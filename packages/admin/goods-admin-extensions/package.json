@@ -1,0 +1,23 @@
+{
+  "name": "@medusajs/goods-admin-extensions",
+  "version": "0.0.1",
+  "description": "Goods Admin Extensions - Custom widgets and routes for Goods Grocery",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./widgets/*": "./src/widgets/*",
+    "./routes/*": "./src/routes/*",
+    "./components/*": "./src/components/*"
+  },
+  "peerDependencies": {
+    "@medusajs/admin-sdk": "*",
+    "@medusajs/ui": "*",
+    "@medusajs/icons": "*",
+    "react": "^18"
+  }
+}
+
