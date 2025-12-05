@@ -1,0 +1,17 @@
+{
+  "name": "@medusajs/goods-attributes",
+  "version": "0.0.1",
+  "description": "Goods Attributes Module - Goods-specific product attributes like brand, dietary flags",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "peerDependencies": {
+    "@medusajs/framework": "*"
+  }
+}
+

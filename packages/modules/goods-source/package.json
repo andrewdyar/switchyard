@@ -1,0 +1,17 @@
+{
+  "name": "@medusajs/goods-source",
+  "version": "0.0.1",
+  "description": "Goods Source Module - Links Medusa products to source catalog",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "peerDependencies": {
+    "@medusajs/framework": "*"
+  }
+}
+

@@ -1,0 +1,17 @@
+{
+  "name": "@medusajs/goods-retailer",
+  "version": "0.0.1",
+  "description": "Goods Retailer Module - Multi-retailer support for product sourcing",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "peerDependencies": {
+    "@medusajs/framework": "*"
+  }
+}
+

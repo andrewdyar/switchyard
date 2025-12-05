@@ -1,0 +1,17 @@
+{
+  "name": "@medusajs/goods-operations",
+  "version": "0.0.1",
+  "description": "Goods Operations Module - WMS/OMS functionality for sweeps, pick lists, drivers",
+  "main": "./index.ts",
+  "types": "./index.ts",
+  "exports": {
+    ".": {
+      "types": "./index.ts",
+      "default": "./index.ts"
+    }
+  },
+  "peerDependencies": {
+    "@medusajs/framework": "*"
+  }
+}
+

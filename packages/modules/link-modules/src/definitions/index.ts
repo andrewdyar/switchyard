@@ -17,3 +17,8 @@ export * from "./sales-channel-location"
 export * from "./shipping-option-price-set"
 export * from "./product-shipping-profile"
 export * from "./customer-account-holder"
+
+// Goods custom module links
+export * from "./product-goods-attributes"
+export * from "./product-goods-retailer"
+export * from "./product-goods-source"
