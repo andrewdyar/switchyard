@@ -143,6 +143,7 @@
   },
   "scripts": {
     "build": "turbo run build --concurrency=100% --no-daemon",
+    "start": "cd apps/goods-backend && medusa start",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx .",
     "lint:path": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx",
     "prettier": "prettier",
