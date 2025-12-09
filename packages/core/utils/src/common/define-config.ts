@@ -132,12 +132,8 @@ function resolvePlugins(
   configPlugins: InputConfig["plugins"],
   { isCloud }: { isCloud: boolean }
 ): ConfigModule["plugins"] {
-  const defaultPlugins: Map<string, ConfigModule["plugins"][number]> = new Map([
-    [
-      "@medusajs/draft-order",
-      { resolve: "@medusajs/draft-order", options: {} },
-    ],
-  ])
+  // Removed @medusajs/draft-order from default plugins for Goods customization
+  const defaultPlugins: Map<string, ConfigModule["plugins"][number]> = new Map([])
 
   if (configPlugins?.length) {
     configPlugins.forEach((plugin) => {

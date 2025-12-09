@@ -51,24 +51,12 @@ export const ProductOrganizationSection = ({
         }
       />
       <SectionRow
-        title={t("fields.type")}
+        title="Inventory Type"
         value={
           product.type ? (
             <OrganizationTag
               label={product.type.value}
               to={`/settings/product-types/${product.type_id}`}
-            />
-          ) : undefined
-        }
-      />
-
-      <SectionRow
-        title={t("fields.collection")}
-        value={
-          product.collection ? (
-            <OrganizationTag
-              label={product.collection.title}
-              to={`/collections/${product.collection.id}`}
             />
           ) : undefined
         }

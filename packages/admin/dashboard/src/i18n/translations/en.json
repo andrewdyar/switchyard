@@ -908,6 +908,44 @@
       "successToast": "Inventory levels updated successfully."
     }
   },
+  "inventoryGroups": {
+    "domain": "Groups",
+    "pageTitle": "Inventory Groups",
+    "subtitle": "Manage your inventory location groups and shelves.",
+    "create": {
+      "header": "Create Group",
+      "successToast": "Group {{name}} was successfully created."
+    },
+    "edit": {
+      "header": "Edit Group",
+      "successToast": "Group was successfully updated."
+    },
+    "delete": {
+      "confirmation": "You are about to delete the group {{name}}. This action cannot be undone.",
+      "successToast": "Group {{name}} was successfully deleted."
+    },
+    "organize": {
+      "header": "Organize",
+      "action": "Edit tree"
+    },
+    "products": {
+      "description": "Products assigned to this inventory group.",
+      "removeConfirmation": "You are about to remove {{count}} product(s) from this group.",
+      "removeSuccess": "Removed {{count}} product(s) from the group."
+    },
+    "fields": {
+      "path": {
+        "label": "Path",
+        "tooltip": "Click to expand full path"
+      },
+      "parent": {
+        "label": "Parent"
+      },
+      "children": {
+        "label": "Children"
+      }
+    }
+  },
   "giftCards": {
     "domain": "Gift Cards",
     "editGiftCard": "Edit Gift Card",
@@ -3066,6 +3104,12 @@
     "limit": "Limit",
     "tags": "Tags",
     "type": "Type",
+    "zone": "Zone",
+    "level": "Level",
+    "locationCode": "Location Code",
+    "aisle": "Aisle",
+    "group": "Group",
+    "shelf": "Shelf",
     "reason": "Reason",
     "none": "none",
     "all": "all",

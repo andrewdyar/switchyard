@@ -8,8 +8,8 @@
 import { ModuleJoinerConfig } from "@medusajs/framework/types"
 import { Modules } from "@medusajs/framework/utils"
 
-export const GOODS_RETAILER_MODULE = "goodsRetailerModuleService"
-export const LINK_PRODUCT_GOODS_RETAILER = "ProductGoodsRetailerLink"
+const GOODS_RETAILER_MODULE = "goodsRetailerModuleService"
+const LINK_PRODUCT_GOODS_RETAILER = "ProductGoodsRetailerLink"
 
 export const ProductGoodsRetailer: ModuleJoinerConfig = {
   serviceName: LINK_PRODUCT_GOODS_RETAILER,
@@ -71,4 +71,3 @@ export const ProductGoodsRetailer: ModuleJoinerConfig = {
     },
   ],
 }
-

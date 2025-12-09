@@ -219,6 +219,10 @@ const useCoreRoutes = (): Omit<INavItem, "pathname">[] => {
       to: "/inventory",
       items: [
         {
+          label: t("inventoryGroups.domain"),
+          to: "/groups",
+        },
+        {
           label: t("reservations.domain"),
           to: "/reservations",
         },

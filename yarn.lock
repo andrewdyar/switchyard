@@ -3142,7 +3142,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@medusajs/admin-sdk@2.12.1, @medusajs/admin-sdk@workspace:packages/admin/admin-sdk":
+"@medusajs/admin-sdk@workspace:*, @medusajs/admin-sdk@workspace:packages/admin/admin-sdk":
   version: 0.0.0-use.local
   resolution: "@medusajs/admin-sdk@workspace:packages/admin/admin-sdk"
   dependencies:
@@ -3323,7 +3323,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@medusajs/cli@2.12.1, @medusajs/cli@workspace:packages/cli/medusa-cli":
+"@medusajs/cli@2.12.1, @medusajs/cli@workspace:*, @medusajs/cli@workspace:packages/cli/medusa-cli":
   version: 0.0.0-use.local
   resolution: "@medusajs/cli@workspace:packages/cli/medusa-cli"
   dependencies:
@@ -3459,60 +3459,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@medusajs/draft-order@2.12.1, @medusajs/draft-order@workspace:packages/plugins/draft-order":
-  version: 0.0.0-use.local
-  resolution: "@medusajs/draft-order@workspace:packages/plugins/draft-order"
-  dependencies:
-    "@ariakit/react": ^0.4.15
-    "@babel/runtime": ^7.26.10
-    "@hookform/resolvers": 3.4.2
-    "@medusajs/admin-sdk": 2.12.1
-    "@medusajs/cli": 2.12.1
-    "@medusajs/framework": 2.12.1
-    "@medusajs/icons": 2.12.1
-    "@medusajs/js-sdk": 2.12.1
-    "@medusajs/test-utils": 2.12.1
-    "@medusajs/types": 2.12.1
-    "@medusajs/ui": 4.0.29
-    "@medusajs/ui-preset": 2.12.1
-    "@tanstack/react-query": 5.64.2
-    "@uiw/react-json-view": ^2.0.0-alpha.17
-    date-fns: ^3.6.0
-    lodash.debounce: ^4.0.8
-    lodash.isequal: ^4.5.0
-    match-sorter: ^6.3.4
-    radix-ui: 1.1.2
-    react-hook-form: 7.49.1
-  peerDependencies:
-    "@medusajs/admin-sdk": 2.12.1
-    "@medusajs/cli": 2.12.1
-    "@medusajs/framework": 2.12.1
-    "@medusajs/icons": 2.12.1
-    "@medusajs/test-utils": 2.12.1
-    "@medusajs/ui": 4.0.29
-    react: ^18.3.1
-    react-dom: ^18.3.1
-    react-router-dom: 6.20.1
-  peerDependenciesMeta:
-    "@medusajs/admin-sdk":
-      optional: true
-    "@medusajs/cli":
-      optional: true
-    "@medusajs/icons":
-      optional: true
-    "@medusajs/test-utils":
-      optional: true
-    "@medusajs/ui":
-      optional: true
-    react:
-      optional: true
-    react-dom:
-      optional: true
-    react-router-dom:
-      optional: true
-  languageName: unknown
-  linkType: soft
-
 "@medusajs/event-bus-local@2.12.1, @medusajs/event-bus-local@workspace:*, @medusajs/event-bus-local@workspace:packages/modules/event-bus-local":
   version: 0.0.0-use.local
   resolution: "@medusajs/event-bus-local@workspace:packages/modules/event-bus-local"
@@ -3639,6 +3585,53 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@medusajs/goods-admin-extensions@workspace:packages/admin/goods-admin-extensions":
+  version: 0.0.0-use.local
+  resolution: "@medusajs/goods-admin-extensions@workspace:packages/admin/goods-admin-extensions"
+  peerDependencies:
+    "@medusajs/admin-sdk": "*"
+    "@medusajs/icons": "*"
+    "@medusajs/ui": "*"
+    react: ^18
+  languageName: unknown
+  linkType: soft
+
+"@medusajs/goods-attributes@workspace:packages/modules/goods-attributes":
+  version: 0.0.0-use.local
+  resolution: "@medusajs/goods-attributes@workspace:packages/modules/goods-attributes"
+  dependencies:
+    "@medusajs/framework": "workspace:*"
+    typescript: ^5.6.2
+  languageName: unknown
+  linkType: soft
+
+"@medusajs/goods-operations@workspace:packages/modules/goods-operations":
+  version: 0.0.0-use.local
+  resolution: "@medusajs/goods-operations@workspace:packages/modules/goods-operations"
+  dependencies:
+    "@medusajs/framework": "workspace:*"
+    typescript: ^5.6.2
+  languageName: unknown
+  linkType: soft
+
+"@medusajs/goods-retailer@workspace:packages/modules/goods-retailer":
+  version: 0.0.0-use.local
+  resolution: "@medusajs/goods-retailer@workspace:packages/modules/goods-retailer"
+  dependencies:
+    "@medusajs/framework": "workspace:*"
+    typescript: ^5.6.2
+  languageName: unknown
+  linkType: soft
+
+"@medusajs/goods-source@workspace:packages/modules/goods-source":
+  version: 0.0.0-use.local
+  resolution: "@medusajs/goods-source@workspace:packages/modules/goods-source"
+  dependencies:
+    "@medusajs/framework": "workspace:*"
+    typescript: ^5.6.2
+  languageName: unknown
+  linkType: soft
+
 "@medusajs/icons@2.12.1, @medusajs/icons@workspace:packages/design-system/icons":
   version: 0.0.0-use.local
   resolution: "@medusajs/icons@workspace:packages/design-system/icons"
@@ -3658,6 +3651,16 @@ __metadata:
     "@medusajs/test-utils": 2.12.1
   peerDependencies:
     "@medusajs/framework": 2.12.1
+  languageName: unknown
+  linkType: soft
+
+"@medusajs/inventory-group@workspace:packages/modules/inventory-group":
+  version: 0.0.0-use.local
+  resolution: "@medusajs/inventory-group@workspace:packages/modules/inventory-group"
+  dependencies:
+    typescript: ^5.3.3
+  peerDependencies:
+    "@medusajs/framework": "workspace:^"
   languageName: unknown
   linkType: soft
 
@@ -3769,7 +3772,6 @@ __metadata:
     "@medusajs/core-flows": 2.12.1
     "@medusajs/currency": 2.12.1
     "@medusajs/customer": 2.12.1
-    "@medusajs/draft-order": 2.12.1
     "@medusajs/event-bus-local": 2.12.1
     "@medusajs/event-bus-redis": 2.12.1
     "@medusajs/file": 2.12.1
@@ -17698,6 +17700,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"goods-backend@workspace:apps/goods-backend":
+  version: 0.0.0-use.local
+  resolution: "goods-backend@workspace:apps/goods-backend"
+  dependencies:
+    "@medusajs/admin-sdk": "workspace:*"
+    "@medusajs/cli": "workspace:*"
+    "@medusajs/framework": "workspace:*"
+    "@medusajs/medusa": "workspace:*"
+    "@types/node": ^20.12.11
+    typescript: ^5.6.2
+  languageName: unknown
+  linkType: soft
+
 "gopd@npm:^1.0.1, gopd@npm:^1.2.0":
   version: 1.2.0
   resolution: "gopd@npm:1.2.0"
@@ -26967,7 +26982,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:^5.6.2":
+"typescript@npm:^5.3.3, typescript@npm:^5.6.2":
   version: 5.9.3
   resolution: "typescript@npm:5.9.3"
   bin:
@@ -26977,7 +26992,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^5.6.2#~builtin<compat/typescript>":
+"typescript@patch:typescript@^5.3.3#~builtin<compat/typescript>, typescript@patch:typescript@^5.6.2#~builtin<compat/typescript>":
   version: 5.9.3
   resolution: "typescript@patch:typescript@npm%3A5.9.3#~builtin<compat/typescript>::version=5.9.3&hash=7ad353"
   bin:

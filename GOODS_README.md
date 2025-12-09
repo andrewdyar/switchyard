@@ -158,3 +158,5 @@ sweeps, drivers, pick_lists ──────→ goods-operations (custom)
 goods_product_attributes ─────────→ goods-attributes (custom)
 ```
 
+
+

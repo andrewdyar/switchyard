@@ -1,0 +1,21 @@
+{
+  "name": "goods-backend",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "medusa develop",
+    "build": "medusa build",
+    "start": "medusa start",
+    "seed": "medusa exec ./src/scripts/seed.ts"
+  },
+  "dependencies": {
+    "@medusajs/admin-sdk": "workspace:*",
+    "@medusajs/cli": "workspace:*",
+    "@medusajs/framework": "workspace:*",
+    "@medusajs/medusa": "workspace:*"
+  },
+  "devDependencies": {
+    "@types/node": "^20.12.11",
+    "typescript": "^5.6.2"
+  }
+}

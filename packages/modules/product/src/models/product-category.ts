@@ -102,7 +102,7 @@ const ProductCategory = model
       where: "deleted_at IS NULL",
     },
     {
-      name: "IDX_categories_parent_id",
+      name: "IDX_categories_parent_category_id",
       on: ["parent_category_id"],
       unique: false,
       where: "deleted_at IS NULL",

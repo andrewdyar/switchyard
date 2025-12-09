@@ -15,9 +15,8 @@
   },
   "peerDependencies": {
     "@medusajs/admin-sdk": "*",
-    "@medusajs/ui": "*",
     "@medusajs/icons": "*",
+    "@medusajs/ui": "*",
     "react": "^18"
   }
 }
-

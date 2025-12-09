@@ -226,6 +226,40 @@ export function getRouteMap({
               ],
             },
             {
+              path: "/groups",
+              errorElement: <ErrorBoundary />,
+              handle: {
+                breadcrumb: () => t("inventoryGroups.domain"),
+              },
+              children: [
+                {
+                  path: "",
+                  lazy: () =>
+                    import(
+                      "../../routes/inventory-groups/inventory-group-list"
+                    ),
+                },
+                {
+                  path: ":id",
+                  errorElement: <ErrorBoundary />,
+                  lazy: async () => {
+                    const { Component, Breadcrumb, loader } = await import(
+                      "../../routes/inventory-groups/inventory-group-detail"
+                    )
+
+                    return {
+                      Component,
+                      loader,
+                      handle: {
+                        breadcrumb: (match: UIMatch) => <Breadcrumb {...match} />,
+                      },
+                    }
+                  },
+                  children: [],
+                },
+              ],
+            },
+            {
               path: "/categories",
               errorElement: <ErrorBoundary />,
               handle: {

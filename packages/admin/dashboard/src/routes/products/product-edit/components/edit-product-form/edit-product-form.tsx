@@ -22,9 +22,8 @@ type EditProductFormProps = {
 const EditProductSchema = zod.object({
   status: zod.enum(["draft", "published", "proposed", "rejected"]),
   title: zod.string().min(1),
-  subtitle: zod.string().optional(),
+  brand: zod.string().optional(),
   handle: zod.string().min(1),
-  material: zod.string().optional(),
   description: zod.string().optional(),
   discountable: zod.boolean(),
 })
@@ -41,8 +40,7 @@ export const EditProductForm = ({ product }: EditProductFormProps) => {
     defaultValues: {
       status: product.status,
       title: product.title,
-      material: product.material || "",
-      subtitle: product.subtitle || "",
+      brand: (product as any).brand || "",
       handle: product.handle || "",
       description: product.description || "",
       discountable: product.discountable,
@@ -55,7 +53,7 @@ export const EditProductForm = ({ product }: EditProductFormProps) => {
   const { mutateAsync, isPending } = useUpdateProduct(product.id)
 
   const handleSubmit = form.handleSubmit(async (data) => {
-    const { title, discountable, handle, status, ...optional } = data
+    const { title, discountable, handle, status, brand, ...optional } = data
 
     const nullableData = transformNullableFormData(optional)
 
@@ -65,8 +63,9 @@ export const EditProductForm = ({ product }: EditProductFormProps) => {
         discountable,
         handle,
         status: status as HttpTypes.AdminProductStatus,
+        brand,
         ...nullableData,
-      },
+      } as any,
       {
         onSuccess: ({ product }) => {
           toast.success(
@@ -146,13 +145,13 @@ export const EditProductForm = ({ product }: EditProductFormProps) => {
               />
               <Form.Field
                 control={form.control}
-                name="subtitle"
+                name="brand"
                 render={({ field }) => {
                   return (
                     <Form.Item>
-                      <Form.Label optional>{t("fields.subtitle")}</Form.Label>
+                      <Form.Label optional>Brand</Form.Label>
                       <Form.Control>
-                        <Input {...field} />
+                        <Input {...field} placeholder="Enter brand name" />
                       </Form.Control>
                       <Form.ErrorMessage />
                     </Form.Item>
@@ -180,21 +179,6 @@ export const EditProductForm = ({ product }: EditProductFormProps) => {
                           </div>
                           <Input {...field} className="pl-10" />
                         </div>
-                      </Form.Control>
-                      <Form.ErrorMessage />
-                    </Form.Item>
-                  )
-                }}
-              />
-              <Form.Field
-                control={form.control}
-                name="material"
-                render={({ field }) => {
-                  return (
-                    <Form.Item>
-                      <Form.Label optional>{t("fields.material")}</Form.Label>
-                      <Form.Control>
-                        <Input {...field} />
                       </Form.Control>
                       <Form.ErrorMessage />
                     </Form.Item>

@@ -1,12 +1,11 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { Alert, Button, Heading, Hint, Input, Text } from "@medusajs/ui"
+import { Alert, Button, Heading, Hint, Input } from "@medusajs/ui"
 import { useForm } from "react-hook-form"
 import { Trans, useTranslation } from "react-i18next"
 import { Link, useLocation, useNavigate } from "react-router-dom"
 import * as z from "zod"
 
 import { Form } from "../../components/common/form"
-import AvatarBox from "../../components/common/logo-box/avatar-box"
 import { useSignInWithEmailPass } from "../../hooks/api"
 import { isFetchError } from "../../lib/is-fetch-error"
 import { useExtension } from "../../providers/extension-provider"
@@ -73,12 +72,13 @@ export const Login = () => {
   return (
     <div className="bg-ui-bg-subtle flex min-h-dvh w-dvw items-center justify-center">
       <div className="m-4 flex w-full max-w-[280px] flex-col items-center">
-        <AvatarBox />
+        <img 
+          src="https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/branding-assets/goods-logo.png" 
+          alt="Goods Admin" 
+          className="mb-4 h-12 w-auto"
+        />
         <div className="mb-4 flex flex-col items-center">
-          <Heading>{t("login.title")}</Heading>
-          <Text size="small" className="text-ui-fg-subtle text-center">
-            {t("login.hint")}
-          </Text>
+          <Heading>Employee Login</Heading>
         </div>
         <div className="flex w-full flex-col gap-y-3">
           {getWidgets("login.before").map((Component, i) => {
@@ -145,7 +145,11 @@ export const Login = () => {
                   {serverError}
                 </Alert>
               )}
-              <Button className="w-full" type="submit" isLoading={isPending}>
+              <Button 
+                className="w-full bg-[#00713d] hover:bg-[#005a31]" 
+                type="submit" 
+                isLoading={isPending}
+              >
                 {t("actions.continueWithEmail")}
               </Button>
             </form>
@@ -161,7 +165,7 @@ export const Login = () => {
               <Link
                 key="reset-password-link"
                 to="/reset-password"
-                className="text-ui-fg-interactive transition-fg hover:text-ui-fg-interactive-hover focus-visible:text-ui-fg-interactive-hover font-medium outline-none"
+                className="text-[#f48308] transition-fg hover:text-[#d97007] focus-visible:text-[#d97007] font-medium outline-none"
               />,
             ]}
           />

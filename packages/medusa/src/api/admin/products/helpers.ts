@@ -22,6 +22,30 @@ const isPricing = (fieldName: string) =>
   fieldName.startsWith("prices") ||
   fieldName.startsWith("*prices")
 
+// Decode HTML entities in strings (e.g., &#39; -> ', &amp; -> &)
+const decodeHtmlEntities = (str: string | null | undefined): string | null | undefined => {
+  if (!str || typeof str !== 'string') return str
+  return str
+    .replace(/&#(\d+);/g, (_, code) => String.fromCharCode(parseInt(code, 10)))
+    .replace(/&amp;/g, '&')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&quot;/g, '"')
+    .replace(/&#x27;/g, "'")
+    .replace(/&#39;/g, "'")
+}
+
+// Map Medusa API field names to Goods database column names
+const mapProductFieldToColumn = (field: string): string => {
+  // Map title -> name (source_products uses 'name' not 'title')
+  if (field === 'title') return 'name'
+  if (field === '*title') return '*name'
+  // Map thumbnail -> image_url (source_products uses 'image_url' not 'thumbnail')
+  if (field === 'thumbnail') return 'image_url'
+  if (field === '*thumbnail') return '*image_url'
+  return field
+}
+
 // The variant had prices before, but that is not part of the price_set money amounts. Do we remap the request and response or not?
 export const remapKeysForProduct = (selectFields: string[]) => {
   const productFields = selectFields.filter(
@@ -34,7 +58,21 @@ export const remapKeysForProduct = (selectFields: string[]) => {
       fieldName.replace("variants.prices.", "variants.price_set.prices.")
     )
 
-  return [...productFields, ...pricingFields]
+  // Map API field names to database column names
+  const remappedProductFields = productFields.map(mapProductFieldToColumn)
+
+  return [...remappedProductFields, ...pricingFields]
+}
+
+// Map Medusa API variant field names to Goods database column names
+const mapVariantFieldToColumn = (field: string): string => {
+  // Map title -> customer_friendly_size (product_skus uses 'customer_friendly_size' not 'title')
+  if (field === 'title') return 'customer_friendly_size'
+  if (field === '*title') return '*customer_friendly_size'
+  // Map sku -> sku_id (product_skus uses 'sku_id' not 'sku')
+  if (field === 'sku') return 'sku_id'
+  if (field === '*sku') return '*sku_id'
+  return field
 }
 
 export const remapKeysForVariant = (selectFields: string[]) => {
@@ -48,14 +86,25 @@ export const remapKeysForVariant = (selectFields: string[]) => {
       fieldName.replace("prices.", "price_set.prices.")
     )
 
-  return [...variantFields, ...pricingFields]
+  // Map API field names to database column names
+  const remappedVariantFields = variantFields.map(mapVariantFieldToColumn)
+
+  return [...remappedVariantFields, ...pricingFields]
 }
 
 export const remapProductResponse = (
   product: ProductDTO
 ): HttpTypes.AdminProduct => {
+  // Map Goods database fields to Medusa API fields
+  const { name, image_url, description, ...rest } = product as any
+  const title = decodeHtmlEntities(name || (product as any).title)
+  const decodedDescription = decodeHtmlEntities(description)
+  
   return {
-    ...product,
+    ...rest,
+    title, // Map 'name' to 'title' for API compatibility, decode HTML entities
+    description: decodedDescription,
+    thumbnail: image_url || (product as any).thumbnail, // Map 'image_url' to 'thumbnail' for API compatibility
     variants: product.variants?.map(remapVariantResponse),
     // TODO: Remove any once all typings are cleaned up
   } as any
@@ -68,8 +117,12 @@ export const remapVariantResponse = (
     return variant
   }
 
+  // Map Goods database fields to Medusa API fields
+  const { sku_id, customer_friendly_size, ...rest } = variant as any
   const resp = {
-    ...variant,
+    ...rest,
+    sku: sku_id || (variant as any).sku, // Map 'sku_id' to 'sku' for API compatibility
+    title: customer_friendly_size || (variant as any).title, // Map 'customer_friendly_size' to 'title' for API compatibility
     prices: (variant as any).price_set?.prices?.map((price) => ({
       id: price.id,
       amount: price.amount,

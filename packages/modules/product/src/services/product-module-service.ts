@@ -1909,7 +1909,7 @@ export default class ProductModuleService
       productData.variants?.forEach((variant) => {
         options.forEach((option) => {
           if (!variant.options?.[option.title]) {
-            missingOptionsVariants.push(variant.title)
+            missingOptionsVariants.push((variant as any).title || (variant as any).customer_friendly_size || (variant as any).id || 'variant')
           }
         })
       })
@@ -2152,7 +2152,7 @@ export default class ProductModuleService
       ) {
         throw new MedusaError(
           MedusaError.Types.INVALID_DATA,
-          `Product has ${productsOptions.length} option values but there were ${numOfProvidedVariantOptionValues} provided option values for the variant: ${variant.title}.`
+          `Product has ${productsOptions.length} option values but there were ${numOfProvidedVariantOptionValues} provided option values for the variant: ${(variant as any).title || (variant as any).customer_friendly_size || variant.id}.`
         )
       }
 
@@ -2230,7 +2230,7 @@ export default class ProductModuleService
       if (existingVariant) {
         throw new MedusaError(
           MedusaError.Types.INVALID_DATA,
-          `Variant (${existingVariant.title}) with provided options already exists.`
+          `Variant (${(existingVariant as any).customer_friendly_size || (existingVariant as any).title || (existingVariant as any).id || 'variant'}) with provided options already exists.`
         )
       }
     }
@@ -2261,7 +2261,7 @@ export default class ProductModuleService
         if (exists) {
           throw new MedusaError(
             MedusaError.Types.INVALID_DATA,
-            `Variant "${variant.title}" has same combination of option values as "${compareVariant.title}".`
+            `Variant "${(variant as any).title || (variant as any).customer_friendly_size || (variant as any).id || 'variant'}" has same combination of option values as "${(compareVariant as any).title || (compareVariant as any).customer_friendly_size || (compareVariant as any).id || 'variant'}".`
           )
         }
       }

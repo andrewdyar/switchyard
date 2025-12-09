@@ -25,8 +25,8 @@ const Product = model
       // UUID primary key (matches source_products.id)
       id: model.id().primaryKey(),
       
-      // Map Medusa's title to source_products.name
-      title: model.text().searchable(),
+      // Use 'name' to match source_products.name column (will be mapped to 'title' in API responses)
+      name: model.text().searchable(),
       
       // Handle for URL slugs (new column added via migration)
       handle: model.text().nullable(),
@@ -39,8 +39,8 @@ const Product = model
         .enum(ProductUtils.ProductStatus)
         .default(ProductUtils.ProductStatus.DRAFT),
       
-      // Map thumbnail to source_products.image_url
-      thumbnail: model.text().nullable(),
+      // Use 'image_url' to match source_products.image_url column (will be mapped to 'thumbnail' in API responses)
+      image_url: model.text().nullable(),
       
       // Metadata (new JSONB column added via migration)
       metadata: model.json().nullable(),

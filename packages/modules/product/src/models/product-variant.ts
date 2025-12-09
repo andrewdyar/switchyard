@@ -21,15 +21,15 @@ const ProductVariant = model
       
       // ---- Map to product_skus columns ----
       
-      // SKU identifier (maps to product_skus.sku_id)
-      sku: model.text().searchable().nullable(),
+      // SKU identifier (use sku_id to match product_skus.sku_id column)
+      sku_id: model.text().searchable().nullable(),
       
       // UPC barcode (maps to product_skus.upc)
       upc: model.text().searchable().nullable(),
       
-      // Customer friendly size (maps to product_skus.customer_friendly_size)
-      // This serves as the variant title
-      title: model.text().searchable(),
+      // Customer friendly size (use customer_friendly_size to match product_skus column)
+      // This serves as the variant title (will be mapped to 'title' in API responses)
+      customer_friendly_size: model.text().searchable(),
       
       // Store name (which retailer this SKU is from)
       store_name: model.text(),
@@ -101,7 +101,7 @@ const ProductVariant = model
     },
     {
       name: "IDX_product_skus_sku_unique",
-      on: ["sku"],
+      on: ["sku_id"],
       unique: true,
       where: "deleted_at IS NULL",
     },

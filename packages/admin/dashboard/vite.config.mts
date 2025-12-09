@@ -2,6 +2,7 @@ import inject from "@medusajs/admin-vite-plugin"
 import react from "@vitejs/plugin-react"
 import { defineConfig, loadEnv } from "vite"
 import inspect from "vite-plugin-inspect"
+import path from "path"
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -30,6 +31,11 @@ export default defineConfig(({ mode }) => {
       __BASE__: JSON.stringify(BASE),
       __BACKEND_URL__: JSON.stringify(BACKEND_URL),
       __STOREFRONT_URL__: JSON.stringify(STOREFRONT_URL),
+    },
+    resolve: {
+      alias: {
+        "@static": path.resolve(__dirname, "../../../../static"),
+      },
     },
     server: {
       open: true,

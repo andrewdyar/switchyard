@@ -1,3 +1,8 @@
+declare module "@static/*.png" {
+  const value: string
+  export default value
+}
+
 declare module "virtual:medusa/forms" {
   import type { FormModule } from "./extensions"
   const formModule: FormModule

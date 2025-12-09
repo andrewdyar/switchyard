@@ -3,6 +3,7 @@
   "private": true,
   "workspaces": {
     "packages": [
+      "apps/*",
       "packages/medusa",
       "packages/medusa-test-utils",
       "packages/modules/*",

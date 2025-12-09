@@ -100,9 +100,8 @@ export const ProductGeneralSection = ({
       </div>
 
       <SectionRow title={t("fields.description")} value={product.description} />
-      <SectionRow title={t("fields.subtitle")} value={product.subtitle} />
+      <SectionRow title="Brand" value={(product as any).brand} />
       <SectionRow title={t("fields.handle")} value={`/${product.handle}`} />
-      <SectionRow title={t("fields.material")} value={product.material} />
       <SectionRow
         title={t("fields.discountable")}
         value={product.discountable ? t("fields.true") : t("fields.false")}
