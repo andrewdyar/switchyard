@@ -1,24 +1,27 @@
-# fly.toml - Fly.io configuration for Medusa backend
+# fly.toml app configuration file generated for goods-medusa on 2025-12-09T15:01:28-06:00
+#
+# See https://fly.io/docs/reference/configuration/ for information about how to use this file.
+#
 
-app = "goods-medusa"
-primary_region = "sjc"
+app = 'goods-medusa'
+primary_region = 'sjc'
 
 [build]
-  dockerfile = "Dockerfile"
+  dockerfile = 'Dockerfile'
 
 [env]
-  NODE_ENV = "production"
-  PORT = "9000"
+  NODE_ENV = 'production'
+  PORT = '9000'
 
 [http_service]
   internal_port = 9000
   force_https = true
-  auto_stop_machines = false
+  auto_stop_machines = 'off'
   auto_start_machines = true
   min_machines_running = 1
 
 [[vm]]
-  memory = "2gb"
-  cpu_kind = "shared"
+  memory = '2gb'
+  cpu_kind = 'shared'
   cpus = 2
-
+  memory_mb = 2048
