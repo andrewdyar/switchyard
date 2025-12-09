@@ -10,7 +10,7 @@ WORKDIR /app
 COPY . .
 
 # Install all dependencies and build
-RUN yarn install --frozen-lockfile && \
+RUN yarn install && \
     yarn build && \
     npx medusa build
 
