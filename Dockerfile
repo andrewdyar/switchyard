@@ -38,6 +38,9 @@ ENV NODE_ENV=production
 # Expose Medusa port
 EXPOSE 9000
 
-# Use dumb-init and start with memory limit appropriate for Railway
+# Set memory limit for Node.js
+ENV NODE_OPTIONS="--max-old-space-size=768"
+
+# Use dumb-init for proper signal handling
 ENTRYPOINT ["dumb-init", "--"]
-CMD ["node", "--max-old-space-size=768", "node_modules/.bin/medusa", "start"]
+CMD ["npx", "medusa", "start"]
