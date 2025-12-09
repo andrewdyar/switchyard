@@ -31,6 +31,8 @@ COPY medusa-config.ts tsconfig.json ./
 COPY --from=builder /app/node_modules ./node_modules
 COPY --from=builder /app/packages ./packages
 COPY --from=builder /app/.medusa ./.medusa
+COPY --from=builder /app/dist ./dist
+COPY --from=builder /app/src ./src
 
 # Set production environment
 ENV NODE_ENV=production
