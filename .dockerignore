@@ -1,0 +1,72 @@
+# Dependencies
+node_modules/.cache
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+
+# Development files
+*.md
+*.log
+.git
+.github
+.vscode
+.idea
+
+# Documentation
+www/
+docs/
+
+# Integration tests (not needed in production)
+integration-tests/
+
+# Development apps (goods-backend is dev-only)
+apps/goods-backend/
+
+# Source files (only need dist/)
+packages/*/src/
+!packages/medusa/src/
+!packages/admin/dashboard/src/
+
+# Build artifacts we don't need
+packages/**/tsconfig.json
+packages/**/*.test.ts
+packages/**/*.test.js
+packages/**/__tests__/
+packages/**/__mocks__/
+packages/**/test/
+packages/**/tests/
+
+# Storybook and design system sources (only need built admin)
+packages/design-system/
+packages/admin/admin-sdk/
+packages/admin/admin-shared/
+packages/admin/admin-vite-plugin/
+packages/admin/admin-bundler/
+
+# CLI tools (we use npx medusa, don't need cli source)
+packages/cli/create-medusa-app/
+packages/cli/oas/
+packages/cli/medusa-dev-cli/
+
+# Development configs
+.eslintrc*
+.prettierrc*
+jest.config.*
+vitest.config.*
+turbo.json
+tsconfig*.json
+!tsconfig.json
+
+# Temporary files
+*.swp
+*.swo
+*~
+.DS_Store
+.env.local
+.env.*.local
+
+# Generated types and maps (reduce size)
+**/*.map
+**/*.d.ts.map
+

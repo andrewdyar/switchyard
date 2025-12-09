@@ -1,0 +1,23 @@
+# Railway ignore file - excludes files from deployment
+# Similar to .dockerignore
+
+# Documentation
+www/
+*.md
+!README.md
+
+# Integration tests
+integration-tests/
+
+# Development
+.git/
+.github/
+.vscode/
+.idea/
+apps/goods-backend/
+
+# Logs and caches
+*.log
+.yarn/cache/
+node_modules/.cache/
+
