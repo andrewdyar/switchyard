@@ -1,0 +1,20 @@
+[phases.setup]
+nixPkgs = ["nodejs-18_x"]
+
+[phases.install]
+cmds = [
+  "yarn install --production=false"
+]
+
+[phases.build]
+cmds = [
+  "yarn build",
+  "npx medusa build"
+]
+
+[start]
+cmd = "NODE_OPTIONS='--max-old-space-size=4096' NODE_ENV=production npx medusa start"
+
+[variables]
+NODE_ENV = "production"
+
