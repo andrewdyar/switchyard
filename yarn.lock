@@ -3515,7 +3515,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@medusajs/framework@2.12.1, @medusajs/framework@workspace:*, @medusajs/framework@workspace:packages/core/framework":
+"@medusajs/framework@2.12.1, @medusajs/framework@workspace:*, @medusajs/framework@workspace:^, @medusajs/framework@workspace:packages/core/framework":
   version: 0.0.0-use.local
   resolution: "@medusajs/framework@workspace:packages/core/framework"
   dependencies:
@@ -3658,6 +3658,8 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@medusajs/inventory-group@workspace:packages/modules/inventory-group"
   dependencies:
+    "@medusajs/framework": "workspace:^"
+    "@medusajs/utils": "workspace:^"
     typescript: ^5.3.3
   peerDependencies:
     "@medusajs/framework": "workspace:^"
