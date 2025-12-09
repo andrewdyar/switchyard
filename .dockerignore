@@ -1,4 +1,4 @@
-# Dependencies
+# Dependencies - only exclude cache, not the yarn configuration
 node_modules/.cache
 .yarn/cache
 .yarn/unplugged
@@ -6,7 +6,6 @@ node_modules/.cache
 .yarn/install-state.gz
 
 # Development files
-*.md
 *.log
 .git
 .github
@@ -16,6 +15,7 @@ node_modules/.cache
 # Documentation
 www/
 docs/
+*.md
 
 # Integration tests (not needed in production)
 integration-tests/
@@ -23,13 +23,7 @@ integration-tests/
 # Development apps (goods-backend is dev-only)
 apps/goods-backend/
 
-# Source files (only need dist/)
-packages/*/src/
-!packages/medusa/src/
-!packages/admin/dashboard/src/
-
-# Build artifacts we don't need
-packages/**/tsconfig.json
+# Test files only
 packages/**/*.test.ts
 packages/**/*.test.js
 packages/**/__tests__/
@@ -37,14 +31,10 @@ packages/**/__mocks__/
 packages/**/test/
 packages/**/tests/
 
-# Storybook and design system sources (only need built admin)
+# Storybook and design system (not needed)
 packages/design-system/
-packages/admin/admin-sdk/
-packages/admin/admin-shared/
-packages/admin/admin-vite-plugin/
-packages/admin/admin-bundler/
 
-# CLI tools (we use npx medusa, don't need cli source)
+# CLI tools we don't need in runtime
 packages/cli/create-medusa-app/
 packages/cli/oas/
 packages/cli/medusa-dev-cli/
@@ -54,8 +44,6 @@ packages/cli/medusa-dev-cli/
 .prettierrc*
 jest.config.*
 vitest.config.*
-# Keep turbo.json - needed for build
-# Keep tsconfig files - needed for runtime
 
 # Temporary files
 *.swp
@@ -65,7 +53,5 @@ vitest.config.*
 .env.local
 .env.*.local
 
-# Generated types and maps (reduce size)
-**/*.map
+# Source maps (reduce size, keep .d.ts for types)
 **/*.d.ts.map
-
