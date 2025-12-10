@@ -1,57 +1,13 @@
-# Dependencies - only exclude cache, not the yarn configuration
-node_modules/.cache
-.yarn/cache
-.yarn/unplugged
-.yarn/build-state.yml
-.yarn/install-state.gz
+# =============================================================================
+# Docker Ignore for CI/CD Pre-built Deployment
+# =============================================================================
+# Since we only copy apps/goods-backend/.medusa/server, most files are ignored.
+# This file ensures minimal build context for faster Docker builds.
+# =============================================================================
 
-# Development files
-*.log
-.git
-.github
-.vscode
-.idea
+# Ignore everything by default
+*
 
-# Documentation
-www/
-docs/
-*.md
-
-# Integration tests (not needed in production)
-integration-tests/
-
-# Development apps (goods-backend is dev-only)
-apps/goods-backend/
-
-# Test files only
-packages/**/*.test.ts
-packages/**/*.test.js
-packages/**/__tests__/
-packages/**/__mocks__/
-packages/**/test/
-packages/**/tests/
-
-# Storybook and design system (not needed)
-packages/design-system/
-
-# CLI tools we don't need in runtime
-packages/cli/create-medusa-app/
-packages/cli/oas/
-packages/cli/medusa-dev-cli/
-
-# Development configs
-.eslintrc*
-.prettierrc*
-jest.config.*
-vitest.config.*
-
-# Temporary files
-*.swp
-*.swo
-*~
-.DS_Store
-.env.local
-.env.*.local
-
-# Source maps (reduce size, keep .d.ts for types)
-**/*.d.ts.map
+# Only include the pre-built Medusa server
+!apps/goods-backend/.medusa/server
+!apps/goods-backend/.medusa/server/**

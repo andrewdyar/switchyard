@@ -6,15 +6,46 @@ on:
       - goods-customization
 
 jobs:
-  deploy:
-    name: Deploy app
+  build-and-deploy:
+    name: Build and Deploy
     runs-on: ubuntu-latest
+    env:
+      NODE_OPTIONS: "--max-old-space-size=8192"
+    
     steps:
-      - uses: actions/checkout@v4
-      
-      - uses: superfly/flyctl-actions/setup-flyctl@master
-      
-      - run: flyctl deploy --remote-only
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --inline-builds
+
+      - name: Build all packages
+        run: yarn build
+
+      - name: Build goods-backend (Medusa app)
+        working-directory: apps/goods-backend
+        run: npx medusa build
+
+      - name: Verify build output
+        run: |
+          echo "Checking .medusa/server directory..."
+          ls -la apps/goods-backend/.medusa/server/
+          echo "Package.json contents:"
+          cat apps/goods-backend/.medusa/server/package.json
+
+      - name: Setup Fly.io CLI
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Deploy to Fly.io
+        run: flyctl deploy --local-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-

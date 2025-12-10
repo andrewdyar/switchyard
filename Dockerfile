@@ -1,35 +1,39 @@
-FROM node:18-bullseye
+# =============================================================================
+# Production Dockerfile for Medusa Application
+# =============================================================================
+# This Dockerfile expects pre-built artifacts from GitHub Actions.
+# The .medusa/server directory is created by `medusa build` in CI.
+# =============================================================================
 
-# Install build tools
-RUN apt-get update && apt-get install -y python3 make g++ && rm -rf /var/lib/apt/lists/*
+FROM node:20-bullseye-slim
+
+# Create non-root user for security
+RUN groupadd -r medusa && useradd -r -g medusa medusa
 
 WORKDIR /app
 
-# Enable corepack for yarn
-RUN corepack enable
+# Copy the pre-built Medusa application
+# This directory is created by `medusa build` in GitHub Actions
+COPY apps/goods-backend/.medusa/server ./
 
-# Copy package files first for caching
-COPY package.json yarn.lock .yarnrc.yml ./
-COPY .yarn ./.yarn
+# Install only production dependencies
+RUN npm install --production --no-audit --no-fund && npm cache clean --force
 
-# Copy all source
-COPY . .
+# Set ownership to non-root user
+RUN chown -R medusa:medusa /app
 
-# Increase memory and install
-ENV NODE_OPTIONS="--max-old-space-size=8192"
-RUN yarn install --inline-builds
+# Switch to non-root user
+USER medusa
 
-# Build all packages
-RUN yarn build
-
-# Build goods-backend app
-WORKDIR /app/apps/goods-backend
-RUN npx medusa build
-
-# Runtime
+# Production environment
 ENV NODE_ENV=production
-ENV NODE_OPTIONS="--max-old-space-size=1024"
+ENV PORT=9000
+
 EXPOSE 9000
 
-CMD ["npx", "medusa", "start"]
+# Health check
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+  CMD node -e "require('http').get('http://localhost:9000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
 
+# Start the application
+CMD ["npm", "start"]
