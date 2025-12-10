@@ -1,0 +1,154 @@
+name: Preview Environment
+
+on:
+  pull_request:
+    types: [opened, reopened, synchronize, closed]
+
+concurrency:
+  group: pr-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+env:
+  FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+  NODE_OPTIONS: "--max-old-space-size=8192"
+
+jobs:
+  build-and-deploy-preview:
+    name: Build and Deploy Preview
+    runs-on: ubuntu-latest
+    if: github.event.action != 'closed'
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'yarn'
+
+      - name: Enable Corepack
+        run: corepack enable
+
+      - name: Install dependencies
+        run: yarn install --inline-builds
+
+      - name: Build all packages
+        run: yarn build
+
+      - name: Build goods-backend (Medusa app)
+        working-directory: apps/goods-backend
+        run: npx medusa build
+
+      - name: Verify build output
+        run: |
+          echo "Checking .medusa/server directory..."
+          ls -la apps/goods-backend/.medusa/server/
+
+      - name: Setup Fly.io CLI
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Create or update preview app
+        id: deploy
+        run: |
+          APP_NAME="goods-medusa-pr-${{ github.event.pull_request.number }}"
+          
+          # Check if app exists
+          if ! flyctl apps list | grep -q "$APP_NAME"; then
+            echo "Creating new preview app: $APP_NAME"
+            flyctl apps create "$APP_NAME" --org personal || true
+          fi
+          
+          # Deploy to preview app
+          flyctl deploy --local-only \
+            --app "$APP_NAME" \
+            --config fly.toml \
+            --build-arg NODE_ENV=production
+          
+          # Get the app URL
+          APP_URL="https://${APP_NAME}.fly.dev"
+          echo "preview_url=$APP_URL" >> $GITHUB_OUTPUT
+          echo "app_name=$APP_NAME" >> $GITHUB_OUTPUT
+
+      - name: Comment PR with preview URL
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const previewUrl = '${{ steps.deploy.outputs.preview_url }}';
+            const appName = '${{ steps.deploy.outputs.app_name }}';
+            
+            const body = `## 🚀 Preview Environment Ready
+            
+            | Resource | URL |
+            |----------|-----|
+            | **Preview App** | [${previewUrl}](${previewUrl}) |
+            | **Health Check** | [${previewUrl}/health](${previewUrl}/health) |
+            | **Admin Panel** | [${previewUrl}/app](${previewUrl}/app) |
+            
+            > **App Name:** \`${appName}\`
+            > 
+            > This preview environment will be automatically destroyed when the PR is closed.
+            `;
+            
+            // Find existing comment
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+            });
+            
+            const botComment = comments.find(comment => 
+              comment.user.type === 'Bot' && 
+              comment.body.includes('Preview Environment')
+            );
+            
+            if (botComment) {
+              await github.rest.issues.updateComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                comment_id: botComment.id,
+                body: body
+              });
+            } else {
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: context.issue.number,
+                body: body
+              });
+            }
+
+  destroy-preview:
+    name: Destroy Preview Environment
+    runs-on: ubuntu-latest
+    if: github.event.action == 'closed'
+    
+    steps:
+      - name: Setup Fly.io CLI
+        uses: superfly/flyctl-actions/setup-flyctl@master
+
+      - name: Destroy preview app
+        run: |
+          APP_NAME="goods-medusa-pr-${{ github.event.pull_request.number }}"
+          
+          echo "Destroying preview app: $APP_NAME"
+          flyctl apps destroy "$APP_NAME" --yes || echo "App may not exist or already destroyed"
+
+      - name: Comment PR about destruction
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const appName = 'goods-medusa-pr-${{ github.event.pull_request.number }}';
+            
+            const body = `## 🗑️ Preview Environment Destroyed
+            
+            The preview environment \`${appName}\` has been destroyed.
+            `;
+            
+            await github.rest.issues.createComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: context.issue.number,
+              body: body
+            });
