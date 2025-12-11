@@ -57,10 +57,15 @@ RUN cd apps/goods-backend && \
     echo "=== Final verification ===" && \
     ls -la public/admin/ 2>/dev/null || (echo "ERROR: public/admin not found after copy" && exit 1) && \
     find public/admin -name "index.html" 2>/dev/null || (echo "ERROR: index.html not found in public/admin" && exit 1) && \
-    echo "=== Fixing HTML base path ===" && \
+    echo "=== Fixing HTML and renaming entry.jsx to entry.js ===" && \
+    if [ -f "public/admin/entry.jsx" ]; then \
+      mv public/admin/entry.jsx public/admin/entry.js && \
+      echo "Renamed entry.jsx to entry.js"; \
+    fi && \
     if [ -f "public/admin/index.html" ]; then \
-      sed -i 's|src="./entry.jsx"|src="/app/entry.jsx"|g' public/admin/index.html && \
-      echo "Updated entry.jsx path in index.html"; \
+      sed -i 's|src="./entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
+      sed -i 's|src="/app/entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
+      echo "Updated entry.js path in index.html"; \
     fi && \
     echo "=== Build verification complete ==="
 
