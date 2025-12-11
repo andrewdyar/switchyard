@@ -12,9 +12,11 @@ WORKDIR /app
 # Copy package files for dependency installation
 COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn/releases .yarn/releases
+COPY .yarn/plugins .yarn/plugins
+COPY .yarn/patches .yarn/patches
 
-# Copy workspace configuration
-COPY turbo.json tsconfig.json ./
+# Copy workspace configuration files
+COPY turbo.json tsconfig.json _tsconfig.base.json ./
 
 # Copy all packages and apps (needed for workspace dependencies)
 COPY packages ./packages
