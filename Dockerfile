@@ -2,6 +2,7 @@
 # Production Dockerfile for Medusa Application
 # =============================================================================
 # Builds from source on Fly.io's remote builder
+# Optimized for Docker layer caching
 # =============================================================================
 
 FROM node:20-bullseye-slim
@@ -9,7 +10,10 @@ FROM node:20-bullseye-slim
 # Create app directory
 WORKDIR /app
 
-# Copy package files for dependency installation
+# =============================================================================
+# Layer 1: Dependencies (CACHED unless package files change)
+# =============================================================================
+# Copy only package files needed for dependency installation
 COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn/releases .yarn/releases
 COPY .yarn/plugins .yarn/plugins
@@ -18,54 +22,57 @@ COPY .yarn/patches .yarn/patches
 # Copy workspace configuration files
 COPY turbo.json tsconfig.json _tsconfig.base.json ./
 
+# Install dependencies (this layer will be cached if package files don't change)
+RUN corepack enable && \
+    yarn install --inline-builds
+
+# =============================================================================
+# Layer 2: Source code (invalidates only this layer on code changes)
+# =============================================================================
 # Copy all packages and apps (needed for workspace dependencies)
 COPY packages ./packages
 COPY apps ./apps
 
-# Install all dependencies and build
+# =============================================================================
+# Layer 3: Build (uses cached node_modules from Layer 1)
+# =============================================================================
 # Set NODE_ENV early to ensure production builds
 ENV NODE_ENV=production
 
-RUN corepack enable && \
-    yarn install --inline-builds && \
-    yarn build
+# Build all packages
+RUN yarn build
 
-# Build Medusa app (this creates .medusa/server with admin build)
+# =============================================================================
+# Layer 4: Medusa build (creates public/admin with transpiled files)
+# =============================================================================
+# Build Medusa app - this creates public/admin with Vite's transpiled output
 RUN cd apps/goods-backend && \
     npx medusa build
 
-# Verify build output exists and ensure admin is in the right place
+# =============================================================================
+# Layer 5: Verify admin build and fix HTML paths
+# =============================================================================
+# medusa build already outputs to public/admin with transpiled JavaScript
+# Vite processes entry.jsx and outputs it as entry.js (transpiled)
+# No copy needed - just verify and fix HTML paths
 RUN cd apps/goods-backend && \
-    echo "=== Checking .medusa directory ===" && \
-    ls -la .medusa/ 2>/dev/null || (echo "ERROR: .medusa directory not found" && exit 1) && \
-    echo "=== Checking .medusa/client ===" && \
-    ls -la .medusa/client/ 2>/dev/null || echo "Warning: .medusa/client not found" && \
-    echo "=== Checking public/admin ===" && \
-    ls -la public/admin/ 2>/dev/null || echo "Info: public/admin not found yet" && \
-    echo "=== Finding index.html in .medusa ===" && \
-    find .medusa -name "index.html" 2>/dev/null || echo "Warning: No index.html in .medusa" && \
-    echo "=== Copying admin build if needed ===" && \
-    if [ -d ".medusa/client" ] && [ ! -d "public/admin" ]; then \
-      mkdir -p public/admin && \
-      cp -r .medusa/client/* public/admin/ && \
-      echo "Copied .medusa/client to public/admin"; \
-    elif [ -d "public/admin" ]; then \
-      echo "public/admin already exists, skipping copy"; \
-    else \
-      echo "ERROR: Neither .medusa/client nor public/admin found" && exit 1; \
-    fi && \
-    echo "=== Final verification ===" && \
-    ls -la public/admin/ 2>/dev/null || (echo "ERROR: public/admin not found after copy" && exit 1) && \
+    echo "=== Verifying admin build ===" && \
+    ls -la public/admin/ 2>/dev/null || (echo "ERROR: public/admin not found" && exit 1) && \
     find public/admin -name "index.html" 2>/dev/null || (echo "ERROR: index.html not found in public/admin" && exit 1) && \
-    echo "=== Fixing HTML and renaming entry.jsx to entry.js ===" && \
-    if [ -f "public/admin/entry.jsx" ]; then \
-      mv public/admin/entry.jsx public/admin/entry.js && \
-      echo "Renamed entry.jsx to entry.js"; \
-    fi && \
+    echo "=== Checking for entry files ===" && \
+    ls -la public/admin/entry.* 2>/dev/null || echo "No entry files found" && \
+    echo "=== Fixing HTML paths ===" && \
     if [ -f "public/admin/index.html" ]; then \
-      sed -i 's|src="./entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
-      sed -i 's|src="/app/entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
-      echo "Updated entry.js path in index.html"; \
+      if [ -f "public/admin/entry.js" ]; then \
+        sed -i 's|src="./entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
+        sed -i 's|src="/app/entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
+        echo "Updated HTML to reference entry.js (Vite output)"; \
+      elif [ -f "public/admin/entry.jsx" ]; then \
+        sed -i 's|src="./entry.jsx"|src="/app/entry.jsx"|g' public/admin/index.html && \
+        echo "Updated HTML to reference entry.jsx (kept original extension)"; \
+      else \
+        echo "WARNING: Neither entry.js nor entry.jsx found in public/admin"; \
+      fi; \
     fi && \
     echo "=== Build verification complete ==="
 

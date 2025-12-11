@@ -28,55 +28,6 @@ jobs:
       - name: Install dependencies
         run: yarn install --inline-builds
 
-      - name: Build all packages
-        run: yarn build
-
-      - name: Build goods-backend (Medusa app)
-        working-directory: apps/goods-backend
-        run: npx medusa build
-
-      - name: Prepare deployment package
-        run: |
-          # Create the deployment structure
-          mkdir -p .fly-deploy/node_modules
-          
-          # Copy compiled backend
-          cp -r apps/goods-backend/dist .fly-deploy/
-          
-          # Copy admin dashboard (client build)
-          if [ -d "apps/goods-backend/.medusa/client" ]; then
-            mkdir -p .fly-deploy/public/admin
-            cp -r apps/goods-backend/.medusa/client/* .fly-deploy/public/admin/ 2>/dev/null || true
-          fi
-          
-          # Copy public assets
-          cp -r apps/goods-backend/public/* .fly-deploy/public/ 2>/dev/null || true
-          
-          # Create a standalone package.json without workspace references
-          cat > .fly-deploy/package.json << 'PKGJSON'
-          {
-            "name": "goods-backend",
-            "version": "1.0.0",
-            "private": true,
-            "scripts": {
-              "start": "medusa start"
-            },
-            "dependencies": {
-              "@medusajs/medusa": "2.12.1",
-              "@medusajs/framework": "2.12.1",
-              "@medusajs/cli": "2.12.1",
-              "@medusajs/admin-sdk": "2.12.1"
-            }
-          }
-          PKGJSON
-          
-          # Copy the workspace node_modules/@medusajs packages
-          cp -r node_modules/@medusajs .fly-deploy/node_modules/ 2>/dev/null || true
-          
-          echo "=== Deployment package ==="
-          ls -la .fly-deploy/
-          ls -la .fly-deploy/node_modules/@medusajs/ 2>/dev/null | head -20 || echo "No @medusajs packages"
-
       - name: Setup Fly.io CLI
         uses: superfly/flyctl-actions/setup-flyctl@master
 
@@ -84,5 +35,3 @@ jobs:
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
-
-
