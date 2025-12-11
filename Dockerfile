@@ -57,6 +57,11 @@ RUN cd apps/goods-backend && \
     echo "=== Final verification ===" && \
     ls -la public/admin/ 2>/dev/null || (echo "ERROR: public/admin not found after copy" && exit 1) && \
     find public/admin -name "index.html" 2>/dev/null || (echo "ERROR: index.html not found in public/admin" && exit 1) && \
+    echo "=== Fixing HTML base path ===" && \
+    if [ -f "public/admin/index.html" ]; then \
+      sed -i 's|src="./entry.jsx"|src="/app/entry.jsx"|g' public/admin/index.html && \
+      echo "Updated entry.jsx path in index.html"; \
+    fi && \
     echo "=== Build verification complete ==="
 
 # Change to the backend directory for runtime
