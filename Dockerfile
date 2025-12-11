@@ -37,23 +37,26 @@ RUN cd apps/goods-backend && \
 # Verify build output exists and ensure admin is in the right place
 RUN cd apps/goods-backend && \
     echo "=== Checking .medusa directory ===" && \
-    ls -la .medusa/ 2>/dev/null && \
-    ls -la .medusa/server/ 2>/dev/null && \
-    ls -la .medusa/client/ 2>/dev/null || echo "No .medusa/client found" && \
+    ls -la .medusa/ 2>/dev/null || (echo "ERROR: .medusa directory not found" && exit 1) && \
+    echo "=== Checking .medusa/client ===" && \
+    ls -la .medusa/client/ 2>/dev/null || echo "Warning: .medusa/client not found" && \
     echo "=== Checking public/admin ===" && \
-    ls -la public/admin/ 2>/dev/null || echo "No public/admin found" && \
-    echo "=== Finding index.html ===" && \
-    find .medusa -name "index.html" 2>/dev/null || echo "No index.html in .medusa" && \
-    find public -name "index.html" 2>/dev/null || echo "No index.html in public" && \
+    ls -la public/admin/ 2>/dev/null || echo "Info: public/admin not found yet" && \
+    echo "=== Finding index.html in .medusa ===" && \
+    find .medusa -name "index.html" 2>/dev/null || echo "Warning: No index.html in .medusa" && \
     echo "=== Copying admin build if needed ===" && \
     if [ -d ".medusa/client" ] && [ ! -d "public/admin" ]; then \
       mkdir -p public && \
-      cp -r .medusa/client public/admin && \
+      cp -r .medusa/client/* public/admin/ && \
       echo "Copied .medusa/client to public/admin"; \
+    elif [ -d "public/admin" ]; then \
+      echo "public/admin already exists, skipping copy"; \
+    else \
+      echo "ERROR: Neither .medusa/client nor public/admin found" && exit 1; \
     fi && \
-    echo "=== Final check ===" && \
-    ls -la public/admin/ 2>/dev/null && \
-    find public/admin -name "index.html" 2>/dev/null && \
+    echo "=== Final verification ===" && \
+    ls -la public/admin/ 2>/dev/null || (echo "ERROR: public/admin not found after copy" && exit 1) && \
+    find public/admin -name "index.html" 2>/dev/null || (echo "ERROR: index.html not found in public/admin" && exit 1) && \
     echo "=== Build verification complete ==="
 
 # Change to the backend directory for runtime
