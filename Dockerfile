@@ -23,11 +23,24 @@ COPY packages ./packages
 COPY apps ./apps
 
 # Install all dependencies and build
+# Set NODE_ENV early to ensure production builds
+ENV NODE_ENV=production
+
 RUN corepack enable && \
     yarn install --inline-builds && \
-    yarn build && \
-    cd apps/goods-backend && \
+    yarn build
+
+# Build Medusa app (this creates .medusa/server with admin build)
+RUN cd apps/goods-backend && \
     npx medusa build
+
+# Verify build output exists
+RUN cd apps/goods-backend && \
+    echo "=== Checking .medusa directory ===" && \
+    ls -la .medusa/ 2>/dev/null && \
+    ls -la .medusa/server/ 2>/dev/null && \
+    find .medusa -name "index.html" 2>/dev/null && \
+    echo "=== Build verification complete ==="
 
 # Change to the backend directory for runtime
 WORKDIR /app/apps/goods-backend
