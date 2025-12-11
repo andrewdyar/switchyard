@@ -1,34 +1,4 @@
-# Git
-.git
-.github
-
-# Development
-*.log
-.vscode
-.idea
-
-# Documentation
-www/
-docs/
-*.md
-
-# Test files
-integration-tests/
-**/*.test.ts
-**/*.test.js
-**/__tests__/
-**/__mocks__/
-
-# Temporary
-*.swp
-*.swo
-*~
-.DS_Store
-.env.local
-.env.*.local
-
-# Build artifacts that will be recreated
-node_modules/.cache
-.turbo
-dist/
-.medusa/
+# Ignore everything except the deployment package
+*
+!.fly-deploy
+!.fly-deploy/**
