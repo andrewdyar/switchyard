@@ -34,12 +34,26 @@ RUN corepack enable && \
 RUN cd apps/goods-backend && \
     npx medusa build
 
-# Verify build output exists
+# Verify build output exists and ensure admin is in the right place
 RUN cd apps/goods-backend && \
     echo "=== Checking .medusa directory ===" && \
     ls -la .medusa/ 2>/dev/null && \
     ls -la .medusa/server/ 2>/dev/null && \
-    find .medusa -name "index.html" 2>/dev/null && \
+    ls -la .medusa/client/ 2>/dev/null || echo "No .medusa/client found" && \
+    echo "=== Checking public/admin ===" && \
+    ls -la public/admin/ 2>/dev/null || echo "No public/admin found" && \
+    echo "=== Finding index.html ===" && \
+    find .medusa -name "index.html" 2>/dev/null || echo "No index.html in .medusa" && \
+    find public -name "index.html" 2>/dev/null || echo "No index.html in public" && \
+    echo "=== Copying admin build if needed ===" && \
+    if [ -d ".medusa/client" ] && [ ! -d "public/admin" ]; then \
+      mkdir -p public && \
+      cp -r .medusa/client public/admin && \
+      echo "Copied .medusa/client to public/admin"; \
+    fi && \
+    echo "=== Final check ===" && \
+    ls -la public/admin/ 2>/dev/null && \
+    find public/admin -name "index.html" 2>/dev/null && \
     echo "=== Build verification complete ==="
 
 # Change to the backend directory for runtime
