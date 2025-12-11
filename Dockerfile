@@ -46,7 +46,7 @@ RUN cd apps/goods-backend && \
     find .medusa -name "index.html" 2>/dev/null || echo "Warning: No index.html in .medusa" && \
     echo "=== Copying admin build if needed ===" && \
     if [ -d ".medusa/client" ] && [ ! -d "public/admin" ]; then \
-      mkdir -p public && \
+      mkdir -p public/admin && \
       cp -r .medusa/client/* public/admin/ && \
       echo "Copied .medusa/client to public/admin"; \
     elif [ -d "public/admin" ]; then \
