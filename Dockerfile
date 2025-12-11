@@ -54,12 +54,30 @@ RUN cd apps/goods-backend && \
 # =============================================================================
 # Layer 5: Verify admin build and fix HTML paths
 # =============================================================================
-# medusa build already outputs to public/admin with transpiled JavaScript
+# medusa build outputs to dist/public/admin (because tsconfig.outDir = "./dist")
 # Vite processes entry.jsx and outputs it as entry.js (transpiled)
-# No copy needed - just verify and fix HTML paths
+# Copy from dist/public/admin to public/admin for runtime
 RUN cd apps/goods-backend && \
     echo "=== Verifying admin build ===" && \
-    ls -la public/admin/ 2>/dev/null || (echo "ERROR: public/admin not found" && exit 1) && \
+    echo "=== Checking dist/public/admin ===" && \
+    ls -la dist/public/admin/ 2>/dev/null || echo "dist/public/admin not found" && \
+    echo "=== Checking public/admin ===" && \
+    ls -la public/admin/ 2>/dev/null || echo "public/admin not found yet" && \
+    echo "=== Finding admin build location ===" && \
+    if [ -d "dist/public/admin" ]; then \
+      echo "Found admin build in dist/public/admin, copying to public/admin" && \
+      mkdir -p public/admin && \
+      cp -r dist/public/admin/* public/admin/ && \
+      echo "Copied dist/public/admin to public/admin"; \
+    elif [ -d "public/admin" ]; then \
+      echo "public/admin already exists"; \
+    else \
+      echo "ERROR: Admin build not found in dist/public/admin or public/admin" && \
+      find . -name "index.html" -path "*/admin/*" 2>/dev/null | head -5 && \
+      exit 1; \
+    fi && \
+    echo "=== Verifying copied admin build ===" && \
+    ls -la public/admin/ 2>/dev/null || (echo "ERROR: public/admin not found after copy" && exit 1) && \
     find public/admin -name "index.html" 2>/dev/null || (echo "ERROR: index.html not found in public/admin" && exit 1) && \
     echo "=== Checking for entry files ===" && \
     ls -la public/admin/entry.* 2>/dev/null || echo "No entry files found" && \
