@@ -1,13 +1,34 @@
-# =============================================================================
-# Docker Ignore for CI/CD Pre-built Deployment
-# =============================================================================
-# Since we only copy apps/goods-backend/.medusa/server, most files are ignored.
-# This file ensures minimal build context for faster Docker builds.
-# =============================================================================
+# Git
+.git
+.github
 
-# Ignore everything by default
-*
+# Development
+*.log
+.vscode
+.idea
 
-# Only include the pre-built Medusa server
-!apps/goods-backend/.medusa/server
-!apps/goods-backend/.medusa/server/**
+# Documentation
+www/
+docs/
+*.md
+
+# Test files
+integration-tests/
+**/*.test.ts
+**/*.test.js
+**/__tests__/
+**/__mocks__/
+
+# Temporary
+*.swp
+*.swo
+*~
+.DS_Store
+.env.local
+.env.*.local
+
+# Build artifacts that will be recreated
+node_modules/.cache
+.turbo
+dist/
+.medusa/

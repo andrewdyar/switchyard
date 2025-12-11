@@ -6,61 +6,18 @@ on:
       - goods-customization
 
 jobs:
-  build-and-deploy:
-    name: Build and Deploy
+  deploy:
+    name: Deploy to Fly.io
     runs-on: ubuntu-latest
-    env:
-      NODE_OPTIONS: "--max-old-space-size=8192"
     
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'yarn'
-
-      - name: Enable Corepack
-        run: corepack enable
-
-      - name: Install dependencies
-        run: yarn install --inline-builds
-
-      - name: Build all packages
-        run: yarn build
-
-      - name: Build goods-backend (Medusa app)
-        working-directory: apps/goods-backend
-        run: npx medusa build
-
-      - name: Debug build output
-        run: |
-          echo "=== Listing apps/goods-backend directory ==="
-          ls -la apps/goods-backend/
-          echo ""
-          echo "=== Listing .medusa directory if it exists ==="
-          ls -la apps/goods-backend/.medusa/ 2>/dev/null || echo ".medusa not found"
-          echo ""
-          echo "=== Finding all .medusa directories ==="
-          find . -type d -name ".medusa" 2>/dev/null || echo "No .medusa dirs found"
-          echo ""
-          echo "=== Listing dist directory if it exists ==="
-          ls -la apps/goods-backend/dist/ 2>/dev/null || echo "dist not found"
-
       - name: Setup Fly.io CLI
         uses: superfly/flyctl-actions/setup-flyctl@master
 
       - name: Deploy to Fly.io
-        run: |
-          # Find and use the correct build output
-          if [ -d "apps/goods-backend/.medusa/server" ]; then
-            echo "Using .medusa/server"
-            flyctl deploy --local-only
-          else
-            echo "ERROR: .medusa/server not found"
-            exit 1
-          fi
+        run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
