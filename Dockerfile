@@ -13,7 +13,7 @@ WORKDIR /app
 # =============================================================================
 # Layer 1: Dependencies (CACHED unless package files change)
 # =============================================================================
-# Copy only package files needed for dependency installation
+# Copy root package files needed for dependency installation
 COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn/releases .yarn/releases
 COPY .yarn/plugins .yarn/plugins
@@ -22,20 +22,22 @@ COPY .yarn/patches .yarn/patches
 # Copy workspace configuration files
 COPY turbo.json tsconfig.json _tsconfig.base.json ./
 
-# Install dependencies (this layer will be cached if package files don't change)
+# Copy workspace directories structure with package.json files
+# Yarn needs to see all workspace package.json files to resolve dependencies
+# We copy the full directories but this layer will be cached if package.json files don't change
+COPY packages ./packages
+COPY apps ./apps
+
+# Install dependencies (this layer will be cached if package.json files don't change)
+# Note: We copy packages/apps before install because Yarn workspaces need to see all package.json files
 RUN corepack enable && \
     yarn install --inline-builds
 
 # =============================================================================
-# Layer 2: Source code (invalidates only this layer on code changes)
+# Layer 2: Build (uses cached node_modules from Layer 1)
 # =============================================================================
-# Copy all packages and apps (needed for workspace dependencies)
-COPY packages ./packages
-COPY apps ./apps
-
-# =============================================================================
-# Layer 3: Build (uses cached node_modules from Layer 1)
-# =============================================================================
+# Note: packages and apps are already copied in Layer 1 (needed for yarn install)
+# Source code changes will invalidate Layer 1, but dependency-only changes will cache
 # Set NODE_ENV early to ensure production builds
 ENV NODE_ENV=production
 
