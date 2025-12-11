@@ -35,17 +35,32 @@ jobs:
         working-directory: apps/goods-backend
         run: npx medusa build
 
-      - name: Verify build output
+      - name: Debug build output
         run: |
-          echo "Checking .medusa/server directory..."
-          ls -la apps/goods-backend/.medusa/server/
-          echo "Package.json contents:"
-          cat apps/goods-backend/.medusa/server/package.json
+          echo "=== Listing apps/goods-backend directory ==="
+          ls -la apps/goods-backend/
+          echo ""
+          echo "=== Listing .medusa directory if it exists ==="
+          ls -la apps/goods-backend/.medusa/ 2>/dev/null || echo ".medusa not found"
+          echo ""
+          echo "=== Finding all .medusa directories ==="
+          find . -type d -name ".medusa" 2>/dev/null || echo "No .medusa dirs found"
+          echo ""
+          echo "=== Listing dist directory if it exists ==="
+          ls -la apps/goods-backend/dist/ 2>/dev/null || echo "dist not found"
 
       - name: Setup Fly.io CLI
         uses: superfly/flyctl-actions/setup-flyctl@master
 
       - name: Deploy to Fly.io
-        run: flyctl deploy --local-only
+        run: |
+          # Find and use the correct build output
+          if [ -d "apps/goods-backend/.medusa/server" ]; then
+            echo "Using .medusa/server"
+            flyctl deploy --local-only
+          else
+            echo "ERROR: .medusa/server not found"
+            exit 1
+          fi
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
