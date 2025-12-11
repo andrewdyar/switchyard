@@ -35,16 +35,13 @@ jobs:
         working-directory: apps/goods-backend
         run: npx medusa build
 
-      - name: Prepare deployment
+      - name: Prepare deployment package
         run: |
           # Create the deployment structure
-          mkdir -p .fly-deploy
+          mkdir -p .fly-deploy/node_modules
           
           # Copy compiled backend
           cp -r apps/goods-backend/dist .fly-deploy/
-          
-          # Copy medusa-config.js if in dist
-          cp apps/goods-backend/dist/medusa-config.js .fly-deploy/ 2>/dev/null || true
           
           # Copy admin dashboard (client build)
           if [ -d "apps/goods-backend/.medusa/client" ]; then
@@ -55,11 +52,30 @@ jobs:
           # Copy public assets
           cp -r apps/goods-backend/public/* .fly-deploy/public/ 2>/dev/null || true
           
-          # Copy package.json and create start script
-          cp apps/goods-backend/package.json .fly-deploy/
+          # Create a standalone package.json without workspace references
+          cat > .fly-deploy/package.json << 'PKGJSON'
+          {
+            "name": "goods-backend",
+            "version": "1.0.0",
+            "private": true,
+            "scripts": {
+              "start": "medusa start"
+            },
+            "dependencies": {
+              "@medusajs/medusa": "2.12.1",
+              "@medusajs/framework": "2.12.1",
+              "@medusajs/cli": "2.12.1",
+              "@medusajs/admin-sdk": "2.12.1"
+            }
+          }
+          PKGJSON
+          
+          # Copy the workspace node_modules/@medusajs packages
+          cp -r node_modules/@medusajs .fly-deploy/node_modules/ 2>/dev/null || true
           
           echo "=== Deployment package ==="
-          find .fly-deploy -type f | head -50
+          ls -la .fly-deploy/
+          ls -la .fly-deploy/node_modules/@medusajs/ 2>/dev/null | head -20 || echo "No @medusajs packages"
 
       - name: Setup Fly.io CLI
         uses: superfly/flyctl-actions/setup-flyctl@master
