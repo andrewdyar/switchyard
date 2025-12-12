@@ -11,10 +11,34 @@ export default defineConfig({
       authCors: process.env.AUTH_CORS || "http://localhost:9000",
       jwtSecret: process.env.JWT_SECRET || "supersecret",
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
+      authMethodsPerActor: {
+        user: ["supabase", "emailpass"],
+        customer: ["emailpass"],
+      },
     },
   },
   admin: {
     disable: false,
+  },
+  modules: {
+    inventoryGroup: {
+      resolve: "@medusajs/inventory-group",
+    },
+    authProviders: [
+      {
+        resolve: "@medusajs/auth-emailpass",
+        id: "emailpass",
+      },
+      {
+        resolve: "@medusajs/auth-supabase",
+        id: "supabase",
+        options: {
+          supabaseUrl: process.env.SUPABASE_URL,
+          supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+          supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+        },
+      },
+    ],
   },
   plugins: [],
 })
