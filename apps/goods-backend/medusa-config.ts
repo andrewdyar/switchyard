@@ -2,6 +2,30 @@ import { defineConfig, loadEnv } from "@medusajs/framework/utils"
 
 loadEnv(process.env.NODE_ENV || "development", process.cwd())
 
+// Build auth providers list - only include Supabase if env vars are configured
+const authProviders: any[] = [
+  {
+    resolve: "@medusajs/medusa/auth-emailpass",
+    id: "emailpass",
+  },
+]
+
+// Only add Supabase provider if all required env vars are present
+if (process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY && process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  authProviders.push({
+    resolve: "@medusajs/auth-supabase",
+    id: "supabase",
+    options: {
+      supabaseUrl: process.env.SUPABASE_URL,
+      supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+      supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+    },
+  })
+}
+
+// Configure auth methods based on available providers
+const userAuthMethods = authProviders.map(p => p.id)
+
 export default defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
@@ -12,7 +36,7 @@ export default defineConfig({
       jwtSecret: process.env.JWT_SECRET || "supersecret",
       cookieSecret: process.env.COOKIE_SECRET || "supersecret",
       authMethodsPerActor: {
-        user: ["supabase", "emailpass"],
+        user: userAuthMethods,
         customer: ["emailpass"],
       },
     },
@@ -27,21 +51,7 @@ export default defineConfig({
     {
       resolve: "@medusajs/medusa/auth",
       options: {
-        providers: [
-          {
-            resolve: "@medusajs/medusa/auth-emailpass",
-            id: "emailpass",
-          },
-          {
-            resolve: "@medusajs/auth-supabase",
-            id: "supabase",
-            options: {
-              supabaseUrl: process.env.SUPABASE_URL,
-              supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
-              supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-            },
-          },
-        ],
+        providers: authProviders,
       },
     },
   ],
