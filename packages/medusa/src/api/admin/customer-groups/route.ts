@@ -62,3 +62,7 @@ export const POST = async (
 
   res.status(200).json({ customer_group: customerGroup })
 }
+
+// TODO: Due to issues with our routing (and using router.use for applying middlewares), we have to opt-out of global auth in all routes, and then reapply it here.
+// See https://medusacorp.slack.com/archives/C025KMS13SA/p1716455350491879 for details.
+export const AUTHENTICATE = false

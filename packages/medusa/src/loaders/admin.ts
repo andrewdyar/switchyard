@@ -81,6 +81,13 @@ async function initDevelopmentServer(
 
   const adminMiddleware = await develop(options)
   app.use(options.path, adminMiddleware)
+
+  // Redirect root path to admin UI for better UX
+  // This can be easily removed later if we need to use root for other purposes
+  app.get("/", (req, res) => {
+    res.redirect(options.path)
+  })
+
   return app
 }
 
@@ -90,6 +97,12 @@ async function serveProductionBuild(app: Express, options: InitializedOptions) {
   const adminRoute = await serve(options)
 
   app.use(options.path, adminRoute)
+
+  // Redirect root path to admin UI for better UX
+  // This can be easily removed later if we need to use root for other purposes
+  app.get("/", (req, res) => {
+    res.redirect(options.path)
+  })
 
   return app
 }
