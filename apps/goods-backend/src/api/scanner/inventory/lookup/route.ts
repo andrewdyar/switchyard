@@ -30,9 +30,10 @@ export const GET = async (
     // Look up product variants by SKU or barcode
     const [variants] = await productModuleService.listProductVariants({
       $or: [{ sku: barcode }, { barcode: barcode }],
-    })
+    } as any)
 
-    if (!variants || variants.length === 0) {
+    const variantsArray = variants as unknown as any[]
+    if (!variantsArray || variantsArray.length === 0) {
       res.status(404).json({
         error: "Product not found",
         barcode,
@@ -40,30 +41,40 @@ export const GET = async (
       return
     }
 
-    const variant = variants
+    const variant = variantsArray[0]
 
     // Get the product
-    const product = await productModuleService.retrieveProduct(variant.product_id)
+    const productId = variant.product_id
+    if (!productId) {
+      res.status(404).json({ error: "Product not linked to variant", barcode })
+      return
+    }
+    const product = await productModuleService.retrieveProduct(productId)
 
     // Get inventory items for this variant
-    const [inventoryItems] = await inventoryModuleService.listInventoryItems({
-      sku: variant.sku,
-    })
-
+    const variantSku = variant.sku
     let inventoryLevels: any[] = []
-    if (inventoryItems && inventoryItems.length > 0) {
-      const inventoryItem = inventoryItems[0]
-      
-      const filter: any = {
-        inventory_item_id: inventoryItem.id,
-      }
-      
-      if (locationId) {
-        filter.location_id = locationId
-      }
+    
+    if (variantSku) {
+      const [inventoryItems] = await inventoryModuleService.listInventoryItems({
+        sku: variantSku,
+      })
 
-      const [levels] = await inventoryModuleService.listInventoryLevels(filter)
-      inventoryLevels = levels || []
+      const itemsArray = inventoryItems as unknown as any[]
+      if (itemsArray && itemsArray.length > 0) {
+        const inventoryItem = itemsArray[0]
+        
+        const filter: any = {
+          inventory_item_id: inventoryItem.id,
+        }
+        
+        if (locationId) {
+          filter.location_id = locationId
+        }
+
+        const [levels] = await inventoryModuleService.listInventoryLevels(filter)
+        inventoryLevels = Array.isArray(levels) ? levels : []
+      }
     }
 
     res.json({

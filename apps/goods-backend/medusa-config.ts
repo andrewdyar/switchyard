@@ -20,26 +20,31 @@ export default defineConfig({
   admin: {
     disable: false,
   },
-  modules: {
-    inventoryGroup: {
+  modules: [
+    {
       resolve: "@medusajs/inventory-group",
     },
-    authProviders: [
-      {
-        resolve: "@medusajs/auth-emailpass",
-        id: "emailpass",
+    {
+      resolve: "@medusajs/medusa/auth",
+      options: {
+        providers: [
+          {
+            resolve: "@medusajs/medusa/auth-emailpass",
+            id: "emailpass",
+          },
+          {
+            resolve: "@medusajs/auth-supabase",
+            id: "supabase",
+            options: {
+              supabaseUrl: process.env.SUPABASE_URL,
+              supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
+              supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
+            },
+          },
+        ],
       },
-      {
-        resolve: "@medusajs/auth-supabase",
-        id: "supabase",
-        options: {
-          supabaseUrl: process.env.SUPABASE_URL,
-          supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
-          supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
-        },
-      },
-    ],
-  },
+    },
+  ],
   plugins: [],
 })
 

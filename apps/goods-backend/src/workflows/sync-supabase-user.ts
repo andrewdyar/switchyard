@@ -71,25 +71,32 @@ const syncSupabaseUserStep = createStep(
       .rpc('get_user_permissions', { p_user_id: input.supabaseUserId })
 
     // Check if auth identity already exists
-    let authIdentity
+    let authIdentity: any
     try {
+      // Use provider_identities filter instead of entity_id
       const existingIdentities = await authModuleService.listAuthIdentities({
-        entity_id: input.supabaseUserId,
-      })
+        provider_identities: {
+          entity_id: input.supabaseUserId,
+        },
+      } as any)
       
       if (existingIdentities.length > 0) {
         authIdentity = existingIdentities[0]
-        // Update metadata
-        authIdentity = await authModuleService.updateAuthIdentities({
-          id: authIdentity.id,
-          user_metadata: {
-            email,
-            roles: roles?.map((r: { role_name: string }) => r.role_name) || input.roles || [],
-            permissions: permissions?.map((p: { permission_name: string }) => p.permission_name) || [],
-            supabase_user_id: input.supabaseUserId,
-            ...userMetadata,
-          },
-        })
+        // Update metadata - use selector + data pattern
+        const [updated] = await authModuleService.updateAuthIdentities(
+          { id: authIdentity.id } as any,
+          {
+            app_metadata: {
+              ...(authIdentity.app_metadata || {}),
+              roles: roles?.map((r: { role_name: string }) => r.role_name) || input.roles || [],
+              permissions: permissions?.map((p: { permission_name: string }) => p.permission_name) || [],
+              supabase_user_id: input.supabaseUserId,
+              email,
+              ...userMetadata,
+            },
+          } as any
+        )
+        authIdentity = updated || authIdentity
       }
     } catch (error) {
       // Identity doesn't exist, will create below
@@ -98,16 +105,18 @@ const syncSupabaseUserStep = createStep(
     // Create auth identity if it doesn't exist
     if (!authIdentity) {
       authIdentity = await authModuleService.createAuthIdentities({
-        entity_id: input.supabaseUserId,
-        provider: "supabase",
-        user_metadata: {
+        provider_identities: [{
+          entity_id: input.supabaseUserId,
+          provider: "supabase",
+        }],
+        app_metadata: {
           email,
           roles: roles?.map((r: { role_name: string }) => r.role_name) || input.roles || [],
           permissions: permissions?.map((p: { permission_name: string }) => p.permission_name) || [],
           supabase_user_id: input.supabaseUserId,
           ...userMetadata,
         },
-      })
+      } as any)
     }
 
     // Check if user already exists
@@ -120,11 +129,13 @@ const syncSupabaseUserStep = createStep(
       user = existingUsers[0]
       // Update user if needed
       if (input.firstName || input.lastName) {
-        user = await userModuleService.updateUsers({
-          id: user.id,
-          first_name: input.firstName || user.first_name,
-          last_name: input.lastName || user.last_name,
-        })
+        user = await userModuleService.updateUsers(
+          { id: user.id } as any,
+          {
+            first_name: input.firstName || user.first_name,
+            last_name: input.lastName || user.last_name,
+          } as any
+        )
       }
     } else {
       // Create new user
@@ -136,12 +147,15 @@ const syncSupabaseUserStep = createStep(
     }
 
     // Link auth identity to user via app_metadata
-    await authModuleService.updateAuthIdentities({
-      id: authIdentity.id,
-      app_metadata: {
-        user_id: user.id,
-      },
-    })
+    await authModuleService.updateAuthIdentities(
+      { id: authIdentity.id } as any,
+      {
+        app_metadata: {
+          ...(authIdentity.app_metadata || {}),
+          user_id: user.id,
+        },
+      } as any
+    )
 
     return new StepResponse({
       userId: user.id,

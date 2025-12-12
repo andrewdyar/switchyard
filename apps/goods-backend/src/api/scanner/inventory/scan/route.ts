@@ -35,14 +35,14 @@ export const POST = async (
 
     // Look up product by barcode (SKU or barcode field)
     const [products] = await productModuleService.listProducts({
-      // @ts-ignore - barcode may be stored in different fields
       $or: [
         { variants: { sku: barcode } },
         { variants: { barcode: barcode } },
       ],
-    })
+    } as any)
 
-    if (!products || products.length === 0) {
+    const productsArray = products as unknown as any[]
+    if (!productsArray || productsArray.length === 0) {
       res.status(404).json({
         error: "Product not found",
         barcode,
@@ -51,44 +51,47 @@ export const POST = async (
       return
     }
 
-    const product = products
+    const product = productsArray[0]
 
     // Get inventory information if location provided
-    let inventoryInfo = null
+    let inventoryInfo: any = null
     if (location_id) {
       const [inventoryItems] = await inventoryModuleService.listInventoryItems({
-        // @ts-ignore
         sku: barcode,
-      })
+      } as any)
 
-      if (inventoryItems && inventoryItems.length > 0) {
-        const inventoryItem = inventoryItems[0]
+      const itemsArray = inventoryItems as unknown as any[]
+      if (itemsArray && itemsArray.length > 0) {
+        const inventoryItem = itemsArray[0]
         const [inventoryLevels] = await inventoryModuleService.listInventoryLevels({
           inventory_item_id: inventoryItem.id,
           location_id: location_id,
         })
 
-        if (inventoryLevels && inventoryLevels.length > 0) {
-          inventoryInfo = inventoryLevels[0]
+        const levelsArray = Array.isArray(inventoryLevels) ? inventoryLevels : []
+        if (levelsArray.length > 0) {
+          inventoryInfo = levelsArray[0]
         }
       }
     }
 
     // Handle different actions
     if (action === "adjust" && quantity !== undefined && inventoryInfo) {
-      // Adjust inventory level
+      // Adjust inventory level - need inventory_item_id and location_id for updateInventoryLevels
       await inventoryModuleService.updateInventoryLevels([
         {
-          id: inventoryInfo.id,
+          inventory_item_id: inventoryInfo.inventory_item_id,
+          location_id: inventoryInfo.location_id,
           stocked_quantity: inventoryInfo.stocked_quantity + quantity,
         },
-      ])
+      ] as any)
 
       // Refresh inventory info
       const [updatedLevels] = await inventoryModuleService.listInventoryLevels({
         id: inventoryInfo.id,
-      })
-      inventoryInfo = updatedLevels?.[0] || inventoryInfo
+      } as any)
+      const updatedArray = Array.isArray(updatedLevels) ? updatedLevels : []
+      inventoryInfo = updatedArray[0] || inventoryInfo
     }
 
     res.json({
