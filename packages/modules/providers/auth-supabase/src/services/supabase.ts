@@ -226,9 +226,9 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
         .select('permissions(name)')
         .eq('role_id', serviceAccount.role_id)
 
-      const permissionNames = permissions?.map(
-        (p: { permissions: { name: string } }) => p.permissions.name
-      ) || []
+      const permissionNames = (permissions as Array<{ permissions: { name: string } | null }> | null)?.map(
+        (p) => p.permissions?.name
+      ).filter((name): name is string => !!name) || []
 
       // Create/retrieve auth identity for service account
       const entity_id = `service:${serviceAccount.id}`
