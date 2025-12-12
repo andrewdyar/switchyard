@@ -28,10 +28,18 @@ jobs:
       - name: Install dependencies
         run: yarn install --inline-builds
 
+      - name: Build and type check
+        run: yarn build
+
       - name: Setup Fly.io CLI
-        uses: superfly/flyctl-actions/setup-flyctl@master
+        uses: superfly/flyctl-actions/setup-flyctl@1.5
 
       - name: Deploy to Fly.io
         run: flyctl deploy --remote-only
         env:
           FLY_API_TOKEN: ${{ secrets.FLY_API_TOKEN }}
+
+      - name: Verify deployment health
+        run: |
+          sleep 30
+          curl -f https://goods-medusa.fly.dev/health || exit 1

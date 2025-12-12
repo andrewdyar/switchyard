@@ -12,7 +12,8 @@
     "@medusajs/admin-sdk": "workspace:*",
     "@medusajs/cli": "workspace:*",
     "@medusajs/framework": "workspace:*",
-    "@medusajs/medusa": "workspace:*"
+    "@medusajs/medusa": "workspace:*",
+    "@supabase/supabase-js": "^2.45.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.11",
