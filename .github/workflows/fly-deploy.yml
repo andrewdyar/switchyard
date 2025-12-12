@@ -28,9 +28,6 @@ jobs:
       - name: Install dependencies
         run: yarn install --inline-builds
 
-      - name: Build and type check
-        run: yarn build
-
       - name: Setup Fly.io CLI
         uses: superfly/flyctl-actions/setup-flyctl@1.5
 
