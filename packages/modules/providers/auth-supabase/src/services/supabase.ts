@@ -111,7 +111,7 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
       // Validate the token and create/retrieve auth identity
       return this.validateToken(data.session.access_token, authIdentityService)
     } catch (error: any) {
-      this.logger_.error("Supabase authentication error:", error)
+      this.logger_.error(`Supabase authentication error: ${error.message}`)
       return { success: false, error: error.message }
     }
   }
@@ -148,7 +148,7 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
         .rpc('get_user_roles', { p_user_id: user.id })
 
       if (rolesError) {
-        this.logger_.warn("Failed to fetch user roles:", rolesError)
+        this.logger_.warn(`Failed to fetch user roles: ${rolesError.message}`)
       }
 
       // Get user permissions
@@ -156,7 +156,7 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
         .rpc('get_user_permissions', { p_user_id: user.id })
 
       if (permissionsError) {
-        this.logger_.warn("Failed to fetch user permissions:", permissionsError)
+        this.logger_.warn(`Failed to fetch user permissions: ${permissionsError.message}`)
       }
 
       const entity_id = user.id
@@ -190,7 +190,7 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
 
       return { success: true, authIdentity }
     } catch (error: any) {
-      this.logger_.error("Token validation error:", error)
+      this.logger_.error(`Token validation error: ${error.message}`)
       return { success: false, error: error.message }
     }
   }
@@ -259,7 +259,7 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
 
       return { success: true, authIdentity }
     } catch (error: any) {
-      this.logger_.error("Service account authentication error:", error)
+      this.logger_.error(`Service account authentication error: ${error.message}`)
       return { success: false, error: error.message }
     }
   }
