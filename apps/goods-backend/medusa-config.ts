@@ -26,9 +26,82 @@ if (process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY && process.env.SUP
 // Configure auth methods based on available providers
 const userAuthMethods = authProviders.map(p => p.id)
 
+// Build modules list - add Redis modules for production if REDIS_URL is configured
+const modules: any[] = [
+  {
+    resolve: "@medusajs/inventory-group",
+  },
+  {
+    resolve: "@medusajs/medusa/auth",
+    options: {
+      providers: authProviders,
+    },
+  },
+]
+
+// Add Redis-based modules for production (required for multi-instance deployments)
+if (process.env.REDIS_URL) {
+  // Redis Caching Module
+  modules.push({
+    resolve: "@medusajs/medusa/caching",
+    options: {
+      providers: [
+        {
+          resolve: "@medusajs/caching-redis",
+          id: "caching-redis",
+          is_default: true,
+          options: {
+            redisUrl: process.env.REDIS_URL,
+          },
+        },
+      ],
+    },
+  })
+
+  // Redis Event Bus Module
+  modules.push({
+    resolve: "@medusajs/medusa/event-bus-redis",
+    options: {
+      redisUrl: process.env.REDIS_URL,
+      jobOptions: {
+        removeOnComplete: { age: 3600, count: 1000 },
+        removeOnFail: { age: 3600, count: 1000 },
+      },
+    },
+  })
+
+  // Redis Workflow Engine Module
+  modules.push({
+    resolve: "@medusajs/medusa/workflow-engine-redis",
+    options: {
+      redis: {
+        redisUrl: process.env.REDIS_URL,
+      },
+    },
+  })
+
+  // Redis Locking Module
+  modules.push({
+    resolve: "@medusajs/medusa/locking",
+    options: {
+      providers: [
+        {
+          resolve: "@medusajs/medusa/locking-redis",
+          id: "locking-redis",
+          is_default: true,
+          options: {
+            redisUrl: process.env.REDIS_URL,
+          },
+        },
+      ],
+    },
+  })
+}
+
 export default defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
+    redisUrl: process.env.REDIS_URL,
     http: {
       storeCors: process.env.STORE_CORS || "http://localhost:8000",
       adminCors: process.env.ADMIN_CORS || "http://localhost:9000",
@@ -44,17 +117,7 @@ export default defineConfig({
   admin: {
     disable: false,
   },
-  modules: [
-    {
-      resolve: "@medusajs/inventory-group",
-    },
-    {
-      resolve: "@medusajs/medusa/auth",
-      options: {
-        providers: authProviders,
-      },
-    },
-  ],
+  modules,
   plugins: [],
 })
 
