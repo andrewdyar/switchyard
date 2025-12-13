@@ -67,17 +67,17 @@
     "test": "../../../node_modules/.bin/jest --bail --forceExit --testPathPattern=src"
   },
   "devDependencies": {
-    "@switchyard/cli": "2.12.1"
+    "@switchyard/cli": "workspace:*"
   },
   "dependencies": {
     "@jercle/yargonaut": "^1.1.5",
-    "@switchyard/deps": "2.12.1",
-    "@switchyard/modules-sdk": "2.12.1",
-    "@switchyard/orchestration": "2.12.1",
-    "@switchyard/telemetry": "2.12.1",
-    "@switchyard/types": "2.12.1",
-    "@switchyard/utils": "2.12.1",
-    "@switchyard/workflows-sdk": "2.12.1",
+    "@switchyard/deps": "workspace:*",
+    "@switchyard/modules-sdk": "workspace:*",
+    "@switchyard/orchestration": "workspace:*",
+    "@switchyard/telemetry": "workspace:*",
+    "@switchyard/types": "workspace:*",
+    "@switchyard/utils": "workspace:*",
+    "@switchyard/workflows-sdk": "workspace:*",
     "@types/express": "^4.17.21",
     "chokidar": "^3.5.3",
     "compression": "^1.8.1",
@@ -97,7 +97,7 @@
   },
   "peerDependencies": {
     "@aws-sdk/client-dynamodb": "^3.218.0",
-    "@switchyard/cli": "2.12.1",
+    "@switchyard/cli": "workspace:*",
     "connect-dynamodb": "^3.0.5",
     "ioredis": "^5.4.1",
     "vite": "^5.4.21"

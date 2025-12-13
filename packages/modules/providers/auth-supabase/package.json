@@ -26,13 +26,13 @@
     "watch": "yarn run -T tsc --watch"
   },
   "devDependencies": {
-    "@switchyard/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0"
   },
   "peerDependencies": {
-    "@switchyard/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "keywords": [
     "medusa-provider",

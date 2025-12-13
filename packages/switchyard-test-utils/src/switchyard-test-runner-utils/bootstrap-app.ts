@@ -18,7 +18,7 @@ async function bootstrapApp({
     res.status(200).send("OK")
   })
 
-  const loaders = require("@switchyard/loaders/index").default
+  const loaders = require("@switchyard/medusa/loaders/index").default
 
   try {
     const { container, shutdown } = await loaders({
@@ -49,7 +49,7 @@ export async function startApp({
   port: number
 }> {
   let expressServer: any
-  let switchyardShutdown: () => Promise<void> = async () => void 0
+  let medusaShutdown: () => Promise<void> = async () => void 0
   let container: SwitchyardContainer
 
   try {
@@ -64,13 +64,13 @@ export async function startApp({
     })
 
     container = appContainer
-    switchyardShutdown = appShutdown
+    medusaShutdown = appShutdown
 
     const shutdown = async () => {
       try {
         const shutdownPromise = promiseAll([
           expressServer?.shutdown(),
-          switchyardShutdown(),
+          medusaShutdown(),
         ])
 
         await execOrTimeout(shutdownPromise)
@@ -82,7 +82,7 @@ export async function startApp({
         logger.error("Error during shutdown:", error)
         try {
           await expressServer?.shutdown()
-          await switchyardShutdown()
+          await medusaShutdown()
         } catch (cleanupError) {
           logger.error("Error during forced cleanup:", cleanupError)
         }
@@ -119,9 +119,9 @@ export async function startApp({
         logger.error("Error cleaning up express server:", cleanupError)
       }
     }
-    if (switchyardShutdown) {
+    if (medusaShutdown) {
       try {
-        await switchyardShutdown()
+        await medusaShutdown()
       } catch (cleanupError) {
         logger.error("Error cleaning up medusa:", cleanupError)
       }

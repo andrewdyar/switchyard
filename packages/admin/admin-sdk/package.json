@@ -19,7 +19,7 @@
     "build": "yarn run -T tsup"
   },
   "dependencies": {
-    "@switchyard/admin-shared": "2.12.1",
+    "@switchyard/admin-shared": "workspace:*",
     "zod": "3.25.76"
   },
   "packageManager": "yarn@3.2.1"

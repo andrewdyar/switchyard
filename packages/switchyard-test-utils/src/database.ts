@@ -8,7 +8,7 @@ import {
   SqlEntityManager,
 } from "@switchyard/framework/mikro-orm/postgresql"
 import { createDatabase, dropDatabase } from "pg-god"
-import { execOrTimeout } from "./medusa-test-runner-utils"
+import { execOrTimeout } from "./switchyard-test-runner-utils"
 
 const DB_HOST = process.env.DB_HOST ?? "localhost"
 const DB_USERNAME = process.env.DB_USERNAME ?? ""

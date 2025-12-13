@@ -37,7 +37,7 @@ function buildLocalCommands(cli, isLocalProject) {
     }
 
     try {
-      const cmdPath = resolveCwd.silent(`@switchyard/commands/${command}`)!
+      const cmdPath = resolveCwd.silent(`@switchyard/medusa/commands/${command}`)!
       return require(cmdPath).default
     } catch (err) {
       console.error(err)

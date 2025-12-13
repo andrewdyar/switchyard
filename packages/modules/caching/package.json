@@ -28,12 +28,12 @@
     "test:integration": "../../../node_modules/.bin/jest --passWithNoTests --forceExit --testPathPattern=\"integration-tests/__tests__/.*\\.ts\""
   },
   "devDependencies": {
-    "@switchyard/framework": "2.12.1",
-    "@switchyard/test-utils": "2.12.1",
+    "@switchyard/framework": "workspace:*",
+    "@switchyard/test-utils": "workspace:*",
     "awilix": "^8.0.1"
   },
   "peerDependencies": {
-    "@switchyard/framework": "2.12.1",
+    "@switchyard/framework": "workspace:*",
     "awilix": "^8.0.1"
   },
   "dependencies": {

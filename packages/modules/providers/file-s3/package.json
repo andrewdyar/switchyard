@@ -26,7 +26,7 @@
     "watch": "yarn run -T tsc --watch"
   },
   "devDependencies": {
-    "@switchyard/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.556.0",
@@ -34,7 +34,7 @@
     "ulid": "^2.3.0"
   },
   "peerDependencies": {
-    "@switchyard/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "keywords": [
     "medusa-plugin",

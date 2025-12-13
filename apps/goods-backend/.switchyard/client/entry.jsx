@@ -1,4 +1,4 @@
-import App from "@medusajs/dashboard";
+import App from "@switchyard/dashboard";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
@@ -8,7 +8,7 @@ import "./index.css";
 let root = null
 
 if (!root) {
-  root = ReactDOM.createRoot(document.getElementById("medusa"))
+  root = ReactDOM.createRoot(document.getElementById("switchyard"))
 }
 
 

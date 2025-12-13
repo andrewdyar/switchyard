@@ -56,7 +56,7 @@ import {
   MedusaRefund,
   RefundPaymentRequest,
   UpdateAccountHolderRequest,
-} from "../types/medusa-payments"
+} from "../types/switchyard-payments"
 
 type HandledErrorType = { retry: true } | { retry: false; data: any }
 class CloudServiceError extends Error {

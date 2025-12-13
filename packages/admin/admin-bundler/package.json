@@ -18,12 +18,12 @@
     "package.json"
   ],
   "devDependencies": {
-    "@switchyard/types": "2.12.1"
+    "@switchyard/types": "workspace:*"
   },
   "dependencies": {
-    "@switchyard/admin-shared": "2.12.1",
-    "@switchyard/admin-vite-plugin": "2.12.1",
-    "@switchyard/dashboard": "2.12.1",
+    "@switchyard/admin-shared": "workspace:*",
+    "@switchyard/admin-vite-plugin": "workspace:*",
+    "@switchyard/dashboard": "workspace:*",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
     "compression": "^1.8.0",

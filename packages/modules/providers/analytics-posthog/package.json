@@ -25,11 +25,11 @@
     "watch": "yarn run -T tsc --watch"
   },
   "devDependencies": {
-    "@switchyard/framework": "2.12.1",
+    "@switchyard/framework": "workspace:*",
     "posthog-node": "^5.11.0"
   },
   "peerDependencies": {
-    "@switchyard/framework": "2.12.1",
+    "@switchyard/framework": "workspace:*",
     "posthog-node": "^5.11.0"
   },
   "keywords": [

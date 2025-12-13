@@ -30,7 +30,7 @@
     "tailwindcss": "^3.4.3"
   },
   "devDependencies": {
-    "@switchyard/toolbox": "2.12.1",
+    "@switchyard/toolbox": "workspace:*",
     "tailwindcss": "^3.4.3"
   },
   "publishConfig": {

@@ -20,7 +20,7 @@ export async function configLoaderOverride(
 
   const { configModule, error } = await getConfigFile<
     ReturnType<typeof configManager.loadConfig>
-  >(entryDirectory, "switchyard.config")
+  >(entryDirectory, "medusa-config")
 
   if (error) {
     throw new Error(error.message || "Error during config loading")

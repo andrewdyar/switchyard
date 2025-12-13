@@ -18,11 +18,11 @@ import {
   migrateDatabase,
   startApp,
   syncLinks,
-} from "./medusa-test-runner-utils"
-import { waitWorkflowExecutions } from "./medusa-test-runner-utils/wait-workflow-executions"
+} from "./switchyard-test-runner-utils"
+import { waitWorkflowExecutions } from "./switchyard-test-runner-utils/wait-workflow-executions"
 import { ulid } from "ulid"
 
-export interface MedusaSuiteOptions {
+export interface SwitchyardSuiteOptions {
   dbConnection: any // knex instance
   getContainer: () => SwitchyardContainer
   api: any
@@ -46,7 +46,7 @@ interface TestRunnerConfig {
   moduleName?: string
   env?: Record<string, any>
   dbName?: string
-  switchyardConfigFile?: string
+  medusaConfigFile?: string
   disableAutoTeardown?: boolean
   schema?: string
   debug?: boolean
@@ -90,8 +90,8 @@ class MedusaTestRunner {
       config.dbName ??
       `medusa-${moduleName.toLowerCase()}-integration-${tempName}`
     this.schema = config.schema ?? "public"
-    this.cwd = config.cwd ?? config.switchyardConfigFile ?? process.cwd()
-    this.modulesConfigPath = config.switchyardConfigFile ?? this.cwd
+    this.cwd = config.cwd ?? config.medusaConfigFile ?? process.cwd()
+    this.modulesConfigPath = config.medusaConfigFile ?? this.cwd
     this.env = config.env ?? {}
     this.debug = config.debug ?? false
     this.inApp = config.inApp ?? false
@@ -281,12 +281,12 @@ class MedusaTestRunner {
 
     try {
       const { SwitchyardAppLoader } = await import("@switchyard/framework")
-      const switchyardAppLoader = new SwitchyardAppLoader({
+      const medusaAppLoader = new SwitchyardAppLoader({
         container: copiedContainer,
         switchyardConfigPath: this.modulesConfigPath,
         cwd: this.cwd,
       })
-      await switchyardAppLoader.runModulesLoader()
+      await medusaAppLoader.runModulesLoader()
     } catch (error) {
       await copiedContainer.dispose?.()
       logger.error("Error running modules loaders:", error?.message)
@@ -308,7 +308,7 @@ class MedusaTestRunner {
     }
   }
 
-  public getOptions(): MedusaSuiteOptions {
+  public getOptions(): SwitchyardSuiteOptions {
     return {
       api: this.createApiProxy(),
       dbConnection: this.createDbConnectionProxy(),
@@ -331,7 +331,7 @@ class MedusaTestRunner {
 export function switchyardIntegrationTestRunner({
   moduleName,
   dbName,
-  switchyardConfigFile,
+  medusaConfigFile,
   schema = "public",
   env = {},
   debug = false,
@@ -344,11 +344,11 @@ export function switchyardIntegrationTestRunner({
   moduleName?: string
   env?: Record<string, any>
   dbName?: string
-  switchyardConfigFile?: string
+  medusaConfigFile?: string
   schema?: string
   debug?: boolean
   inApp?: boolean
-  testSuite: (options: MedusaSuiteOptions) => void
+  testSuite: (options: SwitchyardSuiteOptions) => void
   hooks?: TestRunnerConfig["hooks"]
   cwd?: string
   disableAutoTeardown?: boolean
@@ -356,7 +356,7 @@ export function switchyardIntegrationTestRunner({
   const runner = new MedusaTestRunner({
     moduleName,
     dbName,
-    switchyardConfigFile,
+    medusaConfigFile,
     schema,
     env,
     debug,
@@ -367,7 +367,7 @@ export function switchyardIntegrationTestRunner({
   })
 
   return describe("", () => {
-    let testOptions: MedusaSuiteOptions
+    let testOptions: SwitchyardSuiteOptions
 
     beforeAll(async () => {
       await runner.beforeAll()

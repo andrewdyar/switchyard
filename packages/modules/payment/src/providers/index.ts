@@ -1,2 +1,2 @@
 export { SystemPaymentProvider } from "./system"
-export { MedusaPaymentsProvider } from "./payment-medusa"
+export { MedusaPaymentsProvider } from "./payment-switchyard"

@@ -21,7 +21,7 @@ import {
 } from "@switchyard/utils"
 import { EOL } from "os"
 import { ulid } from "ulid"
-import { SwitchyardWorkflow } from "../medusa-workflow"
+import { SwitchyardWorkflow } from "../switchyard-workflow"
 import { resolveValue } from "../utils/composer/helpers/resolve-value"
 import {
   ExportedWorkflow,

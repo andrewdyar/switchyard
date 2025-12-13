@@ -21,7 +21,7 @@ import {
 } from "../common"
 import { DmlEntity } from "../dml"
 import { CommonEvents } from "../event-bus"
-import { createMedusaMikroOrmEventSubscriber } from "./create-medusa-mikro-orm-event-subscriber"
+import { createMedusaMikroOrmEventSubscriber } from "./create-switchyard-mikro-orm-event-subscriber"
 import { EmitEvents, InjectManager, SwitchyardContext } from "./decorators"
 import { Modules } from "./definition"
 import { moduleEventBuilderFactory } from "./event-builder-factory"

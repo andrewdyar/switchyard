@@ -26,11 +26,11 @@
   "author": "Medusa",
   "license": "MIT",
   "devDependencies": {
-    "@switchyard/types": "2.12.1"
+    "@switchyard/types": "workspace:*"
   },
   "dependencies": {
-    "@switchyard/deps": "2.12.1",
-    "@switchyard/utils": "2.12.1",
+    "@switchyard/deps": "workspace:*",
+    "@switchyard/utils": "workspace:*",
     "ulid": "^2.3.0"
   },
   "scripts": {

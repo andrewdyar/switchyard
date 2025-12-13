@@ -20,7 +20,7 @@ class Switchyard {
   }
 }
 
-export default Medusa
+export default Switchyard
 
 export { FetchError, Client } from "./client"
 export { Admin } from "./admin"

@@ -46,12 +46,12 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@hookform/error-message": "^2.0.1",
     "@hookform/resolvers": "3.4.2",
-    "@switchyard/admin-shared": "2.12.1",
-    "@switchyard/icons": "2.12.1",
-    "@switchyard/js-sdk": "2.12.1",
-    "@switchyard/ui": "4.0.29",
     "@radix-ui/react-dialog": "1.1.4",
     "@radix-ui/react-dismissable-layer": "1.1.4",
+    "@switchyard/admin-shared": "workspace:*",
+    "@switchyard/icons": "workspace:*",
+    "@switchyard/js-sdk": "workspace:*",
+    "@switchyard/ui": "workspace:*",
     "@tanstack/react-query": "5.64.2",
     "@tanstack/react-table": "8.20.5",
     "@tanstack/react-virtual": "^3.8.3",
@@ -80,10 +80,10 @@
     "zod": "3.25.76"
   },
   "devDependencies": {
-    "@switchyard/admin-shared": "2.12.1",
-    "@switchyard/admin-vite-plugin": "2.12.1",
-    "@switchyard/types": "2.12.1",
-    "@switchyard/ui-preset": "2.12.1"
+    "@switchyard/admin-shared": "workspace:*",
+    "@switchyard/admin-vite-plugin": "workspace:*",
+    "@switchyard/types": "workspace:*",
+    "@switchyard/ui-preset": "workspace:*"
   },
   "packageManager": "yarn@3.2.1"
 }

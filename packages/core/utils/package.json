@@ -26,7 +26,7 @@
   "author": "Medusa",
   "license": "MIT",
   "devDependencies": {
-    "@switchyard/types": "2.12.1",
+    "@switchyard/types": "workspace:*",
     "express": "^4.21.0"
   },
   "dependencies": {
@@ -34,7 +34,7 @@
     "@graphql-codegen/typescript": "^4.0.9",
     "@graphql-tools/merge": "^9.0.7",
     "@graphql-tools/schema": "^10.0.6",
-    "@switchyard/deps": "2.12.1",
+    "@switchyard/deps": "workspace:*",
     "@types/pluralize": "^0.0.33",
     "bignumber.js": "^9.1.2",
     "dotenv": "^16.4.5",

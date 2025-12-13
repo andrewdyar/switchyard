@@ -23,7 +23,7 @@ import {
   when,
   WorkflowResponse,
 } from ".."
-import { SwitchyardWorkflow } from "../../../medusa-workflow"
+import { SwitchyardWorkflow } from "../../../switchyard-workflow"
 import { createHook } from "../create-hook"
 
 jest.setTimeout(30000)

@@ -32,10 +32,10 @@
     "orm:cache:clear": "MIKRO_ORM_CLI_CONFIG=./mikro-orm.config.dev.ts MIKRO_ORM_ALLOW_GLOBAL_CLI=true medusa-mikro-orm cache:clear"
   },
   "devDependencies": {
-    "@switchyard/framework": "2.12.1",
-    "@switchyard/test-utils": "2.12.1"
+    "@switchyard/framework": "workspace:*",
+    "@switchyard/test-utils": "workspace:*"
   },
   "peerDependencies": {
-    "@switchyard/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   }
 }

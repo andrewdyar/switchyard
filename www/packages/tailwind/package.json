@@ -12,7 +12,7 @@
     "postcss.config.js"
   ],
   "dependencies": {
-    "@switchyard/ui-preset": "2.12.1",
+    "@switchyard/ui-preset": "workspace:*",
     "tailwindcss-animate": "^1.0.7"
   },
   "peerDependencies": {

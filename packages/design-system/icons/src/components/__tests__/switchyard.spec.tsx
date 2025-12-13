@@ -1,7 +1,7 @@
   import * as React from "react"
   import { cleanup, render, screen } from "@testing-library/react"
 
-  import Switchyard from "../medusa"
+  import Switchyard from "../switchyard"
 
   describe("Medusa", () => {
     it("should render the icon without errors", async () => {

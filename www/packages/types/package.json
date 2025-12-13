@@ -32,7 +32,7 @@
     "watch": "tsc --watch"
   },
   "devDependencies": {
-    "@switchyard/icons": "2.12.1",
+    "@switchyard/icons": "workspace:*",
     "@types/node": "^20.11.20",
     "rimraf": "^5.0.5",
     "tsconfig": "*",

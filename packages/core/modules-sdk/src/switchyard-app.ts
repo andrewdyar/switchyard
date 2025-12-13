@@ -210,6 +210,8 @@ async function initializeLinks({
       if ("discoveryPath" in module) {
         const reExportedLoadedModule = await dynamicImport(module.discoveryPath)
         resources = reExportedLoadedModule.default ?? reExportedLoadedModule
+      } else {
+        resources = module
       }
     }
 

@@ -28,7 +28,7 @@
     "generate": "yarn run -T rimraf ./src/components && toolbox icons -o './src/components'"
   },
   "devDependencies": {
-    "@switchyard/toolbox": "2.12.1",
+    "@switchyard/toolbox": "workspace:*",
     "react": "^18.3.1"
   },
   "peerDependencies": {

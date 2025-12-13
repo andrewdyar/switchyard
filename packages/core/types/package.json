@@ -35,7 +35,7 @@
     "bignumber.js": "^9.1.2"
   },
   "devDependencies": {
-    "@switchyard/deps": "2.12.1"
+    "@switchyard/deps": "workspace:*"
   },
   "peerDependencies": {
     "ioredis": "^5.4.1",

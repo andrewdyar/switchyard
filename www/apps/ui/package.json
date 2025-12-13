@@ -16,9 +16,9 @@
   "dependencies": {
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
-    "@switchyard/icons": "2.12.1",
-    "@switchyard/ui": "4.0.29",
-    "@switchyard/ui-preset": "2.12.1",
+    "@switchyard/icons": "workspace:*",
+    "@switchyard/ui": "workspace:*",
+    "@switchyard/ui-preset": "workspace:*",
     "@next/mdx": "15.3.6",
     "@stefanprobst/rehype-extract-toc": "^3.0.0",
     "clsx": "^2.1.0",

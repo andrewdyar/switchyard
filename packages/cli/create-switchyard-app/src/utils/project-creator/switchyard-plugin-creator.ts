@@ -92,7 +92,7 @@ export class PluginProjectCreator
     logMessage({
       message: boxen(
         chalk.green(
-          `Change to the \`${this.projectName}\` directory to explore your Switchyard plugin.${EOL}${EOL}Check out the Switchyard plugin documentation to start your development:${EOL}${EOL}https://docs.switchyard.run/${EOL}${EOL}Star us on GitHub if you like what we're building:${EOL}${EOL}https://github.com/medusajs/medusa/stargazers`
+          `Change to the \`${this.projectName}\` directory to explore your Medusa plugin.${EOL}${EOL}Check out the Medusa plugin documentation to start your development:${EOL}${EOL}https://docs.medusajs.com/${EOL}${EOL}Star us on GitHub if you like what we're building:${EOL}${EOL}https://github.com/medusajs/medusa/stargazers`
         ),
         {
           titleAlignment: "center",

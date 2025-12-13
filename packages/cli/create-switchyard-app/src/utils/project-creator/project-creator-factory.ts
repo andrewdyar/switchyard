@@ -5,8 +5,8 @@ import slugifyType from "slugify"
 import logMessage from "../log-message.js"
 import { getNodeVersion, MIN_SUPPORTED_NODE_VERSION } from "../node-version.js"
 import { ProjectCreator, ProjectOptions } from "./creator.js"
-import { PluginProjectCreator } from "./medusa-plugin-creator.js"
-import { MedusaProjectCreator } from "./medusa-project-creator.js"
+import { PluginProjectCreator } from "./switchyard-plugin-creator.js"
+import { SwitchyardProjectCreator } from "./switchyard-project-creator.js"
 
 const slugify = slugifyType.default
 
@@ -25,7 +25,7 @@ export class ProjectCreatorFactory {
 
     return options.plugin
       ? new PluginProjectCreator(projectName, options, args)
-      : new MedusaProjectCreator(projectName, options, args)
+      : new SwitchyardProjectCreator(projectName, options, args)
   }
 
   private static validateNodeVersion(): void {
@@ -85,7 +85,7 @@ async function askForProjectName(
       type: "input",
       name: "projectName",
       message: `What's the name of your ${isPlugin ? "plugin" : "project"}?`,
-      default: isPlugin ? "my-medusa-plugin" : "my-medusa-store",
+      default: isPlugin ? "my-switchyard-plugin" : "my-switchyard-store",
       filter: (input) => {
         return slugify(input).toLowerCase()
       },

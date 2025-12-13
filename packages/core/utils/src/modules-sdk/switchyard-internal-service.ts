@@ -32,7 +32,7 @@ import {
   InjectTransactionManager,
   SwitchyardContext,
 } from "./decorators"
-import { MedusaMikroOrmEventSubscriber } from "./create-medusa-mikro-orm-event-subscriber"
+import { MedusaMikroOrmEventSubscriber } from "./create-switchyard-mikro-orm-event-subscriber"
 
 type InternalService = {
   new <TContainer extends object = object, TEntity extends object = any>(

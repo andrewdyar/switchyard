@@ -34,5 +34,5 @@ const Switchyard = React.forwardRef<SVGSVGElement, IconProps>(
     )
   }
 )
-Medusa.displayName = "Medusa"
-export default Medusa
+Switchyard.displayName = "Switchyard"
+export default Switchyard
