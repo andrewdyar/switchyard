@@ -2,7 +2,7 @@
   "name": "@switchyard/admin-shared",
   "description": "Shared code for Medusa admin packages.",
   "version": "2.12.1",
-  "author": "Kasper Kristensen <kasper@medusajs.com>",
+  "author": "Kasper Kristensen <kasper@switchyard.run>",
   "types": "dist/index.d.ts",
   "main": "dist/index.js",
   "module": "dist/index.mjs",

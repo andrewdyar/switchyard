@@ -13,7 +13,7 @@ export const SweepItem = model.define("goods_sweep_item", {
   
   // Relations
   sweep_id: model.text(),             // Links to Sweep
-  product_id: model.text(),           // Links to Medusa Product
+  product_id: model.text(),           // Links to Switchyard Product
   store_item_id: model.text().nullable(), // Retailer's SKU for easy shopping
   
   // Quantities

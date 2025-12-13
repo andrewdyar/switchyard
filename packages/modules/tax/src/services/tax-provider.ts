@@ -9,7 +9,7 @@ type InjectedDependencies = {
   [key: `tp_${string}`]: ITaxProvider
 }
 
-export default class TaxProviderService extends ModulesSdkUtils.MedusaInternalService<InjectedDependencies>(
+export default class TaxProviderService extends ModulesSdkUtils.SwitchyardInternalService<InjectedDependencies>(
   TaxProvider
 ) {
   #logger: Logger

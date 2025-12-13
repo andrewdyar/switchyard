@@ -1,4 +1,4 @@
-import { SwitchyardService } from "../medusa-service"
+import { SwitchyardService } from "../switchyard-service"
 import { model } from "../../dml"
 import { MessageAggregator } from "../../event-bus"
 import { ModuleJoinerConfig } from "@switchyard/types"
@@ -11,12 +11,12 @@ const baseRepoMock = {
 }
 
 const defaultContext = {
-  __type: "MedusaContext",
+  __type: "SwitchyardContext",
   manager: baseRepoMock,
   messageAggregator: new MessageAggregator(),
 }
 const defaultTransactionContext = {
-  __type: "MedusaContext",
+  __type: "SwitchyardContext",
   manager: baseRepoMock,
   messageAggregator: new MessageAggregator(),
 }
@@ -54,18 +54,18 @@ describe("Abstract Module Service Factory", () => {
   class OtherModelMock1 {}
   class OtherModelMock2 {}
 
-  const medusaService = SwitchyardService({
+  const switchyardService = SwitchyardService({
     MainModelMock,
     OtherModelMock1,
     OtherModelMock2,
   })
 
   describe("Main Model Methods", () => {
-    let instance: InstanceType<typeof medusaService>
+    let instance: InstanceType<typeof switchyardService>
 
     beforeEach(() => {
       jest.clearAllMocks()
-      instance = new medusaService(containerMock)
+      instance = new switchyardService(containerMock)
       ;(instance as any).__joinerConfig = {
         serviceName: "serviceName",
       } as ModuleJoinerConfig
@@ -130,7 +130,7 @@ describe("Abstract Module Service Factory", () => {
 
     beforeEach(() => {
       jest.clearAllMocks()
-      instance = new medusaService(containerMock)
+      instance = new switchyardService(containerMock)
       ;(instance as any).__joinerConfig = {
         serviceName: "serviceName",
       }
@@ -227,17 +227,17 @@ describe("Abstract Module Service Factory", () => {
       id: model.id().primaryKey(),
     })
 
-    const medusaService = SwitchyardService({
+    const switchyardService = SwitchyardService({
       MockModel,
       MockModel2,
       MockModel3,
     })
 
-    let instance: InstanceType<typeof medusaService>
+    let instance: InstanceType<typeof switchyardService>
 
     beforeEach(() => {
       jest.clearAllMocks()
-      instance = new medusaService(containerMock)
+      instance = new switchyardService(containerMock)
     })
 
     it("should have the correct methods name while resolving the correct underlying service representation of target models", async () => {

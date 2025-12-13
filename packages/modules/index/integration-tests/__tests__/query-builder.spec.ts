@@ -26,7 +26,7 @@ const dbUtils = TestDatabaseUtils.dbTestUtilFactory()
 jest.setTimeout(300000)
 
 let isFirstTime = true
-let medusaAppLoader!: SwitchyardAppLoader
+let switchyardAppLoader!: SwitchyardAppLoader
 
 const beforeAll_ = async () => {
   try {
@@ -45,14 +45,14 @@ const beforeAll_ = async () => {
       [ContainerRegistrationKeys.PG_CONNECTION]: asValue(dbUtils.pgConnection_),
     })
 
-    medusaAppLoader = new SwitchyardAppLoader(container as any)
+    switchyardAppLoader = new SwitchyardAppLoader(container as any)
 
     // Migrations
     const migrator = new Migrator({ container })
     await migrator.ensureMigrationsTable()
 
-    await medusaAppLoader.runModulesMigrations()
-    const linkPlanner = await medusaAppLoader.getLinksExecutionPlanner()
+    await switchyardAppLoader.runModulesMigrations()
+    const linkPlanner = await switchyardAppLoader.getLinksExecutionPlanner()
     const plan = await linkPlanner.createPlan()
     await linkPlanner.executePlan(plan)
 
@@ -60,7 +60,7 @@ const beforeAll_ = async () => {
     SwitchyardModule.clearInstances()
 
     // Bootstrap modules
-    const globalApp = await medusaAppLoader.load()
+    const globalApp = await switchyardAppLoader.load()
 
     const index = container.resolve(Modules.INDEX)
 
@@ -86,7 +86,7 @@ const beforeEach_ = async () => {
   }
 
   try {
-    await medusaAppLoader.runModulesLoader()
+    await switchyardAppLoader.runModulesLoader()
   } catch (error) {
     console.error("Error runner modules loaders", error?.message)
     throw error
@@ -103,15 +103,15 @@ const afterEach_ = async () => {
 }
 
 describe("IndexModuleService query", function () {
-  let medusaApp: SwitchyardAppOutput
+  let switchyardApp: SwitchyardAppOutput
   let module: IndexTypes.IIndexService
   let onApplicationPrepareShutdown!: () => Promise<void>
   let onApplicationShutdown!: () => Promise<void>
 
   beforeAll(async () => {
-    medusaApp = await beforeAll_()
-    onApplicationPrepareShutdown = medusaApp.onApplicationPrepareShutdown
-    onApplicationShutdown = medusaApp.onApplicationShutdown
+    switchyardApp = await beforeAll_()
+    onApplicationPrepareShutdown = switchyardApp.onApplicationPrepareShutdown
+    onApplicationShutdown = switchyardApp.onApplicationShutdown
   })
 
   afterAll(async () => {
@@ -123,10 +123,10 @@ describe("IndexModuleService query", function () {
   beforeEach(async () => {
     await beforeEach_()
 
-    module = medusaApp.sharedContainer!.resolve(Modules.INDEX)
+    module = switchyardApp.sharedContainer!.resolve(Modules.INDEX)
 
     const manager = (
-      (medusaApp.sharedContainer!.resolve(Modules.INDEX) as any).container_
+      (switchyardApp.sharedContainer!.resolve(Modules.INDEX) as any).container_
         .manager as EntityManager
     ).fork()
 

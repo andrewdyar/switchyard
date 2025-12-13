@@ -1339,7 +1339,7 @@ class OasKindGenerator extends FunctionKindGenerator {
         schema: {
           type: "string",
           externalDocs: {
-            url: "https://docs.switchyard.com/api/store#publishable-api-key",
+            url: "https://docs.switchyard.run/api/store#publishable-api-key",
           },
         },
       }),

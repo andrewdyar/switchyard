@@ -147,7 +147,7 @@ export const SearchHits = ({
     <div
       className={clsx(
         "overflow-auto",
-        "[&_mark]:bg-medusa-bg-highlight",
+        "[&_mark]:bg-switchyard-bg-highlight",
         "[&_mark]:text-medusa-fg-interactive"
       )}
       data-group
@@ -161,8 +161,8 @@ export const SearchHits = ({
             key={index}
             className={clsx(
               "p-docs_0.5",
-              "hover:bg-medusa-bg-base-hover",
-              "focus:bg-medusa-bg-base-hover",
+              "hover:bg-switchyard-bg-base-hover",
+              "focus:bg-switchyard-bg-base-hover",
               "focus:outline-none",
               "flex justify-between items-center"
             )}

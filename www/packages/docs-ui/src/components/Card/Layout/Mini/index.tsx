@@ -36,8 +36,8 @@ export const CardLayoutMini = ({
         "relative rounded-docs_DEFAULT border-medusa-fg-on-inverted border",
         "shadow-elevation-card-rest dark:shadow-elevation-card-rest-dark",
         "hover:shadow-elevation-card-hover dark:hover:shadow-elevation-card-hover-dark",
-        "bg-medusa-tag-neutral-bg dark:bg-medusa-bg-component",
-        "hover:bg-medusa-tag-neutral-bg-hover dark:hover:bg-medusa-bg-component-hover",
+        "bg-medusa-tag-neutral-bg dark:bg-switchyard-bg-component",
+        "hover:bg-medusa-tag-neutral-bg-hover dark:hover:bg-switchyard-bg-component-hover",
         "w-fit transition-[shadow,background]",
         className
       )}
@@ -51,7 +51,7 @@ export const CardLayoutMini = ({
       >
         {icon && (
           <BorderedIcon
-            wrapperClassName={clsx("p-[4.5px] bg-medusa-bg-component-hover")}
+            wrapperClassName={clsx("p-[4.5px] bg-switchyard-bg-component-hover")}
             IconComponent={icon}
           />
         )}

@@ -2,7 +2,7 @@ import {
   createShippingOptionsWorkflow,
   updateShippingOptionsWorkflow,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   FulfillmentSetDTO,
   FulfillmentWorkflow,
@@ -24,7 +24,7 @@ jest.setTimeout(100000)
 const env = {}
 const provider_id = "manual_test-provider"
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer }) => {
     let service: IFulfillmentModuleService

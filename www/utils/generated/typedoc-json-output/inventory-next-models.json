@@ -920,7 +920,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The ID of the inventory level's location. When used with the [Stock Location Module](https://docs.switchyard.com/resources/commerce-modules/stock-location), the ID will be a `StockLocation`'s ID."
+														"text": "The ID of the inventory level's location. When used with the [Stock Location Module](https://docs.switchyard.run/resources/commerce-modules/stock-location), the ID will be a `StockLocation`'s ID."
 													}
 												]
 											},
@@ -1378,7 +1378,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The ID of the location that the quantity is reserved from. When used with the [Stock Location Module](https://docs.switchyard.com/resources/commerce-modules/stock-location), the ID will be a `StockLocation`'s ID."
+														"text": "The ID of the location that the quantity is reserved from. When used with the [Stock Location Module](https://docs.switchyard.run/resources/commerce-modules/stock-location), the ID will be a `StockLocation`'s ID."
 													}
 												]
 											},

@@ -52,12 +52,12 @@
  *     type: object
  *     description: The shipping method's data, useful for the fulfillment provider handling the fulfillment.
  *     externalDocs:
- *       url: https://docs.switchyard.com/resources/commerce-modules/order/concepts#data-property
+ *       url: https://docs.switchyard.run/resources/commerce-modules/order/concepts#data-property
  *   metadata:
  *     type: object
  *     description: The shipping method's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.switchyard.com/api/store#manage-metadata
+ *       url: https://docs.switchyard.run/api/store#manage-metadata
  *       description: Learn how to manage metadata
  *   tax_lines:
  *     type: array

@@ -41,7 +41,7 @@ import {
   MigrationOptions,
   ModuleBootstrapOptions,
   RegisterModuleJoinerConfig,
-} from "./medusa-module"
+} from "./switchyard-module"
 import { createQuery, RemoteQuery } from "./remote-query"
 import { MODULE_SCOPE } from "./types"
 
@@ -295,7 +295,7 @@ export type SwitchyardAppOptions = {
   sharedResourcesConfig?: SharedResources
   loadedModules?: LoadedModule[]
   servicesConfig?: ModuleJoinerConfig[]
-  medusaConfigPath?: string
+  switchyardConfigPath?: string
   modulesConfigFileName?: string
   modulesConfig?: SwitchyardModuleConfig
   linkModules?: RegisterModuleJoinerConfig | RegisterModuleJoinerConfig[]
@@ -313,7 +313,7 @@ async function SwitchyardApp_({
   sharedContainer,
   sharedResourcesConfig,
   servicesConfig,
-  medusaConfigPath,
+  switchyardConfigPath,
   modulesConfigFileName,
   modulesConfig,
   linkModules,
@@ -367,7 +367,7 @@ async function SwitchyardApp_({
     modulesConfig ??
     (
       await dynamicImport(
-        medusaConfigPath ?? cwd + (modulesConfigFileName ?? "/modules-config")
+        switchyardConfigPath ?? cwd + (modulesConfigFileName ?? "/modules-config")
       )
     ).default
 

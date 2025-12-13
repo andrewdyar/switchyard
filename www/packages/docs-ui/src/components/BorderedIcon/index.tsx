@@ -27,7 +27,7 @@ export const BorderedIcon = ({
   return (
     <span
       className={clsx(
-        "rounded-docs_sm p-docs_0.125 bg-medusa-bg-base inline-flex items-center justify-center",
+        "rounded-docs_sm p-docs_0.125 bg-switchyard-bg-base inline-flex items-center justify-center",
         "shadow-border-base dark:shadow-border-base-dark",
         iconWrapperClassName
       )}

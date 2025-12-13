@@ -10,7 +10,7 @@ import { model } from "@switchyard/framework/utils"
 export const PickList = model.define("goods_pick_list", {
   id: model.id().primaryKey(),
   
-  // Links to Medusa Order
+  // Links to Switchyard Order
   order_id: model.text(),
   
   // Assignment
@@ -27,8 +27,8 @@ export const PickListItem = model.define("goods_pick_list_item", {
   
   // Relations
   pick_list_id: model.text(),
-  order_item_id: model.text(),        // Links to Medusa LineItem
-  product_id: model.text(),           // Links to Medusa Product
+  order_item_id: model.text(),        // Links to Switchyard LineItem
+  product_id: model.text(),           // Links to Switchyard Product
   location_id: model.text().nullable(), // Links to StockLocation (zone/shelf/bin)
   
   // Quantities

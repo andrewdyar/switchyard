@@ -139,7 +139,7 @@ const FeatureSections: React.FC<FeatureSectionsProps> = ({
           <div
             key={index}
             className={clsx(
-              "flex items-center justify-center p-0.25 sm:p-1 bg-medusa-bg-base",
+              "flex items-center justify-center p-0.25 sm:p-1 bg-switchyard-bg-base",
               index !== columns.length - 1 &&
                 "border-solid border-r border-medusa-border-base"
             )}
@@ -154,11 +154,11 @@ const FeatureSections: React.FC<FeatureSectionsProps> = ({
       {featureSections.map((section) => (
         <div key={section._key} className="w-full">
           {/* Section Header */}
-          <div className="w-full p-1.5 bg-medusa-bg-component flex gap-1 border-medusa-border-base border-y items-center">
+          <div className="w-full p-1.5 bg-switchyard-bg-component flex gap-1 border-medusa-border-base border-y items-center">
             {featureIcons[section.header.subtitle] && (
               <BorderedIcon
                 IconComponent={featureIcons[section.header.subtitle]}
-                wrapperClassName="p-[7.5px] bg-medusa-bg-component rounded-[5px]"
+                wrapperClassName="p-[7.5px] bg-switchyard-bg-component rounded-[5px]"
               />
             )}
             <div>

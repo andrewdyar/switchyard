@@ -1,11 +1,11 @@
 import { SwitchyardApp } from "@switchyard/modules-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IProductModuleService } from "@switchyard/types"
 import { Modules } from "@switchyard/utils"
 
 jest.setTimeout(30000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConfig: { clientUrl } }) => {
     describe("Standalone Modules", () => {
       beforeAll(async () => {

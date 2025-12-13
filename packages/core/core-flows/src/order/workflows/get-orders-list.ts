@@ -46,7 +46,7 @@ export type GetOrdersListWorkflowOutput =
 export type GetOrdersListWorkflowInput = {
   /**
    * The fields and relations to retrieve in the order. These fields
-   * are passed to [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
+   * are passed to [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
    * so you can pass names of custom models linked to the order.
    */
   fields: string[]
@@ -73,8 +73,8 @@ export type GetOrdersListWorkflowInput = {
 export const getOrdersListWorkflowId = "get-orders-list"
 /**
  * This workflow retrieves a list of orders. It's used by the
- * [List Orders Admin API Route](https://docs.medusajs.com/api/admin#orders_getorders), and the
- * [List Orders Store API Route](https://docs.medusajs.com/api/store#orders_getorders).
+ * [List Orders Admin API Route](https://docs.switchyard.run/api/admin#orders_getorders), and the
+ * [List Orders Store API Route](https://docs.switchyard.run/api/store#orders_getorders).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to retrieve a list of
  * orders in your custom flows. For example, you can retrieve the list of orders to export them

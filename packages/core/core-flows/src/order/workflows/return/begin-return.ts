@@ -30,8 +30,8 @@ export type BeginReturnOrderValidationStepInput = {
  * 
  * :::note
  * 
- * You can retrieve an order details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 
@@ -53,7 +53,7 @@ export const beginReturnOrderValidationStep = createStep(
 export const beginReturnOrderWorkflowId = "begin-return-order"
 /**
  * This workflow creates an order return that can be later requested or confirmed.
- * It's used by the [Create Return Admin API Route](https://docs.medusajs.com/api/admin#returns_postreturns).
+ * It's used by the [Create Return Admin API Route](https://docs.switchyard.run/api/admin#returns_postreturns).
  * 
  * You can start the return receival using the {@link beginReceiveReturnWorkflow}.
  * 

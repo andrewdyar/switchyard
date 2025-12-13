@@ -15,15 +15,15 @@ import { useRemoteQueryStep } from "../../common"
 export const createFulfillmentWorkflowId = "create-fulfillment-workflow"
 /**
  * This workflow creates a fulfillment, which can be used for an order, return, exchanges, and similar concepts.
- * The workflow is used by the [Create Fulfillment Admin API Route](https://docs.medusajs.com/api/admin#fulfillments_postfulfillments).
+ * The workflow is used by the [Create Fulfillment Admin API Route](https://docs.switchyard.run/api/admin#fulfillments_postfulfillments).
  * 
  * You can use this workflow within your own customizations or custom workflows, allowing you to
  * create a fulfillment within your custom flows.
  * 
  * :::note
  * 
- * You can retrieve an order's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 

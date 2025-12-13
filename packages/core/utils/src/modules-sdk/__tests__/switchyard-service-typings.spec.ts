@@ -1,6 +1,6 @@
 import { expectTypeOf } from "expect-type"
 import { model } from "../../dml"
-import { SwitchyardService } from "../medusa-service"
+import { SwitchyardService } from "../switchyard-service"
 import { InferTypeOf } from "@switchyard/types"
 
 const Blog = model.define("Blog", {
@@ -71,7 +71,7 @@ const containerMock = {
   },
 }
 
-describe("Medusa Service typings", () => {
+describe("Switchyard Service typings", () => {
   describe("create<Service>", () => {
     test("type-hint model properties", () => {
       class BlogService extends SwitchyardService({ Blog, Comment }) {}

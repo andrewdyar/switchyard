@@ -12,7 +12,7 @@ const Homepage = () => {
   return (
     <body
       className={clsx(
-        "bg-medusa-bg-subtle font-base text-medium w-full",
+        "bg-switchyard-bg-subtle font-base text-medium w-full",
         "text-medusa-fg-base px-0.25 pt-0.25",
         "h-screen overflow-hidden"
       )}
@@ -29,7 +29,7 @@ const Homepage = () => {
         >
           <div
             className={clsx(
-              "rounded-t bg-medusa-bg-base",
+              "rounded-t bg-switchyard-bg-base",
               "shadow-elevation-card-rest dark:shadow-elevation-card-rest-dark",
               "h-full w-full",
               "overflow-y-scroll overflow-x-hidden"

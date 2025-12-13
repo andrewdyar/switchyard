@@ -94,7 +94,7 @@ function parseNextExecution(
 export class InMemoryDistributedTransactionStorage
   implements IDistributedTransactionStorage, IDistributedSchedulerStorage
 {
-  private workflowExecutionService_: ModulesSdkTypes.IMedusaInternalService<any>
+  private workflowExecutionService_: ModulesSdkTypes.ISwitchyardInternalService<any>
   private logger_: Logger
   private workflowOrchestratorService_: WorkflowOrchestratorService
 
@@ -119,7 +119,7 @@ export class InMemoryDistributedTransactionStorage
     workflowExecutionService,
     logger,
   }: {
-    workflowExecutionService: ModulesSdkTypes.IMedusaInternalService<any>
+    workflowExecutionService: ModulesSdkTypes.ISwitchyardInternalService<any>
     logger: Logger
   }) {
     this.workflowExecutionService_ = workflowExecutionService

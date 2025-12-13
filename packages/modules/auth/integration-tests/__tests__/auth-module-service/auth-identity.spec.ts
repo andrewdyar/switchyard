@@ -293,7 +293,7 @@ moduleIntegrationTestRunner<IAuthModuleService>({
 
           await service.createProviderIdentities({
             id: "test",
-            entity_id: "christian@medusajs.com",
+            entity_id: "christian@switchyard.run",
             provider: "github",
             auth_identity_id: authIdentity.id,
           })
@@ -316,7 +316,7 @@ moduleIntegrationTestRunner<IAuthModuleService>({
           await service.createProviderIdentities([
             {
               id: "test",
-              entity_id: "christian@medusajs.com",
+              entity_id: "christian@switchyard.run",
               provider: "github",
               auth_identity_id: "test-id",
             },

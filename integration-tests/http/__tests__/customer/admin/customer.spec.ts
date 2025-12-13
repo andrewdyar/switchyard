@@ -1,7 +1,7 @@
 import { IAuthModuleService } from "@switchyard/types"
 import { Modules } from "@switchyard/utils"
 import jwt from "jsonwebtoken"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,
@@ -11,7 +11,7 @@ import {
 
 jest.setTimeout(30000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, api, getContainer }) => {
     let customer1
     let customer2

@@ -2,7 +2,7 @@
   "name": "@switchyard/admin-bundler",
   "version": "2.12.1",
   "description": "Bundler for the Medusa admin dashboard.",
-  "author": "Kasper Kristensen <kasper@medusajs.com>",
+  "author": "Kasper Kristensen <kasper@switchyard.run>",
   "scripts": {
     "build": "yarn run -T tsup"
   },

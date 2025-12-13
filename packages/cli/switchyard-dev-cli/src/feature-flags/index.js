@@ -9,7 +9,7 @@ import pkg from "../../package.json"
 export const buildFFCli = (cli) => {
   cli.command({
     command: `ff`,
-    desc: "Manage Medusa feature flags",
+    desc: "Manage Switchyard feature flags",
     builder: (yargs) => {
       yargs
         .command({
@@ -99,7 +99,7 @@ const getRepoRoot = () => {
       `
 You haven't set the path yet to your cloned
 version of medusa. Do so now by running:
-medusa-dev --set-path-to-repo /path/to/my/cloned/version/medusa
+medusa-dev --set-path-to-repo /path/to/my/cloned/version/switchyard
 `
     )
     process.exit()

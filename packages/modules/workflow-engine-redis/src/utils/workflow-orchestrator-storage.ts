@@ -59,7 +59,7 @@ const failedStates = new Set([
 export class RedisDistributedTransactionStorage
   implements IDistributedTransactionStorage, IDistributedSchedulerStorage
 {
-  private workflowExecutionService_: ModulesSdkTypes.IMedusaInternalService<any>
+  private workflowExecutionService_: ModulesSdkTypes.ISwitchyardInternalService<any>
   private logger_: Logger
   private workflowOrchestratorService_: WorkflowOrchestratorService
 
@@ -86,7 +86,7 @@ export class RedisDistributedTransactionStorage
     logger,
     isWorkerMode,
   }: {
-    workflowExecutionService: ModulesSdkTypes.IMedusaInternalService<any>
+    workflowExecutionService: ModulesSdkTypes.ISwitchyardInternalService<any>
     redisConnection: Redis
     redisWorkerConnection: Redis
     redisQueueName: string

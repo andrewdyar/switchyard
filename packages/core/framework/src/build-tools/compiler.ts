@@ -13,7 +13,7 @@ import type tsStatic from "typescript"
  * - loadTSConfigFile: Load and parse the TypeScript config file. All errors
  *   will be reported using the logger.
  *
- * - buildAppBackend: Compile the Medusa application backend source code to the
+ * - buildAppBackend: Compile the Switchyard application backend source code to the
  *   ".switchyard/server" directory. The admin source and integration-tests are
  *   skipped.
  *
@@ -328,7 +328,7 @@ export class Compiler {
   }
 
   /**
-   * Builds the frontend source code of a Medusa application
+   * Builds the frontend source code of a Switchyard application
    * using the "@switchyard/admin-bundler" package.
    */
   async buildAppFrontend(

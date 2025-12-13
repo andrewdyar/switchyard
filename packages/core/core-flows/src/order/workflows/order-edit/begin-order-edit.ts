@@ -31,8 +31,8 @@ export type BeginOrderEditValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -54,7 +54,7 @@ export const beginOrderEditValidationStep = createStep(
 export const beginOrderEditOrderWorkflowId = "begin-order-edit-order"
 /**
  * This workflow creates an order edit request. It' used by the
- * [Create Order Edit Admin API Route](https://docs.medusajs.com/api/admin#order-edits_postorderedits).
+ * [Create Order Edit Admin API Route](https://docs.switchyard.run/api/admin#order-edits_postorderedits).
  *
  * To request the order edit, use the {@link requestOrderEditRequestWorkflow}. The order edit is then only applied after the
  * order edit is confirmed using the {@link confirmOrderEditRequestWorkflow}.

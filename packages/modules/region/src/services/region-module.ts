@@ -20,7 +20,7 @@ import {
   InjectManager,
   InjectTransactionManager,
   isString,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardService,
   promiseAll,
@@ -31,8 +31,8 @@ import { UpdateRegionInput } from "@types"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  regionService: ModulesSdkTypes.IMedusaInternalService<any>
-  countryService: ModulesSdkTypes.IMedusaInternalService<any>
+  regionService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  countryService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 export default class RegionModuleService
@@ -49,10 +49,10 @@ export default class RegionModuleService
   implements IRegionModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected readonly regionService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly regionService_: ModulesSdkTypes.ISwitchyardInternalService<
     typeof Region
   >
-  protected readonly countryService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly countryService_: ModulesSdkTypes.ISwitchyardInternalService<
     typeof Country
   >
 
@@ -83,7 +83,7 @@ export default class RegionModuleService
   // @ts-expect-error
   async createRegions(
     data: CreateRegionDTO | CreateRegionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<RegionDTO | RegionDTO[]> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -97,7 +97,7 @@ export default class RegionModuleService
   @InjectTransactionManager()
   async createRegions_(
     data: CreateRegionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Region>[]> {
     let normalizedInput = RegionModuleService.normalizeInput(data)
 
@@ -139,7 +139,7 @@ export default class RegionModuleService
   async softDeleteRegions(
     ids: string | object | string[] | object[],
     config?: SoftDeleteReturn<string>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     const result = await super.softDeleteRegions(ids, config, sharedContext)
     // Note: You cannot revert the state of a region by simply restoring it. The association with countries is lost.
@@ -167,7 +167,7 @@ export default class RegionModuleService
   @EmitEvents()
   async upsertRegions(
     data: UpsertRegionDTO | UpsertRegionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<RegionDTO | RegionDTO[]> {
     const result = await this.upsertRegions_(data, sharedContext)
 
@@ -179,7 +179,7 @@ export default class RegionModuleService
   @InjectTransactionManager()
   protected async upsertRegions_(
     data: UpsertRegionDTO | UpsertRegionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Region>[]> {
     const input = Array.isArray(data) ? data : [data]
     const forUpdate = input.filter(
@@ -222,7 +222,7 @@ export default class RegionModuleService
   async updateRegions(
     idOrSelector: string | FilterableRegionProps,
     data: UpdateRegionDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<RegionDTO | RegionDTO[]> {
     let normalizedInput: UpdateRegionInput[] = []
     if (isString(idOrSelector)) {
@@ -255,7 +255,7 @@ export default class RegionModuleService
   @InjectTransactionManager()
   protected async updateRegions_(
     data: UpdateRegionInput[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Region>[]> {
     const normalizedInput = RegionModuleService.normalizeInput(data)
 

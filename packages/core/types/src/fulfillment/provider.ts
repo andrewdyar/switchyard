@@ -35,8 +35,8 @@ export type CalculatedShippingOptionPrice = {
    */
   calculated_amount: number
   /**
-   * Whether the calculated price includes taxes. If enabled, Medusa will
-   * infer the taxes from the calculated price. If false, Medusa will
+   * Whether the calculated price includes taxes. If enabled, Switchyard will
+   * infer the taxes from the calculated price. If false, Switchyard will
    * add taxes to the calculated price.
    */
   is_calculated_price_tax_inclusive: boolean

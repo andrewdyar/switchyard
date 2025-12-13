@@ -1,6 +1,6 @@
 import { JoinerServiceConfig, ModuleJoinerConfig } from "@switchyard/types"
 import { isObject, isString } from "@switchyard/utils"
-import { SwitchyardModule } from "../medusa-module"
+import { SwitchyardModule } from "../switchyard-module"
 
 const joinerConfigMapCache = new Map()
 

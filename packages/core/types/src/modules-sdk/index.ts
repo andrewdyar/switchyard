@@ -20,8 +20,8 @@ export {
 
 export type Constructor<T> = new (...args: any[]) => T | (new () => T)
 
-export * from "../common/medusa-container"
-export * from "./medusa-internal-service"
+export * from "../common/switchyard-container"
+export * from "./switchyard-internal-service"
 export * from "./module-provider"
 export * from "./remote-query"
 export * from "./remote-query-entry-points"
@@ -47,7 +47,7 @@ export type CustomModuleDefinition = {
 export type InternalModuleDeclaration = {
   scope: "internal"
   dependencies?: string[]
-  definition?: CustomModuleDefinition // That represent the definition of the module, such as the one we have for the medusa supported modules. This property is used for custom made modules.
+  definition?: CustomModuleDefinition // That represent the definition of the module, such as the one we have for the switchyard supported modules. This property is used for custom made modules.
   resolve?: string | ModuleExports
   options?: Record<string, unknown>
   /**
@@ -63,7 +63,7 @@ export type InternalModuleDeclaration = {
 
 export type ExternalModuleDeclaration = {
   scope: "external"
-  definition?: CustomModuleDefinition // That represent the definition of the module, such as the one we have for the medusa supported modules. This property is used for custom made modules.
+  definition?: CustomModuleDefinition // That represent the definition of the module, such as the one we have for the switchyard supported modules. This property is used for custom made modules.
   server?: {
     type: "http"
     url: string

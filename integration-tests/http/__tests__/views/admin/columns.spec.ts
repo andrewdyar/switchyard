@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { ModuleRegistrationName } from "@switchyard/utils"
 import {
   adminHeaders,
@@ -11,7 +11,7 @@ jest.setTimeout(300000)
 
 const env = { MEDUSA_FF_VIEW_CONFIGURATIONS: true }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     beforeEach(async () => {

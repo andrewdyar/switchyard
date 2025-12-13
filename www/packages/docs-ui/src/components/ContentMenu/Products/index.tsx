@@ -45,7 +45,7 @@ export const ContentMenuProducts = () => {
           className="flex gap-docs_0.5 items-center group"
         >
           <BorderedIcon
-            wrapperClassName={clsx("bg-medusa-bg-base")}
+            wrapperClassName={clsx("bg-switchyard-bg-base")}
             icon={getProductImageUrl(product)}
             iconWidth={16}
             iconHeight={16}

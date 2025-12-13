@@ -52,8 +52,8 @@ export type CreateProductVariantsWorkflowInput = {
       inventory_item_id: string
       /**
        * The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant,
-       * Medusa checks the availability of the quantity multiplied by the value set for `required_quantity`.
-       * When the customer orders the quantity, Medusa reserves the ordered quantity multiplied by the value
+       * Switchyard checks the availability of the quantity multiplied by the value set for `required_quantity`.
+       * When the customer orders the quantity, Switchyard reserves the ordered quantity multiplied by the value
        * set for `required_quantity`.
        */
       required_quantity?: number
@@ -200,7 +200,7 @@ const buildVariantItemCreateMap = (data: {
 
 export const createProductVariantsWorkflowId = "create-product-variants"
 /**
- * This workflow creates one or more product variants. It's used by the [Create Product Variant Admin API Route](https://docs.medusajs.com/api/admin#products_postproductsidvariants).
+ * This workflow creates one or more product variants. It's used by the [Create Product Variant Admin API Route](https://docs.switchyard.run/api/admin#products_postproductsidvariants).
  *
  * This workflow has a hook that allows you to perform custom actions on the created product variants. For example, you can pass under `additional_data` custom data that
  * allows you to create custom data models linked to the product variants.
@@ -210,7 +210,7 @@ export const createProductVariantsWorkflowId = "create-product-variants"
  * :::note
  *
  * Learn more about adding rules to the product variant's prices in the Pricing Module's
- * [Price Rules](https://docs.medusajs.com/resources/commerce-modules/pricing/price-rules) documentation.
+ * [Price Rules](https://docs.switchyard.run/resources/commerce-modules/pricing/price-rules) documentation.
  *
  * :::
  *

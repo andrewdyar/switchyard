@@ -16,7 +16,7 @@ export class ShippingOptionType {
 
   /**
    * This method creates a shipping option type. It sends a request to the
-   * [Create Shipping Option Type](https://docs.medusajs.com/api/admin#shipping-option-types_postshippingoptiontypes)
+   * [Create Shipping Option Type](https://docs.switchyard.run/api/admin#shipping-option-types_postshippingoptiontypes)
    * API route.
    *
    * @param body - The shipping option type's details.
@@ -52,7 +52,7 @@ export class ShippingOptionType {
 
   /**
    * This method updates a shipping option type. It sends a request to the
-   * [Update Shipping Option Type](https://docs.medusajs.com/api/admin#shipping-option-types_postshippingoptiontypesid)
+   * [Update Shipping Option Type](https://docs.switchyard.run/api/admin#shipping-option-types_postshippingoptiontypesid)
    * API route.
    *
    * @param id - The shipping option type's ID.
@@ -88,7 +88,7 @@ export class ShippingOptionType {
 
   /**
    * This method retrieves a paginated list of shipping option types. It sends a request to the
-   * [List Shipping Option Types](https://docs.medusajs.com/api/admin#shipping-option-types_getshippingoptiontypes) API route.
+   * [List Shipping Option Types](https://docs.switchyard.run/api/admin#shipping-option-types_getshippingoptiontypes) API route.
    *
    * @param query - Filters and pagination configurations.
    * @param headers - Headers to pass in the request.
@@ -130,7 +130,7 @@ export class ShippingOptionType {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async list(
     query?: HttpTypes.AdminShippingOptionTypeListParams,
@@ -147,7 +147,7 @@ export class ShippingOptionType {
 
   /**
    * This method retrieves a shipping option type by its ID. It sends a request to the
-   * [Get Shipping Option Type](https://docs.medusajs.com/api/admin#shipping-option-types_getshippingoptiontypesid)
+   * [Get Shipping Option Type](https://docs.switchyard.run/api/admin#shipping-option-types_getshippingoptiontypesid)
    * API route.
    *
    * @param id - The shipping option type's ID.
@@ -176,7 +176,7 @@ export class ShippingOptionType {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async retrieve(
     id: string,
@@ -194,7 +194,7 @@ export class ShippingOptionType {
 
   /**
    * This method deletes a shipping option type. It sends a request to the
-   * [Delete Shipping Option Type](https://docs.medusajs.com/api/admin#shipping-option-types_deleteshippingoptiontypesid)
+   * [Delete Shipping Option Type](https://docs.switchyard.run/api/admin#shipping-option-types_deleteshippingoptiontypesid)
    * API route.
    *
    * @param id - The shipping option type's ID.

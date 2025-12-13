@@ -32,10 +32,10 @@ export interface BatchProductVariantsWorkflowOutput extends BatchWorkflowOutput<
 export const batchProductVariantsWorkflowId = "batch-product-variants"
 /**
  * This workflow creates, updates, and deletes product variants. It's used by the 
- * [Manage Variants in a Product Admin API Route](https://docs.medusajs.com/api/admin#products_postproductsidvariantsbatch).
+ * [Manage Variants in a Product Admin API Route](https://docs.switchyard.run/api/admin#products_postproductsidvariantsbatch).
  * 
  * You can use this workflow within your own customizations or custom workflows to manage the variants of a product. You can also
- * use this within a [seed script](https://docs.medusajs.com/learn/fundamentals/custom-cli-scripts/seed-data) or in a custom import script.
+ * use this within a [seed script](https://docs.switchyard.run/learn/fundamentals/custom-cli-scripts/seed-data) or in a custom import script.
  * 
  * @example
  * const { result } = await batchProductVariantsWorkflow(container)

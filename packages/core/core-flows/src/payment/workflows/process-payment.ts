@@ -19,7 +19,7 @@ export const processPaymentWorkflowId = "process-payment-workflow"
 /**
  * This workflow processes a payment to either complete its associated cart,
  * capture the payment, or authorize the payment session. It's used when a
- * [Webhook Event is received](https://docs.medusajs.com/resources/commerce-modules/payment/webhook-events).
+ * [Webhook Event is received](https://docs.switchyard.run/resources/commerce-modules/payment/webhook-events).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you
  * to process a payment in your custom flows based on a webhook action.

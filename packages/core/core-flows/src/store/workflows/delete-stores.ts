@@ -19,9 +19,9 @@ export const deleteStoresWorkflowId = "delete-stores"
  *
  * :::note
  *
- * By default, Medusa uses a single store. This is useful
+ * By default, Switchyard uses a single store. This is useful
  * if you're building a multi-tenant application or a marketplace where each tenant has its own store.
- * If you delete the only store in your application, the Medusa application will re-create it on application start-up.
+ * If you delete the only store in your application, the Switchyard application will re-create it on application start-up.
  *
  * :::
  *

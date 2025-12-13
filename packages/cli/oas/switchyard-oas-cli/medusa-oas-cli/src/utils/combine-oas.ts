@@ -10,7 +10,7 @@ export async function combineOAS(
 
   const combinedOAS: OpenAPIObject = {
     openapi: "3.0.0",
-    info: { title: "Medusa API", version: "1.0.0" },
+    info: { title: "Switchyard API", version: "1.0.0" },
     servers: [],
     paths: {},
     tags: [],

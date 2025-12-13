@@ -388,7 +388,7 @@ export type WebhookActionData = {
  */
 export type WebhookActionResult = {
   /**
-   * The action that was performed so that Medusa can handle it internally.
+   * The action that was performed so that Switchyard can handle it internally.
    */
   action: PaymentActions
 
@@ -465,7 +465,7 @@ export interface IPaymentProvider {
    * The returned data will be stored in the account holder created in Medusa. For example,
    * the returned `id` property will be stored in the account holder's `external_id` property.
    *
-   * Medusa creates an account holder when a payment session initialized for a registered customer.
+   * Switchyard creates an account holder when a payment session initialized for a registered customer.
    *
    * @param data - Input data including the details of the account holder to create.
    * @returns The result of creating the account holder. If an error occurs, throw it.

@@ -20,13 +20,13 @@ export const InputText = ({
     <input
       {...props}
       className={clsx(
-        "bg-medusa-bg-field-component shadow-border-base dark:shadow-border-base-dark",
+        "bg-switchyard-bg-field-component shadow-border-base dark:shadow-border-base-dark",
         "rounded-docs_sm px-docs_0.5",
-        "hover:bg-medusa-bg-field-component-hover",
-        addGroupStyling && "group-hover:bg-medusa-bg-field-component-hover",
+        "hover:bg-switchyard-bg-field-component-hover",
+        addGroupStyling && "group-hover:bg-switchyard-bg-field-component-hover",
         "focus:border-medusa-border-interactive",
         "active:border-medusa-border-interactive",
-        "disabled:bg-medusa-bg-disabled",
+        "disabled:bg-switchyard-bg-disabled",
         "disabled:border-medusa-border-base",
         "placeholder:text-medusa-fg-muted",
         "disabled:placeholder:text-medusa-fg-disabled",

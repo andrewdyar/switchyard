@@ -1,5 +1,5 @@
 import { Context } from "@switchyard/types"
-import { MedusaContextType } from "./context-parameter"
+import { SwitchyardContextType } from "./context-parameter"
 
 export function InjectSharedContext(): MethodDecorator {
   return function (
@@ -7,18 +7,18 @@ export function InjectSharedContext(): MethodDecorator {
     propertyKey: string | symbol,
     descriptor: any
   ): void {
-    if (!target.MedusaContextIndex_) {
+    if (!target.SwitchyardContextIndex_) {
       throw new Error(
-        `To apply @InjectSharedContext you have to flag a parameter using @MedusaContext`
+        `To apply @InjectSharedContext you have to flag a parameter using @SwitchyardContext`
       )
     }
 
     const originalMethod = descriptor.value
-    const argIndex = target.MedusaContextIndex_[propertyKey]
+    const argIndex = target.SwitchyardContextIndex_[propertyKey]
 
     descriptor.value = function (...args: any[]) {
       const context: Context = {
-        ...(args[argIndex] ?? { __type: MedusaContextType }),
+        ...(args[argIndex] ?? { __type: SwitchyardContextType }),
       }
       args[argIndex] = context
 

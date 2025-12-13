@@ -3,7 +3,7 @@
 		"filePath": "packages/modules/inventory/src/models/inventory-level.ts",
 		"properties": {
 			"id": "The ID of the inventory level.",
-			"location_id": "The ID of the inventory level's location. When used with the [Stock Location Module](https://docs.switchyard.com/resources/commerce-modules/stock-location), the ID will be a `StockLocation`'s ID.",
+			"location_id": "The ID of the inventory level's location. When used with the [Stock Location Module](https://docs.switchyard.run/resources/commerce-modules/stock-location), the ID will be a `StockLocation`'s ID.",
 			"stocked_quantity": "The stocked quantity of the inventory level",
 			"reserved_quantity": "The reserved quantity of the inventory level",
 			"incoming_quantity": "The incoming quantity of the inventory level",
@@ -21,7 +21,7 @@
 			"id": "The ID of the reservation item.",
 			"line_item_id": "The ID of the reservation item's line item.",
 			"allow_backorder": "Whether the underlying item can still be ordered despite the reserved quantity.",
-			"location_id": "The ID of the location that the quantity is reserved from. When used with the [Stock Location Module](https://docs.switchyard.com/resources/commerce-modules/stock-location), the ID will be a `StockLocation`'s ID.",
+			"location_id": "The ID of the location that the quantity is reserved from. When used with the [Stock Location Module](https://docs.switchyard.run/resources/commerce-modules/stock-location), the ID will be a `StockLocation`'s ID.",
 			"quantity": "The reserved quantity.",
 			"raw_quantity": "The raw reserved quantity.",
 			"external_id": "The external ID of the reservation item. Can store an ID from a third-party system.",

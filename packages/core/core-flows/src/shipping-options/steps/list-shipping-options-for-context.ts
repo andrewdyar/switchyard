@@ -22,7 +22,7 @@ export interface ListShippingOptionsForContextStepInput {
    * The fields and relations to select in the returned shipping options,
    * along with pagination and sorting options.
    * 
-   * Learn more in the [service factory reference](https://docs.medusajs.com/resources/service-factory-reference/methods/list).
+   * Learn more in the [service factory reference](https://docs.switchyard.run/resources/service-factory-reference/methods/list).
    */
   config?: FindConfig<ShippingOptionDTO>
 }
@@ -59,7 +59,7 @@ export const listShippingOptionsForContextStepId =
  * ```
  * 
  * Learn more about paginating records and selecting fields in the 
- * [service factory reference](https://docs.medusajs.com/resources/service-factory-reference/methods/list).
+ * [service factory reference](https://docs.switchyard.run/resources/service-factory-reference/methods/list).
  */
 export const listShippingOptionsForContextStep = createStep(
   listShippingOptionsForContextStepId,

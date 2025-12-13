@@ -4,7 +4,7 @@ import StoreCurrency from "./currency"
 const Store = model
   .define("Store", {
     id: model.id({ prefix: "store" }).primaryKey(),
-    name: model.text().default("Medusa Store").searchable(),
+    name: model.text().default("Switchyard Store").searchable(),
     default_sales_channel_id: model.text().nullable(),
     default_region_id: model.text().nullable(),
     default_location_id: model.text().nullable(),

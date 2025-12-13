@@ -17,7 +17,7 @@ export const MenuItem = ({ item, onClick }: MenuItemProps) => {
         className={clsx(
           "flex py-docs_0.25 px-docs_0.5",
           "gap-docs_0.5 rounded-docs_xs",
-          "hover:bg-medusa-bg-component-hover",
+          "hover:bg-switchyard-bg-component-hover",
           "text-medusa-fg-base"
         )}
         href={item.link}

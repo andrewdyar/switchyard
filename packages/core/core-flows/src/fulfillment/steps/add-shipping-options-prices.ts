@@ -129,7 +129,7 @@ export const createShippingOptionsPriceSetsStepId =
  * :::note
  * 
  * Learn more about adding rules to the shipping option's prices in the Pricing Module's 
- * [Price Rules](https://docs.medusajs.com/resources/commerce-modules/pricing/price-rules) documentation.
+ * [Price Rules](https://docs.switchyard.run/resources/commerce-modules/pricing/price-rules) documentation.
  * 
  * :::
  */

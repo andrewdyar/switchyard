@@ -42,8 +42,8 @@ export type RequestOrderTransferValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and customer details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and customer details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -88,8 +88,8 @@ export const requestOrderTransferWorkflowId = "request-order-transfer-workflow"
  * This workflow requests an order transfer from a guest customer to a registered customer. It can be requested by an admin user or a customer.
  * If a customer requested the transfer, the `logged_in_user` input property should be the same as the customer's ID.
  *
- * This workflow is used by the [Request Order Transfer Store API Route](https://docs.medusajs.com/api/store#orders_postordersidtransferrequest),
- * and the [Request Order Transfer Admin API Route](https://docs.medusajs.com/api/admin#orders_postordersidtransfer).
+ * This workflow is used by the [Request Order Transfer Store API Route](https://docs.switchyard.run/api/store#orders_postordersidtransferrequest),
+ * and the [Request Order Transfer Admin API Route](https://docs.switchyard.run/api/admin#orders_postordersidtransfer).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to build a custom flow around requesting an order transfer.
  *

@@ -1,7 +1,7 @@
 /**
  * Robot Icon Component
  * 
- * Medusa Tools icon for the Scrapers sidebar item.
+ * Switchyard Tools icon for the Scrapers sidebar item.
  * Represents automation/scraping tools.
  */
 

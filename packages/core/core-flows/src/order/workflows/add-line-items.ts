@@ -71,7 +71,7 @@ export const addOrderLineItemsWorkflowId = "order-add-line-items"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { addOrderLineItemsWorkflow } from "@switchyard/medusa/core-flows";
+ * import { addOrderLineItemsWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * addOrderLineItemsWorkflow.hooks.setPricingContext((
@@ -87,7 +87,7 @@ export const addOrderLineItemsWorkflowId = "order-add-line-items"
  *
  * :::note
  *
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  *
  * :::
  */

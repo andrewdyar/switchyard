@@ -21,7 +21,7 @@ export interface GetVariantPriceSetsStepInput {
   /**
    * The context to use when calculating the price sets.
    *
-   * Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/product/guides/price#retrieve-calculated-price-for-a-context).
+   * Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/product/guides/price#retrieve-calculated-price-for-a-context).
    */
   context?: Record<string, unknown>
 }

@@ -31,10 +31,10 @@ describe("CSV processor", () => {
             "handle": "sweatshirt",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
               },
             ],
             "options": [
@@ -51,8 +51,8 @@ describe("CSV processor", () => {
               },
             ],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
-            "title": "Medusa Sweatshirt",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+            "title": "Switchyard Sweatshirt",
             "variants": [
               {
                 "allow_backorder": false,
@@ -102,10 +102,10 @@ describe("CSV processor", () => {
             "handle": "sweatshirt",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
               },
             ],
             "options": [
@@ -124,8 +124,8 @@ describe("CSV processor", () => {
               },
             ],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
-            "title": "Medusa Sweatshirt",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+            "title": "Switchyard Sweatshirt",
             "variants": [
               {
                 "allow_backorder": false,
@@ -217,10 +217,10 @@ describe("CSV processor", () => {
             "handle": "sweatshirt",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
               },
             ],
             "options": [
@@ -246,8 +246,8 @@ describe("CSV processor", () => {
               },
             ],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
-            "title": "Medusa Sweatshirt",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+            "title": "Switchyard Sweatshirt",
             "variants": [
               {
                 "allow_backorder": false,
@@ -342,10 +342,10 @@ describe("CSV processor", () => {
             "handle": "shorts",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-back.png",
               },
             ],
             "options": [
@@ -365,8 +365,8 @@ describe("CSV processor", () => {
               },
             ],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png",
-            "title": "Medusa Shorts",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/shorts-vintage-front.png",
+            "title": "Switchyard Shorts",
             "variants": [
               {
                 "allow_backorder": false,
@@ -461,10 +461,10 @@ describe("CSV processor", () => {
             "handle": "sweatpants",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-back.png",
               },
             ],
             "options": [
@@ -484,8 +484,8 @@ describe("CSV processor", () => {
               },
             ],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
-            "title": "Medusa Sweatpants",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
+            "title": "Switchyard Sweatpants",
             "variants": [
               {
                 "allow_backorder": false,
@@ -580,16 +580,16 @@ describe("CSV processor", () => {
             "handle": "t-shirt",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/tee-black-back.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-white-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/tee-white-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-white-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/tee-white-back.png",
               },
             ],
             "options": [
@@ -616,8 +616,8 @@ describe("CSV processor", () => {
               },
             ],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
-            "title": "Medusa T-Shirt",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/tee-black-front.png",
+            "title": "Switchyard T-Shirt",
             "variants": [
               {
                 "allow_backorder": false,
@@ -807,10 +807,10 @@ describe("CSV processor", () => {
             "id": "prod_01JSXX3ZVW4M4RS0NH4MSWCQWA",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-back.png",
               },
             ],
             "options": [
@@ -830,8 +830,8 @@ describe("CSV processor", () => {
               },
             ],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
-            "title": "Medusa Sweatshirt",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatshirt-vintage-front.png",
+            "title": "Switchyard Sweatshirt",
             "variants": [
               {
                 "allow_backorder": false,
@@ -927,7 +927,7 @@ describe("CSV processor", () => {
             "id": "prod_01JT598HEWAE555V0A6BD602MG",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/coffee-mug.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/coffee-mug.png",
               },
             ],
             "options": [
@@ -940,8 +940,8 @@ describe("CSV processor", () => {
             ],
             "sales_channels": [],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/coffee-mug.png",
-            "title": "Medusa Coffee Mug",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/coffee-mug.png",
+            "title": "Switchyard Coffee Mug",
             "variants": [
               {
                 "allow_backorder": false,
@@ -973,10 +973,10 @@ describe("CSV processor", () => {
             "id": "prod_01JT598HEX26EHDG7SRK37Q3FG",
             "images": [
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
               },
               {
-                "url": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-back.png",
+                "url": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-back.png",
               },
             ],
             "options": [
@@ -992,8 +992,8 @@ describe("CSV processor", () => {
             ],
             "sales_channels": [],
             "status": "published",
-            "thumbnail": "https://medusa-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
-            "title": "Medusa Sweatpants",
+            "thumbnail": "https://switchyard-public-images.s3.eu-west-1.amazonaws.com/sweatpants-gray-front.png",
+            "title": "Switchyard Sweatpants",
             "variants": [
               {
                 "allow_backorder": false,

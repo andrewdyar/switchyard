@@ -27,7 +27,7 @@ A Tax Module Provider is used to retrieve the tax lines in a provided context. T
 
 As you implement your Tax Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [Avalara Tax Module Provider tutorial](https://docs.switchyard.com/resources/integrations/guides/avalara).`,
+If you need to refer to an existing implementation as an example, check the [Avalara Tax Module Provider tutorial](https://docs.switchyard.run/resources/integrations/guides/avalara).`,
       `## Understanding Tax Module Provider Implementation
 
 The Tax Module Provider handles calculating taxes with a third-party provider. However, it's not responsible for managing tax concepts within Switchyard, such as creating a tax region. The Tax Module uses your Tax Module Provider within core operations.
@@ -91,7 +91,7 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/tax",
+      resolve: "@switchyard/tax",
       options: {
         providers: [
           {

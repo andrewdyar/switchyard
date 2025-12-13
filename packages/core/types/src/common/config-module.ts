@@ -55,13 +55,13 @@ export interface AdminOptions {
   path: `/${string}`
 
   /**
-   * The URL of your Medusa application. Defaults to the browser origin. This is useful to set when running the admin on a separate domain.
+   * The URL of your Switchyard application. Defaults to the browser origin. This is useful to set when running the admin on a separate domain.
    *
    * @example
    * ```js title="switchyard.config.ts"
    * module.exports = defineConfig({
    *   admin: {
-   *     backendUrl: process.env.MEDUSA_BACKEND_URL ||
+   *     backendUrl: process.env.SWITCHYARD_BACKEND_URL ||
    *       "http://localhost:9000"
    *   },
    *   // ...
@@ -71,7 +71,7 @@ export interface AdminOptions {
   backendUrl?: string
 
   /**
-   * The URL of your Medusa storefront application. This will help generate links from the admin
+   * The URL of your Switchyard storefront application. This will help generate links from the admin
    * to provide to customers to complete any processes
    *
    * @example
@@ -216,19 +216,19 @@ export type HttpCompressionOptions = {
 /**
  * @interface
  *
- * Medusa Cloud configurations.
+ * Switchyard Cloud configurations.
  */
 export type MedusaCloudOptions = {
   /**
-   * The environment handle of the Medusa Cloud environment.
+   * The environment handle of the Switchyard Cloud environment.
    */
   environmentHandle?: string
   /**
-   * The sandbox handle of the Medusa Cloud sandbox.
+   * The sandbox handle of the Switchyard Cloud sandbox.
    */
   sandboxHandle?: string
   /**
-   * The API key used to access Medusa Cloud services.
+   * The API key used to access Switchyard Cloud services.
    */
   apiKey?: string
   /**
@@ -236,11 +236,11 @@ export type MedusaCloudOptions = {
    */
   webhookSecret?: string
   /**
-   * The endpoint of the Medusa Cloud payment service.
+   * The endpoint of the Switchyard Cloud payment service.
    */
   paymentsEndpoint?: string
   /**
-   * The endpoint of the Medusa Cloud email service.
+   * The endpoint of the Switchyard Cloud email service.
    */
   emailsEndpoint?: string
 }
@@ -248,7 +248,7 @@ export type MedusaCloudOptions = {
 /**
  * @interface
  *
- * Essential configurations related to the Medusa application, such as database and CORS configurations.
+ * Essential configurations related to the Switchyard application, such as database and CORS configurations.
  */
 export type ProjectConfigOptions = {
   /**
@@ -376,7 +376,7 @@ export type ProjectConfigOptions = {
   }
 
   /**
-   * This configuration specifies the connection URL to Redis to store the Medusa server's session.
+   * This configuration specifies the connection URL to Redis to store the Switchyard server's session.
    *
    * :::note
    *
@@ -407,7 +407,7 @@ export type ProjectConfigOptions = {
   redisUrl?: string
 
   /**
-   * This configuration defines a prefix on all keys stored in Redis for the Medusa server's session. The default value is `sess:`.
+   * This configuration defines a prefix on all keys stored in Redis for the Switchyard server's session. The default value is `sess:`.
    *
    * If this configuration option is provided, it is prepended to `sess:`.
    *
@@ -425,7 +425,7 @@ export type ProjectConfigOptions = {
   redisPrefix?: string
 
   /**
-   * This configuration defines options to pass ioredis for the Redis connection used to store the Medusa server's session. Refer to [ioredis’s RedisOptions documentation](https://redis.github.io/ioredis/index.html#RedisOptions)
+   * This configuration defines options to pass ioredis for the Redis connection used to store the Switchyard server's session. Refer to [ioredis’s RedisOptions documentation](https://redis.github.io/ioredis/index.html#RedisOptions)
    * for the list of available options.
    *
    * @example
@@ -445,7 +445,7 @@ export type ProjectConfigOptions = {
   redisOptions?: RedisOptions
 
   /**
-   * This configuration defines additional options to pass to [express-session](https://www.npmjs.com/package/express-session), which is used to store the Medusa server's session.
+   * This configuration defines additional options to pass to [express-session](https://www.npmjs.com/package/express-session), which is used to store the Switchyard server's session.
    *
    * @example
    * ```js title="switchyard.config.ts"
@@ -494,7 +494,7 @@ export type ProjectConfigOptions = {
    *
    * ![Diagram showcasing how the server and worker work together](https://res.cloudinary.com/dza7lstvk/image/upload/fl_lossy/f_auto/r_16/ar_16:9,c_pad/v1/Medusa%20Book/medusa-worker_klkbch.jpg?_a=BATFJtAA0)
    *
-   * Medusa has three runtime modes:
+   * Switchyard has three runtime modes:
    *
    * - Use `shared` to run the application in a single process.
    * - Use `worker` to run the a worker process only.
@@ -661,14 +661,14 @@ export type ProjectConfigOptions = {
      */
     cookieSecret?: string
     /**
-     * The Medusa application's API Routes are protected by Cross-Origin Resource Sharing (CORS). So, only allowed URLs or URLs matching a specified pattern can send requests to the backend’s API Routes.
+     * The Switchyard application's API Routes are protected by Cross-Origin Resource Sharing (CORS). So, only allowed URLs or URLs matching a specified pattern can send requests to the backend’s API Routes.
      *
      * `cors` is a string used to specify the accepted URLs or patterns for API Routes starting with `/auth`. It can either be one accepted origin, or a comma-separated list of accepted origins.
      *
      * Every origin in that list must either be:
      *
      * 1. A URL. For example, `http://localhost:7001`. The URL must not end with a backslash;
-     * 2. Or a regular expression pattern that can match more than one origin. For example, `.example.com`. The regex pattern that Medusa tests for is `^([\/~@;%#'])(.*?)\1([gimsuy]*)$`.
+     * 2. Or a regular expression pattern that can match more than one origin. For example, `.example.com`. The regex pattern that Switchyard tests for is `^([\/~@;%#'])(.*?)\1([gimsuy]*)$`.
      *
      * @example
      * Some example values of common use cases:
@@ -719,7 +719,7 @@ export type ProjectConfigOptions = {
      * However, some platforms don't offer access to the HTTP layer and in those cases, this is a good alternative.
      *
      * If you enable HTTP compression and you want to disable it for specific API Routes, you can pass in the request header `"x-no-compression": true`.
-     * Learn more in the [API Reference](https://docs.medusajs.com/api/store#http-compression).
+     * Learn more in the [API Reference](https://docs.switchyard.run/api/store#http-compression).
      *
      * @example
      * ```js title="switchyard.config.ts"
@@ -741,7 +741,7 @@ export type ProjectConfigOptions = {
      */
     compression?: HttpCompressionOptions
     /**
-     * The Medusa application's API Routes are protected by Cross-Origin Resource Sharing (CORS). So, only allowed URLs or URLs matching a specified pattern can send requests to the backend’s API Routes.
+     * The Switchyard application's API Routes are protected by Cross-Origin Resource Sharing (CORS). So, only allowed URLs or URLs matching a specified pattern can send requests to the backend’s API Routes.
      *
      * `store_cors` is a string used to specify the accepted URLs or patterns for store API Routes. It can either be one accepted origin, or a comma-separated list of accepted origins.
      *
@@ -795,7 +795,7 @@ export type ProjectConfigOptions = {
     storeCors: string
 
     /**
-     * The Medusa application's API Routes are protected by Cross-Origin Resource Sharing (CORS). So, only allowed URLs or URLs matching a specified pattern can send requests to the backend’s API Routes.
+     * The Switchyard application's API Routes are protected by Cross-Origin Resource Sharing (CORS). So, only allowed URLs or URLs matching a specified pattern can send requests to the backend’s API Routes.
      *
      * `admin_cors` is a string used to specify the accepted URLs or patterns for admin API Routes. It can either be one accepted origin, or a comma-separated list of accepted origins.
      *
@@ -899,7 +899,7 @@ export type ProjectConfigOptions = {
   }
 
   /**
-   * This property holds configurations for running in Medusa Cloud.
+   * This property holds configurations for running in Switchyard Cloud.
    * It gets automatically populated in the cloud, and is not needed outside of it.
    */
   cloud?: MedusaCloudOptions
@@ -908,11 +908,11 @@ export type ProjectConfigOptions = {
 /**
  * @interface
  *
- * The configurations for your Medusa application are set in `switchyard.config.ts` located in the root of your Medusa project. The configurations include configurations for database, modules, and more.
+ * The configurations for your Switchyard application are set in `switchyard.config.ts` located in the root of your Switchyard project. The configurations include configurations for database, modules, and more.
  *
  * :::note
  *
- * Some Medusa configurations are set through environment variables, which you can find in [this documentation](https://docs.medusajs.com/learn/fundamentals/environment-variables#predefined-medusa-environment-variables).
+ * Some Switchyard configurations are set through environment variables, which you can find in [this documentation](https://docs.switchyard.run/learn/fundamentals/environment-variables#predefined-medusa-environment-variables).
  *
  * :::
  *
@@ -920,10 +920,10 @@ export type ProjectConfigOptions = {
  *
  * `defineConfig` accepts as a parameter an object with the following properties:
  *
- * - {@link ConfigModule.projectConfig | projectConfig} (required): An object that holds general configurations related to the Medusa application, such as database or CORS configurations.
- * - {@link ConfigModule.plugins | plugins}: An array of strings or objects that hold the configurations of the plugins installed in the Medusa application.
+ * - {@link ConfigModule.projectConfig | projectConfig} (required): An object that holds general configurations related to the Switchyard application, such as database or CORS configurations.
+ * - {@link ConfigModule.plugins | plugins}: An array of strings or objects that hold the configurations of the plugins installed in the Switchyard application.
  * - {@link ConfigModule.admin | admin}: An object that holds admin-related configurations.
- * - {@link ConfigModule.modules | modules}: An object that configures the Medusa application's modules.
+ * - {@link ConfigModule.modules | modules}: An object that configures the Switchyard application's modules.
  * - {@link ConfigModule.featureFlags | featureFlags}: An object that enables or disables features guarded by a feature flag.
  *
  * For example:
@@ -951,25 +951,25 @@ export type ProjectConfigOptions = {
  *
  * It's highly recommended to store the values of configurations in environment variables, then reference them within `switchyard.config.ts`.
  *
- * During development, you can set your environment variables in the `.env` file at the root of your Medusa application project. In production,
+ * During development, you can set your environment variables in the `.env` file at the root of your Switchyard application project. In production,
  * setting the environment variables depends on the hosting provider.
  *
  * ---
  */
 export type ConfigModule = {
   /**
-   * This property holds essential configurations related to the Medusa application, such as database, CORS configurations and Logger.
+   * This property holds essential configurations related to the Switchyard application, such as database, CORS configurations and Logger.
    */
   projectConfig: ProjectConfigOptions
 
   /**
-   * This property holds configurations for the Medusa Admin dashboard.
+   * This property holds configurations for the Switchyard Admin dashboard.
    *
    * @example
    * ```ts title="switchyard.config.ts"
    * module.exports = defineConfig({
    *   admin: {
-   *     backendUrl: process.env.MEDUSA_BACKEND_URL ||
+   *     backendUrl: process.env.SWITCHYARD_BACKEND_URL ||
    *       "http://localhost:9000"
    *   },
    *   // ...
@@ -979,8 +979,8 @@ export type ConfigModule = {
   admin: AdminOptions
 
   /**
-   * On your Medusa server, you can use [Plugins](https://docs.medusajs.com/learn/fundamentals/plugins) to add re-usable Medusa customizations. Plugins
-   * can include modules, workflows, API Routes, and other customizations. Plugins are available starting from [Medusa v2.3.0](https://github.com/medusajs/medusa/releases/tag/v2.3.0).
+   * On your Switchyard server, you can use [Plugins](https://docs.switchyard.run/learn/fundamentals/plugins) to add re-usable Switchyard customizations. Plugins
+   * can include modules, workflows, API Routes, and other customizations. Plugins are available starting from [Switchyard v2.3.0](https://github.com/medusajs/medusa/releases/tag/v2.3.0).
    *
    * Aside from installing the plugin with NPM, you need to pass the plugin you installed into the `plugins` array defined in `switchyard.config.ts`.
    *
@@ -989,9 +989,9 @@ export type ConfigModule = {
    * - A string, which is the name of the plugin's package as specified in the plugin's `package.json` file. You can pass a plugin as a string if it doesn’t require any options.
    * - An object having the following properties:
    *     - `resolve`: The name of the plugin's package as specified in the plugin's `package.json` file.
-   *     - `options`: An object that includes options to be passed to the modules within the plugin. Learn more in [this documentation](https://docs.medusajs.com/learn/fundamentals/modules/options).
+   *     - `options`: An object that includes options to be passed to the modules within the plugin. Learn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/modules/options).
    *
-   * Learn how to create a plugin in [this documentation](https://docs.medusajs.com/learn/fundamentals/plugins/create).
+   * Learn how to create a plugin in [this documentation](https://docs.switchyard.run/learn/fundamentals/plugins/create).
    *
    * @example
    * ```ts title="switchyard.config.ts"
@@ -1019,7 +1019,7 @@ export type ConfigModule = {
         resolve: string
         /**
          * An object that includes options to be passed to the modules within the plugin.
-         * Learn more in [this documentation](https://docs.medusajs.com/learn/fundamentals/modules/options).
+         * Learn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/modules/options).
          */
         options: Record<string, unknown>
       }
@@ -1027,7 +1027,7 @@ export type ConfigModule = {
   )[]
 
   /**
-   * This property holds all custom modules installed in your Medusa application.
+   * This property holds all custom modules installed in your Switchyard application.
    *
    * :::note
    *
@@ -1059,7 +1059,7 @@ export type ConfigModule = {
   >
 
   /**
-   * Some features in the Medusa application are guarded by a feature flag. This ensures constant shipping of new features while maintaining the engine’s stability.
+   * Some features in the Switchyard application are guarded by a feature flag. This ensures constant shipping of new features while maintaining the engine’s stability.
    *
    * You can enable a feature in your application by enabling its feature flag. Feature flags are enabled through either environment
    * variables or through this configuration property exported in `switchyard.config.ts`.

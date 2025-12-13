@@ -53,8 +53,8 @@ export type RequestItemReturnValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, return, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, return, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -111,7 +111,7 @@ export const requestItemReturnValidationStep = createStep(
 export const requestItemReturnWorkflowId = "request-item-return"
 /**
  * This workflow adds items to a return. It's used by the
- * [Add Requested Items to Return Admin API Route](https://docs.medusajs.com/api/admin#returns_postreturnsidrequestitems).
+ * [Add Requested Items to Return Admin API Route](https://docs.switchyard.run/api/admin#returns_postreturnsidrequestitems).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to add items to a return
  * in your custom flows.

@@ -10,7 +10,7 @@ import { createReservationsStep } from "../steps"
 export const createReservationsWorkflowId = "create-reservations-workflow"
 /**
  * This workflow creates one or more reservations. It's used by the
- * [Create Reservations Admin API Route](https://docs.medusajs.com/api/admin#reservations_postreservations).
+ * [Create Reservations Admin API Route](https://docs.switchyard.run/api/admin#reservations_postreservations).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you
  * to create reservations in your custom flows.

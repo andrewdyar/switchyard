@@ -48,8 +48,8 @@ export type RemoveClaimShippingMethodValidationStepInput = {
  * 
  * :::note
  * 
- * You can retrieve an order claim and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order claim and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 
@@ -99,8 +99,8 @@ export const removeClaimShippingMethodWorkflowId =
   "remove-claim-shipping-method"
 /**
  * This workflow removes an inbound (return) or outbound (delivery of new items) shipping method of a claim.
- * It's used by the [Remove Inbound Shipping Method](https://docs.medusajs.com/api/admin#claims_deleteclaimsidinboundshippingmethodaction_id),
- * or [Remove Outbound Shipping Method](https://docs.medusajs.com/api/admin#claims_deleteclaimsidoutboundshippingmethodaction_id) Admin API Routes.
+ * It's used by the [Remove Inbound Shipping Method](https://docs.switchyard.run/api/admin#claims_deleteclaimsidinboundshippingmethodaction_id),
+ * or [Remove Outbound Shipping Method](https://docs.switchyard.run/api/admin#claims_deleteclaimsidoutboundshippingmethodaction_id) Admin API Routes.
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you to remove shipping methods from a claim
  * in your own custom flows.

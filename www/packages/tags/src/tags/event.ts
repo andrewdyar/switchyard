@@ -1,10 +1,10 @@
 export const event = [
   {
     "title": "Create Event Module",
-    "path": "https://docs.switchyard.com/resources/infrastructure-modules/event/create"
+    "path": "https://docs.switchyard.run/resources/infrastructure-modules/event/create"
   },
   {
     "title": "Use Event Module",
-    "path": "https://docs.switchyard.com/resources/references/event-service"
+    "path": "https://docs.switchyard.run/resources/references/event-service"
   }
 ]

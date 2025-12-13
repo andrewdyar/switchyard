@@ -3,7 +3,7 @@ import {
   createShippingOptionsWorkflow,
 } from "@switchyard/core-flows"
 import { RemoteLink } from "@switchyard/modules-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   FulfillmentSetDTO,
   FulfillmentWorkflow,
@@ -354,7 +354,7 @@ async function createOrderFixture({ container, product }) {
   return order
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer }) => {
     let container

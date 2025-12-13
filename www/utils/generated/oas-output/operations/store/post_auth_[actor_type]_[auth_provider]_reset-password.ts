@@ -7,12 +7,12 @@
  *   Generate a reset password token for a customer. This API route doesn't reset the customer password or send them the reset instructions in a notification.
  * 
  * 
- *   Instead, This API route emits the `auth.password_reset` event, passing it the token as a payload. You can listen to that event in a subscriber as explained in [this guide](https://docs.switchyard.com/resources/commerce-modules/auth/reset-password), then send the customer a notification. The notification is sent using a [Notification Module Provider](https://docs.switchyard.com/resources/infrastructure-modules/notification), and it should have a URL that accepts a `token` query parameter, allowing the customer to reset their password from the storefront.
+ *   Instead, This API route emits the `auth.password_reset` event, passing it the token as a payload. You can listen to that event in a subscriber as explained in [this guide](https://docs.switchyard.run/resources/commerce-modules/auth/reset-password), then send the customer a notification. The notification is sent using a [Notification Module Provider](https://docs.switchyard.run/resources/infrastructure-modules/notification), and it should have a URL that accepts a `token` query parameter, allowing the customer to reset their password from the storefront.
  * 
  * 
- *    Use the generated token to update the customer's password using the [Reset Password API route](https://docs.switchyard.com/api/store#auth_postactor_typeauth_providerupdate).
+ *    Use the generated token to update the customer's password using the [Reset Password API route](https://docs.switchyard.run/api/store#auth_postactor_typeauth_providerupdate).
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/storefront-development/customers/reset-password#1-request-reset-password-page
+ *   url: https://docs.switchyard.run/resources/storefront-development/customers/reset-password#1-request-reset-password-page
  *   description: "Storefront development: How to create the request reset password page."
  * x-authenticated: false
  * parameters:
@@ -37,16 +37,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       sdk.auth.resetPassword(

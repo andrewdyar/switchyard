@@ -236,7 +236,7 @@ const getPaths = async (starterPath, rootPath, v2 = false) => {
         name: `starter`,
         message: `What starter would you like to use?`,
         choices: [
-          { title: `medusa-starter-default`, value: `medusa-starter-default` },
+          { title: `switchyard-starter-default`, value: `switchyard-starter-default` },
           { title: `(Use a different starter)`, value: `different` },
         ],
         initial: 0,
@@ -251,19 +251,19 @@ const getPaths = async (starterPath, rootPath, v2 = false) => {
     }
 
     selectedOtherStarter = response.starter === `different`
-    starterPath = `medusajs/${v2 ? "medusa-starter-default" : response.starter}`
+    starterPath = `medusajs/${v2 ? "switchyard-starter-default" : response.starter}`
     rootPath = response.path
   }
 
   // set defaults if no root or starter has been set yet
   rootPath = rootPath || process.cwd()
-  starterPath = starterPath || `medusajs/medusa-starter-default`
+  starterPath = starterPath || `medusajs/switchyard-starter-default`
 
   return { starterPath, rootPath, selectedOtherStarter }
 }
 
 const successMessage = (path) => {
-  reporter.info(`Your new Medusa project is ready for you! To start developing run:
+  reporter.info(`Your new Switchyard project is ready for you! To start developing run:
 
   cd ${path}
   switchyard develop
@@ -502,7 +502,7 @@ export const newStarter = async (args) => {
   const nodeVersion = getNodeVersion()
   if (nodeVersion < MIN_SUPPORTED_NODE_VERSION) {
     reporter.error(
-      `Medusa requires at least v20 of Node.js. You're using v${nodeVersion}. Please install at least v20 and try again: https://nodejs.org/en/download`
+      `Switchyard requires at least v20 of Node.js. You're using v${nodeVersion}. Please install at least v20 and try again: https://nodejs.org/en/download`
     )
     process.exit(1)
   }
@@ -543,7 +543,7 @@ export const newStarter = async (args) => {
 
   if (selectedOtherStarter) {
     reporter.info(
-      `Find the url of the Medusa starter you wish to create and run:
+      `Find the url of the Switchyard starter you wish to create and run:
 
 medusa new ${rootPath} [url-to-starter]
 
@@ -615,7 +615,7 @@ medusa new ${rootPath} [url-to-starter]
 
   if (creds === null) {
     reporter.info(
-      "Skipping automatic database setup. Please note that you need to create a database and run migrations before you can run your Medusa backend"
+      "Skipping automatic database setup. Please note that you need to create a database and run migrations before you can run your Switchyard backend"
     )
   } else {
     if (!skipDb) {

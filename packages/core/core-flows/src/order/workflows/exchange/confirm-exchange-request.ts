@@ -66,8 +66,8 @@ export type ConfirmExchangeRequestValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, order exchange, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, order exchange, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -265,7 +265,7 @@ export type ConfirmExchangeRequestWorkflowInput = {
 export const confirmExchangeRequestWorkflowId = "confirm-exchange-request"
 /**
  * This workflow confirms an exchange request. It's used by the
- * [Confirm Exchange Admin API Route](https://docs.medusajs.com/api/admin#exchanges_postexchangesidrequest).
+ * [Confirm Exchange Admin API Route](https://docs.switchyard.run/api/admin#exchanges_postexchangesidrequest).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to confirm an exchange
  * for an order in your custom flow.

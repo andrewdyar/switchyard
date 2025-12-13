@@ -19,7 +19,7 @@ export const CodeBlockHeaderWrapper = React.forwardRef<
       clsx(
         blockStyle === "loud" && "bg-medusa-contrast-bg-base",
         blockStyle === "subtle" && [
-          colorMode === "light" && "bg-medusa-bg-component",
+          colorMode === "light" && "bg-switchyard-bg-component",
           colorMode === "dark" && "bg-medusa-code-bg-header",
         ]
       ),

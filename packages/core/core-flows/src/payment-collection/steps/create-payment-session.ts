@@ -35,7 +35,7 @@ export interface CreatePaymentSessionStepInput {
   context?: PaymentProviderContext
   /**
    * Custom data relevant for the payment provider to process the payment session.
-   * Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/payment/payment-session#data-property).
+   * Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/payment/payment-session#data-property).
    */
   data?: Record<string, unknown>
 

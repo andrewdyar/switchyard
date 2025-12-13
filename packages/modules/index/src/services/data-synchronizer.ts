@@ -32,16 +32,16 @@ export class DataSynchronizer {
     return this.#container[Modules.LOCKING] as ILockingModule
   }
 
-  get #indexMetadataService(): ModulesSdkTypes.IMedusaInternalService<any> {
+  get #indexMetadataService(): ModulesSdkTypes.ISwitchyardInternalService<any> {
     return this.#container.indexMetadataService
   }
 
-  get #indexSyncService(): ModulesSdkTypes.IMedusaInternalService<any> {
+  get #indexSyncService(): ModulesSdkTypes.ISwitchyardInternalService<any> {
     return this.#container.indexSyncService
   }
 
   // @ts-ignore
-  get #indexRelationService(): ModulesSdkTypes.IMedusaInternalService<any> {
+  get #indexRelationService(): ModulesSdkTypes.ISwitchyardInternalService<any> {
     return this.#container.indexRelationService
   }
 

@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { RuleOperator } from "@switchyard/utils"
 import {
   adminHeaders,
@@ -8,7 +8,7 @@ import {
 jest.setTimeout(50000)
 
 // BREAKING: Shipping setup has significantly changed from v1, exact migration needs more investigation
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Admin: Shipping Option API", () => {
       let shippingProfile

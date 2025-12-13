@@ -21,7 +21,7 @@ export const VersionNotice = ({
           This is available starting from
           <br />
           <a
-            href={`https://github.com/switchyard/medusa/releases/tag/${version}`}
+            href={`https://github.com/switchyard/switchyard/releases/tag/${version}`}
           >
             Switchyard v{version}
           </a>

@@ -62,14 +62,14 @@ export const Sidebar = ({ className = "" }: SidebarProps) => {
       {mobileSidebarOpen && (
         <div
           className={clsx(
-            "lg:hidden bg-medusa-bg-overlay opacity-70",
+            "lg:hidden bg-switchyard-bg-overlay opacity-70",
             "fixed top-0 left-0 w-full h-full z-[45]"
           )}
         ></div>
       )}
       <aside
         className={clsx(
-          "bg-medusa-bg-base lg:bg-transparent block",
+          "bg-switchyard-bg-base lg:bg-transparent block",
           "fixed -left-full top-0 h-[calc(100%-16px)] transition-[left] lg:relative lg:h-auto",
           "max-w-sidebar-xs sm:max-w-sidebar-sm md:max-w-sidebar-md lg:max-w-sidebar-lg",
           "xl:max-w-sidebar-xl xxl:max-w-sidebar-xxl xxxl:max-w-sidebar-xxxl",

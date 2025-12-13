@@ -4,7 +4,7 @@ import {
   createTaxRateRulesStepId,
   updateTaxRatesWorkflow,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { Modules } from "@switchyard/utils"
 import { createAdminUser } from "../../../../helpers/create-admin-user"
 
@@ -12,10 +12,10 @@ jest.setTimeout(50000)
 
 const env = {}
 const adminHeaders = {
-  headers: { "x-medusa-access-token": "test_token" },
+  headers: { "x-switchyard-access-token": "test_token" },
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Taxes - Workflow", () => {

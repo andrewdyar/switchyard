@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { Modules, PromotionStatus, PromotionType } from "@switchyard/utils"
 import {
   createAdminUser,
@@ -11,10 +11,10 @@ import { switchyardTshirtProduct } from "../../../__fixtures__/product"
 jest.setTimeout(500000)
 
 const adminHeaders = {
-  headers: { "x-medusa-access-token": "test_token" },
+  headers: { "x-switchyard-access-token": "test_token" },
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Admin Promotions API - Promotion Limits", () => {
       let appContainer

@@ -26,7 +26,7 @@ export type BatchPriceListPricesWorkflowInput = {
 export const batchPriceListPricesWorkflowId = "batch-price-list-prices"
 /**
  * This workflow manages a price list's prices by creating, updating, or removing them. It's used by the
- * [Manage Prices in Price List Admin API Route](https://docs.medusajs.com/api/admin#price-lists_postpricelistsidpricesbatch).
+ * [Manage Prices in Price List Admin API Route](https://docs.switchyard.run/api/admin#price-lists_postpricelistsidpricesbatch).
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you to 
  * manage price lists' prices in your custom flows.

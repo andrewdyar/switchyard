@@ -14,8 +14,8 @@ import { isFile } from "./utils/fs-utils"
 /**
  * Constants
  */
-// Medusa core package directory
-const medusaPackagePath = path.dirname(require.resolve("@switchyard/medusa"))
+// Switchyard core package directory
+const medusaPackagePath = path.dirname(require.resolve("@switchyard/core"))
 const basePath = path.resolve(__dirname, "../")
 
 /**
@@ -45,7 +45,7 @@ export const commandOptions: Option[] = [
   new Option("-F, --force", "Ignore OAS validation and output OAS files."),
   new Option(
     "--local",
-    "Generate OAS from local files rather than public OAS. This is useful for generating references in the Medusa monorepo."
+    "Generate OAS from local files rather than public OAS. This is useful for generating references in the Switchyard monorepo."
   ),
 ]
 
@@ -170,7 +170,7 @@ async function getOASFromCodebase(apiType: ApiType): Promise<OpenAPIObject> {
 }
 
 async function getPublicOas(apiType: ApiType) {
-  const url = `https://docs.medusajs.com/api/download/${apiType}`
+  const url = `https://docs.switchyard.run/api/download/${apiType}`
   return (await OpenAPIParser.parse(url)) as OpenAPIObject
 }
 

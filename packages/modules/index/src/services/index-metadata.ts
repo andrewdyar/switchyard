@@ -1,6 +1,6 @@
-import { MedusaInternalService } from "@switchyard/framework/utils"
+import { SwitchyardInternalService } from "@switchyard/framework/utils"
 import { IndexMetadata } from "@models"
 
-export class IndexMetadataService extends MedusaInternalService(
+export class IndexMetadataService extends SwitchyardInternalService(
   IndexMetadata
 ) {}

@@ -8,7 +8,7 @@ import {
 } from "@switchyard/types"
 
 import { asClass } from "@switchyard/deps/awilix"
-import { MedusaInternalService } from "../medusa-internal-service"
+import { SwitchyardInternalService } from "../switchyard-internal-service"
 import { lowerCaseFirst } from "../../common"
 import {
   MikroOrmBaseRepository,
@@ -100,7 +100,7 @@ export function loadModuleServices({
     const finalService = moduleServicesMap.get(mappedServiceName)
 
     if (!finalService) {
-      moduleServicesMap.set(mappedServiceName, MedusaInternalService(Model))
+      moduleServicesMap.set(mappedServiceName, SwitchyardInternalService(Model))
     }
   })
 

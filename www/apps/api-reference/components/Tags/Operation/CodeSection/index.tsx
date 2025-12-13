@@ -30,7 +30,7 @@ const TagOperationCodeSection = ({
     <div className={clsx("mt-2 flex flex-col gap-2", className)}>
       <div
         className={clsx(
-          "bg-medusa-bg-subtle border-medusa-border-base px-0.75 rounded border py-0.5",
+          "bg-switchyard-bg-subtle border-medusa-border-base px-0.75 rounded border py-0.5",
           "text-code-body flex w-full justify-between gap-1"
         )}
       >

@@ -34,7 +34,7 @@ export default async function ({ types, directory }) {
   }
 
   /**
-   * Re-constructing the path to Medusa CLI to execute the
+   * Re-constructing the path to Switchyard CLI to execute the
    * start command.
    */
 

@@ -12,7 +12,7 @@ const TagsOperationDescriptionSectionWorkflowBadge = ({
     <p className="my-1">
       Workflow{" "}
       <SourceCodeLink
-        link={`${config.baseUrl}/resources/references/medusa-workflows/${workflow}`}
+        link={`${config.baseUrl}/resources/references/switchyard-workflows/${workflow}`}
         text={workflow}
         icon={<DecisionProcessIcon />}
       />{" "}

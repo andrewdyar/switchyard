@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IPricingModuleService, IProductModuleService } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
@@ -10,7 +10,7 @@ jest.setTimeout(50000)
 
 const env = {}
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer }) => {
     describe("ProductVariant Price Sets", () => {

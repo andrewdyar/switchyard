@@ -3,8 +3,8 @@ import {
   createSwitchyardContainer,
   isDefined,
   isString,
-  MedusaContext,
-  MedusaContextType,
+  SwitchyardContext,
+  SwitchyardContextType,
   SwitchyardError,
   SwitchyardModuleType,
 } from "@switchyard/utils"
@@ -37,7 +37,7 @@ export class LocalWorkflow {
   protected customOptions: Partial<TransactionModelOptions> = {}
   protected workflow: WorkflowDefinition
   protected handlers: Map<string, StepHandler>
-  protected medusaContext?: Context
+  protected switchyardContext?: Context
 
   get container(): SwitchyardContainer {
     return this.container_
@@ -114,12 +114,12 @@ export class LocalWorkflow {
           }
 
           return (...args) => {
-            const ctxIndex = MedusaContext.getIndex(target, prop as string)
+            const ctxIndex = SwitchyardContext.getIndex(target, prop as string)
 
-            const hasContext = args[ctxIndex!]?.__type === MedusaContextType
+            const hasContext = args[ctxIndex!]?.__type === SwitchyardContextType
             if (!hasContext && isDefined(ctxIndex)) {
-              const context = this_.medusaContext
-              if (context?.__type === MedusaContextType) {
+              const context = this_.switchyardContext
+              if (context?.__type === SwitchyardContextType) {
                 delete context?.manager
                 delete context?.transactionManager
 
@@ -354,7 +354,7 @@ export class LocalWorkflow {
     if (this.flow.hasChanges) {
       this.commit()
     }
-    this.medusaContext = context
+    this.switchyardContext = context
     const { handler, orchestrator } = this.workflow
 
     const transaction = await orchestrator.beginTransaction({
@@ -382,7 +382,7 @@ export class LocalWorkflow {
   }
 
   async getRunningTransaction(uniqueTransactionId: string, context?: Context) {
-    this.medusaContext = context
+    this.switchyardContext = context
     const { handler, orchestrator } = this.workflow
 
     const transaction = await orchestrator.retrieveExistingTransaction(
@@ -400,7 +400,7 @@ export class LocalWorkflow {
     context?: Context,
     subscribe?: DistributedTransactionEvents
   ) {
-    this.medusaContext = context
+    this.switchyardContext = context
     const { orchestrator } = this.workflow
 
     let transaction = isString(transactionOrTransactionId)
@@ -415,11 +415,11 @@ export class LocalWorkflow {
       )
     }
 
-    if (this.medusaContext) {
-      this.medusaContext.eventGroupId =
+    if (this.switchyardContext) {
+      this.switchyardContext.eventGroupId =
         transaction.getFlow().metadata!.eventGroupId
       transaction.getFlow().metadata!.cancelingFromParentStep ??=
-        this.medusaContext.cancelingFromParentStep
+        this.switchyardContext.cancelingFromParentStep
     }
 
     const { cleanUpEventListeners } = this.registerEventCallbacks({
@@ -442,7 +442,7 @@ export class LocalWorkflow {
     context?: Context,
     subscribe?: DistributedTransactionEvents
   ): Promise<DistributedTransactionType> {
-    this.medusaContext = context
+    this.switchyardContext = context
     const { handler, orchestrator } = this.workflow
 
     const { cleanUpEventListeners } = this.registerEventCallbacks({
@@ -470,7 +470,7 @@ export class LocalWorkflow {
     context?: Context,
     subscribe?: DistributedTransactionEvents
   ): Promise<DistributedTransactionType> {
-    this.medusaContext = context
+    this.switchyardContext = context
     const { handler, orchestrator } = this.workflow
 
     const { cleanUpEventListeners } = this.registerEventCallbacks({
@@ -500,7 +500,7 @@ export class LocalWorkflow {
     subscribe?: DistributedTransactionEvents,
     forcePermanentFailure?: boolean
   ): Promise<DistributedTransactionType> {
-    this.medusaContext = context
+    this.switchyardContext = context
     const { handler, orchestrator } = this.workflow
 
     const { cleanUpEventListeners } = this.registerEventCallbacks({
@@ -620,15 +620,15 @@ export class LocalWorkflow {
   }
 
   private onLoad(transaction: DistributedTransactionType) {
-    if (this.medusaContext) {
+    if (this.switchyardContext) {
       const flow = transaction.getFlow() ?? {}
       const metadata = (flow.metadata ??
         {}) as Required<TransactionFlow>["metadata"]
-      this.medusaContext.eventGroupId = metadata.eventGroupId
-      this.medusaContext.parentStepIdempotencyKey =
+      this.switchyardContext.eventGroupId = metadata.eventGroupId
+      this.switchyardContext.parentStepIdempotencyKey =
         metadata.parentStepIdempotencyKey
-      this.medusaContext.preventReleaseEvents = metadata?.preventReleaseEvents
-      this.medusaContext.cancelingFromParentStep =
+      this.switchyardContext.preventReleaseEvents = metadata?.preventReleaseEvents
+      this.switchyardContext.cancelingFromParentStep =
         metadata?.cancelingFromParentStep
     }
   }

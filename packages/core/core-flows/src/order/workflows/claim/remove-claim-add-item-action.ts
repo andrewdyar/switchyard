@@ -54,8 +54,8 @@ export type RemoveClaimAddItemActionValidationStepInput = {
  * 
  * :::note
  * 
- * You can retrieve an order, order claim, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, order claim, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 
@@ -118,7 +118,7 @@ export type RemoveAddItemClaimActionWorkflowInput = OrderWorkflow.DeleteOrderCla
 export const removeAddItemClaimActionWorkflowId = "remove-item-claim-add-action"
 /**
  * This workflow removes outbound (new) items from a claim. It's used by the
- * [Remove Outbound Items Admin API Route](https://docs.medusajs.com/api/admin#claims_deleteclaimsidoutbounditemsaction_id).
+ * [Remove Outbound Items Admin API Route](https://docs.switchyard.run/api/admin#claims_deleteclaimsidoutbounditemsaction_id).
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you to remove outbound items from a claim
  * in your custom flows.

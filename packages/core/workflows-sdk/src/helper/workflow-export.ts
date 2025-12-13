@@ -15,7 +15,7 @@ import {
 import {
   ContainerRegistrationKeys,
   isPresent,
-  MedusaContextType,
+  SwitchyardContextType,
   Modules,
   TransactionHandlerType,
 } from "@switchyard/utils"
@@ -215,7 +215,7 @@ function createContextualWorkflowRunner<
 
     const context = {
       ...outerContext,
-      __type: MedusaContextType as Context["__type"],
+      __type: SwitchyardContextType as Context["__type"],
     }
 
     const uniqId = ulid()
@@ -262,7 +262,7 @@ function createContextualWorkflowRunner<
     const context = {
       ...outerContext,
       transactionId,
-      __type: MedusaContextType as Context["__type"],
+      __type: SwitchyardContextType as Context["__type"],
     }
 
     context.eventGroupId ??= ulid()
@@ -307,7 +307,7 @@ function createContextualWorkflowRunner<
     const context = {
       ...outerContext,
       transactionId,
-      __type: MedusaContextType as Context["__type"],
+      __type: SwitchyardContextType as Context["__type"],
     }
 
     context.eventGroupId ??= ulid()
@@ -349,7 +349,7 @@ function createContextualWorkflowRunner<
     const context = {
       ...outerContext,
       transactionId,
-      __type: MedusaContextType as Context["__type"],
+      __type: SwitchyardContextType as Context["__type"],
     }
 
     context.eventGroupId ??= ulid()
@@ -384,7 +384,7 @@ function createContextualWorkflowRunner<
     const context = {
       ...outerContext,
       transactionId,
-      __type: MedusaContextType as Context["__type"],
+      __type: SwitchyardContextType as Context["__type"],
     }
 
     context.eventGroupId ??= ulid()

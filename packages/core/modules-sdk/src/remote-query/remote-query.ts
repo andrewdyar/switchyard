@@ -15,7 +15,7 @@ import {
   RemoteNestedExpands,
 } from "@switchyard/types"
 import { isPresent, isString, toPascalCase } from "@switchyard/utils"
-import { SwitchyardModule } from "../medusa-module"
+import { SwitchyardModule } from "../switchyard-module"
 
 const BASE_PREFIX = ""
 const MAX_BATCH_SIZE = 4000

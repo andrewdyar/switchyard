@@ -12,7 +12,7 @@ export const listShippingOptionsForOrderWorkflowId =
   "list-shipping-options-for-order"
 /**
  * This workflow lists the shipping options of an order. It's executed by the
- * [List Shipping Options Store API Route](https://docs.medusajs.com/api/store#orders_getidshippingoptions).
+ * [List Shipping Options Store API Route](https://docs.switchyard.run/api/store#orders_getidshippingoptions).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you to wrap custom logic around to retrieve the shipping options of an order
  * in your custom flows.

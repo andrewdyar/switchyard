@@ -37,7 +37,7 @@ export const MainNavDesktopMenu = () => {
         type: "link",
         icon: <Book />,
         title: "Switchyard v1",
-        link: "https://docs.switchyard.com/v1",
+        link: "https://docs.switchyard.run/v1",
       },
       {
         type: "link",

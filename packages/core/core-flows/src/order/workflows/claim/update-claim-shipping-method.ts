@@ -58,8 +58,8 @@ export type UpdateClaimShippingMethodValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order claim and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order claim and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -109,8 +109,8 @@ export const updateClaimShippingMethodWorkflowId =
   "update-claim-shipping-method"
 /**
  * This workflow updates a claim's inbound (return) or outbound (delivery of new items) shipping method.
- * It's used by the [Update Inbound Shipping Admin API Route](https://docs.medusajs.com/api/admin#claims_postclaimsidinboundshippingmethodaction_id),
- * and the [Update Outbound Shipping Admin API Route](https://docs.medusajs.com/api/admin#claims_postclaimsidoutboundshippingmethodaction_id).
+ * It's used by the [Update Inbound Shipping Admin API Route](https://docs.switchyard.run/api/admin#claims_postclaimsidinboundshippingmethodaction_id),
+ * and the [Update Outbound Shipping Admin API Route](https://docs.switchyard.run/api/admin#claims_postclaimsidoutboundshippingmethodaction_id).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to update a claim's shipping method
  * in your own custom flows.
@@ -146,7 +146,7 @@ export const updateClaimShippingMethodWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { updateClaimShippingMethodWorkflow } from "@switchyard/medusa/core-flows";
+ * import { updateClaimShippingMethodWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  * 
  * updateClaimShippingMethodWorkflow.hooks.setPricingContext((
@@ -162,7 +162,7 @@ export const updateClaimShippingMethodWorkflowId =
  * 
  * :::note
  * 
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  * 
  * :::
  */

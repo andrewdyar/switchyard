@@ -17,7 +17,7 @@ export class PriceList {
 
   /**
    * This method retrieves a price list. It sends a request to the
-   * [Get Price List](https://docs.medusajs.com/v2/api/admin#price-lists_getpricelistsid)
+   * [Get Price List](https://docs.switchyard.run/v2/api/admin#price-lists_getpricelistsid)
    * API route.
    * 
    * @param id - The price list's ID.
@@ -46,7 +46,7 @@ export class PriceList {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/v2/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/v2/api/store#select-fields-and-relations).
    */
   async retrieve(
     id: string,
@@ -65,7 +65,7 @@ export class PriceList {
 
   /**
    * This method retrieves a paginated list of price lists. It sends a request to the 
-   * [List Price Lists](https://docs.medusajs.com/v2/api/admin#price-lists_getpricelists) API route.
+   * [List Price Lists](https://docs.switchyard.run/v2/api/admin#price-lists_getpricelists) API route.
    * 
    * @param query - Filters and pagination configurations.
    * @param headers - Headers to pass in the request.
@@ -107,7 +107,7 @@ export class PriceList {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/v2/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/v2/api/store#select-fields-and-relations).
    */
   async list(
     query?: HttpTypes.AdminPriceListListParams,
@@ -125,7 +125,7 @@ export class PriceList {
 
   /**
    * This method creates a price list. It sends a request to the
-   * [Create Price List](https://docs.medusajs.com/v2/api/admin#price-lists_postpricelists)
+   * [Create Price List](https://docs.switchyard.run/v2/api/admin#price-lists_postpricelists)
    * API route.
    * 
    * @param body - The details of the price list to create.
@@ -171,7 +171,7 @@ export class PriceList {
 
   /**
    * This method updates a price list. It sends a request to the 
-   * [Update Price List](https://docs.medusajs.com/v2/api/admin#price-lists_postpricelistsid)
+   * [Update Price List](https://docs.switchyard.run/v2/api/admin#price-lists_postpricelistsid)
    * API route.
    * 
    * @param id - The price list's ID.
@@ -207,7 +207,7 @@ export class PriceList {
 
   /**
    * This method deletes a price list. It sends a request to the
-   * [Delete Price List](https://docs.medusajs.com/v2/api/admin#price-lists_deletepricelistsid)
+   * [Delete Price List](https://docs.switchyard.run/v2/api/admin#price-lists_deletepricelistsid)
    * API route.
    * 
    * @param id - The price list's ID.
@@ -232,7 +232,7 @@ export class PriceList {
 
   /**
    * This method manages the prices of a price list to create, update, or delete them.
-   * It sends a request to the [Manage Prices](https://docs.medusajs.com/v2/api/admin#price-lists_postpricelistsidpricesbatch)
+   * It sends a request to the [Manage Prices](https://docs.switchyard.run/v2/api/admin#price-lists_postpricelistsidpricesbatch)
    * API route.
    * 
    * @param id - The price list's ID.
@@ -281,7 +281,7 @@ export class PriceList {
 
   /**
    * This method removes products from a price list. It sends a request to the
-   * [Remove Product](https://docs.medusajs.com/v2/api/admin#price-lists_postpricelistsidproducts)
+   * [Remove Product](https://docs.switchyard.run/v2/api/admin#price-lists_postpricelistsidproducts)
    * API route.
    * 
    * @param id - The price list's ID.

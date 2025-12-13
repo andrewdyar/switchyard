@@ -6,7 +6,7 @@ import {
   buildLinkConfigFromModelObjects,
   defineJoinerConfig,
 } from "./joiner-config-builder"
-import { SwitchyardServiceModelObjectsSymbol } from "./medusa-service"
+import { SwitchyardServiceModelObjectsSymbol } from "./switchyard-service"
 import { InfersLinksConfig } from "./types/links-config"
 
 /**

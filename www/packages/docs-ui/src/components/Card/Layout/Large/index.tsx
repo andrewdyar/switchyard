@@ -26,7 +26,7 @@ export const CardLargeLayout = ({
     >
       <div
         className={clsx(
-          "rounded-docs_DEFAULT bg-medusa-bg-component w-[290px] h-[144px]",
+          "rounded-docs_DEFAULT bg-switchyard-bg-component w-[290px] h-[144px]",
           "shadow-elevation-card-rest dark:shadow-elevation-card-rest-dark",
           href &&
             "group-hover:shadow-elevation-card-hover group-hover:dark:shadow-elevation-card-hover-dark",

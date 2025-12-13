@@ -6,7 +6,7 @@ import { GITHUB_ISSUES_LINK } from "../../constants"
 
 export const ErrorPage = () => {
   return (
-    <div className="w-full h-full bg-medusa-bg-subtle flex items-center justify-center">
+    <div className="w-full h-full bg-switchyard-bg-subtle flex items-center justify-center">
       <div className="flex gap-docs_1.5 flex-col items-center justify-center w-fit max-w-lg">
         <ErrorPageIcon />
         <div className="flex flex-col items-center gap-docs_0.5">

@@ -78,7 +78,7 @@ export const ApiRunner = React.forwardRef<HTMLDivElement, ApiRunnerProps>(
         {manualTestTrigger && (
           <div
             className={clsx(
-              "bg-medusa-bg-component rounded-docs_DEFAULT",
+              "bg-switchyard-bg-component rounded-docs_DEFAULT",
               "shadow-elevation-card-rest dark:shadow-elevation-card-rest-dark",
               "mb-docs_0.75"
             )}

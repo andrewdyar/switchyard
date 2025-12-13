@@ -354,56 +354,56 @@ export interface BaseCartShippingMethod {
   /**
    * The original total of the cart shipping method.
    * This field is only available if you expand the `shipping_methods.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
    */
   original_total?: number
 
   /**
    * The original subtotal of the cart shipping method.
    * This field is only available if you expand the `shipping_methods.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
    */
   original_subtotal?: number
 
   /**
    * The original tax total of the cart shipping method.
    * This field is only available if you expand the `shipping_methods.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
    */
   original_tax_total?: number
 
   /**
    * The total of the cart shipping method.
    * This field is only available if you expand the `shipping_methods.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
    */
   total?: number
 
   /**
    * The subtotal of the cart shipping method.
    * This field is only available if you expand the `shipping_methods.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
    */
   subtotal?: number
 
   /**
    * The tax total of the cart shipping method.
    * This field is only available if you expand the `shipping_methods.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
    */
   tax_total?: number
 
   /**
    * The discount total of the cart shipping method.
    * This field is only available if you expand the `shipping_methods.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
    */
   discount_total?: number
 
   /**
    * The discount tax total of the cart shipping method.
    * This field is only available if you expand the `shipping_methods.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-shipping-method-totals) guide.
    */
   discount_tax_total?: number
 }
@@ -590,77 +590,77 @@ export interface BaseCartLineItemTotals {
   /**
    * The original total of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   original_total?: number
 
   /**
    * The original subtotal of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   original_subtotal?: number
 
   /**
    * The original tax total of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   original_tax_total?: number
 
   /**
    * The item total of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   item_total?: number
 
   /**
    * The item subtotal of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   item_subtotal?: number
 
   /**
    * The item tax total of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   item_tax_total?: number
 
   /**
    * The total of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   total?: number
 
   /**
    * The subtotal of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   subtotal?: number
 
   /**
    * The tax total of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   tax_total?: number
 
   /**
    * The discount total of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   discount_total?: number
 
   /**
    * The discount tax total of the cart line item.
    * This field is only available if you expand the `items.*` relation. Learn more in the
-   * [Cart Totals](https://docs.medusajs.com/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
+   * [Cart Totals](https://docs.switchyard.run/resources/storefront-development/cart/totals#retrieve-and-show-cart-item-totals) guide.
    */
   discount_tax_total?: number
 }

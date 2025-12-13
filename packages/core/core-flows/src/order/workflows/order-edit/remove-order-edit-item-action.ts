@@ -50,8 +50,8 @@ export type RemoveOrderEditItemActionValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -105,7 +105,7 @@ export const removeItemOrderEditActionWorkflowId =
   "remove-item-order edit-action"
 /**
  * This workflow removes an item that was added to an order edit. It's used by the
- * [Remove Item from Order Edit Admin API Route](https://docs.medusajs.com/api/admin#order-edits_deleteordereditsiditemsaction_id).
+ * [Remove Item from Order Edit Admin API Route](https://docs.switchyard.run/api/admin#order-edits_deleteordereditsiditemsaction_id).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to remove an item that was
  * added to an order edit in your custom flow.

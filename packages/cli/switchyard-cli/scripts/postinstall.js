@@ -2,7 +2,7 @@ const chalk = require(`chalk`)
 
 const showSuccessMessage = () => {
   console.log(chalk.green(`Success!\n`))
-  console.log(chalk.cyan(`Welcome to the Medusa CLI!`))
+  console.log(chalk.cyan(`Welcome to the Switchyard CLI!`))
 }
 
 try {

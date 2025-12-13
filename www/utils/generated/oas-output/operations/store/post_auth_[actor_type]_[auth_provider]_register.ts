@@ -4,7 +4,7 @@
  * summary: Retrieve Registration JWT Token
  * description: This API route retrieves a registration JWT token of a customer that hasn't been registered yet. The token is used in the header of requests that create a customer.
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/storefront-development/customers/register
+ *   url: https://docs.switchyard.run/resources/storefront-development/customers/register
  *   description: "Storefront development: How to register a customer"
  * x-authenticated: false
  * parameters:
@@ -31,16 +31,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       await sdk.auth.register(

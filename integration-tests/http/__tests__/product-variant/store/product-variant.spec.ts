@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { HttpTypes } from "@switchyard/framework/types"
 import { IStoreModuleService } from "@switchyard/types"
 import { ApiKeyType, Modules, ProductStatus } from "@switchyard/utils"
@@ -12,7 +12,7 @@ import { getProductFixture } from "../../../../helpers/fixtures"
 
 jest.setTimeout(60000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, api, getContainer }) => {
     let appContainer
     let publishableKey

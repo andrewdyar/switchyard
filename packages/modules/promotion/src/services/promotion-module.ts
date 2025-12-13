@@ -25,7 +25,7 @@ import {
   isPresent,
   isString,
   MathBN,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardService,
   PromotionStatus,
@@ -66,13 +66,13 @@ import { buildPromotionRuleQueryFilterFromContext } from "../utils/compute-actio
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  promotionService: ModulesSdkTypes.IMedusaInternalService<any>
-  applicationMethodService: ModulesSdkTypes.IMedusaInternalService<any>
-  promotionRuleService: ModulesSdkTypes.IMedusaInternalService<any>
-  promotionRuleValueService: ModulesSdkTypes.IMedusaInternalService<any>
-  campaignService: ModulesSdkTypes.IMedusaInternalService<any>
-  campaignBudgetService: ModulesSdkTypes.IMedusaInternalService<any>
-  campaignBudgetUsageService: ModulesSdkTypes.IMedusaInternalService<any>
+  promotionService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  applicationMethodService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  promotionRuleService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  promotionRuleValueService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  campaignService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  campaignBudgetService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  campaignBudgetUsageService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 export default class PromotionModuleService
@@ -96,26 +96,26 @@ export default class PromotionModuleService
   implements PromotionTypes.IPromotionModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected promotionService_: ModulesSdkTypes.IMedusaInternalService<
+  protected promotionService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof Promotion>
   >
-  protected applicationMethodService_: ModulesSdkTypes.IMedusaInternalService<
+  protected applicationMethodService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ApplicationMethod>
   >
-  protected promotionRuleService_: ModulesSdkTypes.IMedusaInternalService<
+  protected promotionRuleService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof PromotionRule>
   >
-  protected promotionRuleValueService_: ModulesSdkTypes.IMedusaInternalService<
+  protected promotionRuleValueService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof PromotionRuleValue>
   >
-  protected campaignService_: ModulesSdkTypes.IMedusaInternalService<
+  protected campaignService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof Campaign>
   >
-  protected campaignBudgetService_: ModulesSdkTypes.IMedusaInternalService<
+  protected campaignBudgetService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof CampaignBudget>
   >
 
-  protected campaignBudgetUsageService_: ModulesSdkTypes.IMedusaInternalService<
+  protected campaignBudgetUsageService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof CampaignBudgetUsage>
   >
 
@@ -164,7 +164,7 @@ export default class PromotionModuleService
   protected async listActivePromotions_(
     filters?: FilterablePromotionProps,
     config?: FindConfig<PromotionDTO>,
-    @MedusaContext() sharedContext?: Context
+    @SwitchyardContext() sharedContext?: Context
   ): Promise<InferEntityType<typeof Promotion>[]> {
     // Ensure we share the same now date across all filters
     const now = new Date()
@@ -203,7 +203,7 @@ export default class PromotionModuleService
   protected async registerCampaignBudgetUsageByAttribute_(
     budgetId: string,
     attributeValue: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const [campaignBudgetUsagePerAttributeValue] =
       await this.campaignBudgetUsageService_.list(
@@ -252,7 +252,7 @@ export default class PromotionModuleService
   protected async revertCampaignBudgetUsageByAttribute_(
     budgetId: string,
     attributeValue: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const [campaignBudgetUsagePerAttributeValue] =
       await this.campaignBudgetUsageService_.list(
@@ -299,7 +299,7 @@ export default class PromotionModuleService
   async registerUsage(
     computedActions: PromotionTypes.UsageComputedActions[],
     registrationContext: PromotionTypes.CampaignBudgetUsageContext,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const promotionCodes = computedActions
       .map((computedAction) => computedAction.code)
@@ -479,7 +479,7 @@ export default class PromotionModuleService
   async revertUsage(
     computedActions: PromotionTypes.UsageComputedActions[],
     registrationContext: PromotionTypes.CampaignBudgetUsageContext,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const promotionCodeUsageMap = new Map<string, boolean>()
     const campaignBudgetMap = new Map<string, UpdateCampaignBudgetDTO>()
@@ -632,7 +632,7 @@ export default class PromotionModuleService
     promotionCodes: string[],
     applicationContext: PromotionTypes.ComputeActionContext,
     options: PromotionTypes.ComputeActionOptions = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.ComputeActions[]> {
     const {
       prevent_auto_promotions: preventAutoPromotions,
@@ -947,7 +947,7 @@ export default class PromotionModuleService
     data:
       | PromotionTypes.CreatePromotionDTO
       | PromotionTypes.CreatePromotionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.PromotionDTO | PromotionTypes.PromotionDTO[]> {
     const input = Array.isArray(data) ? data : [data]
     const createdPromotions = await this.createPromotions_(input, sharedContext)
@@ -978,7 +978,7 @@ export default class PromotionModuleService
   @InjectTransactionManager()
   protected async createPromotions_(
     data: PromotionTypes.CreatePromotionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const promotionsData: CreatePromotionDTO[] = []
     const applicationMethodsData: CreateApplicationMethodDTO[] = []
@@ -1237,7 +1237,7 @@ export default class PromotionModuleService
     data:
       | PromotionTypes.UpdatePromotionDTO
       | PromotionTypes.UpdatePromotionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.PromotionDTO | PromotionTypes.PromotionDTO[]> {
     const input = Array.isArray(data) ? data : [data]
     const updatedPromotions = await this.updatePromotions_(input, sharedContext)
@@ -1264,7 +1264,7 @@ export default class PromotionModuleService
   @InjectTransactionManager()
   protected async updatePromotions_(
     data: PromotionTypes.UpdatePromotionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const promotionIds = data.map((d) => d.id)
     const existingPromotions = await this.promotionService_.list(
@@ -1376,7 +1376,7 @@ export default class PromotionModuleService
   // @ts-ignore
   async updatePromotionRules(
     data: PromotionTypes.UpdatePromotionRuleDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.PromotionRuleDTO[]> {
     const updatedPromotionRules = await this.updatePromotionRules_(
       data,
@@ -1393,7 +1393,7 @@ export default class PromotionModuleService
   @InjectTransactionManager()
   protected async updatePromotionRules_(
     data: PromotionTypes.UpdatePromotionRuleDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const promotionRuleIds = data.map((d) => d.id)
 
@@ -1463,7 +1463,7 @@ export default class PromotionModuleService
   async addPromotionRules(
     promotionId: string,
     rulesData: PromotionTypes.CreatePromotionRuleDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.PromotionRuleDTO[]> {
     const promotion = await this.promotionService_.retrieve(promotionId)
 
@@ -1486,7 +1486,7 @@ export default class PromotionModuleService
   async addPromotionTargetRules(
     promotionId: string,
     rulesData: PromotionTypes.CreatePromotionRuleDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.PromotionRuleDTO[]> {
     const promotion = await this.promotionService_.retrieve(promotionId, {
       relations: ["application_method"],
@@ -1520,7 +1520,7 @@ export default class PromotionModuleService
   async addPromotionBuyRules(
     promotionId: string,
     rulesData: PromotionTypes.CreatePromotionRuleDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.PromotionRuleDTO[]> {
     const promotion = await this.promotionService_.retrieve(
       promotionId,
@@ -1558,7 +1558,7 @@ export default class PromotionModuleService
     relation:
       | InferEntityType<typeof Promotion>
       | InferEntityType<typeof ApplicationMethod>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof PromotionRule>[]> {
     const MikroORMApplicationMethod = toMikroORMEntity(ApplicationMethod)
     const createdPromotionRules: InferEntityType<typeof PromotionRule>[] = []
@@ -1621,7 +1621,7 @@ export default class PromotionModuleService
   async removePromotionRules(
     promotionId: string,
     ruleIds: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await this.removePromotionRules_(promotionId, ruleIds, sharedContext)
   }
@@ -1630,7 +1630,7 @@ export default class PromotionModuleService
   protected async removePromotionRules_(
     promotionId: string,
     ruleIds: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const promotion = await this.promotionService_.retrieve(
       promotionId,
@@ -1649,7 +1649,7 @@ export default class PromotionModuleService
   async removePromotionTargetRules(
     promotionId: string,
     ruleIds: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await this.removeApplicationMethodRules_(
       promotionId,
@@ -1663,7 +1663,7 @@ export default class PromotionModuleService
   async removePromotionBuyRules(
     promotionId: string,
     ruleIds: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await this.removeApplicationMethodRules_(
       promotionId,
@@ -1680,7 +1680,7 @@ export default class PromotionModuleService
     relation:
       | ApplicationMethodRuleTypes.TARGET_RULES
       | ApplicationMethodRuleTypes.BUY_RULES,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const promotion = await this.promotionService_.retrieve(
       promotionId,
@@ -1724,7 +1724,7 @@ export default class PromotionModuleService
   // @ts-expect-error
   async createCampaigns(
     data: PromotionTypes.CreateCampaignDTO | PromotionTypes.CreateCampaignDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.CampaignDTO | PromotionTypes.CampaignDTO[]> {
     const input = Array.isArray(data) ? data : [data]
     const createdCampaigns = await this.createCampaigns_(input, sharedContext)
@@ -1743,7 +1743,7 @@ export default class PromotionModuleService
   @InjectTransactionManager()
   protected async createCampaigns_(
     data: PromotionTypes.CreateCampaignDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const campaignsData: CreateCampaignDTO[] = []
     const campaignBudgetsData: CreateCampaignBudgetDTO[] = []
@@ -1836,7 +1836,7 @@ export default class PromotionModuleService
   // @ts-expect-error
   async updateCampaigns(
     data: PromotionTypes.UpdateCampaignDTO | PromotionTypes.UpdateCampaignDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PromotionTypes.CampaignDTO | PromotionTypes.CampaignDTO[]> {
     const input = Array.isArray(data) ? data : [data]
     const updatedCampaigns = await this.updateCampaigns_(input, sharedContext)
@@ -1855,7 +1855,7 @@ export default class PromotionModuleService
   @InjectTransactionManager()
   protected async updateCampaigns_(
     data: PromotionTypes.UpdateCampaignDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const campaignIds = data.map((d) => d.id)
     const campaignsData: UpdateCampaignDTO[] = []
@@ -1929,7 +1929,7 @@ export default class PromotionModuleService
   @EmitEvents()
   async addPromotionsToCampaign(
     data: PromotionTypes.AddPromotionsToCampaignDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<{ ids: string[] }> {
     const ids = await this.addPromotionsToCampaign_(data, sharedContext)
 
@@ -1943,7 +1943,7 @@ export default class PromotionModuleService
   @InjectTransactionManager()
   protected async addPromotionsToCampaign_(
     data: PromotionTypes.AddPromotionsToCampaignDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const { id, promotion_ids: promotionIds = [] } = data
 
@@ -1997,7 +1997,7 @@ export default class PromotionModuleService
   @EmitEvents()
   async removePromotionsFromCampaign(
     data: PromotionTypes.AddPromotionsToCampaignDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<{ ids: string[] }> {
     const ids = await this.removePromotionsFromCampaign_(data, sharedContext)
 
@@ -2007,7 +2007,7 @@ export default class PromotionModuleService
   @InjectTransactionManager()
   protected async removePromotionsFromCampaign_(
     data: PromotionTypes.AddPromotionsToCampaignDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const { id, promotion_ids: promotionIds = [] } = data
 

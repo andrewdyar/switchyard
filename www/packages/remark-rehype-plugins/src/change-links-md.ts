@@ -8,7 +8,7 @@ export const changeLinksToHtmlMdPlugin = (): Transformer => {
     visit(tree as UnistTree, ["link"], (node: UnistNode) => {
       if (
         node.type === "link" &&
-        node.url?.startsWith("https://docs.switchyard.com") &&
+        node.url?.startsWith("https://docs.switchyard.run") &&
         !node.url.endsWith("index.html.md") &&
         !node.url.includes("/api/store") &&
         !node.url.includes("/api/admin")

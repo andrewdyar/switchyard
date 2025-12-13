@@ -1,4 +1,4 @@
-import { SubscriberConfig } from "@switchyard/medusa"
+import { SubscriberConfig } from "@switchyard/core"
 
 const testEventPayloadHandlerMock = jest.fn()
 

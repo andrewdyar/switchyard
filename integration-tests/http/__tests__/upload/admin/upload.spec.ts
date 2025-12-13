@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import FormData from "form-data"
 import fs from "fs/promises"
 import os from "os"
@@ -27,7 +27,7 @@ const getUploadReq = (files: { name: string; content: string }[]) => {
   }
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     afterAll(async () => {
       await fs.rm(path.join(os.tmpdir(), "uploads"), { recursive: true })

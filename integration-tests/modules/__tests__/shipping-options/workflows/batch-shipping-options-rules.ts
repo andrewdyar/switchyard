@@ -2,7 +2,7 @@ import {
   batchShippingOptionRulesWorkflow,
   createShippingOptionsWorkflow,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   BatchWorkflowInput,
   CreateShippingOptionRuleDTO,
@@ -114,7 +114,7 @@ async function createShippingOptionFixture({
   return createdShippingOption
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer }) => {
     let service: IFulfillmentModuleService

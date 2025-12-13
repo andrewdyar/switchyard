@@ -70,10 +70,10 @@ const TWO_MINUTES = 60 * 2
 export const completeCartWorkflowId = "complete-cart"
 /**
  * This workflow completes a cart and places an order for the customer. It's executed by the
- * [Complete Cart Store API Route](https://docs.medusajs.com/api/store#carts_postcartsidcomplete).
+ * [Complete Cart Store API Route](https://docs.switchyard.run/api/store#carts_postcartsidcomplete).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you to wrap custom logic around completing a cart.
- * For example, in the [Subscriptions recipe](https://docs.medusajs.com/resources/recipes/subscriptions/examples/standard#create-workflow),
+ * For example, in the [Subscriptions recipe](https://docs.switchyard.run/resources/recipes/subscriptions/examples/standard#create-workflow),
  * this workflow is used within another workflow that creates a subscription order.
  * 
  * ## Cart Completion Idempotency
@@ -93,7 +93,7 @@ export const completeCartWorkflowId = "complete-cart"
  * digital order.
  * 
  * In such cases, ensure that your workflow's logic checks for existing links or records before creating new ones. You can query the 
- * [entry point of the link](https://docs.medusajs.com/learn/fundamentals/module-links/custom-columns#method-2-using-entry-point)
+ * [entry point of the link](https://docs.switchyard.run/learn/fundamentals/module-links/custom-columns#method-2-using-entry-point)
  * to check for existing links before creating new ones.
  * 
  * For example:
@@ -179,7 +179,7 @@ export const completeCartWorkflowId = "complete-cart"
  * ```ts
  * import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
  * import { SwitchyardError } from "@switchyard/framework/utils"
- * import { cancelOrderWorkflow } from "@switchyard/medusa/core-flows"
+ * import { cancelOrderWorkflow } from "@switchyard/core-flows"
  * 
  * type StepInput = {
  *   order_id: string

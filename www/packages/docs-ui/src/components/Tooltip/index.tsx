@@ -48,7 +48,7 @@ export const Tooltip = forwardRef<HTMLSpanElement, TooltipProps>(
           className={clsx(
             "!text-compact-x-small !shadow-elevation-tooltip dark:!shadow-elevation-tooltip-dark !rounded-docs_DEFAULT",
             "!py-docs_0.25 !z-[399] hidden !px-docs_0.5 lg:block",
-            "!bg-medusa-bg-component",
+            "!bg-switchyard-bg-component",
             "!text-medusa-fg-base text-center",
             tooltipClassName
           )}

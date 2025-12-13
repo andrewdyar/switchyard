@@ -288,7 +288,7 @@
  *                       type: object
  *                       description: The shipping method's data, useful for fulfillment providers.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/resources/commerce-modules/order/concepts#data-property
+ *                         url: https://docs.switchyard.run/resources/commerce-modules/order/concepts#data-property
  *                     amount:
  *                       oneOf:
  *                         - type: string

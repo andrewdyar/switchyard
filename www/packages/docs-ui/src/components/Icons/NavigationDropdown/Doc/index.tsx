@@ -14,7 +14,7 @@ export const NavigationDropdownDocIcon = (props: IconProps) => {
       <rect
         width="20"
         height="20"
-        className="fill-medusa-fg-base dark:fill-medusa-bg-base"
+        className="fill-medusa-fg-base dark:fill-switchyard-bg-base"
       />
       <g clipPath="url(#clip0_9988_95547)">
         <path

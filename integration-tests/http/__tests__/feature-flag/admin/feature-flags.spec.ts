@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,
@@ -6,7 +6,7 @@ import {
 
 jest.setTimeout(30000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("GET /admin/feature-flags", () => {
       it("should return feature flags when unauthenticated", async () => {

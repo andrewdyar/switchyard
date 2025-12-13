@@ -14,7 +14,7 @@
  *     type: object
  *     description: Any data necessary for the payment provider to process the payment.
  *     externalDocs:
- *       url: https://docs.switchyard.com/resources/commerce-modules/payment/payment-session#data-property
+ *       url: https://docs.switchyard.run/resources/commerce-modules/payment/payment-session#data-property
  *       description: Learn more about the payment session's data property
  * x-schemaName: StoreInitializePaymentSession
  * 

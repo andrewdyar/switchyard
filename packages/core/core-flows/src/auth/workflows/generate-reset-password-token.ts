@@ -13,13 +13,13 @@ import type { ProjectConfigOptions } from "@switchyard/framework/types"
 
 /**
  * This workflow generates a reset password token for a user. It's used by the
- * [Generate Reset Password Token for Admin](https://docs.medusajs.com/api/admin#auth_postactor_typeauth_providerresetpassword)
- * and [Generate Reset Password Token for Customer](https://docs.medusajs.com/api/store#auth_postactor_typeauth_providerresetpassword)
+ * [Generate Reset Password Token for Admin](https://docs.switchyard.run/api/admin#auth_postactor_typeauth_providerresetpassword)
+ * and [Generate Reset Password Token for Customer](https://docs.switchyard.run/api/store#auth_postactor_typeauth_providerresetpassword)
  * API Routes.
  *
  * The workflow emits the `auth.password_reset` event, which you can listen to in
- * a [subscriber](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers). Follow
- * [this guide](https://docs.medusajs.com/resources/commerce-modules/auth/reset-password) to learn
+ * a [subscriber](https://docs.switchyard.run/learn/fundamentals/events-and-subscribers). Follow
+ * [this guide](https://docs.switchyard.run/resources/commerce-modules/auth/reset-password) to learn
  * how to handle this event.
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to

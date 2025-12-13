@@ -93,7 +93,7 @@
  *     type: object
  *     description: The shipping option's data, useful for the provider handling fulfillment.
  *     externalDocs:
- *       url: https://docs.switchyard.com/resources/commerce-modules/fulfillment/shipping-option#data-property
+ *       url: https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property
  *   prices:
  *     type: array
  *     description: The shipping option's prices.

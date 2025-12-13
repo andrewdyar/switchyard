@@ -113,7 +113,7 @@ export const WorkflowDiagramStepNode = ({ step }: WorkflowDiagramNodeProps) => {
       >
         <div
           className={clsx(
-            "shadow-borders-base flex w-fit bg-medusa-bg-base",
+            "shadow-borders-base flex w-fit bg-switchyard-bg-base",
             "items-center rounded-docs_sm py-docs_0.125 px-docs_0.5",
             (step.type === "hook" || step.when) && "gap-x-docs_0.125"
           )}

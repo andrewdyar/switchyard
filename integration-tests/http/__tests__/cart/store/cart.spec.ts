@@ -1,5 +1,5 @@
 import { createCartCreditLinesWorkflow } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   Modules,
   PriceListStatus,
@@ -22,7 +22,7 @@ import { switchyardTshirtProduct } from "../../../__fixtures__/product"
 jest.setTimeout(100000)
 
 const env = {}
-const adminHeaders = { headers: { "x-medusa-access-token": "test_token" } }
+const adminHeaders = { headers: { "x-switchyard-access-token": "test_token" } }
 
 const shippingAddressData = {
   address_1: "test address 1",
@@ -33,7 +33,7 @@ const shippingAddressData = {
   postal_code: "94016",
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Store Carts API", () => {
@@ -204,7 +204,7 @@ medusaIntegrationTestRunner({
 
         it("should successfully create a cart with a line item with quantity and calculate prices based on the correct quantity", async () => {
           const productData = {
-            title: "Medusa T-Shirt based quantity",
+            title: "Switchyard T-Shirt based quantity",
             handle: "t-shirt-with-quantity-prices",
             status: ProductStatus.PUBLISHED,
             options: [
@@ -269,7 +269,7 @@ medusaIntegrationTestRunner({
               items: [
                 expect.objectContaining({
                   quantity: 6,
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   unit_price: 1000,
                   updated_at: expect.any(String),
                   variant_barcode: null,
@@ -298,7 +298,7 @@ medusaIntegrationTestRunner({
 
         it("should successfully create a cart with a line items for the same variant with different quantities and calculate prices based on the correct quantity", async () => {
           const productData = {
-            title: "Medusa T-Shirt based quantity",
+            title: "Switchyard T-Shirt based quantity",
             handle: "t-shirt-with-quantity-prices",
             status: ProductStatus.PUBLISHED,
             options: [
@@ -363,7 +363,7 @@ medusaIntegrationTestRunner({
               items: [
                 expect.objectContaining({
                   quantity: 6,
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   unit_price: 1000,
                   updated_at: expect.any(String),
                   variant_barcode: null,
@@ -409,7 +409,7 @@ medusaIntegrationTestRunner({
               items: expect.arrayContaining([
                 expect.objectContaining({
                   quantity: 6,
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   unit_price: 1000,
                   updated_at: expect.any(String),
                   variant_barcode: null,
@@ -419,7 +419,7 @@ medusaIntegrationTestRunner({
                 }),
                 expect.objectContaining({
                   quantity: 1,
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   unit_price: 1500,
                   updated_at: expect.any(String),
                   variant_barcode: null,
@@ -700,7 +700,7 @@ medusaIntegrationTestRunner({
 
         it("should add item to cart and calculate prices based on item quantity", async () => {
           const productData = {
-            title: "Medusa T-Shirt based quantity",
+            title: "Switchyard T-Shirt based quantity",
             handle: "t-shirt-with-quantity-prices",
             status: ProductStatus.PUBLISHED,
             options: [
@@ -810,7 +810,7 @@ medusaIntegrationTestRunner({
                   product_handle: "t-shirt-with-quantity-prices",
                   product_id: expect.any(String),
                   product_subtitle: null,
-                  product_title: "Medusa T-Shirt based quantity",
+                  product_title: "Switchyard T-Shirt based quantity",
                   product_type: null,
                   product_type_id: null,
                   quantity: 1,
@@ -825,7 +825,7 @@ medusaIntegrationTestRunner({
                     },
                   ],
                   thumbnail: null,
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   unit_price: 1500,
                   updated_at: expect.any(String),
                   variant_barcode: null,
@@ -932,7 +932,7 @@ medusaIntegrationTestRunner({
                   product_handle: "t-shirt-with-quantity-prices",
                   product_id: expect.any(String),
                   product_subtitle: null,
-                  product_title: "Medusa T-Shirt based quantity",
+                  product_title: "Switchyard T-Shirt based quantity",
                   product_type: null,
                   product_type_id: null,
                   quantity: 6,
@@ -947,7 +947,7 @@ medusaIntegrationTestRunner({
                     },
                   ],
                   thumbnail: null,
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   unit_price: 1000,
                   updated_at: expect.any(String),
                   variant_barcode: null,
@@ -1003,7 +1003,7 @@ medusaIntegrationTestRunner({
 
         it("should update a cart line item quantity and calculate prices based the new item quantity", async () => {
           const productData = {
-            title: "Medusa T-Shirt based quantity",
+            title: "Switchyard T-Shirt based quantity",
             handle: "t-shirt-with-quantity-prices",
             status: ProductStatus.PUBLISHED,
             options: [
@@ -1083,7 +1083,7 @@ medusaIntegrationTestRunner({
               items: [
                 expect.objectContaining({
                   quantity: 1,
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   unit_price: 1500,
                   updated_at: expect.any(String),
                   variant_barcode: null,
@@ -1138,7 +1138,7 @@ medusaIntegrationTestRunner({
               items: [
                 expect.objectContaining({
                   quantity: 6,
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   unit_price: 1000,
                   updated_at: expect.any(String),
                   variant_barcode: null,
@@ -1403,7 +1403,7 @@ medusaIntegrationTestRunner({
                   unit_price: 1500,
                   compare_at_unit_price: null,
                   is_tax_inclusive: true,
-                  title: "Medusa T-Shirt",
+                  title: "Switchyard T-Shirt",
                   quantity: 2,
                   tax_lines: [
                     expect.objectContaining({
@@ -1438,7 +1438,7 @@ medusaIntegrationTestRunner({
                   compare_at_unit_price: null,
                   is_tax_inclusive: true,
                   quantity: 2,
-                  title: "Medusa T-Shirt",
+                  title: "Switchyard T-Shirt",
                   tax_lines: [
                     expect.objectContaining({
                       description: "CA Default Rate",
@@ -1453,7 +1453,7 @@ medusaIntegrationTestRunner({
                   compare_at_unit_price: null,
                   is_tax_inclusive: true,
                   quantity: 1,
-                  title: "Medusa T-Shirt",
+                  title: "Switchyard T-Shirt",
                   tax_lines: [
                     expect.objectContaining({
                       description: "CA Default Rate",
@@ -3747,7 +3747,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  title: "Medusa T-Shirt not discountable",
+                  title: "Switchyard T-Shirt not discountable",
                   status: ProductStatus.PUBLISHED,
                   handle: "t-shirt-not-discountable",
                   discountable: false,

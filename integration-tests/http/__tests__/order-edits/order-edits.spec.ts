@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IOrderModuleService, IPromotionModuleService } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
@@ -19,7 +19,7 @@ import { switchyardTshirtProduct } from "../../__fixtures__/product"
 
 jest.setTimeout(300000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let order
     let taxLine
@@ -767,7 +767,7 @@ medusaIntegrationTestRunner({
           email: "foo@bar.com",
           items: [
             {
-              title: "Medusa T-shirt",
+              title: "Switchyard T-shirt",
               subtitle: "L shirt",
               variant_id: product.variants.find((v) => v.title === "L shirt")
                 .id,
@@ -775,7 +775,7 @@ medusaIntegrationTestRunner({
               unit_price: 25,
             },
             {
-              title: "Medusa T-shirt",
+              title: "Switchyard T-shirt",
               subtitle: "M shirt",
               variant_id: product.variants.find((v) => v.title === "M shirt")
                 .id,

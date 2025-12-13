@@ -50,7 +50,7 @@
  *     type: object
  *     description: Data useful for the fulfillment provider handling it. This is taken from the associated shipping option.
  *     externalDocs:
- *       url: https://docs.switchyard.com/resources/commerce-modules/fulfillment/shipping-option#data-property
+ *       url: https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property
  *   provider_id:
  *     type: string
  *     title: provider_id
@@ -63,7 +63,7 @@
  *     type: object
  *     description: The fulfillment's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.switchyard.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.run/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  *   created_at:
  *     type: string

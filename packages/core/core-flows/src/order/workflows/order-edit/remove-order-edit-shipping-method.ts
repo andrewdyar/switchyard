@@ -43,8 +43,8 @@ export type RemoveOrderEditShippingMethodValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -88,7 +88,7 @@ export const removeOrderEditShippingMethodWorkflowId =
   "remove-order-edit-shipping-method"
 /**
  * This workflow removes a shipping method of an order edit. It's used by the
- * [Remove Shipping Method Admin API Route](https://docs.medusajs.com/api/admin#order-edits_deleteordereditsidshippingmethodaction_id).
+ * [Remove Shipping Method Admin API Route](https://docs.switchyard.run/api/admin#order-edits_deleteordereditsidshippingmethodaction_id).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to remove a
  * shipping method from an order edit in your custom flows.

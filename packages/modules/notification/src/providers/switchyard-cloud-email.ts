@@ -3,7 +3,7 @@ import { AbstractNotificationProviderService } from "@switchyard/framework/utils
 import { MedusaCloudEmailOptions } from "@types"
 
 export class MedusaCloudEmailNotificationProvider extends AbstractNotificationProviderService {
-  static identifier = "notification-medusa-cloud-email"
+  static identifier = "notification-switchyard-cloud-email"
   protected options_: MedusaCloudEmailOptions
   protected logger_: Logger
 

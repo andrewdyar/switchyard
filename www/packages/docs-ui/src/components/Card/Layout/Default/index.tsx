@@ -49,7 +49,7 @@ export const CardDefaultLayout = ({
   return (
     <div
       className={clsx(
-        "bg-medusa-bg-component w-full rounded-docs_DEFAULT",
+        "bg-switchyard-bg-component w-full rounded-docs_DEFAULT",
         "shadow-elevation-card-rest dark:shadow-elevation-card-rest-dark",
         "py-docs_0.5 px-docs_0.75 relative",
         "flex justify-start items-center gap-docs_0.75 transition-shadow",
@@ -61,7 +61,7 @@ export const CardDefaultLayout = ({
       {icon && (
         <BorderedIcon
           wrapperClassName={clsx(
-            "p-[4.5px] bg-medusa-bg-component-hover",
+            "p-[4.5px] bg-switchyard-bg-component-hover",
             iconClassName
           )}
           IconComponent={icon}
@@ -69,7 +69,7 @@ export const CardDefaultLayout = ({
       )}
       {image && (
         <BorderedIcon
-          wrapperClassName={clsx("bg-medusa-bg-base", iconClassName)}
+          wrapperClassName={clsx("bg-switchyard-bg-base", iconClassName)}
           icon={image}
         />
       )}

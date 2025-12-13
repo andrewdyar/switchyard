@@ -1,5 +1,5 @@
 import { SwitchyardContainer } from "@switchyard/types"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,
@@ -10,7 +10,7 @@ import { createAuthenticatedCustomer } from "../../../../modules/helpers/create-
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, api, getContainer }) => {
     let appContainer: SwitchyardContainer
     let storeHeaders
@@ -28,7 +28,7 @@ medusaIntegrationTestRunner({
           .post(
             "/store/customers",
             {
-              email: "newcustomer@medusa.js",
+              email: "newcustomer@switchyard.run",
               first_name: "John",
               last_name: "Doe",
             },
@@ -41,7 +41,7 @@ medusaIntegrationTestRunner({
 
       it("should successfully create a customer with an identity", async () => {
         const signup = await api.post("/auth/customer/emailpass/register", {
-          email: "newcustomer@medusa.js",
+          email: "newcustomer@switchyard.run",
           password: "secret_password",
         })
 
@@ -51,7 +51,7 @@ medusaIntegrationTestRunner({
         const customer = await api.post(
           "/store/customers",
           {
-            email: "newcustomer@medusa.js",
+            email: "newcustomer@switchyard.run",
             first_name: "John",
             last_name: "Doe",
             metadata: {
@@ -72,7 +72,7 @@ medusaIntegrationTestRunner({
         expect(customer.status).toEqual(200)
         expect(customer.data).toEqual({
           customer: expect.objectContaining({
-            email: "newcustomer@medusa.js",
+            email: "newcustomer@switchyard.run",
             first_name: "John",
             last_name: "Doe",
             has_account: true,
@@ -90,7 +90,7 @@ medusaIntegrationTestRunner({
         const nonRegisteredCustomer = await api.post(
           "/admin/customers",
           {
-            email: "newcustomer@medusa.js",
+            email: "newcustomer@switchyard.run",
             first_name: "John",
             last_name: "Doe",
           },
@@ -100,7 +100,7 @@ medusaIntegrationTestRunner({
         expect(nonRegisteredCustomer.status).toEqual(200)
         expect(nonRegisteredCustomer.data).toEqual({
           customer: expect.objectContaining({
-            email: "newcustomer@medusa.js",
+            email: "newcustomer@switchyard.run",
             first_name: "John",
             last_name: "Doe",
             has_account: false,
@@ -108,7 +108,7 @@ medusaIntegrationTestRunner({
         })
 
         const signup = await api.post("/auth/customer/emailpass/register", {
-          email: "newcustomer@medusa.js",
+          email: "newcustomer@switchyard.run",
           password: "secret_password",
         })
 
@@ -118,7 +118,7 @@ medusaIntegrationTestRunner({
         const customer = await api.post(
           "/store/customers",
           {
-            email: "newcustomer@medusa.js",
+            email: "newcustomer@switchyard.run",
             first_name: "Jane",
             last_name: "Doe",
           },
@@ -133,7 +133,7 @@ medusaIntegrationTestRunner({
         expect(customer.status).toEqual(200)
         expect(customer.data).toEqual({
           customer: expect.objectContaining({
-            email: "newcustomer@medusa.js",
+            email: "newcustomer@switchyard.run",
             first_name: "Jane",
             last_name: "Doe",
             has_account: true,
@@ -150,13 +150,13 @@ medusaIntegrationTestRunner({
             expect.objectContaining({
               first_name: "Jane",
               last_name: "Doe",
-              email: "newcustomer@medusa.js",
+              email: "newcustomer@switchyard.run",
               has_account: true,
             }),
             expect.objectContaining({
               first_name: "John",
               last_name: "Doe",
-              email: "newcustomer@medusa.js",
+              email: "newcustomer@switchyard.run",
               has_account: false,
             }),
           ])
@@ -167,7 +167,7 @@ medusaIntegrationTestRunner({
         const firstSignup = await api.post(
           "/auth/customer/emailpass/register",
           {
-            email: "newcustomer@medusa.js",
+            email: "newcustomer@switchyard.run",
             password: "secret_password",
           }
         )
@@ -178,7 +178,7 @@ medusaIntegrationTestRunner({
         await api.post(
           "/store/customers",
           {
-            email: "newcustomer@medusa.js",
+            email: "newcustomer@switchyard.run",
             first_name: "John",
             last_name: "Doe",
           },
@@ -191,7 +191,7 @@ medusaIntegrationTestRunner({
         )
 
         const firstSignin = await api.post("/auth/customer/emailpass", {
-          email: "newcustomer@medusa.js",
+          email: "newcustomer@switchyard.run",
           password: "secret_password",
         })
 
@@ -199,7 +199,7 @@ medusaIntegrationTestRunner({
           .post(
             "/store/customers",
             {
-              email: "newcustomer@medusa.js",
+              email: "newcustomer@switchyard.run",
               first_name: "Jane",
               last_name: "Doe",
             },
@@ -224,7 +224,7 @@ medusaIntegrationTestRunner({
             .post(
               "/store/customers",
               {
-                email: "newcustomer@medusa.js",
+                email: "newcustomer@switchyard.run",
                 first_name: "John",
                 last_name: "Doe",
               },
@@ -246,7 +246,7 @@ medusaIntegrationTestRunner({
             .post(
               "/store/customers",
               {
-                email: "newcustomer@medusa.js",
+                email: "newcustomer@switchyard.run",
                 first_name: "John",
                 last_name: "Doe",
               },

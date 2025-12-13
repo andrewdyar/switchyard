@@ -27,7 +27,7 @@ export type UpdateProductTagsWorkflowInput = {
 export const updateProductTagsWorkflowId = "update-product-tags"
 /**
  * This workflow updates one or more product tags. It's used by the
- * [Update Product Tag Admin API Route](https://docs.medusajs.com/api/admin#product-tags_postproducttagsid).
+ * [Update Product Tag Admin API Route](https://docs.switchyard.run/api/admin#product-tags_postproducttagsid).
  *
  * This workflow has a hook that allows you to perform custom actions on the updated product tags. For example, you can pass under `additional_data` custom data that
  * allows you to update custom data models linked to the product tags.

@@ -16,7 +16,7 @@ export class WorkflowExecution {
 
   /**
    * This method retrieves a list of workflow executions. It sends a request to the
-   * [List Workflow Executions](https://docs.medusajs.com/api/admin#workflows-executions_getworkflowsexecutions)
+   * [List Workflow Executions](https://docs.switchyard.run/api/admin#workflows-executions_getworkflowsexecutions)
    * API route.
    * 
    * @param queryParams - Filters and pagination configurations.
@@ -59,7 +59,7 @@ export class WorkflowExecution {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/admin#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/admin#select-fields-and-relations).
    */
   async list(
     queryParams?: HttpTypes.AdminGetWorkflowExecutionsParams,
@@ -76,7 +76,7 @@ export class WorkflowExecution {
 
   /**
    * This method retrieves a workflow execution by its ID. It sends a request to the
-   * [Get Workflow Execution](https://docs.medusajs.com/api/admin#workflows-executions_getworkflowsexecutionsworkflow_idtransaction_id)
+   * [Get Workflow Execution](https://docs.switchyard.run/api/admin#workflows-executions_getworkflowsexecutionsworkflow_idtransaction_id)
    * API route.
    * 
    * @param id - The ID of the workflow execution to retrieve.

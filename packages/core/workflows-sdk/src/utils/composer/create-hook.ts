@@ -39,7 +39,7 @@ export type Hook<Name extends string, Input, Output> = {
  *
  * A handler hook can later be registered to consume the hook and perform custom functionality.
  *
- * Learn more in [this documentation](https://docs.medusajs.com/learn/fundamentals/workflows/workflow-hooks).
+ * Learn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/workflows/workflow-hooks).
  *
  * @param name - The hook's name. This is used when the hook handler is registered to consume the workflow.
  * @param hookInput - The input to pass to the hook handler.

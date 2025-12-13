@@ -18,7 +18,7 @@ export default async function getCoreFlowsRefSidebarChildren(): Promise<
     {
       type: "link",
       title: "Overview",
-      path: "/medusa-workflows-reference",
+      path: "/switchyard-workflows-reference",
       loaded: true,
       isPathHref: true,
     },

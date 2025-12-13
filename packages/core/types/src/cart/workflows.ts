@@ -107,7 +107,7 @@ export interface CreateCartCreateLineItemDTO {
 
   /**
    * Whether the line item's price is tax inclusive. Learn more in
-   * [this documentation](https://docs.medusajs.com/resources/commerce-modules/pricing/tax-inclusive-pricing)
+   * [this documentation](https://docs.switchyard.run/resources/commerce-modules/pricing/tax-inclusive-pricing)
    */
   is_tax_inclusive?: boolean
 
@@ -423,7 +423,7 @@ export interface ConfirmVariantInventoryWorkflowInputDTO {
      */
     id: string
     /**
-     * Whether Medusa manages the inventory of the variant. If disabled, the
+     * Whether Switchyard manages the inventory of the variant. If disabled, the
      * variant is always considered in stock.
      */
     manage_inventory: boolean
@@ -440,8 +440,8 @@ export interface ConfirmVariantInventoryWorkflowInputDTO {
        */
       variant_id: string
       /**
-       * The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Medusa checks the availability of the quantity multiplied by the
-       * value set for `required_quantity`. When the customer orders the quantity, Medusa reserves the ordered quantity multiplied by the value set for `required_quantity`.
+       * The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Switchyard checks the availability of the quantity multiplied by the
+       * value set for `required_quantity`. When the customer orders the quantity, Switchyard reserves the ordered quantity multiplied by the value set for `required_quantity`.
        */
       required_quantity: BigNumberInput
       /**

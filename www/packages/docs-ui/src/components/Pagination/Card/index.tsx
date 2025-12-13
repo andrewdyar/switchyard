@@ -23,7 +23,7 @@ export const PaginationCard = ({
       className={clsx(
         "relative flex-1",
         "py-docs_0.5 px-docs_0.75 rounded",
-        "bg-medusa-bg-component hover:bg-medusa-bg-component-hover",
+        "bg-switchyard-bg-component hover:bg-switchyard-bg-component-hover",
         "shadow-elevation-card-rest dark:shadow-elevation-card-rest-dark",
         "hover:shadow-elevation-card-hover dark:shadow-elevation-card-hover-dark",
         className

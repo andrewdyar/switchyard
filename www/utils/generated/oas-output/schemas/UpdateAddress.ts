@@ -63,7 +63,7 @@
  *     type: object
  *     description: The address's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.switchyard.com/api/store#manage-metadata
+ *       url: https://docs.switchyard.run/api/store#manage-metadata
  *       description: Learn how to manage metadata
  * 
 */

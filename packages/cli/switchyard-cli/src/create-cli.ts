@@ -37,7 +37,7 @@ function buildLocalCommands(cli, isLocalProject) {
     }
 
     try {
-      const cmdPath = resolveCwd.silent(`@switchyard/medusa/commands/${command}`)!
+      const cmdPath = resolveCwd.silent(`@switchyard/commands/${command}`)!
       return require(cmdPath).default
     } catch (err) {
       console.error(err)
@@ -106,14 +106,14 @@ function buildLocalCommands(cli, isLocalProject) {
           })
           .option(`v2`, {
             type: `boolean`,
-            describe: `Install Medusa with the V2 feature flag enabled. WARNING: Medusa V2 is still in development and shouldn't be used in production.`,
+            describe: `Install Switchyard with the V2 feature flag enabled. WARNING: Switchyard V2 is still in development and shouldn't be used in production.`,
             default: false,
           })
           .option(`branch`, {
             type: `string`,
             describe: `The branch of the git repository to clone.`,
           }),
-      desc: `Create a new Medusa project.`,
+      desc: `Create a new Switchyard project.`,
       handler: handlerP(newStarter),
     })
     .command({
@@ -264,7 +264,7 @@ function buildLocalCommands(cli, isLocalProject) {
     })
     .command({
       command: "db:sync-links",
-      desc: "Sync database schema with the links defined by your application and Medusa core",
+      desc: "Sync database schema with the links defined by your application and Switchyard core",
       builder: (builder) => {
         builder.option("execute-all", {
           type: "boolean",
@@ -525,8 +525,8 @@ function isLocalMedusaProject() {
       `./package.json`
     ))
     inMedusaProject = !!(
-      (dependencies && dependencies["@switchyard/medusa"]) ||
-      (devDependencies && devDependencies["@switchyard/medusa"])
+      (dependencies && dependencies["@switchyard/core"]) ||
+      (devDependencies && devDependencies["@switchyard/core"])
     )
   } catch (err) {
     // ignore
@@ -544,7 +544,7 @@ function getVersionInfo() {
       medusaVersion = require(path.join(
         process.cwd(),
         `node_modules`,
-        `@switchyard/medusa`,
+        `@switchyard/core`,
         `package.json`
       )).version
     } catch (e) {
@@ -555,11 +555,11 @@ function getVersionInfo() {
       medusaVersion = `unknown`
     }
 
-    return `Medusa CLI version: ${version}
-Medusa version: ${medusaVersion}
-  Note: this is the Medusa version for the site at: ${process.cwd()}`
+    return `Switchyard CLI version: ${version}
+Switchyard version: ${medusaVersion}
+  Note: this is the Switchyard version for the site at: ${process.cwd()}`
   } else {
-    return `Medusa CLI version: ${version}`
+    return `Switchyard CLI version: ${version}`
   }
 }
 
@@ -597,7 +597,7 @@ export default (argv) => {
   try {
     cli.version(
       `version`,
-      `Show the version of the Medusa CLI and the Medusa package in the current project`,
+      `Show the version of the Switchyard CLI and the Switchyard package in the current project`,
       getVersionInfo()
     )
   } catch (e) {

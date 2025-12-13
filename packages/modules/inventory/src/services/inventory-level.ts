@@ -9,7 +9,7 @@ type InjectedDependencies = {
   inventoryLevelRepository: InventoryLevelRepository
 }
 
-export default class InventoryLevelService extends ModulesSdkUtils.MedusaInternalService<
+export default class InventoryLevelService extends ModulesSdkUtils.SwitchyardInternalService<
   InjectedDependencies,
   typeof InventoryLevel
 >(InventoryLevel) {

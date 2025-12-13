@@ -30,14 +30,14 @@ import { buildQuery } from "./build-query"
 import {
   InjectManager,
   InjectTransactionManager,
-  MedusaContext,
+  SwitchyardContext,
 } from "./decorators"
 import { MedusaMikroOrmEventSubscriber } from "./create-medusa-mikro-orm-event-subscriber"
 
 type InternalService = {
   new <TContainer extends object = object, TEntity extends object = any>(
     container: TContainer
-  ): ModulesSdkTypes.IMedusaInternalService<TEntity, TContainer>
+  ): ModulesSdkTypes.ISwitchyardInternalService<TEntity, TContainer>
 
   setEventSubscriber(subscriber: MedusaMikroOrmEventSubscriber): void
 }
@@ -67,22 +67,22 @@ export function registerInternalServiceEventSubscriber(
   }
 }
 
-export const MedusaInternalServiceSymbol = Symbol.for(
-  "MedusaInternalServiceSymbol"
+export const SwitchyardInternalServiceSymbol = Symbol.for(
+  "SwitchyardInternalServiceSymbol"
 )
 
 /**
- * Check if a value is a Medusa internal service
+ * Check if a value is a Switchyard internal service
  * @param value
  */
-export function isMedusaInternalService(value: any): value is InternalService {
+export function isSwitchyardInternalService(value: any): value is InternalService {
   return (
-    !!value?.[MedusaInternalServiceSymbol] ||
-    !!value?.prototype?.[MedusaInternalServiceSymbol]
+    !!value?.[SwitchyardInternalServiceSymbol] ||
+    !!value?.prototype?.[SwitchyardInternalServiceSymbol]
   )
 }
 
-export function MedusaInternalService<
+export function SwitchyardInternalService<
   TContainer extends object = object,
   TEntity extends object = any
 >(rawModel: any): InternalService {
@@ -94,9 +94,9 @@ export function MedusaInternalService<
   const propertyRepositoryName = `__${injectedRepositoryName}__`
 
   class AbstractService_
-    implements ModulesSdkTypes.IMedusaInternalService<TEntity, TContainer>
+    implements ModulesSdkTypes.ISwitchyardInternalService<TEntity, TContainer>
   {
-    [MedusaInternalServiceSymbol] = true
+    [SwitchyardInternalServiceSymbol] = true
 
     #eventSubscriber?: MedusaMikroOrmEventSubscriber
 
@@ -159,7 +159,7 @@ export function MedusaInternalService<
     async retrieve(
       idOrObject: string | object,
       config: FindConfig<InferEntityType<TEntity>> = {},
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<InferEntityType<TEntity>> {
       const primaryKeys = AbstractService_.retrievePrimaryKeys(model)
 
@@ -223,7 +223,7 @@ export function MedusaInternalService<
     async list(
       filters: FilterQuery<any> | BaseFilterable<FilterQuery<any>> = {},
       config: FindConfig<any> = {},
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<InferEntityType<TEntity>[]> {
       AbstractService_.applyDefaultOrdering(config)
       AbstractService_.applyFreeTextSearchFilter(filters, config)
@@ -240,7 +240,7 @@ export function MedusaInternalService<
     async listAndCount(
       filters: FilterQuery<any> | BaseFilterable<FilterQuery<any>> = {},
       config: FindConfig<any> = {},
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<[InferEntityType<TEntity>[], number]> {
       AbstractService_.applyDefaultOrdering(config)
       AbstractService_.applyFreeTextSearchFilter(filters, config)
@@ -265,7 +265,7 @@ export function MedusaInternalService<
     @InjectTransactionManager(propertyRepositoryName)
     async create(
       data: any | any[],
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<InferEntityType<TEntity> | InferEntityType<TEntity>[]> {
       if (!isDefined(data) || (Array.isArray(data) && data.length === 0)) {
         return (Array.isArray(data) ? [] : void 0) as
@@ -307,7 +307,7 @@ export function MedusaInternalService<
     @InjectTransactionManager(propertyRepositoryName)
     async update(
       input: any | any[] | SelectorAndData | SelectorAndData[],
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<InferEntityType<TEntity> | InferEntityType<TEntity>[]> {
       if (!isDefined(input) || (Array.isArray(input) && input.length === 0)) {
         return (Array.isArray(input) ? [] : void 0) as
@@ -470,7 +470,7 @@ export function MedusaInternalService<
         | {
             selector: FilterQuery<any> | BaseFilterable<FilterQuery<any>>
           },
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<string[]> {
       if (
         !isDefined(idOrSelector) ||
@@ -564,7 +564,7 @@ export function MedusaInternalService<
         | string[]
         | InternalFilterQuery
         | InternalFilterQuery[],
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<[InferEntityType<TEntity>[], Record<string, unknown[]>]> {
       if (
         (Array.isArray(idsOrFilter) && !idsOrFilter.length) ||
@@ -587,7 +587,7 @@ export function MedusaInternalService<
     @InjectTransactionManager(propertyRepositoryName)
     async restore(
       idsOrFilter: string[] | InternalFilterQuery,
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<[InferEntityType<TEntity>[], Record<string, unknown[]>]> {
       return await this[propertyRepositoryName].restore(
         idsOrFilter,
@@ -607,7 +607,7 @@ export function MedusaInternalService<
     @InjectTransactionManager(propertyRepositoryName)
     async upsert(
       data: any | any[],
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<InferEntityType<TEntity> | InferEntityType<TEntity>[]> {
       registerInternalServiceEventSubscriber(
         sharedContext,
@@ -645,7 +645,7 @@ export function MedusaInternalService<
       config: UpsertWithReplaceConfig<InferEntityType<TEntity>> = {
         relations: [],
       },
-      @MedusaContext() sharedContext: Context = {}
+      @SwitchyardContext() sharedContext: Context = {}
     ): Promise<{
       entities: InferEntityType<TEntity> | InferEntityType<TEntity>[]
       performedActions: PerformedActions

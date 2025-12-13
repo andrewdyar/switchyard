@@ -34,7 +34,7 @@ import {
   isPresent,
   isString,
   MathBN,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   ModulesSdkUtils,
   PriceListType,
@@ -60,12 +60,12 @@ import { joinerConfig } from "../joiner-config"
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
   pricingRepository: PricingRepositoryService
-  priceSetService: ModulesSdkTypes.IMedusaInternalService<any>
-  priceRuleService: ModulesSdkTypes.IMedusaInternalService<any>
-  priceService: ModulesSdkTypes.IMedusaInternalService<any>
-  priceListService: ModulesSdkTypes.IMedusaInternalService<any>
-  pricePreferenceService: ModulesSdkTypes.IMedusaInternalService<any>
-  priceListRuleService: ModulesSdkTypes.IMedusaInternalService<any>
+  priceSetService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  priceRuleService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  priceService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  priceListService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  pricePreferenceService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  priceListRuleService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 const generateMethodForModels = {
@@ -100,22 +100,22 @@ export default class PricingModuleService
   protected readonly pricingRepository_: PricingRepositoryService & {
     clearAvailableAttributes?: () => Promise<void>
   }
-  protected readonly priceSetService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly priceSetService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof PriceSet>
   >
-  protected readonly priceRuleService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly priceRuleService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof PriceRule>
   >
-  protected readonly priceService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly priceService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof Price>
   >
-  protected readonly priceListService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly priceListService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof PriceList>
   >
-  protected readonly priceListRuleService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly priceListRuleService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof PriceListRule>
   >
-  protected readonly pricePreferenceService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly pricePreferenceService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof PricePreference>
   >
 
@@ -245,7 +245,7 @@ export default class PricingModuleService
   async listPriceSets(
     filters: PricingTypes.FilterablePriceSetProps = {},
     config: FindConfig<PricingTypes.PriceSetDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PriceSetDTO[]> {
     const normalizedConfig = this.normalizePriceSetConfig(config)
     const pricingContext = this.setupCalculatedPriceConfig_(
@@ -286,7 +286,7 @@ export default class PricingModuleService
   async listAndCountPriceSets(
     filters: PricingTypes.FilterablePriceSetProps = {},
     config: FindConfig<PricingTypes.PriceSetDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<[PriceSetDTO[], number]> {
     const normalizedConfig = this.normalizePriceSetConfig(config)
     const pricingContext = this.setupCalculatedPriceConfig_(
@@ -389,7 +389,7 @@ export default class PricingModuleService
   async calculatePrices(
     pricingFilters: PricingFilters,
     pricingContext: PricingContext = { context: {} },
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricingTypes.CalculatedPriceSet[]> {
     const results = await this.pricingRepository_.calculatePrices(
       pricingFilters,
@@ -571,7 +571,7 @@ export default class PricingModuleService
   // @ts-expect-error
   async createPriceSets(
     data: PricingTypes.CreatePriceSetDTO | PricingTypes.CreatePriceSetDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PriceSetDTO | PriceSetDTO[]> {
     const input = Array.isArray(data) ? data : [data]
     const priceSets = await this.createPriceSets_(input, sharedContext)
@@ -612,7 +612,7 @@ export default class PricingModuleService
   @EmitEvents()
   async upsertPriceSets(
     data: UpsertPriceSetDTO | UpsertPriceSetDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PriceSetDTO | PriceSetDTO[]> {
     const result = await this.upsertPriceSets_(data, sharedContext)
 
@@ -628,7 +628,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async upsertPriceSets_(
     data: UpsertPriceSetDTO | UpsertPriceSetDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof PriceSet>[]> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -672,7 +672,7 @@ export default class PricingModuleService
   async updatePriceSets(
     idOrSelector: string | PricingTypes.FilterablePriceSetProps,
     data: PricingTypes.UpdatePriceSetDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PriceSetDTO | PriceSetDTO[]> {
     let normalizedInput: ServiceTypes.UpdatePriceSetInput[] = []
     if (isString(idOrSelector)) {
@@ -711,7 +711,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async updatePriceSets_(
     data: ServiceTypes.UpdatePriceSetInput[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof PriceSet>[]> {
     const normalizedData = await this.normalizeUpdateData(data)
 
@@ -989,7 +989,7 @@ export default class PricingModuleService
   @EmitEvents()
   async addPrices(
     data: AddPricesDTO | AddPricesDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricingTypes.PriceSetDTO[] | PricingTypes.PriceSetDTO> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -1021,7 +1021,7 @@ export default class PricingModuleService
   // @ts-ignore
   async createPriceLists(
     data: PricingTypes.CreatePriceListDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricingTypes.PriceListDTO[]> {
     const priceLists = await this.createPriceLists_(data, sharedContext)
 
@@ -1039,7 +1039,7 @@ export default class PricingModuleService
   // @ts-ignore
   async updatePriceLists(
     data: PricingTypes.UpdatePriceListDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricingTypes.PriceListDTO[]> {
     const priceLists = await this.updatePriceLists_(data, sharedContext)
 
@@ -1056,7 +1056,7 @@ export default class PricingModuleService
   @EmitEvents()
   async updatePriceListPrices(
     data: PricingTypes.UpdatePriceListPricesDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricingTypes.PriceDTO[]> {
     const prices = await this.updatePriceListPrices_(data, sharedContext)
 
@@ -1073,7 +1073,7 @@ export default class PricingModuleService
   @EmitEvents()
   async removePrices(
     ids: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     try {
       await this.removePrices_(ids, sharedContext)
@@ -1086,7 +1086,7 @@ export default class PricingModuleService
   @EmitEvents()
   async addPriceListPrices(
     data: PricingTypes.AddPriceListPricesDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricingTypes.PriceDTO[]> {
     const prices = await this.addPriceListPrices_(data, sharedContext)
 
@@ -1103,7 +1103,7 @@ export default class PricingModuleService
   @EmitEvents()
   async setPriceListRules(
     data: PricingTypes.SetPriceListRulesDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricingTypes.PriceListDTO> {
     const [priceList] = await this.setPriceListRules_([data], sharedContext)
 
@@ -1120,7 +1120,7 @@ export default class PricingModuleService
   @EmitEvents()
   async removePriceListRules(
     data: PricingTypes.RemovePriceListRulesDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricingTypes.PriceListDTO> {
     const [priceList] = await this.removePriceListRules_([data], sharedContext)
 
@@ -1145,7 +1145,7 @@ export default class PricingModuleService
     data:
       | PricingTypes.CreatePricePreferenceDTO
       | PricingTypes.CreatePricePreferenceDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricePreferenceDTO | PricePreferenceDTO[]> {
     const normalized = Array.isArray(data) ? data : [data]
     const preferences = await this.createPricePreferences_(
@@ -1172,7 +1172,7 @@ export default class PricingModuleService
   @EmitEvents()
   async upsertPricePreferences(
     data: UpsertPricePreferenceDTO | UpsertPricePreferenceDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricePreferenceDTO | PricePreferenceDTO[]> {
     const result = await this.upsertPricePreferences_(data, sharedContext)
 
@@ -1184,7 +1184,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async upsertPricePreferences_(
     data: UpsertPricePreferenceDTO | UpsertPricePreferenceDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof PricePreference>[]> {
     const input = Array.isArray(data) ? data : [data]
     const forUpdate = input.filter(
@@ -1231,7 +1231,7 @@ export default class PricingModuleService
   async updatePricePreferences(
     idOrSelector: string | PricingTypes.FilterablePricePreferenceProps,
     data: PricingTypes.UpdatePricePreferenceDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<PricePreferenceDTO | PricePreferenceDTO[]> {
     let normalizedInput: ServiceTypes.UpdatePricePreferenceInput[] = []
     if (isString(idOrSelector)) {
@@ -1270,7 +1270,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async createPricePreferences_(
     data: PricingTypes.CreatePricePreferenceDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const preferences = await this.pricePreferenceService_.create(
       data.map((d) => ({
@@ -1286,7 +1286,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async updatePricePreferences_(
     data: PricingTypes.UpdatePricePreferenceDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const preferences = await this.pricePreferenceService_.update(
       data,
@@ -1299,7 +1299,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async createPriceSets_(
     data: PricingTypes.CreatePriceSetDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const input = Array.isArray(data) ? data : [data]
 
@@ -1323,7 +1323,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async addPrices_(
     input: AddPricesDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const prices = input.flatMap((data) => {
       return data.prices.map((price) => {
@@ -1382,7 +1382,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async createPriceLists_(
     data: PricingTypes.CreatePriceListDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const normalized = this.normalizePriceListDate(data)
 
@@ -1434,7 +1434,7 @@ export default class PricingModuleService
   @InjectTransactionManager()
   protected async updatePriceLists_(
     data: PricingTypes.UpdatePriceListDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const existingPriceLists = await this.priceListService_.list(
       { id: data.map((d) => d.id) },

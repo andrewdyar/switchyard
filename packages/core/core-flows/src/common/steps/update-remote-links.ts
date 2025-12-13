@@ -10,7 +10,7 @@ export const updateRemoteLinksStepId = "update-remote-links-step"
 /**
  * This step updates remote links between two records of linked data models.
  *
- * Learn more in the [Remote Link documentation.](https://docs.medusajs.com/learn/fundamentals/module-links/remote-link#create-link).
+ * Learn more in the [Remote Link documentation.](https://docs.switchyard.run/learn/fundamentals/module-links/remote-link#create-link).
  *
  * @example
  * const data = updateRemoteLinksStep([

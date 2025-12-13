@@ -12,7 +12,7 @@ async function bootstrapApp({ cwd, env = {} } = {}) {
     Object.entries(env).forEach(([k, v]) => (process.env[k] = v))
   }
 
-  const loaders = require("@switchyard/medusa/dist/loaders").default
+  const loaders = require("@switchyard/dist/loaders").default
 
   const { container, shutdown } = await loaders({
     directory: path.resolve(cwd || process.cwd()),

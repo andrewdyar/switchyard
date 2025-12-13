@@ -11,7 +11,7 @@ export const Sweep = model.define("goods_sweep", {
   id: model.id().primaryKey(),
   
   // When/where
-  store_id: model.text(),             // Links to Medusa StockLocation
+  store_id: model.text(),             // Links to Switchyard StockLocation
   sweep_date: model.dateTime(),
   scheduled_start_time: model.dateTime(),
   

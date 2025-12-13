@@ -24,7 +24,7 @@ const run = async () => {
 const generateOASSource = async (outDir, apiType) => {
   const commandParams = ["oas", `--type=${apiType}`, `--out-dir=${outDir}`, "--local"]
   const { all: logs } = await execa(
-    "medusa-oas",
+    "switchyard-oas",
     commandParams,
     { cwd: basePath, all: true }
   )
@@ -57,7 +57,7 @@ const generateDocs = async (srcFile, outDir, isDryRun) => {
 }
 
 const runMedusaOasCommand = async (params) => {
-  const { all: logs } = await execa("medusa-oas", params, {
+  const { all: logs } = await execa("switchyard-oas", params, {
     cwd: basePath,
     all: true,
   })

@@ -4,7 +4,7 @@ import {
   batchProductVariantsWorkflow,
   batchProductVariantsWorkflowId,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IFulfillmentModuleService,
   IProductModuleService,
@@ -13,7 +13,7 @@ import { Modules } from "@switchyard/utils"
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env: {},
   testSuite: ({ getContainer }) => {
     describe("Workflows: Batch Product", () => {

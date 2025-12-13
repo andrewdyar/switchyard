@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   generatePublishableKey,
   generateStoreHeaders,
@@ -8,7 +8,7 @@ jest.setTimeout(50000)
 
 const env = {}
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ api, getContainer }) => {
     describe("Currency - Store", () => {

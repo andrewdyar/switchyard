@@ -38,7 +38,7 @@ export interface CreatePaymentSessionsWorkflowInput {
   customer_id?: string
   /**
    * Custom data relevant for the payment provider to process the payment session.
-   * Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/payment/payment-session#data-property).
+   * Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/payment/payment-session#data-property).
    */
   data?: Record<string, unknown>
 
@@ -52,7 +52,7 @@ export interface CreatePaymentSessionsWorkflowInput {
 export const createPaymentSessionsWorkflowId = "create-payment-sessions"
 /**
  * This workflow creates payment sessions. It's used by the
- * [Initialize Payment Session Store API Route](https://docs.medusajs.com/api/store#payment-collections_postpaymentcollectionsidpaymentsessions).
+ * [Initialize Payment Session Store API Route](https://docs.switchyard.run/api/store#payment-collections_postpaymentcollectionsidpaymentsessions).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you
  * to create payment sessions in your custom flows.

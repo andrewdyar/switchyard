@@ -17,7 +17,7 @@ import {
   startNextjsStarter,
 } from "../nextjs-utils.js"
 import prepareProject from "../prepare-project.js"
-import startMedusa from "../start-medusa.js"
+import startSwitchyard from "../start-medusa.js"
 import {
   BaseProjectCreator,
   ProjectCreator,
@@ -26,7 +26,7 @@ import {
 
 const slugify = slugifyType.default
 
-// Medusa Project Creator
+// Switchyard Project Creator
 export class MedusaProjectCreator
   extends BaseProjectCreator
   implements ProjectCreator
@@ -223,15 +223,15 @@ export class MedusaProjectCreator
         chalk.green(
           `Change to the \`${
             this.projectName
-          }\` directory to explore your Medusa project.${EOL}${EOL}Start your Medusa application again with the following command:${EOL}${EOL}${commandStr}${EOL}${EOL}${
+          }\` directory to explore your Switchyard project.${EOL}${EOL}Start your Switchyard application again with the following command:${EOL}${EOL}${commandStr}${EOL}${EOL}${
             this.inviteToken
-              ? `After you start the Medusa application, you can create an admin user with the URL http://localhost:9000/app/invite?token=${this.inviteToken}&first_run=true${EOL}${EOL}`
+              ? `After you start the Switchyard application, you can create an admin user with the URL http://localhost:9000/app/invite?token=${this.inviteToken}&first_run=true${EOL}${EOL}`
               : ""
           }${
             this.nextjsDirectory?.length
               ? `The Next.js Starter Storefront was installed in the \`${this.nextjsDirectory}\` directory. Change to that directory and start it with the following command:${EOL}${EOL}${commandStr}${EOL}${EOL}`
               : ""
-          }Check out the Medusa documentation to start your development:${EOL}${EOL}https://docs.medusajs.com/${EOL}${EOL}Star us on GitHub if you like what we're building:${EOL}${EOL}https://github.com/medusajs/medusa/stargazers`
+          }Check out the Switchyard documentation to start your development:${EOL}${EOL}https://docs.switchyard.run/${EOL}${EOL}Star us on GitHub if you like what we're building:${EOL}${EOL}https://github.com/medusajs/medusa/stargazers`
         ),
         {
           titleAlignment: "center",

@@ -3,7 +3,7 @@ import {
   cancelOrderWorkflow,
   createOrderFulfillmentWorkflow,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IOrderModuleService,
   InventoryItemDTO,
@@ -24,7 +24,7 @@ jest.setTimeout(500000)
 
 const env = {}
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer }) => {
     let container

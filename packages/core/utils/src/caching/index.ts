@@ -1,5 +1,5 @@
 import { ICachingModuleService, Logger, SwitchyardContainer } from "@switchyard/types"
-import { MedusaContextType, Modules } from "../modules-sdk"
+import { SwitchyardContextType, Modules } from "../modules-sdk"
 import { FeatureFlag } from "../feature-flags"
 import { ContainerRegistrationKeys, isObject } from "../common"
 
@@ -188,7 +188,7 @@ export function Cached<
                   __type,
                   ...rest
                 } = arg as any
-                if (__type === MedusaContextType) {
+                if (__type === SwitchyardContextType) {
                   return
                 }
                 return rest

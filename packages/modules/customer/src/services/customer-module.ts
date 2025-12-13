@@ -18,7 +18,7 @@ import {
   InjectManager,
   InjectTransactionManager,
   isString,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardService,
 } from "@switchyard/framework/utils"
 import {
@@ -31,10 +31,10 @@ import { joinerConfig } from "../joiner-config"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  customerService: ModulesSdkTypes.IMedusaInternalService<any>
-  customerAddressService: ModulesSdkTypes.IMedusaInternalService<any>
-  customerGroupService: ModulesSdkTypes.IMedusaInternalService<any>
-  customerGroupCustomerService: ModulesSdkTypes.IMedusaInternalService<any>
+  customerService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  customerAddressService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  customerGroupService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  customerGroupCustomerService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 export default class CustomerModuleService
@@ -52,16 +52,16 @@ export default class CustomerModuleService
   implements ICustomerModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected customerService_: ModulesSdkTypes.IMedusaInternalService<
+  protected customerService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof Customer>
   >
-  protected customerAddressService_: ModulesSdkTypes.IMedusaInternalService<
+  protected customerAddressService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof CustomerAddress>
   >
-  protected customerGroupService_: ModulesSdkTypes.IMedusaInternalService<
+  protected customerGroupService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof CustomerGroup>
   >
-  protected customerGroupCustomerService_: ModulesSdkTypes.IMedusaInternalService<
+  protected customerGroupCustomerService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof CustomerGroupCustomer>
   >
 
@@ -106,7 +106,7 @@ export default class CustomerModuleService
     dataOrArray:
       | CustomerTypes.CreateCustomerDTO
       | CustomerTypes.CreateCustomerDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<CustomerTypes.CustomerDTO | CustomerTypes.CustomerDTO[]> {
     const customers = await this.createCustomers_(dataOrArray, sharedContext)
 
@@ -124,7 +124,7 @@ export default class CustomerModuleService
     dataOrArray:
       | CustomerTypes.CreateCustomerDTO
       | CustomerTypes.CreateCustomerDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Customer>[]> {
     const data = Array.isArray(dataOrArray) ? dataOrArray : [dataOrArray]
     const customerAttributes = data.map(({ addresses, ...rest }) => {
@@ -182,7 +182,7 @@ export default class CustomerModuleService
   async updateCustomers(
     idsOrSelector: string | string[] | CustomerTypes.FilterableCustomerProps,
     data: CustomerTypes.CustomerUpdatableFields,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<CustomerTypes.CustomerDTO | CustomerTypes.CustomerDTO[]> {
     const customers = await this.updateCustomers_(
       idsOrSelector,
@@ -199,7 +199,7 @@ export default class CustomerModuleService
   protected async updateCustomers_(
     idsOrSelector: string | string[] | CustomerTypes.FilterableCustomerProps,
     data: CustomerTypes.CustomerUpdatableFields,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     InferEntityType<typeof Customer>[] | InferEntityType<typeof Customer>
   > {
@@ -255,7 +255,7 @@ export default class CustomerModuleService
     dataOrArrayOfData:
       | CustomerTypes.CreateCustomerGroupDTO
       | CustomerTypes.CreateCustomerGroupDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     CustomerTypes.CustomerGroupDTO | CustomerTypes.CustomerGroupDTO[]
   > {
@@ -274,7 +274,7 @@ export default class CustomerModuleService
     dataOrArrayOfData:
       | CustomerTypes.CreateCustomerGroupDTO
       | CustomerTypes.CreateCustomerGroupDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof CustomerGroup>[]
     | InferEntityType<typeof CustomerGroup>
@@ -315,7 +315,7 @@ export default class CustomerModuleService
       | string[]
       | CustomerTypes.FilterableCustomerGroupProps,
     data: CustomerTypes.CustomerGroupUpdatableFields,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     CustomerTypes.CustomerGroupDTO | CustomerTypes.CustomerGroupDTO[]
   > {
@@ -337,7 +337,7 @@ export default class CustomerModuleService
       | string[]
       | CustomerTypes.FilterableCustomerGroupProps,
     data: CustomerTypes.CustomerGroupUpdatableFields,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof CustomerGroup>[]
     | InferEntityType<typeof CustomerGroup>
@@ -391,7 +391,7 @@ export default class CustomerModuleService
   @EmitEvents()
   async addCustomerToGroup(
     data: CustomerTypes.GroupCustomerPair | CustomerTypes.GroupCustomerPair[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<{ id: string } | { id: string }[]> {
     const groupCustomers = await this.addCustomerToGroup_(data, sharedContext)
 
@@ -401,7 +401,7 @@ export default class CustomerModuleService
   @InjectTransactionManager()
   protected async addCustomerToGroup_(
     data: CustomerTypes.GroupCustomerPair | CustomerTypes.GroupCustomerPair[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<{ id: string } | { id: string }[]> {
     const groupCustomers = await this.customerGroupCustomerService_.create(
       data,
@@ -437,7 +437,7 @@ export default class CustomerModuleService
     data:
       | CustomerTypes.CreateCustomerAddressDTO
       | CustomerTypes.CreateCustomerAddressDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     CustomerTypes.CustomerAddressDTO | CustomerTypes.CustomerAddressDTO[]
   > {
@@ -459,7 +459,7 @@ export default class CustomerModuleService
     data:
       | CustomerTypes.CreateCustomerAddressDTO
       | CustomerTypes.CreateCustomerAddressDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     return await this.customerAddressService_.create(
       Array.isArray(data) ? data : [data],
@@ -495,7 +495,7 @@ export default class CustomerModuleService
       | string[]
       | CustomerTypes.FilterableCustomerAddressProps,
     data: CustomerTypes.UpdateCustomerAddressDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     CustomerTypes.CustomerAddressDTO | CustomerTypes.CustomerAddressDTO[]
   > {
@@ -517,7 +517,7 @@ export default class CustomerModuleService
       | string[]
       | CustomerTypes.FilterableCustomerAddressProps,
     data: CustomerTypes.UpdateCustomerAddressDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof CustomerAddress>[]
     | InferEntityType<typeof CustomerAddress>
@@ -572,7 +572,7 @@ export default class CustomerModuleService
   @EmitEvents()
   async removeCustomerFromGroup(
     data: CustomerTypes.GroupCustomerPair | CustomerTypes.GroupCustomerPair[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await this.removeCustomerFromGroup_(data, sharedContext)
   }
@@ -580,7 +580,7 @@ export default class CustomerModuleService
   @InjectTransactionManager()
   protected async removeCustomerFromGroup_(
     data: CustomerTypes.GroupCustomerPair | CustomerTypes.GroupCustomerPair[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const pairs = Array.isArray(data) ? data : [data]
     const groupCustomers = await this.customerGroupCustomerService_.list({

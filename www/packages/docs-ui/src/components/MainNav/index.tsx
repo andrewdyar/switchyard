@@ -32,7 +32,7 @@ export const MainNav = ({ className, itemsClassName }: MainNavProps) => {
 
   return (
     <div
-      className={clsx("w-full z-20 sticky top-0 bg-medusa-bg-base", className)}
+      className={clsx("w-full z-20 sticky top-0 bg-switchyard-bg-base", className)}
     >
       <div
         className={clsx(
@@ -79,7 +79,7 @@ export const MainNav = ({ className, itemsClassName }: MainNavProps) => {
                   {
                     type: "link",
                     title: "Troubleshooting",
-                    link: "https://docs.switchyard.com/resources/troubleshooting",
+                    link: "https://docs.switchyard.run/resources/troubleshooting",
                   },
                   {
                     type: "link",

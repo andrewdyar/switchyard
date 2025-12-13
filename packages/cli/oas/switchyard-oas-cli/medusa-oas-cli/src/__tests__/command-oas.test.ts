@@ -12,7 +12,7 @@ import execa from "execa"
  * OAS output directory
  *
  * @privateRemarks
- * This should be the only directory OAS is loaded from for Medusa V2.
+ * This should be the only directory OAS is loaded from for Switchyard V2.
  * For now, we only use it if the --v2 flag it passed to the CLI tool.
  */
 const oasOutputPath = path.resolve(
@@ -31,7 +31,7 @@ const oasOutputPath = path.resolve(
 const basePath = path.resolve(__dirname, `../../`)
 
 export const runCLI = async (command: string, options: string[] = []) => {
-  const params = ["run", "medusa-oas", command, ...options]
+  const params = ["run", "switchyard-oas", command, ...options]
   try {
     const { all: logs } = await execa("yarn", params, {
       cwd: basePath,

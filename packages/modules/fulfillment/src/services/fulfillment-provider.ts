@@ -28,7 +28,7 @@ type InjectedDependencies = {
 
 // TODO rework DTO's
 
-export default class FulfillmentProviderService extends ModulesSdkUtils.MedusaInternalService<InjectedDependencies>(
+export default class FulfillmentProviderService extends ModulesSdkUtils.SwitchyardInternalService<InjectedDependencies>(
   FulfillmentProvider
 ) {
   protected readonly fulfillmentProviderRepository_: DAL.RepositoryService

@@ -2,7 +2,7 @@
  * Product Variant Model - Modified for Goods Integration
  * 
  * Maps to Supabase `product_skus` table instead of Medusa's default `product_variant` table.
- * Each SKU in product_skus becomes a Medusa variant.
+ * Each SKU in product_skus becomes a Switchyard variant.
  */
 
 import { model } from "@switchyard/framework/utils"
@@ -37,7 +37,7 @@ const ProductVariant = model
       // Is this the primary/default variant?
       is_primary: model.boolean().default(false),
       
-      // ---- Medusa fields (keep for compatibility) ----
+      // ---- Switchyard fields (keep for compatibility) ----
       
       // Also use UPC for barcode field
       barcode: model.text().searchable().nullable(),

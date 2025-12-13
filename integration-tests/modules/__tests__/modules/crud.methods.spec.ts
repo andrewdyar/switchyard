@@ -1,8 +1,8 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 
 jest.setTimeout(100000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ getContainer, dbConnection, api, dbConfig }) => {
     let appContainer
 
@@ -15,33 +15,33 @@ medusaIntegrationTestRunner({
         const brandModule = appContainer.resolve("brand")
 
         const brand = await brandModule.createBrands({
-          name: "Medusa Brand",
+          name: "Switchyard Brand",
         })
 
         expect(brand).toEqual(
           expect.objectContaining({
             id: expect.any(String),
-            name: "Medusa Brand",
+            name: "Switchyard Brand",
           })
         )
 
         const multipleBrands = await brandModule.createBrands([
           {
-            name: "Medusa Brand 2",
+            name: "Switchyard Brand 2",
           },
           {
-            name: "Medusa Brand 3",
+            name: "Switchyard Brand 3",
           },
         ])
 
         expect(multipleBrands).toEqual([
           expect.objectContaining({
             id: expect.stringMatching("brand_"),
-            name: "Medusa Brand 2",
+            name: "Switchyard Brand 2",
           }),
           expect.objectContaining({
             id: expect.stringMatching("brand_"),
-            name: "Medusa Brand 3",
+            name: "Switchyard Brand 3",
           }),
         ])
       })
@@ -51,33 +51,33 @@ medusaIntegrationTestRunner({
 
         const multipleBrands = await brandModule.createBrands([
           {
-            name: "Medusa Brand 2",
+            name: "Switchyard Brand 2",
           },
           {
-            name: "Medusa Brand 3",
+            name: "Switchyard Brand 3",
           },
         ])
 
         const brand = await brandModule.updateBrands({
           id: multipleBrands[0].id,
-          name: "Medusa Brand",
+          name: "Switchyard Brand",
         })
 
         expect(brand).toEqual(
           expect.objectContaining({
             id: expect.any(String),
-            name: "Medusa Brand",
+            name: "Switchyard Brand",
           })
         )
 
         const multipleBrandsUpdated = await brandModule.updateBrands([
           {
             id: multipleBrands[0].id,
-            name: "Medusa Brand 22",
+            name: "Switchyard Brand 22",
           },
           {
             id: multipleBrands[1].id,
-            name: "Medusa Brand 33",
+            name: "Switchyard Brand 33",
           },
         ])
 
@@ -85,11 +85,11 @@ medusaIntegrationTestRunner({
           expect.arrayContaining([
             expect.objectContaining({
               id: expect.any(String),
-              name: "Medusa Brand 22",
+              name: "Switchyard Brand 22",
             }),
             expect.objectContaining({
               id: expect.any(String),
-              name: "Medusa Brand 33",
+              name: "Switchyard Brand 33",
             }),
           ])
         )
@@ -97,17 +97,17 @@ medusaIntegrationTestRunner({
         const multipleBrandsUpdatedWithSelector =
           await brandModule.updateBrands({
             selector: {
-              name: { $like: "Medusa Brand 22" },
+              name: { $like: "Switchyard Brand 22" },
             },
             data: {
-              name: "Medusa Brand **",
+              name: "Switchyard Brand **",
             },
           })
 
         expect(multipleBrandsUpdatedWithSelector).toEqual([
           expect.objectContaining({
             id: expect.any(String),
-            name: "Medusa Brand **",
+            name: "Switchyard Brand **",
           }),
         ])
       })

@@ -53,8 +53,8 @@ export type ConfirmOrderEditRequestValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -98,7 +98,7 @@ export type ConfirmOrderEditRequestWorkflowInput = {
 export const confirmOrderEditRequestWorkflowId = "confirm-order-edit-request"
 /**
  * This workflow confirms an order edit request. It's used by the
- * [Confirm Order Edit Admin API Route](https://docs.medusajs.com/api/admin#order-edits_postordereditsidconfirm).
+ * [Confirm Order Edit Admin API Route](https://docs.switchyard.run/api/admin#order-edits_postordereditsidconfirm).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to confirm an order edit
  * in your custom flow.

@@ -1,11 +1,11 @@
 import { getMigrationPlanner, initialize } from "@switchyard/link-modules"
 import { SwitchyardModule } from "@switchyard/modules-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { ModuleJoinerConfig } from "@switchyard/types"
 
 jest.setTimeout(5000000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConfig: { clientUrl } }) => {
     let DB_URL
     let links

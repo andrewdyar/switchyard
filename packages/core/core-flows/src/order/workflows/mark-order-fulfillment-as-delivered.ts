@@ -68,8 +68,8 @@ export const orderFulfillmentDeliverablilityValidationStepId =
  *
  * :::note
  *
- * You can retrieve an order and fulfillment's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and fulfillment's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -199,7 +199,7 @@ export const markOrderFulfillmentAsDeliveredWorkflowId =
   "mark-order-fulfillment-as-delivered-workflow"
 /**
  * This workflow marks a fulfillment in an order as delivered. It's used by the
- * [Mark Fulfillment as Delivered Admin API Route](https://docs.medusajs.com/api/admin#orders_postordersidfulfillmentsfulfillment_idmarkasdelivered).
+ * [Mark Fulfillment as Delivered Admin API Route](https://docs.switchyard.run/api/admin#orders_postordersidfulfillmentsfulfillment_idmarkasdelivered).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to wrap custom logic around
  * marking a fulfillment as delivered.

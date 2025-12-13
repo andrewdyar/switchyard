@@ -11,7 +11,7 @@ export default function Error() {
       htmlClassName={clsx(inter.variable, robotoMono.variable)}
       gaId={process.env.NEXT_PUBLIC_GA_ID}
     >
-      <body className="w-screen h-screen overflow-hidden bg-medusa-bg-subtle">
+      <body className="w-screen h-screen overflow-hidden bg-switchyard-bg-subtle">
         <BrowserProvider>
           <ErrorPage />
         </BrowserProvider>

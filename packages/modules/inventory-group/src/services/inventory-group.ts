@@ -13,7 +13,7 @@ type InjectedDependencies = {
   inventoryGroupRepository: InventoryGroupRepository
 }
 
-export default class InventoryGroupService extends ModulesSdkUtils.MedusaInternalService<
+export default class InventoryGroupService extends ModulesSdkUtils.SwitchyardInternalService<
   typeof InventoryGroup
 >(InventoryGroup) {
   protected readonly inventoryGroupRepository_: InventoryGroupRepository

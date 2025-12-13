@@ -61,8 +61,8 @@ export type RequestOrderEditRequestValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -106,7 +106,7 @@ export type OrderEditRequestWorkflowInput = {
 export const requestOrderEditRequestWorkflowId = "order-edit-request"
 /**
  * This workflow requests a previously created order edit request by {@link beginOrderEditOrderWorkflow}. This workflow is used by
- * the [Request Order Edit Admin API Route](https://docs.medusajs.com/api/admin#order-edits_postordereditsidrequest).
+ * the [Request Order Edit Admin API Route](https://docs.switchyard.run/api/admin#order-edits_postordereditsidrequest).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to request an order edit
  * in your custom flows.

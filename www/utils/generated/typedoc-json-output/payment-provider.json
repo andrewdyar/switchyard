@@ -150,7 +150,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "The constructor allows you to access resources from the [module's container](https://docs.switchyard.com/learn/fundamentals/modules/container)\nusing the first parameter, and the module's options using the second parameter.\n\nIf you're creating a client or establishing a connection with a third-party service, do it in the constructor.\n\n:::note\n\nA module's options are passed when you register it in the Switchyard application.\n\n:::"
+										"text": "The constructor allows you to access resources from the [module's container](https://docs.switchyard.run/learn/fundamentals/modules/container)\nusing the first parameter, and the module's options using the second parameter.\n\nIf you're creating a client or establishing a connection with a third-party service, do it in the constructor.\n\n:::note\n\nA module's options are passed when you register it in the Switchyard application.\n\n:::"
 									}
 								],
 								"blockTags": [
@@ -1942,7 +1942,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method is executed when a webhook event is received from the third-party payment provider. Switchyard uses\nthe data returned by this method to perform actions in the Switchyard application, such as completing the associated cart\nif the payment was authorized successfully.\n\nLearn more in the [Webhook Events](https://docs.switchyard.com/resources/commerce-modules/payment/webhook-events) documentation."
+										"text": "This method is executed when a webhook event is received from the third-party payment provider. Switchyard uses\nthe data returned by this method to perform actions in the Switchyard application, such as completing the associated cart\nif the payment was authorized successfully.\n\nLearn more in the [Webhook Events](https://docs.switchyard.run/resources/commerce-modules/payment/webhook-events) documentation."
 									}
 								],
 								"blockTags": [

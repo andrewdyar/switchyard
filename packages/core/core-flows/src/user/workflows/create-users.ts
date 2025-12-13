@@ -16,7 +16,7 @@ export const createUsersWorkflowId = "create-users-workflow"
  *
  * You can attach an auth identity to each user to allow the user to log in using the
  * {@link setAuthAppMetadataStep}. Learn more about auth identities in
- * [this documentation](https://docs.medusajs.com/resources/commerce-modules/auth/auth-identity-and-actor-types).
+ * [this documentation](https://docs.switchyard.run/resources/commerce-modules/auth/auth-identity-and-actor-types).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to
  * create users within your custom flows.

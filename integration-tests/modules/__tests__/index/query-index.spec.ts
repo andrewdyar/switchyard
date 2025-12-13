@@ -1,6 +1,6 @@
 import CustomerModule from "@switchyard/customer"
 import ProductModule from "@switchyard/product"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { RemoteQueryFunction } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
@@ -97,7 +97,7 @@ async function populateData(api: any) {
 
 process.env.ENABLE_INDEX_MODULE = "true"
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   hooks: {
     beforeServerStart: async () => {
       const customer = CustomerModule.linkable.customer
@@ -131,7 +131,7 @@ medusaIntegrationTestRunner({
         const brandModule = appContainer.resolve("brand")
         const link = appContainer.resolve(ContainerRegistrationKeys.LINK)
         const brand = await brandModule.createBrands({
-          name: "Medusa Brand",
+          name: "Switchyard Brand",
         })
 
         const [createdLink] = await link.create({
@@ -244,7 +244,7 @@ medusaIntegrationTestRunner({
             status: "published",
             brand: {
               id: expect.any(String),
-              name: "Medusa Brand",
+              name: "Switchyard Brand",
             },
             variants: [
               {
@@ -589,7 +589,7 @@ medusaIntegrationTestRunner({
         const brandModule = appContainer.resolve("brand")
         const link = appContainer.resolve(ContainerRegistrationKeys.LINK)
         const brand = await brandModule.createBrands({
-          name: "Medusa Brand",
+          name: "Switchyard Brand",
         })
 
         const [createdLink] = await link.create({

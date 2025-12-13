@@ -1,7 +1,7 @@
 /**
  * Goods Source Product Link Model
  * 
- * Links Medusa products to source_products table (scraped catalog).
+ * Links Switchyard products to source_products table (scraped catalog).
  * This enables tracing commerce products back to their source data.
  */
 
@@ -10,7 +10,7 @@ import { model } from "@switchyard/framework/utils"
 export const SourceProductLink = model.define("goods_source_product_link", {
   id: model.id().primaryKey(),
   
-  // Link to Medusa product (will be linked via Module Link)
+  // Link to Switchyard product (will be linked via Module Link)
   // product_id is managed by the link table
   
   // Link to source catalog (UUID stored as text)

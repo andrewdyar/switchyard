@@ -16,7 +16,7 @@ export class ShippingProfile {
 
   /**
    * This method creates a new shipping profile. It sends a request to the
-   * [Create Shipping Profile](https://docs.medusajs.com/api/admin#shipping-profiles_postshippingprofiles)
+   * [Create Shipping Profile](https://docs.switchyard.run/api/admin#shipping-profiles_postshippingprofiles)
    * API route.
    * 
    * @param body - The details of the shipping profile to create.
@@ -50,7 +50,7 @@ export class ShippingProfile {
 
   /**
    * This method updates a shipping profile. It sends a request to the
-   * [Update Shipping Profile](https://docs.medusajs.com/api/admin#shipping-profiles_postshippingprofilesid)
+   * [Update Shipping Profile](https://docs.switchyard.run/api/admin#shipping-profiles_postshippingprofilesid)
    * API route.
    * 
    * @param id - The ID of the shipping profile to update.
@@ -86,7 +86,7 @@ export class ShippingProfile {
 
   /**
    * This method deletes a shipping profile. It sends a request to the
-   * [Delete Shipping Profile](https://docs.medusajs.com/api/admin#shipping-profiles_deleteshippingprofilesid)
+   * [Delete Shipping Profile](https://docs.switchyard.run/api/admin#shipping-profiles_deleteshippingprofilesid)
    * API route.
    * 
    * @param id - The ID of the shipping profile to delete.
@@ -111,7 +111,7 @@ export class ShippingProfile {
 
   /**
    * This method retrieves a list of shipping profiles. It sends a request to the
-   * [List Shipping Profiles](https://docs.medusajs.com/api/admin#shipping-profiles_getshippingprofiles)
+   * [List Shipping Profiles](https://docs.switchyard.run/api/admin#shipping-profiles_getshippingprofiles)
    * API route.
    * 
    * @param query - Filters and pagination configurations.
@@ -154,7 +154,7 @@ export class ShippingProfile {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/admin#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/admin#select-fields-and-relations).
    */
   async list(
     query?: HttpTypes.AdminShippingProfileListParams,
@@ -172,7 +172,7 @@ export class ShippingProfile {
 
   /**
    * This method retrieves a shipping profile. It sends a request to the
-   * [Get Shipping Profile](https://docs.medusajs.com/api/admin#shipping-profiles_getshippingprofilesid)
+   * [Get Shipping Profile](https://docs.switchyard.run/api/admin#shipping-profiles_getshippingprofilesid)
    * API route.
    * 
    * @param id - The ID of the shipping profile to retrieve.
@@ -201,7 +201,7 @@ export class ShippingProfile {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/admin#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/admin#select-fields-and-relations).
    */
   async retrieve(
     id: string,

@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { ICustomerModuleService } from "@switchyard/types"
 import { Modules } from "@switchyard/utils"
 import {
@@ -11,7 +11,7 @@ const env = {}
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("DELETE /store/customers/me/addresses/:address_id", () => {

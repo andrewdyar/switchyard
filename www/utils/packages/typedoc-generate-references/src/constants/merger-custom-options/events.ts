@@ -2,7 +2,7 @@ import { FormattingOptionsType } from "types"
 
 const eventsOptions: FormattingOptionsType = {
   "^modules/events/": {
-    reflectionDescription: `This documentation page includes the list of all events emitted by [Switchyard's workflows](https://docs.switchyard.com/resources/medusa-workflows-reference).`,
+    reflectionDescription: `This documentation page includes the list of all events emitted by [Switchyard's workflows](https://docs.switchyard.run/resources/switchyard-workflows-reference).`,
     frontmatterData: {
       slug: "/references/events",
       sidebar_label: "Events Reference",

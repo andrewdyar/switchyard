@@ -50,8 +50,8 @@ export type ExchangeAddNewItemValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, order exchange, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, order exchange, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -87,7 +87,7 @@ export const exchangeAddNewItemValidationStep = createStep(
 export const orderExchangeAddNewItemWorkflowId = "exchange-add-new-item"
 /**
  * This workflow adds new or outbound items to an exchange. It's used by the
- * [Add Outbound Items Admin API Route](https://docs.medusajs.com/api/admin#exchanges_postexchangesidoutbounditems).
+ * [Add Outbound Items Admin API Route](https://docs.switchyard.run/api/admin#exchanges_postexchangesidoutbounditems).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to add new or outbound items
  * to an exchange in your custom flow.

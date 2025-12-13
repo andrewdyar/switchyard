@@ -11,7 +11,7 @@ import { createInviteStep } from "../steps"
 export const createInvitesWorkflowId = "create-invite-step"
 /**
  * This workflow creates one or more user invites. It's used by the
- * [Create Invite Admin API Route](https://docs.medusajs.com/api/admin#invites_postinvites).
+ * [Create Invite Admin API Route](https://docs.switchyard.run/api/admin#invites_postinvites).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to
  * create invites within your custom flows.

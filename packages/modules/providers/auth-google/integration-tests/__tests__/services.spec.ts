@@ -11,7 +11,7 @@ const sampleIdPayload = {
   aud: "199301612397-l1lrg08vd6dvu98r43l7ul0ri2rd2b6r.apps.googleusercontent.com",
   sub: "113664482950786663866",
   hd: "medusajs.com",
-  email: "test@medusajs.com",
+  email: "test@switchyard.run",
   email_verified: true,
   at_hash: "7DKi89ceSj-Bii1m_V1Pew",
   name: "Test Admin",

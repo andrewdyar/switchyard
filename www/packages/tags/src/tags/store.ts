@@ -1,42 +1,42 @@
 export const store = [
   {
     "title": "Manage Store",
-    "path": "https://docs.switchyard.com/user-guide/settings/store"
+    "path": "https://docs.switchyard.run/user-guide/settings/store"
   },
   {
     "title": "createDefaultStoreStep",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/createDefaultStoreStep"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/steps/createDefaultStoreStep"
   },
   {
     "title": "createDefaultsWorkflow",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/createDefaultsWorkflow"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/createDefaultsWorkflow"
   },
   {
     "title": "createStoresStep",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/createStoresStep"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/steps/createStoresStep"
   },
   {
     "title": "deleteStoresStep",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/deleteStoresStep"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/steps/deleteStoresStep"
   },
   {
     "title": "updateStoresStep",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/updateStoresStep"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/steps/updateStoresStep"
   },
   {
     "title": "createStoresWorkflow",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/createStoresWorkflow"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/createStoresWorkflow"
   },
   {
     "title": "deleteStoresWorkflow",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/deleteStoresWorkflow"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/deleteStoresWorkflow"
   },
   {
     "title": "updateStoresWorkflow",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateStoresWorkflow"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/updateStoresWorkflow"
   },
   {
     "title": "store",
-    "path": "https://docs.switchyard.com/resources/references/js-sdk/admin/store"
+    "path": "https://docs.switchyard.run/resources/references/js-sdk/admin/store"
   }
 ]

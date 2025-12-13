@@ -283,7 +283,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead."
+								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead."
 							}
 						]
 					},
@@ -7063,7 +7063,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Whether the tax rate should be combined with parent rates.\n\nLearn more [here](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates)."
+								"text": "Whether the tax rate should be combined with parent rates.\n\nLearn more [here](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates)."
 							}
 						]
 					},
@@ -9020,7 +9020,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
+								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
 							}
 						]
 					},
@@ -9054,7 +9054,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
+								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
 							}
 						]
 					},
@@ -12690,7 +12690,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Whether the tax rate is combinable.\n\nLearn more [here](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates)."
+								"text": "Whether the tax rate is combinable.\n\nLearn more [here](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates)."
 							}
 						]
 					},
@@ -13412,7 +13412,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
+								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
 							}
 						]
 					},
@@ -13446,7 +13446,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
+								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
 							}
 						]
 					},
@@ -13852,7 +13852,7 @@
 					},
 					{
 						"kind": "text",
-						"text": " of your Tax Module Provider's service to access the resources registered in the [Module Container](https://docs.switchyard.com/resources/medusa-container-resources#module-container-resources).\n\nYou can also use the constructor to initialize your integration with the third-party provider. For example, if you use a client to connect to the third-party provider’s APIs, you can initialize it in the constructor and use it in other methods in the service.\n\nAdditionally, if you’re creating your tax provider as a plugin or a module provider to be installed in any Switchyard application and you want to access its options, you can access them in the second parameter of the constructor.\n\nFor example:\n\n"
+						"text": " of your Tax Module Provider's service to access the resources registered in the [Module Container](https://docs.switchyard.run/resources/medusa-container-resources#module-container-resources).\n\nYou can also use the constructor to initialize your integration with the third-party provider. For example, if you use a client to connect to the third-party provider’s APIs, you can initialize it in the constructor and use it in other methods in the service.\n\nAdditionally, if you’re creating your tax provider as a plugin or a module provider to be installed in any Switchyard application and you want to access its options, you can access them in the second parameter of the constructor.\n\nFor example:\n\n"
 					},
 					{
 						"kind": "code",
@@ -14207,7 +14207,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -14387,7 +14387,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax rate:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax rate:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -14614,7 +14614,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax rate:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax rate:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -16919,7 +16919,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax region:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax region:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -17396,7 +17396,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax provider:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax provider:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -17853,7 +17853,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax rate rule:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax rate rule:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18054,7 +18054,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method retrieves tax lines for taxable items and shipping methods in a cart.\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-calculation-with-provider)."
+										"text": "This method retrieves tax lines for taxable items and shipping methods in a cart.\n\nLearn more in [this guide](https://docs.switchyard.run/resources/commerce-modules/tax/tax-calculation-with-provider)."
 									}
 								],
 								"blockTags": [

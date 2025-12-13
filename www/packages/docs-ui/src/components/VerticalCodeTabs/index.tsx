@@ -25,7 +25,7 @@ export const VerticalCodeTabs = ({
   return (
     <div
       className={clsx(
-        "rounded-[20px] bg-medusa-bg-subtle p-docs_0.5",
+        "rounded-[20px] bg-switchyard-bg-subtle p-docs_0.5",
         "shadow-elevation-modal dark:shadow-elevation-modal-dark",
         className
       )}

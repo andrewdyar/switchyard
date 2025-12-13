@@ -45,7 +45,7 @@ export default function (theme: MarkdownTheme) {
         return ""
       }
 
-      let str = `${Handlebars.helpers.titleLevel()} Hooks\n\nHooks allow you to inject custom functionalities into the workflow. You'll receive data from the workflow, as well as additional data sent through an HTTP request.\n\nLearn more about [Hooks](https://docs.switchyard.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).\n\n`
+      let str = `${Handlebars.helpers.titleLevel()} Hooks\n\nHooks allow you to inject custom functionalities into the workflow. You'll receive data from the workflow, as well as additional data sent through an HTTP request.\n\nLearn more about [Hooks](https://docs.switchyard.run/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.switchyard.run/learn/fundamentals/api-routes/additional-data).\n\n`
 
       Handlebars.helpers.incrementCurrentTitleLevel()
 
@@ -96,7 +96,7 @@ export default function (theme: MarkdownTheme) {
         }
 
         if (isNested) {
-          str += `\n\n:::note\n\nThis hook is nested within a [when](https://docs.switchyard.com/learn/fundamentals/workflows/conditions) condition, so it may not be executed if the when condition isn't satisfied.\n\n:::\n\n`
+          str += `\n\n:::note\n\nThis hook is nested within a [when](https://docs.switchyard.run/learn/fundamentals/workflows/conditions) condition, so it may not be executed if the when condition isn't satisfied.\n\n:::\n\n`
         }
 
         const hookExample = hookReflection.comment?.getTag(`@example`)

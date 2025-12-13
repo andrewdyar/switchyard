@@ -1,15 +1,15 @@
 import Switchyard from "@switchyard/js-sdk"
 
-let MEDUSA_BACKEND_URL = "http://localhost:9000"
+let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
 
-if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
-  MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+  SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
 }
 
 export const sdk = new Switchyard({
-  baseUrl: MEDUSA_BACKEND_URL,
+  baseUrl: SWITCHYARD_BACKEND_URL,
   debug: process.env.NODE_ENV === "development",
-  publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+  publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
 })
 
 // TODO must be authenticated as the customer to list their orders

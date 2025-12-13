@@ -15,7 +15,7 @@ import {
   InjectTransactionManager,
   isDefined,
   isString,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   ModulesSdkUtils,
 } from "@switchyard/framework/utils"
@@ -24,9 +24,9 @@ import { TaxProviderService } from "@services"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  taxRateService: ModulesSdkTypes.IMedusaInternalService<any>
-  taxRegionService: ModulesSdkTypes.IMedusaInternalService<any>
-  taxRateRuleService: ModulesSdkTypes.IMedusaInternalService<any>
+  taxRateService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  taxRegionService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  taxRateRuleService: ModulesSdkTypes.ISwitchyardInternalService<any>
   taxProviderService: TaxProviderService
   [key: `tp_${string}`]: ITaxProvider
 }
@@ -49,13 +49,13 @@ export default class TaxModuleService
 {
   protected readonly container_: InjectedDependencies
   protected baseRepository_: DAL.RepositoryService
-  protected taxRateService_: ModulesSdkTypes.IMedusaInternalService<
+  protected taxRateService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof TaxRate>
   >
-  protected taxRegionService_: ModulesSdkTypes.IMedusaInternalService<
+  protected taxRegionService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof TaxRegion>
   >
-  protected taxRateRuleService_: ModulesSdkTypes.IMedusaInternalService<
+  protected taxRateRuleService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof TaxRateRule>
   >
   protected taxProviderService_: TaxProviderService
@@ -98,7 +98,7 @@ export default class TaxModuleService
   // @ts-expect-error
   async createTaxRates(
     data: TaxTypes.CreateTaxRateDTO[] | TaxTypes.CreateTaxRateDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<TaxTypes.TaxRateDTO[] | TaxTypes.TaxRateDTO> {
     const input = Array.isArray(data) ? data : [data]
     const rates = await this.createTaxRates_(input, sharedContext)
@@ -113,7 +113,7 @@ export default class TaxModuleService
   @InjectTransactionManager()
   protected async createTaxRates_(
     data: TaxTypes.CreateTaxRateDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const [rules, rateData] = data.reduce(
       (acc, region) => {
@@ -179,7 +179,7 @@ export default class TaxModuleService
   async updateTaxRates(
     selector: string | string[] | TaxTypes.FilterableTaxRateProps,
     data: TaxTypes.UpdateTaxRateDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<TaxTypes.TaxRateDTO | TaxTypes.TaxRateDTO[]> {
     const rates = await this.updateTaxRates_(selector, data, sharedContext)
 
@@ -194,7 +194,7 @@ export default class TaxModuleService
   protected async updateTaxRates_(
     idOrSelector: string | string[] | TaxTypes.FilterableTaxRateProps,
     data: TaxTypes.UpdateTaxRateDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const selector =
       Array.isArray(idOrSelector) || isString(idOrSelector)
@@ -293,7 +293,7 @@ export default class TaxModuleService
   @EmitEvents()
   async upsertTaxRates(
     data: TaxTypes.UpsertTaxRateDTO | TaxTypes.UpsertTaxRateDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<TaxTypes.TaxRateDTO | TaxTypes.TaxRateDTO[]> {
     const result = await this.taxRateService_.upsert(data, sharedContext)
 
@@ -321,7 +321,7 @@ export default class TaxModuleService
   // @ts-expect-error
   async createTaxRegions(
     data: TaxTypes.CreateTaxRegionDTO | TaxTypes.CreateTaxRegionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const input = Array.isArray(data) ? data : [data]
     const result = await this.createTaxRegions_(input, sharedContext)
@@ -383,7 +383,7 @@ export default class TaxModuleService
   // @ts-expect-error
   async createTaxRateRules(
     data: TaxTypes.CreateTaxRateRuleDTO | TaxTypes.CreateTaxRateRuleDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const input = Array.isArray(data) ? data : [data]
     const result = await this.createTaxRateRules_(input, sharedContext)
@@ -398,7 +398,7 @@ export default class TaxModuleService
   @InjectTransactionManager()
   async createTaxRateRules_(
     data: TaxTypes.CreateTaxRateRuleDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const rules = await this.taxRateRuleService_.create(data, sharedContext)
     return rules
@@ -408,7 +408,7 @@ export default class TaxModuleService
   async getTaxLines(
     items: (TaxTypes.TaxableItemDTO | TaxTypes.TaxableShippingDTO)[],
     calculationContext: TaxTypes.TaxCalculationContext,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<(TaxTypes.ItemTaxLineDTO | TaxTypes.ShippingTaxLineDTO)[]> {
     const normalizedContext =
       this.normalizeTaxCalculationContext(calculationContext)

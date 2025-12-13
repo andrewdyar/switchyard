@@ -11,7 +11,7 @@ export class InitialSetup20240226130829 extends Migration {
       this.addSql(`alter table "store" alter column "id" TYPE text;`)
       this.addSql(`alter table "store" alter column "name" TYPE text;`)
       this.addSql(
-        `alter table "store" alter column "name" SET DEFAULT 'Medusa Store';`
+        `alter table "store" alter column "name" SET DEFAULT 'Switchyard Store';`
       )
       this.addSql(
         `alter table "store" alter column "default_currency_code" TYPE text;`
@@ -53,7 +53,7 @@ export class InitialSetup20240226130829 extends Migration {
       // this.addSql(`alter table "store" drop column "invite_link_template";`)
     } else {
       this.addSql(`create table if not exists "store" 
-      ("id" text not null, "name" text not null default \'Medusa Store\', "supported_currency_codes" text[] not null default \'{}\',
+      ("id" text not null, "name" text not null default \'Switchyard Store\', "supported_currency_codes" text[] not null default \'{}\',
       "default_currency_code" text null, "default_sales_channel_id" text null, "default_region_id" text null, "default_location_id" text null, 
       "metadata" jsonb null, "created_at" timestamptz not null default now(), "updated_at" timestamptz not null default now(), "deleted_at" timestamptz null, 
       constraint "store_pkey" primary key ("id"));`)

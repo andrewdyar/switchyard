@@ -80,7 +80,7 @@ export const TabsTriggerVertical = ({
       className={clsx(
         className,
         "px-docs_0.5 py-docs_0.25 !text-medusa-fg-base text-compact-small data-[state=active]:!text-compact-small-plus",
-        "[&[data-state=active]_svg]:!visible hover:!bg-medusa-bg-base-hover rounded-docs_DEFAULT",
+        "[&[data-state=active]_svg]:!visible hover:!bg-switchyard-bg-base-hover rounded-docs_DEFAULT",
         "!shadow-none"
       )}
     >

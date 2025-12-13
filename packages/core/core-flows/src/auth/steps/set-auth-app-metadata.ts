@@ -16,9 +16,9 @@ export const setAuthAppMetadataStepId = "set-auth-app-metadata"
  * that allows them to authenticate into Medusa.
  *
  * You can learn more about auth identites in
- * [this documentation](https://docs.medusajs.com/resources/commerce-modules/auth/auth-identity-and-actor-types).
+ * [this documentation](https://docs.switchyard.run/resources/commerce-modules/auth/auth-identity-and-actor-types).
  *
- * To use this for a custom actor type, check out [this guide](https://docs.medusajs.com/resources/commerce-modules/auth/create-actor-type)
+ * To use this for a custom actor type, check out [this guide](https://docs.switchyard.run/resources/commerce-modules/auth/create-actor-type)
  * that explains how to create a custom `manager` actor type and manage its users.
  *
  * @example

@@ -12,7 +12,7 @@ import { model } from "@switchyard/framework/utils"
 export const RetailerPricing = model.define("goods_retailer_pricing", {
   id: model.id().primaryKey(),
   
-  // Links to Medusa Product
+  // Links to Switchyard Product
   product_id: model.text(),
   
   // Location-specific pricing

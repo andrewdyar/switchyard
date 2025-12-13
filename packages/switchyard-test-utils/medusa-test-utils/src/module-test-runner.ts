@@ -17,7 +17,7 @@ import { ulid } from "ulid"
 
 export interface SuiteOptions<TService = unknown> {
   MikroOrmWrapper: TestDatabase
-  medusaApp: any
+  switchyardApp: any
   service: TService
   dbConfig: {
     schema: string
@@ -39,7 +39,7 @@ interface ModuleTestRunnerConfig<TService = any> {
   cwd?: string
   hooks?: {
     beforeModuleInit?: () => Promise<void>
-    afterModuleInit?: (medusaApp: any, service: TService) => Promise<void>
+    afterModuleInit?: (switchyardApp: any, service: TService) => Promise<void>
   }
 }
 
@@ -110,7 +110,7 @@ class ModuleTestRunner<TService = any> {
 
   private shutdown: () => Promise<void> = async () => void 0
   private moduleService: any = null
-  private medusaApp: any = {}
+  private switchyardApp: any = {}
 
   constructor(config: ModuleTestRunnerConfig<TService>) {
     const tempName = parseInt(process.env.JEST_WORKER_ID || "1")
@@ -203,7 +203,7 @@ class ModuleTestRunner<TService = any> {
       {},
       {
         get: (target, prop) => {
-          return this.medusaApp?.[prop]
+          return this.switchyardApp?.[prop]
         },
       }
     )
@@ -242,11 +242,11 @@ class ModuleTestRunner<TService = any> {
 
       const output = await initModules(this.moduleOptionsConfig)
       this.shutdown = output.shutdown
-      this.medusaApp = output.medusaApp
-      this.moduleService = output.medusaApp.modules[this.moduleName]
+      this.switchyardApp = output.switchyardApp
+      this.moduleService = output.switchyardApp.modules[this.moduleName]
 
       if (this.hooks?.afterModuleInit) {
-        await this.hooks.afterModuleInit(this.medusaApp, this.moduleService)
+        await this.hooks.afterModuleInit(this.switchyardApp, this.moduleService)
       }
     } catch (error) {
       logger.error("Error in beforeEach:", error?.message)
@@ -262,7 +262,7 @@ class ModuleTestRunner<TService = any> {
       }
       await this.shutdown()
       this.moduleService = {}
-      this.medusaApp = {}
+      this.switchyardApp = {}
     } catch (error) {
       logger.error("Error in afterEach:", error?.message)
       throw error
@@ -278,7 +278,7 @@ class ModuleTestRunner<TService = any> {
       await (this.connection as any)?.destroy()
 
       this.moduleService = null
-      this.medusaApp = null
+      this.switchyardApp = null
       this.connection = null
 
       if (global.gc) {
@@ -292,7 +292,7 @@ class ModuleTestRunner<TService = any> {
   public getOptions(): SuiteOptions<TService> {
     return {
       MikroOrmWrapper: this.MikroOrmWrapper,
-      medusaApp: this.createSwitchyardAppProxy(),
+      switchyardApp: this.createSwitchyardAppProxy(),
       service: this.createServiceProxy(),
       dbConfig: {
         schema: this.schema,

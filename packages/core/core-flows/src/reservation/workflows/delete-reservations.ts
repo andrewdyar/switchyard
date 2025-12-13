@@ -15,7 +15,7 @@ type WorkflowInput = {
 export const deleteReservationsWorkflowId = "delete-reservations"
 /**
  * This workflow deletes one or more reservations. It's used by the
- * [Delete Reservations Admin API Route](https://docs.medusajs.com/api/admin#reservations_deletereservationsid).
+ * [Delete Reservations Admin API Route](https://docs.switchyard.run/api/admin#reservations_deletereservationsid).
  * 
  * You can use this workflow within your own customizations or custom workflows, allowing you
  * to delete reservations in your custom flows.

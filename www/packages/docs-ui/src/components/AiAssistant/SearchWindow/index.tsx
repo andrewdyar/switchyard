@@ -130,7 +130,7 @@ export const AiAssistantSearchWindow = () => {
         className={clsx(
           "py-docs_0.75 hidden md:flex items-center justify-end px-docs_1",
           "border-medusa-border-base border-t",
-          "bg-medusa-bg-field-component"
+          "bg-switchyard-bg-field-component"
         )}
       >
         <div className="flex items-center gap-docs_0.75">
@@ -148,7 +148,7 @@ export const AiAssistantSearchWindow = () => {
                 <span className="gap-[5px] flex">
                   <Kbd
                     className={clsx(
-                      "!bg-medusa-bg-field-component !border-medusa-border-strong",
+                      "!bg-switchyard-bg-field-component !border-medusa-border-strong",
                       "!text-medusa-fg-subtle h-[18px] w-[18px] p-0"
                     )}
                   >
@@ -156,7 +156,7 @@ export const AiAssistantSearchWindow = () => {
                   </Kbd>
                   <Kbd
                     className={clsx(
-                      "!bg-medusa-bg-field-component !border-medusa-border-strong",
+                      "!bg-switchyard-bg-field-component !border-medusa-border-strong",
                       "!text-medusa-fg-subtle h-[18px] w-[18px] p-0"
                     )}
                   >
@@ -184,7 +184,7 @@ export const AiAssistantSearchWindow = () => {
             </span>
             <Kbd
               className={clsx(
-                "!bg-medusa-bg-field-component !border-medusa-border-strong",
+                "!bg-switchyard-bg-field-component !border-medusa-border-strong",
                 "!text-medusa-fg-subtle h-[18px] w-[18px] p-0"
               )}
             >

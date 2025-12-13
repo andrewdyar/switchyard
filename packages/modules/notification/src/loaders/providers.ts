@@ -13,7 +13,7 @@ import {
   NotificationModuleOptions,
   NotificationProviderRegistrationPrefix,
 } from "@types"
-import { MedusaCloudEmailNotificationProvider } from "../providers/medusa-cloud-email"
+import { MedusaCloudEmailNotificationProvider } from "../providers/switchyard-cloud-email"
 
 const validateCloudOptions = (options: NotificationModuleOptions["cloud"]) => {
   const { api_key, endpoint, environment_handle, sandbox_handle } =
@@ -58,7 +58,7 @@ export default async ({
 >): Promise<void> => {
   let providers = options?.providers || []
 
-  // We add the Medusa Cloud Email provider if there is no other email provider configured
+  // We add the Switchyard Cloud Email provider if there is no other email provider configured
   const hasEmailProvider = options?.providers?.some((provider) =>
     provider.options?.channels?.some((channel) => channel === "email")
   )
@@ -106,7 +106,7 @@ async function syncDatabaseProviders({
   const providerServiceRegistrationKey = lowerCaseFirst(
     NotificationProviderService.name
   )
-  const providerService: ModulesSdkTypes.IMedusaInternalService<
+  const providerService: ModulesSdkTypes.ISwitchyardInternalService<
     typeof NotificationProvider
   > = container.resolve(providerServiceRegistrationKey)
 

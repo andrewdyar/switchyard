@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   createAdminUser,
   generatePublishableKey,
@@ -9,9 +9,9 @@ import { ProductStatus } from "@switchyard/utils"
 jest.setTimeout(50000)
 
 const env = {}
-const adminHeaders = { headers: { "x-medusa-access-token": "test_token" } }
+const adminHeaders = { headers: { "x-switchyard-access-token": "test_token" } }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Store: Shipping Option API", () => {

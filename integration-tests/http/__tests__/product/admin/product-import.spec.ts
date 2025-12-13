@@ -1,6 +1,6 @@
 import { csv2json, json2csv } from "json-2-csv"
 import {
-  medusaIntegrationTestRunner,
+  switchyardIntegrationTestRunner,
   TestEventUtils,
 } from "@switchyard/test-utils"
 import { IEventBusModuleService } from "@switchyard/types"
@@ -54,7 +54,7 @@ function prepareCSVForImport(fileContents: string, delimiter: string = ",") {
   return json2csv(CSVFileAsJSON)
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let baseCollection
     let baseType

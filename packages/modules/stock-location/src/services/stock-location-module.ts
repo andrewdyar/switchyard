@@ -21,7 +21,7 @@ import {
   InjectManager,
   InjectTransactionManager,
   isString,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardService,
   Modules,
   promiseAll,
@@ -32,8 +32,8 @@ import { StockLocation, StockLocationAddress } from "../models"
 type InjectedDependencies = {
   [Modules.EVENT_BUS]: IEventBusService
   baseRepository: DAL.RepositoryService
-  stockLocationService: ModulesSdkTypes.IMedusaInternalService<any>
-  stockLocationAddressService: ModulesSdkTypes.IMedusaInternalService<any>
+  stockLocationService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  stockLocationAddressService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 /**
@@ -48,10 +48,10 @@ export default class StockLocationModuleService
 {
   protected readonly eventBusModuleService_: IEventBusService
   protected baseRepository_: DAL.RepositoryService
-  protected readonly stockLocationService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly stockLocationService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof StockLocation>
   >
-  protected readonly stockLocationAddressService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly stockLocationAddressService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof StockLocationAddress>
   >
 
@@ -93,7 +93,7 @@ export default class StockLocationModuleService
   // @ts-expect-error
   async createStockLocations(
     data: CreateStockLocationInput | CreateStockLocationInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     StockLocationTypes.StockLocationDTO | StockLocationTypes.StockLocationDTO[]
   > {
@@ -112,7 +112,7 @@ export default class StockLocationModuleService
   @InjectTransactionManager()
   async createStockLocations_(
     data: CreateStockLocationInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<InferEntityType<typeof StockLocation>[]> {
     return await this.stockLocationService_.create(data, context)
   }
@@ -130,7 +130,7 @@ export default class StockLocationModuleService
   @EmitEvents()
   async upsertStockLocations(
     data: UpsertStockLocationInput | UpsertStockLocationInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     StockLocationTypes.StockLocationDTO | StockLocationTypes.StockLocationDTO[]
   > {
@@ -147,7 +147,7 @@ export default class StockLocationModuleService
   @InjectTransactionManager()
   async upsertStockLocations_(
     input: UpsertStockLocationInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ) {
     const toUpdate = input.filter(
       (location): location is UpdateStockLocationInput => !!location.id
@@ -197,7 +197,7 @@ export default class StockLocationModuleService
   async updateStockLocations(
     idOrSelector: string | FilterableStockLocationProps,
     data: UpdateStockLocationInput | UpdateStockLocationInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     StockLocationTypes.StockLocationDTO | StockLocationTypes.StockLocationDTO[]
   > {
@@ -225,7 +225,7 @@ export default class StockLocationModuleService
       | UpdateStockLocationInput[]
       | UpdateStockLocationInput
       | { data: any; selector: FilterableStockLocationProps },
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     | InferEntityType<typeof StockLocation>[]
     | InferEntityType<typeof StockLocation>
@@ -251,7 +251,7 @@ export default class StockLocationModuleService
     data:
       | (StockLocationAddressInput & { id: string })
       | (StockLocationAddressInput & { id: string })[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ) {
     const input = Array.isArray(data) ? data : [data]
 
@@ -268,7 +268,7 @@ export default class StockLocationModuleService
   @InjectTransactionManager()
   private async updateStockLocationAddresses_(
     input: (StockLocationAddressInput & { id: string })[],
-    @MedusaContext() context: Context
+    @SwitchyardContext() context: Context
   ) {
     return await this.stockLocationAddressService_.update(input, context)
   }
@@ -286,7 +286,7 @@ export default class StockLocationModuleService
   @EmitEvents()
   async upsertStockLocationAddresses(
     data: UpsertStockLocationAddressInput | UpsertStockLocationAddressInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     | StockLocationTypes.StockLocationAddressDTO
     | StockLocationTypes.StockLocationAddressDTO[]
@@ -304,7 +304,7 @@ export default class StockLocationModuleService
   @InjectTransactionManager()
   async upsertStockLocationAddresses_(
     input: UpsertStockLocationAddressInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ) {
     const toUpdate = input.filter(
       (location): location is UpdateStockLocationAddressInput => !!location.id

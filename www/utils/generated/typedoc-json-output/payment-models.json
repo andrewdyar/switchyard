@@ -1504,7 +1504,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The data of the payment session that's useful for processing with third-party services. Learn more in [this documentation](https://docs.switchyard.com/resources/commerce-modules/payment/payment-session#data-property)"
+														"text": "The data of the payment session that's useful for processing with third-party services. Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/payment/payment-session#data-property)"
 													}
 												]
 											},
@@ -2005,7 +2005,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The data of the payment that's useful for processing with third-party services. Learn more in [this documentation](https://docs.switchyard.com/resources/commerce-modules/payment/payment-session#data-property)"
+														"text": "The data of the payment that's useful for processing with third-party services. Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/payment/payment-session#data-property)"
 													}
 												]
 											},

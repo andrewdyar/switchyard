@@ -20,7 +20,7 @@ export class Region {
 
   /**
    * This method creates a new region. It sends a request to the 
-   * [Create Region](https://docs.medusajs.com/api/admin#regions_postregions)
+   * [Create Region](https://docs.switchyard.run/api/admin#regions_postregions)
    * API route.
    * 
    * @param body - The details of the region to create.
@@ -55,7 +55,7 @@ export class Region {
 
   /**
    * This method updates a region. It sends a request to the 
-   * [Update Region](https://docs.medusajs.com/api/admin#regions_postregionsid)
+   * [Update Region](https://docs.switchyard.run/api/admin#regions_postregionsid)
    * API route.
    * 
    * @param id - The ID of the region to update.
@@ -91,7 +91,7 @@ export class Region {
 
   /**
    * This method retrieves a list of regions. It sends a request to the 
-   * [List Regions](https://docs.medusajs.com/api/admin#regions_getregions)
+   * [List Regions](https://docs.switchyard.run/api/admin#regions_getregions)
    * API route.
    * 
    * @param queryParams - Filters and pagination configurations.
@@ -134,7 +134,7 @@ export class Region {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/admin#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/admin#select-fields-and-relations).
    */
   async list(
     queryParams?: FindParams & HttpTypes.AdminRegionFilters,
@@ -151,7 +151,7 @@ export class Region {
 
   /**
    * This method retrieves a region by ID. It sends a request to the 
-   * [Get Region](https://docs.medusajs.com/api/admin#regions_getregionsid)
+   * [Get Region](https://docs.switchyard.run/api/admin#regions_getregionsid)
    * API route.
    * 
    * @param id - The ID of the region to retrieve.
@@ -180,7 +180,7 @@ export class Region {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/admin#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/admin#select-fields-and-relations).
    */
   async retrieve(id: string, query?: SelectParams, headers?: ClientHeaders) {
     return await this.client.fetch<HttpTypes.AdminRegionResponse>(
@@ -194,7 +194,7 @@ export class Region {
 
   /**
    * This method deletes a region by ID. It sends a request to the 
-   * [Delete Region](https://docs.medusajs.com/api/admin#regions_deleteregionsid)
+   * [Delete Region](https://docs.switchyard.run/api/admin#regions_deleteregionsid)
    * API route.
    * 
    * @param id - The ID of the region to delete.

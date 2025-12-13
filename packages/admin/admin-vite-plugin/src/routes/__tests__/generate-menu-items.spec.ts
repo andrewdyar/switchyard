@@ -95,9 +95,9 @@ const expectedMenuItems = `
 describe("generateMenuItems", () => {
   it("should generate menu items", async () => {
     const mockFiles = [
-      "Users/user/medusa/src/admin/routes/one/page.tsx",
-      "Users/user/medusa/src/admin/routes/two/page.tsx",
-      "Users/user/medusa/src/admin/routes/three/page.tsx",
+      "Users/user/switchyard/src/admin/routes/one/page.tsx",
+      "Users/user/switchyard/src/admin/routes/two/page.tsx",
+      "Users/user/switchyard/src/admin/routes/three/page.tsx",
     ]
     vi.mocked(utils.crawl).mockResolvedValue(mockFiles)
 
@@ -106,13 +106,13 @@ describe("generateMenuItems", () => {
     )
 
     const result = await generateMenuItems(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
 
     expect(result.imports).toEqual([
-      `import { config as RouteConfig0 } from "Users/user/medusa/src/admin/routes/one/page.tsx"`,
-      `import { config as RouteConfig1 } from "Users/user/medusa/src/admin/routes/two/page.tsx"`,
-      `import { config as RouteConfig2 } from "Users/user/medusa/src/admin/routes/three/page.tsx"`,
+      `import { config as RouteConfig0 } from "Users/user/switchyard/src/admin/routes/one/page.tsx"`,
+      `import { config as RouteConfig1 } from "Users/user/switchyard/src/admin/routes/two/page.tsx"`,
+      `import { config as RouteConfig2 } from "Users/user/switchyard/src/admin/routes/three/page.tsx"`,
     ])
     expect(utils.normalizeString(result.code)).toEqual(
       utils.normalizeString(expectedMenuItems)
@@ -146,8 +146,8 @@ describe("generateMenuItems", () => {
 
   it("should include rank property in generated menu items", async () => {
     const mockFilesWithRank = [
-      "Users/user/medusa/src/admin/routes/analytics/page.tsx",
-      "Users/user/medusa/src/admin/routes/reports/page.tsx",
+      "Users/user/switchyard/src/admin/routes/analytics/page.tsx",
+      "Users/user/switchyard/src/admin/routes/reports/page.tsx",
     ]
 
     const mockFileContentsWithRank = [
@@ -191,7 +191,7 @@ describe("generateMenuItems", () => {
     )
 
     const result = await generateMenuItems(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
 
     const expectedMenuItemsWithRank = `
@@ -236,16 +236,16 @@ describe("generateMenuItems", () => {
       export default Page
     `
 
-    const mockFiles = ["Users/user/medusa/src/admin/routes/custom/page.tsx"]
+    const mockFiles = ["Users/user/switchyard/src/admin/routes/custom/page.tsx"]
     vi.mocked(utils.crawl).mockResolvedValue(mockFiles)
     vi.mocked(fs.readFile).mockResolvedValue(mockFileWithTranslation)
 
     const result = await generateMenuItems(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
 
     expect(result.imports).toEqual([
-      `import { config as RouteConfig0 } from "Users/user/medusa/src/admin/routes/custom/page.tsx"`,
+      `import { config as RouteConfig0 } from "Users/user/switchyard/src/admin/routes/custom/page.tsx"`,
     ])
 
     const expectedOutput = `
@@ -268,9 +268,9 @@ describe("generateMenuItems", () => {
 
   it("should handle mixed ranked and unranked routes", async () => {
     const mockMixedFiles = [
-      "Users/user/medusa/src/admin/routes/first/page.tsx",
-      "Users/user/medusa/src/admin/routes/second/page.tsx",
-      "Users/user/medusa/src/admin/routes/third/page.tsx",
+      "Users/user/switchyard/src/admin/routes/first/page.tsx",
+      "Users/user/switchyard/src/admin/routes/second/page.tsx",
+      "Users/user/switchyard/src/admin/routes/third/page.tsx",
     ]
 
     const mockMixedContents = [
@@ -324,7 +324,7 @@ describe("generateMenuItems", () => {
     )
 
     const result = await generateMenuItems(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
 
     const expectedMixedMenuItems = `

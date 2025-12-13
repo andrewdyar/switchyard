@@ -9,7 +9,7 @@ const analyticsOptions: FormattingOptionsType = {
     
 :::note
 
-The Analytics Module is available starting [Switchyard v2.8.3](https://github.com/switchyard/medusa/releases/tag/v2.8.3).
+The Analytics Module is available starting [Switchyard v2.8.3](https://github.com/switchyard/switchyard/releases/tag/v2.8.3).
 
 :::`,
     frontmatterData: {
@@ -36,11 +36,11 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/analytics",
+      resolve: "@switchyard/analytics",
       options: {
         providers: [
           {
-            resolve: "@switchyard/medusa/analytics-local",
+            resolve: "@switchyard/analytics-local",
             id: "local",
           },
         ],

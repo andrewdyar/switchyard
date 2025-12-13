@@ -64,7 +64,7 @@ export const LearningPathSteps = ({ ...rest }: LearningPathStepsProps) => {
           {!collapsed && (
             <div
               className={clsx(
-                "bg-medusa-bg-base shadow-elevation-flyout dark:shadow-elevation-flyout-dark rounded",
+                "bg-switchyard-bg-base shadow-elevation-flyout dark:shadow-elevation-flyout-dark rounded",
                 "transition-transform origin-bottom-right flex flex-col"
               )}
               ref={stepsRef}

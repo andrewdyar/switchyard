@@ -19,7 +19,7 @@ export class Product {
    * the import is confirmed using the {@link confirmImport} method.
    *
    * This method sends a request to the
-   * [Create Product Import](https://docs.medusajs.com/api/admin#products_postproductsimport)
+   * [Create Product Import](https://docs.switchyard.run/api/admin#products_postproductsimport)
    * API route.
    *
    * @param body - The import's details.
@@ -63,7 +63,7 @@ export class Product {
    * the import is confirmed using the {@link confirmImport} method.
    *
    * This method sends a request to the
-   * [Create Product Import](https://docs.medusajs.com/api/admin#products_postproductsimports)
+   * [Create Product Import](https://docs.switchyard.run/api/admin#products_postproductsimports)
    * API route.
    *
    * @since 2.8.5
@@ -169,7 +169,7 @@ export class Product {
   /**
    * This method confirms a product import created using the method {@link import}.
    * It sends a request to the
-   * [Confirm Product Import](https://docs.medusajs.com/api/admin#products_postproductsimporttransaction_idconfirm)
+   * [Confirm Product Import](https://docs.switchyard.run/api/admin#products_postproductsimporttransaction_idconfirm)
    * API route.
    *
    * @since 2.8.5
@@ -212,7 +212,7 @@ export class Product {
    * You can retrieve the notifications using the `/admin/notification` API route to
    * retrieve the file's download URL.
    *
-   * This method sends a request to the [Export Product](https://docs.medusajs.com/api/admin#products_postproductsexport)
+   * This method sends a request to the [Export Product](https://docs.switchyard.run/api/admin#products_postproductsexport)
    * API route.
    *
    * @param body - The export's details.
@@ -244,7 +244,7 @@ export class Product {
 
   /**
    * This method manages products to create, update, or delete them. It sends a request to the
-   * [Manage Products](https://docs.medusajs.com/api/admin#products_postproductsbatch)
+   * [Manage Products](https://docs.switchyard.run/api/admin#products_postproductsbatch)
    * API route.
    *
    * @param body - The products to create, update, or delete.
@@ -300,7 +300,7 @@ export class Product {
 
   /**
    * This method creates a product. It sends a request to the
-   * [Create Product](https://docs.medusajs.com/api/admin#products_postproducts)
+   * [Create Product](https://docs.switchyard.run/api/admin#products_postproducts)
    * API route.
    *
    * @param body - The product's details.
@@ -348,7 +348,7 @@ export class Product {
 
   /**
    * This method updates a product. It sends a request to the
-   * [Update Product](https://docs.medusajs.com/api/admin#products_postproductsid)
+   * [Update Product](https://docs.switchyard.run/api/admin#products_postproductsid)
    * API route.
    *
    * @param id - The product's ID.
@@ -384,7 +384,7 @@ export class Product {
 
   /**
    * This method retrieves a paginated list of products. It sends a request to the
-   * [List Products](https://docs.medusajs.com/api/admin#products_getproducts) API route.
+   * [List Products](https://docs.switchyard.run/api/admin#products_getproducts) API route.
    *
    * @param queryParams - Filters and pagination configurations.
    * @param headers - Headers to pass in the request.
@@ -426,7 +426,7 @@ export class Product {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async list(
     queryParams?: HttpTypes.AdminProductListParams,
@@ -443,7 +443,7 @@ export class Product {
 
   /**
    * This method retrieves a product by its ID. It sends a request to the
-   * [Get Product](https://docs.medusajs.com/api/admin#products_getproductsid)
+   * [Get Product](https://docs.switchyard.run/api/admin#products_getproductsid)
    * API route.
    *
    * @param id - The product's ID.
@@ -472,7 +472,7 @@ export class Product {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async retrieve(id: string, query?: SelectParams, headers?: ClientHeaders) {
     return await this.client.fetch<HttpTypes.AdminProductResponse>(
@@ -486,7 +486,7 @@ export class Product {
 
   /**
    * This method deletes a product. It sends a request to the
-   * [Delete Product](https://docs.medusajs.com/api/admin#products_deleteproductsid)
+   * [Delete Product](https://docs.switchyard.run/api/admin#products_deleteproductsid)
    * API route.
    *
    * @param id - The product's ID.
@@ -511,7 +511,7 @@ export class Product {
 
   /**
    * This method manages the variants of a product. It sends a request to the
-   * [Manage Variants](https://docs.medusajs.com/api/admin#products_postproductsidvariantsbatch)
+   * [Manage Variants](https://docs.switchyard.run/api/admin#products_postproductsidvariantsbatch)
    * API route.
    *
    * @param productId - The product's ID.
@@ -562,7 +562,7 @@ export class Product {
 
   /**
    * This method creates a variant for a product. It sends a request to the
-   * [Create Variant](https://docs.medusajs.com/api/admin#products_postproductsidvariants)
+   * [Create Variant](https://docs.switchyard.run/api/admin#products_postproductsidvariants)
    * API route.
    *
    * @param productId - The product's ID.
@@ -607,7 +607,7 @@ export class Product {
 
   /**
    * This method updates a variant of a product. It sends a request to the
-   * [Update Variant](https://docs.medusajs.com/api/admin#products_postproductsidvariantsvariant_id)
+   * [Update Variant](https://docs.switchyard.run/api/admin#products_postproductsidvariantsvariant_id)
    * API route.
    *
    * @param productId - The product's ID.
@@ -649,7 +649,7 @@ export class Product {
 
   /**
    * This method retrieves a paginated list of products. It sends a request to the
-   * [List Products](https://docs.medusajs.com/api/admin#products_getproductsidvariants) API route.
+   * [List Products](https://docs.switchyard.run/api/admin#products_getproductsidvariants) API route.
    *
    * @param productId - The ID of the product to retrieve its variants.
    * @param query - Filters and pagination configurations.
@@ -692,7 +692,7 @@ export class Product {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async listVariants(
     productId: string,
@@ -710,7 +710,7 @@ export class Product {
 
   /**
    * This method retrieves a product's variant. It sends a request to the
-   * [Retrieve Variant](https://docs.medusajs.com/api/admin#products_getproductsidvariantsvariant_id)
+   * [Retrieve Variant](https://docs.switchyard.run/api/admin#products_getproductsidvariantsvariant_id)
    * API route.
    *
    * @param productId - The product's ID.
@@ -747,7 +747,7 @@ export class Product {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async retrieveVariant(
     productId: string,
@@ -766,7 +766,7 @@ export class Product {
 
   /**
    * This method deletes a product's variant. It sends a request to the
-   * [Delete Variant](https://docs.medusajs.com/api/admin#products_deleteproductsidvariantsvariant_id)
+   * [Delete Variant](https://docs.switchyard.run/api/admin#products_deleteproductsidvariantsvariant_id)
    * API route.
    *
    * @param productId - The product's ID.
@@ -795,7 +795,7 @@ export class Product {
    * update their inventory items, or delete their association with inventory items.
    *
    * It sends a request to the
-   * [Manage Variant Inventory](https://docs.medusajs.com/api/admin#products_postproductsidvariantsinventoryitemsbatch)
+   * [Manage Variant Inventory](https://docs.switchyard.run/api/admin#products_postproductsidvariantsinventoryitemsbatch)
    * API route.
    *
    * @param productId - The ID of the product that the variant belongs to.
@@ -853,7 +853,7 @@ export class Product {
 
   /**
    * This method creates an option in a product. It sends a request to the
-   * [Create Option](https://docs.medusajs.com/api/admin#products_postproductsidoptions)
+   * [Create Option](https://docs.switchyard.run/api/admin#products_postproductsidoptions)
    * API route.
    *
    * @param productId - The product's ID.
@@ -893,7 +893,7 @@ export class Product {
 
   /**
    * This method updates a product's option. It sends a request to the
-   * [Update Option](https://docs.medusajs.com/api/admin#products_postproductsidoptionsoption_id)
+   * [Update Option](https://docs.switchyard.run/api/admin#products_postproductsidoptionsoption_id)
    * API route.
    *
    * @param productId - The product's ID.
@@ -935,7 +935,7 @@ export class Product {
 
   /**
    * This method retrieves a paginated list of product options. It sends a request to the
-   * [List Options](https://docs.medusajs.com/api/admin#products_getproductsidoptions) API route.
+   * [List Options](https://docs.switchyard.run/api/admin#products_getproductsidoptions) API route.
    *
    * @param productId - The ID of the product to retrieve its options
    * @param query - Filters and pagination configurations.
@@ -978,7 +978,7 @@ export class Product {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async listOptions(
     productId: string,
@@ -996,7 +996,7 @@ export class Product {
 
   /**
    * This method retrieves a product's option. It sends a request to the
-   * [Get Option](https://docs.medusajs.com/api/admin#products_getproductsidoptionsoption_id)
+   * [Get Option](https://docs.switchyard.run/api/admin#products_getproductsidoptionsoption_id)
    * API route.
    *
    * @param productId - The product's ID.
@@ -1033,7 +1033,7 @@ export class Product {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async retrieveOption(
     productId: string,
@@ -1052,7 +1052,7 @@ export class Product {
 
   /**
    * This method deletes a product's option. It sends a request to the
-   * [Delete Option](https://docs.medusajs.com/api/admin#products_deleteproductsidoptionsoption_id)
+   * [Delete Option](https://docs.switchyard.run/api/admin#products_deleteproductsidoptionsoption_id)
    * API route.
    *
    * @param productId - The product's ID.
@@ -1078,7 +1078,7 @@ export class Product {
 
   /**
    * This method manages image-variant associations for a specific image. It sends a request to the
-   * [Batch Image Variants](https://docs.medusajs.com/api/admin#products_postproductsidimagesimage_idvariantsbatch)
+   * [Batch Image Variants](https://docs.switchyard.run/api/admin#products_postproductsidimagesimage_idvariantsbatch)
    * API route.
    * 
    * @since 2.11.2
@@ -1116,7 +1116,7 @@ export class Product {
 
   /**
    * This method manages variant-image associations for a specific variant. It sends a request to the
-   * [Batch Variant Images](https://docs.medusajs.com/api/admin#products_postproductsidvariantsvariant_idimagesbatch)
+   * [Batch Variant Images](https://docs.switchyard.run/api/admin#products_postproductsidvariantsvariant_idimagesbatch)
    * API route.
    * 
    * @since 2.11.2

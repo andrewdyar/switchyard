@@ -47,7 +47,7 @@ const cartFields = ["completed_at"].concat(cartFieldsForPricingContext)
 export const addToCartWorkflowId = "add-to-cart"
 /**
  * This workflow adds a product variant to a cart as a line item. It's executed by the
- * [Add Line Item Store API Route](https://docs.medusajs.com/api/store#carts_postcartsidlineitems).
+ * [Add Line Item Store API Route](https://docs.switchyard.run/api/store#carts_postcartsidlineitems).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you to wrap custom logic around adding an item to the cart.
  * For example, you can use this workflow to add a line item to the cart with a custom price.
@@ -91,7 +91,7 @@ export const addToCartWorkflowId = "add-to-cart"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { addToCartWorkflow } from "@switchyard/medusa/core-flows";
+ * import { addToCartWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * addToCartWorkflow.hooks.setPricingContext((
@@ -107,7 +107,7 @@ export const addToCartWorkflowId = "add-to-cart"
  *
  * :::note
  *
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  *
  * :::
  */

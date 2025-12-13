@@ -4,8 +4,8 @@
  * summary: Accept Order Transfer
  * x-sidebar-summary: Accept Transfer
  * description: Accept an order to be transfered to a customer's account, which was specified when the transfer request was created. The transfer is requested previously either by the customer using the
- *   [Request Order Transfer Store API route](https://docs.switchyard.com/api/store#orders_postordersidtransferrequest), or by the admin using the [Request Order Transfer Admin API
- *   route](https://docs.switchyard.com/api/admin#orders_postordersidtransferrequest).
+ *   [Request Order Transfer Store API route](https://docs.switchyard.run/api/store#orders_postordersidtransferrequest), or by the admin using the [Request Order Transfer Admin API
+ *   route](https://docs.switchyard.run/api/admin#orders_postordersidtransferrequest).
  * x-authenticated: false
  * parameters:
  *   - name: id
@@ -21,7 +21,7 @@
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.switchyard.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.run/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: |-
@@ -47,16 +47,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       sdk.store.order.acceptTransfer(

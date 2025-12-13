@@ -1,8 +1,8 @@
 import { RemoteJoiner } from "@switchyard/framework/orchestration"
-import CustomerModule from "@switchyard/medusa/customer"
-import RegionModule from "@switchyard/medusa/region"
+import CustomerModule from "@switchyard/customer"
+import RegionModule from "@switchyard/region"
 import { SwitchyardModule } from "@switchyard/modules-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IRegionModuleService,
   ModuleJoinerConfig,
@@ -16,7 +16,7 @@ jest.setTimeout(50000)
 
 const env = {}
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Remote Query", () => {

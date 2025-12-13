@@ -15,7 +15,7 @@ export interface CreateRegionsWorkflowInput {
     /**
      * Whether prices in the region are tax inclusive.
      * 
-     * Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/pricing/tax-inclusive-pricing).
+     * Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/pricing/tax-inclusive-pricing).
      */
     is_tax_inclusive?: boolean
   })[]

@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { HttpTypes } from "@switchyard/types"
 import { ModuleRegistrationName, ProductStatus } from "@switchyard/utils"
 import {
@@ -9,7 +9,7 @@ import { setupTaxStructure } from "../../../../modules/__tests__/fixtures"
 
 jest.setTimeout(300000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let region: HttpTypes.AdminRegion
     let salesChannel: HttpTypes.AdminSalesChannel

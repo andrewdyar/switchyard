@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IStoreModuleService } from "@switchyard/types"
 import { Modules } from "@switchyard/utils"
 import {
@@ -8,7 +8,7 @@ import {
 
 jest.setTimeout(90000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("/admin/stores", () => {
       let store

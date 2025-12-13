@@ -352,7 +352,7 @@
  *                       type: object
  *                       description: The variant's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                 variant_id:
  *                   type: string
@@ -536,7 +536,7 @@
  *                       type: object
  *                       description: The product's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                 product_id:
  *                   type: string
@@ -803,7 +803,7 @@
  *                       type: object
  *                       description: The detail's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                     created_at:
  *                       type: string
@@ -829,7 +829,7 @@
  *                   type: object
  *                   description: The item's metadata.
  *                   externalDocs:
- *                     url: https://docs.switchyard.com/api/store#manage-metadata
+ *                     url: https://docs.switchyard.run/api/store#manage-metadata
  *                     description: Learn how to manage metadata
  *                 original_total:
  *                   type: number
@@ -1031,7 +1031,7 @@
  *                       type: object
  *                       description: The variant's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                     created_at:
  *                       type: string
@@ -1219,7 +1219,7 @@
  *                       type: object
  *                       description: The product's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                     created_at:
  *                       type: string
@@ -1515,7 +1515,7 @@
  *                           type: object
  *                           description: The detail's metadata.
  *                           externalDocs:
- *                             url: https://docs.switchyard.com/api/store#manage-metadata
+ *                             url: https://docs.switchyard.run/api/store#manage-metadata
  *                             description: Learn how to manage metadata
  *                         created_at:
  *                           type: string
@@ -1548,7 +1548,7 @@
  *                   type: object
  *                   description: The item's metadata.
  *                   externalDocs:
- *                     url: https://docs.switchyard.com/api/store#manage-metadata
+ *                     url: https://docs.switchyard.run/api/store#manage-metadata
  *                     description: Learn how to manage metadata
  *                 created_at:
  *                   type: string
@@ -1905,7 +1905,7 @@
  *                       type: object
  *                       description: The variant's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                 variant_id:
  *                   type: string
@@ -2089,7 +2089,7 @@
  *                       type: object
  *                       description: The product's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                 product_id:
  *                   type: string
@@ -2356,7 +2356,7 @@
  *                       type: object
  *                       description: The detail's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                     created_at:
  *                       type: string
@@ -2382,7 +2382,7 @@
  *                   type: object
  *                   description: The item's metadata.
  *                   externalDocs:
- *                     url: https://docs.switchyard.com/api/store#manage-metadata
+ *                     url: https://docs.switchyard.run/api/store#manage-metadata
  *                     description: Learn how to manage metadata
  *                 original_total:
  *                   type: number
@@ -2580,7 +2580,7 @@
  *                       type: object
  *                       description: The variant's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                     created_at:
  *                       type: string
@@ -2768,7 +2768,7 @@
  *                       type: object
  *                       description: The product's metadata.
  *                       externalDocs:
- *                         url: https://docs.switchyard.com/api/store#manage-metadata
+ *                         url: https://docs.switchyard.run/api/store#manage-metadata
  *                         description: Learn how to manage metadata
  *                     created_at:
  *                       type: string
@@ -3064,7 +3064,7 @@
  *                           type: object
  *                           description: The detail's metadata.
  *                           externalDocs:
- *                             url: https://docs.switchyard.com/api/store#manage-metadata
+ *                             url: https://docs.switchyard.run/api/store#manage-metadata
  *                             description: Learn how to manage metadata
  *                         created_at:
  *                           type: string
@@ -3097,7 +3097,7 @@
  *                   type: object
  *                   description: The item's metadata.
  *                   externalDocs:
- *                     url: https://docs.switchyard.com/api/store#manage-metadata
+ *                     url: https://docs.switchyard.run/api/store#manage-metadata
  *                     description: Learn how to manage metadata
  *                 created_at:
  *                   type: string
@@ -3346,7 +3346,7 @@
  *                     type: object
  *                     description: The variant's metadata.
  *                     externalDocs:
- *                       url: https://docs.switchyard.com/api/store#manage-metadata
+ *                       url: https://docs.switchyard.run/api/store#manage-metadata
  *                       description: Learn how to manage metadata
  *                   created_at:
  *                     type: string
@@ -3534,7 +3534,7 @@
  *                     type: object
  *                     description: The product's metadata.
  *                     externalDocs:
- *                       url: https://docs.switchyard.com/api/store#manage-metadata
+ *                       url: https://docs.switchyard.run/api/store#manage-metadata
  *                       description: Learn how to manage metadata
  *                   created_at:
  *                     type: string
@@ -3830,7 +3830,7 @@
  *                         type: object
  *                         description: The detail's metadata.
  *                         externalDocs:
- *                           url: https://docs.switchyard.com/api/store#manage-metadata
+ *                           url: https://docs.switchyard.run/api/store#manage-metadata
  *                           description: Learn how to manage metadata
  *                       created_at:
  *                         type: string
@@ -3863,7 +3863,7 @@
  *                 type: object
  *                 description: The item's metadata.
  *                 externalDocs:
- *                   url: https://docs.switchyard.com/api/store#manage-metadata
+ *                   url: https://docs.switchyard.run/api/store#manage-metadata
  *                   description: Learn how to manage metadata
  *               created_at:
  *                 type: string
@@ -4021,7 +4021,7 @@
  *     type: object
  *     description: The item's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.switchyard.com/api/store#manage-metadata
+ *       url: https://docs.switchyard.run/api/store#manage-metadata
  *       description: Learn how to manage metadata
  *   original_total:
  *     type: number

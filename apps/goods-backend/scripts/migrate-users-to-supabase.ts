@@ -1,5 +1,5 @@
 /**
- * Migration script to migrate existing Medusa admin users to Supabase Auth.
+ * Migration script to migrate existing Switchyard admin users to Supabase Auth.
  * 
  * This script:
  * 1. Reads all users from Medusa's user table
@@ -12,7 +12,7 @@
  *   npx ts-node scripts/migrate-users-to-supabase.ts
  * 
  * Environment variables required:
- *   - DATABASE_URL (Medusa database)
+ *   - DATABASE_URL (Switchyard database)
  *   - SUPABASE_URL
  *   - SUPABASE_SERVICE_ROLE_KEY
  */
@@ -225,7 +225,7 @@ async function updateAuthIdentity(
 }
 
 async function main() {
-  console.log("=== Medusa to Supabase User Migration ===\n")
+  console.log("=== Switchyard to Supabase User Migration ===\n")
 
   // Get default role ID (manager)
   const defaultRoleId = await getRoleId("manager")
@@ -234,8 +234,8 @@ async function main() {
     process.exit(1)
   }
 
-  // Get all Medusa users
-  console.log("Fetching Medusa users...")
+  // Get all Switchyard users
+  console.log("Fetching Switchyard users...")
   const users = await getMedusaUsers()
   console.log(`Found ${users.length} users to migrate\n`)
 

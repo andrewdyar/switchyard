@@ -7,8 +7,8 @@ const defaultConfig = {
 }
 
 const defaultMessage =
-  `Medusa collects anonymous usage analytics\n` +
-  `to help improve Medusa for all users.\n` +
+  `Switchyard collects anonymous usage analytics\n` +
+  `to help improve Switchyard for all users.\n` +
   `\n` +
   `If you'd like to opt-out, you can use \`medusa telemetry --disable\`\n`
 

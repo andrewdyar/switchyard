@@ -20,7 +20,7 @@ const TagsOperationFeatureFlagNotice = ({
           To use this {type}, make sure to
           <br />
           <Link
-            href="https://docs.switchyard.com/development/feature-flags/toggle"
+            href="https://docs.switchyard.run/development/feature-flags/toggle"
             target="__blank"
             variant="content"
           >

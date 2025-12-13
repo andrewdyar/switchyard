@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   ClaimReason,
   ClaimType,
@@ -15,7 +15,7 @@ import { setupTaxStructure } from "../../../modules/__tests__/fixtures"
 
 jest.setTimeout(30000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let baseClaim
     let order, order2

@@ -90,7 +90,7 @@ export const Solutions = ({ feedback, message }: SolutionsProps) => {
           <span>
             Explore more issues in{" "}
             <Link
-              href={`https://github.com/switchyard/medusa/issues?q=${possibleSolutionsQuery}`}
+              href={`https://github.com/switchyard/switchyard/issues?q=${possibleSolutionsQuery}`}
               target="_blank"
               rel="noreferrer"
               variant="content"

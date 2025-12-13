@@ -1,9 +1,9 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { adminHeaders, createAdminUser, } from "../../../../helpers/create-admin-user"
 
 jest.setTimeout(30000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env: {},
   testSuite: ({ dbConnection, getContainer, api }) => {
     let type1

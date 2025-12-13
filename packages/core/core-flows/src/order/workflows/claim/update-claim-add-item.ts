@@ -54,8 +54,8 @@ export type UpdateClaimAddNewItemValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, order claim, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, order claim, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -114,7 +114,7 @@ export const updateClaimAddItemValidationStep = createStep(
 export const updateClaimAddItemWorkflowId = "update-claim-add-item"
 /**
  * This workflow updates a claim's new or outbound item. It's used by the
- * [Update Outbound Item API Route](https://docs.medusajs.com/api/admin#claims_postclaimsidoutbounditemsaction_id).
+ * [Update Outbound Item API Route](https://docs.switchyard.run/api/admin#claims_postclaimsidoutbounditemsaction_id).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to update a claim's new or outbound item
  * in your custom flows.

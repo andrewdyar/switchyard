@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { Modules, ProductStatus, PromotionStatus, PromotionType } from "@switchyard/utils"
 import {
   createAdminUser,
@@ -11,7 +11,7 @@ import { switchyardTshirtProduct } from "../../../__fixtures__/product"
 jest.setTimeout(500000)
 
 const adminHeaders = {
-  headers: { "x-medusa-access-token": "test_token" },
+  headers: { "x-switchyard-access-token": "test_token" },
 }
 
 const standardPromotionPayload = {
@@ -51,7 +51,7 @@ const standardPromotionPayload = {
   ],
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Admin Promotions API", () => {
       let appContainer
@@ -2244,7 +2244,7 @@ medusaIntegrationTestRunner({
             await api.post(
               "/admin/products",
               {
-                title: "Discounted Medusa T-Shirt",
+                title: "Discounted Switchyard T-Shirt",
                 status: ProductStatus.PUBLISHED,
                 handle: "discounted-medusa-t-shirt",
                 options: [

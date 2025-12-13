@@ -23,7 +23,7 @@ const main = async function ({ directory, modules }) {
 
     await ensureDbExists(container)
 
-    const medusaAppLoader = new SwitchyardAppLoader()
+    const switchyardAppLoader = new SwitchyardAppLoader()
     const configModule = container.resolve(
       ContainerRegistrationKeys.CONFIG_MODULE
     )
@@ -44,7 +44,7 @@ const main = async function ({ directory, modules }) {
     const migrator = new Migrator({ container })
     await migrator.ensureMigrationsTable()
 
-    await medusaAppLoader.runModulesMigrations({
+    await switchyardAppLoader.runModulesMigrations({
       moduleNames: modules,
       action: "revert",
     })

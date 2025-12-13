@@ -8,14 +8,14 @@ import {
 
 import {
   isObject,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardModuleType,
   Modules,
   promiseAll,
   toPascalCase,
 } from "@switchyard/utils"
-import { SwitchyardModule } from "./medusa-module"
+import { SwitchyardModule } from "./switchyard-module"
 import { convertRecordsToLinkDefinition } from "./utils/convert-data-to-link-definition"
 import { linkingErrorMessage } from "./utils/linking-error"
 
@@ -178,7 +178,7 @@ export class Link {
   private async executeCascade(
     removedServices: DeleteEntityInput,
     executionMethod: "softDelete" | "restore",
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<[CascadeError[] | null, RemovedIds]> {
     const removedIds: RemovedIds = {}
     const returnIdsList: RemovedIds = {}
@@ -395,7 +395,7 @@ export class Link {
 
   async create(
     link: LinkDefinition | LinkDefinition[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<unknown[]> {
     const allLinks = Array.isArray(link) ? link : [link]
     const serviceLinks = new Map<
@@ -532,7 +532,7 @@ export class Link {
 
   async dismiss(
     link: LinkDefinition | LinkDefinition[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<unknown[]> {
     const allLinks = Array.isArray(link) ? link : [link]
     const serviceLinks = new Map<string, [string | string[], string][]>()
@@ -569,7 +569,7 @@ export class Link {
 
   async delete(
     removedServices: DeleteEntityInput,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<[CascadeError[] | null, RemovedIds]> {
     return await this.executeCascade(
       removedServices,
@@ -580,7 +580,7 @@ export class Link {
 
   async restore(
     removedServices: DeleteEntityInput,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<[CascadeError[] | null, RestoredIds]> {
     return await this.executeCascade(removedServices, "restore", sharedContext)
   }
@@ -588,7 +588,7 @@ export class Link {
   async list(
     link: LinkDefinition | LinkDefinition[],
     options?: { asLinkDefinition?: boolean },
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<(object | LinkDefinition)[]> {
     const allLinks = Array.isArray(link) ? link : [link]
     const serviceLinks = new Map<string, object[]>()

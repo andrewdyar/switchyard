@@ -11,9 +11,9 @@
  * 
  *   In cases where you want to create a payment session for a payment collection with an amount of `0`, you can use the Manual System Payment Provider instead of third-party payment providers. The Manual System Payment Provider is built into Switchyard and allows you to create payment sessions without interacting with an external payment provider.
  * 
- *   Make sure to configure the Manual System Payment Provider in your store's region. Learn more in the [Manage Region](https://docs.switchyard.com/user-guide/settings/regions#edit-region-details) user guide.
+ *   Make sure to configure the Manual System Payment Provider in your store's region. Learn more in the [Manage Region](https://docs.switchyard.run/user-guide/settings/regions#edit-region-details) user guide.
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/storefront-development/checkout/payment
+ *   url: https://docs.switchyard.run/resources/storefront-development/checkout/payment
  *   description: "Storefront guide: How to implement payment during checkout."
  * x-authenticated: false
  * parameters:
@@ -30,7 +30,7 @@
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.switchyard.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.run/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default

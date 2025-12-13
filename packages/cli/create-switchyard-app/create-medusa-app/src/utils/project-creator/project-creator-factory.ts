@@ -32,7 +32,7 @@ export class ProjectCreatorFactory {
     const nodeVersion = getNodeVersion()
     if (nodeVersion < MIN_SUPPORTED_NODE_VERSION) {
       logMessage({
-        message: `Medusa requires at least v20 of Node.js. You're using v${nodeVersion}. Please install at least v20 and try again: https://nodejs.org/en/download`,
+        message: `Switchyard requires at least v20 of Node.js. You're using v${nodeVersion}. Please install at least v20 and try again: https://nodejs.org/en/download`,
         type: "error",
       })
     }

@@ -24,7 +24,7 @@ export class Order {
 
   /**
    * This method retrieves an order by its ID. It sends a request to the
-   * [Get Order](https://docs.medusajs.com/api/admin#orders_getordersid)
+   * [Get Order](https://docs.switchyard.run/api/admin#orders_getordersid)
    * API route.
    *
    * @param id - The order's ID.
@@ -53,7 +53,7 @@ export class Order {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async retrieve(id: string, query?: SelectParams, headers?: ClientHeaders) {
     return await this.client.fetch<HttpTypes.AdminOrderResponse>(
@@ -67,7 +67,7 @@ export class Order {
 
   /**
    * This method updates an order. It sends a request to the
-   * [Update Order Email](https://docs.medusajs.com/api/admin#orders_postordersid)
+   * [Update Order Email](https://docs.switchyard.run/api/admin#orders_postordersid)
    * API route.
    *
    * @param id - The order's ID.
@@ -108,7 +108,7 @@ export class Order {
 
   /**
    * This method retrieves the preview of an order based on its last associated change. It sends a request to the
-   * [Get Order Preview](https://docs.medusajs.com/api/admin#orders_getordersidpreview) API route.
+   * [Get Order Preview](https://docs.switchyard.run/api/admin#orders_getordersidpreview) API route.
    *
    * @param id - The order's ID.
    * @param query - Query parameters.
@@ -137,7 +137,7 @@ export class Order {
 
   /**
    * This method retrieves a paginated list of orders. It sends a request to the
-   * [List Orders](https://docs.medusajs.com/api/admin#orders_getorders) API route.
+   * [List Orders](https://docs.switchyard.run/api/admin#orders_getorders) API route.
    *
    * @param queryParams - Filters and pagination configurations.
    * @param headers - Headers to pass in the request.
@@ -179,7 +179,7 @@ export class Order {
    * })
    * ```
    *
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/store#select-fields-and-relations).
    */
   async list(
     queryParams?: HttpTypes.AdminOrderFilters,
@@ -196,7 +196,7 @@ export class Order {
 
   /**
    * This method archives an order. It sends a request to the
-   * [Archive Order](https://docs.medusajs.com/api/admin#orders_postordersidarchive)
+   * [Archive Order](https://docs.switchyard.run/api/admin#orders_postordersidarchive)
    * API route.
    *
    * @param id - The order's ID.
@@ -227,7 +227,7 @@ export class Order {
 
   /**
    * This method cancels an order. It sends a request to the
-   * [Cancel Order](https://docs.medusajs.com/api/admin#orders_postordersidcancel)
+   * [Cancel Order](https://docs.switchyard.run/api/admin#orders_postordersidcancel)
    * API route.
    *
    * @param id - The order's ID.
@@ -252,7 +252,7 @@ export class Order {
 
   /**
    * This method completes an order. It sends a request to the
-   * [Complete Order](https://docs.medusajs.com/api/admin#orders_postordersidcomplete)
+   * [Complete Order](https://docs.switchyard.run/api/admin#orders_postordersidcomplete)
    * API route.
    *
    * @param id - The order's ID.
@@ -284,7 +284,7 @@ export class Order {
 
   /**
    * This method requests an order transfer. It sends a request to the
-   * [Request Order Transfer](https://docs.medusajs.com/api/admin#orders_postordersidrequesttransfer)
+   * [Request Order Transfer](https://docs.switchyard.run/api/admin#orders_postordersidrequesttransfer)
    * API route.
    *
    * @param id - The order's ID.
@@ -318,7 +318,7 @@ export class Order {
 
   /**
    * This method cancels an order transfer request. It sends a request to the
-   * [Cancel Order Transfer Request](https://docs.medusajs.com/api/admin#orders_postordersidcanceltransferrequest)
+   * [Cancel Order Transfer Request](https://docs.switchyard.run/api/admin#orders_postordersidcanceltransferrequest)
    * API route.
    *
    * @param id - The order's ID.
@@ -343,7 +343,7 @@ export class Order {
 
   /**
    * This method creates a fulfillment for an order. It sends a request to the
-   * [Create Fulfillment](https://docs.medusajs.com/api/admin#orders_postordersidfulfillments)
+   * [Create Fulfillment](https://docs.switchyard.run/api/admin#orders_postordersidfulfillments)
    * API route.
    *
    * @param id - The order's ID.
@@ -384,7 +384,7 @@ export class Order {
 
   /**
    * This method cancels an order's fulfillment. It sends a request to the
-   * [Cancel Fulfillment](https://docs.medusajs.com/api/admin#orders_postordersidfulfillmentsfulfillment_idcancel)
+   * [Cancel Fulfillment](https://docs.switchyard.run/api/admin#orders_postordersidfulfillmentsfulfillment_idcancel)
    * API route.
    *
    * @param id - The order's ID.
@@ -423,7 +423,7 @@ export class Order {
 
   /**
    * This method creates a shipment for an order's fulfillment. It sends a request to the
-   * [Create Shipment](https://docs.medusajs.com/api/admin#orders_postordersidfulfillmentsfulfillment_idshipments)
+   * [Create Shipment](https://docs.switchyard.run/api/admin#orders_postordersidfulfillmentsfulfillment_idshipments)
    * API route.
    *
    * @param id - The order's ID.
@@ -470,7 +470,7 @@ export class Order {
 
   /**
    * This method marks an order's fulfillment as delivered. It sends a request to the
-   * [Mark Delivered ](https://docs.medusajs.com/api/admin#orders_postordersidfulfillmentsfulfillment_idmarkasdelivered)
+   * [Mark Delivered ](https://docs.switchyard.run/api/admin#orders_postordersidfulfillmentsfulfillment_idmarkasdelivered)
    * API route.
    *
    * @param id - The order's ID.
@@ -507,7 +507,7 @@ export class Order {
   /**
    * This method retrieves a list of shipping options for an order based on the order's shipping address.
    *
-   * This method sends a request to the [List Shipping Options](https://docs.medusajs.com/api/admin#orders_getordersidshipping-options)
+   * This method sends a request to the [List Shipping Options](https://docs.switchyard.run/api/admin#orders_getordersidshipping-options)
    * API route.
    *
    * @param id - The order's ID.
@@ -537,7 +537,7 @@ export class Order {
   /**
    * This method retrieves a list of changes made on an order, including returns, exchanges, etc...
    *
-   * This method sends a request to the [List Changes](https://docs.medusajs.com/api/admin#orders_getordersidchanges)
+   * This method sends a request to the [List Changes](https://docs.switchyard.run/api/admin#orders_getordersidchanges)
    * API route.
    *
    * @param id - The order's ID.
@@ -566,7 +566,7 @@ export class Order {
 
   /**
    * This method retrieves the order's line items. It sends a request to the
-   * [List Line Items](https://docs.medusajs.com/api/admin#orders_getordersidlineitems)
+   * [List Line Items](https://docs.switchyard.run/api/admin#orders_getordersidlineitems)
    * API routes.
    *
    * @param id - The order's ID.
@@ -596,7 +596,7 @@ export class Order {
 
   /**
    * This method creates a credit line for an order. It sends a request to the
-   * [Create Credit Line](https://docs.medusajs.com/api/admin#orders_postordersidcredit-lines) API route.
+   * [Create Credit Line](https://docs.switchyard.run/api/admin#orders_postordersidcredit-lines) API route.
    *
    * @param orderId - The order's ID.
    * @param body - The credit line's details.
@@ -636,7 +636,7 @@ export class Order {
 
   /**
    * This method updates an order change. It sends a request to the
-   * [Update Order Change](https://docs.medusajs.com/api/admin#order-changes_postorder-changesid)
+   * [Update Order Change](https://docs.switchyard.run/api/admin#order-changes_postorder-changesid)
    * API route.
    * 
    * @since 2.12.0

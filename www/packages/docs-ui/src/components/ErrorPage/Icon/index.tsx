@@ -11,7 +11,7 @@ export const ErrorPageIcon = () => {
     >
       <path
         d="M134.25 128.75V139.5C134.25 143.228 131.228 146.25 127.5 146.25H7.5C3.77208 146.25 0.75 143.228 0.75 139.5V128.75H134.25Z"
-        className="fill-medusa-bg-base-hover"
+        className="fill-switchyard-bg-base-hover"
       />
       <path
         d="M134.25 128.75V139.5C134.25 143.228 131.228 146.25 127.5 146.25H7.5C3.77208 146.25 0.75 143.228 0.75 139.5V128.75H134.25Z"
@@ -23,235 +23,235 @@ export const ErrorPageIcon = () => {
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="7.44281"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="11.3856"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="15.3284"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="19.2712"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="23.2141"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="27.1569"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="31.0997"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="35.0425"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="38.9853"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="42.9281"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="46.8709"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="50.8137"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="54.7566"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="58.6994"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="62.6422"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="66.585"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="70.5278"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="74.4706"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="78.4135"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="82.3563"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="86.2991"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="90.2419"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="94.1847"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="98.1275"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="102.07"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="106.013"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="109.956"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="113.899"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="117.842"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="121.784"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="125.727"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="129.67"
         y="129.5"
         width="1.83"
         height="16"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <path
         d="M109.5 0.75C123.169 0.75 134.25 11.831 134.25 25.5V130.25H0.75V25.5C0.75 11.831 11.831 0.75 25.5 0.75H109.5Z"
-        className="fill-medusa-bg-base stroke-medusa-fg-subtle"
+        className="fill-switchyard-bg-base stroke-medusa-fg-subtle"
         strokeWidth="1.5"
       />
       <rect
@@ -260,7 +260,7 @@ export const ErrorPageIcon = () => {
         width="12"
         height="4"
         rx="2"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="85.5"
@@ -268,7 +268,7 @@ export const ErrorPageIcon = () => {
         width="36"
         height="4"
         rx="2"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="12.75"
@@ -276,7 +276,7 @@ export const ErrorPageIcon = () => {
         width="109.5"
         height="77.5"
         rx="12.75"
-        className="fill-medusa-bg-base stroke-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-base stroke-switchyard-bg-switch-off-hover"
         strokeWidth="1.5"
       />
       <rect
@@ -285,7 +285,7 @@ export const ErrorPageIcon = () => {
         width="97.5"
         height="65.5"
         rx="6.75"
-        className="fill-medusa-bg-base-hover stroke-medusa-fg-subtle"
+        className="fill-switchyard-bg-base-hover stroke-medusa-fg-subtle"
         strokeWidth="1.5"
       />
       <rect
@@ -294,7 +294,7 @@ export const ErrorPageIcon = () => {
         width="97.5"
         height="65.5"
         rx="6.75"
-        className="fill-medusa-bg-base-hover stroke-medusa-fg-subtle"
+        className="fill-switchyard-bg-base-hover stroke-medusa-fg-subtle"
         strokeWidth="1.5"
       />
       <path
@@ -342,7 +342,7 @@ export const ErrorPageIcon = () => {
         width="14"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="54.5"
@@ -350,7 +350,7 @@ export const ErrorPageIcon = () => {
         width="16"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="37.5"
@@ -358,7 +358,7 @@ export const ErrorPageIcon = () => {
         width="16"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="53.5"
@@ -366,7 +366,7 @@ export const ErrorPageIcon = () => {
         width="26"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="60.5"
@@ -374,7 +374,7 @@ export const ErrorPageIcon = () => {
         width="28"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="45.5"
@@ -382,7 +382,7 @@ export const ErrorPageIcon = () => {
         width="12"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="45.5"
@@ -390,7 +390,7 @@ export const ErrorPageIcon = () => {
         width="16"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="64.5"
@@ -398,7 +398,7 @@ export const ErrorPageIcon = () => {
         width="10"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="29.5"
@@ -406,7 +406,7 @@ export const ErrorPageIcon = () => {
         width="16"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="48.5"
@@ -414,7 +414,7 @@ export const ErrorPageIcon = () => {
         width="8"
         height="3"
         rx="1.5"
-        className="fill-medusa-bg-switch-off-hover"
+        className="fill-switchyard-bg-switch-off-hover"
       />
       <rect
         x="55.5"

@@ -4,7 +4,7 @@ import { Client } from "./client"
 import { Store } from "./store"
 import { Config } from "./types"
 
-class Medusa {
+class Switchyard {
   public client: Client
 
   public admin: Admin

@@ -116,7 +116,7 @@ const ActionButton = ({ children, className, ...props }: ButtonProps) => {
       variant="transparent"
       className={clsx(
         "text-medusa-fg-muted hover:text-medusa-fg-muted",
-        "hover:bg-medusa-bg-subtle-hover",
+        "hover:bg-switchyard-bg-subtle-hover",
         "!p-[4.5px] rounded-docs_sm",
         className
       )}

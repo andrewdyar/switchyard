@@ -71,7 +71,7 @@ async function syncDatabaseProviders({ container }) {
       container.resolve(FulfillmentIdentifiersRegistrationName) ?? []
     ).filter(Boolean)
 
-    const providerService: ModulesSdkTypes.IMedusaInternalService<any> =
+    const providerService: ModulesSdkTypes.ISwitchyardInternalService<any> =
       container.resolve(providerServiceRegistrationKey)
 
     const providers = await providerService.list({})

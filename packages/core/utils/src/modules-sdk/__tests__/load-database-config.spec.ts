@@ -8,7 +8,7 @@ describe("loadDatabaseConfig", function () {
   })
 
   it("should return the local configuration using the environment variable respecting their precedence", function () {
-    process.env.MEDUSA_DATABASE_URL = "postgres://localhost:5432/medusa"
+    process.env.MEDUSA_DATABASE_URL = "postgres://localhost:5432/switchyard"
     process.env.PRODUCT_DATABASE_URL = "postgres://localhost:5432/product"
     process.env.DATABASE_URL = "postgres://localhost:5432/share_db"
 
@@ -90,10 +90,10 @@ describe("loadDatabaseConfig", function () {
   })
 
   it("should return the local configuration using the options", function () {
-    process.env.DATABASE_URL = "postgres://localhost:5432/medusa"
+    process.env.DATABASE_URL = "postgres://localhost:5432/switchyard"
     const options = {
       database: {
-        clientUrl: "postgres://localhost:5432/medusa-test",
+        clientUrl: "postgres://localhost:5432/switchyard-test",
       },
     }
 
@@ -112,7 +112,7 @@ describe("loadDatabaseConfig", function () {
   })
 
   it("should return the local configuration using the options", function () {
-    process.env.DATABASE_URL = "postgres://localhost:5432/medusa"
+    process.env.DATABASE_URL = "postgres://localhost:5432/switchyard"
     const options = {
       database: {
         clientUrl: "postgres://127.0.0.1:5432/medusa-test",
@@ -134,7 +134,7 @@ describe("loadDatabaseConfig", function () {
   })
 
   it("should return the remote configuration using the options", function () {
-    process.env.DATABASE_URL = "postgres://localhost:5432/medusa"
+    process.env.DATABASE_URL = "postgres://localhost:5432/switchyard"
     const options = {
       database: {
         clientUrl: "postgres://https://test.com:5432/medusa-test",
@@ -158,7 +158,7 @@ describe("loadDatabaseConfig", function () {
   })
 
   it("should return the local configuration using the client url ssl_mode=disable", function () {
-    process.env.DATABASE_URL = "postgres://localhost:5432/medusa"
+    process.env.DATABASE_URL = "postgres://localhost:5432/switchyard"
     const options = {
       database: {
         clientUrl:
@@ -181,7 +181,7 @@ describe("loadDatabaseConfig", function () {
   })
 
   it("should return the local configuration using the client url sslmode=disable", function () {
-    process.env.DATABASE_URL = "postgres://localhost:5432/medusa"
+    process.env.DATABASE_URL = "postgres://localhost:5432/switchyard"
     const options = {
       database: {
         clientUrl:
@@ -204,7 +204,7 @@ describe("loadDatabaseConfig", function () {
   })
 
   it("should return the remote configuration using the client url ssl_mode=false", function () {
-    process.env.DATABASE_URL = "postgres://localhost:5432/medusa"
+    process.env.DATABASE_URL = "postgres://localhost:5432/switchyard"
     const options = {
       database: {
         clientUrl:

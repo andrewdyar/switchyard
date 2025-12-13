@@ -5,7 +5,7 @@ import {
   WorkflowData,
   WorkflowResponse,
 } from "@switchyard/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { createAdminUser } from "../../../../helpers/create-admin-user"
 import { setTimeout } from "timers/promises"
 
@@ -48,11 +48,11 @@ async function finishWorkflows(
 
 const adminHeaders = {
   headers: {
-    "x-medusa-access-token": "test_token",
+    "x-switchyard-access-token": "test_token",
   },
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Workflow Engine API", () => {
       let medusaContainer

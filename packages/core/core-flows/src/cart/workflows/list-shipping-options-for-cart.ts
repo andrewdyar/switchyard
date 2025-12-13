@@ -29,7 +29,7 @@ export const listShippingOptionsForCartWorkflowId =
   "list-shipping-options-for-cart"
 /**
  * This workflow lists the shipping options of a cart. It's executed by the
- * [List Shipping Options Store API Route](https://docs.medusajs.com/api/store#shipping-options_getshippingoptions).
+ * [List Shipping Options Store API Route](https://docs.switchyard.run/api/store#shipping-options_getshippingoptions).
  *
  * :::note
  *
@@ -69,7 +69,7 @@ export const listShippingOptionsForCartWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { listShippingOptionsForCartWorkflow } from "@switchyard/medusa/core-flows";
+ * import { listShippingOptionsForCartWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * listShippingOptionsForCartWorkflow.hooks.setPricingContext((
@@ -85,7 +85,7 @@ export const listShippingOptionsForCartWorkflowId =
  *
  * :::note
  *
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  *
  * :::
  *
@@ -94,7 +94,7 @@ export const listShippingOptionsForCartWorkflowId =
  * For example, you can consume the hook to add the customer Id to the context:
  *
  * ```ts
- * import { listShippingOptionsForCartWithPricingWorkflow } from "@switchyard/medusa/core-flows"
+ * import { listShippingOptionsForCartWithPricingWorkflow } from "@switchyard/core-flows"
  * import { StepResponse } from "@switchyard/workflows-sdk"
  *
  * listShippingOptionsForCartWithPricingWorkflow.hooks.setShippingOptionsContext(

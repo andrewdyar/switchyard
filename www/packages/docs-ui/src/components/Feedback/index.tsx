@@ -245,7 +245,7 @@ export const Feedback = ({
                         onChange={() => setFeedbackOption(option)}
                         className={clsx(
                           feedbackOption !== option &&
-                            "group-hover:bg-medusa-bg-component-hover"
+                            "group-hover:bg-switchyard-bg-component-hover"
                         )}
                       />
                       <Label className="text-medusa-fg-base text-compact-small-plus">

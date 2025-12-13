@@ -49,8 +49,8 @@ export type CreateClaimShippingMethodValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, order claim, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, order claim, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -111,8 +111,8 @@ export const createClaimShippingMethodWorkflowId =
   "create-claim-shipping-method"
 /**
  * This workflow creates an inbound (return) or outbound (delivering new items) shipping method for a claim.
- * It's used by the [Add Inbound Shipping Admin API Route](https://docs.medusajs.com/api/admin#claims_postclaimsidinboundshippingmethod),
- * and the [Add Outbound Shipping Admin API Route](https://docs.medusajs.com/api/admin#claims_postclaimsidoutboundshippingmethod).
+ * It's used by the [Add Inbound Shipping Admin API Route](https://docs.switchyard.run/api/admin#claims_postclaimsidinboundshippingmethod),
+ * and the [Add Outbound Shipping Admin API Route](https://docs.switchyard.run/api/admin#claims_postclaimsidoutboundshippingmethod).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to create a shipping method
  * for a claim in your custom flows.

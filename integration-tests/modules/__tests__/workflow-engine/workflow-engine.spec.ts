@@ -7,7 +7,7 @@ import {
   WorkflowData,
   WorkflowResponse,
 } from "@switchyard/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IEventBusModuleService } from "@switchyard/types"
 import {
   adminHeaders,
@@ -16,7 +16,7 @@ import {
 
 jest.setTimeout(300000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Workflow Engine API", () => {
       let medusaContainer
@@ -80,7 +80,7 @@ medusaIntegrationTestRunner({
             "abc",
             expect.objectContaining({
               transactionId: "trx-id",
-              __type: "MedusaContext",
+              __type: "SwitchyardContext",
               eventGroupId: expect.any(String),
               idempotencyKey: "my-workflow-name:trx-id:my-step:invoke",
               meta: {

@@ -17,7 +17,7 @@ export const Kbd = ({
         "rounded-docs_xs border-solid border border-medusa-border-base",
         "inline-flex items-center justify-center",
         "px-docs_0.25",
-        "bg-medusa-bg-field",
+        "bg-switchyard-bg-field",
         "text-medusa-fg-base",
         "font-base shadow-none",
         variant === "small"

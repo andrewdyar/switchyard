@@ -1,4 +1,4 @@
-import { SwitchyardModule } from "../../medusa-module"
+import { SwitchyardModule } from "../../switchyard-module"
 import { getEntitiesMap } from "../__fixtures__/get-entities-map"
 import "../__fixtures__/parse-filters"
 import { parseAndAssignFilters } from "../parse-filters"

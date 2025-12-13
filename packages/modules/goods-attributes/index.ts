@@ -1,7 +1,7 @@
 /**
  * Goods Attributes Module
  * 
- * Custom Medusa module for Goods-specific product attributes
+ * Custom Switchyard module for Goods-specific product attributes
  * like brand, dietary flags, and merchandising flags.
  */
 

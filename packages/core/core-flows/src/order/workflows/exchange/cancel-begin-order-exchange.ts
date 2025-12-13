@@ -47,8 +47,8 @@ export type CancelBeginOrderExchangeValidationStepInput = {
  * 
  * :::note
  * 
- * You can retrieve an order, order exchange, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, order exchange, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 
@@ -94,7 +94,7 @@ export type CancelBeginOrderExchangeWorkflowInput = {
 export const cancelBeginOrderExchangeWorkflowId = "cancel-begin-order-exchange"
 /**
  * This workflow cancels a requested order exchange. It's used by the
- * [Cancel Exchange Admin API Route](https://docs.medusajs.com/api/admin#exchanges_deleteexchangesidrequest).
+ * [Cancel Exchange Admin API Route](https://docs.switchyard.run/api/admin#exchanges_deleteexchangesidrequest).
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you to cancel an exchange
  * for an order in your custom flow.

@@ -24,7 +24,7 @@ export const updateShippingOptionsWorkflowId =
   "update-shipping-options-workflow"
 /**
  * This workflow updates one or more shipping options. It's used by the
- * [Update Shipping Options Admin API Route](https://docs.medusajs.com/api/admin#shipping-options_postshippingoptionsid).
+ * [Update Shipping Options Admin API Route](https://docs.switchyard.run/api/admin#shipping-options_postshippingoptionsid).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you to
  * update shipping options within your custom flows.
@@ -32,7 +32,7 @@ export const updateShippingOptionsWorkflowId =
  * :::note
  *
  * Learn more about adding rules to the shipping option's prices in the Pricing Module's
- * [Price Rules](https://docs.medusajs.com/resources/commerce-modules/pricing/price-rules) documentation.
+ * [Price Rules](https://docs.switchyard.run/resources/commerce-modules/pricing/price-rules) documentation.
  *
  * :::
  *

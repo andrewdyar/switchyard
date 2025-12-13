@@ -26,8 +26,8 @@ export interface ConfirmVariantInventoryWorkflowOutput {
      */
     inventory_item_id: string
     /**
-     * The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Medusa checks the availability of the quantity multiplied by the
-     * value set for `required_quantity`. When the customer orders the quantity, Medusa reserves the ordered quantity multiplied by the value set for `required_quantity`.
+     * The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Switchyard checks the availability of the quantity multiplied by the
+     * value set for `required_quantity`. When the customer orders the quantity, Switchyard reserves the ordered quantity multiplied by the value set for `required_quantity`.
      */
     required_quantity: number
     /**
@@ -55,14 +55,14 @@ export const confirmVariantInventoryWorkflowId = "confirm-item-inventory"
  *
  * :::note
  *
- * Learn more about the links between the product variant and sales channels and inventory items in [this documentation](https://docs.medusajs.com/resources/commerce-modules/product/links-to-other-modules).
+ * Learn more about the links between the product variant and sales channels and inventory items in [this documentation](https://docs.switchyard.run/resources/commerce-modules/product/links-to-other-modules).
  *
  * :::
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you to check whether a product variant has enough inventory quantity before adding them to the cart.
  *
  * @example
- * You can retrieve a variant's required details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query):
+ * You can retrieve a variant's required details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query):
  *
  * ```ts workflow={false}
  * const { data: variants } = await query.graph({
@@ -90,7 +90,7 @@ export const confirmVariantInventoryWorkflowId = "confirm-item-inventory"
  *
  * :::note
  *
- * In a workflow, use [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep) instead.
+ * In a workflow, use [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep) instead.
  *
  * :::
  *

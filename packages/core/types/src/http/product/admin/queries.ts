@@ -16,7 +16,7 @@ export interface AdminProductVariantParams
    */
   id?: string | string[]
   /**
-   * Filter by whether Medusa manages the inventory of the variant.
+   * Filter by whether Switchyard manages the inventory of the variant.
    */
   manage_inventory?: boolean
   /**

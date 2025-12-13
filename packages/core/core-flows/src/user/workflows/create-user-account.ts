@@ -26,8 +26,8 @@ export const createUserAccountWorkflowId = "create-user-account"
 /**
  * This workflow creates a user and attaches it to an auth identity.
  *
- * You can create an auth identity first using the [Retrieve Registration JWT Token API Route](https://docs.medusajs.com/api/admin#auth_postactor_typeauth_provider_register).
- * Learn more about basic authentication flows in [this documentation](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route).
+ * You can create an auth identity first using the [Retrieve Registration JWT Token API Route](https://docs.switchyard.run/api/admin#auth_postactor_typeauth_provider_register).
+ * Learn more about basic authentication flows in [this documentation](https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to
  * register or create user accounts within your custom flows.

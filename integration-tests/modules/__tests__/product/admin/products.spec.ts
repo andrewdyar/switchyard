@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   CreateProductDTO,
   IPricingModuleService,
@@ -13,7 +13,7 @@ import { createVariantPriceSet } from "../../../helpers/create-variant-price-set
 jest.setTimeout(50000)
 
 const env = {}
-const adminHeaders = { headers: { "x-medusa-access-token": "test_token" } }
+const adminHeaders = { headers: { "x-switchyard-access-token": "test_token" } }
 
 async function createProductsWithVariants(
   productModule: IProductModuleService,
@@ -34,7 +34,7 @@ async function createProductsWithVariants(
   return [product, variants]
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Admin: Products API", () => {

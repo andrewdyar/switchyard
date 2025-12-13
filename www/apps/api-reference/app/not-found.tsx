@@ -25,11 +25,11 @@ const NotFoundPage = () => {
       <P>The page you were looking for isn&apos;t available.</P>
       <P>
         If you&apos;re looking for Switchyard v1 documentation, it&apos;s been moved
-        to <A href="https://docs.switchyard.com/v1">docs.switchyard.com/v1</A>.
+        to <A href="https://docs.switchyard.run/v1">docs.switchyard.run/v1</A>.
       </P>
       <P>
         If you think this is a mistake, please{" "}
-        <A href="https://github.com/switchyard/medusa/issues/new?assignees=&labels=type%3A+docs&template=docs.yml">
+        <A href="https://github.com/switchyard/switchyard/issues/new?assignees=&labels=type%3A+docs&template=docs.yml">
           report this issue on GitHub
         </A>
         .

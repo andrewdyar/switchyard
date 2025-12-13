@@ -1,5 +1,5 @@
 import { Context } from "@switchyard/types"
-import { MedusaContextType } from "./context-parameter"
+import { SwitchyardContextType } from "./context-parameter"
 
 export function InjectTransactionManager(
   managerProperty?: string
@@ -9,18 +9,18 @@ export function InjectTransactionManager(
     propertyKey: string | symbol,
     descriptor: any
   ): void {
-    if (!target.MedusaContextIndex_) {
+    if (!target.SwitchyardContextIndex_) {
       throw new Error(
         `An error occured applying decorator '@InjectTransactionManager' to method ${String(
           propertyKey
-        )}: Missing parameter with flag @MedusaContext`
+        )}: Missing parameter with flag @SwitchyardContext`
       )
     }
 
     const originalMethod = descriptor.value
     managerProperty ??= "baseRepository_"
 
-    const argIndex = target.MedusaContextIndex_[propertyKey]
+    const argIndex = target.SwitchyardContextIndex_[propertyKey]
     descriptor.value = async function (...args: any[]) {
       const originalContext = args[argIndex] ?? {}
 
@@ -52,7 +52,7 @@ export function InjectTransactionManager(
 
           copiedContext.transactionManager = transactionManager
 
-          copiedContext.__type = MedusaContextType
+          copiedContext.__type = SwitchyardContextType
 
           args[argIndex] = copiedContext
 

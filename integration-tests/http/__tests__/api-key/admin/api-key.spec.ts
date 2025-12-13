@@ -1,5 +1,5 @@
 import { ApiKeyType } from "@switchyard/utils"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,
@@ -7,7 +7,7 @@ import {
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env: {},
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("API Keys - Admin", () => {

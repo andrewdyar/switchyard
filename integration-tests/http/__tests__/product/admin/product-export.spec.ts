@@ -4,7 +4,7 @@ import os from "os"
 import fs from "fs/promises"
 import {
   TestEventUtils,
-  medusaIntegrationTestRunner,
+  switchyardIntegrationTestRunner,
 } from "@switchyard/test-utils"
 import path from "path"
 import {
@@ -42,7 +42,7 @@ const getCSVContents = async (filePath: string) => {
   }, [])
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let baseProduct
     let proposedProduct

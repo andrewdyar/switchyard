@@ -163,8 +163,8 @@ const expectedRoutesWithHandleLoader = `
 describe("generateRoutes", () => {
   it("should generate routes", async () => {
     const mockFiles = [
-      "Users/user/medusa/src/admin/routes/one/page.tsx",
-      "Users/user/medusa/src/admin/routes/two/page.tsx",
+      "Users/user/switchyard/src/admin/routes/one/page.tsx",
+      "Users/user/switchyard/src/admin/routes/two/page.tsx",
     ]
     vi.mocked(utils.crawl).mockResolvedValue(mockFiles)
 
@@ -175,7 +175,7 @@ describe("generateRoutes", () => {
     vi.mocked(fs.stat).mockRejectedValue(new Error("File not found"))
 
     const result = await generateRoutes(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
     expect(utils.normalizeString(result.code)).toEqual(
       utils.normalizeString(expectedRoutesWithoutLoaders)
@@ -202,8 +202,8 @@ describe("generateRoutes", () => {
   })
   it("should handle parallel routes", async () => {
     const mockFiles = [
-      "Users/user/medusa/src/admin/routes/brands/page.tsx",
-      "Users/user/medusa/src/admin/routes/brands/@create/page.tsx",
+      "Users/user/switchyard/src/admin/routes/brands/page.tsx",
+      "Users/user/switchyard/src/admin/routes/brands/@create/page.tsx",
     ]
     vi.mocked(utils.crawl).mockResolvedValue(mockFiles)
 
@@ -216,7 +216,7 @@ describe("generateRoutes", () => {
     vi.mocked(fs.stat).mockRejectedValue(new Error("File not found"))
 
     const result = await generateRoutes(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
     expect(utils.normalizeString(result.code)).toEqual(
       utils.normalizeString(expectedRoutesWithParallel)
@@ -245,8 +245,8 @@ describe("generateRoutes", () => {
   })
   it("should handle routes with handle and loader exports", async () => {
     const mockFiles = [
-      "Users/user/medusa/src/admin/routes/one/page.tsx",
-      "Users/user/medusa/src/admin/routes/two/page.tsx",
+      "Users/user/switchyard/src/admin/routes/one/page.tsx",
+      "Users/user/switchyard/src/admin/routes/two/page.tsx",
     ]
     vi.mocked(utils.crawl).mockResolvedValue(mockFiles)
 
@@ -259,7 +259,7 @@ describe("generateRoutes", () => {
     vi.mocked(fs.stat).mockRejectedValue(new Error("File not found"))
 
     const result = await generateRoutes(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
 
     expect(utils.normalizeString(result.code)).toEqual(

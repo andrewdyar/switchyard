@@ -8,7 +8,7 @@ export const SearchFooter = () => {
       className={clsx(
         "py-docs_0.75 hidden md:flex items-center justify-end px-docs_1",
         "border-medusa-border-base border-t",
-        "bg-medusa-bg-field z-10"
+        "bg-switchyard-bg-field z-10"
       )}
     >
       <div className="flex items-center gap-docs_0.75">
@@ -24,7 +24,7 @@ export const SearchFooter = () => {
           <span className="gap-[5px] flex">
             <Kbd
               className={clsx(
-                "!bg-medusa-bg-field-component !border-medusa-border-strong",
+                "!bg-switchyard-bg-field-component !border-medusa-border-strong",
                 "!text-medusa-fg-subtle h-[18px] w-[18px] p-0"
               )}
             >
@@ -32,7 +32,7 @@ export const SearchFooter = () => {
             </Kbd>
             <Kbd
               className={clsx(
-                "!bg-medusa-bg-field-component !border-medusa-border-strong",
+                "!bg-switchyard-bg-field-component !border-medusa-border-strong",
                 "!text-medusa-fg-subtle h-[18px] w-[18px] p-0"
               )}
             >
@@ -52,7 +52,7 @@ export const SearchFooter = () => {
           </span>
           <Kbd
             className={clsx(
-              "!bg-medusa-bg-field-component !border-medusa-border-strong",
+              "!bg-switchyard-bg-field-component !border-medusa-border-strong",
               "!text-medusa-fg-subtle h-[18px] w-[18px] p-0"
             )}
           >

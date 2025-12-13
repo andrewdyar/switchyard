@@ -13,7 +13,7 @@ export class TranslationModule extends SwitchyardService({
   }
 
   // @ts-expect-error
-  async listTranslations(find, config, medusaContext) {
+  async listTranslations(find, config, switchyardContext) {
     const { filters, context, id } = find ?? {}
     let lang = null
 

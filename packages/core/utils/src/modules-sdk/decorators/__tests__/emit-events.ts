@@ -1,5 +1,5 @@
 import { EmitEvents } from "../emit-events"
-import { MedusaContext } from "../context-parameter"
+import { SwitchyardContext } from "../context-parameter"
 import { Context } from "@switchyard/types"
 import { InjectSharedContext } from "../inject-shared-context"
 
@@ -14,7 +14,7 @@ describe("EmitEvents", () => {
 
       @InjectSharedContext()
       @EmitEvents({ internal: true })
-      async method(@MedusaContext() sharedContext: Context = {}) {
+      async method(@SwitchyardContext() sharedContext: Context = {}) {
         sharedContext.messageAggregator?.saveRawMessageData({
           data: { id: 1 },
           object: "test",
@@ -59,7 +59,7 @@ describe("EmitEvents", () => {
 
       @InjectSharedContext()
       @EmitEvents({ internal: true, groupBy: ["name"] })
-      async method(@MedusaContext() sharedContext: Context = {}) {
+      async method(@SwitchyardContext() sharedContext: Context = {}) {
         sharedContext.messageAggregator?.saveRawMessageData({
           data: { id: 1 },
           object: "test",

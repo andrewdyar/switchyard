@@ -1,7 +1,7 @@
 import { ProductStatus } from "@switchyard/utils"
 
 export const switchyardTshirtProduct = {
-  title: "Medusa T-Shirt",
+  title: "Switchyard T-Shirt",
   handle: "t-shirt",
   status: ProductStatus.PUBLISHED,
   options: [

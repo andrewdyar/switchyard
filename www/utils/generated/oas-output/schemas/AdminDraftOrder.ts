@@ -149,7 +149,7 @@
  *     type: object
  *     description: The draft order's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.switchyard.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.run/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  *   created_at:
  *     type: string
@@ -273,7 +273,7 @@
  *     title: custom_display_id
  *     description: The custom display ID of the draft order.
  *     externalDocs:
- *       url: https://docs.switchyard.com/resources/commerce-modules/order/custom-display-id
+ *       url: https://docs.switchyard.run/resources/commerce-modules/order/custom-display-id
  * 
 */
 

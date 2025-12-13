@@ -15,7 +15,7 @@ import { Currency } from "@models"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  currencyService: ModulesSdkTypes.IMedusaInternalService<typeof Currency>
+  currencyService: ModulesSdkTypes.ISwitchyardInternalService<typeof Currency>
 }
 
 export default class CurrencyModuleService
@@ -25,7 +25,7 @@ export default class CurrencyModuleService
   implements ICurrencyModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected readonly currencyService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly currencyService_: ModulesSdkTypes.ISwitchyardInternalService<
     typeof Currency
   >
 

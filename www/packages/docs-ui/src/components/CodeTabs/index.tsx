@@ -184,7 +184,7 @@ export const CodeTabs = ({
       clsx(
         blockStyle === "loud" && "bg-medusa-contrast-bg-base",
         blockStyle === "subtle" && [
-          colorMode === "light" && "bg-medusa-bg-component",
+          colorMode === "light" && "bg-switchyard-bg-component",
           colorMode === "dark" && "bg-medusa-code-bg-header",
         ]
       ),
@@ -270,7 +270,7 @@ export const CodeTabs = ({
             blockStyle === "loud" && "bg-medusa-contrast-fg-primary h-px",
             blockStyle === "subtle" && [
               colorMode === "light" &&
-                "xs:border-medusa-border-base xs:bg-medusa-bg-base",
+                "xs:border-medusa-border-base xs:bg-switchyard-bg-base",
               colorMode === "dark" &&
                 "xs:border-medusa-code-border xs:bg-medusa-code-bg-base",
             ]

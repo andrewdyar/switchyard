@@ -69,7 +69,7 @@ export const Search = ({
         }}
         insights={true}
       >
-        <div className={clsx("bg-medusa-bg-base flex z-[1]")}>
+        <div className={clsx("bg-switchyard-bg-base flex z-[1]")}>
           {/* @ts-expect-error React v19 doesn't see this type as a React element */}
           <SearchBox
             classNames={{
@@ -81,7 +81,7 @@ export const Search = ({
               form: clsx("h-full md:rounded-t-docs_xl bg-transparent"),
               input: clsx(
                 "w-[calc(100%-40px)] h-full px-docs_1 py-docs_0.75 text-medusa-fg-base",
-                "placeholder:text-medusa-fg-muted bg-medusa-bg-base",
+                "placeholder:text-medusa-fg-muted bg-switchyard-bg-base",
                 "md:rounded-t-docs_xl text-compact-large sm:text-compact-medium",
                 "appearance-none search-cancel:hidden border-0 active:outline-none focus:outline-none"
               ),

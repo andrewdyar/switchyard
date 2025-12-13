@@ -1,19 +1,19 @@
-export function MedusaContext() {
+export function SwitchyardContext() {
   return function (
     target: any,
     propertyKey: string | symbol,
     parameterIndex: number
   ) {
-    target.MedusaContextIndex_ ??= {}
-    target.MedusaContextIndex_[propertyKey] = parameterIndex
+    target.SwitchyardContextIndex_ ??= {}
+    target.SwitchyardContextIndex_[propertyKey] = parameterIndex
   }
 }
 
-MedusaContext.getIndex = function (
+SwitchyardContext.getIndex = function (
   target: any,
   propertyKey: string
 ): number | undefined {
-  return target.MedusaContextIndex_?.[propertyKey]
+  return target.SwitchyardContextIndex_?.[propertyKey]
 }
 
-export const MedusaContextType = "MedusaContext"
+export const SwitchyardContextType = "SwitchyardContext"

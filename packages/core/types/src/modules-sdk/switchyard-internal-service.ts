@@ -9,7 +9,7 @@ import {
 } from "../dal"
 import { InferEntityType } from "../dml"
 
-export interface IMedusaInternalService<
+export interface ISwitchyardInternalService<
   TEntity extends {},
   TContainer extends object = object
 > {

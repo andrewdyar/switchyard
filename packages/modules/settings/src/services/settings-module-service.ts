@@ -10,7 +10,7 @@ import {
   EmitEvents,
   InjectManager,
   InjectTransactionManager,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardService,
 } from "@switchyard/framework/utils"
@@ -18,8 +18,8 @@ import { ViewConfiguration, UserPreference } from "@/models"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  viewConfigurationService: ModulesSdkTypes.IMedusaInternalService<any>
-  userPreferenceService: ModulesSdkTypes.IMedusaInternalService<any>
+  viewConfigurationService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  userPreferenceService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 export default class SettingsModuleService
@@ -30,10 +30,10 @@ export default class SettingsModuleService
   implements SettingsTypes.ISettingsModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected readonly viewConfigurationService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly viewConfigurationService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ViewConfiguration>
   >
-  protected readonly userPreferenceService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly userPreferenceService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof UserPreference>
   >
 
@@ -58,7 +58,7 @@ export default class SettingsModuleService
     data:
       | SettingsTypes.CreateViewConfigurationDTO
       | SettingsTypes.CreateViewConfigurationDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     SettingsTypes.ViewConfigurationDTO | SettingsTypes.ViewConfigurationDTO[]
   > {
@@ -111,7 +111,7 @@ export default class SettingsModuleService
   async updateViewConfigurations(
     idOrSelector: string | SettingsTypes.FilterableViewConfigurationProps,
     data: SettingsTypes.UpdateViewConfigurationDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     SettingsTypes.ViewConfigurationDTO | SettingsTypes.ViewConfigurationDTO[]
   > {
@@ -132,7 +132,7 @@ export default class SettingsModuleService
   protected async updateViewConfigurations_(
     idOrSelector: string | SettingsTypes.FilterableViewConfigurationProps,
     data: SettingsTypes.UpdateViewConfigurationDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ViewConfiguration>[]> {
     let selector: SettingsTypes.FilterableViewConfigurationProps = {}
 
@@ -205,7 +205,7 @@ export default class SettingsModuleService
   async getUserPreference(
     userId: string,
     key: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<SettingsTypes.UserPreferenceDTO | null> {
     const prefs = await this.userPreferenceService_.list(
       { user_id: userId, key },
@@ -228,7 +228,7 @@ export default class SettingsModuleService
     userId: string,
     key: string,
     value: any,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<SettingsTypes.UserPreferenceDTO> {
     const existing = await this.userPreferenceService_.list(
       { user_id: userId, key },
@@ -261,7 +261,7 @@ export default class SettingsModuleService
   async getActiveViewConfiguration(
     entity: string,
     userId: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<SettingsTypes.ViewConfigurationDTO | null> {
     // Check if user has an active view preference
     const activeViewPref = await this.getUserPreference(
@@ -319,7 +319,7 @@ export default class SettingsModuleService
     entity: string,
     userId: string,
     viewConfigurationId: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     // Verify the view configuration exists and user has access
     const viewConfig = await this.retrieveViewConfiguration(
@@ -353,7 +353,7 @@ export default class SettingsModuleService
   @InjectManager()
   async getSystemDefaultViewConfiguration(
     entity: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<SettingsTypes.ViewConfigurationDTO | null> {
     const systemDefaults = await this.listViewConfigurations(
       { entity, is_system_default: true },
@@ -369,7 +369,7 @@ export default class SettingsModuleService
   async clearActiveViewConfiguration(
     entity: string,
     userId: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     // Instead of deleting, set the preference to null
     // This ensures we're using the same transaction pattern as setActiveViewConfiguration

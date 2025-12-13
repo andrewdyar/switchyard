@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { AdminShippingOption } from "@switchyard/types"
 import { ModuleRegistrationName, ProductStatus } from "@switchyard/utils"
 import {
@@ -13,7 +13,7 @@ import { createShippingOptionSeeder } from "../../fixtures/shipping"
 
 jest.setTimeout(300000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let order,
       seeder,

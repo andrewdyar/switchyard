@@ -5,7 +5,7 @@
  * x-sidebar-summary: Update Address
  * description: Update the logged-in customer's address.
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/storefront-development/customers/addresses#edit-an-address
+ *   url: https://docs.switchyard.run/resources/storefront-development/customers/addresses#edit-an-address
  *   description: "Storefront guide: How to update an address of the logged-in customer."
  * x-authenticated: true
  * parameters:
@@ -22,19 +22,19 @@
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.switchyard.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.run/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default
  *       fields. without prefix it will replace the entire default fields. This API route restricts the fields that can be selected. Learn how to override the retrievable fields in the [Retrieve Custom
- *       Links](https://docs.switchyard.com/learn/fundamentals/api-routes/retrieve-custom-links) documentation.
+ *       Links](https://docs.switchyard.run/learn/fundamentals/api-routes/retrieve-custom-links) documentation.
  *     required: false
  *     schema:
  *       type: string
  *       title: fields
  *       description: Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default
  *         fields. without prefix it will replace the entire default fields. This API route restricts the fields that can be selected. Learn how to override the retrievable fields in the [Retrieve Custom
- *         Links](https://docs.switchyard.com/learn/fundamentals/api-routes/retrieve-custom-links) documentation.
+ *         Links](https://docs.switchyard.run/learn/fundamentals/api-routes/retrieve-custom-links) documentation.
  *       externalDocs:
  *         url: "#select-fields-and-relations"
  * security:
@@ -51,16 +51,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       // TODO must be authenticated as the customer to update their address

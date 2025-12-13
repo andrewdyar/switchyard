@@ -2,7 +2,7 @@ import { InternalModuleDeclaration } from "@switchyard/types"
 import { MODULE_SCOPE } from "../../types"
 
 import { asValue } from "@switchyard/deps/awilix"
-import { SwitchyardModule } from "../../medusa-module"
+import { SwitchyardModule } from "../../switchyard-module"
 
 const mockRegisterSwitchyardModule = jest.fn().mockImplementation(() => {
   return {
@@ -33,7 +33,7 @@ jest.mock("./../../loaders", () => ({
     .mockImplementation((...args) => mockModuleLoader.apply(this, args)),
 }))
 
-describe("Medusa Modules", () => {
+describe("Switchyard Modules", () => {
   beforeEach(() => {
     SwitchyardModule.clearInstances()
     jest.resetModules()

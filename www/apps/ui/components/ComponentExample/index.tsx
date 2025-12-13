@@ -50,7 +50,7 @@ export function ComponentExample({
           >
             <div
               className={clx(
-                "bg-medusa-bg-base border-medusa-border-base flex max-h-[400px] min-h-[400px]",
+                "bg-switchyard-bg-base border-medusa-border-base flex max-h-[400px] min-h-[400px]",
                 "w-full overflow-auto justify-center rounded-md border px-10 py-5",
                 !disableCenterAlignPreview && "items-center"
               )}

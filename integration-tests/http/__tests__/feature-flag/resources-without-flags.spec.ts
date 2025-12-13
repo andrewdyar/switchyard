@@ -1,12 +1,12 @@
 import { SwitchyardWorkflow } from "@switchyard/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import path from "path"
 import { setTimeout as setTimeoutPromise } from "timers/promises"
 import { testJobHandler } from "../../__fixtures__/feature-flag/src/jobs/test-job"
 
 jest.setTimeout(100000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   cwd: path.join(__dirname, "../../__fixtures__/feature-flag"),
   testSuite: ({ api, dbConnection }) => {
     describe("Resources loaded without feature flags", () => {

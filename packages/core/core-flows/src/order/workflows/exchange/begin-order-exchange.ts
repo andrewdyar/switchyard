@@ -31,8 +31,8 @@ export type BeginOrderExchangeValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -54,7 +54,7 @@ export const beginOrderExchangeValidationStep = createStep(
 export const beginExchangeOrderWorkflowId = "begin-exchange-order"
 /**
  * This workflow requests an order exchange. It's used by the
- * [Create Exchange Admin API Route](https://docs.medusajs.com/api/admin#exchanges_postexchanges).
+ * [Create Exchange Admin API Route](https://docs.switchyard.run/api/admin#exchanges_postexchanges).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to request an exchange
  * for an order in your custom flow.

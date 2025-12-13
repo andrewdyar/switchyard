@@ -13,6 +13,6 @@ export default function () {
 
     const tagContent = sinceTag.content.map((content) => content.text).join("")
 
-    return `:::note\n\nThis is available starting from [Switchyard v${tagContent}](https://github.com/switchyard/medusa/releases/tag/v${tagContent}).\n\n:::`
+    return `:::note\n\nThis is available starting from [Switchyard v${tagContent}](https://github.com/switchyard/switchyard/releases/tag/v${tagContent}).\n\n:::`
   })
 }

@@ -30,7 +30,7 @@ const authProviderOptions: FormattingOptionsType = {
       
 As you implement your Auth Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [Google Auth Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/auth-google).`,
+If you need to refer to an existing implementation as an example, check the [Google Auth Module Provider in the Switchyard repository](https://github.com/switchyard/switchyard/tree/develop/packages/modules/providers/auth-google).`,
       `## 1. Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
@@ -93,13 +93,13 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/auth",
+      resolve: "@switchyard/auth",
       dependencies: [Modules.CACHE, ContainerRegistrationKeys.LOGGER],
       options: {
         providers: [
           // default provider
           {
-            resolve: "@switchyard/medusa/auth-emailpass",
+            resolve: "@switchyard/auth-emailpass",
             id: "emailpass",
           },
           {
@@ -119,7 +119,7 @@ module.exports = defineConfig({
 `,
       `## 5. Test it Out
 
-To test out your Authentication Module Provider, use any of the [Authentication Routes](https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route), using your provider's ID as a path parameter.
+To test out your Authentication Module Provider, use any of the [Authentication Routes](https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route), using your provider's ID as a path parameter.
 
 For example, to get a registration token for a customer, send a \`POST\` request to \`/auth/customer/my-auth/register\` replacing \`my-auth\` with your Authentication Module Provider's ID:
 
@@ -136,7 +136,7 @@ Change the request body to pass the data required for your Authentication Module
 
 If registration is successful, the response will have a \`token\` property.
 
-You can then use the token to create a customer by sending a request to the [Create Customer API route](https://docs.switchyard.com/api/store#customers_postcustomers).
+You can then use the token to create a customer by sending a request to the [Create Customer API route](https://docs.switchyard.run/api/store#customers_postcustomers).
       `,
     ],
   },

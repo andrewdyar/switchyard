@@ -89,7 +89,7 @@ ${beautifyCode(`import type {
   SwitchyardRequest,
   SwitchyardResponse,
 } from "@switchyard/framework/http"
-import { ${workflowName} } from "@switchyard/medusa/core-flows"
+import { ${workflowName} } from "@switchyard/core-flows"
 
 export async function POST(
   req: SwitchyardRequest,
@@ -110,7 +110,7 @@ ${beautifyCode(`import {
   type SubscriberConfig,
   type SubscriberArgs,
 } from "@switchyard/framework"
-import { ${workflowName} } from "@switchyard/medusa/core-flows"
+import { ${workflowName} } from "@switchyard/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -131,7 +131,7 @@ export const config: SubscriberConfig = {
     
 \`\`\`ts title="src/jobs/message-daily.ts"
 ${beautifyCode(`import { SwitchyardContainer } from "@switchyard/framework/types"
-import { ${workflowName} } from "@switchyard/medusa/core-flows"
+import { ${workflowName} } from "@switchyard/core-flows"
 
 export default async function myCustomJob(
   container: SwitchyardContainer
@@ -152,7 +152,7 @@ export const config = {
     
 \`\`\`ts title="src/workflows/my-workflow.ts"
 ${beautifyCode(`import { createWorkflow } from "@switchyard/framework/workflows-sdk"
-import { ${workflowName} } from "@switchyard/medusa/core-flows"
+import { ${workflowName} } from "@switchyard/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",

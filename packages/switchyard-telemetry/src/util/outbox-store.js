@@ -72,7 +72,7 @@ class Outbox {
       if (!existsSync(filePath)) {
         return true
       }
-      // Unique temporary file name across multiple concurrent Medusa instances
+      // Unique temporary file name across multiple concurrent Switchyard instances
       const newPath = `${this.bufferFilePath}-${now}`
       renameSync(filePath, newPath)
       contents = readFileSync(newPath, `utf8`)

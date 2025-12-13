@@ -37,7 +37,7 @@ export default async function ({
 
       logger.info(`
       Invite token: ${invite.token}
-      Open the invite in Medusa Admin at: [your-admin-url]/invite?token=${invite.token}`)
+      Open the invite in Switchyard Admin at: [your-admin-url]/invite?token=${invite.token}`)
     } else {
       const user = await userService.createUsers({ email })
 

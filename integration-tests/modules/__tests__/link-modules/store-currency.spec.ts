@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { ICurrencyModuleService, IStoreModuleService } from "@switchyard/types"
 import { Modules, remoteQueryObjectFromString } from "@switchyard/utils"
 
@@ -6,7 +6,7 @@ jest.setTimeout(50000)
 
 const env = {}
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer }) => {
     describe("Link: Store Currency", () => {

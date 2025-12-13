@@ -92,7 +92,7 @@ export type CreateOrderWorkflowInput = CreateOrderDTO & AdditionalData
 
 export const createOrdersWorkflowId = "create-orders"
 /**
- * This workflow creates an order. It's used by the [Create Draft Order Admin API Route](https://docs.medusajs.com/api/admin#draft-orders_postdraftorders), but
+ * This workflow creates an order. It's used by the [Create Draft Order Admin API Route](https://docs.switchyard.run/api/admin#draft-orders_postdraftorders), but
  * you can also use it to create any order.
  *
  * This workflow has a hook that allows you to perform custom actions on the created order. For example, you can pass under `additional_data` custom data that
@@ -150,7 +150,7 @@ export const createOrdersWorkflowId = "create-orders"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { createOrderWorkflow } from "@switchyard/medusa/core-flows";
+ * import { createOrderWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * createOrderWorkflow.hooks.setPricingContext((
@@ -166,7 +166,7 @@ export const createOrdersWorkflowId = "create-orders"
  *
  * :::note
  *
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  *
  * :::
  */

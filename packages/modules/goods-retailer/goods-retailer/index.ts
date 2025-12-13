@@ -1,7 +1,7 @@
 /**
  * Goods Retailer Module
  * 
- * Custom Medusa module for handling Goods' multi-retailer
+ * Custom Switchyard module for handling Goods' multi-retailer
  * product sourcing model. Tracks which products are available
  * at which retailers and at what prices.
  */

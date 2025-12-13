@@ -19,12 +19,12 @@ export type DeleteCustomerAddressesWorkflowInput = {
 export const deleteCustomerAddressesWorkflowId = "delete-customer-addresses"
 /**
  * This workflow deletes one or more customer addresses. It's used by the
- * [Remove Customer Addresses Admin API Route](https://docs.medusajs.com/api/admin#customers_deletecustomersidaddressesaddress_id)
- * and the [Remove Customer Addresses Store API Route](https://docs.medusajs.com/api/store#customers_deletecustomersmeaddressesaddress_id).
+ * [Remove Customer Addresses Admin API Route](https://docs.switchyard.run/api/admin#customers_deletecustomersidaddressesaddress_id)
+ * and the [Remove Customer Addresses Store API Route](https://docs.switchyard.run/api/store#customers_deletecustomersmeaddressesaddress_id).
  * 
  * :::note
  * 
- * This workflow deletes addresses created by the [Customer Module](https://docs.medusajs.com/resources/commerce-modules/customer)
+ * This workflow deletes addresses created by the [Customer Module](https://docs.switchyard.run/resources/commerce-modules/customer)
  * only. So, you can't delete addresses attached to a cart, for example. To do that, use the workflow
  * relevant to that module.
  * 

@@ -46,8 +46,8 @@ export type CancelTransferOrderRequestValidationStep = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -99,8 +99,8 @@ export const cancelTransferOrderRequestWorkflowId =
   "cancel-transfer-order-request"
 /**
  * This workflow cancels a requested order transfer. This operation is allowed only by admin users and the customer that requested the transfer.
- * This workflow is used by the [Cancel Order Transfer Store API Route](https://docs.medusajs.com/api/store#orders_postordersidtransfercancel),
- * and the [Cancel Transfer Request Admin API Route](https://docs.medusajs.com/api/admin#orders_postordersidtransfercancel).
+ * This workflow is used by the [Cancel Order Transfer Store API Route](https://docs.switchyard.run/api/store#orders_postordersidtransfercancel),
+ * and the [Cancel Transfer Request Admin API Route](https://docs.switchyard.run/api/admin#orders_postordersidtransfercancel).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to build a custom flow
  * around canceling an order transfer.

@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IStoreModuleService } from "@switchyard/types"
 import {
   ApiKeyType,
@@ -19,7 +19,7 @@ import { createAuthenticatedCustomer } from "../../../../modules/helpers/create-
 
 jest.setTimeout(30000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, api, getContainer }) => {
     let store
     let appContainer

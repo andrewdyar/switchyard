@@ -1911,7 +1911,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The data of the fulfillment useful for the associated fulfillment provider. Learn more in [this documentation](https://docs.switchyard.com/resources/commerce-modules/fulfillment/item-fulfillment#data-property)"
+														"text": "The data of the fulfillment useful for the associated fulfillment provider. Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/fulfillment/item-fulfillment#data-property)"
 													}
 												]
 											},
@@ -3584,7 +3584,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The data of the shipping option useful for the associated fulfillment provider. Learn more in [this documentation](https://docs.switchyard.com/resources/commerce-modules/fulfillment/shipping-option#data-property)"
+														"text": "The data of the shipping option useful for the associated fulfillment provider. Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property)"
 													}
 												]
 											},

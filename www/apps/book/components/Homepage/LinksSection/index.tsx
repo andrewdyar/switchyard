@@ -11,11 +11,11 @@ const HomepageLinksSection = () => {
           text: "Create your first application",
         },
         {
-          href: "https://docs.switchyard.com/cloud/sign-up",
+          href: "https://docs.switchyard.run/cloud/sign-up",
           text: "Deploy to Switchyard Cloud",
         },
         {
-          href: "https://docs.switchyard.com/resources/integrations",
+          href: "https://docs.switchyard.run/resources/integrations",
           text: "Browse third-party integrations",
         },
       ],
@@ -32,7 +32,7 @@ const HomepageLinksSection = () => {
           text: "Add a UI Route",
         },
         {
-          href: "https://docs.switchyard.com/ui",
+          href: "https://docs.switchyard.run/ui",
           text: "Browse the UI component library",
         },
       ],
@@ -41,15 +41,15 @@ const HomepageLinksSection = () => {
       title: "Storefront Development",
       links: [
         {
-          href: "https://docs.switchyard.com/resources/nextjs-starter",
+          href: "https://docs.switchyard.run/resources/nextjs-starter",
           text: "Explore our storefront starter",
         },
         {
-          href: "https://docs.switchyard.com/resources/storefront-development",
+          href: "https://docs.switchyard.run/resources/storefront-development",
           text: "Build a custom storefront",
         },
         {
-          href: "https://docs.switchyard.com/ui",
+          href: "https://docs.switchyard.run/ui",
           text: "Browse the UI component library",
         },
       ],

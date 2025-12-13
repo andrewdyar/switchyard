@@ -8,7 +8,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   InjectManager,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   ModulesSdkUtils,
 } from "@switchyard/framework/utils"
@@ -18,7 +18,7 @@ type InjectedDependencies = {
   orderRepository: DAL.RepositoryService
 }
 
-export default class OrderService extends ModulesSdkUtils.MedusaInternalService<
+export default class OrderService extends ModulesSdkUtils.SwitchyardInternalService<
   InjectedDependencies,
   InferEntityType<typeof Order>
 >(Order) {
@@ -37,7 +37,7 @@ export default class OrderService extends ModulesSdkUtils.MedusaInternalService<
     id: string,
     version: number,
     config: FindConfig<TEntityMethod> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<typeof Order> {
     const queryConfig = ModulesSdkUtils.buildQuery<typeof Order>(
       { id, items: { version } },

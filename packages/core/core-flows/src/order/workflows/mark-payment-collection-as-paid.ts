@@ -29,8 +29,8 @@ export type ThrowUnlessPaymentCollectionNotePaidInput = {
  *
  * :::note
  *
- * You can retrieve a payment collection's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve a payment collection's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -76,7 +76,7 @@ const systemPaymentProviderId = "pp_system_default"
 export const markPaymentCollectionAsPaidId = "mark-payment-collection-as-paid"
 /**
  * This workflow marks a payment collection for an order as paid. It's used by the
- * [Mark Payment Collection as Paid Admin API Route](https://docs.medusajs.com/api/admin#payment-collections_postpaymentcollectionsidmarkaspaid).
+ * [Mark Payment Collection as Paid Admin API Route](https://docs.switchyard.run/api/admin#payment-collections_postpaymentcollectionsidmarkaspaid).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to wrap custom logic around
  * marking a payment collection for an order as paid.

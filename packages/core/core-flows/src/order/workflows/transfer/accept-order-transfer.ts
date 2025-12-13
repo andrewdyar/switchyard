@@ -46,8 +46,8 @@ export type AcceptOrderTransferValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -96,7 +96,7 @@ export const acceptOrderTransferValidationStep = createStep(
 export const acceptOrderTransferWorkflowId = "accept-order-transfer-workflow"
 /**
  * This workflow accepts an order transfer, requested previously by the {@link requestOrderTransferWorkflow}. This workflow is used by the
- * [Accept Order Transfer Store API Route](https://docs.medusajs.com/api/store#orders_postordersidtransferaccept).
+ * [Accept Order Transfer Store API Route](https://docs.switchyard.run/api/store#orders_postordersidtransferaccept).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to build a custom flow
  * around accepting an order transfer.

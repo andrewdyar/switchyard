@@ -86,7 +86,7 @@ export const listShippingOptionsForCartWithPricingWorkflowId =
  * For example, you can consume the hook to add the customer Id to the context:
  *
  * ```ts
- * import { listShippingOptionsForCartWithPricingWorkflow } from "@switchyard/medusa/core-flows"
+ * import { listShippingOptionsForCartWithPricingWorkflow } from "@switchyard/core-flows"
  * import { StepResponse } from "@switchyard/workflows-sdk"
  *
  * listShippingOptionsForCartWithPricingWorkflow.hooks.setShippingOptionsContext(

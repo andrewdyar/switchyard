@@ -18,7 +18,7 @@ import {
   updateTaxLinesWorkflow,
 } from "@switchyard/core-flows"
 import { StepResponse } from "@switchyard/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   ICartModuleService,
   ICustomerModuleService,
@@ -52,7 +52,7 @@ jest.setTimeout(200000)
 
 const env = {}
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Carts workflows", () => {

@@ -31,8 +31,8 @@ export type BeginClaimOrderValidationStepInput = {
  * 
  * :::note
  * 
- * You can retrieve an order's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 
@@ -54,7 +54,7 @@ export const beginClaimOrderValidationStep = createStep(
 export const beginClaimOrderWorkflowId = "begin-claim-order"
 /**
  * This workflow creates an order claim in requested state. It's used by the 
- * [Create Claim Admin API Route](https://docs.medusajs.com/api/admin#claims_postclaims).
+ * [Create Claim Admin API Route](https://docs.switchyard.run/api/admin#claims_postclaims).
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you to create a claim
  * for an order in your custom flows.

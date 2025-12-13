@@ -53,14 +53,14 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
   static validateOptions(options: Record<any, any>): void | never {}
 
   /**
-   * The constructor allows you to access resources from the [module's container](https://docs.medusajs.com/learn/fundamentals/modules/container)
+   * The constructor allows you to access resources from the [module's container](https://docs.switchyard.run/learn/fundamentals/modules/container)
    * using the first parameter, and the module's options using the second parameter.
    * 
    * If you're creating a client or establishing a connection with a third-party service, do it in the constructor.
    *
    * :::note
    *
-   * A module's options are passed when you register it in the Medusa application.
+   * A module's options are passed when you register it in the Switchyard application.
    *
    * :::
    *
@@ -614,15 +614,15 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
   ): Promise<UpdatePaymentOutput>
 
   /**
-   * This method is executed when a webhook event is received from the third-party payment provider. Medusa uses
-   * the data returned by this method to perform actions in the Medusa application, such as completing the associated cart
+   * This method is executed when a webhook event is received from the third-party payment provider. Switchyard uses
+   * the data returned by this method to perform actions in the Switchyard application, such as completing the associated cart
    * if the payment was authorized successfully.
    *
-   * Learn more in the [Webhook Events](https://docs.medusajs.com/resources/commerce-modules/payment/webhook-events) documentation.
+   * Learn more in the [Webhook Events](https://docs.switchyard.run/resources/commerce-modules/payment/webhook-events) documentation.
    *
    * @param data - The webhook event's data
-   * @returns The webhook result. If the `action`'s value is `captured`, the payment is captured within Medusa as well.
-   * If the `action`'s value is `authorized`, the associated payment session is authorized within Medusa and the associated cart
+   * @returns The webhook result. If the `action`'s value is `captured`, the payment is captured within Switchyard as well.
+   * If the `action`'s value is `authorized`, the associated payment session is authorized within Switchyard and the associated cart
    * will be completed to create an order.
    *
    * @example

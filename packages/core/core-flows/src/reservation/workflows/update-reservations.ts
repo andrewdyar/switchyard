@@ -10,7 +10,7 @@ import { updateReservationsStep } from "../steps"
 export const updateReservationsWorkflowId = "update-reservations-workflow"
 /**
  * This workflow updates one or more reservations. It's used by the
- * [Update Reservations Admin API Route](https://docs.medusajs.com/api/admin#reservations_postreservationsid).
+ * [Update Reservations Admin API Route](https://docs.switchyard.run/api/admin#reservations_postreservationsid).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you
  * to update reservations in your custom flows.

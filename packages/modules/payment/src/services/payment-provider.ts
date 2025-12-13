@@ -42,7 +42,7 @@ type InjectedDependencies = {
   [key: `pp_${string}`]: IPaymentProvider
 }
 
-export default class PaymentProviderService extends ModulesSdkUtils.MedusaInternalService<InjectedDependencies>(
+export default class PaymentProviderService extends ModulesSdkUtils.SwitchyardInternalService<InjectedDependencies>(
   PaymentProvider
 ) {
   #logger: Logger

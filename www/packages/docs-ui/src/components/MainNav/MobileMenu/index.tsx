@@ -37,7 +37,7 @@ export const MainNavMobileMenu = () => {
       <div
         className={clsx(
           "flex items-center justify-center fixed w-full h-[calc(100vh-52px)]",
-          "top-[52px] transition-[left] bg-medusa-bg-subtle z-50",
+          "top-[52px] transition-[left] bg-switchyard-bg-subtle z-50",
           !isOpen && "-left-full",
           isOpen && "left-0"
         )}

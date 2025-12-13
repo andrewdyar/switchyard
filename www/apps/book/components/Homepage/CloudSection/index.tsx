@@ -44,7 +44,7 @@ export const HomepageCloudSection = () => {
             </div>
           </div>
           <Link
-            href={"https://docs.switchyard.com/cloud"}
+            href={"https://docs.switchyard.run/cloud"}
             className="flex gap-0.25 items-center text-compact-small-plus"
             withIcon
           >

@@ -634,7 +634,7 @@ class WorkflowsPlugin {
           additionalDataChild.comment.summary = [
             {
               kind: "text",
-              text: "Additional data that can be passed through the `additional_data` property in HTTP requests.\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).",
+              text: "Additional data that can be passed through the `additional_data` property in HTTP requests.\nLearn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/api-routes/additional-data).",
             },
           ]
         }

@@ -50,7 +50,7 @@ export async function runMigrationScripts({
     onApplicationShutdown = resources.onApplicationShutdown
 
     const scriptsSourcePaths = [
-      join(dirname(require.resolve("@switchyard/medusa")), "migration-scripts"),
+      join(dirname(require.resolve("@switchyard/core")), "migration-scripts"),
       ...plugins.map((plugin) => join(plugin.resolve, "migration-scripts")),
     ]
 
@@ -104,11 +104,11 @@ async function loadResources(
   )
   await new LinkLoader(linksSourcePaths, logger).load()
 
-  const medusaAppResources = await new SwitchyardAppLoader().load()
+  const switchyardAppResources = await new SwitchyardAppLoader().load()
   const onApplicationPrepareShutdown =
-    medusaAppResources.onApplicationPrepareShutdown
-  const onApplicationShutdown = medusaAppResources.onApplicationShutdown
-  await medusaAppResources.onApplicationStart()
+    switchyardAppResources.onApplicationPrepareShutdown
+  const onApplicationShutdown = switchyardAppResources.onApplicationShutdown
+  await switchyardAppResources.onApplicationStart()
 
   return {
     onApplicationPrepareShutdown,

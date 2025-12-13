@@ -2,7 +2,7 @@
  * Product Model - Modified for Goods Integration
  * 
  * Maps to Supabase `source_products` table instead of Medusa's default `product` table.
- * This allows Medusa to work directly with Goods' existing product catalog.
+ * This allows Switchyard to work directly with Goods' existing product catalog.
  */
 
 import { model, ProductUtils } from "@switchyard/framework/utils"
@@ -80,7 +80,7 @@ const Product = model
       is_non_gmo: model.boolean().default(false),
       needs_review: model.boolean().default(false),
       
-      // ---- Medusa fields we don't use but keep for compatibility ----
+      // ---- Switchyard fields we don't use but keep for compatibility ----
       subtitle: model.text().searchable().nullable(),
       is_giftcard: model.boolean().default(false),
       weight: model.text().nullable(),

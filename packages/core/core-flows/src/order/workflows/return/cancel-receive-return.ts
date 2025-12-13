@@ -40,8 +40,8 @@ export type CancelReceiveReturnValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, return, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, return, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -87,7 +87,7 @@ export type CancelReturnReceiveWorkflowInput = {
 export const cancelReturnReceiveWorkflowId = "cancel-receive-return"
 /**
  * This workflow cancels a return receival. It's used by the
- * [Cancel Return Receival Admin API Route](https://docs.medusajs.com/api/admin#returns_deletereturnsidreceive).
+ * [Cancel Return Receival Admin API Route](https://docs.switchyard.run/api/admin#returns_deletereturnsidreceive).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you
  * to cancel a return receival in your custom flow.

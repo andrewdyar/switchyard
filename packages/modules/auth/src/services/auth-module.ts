@@ -14,7 +14,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   InjectManager,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardService,
 } from "@switchyard/framework/utils"
@@ -24,8 +24,8 @@ import AuthProviderService from "./auth-provider"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  authIdentityService: ModulesSdkTypes.IMedusaInternalService<any>
-  providerIdentityService: ModulesSdkTypes.IMedusaInternalService<any>
+  authIdentityService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  providerIdentityService: ModulesSdkTypes.ISwitchyardInternalService<any>
   authProviderService: AuthProviderService
   logger?: Logger
   cache?: ICacheService
@@ -38,10 +38,10 @@ export default class AuthModuleService
   implements AuthTypes.IAuthModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected authIdentityService_: ModulesSdkTypes.IMedusaInternalService<
+  protected authIdentityService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof AuthIdentity>
   >
-  protected providerIdentityService_: ModulesSdkTypes.IMedusaInternalService<
+  protected providerIdentityService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ProviderIdentity>
   >
   protected readonly authProviderService_: AuthProviderService
@@ -84,7 +84,7 @@ export default class AuthModuleService
   @InjectManager()
   async createAuthIdentities(
     data: AuthTypes.CreateAuthIdentityDTO[] | AuthTypes.CreateAuthIdentityDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<AuthTypes.AuthIdentityDTO | AuthTypes.AuthIdentityDTO[]> {
     const authIdentities = await this.authIdentityService_.create(
       data,
@@ -116,7 +116,7 @@ export default class AuthModuleService
   // @ts-expect-error
   async updateAuthIdentities(
     data: AuthTypes.UpdateAuthIdentityDTO | AuthTypes.UpdateAuthIdentityDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<AuthTypes.AuthIdentityDTO | AuthTypes.AuthIdentityDTO[]> {
     const updatedUsers = await this.authIdentityService_.update(
       data,
@@ -165,7 +165,7 @@ export default class AuthModuleService
     data:
       | AuthTypes.CreateProviderIdentityDTO[]
       | AuthTypes.CreateProviderIdentityDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<AuthTypes.ProviderIdentityDTO | AuthTypes.ProviderIdentityDTO[]> {
     const providerIdentities = await this.providerIdentityService_.create(
       data,
@@ -195,7 +195,7 @@ export default class AuthModuleService
     data:
       | AuthTypes.UpdateProviderIdentityDTO
       | AuthTypes.UpdateProviderIdentityDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<AuthTypes.ProviderIdentityDTO | AuthTypes.ProviderIdentityDTO[]> {
     const updatedProviders = await this.providerIdentityService_.update(
       data,

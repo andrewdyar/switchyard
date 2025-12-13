@@ -9,7 +9,7 @@
  *   You can decode the JWT token using libraries like [react-jwt](https://www.npmjs.com/package/react-jwt) in the storefront. If the decoded data doesn't 
  *   have an `actor_id` property, then you must register the customer using the Create Customer API route passing the token in the request's Authorization header.
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/storefront-development/customers/third-party-login
+ *   url: https://docs.switchyard.run/resources/storefront-development/customers/third-party-login
  *   description: "Storefront development: Implement third-party (social) login."
  * x-authenticated: false
  * parameters:
@@ -27,16 +27,16 @@
  *       import Switchyard from "@switchyard/js-sdk"
  *       import { decodeToken } from "react-jwt"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       const token = await sdk.auth.callback(
@@ -70,16 +70,16 @@
  *       import Switchyard from "@switchyard/js-sdk"
  *       import { decodeToken } from "react-jwt"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       const token = await sdk.auth.callback(

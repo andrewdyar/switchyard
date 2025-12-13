@@ -37,15 +37,15 @@ const ColorBlock = ({ colour, className, ...props }: ColorBlockProps) => {
         >
           <div
             className={clx(
-              "bg-medusa-bg-component h-full w-full animate-pulse rounded-[4px]",
+              "bg-switchyard-bg-component h-full w-full animate-pulse rounded-[4px]",
               className
             )}
             {...props}
           />
         </div>
         <div className="flex flex-col items-start">
-          <div className="bg-medusa-bg-component h-[20px] w-[85px] animate-pulse rounded-sm" />
-          <div className="bg-medusa-bg-subtle h-[20px] w-[120px] animate-pulse rounded-sm" />
+          <div className="bg-switchyard-bg-component h-[20px] w-[85px] animate-pulse rounded-sm" />
+          <div className="bg-switchyard-bg-subtle h-[20px] w-[120px] animate-pulse rounded-sm" />
         </div>
       </div>
     )

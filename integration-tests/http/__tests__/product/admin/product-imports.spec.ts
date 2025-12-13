@@ -5,7 +5,7 @@ import { CommonEvents, Modules } from "@switchyard/utils"
 import { IEventBusModuleService, IFileModuleService } from "@switchyard/types"
 import {
   TestEventUtils,
-  medusaIntegrationTestRunner,
+  switchyardIntegrationTestRunner,
 } from "@switchyard/test-utils"
 import {
   adminHeaders,
@@ -56,7 +56,7 @@ function prepareCSVForImport(fileContents: string, delimiter: string = ",") {
   return json2csv(CSVFileAsJSON)
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let baseCollection
     let baseType

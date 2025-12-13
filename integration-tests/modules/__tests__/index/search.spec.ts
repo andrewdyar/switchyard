@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IndexTypes } from "@switchyard/types"
 import { defaultCurrencies, Modules } from "@switchyard/utils"
 import { setTimeout } from "timers/promises"
@@ -58,7 +58,7 @@ async function populateData(
   await setTimeout(4000 * (productCount / 10))
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ getContainer, dbConnection, api }) => {
     let indexEngine: IndexTypes.IIndexService
     let appContainer

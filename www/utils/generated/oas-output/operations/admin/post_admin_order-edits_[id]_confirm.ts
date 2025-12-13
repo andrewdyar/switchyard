@@ -66,7 +66,7 @@
  *       ```ts
  *       {
  *         order_id, // The ID of the order
- *         actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+ *         actions, // (array) The [actions](https://docs.switchyard.run/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
  *       }
  *       ```
  *     description: Emitted when an order edit request is confirmed.

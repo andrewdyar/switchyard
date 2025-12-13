@@ -1,12 +1,12 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IEventBusModuleService } from "@switchyard/types"
 import { composeMessage, Modules, PaymentWebhookEvents } from "@switchyard/utils"
 import path from "path"
 
 jest.setTimeout(100000)
 
-medusaIntegrationTestRunner({
-  medusaConfigFile: path.join(
+switchyardIntegrationTestRunner({
+  switchyardConfigFile: path.join(
     __dirname,
     "../../__fixtures__/worker-mode-server"
   ),

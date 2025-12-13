@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   CampaignBudgetType,
   PromotionStatus,
@@ -78,10 +78,10 @@ const promotionData = {
 
 const env = {}
 const adminHeaders = {
-  headers: { "x-medusa-access-token": "test_token" },
+  headers: { "x-switchyard-access-token": "test_token" },
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Admin Campaigns API", () => {

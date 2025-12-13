@@ -1,10 +1,10 @@
 export const caching = [
   {
     "title": "Use Caching Module",
-    "path": "https://docs.switchyard.com/resources/references/caching-service"
+    "path": "https://docs.switchyard.run/resources/references/caching-service"
   },
   {
     "title": "Create Caching Provider",
-    "path": "https://docs.switchyard.com/resources/references/caching-module-provider"
+    "path": "https://docs.switchyard.run/resources/references/caching-module-provider"
   }
 ]

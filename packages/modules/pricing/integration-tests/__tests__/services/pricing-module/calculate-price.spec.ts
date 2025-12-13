@@ -195,7 +195,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
               id: "price-rule-company_id-PLN",
               price_set_id: "price-set-PLN",
               attribute: "company_id",
-              value: "medusa-company-id",
+              value: "switchyard-company-id",
               price_list_id: "test",
               price_id: "price-company_id-PLN",
             },
@@ -216,10 +216,10 @@ moduleIntegrationTestRunner<IPricingModuleService>({
               price_id: "price-region_id+company_id-PLN",
             },
             {
-              id: "price-rule-region_id+company_id-medusa-company-id",
+              id: "price-rule-region_id+company_id-switchyard-company-id",
               price_set_id: "price-set-PLN",
               attribute: "company_id",
-              value: "medusa-company-id",
+              value: "switchyard-company-id",
               price_list_id: "test",
               price_id: "price-region_id+company_id-PLN",
             },
@@ -243,7 +243,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
               id: "price-rule-region_id-company_id-PLN",
               price_set_id: "price-set-PLN",
               attribute: "company_id",
-              value: "medusa-company-id",
+              value: "switchyard-company-id",
               price_list_id: "test",
               price_id: "price-region_id_company_id-PL-EUR",
             },
@@ -259,7 +259,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
               id: "price-rule-region_id-company_id-PLN-4-qty",
               price_set_id: "price-set-PLN",
               attribute: "company_id",
-              value: "medusa-company-id",
+              value: "switchyard-company-id",
               price_list_id: "test",
               price_id: "price-region_id_company_id-PL-EUR-4-qty",
             },
@@ -275,7 +275,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
               id: "price-rule-region_id-currency_customer_group_code-PLN",
               price_set_id: "price-set-PLN",
               attribute: "company_id",
-              value: "medusa-company-id",
+              value: "switchyard-company-id",
               price_list_id: "test",
               price_id: "price-region_id_company_id-PL-EUR-customer-group",
             },
@@ -339,7 +339,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                 variant_id: "variant_01JRDH08GJCZQB4GZCDDTYMD1V",
                 product_id: "prod_01JRDH08FPZ6QBZQ096B310RM7",
                 product_type_id: null,
-                product_title: "Medusa T-Shirt",
+                product_title: "Switchyard T-Shirt",
                 product_description: null,
                 product_subtitle: null,
                 product_type: null,
@@ -924,7 +924,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                 currency_code: "EUR",
                 region_id: "PL",
                 customer_group_id: "test-customer-group",
-                company_id: "medusa-company-id",
+                company_id: "switchyard-company-id",
               },
             }
           )
@@ -1191,7 +1191,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -1266,7 +1266,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -1317,7 +1317,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -1539,7 +1539,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -1702,7 +1702,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -1766,7 +1766,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -1829,7 +1829,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -1952,7 +1952,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -2095,7 +2095,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -2156,7 +2156,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -2221,7 +2221,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )
@@ -2245,7 +2245,7 @@ moduleIntegrationTestRunner<IPricingModuleService>({
                   currency_code: "PLN",
                   region_id: "DE",
                   customer_group_id: "vip-customer-group-id",
-                  company_id: "medusa-company-id",
+                  company_id: "switchyard-company-id",
                 },
               }
             )

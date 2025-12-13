@@ -1,50 +1,50 @@
 export const apiKey = [
   {
     "title": "Manage Publishable API Keys",
-    "path": "https://docs.switchyard.com/user-guide/settings/developer/publishable-api-keys"
+    "path": "https://docs.switchyard.run/user-guide/settings/developer/publishable-api-keys"
   },
   {
     "title": "Manage Secret API Keys",
-    "path": "https://docs.switchyard.com/user-guide/settings/developer/secret-api-keys"
+    "path": "https://docs.switchyard.run/user-guide/settings/developer/secret-api-keys"
   },
   {
     "title": "Use a Publishable API Key in the Storefront",
-    "path": "https://docs.switchyard.com/resources/storefront-development/publishable-api-keys"
+    "path": "https://docs.switchyard.run/resources/storefront-development/publishable-api-keys"
   },
   {
     "title": "createApiKeysStep",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/createApiKeysStep"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/steps/createApiKeysStep"
   },
   {
     "title": "deleteApiKeysStep",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/deleteApiKeysStep"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/steps/deleteApiKeysStep"
   },
   {
     "title": "revokeApiKeysStep",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/revokeApiKeysStep"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/steps/revokeApiKeysStep"
   },
   {
     "title": "updateApiKeysStep",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/updateApiKeysStep"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/steps/updateApiKeysStep"
   },
   {
     "title": "createApiKeysWorkflow",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/createApiKeysWorkflow"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/createApiKeysWorkflow"
   },
   {
     "title": "deleteApiKeysWorkflow",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/deleteApiKeysWorkflow"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/deleteApiKeysWorkflow"
   },
   {
     "title": "revokeApiKeysWorkflow",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/revokeApiKeysWorkflow"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/revokeApiKeysWorkflow"
   },
   {
     "title": "updateApiKeysWorkflow",
-    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateApiKeysWorkflow"
+    "path": "https://docs.switchyard.run/resources/references/switchyard-workflows/updateApiKeysWorkflow"
   },
   {
     "title": "apiKey",
-    "path": "https://docs.switchyard.com/resources/references/js-sdk/admin/apiKey"
+    "path": "https://docs.switchyard.run/resources/references/js-sdk/admin/apiKey"
   }
 ]

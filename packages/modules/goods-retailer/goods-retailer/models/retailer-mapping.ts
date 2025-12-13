@@ -4,7 +4,7 @@
  * Maps master products to store-specific SKUs across 7 retailers:
  * HEB, Walmart, Costco, Target, Whole Foods, Central Market, Trader Joe's
  * 
- * This is a custom Medusa module that extends core functionality
+ * This is a custom Switchyard module that extends core functionality
  * to handle Goods' unique multi-retailer product sourcing model.
  */
 
@@ -13,7 +13,7 @@ import { model } from "@switchyard/framework/utils"
 export const RetailerMapping = model.define("goods_retailer_mapping", {
   id: model.id().primaryKey(),
   
-  // Links to Medusa Product
+  // Links to Switchyard Product
   product_id: model.text(),
   
   // Retailer identification

@@ -3,7 +3,7 @@ import {
   EmitEvents,
   InjectManager,
   kebabCase,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardService,
   Modules,
   isString,
@@ -64,7 +64,7 @@ export default class InventoryGroupModuleService extends SwitchyardService({
   @EmitEvents()
   async create(
     data: CreateInventoryGroupDTO | CreateInventoryGroupDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const input = (Array.isArray(data) ? data : [data]).map((group) => {
       // Auto-generate handle if not provided
@@ -110,7 +110,7 @@ export default class InventoryGroupModuleService extends SwitchyardService({
   async update(
     idOrSelector: string | Partial<FilterableInventoryGroupProps>,
     data: UpdateInventoryGroupDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     let normalizedInput: any[] = []
 
@@ -147,7 +147,7 @@ export default class InventoryGroupModuleService extends SwitchyardService({
   async retrieve(
     inventoryGroupId: string,
     config?: FindConfig<InventoryGroupDTO>,
-    @MedusaContext() sharedContext?: Context
+    @SwitchyardContext() sharedContext?: Context
   ) {
     const group = await this.inventoryGroupService_.retrieve(
       inventoryGroupId,
@@ -162,7 +162,7 @@ export default class InventoryGroupModuleService extends SwitchyardService({
   async list(
     filters?: FilterableInventoryGroupProps,
     config?: FindConfig<InventoryGroupDTO>,
-    @MedusaContext() sharedContext?: Context
+    @SwitchyardContext() sharedContext?: Context
   ) {
     const groups = await this.inventoryGroupService_.listInventoryGroups(
       filters,
@@ -177,7 +177,7 @@ export default class InventoryGroupModuleService extends SwitchyardService({
   async listAndCount(
     filters?: FilterableInventoryGroupProps,
     config?: FindConfig<InventoryGroupDTO>,
-    @MedusaContext() sharedContext?: Context
+    @SwitchyardContext() sharedContext?: Context
   ) {
     const [groups, count] =
       await this.inventoryGroupService_.listAndCountInventoryGroups(
@@ -195,7 +195,7 @@ export default class InventoryGroupModuleService extends SwitchyardService({
   @EmitEvents()
   async delete(
     ids: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await this.inventoryGroupService_.deleteInventoryGroups(ids, sharedContext)
   }
@@ -204,7 +204,7 @@ export default class InventoryGroupModuleService extends SwitchyardService({
   @EmitEvents()
   async softDelete(
     ids: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const [, cascade] =
       await this.inventoryGroupService_.softDeleteInventoryGroups(
@@ -216,7 +216,7 @@ export default class InventoryGroupModuleService extends SwitchyardService({
 
   @InjectManager()
   @EmitEvents()
-  async restore(ids: string[], @MedusaContext() sharedContext: Context = {}) {
+  async restore(ids: string[], @SwitchyardContext() sharedContext: Context = {}) {
     const [, cascade] =
       await this.inventoryGroupService_.restoreInventoryGroups(
         ids,

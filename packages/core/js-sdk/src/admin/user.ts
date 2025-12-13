@@ -16,7 +16,7 @@ export class User {
 
   /**
    * This method updates a user. It sends a request to the
-   * [Update User](https://docs.medusajs.com/api/admin#users_postusersid)
+   * [Update User](https://docs.switchyard.run/api/admin#users_postusersid)
    * API route.
    * 
    * @param id - The ID of the user to update.
@@ -53,7 +53,7 @@ export class User {
 
   /**
    * This method retrieves a list of users. It sends a request to the
-   * [List Users](https://docs.medusajs.com/api/admin#users_getusers)
+   * [List Users](https://docs.switchyard.run/api/admin#users_getusers)
    * API route.
    * 
    * @param queryParams - Filters and pagination configurations.
@@ -96,7 +96,7 @@ export class User {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/admin#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/admin#select-fields-and-relations).
    */
   async list(
     queryParams?: HttpTypes.AdminUserListParams,
@@ -110,7 +110,7 @@ export class User {
 
   /**
    * This method retrieves a user. It sends a request to the
-   * [Get User](https://docs.medusajs.com/api/admin#users_getusersid)
+   * [Get User](https://docs.switchyard.run/api/admin#users_getusersid)
    * API route.
    * 
    * @param id - The ID of the user to retrieve.
@@ -139,7 +139,7 @@ export class User {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/admin#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/admin#select-fields-and-relations).
    */
   async retrieve(
     id: string,
@@ -157,7 +157,7 @@ export class User {
 
   /**
    * This method deletes a user. It sends a request to the
-   * [Delete User](https://docs.medusajs.com/api/admin#users_deleteusersid)
+   * [Delete User](https://docs.switchyard.run/api/admin#users_deleteusersid)
    * API route.
    * 
    * @param id - The ID of the user to delete.
@@ -182,7 +182,7 @@ export class User {
 
   /**
    * This method retrieves the currently authenticated user. It sends a request to the
-   * [Get Logged-In User](https://docs.medusajs.com/api/admin#users_getusersme)
+   * [Get Logged-In User](https://docs.switchyard.run/api/admin#users_getusersme)
    * API route.
    * 
    * @param query - Configure the fields and relations to retrieve in the user.
@@ -210,7 +210,7 @@ export class User {
    * })
    * ```
    * 
-   * Learn more about the `fields` property in the [API reference](https://docs.medusajs.com/api/admin#select-fields-and-relations).
+   * Learn more about the `fields` property in the [API reference](https://docs.switchyard.run/api/admin#select-fields-and-relations).
    */
   async me(query?: HttpTypes.AdminUserParams, headers?: ClientHeaders) {
     return this.client.fetch<HttpTypes.AdminUserResponse>(`/admin/users/me`, {

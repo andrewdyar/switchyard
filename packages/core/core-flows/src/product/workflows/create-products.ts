@@ -102,17 +102,17 @@ export type CreateProductsWorkflowInput = {
 
 export const createProductsWorkflowId = "create-products"
 /**
- * This workflow creates one or more products. It's used by the [Create Product Admin API Route](https://docs.medusajs.com/api/admin#products_postproducts).
- * It can also be useful to you when creating [seed scripts](https://docs.medusajs.com/learn/fundamentals/custom-cli-scripts/seed-data), for example.
+ * This workflow creates one or more products. It's used by the [Create Product Admin API Route](https://docs.switchyard.run/api/admin#products_postproducts).
+ * It can also be useful to you when creating [seed scripts](https://docs.switchyard.run/learn/fundamentals/custom-cli-scripts/seed-data), for example.
  *
- * This workflow has a hook that allows you to perform custom actions on the created products. You can see an example in [this guide](https://docs.medusajs.com/resources/commerce-modules/product/extend).
+ * This workflow has a hook that allows you to perform custom actions on the created products. You can see an example in [this guide](https://docs.switchyard.run/resources/commerce-modules/product/extend).
  *
  * You can also use this workflow within your customizations or your own custom workflows, allowing you to wrap custom logic around product creation.
  * 
  * :::note
  * 
  * Learn more about adding rules to the product variant's prices in the Pricing Module's 
- * [Price Rules](https://docs.medusajs.com/resources/commerce-modules/pricing/price-rules) documentation.
+ * [Price Rules](https://docs.switchyard.run/resources/commerce-modules/pricing/price-rules) documentation.
  * 
  * :::
  *

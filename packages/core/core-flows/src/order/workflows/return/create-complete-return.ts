@@ -239,8 +239,8 @@ export type CreateCompleteReturnValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -289,7 +289,7 @@ export const createAndCompleteReturnOrderWorkflowId =
 /**
  * This workflow creates and completes a return from the storefront. The admin would receive the return and
  * process it from the dashboard. This workflow is used by the
- * [Create Return Store API Route](https://docs.medusajs.com/api/store#return_postreturn).
+ * [Create Return Store API Route](https://docs.switchyard.run/api/store#return_postreturn).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to create a return
  * for an order in your custom flow.
@@ -327,7 +327,7 @@ export const createAndCompleteReturnOrderWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { createAndCompleteReturnOrderWorkflow } from "@switchyard/medusa/core-flows";
+ * import { createAndCompleteReturnOrderWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * createAndCompleteReturnOrderWorkflow.hooks.setPricingContext((
@@ -343,7 +343,7 @@ export const createAndCompleteReturnOrderWorkflowId =
  *
  * :::note
  *
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  *
  * :::
  */

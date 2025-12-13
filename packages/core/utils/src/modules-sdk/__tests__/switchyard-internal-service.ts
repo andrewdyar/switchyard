@@ -1,7 +1,7 @@
-import { MedusaInternalService } from "../medusa-internal-service"
+import { SwitchyardInternalService } from "../switchyard-internal-service"
 import { lowerCaseFirst } from "../../common"
 
-const defaultContext = { __type: "MedusaContext" }
+const defaultContext = { __type: "SwitchyardContext" }
 
 class Model {
   static __meta = {
@@ -41,13 +41,13 @@ describe("Internal Module Service Factory", () => {
     },
   }
 
-  const IMedusaInternalService = MedusaInternalService<any>(Model)
+  const ISwitchyardInternalService = SwitchyardInternalService<any>(Model)
 
   describe("Internal Module Service Methods", () => {
     let instance
 
     beforeEach(() => {
-      instance = new IMedusaInternalService(containerMock)
+      instance = new ISwitchyardInternalService(containerMock)
     })
 
     afterEach(() => {
@@ -67,10 +67,10 @@ describe("Internal Module Service Factory", () => {
         static meta = { primaryKeys: ["id", "name"] }
       }
 
-      const compositeIMedusaInternalService =
-        MedusaInternalService<any>(CompositeModel)
+      const compositeISwitchyardInternalService =
+        SwitchyardInternalService<any>(CompositeModel)
 
-      const instance = new compositeIMedusaInternalService(containerMock)
+      const instance = new compositeISwitchyardInternalService(containerMock)
 
       // @ts-expect-error
       const err = await instance.retrieve().catch((e) => e)
@@ -100,10 +100,10 @@ describe("Internal Module Service Factory", () => {
         static meta = { primaryKeys: ["id", "name"] }
       }
 
-      const compositeIMedusaInternalService =
-        MedusaInternalService<any>(CompositeModel)
+      const compositeISwitchyardInternalService =
+        SwitchyardInternalService<any>(CompositeModel)
 
-      const instance = new compositeIMedusaInternalService(containerMock)
+      const instance = new compositeISwitchyardInternalService(containerMock)
 
       const entity = { id: "1", name: "Item" }
       containerMock[

@@ -16,7 +16,7 @@ import Scrypt from "scrypt-kdf"
 import { getContainer } from "../environment-helpers/use-container"
 
 export const adminHeaders = {
-  headers: { "x-medusa-access-token": "test_token" },
+  headers: { "x-switchyard-access-token": "test_token" },
 }
 
 export const createAdminUser = async (
@@ -26,7 +26,7 @@ export const createAdminUser = async (
   options?: { email?: string }
 ) => {
   const appContainer = container ?? getContainer()!
-  const email = options?.email ?? "admin@medusa.js"
+  const email = options?.email ?? "admin@switchyard.run"
 
   const userModule: IUserModuleService = appContainer.resolve(Modules.USER)
   const authModule: IAuthModuleService = appContainer.resolve(Modules.AUTH)

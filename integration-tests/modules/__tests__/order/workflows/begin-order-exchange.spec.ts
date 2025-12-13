@@ -4,7 +4,7 @@ import {
   orderExchangeAddNewItemWorkflow,
   orderExchangeRequestItemReturnWorkflow,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   FulfillmentWorkflow,
   IRegionModuleService,
@@ -390,7 +390,7 @@ async function createOrderFixture({
   return order
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer }) => {
     let container

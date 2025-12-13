@@ -222,7 +222,7 @@
     "name": "order-edit.requested",
     "parentName": "OrderEditWorkflowEvents",
     "propertyName": "REQUESTED",
-    "payload": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```",
+    "payload": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.switchyard.run/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```",
     "description": "Emitted when an order edit is requested.",
     "workflows": [
       "requestOrderEditRequestWorkflow"
@@ -234,7 +234,7 @@
     "name": "order-edit.confirmed",
     "parentName": "OrderEditWorkflowEvents",
     "propertyName": "CONFIRMED",
-    "payload": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```",
+    "payload": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.switchyard.run/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```",
     "description": "Emitted when an order edit request is confirmed.",
     "workflows": [
       "confirmOrderEditRequestWorkflow"
@@ -246,7 +246,7 @@
     "name": "order-edit.canceled",
     "parentName": "OrderEditWorkflowEvents",
     "propertyName": "CANCELED",
-    "payload": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```",
+    "payload": "```ts\n{\n  order_id, // The ID of the order\n  actions, // (array) The [actions](https://docs.switchyard.run/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order\n}\n```",
     "description": "Emitted when an order edit request is canceled.",
     "workflows": [
       "cancelBeginOrderEditWorkflow"

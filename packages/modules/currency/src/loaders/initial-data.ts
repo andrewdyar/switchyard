@@ -20,7 +20,7 @@ export default async ({
   const logger =
     container.resolve<Logger>(ContainerRegistrationKeys.LOGGER) ?? console
   const { currencyService_ } = container.resolve<{
-    currencyService_: ModulesSdkTypes.IMedusaInternalService<typeof Currency>
+    currencyService_: ModulesSdkTypes.ISwitchyardInternalService<typeof Currency>
   }>("currencyModuleService")
 
   try {

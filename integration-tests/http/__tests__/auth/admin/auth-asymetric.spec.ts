@@ -1,5 +1,5 @@
 import { generateResetPasswordTokenWorkflow } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { ContainerRegistrationKeys } from "@switchyard/utils"
 import jwt from "jsonwebtoken"
 import path from "path"
@@ -10,8 +10,8 @@ import {
 
 jest.setTimeout(100000)
 
-medusaIntegrationTestRunner({
-  medusaConfigFile: path.join(__dirname, "../../../__fixtures__/auth"),
+switchyardIntegrationTestRunner({
+  switchyardConfigFile: path.join(__dirname, "../../../__fixtures__/auth"),
   testSuite: ({ dbConnection, getContainer, api }) => {
     let container
     beforeEach(async () => {
@@ -29,14 +29,14 @@ medusaIntegrationTestRunner({
         const { token: inviteToken } = (
           await api.post(
             "/admin/invites",
-            { email: "newadmin@medusa.js" },
+            { email: "newadmin@switchyard.run" },
             adminHeaders
           )
         ).data.invite
 
         // Register identity
         const signup = await api.post("/auth/user/emailpass/register", {
-          email: "newadmin@medusa.js",
+          email: "newadmin@switchyard.run",
           password: "secret_password",
         })
 
@@ -47,7 +47,7 @@ medusaIntegrationTestRunner({
         const response = await api.post(
           `/admin/invites/accept?token=${inviteToken}`,
           {
-            email: "newadmin@medusa.js",
+            email: "newadmin@switchyard.run",
             first_name: "John",
             last_name: "Doe",
           },
@@ -61,7 +61,7 @@ medusaIntegrationTestRunner({
         expect(response.status).toEqual(200)
         expect(response.data).toEqual({
           user: expect.objectContaining({
-            email: "newadmin@medusa.js",
+            email: "newadmin@switchyard.run",
             first_name: "John",
             last_name: "Doe",
           }),
@@ -69,7 +69,7 @@ medusaIntegrationTestRunner({
 
         // Sign in
         const login = await api.post("/auth/user/emailpass", {
-          email: "newadmin@medusa.js",
+          email: "newadmin@switchyard.run",
           password: "secret_password",
         })
         expect(login.status).toEqual(200)
@@ -113,7 +113,7 @@ medusaIntegrationTestRunner({
       it("should respond with 401 on register, if email already exists", async () => {
         const signup = await api
           .post("/auth/user/emailpass/register", {
-            email: "admin@medusa.js",
+            email: "admin@switchyard.run",
             password: "secret_password",
           })
           .catch((e) => e)
@@ -142,7 +142,7 @@ medusaIntegrationTestRunner({
     describe("Reset password flows", () => {
       it("should generate a reset password token", async () => {
         const response = await api.post("/auth/user/emailpass/reset-password", {
-          identifier: "admin@medusa.js",
+          identifier: "admin@switchyard.run",
         })
 
         expect(response.status).toEqual(201)
@@ -161,7 +161,7 @@ medusaIntegrationTestRunner({
 
       it("should fail to generate token for non-existing user, but still respond with 201", async () => {
         const response = await api.post("/auth/user/emailpass/reset-password", {
-          identifier: "non-existing-user@medusa.js",
+          identifier: "non-existing-user@switchyard.run",
         })
 
         expect(response.status).toEqual(201)
@@ -170,7 +170,7 @@ medusaIntegrationTestRunner({
       it("should fail to generate token for existing user but no provider, but still respond with 201", async () => {
         const response = await api.post(
           "/auth/user/non-existing-provider/reset-password",
-          { identifier: "admin@medusa.js" }
+          { identifier: "admin@switchyard.run" }
         )
 
         expect(response.status).toEqual(201)
@@ -179,7 +179,7 @@ medusaIntegrationTestRunner({
       it("should successfully reset password", async () => {
         // Register user
         await api.post("/auth/user/emailpass/register", {
-          email: "test@medusa-commerce.com",
+          email: "test@switchyard.run",
           password: "secret_password",
         })
 
@@ -191,7 +191,7 @@ medusaIntegrationTestRunner({
           container
         ).run({
           input: {
-            entityId: "test@medusa-commerce.com",
+            entityId: "test@switchyard.run",
             actorType: "user",
             provider: "emailpass",
             secret: http.jwtSecret!,
@@ -216,7 +216,7 @@ medusaIntegrationTestRunner({
 
         const failedLogin = await api
           .post("/auth/user/emailpass", {
-            email: "test@medusa-commerce.com",
+            email: "test@switchyard.run",
             password: "secret_password",
           })
           .catch((e) => e)
@@ -227,7 +227,7 @@ medusaIntegrationTestRunner({
         )
 
         const login = await api.post("/auth/user/emailpass", {
-          email: "test@medusa-commerce.com",
+          email: "test@switchyard.run",
           password: "new_password",
         })
 
@@ -238,7 +238,7 @@ medusaIntegrationTestRunner({
       it("should ensure you can only update password", async () => {
         // Register user
         await api.post("/auth/user/emailpass/register", {
-          email: "test@medusa-commerce.com",
+          email: "test@switchyard.run",
           password: "secret_password",
         })
 
@@ -250,7 +250,7 @@ medusaIntegrationTestRunner({
           container
         ).run({
           input: {
-            entityId: "test@medusa-commerce.com",
+            entityId: "test@switchyard.run",
             actorType: "user",
             provider: "emailpass",
             secret: http.jwtSecret!,
@@ -261,7 +261,7 @@ medusaIntegrationTestRunner({
         const response = await api.post(
           `/auth/user/emailpass/update`,
           {
-            email: "test+new@medusa-commerce.com",
+            email: "test+new@switchyard.run",
             password: "new_password",
           },
           {
@@ -276,7 +276,7 @@ medusaIntegrationTestRunner({
 
         const failedLogin = await api
           .post("/auth/user/emailpass", {
-            email: "test+new@medusa-commerce.com",
+            email: "test+new@switchyard.run",
             password: "new_password",
           })
           .catch((e) => e)
@@ -287,7 +287,7 @@ medusaIntegrationTestRunner({
         )
 
         const login = await api.post("/auth/user/emailpass", {
-          email: "test@medusa-commerce.com",
+          email: "test@switchyard.run",
           password: "new_password",
         })
 
@@ -300,7 +300,7 @@ medusaIntegrationTestRunner({
 
         // Register user
         await api.post("/auth/user/emailpass/register", {
-          email: "test@medusa-commerce.com",
+          email: "test@switchyard.run",
           password: "secret_password",
         })
 
@@ -309,7 +309,7 @@ medusaIntegrationTestRunner({
           container
         ).run({
           input: {
-            entityId: "test@medusa-commerce.com",
+            entityId: "test@switchyard.run",
             actorType: "user",
             provider: "emailpass",
             secret: "test",
@@ -342,7 +342,7 @@ medusaIntegrationTestRunner({
 
         // Register user
         await api.post("/auth/user/emailpass/register", {
-          email: "test@medusa-commerce.com",
+          email: "test@switchyard.run",
           password: "secret_password",
         })
 
@@ -351,7 +351,7 @@ medusaIntegrationTestRunner({
 
         const response = await api
           .post(`/auth/user/emailpass/update`, {
-            email: "test@medusa-commerce.com",
+            email: "test@switchyard.run",
           })
           .catch((e) => e)
 
@@ -364,7 +364,7 @@ medusaIntegrationTestRunner({
 
         // Register user
         await api.post("/auth/user/emailpass/register", {
-          email: "test@medusa-commerce.com",
+          email: "test@switchyard.run",
           password: "secret_password",
         })
 
@@ -373,7 +373,7 @@ medusaIntegrationTestRunner({
           container
         ).run({
           input: {
-            entityId: "test@medusa-commerce.com",
+            entityId: "test@switchyard.run",
             actorType: "user",
             provider: "emailpass",
             secret: "test",
@@ -406,7 +406,7 @@ medusaIntegrationTestRunner({
 
         // Register user
         await api.post("/auth/user/emailpass/register", {
-          email: "test@medusa-commerce.com",
+          email: "test@switchyard.run",
           password: "secret_password",
         })
 
@@ -415,7 +415,7 @@ medusaIntegrationTestRunner({
           container
         ).run({
           input: {
-            entityId: "test@medusa-commerce.com",
+            entityId: "test@switchyard.run",
             actorType: "user",
             provider: "emailpass",
             secret: "incorrect_secret",

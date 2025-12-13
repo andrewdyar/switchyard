@@ -59,8 +59,8 @@ export type UpdateExchangeShippingMethodValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order exchange and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order exchange and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -113,8 +113,8 @@ export const updateExchangeShippingMethodWorkflowId =
   "update-exchange-shipping-method"
 /**
  * This workflow updates an exchange's inbound or outbound shipping method. It's used by the
- * [Update Inbound Shipping Admin API Route](https://docs.medusajs.com/api/admin#exchanges_postexchangesidinboundshippingmethodaction_id)
- * or the [Outbound Inbound Shipping Admin API Route](https://docs.medusajs.com/api/admin#exchanges_postexchangesidoutboundshippingmethodaction_id).
+ * [Update Inbound Shipping Admin API Route](https://docs.switchyard.run/api/admin#exchanges_postexchangesidinboundshippingmethodaction_id)
+ * or the [Outbound Inbound Shipping Admin API Route](https://docs.switchyard.run/api/admin#exchanges_postexchangesidoutboundshippingmethodaction_id).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to update an exchange's
  * inbound or outbound shipping method in your custom flow.
@@ -150,7 +150,7 @@ export const updateExchangeShippingMethodWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { updateExchangeShippingMethodWorkflow } from "@switchyard/medusa/core-flows";
+ * import { updateExchangeShippingMethodWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  * 
  * updateExchangeShippingMethodWorkflow.hooks.setPricingContext((
@@ -166,7 +166,7 @@ export const updateExchangeShippingMethodWorkflowId =
  * 
  * :::note
  * 
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  * 
  * :::
  */

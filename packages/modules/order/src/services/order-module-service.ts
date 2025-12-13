@@ -34,7 +34,7 @@ import {
   isObject,
   isString,
   MathBN,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   ModulesSdkUtils,
   OrderChangeStatus,
@@ -94,25 +94,25 @@ import OrderService from "./order-service"
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
   orderService: OrderService
-  orderAddressService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderLineItemService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderShippingMethodAdjustmentService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderShippingMethodService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderLineItemAdjustmentService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderLineItemTaxLineService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderShippingMethodTaxLineService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderTransactionService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderChangeService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderChangeActionService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderItemService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderSummaryService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderShippingService: ModulesSdkTypes.IMedusaInternalService<any>
-  returnReasonService: ModulesSdkTypes.IMedusaInternalService<any>
-  returnService: ModulesSdkTypes.IMedusaInternalService<any>
-  returnItemService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderClaimService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderExchangeService: ModulesSdkTypes.IMedusaInternalService<any>
-  orderCreditLineService: ModulesSdkTypes.IMedusaInternalService<any>
+  orderAddressService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderLineItemService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderShippingMethodAdjustmentService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderShippingMethodService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderLineItemAdjustmentService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderLineItemTaxLineService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderShippingMethodTaxLineService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderTransactionService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderChangeService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderChangeActionService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderItemService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderSummaryService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderShippingService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  returnReasonService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  returnService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  returnItemService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderClaimService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderExchangeService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  orderCreditLineService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 const generateMethodForModels = {
@@ -227,70 +227,70 @@ export default class OrderModuleService
 
   protected baseRepository_: DAL.RepositoryService
   protected orderService_: OrderService
-  protected orderAddressService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderAddressService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderAddress>
   >
-  protected orderLineItemService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderLineItemService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderLineItem>
   >
-  protected orderShippingMethodAdjustmentService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderShippingMethodAdjustmentService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderShippingMethodAdjustment>
   >
-  protected orderShippingMethodService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderShippingMethodService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderShippingMethod>
   >
-  protected orderLineItemAdjustmentService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderLineItemAdjustmentService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderLineItemAdjustment>
   >
-  protected orderLineItemTaxLineService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderLineItemTaxLineService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderLineItemTaxLine>
   >
-  protected orderShippingMethodTaxLineService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderShippingMethodTaxLineService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderShippingMethodTaxLine>
   >
-  protected orderTransactionService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderTransactionService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderTransaction>
   >
-  protected orderChangeService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderChangeService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderChange>
   >
-  protected orderChangeActionService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderChangeActionService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderChangeAction>
   >
-  protected orderItemService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderItemService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderItem>
   >
-  protected orderSummaryService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderSummaryService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderSummary>
   >
-  protected orderShippingService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderShippingService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderShipping>
   >
-  protected returnReasonService_: ModulesSdkTypes.IMedusaInternalService<
+  protected returnReasonService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ReturnReason>
   >
-  protected returnService_: ModulesSdkTypes.IMedusaInternalService<
+  protected returnService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof Return>
   >
-  protected returnItemService_: ModulesSdkTypes.IMedusaInternalService<
+  protected returnItemService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ReturnItem>
   >
-  protected orderClaimService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderClaimService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderClaim>
   >
-  protected orderClaimItemService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderClaimItemService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderClaimItem>
   >
-  protected orderClaimItemImageService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderClaimItemImageService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderClaimItemImage>
   >
-  protected orderExchangeService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderExchangeService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderExchange>
   >
-  protected orderExchangeItemService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderExchangeItemService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderExchangeItem>
   >
-  protected orderCreditLineService_: ModulesSdkTypes.IMedusaInternalService<
+  protected orderCreditLineService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof OrderCreditLine>
   >
 
@@ -468,7 +468,7 @@ export default class OrderModuleService
   protected async listOrders_(
     filters?: any,
     config?: FindConfig<any> | undefined,
-    @MedusaContext() sharedContext?: Context | undefined
+    @SwitchyardContext() sharedContext?: Context | undefined
   ): Promise<OrderTypes.OrderDTO[]> {
     config ??= {}
     const includeTotals = this.shouldIncludeTotals(config)
@@ -711,7 +711,7 @@ export default class OrderModuleService
   // @ts-expect-error
   async createOrders(
     data: OrderTypes.CreateOrderDTO[] | OrderTypes.CreateOrderDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderDTO[] | OrderTypes.OrderDTO> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -747,7 +747,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   protected async createOrders_(
     data: OrderTypes.CreateOrderDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     await this.createOrderAddresses_(data, sharedContext)
 
@@ -841,7 +841,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   protected async createOrderAddresses_(
     input: OrderTypes.CreateOrderDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const allAddresses: {
       data: any
@@ -889,7 +889,7 @@ export default class OrderModuleService
   // @ts-expect-error
   async deleteOrders(
     orderIds: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const ids = Array.isArray(orderIds) ? orderIds : [orderIds]
 
@@ -972,7 +972,7 @@ export default class OrderModuleService
       | string
       | Partial<OrderTypes.FilterableOrderProps>,
     data?: OrderTypes.UpdateOrderDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderDTO[] | OrderTypes.OrderDTO> {
     const result = await this.updateOrders_(
       dataOrIdOrSelector,
@@ -994,7 +994,7 @@ export default class OrderModuleService
       | string
       | Partial<OrderTypes.FilterableOrderProps>,
     data?: OrderTypes.UpdateOrderDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     let toUpdate: OrderTypes.UpdateOrderDTO[] = []
     if (isString(dataOrIdOrSelector)) {
@@ -1051,7 +1051,7 @@ export default class OrderModuleService
     data?:
       | OrderTypes.CreateOrderLineItemDTO[]
       | OrderTypes.CreateOrderLineItemDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderLineItemDTO[]> {
     let items: InferEntityType<typeof OrderLineItem>[] = []
     if (isString(orderIdOrData)) {
@@ -1095,7 +1095,7 @@ export default class OrderModuleService
   protected async createOrderLineItems_(
     orderId: string,
     items: OrderTypes.CreateOrderLineItemDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItem>[]> {
     const order = await this.retrieveOrder(
       orderId,
@@ -1117,7 +1117,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   protected async createOrderLineItemsBulk_(
     data: CreateOrderLineItemDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItem>[]> {
     const orderItemToCreate: CreateOrderItemDTO[] = []
 
@@ -1175,7 +1175,7 @@ export default class OrderModuleService
     data?:
       | OrderTypes.UpdateOrderLineItemDTO
       | Partial<OrderTypes.UpdateOrderLineItemDTO>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderLineItemDTO[] | OrderTypes.OrderLineItemDTO> {
     let items: InferEntityType<typeof OrderLineItem>[] = []
     if (isString(lineItemIdOrDataOrSelector)) {
@@ -1213,7 +1213,7 @@ export default class OrderModuleService
   protected async updateOrderLineItem_(
     lineItemId: string,
     data: Partial<OrderTypes.UpdateOrderLineItemDTO>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItem>> {
     const [item] = await this.orderLineItemService_.update(
       [{ id: lineItemId, ...data }],
@@ -1238,7 +1238,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   protected async updateOrderLineItemsWithSelector_(
     updates: OrderTypes.UpdateOrderLineItemWithSelectorDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItem>[]> {
     let toUpdate: UpdateOrderLineItemDTO[] = []
     const detailsToUpdate: UpdateOrderItemWithSelectorDTO[] = []
@@ -1292,7 +1292,7 @@ export default class OrderModuleService
     data?:
       | OrderTypes.UpdateOrderItemDTO
       | Partial<OrderTypes.UpdateOrderItemDTO>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderItemDTO[] | OrderTypes.OrderItemDTO> {
     let items: InferEntityType<typeof OrderItem>[] = []
     if (isString(orderItemIdOrDataOrSelector)) {
@@ -1325,7 +1325,7 @@ export default class OrderModuleService
   protected async updateOrderItem_(
     orderItemId: string,
     data: Partial<OrderTypes.UpdateOrderItemDTO>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderItem>> {
     const [detail] = await this.orderItemService_.update(
       [{ id: orderItemId, ...data }],
@@ -1338,7 +1338,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   protected async updateOrderItemWithSelector_(
     updates: OrderTypes.UpdateOrderItemWithSelectorDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderItem>[]> {
     let toUpdate: UpdateOrderItemDTO[] = []
     for (const { selector, data } of updates) {
@@ -1383,7 +1383,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodDTO[]
       | OrderTypes.CreateOrderShippingMethodDTO,
     data?: OrderTypes.CreateOrderShippingMethodDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     OrderTypes.OrderShippingMethodDTO[] | OrderTypes.OrderShippingMethodDTO
   > {
@@ -1436,7 +1436,7 @@ export default class OrderModuleService
   protected async createOrderShippingMethods_(
     orderId: string,
     data: CreateOrderShippingMethodDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderShippingMethod>[]> {
     const order = await this.retrieveOrder(
       orderId,
@@ -1465,7 +1465,7 @@ export default class OrderModuleService
       order_id: string
       version: number
     }[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderShippingMethod>[]> {
     const sm = await this.orderShippingService_.create(data, sharedContext)
 
@@ -1478,7 +1478,7 @@ export default class OrderModuleService
   async softDeleteOrderShippingMethods<TReturnableLinkableKeys extends string>(
     ids: string | object | string[] | object[],
     config?: SoftDeleteReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     return await this.softDeleteOrderShippingMethods_(
       ids,
@@ -1493,7 +1493,7 @@ export default class OrderModuleService
   >(
     ids: string | object | string[] | object[],
     config?: SoftDeleteReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     const rel = await super.listOrderShippings(
       {
@@ -1520,7 +1520,7 @@ export default class OrderModuleService
   async restoreOrderShippingMethods<TReturnableLinkableKeys extends string>(
     ids: string | object | string[] | object[],
     config?: RestoreReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     return await this.restoreOrderShippingMethods_(ids, config, sharedContext)
   }
@@ -1531,7 +1531,7 @@ export default class OrderModuleService
   >(
     ids: string | object | string[] | object[],
     config?: RestoreReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     const rel = await super.listOrderShippings(
       {
@@ -1576,7 +1576,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemAdjustmentDTO[]
       | OrderTypes.CreateOrderLineItemAdjustmentDTO,
     adjustments?: OrderTypes.CreateOrderLineItemAdjustmentDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderLineItemAdjustmentDTO[]> {
     const addedAdjustments = await this.createOrderLineItemAdjustments_(
       orderIdOrData,
@@ -1596,7 +1596,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemAdjustmentDTO[]
       | OrderTypes.CreateOrderLineItemAdjustmentDTO,
     adjustments?: OrderTypes.CreateOrderLineItemAdjustmentDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItemAdjustment>[]> {
     let addedAdjustments: InferEntityType<typeof OrderLineItemAdjustment>[] = []
     if (isString(orderIdOrData)) {
@@ -1642,7 +1642,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemAdjustmentDTO
       | OrderTypes.UpdateOrderLineItemAdjustmentDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderLineItemAdjustmentDTO[]> {
     let result = await this.upsertOrderLineItemAdjustments_(
       adjustments,
@@ -1660,7 +1660,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemAdjustmentDTO
       | OrderTypes.UpdateOrderLineItemAdjustmentDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItemAdjustment>[]> {
     return await this.orderLineItemAdjustmentService_.upsert(
       adjustments,
@@ -1676,7 +1676,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemAdjustmentDTO
       | OrderTypes.UpdateOrderLineItemAdjustmentDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderLineItemAdjustmentDTO[]> {
     const result = await this.setOrderLineItemAdjustments_(
       orderId,
@@ -1696,7 +1696,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemAdjustmentDTO
       | OrderTypes.UpdateOrderLineItemAdjustmentDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItemAdjustment>[]> {
     const order = await this.retrieveOrder(
       orderId,
@@ -1743,7 +1743,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodAdjustmentDTO
       | OrderTypes.UpdateOrderShippingMethodAdjustmentDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderShippingMethodAdjustmentDTO[]> {
     const result = await this.upsertOrderShippingMethodAdjustments_(
       adjustments,
@@ -1761,7 +1761,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodAdjustmentDTO
       | OrderTypes.UpdateOrderShippingMethodAdjustmentDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderShippingMethodAdjustment>[]> {
     return await this.orderShippingMethodAdjustmentService_.upsert(
       adjustments,
@@ -1777,7 +1777,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodAdjustmentDTO
       | OrderTypes.UpdateOrderShippingMethodAdjustmentDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderShippingMethodAdjustmentDTO[]> {
     const result = await this.setOrderShippingMethodAdjustments_(
       orderId,
@@ -1797,7 +1797,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodAdjustmentDTO
       | OrderTypes.UpdateOrderShippingMethodAdjustmentDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderShippingMethodAdjustment>[]> {
     const order = await this.retrieveOrder(
       orderId,
@@ -1866,7 +1866,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodAdjustmentDTO[]
       | OrderTypes.CreateOrderShippingMethodAdjustmentDTO,
     adjustments?: OrderTypes.CreateOrderShippingMethodAdjustmentDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | OrderTypes.OrderShippingMethodAdjustmentDTO[]
     | OrderTypes.OrderShippingMethodAdjustmentDTO
@@ -1890,7 +1890,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodAdjustmentDTO[]
       | OrderTypes.CreateOrderShippingMethodAdjustmentDTO,
     adjustments?: OrderTypes.CreateOrderShippingMethodAdjustmentDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof OrderShippingMethodAdjustment>[]
     | InferEntityType<typeof OrderShippingMethodAdjustment>
@@ -1968,7 +1968,7 @@ export default class OrderModuleService
     taxLines?:
       | OrderTypes.CreateOrderLineItemTaxLineDTO[]
       | OrderTypes.CreateOrderLineItemTaxLineDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     OrderTypes.OrderLineItemTaxLineDTO[] | OrderTypes.OrderLineItemTaxLineDTO
   > {
@@ -1998,7 +1998,7 @@ export default class OrderModuleService
     taxLines?:
       | OrderTypes.CreateOrderLineItemTaxLineDTO[]
       | OrderTypes.CreateOrderLineItemTaxLineDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof OrderLineItemTaxLine>[]
     | InferEntityType<typeof OrderLineItemTaxLine>
@@ -2036,7 +2036,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemTaxLineDTO
       | OrderTypes.UpdateOrderLineItemTaxLineDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderLineItemTaxLineDTO[]> {
     const result = await this.upsertOrderLineItemTaxLines_(
       taxLines,
@@ -2054,7 +2054,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemTaxLineDTO
       | OrderTypes.UpdateOrderLineItemTaxLineDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItemTaxLine>[]> {
     const result = await this.orderLineItemTaxLineService_.upsert(
       taxLines as UpdateOrderLineItemTaxLineDTO[],
@@ -2072,7 +2072,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemTaxLineDTO
       | OrderTypes.UpdateOrderLineItemTaxLineDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderLineItemTaxLineDTO[]> {
     const result = await this.setOrderLineItemTaxLines_(
       orderId,
@@ -2092,7 +2092,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderLineItemTaxLineDTO
       | OrderTypes.UpdateOrderLineItemTaxLineDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderLineItemTaxLine>[]> {
     const order = await this.retrieveOrder(
       orderId,
@@ -2160,7 +2160,7 @@ export default class OrderModuleService
     taxLines?:
       | OrderTypes.CreateOrderShippingMethodTaxLineDTO[]
       | OrderTypes.CreateOrderShippingMethodTaxLineDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | OrderTypes.OrderShippingMethodTaxLineDTO[]
     | OrderTypes.OrderShippingMethodTaxLineDTO
@@ -2192,7 +2192,7 @@ export default class OrderModuleService
     taxLines?:
       | OrderTypes.CreateOrderShippingMethodTaxLineDTO[]
       | OrderTypes.CreateOrderShippingMethodTaxLineDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderShippingMethodTaxLine>[]> {
     let addedTaxLines: InferEntityType<typeof OrderShippingMethodTaxLine>[]
     if (isString(orderIdOrData)) {
@@ -2219,7 +2219,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodTaxLineDTO
       | OrderTypes.UpdateOrderShippingMethodTaxLineDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderShippingMethodTaxLineDTO[]> {
     const result = await this.orderShippingMethodTaxLineService_.upsert(
       taxLines as UpdateOrderShippingMethodTaxLineDTO[],
@@ -2239,7 +2239,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodTaxLineDTO
       | OrderTypes.UpdateOrderShippingMethodTaxLineDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderShippingMethodTaxLineDTO[]> {
     const result = await this.setOrderShippingMethodTaxLines_(
       orderId,
@@ -2259,7 +2259,7 @@ export default class OrderModuleService
       | OrderTypes.CreateOrderShippingMethodTaxLineDTO
       | OrderTypes.UpdateOrderShippingMethodTaxLineDTO
     )[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderShippingMethodTaxLine>[]> {
     const order = await this.retrieveOrder(
       orderId,
@@ -2320,7 +2320,7 @@ export default class OrderModuleService
   // @ts-expect-error
   async createReturns(
     data: OrderTypes.CreateOrderReturnDTO | OrderTypes.CreateOrderReturnDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.ReturnDTO | OrderTypes.ReturnDTO[]> {
     const created = await this.createOrderRelatedEntity_(
       data,
@@ -2350,7 +2350,7 @@ export default class OrderModuleService
   // @ts-expect-error
   async createOrderClaims(
     data: OrderTypes.CreateOrderClaimDTO | OrderTypes.CreateOrderClaimDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderClaimDTO | OrderTypes.OrderClaimDTO[]> {
     const created = await this.createOrderRelatedEntity_(
       data,
@@ -2382,7 +2382,7 @@ export default class OrderModuleService
     data:
       | OrderTypes.CreateOrderExchangeDTO
       | OrderTypes.CreateOrderExchangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderExchangeDTO | OrderTypes.OrderExchangeDTO[]> {
     const created = await this.createOrderRelatedEntity_(
       data,
@@ -2399,7 +2399,7 @@ export default class OrderModuleService
   private async createOrderRelatedEntity_(
     data: any,
     service: any,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const data_ = Array.isArray(data) ? data : [data]
 
@@ -2445,7 +2445,7 @@ export default class OrderModuleService
   @EmitEvents()
   async createOrderChange(
     data: CreateOrderChangeDTO | CreateOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderChangeDTO | OrderTypes.OrderChangeDTO[]> {
     const changes = await this.createOrderChange_(data, sharedContext)
 
@@ -2457,7 +2457,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   protected async createOrderChange_(
     data: CreateOrderChangeDTO | CreateOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderChange>[]> {
     const dataArr = Array.isArray(data) ? data : [data]
     const orderIds: string[] = []
@@ -2519,7 +2519,7 @@ export default class OrderModuleService
   @InjectManager()
   async previewOrderChange(
     orderId: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const order = await this.retrieveOrder(
       orderId,
@@ -2723,7 +2723,7 @@ export default class OrderModuleService
       | string[]
       | OrderTypes.CancelOrderChangeDTO
       | OrderTypes.CancelOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const data = Array.isArray(orderChangeIdOrData)
       ? orderChangeIdOrData
@@ -2765,7 +2765,7 @@ export default class OrderModuleService
       | string[]
       | OrderTypes.ConfirmOrderChangeDTO
       | OrderTypes.ConfirmOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderChangeReturn> {
     const result = await this.confirmOrderChange_(
       orderChangeIdOrData,
@@ -2784,7 +2784,7 @@ export default class OrderModuleService
       | string[]
       | OrderTypes.ConfirmOrderChangeDTO
       | OrderTypes.ConfirmOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderChangeReturn> {
     const data = Array.isArray(orderChangeIdOrData)
       ? orderChangeIdOrData
@@ -2836,7 +2836,7 @@ export default class OrderModuleService
       | string[]
       | OrderTypes.DeclineOrderChangeDTO
       | OrderTypes.DeclineOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await this.declineOrderChange_(orderChangeIdOrData, sharedContext)
   }
@@ -2848,7 +2848,7 @@ export default class OrderModuleService
       | string[]
       | OrderTypes.DeclineOrderChangeDTO
       | OrderTypes.DeclineOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const data = Array.isArray(orderChangeIdOrData)
       ? orderChangeIdOrData
@@ -2886,7 +2886,7 @@ export default class OrderModuleService
     data:
       | OrderTypes.RegisterOrderChangeDTO
       | OrderTypes.RegisterOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderChangeDTO | OrderTypes.OrderChangeDTO[]> {
     const result = await this.registerOrderChange_(data, sharedContext)
 
@@ -2900,7 +2900,7 @@ export default class OrderModuleService
     data:
       | OrderTypes.RegisterOrderChangeDTO
       | OrderTypes.RegisterOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     InferEntityType<typeof OrderChange> | InferEntityType<typeof OrderChange>[]
   > {
@@ -2945,7 +2945,7 @@ export default class OrderModuleService
   @EmitEvents()
   async applyPendingOrderActions(
     orderId: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderChangeReturn> {
     const result = await this.applyPendingOrderActions_(orderId, sharedContext)
 
@@ -2957,7 +2957,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   protected async applyPendingOrderActions_(
     orderId: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderChangeReturn> {
     const orderIds = Array.isArray(orderId) ? orderId : [orderId]
 
@@ -3010,7 +3010,7 @@ export default class OrderModuleService
   @EmitEvents()
   async revertLastVersion(
     orderId: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const order = await super.retrieveOrder(
       orderId,
@@ -3035,7 +3035,7 @@ export default class OrderModuleService
   async undoLastChange(
     orderId: string,
     lastOrderChange?: Partial<OrderChangeDTO>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const order = await super.retrieveOrder(
       orderId,
@@ -3059,7 +3059,7 @@ export default class OrderModuleService
   protected async undoLastChange_(
     order: OrderDTO,
     lastOrderChange?: Partial<OrderChangeDTO>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const currentVersion = order.version
 
@@ -3190,7 +3190,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   protected async revertLastChange_(
     order: OrderDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const currentVersion = order.version
 
@@ -3448,7 +3448,7 @@ export default class OrderModuleService
     data:
       | OrderTypes.CreateOrderChangeActionDTO
       | OrderTypes.CreateOrderChangeActionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     OrderTypes.OrderChangeActionDTO | OrderTypes.OrderChangeActionDTO[]
   > {
@@ -3466,7 +3466,7 @@ export default class OrderModuleService
     data:
       | OrderTypes.CreateOrderChangeActionDTO
       | OrderTypes.CreateOrderChangeActionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderChangeAction>[]> {
     let dataArr = Array.isArray(data) ? data : [data]
 
@@ -3508,7 +3508,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async applyOrderChanges_(
     changeActions: ApplyOrderChangeDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderChangeReturn> {
     const actionsMap: Record<string, any[]> = {}
     const ordersIds: string[] = []
@@ -3634,7 +3634,7 @@ export default class OrderModuleService
     transactionData:
       | OrderTypes.CreateOrderTransactionDTO
       | OrderTypes.CreateOrderTransactionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     OrderTypes.OrderTransactionDTO | OrderTypes.OrderTransactionDTO[]
   > {
@@ -3657,7 +3657,7 @@ export default class OrderModuleService
     transactionData:
       | OrderTypes.CreateOrderTransactionDTO
       | OrderTypes.CreateOrderTransactionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof OrderTransaction>[]> {
     const orders = await this.orderService_.list(
       {
@@ -3697,7 +3697,7 @@ export default class OrderModuleService
   // @ts-ignore
   async deleteOrderTransactions(
     transactionIds: string | object | string[] | object[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const data = Array.isArray(transactionIds)
       ? transactionIds
@@ -3728,7 +3728,7 @@ export default class OrderModuleService
   async softDeleteOrderTransactions<TReturnableLinkableKeys extends string>(
     transactionIds: string | object | string[] | object[],
     config?: SoftDeleteReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     const returned = await this.softDeleteOrderTransactions_(
       transactionIds,
@@ -3745,7 +3745,7 @@ export default class OrderModuleService
   >(
     transactionIds: string | object | string[] | object[],
     config?: SoftDeleteReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     const transactions = await super.listOrderTransactions(
       {
@@ -3778,7 +3778,7 @@ export default class OrderModuleService
   async restoreOrderTransactions<TReturnableLinkableKeys extends string>(
     transactionIds: string | object | string[] | object[],
     config?: RestoreReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     const returned = await this.restoreOrderTransactions_(
       transactionIds,
@@ -3795,7 +3795,7 @@ export default class OrderModuleService
   >(
     transactionIds: string | object | string[] | object[],
     config?: RestoreReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     const transactions = await super.listOrderTransactions(
       {
@@ -3831,7 +3831,7 @@ export default class OrderModuleService
       amount: BigNumber | number | BigNumberInput
     }[],
     isRemoved: boolean,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const summaries: any = await this.listOrderSummaries(
       {
@@ -3900,7 +3900,7 @@ export default class OrderModuleService
   @EmitEvents()
   async archive(
     orderId: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderDTO | OrderTypes.OrderDTO[]> {
     const orders = await this.archive_(orderId, sharedContext)
 
@@ -3912,7 +3912,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async archive_(
     orderId: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderDTO[]> {
     const orderIds = Array.isArray(orderId) ? orderId : [orderId]
     const orders = await this.listOrders_(
@@ -3973,7 +3973,7 @@ export default class OrderModuleService
   @EmitEvents()
   async completeOrder(
     orderId: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderDTO | OrderTypes.OrderDTO[]> {
     const orders = await this.completeOrder_(orderId, sharedContext)
 
@@ -3985,7 +3985,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async completeOrder_(
     orderId: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderDTO[]> {
     const orderIds = Array.isArray(orderId) ? orderId : [orderId]
     const orders = await this.listOrders_(
@@ -4038,7 +4038,7 @@ export default class OrderModuleService
   @EmitEvents()
   async cancel(
     orderId: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderDTO | OrderTypes.OrderDTO[]> {
     const orders = await this.cancel_(orderId, sharedContext)
 
@@ -4050,7 +4050,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async cancel_(
     orderId: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderDTO[]> {
     const orderIds = Array.isArray(orderId) ? orderId : [orderId]
     const orders = await this.listOrders_(
@@ -4087,7 +4087,7 @@ export default class OrderModuleService
   @EmitEvents()
   async createReturn(
     data: OrderTypes.CreateOrderReturnDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.ReturnDTO> {
     const ret = await this.createReturn_(data, sharedContext)
 
@@ -4097,7 +4097,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async createReturn_(
     data: OrderTypes.CreateOrderReturnDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.ReturnDTO> {
     const ret = await BundledActions.createReturn.bind(this)(
       data,
@@ -4122,7 +4122,7 @@ export default class OrderModuleService
   @EmitEvents()
   async receiveReturn(
     data: OrderTypes.ReceiveOrderReturnDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.ReturnDTO> {
     const ret = await this.receiveReturn_(data, sharedContext)
 
@@ -4142,7 +4142,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async receiveReturn_(
     data: OrderTypes.ReceiveOrderReturnDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<any[]> {
     return await BundledActions.receiveReturn.bind(this)(data, sharedContext)
   }
@@ -4151,7 +4151,7 @@ export default class OrderModuleService
   @EmitEvents()
   async cancelReturn(
     data: OrderTypes.CancelOrderReturnDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.ReturnDTO> {
     const ret = await this.cancelReturn_(data, sharedContext)
 
@@ -4170,7 +4170,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async cancelReturn_(
     data: OrderTypes.CancelOrderReturnDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<any> {
     return await BundledActions.cancelReturn.bind(this)(data, sharedContext)
   }
@@ -4179,7 +4179,7 @@ export default class OrderModuleService
   @EmitEvents()
   async createClaim(
     data: OrderTypes.CreateOrderClaimDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderClaimDTO> {
     const ret = await this.createClaim_(data, sharedContext)
 
@@ -4208,7 +4208,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   async createClaim_(
     data: OrderTypes.CreateOrderClaimDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<any> {
     return await BundledActions.createClaim.bind(this)(data, sharedContext)
   }
@@ -4217,7 +4217,7 @@ export default class OrderModuleService
   @EmitEvents()
   async cancelClaim(
     data: OrderTypes.CancelOrderClaimDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderClaimDTO> {
     const ret = await this.cancelClaim_(data, sharedContext)
 
@@ -4231,7 +4231,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async cancelClaim_(
     data: OrderTypes.CancelOrderClaimDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<any> {
     return await BundledActions.cancelClaim.bind(this)(data, sharedContext)
   }
@@ -4240,7 +4240,7 @@ export default class OrderModuleService
   @EmitEvents()
   async createExchange(
     data: OrderTypes.CreateOrderExchangeDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderExchangeDTO> {
     const ret = await this.createExchange_(data, sharedContext)
 
@@ -4285,7 +4285,7 @@ export default class OrderModuleService
   async updateReturnReasons(
     idOrSelector: string | FilterableOrderReturnReasonProps,
     data: UpdateOrderReturnReasonDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderReturnReasonDTO[] | OrderReturnReasonDTO> {
     const reasons = await this.updateReturnReasons_(
       idOrSelector,
@@ -4302,7 +4302,7 @@ export default class OrderModuleService
   private async updateReturnReasons_(
     idOrSelector: string | FilterableOrderReturnReasonProps,
     data: UpdateOrderReturnReasonDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ReturnReason>[]> {
     let normalizedInput: UpdateReturnReasonDTO[] = []
     if (isString(idOrSelector)) {
@@ -4333,7 +4333,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   async createExchange_(
     data: OrderTypes.CreateOrderExchangeDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<any> {
     return await BundledActions.createExchange.bind(this)(data, sharedContext)
   }
@@ -4342,7 +4342,7 @@ export default class OrderModuleService
   @EmitEvents()
   async cancelExchange(
     data: OrderTypes.CancelOrderExchangeDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<OrderTypes.OrderExchangeDTO> {
     const ret = await this.cancelExchange_(data, sharedContext)
 
@@ -4358,7 +4358,7 @@ export default class OrderModuleService
   @InjectTransactionManager()
   private async cancelExchange_(
     data: OrderTypes.CancelOrderExchangeDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<any> {
     return await BundledActions.cancelExchange.bind(this)(data, sharedContext)
   }
@@ -4367,7 +4367,7 @@ export default class OrderModuleService
   @EmitEvents()
   async registerFulfillment(
     data: OrderTypes.RegisterOrderFulfillmentDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await BundledActions.registerFulfillment.bind(this)(data, sharedContext)
   }
@@ -4376,7 +4376,7 @@ export default class OrderModuleService
   @EmitEvents()
   async cancelFulfillment(
     data: OrderTypes.CancelOrderFulfillmentDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await BundledActions.cancelFulfillment.bind(this)(data, sharedContext)
   }
@@ -4385,7 +4385,7 @@ export default class OrderModuleService
   @EmitEvents()
   async registerShipment(
     data: OrderTypes.RegisterOrderShipmentDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await BundledActions.registerShipment.bind(this)(data, sharedContext)
   }
@@ -4394,7 +4394,7 @@ export default class OrderModuleService
   @EmitEvents()
   async registerDelivery(
     data: OrderTypes.RegisterOrderDeliveryDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     await BundledActions.registerDelivery.bind(this)(data, sharedContext)
   }

@@ -5,7 +5,7 @@
  * description: Complete a cart and place an order.
  * x-authenticated: false
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/storefront-development/checkout/complete-cart
+ *   url: https://docs.switchyard.run/resources/storefront-development/checkout/complete-cart
  *   description: "Storefront guide: How to implement cart completion during checkout."
  * parameters:
  *   - name: id
@@ -21,7 +21,7 @@
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.switchyard.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.run/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default
@@ -40,16 +40,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       sdk.store.cart.complete("cart_123")
@@ -123,7 +123,7 @@
  *                       type: string
  *                       title: type
  *                       description: >
- *                         The error's type. Can be a [SwitchyardError type](https://docs.switchyard.com/learn/fundamentals/api-routes/errors#medusaerror-types) or `payment_authorization_error` or
+ *                         The error's type. Can be a [SwitchyardError type](https://docs.switchyard.run/learn/fundamentals/api-routes/errors#medusaerror-types) or `payment_authorization_error` or
  *                         `payment_requires_more_error` for payment-related errors.
  *   "400":
  *     $ref: "#/components/responses/400_error"

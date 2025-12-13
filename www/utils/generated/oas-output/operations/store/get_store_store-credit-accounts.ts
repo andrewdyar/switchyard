@@ -14,7 +14,7 @@
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.switchyard.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.run/api/store#publishable-api-key
  *   - name: currency_code
  *     in: query
  *     description: Filter by the store credit account's currency code.
@@ -357,7 +357,7 @@
  * x-badges:
  *   - text: Cloud
  *     description: |
- *       This API route is only available in [Switchyard Cloud](https://docs.switchyard.com/cloud/loyalty-plugin).
+ *       This API route is only available in [Switchyard Cloud](https://docs.switchyard.run/cloud/loyalty-plugin).
  * 
 */
 

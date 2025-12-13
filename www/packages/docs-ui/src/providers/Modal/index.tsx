@@ -34,7 +34,7 @@ export const ModalProvider = ({ children }: ModalProviderProps) => {
       {children}
       {modalProps && (
         <>
-          <div className="bg-medusa-bg-overlay fixed top-0 left-0 z-[499] h-screen w-screen"></div>
+          <div className="bg-switchyard-bg-overlay fixed top-0 left-0 z-[499] h-screen w-screen"></div>
           <Modal {...modalProps} onClose={closeModal} />
         </>
       )}

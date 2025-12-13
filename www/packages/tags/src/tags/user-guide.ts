@@ -1,214 +1,214 @@
 export const userGuide = [
   {
     "title": "Manage Customer Groups",
-    "path": "https://docs.switchyard.com/user-guide/customers/groups"
+    "path": "https://docs.switchyard.run/user-guide/customers/groups"
   },
   {
     "title": "Manage Customers",
-    "path": "https://docs.switchyard.com/user-guide/customers/manage"
+    "path": "https://docs.switchyard.run/user-guide/customers/manage"
   },
   {
     "title": "Customers Overview",
-    "path": "https://docs.switchyard.com/user-guide/customers"
+    "path": "https://docs.switchyard.run/user-guide/customers"
   },
   {
     "title": "Manage Inventory Items",
-    "path": "https://docs.switchyard.com/user-guide/inventory/inventory"
+    "path": "https://docs.switchyard.run/user-guide/inventory/inventory"
   },
   {
     "title": "Inventory Overview",
-    "path": "https://docs.switchyard.com/user-guide/inventory"
+    "path": "https://docs.switchyard.run/user-guide/inventory"
   },
   {
     "title": "Manage Reservations",
-    "path": "https://docs.switchyard.com/user-guide/inventory/reservations"
+    "path": "https://docs.switchyard.run/user-guide/inventory/reservations"
   },
   {
     "title": "Manage Order Claims",
-    "path": "https://docs.switchyard.com/user-guide/orders/claims"
+    "path": "https://docs.switchyard.run/user-guide/orders/claims"
   },
   {
     "title": "Create Draft Order",
-    "path": "https://docs.switchyard.com/user-guide/orders/draft-orders/create"
+    "path": "https://docs.switchyard.run/user-guide/orders/draft-orders/create"
   },
   {
     "title": "Manage Draft Order",
-    "path": "https://docs.switchyard.com/user-guide/orders/draft-orders/manage"
+    "path": "https://docs.switchyard.run/user-guide/orders/draft-orders/manage"
   },
   {
     "title": "Draft Orders",
-    "path": "https://docs.switchyard.com/user-guide/orders/draft-orders"
+    "path": "https://docs.switchyard.run/user-guide/orders/draft-orders"
   },
   {
     "title": "Edit Order Items",
-    "path": "https://docs.switchyard.com/user-guide/orders/edit"
+    "path": "https://docs.switchyard.run/user-guide/orders/edit"
   },
   {
     "title": "Manage Order Exchanges",
-    "path": "https://docs.switchyard.com/user-guide/orders/exchanges"
+    "path": "https://docs.switchyard.run/user-guide/orders/exchanges"
   },
   {
     "title": "Manage Order Fulfillments",
-    "path": "https://docs.switchyard.com/user-guide/orders/fulfillments"
+    "path": "https://docs.switchyard.run/user-guide/orders/fulfillments"
   },
   {
     "title": "Manage Order Details",
-    "path": "https://docs.switchyard.com/user-guide/orders/manage"
+    "path": "https://docs.switchyard.run/user-guide/orders/manage"
   },
   {
     "title": "Orders Overview",
-    "path": "https://docs.switchyard.com/user-guide/orders"
+    "path": "https://docs.switchyard.run/user-guide/orders"
   },
   {
     "title": "Manage Order Payments",
-    "path": "https://docs.switchyard.com/user-guide/orders/payments"
+    "path": "https://docs.switchyard.run/user-guide/orders/payments"
   },
   {
     "title": "Manage Order Returns",
-    "path": "https://docs.switchyard.com/user-guide/orders/returns"
+    "path": "https://docs.switchyard.run/user-guide/orders/returns"
   },
   {
     "title": "Create a Price List",
-    "path": "https://docs.switchyard.com/user-guide/price-lists/create"
+    "path": "https://docs.switchyard.run/user-guide/price-lists/create"
   },
   {
     "title": "Manage Price Lists",
-    "path": "https://docs.switchyard.com/user-guide/price-lists/manage"
+    "path": "https://docs.switchyard.run/user-guide/price-lists/manage"
   },
   {
     "title": "Price Lists Overview",
-    "path": "https://docs.switchyard.com/user-guide/price-lists"
+    "path": "https://docs.switchyard.run/user-guide/price-lists"
   },
   {
     "title": "Manage Product Categories",
-    "path": "https://docs.switchyard.com/user-guide/products/categories"
+    "path": "https://docs.switchyard.run/user-guide/products/categories"
   },
   {
     "title": "Manage Product Collections",
-    "path": "https://docs.switchyard.com/user-guide/products/collections"
+    "path": "https://docs.switchyard.run/user-guide/products/collections"
   },
   {
     "title": "Create Bundle Product",
-    "path": "https://docs.switchyard.com/user-guide/products/create/bundle"
+    "path": "https://docs.switchyard.run/user-guide/products/create/bundle"
   },
   {
     "title": "Create Multi-Part Product",
-    "path": "https://docs.switchyard.com/user-guide/products/create/multi-part"
+    "path": "https://docs.switchyard.run/user-guide/products/create/multi-part"
   },
   {
     "title": "Create Product",
-    "path": "https://docs.switchyard.com/user-guide/products/create"
+    "path": "https://docs.switchyard.run/user-guide/products/create"
   },
   {
     "title": "Edit Product",
-    "path": "https://docs.switchyard.com/user-guide/products/edit"
+    "path": "https://docs.switchyard.run/user-guide/products/edit"
   },
   {
     "title": "Export Products",
-    "path": "https://docs.switchyard.com/user-guide/products/export"
+    "path": "https://docs.switchyard.run/user-guide/products/export"
   },
   {
     "title": "Import Products",
-    "path": "https://docs.switchyard.com/user-guide/products/import"
+    "path": "https://docs.switchyard.run/user-guide/products/import"
   },
   {
     "title": "Products Overview",
-    "path": "https://docs.switchyard.com/user-guide/products"
+    "path": "https://docs.switchyard.run/user-guide/products"
   },
   {
     "title": "Manage Product Variants",
-    "path": "https://docs.switchyard.com/user-guide/products/variants"
+    "path": "https://docs.switchyard.run/user-guide/products/variants"
   },
   {
     "title": "Manage Campaigns",
-    "path": "https://docs.switchyard.com/user-guide/promotions/campaigns"
+    "path": "https://docs.switchyard.run/user-guide/promotions/campaigns"
   },
   {
     "title": "Create a Promotion",
-    "path": "https://docs.switchyard.com/user-guide/promotions/create"
+    "path": "https://docs.switchyard.run/user-guide/promotions/create"
   },
   {
     "title": "Manage Promotions",
-    "path": "https://docs.switchyard.com/user-guide/promotions/manage"
+    "path": "https://docs.switchyard.run/user-guide/promotions/manage"
   },
   {
     "title": "Promotions Overview",
-    "path": "https://docs.switchyard.com/user-guide/promotions"
+    "path": "https://docs.switchyard.run/user-guide/promotions"
   },
   {
     "title": "Reset Password",
-    "path": "https://docs.switchyard.com/user-guide/reset-password"
+    "path": "https://docs.switchyard.run/user-guide/reset-password"
   },
   {
     "title": "Manage Publishable API Keys",
-    "path": "https://docs.switchyard.com/user-guide/settings/developer/publishable-api-keys"
+    "path": "https://docs.switchyard.run/user-guide/settings/developer/publishable-api-keys"
   },
   {
     "title": "Manage Secret API Keys",
-    "path": "https://docs.switchyard.com/user-guide/settings/developer/secret-api-keys"
+    "path": "https://docs.switchyard.run/user-guide/settings/developer/secret-api-keys"
   },
   {
     "title": "Workflow Executions",
-    "path": "https://docs.switchyard.com/user-guide/settings/developer/workflows"
+    "path": "https://docs.switchyard.run/user-guide/settings/developer/workflows"
   },
   {
     "title": "Manage Locations",
-    "path": "https://docs.switchyard.com/user-guide/settings/locations-and-shipping/locations"
+    "path": "https://docs.switchyard.run/user-guide/settings/locations-and-shipping/locations"
   },
   {
     "title": "Locations & Shipping Overview",
-    "path": "https://docs.switchyard.com/user-guide/settings/locations-and-shipping"
+    "path": "https://docs.switchyard.run/user-guide/settings/locations-and-shipping"
   },
   {
     "title": "Manage Shipping Option Types",
-    "path": "https://docs.switchyard.com/user-guide/settings/locations-and-shipping/shipping-option-types"
+    "path": "https://docs.switchyard.run/user-guide/settings/locations-and-shipping/shipping-option-types"
   },
   {
     "title": "Manage Shipping Profiles",
-    "path": "https://docs.switchyard.com/user-guide/settings/locations-and-shipping/shipping-profiles"
+    "path": "https://docs.switchyard.run/user-guide/settings/locations-and-shipping/shipping-profiles"
   },
   {
     "title": "Manage Product Tags",
-    "path": "https://docs.switchyard.com/user-guide/settings/product-tags"
+    "path": "https://docs.switchyard.run/user-guide/settings/product-tags"
   },
   {
     "title": "Manage Product Types",
-    "path": "https://docs.switchyard.com/user-guide/settings/product-types"
+    "path": "https://docs.switchyard.run/user-guide/settings/product-types"
   },
   {
     "title": "Manage Profile",
-    "path": "https://docs.switchyard.com/user-guide/settings/profile"
+    "path": "https://docs.switchyard.run/user-guide/settings/profile"
   },
   {
     "title": "Manage Refund Reasons",
-    "path": "https://docs.switchyard.com/user-guide/settings/refund-reasons"
+    "path": "https://docs.switchyard.run/user-guide/settings/refund-reasons"
   },
   {
     "title": "Manage Regions",
-    "path": "https://docs.switchyard.com/user-guide/settings/regions"
+    "path": "https://docs.switchyard.run/user-guide/settings/regions"
   },
   {
     "title": "Manage Return Reasons",
-    "path": "https://docs.switchyard.com/user-guide/settings/return-reasons"
+    "path": "https://docs.switchyard.run/user-guide/settings/return-reasons"
   },
   {
     "title": "Manage Sales Channels",
-    "path": "https://docs.switchyard.com/user-guide/settings/sales-channels"
+    "path": "https://docs.switchyard.run/user-guide/settings/sales-channels"
   },
   {
     "title": "Manage Store",
-    "path": "https://docs.switchyard.com/user-guide/settings/store"
+    "path": "https://docs.switchyard.run/user-guide/settings/store"
   },
   {
     "title": "Manage Tax Regions",
-    "path": "https://docs.switchyard.com/user-guide/settings/tax-regions"
+    "path": "https://docs.switchyard.run/user-guide/settings/tax-regions"
   },
   {
     "title": "Manage Invites",
-    "path": "https://docs.switchyard.com/user-guide/settings/users/invites"
+    "path": "https://docs.switchyard.run/user-guide/settings/users/invites"
   },
   {
     "title": "Manage Users",
-    "path": "https://docs.switchyard.com/user-guide/settings/users"
+    "path": "https://docs.switchyard.run/user-guide/settings/users"
   }
 ]

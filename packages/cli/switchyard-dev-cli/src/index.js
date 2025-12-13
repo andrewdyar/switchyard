@@ -22,7 +22,7 @@ const cli = yargs()
 
 cli.command({
   command: `*`,
-  description: `Start the Medusa dev CLI`,
+  description: `Start the Switchyard dev CLI`,
   builder: (yargs) => {
     yargs
       .usage(`Usage: medusa-dev [options]`)
@@ -61,7 +61,7 @@ You typically only need to configure this once.`
       .alias(`h`, `help`)
       .nargs(`v`, 0)
       .alias(`v`, `version`)
-      .describe(`v`, `Print the currently installed version of Medusa Dev CLI`)
+      .describe(`v`, `Print the currently installed version of Switchyard Dev CLI`)
   },
   handler: async (argv) => {
     const conf = new Configstore(pkg.name)
@@ -95,7 +95,7 @@ You typically only need to configure this once.`
         `
 You haven't set the path yet to your cloned
 version of medusa. Do so now by running:
-medusa-dev --set-path-to-repo /path/to/my/cloned/version/medusa
+medusa-dev --set-path-to-repo /path/to/my/cloned/version/switchyard
 `
       )
       process.exit()

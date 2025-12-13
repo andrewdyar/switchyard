@@ -1,4 +1,4 @@
-import ProductModule from "@switchyard/medusa/product"
+import ProductModule from "@switchyard/product"
 import { defineLink } from "@switchyard/utils"
 import Translation from "../modules/translation"
 

@@ -84,7 +84,7 @@ const mergerOptions: Partial<TypeDocOptions> = {
       mdxImports: [`import { TypeList } from "docs-ui"`],
       parameterComponentExtraProps: {
         expandUrl:
-          "https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation",
+          "https://docs.switchyard.run/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation",
       },
     },
     internal: {
@@ -135,7 +135,7 @@ const mergerOptions: Partial<TypeDocOptions> = {
 
 <Note>
 
-You should only use this methods when implementing complex customizations. For common cases, check out [available workflows instead](/medusa-workflows-reference).
+You should only use this methods when implementing complex customizations. For common cases, check out [available workflows instead](/switchyard-workflows-reference).
 
 </Note>`,
           frontmatterData: {
@@ -154,7 +154,7 @@ You should only use this methods when implementing complex customizations. For c
 
 <Note>
 
-You should only use the methods in this reference when implementing complex customizations. For common cases, check out [available workflows instead](/medusa-workflows-reference).
+You should only use the methods in this reference when implementing complex customizations. For common cases, check out [available workflows instead](/switchyard-workflows-reference).
 
 </Note>`,
           frontmatterData: {

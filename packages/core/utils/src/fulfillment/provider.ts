@@ -14,12 +14,12 @@ import {
 /**
  * ### constructor
  *
- * The constructor allows you to access resources from the [module's container](https://docs.medusajs.com/learn/fundamentals/modules/container)
+ * The constructor allows you to access resources from the [module's container](https://docs.switchyard.run/learn/fundamentals/modules/container)
  * using the first parameter, and the module's options using the second parameter.
  *
  * :::note
  *
- * A module's options are passed when you register it in the Medusa application.
+ * A module's options are passed when you register it in the Switchyard application.
  *
  * :::
  *

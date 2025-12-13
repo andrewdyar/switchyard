@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IOrderModuleService, IPromotionModuleService } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
@@ -16,7 +16,7 @@ import { setupTaxStructure } from "../../../modules/__tests__/fixtures/tax"
 
 jest.setTimeout(300000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let order, order2
     let returnShippingOption

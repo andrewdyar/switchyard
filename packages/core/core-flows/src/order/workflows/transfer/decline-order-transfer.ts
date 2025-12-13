@@ -47,8 +47,8 @@ export type DeclineTransferOrderRequestValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -92,7 +92,7 @@ export const declineTransferOrderRequestWorkflowId =
   "decline-transfer-order-request"
 /**
  * This workflow declines a requested order transfer by its token. It's used by the
- * [Decline Order Transfer Store API Route](https://docs.medusajs.com/api/store#orders_postordersidtransferdecline).
+ * [Decline Order Transfer Store API Route](https://docs.switchyard.run/api/store#orders_postordersidtransferdecline).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to wrap custom logic around declining an order transfer request.
  *

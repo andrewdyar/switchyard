@@ -69,8 +69,8 @@ export type ExchangeRequestItemReturnValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, order exchange, and order return details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, order exchange, and order return details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -126,7 +126,7 @@ export const orderExchangeRequestItemReturnWorkflowId =
   "exchange-request-item-return"
 /**
  * This workflow adds inbound items to be retuned as part of the exchange. It's used
- * by the [Add Inbound Items Admin API Route](https://docs.medusajs.com/api/admin#exchanges_postexchangesidinbounditems).
+ * by the [Add Inbound Items Admin API Route](https://docs.switchyard.run/api/admin#exchanges_postexchangesidinbounditems).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to add inbound items
  * to be returned as part of an exchange in your custom flow.

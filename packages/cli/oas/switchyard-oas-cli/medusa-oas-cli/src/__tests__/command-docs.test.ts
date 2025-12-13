@@ -15,7 +15,7 @@ import execa from "execa"
 const basePath = path.resolve(__dirname, `../../../`)
 
 export const runCLI = async (command: string, options: string[] = []) => {
-  const params = ["run", "medusa-oas", command, ...options]
+  const params = ["run", "switchyard-oas", command, ...options]
   try {
     const { all: logs } = await execa("yarn", params, {
       cwd: basePath,

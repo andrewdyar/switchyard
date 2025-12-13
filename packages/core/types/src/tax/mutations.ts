@@ -163,7 +163,7 @@ export interface UpdateTaxRateDTO {
   /**
    * Whether the tax rate is combinable.
    *
-   * Learn more [here](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates).
+   * Learn more [here](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates).
    */
   is_combinable?: boolean
 
@@ -278,7 +278,7 @@ export interface CreateTaxRateRuleDTO {
    * The snake-case name of the data model that the tax rule references.
    * For example, `product`.
    *
-   * Learn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).
+   * Learn more in [this guide](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).
    */
   reference: string
 
@@ -286,7 +286,7 @@ export interface CreateTaxRateRuleDTO {
    * The ID of the record of the data model that the tax rule references.
    * For example, `prod_123`.
    *
-   * Learn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).
+   * Learn more in [this guide](https://docs.switchyard.run/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).
    */
   reference_id: string
 

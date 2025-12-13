@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   ContainerRegistrationKeys,
   Modules,
@@ -11,7 +11,7 @@ import {
 
 jest.setTimeout(60000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let order, order2
     let returnShippingOption

@@ -97,7 +97,7 @@ export const NoteLayout = ({
       className={clsx(
         "py-[10px] px-docs_0.75 my-docs_1",
         "flex gap-docs_0.75 rounded-docs_DEFAULT items-stretch",
-        "bg-medusa-bg-component border border-medusa-border-base"
+        "bg-switchyard-bg-component border border-medusa-border-base"
       )}
     >
       <span

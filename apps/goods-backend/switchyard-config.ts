@@ -5,7 +5,7 @@ loadEnv(process.env.NODE_ENV || "development", process.cwd())
 // Build auth providers list - only include Supabase if env vars are configured
 const authProviders: any[] = [
   {
-    resolve: "@switchyard/medusa/auth-emailpass",
+    resolve: "@switchyard/auth-emailpass",
     id: "emailpass",
   },
 ]
@@ -32,7 +32,7 @@ const modules: any[] = [
     resolve: "@switchyard/inventory-group",
   },
   {
-    resolve: "@switchyard/medusa/auth",
+    resolve: "@switchyard/auth",
     options: {
       providers: authProviders,
     },
@@ -43,7 +43,7 @@ const modules: any[] = [
 if (process.env.REDIS_URL) {
   // Redis Caching Module
   modules.push({
-    resolve: "@switchyard/medusa/caching",
+    resolve: "@switchyard/caching",
     options: {
       providers: [
         {
@@ -60,7 +60,7 @@ if (process.env.REDIS_URL) {
 
   // Redis Event Bus Module
   modules.push({
-    resolve: "@switchyard/medusa/event-bus-redis",
+    resolve: "@switchyard/event-bus-redis",
     options: {
       redisUrl: process.env.REDIS_URL,
       jobOptions: {
@@ -72,7 +72,7 @@ if (process.env.REDIS_URL) {
 
   // Redis Workflow Engine Module
   modules.push({
-    resolve: "@switchyard/medusa/workflow-engine-redis",
+    resolve: "@switchyard/workflow-engine-redis",
     options: {
       redis: {
         url: process.env.REDIS_URL,
@@ -82,11 +82,11 @@ if (process.env.REDIS_URL) {
 
   // Redis Locking Module
   modules.push({
-    resolve: "@switchyard/medusa/locking",
+    resolve: "@switchyard/locking",
     options: {
       providers: [
         {
-          resolve: "@switchyard/medusa/locking-redis",
+          resolve: "@switchyard/locking-redis",
           id: "locking-redis",
           is_default: true,
           options: {

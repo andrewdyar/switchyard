@@ -29,7 +29,7 @@ const notificationOptions: FormattingOptionsType = {
       
 As you implement your Notification Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [SendGrid Notification Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/notification-sendgrid).`,
+If you need to refer to an existing implementation as an example, check the [SendGrid Notification Module Provider in the Switchyard repository](https://github.com/switchyard/switchyard/tree/develop/packages/modules/providers/notification-sendgrid).`,
       `## 1. Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
@@ -100,12 +100,12 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/notification",
+      resolve: "@switchyard/notification",
       options: {
         providers: [
           // default provider
           {
-            resolve: "@switchyard/medusa/notification-local",
+            resolve: "@switchyard/notification-local",
             id: "local",
             options: {
               name: "Local Notification Provider",
@@ -140,7 +140,7 @@ import { Modules } from "@switchyard/framework/utils"
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@switchyard/medusa"
+} from "@switchyard/core"
 
 export default async function userCreatedHandler({
   event: { data },

@@ -23,7 +23,7 @@ export interface IAuthModuleService extends IModuleService {
    * underlying provider is called, passing it the `providerData` parameter as a parameter. The method
    * returns the data returned by the provider.
    *
-   * Refer to [this guide](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route) to learn more about the authentication flows.
+   * Refer to [this guide](https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route) to learn more about the authentication flows.
    *
    * @param {string} provider - The ID of the provider to authenticate the user with.
    * @param {AuthenticationInput} providerData - The data to pass to the provider to authenticate the user.
@@ -54,7 +54,7 @@ export interface IAuthModuleService extends IModuleService {
    * underlying provider is called, passing it the `providerData` parameter as a parameter. The method
    * returns the data returned by the provider.
    *
-   * Refer to [this guide](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route) to learn more about the authentication flows.
+   * Refer to [this guide](https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route) to learn more about the authentication flows.
    * 
    * @param {string} provider - The ID of the provider to register the user with.
    * @param {AuthenticationInput} providerData - The data to pass to the provider to register the user.
@@ -120,7 +120,7 @@ export interface IAuthModuleService extends IModuleService {
    * In that API route, you can call this method to validate the third-party provider's
    * callback and authenticate the user.
    *
-   * Learn more about this authentication flow in [this guide](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route#2-third-party-service-authenticate-flow).
+   * Learn more about this authentication flow in [this guide](https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route#2-third-party-service-authenticate-flow).
    *
    * @param {string} provider - The ID of the provider to use to validate the callback.
    * @param {AuthenticationInput} providerData - The data to pass to the provider to validate the callback.

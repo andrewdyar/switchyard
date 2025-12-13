@@ -1,6 +1,6 @@
 import { IAuthModuleService } from "@switchyard/types"
 import { Modules } from "@switchyard/utils"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,
@@ -8,7 +8,7 @@ import {
 
 jest.setTimeout(30000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let user, container, authIdentity
 
@@ -30,7 +30,7 @@ medusaIntegrationTestRunner({
 
         const v2Response = {
           id: user.id,
-          email: "admin@medusa.js",
+          email: "admin@switchyard.run",
           created_at: expect.any(String),
           updated_at: expect.any(String),
         }
@@ -50,7 +50,7 @@ medusaIntegrationTestRunner({
         const v2Response = [
           expect.objectContaining({
             id: user.id,
-            email: "admin@medusa.js",
+            email: "admin@switchyard.run",
             created_at: expect.any(String),
             updated_at: expect.any(String),
           }),
@@ -74,7 +74,7 @@ medusaIntegrationTestRunner({
         expect(response.data.users).toEqual([
           expect.objectContaining({
             id: user.id,
-            email: "admin@medusa.js",
+            email: "admin@switchyard.run",
             created_at: expect.any(String),
             updated_at: expect.any(String),
           }),
@@ -107,7 +107,7 @@ medusaIntegrationTestRunner({
     describe("DELETE /admin/users", () => {
       it("Deletes a user and updates associated auth identity", async () => {
         const userTwoAdminHeaders = {
-            headers: { "x-medusa-access-token": "test_token" },
+            headers: { "x-switchyard-access-token": "test_token" },
         }
 
         const { user: userTwo, authIdentity: userTwoAuthIdentity } = await createAdminUser(

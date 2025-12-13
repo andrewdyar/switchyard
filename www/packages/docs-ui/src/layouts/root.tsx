@@ -23,7 +23,7 @@ export const RootLayout = ({
     <body className={clsx("h-screen w-full overflow-hidden")}>
       <div
         className={clsx(
-          "bg-medusa-bg-subtle font-base text-medium w-full",
+          "bg-switchyard-bg-subtle font-base text-medium w-full",
           "text-medusa-fg-base",
           "h-full overflow-hidden",
           "grid grid-cols-1 lg:mx-auto lg:grid-cols-[221px_1fr]",

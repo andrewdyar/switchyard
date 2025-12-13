@@ -16,7 +16,7 @@ export class PaymentCollection {
 
   /**
    * This method creates a payment collection. It sends a request to the
-   * [Create Payment Collection](https://docs.medusajs.com/api/admin#payment-collections_postpaymentcollections)
+   * [Create Payment Collection](https://docs.switchyard.run/api/admin#payment-collections_postpaymentcollections)
    * API route.
    * 
    * @param body - The details of the payment collection to create.
@@ -50,7 +50,7 @@ export class PaymentCollection {
 
   /**
    * This method deletes a payment collection. It sends a request to the
-   * [Delete Payment Collection](https://docs.medusajs.com/api/admin#payment-collections_deletepaymentcollectionsid)
+   * [Delete Payment Collection](https://docs.switchyard.run/api/admin#payment-collections_deletepaymentcollectionsid)
    * API route.
    * 
    * @param id - The payment collection's ID.
@@ -75,7 +75,7 @@ export class PaymentCollection {
 
   /**
    * This method marks a payment collection as paid. It sends a request to the 
-   * [Mark as Paid](https://docs.medusajs.com/api/admin#payment-collections_postpaymentcollectionsidmarkaspaid)
+   * [Mark as Paid](https://docs.switchyard.run/api/admin#payment-collections_postpaymentcollectionsidmarkaspaid)
    * API route.
    * 
    * The API route creates and authorizes a payment session, then capture its payment, 

@@ -7,7 +7,7 @@ import type { AwilixContainer, ResolveOptions } from "@switchyard/deps/awilix"
 export interface ModuleImplementations {}
 
 /**
- * The Medusa Container extends [Awilix](https://github.com/jeffijoe/awilix) to
+ * The Switchyard Container extends [Awilix](https://github.com/jeffijoe/awilix) to
  * provide dependency injection functionalities.
  */
 export type SwitchyardContainer<Cradle extends object = ModuleImplementations> =

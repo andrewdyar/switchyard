@@ -56,7 +56,7 @@ export async function migrate({
     process.env.DB_MIGRATION_CONCURRENCY = String(concurrency)
   }
 
-  const medusaAppLoader = new SwitchyardAppLoader()
+  const switchyardAppLoader = new SwitchyardAppLoader()
   const configModule = container.resolve(
     ContainerRegistrationKeys.CONFIG_MODULE
   )
@@ -77,7 +77,7 @@ export async function migrate({
   const migrator = new Migrator({ container })
   await migrator.ensureMigrationsTable()
 
-  await medusaAppLoader.runModulesMigrations({
+  await switchyardAppLoader.runModulesMigrations({
     action: "run",
   })
   logger.log(new Array(TERMINAL_SIZE).join("-"))
@@ -88,7 +88,7 @@ export async function migrate({
    */
   if (!skipLinks) {
     logger.log(new Array(TERMINAL_SIZE).join("-"))
-    await syncLinks(medusaAppLoader, {
+    await syncLinks(switchyardAppLoader, {
       executeAll: executeAllLinks,
       executeSafe: executeSafeLinks,
       directory,

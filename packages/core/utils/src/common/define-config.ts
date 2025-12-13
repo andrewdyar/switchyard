@@ -17,11 +17,11 @@ import { normalizeImportPathWithSource } from "./normalize-import-path-with-sour
 import { resolveExports } from "./resolve-exports"
 import { tryConvertToNumber } from "./try-convert-to-number"
 
-const MEDUSA_CLOUD_EXECUTION_CONTEXT = "medusa-cloud"
+const MEDUSA_CLOUD_EXECUTION_CONTEXT = "switchyard-cloud"
 const DEFAULT_SECRET = "supersecret"
 const DEFAULT_ADMIN_URL = "/"
 const DEFAULT_STORE_CORS = "http://localhost:8000"
-const DEFAULT_DATABASE_URL = "postgres://localhost/medusa-starter-default"
+const DEFAULT_DATABASE_URL = "postgres://localhost/switchyard-starter-default"
 const DEFAULT_ADMIN_CORS =
   "http://localhost:7000,http://localhost:7001,http://localhost:5173"
 
@@ -186,7 +186,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@switchyard/medusa/auth-emailpass",
+            resolve: "@switchyard/auth-emailpass",
             id: "emailpass",
           },
         ],
@@ -206,7 +206,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@switchyard/medusa/fulfillment-manual",
+            resolve: "@switchyard/fulfillment-manual",
             id: "manual",
           },
         ],
@@ -217,7 +217,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@switchyard/medusa/notification-local",
+            resolve: "@switchyard/notification-local",
             id: "local",
             options: {
               name: "Local Notification Provider",
@@ -241,7 +241,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@switchyard/medusa/file-local",
+            resolve: "@switchyard/file-local",
             id: "local",
           },
         ],
@@ -286,7 +286,7 @@ function resolveModules(
         providers: [
           {
             id: "s3",
-            resolve: "@switchyard/medusa/file-s3",
+            resolve: "@switchyard/file-s3",
             options: {
               authentication_method: "s3-iam-role",
               file_url: process.env.S3_FILE_URL,
@@ -308,7 +308,7 @@ function resolveModules(
         providers: [
           {
             id: "caching-redis",
-            resolve: "@switchyard/medusa/caching-redis",
+            resolve: "@switchyard/caching-redis",
             is_default: true,
             options: {
               redisUrl: process.env.CACHE_REDIS_URL,
@@ -453,7 +453,7 @@ function normalizeAdminConfig(
    * with the user defined config
    */
   return {
-    backendUrl: process.env.MEDUSA_BACKEND_URL || DEFAULT_ADMIN_URL,
+    backendUrl: process.env.SWITCHYARD_BACKEND_URL || DEFAULT_ADMIN_URL,
     path: "/app",
     ...adminConfig,
   }

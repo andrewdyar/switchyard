@@ -50,10 +50,10 @@ export const batchImageVariantsWorkflowId = "batch-image-variants"
 
 /**
  * This workflow manages the association between product images and variants in bulk.
- * It's used by the [Batch Image Variants Admin API Route](https://docs.medusajs.com/api/admin#products_postproductsidimagesimage_idvariantsbatch).
+ * It's used by the [Batch Image Variants Admin API Route](https://docs.switchyard.run/api/admin#products_postproductsidimagesimage_idvariantsbatch).
  *
  * You can use this workflow within your own customizations or custom workflows to manage image-variant associations in bulk.
- * This is also useful when writing a [seed script](https://docs.medusajs.com/learn/fundamentals/custom-cli-scripts/seed-data) or a custom import script.
+ * This is also useful when writing a [seed script](https://docs.switchyard.run/learn/fundamentals/custom-cli-scripts/seed-data) or a custom import script.
  *
  * @since 2.11.2
  *

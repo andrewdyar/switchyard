@@ -94,7 +94,7 @@ export const refreshCartItemsWorkflowId = "refresh-cart-items"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { refreshCartItemsWorkflow } from "@switchyard/medusa/core-flows";
+ * import { refreshCartItemsWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * refreshCartItemsWorkflow.hooks.setPricingContext((
@@ -110,7 +110,7 @@ export const refreshCartItemsWorkflowId = "refresh-cart-items"
  *
  * :::note
  *
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  *
  * :::
  *

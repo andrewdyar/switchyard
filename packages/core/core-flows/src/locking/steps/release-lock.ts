@@ -24,7 +24,7 @@ export interface ReleaseLockStepInput {
 
 export const releaseLockStepId = "release-lock-step"
 /**
- * This step releases a lock for a given key. Learn more about locks in the [Locking Module](https://docs.medusajs.com/resources/infrastructure-modules/locking)
+ * This step releases a lock for a given key. Learn more about locks in the [Locking Module](https://docs.switchyard.run/resources/infrastructure-modules/locking)
  * guide.
  *
  * @example

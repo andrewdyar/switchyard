@@ -103,14 +103,14 @@ interface AdminCreateShippingOptionBase {
   /**
    * The ID of the service zone that the shipping option belongs to.
    *
-   * Learn more in the [Shipping Options](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#service-zone-restrictions)
+   * Learn more in the [Shipping Options](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#service-zone-restrictions)
    * documentation.
    */
   service_zone_id: string
   /**
    * The ID of the shipping profile that the shipping option belongs to.
    *
-   * Learn more in the [Shipping Options](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
+   * Learn more in the [Shipping Options](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
    * documentation.
    */
   shipping_profile_id: string
@@ -118,7 +118,7 @@ interface AdminCreateShippingOptionBase {
    * Additional data that is useful for third-party fulfillment providers
    * that process fulfillments for the shipping option.
    *
-   * Learn more in the [Shipping Options](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property)
+   * Learn more in the [Shipping Options](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property)
    * documentation.
    */
   data?: Record<string, unknown>
@@ -133,21 +133,21 @@ interface AdminCreateShippingOptionBase {
   /**
    * The type of shipping option.
    *
-   * Learn more in the [Shipping Option](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
+   * Learn more in the [Shipping Option](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
    * documentation.
    */
   type?: AdminCreateShippingOptionType
   /**
    * The ID of the type of shipping option.
    *
-   * Learn more in the [Shipping Option](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
+   * Learn more in the [Shipping Option](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
    * documentation.
    */
   type_id?: string
   /**
    * The rules of the shipping option.
    *
-   * Learn more in the [Shipping Option Rules](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#shipping-option-rules)
+   * Learn more in the [Shipping Option Rules](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#shipping-option-rules)
    * documentation.
    */
   rules?: AdminCreateShippingOptionRule[]
@@ -253,21 +253,21 @@ export interface AdminUpdateShippingOption {
   /**
    * The ID of the shipping profile that the shipping option belongs to.
    *
-   * Learn more in the [Shipping Options](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
+   * Learn more in the [Shipping Options](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
    * documentation.
    */
   shipping_profile_id?: string
   /**
    * The type of shipping option.
    *
-   * Learn more in the [Shipping Options](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
+   * Learn more in the [Shipping Options](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
    * documentation.
    */
   type?: AdminCreateShippingOptionType
   /**
    * The ID of the type of shipping option.
    *
-   * Learn more in the [Shipping Option](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
+   * Learn more in the [Shipping Option](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#shipping-profile-and-types)
    * documentation.
    */
   type_id?: string
@@ -281,7 +281,7 @@ export interface AdminUpdateShippingOption {
   /**
    * The rules of the shipping option.
    *
-   * Learn more in the [Shipping Option Rules](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#shipping-option-rules)
+   * Learn more in the [Shipping Option Rules](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#shipping-option-rules)
    * documentation.
    */
   rules?: (AdminUpdateShippingOptionRule | AdminCreateShippingOptionRule)[]

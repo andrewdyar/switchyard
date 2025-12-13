@@ -1,7 +1,7 @@
 import { NavigationItem, Product } from "types"
 
 export const GITHUB_ISSUES_LINK =
-  "https://github.com/switchyard/medusa/issues/new/choose"
+  "https://github.com/switchyard/switchyard/issues/new/choose"
 
 export const navDropdownItems: NavigationItem[] = [
   {
@@ -42,7 +42,7 @@ export const navDropdownItems: NavigationItem[] = [
           {
             type: "link",
             title: "Switchyard Container",
-            link: "/learn/fundamentals/medusa-container",
+            link: "/learn/fundamentals/switchyard-container",
           },
           {
             type: "link",
@@ -310,12 +310,12 @@ export const navDropdownItems: NavigationItem[] = [
       {
         type: "link",
         title: "Container Resources",
-        link: "/resources/medusa-container-resources",
+        link: "/resources/switchyard-container-resources",
       },
       {
         type: "link",
         title: "Core Workflows",
-        link: "/resources/medusa-workflows-reference",
+        link: "/resources/switchyard-workflows-reference",
       },
       {
         type: "link",

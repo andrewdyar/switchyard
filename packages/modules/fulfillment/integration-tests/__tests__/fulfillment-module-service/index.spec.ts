@@ -327,8 +327,8 @@ moduleIntegrationTestRunner({
           },
         }
 
-        const medusaApp = await initModules(moduleOptions)
-        shutdown = medusaApp.shutdown
+        const switchyardApp = await initModules(moduleOptions)
+        shutdown = switchyardApp.shutdown
 
         fulfillmentProviders = await MikroOrmWrapper.forkManager().execute(
           `SELECT * FROM fulfillment_provider`

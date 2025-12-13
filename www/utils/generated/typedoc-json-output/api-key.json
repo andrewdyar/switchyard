@@ -944,7 +944,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ", the user can use the created API key's token to authenticate\nas explained in the [API Reference](https://docs.switchyard.com/api/admin#2-api-token)."
+								"text": ", the user can use the created API key's token to authenticate\nas explained in the [API Reference](https://docs.switchyard.run/api/admin#2-api-token)."
 							}
 						]
 					},
@@ -3623,7 +3623,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead."
+								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead."
 							}
 						]
 					},

@@ -18,7 +18,7 @@ async function bootstrapApp({
     res.status(200).send("OK")
   })
 
-  const loaders = require("@switchyard/medusa/loaders/index").default
+  const loaders = require("@switchyard/loaders/index").default
 
   try {
     const { container, shutdown } = await loaders({

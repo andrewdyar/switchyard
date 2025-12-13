@@ -16,7 +16,7 @@ export type RemoveCustomerAccountWorkflowInput = {
 export const removeCustomerAccountWorkflowId = "remove-customer-account"
 /**
  * This workflow deletes a customer and remove its association to its auth identity. It's used by the
- * [Delete Customer Admin API Route](https://docs.medusajs.com/api/admin#customers_deletecustomersid).
+ * [Delete Customer Admin API Route](https://docs.switchyard.run/api/admin#customers_deletecustomersid).
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you to
  * delete customer accounts within your custom flows.

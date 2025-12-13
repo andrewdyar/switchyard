@@ -12927,7 +12927,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "If true, the state of the transaction will be persisted.\n\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/workflows/store-executions)."
+										"text": "If true, the state of the transaction will be persisted.\n\nLearn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/workflows/store-executions)."
 									}
 								]
 							},
@@ -12955,7 +12955,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "The number of seconds that the workflow execution should be stored in the database.\n\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/workflows/store-executions)."
+										"text": "The number of seconds that the workflow execution should be stored in the database.\n\nLearn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/workflows/store-executions)."
 									}
 								]
 							},
@@ -28019,7 +28019,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Expose a hook in your workflow where you can inject custom functionality as a step function.\n\nA handler hook can later be registered to consume the hook and perform custom functionality.\n\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/workflows/workflow-hooks)."
+								"text": "Expose a hook in your workflow where you can inject custom functionality as a step function.\n\nA handler hook can later be registered to consume the hook and perform custom functionality.\n\nLearn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/workflows/workflow-hooks)."
 							}
 						],
 						"blockTags": [
@@ -36121,7 +36121,7 @@
 										"summary": [
 											{
 												"kind": "text",
-												"text": "This method executes the workflow as a step. Useful when running a workflow within another.\n\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/workflows/execute-another-workflow)."
+												"text": "This method executes the workflow as a step. Useful when running a workflow within another.\n\nLearn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/workflows/execute-another-workflow)."
 											}
 										]
 									},
@@ -36643,7 +36643,7 @@
 										"summary": [
 											{
 												"kind": "text",
-												"text": "The workflow's exposed hooks, used to register a handler to consume the hook.\n\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/workflows/workflow-hooks#how-to-consume-a-hook)."
+												"text": "The workflow's exposed hooks, used to register a handler to consume the hook.\n\nLearn more in [this documentation](https://docs.switchyard.run/learn/fundamentals/workflows/workflow-hooks#how-to-consume-a-hook)."
 											}
 										]
 									},

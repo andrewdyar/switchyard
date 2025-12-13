@@ -56,7 +56,7 @@ export type ListShippingOptionsForCartWithPricingWorkflowInput = {
      * Custom data relevant for the fulfillment provider that processes this shipping option.
      * It can be data relevant to calculate the shipping option's price.
      *
-     * Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property).
+     * Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property).
      */
     data?: Record<string, unknown>
   }[]
@@ -125,7 +125,7 @@ export type ListShippingOptionsForCartWithPricingWorkflowOutput = {
    * Custom additional data related to the shipping option, useful for the fulfillment provider
    * to process the shipping option and calculate its price.
    *
-   * Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property).
+   * Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property).
    */
   data: Record<string, unknown>
 
@@ -238,7 +238,7 @@ export type ListShippingOptionsForCartWorkflowInput = {
   option_ids?: string[]
   /**
    * The fields and relations to retrieve in the shipping option. These fields
-   * are passed to [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
+   * are passed to [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
    * so you can pass names of custom models linked to the shipping option.
    */
   fields?: string[]

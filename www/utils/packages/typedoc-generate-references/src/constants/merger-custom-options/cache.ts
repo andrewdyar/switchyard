@@ -9,7 +9,7 @@ const cacheOptions: FormattingOptionsType = {
 
 :::note[Deprecation Notice]
 
-The Cache Module is deprecated starting from [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0). [Use the Caching Module](https://docs.switchyard.com/resources/infrastructure-modules/caching) instead.
+The Cache Module is deprecated starting from [Switchyard v2.11.0](https://github.com/switchyard/switchyard/releases/tag/v2.11.0). [Use the Caching Module](https://docs.switchyard.run/resources/infrastructure-modules/caching) instead.
 
 :::
     `,
@@ -45,7 +45,7 @@ const step1 = createStep(
 )
 \`\`\`
 
-This will resolve the service of the configured Cache Module, which is the [In-Memory Cache Module](https://docs.switchyard.com/resources/infrastructure-modules/cache/in-memory) by default.
+This will resolve the service of the configured Cache Module, which is the [In-Memory Cache Module](https://docs.switchyard.run/resources/infrastructure-modules/cache/in-memory) by default.
 
 You can then use the Cache Module's service's methods in the step. The rest of this guide details these methods.
 

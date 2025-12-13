@@ -22,11 +22,11 @@ import {
 import { DmlEntity } from "../dml"
 import { CommonEvents } from "../event-bus"
 import { createMedusaMikroOrmEventSubscriber } from "./create-medusa-mikro-orm-event-subscriber"
-import { EmitEvents, InjectManager, MedusaContext } from "./decorators"
+import { EmitEvents, InjectManager, SwitchyardContext } from "./decorators"
 import { Modules } from "./definition"
 import { moduleEventBuilderFactory } from "./event-builder-factory"
 import { buildModelsNameToLinkableKeysMap } from "./joiner-config-builder"
-import { isMedusaInternalService } from "./medusa-internal-service"
+import { isSwitchyardInternalService } from "./switchyard-internal-service"
 import {
   BaseMethods,
   ExtractKeysFromConfig,
@@ -34,7 +34,7 @@ import {
   ModelConfigurationsToConfigTemplate,
   ModelEntries,
   ModelsConfigTemplate,
-} from "./types/medusa-service"
+} from "./types/switchyard-service"
 
 const readMethods = ["retrieve", "list", "listAndCount"] as BaseMethods[]
 const writeMethods = [
@@ -83,7 +83,7 @@ export const SwitchyardServiceModelObjectsSymbol = Symbol.for(
 )
 
 /**
- * Symbol to mark a class as a Medusa service
+ * Symbol to mark a class as a Switchyard service
  */
 export const SwitchyardServiceSymbol = Symbol.for("SwitchyardServiceSymbol")
 
@@ -96,7 +96,7 @@ export const SwitchyardServiceModelNameToLinkableKeysMapSymbol = Symbol.for(
 )
 
 /**
- * Check if a value is a Medusa service
+ * Check if a value is a Switchyard service
  * @param value
  */
 export function isSwitchyardService(
@@ -155,7 +155,7 @@ export function SwitchyardService<
       }
 
       // The order of the decorators is important, do not change it
-      MedusaContext()(klassPrototype, methodName, contextIndex)
+      SwitchyardContext()(klassPrototype, methodName, contextIndex)
       EmitEvents()(klassPrototype, methodName, descriptorMockRef)
       InjectManager()(klassPrototype, methodName, descriptorMockRef)
 
@@ -380,7 +380,7 @@ export function SwitchyardService<
             )
             try {
               const service = container[key]
-              if (isMedusaInternalService(service)) {
+              if (isSwitchyardInternalService(service)) {
                 service.setEventSubscriber(globalSubscriber)
               }
             } catch (error) {

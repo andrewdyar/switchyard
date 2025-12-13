@@ -45,8 +45,8 @@ export type UpdateOrderValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -98,7 +98,7 @@ export const updateOrderValidationStep = createStep(
 export const updateOrderWorkflowId = "update-order-workflow"
 /**
  * This workflow updates an order's general details, such as its email or addresses. It's used by the
- * [Update Order Admin API Route](https://docs.medusajs.com/api/admin#orders_postordersid).
+ * [Update Order Admin API Route](https://docs.switchyard.run/api/admin#orders_postordersid).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to update an
  * order's details in your custom flows.

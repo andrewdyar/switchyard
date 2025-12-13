@@ -30,7 +30,7 @@ const paymentProviderOptions: FormattingOptionsType = {
       
 As you implement your Payment Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [Stripe Payment Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/payment-stripe).`,
+If you need to refer to an existing implementation as an example, check the [Stripe Payment Module Provider in the Switchyard repository](https://github.com/switchyard/switchyard/tree/develop/packages/modules/providers/payment-stripe).`,
       `## Understanding Payment Module Provider Implementation
 
 The Payment Module Provider handles processing payment with a third-party provirder. However, it's not responsible for managing payment concepts within Switchyard, such as payment sessions or collections. These concepts are handled by the Payment Module which uses your Payment Module Provider within core operations.
@@ -103,7 +103,7 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/payment",
+      resolve: "@switchyard/payment",
       options: {
         providers: [
           {
@@ -130,7 +130,7 @@ Then, go through checkout to place an order. Your Payment Module Provider is use
 `,
       `## Useful Guides
 
-- [Storefront Guide: how to implement UI for your Payment Module Provider during checkout](https://docs.switchyard.com/resources/storefront-development/checkout/payment)
+- [Storefront Guide: how to implement UI for your Payment Module Provider during checkout](https://docs.switchyard.run/resources/storefront-development/checkout/payment)
 `,
     ],
   },

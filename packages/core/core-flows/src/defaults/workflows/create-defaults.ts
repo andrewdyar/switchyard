@@ -7,8 +7,8 @@ import { createDefaultStoreStep } from "../steps/create-default-store"
 
 export const createDefaultsWorkflowID = "create-defaults"
 /**
- * This workflow creates default data for a Medusa application, including
- * a default sales channel and store. The Medusa application uses this workflow
+ * This workflow creates default data for a Switchyard application, including
+ * a default sales channel and store. The Switchyard application uses this workflow
  * to create the default data, if not existing, when the application is first started.
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you to
@@ -20,7 +20,7 @@ export const createDefaultsWorkflowID = "create-defaults"
  * 
  * @summary
  * 
- * Create default data for a Medusa application.
+ * Create default data for a Switchyard application.
  */
 export const createDefaultsWorkflow = createWorkflow(
   createDefaultsWorkflowID,

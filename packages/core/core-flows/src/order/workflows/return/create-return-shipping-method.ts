@@ -48,8 +48,8 @@ export type CreateReturnShippingMethodValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, return, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, return, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -113,7 +113,7 @@ export const createReturnShippingMethodWorkflowId =
   "create-return-shipping-method"
 /**
  * This workflow creates a shipping method for a return. It's used by the
- * [Add Shipping Method Store API Route](https://docs.medusajs.com/api/admin#returns_postreturnsidshippingmethod).
+ * [Add Shipping Method Store API Route](https://docs.switchyard.run/api/admin#returns_postreturnsidshippingmethod).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you
  * to create a shipping method for a return in your custom flows.

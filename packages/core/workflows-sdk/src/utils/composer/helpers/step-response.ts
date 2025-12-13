@@ -49,7 +49,7 @@ export class StepResponse<TOutput, TCompensateInput = TOutput> {
    * @param message - An optional message to be logged.
    *
    * @example
-   * import { Product } from "@switchyard/medusa"
+   * import { Product } from "@switchyard/core"
    * import {
    *   createStep,
    *   StepResponse,

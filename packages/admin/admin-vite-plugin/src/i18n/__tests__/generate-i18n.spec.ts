@@ -26,15 +26,15 @@ const expectedI18nNoSources = `
 
 describe("generateI18n", () => {
   it("should generate i18n with single source", async () => {
-    const mockFiles = ["Users/user/medusa/src/admin/i18n/index.ts"]
+    const mockFiles = ["Users/user/switchyard/src/admin/i18n/index.ts"]
     vi.mocked(utils.crawl).mockResolvedValue(mockFiles)
 
     const result = await generateI18n(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
 
     expect(result.imports).toEqual([
-      `import i18nTranslations0 from "Users/user/medusa/src/admin/i18n/index.ts"`,
+      `import i18nTranslations0 from "Users/user/switchyard/src/admin/i18n/index.ts"`,
     ])
     expect(utils.normalizeString(result.code)).toEqual(
       utils.normalizeString(expectedI18nSingleSource)
@@ -57,22 +57,22 @@ describe("generateI18n", () => {
 
   it("should generate i18n with multiple sources", async () => {
     vi.mocked(utils.crawl)
-      .mockResolvedValueOnce(["Users/user/medusa/src/admin/i18n/index.ts"])
-      .mockResolvedValueOnce(["Users/user/medusa/src/plugin1/i18n/index.ts"])
-      .mockResolvedValueOnce(["Users/user/medusa/src/plugin2/i18n/index.ts"])
+      .mockResolvedValueOnce(["Users/user/switchyard/src/admin/i18n/index.ts"])
+      .mockResolvedValueOnce(["Users/user/switchyard/src/plugin1/i18n/index.ts"])
+      .mockResolvedValueOnce(["Users/user/switchyard/src/plugin2/i18n/index.ts"])
 
     const result = await generateI18n(
       new Set([
-        "Users/user/medusa/src/admin",
-        "Users/user/medusa/src/plugin1",
-        "Users/user/medusa/src/plugin2",
+        "Users/user/switchyard/src/admin",
+        "Users/user/switchyard/src/plugin1",
+        "Users/user/switchyard/src/plugin2",
       ])
     )
 
     expect(result.imports).toEqual([
-      `import i18nTranslations0 from "Users/user/medusa/src/admin/i18n/index.ts"`,
-      `import i18nTranslations1 from "Users/user/medusa/src/plugin1/i18n/index.ts"`,
-      `import i18nTranslations2 from "Users/user/medusa/src/plugin2/i18n/index.ts"`,
+      `import i18nTranslations0 from "Users/user/switchyard/src/admin/i18n/index.ts"`,
+      `import i18nTranslations1 from "Users/user/switchyard/src/plugin1/i18n/index.ts"`,
+      `import i18nTranslations2 from "Users/user/switchyard/src/plugin2/i18n/index.ts"`,
     ])
     expect(utils.normalizeString(result.code)).toEqual(
       utils.normalizeString(expectedI18nMultipleSources)
@@ -83,7 +83,7 @@ describe("generateI18n", () => {
     vi.mocked(utils.crawl).mockResolvedValue([])
 
     const result = await generateI18n(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
 
     expect(result.imports).toEqual([])

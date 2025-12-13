@@ -5,7 +5,7 @@ import {
   WorkflowData,
   WorkflowResponse,
 } from "@switchyard/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { Modules, TransactionState } from "@switchyard/utils"
 import {
   adminHeaders,
@@ -16,7 +16,7 @@ import { IWorkflowEngineService } from "@switchyard/framework/types"
 
 jest.setTimeout(300000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let container
     let workflowOrcModule: IWorkflowEngineService

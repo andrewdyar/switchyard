@@ -1,6 +1,6 @@
 import { ModuleJoinerConfig } from "@switchyard/types"
 import { defineJoinerConfig } from "@switchyard/utils"
-import { SwitchyardModule } from "../../medusa-module"
+import { SwitchyardModule } from "../../switchyard-module"
 
 const customModuleJoinerConfig = defineJoinerConfig("custom_user", {
   schema: `

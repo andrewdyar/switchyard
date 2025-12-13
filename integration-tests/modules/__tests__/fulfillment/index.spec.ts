@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IFulfillmentModuleService, StockLocationDTO } from "@switchyard/types"
 import { Modules } from "@switchyard/utils"
 import { createAdminUser } from "../../../helpers/create-admin-user"
@@ -12,11 +12,11 @@ jest.setTimeout(100000)
 
 const env = {}
 const adminHeaders = {
-  headers: { "x-medusa-access-token": "test_token" },
+  headers: { "x-switchyard-access-token": "test_token" },
 }
 const providerId = "manual_test-provider"
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer, api, dbConnection }) => {
     let service: IFulfillmentModuleService

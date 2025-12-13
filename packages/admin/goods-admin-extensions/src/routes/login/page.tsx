@@ -55,7 +55,7 @@ const SupabaseLoginPage = () => {
       const supabaseData = await supabaseResponse.json()
       const accessToken = supabaseData.access_token
 
-      // Now authenticate with Medusa using the Supabase token
+      // Now authenticate with Switchyard using the Supabase token
       const medusaResponse = await fetch("/auth/user/supabase", {
         method: "POST",
         headers: {
@@ -69,7 +69,7 @@ const SupabaseLoginPage = () => {
 
       if (!medusaResponse.ok) {
         const errorData = await medusaResponse.json()
-        throw new Error(errorData.message || "Medusa authentication failed")
+        throw new Error(errorData.message || "Switchyard authentication failed")
       }
 
       toast.success("Login successful!")

@@ -42,7 +42,7 @@ export interface AddShippingMethodToCartWorkflowInput {
     /**
      * Custom data useful for the fulfillment provider processing the shipping option or method.
      *
-     * Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property).
+     * Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property).
      */
     data?: Record<string, unknown>
   }[]
@@ -51,7 +51,7 @@ export interface AddShippingMethodToCartWorkflowInput {
 export const addShippingMethodToCartWorkflowId = "add-shipping-method-to-cart"
 /**
  * This workflow adds a shipping method to a cart. It's executed by the
- * [Add Shipping Method Store API Route](https://docs.medusajs.com/api/store#carts_postcartsidshippingmethods).
+ * [Add Shipping Method Store API Route](https://docs.switchyard.run/api/store#carts_postcartsidshippingmethods).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you to wrap custom logic around adding a shipping method to the cart.
  *

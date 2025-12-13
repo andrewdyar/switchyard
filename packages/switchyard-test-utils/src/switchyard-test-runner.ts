@@ -46,7 +46,7 @@ interface TestRunnerConfig {
   moduleName?: string
   env?: Record<string, any>
   dbName?: string
-  medusaConfigFile?: string
+  switchyardConfigFile?: string
   disableAutoTeardown?: boolean
   schema?: string
   debug?: boolean
@@ -90,8 +90,8 @@ class MedusaTestRunner {
       config.dbName ??
       `medusa-${moduleName.toLowerCase()}-integration-${tempName}`
     this.schema = config.schema ?? "public"
-    this.cwd = config.cwd ?? config.medusaConfigFile ?? process.cwd()
-    this.modulesConfigPath = config.medusaConfigFile ?? this.cwd
+    this.cwd = config.cwd ?? config.switchyardConfigFile ?? process.cwd()
+    this.modulesConfigPath = config.switchyardConfigFile ?? this.cwd
     this.env = config.env ?? {}
     this.debug = config.debug ?? false
     this.inApp = config.inApp ?? false
@@ -158,7 +158,7 @@ class MedusaTestRunner {
   private async setupApplication(): Promise<void> {
     const { container, SwitchyardAppLoader } = await import("@switchyard/framework")
     const appLoader = new SwitchyardAppLoader({
-      medusaConfigPath: this.modulesConfigPath,
+      switchyardConfigPath: this.modulesConfigPath,
       cwd: this.cwd,
     })
 
@@ -281,12 +281,12 @@ class MedusaTestRunner {
 
     try {
       const { SwitchyardAppLoader } = await import("@switchyard/framework")
-      const medusaAppLoader = new SwitchyardAppLoader({
+      const switchyardAppLoader = new SwitchyardAppLoader({
         container: copiedContainer,
-        medusaConfigPath: this.modulesConfigPath,
+        switchyardConfigPath: this.modulesConfigPath,
         cwd: this.cwd,
       })
-      await medusaAppLoader.runModulesLoader()
+      await switchyardAppLoader.runModulesLoader()
     } catch (error) {
       await copiedContainer.dispose?.()
       logger.error("Error running modules loaders:", error?.message)
@@ -328,10 +328,10 @@ class MedusaTestRunner {
   }
 }
 
-export function medusaIntegrationTestRunner({
+export function switchyardIntegrationTestRunner({
   moduleName,
   dbName,
-  medusaConfigFile,
+  switchyardConfigFile,
   schema = "public",
   env = {},
   debug = false,
@@ -344,7 +344,7 @@ export function medusaIntegrationTestRunner({
   moduleName?: string
   env?: Record<string, any>
   dbName?: string
-  medusaConfigFile?: string
+  switchyardConfigFile?: string
   schema?: string
   debug?: boolean
   inApp?: boolean
@@ -356,7 +356,7 @@ export function medusaIntegrationTestRunner({
   const runner = new MedusaTestRunner({
     moduleName,
     dbName,
-    medusaConfigFile,
+    switchyardConfigFile,
     schema,
     env,
     debug,

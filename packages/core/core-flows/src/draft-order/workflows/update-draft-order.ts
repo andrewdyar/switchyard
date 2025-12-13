@@ -78,8 +78,8 @@ export interface UpdateDraftOrderStepInput {
  *
  * :::note
  *
- * You can retrieve a draft order's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve a draft order's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -123,7 +123,7 @@ export const updateDraftOrderStep = createStep(
 
 /**
  * This workflow updates a draft order's details. It's used by the
- * [Update Draft Order Admin API Route](https://docs.medusajs.com/api/admin#draft-orders_postdraftordersid).
+ * [Update Draft Order Admin API Route](https://docs.switchyard.run/api/admin#draft-orders_postdraftordersid).
  *
  * This workflow doesn't update the draft order's items, shipping methods, or promotions. Instead, you have to
  * create a draft order edit using {@link beginDraftOrderEditWorkflow} and make updates in the draft order edit.

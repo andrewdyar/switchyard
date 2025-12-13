@@ -17,7 +17,7 @@ import {
   ContainerRegistrationKeys,
   GraphQLUtils,
   InjectManager,
-  MedusaContext,
+  SwitchyardContext,
   Modules,
   ModulesSdkUtils,
   promiseAll,
@@ -42,8 +42,8 @@ type InjectedDependencies = {
   [ContainerRegistrationKeys.QUERY]: RemoteQueryFunction
   storageProviderCtrOptions: unknown
   baseRepository: BaseRepository
-  indexMetadataService: ModulesSdkTypes.IMedusaInternalService<any>
-  indexSyncService: ModulesSdkTypes.IMedusaInternalService<any>
+  indexMetadataService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  indexSyncService: ModulesSdkTypes.ISwitchyardInternalService<any>
   dataSynchronizer: DataSynchronizer
 }
 
@@ -79,11 +79,11 @@ export default class IndexModuleService
 
   private configurationChecker_: Configuration
 
-  private get indexMetadataService_(): ModulesSdkTypes.IMedusaInternalService<any> {
+  private get indexMetadataService_(): ModulesSdkTypes.ISwitchyardInternalService<any> {
     return this.container_.indexMetadataService
   }
 
-  private get indexSyncService_(): ModulesSdkTypes.IMedusaInternalService<any> {
+  private get indexSyncService_(): ModulesSdkTypes.ISwitchyardInternalService<any> {
     return this.container_.indexSyncService
   }
 
@@ -268,7 +268,7 @@ export default class IndexModuleService
    */
   @InjectManager()
   async getInfo(
-    @MedusaContext() sharedContext?: Context
+    @SwitchyardContext() sharedContext?: Context
   ): Promise<IndexTypes.IndexInfo[]> {
     const listArguments = [
       {} as FilterQuery<InferEntityType<typeof IndexMetadata>>,

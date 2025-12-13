@@ -1,7 +1,7 @@
 /**
  * Goods Operations Module
  * 
- * Custom Medusa module for handling Goods' operational workflows:
+ * Custom Switchyard module for handling Goods' operational workflows:
  * - Sweeps (daily store shopping trips)
  * - Pick lists (RFC warehouse fulfillment)
  * - Driver management

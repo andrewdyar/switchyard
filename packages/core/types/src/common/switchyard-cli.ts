@@ -1,4 +1,4 @@
-import { SwitchyardContainer } from "./medusa-container"
+import { SwitchyardContainer } from "./switchyard-container"
 
 export type ExecArgs = {
   container: SwitchyardContainer

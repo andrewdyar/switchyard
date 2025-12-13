@@ -13,61 +13,61 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -80,44 +80,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -126,10 +126,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -139,7 +139,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -186,61 +186,61 @@ describe("defineConfig", function () {
             "resolve": "./modules/github",
           },
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -253,44 +253,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -299,10 +299,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -312,7 +312,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -367,61 +367,61 @@ describe("defineConfig", function () {
             )}",
           },
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -434,44 +434,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -480,10 +480,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -493,7 +493,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -549,61 +549,61 @@ describe("defineConfig", function () {
             )}",
           },
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -616,44 +616,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -662,10 +662,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -675,7 +675,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -719,61 +719,61 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -786,44 +786,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -832,10 +832,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -845,7 +845,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:3000",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -892,61 +892,61 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
             "disable": true,
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -959,44 +959,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -1005,10 +1005,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -1018,7 +1018,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:3000",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -1046,13 +1046,13 @@ describe("defineConfig", function () {
   it("should include cloud-based modules when in cloud execution context", function () {
     const originalEnv = { ...process.env }
 
-    process.env.EXECUTION_CONTEXT = "medusa-cloud"
+    process.env.EXECUTION_CONTEXT = "switchyard-cloud"
     process.env.REDIS_URL = "redis://localhost:6379"
     process.env.CACHE_REDIS_URL = "redis://localhost:6379"
-    process.env.S3_FILE_URL = "https://s3.amazonaws.com/medusa-cloud-test"
+    process.env.S3_FILE_URL = "https://s3.amazonaws.com/switchyard-cloud-test"
     process.env.S3_PREFIX = "test"
     process.env.S3_REGION = "us-east-1"
-    process.env.S3_BUCKET = "medusa-cloud-test"
+    process.env.S3_BUCKET = "switchyard-cloud-test"
     process.env.S3_ENDPOINT = "https://s3.amazonaws.com"
     const res = defineConfig({})
 
@@ -1068,24 +1068,24 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
             "options": {
               "redisUrl": "redis://localhost:6379",
             },
-            "resolve": "@switchyard/medusa/cache-redis",
+            "resolve": "@switchyard/cache-redis",
           },
           "caching": {
             "options": {
@@ -1096,26 +1096,26 @@ describe("defineConfig", function () {
                   "options": {
                     "redisUrl": "redis://localhost:6379",
                   },
-                  "resolve": "@switchyard/medusa/caching-redis",
+                  "resolve": "@switchyard/caching-redis",
                 },
               ],
             },
             "resolve": "@switchyard/caching",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
             "options": {
               "redisUrl": "redis://localhost:6379",
             },
-            "resolve": "@switchyard/medusa/event-bus-redis",
+            "resolve": "@switchyard/event-bus-redis",
           },
           "file": {
             "options": {
@@ -1124,31 +1124,31 @@ describe("defineConfig", function () {
                   "id": "s3",
                   "options": {
                     "authentication_method": "s3-iam-role",
-                    "bucket": "medusa-cloud-test",
+                    "bucket": "switchyard-cloud-test",
                     "endpoint": "https://s3.amazonaws.com",
-                    "file_url": "https://s3.amazonaws.com/medusa-cloud-test",
+                    "file_url": "https://s3.amazonaws.com/switchyard-cloud-test",
                     "prefix": "test",
                     "region": "us-east-1",
                   },
-                  "resolve": "@switchyard/medusa/file-s3",
+                  "resolve": "@switchyard/file-s3",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
             "options": {
@@ -1159,11 +1159,11 @@ describe("defineConfig", function () {
                   "options": {
                     "redisUrl": "redis://localhost:6379",
                   },
-                  "resolve": "@switchyard/medusa/locking-redis",
+                  "resolve": "@switchyard/locking-redis",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -1176,44 +1176,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -1222,7 +1222,7 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
             "options": {
@@ -1230,7 +1230,7 @@ describe("defineConfig", function () {
                 "url": "redis://localhost:6379",
               },
             },
-            "resolve": "@switchyard/medusa/workflow-engine-redis",
+            "resolve": "@switchyard/workflow-engine-redis",
           },
         },
         "plugins": [
@@ -1240,7 +1240,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -1269,13 +1269,13 @@ describe("defineConfig", function () {
   it("should include cloud-based config with dynamo db", function () {
     const originalEnv = { ...process.env }
 
-    process.env.EXECUTION_CONTEXT = "medusa-cloud"
+    process.env.EXECUTION_CONTEXT = "switchyard-cloud"
     process.env.REDIS_URL = "redis://localhost:6379"
     process.env.CACHE_REDIS_URL = "redis://localhost:6379"
-    process.env.S3_FILE_URL = "https://s3.amazonaws.com/medusa-cloud-test"
+    process.env.S3_FILE_URL = "https://s3.amazonaws.com/switchyard-cloud-test"
     process.env.S3_PREFIX = "test"
     process.env.S3_REGION = "us-east-1"
-    process.env.S3_BUCKET = "medusa-cloud-test"
+    process.env.S3_BUCKET = "switchyard-cloud-test"
     process.env.S3_ENDPOINT = "https://s3.amazonaws.com"
     process.env.SESSION_STORE = "dynamodb"
     const res = defineConfig({})
@@ -1292,24 +1292,24 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
             "options": {
               "redisUrl": "redis://localhost:6379",
             },
-            "resolve": "@switchyard/medusa/cache-redis",
+            "resolve": "@switchyard/cache-redis",
           },
           "caching": {
             "options": {
@@ -1320,26 +1320,26 @@ describe("defineConfig", function () {
                   "options": {
                     "redisUrl": "redis://localhost:6379",
                   },
-                  "resolve": "@switchyard/medusa/caching-redis",
+                  "resolve": "@switchyard/caching-redis",
                 },
               ],
             },
             "resolve": "@switchyard/caching",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
             "options": {
               "redisUrl": "redis://localhost:6379",
             },
-            "resolve": "@switchyard/medusa/event-bus-redis",
+            "resolve": "@switchyard/event-bus-redis",
           },
           "file": {
             "options": {
@@ -1348,31 +1348,31 @@ describe("defineConfig", function () {
                   "id": "s3",
                   "options": {
                     "authentication_method": "s3-iam-role",
-                    "bucket": "medusa-cloud-test",
+                    "bucket": "switchyard-cloud-test",
                     "endpoint": "https://s3.amazonaws.com",
-                    "file_url": "https://s3.amazonaws.com/medusa-cloud-test",
+                    "file_url": "https://s3.amazonaws.com/switchyard-cloud-test",
                     "prefix": "test",
                     "region": "us-east-1",
                   },
-                  "resolve": "@switchyard/medusa/file-s3",
+                  "resolve": "@switchyard/file-s3",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
             "options": {
@@ -1383,11 +1383,11 @@ describe("defineConfig", function () {
                   "options": {
                     "redisUrl": "redis://localhost:6379",
                   },
-                  "resolve": "@switchyard/medusa/locking-redis",
+                  "resolve": "@switchyard/locking-redis",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -1400,44 +1400,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -1446,7 +1446,7 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
             "options": {
@@ -1454,7 +1454,7 @@ describe("defineConfig", function () {
                 "url": "redis://localhost:6379",
               },
             },
-            "resolve": "@switchyard/medusa/workflow-engine-redis",
+            "resolve": "@switchyard/workflow-engine-redis",
           },
         },
         "plugins": [
@@ -1464,7 +1464,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -1503,13 +1503,13 @@ describe("defineConfig", function () {
   it("should allow overriding cloud-only dynamodb config values via environment variables", function () {
     const originalEnv = { ...process.env }
 
-    process.env.EXECUTION_CONTEXT = "medusa-cloud"
+    process.env.EXECUTION_CONTEXT = "switchyard-cloud"
     process.env.REDIS_URL = "redis://localhost:6379"
     process.env.CACHE_REDIS_URL = "redis://localhost:6379"
-    process.env.S3_FILE_URL = "https://s3.amazonaws.com/medusa-cloud-test"
+    process.env.S3_FILE_URL = "https://s3.amazonaws.com/switchyard-cloud-test"
     process.env.S3_PREFIX = "test"
     process.env.S3_REGION = "us-east-1"
-    process.env.S3_BUCKET = "medusa-cloud-test"
+    process.env.S3_BUCKET = "switchyard-cloud-test"
     process.env.S3_ENDPOINT = "https://s3.amazonaws.com"
     process.env.SESSION_STORE = "dynamodb"
     process.env.DYNAMO_DB_SESSIONS_CREATE_TABLE = "true"
@@ -1532,24 +1532,24 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
             "options": {
               "redisUrl": "redis://localhost:6379",
             },
-            "resolve": "@switchyard/medusa/cache-redis",
+            "resolve": "@switchyard/cache-redis",
           },
           "caching": {
             "options": {
@@ -1560,26 +1560,26 @@ describe("defineConfig", function () {
                   "options": {
                     "redisUrl": "redis://localhost:6379",
                   },
-                  "resolve": "@switchyard/medusa/caching-redis",
+                  "resolve": "@switchyard/caching-redis",
                 },
               ],
             },
             "resolve": "@switchyard/caching",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
             "options": {
               "redisUrl": "redis://localhost:6379",
             },
-            "resolve": "@switchyard/medusa/event-bus-redis",
+            "resolve": "@switchyard/event-bus-redis",
           },
           "file": {
             "options": {
@@ -1588,31 +1588,31 @@ describe("defineConfig", function () {
                   "id": "s3",
                   "options": {
                     "authentication_method": "s3-iam-role",
-                    "bucket": "medusa-cloud-test",
+                    "bucket": "switchyard-cloud-test",
                     "endpoint": "https://s3.amazonaws.com",
-                    "file_url": "https://s3.amazonaws.com/medusa-cloud-test",
+                    "file_url": "https://s3.amazonaws.com/switchyard-cloud-test",
                     "prefix": "test",
                     "region": "us-east-1",
                   },
-                  "resolve": "@switchyard/medusa/file-s3",
+                  "resolve": "@switchyard/file-s3",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
             "options": {
@@ -1623,11 +1623,11 @@ describe("defineConfig", function () {
                   "options": {
                     "redisUrl": "redis://localhost:6379",
                   },
-                  "resolve": "@switchyard/medusa/locking-redis",
+                  "resolve": "@switchyard/locking-redis",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -1640,44 +1640,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -1686,7 +1686,7 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
             "options": {
@@ -1694,7 +1694,7 @@ describe("defineConfig", function () {
                 "url": "redis://localhost:6379",
               },
             },
-            "resolve": "@switchyard/medusa/workflow-engine-redis",
+            "resolve": "@switchyard/workflow-engine-redis",
           },
         },
         "plugins": [
@@ -1704,7 +1704,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -1788,7 +1788,7 @@ describe("defineConfig", function () {
 
   it("should include plugins in cloud environment", function () {
     const originalEnv = { ...process.env }
-    process.env.EXECUTION_CONTEXT = "medusa-cloud"
+    process.env.EXECUTION_CONTEXT = "switchyard-cloud"
 
     const config = defineConfig({
       plugins: [
@@ -1851,61 +1851,61 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -1918,44 +1918,44 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -1964,10 +1964,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -1977,7 +1977,7 @@ describe("defineConfig", function () {
           },
         ],
         "projectConfig": {
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:3000",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -2031,61 +2031,61 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -2104,14 +2104,14 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
             "options": {
@@ -2123,34 +2123,34 @@ describe("defineConfig", function () {
                 "webhook_secret": "test-webhook-secret",
               },
             },
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -2159,10 +2159,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -2180,7 +2180,7 @@ describe("defineConfig", function () {
             "sandboxHandle": undefined,
             "webhookSecret": "test-webhook-secret",
           },
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -2225,61 +2225,61 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -2298,14 +2298,14 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
             "options": {
@@ -2317,34 +2317,34 @@ describe("defineConfig", function () {
                 "webhook_secret": "test-webhook-secret",
               },
             },
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -2353,10 +2353,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -2374,7 +2374,7 @@ describe("defineConfig", function () {
             "sandboxHandle": "test-sandbox",
             "webhookSecret": "test-webhook-secret",
           },
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
@@ -2430,61 +2430,61 @@ describe("defineConfig", function () {
         "logger": undefined,
         "modules": {
           "api_key": {
-            "resolve": "@switchyard/medusa/api-key",
+            "resolve": "@switchyard/api-key",
           },
           "auth": {
             "options": {
               "providers": [
                 {
                   "id": "emailpass",
-                  "resolve": "@switchyard/medusa/auth-emailpass",
+                  "resolve": "@switchyard/auth-emailpass",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/auth",
+            "resolve": "@switchyard/auth",
           },
           "cache": {
-            "resolve": "@switchyard/medusa/cache-inmemory",
+            "resolve": "@switchyard/cache-inmemory",
           },
           "cart": {
-            "resolve": "@switchyard/medusa/cart",
+            "resolve": "@switchyard/cart",
           },
           "currency": {
-            "resolve": "@switchyard/medusa/currency",
+            "resolve": "@switchyard/currency",
           },
           "customer": {
-            "resolve": "@switchyard/medusa/customer",
+            "resolve": "@switchyard/customer",
           },
           "event_bus": {
-            "resolve": "@switchyard/medusa/event-bus-local",
+            "resolve": "@switchyard/event-bus-local",
           },
           "file": {
             "options": {
               "providers": [
                 {
                   "id": "local",
-                  "resolve": "@switchyard/medusa/file-local",
+                  "resolve": "@switchyard/file-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/file",
+            "resolve": "@switchyard/file",
           },
           "fulfillment": {
             "options": {
               "providers": [
                 {
                   "id": "manual",
-                  "resolve": "@switchyard/medusa/fulfillment-manual",
+                  "resolve": "@switchyard/fulfillment-manual",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/fulfillment",
+            "resolve": "@switchyard/fulfillment",
           },
           "inventory": {
-            "resolve": "@switchyard/medusa/inventory",
+            "resolve": "@switchyard/inventory",
           },
           "locking": {
-            "resolve": "@switchyard/medusa/locking",
+            "resolve": "@switchyard/locking",
           },
           "notification": {
             "options": {
@@ -2503,14 +2503,14 @@ describe("defineConfig", function () {
                     ],
                     "name": "Local Notification Provider",
                   },
-                  "resolve": "@switchyard/medusa/notification-local",
+                  "resolve": "@switchyard/notification-local",
                 },
               ],
             },
-            "resolve": "@switchyard/medusa/notification",
+            "resolve": "@switchyard/notification",
           },
           "order": {
-            "resolve": "@switchyard/medusa/order",
+            "resolve": "@switchyard/order",
           },
           "payment": {
             "options": {
@@ -2522,34 +2522,34 @@ describe("defineConfig", function () {
                 "webhook_secret": "overriden-webhook-secret",
               },
             },
-            "resolve": "@switchyard/medusa/payment",
+            "resolve": "@switchyard/payment",
           },
           "pricing": {
-            "resolve": "@switchyard/medusa/pricing",
+            "resolve": "@switchyard/pricing",
           },
           "product": {
-            "resolve": "@switchyard/medusa/product",
+            "resolve": "@switchyard/product",
           },
           "promotion": {
-            "resolve": "@switchyard/medusa/promotion",
+            "resolve": "@switchyard/promotion",
           },
           "region": {
-            "resolve": "@switchyard/medusa/region",
+            "resolve": "@switchyard/region",
           },
           "sales_channel": {
-            "resolve": "@switchyard/medusa/sales-channel",
+            "resolve": "@switchyard/sales-channel",
           },
           "settings": {
-            "resolve": "@switchyard/medusa/settings",
+            "resolve": "@switchyard/settings",
           },
           "stock_location": {
-            "resolve": "@switchyard/medusa/stock-location",
+            "resolve": "@switchyard/stock-location",
           },
           "store": {
-            "resolve": "@switchyard/medusa/store",
+            "resolve": "@switchyard/store",
           },
           "tax": {
-            "resolve": "@switchyard/medusa/tax",
+            "resolve": "@switchyard/tax",
           },
           "user": {
             "options": {
@@ -2558,10 +2558,10 @@ describe("defineConfig", function () {
               "jwt_secret": "supersecret",
               "jwt_verify_options": undefined,
             },
-            "resolve": "@switchyard/medusa/user",
+            "resolve": "@switchyard/user",
           },
           "workflows": {
-            "resolve": "@switchyard/medusa/workflow-engine-inmemory",
+            "resolve": "@switchyard/workflow-engine-inmemory",
           },
         },
         "plugins": [
@@ -2579,7 +2579,7 @@ describe("defineConfig", function () {
             "sandboxHandle": undefined,
             "webhookSecret": "overriden-webhook-secret",
           },
-          "databaseUrl": "postgres://localhost/medusa-starter-default",
+          "databaseUrl": "postgres://localhost/switchyard-starter-default",
           "http": {
             "adminCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",
             "authCors": "http://localhost:7000,http://localhost:7001,http://localhost:5173",

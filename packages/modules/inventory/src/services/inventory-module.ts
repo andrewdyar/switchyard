@@ -21,7 +21,7 @@ import {
   isDefined,
   isString,
   MathBN,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardService,
   partitionArray,
@@ -33,9 +33,9 @@ import InventoryLevelService from "./inventory-level"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  inventoryItemService: ModulesSdkTypes.IMedusaInternalService<any>
+  inventoryItemService: ModulesSdkTypes.ISwitchyardInternalService<any>
   inventoryLevelService: InventoryLevelService
-  reservationItemService: ModulesSdkTypes.IMedusaInternalService<any>
+  reservationItemService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 type InventoryItemCheckLevel = {
@@ -68,10 +68,10 @@ export default class InventoryModuleService
 {
   protected baseRepository_: DAL.RepositoryService
 
-  protected readonly inventoryItemService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly inventoryItemService_: ModulesSdkTypes.ISwitchyardInternalService<
     typeof InventoryItem
   >
-  protected readonly reservationItemService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly reservationItemService_: ModulesSdkTypes.ISwitchyardInternalService<
     typeof ReservationItem
   >
   protected readonly inventoryLevelService_: InventoryLevelService
@@ -238,7 +238,7 @@ export default class InventoryModuleService
     input:
       | InventoryTypes.CreateReservationItemInput[]
       | InventoryTypes.CreateReservationItemInput,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     InventoryTypes.ReservationItemDTO[] | InventoryTypes.ReservationItemDTO
   > {
@@ -257,7 +257,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   async createReservationItems_(
     input: InventoryTypes.CreateReservationItemInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<InferEntityType<typeof ReservationItem>[]> {
     const inventoryLevels = await this.ensureInventoryLevels(
       input.map(
@@ -325,7 +325,7 @@ export default class InventoryModuleService
     input:
       | InventoryTypes.CreateInventoryItemInput
       | InventoryTypes.CreateInventoryItemInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     InventoryTypes.InventoryItemDTO | InventoryTypes.InventoryItemDTO[]
   > {
@@ -344,7 +344,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   async createInventoryItems_(
     input: InventoryTypes.CreateInventoryItemInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<InventoryTypes.InventoryItemDTO[]> {
     return await this.inventoryItemService_.create(input, context)
   }
@@ -367,7 +367,7 @@ export default class InventoryModuleService
     input:
       | InventoryTypes.CreateInventoryLevelInput[]
       | InventoryTypes.CreateInventoryLevelInput,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     InventoryTypes.InventoryLevelDTO[] | InventoryTypes.InventoryLevelDTO
   > {
@@ -387,7 +387,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   async createInventoryLevels_(
     input: InventoryTypes.CreateInventoryLevelInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<InferEntityType<typeof InventoryLevel>[]> {
     return await this.inventoryLevelService_.create(input, context)
   }
@@ -410,7 +410,7 @@ export default class InventoryModuleService
     input:
       | InventoryTypes.UpdateInventoryItemInput
       | InventoryTypes.UpdateInventoryItemInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     InventoryTypes.InventoryItemDTO | InventoryTypes.InventoryItemDTO[]
   > {
@@ -432,7 +432,7 @@ export default class InventoryModuleService
     input: (Partial<InventoryTypes.CreateInventoryItemInput> & {
       id: string
     })[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<InferEntityType<typeof InventoryItem>[]> {
     return await this.inventoryItemService_.update(input, context)
   }
@@ -441,7 +441,7 @@ export default class InventoryModuleService
   @EmitEvents()
   async deleteInventoryItemLevelByLocationId(
     locationId: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<[object[], Record<string, unknown[]>]> {
     const result = await this.inventoryLevelService_.softDelete(
       { location_id: locationId },
@@ -462,7 +462,7 @@ export default class InventoryModuleService
   async deleteInventoryLevel(
     inventoryItemId: string,
     locationId: string,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     const [inventoryLevel] = await this.inventoryLevelService_.list(
       { inventory_item_id: inventoryItemId, location_id: locationId },
@@ -495,7 +495,7 @@ export default class InventoryModuleService
     updates:
       | InventoryTypes.UpdateInventoryLevelInput[]
       | InventoryTypes.UpdateInventoryLevelInput,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     InventoryTypes.InventoryLevelDTO | InventoryTypes.InventoryLevelDTO[]
   > {
@@ -515,7 +515,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   async updateInventoryLevels_(
     updates: InventoryTypes.UpdateInventoryLevelInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ) {
     const inventoryLevels = await this.ensureInventoryLevels(
       updates.map(({ location_id, inventory_item_id }) => ({
@@ -568,7 +568,7 @@ export default class InventoryModuleService
     input:
       | InventoryTypes.UpdateReservationItemInput
       | InventoryTypes.UpdateReservationItemInput[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     InventoryTypes.ReservationItemDTO | InventoryTypes.ReservationItemDTO[]
   > {
@@ -585,7 +585,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   async updateReservationItems_(
     input: (InventoryTypes.UpdateReservationItemInput & { id: string })[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<InferEntityType<typeof ReservationItem>[]> {
     const ids = input.map((u) => u.id)
     const reservationItems = await this.reservationItemService_.list(
@@ -716,7 +716,7 @@ export default class InventoryModuleService
   // @ts-expect-error
   async deleteReservationItems(
     ids: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     return await this.deleteReservationItems_(ids, context)
   }
@@ -724,7 +724,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   protected async deleteReservationItems_(
     ids: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     const reservations: InventoryTypes.ReservationItemDTO[] =
       await this.reservationItemService_.list({ id: ids }, {}, context)
@@ -743,7 +743,7 @@ export default class InventoryModuleService
   async softDeleteReservationItems(
     ids: string | string[],
     config?: SoftDeleteReturn<string>,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     return await this.softDeleteReservationItems_(ids, config, context)
   }
@@ -752,7 +752,7 @@ export default class InventoryModuleService
   protected async softDeleteReservationItems_(
     ids: string | string[],
     config?: SoftDeleteReturn<string>,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     const reservations: InventoryTypes.ReservationItemDTO[] =
       await this.reservationItemService_.list({ id: ids }, {}, context)
@@ -771,7 +771,7 @@ export default class InventoryModuleService
   async restoreReservationItems(
     ids: string | string[],
     config?: RestoreReturn<string>,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     return await this.restoreReservationItems_(ids, config, context)
   }
@@ -780,7 +780,7 @@ export default class InventoryModuleService
   protected async restoreReservationItems_(
     ids: string | string[],
     config?: RestoreReturn<string>,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     const reservations: InventoryTypes.ReservationItemDTO[] =
       await super.listReservationItems({ id: ids }, {}, context)
@@ -797,7 +797,7 @@ export default class InventoryModuleService
   @EmitEvents()
   async deleteReservationItemByLocationId(
     locationId: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     return await this.deleteReservationItemByLocationId_(locationId, context)
   }
@@ -805,7 +805,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   protected async deleteReservationItemByLocationId_(
     locationId: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     const reservations: InventoryTypes.ReservationItemDTO[] =
       await this.reservationItemService_.list(
@@ -835,7 +835,7 @@ export default class InventoryModuleService
   @EmitEvents()
   async deleteReservationItemsByLineItem(
     lineItemId: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     return await this.deleteReservationItemsByLineItem_(lineItemId, context)
   }
@@ -843,7 +843,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   protected async deleteReservationItemsByLineItem_(
     lineItemId: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     const reservations: InventoryTypes.ReservationItemDTO[] =
       await this.reservationItemService_.list(
@@ -873,7 +873,7 @@ export default class InventoryModuleService
   @EmitEvents()
   async restoreReservationItemsByLineItem(
     lineItemId: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     return await this.restoreReservationItemsByLineItem_(lineItemId, context)
   }
@@ -881,7 +881,7 @@ export default class InventoryModuleService
   @InjectTransactionManager()
   protected async restoreReservationItemsByLineItem_(
     lineItemId: string | string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<void> {
     const reservations: InventoryTypes.ReservationItemDTO[] =
       await this.reservationItemService_.list(
@@ -932,7 +932,7 @@ export default class InventoryModuleService
     inventoryItemIdOrData: string | any,
     locationId?: string | Context,
     adjustment?: BigNumberInput,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<
     InventoryTypes.InventoryLevelDTO | InventoryTypes.InventoryLevelDTO[]
   > {
@@ -970,7 +970,7 @@ export default class InventoryModuleService
     inventoryItemId: string,
     locationId: string,
     adjustment: BigNumberInput,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<InferEntityType<typeof InventoryLevel>> {
     const [inventoryLevel] = await this.inventoryLevelService_.list(
       { inventory_item_id: inventoryItemId, location_id: locationId },
@@ -1003,7 +1003,7 @@ export default class InventoryModuleService
   async retrieveInventoryLevelByItemAndLocation(
     inventoryItemId: string,
     locationId: string,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<InventoryTypes.InventoryLevelDTO> {
     const [inventoryLevel] = await this.listInventoryLevels(
       { inventory_item_id: inventoryItemId, location_id: locationId },
@@ -1033,7 +1033,7 @@ export default class InventoryModuleService
   async retrieveAvailableQuantity(
     inventoryItemId: string,
     locationIds: string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<BigNumber> {
     if (locationIds.length === 0) {
       return new BigNumber(0)
@@ -1069,7 +1069,7 @@ export default class InventoryModuleService
   async retrieveStockedQuantity(
     inventoryItemId: string,
     locationIds: string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<BigNumber> {
     if (locationIds.length === 0) {
       return new BigNumber(0)
@@ -1106,7 +1106,7 @@ export default class InventoryModuleService
   async retrieveReservedQuantity(
     inventoryItemId: string,
     locationIds: string[],
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<BigNumber> {
     // Throws if item does not exist
     await this.inventoryItemService_.retrieve(
@@ -1144,7 +1144,7 @@ export default class InventoryModuleService
     inventoryItemId: string,
     locationIds: string[],
     quantity: BigNumberInput,
-    @MedusaContext() context: Context = {}
+    @SwitchyardContext() context: Context = {}
   ): Promise<boolean> {
     const availableQuantity = await this.retrieveAvailableQuantity(
       inventoryItemId,

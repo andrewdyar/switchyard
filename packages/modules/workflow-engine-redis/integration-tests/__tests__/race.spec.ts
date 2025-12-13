@@ -24,7 +24,7 @@ moduleIntegrationTestRunner<IWorkflowEngineService>({
       url: "localhost:6379",
     },
   },
-  testSuite: ({ service: workflowOrcModule, medusaApp }) => {
+  testSuite: ({ service: workflowOrcModule, switchyardApp }) => {
     describe("Testing race condition of the workflow during retry", () => {
       beforeEach(async () => {
         await TestDatabase.clearTables()

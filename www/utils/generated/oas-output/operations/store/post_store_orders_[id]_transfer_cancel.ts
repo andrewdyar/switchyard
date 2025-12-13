@@ -3,7 +3,7 @@
  * operationId: PostOrdersIdTransferCancel
  * summary: Cancel Order Transfer
  * x-sidebar-summary: Cancel Transfer
- * description: Cancel an order transfer that the logged-in customer previously requested using the [Request Order Transfer](https://docs.switchyard.com/api/store#orders_postordersidtransferrequest) API route.
+ * description: Cancel an order transfer that the logged-in customer previously requested using the [Request Order Transfer](https://docs.switchyard.run/api/store#orders_postordersidtransferrequest) API route.
  * x-authenticated: true
  * parameters:
  *   - name: id
@@ -19,7 +19,7 @@
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.switchyard.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.run/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: |-
@@ -40,16 +40,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       // TODO must be authenticated as the customer to cancel the order transfer

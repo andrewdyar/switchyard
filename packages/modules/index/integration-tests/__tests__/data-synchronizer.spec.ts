@@ -65,7 +65,7 @@ const mockData = [
   },
 ]
 
-let medusaAppLoader!: SwitchyardAppLoader
+let switchyardAppLoader!: SwitchyardAppLoader
 let index!: IndexTypes.IIndexService
 
 const beforeAll_ = async () => {
@@ -84,14 +84,14 @@ const beforeAll_ = async () => {
       [ContainerRegistrationKeys.PG_CONNECTION]: asValue(dbUtils.pgConnection_),
     })
 
-    medusaAppLoader = new SwitchyardAppLoader()
+    switchyardAppLoader = new SwitchyardAppLoader()
 
     // Migrations
     const migrator = new Migrator({ container })
     await migrator.ensureMigrationsTable()
 
-    await medusaAppLoader.runModulesMigrations()
-    const linkPlanner = await medusaAppLoader.getLinksExecutionPlanner()
+    await switchyardAppLoader.runModulesMigrations()
+    const linkPlanner = await switchyardAppLoader.getLinksExecutionPlanner()
     const plan = await linkPlanner.createPlan()
     await linkPlanner.executePlan(plan)
 
@@ -99,7 +99,7 @@ const beforeAll_ = async () => {
     SwitchyardModule.clearInstances()
 
     // Bootstrap modules
-    const globalApp = await medusaAppLoader.load()
+    const globalApp = await switchyardAppLoader.load()
     container.register({
       [ContainerRegistrationKeys.QUERY]: asValue(queryMock),
       [ContainerRegistrationKeys.REMOTE_QUERY]: asValue(queryMock),
@@ -121,15 +121,15 @@ const beforeAll_ = async () => {
 describe("DataSynchronizer", () => {
   let index: IndexTypes.IIndexService
   let dataSynchronizer: DataSynchronizer
-  let medusaApp: SwitchyardAppOutput
+  let switchyardApp: SwitchyardAppOutput
   let onApplicationPrepareShutdown!: () => Promise<void>
   let onApplicationShutdown!: () => Promise<void>
   let manager: EntityManager
 
   beforeAll(async () => {
-    medusaApp = await beforeAll_()
-    onApplicationPrepareShutdown = medusaApp.onApplicationPrepareShutdown
-    onApplicationShutdown = medusaApp.onApplicationShutdown
+    switchyardApp = await beforeAll_()
+    onApplicationPrepareShutdown = switchyardApp.onApplicationPrepareShutdown
+    onApplicationShutdown = switchyardApp.onApplicationShutdown
   })
 
   afterAll(async () => {

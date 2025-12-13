@@ -23,8 +23,8 @@ export interface ConfirmVariantInventoryStepInput {
      */
     inventory_item_id: string
     /**
-     * The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Medusa checks the availability of the quantity multiplied by the
-     * value set for `required_quantity`. When the customer orders the quantity, Medusa reserves the ordered quantity multiplied by the value set for `required_quantity`.
+     * The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Switchyard checks the availability of the quantity multiplied by the
+     * value set for `required_quantity`. When the customer orders the quantity, Switchyard reserves the ordered quantity multiplied by the value set for `required_quantity`.
      */
     required_quantity: number
     /**

@@ -382,7 +382,7 @@
  * x-badges:
  *   - text: Cloud
  *     description: |
- *       This API route is only available in [Switchyard Cloud](https://docs.switchyard.com/cloud/loyalty-plugin).
+ *       This API route is only available in [Switchyard Cloud](https://docs.switchyard.run/cloud/loyalty-plugin).
  * 
 */
 

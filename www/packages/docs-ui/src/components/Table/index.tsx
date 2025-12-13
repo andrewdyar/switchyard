@@ -27,7 +27,7 @@ const Header = ({ className, ...props }: HeaderProps) => {
     <UiTable.Header
       className={clsx(
         className,
-        "!border-0 bg-medusa-bg-component [&_tr]:!bg-medusa-bg-component",
+        "!border-0 bg-switchyard-bg-component [&_tr]:!bg-switchyard-bg-component",
         "rounded-docs_DEFAULT [&_tr]:rounded-docs_DEFAULT"
       )}
       {...props}

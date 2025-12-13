@@ -71,7 +71,7 @@ import { SearchTypes } from "@switchyard/types"
  *
  * ## Notes About Class Methods
  *
- * Although there are several helper methods in this class, the main methods used by the Medusa backend are `addDocuments`, `deleteDocument`, and `search`.
+ * Although there are several helper methods in this class, the main methods used by the Switchyard backend are `addDocuments`, `deleteDocument`, and `search`.
  * The rest of the methods are provided in case you need them for custom use cases.
  *
  * ---
@@ -92,7 +92,7 @@ export abstract class AbstractSearchService
   }
 
   /**
-   * This property is used to pinpoint the default search service defined in the Medusa core. For custom search services, the `isDefault` property must be `false`.
+   * This property is used to pinpoint the default search service defined in the Switchyard core. For custom search services, the `isDefault` property must be `false`.
    */
   abstract readonly isDefault
   /**
@@ -108,20 +108,20 @@ export abstract class AbstractSearchService
   }
 
   /**
-   * You can use the `constructor` of your search service to access the different services in Medusa through dependency injection.
+   * You can use the `constructor` of your search service to access the different services in Switchyard through dependency injection.
    *
    * You can also use the constructor to initialize your integration with the third-party provider. For example, if you use a client to connect to the third-party provider’s APIs,
    * you can initialize it in the constructor and use it in other methods in the service.
    *
-   * Additionally, if you’re creating your search service as an external plugin to be installed on any Medusa backend and you want to access the options added for the plugin,
+   * Additionally, if you’re creating your search service as an external plugin to be installed on any Switchyard backend and you want to access the options added for the plugin,
    * you can access them in the constructor. The default constructor already sets the value of the class proeprty `options_` to the passed options.
    *
-   * @param {Record<string, unknown>} cradle - An container cradle that allows you to access other resources, such as services, in your Medusa backend.
+   * @param {Record<string, unknown>} cradle - An container cradle that allows you to access other resources, such as services, in your Switchyard backend.
    * @param {Record<string, unknown>} options - If this search service is created in a plugin, the plugin's options are passed in this parameter.
    *
    * @example
    * // ...
-   * import { ProductService } from "@switchyard/medusa"
+   * import { ProductService } from "@switchyard/core"
    *
    * type InjectedDependencies = {
    *   productService: ProductService
@@ -169,7 +169,7 @@ export abstract class AbstractSearchService
    * }
    * ```
    *
-   * Another example of how the [MeiliSearch plugin](https://docs.medusajs.com/plugins/search/meilisearch) uses the
+   * Another example of how the [MeiliSearch plugin](https://docs.switchyard.run/plugins/search/meilisearch) uses the
    * `options` parameter:
    *
    * ```ts
@@ -207,7 +207,7 @@ export abstract class AbstractSearchService
   /**
    * This method is used to add a document to an index in the search engine.
    *
-   * When the Medusa backend loads, it triggers indexing for all products available in the Medusa backend, which uses this method to add or update documents.
+   * When the Switchyard backend loads, it triggers indexing for all products available in the Switchyard backend, which uses this method to add or update documents.
    * It’s also used whenever a new product is added or a product is updated.
    *
    * @param {string} indexName - The name of the index to add the documents to.
@@ -269,7 +269,7 @@ export abstract class AbstractSearchService
   /**
    * This method is used to delete a document from an index.
    *
-   * When a product is deleted in the Medusa backend, this method is used to delete the product from the search engine’s index.
+   * When a product is deleted in the Switchyard backend, this method is used to delete the product from the search engine’s index.
    *
    * @param {string} indexName - The name of the index that the document belongs to.
    * @param {string | number} document_id - The ID of the item indexed. For example, if the deleted item is a product, then this is
@@ -315,7 +315,7 @@ export abstract class AbstractSearchService
   /**
    * This method is used to search through an index by a query.
    *
-   * In the Medusa backend, this method is used within the [Search Products API Route](https://docs.medusajs.com/api/store#products_postproductssearch)
+   * In the Switchyard backend, this method is used within the [Search Products API Route](https://docs.switchyard.run/api/store#products_postproductssearch)
    * to retrieve the search results. The API route's response type is an array of items, though the item's format is not defined as it depends on the
    * data returned by this method.
    *
@@ -356,7 +356,7 @@ export abstract class AbstractSearchService
   /**
    * This method is used to update the settings of an index within the search service. This is useful if you want to update the index settings when the plugin options change.
    *
-   * For example, in the Algolia plugin, a loader, which runs when the Medusa backend loads, is used to update the settings of indices based on the plugin options.
+   * For example, in the Algolia plugin, a loader, which runs when the Switchyard backend loads, is used to update the settings of indices based on the plugin options.
    * The loader uses this method to update the settings.
    *
    * @param {string} indexName - The index's name to update its settings.

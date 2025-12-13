@@ -49,8 +49,8 @@ export type RemoveReturnShippingMethodValidationStepInput = {
  * 
  * :::note
  * 
- * You can retrieve a return and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve a return and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 
@@ -100,7 +100,7 @@ export const removeReturnShippingMethodWorkflowId =
   "remove-return-shipping-method"
 /**
  * This workflow removes a shipping method from a return. It's used by the
- * [Remove Shipping Method from Return Admin API Route](https://docs.medusajs.com/api/admin#returns_deletereturnsidshippingmethodaction_id).
+ * [Remove Shipping Method from Return Admin API Route](https://docs.switchyard.run/api/admin#returns_deletereturnsidshippingmethodaction_id).
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you
  * to remove a shipping method from a return in your custom flows.

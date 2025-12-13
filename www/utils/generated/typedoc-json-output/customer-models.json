@@ -1487,7 +1487,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "Whether the customer has account. Learn more in [this documentation](https://docs.switchyard.com/resources/commerce-modules/customer/customer-accounts)"
+														"text": "Whether the customer has account. Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/customer/customer-accounts)"
 													}
 												]
 											},

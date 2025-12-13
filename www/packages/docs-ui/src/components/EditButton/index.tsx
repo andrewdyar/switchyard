@@ -15,7 +15,7 @@ export const EditButton = ({ filePath, editDate }: EditButtonProps) => {
       {editDate && <EditDate date={editDate} />}
 
       <Link
-        href={`https://github.com/switchyard/medusa/edit/develop${filePath}`}
+        href={`https://github.com/switchyard/switchyard/edit/develop${filePath}`}
         className={clsx(
           "flex w-fit gap-docs_0.25 items-center",
           "text-medusa-fg-subtle hover:text-medusa-fg-base",

@@ -14,11 +14,11 @@ export const RadioItem = ({ className, checked, ...props }: RadioItemProps) => {
       <input
         type="radio"
         className={clsx(
-          "appearance-none bg-medusa-bg-component shadow-borders-base dark:shadow-border-base-dark",
+          "appearance-none bg-switchyard-bg-component shadow-borders-base dark:shadow-border-base-dark",
           "w-[14px] h-[14px] rounded-full",
           "focus:shadow-borders-interactive-with-focus disabled:opacity-50",
-          "checked:!bg-medusa-bg-interactive checked:!shadow-borders-interactive-with-shadow",
-          !checked && "hover:bg-medusa-bg-component-hover",
+          "checked:!bg-switchyard-bg-interactive checked:!shadow-borders-interactive-with-shadow",
+          !checked && "hover:bg-switchyard-bg-component-hover",
           className
         )}
         checked={checked}
@@ -27,7 +27,7 @@ export const RadioItem = ({ className, checked, ...props }: RadioItemProps) => {
       {checked && (
         <span
           className={clsx(
-            "w-[6px] h-[6px] bg-medusa-bg-base dark:bg-medusa-fg-on-color absolute top-1/2 left-1/2 rounded-full",
+            "w-[6px] h-[6px] bg-switchyard-bg-base dark:bg-medusa-fg-on-color absolute top-1/2 left-1/2 rounded-full",
             "-translate-x-1/2 -translate-y-1/2 shadow-details-contrast-on-bg-interactive"
           )}
         />

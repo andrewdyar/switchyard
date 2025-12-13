@@ -34,9 +34,9 @@ export const SearchInput = ({
           placeholder={placeholder}
           className={clsx(
             "w-full h-docs_2 pl-docs_2 text-base md:text-compact-small placeholder:text-medusa-fg-muted",
-            "bg-medusa-bg-field text-medusa-fg-base rounded-full",
-            "shadow-borders-base hover:bg-medusa-bg-field-hover",
-            "focus:bg-medusa-bg-field focus:shadow-borders-interactive-with-active focus:outline-none",
+            "bg-switchyard-bg-field text-medusa-fg-base rounded-full",
+            "shadow-borders-base hover:bg-switchyard-bg-field-hover",
+            "focus:bg-switchyard-bg-field focus:shadow-borders-interactive-with-active focus:outline-none",
             className
           )}
           value={value}

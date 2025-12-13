@@ -25,7 +25,7 @@ export const SwitchyardErrorCodes = {
 }
 
 /**
- * Standardized error to be used across Medusa project.
+ * Standardized error to be used across Switchyard project.
  * @extends Error
  */
 export class SwitchyardError extends Error {
@@ -39,7 +39,7 @@ export class SwitchyardError extends Error {
   public static Codes = SwitchyardErrorCodes
 
   /**
-   * Creates a standardized error to be used across Medusa project.
+   * Creates a standardized error to be used across Switchyard project.
    * @param {string} type - type of error
    * @param {string} message - message to go along with error
    * @param {string} code - code of error

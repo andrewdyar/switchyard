@@ -3,7 +3,7 @@
  * operationId: PostOrdersIdTransferDecline
  * summary: Decline Order Transfer
  * x-sidebar-summary: Decline Transfer
- * description: Decline an order transfer previously requested, typically by the admin user using the [Request Order Transfer Admin API route](https://docs.switchyard.com/api/admin#orders_postordersidtransferrequest).
+ * description: Decline an order transfer previously requested, typically by the admin user using the [Request Order Transfer Admin API route](https://docs.switchyard.run/api/admin#orders_postordersidtransferrequest).
  * x-authenticated: false
  * parameters:
  *   - name: id
@@ -19,7 +19,7 @@
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.switchyard.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.run/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: |-
@@ -45,16 +45,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       sdk.store.order.declineTransfer(

@@ -13,7 +13,7 @@ export default async ({ container }: LoaderOptions): Promise<void> => {
   // TODO: Add default logger to the container when running tests
   const logger =
     container.resolve<Logger>(ContainerRegistrationKeys.LOGGER) ?? console
-  const countryService_: ModulesSdkTypes.IMedusaInternalService<
+  const countryService_: ModulesSdkTypes.ISwitchyardInternalService<
     typeof Country
   > = container.resolve("countryService")
 

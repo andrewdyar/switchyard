@@ -12,7 +12,7 @@ import {
   EmitEvents,
   generateEntityId,
   InjectManager,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardService,
   NotificationStatus,
@@ -24,7 +24,7 @@ import NotificationProviderService from "./notification-provider"
 type InjectedDependencies = {
   logger?: Logger
   baseRepository: DAL.RepositoryService
-  notificationService: ModulesSdkTypes.IMedusaInternalService<
+  notificationService: ModulesSdkTypes.ISwitchyardInternalService<
     typeof Notification
   >
   notificationProviderService: NotificationProviderService
@@ -37,7 +37,7 @@ export default class NotificationModuleService
   implements INotificationModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected readonly notificationService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly notificationService_: ModulesSdkTypes.ISwitchyardInternalService<
     typeof Notification
   >
   protected readonly notificationProviderService_: NotificationProviderService
@@ -75,7 +75,7 @@ export default class NotificationModuleService
     data:
       | NotificationTypes.CreateNotificationDTO
       | NotificationTypes.CreateNotificationDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     NotificationTypes.NotificationDTO | NotificationTypes.NotificationDTO[]
   > {
@@ -96,7 +96,7 @@ export default class NotificationModuleService
   @InjectManager()
   protected async createNotifications_(
     data: NotificationTypes.CreateNotificationDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Notification>[]> {
     if (!data.length) {
       return []

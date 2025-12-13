@@ -125,7 +125,7 @@
  *     type: object
  *     description: The item's metadata.
  *     externalDocs:
- *       url: https://docs.switchyard.com/api/store#manage-metadata
+ *       url: https://docs.switchyard.run/api/store#manage-metadata
  *       description: Learn how to manage metadata
  *   created_at:
  *     type: string

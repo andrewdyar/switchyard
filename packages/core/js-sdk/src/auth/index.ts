@@ -13,13 +13,13 @@ export class Auth {
 
   /**
    * This method is used to retrieve a registration JWT token for a user, customer, or custom actor type. It sends a request to the
-   * [Retrieve Registration Token API route](https://docs.medusajs.com/api/store#auth_postactor_typeauth_provider_register).
+   * [Retrieve Registration Token API route](https://docs.switchyard.run/api/store#auth_postactor_typeauth_provider_register).
    * 
    * Then, it stores the returned token and passes it in the header of subsequent requests. So, you can call the
-   * [store.customer.create](https://docs.medusajs.com/resources/references/js-sdk/store/customer#create) method,
+   * [store.customer.create](https://docs.switchyard.run/resources/references/js-sdk/store/customer#create) method,
    * for example, after calling this method.
    * 
-   * Learn more in the [JS SDK Authentication](https://docs.medusajs.com/resources/js-sdk/auth/overview) guide.
+   * Learn more in the [JS SDK Authentication](https://docs.switchyard.run/resources/js-sdk/auth/overview) guide.
    *
    * @param actor - The actor type. For example, `user` for admin user, or `customer` for customer.
    * @param method - The authentication provider to use. For example, `emailpass` or `google`.
@@ -65,7 +65,7 @@ export class Auth {
 
   /**
    * This method retrieves the JWT authenticated token for an admin user, customer, or custom
-   * actor type. It sends a request to the [Authenticate API Route](https://docs.medusajs.com/api/admin#auth_postactor_typeauth_provider).
+   * actor type. It sends a request to the [Authenticate API Route](https://docs.switchyard.run/api/admin#auth_postactor_typeauth_provider).
    * 
    * ### Third-Party Authentication
    * 
@@ -76,23 +76,23 @@ export class Auth {
    * :::note
    * 
    * For an example of implementing third-party authentication, refer to the
-   * [Third-Party Login in Storefront](https://docs.medusajs.com/resources/storefront-development/customers/third-party-login) guide.
+   * [Third-Party Login in Storefront](https://docs.switchyard.run/resources/storefront-development/customers/third-party-login) guide.
    * 
    * :::
    * 
    * ### Session Authentication
    *
    * If the `auth.type` of the SDK is set to `session`, this method will also send a request to the
-   * [Set Authentication Session API route](https://docs.medusajs.com/api/admin#auth_postsession).
+   * [Set Authentication Session API route](https://docs.switchyard.run/api/admin#auth_postsession).
    * 
-   * Learn more in the [JS SDK Authentication](https://docs.medusajs.com/resources/js-sdk/auth/overview) guide.
+   * Learn more in the [JS SDK Authentication](https://docs.switchyard.run/resources/js-sdk/auth/overview) guide.
    * 
    * ### Automatic Authentication
    *
    * If the authentication was successful, subsequent requests using the SDK will automatically have the necessary authentication headers / session
    * set, based on your JS SDK authentication configurations.
    * 
-   * Learn more in the [JS SDK Authentication](https://docs.medusajs.com/resources/js-sdk/auth/overview) guide.
+   * Learn more in the [JS SDK Authentication](https://docs.switchyard.run/resources/js-sdk/auth/overview) guide.
    *
    * @param actor - The actor type. For example, `user` for admin user, or `customer` for customer.
    * @param method - The authentication provider to use. For example, `emailpass` or `google`.
@@ -149,13 +149,13 @@ export class Auth {
 
   /**
    * This method is used to validate an Oauth callback from a third-party service, such as Google, for an admin user, customer, or custom actor types.
-   * It sends a request to the [Validate Authentication Callback](https://docs.medusajs.com/api/admin#auth_postactor_typeauth_providercallback).
+   * It sends a request to the [Validate Authentication Callback](https://docs.switchyard.run/api/admin#auth_postactor_typeauth_providercallback).
    * 
    * The method stores the returned token and passes it in the header of subsequent requests. So, you can call the
-   * [store.customer.create](https://docs.medusajs.com/resources/references/js-sdk/store/customer#create) or {@link refresh} methods,
+   * [store.customer.create](https://docs.switchyard.run/resources/references/js-sdk/store/customer#create) or {@link refresh} methods,
    * for example, after calling this method.
    * 
-   * Learn more in the [JS SDK Authentication](https://docs.medusajs.com/resources/js-sdk/auth/overview) guide.
+   * Learn more in the [JS SDK Authentication](https://docs.switchyard.run/resources/js-sdk/auth/overview) guide.
    *
    * @param actor - The actor type. For example, `user` for admin user, or `customer` for customer.
    * @param method - The authentication provider to use. For example, `google`.
@@ -204,15 +204,15 @@ export class Auth {
 
   /**
    * This method refreshes a JWT authentication token, which is useful after validating the Oauth callback
-   * with {@link callback}. It sends a request to the [Refresh Authentication Token API route](https://docs.medusajs.com/api/admin#auth_postadminauthtokenrefresh).
+   * with {@link callback}. It sends a request to the [Refresh Authentication Token API route](https://docs.switchyard.run/api/admin#auth_postadminauthtokenrefresh).
    * 
    * The method stores the returned token and passes it in the header of subsequent requests. So, you can call other
    * methods that require authentication after calling this method.
    * 
-   * Learn more in the [JS SDK Authentication](https://docs.medusajs.com/resources/js-sdk/auth/overview) guide.
+   * Learn more in the [JS SDK Authentication](https://docs.switchyard.run/resources/js-sdk/auth/overview) guide.
    * 
    * For an example of implementing third-party authentication, refer to the
-   * [Third-Party Login in Storefront](https://docs.medusajs.com/resources/storefront-development/customers/third-party-login) guide.
+   * [Third-Party Login in Storefront](https://docs.switchyard.run/resources/storefront-development/customers/third-party-login) guide.
    * 
    * @param headers - Headers to pass in the request
    *
@@ -245,11 +245,11 @@ export class Auth {
    * This method logs out the currently authenticated user based on your JS SDK authentication configurations.
    * 
    * If the `auth.type` of the SDK is set to `session`, this method will also send a request to the
-   * [Delete Authentication Session API route](https://docs.medusajs.com/api/admin#auth_deletesession).
+   * [Delete Authentication Session API route](https://docs.switchyard.run/api/admin#auth_deletesession).
    * 
    * The method also clears any stored tokens or sessions, based on your JS SDK authentication configurations.
    * 
-   * Learn more in the [JS SDK Authentication](https://docs.medusajs.com/resources/js-sdk/auth/overview) guide.
+   * Learn more in the [JS SDK Authentication](https://docs.switchyard.run/resources/js-sdk/auth/overview) guide.
    * 
    * @tags auth
    *
@@ -271,11 +271,11 @@ export class Auth {
 
   /**
    * This method requests a reset password token for an admin user, customer, or custom actor type.
-   * It sends a request to the [Generate Reset Password Token API route](https://docs.medusajs.com/api/admin#auth_postactor_typeauth_providerresetpassword).
+   * It sends a request to the [Generate Reset Password Token API route](https://docs.switchyard.run/api/admin#auth_postactor_typeauth_providerresetpassword).
    *
    * To reset the password later using the token delivered to the user, use the {@link updateProvider} method.
    *
-   * Related guide: [How to allow customers to reset their passwords in a storefront](https://docs.medusajs.com/resources/storefront-development/customers/reset-password).
+   * Related guide: [How to allow customers to reset their passwords in a storefront](https://docs.switchyard.run/resources/storefront-development/customers/reset-password).
    *
    * @param actor - The actor type. For example, `user` for admin user, or `customer` for customer.
    * @param provider - The authentication provider to use. For example, `emailpass`.
@@ -319,9 +319,9 @@ export class Auth {
    * More specifically, use this method when updating the password of an admin user, customer, or
    * custom actor type after requesting to reset their password with {@link resetPassword}.
    *
-   * This method sends a request to [this API route](https://docs.medusajs.com/api/admin#auth_postactor_typeauth_providerupdate).
+   * This method sends a request to [this API route](https://docs.switchyard.run/api/admin#auth_postactor_typeauth_providerupdate).
    *
-   * Related guide: [How to allow customers to reset their passwords in a storefront](https://docs.medusajs.com/resources/storefront-development/customers/reset-password).
+   * Related guide: [How to allow customers to reset their passwords in a storefront](https://docs.switchyard.run/resources/storefront-development/customers/reset-password).
    *
    * @param actor - The actor type. For example, `user` for admin user, or `customer` for customer.
    * @param provider - The authentication provider to use. For example, `emailpass`.

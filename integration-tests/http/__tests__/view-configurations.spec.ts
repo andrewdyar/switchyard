@@ -1,11 +1,11 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { adminHeaders, createAdminUser } from "../../helpers/create-admin-user"
 
 jest.setTimeout(50000)
 
 const env = { MEDUSA_FF_VIEW_CONFIGURATIONS: true }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, api, getContainer }) => {
     describe("View Configurations API", () => {

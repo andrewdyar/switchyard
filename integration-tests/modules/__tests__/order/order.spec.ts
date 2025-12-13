@@ -2,7 +2,7 @@ import {
   createOrderChangeWorkflow,
   createOrderWorkflow,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   CreateOrderLineItemDTO,
   IOrderModuleService,
@@ -18,7 +18,7 @@ jest.setTimeout(50000)
 
 const env = {}
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     let appContainer
@@ -45,7 +45,7 @@ medusaIntegrationTestRunner({
         )
 
         const productData = {
-          title: "Medusa T-Shirt based quantity",
+          title: "Switchyard T-Shirt based quantity",
           handle: "t-shirt-with-quantity-prices",
           status: ProductStatus.PUBLISHED,
           sales_channels: [
@@ -119,7 +119,7 @@ medusaIntegrationTestRunner({
               },
               items: [
                 {
-                  title: "Medusa T-Shirt based quantity",
+                  title: "Switchyard T-Shirt based quantity",
                   variant_id: variantId,
                   quantity: 6,
                 } as CreateOrderLineItemDTO,

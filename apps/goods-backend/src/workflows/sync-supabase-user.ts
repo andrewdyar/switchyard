@@ -169,7 +169,7 @@ export const syncSupabaseUserWorkflowId = "sync-supabase-user-workflow"
 
 /**
  * Workflow to sync a Supabase user to Medusa's auth_identity and user tables.
- * This ensures that Supabase users are properly linked to Medusa user records.
+ * This ensures that Supabase users are properly linked to Switchyard user records.
  * 
  * @example
  * const { result } = await syncSupabaseUserWorkflow(container)

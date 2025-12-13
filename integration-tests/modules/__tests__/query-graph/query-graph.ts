@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import path from "path"
 
 jest.setTimeout(100000)
@@ -74,7 +74,7 @@ const attachTranslationToProductCategory = async (
   return created
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   cwd: path.join(__dirname, "../__fixtures__/translation-test"),
   testSuite: ({ getContainer }) => {
     describe("query.graph()", () => {

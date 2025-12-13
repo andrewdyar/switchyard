@@ -65,12 +65,12 @@
  *     type: object
  *     description: The shipping option's data, useful for the provider handling fulfillment.
  *     externalDocs:
- *       url: https://docs.switchyard.com/resources/commerce-modules/fulfillment/shipping-option#data-property
+ *       url: https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property
  *   metadata:
  *     type: object
  *     description: The shipping option's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.switchyard.com/api/store#manage-metadata
+ *       url: https://docs.switchyard.run/api/store#manage-metadata
  *       description: Learn how to manage metadata
  * 
 */

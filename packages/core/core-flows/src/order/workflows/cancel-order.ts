@@ -50,8 +50,8 @@ export type CancelValidateOrderStepInput = {
  *
  * :::note
  *
- * You can retrieve an order's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -101,7 +101,7 @@ export const cancelOrderWorkflowId = "cancel-order"
  * any fulfillments, or if all fulfillments are canceled. The workflow will also cancel
  * any uncaptured payments, and refund any captured payments.
  *
- * This workflow is used by the [Cancel Order Admin API Route](https://docs.medusajs.com/api/admin#orders_postordersidcancel).
+ * This workflow is used by the [Cancel Order Admin API Route](https://docs.switchyard.run/api/admin#orders_postordersidcancel).
  *
  * This workflow has a hook that allows you to perform custom actions on the canceled order. For example, you can
  * make changes to custom models linked to the order.

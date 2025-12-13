@@ -28,7 +28,7 @@ const fileOptions: FormattingOptionsType = {
       
 As you implement your File Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [S3 File Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/file-s3).`,
+If you need to refer to an existing implementation as an example, check the [S3 File Module Provider in the Switchyard repository](https://github.com/switchyard/switchyard/tree/develop/packages/modules/providers/file-s3).`,
       `## Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
@@ -89,12 +89,12 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/file",
+      resolve: "@switchyard/file",
       options: {
         providers: [
           // default provider
           {
-            resolve: "@switchyard/medusa/file-local",
+            resolve: "@switchyard/file-local",
             id: "local",
           },
           {
@@ -114,7 +114,7 @@ module.exports = defineConfig({
 `,
       `## 5. Test it Out
 
-To test out your File Module Provider, use the Switchyard Admin or the [Upload API route](https://docs.switchyard.com/v2/api/admin#uploads_postuploads) to upload a file.
+To test out your File Module Provider, use the Switchyard Admin or the [Upload API route](https://docs.switchyard.run/v2/api/admin#uploads_postuploads) to upload a file.
 `,
     ],
   },

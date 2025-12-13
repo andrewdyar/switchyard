@@ -16,7 +16,7 @@ type ConfigItem = {
 // We need to set the base URL to solve problems
 // when linking between projects
 // TODO maybe find a better way of setting this
-const BASE_URL = "https://docs.switchyard.com"
+const BASE_URL = "https://docs.switchyard.run"
 
 const config: ConfigItem[] = [
   {

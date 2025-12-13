@@ -31,10 +31,10 @@ export const AiAssistantTriggerButton = () => {
     <Tooltip
       render={() => (
         <span className="flex gap-[5px] items-center">
-          <Kbd className="bg-medusa-bg-field-component border-medusa-border-strong w-[18px] h-[18px] inline-block">
+          <Kbd className="bg-switchyard-bg-field-component border-medusa-border-strong w-[18px] h-[18px] inline-block">
             {osShortcut}
           </Kbd>
-          <Kbd className="bg-medusa-bg-field-component border-medusa-border-strong w-[18px] h-[18px] inline-block">
+          <Kbd className="bg-switchyard-bg-field-component border-medusa-border-strong w-[18px] h-[18px] inline-block">
             i
           </Kbd>
         </span>

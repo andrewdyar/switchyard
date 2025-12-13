@@ -108,7 +108,7 @@ export const SelectDropdown = ({
         <div
           className={clsx(
             "px-docs_0.5 py-docs_0.25 flex-1 min-w-max rounded-docs_xs",
-            "hover:bg-medusa-bg-component-hover cursor-pointer",
+            "hover:bg-switchyard-bg-component-hover cursor-pointer",
             "flex gap-docs_0.5 text-medusa-fg-base items-center",
             !isSelected && "text-compact-small",
             isSelected && "text-compact-small-plus"
@@ -162,7 +162,7 @@ export const SelectDropdown = ({
       <ul
         className={clsx(
           "mb-0 py-docs_0.25 overflow-auto rounded-docs_DEFAULT",
-          "bg-medusa-bg-component text-medusa-fg-base",
+          "bg-switchyard-bg-component text-medusa-fg-base",
           "shadow-elevation-flyout dark:shadow-elevation-flyout-dark list-none",
           "flex flex-col"
         )}

@@ -30,7 +30,7 @@ import {
   isDefined,
   isPresent,
   isString,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   ModulesSdkUtils,
   promiseAll,
@@ -65,16 +65,16 @@ const generateMethodForModels = {
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  fulfillmentAddressService: ModulesSdkTypes.IMedusaInternalService<any>
-  fulfillmentSetService: ModulesSdkTypes.IMedusaInternalService<any>
-  serviceZoneService: ModulesSdkTypes.IMedusaInternalService<any>
-  geoZoneService: ModulesSdkTypes.IMedusaInternalService<any>
-  shippingProfileService: ModulesSdkTypes.IMedusaInternalService<any>
-  shippingOptionService: ModulesSdkTypes.IMedusaInternalService<any>
-  shippingOptionRuleService: ModulesSdkTypes.IMedusaInternalService<any>
-  shippingOptionTypeService: ModulesSdkTypes.IMedusaInternalService<any>
+  fulfillmentAddressService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  fulfillmentSetService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  serviceZoneService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  geoZoneService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  shippingProfileService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  shippingOptionService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  shippingOptionRuleService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  shippingOptionTypeService: ModulesSdkTypes.ISwitchyardInternalService<any>
   fulfillmentProviderService: FulfillmentProviderService
-  fulfillmentService: ModulesSdkTypes.IMedusaInternalService<any>
+  fulfillmentService: ModulesSdkTypes.ISwitchyardInternalService<any>
   logger?: Logger
 }
 
@@ -92,29 +92,29 @@ export default class FulfillmentModuleService
   implements IFulfillmentModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected readonly fulfillmentSetService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly fulfillmentSetService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof FulfillmentSet>
   >
-  protected readonly serviceZoneService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly serviceZoneService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ServiceZone>
   >
-  protected readonly geoZoneService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly geoZoneService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof GeoZone>
   >
-  protected readonly shippingProfileService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly shippingProfileService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ShippingProfile>
   >
-  protected readonly shippingOptionService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly shippingOptionService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ShippingOption>
   >
-  protected readonly shippingOptionRuleService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly shippingOptionRuleService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ShippingOptionRule>
   >
-  protected readonly shippingOptionTypeService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly shippingOptionTypeService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof ShippingOptionType>
   >
   protected readonly fulfillmentProviderService_: FulfillmentProviderService
-  protected readonly fulfillmentService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly fulfillmentService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof Fulfillment>
   >
 
@@ -157,7 +157,7 @@ export default class FulfillmentModuleService
   async listShippingOptions(
     filters: FulfillmentTypes.FilterableShippingOptionForContextProps = {},
     config: FindConfig<FulfillmentTypes.ShippingOptionDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.ShippingOptionDTO[]> {
     // Eventually, we could call normalizeListShippingOptionsForContextParams to translate the address and make a and condition with the other filters
     // In that case we could remote the address check below
@@ -176,7 +176,7 @@ export default class FulfillmentModuleService
   async listShippingOptionsForContext(
     filters: FulfillmentTypes.FilterableShippingOptionForContextProps,
     config: FindConfig<ShippingOptionDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.ShippingOptionDTO[]> {
     const {
       context,
@@ -215,7 +215,7 @@ export default class FulfillmentModuleService
   async retrieveFulfillment(
     id: string,
     config: FindConfig<FulfillmentTypes.FulfillmentDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.FulfillmentDTO> {
     const fulfillment = await this.fulfillmentService_.retrieve(
       id,
@@ -232,7 +232,7 @@ export default class FulfillmentModuleService
   async listFulfillments(
     filters: FulfillmentTypes.FilterableFulfillmentProps = {},
     config: FindConfig<FulfillmentTypes.FulfillmentDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.FulfillmentDTO[]> {
     const fulfillments = await this.fulfillmentService_.list(
       filters,
@@ -249,7 +249,7 @@ export default class FulfillmentModuleService
   async listAndCountFulfillments(
     filters?: FilterableFulfillmentSetProps,
     config?: FindConfig<FulfillmentDTO>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<[FulfillmentDTO[], number]> {
     const [fulfillments, count] = await this.fulfillmentService_.listAndCount(
       filters,
@@ -283,7 +283,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateFulfillmentSetDTO
       | FulfillmentTypes.CreateFulfillmentSetDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.FulfillmentSetDTO | FulfillmentTypes.FulfillmentSetDTO[]
   > {
@@ -306,7 +306,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateFulfillmentSetDTO
       | FulfillmentTypes.CreateFulfillmentSetDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof FulfillmentSet>[]> {
     const data_ = Array.isArray(data) ? data : [data]
 
@@ -350,7 +350,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateServiceZoneDTO[]
       | FulfillmentTypes.CreateServiceZoneDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ServiceZoneDTO | FulfillmentTypes.ServiceZoneDTO[]
   > {
@@ -369,7 +369,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateServiceZoneDTO[]
       | FulfillmentTypes.CreateServiceZoneDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ServiceZone>[]> {
     const data_ = Array.isArray(data) ? data : [data]
 
@@ -411,7 +411,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateShippingOptionDTO[]
       | FulfillmentTypes.CreateShippingOptionDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ShippingOptionDTO | FulfillmentTypes.ShippingOptionDTO[]
   > {
@@ -430,7 +430,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateShippingOptionDTO[]
       | FulfillmentTypes.CreateShippingOptionDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ShippingOption>[]> {
     const data_ = Array.isArray(data) ? data : [data]
 
@@ -469,7 +469,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateShippingProfileDTO[]
       | FulfillmentTypes.CreateShippingProfileDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ShippingProfileDTO | FulfillmentTypes.ShippingProfileDTO[]
   > {
@@ -491,7 +491,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateShippingProfileDTO[]
       | FulfillmentTypes.CreateShippingProfileDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ShippingProfile>[]> {
     const data_ = Array.isArray(data) ? data : [data]
 
@@ -520,7 +520,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateGeoZoneDTO
       | FulfillmentTypes.CreateGeoZoneDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.GeoZoneDTO | FulfillmentTypes.GeoZoneDTO[]> {
     const data_ = Array.isArray(data) ? data : [data]
 
@@ -554,7 +554,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateShippingOptionRuleDTO[]
       | FulfillmentTypes.CreateShippingOptionRuleDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | FulfillmentTypes.ShippingOptionRuleDTO
     | FulfillmentTypes.ShippingOptionRuleDTO[]
@@ -579,7 +579,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.CreateShippingOptionRuleDTO[]
       | FulfillmentTypes.CreateShippingOptionRuleDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ShippingOptionRule>[]> {
     const data_ = Array.isArray(data) ? data : [data]
 
@@ -601,7 +601,7 @@ export default class FulfillmentModuleService
   @EmitEvents()
   async createFulfillment(
     data: FulfillmentTypes.CreateFulfillmentDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.FulfillmentDTO> {
     const { order, ...fulfillmentDataToCreate } = data
 
@@ -648,7 +648,7 @@ export default class FulfillmentModuleService
   @EmitEvents()
   async deleteFulfillment(
     id: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<void> {
     const fulfillment = await this.fulfillmentService_.retrieve(
       id,
@@ -670,7 +670,7 @@ export default class FulfillmentModuleService
   @EmitEvents()
   async createReturnFulfillment(
     data: FulfillmentTypes.CreateFulfillmentDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.FulfillmentDTO> {
     const { order, ...fulfillmentDataToCreate } = data
 
@@ -730,7 +730,7 @@ export default class FulfillmentModuleService
   // @ts-expect-error
   async updateFulfillmentSets(
     data: UpdateFulfillmentSetDTO[] | UpdateFulfillmentSetDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.FulfillmentSetDTO[] | FulfillmentTypes.FulfillmentSetDTO
   > {
@@ -747,7 +747,7 @@ export default class FulfillmentModuleService
   @InjectTransactionManager()
   protected async updateFulfillmentSets_(
     data: UpdateFulfillmentSetDTO[] | UpdateFulfillmentSetDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof FulfillmentSet>[]
     | InferEntityType<typeof FulfillmentSet>
@@ -938,7 +938,7 @@ export default class FulfillmentModuleService
   async updateServiceZones(
     idOrSelector: string | FulfillmentTypes.FilterableServiceZoneProps,
     data: FulfillmentTypes.UpdateServiceZoneDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ServiceZoneDTO[] | FulfillmentTypes.ServiceZoneDTO
   > {
@@ -981,7 +981,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpdateServiceZoneDTO[]
       | FulfillmentTypes.UpdateServiceZoneDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     InferEntityType<typeof ServiceZone> | InferEntityType<typeof ServiceZone>[]
   > {
@@ -1133,7 +1133,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpsertServiceZoneDTO
       | FulfillmentTypes.UpsertServiceZoneDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ServiceZoneDTO | FulfillmentTypes.ServiceZoneDTO[]
   > {
@@ -1154,7 +1154,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpsertServiceZoneDTO[]
       | FulfillmentTypes.UpsertServiceZoneDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     InferEntityType<typeof ServiceZone>[] | InferEntityType<typeof ServiceZone>
   > {
@@ -1219,7 +1219,7 @@ export default class FulfillmentModuleService
   async updateShippingOptions(
     idOrSelector: string | FulfillmentTypes.FilterableShippingOptionProps,
     data: FulfillmentTypes.UpdateShippingOptionDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ShippingOptionDTO[] | FulfillmentTypes.ShippingOptionDTO
   > {
@@ -1253,7 +1253,7 @@ export default class FulfillmentModuleService
   @InjectTransactionManager()
   async updateShippingOptions_(
     data: UpdateShippingOptionsInput[] | UpdateShippingOptionsInput,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof ShippingOption>
     | InferEntityType<typeof ShippingOption>[]
@@ -1407,7 +1407,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpsertShippingOptionDTO[]
       | FulfillmentTypes.UpsertShippingOptionDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ShippingOptionDTO[] | FulfillmentTypes.ShippingOptionDTO
   > {
@@ -1428,7 +1428,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpsertShippingOptionDTO[]
       | FulfillmentTypes.UpsertShippingOptionDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ShippingOption>[]> {
     const input = Array.isArray(data) ? data : [data]
     const forUpdate = input.filter(
@@ -1484,7 +1484,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpsertShippingOptionTypeDTO[]
       | FulfillmentTypes.UpsertShippingOptionTypeDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | FulfillmentTypes.ShippingOptionTypeDTO[]
     | FulfillmentTypes.ShippingOptionTypeDTO
@@ -1535,7 +1535,7 @@ export default class FulfillmentModuleService
   async updateShippingOptionTypes(
     idOrSelector: string | FulfillmentTypes.FilterableShippingOptionTypeProps,
     data: FulfillmentTypes.UpdateShippingOptionTypeDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | FulfillmentTypes.ShippingOptionTypeDTO[]
     | FulfillmentTypes.ShippingOptionTypeDTO
@@ -1593,7 +1593,7 @@ export default class FulfillmentModuleService
   async updateShippingProfiles(
     idOrSelector: string | FulfillmentTypes.FilterableShippingProfileProps,
     data: FulfillmentTypes.UpdateShippingProfileDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ShippingProfileDTO | FulfillmentTypes.ShippingProfileDTO[]
   > {
@@ -1614,7 +1614,7 @@ export default class FulfillmentModuleService
   protected async updateShippingProfiles_(
     idOrSelector: string | FulfillmentTypes.FilterableShippingProfileProps,
     data: FulfillmentTypes.UpdateShippingProfileDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ShippingProfile>[]> {
     let normalizedInput: ({
       id: string
@@ -1662,7 +1662,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpsertShippingProfileDTO[]
       | FulfillmentTypes.UpsertShippingProfileDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     FulfillmentTypes.ShippingProfileDTO[] | FulfillmentTypes.ShippingProfileDTO
   > {
@@ -1679,7 +1679,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpsertShippingProfileDTO[]
       | FulfillmentTypes.UpsertShippingProfileDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof ShippingProfile>[]
     | InferEntityType<typeof ShippingProfile>
@@ -1727,7 +1727,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpdateGeoZoneDTO
       | FulfillmentTypes.UpdateGeoZoneDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.GeoZoneDTO | FulfillmentTypes.GeoZoneDTO[]> {
     const data_ = Array.isArray(data) ? data : [data]
 
@@ -1767,7 +1767,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpdateShippingOptionRuleDTO[]
       | FulfillmentTypes.UpdateShippingOptionRuleDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | FulfillmentTypes.ShippingOptionRuleDTO[]
     | FulfillmentTypes.ShippingOptionRuleDTO
@@ -1788,7 +1788,7 @@ export default class FulfillmentModuleService
     data:
       | FulfillmentTypes.UpdateShippingOptionRuleDTO[]
       | FulfillmentTypes.UpdateShippingOptionRuleDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<
     | InferEntityType<typeof ShippingOptionRule>
     | InferEntityType<typeof ShippingOptionRule>[]
@@ -1814,7 +1814,7 @@ export default class FulfillmentModuleService
   async updateFulfillment(
     id: string,
     data: FulfillmentTypes.UpdateFulfillmentDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentTypes.FulfillmentDTO> {
     const fulfillment = await this.updateFulfillment_(id, data, sharedContext)
 
@@ -1827,7 +1827,7 @@ export default class FulfillmentModuleService
   protected async updateFulfillment_(
     id: string,
     data: FulfillmentTypes.UpdateFulfillmentDTO,
-    @MedusaContext() sharedContext: Context
+    @SwitchyardContext() sharedContext: Context
   ): Promise<InferEntityType<typeof Fulfillment>> {
     const existingFulfillment: InferEntityType<typeof Fulfillment> =
       await this.fulfillmentService_.retrieve(
@@ -1886,7 +1886,7 @@ export default class FulfillmentModuleService
   @EmitEvents()
   async cancelFulfillment(
     id: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<FulfillmentDTO> {
     const canceledAt = new Date()
 
@@ -1962,7 +1962,7 @@ export default class FulfillmentModuleService
   async validateShippingOption(
     shippingOptionId: string,
     context: Record<string, unknown> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const shippingOptions = await this.listShippingOptionsForContext(
       { id: shippingOptionId, context },
@@ -1978,7 +1978,7 @@ export default class FulfillmentModuleService
   @InjectManager()
   async validateShippingOptionsForPriceCalculation(
     shippingOptionsData: FulfillmentTypes.CreateShippingOptionDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<boolean[]> {
     const nonCalculatedOptions = shippingOptionsData.filter(
       (option) => option.price_type !== "calculated"
@@ -2020,7 +2020,7 @@ export default class FulfillmentModuleService
   // @ts-expect-error
   async deleteShippingProfiles(
     ids: string | string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const shippingProfileIds = Array.isArray(ids) ? ids : [ids]
     await this.validateShippingProfileDeletion(
@@ -2039,7 +2039,7 @@ export default class FulfillmentModuleService
   >(
     ids: string[],
     config?: SoftDeleteReturn<TReturnableLinkableKeys>,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<Record<string, string[]> | void> {
     await this.validateShippingProfileDeletion(ids, sharedContext)
 

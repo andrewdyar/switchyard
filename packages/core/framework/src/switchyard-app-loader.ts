@@ -49,7 +49,7 @@ export class SwitchyardAppLoader {
     | RegisterModuleJoinerConfig
     | RegisterModuleJoinerConfig[]
 
-  readonly #medusaConfigPath?: string
+  readonly #switchyardConfigPath?: string
   readonly #cwd?: string
 
   // TODO: Adjust all loaders to accept an optional container such that in test env it is possible if needed to provide a specific container otherwise use the main container
@@ -58,19 +58,19 @@ export class SwitchyardAppLoader {
   constructor({
     container,
     customLinksModules,
-    medusaConfigPath,
+    switchyardConfigPath,
     cwd,
   }: {
     container?: SwitchyardContainer
     customLinksModules?:
       | RegisterModuleJoinerConfig
       | RegisterModuleJoinerConfig[]
-    medusaConfigPath?: string
+    switchyardConfigPath?: string
     cwd?: string
   } = {}) {
     this.#container = container ?? mainContainer
     this.#customLinksModules = customLinksModules ?? []
-    this.#medusaConfigPath = medusaConfigPath
+    this.#switchyardConfigPath = switchyardConfigPath
     this.#cwd = cwd
   }
 
@@ -181,7 +181,7 @@ export class SwitchyardAppLoader {
       linkModules: this.#customLinksModules,
       sharedResourcesConfig,
       injectedDependencies,
-      medusaConfigPath: this.#medusaConfigPath,
+      switchyardConfigPath: this.#switchyardConfigPath,
       cwd: this.#cwd,
     }
 
@@ -208,7 +208,7 @@ export class SwitchyardAppLoader {
       linkModules: this.#customLinksModules,
       sharedResourcesConfig,
       injectedDependencies,
-      medusaConfigPath: this.#medusaConfigPath,
+      switchyardConfigPath: this.#switchyardConfigPath,
       cwd: this.#cwd,
     }
 
@@ -230,7 +230,7 @@ export class SwitchyardAppLoader {
       sharedResourcesConfig,
       injectedDependencies,
       loaderOnly: true,
-      medusaConfigPath: this.#medusaConfigPath,
+      switchyardConfigPath: this.#switchyardConfigPath,
       cwd: this.#cwd,
     })
   }
@@ -263,24 +263,24 @@ export class SwitchyardAppLoader {
 
     const configModules = this.mergeDefaultModules(configModule.modules)
 
-    const medusaApp = await SwitchyardApp({
+    const switchyardApp = await SwitchyardApp({
       workerMode: configModule.projectConfig.workerMode,
       modulesConfig: configModules,
       sharedContainer: this.#container,
       linkModules: this.#customLinksModules,
       sharedResourcesConfig,
       injectedDependencies,
-      medusaConfigPath: this.#medusaConfigPath,
+      switchyardConfigPath: this.#switchyardConfigPath,
       cwd: this.#cwd,
     })
 
     if (!config.registerInContainer) {
-      return medusaApp
+      return switchyardApp
     }
 
     this.#container.register(
       ContainerRegistrationKeys.LINK,
-      asValue(medusaApp.link)
+      asValue(switchyardApp.link)
     )
     this.#container.register(
       ContainerRegistrationKeys.REMOTE_LINK,
@@ -288,14 +288,14 @@ export class SwitchyardAppLoader {
     )
     this.#container.register(
       ContainerRegistrationKeys.REMOTE_QUERY,
-      asValue(medusaApp.query)
+      asValue(switchyardApp.query)
     )
     this.#container.register(
       ContainerRegistrationKeys.QUERY,
-      asValue(medusaApp.query)
+      asValue(switchyardApp.query)
     )
 
-    for (const moduleService of Object.values(medusaApp.modules)) {
+    for (const moduleService of Object.values(switchyardApp.modules)) {
       const loadedModule = moduleService as LoadedModule
       container.register(loadedModule.__definition.key, asValue(moduleService))
     }
@@ -308,6 +308,6 @@ export class SwitchyardAppLoader {
       }
     }
 
-    return medusaApp
+    return switchyardApp
   }
 }

@@ -43,7 +43,7 @@
  *     type: object
  *     description: Any data useful for the fulfillment provider to handle the fulfillment.
  *     externalDocs:
- *       url: https://docs.switchyard.com/resources/commerce-modules/fulfillment/shipping-option#data-property
+ *       url: https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property
  *       description: Learn more about the data property.
  *   packed_at:
  *     type: string
@@ -69,7 +69,7 @@
  *     type: object
  *     description: The fulfillment's metadata, used to store custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.switchyard.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.run/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  * 
 */

@@ -39,8 +39,8 @@ export type CancelBeginOrderEditValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -80,7 +80,7 @@ export type CancelBeginOrderEditWorkflowInput = {
 export const cancelBeginOrderEditWorkflowId = "cancel-begin-order-edit"
 /**
  * This workflow cancels a requested edit for an order. It's used by the
- * [Cancel Order Edit Admin API Route](https://docs.medusajs.com/api/admin#order-edits_deleteordereditsid).
+ * [Cancel Order Edit Admin API Route](https://docs.switchyard.run/api/admin#order-edits_deleteordereditsid).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to cancel an order edit
  * in your custom flow.

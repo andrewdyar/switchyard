@@ -44,8 +44,8 @@ export type OrderEditAddNewItemValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -75,7 +75,7 @@ export const orderEditAddNewItemValidationStep = createStep(
 export const orderEditAddNewItemWorkflowId = "order-edit-add-new-item"
 /**
  * This workflow adds new items to an order edit. It's used by the
- * [Add Items to Order Edit Admin API Route](https://docs.medusajs.com/api/admin#order-edits_postordereditsiditems).
+ * [Add Items to Order Edit Admin API Route](https://docs.switchyard.run/api/admin#order-edits_postordereditsiditems).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to add new items to an order edit
  * in your custom flows.

@@ -112,7 +112,7 @@ const TagSectionSchema = ({ schema, tagName }: TagSectionSchemaProps) => {
                   view the models in the Switchyard application and their relations,
                   visit the{" "}
                   <Link
-                    href="https://docs.switchyard.com/resources/commerce-modules"
+                    href="https://docs.switchyard.run/resources/commerce-modules"
                     variant="content"
                   >
                     Commerce Modules Documentation

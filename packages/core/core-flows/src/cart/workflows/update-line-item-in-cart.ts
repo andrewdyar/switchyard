@@ -52,7 +52,7 @@ export const updateLineItemInCartWorkflowId = "update-line-item-in-cart"
 /**
  * This workflow updates a line item's details in a cart. You can update the line item's quantity, unit price, and more.
  * If the quantity is set to 0, the item will be removed from the cart.
- * This workflow is executed by the [Update Line Item Store API Route](https://docs.medusajs.com/api/store#carts_postcartsidlineitemsline_id).
+ * This workflow is executed by the [Update Line Item Store API Route](https://docs.switchyard.run/api/store#carts_postcartsidlineitemsline_id).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you to update a line item's details in your custom flows.
  *
@@ -88,7 +88,7 @@ export const updateLineItemInCartWorkflowId = "update-line-item-in-cart"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { addToCartWorkflow } from "@switchyard/medusa/core-flows";
+ * import { addToCartWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * addToCartWorkflow.hooks.setPricingContext((
@@ -104,7 +104,7 @@ export const updateLineItemInCartWorkflowId = "update-line-item-in-cart"
  *
  * :::note
  *
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  *
  * :::
  */

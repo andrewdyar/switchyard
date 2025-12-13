@@ -43,9 +43,9 @@ const coreFlowsOptions: FormattingOptionsType = {
   },
   "^core_flows/.*/Workflows_.*/functions/.*/page\\.mdx": {
     reflectionDescription:
-      "This documentation provides a reference to the `{{alias}}`. It belongs to the `@switchyard/medusa/core-flows` package.",
+      "This documentation provides a reference to the `{{alias}}`. It belongs to the `@switchyard/core-flows` package.",
     frontmatterData: {
-      slug: "/references/medusa-workflows/{{alias}}",
+      slug: "/references/switchyard-workflows/{{alias}}",
       sidebar_label: "{{alias}}",
       sidebar_description: "{{summary}}",
     },
@@ -57,9 +57,9 @@ const coreFlowsOptions: FormattingOptionsType = {
   },
   "^core_flows/.*/Steps_.*/functions/.*/page\\.mdx": {
     reflectionDescription:
-      "This documentation provides a reference to the `{{alias}}`. It belongs to the `@switchyard/medusa/core-flows` package.",
+      "This documentation provides a reference to the `{{alias}}`. It belongs to the `@switchyard/core-flows` package.",
     frontmatterData: {
-      slug: "/references/medusa-workflows/steps/{{alias}}",
+      slug: "/references/switchyard-workflows/steps/{{alias}}",
       sidebar_label: "{{alias}}",
     },
     reflectionTitle: {

@@ -56,7 +56,7 @@ export const MainContentLayout = ({
     >
       <div
         className={clsx(
-          "bg-medusa-bg-base",
+          "bg-switchyard-bg-base",
           "flex-col items-center",
           "h-full w-full",
           "overflow-y-scroll overflow-x-hidden",

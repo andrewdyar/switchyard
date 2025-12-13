@@ -7,12 +7,12 @@
  *   Generate a reset password token for an admin user. This API route doesn't reset the admin's password or send them the reset instructions in a notification.
  * 
  * 
- *   Instead, This API route emits the `auth.password_reset` event, passing it the token as a payload. You can listen to that event in a subscriber as explained in [this guide](https://docs.switchyard.com/resources/commerce-modules/auth/reset-password), then send the user a notification. The notification is sent using a [Notification Module Provider](https://docs.switchyard.com/resources/infrastructure-modules/notification), and it should have the URL to reset the password in the Switchyard Admin dashboard, such as `http://localhost:9000/app/reset-password?token=123`.
+ *   Instead, This API route emits the `auth.password_reset` event, passing it the token as a payload. You can listen to that event in a subscriber as explained in [this guide](https://docs.switchyard.run/resources/commerce-modules/auth/reset-password), then send the user a notification. The notification is sent using a [Notification Module Provider](https://docs.switchyard.run/resources/infrastructure-modules/notification), and it should have the URL to reset the password in the Switchyard Admin dashboard, such as `http://localhost:9000/app/reset-password?token=123`.
  * 
  * 
- *    Use the generated token to update the user's password using the [Reset Password API route](https://docs.switchyard.com/api/admin#auth_postactor_typeauth_providerupdate).
+ *    Use the generated token to update the user's password using the [Reset Password API route](https://docs.switchyard.run/api/admin#auth_postactor_typeauth_providerupdate).
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route#generate-reset-password-token-route
+ *   url: https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route#generate-reset-password-token-route
  *   description: Learn more about this API route.
  * x-authenticated: false
  * parameters:
@@ -30,7 +30,7 @@
  *         type: object
  *         title: identifier
  *         description: The user's identifier for the selected auth provider. For example, for the `emailpass` auth provider, the value is the user's email.
- *         example: "admin@medusa-test.com"
+ *         example: "admin@switchyard-test.run"
  * x-codeSamples:
  *   - lang: JavaScript
  *     label: JS SDK
@@ -61,7 +61,7 @@
  *       curl -X POST '{backend_url}/auth/user/emailpass/reset-password' \
  *       -H 'Content-Type: application/json' \
  *       --data-raw '{
- *         "identifier": "admin@medusa-test.com"
+ *         "identifier": "admin@switchyard-test.run"
  *       }'
  * tags:
  *   - Auth

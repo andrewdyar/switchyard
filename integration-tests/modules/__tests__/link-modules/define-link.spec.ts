@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 
 import CurrencyModule from "@switchyard/currency"
 import { SwitchyardModule } from "@switchyard/modules-sdk"
@@ -8,7 +8,7 @@ import { defineLink } from "@switchyard/utils"
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ getContainer }) => {
     describe("defineLink", () => {
       it("should generate a proper link definition", async () => {

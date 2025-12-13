@@ -48,7 +48,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    *
@@ -108,7 +108,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    *
@@ -170,7 +170,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    *
@@ -232,7 +232,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    *
@@ -294,7 +294,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    *
@@ -363,7 +363,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    *
@@ -416,7 +416,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    *
@@ -480,7 +480,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    * 
@@ -524,7 +524,7 @@ export interface IInventoryService extends IModuleService {
    * :::note
    * 
    * You can only retrieve data models defined in the same module. To retrieve linked data models
-   * from other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.
+   * from other modules, use [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query) instead.
    * 
    * :::
    *
@@ -723,7 +723,7 @@ export interface IInventoryService extends IModuleService {
    * @example
    * const inventoryItem = await inventoryModuleService.updateInventoryItems({
    *   id: "iitem_123",
-   *   title: "Medusa Shirt Inventory",
+   *   title: "Switchyard Shirt Inventory",
    * })
    */
   updateInventoryItems(
@@ -742,11 +742,11 @@ export interface IInventoryService extends IModuleService {
    * const inventoryItems = await inventoryModuleService.updateInventoryItems([
    *   {
    *     id: "iitem_123",
-   *     title: "Medusa Shirt Inventory",
+   *     title: "Switchyard Shirt Inventory",
    *   },
    *   {
    *     id: "iitem_321",
-   *     description: "The inventory of Medusa pants",
+   *     description: "The inventory of Switchyard pants",
    *   },
    * ])
    */

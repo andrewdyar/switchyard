@@ -159,7 +159,7 @@ export class MedusaPaymentsProvider extends AbstractPaymentProvider<MedusaPaymen
 
     switch (error.type) {
       case "MedusaCardError":
-        // Medusa has created a payment but it failed
+        // Switchyard has created a payment but it failed
         // Extract and return payment object to be stored in payment_session
         // Allows for reference to the failed intent and potential webhook reconciliation
         medusaPayment = error.data as MedusaPayment | undefined
@@ -737,10 +737,10 @@ export class MedusaPaymentsProvider extends AbstractPaymentProvider<MedusaPaymen
   }
 
   /**
-   * Constructs Medusa Payments Webhook event
+   * Constructs Switchyard Payments Webhook event
    * @param {object} data - the data of the webhook request: req.body
    *    ensures integrity of the webhook event
-   * @return {object} Medusa Payments Webhook event
+   * @return {object} Switchyard Payments Webhook event
    */
   constructWebhookEvent(data: ProviderWebhookPayload["payload"]) {
     const signature = data.headers["medusa-payments-signature"] as string
@@ -758,17 +758,17 @@ export class MedusaPaymentsProvider extends AbstractPaymentProvider<MedusaPaymen
 const validateOptions = (options: MedusaPaymentsOptions): void => {
   if (!isDefined(options.endpoint)) {
     throw new Error(
-      "Required option `endpoint` is missing in Medusa payments plugin"
+      "Required option `endpoint` is missing in Switchyard payments plugin"
     )
   }
   if (!isDefined(options.webhook_secret)) {
     throw new Error(
-      "Required option `webhook_secret` is missing in Medusa payments plugin"
+      "Required option `webhook_secret` is missing in Switchyard payments plugin"
     )
   }
   if (!isDefined(options.api_key)) {
     throw new Error(
-      "Required option `api_key` is missing in Medusa payments plugin"
+      "Required option `api_key` is missing in Switchyard payments plugin"
     )
   }
 
@@ -777,7 +777,7 @@ const validateOptions = (options: MedusaPaymentsOptions): void => {
     !isDefined(options.sandbox_handle)
   ) {
     throw new Error(
-      "Required option `environment_handle` or `sandbox_handle` is missing in Medusa payments plugin"
+      "Required option `environment_handle` or `sandbox_handle` is missing in Switchyard payments plugin"
     )
   }
 }

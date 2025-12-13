@@ -38,7 +38,7 @@ function generateStepExample(stepReflection: DeclarationReflection): string {
   return `
 \`\`\`ts title="src/workflows/my-workflow.ts"
 ${beautifyCode(`import { createWorkflow } from "@switchyard/framework/workflows-sdk"
-import { ${stepReflection.name} } from "@switchyard/medusa/core-flows"
+import { ${stepReflection.name} } from "@switchyard/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",

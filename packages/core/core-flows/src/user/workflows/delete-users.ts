@@ -15,7 +15,7 @@ export const deleteUsersWorkflowId = "delete-user"
  * like {@link removeUserAccountWorkflow}. If you use this workflow directly,
  * you must also remove the association to the auth identity using the
  * {@link setAuthAppMetadataStep}. Learn more about auth identities in
- * [this documentation](https://docs.medusajs.com/resources/commerce-modules/auth/auth-identity-and-actor-types).
+ * [this documentation](https://docs.switchyard.run/resources/commerce-modules/auth/auth-identity-and-actor-types).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to
  * delete users within your custom flows.

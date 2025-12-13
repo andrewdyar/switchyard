@@ -3,7 +3,7 @@ import {
   createShippingOptionsWorkflow,
   orderClaimRequestItemReturnWorkflow,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   FulfillmentWorkflow,
   IOrderModuleService,
@@ -339,7 +339,7 @@ async function createOrderFixture({ container, product }) {
   return order
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ getContainer }) => {
     let container

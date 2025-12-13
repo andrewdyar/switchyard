@@ -15,7 +15,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "### constructor\n\nThe constructor allows you to access resources from the [module's container](https://docs.switchyard.com/learn/fundamentals/modules/container)\nusing the first parameter, and the module's options using the second parameter.\n\n:::note\n\nA module's options are passed when you register it in the Switchyard application.\n\n:::\n\nIf you're creating a client or establishing a connection with a third-party service, do it in the constructor.\n\n#### Example\n\n"
+						"text": "### constructor\n\nThe constructor allows you to access resources from the [module's container](https://docs.switchyard.run/learn/fundamentals/modules/container)\nusing the first parameter, and the module's options using the second parameter.\n\n:::note\n\nA module's options are passed when you register it in the Switchyard application.\n\n:::\n\nIf you're creating a client or establishing a connection with a third-party service, do it in the constructor.\n\n#### Example\n\n"
 					},
 					{
 						"kind": "code",

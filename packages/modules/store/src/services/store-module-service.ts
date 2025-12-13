@@ -13,7 +13,7 @@ import {
   InjectManager,
   InjectTransactionManager,
   isString,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardService,
   promiseAll,
@@ -25,7 +25,7 @@ import { UpdateStoreInput } from "@types"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  storeService: ModulesSdkTypes.IMedusaInternalService<any>
+  storeService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 export default class StoreModuleService
@@ -36,7 +36,7 @@ export default class StoreModuleService
   implements IStoreModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected readonly storeService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly storeService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof Store>
   >
 
@@ -66,7 +66,7 @@ export default class StoreModuleService
   // @ts-expect-error
   async createStores(
     data: StoreTypes.CreateStoreDTO | StoreTypes.CreateStoreDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<StoreTypes.StoreDTO | StoreTypes.StoreDTO[]> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -80,7 +80,7 @@ export default class StoreModuleService
   @InjectTransactionManager()
   async create_(
     data: StoreTypes.CreateStoreDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Store>[]> {
     let normalizedInput = StoreModuleService.normalizeInput(data)
     StoreModuleService.validateCreateRequest(normalizedInput)
@@ -107,7 +107,7 @@ export default class StoreModuleService
   @EmitEvents()
   async upsertStores(
     data: StoreTypes.UpsertStoreDTO | StoreTypes.UpsertStoreDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<StoreTypes.StoreDTO | StoreTypes.StoreDTO[]> {
     const result = await this.upsertStores_(data, sharedContext)
 
@@ -119,7 +119,7 @@ export default class StoreModuleService
   @InjectTransactionManager()
   protected async upsertStores_(
     data: StoreTypes.UpsertStoreDTO | StoreTypes.UpsertStoreDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Store>[]> {
     const input = Array.isArray(data) ? data : [data]
     const forUpdate = input.filter(
@@ -162,7 +162,7 @@ export default class StoreModuleService
   async updateStores(
     idOrSelector: string | StoreTypes.FilterableStoreProps,
     data: StoreTypes.UpdateStoreDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<StoreTypes.StoreDTO | StoreTypes.StoreDTO[]> {
     let normalizedInput: UpdateStoreInput[] = []
     if (isString(idOrSelector)) {
@@ -192,7 +192,7 @@ export default class StoreModuleService
   @InjectTransactionManager()
   protected async update_(
     data: UpdateStoreInput[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Store>[]> {
     const normalizedInput = StoreModuleService.normalizeInput(data)
     StoreModuleService.validateUpdateRequest(normalizedInput)

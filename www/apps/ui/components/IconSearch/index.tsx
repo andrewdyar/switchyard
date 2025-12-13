@@ -67,7 +67,7 @@ const SearchResults = ({ query = "" }: { query?: string }) => {
                 <span className="sr-only">Icon named {name}</span>
                 <div
                   className={clsx(
-                    "bg-medusa-bg-component text-medusa-fg-base",
+                    "bg-switchyard-bg-component text-medusa-fg-base",
                     "flex h-8 w-8 items-center justify-center rounded-[4px]"
                   )}
                 >

@@ -12,12 +12,12 @@ import { batchProductsWorkflow } from "./batch-products"
 export const importProductsWorkflowId = "import-products"
 /**
  * This workflow starts a product import from a CSV file in the background. It's used by the
- * [Import Products Admin API Route](https://docs.medusajs.com/api/admin#products_postproductsimport).
+ * [Import Products Admin API Route](https://docs.switchyard.run/api/admin#products_postproductsimport).
  *
  * You can use this workflow within your custom workflows, allowing you to wrap custom logic around product import.
  * For example, you can import products from another system.
  *
- * The workflow only starts the import, but you'll have to confirm it using the [Workflow Engine](https://docs.medusajs.com/resources/infrastructure-modules/workflow-engine).
+ * The workflow only starts the import, but you'll have to confirm it using the [Workflow Engine](https://docs.switchyard.run/resources/infrastructure-modules/workflow-engine).
  * The below example shows how to confirm the import.
  *
  * @example
@@ -36,7 +36,7 @@ export const importProductsWorkflowId = "import-products"
  *
  * Notice that the workflow returns a `transaction.transactionId`. You'll use this ID to confirm the import afterwards.
  *
- * You confirm the import using the [Workflow Engine](https://docs.medusajs.com/resources/infrastructure-modules/workflow-engine).
+ * You confirm the import using the [Workflow Engine](https://docs.switchyard.run/resources/infrastructure-modules/workflow-engine).
  * For example, in an API route:
  *
  * ```ts workflow={false}
@@ -77,7 +77,7 @@ export const importProductsWorkflowId = "import-products"
  *
  * :::tip
  *
- * This example API route uses the same implementation as the [Confirm Product Import Admin API Route](https://docs.medusajs.com/api/admin#products_postproductsimporttransaction_idconfirm).
+ * This example API route uses the same implementation as the [Confirm Product Import Admin API Route](https://docs.switchyard.run/api/admin#products_postproductsimporttransaction_idconfirm).
  *
  * :::
  *

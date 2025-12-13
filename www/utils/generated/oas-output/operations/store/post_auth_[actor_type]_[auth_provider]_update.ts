@@ -3,9 +3,9 @@
  * operationId: PostActor_typeAuth_providerUpdate
  * summary: Reset a Customer's Password
  * x-sidebar-summary: Reset Password
- * description: Reset a customer's password using a reset-password token generated with the [Generate Reset Password Token API route](https://docs.switchyard.com/api/store#auth_postactor_typeauth_providerresetpassword). You pass the token as a bearer token in the request's Authorization header.
+ * description: Reset a customer's password using a reset-password token generated with the [Generate Reset Password Token API route](https://docs.switchyard.run/api/store#auth_postactor_typeauth_providerresetpassword). You pass the token as a bearer token in the request's Authorization header.
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/storefront-development/customers/reset-password#2-reset-password-page
+ *   url: https://docs.switchyard.run/resources/storefront-development/customers/reset-password#2-reset-password-page
  *   description: "Storefront development: How to create the reset password page."
  * x-authenticated: true
  * parameters:
@@ -32,16 +32,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       sdk.auth.updateProvider(

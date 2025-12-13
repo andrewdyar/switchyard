@@ -10,7 +10,7 @@ const cachingOptions: FormattingOptionsType = {
     
 :::note
 
-The Caching Module and its providers are available starting [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0).
+The Caching Module and its providers are available starting [Switchyard v2.11.0](https://github.com/switchyard/switchyard/releases/tag/v2.11.0).
 
 :::`,
     frontmatterData: {
@@ -37,7 +37,7 @@ The Caching Module and its providers are available starting [Switchyard v2.11.0]
 
 As you implement your Caching Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [Redis Caching Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/caching-redis).`,
+If you need to refer to an existing implementation as an example, check the [Redis Caching Module Provider in the Switchyard repository](https://github.com/switchyard/switchyard/tree/develop/packages/modules/providers/caching-redis).`,
       `## 1. Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
@@ -89,7 +89,7 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/caching",
+      resolve: "@switchyard/caching",
       options: {
         providers: [
           {
@@ -163,7 +163,7 @@ You will receive a response with the list of products. The first time you make t
     
 :::note
 
-The Caching Module and its providers are available starting [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0).
+The Caching Module and its providers are available starting [Switchyard v2.11.0](https://github.com/switchyard/switchyard/releases/tag/v2.11.0).
 
 :::
 

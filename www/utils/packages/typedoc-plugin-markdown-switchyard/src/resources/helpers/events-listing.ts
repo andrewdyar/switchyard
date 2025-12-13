@@ -193,11 +193,11 @@ function formatEventsType(
     content.push(eventPayload || "")
     content.push("")
     content.push(
-      `${subHeaderPrefix}# Workflows Emitting this Event\n\nThe following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.`
+      `${subHeaderPrefix}# Workflows Emitting this Event\n\nThe following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.run/api/store) and [Admin](https://docs.switchyard.run/api/admin) API references.`
     )
     content.push("")
     workflows?.forEach((workflow) => {
-      content.push(`- [${workflow}](/references/medusa-workflows/${workflow})`)
+      content.push(`- [${workflow}](/references/switchyard-workflows/${workflow})`)
     })
     content.push("")
     if (index < eventProperties.length - 1) {

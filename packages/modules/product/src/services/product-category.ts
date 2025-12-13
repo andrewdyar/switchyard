@@ -11,9 +11,9 @@ import {
   InjectManager,
   InjectTransactionManager,
   isDefined,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
-  MedusaInternalService,
+  SwitchyardInternalService,
   SwitchyardService,
   ModulesSdkUtils,
   registerInternalServiceEventSubscriber,
@@ -28,7 +28,7 @@ type InjectedDependencies = {
   productModuleService: ReturnType<typeof SwitchyardService>
 }
 
-export default class ProductCategoryService extends MedusaInternalService<
+export default class ProductCategoryService extends SwitchyardInternalService<
   InjectedDependencies,
   typeof ProductCategory
 >(ProductCategory) {
@@ -48,7 +48,7 @@ export default class ProductCategoryService extends MedusaInternalService<
   async retrieve(
     productCategoryId: string,
     config: FindConfig<ProductTypes.ProductCategoryDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ProductCategory>> {
     if (!isDefined(productCategoryId)) {
       throw new SwitchyardError(
@@ -90,7 +90,7 @@ export default class ProductCategoryService extends MedusaInternalService<
   async list(
     filters: ProductTypes.FilterableProductCategoryProps = {},
     config: FindConfig<ProductTypes.ProductCategoryDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ProductCategory>[]> {
     const transformOptions = {
       includeDescendantsTree: filters?.include_descendants_tree || false,
@@ -124,7 +124,7 @@ export default class ProductCategoryService extends MedusaInternalService<
   async listAndCount(
     filters: ProductTypes.FilterableProductCategoryProps = {},
     config: FindConfig<ProductTypes.ProductCategoryDTO> = {},
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<[InferEntityType<typeof ProductCategory>[], number]> {
     const transformOptions = {
       includeDescendantsTree: filters?.include_descendants_tree || false,
@@ -157,7 +157,7 @@ export default class ProductCategoryService extends MedusaInternalService<
   @InjectTransactionManager("productCategoryRepository_")
   async create(
     data: ProductTypes.CreateProductCategoryDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ProductCategory>[]> {
     return await (
       this.productCategoryRepository_ as unknown as ProductCategoryRepository
@@ -168,7 +168,7 @@ export default class ProductCategoryService extends MedusaInternalService<
   // @ts-expect-error
   async update(
     data: UpdateCategoryInput[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ProductCategory>[]> {
     return await (
       this.productCategoryRepository_ as unknown as ProductCategoryRepository
@@ -179,7 +179,7 @@ export default class ProductCategoryService extends MedusaInternalService<
   // @ts-expect-error
   async delete(
     ids: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<string[]> {
     const subscriber = createMedusaMikroOrmEventSubscriber(
       [ProductCategory.name],
@@ -217,7 +217,7 @@ export default class ProductCategoryService extends MedusaInternalService<
   // @ts-expect-error
   async softDelete(
     ids: string[],
-    @MedusaContext() sharedContext?: Context
+    @SwitchyardContext() sharedContext?: Context
   ): Promise<Record<string, string[]> | void> {
     return (await (
       this.productCategoryRepository_ as unknown as ProductCategoryRepository
@@ -228,7 +228,7 @@ export default class ProductCategoryService extends MedusaInternalService<
   // @ts-expect-error
   async restore(
     ids: string[],
-    @MedusaContext() sharedContext?: Context
+    @SwitchyardContext() sharedContext?: Context
   ): Promise<Record<string, string[]> | void> {
     return (await (
       this.productCategoryRepository_ as unknown as ProductCategoryRepository

@@ -1,12 +1,12 @@
 import { IModuleService } from "@switchyard/types"
-import { MedusaContext } from "@switchyard/utils"
+import { SwitchyardContext } from "@switchyard/utils"
 
 // @ts-expect-error
 export class ModuleService implements IModuleService {
   public property = "value"
 
   constructor() {}
-  async methodName(input, @MedusaContext() context) {
+  async methodName(input, @SwitchyardContext() context) {
     return input + " called"
   }
 }

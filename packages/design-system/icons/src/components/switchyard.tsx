@@ -1,6 +1,6 @@
 import * as React from "react"
 import type { IconProps } from "../types"
-const Medusa = React.forwardRef<SVGSVGElement, IconProps>(
+const Switchyard = React.forwardRef<SVGSVGElement, IconProps>(
   ({ color = "currentColor", ...props }, ref) => {
     return (
       <svg

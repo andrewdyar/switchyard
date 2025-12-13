@@ -28,7 +28,7 @@ const analyticsProviderOptions: FormattingOptionsType = {
       
 As you implement your Analytics Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [PostHog Analytics Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/analytics-posthog).`,
+If you need to refer to an existing implementation as an example, check the [PostHog Analytics Module Provider in the Switchyard repository](https://github.com/switchyard/switchyard/tree/develop/packages/modules/providers/analytics-posthog).`,
       `## Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
@@ -89,7 +89,7 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/analytics",
+      resolve: "@switchyard/analytics",
       options: {
         providers: [
           {
@@ -174,7 +174,7 @@ export const trackOrderCreatedWorkflow = createWorkflow(
 
 This workflow retrieves the order details using the \`useQueryGraphStep\` and then tracks the order creation event using the \`trackOrderCreatedStep\`.
 
-In the step, you resolve the service of the Analytics Module from the [Switchyard container](!docs!/learn/fundamentals/medusa-container) and use its \`track\` method to track the event. This method will use the underlying provider configured (which is your provider, in this case) to track the event.
+In the step, you resolve the service of the Analytics Module from the [Switchyard container](!docs!/learn/fundamentals/switchyard-container) and use its \`track\` method to track the event. This method will use the underlying provider configured (which is your provider, in this case) to track the event.
 
 Next, create a subscriber at \`src/subscribers/order-placed.ts\` with the following content:
 

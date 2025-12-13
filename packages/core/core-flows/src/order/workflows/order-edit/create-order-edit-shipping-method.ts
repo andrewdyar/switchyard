@@ -45,8 +45,8 @@ export type CreateOrderEditShippingMethodValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -96,7 +96,7 @@ export const createOrderEditShippingMethodWorkflowId =
   "create-order-edit-shipping-method"
 /**
  * This workflow creates a shipping method for an order edit. It's used by the
- * [Add Shipping Method API Route](https://docs.medusajs.com/api/admin#order-edits_postordereditsidshippingmethod).
+ * [Add Shipping Method API Route](https://docs.switchyard.run/api/admin#order-edits_postordereditsidshippingmethod).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to create a shipping method
  * for an order edit in your in your own custom flows.
@@ -129,7 +129,7 @@ export const createOrderEditShippingMethodWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { createOrderEditShippingMethodWorkflow } from "@switchyard/medusa/core-flows";
+ * import { createOrderEditShippingMethodWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  * 
  * createOrderEditShippingMethodWorkflow.hooks.setPricingContext((
@@ -145,7 +145,7 @@ export const createOrderEditShippingMethodWorkflowId =
  * 
  * :::note
  * 
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  * 
  * :::
  */

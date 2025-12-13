@@ -1,134 +1,134 @@
 export const tutorial = [
   {
     "title": "Extend Cart",
-    "path": "https://docs.switchyard.com/resources/commerce-modules/cart/extend"
+    "path": "https://docs.switchyard.run/resources/commerce-modules/cart/extend"
   },
   {
     "title": "Extend Customer",
-    "path": "https://docs.switchyard.com/resources/commerce-modules/customer/extend"
+    "path": "https://docs.switchyard.run/resources/commerce-modules/customer/extend"
   },
   {
     "title": "Extend Product",
-    "path": "https://docs.switchyard.com/resources/commerce-modules/product/extend"
+    "path": "https://docs.switchyard.run/resources/commerce-modules/product/extend"
   },
   {
     "title": "Extend Promotion",
-    "path": "https://docs.switchyard.com/resources/commerce-modules/promotion/extend"
+    "path": "https://docs.switchyard.run/resources/commerce-modules/promotion/extend"
   },
   {
     "title": "Implement Custom Line Item Pricing in Switchyard",
-    "path": "https://docs.switchyard.com/resources/examples/guides/custom-item-price"
+    "path": "https://docs.switchyard.run/resources/examples/guides/custom-item-price"
   },
   {
     "title": "Implement Quote Management",
-    "path": "https://docs.switchyard.com/resources/examples/guides/quote-management"
+    "path": "https://docs.switchyard.run/resources/examples/guides/quote-management"
   },
   {
     "title": "Abandoned Cart Notification",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/abandoned-cart"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/abandoned-cart"
   },
   {
     "title": "Agentic Commerce",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/agentic-commerce"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/agentic-commerce"
   },
   {
     "title": "Product Category Images",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/category-images"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/category-images"
   },
   {
     "title": "Customer Tiers",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/customer-tiers"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/customer-tiers"
   },
   {
     "title": "First-Purchase Discount",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/first-purchase-discounts"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/first-purchase-discounts"
   },
   {
     "title": "Add Gift Message",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/gift-message"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/gift-message"
   },
   {
     "title": "Generate Invoices",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/invoice-generator"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/invoice-generator"
   },
   {
     "title": "Loyalty Points",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/loyalty-points"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/loyalty-points"
   },
   {
     "title": "Phone Authentication",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/phone-auth"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/phone-auth"
   },
   {
     "title": "Pre-Orders",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/preorder"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/preorder"
   },
   {
     "title": "Product Builder",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/product-builder"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/product-builder"
   },
   {
     "title": "Meta Product Feed",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/product-feed"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/product-feed"
   },
   {
     "title": "Product Rentals",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/product-rentals"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/product-rentals"
   },
   {
     "title": "Product Reviews",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/product-reviews"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/product-reviews"
   },
   {
     "title": "Re-Order",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/re-order"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/re-order"
   },
   {
     "title": "Saved Payment Methods",
-    "path": "https://docs.switchyard.com/resources/how-to-tutorials/tutorials/saved-payment-methods"
+    "path": "https://docs.switchyard.run/resources/how-to-tutorials/tutorials/saved-payment-methods"
   },
   {
     "title": "Integrate Contentful",
-    "path": "https://docs.switchyard.com/resources/integrations/guides/contentful"
+    "path": "https://docs.switchyard.run/resources/integrations/guides/contentful"
   },
   {
     "title": "Integrate Mailchimp",
-    "path": "https://docs.switchyard.com/resources/integrations/guides/mailchimp"
+    "path": "https://docs.switchyard.run/resources/integrations/guides/mailchimp"
   },
   {
     "title": "Integrate Payload",
-    "path": "https://docs.switchyard.com/resources/integrations/guides/payload"
+    "path": "https://docs.switchyard.run/resources/integrations/guides/payload"
   },
   {
     "title": "Integrate Segment",
-    "path": "https://docs.switchyard.com/resources/integrations/guides/segment"
+    "path": "https://docs.switchyard.run/resources/integrations/guides/segment"
   },
   {
     "title": "Integrate Slack",
-    "path": "https://docs.switchyard.com/resources/integrations/guides/slack"
+    "path": "https://docs.switchyard.run/resources/integrations/guides/slack"
   },
   {
     "title": "Integrate Strapi",
-    "path": "https://docs.switchyard.com/resources/integrations/guides/strapi"
+    "path": "https://docs.switchyard.run/resources/integrations/guides/strapi"
   },
   {
     "title": "Build Wishlist Plugin",
-    "path": "https://docs.switchyard.com/resources/plugins/guides/wishlist"
+    "path": "https://docs.switchyard.run/resources/plugins/guides/wishlist"
   },
   {
     "title": "Bundled Products",
-    "path": "https://docs.switchyard.com/resources/recipes/bundled-products/examples/standard"
+    "path": "https://docs.switchyard.run/resources/recipes/bundled-products/examples/standard"
   },
   {
     "title": "Personalized Products",
-    "path": "https://docs.switchyard.com/resources/recipes/personalized-products/example"
+    "path": "https://docs.switchyard.run/resources/recipes/personalized-products/example"
   },
   {
     "title": "Example",
-    "path": "https://docs.switchyard.com/resources/recipes/ticket-booking/example"
+    "path": "https://docs.switchyard.run/resources/recipes/ticket-booking/example"
   },
   {
     "title": "Storefront Customizations",
-    "path": "https://docs.switchyard.com/resources/recipes/ticket-booking/example/storefront"
+    "path": "https://docs.switchyard.run/resources/recipes/ticket-booking/example/storefront"
   }
 ]

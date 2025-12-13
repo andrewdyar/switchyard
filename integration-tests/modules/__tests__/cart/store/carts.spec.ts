@@ -1,5 +1,5 @@
 import { RemoteLink } from "@switchyard/modules-sdk"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IApiKeyModuleService,
   ICartModuleService,
@@ -34,9 +34,9 @@ import { setupTaxStructure } from "../../fixtures"
 jest.setTimeout(100000)
 
 const env = {}
-const adminHeaders = { headers: { "x-medusa-access-token": "test_token" } }
+const adminHeaders = { headers: { "x-switchyard-access-token": "test_token" } }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Store Carts API", () => {
@@ -662,7 +662,7 @@ medusaIntegrationTestRunner({
         let region
 
         const productData = {
-          title: "Medusa T-Shirt",
+          title: "Switchyard T-Shirt",
           handle: "t-shirt",
           status: ProductStatus.PUBLISHED,
           options: [

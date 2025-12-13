@@ -35,8 +35,8 @@ export type CancelReturnValidateOrderInput = {
  *
  * :::note
  *
- * You can retrieve a return details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve a return details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -91,7 +91,7 @@ export const cancelReturnValidateOrder = createStep(
 export const cancelReturnWorkflowId = "cancel-return"
 /**
  * This workflow cancels a return. It's used by the
- * [Cancel Return Admin API Route](https://docs.medusajs.com/api/admin#returns_postreturnsidcancel).
+ * [Cancel Return Admin API Route](https://docs.switchyard.run/api/admin#returns_postreturnsidcancel).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you
  * to cancel a return in your custom flow.

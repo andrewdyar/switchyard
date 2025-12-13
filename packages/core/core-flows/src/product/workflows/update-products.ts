@@ -337,7 +337,7 @@ function prepareToDeleteShippingProfileLinks({
 
 export const updateProductsWorkflowId = "update-products"
 /**
- * This workflow updates one or more products. It's used by the [Update Product Admin API Route](https://docs.medusajs.com/api/admin#products_postproductsid).
+ * This workflow updates one or more products. It's used by the [Update Product Admin API Route](https://docs.switchyard.run/api/admin#products_postproductsid).
  *
  * This workflow has a hook that allows you to perform custom actions on the updated products. For example, you can pass under `additional_data` custom data that
  * allows you to update custom data models linked to the products.
@@ -347,7 +347,7 @@ export const updateProductsWorkflowId = "update-products"
  * :::note
  *
  * Learn more about adding rules to the product variant's prices in the Pricing Module's
- * [Price Rules](https://docs.medusajs.com/resources/commerce-modules/pricing/price-rules) documentation.
+ * [Price Rules](https://docs.switchyard.run/resources/commerce-modules/pricing/price-rules) documentation.
  *
  * :::
  *

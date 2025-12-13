@@ -1,6 +1,6 @@
 import { join } from "path"
 import { readFile } from "fs/promises"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,
@@ -26,7 +26,7 @@ const getUploadReq = (file: File) => {
   }
 }
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     beforeEach(async () => {
       await createAdminUser(dbConnection, adminHeaders, getContainer())

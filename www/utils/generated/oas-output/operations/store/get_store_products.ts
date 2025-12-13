@@ -5,7 +5,7 @@
  * description: Retrieve a list of products. The products can be filtered by fields such as `id`. The products can also be sorted or paginated.
  * x-authenticated: false
  * externalDocs:
- *   url: https://docs.switchyard.com/resources/storefront-development/products/price
+ *   url: https://docs.switchyard.run/resources/storefront-development/products/price
  *   description: "Storefront guide: How to retrieve a product variants' prices."
  * parameters:
  *   - name: x-publishable-api-key
@@ -15,7 +15,7 @@
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.switchyard.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.run/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default
@@ -143,7 +143,7 @@
  *     schema:
  *       description: Filter by a collection's ID to retrieve the products in it.
  *       externalDocs:
- *         url: https://docs.switchyard.com/resources/storefront-development/products/collections/products
+ *         url: https://docs.switchyard.run/resources/storefront-development/products/collections/products
  *         description: "Storefront guide: Retrieve a collection's products."
  *       items:
  *         type: string
@@ -650,7 +650,7 @@
  *       title: region_id
  *       description: The ID of the region the products are being viewed from. This is required if you're retrieving product variant prices with taxes.
  *       externalDocs:
- *         url: https://docs.switchyard.com/resources/storefront-development/products/price/examples/tax-price
+ *         url: https://docs.switchyard.run/resources/storefront-development/products/price/examples/tax-price
  *         description: "Storefront guide: How to show product variants' prices with taxes."
  *   - name: province
  *     in: query
@@ -738,16 +738,16 @@
  *     source: |-
  *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
+ *       let SWITCHYARD_BACKEND_URL = "http://localhost:9000"
  * 
- *       if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
- *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
+ *       if (process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL) {
+ *         SWITCHYARD_BACKEND_URL = process.env.NEXT_PUBLIC_SWITCHYARD_BACKEND_URL
  *       }
  * 
  *       export const sdk = new Switchyard({
- *         baseUrl: MEDUSA_BACKEND_URL,
+ *         baseUrl: SWITCHYARD_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
- *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
+ *         publishableKey: process.env.NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY,
  *       })
  * 
  *       sdk.store.product.list()

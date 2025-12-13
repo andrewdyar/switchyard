@@ -35,7 +35,7 @@ const HeroPricing: React.FC<HeroPricingProps> = ({ data }) => {
                   index !== data.options.length - 1 &&
                     "border-solid border-r border-medusa-border-base",
                   index === data.options.length - 1 &&
-                    "bg-medusa-bg-subtle rounded-tr"
+                    "bg-switchyard-bg-subtle rounded-tr"
                 )}
               >
                 <div className="flex flex-col w-full">
@@ -79,7 +79,7 @@ const HeroPricing: React.FC<HeroPricingProps> = ({ data }) => {
               `p-1 flex items-start border-b border-medusa-border-base`,
               index !== data.options.length - 1 &&
                 "border-solid border-r border-medusa-border-base",
-              index === data.options.length - 1 && "bg-medusa-bg-subtle"
+              index === data.options.length - 1 && "bg-switchyard-bg-subtle"
             )}
           >
             <div className="w-full flex items-start">
@@ -100,7 +100,7 @@ const HeroPricing: React.FC<HeroPricingProps> = ({ data }) => {
               `p-1 flex flex-col gap-0.75`,
               index !== data.options.length - 1 &&
                 "border-solid border-r border-medusa-border-base",
-              index === data.options.length - 1 && "bg-medusa-bg-subtle"
+              index === data.options.length - 1 && "bg-switchyard-bg-subtle"
             )}
           >
             {option.pre_features && (
@@ -134,7 +134,7 @@ const HeroPricing: React.FC<HeroPricingProps> = ({ data }) => {
               index !== data.options.length - 1 &&
                 "border-solid border-r border-medusa-border-base",
               index === data.options.length - 1 &&
-                "bg-medusa-bg-subtle rounded-br"
+                "bg-switchyard-bg-subtle rounded-br"
             )}
           >
             <div className="w-full flex flex-col gap-0.25">

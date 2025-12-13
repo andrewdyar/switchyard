@@ -1,5 +1,5 @@
 /**
- * Re-implementation of enum from `@switchyard/medusa` as it cannot be imported
+ * Re-implementation of enum from `@switchyard/core` as it cannot be imported
  */
 export enum PriceListStatus {
   ACTIVE = "active",
@@ -12,7 +12,7 @@ export enum PriceListDateStatus {
 }
 
 /**
- * Re-implementation of enum from `@switchyard/medusa` as it cannot be imported
+ * Re-implementation of enum from `@switchyard/core` as it cannot be imported
  */
 export enum PriceListType {
   SALE = "sale",

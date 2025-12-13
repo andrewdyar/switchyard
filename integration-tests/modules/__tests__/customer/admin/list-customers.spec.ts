@@ -6,11 +6,11 @@ import {
 
 import { ICustomerModuleService } from "@switchyard/types"
 
-const { medusaIntegrationTestRunner } = require("@switchyard/test-utils")
+const { switchyardIntegrationTestRunner } = require("@switchyard/test-utils")
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env: {},
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("GET /admin/customers", () => {

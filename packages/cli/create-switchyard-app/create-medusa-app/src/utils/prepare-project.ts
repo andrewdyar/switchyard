@@ -9,10 +9,10 @@ import type { Client } from "@switchyard/deps/pg"
 import PackageManager from "./package-manager.js"
 import { updatePackageVersions } from "./update-package-versions.js"
 
-const ADMIN_EMAIL = "admin@medusa-test.com"
+const ADMIN_EMAIL = "admin@switchyard-test.run"
 let STORE_CORS = "http://localhost:8000"
 let ADMIN_CORS = "http://localhost:5173,http://localhost:9000"
-const DOCS_CORS = "https://docs.medusajs.com"
+const DOCS_CORS = "https://docs.switchyard.run"
 const AUTH_CORS = [ADMIN_CORS, STORE_CORS, DOCS_CORS].join(",")
 STORE_CORS += `,${DOCS_CORS}`
 ADMIN_CORS += `,${DOCS_CORS}`
@@ -300,8 +300,8 @@ async function prepareProject({
       fs.writeFileSync(
         nextjsEnvPath,
         originalContent.replace(
-          "NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=pk_test",
-          `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=${apiKeys.rows[0].token}`
+          "NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY=pk_test",
+          `NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY=${apiKeys.rows[0].token}`
         )
       )
     }

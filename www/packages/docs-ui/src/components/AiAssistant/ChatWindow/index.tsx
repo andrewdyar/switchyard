@@ -146,7 +146,7 @@ export const AiAssistantChatWindow = () => {
     <>
       <div
         className={clsx(
-          "fixed top-0 left-0 h-screen w-screen z-50 bg-medusa-bg-overlay",
+          "fixed top-0 left-0 h-screen w-screen z-50 bg-switchyard-bg-overlay",
           !chatOpened && "hidden",
           chatOpened && "block",
           type === "default" && "xxl:hidden"
@@ -163,7 +163,7 @@ export const AiAssistantChatWindow = () => {
             chatOpened && "xxl:!w-ai-assistant",
           ],
           "shadow-elevation-modal dark:shadow-elevation-modal-dark",
-          "bg-medusa-bg-base rounded-docs_DEFAULT overflow-x-hidden",
+          "bg-switchyard-bg-base rounded-docs_DEFAULT overflow-x-hidden",
           "flex-col justify-between m-docs_0.25 max-w-ai-assistant",
           chatOpened && ["!right-0"],
           !chatOpened && ["!fixed"]

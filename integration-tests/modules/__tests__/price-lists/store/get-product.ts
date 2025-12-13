@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { PriceListStatus, PriceListType } from "@switchyard/utils"
 import {
   createAdminUser,
@@ -11,13 +11,13 @@ jest.setTimeout(50000)
 
 const adminHeaders = {
   headers: {
-    "x-medusa-access-token": "test_token",
+    "x-switchyard-access-token": "test_token",
   },
 }
 
 const env = {}
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe.skip("GET /store/products/:id", () => {

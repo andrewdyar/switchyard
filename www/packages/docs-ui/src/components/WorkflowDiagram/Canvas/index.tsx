@@ -123,7 +123,7 @@ export const WorkflowDiagramCanvas = ({
                 scale,
               }}
               className={clsx(
-                "bg-medusa-bg-subtle relative size-[500rem] origin-top-left items-start justify-start overflow-hidden",
+                "bg-switchyard-bg-subtle relative size-[500rem] origin-top-left items-start justify-start overflow-hidden",
                 "bg-[radial-gradient(var(--docs-border-base)_1.5px,transparent_0)] bg-[length:20px_20px] bg-repeat",
                 !isDragging && "cursor-grab",
                 isDragging && "cursor-grabbing"
@@ -147,20 +147,20 @@ export const WorkflowDiagramCanvas = ({
             </motion.div>
           </div>
         </div>
-        <div className="bg-medusa-bg-base shadow-borders-base text-medusa-fg-subtle absolute bottom-docs_1 left-docs_1.5 flex h-[28px] items-center overflow-hidden rounded-docs_sm">
+        <div className="bg-switchyard-bg-base shadow-borders-base text-medusa-fg-subtle absolute bottom-docs_1 left-docs_1.5 flex h-[28px] items-center overflow-hidden rounded-docs_sm">
           <div className="flex items-center">
             <button
               onClick={zoomIn}
               type="button"
               disabled={!canZoomIn}
               aria-label="Zoom in"
-              className="disabled:text-medusa-fg-disabled transition-fg hover:bg-medusa-bg-base-hover active:bg-medusa-bg-base-pressed focus-visible:bg-medusa-bg-base-pressed border-r p-docs_0.25 outline-none"
+              className="disabled:text-medusa-fg-disabled transition-fg hover:bg-switchyard-bg-base-hover active:bg-switchyard-bg-base-pressed focus-visible:bg-switchyard-bg-base-pressed border-r p-docs_0.25 outline-none"
             >
               <PlusMini />
             </button>
             <div>
               <DropdownMenu>
-                <DropdownMenu.Trigger className="disabled:text-medusa-fg-disabled transition-fg hover:bg-medusa-bg-base-hover active:bg-medusa-bg-base-pressed focus-visible:bg-medusa-bg-base-pressed flex w-[50px] items-center justify-center border-r p-docs_0.25 outline-none">
+                <DropdownMenu.Trigger className="disabled:text-medusa-fg-disabled transition-fg hover:bg-switchyard-bg-base-hover active:bg-switchyard-bg-base-pressed focus-visible:bg-switchyard-bg-base-pressed flex w-[50px] items-center justify-center border-r p-docs_0.25 outline-none">
                   <Text
                     as="span"
                     size="xsmall"
@@ -170,7 +170,7 @@ export const WorkflowDiagramCanvas = ({
                     {Math.round(zoom * 100)}%
                   </Text>
                 </DropdownMenu.Trigger>
-                <DropdownMenu.Content className="bg-medusa-bg-base">
+                <DropdownMenu.Content className="bg-switchyard-bg-base">
                   {[50, 75, 100, 125, 150].map((value) => (
                     <DropdownMenu.Item
                       key={value}
@@ -188,7 +188,7 @@ export const WorkflowDiagramCanvas = ({
               type="button"
               disabled={!canZoomOut}
               aria-label="Zoom out"
-              className="disabled:text-medusa-fg-disabled transition-fg hover:bg-medusa-bg-base-hover active:bg-medusa-bg-base-pressed focus-visible:bg-medusa-bg-base-pressed border-r p-docs_0.25 outline-none"
+              className="disabled:text-medusa-fg-disabled transition-fg hover:bg-switchyard-bg-base-hover active:bg-switchyard-bg-base-pressed focus-visible:bg-switchyard-bg-base-pressed border-r p-docs_0.25 outline-none"
             >
               <MinusMini />
             </button>
@@ -197,7 +197,7 @@ export const WorkflowDiagramCanvas = ({
             onClick={resetCanvas}
             type="button"
             aria-label="Reset canvas"
-            className="disabled:text-medusa-fg-disabled transition-fg hover:bg-medusa-bg-base-hover active:bg-medusa-bg-base-pressed focus-visible:bg-medusa-bg-base-pressed p-docs_0.25 outline-none"
+            className="disabled:text-medusa-fg-disabled transition-fg hover:bg-switchyard-bg-base-hover active:bg-switchyard-bg-base-pressed focus-visible:bg-switchyard-bg-base-pressed p-docs_0.25 outline-none"
           >
             <ArrowPathMini />
           </button>

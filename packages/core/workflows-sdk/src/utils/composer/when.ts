@@ -23,7 +23,7 @@ type ThenFunc = <ThenResolver extends () => any>(
  * This function allows you to execute steps only if a condition is satisfied. As you can't use if conditions in
  * a workflow's constructor function, use `when-then` instead.
  *
- * Learn more about why you can't use if conditions and `when-then` in [this documentation](https://docs.medusajs.com/learn/fundamentals/workflows/conditions).
+ * Learn more about why you can't use if conditions and `when-then` in [this documentation](https://docs.switchyard.run/learn/fundamentals/workflows/conditions).
  *
  * @param values - The data to pass to the second parameter function.
  * @param condition - A function that returns a boolean value, indicating whether the steps in `then` should be executed.

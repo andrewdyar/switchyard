@@ -51,8 +51,8 @@ export type ReceiveItemReturnRequestValidationStepInput = {
  * 
  * :::note
  * 
- * You can retrieve an order, return, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, return, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 
@@ -99,7 +99,7 @@ export const receiveItemReturnRequestValidationStep = createStep(
 export const receiveItemReturnRequestWorkflowId = "receive-item-return-request"
 /**
  * This workflow marks return items as received. It's used by the 
- * [Add Received Items to Return Admin API Route](https://docs.medusajs.com/api/admin#returns_postreturnsidreceiveitems).
+ * [Add Received Items to Return Admin API Route](https://docs.switchyard.run/api/admin#returns_postreturnsidreceiveitems).
  * 
  * You can use this workflow within your customizations or your own custom workflows, allowing you to mark return items as received
  * in your custom flows.

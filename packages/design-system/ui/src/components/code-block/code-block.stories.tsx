@@ -23,14 +23,14 @@ const snippets = [
     code: `curl -H 'x-publishable-key: YOUR_API_KEY' 'http://localhost:9000/store/products/PRODUCT_ID'`,
   },
   {
-    label: "Medusa JS Client",
+    label: "Switchyard JS Client",
     language: "jsx",
-    code: `// Install the JS Client in your storefront project: @switchyard/medusa-js\n\nimport Medusa from "@switchyard/medusa-js"\n\nconst medusa = new Medusa({ publishableApiKey: "YOUR_API_KEY"})\nconst product = await medusa.products.retrieve("PRODUCT_ID")\nconsole.log(product.id)`,
+    code: `// Install the JS Client in your storefront project: @switchyard/core-js\n\nimport Switchyard from "@switchyard/core-js"\n\nconst medusa = new Medusa({ publishableApiKey: "YOUR_API_KEY"})\nconst product = await medusa.products.retrieve("PRODUCT_ID")\nconsole.log(product.id)`,
   },
   {
-    label: "Medusa React",
+    label: "Switchyard React",
     language: "tsx",
-    code: `// Install the React SDK and required dependencies in your storefront project:\n// switchyard-react @tanstack/react-query @switchyard/medusa\n\nimport { useProduct } from "switchyard-react"\n\nconst { product } = useProduct("PRODUCT_ID")\nconsole.log(product.id)`,
+    code: `// Install the React SDK and required dependencies in your storefront project:\n// switchyard-react @tanstack/react-query @switchyard/core\n\nimport { useProduct } from "switchyard-react"\n\nconst { product } = useProduct("PRODUCT_ID")\nconsole.log(product.id)`,
   },
 ]
 

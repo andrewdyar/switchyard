@@ -13,7 +13,7 @@ type CloneRepoOptions = {
   isPlugin?: boolean
 }
 
-const DEFAULT_REPO = "https://github.com/medusajs/medusa-starter-default"
+const DEFAULT_REPO = "https://github.com/medusajs/switchyard-starter-default"
 const DEFAULT_PLUGIN_REPO = "https://github.com/medusajs/medusa-starter-plugin"
 const BRANCH = "master"
 const PLUGIN_BRANCH = "main"

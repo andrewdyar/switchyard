@@ -1,5 +1,5 @@
 import { defineLink } from "@switchyard/framework/utils"
-import ProductModule from "@switchyard/medusa/product"
+import ProductModule from "@switchyard/product"
 import Translation from "../modules/translation"
 
 export default defineLink(

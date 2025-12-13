@@ -5,11 +5,11 @@ import {
   createAdminUser,
 } from "../../../../helpers/create-admin-user"
 
-const { medusaIntegrationTestRunner } = require("@switchyard/test-utils")
+const { switchyardIntegrationTestRunner } = require("@switchyard/test-utils")
 
 jest.setTimeout(30000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     let fulfillmentSet1
 

@@ -49,7 +49,7 @@
  *                 type: string
  *                 description: The promotion's type.
  *                 externalDocs:
- *                   url: https://docs.switchyard.com/resources/commerce-modules/promotion/concepts#what-is-a-promotion
+ *                   url: https://docs.switchyard.run/resources/commerce-modules/promotion/concepts#what-is-a-promotion
  *                 enum:
  *                   - standard
  *                   - buyget

@@ -26,7 +26,7 @@ export const MainNavThemeMenu = () => {
             "flex items-center gap-docs_0.5",
             "py-docs_0.25 px-docs_0.5 cursor-pointer",
             "rounded-docs_xs text-medusa-fg-base",
-            "hover:bg-medusa-bg-component-hover"
+            "hover:bg-switchyard-bg-component-hover"
           )}
           tabIndex={-1}
           onClick={() => setColorMode("light")}
@@ -50,7 +50,7 @@ export const MainNavThemeMenu = () => {
             "flex items-center gap-docs_0.5",
             "py-docs_0.25 px-docs_0.5 cursor-pointer",
             "rounded-docs_xs text-medusa-fg-base",
-            "hover:bg-medusa-bg-component-hover"
+            "hover:bg-switchyard-bg-component-hover"
           )}
           tabIndex={-1}
           onClick={() => setColorMode("dark")}

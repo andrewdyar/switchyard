@@ -8,7 +8,7 @@
     "url": "https://github.com/medusajs/medusa.git",
     "directory": "packages/design-system/ui-preset"
   },
-  "author": "Kasper Kristensen <kasper@medusajs.com>",
+  "author": "Kasper Kristensen <kasper@switchyard.run>",
   "exports": {
     ".": {
       "import": "./dist/index.mjs",

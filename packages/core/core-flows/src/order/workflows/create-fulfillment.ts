@@ -81,8 +81,8 @@ export type CreateFulfillmentValidateOrderStepInput = {
  *
  * :::note
  *
- * You can retrieve an order's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -361,7 +361,7 @@ export type CreateOrderFulfillmentWorkflowInput =
 
 export const createOrderFulfillmentWorkflowId = "create-order-fulfillment"
 /**
- * This workflow creates a fulfillment for an order. It's used by the [Create Order Fulfillment Admin API Route](https://docs.medusajs.com/api/admin#orders_postordersidfulfillments).
+ * This workflow creates a fulfillment for an order. It's used by the [Create Order Fulfillment Admin API Route](https://docs.switchyard.run/api/admin#orders_postordersidfulfillments).
  *
  * This workflow has a hook that allows you to perform custom actions on the created fulfillment. For example, you can pass under `additional_data` custom data that
  * allows you to create custom data models linked to the fulfillment.

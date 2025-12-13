@@ -134,7 +134,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    * The authentication happens either by directly authenticating or returning a redirect URL to continue
    * the authentication with a third party provider.
    *
-   * Related Read: [Learn about the different authentication flows in Medusa](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route).
+   * Related Read: [Learn about the different authentication flows in Medusa](https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route).
    *
    * @param {AuthenticationInput} data - The details of the authentication request.
    * @param {AuthIdentityProviderService} authIdentityProviderService - The service used to retrieve or
@@ -248,7 +248,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    * This method is only used in a basic authentication flow, such as when using an email and password
    * to register and authenticate a user.
    *
-   * Related Read: [Learn about the different authentication flows in Medusa](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route).
+   * Related Read: [Learn about the different authentication flows in Medusa](https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route).
    *
    * @param {AuthenticationInput} data - The details of the authentication request.
    * @param {AuthIdentityProviderService} authIdentityProviderService - The service used to retrieve or
@@ -370,7 +370,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    * with a social account, the {@link authenticate} method is called first.
    *
    * Then, the third-party service redirects to a frontend URL passing it a `code` query parameter.
-   * The frontend should then send a request to the Medusa application's validate callback API route, passing it the code.
+   * The frontend should then send a request to the Switchyard application's validate callback API route, passing it the code.
    * That route uses this method to verify the callback's code.
    *
    * If the callback is verified successfully, the provider creates an auth identity for the user, or updates the auth identity's user information.
@@ -381,7 +381,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    * - `user_metadata`: Store metadata of the user's details. For example, if the third-party service returns the user's information such as email
    * or name, you store this data in this property.
    *
-   * Related Guide: [Learn about the different authentication flows in Medusa](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route).
+   * Related Guide: [Learn about the different authentication flows in Medusa](https://docs.switchyard.run/resources/commerce-modules/auth/authentication-route).
    *
    * @param {AuthenticationInput} data - The details of the authentication request.
    * @param {AuthIdentityProviderService} authIdentityProviderService - The service used to retrieve or

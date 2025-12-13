@@ -1,7 +1,7 @@
 /**
  * Goods Source Module Service
  * 
- * Manages links between Medusa products and source catalog.
+ * Manages links between Switchyard products and source catalog.
  */
 
 import { SwitchyardService } from "@switchyard/framework/utils"
@@ -11,7 +11,7 @@ class GoodsSourceModuleService extends SwitchyardService({
   SourceProductLink,
 }) {
   /**
-   * Link a Medusa product to a source catalog item
+   * Link a Switchyard product to a source catalog item
    */
   async linkProductToSource(
     productId: string, 
@@ -25,7 +25,7 @@ class GoodsSourceModuleService extends SwitchyardService({
   }
 
   /**
-   * Get source product info for a Medusa product
+   * Get source product info for a Switchyard product
    */
   async getSourceForProduct(productId: string) {
     const links = await this.listSourceProductLinks({

@@ -20,7 +20,7 @@ export type CalculateShippingOptionsPricesWorkflowInput = {
      * Custom data that's necessary for the shipping option's fulfillment provider
      * to calculate the price.
      * 
-     * Learn more about this property in [this documentation](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property).
+     * Learn more about this property in [this documentation](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property).
      */
     data?: Record<string, unknown>
   }[]

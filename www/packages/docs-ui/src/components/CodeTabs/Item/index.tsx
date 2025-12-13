@@ -34,7 +34,7 @@ export const CodeTab = ({
             blockStyle === "loud" && "text-medusa-contrast-fg-secondary",
             blockStyle === "subtle" && [
               colorMode === "light" &&
-                "text-medusa-fg-subtle hover:bg-medusa-bg-base",
+                "text-medusa-fg-subtle hover:bg-switchyard-bg-base",
               colorMode === "dark" &&
                 "text-medusa-contrast-fg-secondary hover:bg-medusa-code-bg-base",
             ],

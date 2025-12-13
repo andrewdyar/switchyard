@@ -13,7 +13,7 @@ export const dismissLinksWorkflowId = "dismiss-link"
  * You can use this workflow within your customizations or your own custom workflows, allowing you to
  * dismiss links within your custom flows.
  *
- * Learn more about links in [this documentation](https://docs.medusajs.com/learn/fundamentals/module-links/link).
+ * Learn more about links in [this documentation](https://docs.switchyard.run/learn/fundamentals/module-links/link).
  *
  * @example
  * const { result } = await dismissLinksWorkflow(container)

@@ -49,8 +49,8 @@ export type CreateExchangeShippingMethodValidationStepInput = {
  *
  * :::note
  *
- * You can retrieve an order, order exchange, and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order, order exchange, and order change details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -112,8 +112,8 @@ export const createExchangeShippingMethodWorkflowId =
   "create-exchange-shipping-method"
 /**
  * This workflow creates an inbound (return) or outbound (delivery of new items) shipping method for an exchange.
- * It's used by the [Add Inbound Shipping Admin API Route](https://docs.medusajs.com/api/admin#exchanges_postexchangesidinboundshippingmethod)
- * and the [Add Outbound Shipping Admin API Route](https://docs.medusajs.com/api/admin#exchanges_postexchangesidoutboundshippingmethod).
+ * It's used by the [Add Inbound Shipping Admin API Route](https://docs.switchyard.run/api/admin#exchanges_postexchangesidinboundshippingmethod)
+ * and the [Add Outbound Shipping Admin API Route](https://docs.switchyard.run/api/admin#exchanges_postexchangesidoutboundshippingmethod).
  *
  * You can use this workflow within your customizations or your own custom workflows, allowing you to create a shipping method
  * for an exchange in your custom flow.

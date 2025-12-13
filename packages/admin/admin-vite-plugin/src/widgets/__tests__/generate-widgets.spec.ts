@@ -45,7 +45,7 @@ const expectedWidgets = `
 
 describe("generateWidgets", () => {
   it("should generate widgets", async () => {
-    const mockFiles = ["Users/user/medusa/src/admin/widgets/widget.tsx"]
+    const mockFiles = ["Users/user/switchyard/src/admin/widgets/widget.tsx"]
     vi.mocked(utils.crawl).mockResolvedValue(mockFiles)
 
     vi.mocked(fs.readFile).mockImplementation(async (file) =>
@@ -53,11 +53,11 @@ describe("generateWidgets", () => {
     )
 
     const result = await generateWidgets(
-      new Set(["Users/user/medusa/src/admin"])
+      new Set(["Users/user/switchyard/src/admin"])
     )
 
     expect(result.imports).toEqual([
-      `import WidgetComponent0, { config as WidgetConfig0 } from "Users/user/medusa/src/admin/widgets/widget.tsx"`,
+      `import WidgetComponent0, { config as WidgetConfig0 } from "Users/user/switchyard/src/admin/widgets/widget.tsx"`,
     ])
     expect(utils.normalizeString(result.code)).toEqual(
       utils.normalizeString(expectedWidgets)

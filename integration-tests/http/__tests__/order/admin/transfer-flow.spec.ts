@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { Modules } from "@switchyard/utils"
 import {
   adminHeaders,
@@ -10,7 +10,7 @@ import { createOrderSeeder } from "../../fixtures/order"
 
 jest.setTimeout(300000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Transfer Order flow (Admin)", () => {
       let order
@@ -195,7 +195,7 @@ medusaIntegrationTestRunner({
             "/admin/customers",
             {
               first_name: "guest",
-              email: "guest@medusajs.com",
+              email: "guest@switchyard.run",
             },
             adminHeaders
           )
@@ -215,7 +215,7 @@ medusaIntegrationTestRunner({
         expect(err.response.data).toEqual(
           expect.objectContaining({
             type: "invalid_data",
-            message: `Cannot transfer order: ${order.id} to a guest customer account: guest@medusajs.com`,
+            message: `Cannot transfer order: ${order.id} to a guest customer account: guest@switchyard.run`,
           })
         )
       })

@@ -15,7 +15,7 @@ import {
   generateJwtToken,
   InjectManager,
   InjectTransactionManager,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardError,
   SwitchyardService,
   moduleEventBuilderFactory,
@@ -30,8 +30,8 @@ import { getExpiresAt } from "../utils/utils"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  userService: ModulesSdkTypes.IMedusaInternalService<any>
-  inviteService: ModulesSdkTypes.IMedusaInternalService<any>
+  userService: ModulesSdkTypes.ISwitchyardInternalService<any>
+  inviteService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 const DEFAULT_VALID_INVITE_DURATION_SECONDS = 60 * 60 * 24
@@ -48,10 +48,10 @@ export default class UserModuleService
 {
   protected baseRepository_: DAL.RepositoryService
 
-  protected readonly userService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly userService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof User>
   >
-  protected readonly inviteService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly inviteService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof Invite>
   >
   protected readonly config: {
@@ -98,7 +98,7 @@ export default class UserModuleService
   @InjectManager()
   async validateInviteToken(
     token: string,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<UserTypes.InviteDTO> {
     const options = {
       ...(this.config.jwt_verify_options ?? this.config.jwtOptions),
@@ -136,7 +136,7 @@ export default class UserModuleService
   @EmitEvents()
   async refreshInviteTokens(
     inviteIds: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<UserTypes.InviteDTO[]> {
     const invites = await this.refreshInviteTokens_(inviteIds, sharedContext)
 
@@ -160,7 +160,7 @@ export default class UserModuleService
   @InjectTransactionManager()
   async refreshInviteTokens_(
     inviteIds: string[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ) {
     const [invites, count] = await this.inviteService_.listAndCount(
       { id: inviteIds },
@@ -210,7 +210,7 @@ export default class UserModuleService
   // @ts-expect-error
   async createUsers(
     data: UserTypes.CreateUserDTO[] | UserTypes.CreateUserDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<UserTypes.UserDTO | UserTypes.UserDTO[]> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -239,7 +239,7 @@ export default class UserModuleService
   // @ts-expect-error
   async updateUsers(
     data: UserTypes.UpdateUserDTO | UserTypes.UpdateUserDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<UserTypes.UserDTO | UserTypes.UserDTO[]> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -268,7 +268,7 @@ export default class UserModuleService
   // @ts-expect-error
   async createInvites(
     data: UserTypes.CreateInviteDTO[] | UserTypes.CreateInviteDTO,
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<UserTypes.InviteDTO | UserTypes.InviteDTO[]> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -294,7 +294,7 @@ export default class UserModuleService
   @InjectTransactionManager()
   private async createInvites_(
     data: UserTypes.CreateInviteDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof Invite>[]> {
     const alreadyExistingUsers = await this.listUsers({
       email: data.map((d) => d.email),
@@ -340,7 +340,7 @@ export default class UserModuleService
   // @ts-expect-error
   async updateInvites(
     data: UserTypes.UpdateInviteDTO | UserTypes.UpdateInviteDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<UserTypes.InviteDTO | UserTypes.InviteDTO[]> {
     const input = Array.isArray(data) ? data : [data]
 

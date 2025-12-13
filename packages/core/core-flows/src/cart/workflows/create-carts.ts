@@ -43,9 +43,9 @@ export type CreateCartWorkflowInput = CreateCartWorkflowInputDTO &
 export const createCartWorkflowId = "create-cart"
 /**
  * This workflow creates and returns a cart. You can set the cart's items, region, customer, and other details. This workflow is executed by the
- * [Create Cart Store API Route](https://docs.medusajs.com/api/store#carts_postcarts).
+ * [Create Cart Store API Route](https://docs.switchyard.run/api/store#carts_postcarts).
  *
- * This workflow has a hook that allows you to perform custom actions on the created cart. You can see an example in [this guide](https://docs.medusajs.com/resources/commerce-modules/cart/extend#step-4-consume-cartcreated-workflow-hook).
+ * This workflow has a hook that allows you to perform custom actions on the created cart. You can see an example in [this guide](https://docs.switchyard.run/resources/commerce-modules/cart/extend#step-4-consume-cartcreated-workflow-hook).
  *
  * You can also use this workflow within your customizations or your own custom workflows, allowing you to wrap custom logic around cart creation.
  *
@@ -88,7 +88,7 @@ export const createCartWorkflowId = "create-cart"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { createCartWorkflow } from "@switchyard/medusa/core-flows";
+ * import { createCartWorkflow } from "@switchyard/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * createCartWorkflow.hooks.setPricingContext((
@@ -104,7 +104,7 @@ export const createCartWorkflowId = "create-cart"
  *
  * :::note
  *
- * Learn more about prices calculation context in the [Prices Calculation](https://docs.medusajs.com/resources/commerce-modules/pricing/price-calculation) documentation.
+ * Learn more about prices calculation context in the [Prices Calculation](https://docs.switchyard.run/resources/commerce-modules/pricing/price-calculation) documentation.
  *
  * :::
  */

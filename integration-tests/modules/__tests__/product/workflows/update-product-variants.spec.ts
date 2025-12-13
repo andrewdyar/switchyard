@@ -1,11 +1,11 @@
 import { updateProductVariantsWorkflow } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import { IProductModuleService } from "@switchyard/types"
 import { SwitchyardError, Modules } from "@switchyard/utils"
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env: {},
   testSuite: ({ getContainer }) => {
     describe("Workflows: Update product variants", () => {

@@ -57,11 +57,11 @@ export type ItemTaxCalculationLine = {
  *
  * ### constructor
  *
- * You can use the `constructor` of your Tax Module Provider's service to access the resources registered in the [Module Container](https://docs.medusajs.com/resources/medusa-container-resources#module-container-resources).
+ * You can use the `constructor` of your Tax Module Provider's service to access the resources registered in the [Module Container](https://docs.switchyard.run/resources/switchyard-container-resources#module-container-resources).
  *
  * You can also use the constructor to initialize your integration with the third-party provider. For example, if you use a client to connect to the third-party provider’s APIs, you can initialize it in the constructor and use it in other methods in the service.
  *
- * Additionally, if you’re creating your tax provider as a plugin or a module provider to be installed in any Medusa application and you want to access its options, you can access them in the second parameter of the constructor.
+ * Additionally, if you’re creating your tax provider as a plugin or a module provider to be installed in any Switchyard application and you want to access its options, you can access them in the second parameter of the constructor.
  *
  * For example:
  *

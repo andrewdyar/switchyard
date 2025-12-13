@@ -1,7 +1,7 @@
 /**
  * Goods Product Attributes Model
  * 
- * Extends Medusa products with Goods-specific attributes:
+ * Extends Switchyard products with Goods-specific attributes:
  * - Brand
  * - Unit of measure
  * - Dietary flags (organic, gluten-free, vegan, etc.)
@@ -13,7 +13,7 @@ import { model } from "@switchyard/framework/utils"
 export const ProductAttributes = model.define("goods_product_attributes", {
   id: model.id().primaryKey(),
   
-  // Will be linked to Medusa product via Module Link
+  // Will be linked to Switchyard product via Module Link
   
   // Brand information
   brand: model.text().nullable(),

@@ -76,7 +76,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
 
       it("should send a notification and stores it in the database", async () => {
         const notification = {
-          to: "admin@medusa.com",
+          to: "admin@switchyard.run",
           from: "sender@verified.com",
           template: "some-template",
           channel: "email",
@@ -88,7 +88,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
         const retrieved = await service.retrieveNotification(result.id)
 
         const expected = {
-          to: "admin@medusa.com",
+          to: "admin@switchyard.run",
           from: "sender@verified.com",
           template: "some-template",
           channel: "email",
@@ -104,7 +104,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
 
       it("should send a notification and don't store the content in the database", async () => {
         const notification = {
-          to: "admin@medusa.com",
+          to: "admin@switchyard.run",
           template: "signup-template",
           channel: "email",
           data: {},
@@ -129,7 +129,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
 
       it("should send a notification without a template", async () => {
         const notification = {
-          to: "admin@medusa.com",
+          to: "admin@switchyard.run",
           channel: "email",
           content: {
             html: "<p>Welcome to medusa</p>",
@@ -152,7 +152,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
 
       it("should emit an event when a notification is created", async () => {
         const notification = {
-          to: "admin@medusa.com",
+          to: "admin@switchyard.run",
           template: "some-template",
           channel: "email",
           data: {},
@@ -186,7 +186,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
 
       it("should ensures the same notification is not sent twice", async () => {
         const notification = {
-          to: "admin@medusa.com",
+          to: "admin@switchyard.run",
           template: "some-template",
           channel: "email",
           data: {},
@@ -208,7 +208,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
 
       it("should manage the status of multiple notification properly in any scenarios", async () => {
         const notification1 = {
-          to: "admin@medusa.com",
+          to: "admin@switchyard.run",
           template: "some-template",
           channel: "email",
           data: {},
@@ -224,7 +224,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
         }
 
         const notification3 = {
-          to: "admin@medusa.com",
+          to: "admin@switchyard.run",
           template: "some-template",
           channel: "email",
           data: {},

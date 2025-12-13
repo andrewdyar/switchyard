@@ -7,7 +7,7 @@ import {
   updateOrderChangeActionsWorkflow,
   updateOrderChangeActionsWorkflowId,
 } from "@switchyard/core-flows"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IOrderModuleService,
   OrderChangeActionDTO,
@@ -19,7 +19,7 @@ import { createOrderFixture, prepareDataFixtures } from "./__fixtures__"
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env: {},
   testSuite: ({ getContainer }) => {
     let container

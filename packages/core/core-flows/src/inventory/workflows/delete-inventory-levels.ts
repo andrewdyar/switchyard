@@ -36,8 +36,8 @@ export type ValidateInventoryLevelsDeleteStepInput = {
  *
  * :::note
  *
- * You can retrieve an inventory level's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an inventory level's details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  *
  * :::
  *
@@ -107,7 +107,7 @@ export const deleteInventoryLevelsWorkflowId =
   "delete-inventory-levels-workflow"
 /**
  * This workflow deletes one or more inventory levels. It's used by the
- * [Delete Inventory Levels Admin API Route](https://docs.medusajs.com/api/admin#inventory-items_deleteinventoryitemsidlocationlevelslocation_id).
+ * [Delete Inventory Levels Admin API Route](https://docs.switchyard.run/api/admin#inventory-items_deleteinventoryitemsidlocationlevelslocation_id).
  *
  * You can use this workflow within your own customizations or custom workflows, allowing you
  * to delete inventory levels in your custom flows.

@@ -152,7 +152,7 @@ export const CodeBlock = ({
         !overrideColors.bg && [
           blockStyle === "loud" && "bg-medusa-contrast-bg-base",
           blockStyle === "subtle" && [
-            colorMode === "light" && "bg-medusa-bg-subtle",
+            colorMode === "light" && "bg-switchyard-bg-subtle",
             colorMode === "dark" && "bg-medusa-code-bg-base",
           ],
         ]

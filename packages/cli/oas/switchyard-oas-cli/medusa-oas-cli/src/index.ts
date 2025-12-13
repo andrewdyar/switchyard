@@ -25,7 +25,7 @@ const run = async () => {
 
 export function getBaseCommand() {
   const command = new Command()
-  command.name("medusa-oas")
+  command.name("switchyard-oas")
   command.action(async () => {
     console.log("No command provided.")
     command.outputHelp({ error: true })

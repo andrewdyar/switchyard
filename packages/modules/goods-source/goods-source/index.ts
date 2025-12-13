@@ -1,7 +1,7 @@
 /**
  * Goods Source Module
  * 
- * Custom Medusa module for linking commerce products
+ * Custom Switchyard module for linking commerce products
  * back to the source catalog (source_products table).
  */
 

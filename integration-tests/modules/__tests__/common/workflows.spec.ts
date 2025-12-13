@@ -7,7 +7,7 @@ import {
   updateLinksWorkflowId,
 } from "@switchyard/core-flows"
 import { Modules } from "@switchyard/utils"
-import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { switchyardIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,
@@ -15,7 +15,7 @@ import {
 
 jest.setTimeout(50000)
 
-medusaIntegrationTestRunner({
+switchyardIntegrationTestRunner({
   env: {},
   testSuite: ({ getContainer, api, dbConnection }) => {
     describe("Workflows: Common", () => {

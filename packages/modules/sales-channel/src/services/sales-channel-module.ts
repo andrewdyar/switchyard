@@ -17,7 +17,7 @@ import {
   InjectManager,
   InjectTransactionManager,
   isString,
-  MedusaContext,
+  SwitchyardContext,
   SwitchyardService,
   promiseAll,
 } from "@switchyard/framework/utils"
@@ -28,7 +28,7 @@ import { joinerConfig } from "../joinfer-config"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
-  salesChannelService: ModulesSdkTypes.IMedusaInternalService<any>
+  salesChannelService: ModulesSdkTypes.ISwitchyardInternalService<any>
 }
 
 export default class SalesChannelModuleService
@@ -38,7 +38,7 @@ export default class SalesChannelModuleService
   implements ISalesChannelModuleService
 {
   protected baseRepository_: DAL.RepositoryService
-  protected readonly salesChannelService_: ModulesSdkTypes.IMedusaInternalService<
+  protected readonly salesChannelService_: ModulesSdkTypes.ISwitchyardInternalService<
     InferEntityType<typeof SalesChannel>
   >
 
@@ -72,7 +72,7 @@ export default class SalesChannelModuleService
   // @ts-expect-error
   async createSalesChannels(
     data: CreateSalesChannelDTO | CreateSalesChannelDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<SalesChannelDTO | SalesChannelDTO[]> {
     const input = Array.isArray(data) ? data : [data]
 
@@ -86,7 +86,7 @@ export default class SalesChannelModuleService
   @InjectTransactionManager()
   async createSalesChannels_(
     data: CreateSalesChannelDTO[],
-    @MedusaContext() sharedContext: Context
+    @SwitchyardContext() sharedContext: Context
   ): Promise<InferEntityType<typeof SalesChannel>[]> {
     return await this.salesChannelService_.create(data, sharedContext)
   }
@@ -110,7 +110,7 @@ export default class SalesChannelModuleService
   async updateSalesChannels(
     idOrSelector: string | FilterableSalesChannelProps,
     data: UpdateSalesChannelDTO | UpdateSalesChannelDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<SalesChannelDTO | SalesChannelDTO[]> {
     let normalizedInput: UpdateSalesChanneInput[] = []
     if (isString(idOrSelector)) {
@@ -159,7 +159,7 @@ export default class SalesChannelModuleService
   @InjectTransactionManager()
   async upsertSalesChannels(
     data: UpsertSalesChannelDTO | UpsertSalesChannelDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<SalesChannelDTO | SalesChannelDTO[]> {
     const result = await this.upsertSalesChannels_(data, sharedContext)
 
@@ -171,7 +171,7 @@ export default class SalesChannelModuleService
   @InjectTransactionManager()
   protected async upsertSalesChannels_(
     data: UpsertSalesChannelDTO | UpsertSalesChannelDTO[],
-    @MedusaContext() sharedContext: Context = {}
+    @SwitchyardContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof SalesChannel>[]> {
     const input = Array.isArray(data) ? data : [data]
     const forUpdate = input.filter(

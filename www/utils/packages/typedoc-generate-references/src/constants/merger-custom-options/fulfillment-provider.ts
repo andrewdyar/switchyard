@@ -92,12 +92,12 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@switchyard/medusa/fulfillment",
+      resolve: "@switchyard/fulfillment",
       options: {
         providers: [
           // default provider
           {
-            resolve: "@switchyard/medusa/fulfillment-manual",
+            resolve: "@switchyard/fulfillment-manual",
             id: "manual",
           },
           {

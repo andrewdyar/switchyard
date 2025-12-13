@@ -35,7 +35,7 @@ const decodeHtmlEntities = (str: string | null | undefined): string | null | und
     .replace(/&#39;/g, "'")
 }
 
-// Map Medusa API field names to Goods database column names
+// Map Switchyard API field names to Goods database column names
 const mapProductFieldToColumn = (field: string): string => {
   // Map title -> name (source_products uses 'name' not 'title')
   if (field === 'title') return 'name'
@@ -64,7 +64,7 @@ export const remapKeysForProduct = (selectFields: string[]) => {
   return [...remappedProductFields, ...pricingFields]
 }
 
-// Map Medusa API variant field names to Goods database column names
+// Map Switchyard API variant field names to Goods database column names
 const mapVariantFieldToColumn = (field: string): string => {
   // Map title -> customer_friendly_size (product_skus uses 'customer_friendly_size' not 'title')
   if (field === 'title') return 'customer_friendly_size'
@@ -95,7 +95,7 @@ export const remapKeysForVariant = (selectFields: string[]) => {
 export const remapProductResponse = (
   product: ProductDTO
 ): HttpTypes.AdminProduct => {
-  // Map Goods database fields to Medusa API fields
+  // Map Goods database fields to Switchyard API fields
   const { name, image_url, description, ...rest } = product as any
   const title = decodeHtmlEntities(name || (product as any).title)
   const decodedDescription = decodeHtmlEntities(description)
@@ -117,7 +117,7 @@ export const remapVariantResponse = (
     return variant
   }
 
-  // Map Goods database fields to Medusa API fields
+  // Map Goods database fields to Switchyard API fields
   const { sku_id, customer_friendly_size, ...rest } = variant as any
   const resp = {
     ...rest,

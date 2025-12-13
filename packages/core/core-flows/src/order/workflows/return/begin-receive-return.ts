@@ -35,8 +35,8 @@ export type BeginReceiveReturnValidationStepInput = {
  * 
  * :::note
  * 
- * You can retrieve an order and return details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),
- * or [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).
+ * You can retrieve an order and return details using [Query](https://docs.switchyard.run/learn/fundamentals/module-links/query),
+ * or [useQueryGraphStep](https://docs.switchyard.run/resources/references/switchyard-workflows/steps/useQueryGraphStep).
  * 
  * :::
  * 
@@ -69,7 +69,7 @@ export const beginReceiveReturnValidationStep = createStep(
 export const beginReceiveReturnWorkflowId = "begin-receive-return"
 /**
  * This workflow requests return receival. It's used by the
- * [Start Return Receival Admin API Route](https://docs.medusajs.com/api/admin#returns_postreturnsidreceive).
+ * [Start Return Receival Admin API Route](https://docs.switchyard.run/api/admin#returns_postreturnsidreceive).
  * 
  * You can confirm the return receival using the {@link confirmReturnRequestWorkflow}.
  * 

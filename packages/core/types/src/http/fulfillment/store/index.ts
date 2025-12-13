@@ -33,7 +33,7 @@ export interface StoreCartShippingOption {
   /**
    * The data useful for the fulfillment provider when handling the shipment and fulfillment.
    *
-   * Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property).
+   * Learn more in [this documentation](https://docs.switchyard.run/resources/commerce-modules/fulfillment/shipping-option#data-property).
    */
   data: Record<string, unknown> | null
   /**

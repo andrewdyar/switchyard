@@ -89,14 +89,14 @@ export interface ICachingModuleService extends IModuleService {
     /**
      * The providers to retrieve the item(s) from. You can specify an array of provider IDs.
      * They're checked in the order they're provided in, so make sure to order them based on your priority.
-     * If not provided, the [default provider](https://docs.medusajs.com/infrastructure-modules/caching/providers#default-caching-module-provider) is used.
+     * If not provided, the [default provider](https://docs.switchyard.run/infrastructure-modules/caching/providers#default-caching-module-provider) is used.
      */
     providers?: string[]
   }): Promise<any | null>
 
   /**
    * This method stores data in the cache using the 
-   * [default Caching Module Provider](https://docs.medusajs.com/infrastructure-modules/caching/providers#default-caching-module-provider).
+   * [default Caching Module Provider](https://docs.switchyard.run/infrastructure-modules/caching/providers#default-caching-module-provider).
    *
    * @param param0 - The options for storing the item.
    * @returns A promise that resolves when the item has been stored.
@@ -117,7 +117,7 @@ export interface ICachingModuleService extends IModuleService {
    * 
    * :::note
    * 
-   * Tags should follow [conventions](https://docs.medusajs.com/infrastructure-modules/caching/concepts#caching-tags-convention) to ensure they're automatically invalidated.
+   * Tags should follow [conventions](https://docs.switchyard.run/infrastructure-modules/caching/concepts#caching-tags-convention) to ensure they're automatically invalidated.
    * 
    * :::
    * 
@@ -203,7 +203,7 @@ export interface ICachingModuleService extends IModuleService {
     }
     /**
      * The providers to store the item(s) in. You can specify an array of provider IDs or an array of objects with provider ID and TTL.
-     * If not provided, the [default provider](https://docs.medusajs.com/infrastructure-modules/caching/providers#default-caching-module-provider) is used.
+     * If not provided, the [default provider](https://docs.switchyard.run/infrastructure-modules/caching/providers#default-caching-module-provider) is used.
      */
     providers?: Providers
   }): Promise<void>
@@ -299,7 +299,7 @@ export interface ICachingModuleService extends IModuleService {
     }
     /**
      * The providers from which to clear the item(s). You can specify an array of provider IDs.
-     * If not provided, the [default provider](https://docs.medusajs.com/infrastructure-modules/caching/providers#default-caching-module-provider) is used.
+     * If not provided, the [default provider](https://docs.switchyard.run/infrastructure-modules/caching/providers#default-caching-module-provider) is used.
      */
     providers?: string[]
   }): Promise<void>
@@ -343,12 +343,12 @@ export interface ICachingModuleService extends IModuleService {
  * The constructor allows you to access resources from the module's container using the first parameter,
  * and the module's options using the second parameter.
  *
- * If you're creating a client or establishing a connection with a third-party service, do it in a [Loader](https://docs.medusajs.com/learn/fundamentals/modules/loaders)
+ * If you're creating a client or establishing a connection with a third-party service, do it in a [Loader](https://docs.switchyard.run/learn/fundamentals/modules/loaders)
  * and store it in the Module's container. Then, you can access it in your service using the container.
  * 
  * :::note[Loader Example]
  * 
- * [Initialize MongoDB client in loader and access it in service](https://docs.medusajs.com/learn/fundamentals/modules/loaders#example-register-custom-mongodb-connection).
+ * [Initialize MongoDB client in loader and access it in service](https://docs.switchyard.run/learn/fundamentals/modules/loaders#example-register-custom-mongodb-connection).
  * 
  * :::
  *

@@ -82,7 +82,7 @@ class Telemeter {
 
   getMedusaVersion() {
     try {
-      const packageJson = require.resolve(`@switchyard/medusa/package.json`)
+      const packageJson = require.resolve(`@switchyard/package.json`)
       const { version } = JSON.parse(fs.readFileSync(packageJson, `utf-8`))
       return version
     } catch (e) {

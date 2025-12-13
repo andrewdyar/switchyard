@@ -35,7 +35,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
     },
   },
   testSuite: ({ service }) =>
-    describe("Medusa Cloud Email provider", () => {
+    describe("Switchyard Cloud Email provider", () => {
       let fetchMock: jest.SpyInstance
 
       beforeEach(() => {
@@ -50,7 +50,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
         fetchMock.mockClear()
       })
 
-      it("should send email notification to Medusa Cloud", async () => {
+      it("should send email notification to Switchyard Cloud", async () => {
         const result = await service.createNotifications(testNotification)
         expect(result).toEqual(
           expect.objectContaining({
@@ -91,7 +91,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
         })
       })
 
-      it("should return an error if the Medusa Cloud Email provider fails", async () => {
+      it("should return an error if the Switchyard Cloud Email provider fails", async () => {
         fetchMock.mockImplementation(
           async () =>
             ({
@@ -132,7 +132,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
     ],
   },
   testSuite: ({ service }) =>
-    describe("Medusa Cloud Email provider - when another email provider is configured", () => {
+    describe("Switchyard Cloud Email provider - when another email provider is configured", () => {
       let fetchMock: jest.SpyInstance
 
       beforeEach(() => {
@@ -147,7 +147,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
         fetchMock.mockClear()
       })
 
-      it("should not enable Medusa Cloud Email provider", async () => {
+      it("should not enable Switchyard Cloud Email provider", async () => {
         const result = await service.createNotifications(testNotification)
         expect(result).toMatchObject({ status: NotificationStatus.SUCCESS })
 
@@ -160,7 +160,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
   moduleName: Modules.NOTIFICATION,
   moduleOptions: {},
   testSuite: ({ service }) =>
-    describe("Medusa Cloud Email provider - when cloud options are not provided", () => {
+    describe("Switchyard Cloud Email provider - when cloud options are not provided", () => {
       let fetchMock: jest.SpyInstance
 
       beforeEach(() => {
@@ -175,7 +175,7 @@ moduleIntegrationTestRunner<INotificationModuleService>({
         fetchMock.mockClear()
       })
 
-      it("should not enable Medusa Cloud Email provider", async () => {
+      it("should not enable Switchyard Cloud Email provider", async () => {
         await expect(
           service.createNotifications(testNotification)
         ).rejects.toThrow()
