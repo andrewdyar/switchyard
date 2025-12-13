@@ -8,7 +8,7 @@ import { readFileSync } from "fs"
 type CodeSampleData = Omit<CodeSample, "source">
 
 const JS_SDK_PREFIX = {
-  store: `import Medusa from "@medusajs/js-sdk"
+  store: `import Switchyard from "@switchyard/js-sdk"
 
 let MEDUSA_BACKEND_URL = "http://localhost:9000"
 
@@ -16,16 +16,16 @@ if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
   MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
 }
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: MEDUSA_BACKEND_URL,
   debug: process.env.NODE_ENV === "development",
   publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
 })
 
 `,
-  admin: `import Medusa from "@medusajs/js-sdk"
+  admin: `import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {

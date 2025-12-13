@@ -19,7 +19,7 @@ import {
 import { useMemo } from "react"
 import type { OpenAPI } from "types"
 import TagOperationParameters from "../../Parameters"
-import { Brackets, CheckCircle, SquareTwoStack, Tag } from "@medusajs/icons"
+import { Brackets, CheckCircle, SquareTwoStack, Tag } from "@switchyard/icons"
 
 export type TagsOperationDescriptionSectionEventsProps = {
   events: OpenAPI.OasEvents[]
@@ -37,7 +37,7 @@ const TagsOperationDescriptionSectionEvents = ({
             The following events are emitted by the workflow used in this API
             route. You can listen to and handle these events using a{" "}
             <Link
-              href="https://docs.medusajs.com/learn/fundamentals/events-and-subscribers"
+              href="https://docs.switchyard.com/learn/fundamentals/events-and-subscribers"
               variant="content"
             >
               Subscriber

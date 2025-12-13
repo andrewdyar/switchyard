@@ -6,7 +6,7 @@ export const metadata = {
 
 # {metadata.title}
 
-The Redis Event Module uses Redis to implement Medusa's pub/sub events system.
+The Redis Event Module uses Redis to implement Switchyard's pub/sub events system.
 
 It's powered by [BullMQ](https://bullmq.io/) and `io-redis`. BullMQ is responsible for the message queue and worker, and `io-redis` is the underlying Redis client that BullMQ connects to for events storage.
 
@@ -29,14 +29,14 @@ Our Cloud offering automatically provisions a Redis instance and configures the 
   }
 ]} />
 
-Add the module into the `modules` property of the exported object in `medusa-config.ts`:
+Add the module into the `modules` property of the exported object in `switchyard.config.ts`:
 
 export const highlights = [
   ["11", "redisUrl", "The Redis connection URL."]
 ]
 
-```ts title="medusa-config.ts"
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -44,7 +44,7 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/event-bus-redis",
+      resolve: "@switchyard/medusa/event-bus-redis",
       options: { 
         redisUrl: process.env.EVENTS_REDIS_URL,
         // suggested additional options for production use
@@ -223,7 +223,7 @@ EVENTS_REDIS_URL=<YOUR_REDIS_URL>
 
 ## Test the Module
 
-To test the module, start the Medusa application:
+To test the module, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev

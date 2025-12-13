@@ -11,41 +11,41 @@ products:
   - order
 ---
 
-import { Github } from "@medusajs/icons"
+import { Github } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
-  title: `Add Gift Message to Line Items in Medusa`,
+  title: `Add Gift Message to Line Items in Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you will learn how to add a gift message to items in carts and orders in Medusa.
+In this tutorial, you will learn how to add a gift message to items in carts and orders in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include cart and order management capabilities.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include cart and order management capabilities.
 
-You can customize the Medusa application and storefront to add a gift message to items in the cart. This feature allows customers to add a personalized message to their gifts, enhancing the shopping experience.
+You can customize the Switchyard application and storefront to add a gift message to items in the cart. This feature allows customers to add a personalized message to their gifts, enhancing the shopping experience.
 
 ## Summary
 
 By following this tutorial, you will learn how to:
 
-- Install and set up Medusa and the Next.js Starter Storefront.
+- Install and set up Switchyard and the Next.js Starter Storefront.
 - Customize the storefront to support gift messages on cart items during checkout.
-- Customize the Medusa Admin to show gift items with messages in an order.
+- Customize the Switchyard Admin to show gift items with messages in an order.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
 <Card
   title="View on Github"
   icon={Github}
-  href="https://github.com/medusajs/examples/tree/main/order-gift-message"
+  href="https://github.com/switchyard/examples/tree/main/order-gift-message"
   text="Find the full code for this tutorial."
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -62,27 +62,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 First, you'll be asked for the project's name. Then, when prompted about installing the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -98,7 +98,7 @@ So, you only need to customize the storefront to add the gift message input and 
 
 ### a. Changes to Update Item Function
 
-The Next.js Starter Storefront has an `updateLineItem` function that sends a request to the Medusa server to update the cart item. However, it doesn't support updating the `metadata` property.
+The Next.js Starter Storefront has an `updateLineItem` function that sends a request to the Switchyard server to update the cart item. However, it doesn't support updating the `metadata` property.
 
 So, in `src/lib/data/cart.ts`, find the `updateLineItem` function and add a `metadata` property to its object parameter:
 
@@ -129,7 +129,7 @@ await sdk.store.cart
 // ...
 ```
 
-You pass the `metadata` property to the Medusa server, which will update the cart item with the new metadata.
+You pass the `metadata` property to the Switchyard server, which will update the cart item with the new metadata.
 
 ### b. Add Gift Inputs
 
@@ -138,10 +138,10 @@ Next, you'll modify the cart item component that's shown in the cart and checkou
 In `src/modules/cart/components/item/index.tsx`, add the following imports at the top of the file:
 
 ```tsx title="src/modules/cart/components/item/index.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { Checkbox, Textarea, Button, Label } from "@medusajs/ui"
+import { Checkbox, Textarea, Button, Label } from "@switchyard/ui"
 ```
 
-You import components from the [Medusa UI library](!ui!) that will be useful for the gift inputs.
+You import components from the [Switchyard UI library](!ui!) that will be useful for the gift inputs.
 
 Next, in the `Item` component, add the following variables before the `changeQuantity` function:
 
@@ -495,9 +495,9 @@ Similarly, you replace the table that was wrapping the items with a `div` that c
 
 You can now test the gift inputs during checkout.
 
-First, start the Medusa application by running the following command in the Medusa application directory:
+First, start the Switchyard application by running the following command in the Switchyard application directory:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -509,11 +509,11 @@ npm run dev
 
 Open the storefront in your browser at `http://localhost:8000`. Add a product to the cart, and proceed to the checkout page. You'll find a checkbox to mark the item as a gift for each item.
 
-![Gift checkbox on checkout page](https://res.cloudinary.com/dza7lstvk/image/upload/v1750923117/Medusa%20Resources/CleanShot_2025-06-26_at_10.31.25_2x_wcqiff.png)
+![Gift checkbox on checkout page](https://res.cloudinary.com/dza7lstvk/image/upload/v1750923117/Switchyard%20Resources/CleanShot_2025-06-26_at_10.31.25_2x_wcqiff.png)
 
 If you check the box, you can also add and edit the gift message. The gift message will be saved in the cart item's `metadata`.
 
-![Gift item with message added](https://res.cloudinary.com/dza7lstvk/image/upload/v1750924150/Medusa%20Resources/CleanShot_2025-06-26_at_10.32.52_2x_qir2t5.png)
+![Gift item with message added](https://res.cloudinary.com/dza7lstvk/image/upload/v1750924150/Switchyard%20Resources/CleanShot_2025-06-26_at_10.32.52_2x_qir2t5.png)
 
 ---
 
@@ -549,28 +549,28 @@ If the item is a gift, you show the gift message below the variant options. If n
 
 To test this change, place an order with a gift item. On the order confirmation page, you should see the gift message displayed below the variant options.
 
-![Gift message on order confirmation page](https://res.cloudinary.com/dza7lstvk/image/upload/v1750924429/Medusa%20Resources/CleanShot_2025-06-26_at_10.53.32_2x_htzvtw.png)
+![Gift message on order confirmation page](https://res.cloudinary.com/dza7lstvk/image/upload/v1750924429/Switchyard%20Resources/CleanShot_2025-06-26_at_10.53.32_2x_htzvtw.png)
 
 ---
 
 ## Step 4: Show Gift Options in Admin Dashboard
 
-In this step, you'll customize the Medusa Admin dashboard to show the gift items with their messages in an order.
+In this step, you'll customize the Switchyard Admin dashboard to show the gift items with their messages in an order.
 
 ### What is a Widget?
 
-The Medusa Admin dashboard's pages are customizable to insert [widgets](!docs!/learn/fundamentals/admin/widgets) of custom content in predefined injection zones. You create these widgets as React components that allow admin users to perform custom actions.
+The Switchyard Admin dashboard's pages are customizable to insert [widgets](!docs!/learn/fundamentals/admin/widgets) of custom content in predefined injection zones. You create these widgets as React components that allow admin users to perform custom actions.
 
 So, to show the gift items with their messages in an order, you'll create a custom widget that shows the gift items in the order details page.
 
 ### Create the Widget
 
-You create a widget in a `.tsx` file under the `src/admin/widgets` directory. So, in the Medusa application directory, create the file `src/admin/widgets/order-gift-items-widget.tsx` with the following content:
+You create a widget in a `.tsx` file under the `src/admin/widgets` directory. So, in the Switchyard application directory, create the file `src/admin/widgets/order-gift-items-widget.tsx` with the following content:
 
-```tsx title="src/admin/widgets/order-gift-items-widget.tsx" badgeLabel="Medusa Application" badgeColor="green"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Text } from "@medusajs/ui"
-import { DetailWidgetProps, AdminOrder } from "@medusajs/framework/types"
+```tsx title="src/admin/widgets/order-gift-items-widget.tsx" badgeLabel="Switchyard Application" badgeColor="green"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Text } from "@switchyard/ui"
+import { DetailWidgetProps, AdminOrder } from "@switchyard/framework/types"
 
 const OrderGiftItemsWidget = ({ data }: DetailWidgetProps<AdminOrder>) => {
   const giftItems = data.items?.filter(
@@ -614,19 +614,19 @@ You define the `OrderGiftItemsWidget` component that is injected in the `order.d
 
 In the component, you filter the order items to get only the gift items by checking if the `metadata.is_gift` property is set to `"true"`. Then, you render the gift items with their messages in a new "Gift Items & Messages" section.
 
-### Test Medusa Admin Changes
+### Test Switchyard Admin Changes
 
-To test out the Medusa Admin widget, start the Medusa application by running the following command in the Medusa application directory:
+To test out the Switchyard Admin widget, start the Switchyard application by running the following command in the Switchyard application directory:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
-Then, open the Medusa Admin at `http://localhost:9000/app` and log in with the user you created earlier.
+Then, open the Switchyard Admin at `http://localhost:9000/app` and log in with the user you created earlier.
 
 Go to the Orders page and click on an order that has gift items. You'll find a new section called "Gift Items & Messages" that shows the gift items with their messages.
 
-![Order details page in the Medusa Admin with the "Gift Items & Messages" section highlighted](https://res.cloudinary.com/dza7lstvk/image/upload/v1750925501/Medusa%20Resources/CleanShot_2025-06-26_at_11.11.18_2x_jrrc2s.png)
+![Order details page in the Switchyard Admin with the "Gift Items & Messages" section highlighted](https://res.cloudinary.com/dza7lstvk/image/upload/v1750925501/Switchyard%20Resources/CleanShot_2025-06-26_at_11.11.18_2x_jrrc2s.png)
 
 ---
 
@@ -640,7 +640,7 @@ export const createFulfillmentHighlights = [
   ["9", "itemsWithGiftMessage", "Filter order items to find gift items."],
 ]
 
-```ts title="Fulfillment Module Provider's Service" badgeLabel="Medusa Application" badgeColor="green" highlights={createFulfillmentHighlights}
+```ts title="Fulfillment Module Provider's Service" badgeLabel="Switchyard Application" badgeColor="green" highlights={createFulfillmentHighlights}
 class ManualFulfillmentService extends utils_1.AbstractFulfillmentProviderService {
   // ...
   async createFulfillment(
@@ -670,11 +670,11 @@ You filter the order items to find the items that are part of the fulfillment an
 
 ## Next Steps
 
-You've now added gift messages to items in carts and orders in Medusa.
+You've now added gift messages to items in carts and orders in Switchyard.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -684,5 +684,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

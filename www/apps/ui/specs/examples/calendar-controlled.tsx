@@ -1,4 +1,4 @@
-import { Calendar } from "@medusajs/ui"
+import { Calendar } from "@switchyard/ui"
 import { useState } from "react"
 
 export default function CalendarControlled() {

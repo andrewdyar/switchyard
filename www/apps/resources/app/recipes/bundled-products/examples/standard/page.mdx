@@ -12,40 +12,40 @@ products:
   - product
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
-  title: `Implement Bundled Products in Medusa`,
+  title: `Implement Bundled Products in Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to implement bundled products in Medusa.
+In this tutorial, you'll learn how to implement bundled products in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../../commerce-modules/page.mdx), which are available out-of-the-box.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../../commerce-modules/page.mdx), which are available out-of-the-box.
 
-Medusa natively supports [inventory kits](../../../../commerce-modules/inventory/inventory-kit/page.mdx), which can be used to create bundled products. However, inventory kits don't support all features of bundled products, such as fulfilling the products in the bundle separately.
+Switchyard natively supports [inventory kits](../../../../commerce-modules/inventory/inventory-kit/page.mdx), which can be used to create bundled products. However, inventory kits don't support all features of bundled products, such as fulfilling the products in the bundle separately.
 
-In this tutorial, you'll use Medusa's customizable Framework to implement bundled products. By building the bundled products feature, you can expand on it based on what's necessary for your use case.
+In this tutorial, you'll use Switchyard's customizable Framework to implement bundled products. By building the bundled products feature, you can expand on it based on what's necessary for your use case.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up a Medusa application.
+- Install and set up a Switchyard application.
 - Define models for bundled products.
-- Link bundled products to Medusa's existing product model, allowing you to benefit from existing product features.
+- Link bundled products to Switchyard's existing product model, allowing you to benefit from existing product features.
 - Customize the add-to-cart flow to support bundled products.
 - Customize the Next.js Starter Storefront to display bundled products.
 
-![Bundled products system architecture diagram showing the relationship between bundled products and individual products and variants](https://res.cloudinary.com/dza7lstvk/image/upload/v1745855513/Medusa%20Resources/bundled-products-overview_r5zejm.jpg)
+![Bundled products system architecture diagram showing the relationship between bundled products and individual products and variants](https://res.cloudinary.com/dza7lstvk/image/upload/v1745855513/Switchyard%20Resources/bundled-products-overview_r5zejm.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/bundled-products",
+    href: "https://github.com/switchyard/examples/tree/main/bundled-products",
     title: "Bundled Products Repository",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -60,7 +60,7 @@ By following this tutorial, you'll learn how to:
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -77,27 +77,27 @@ By following this tutorial, you'll learn how to:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -105,7 +105,7 @@ Check out the [troubleshooting guides](../../../../troubleshooting/create-medusa
 
 ## Step 2: Create Bundled Product Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 In the module, you define the data models necessary for a feature and the logic to manage these data models. Later, you can build commerce flows around your module.
 
@@ -119,11 +119,11 @@ Refer to the [Modules documentation](!docs!/learn/fundamentals/modules) to learn
 
 ### Create Module Directory
 
-Modules are created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/bundled-product`.
+Modules are created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/bundled-product`.
 
 ### Create Data Models
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -145,7 +145,7 @@ export const bundleHighlights = [
 ]
 
 ```ts title="src/modules/bundled-product/models/bundle.ts" highlights={bundleHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { BundleItem } from "./bundle-item"
 
 export const Bundle = model.define("bundle", {
@@ -180,7 +180,7 @@ export const bundleItemHighlights = [
 ]
 
 ```ts title="src/modules/bundled-product/models/bundle-item.ts" highlights={bundleItemHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { Bundle } from "./bundle"
 
 export const BundleItem = model.define("bundle_item", {
@@ -219,35 +219,35 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Bundled Product Module's service, create the file `src/modules/bundled-product/service.ts` with the following content:
 
 ```ts title="src/modules/bundled-product/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Bundle } from "./models/bundle"
 import { BundleItem } from "./models/bundle-item"
 
-export default class BundledProductModuleService extends MedusaService({
+export default class BundledProductModuleService extends SwitchyardService({
   Bundle,
   BundleItem,
 }) {
 }
 ```
 
-The `BundledProductModuleService` extends `MedusaService` from the Modules SDK which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
+The `BundledProductModuleService` extends `SwitchyardService` from the Modules SDK which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
 
 So, the `BundledProductModuleService` class now has methods like `createBundles` and `retrieveBundleItem`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory reference](../../../../service-factory-reference/page.mdx).
+Find all methods generated by the `SwitchyardService` in [the Service Factory reference](../../../../service-factory-reference/page.mdx).
 
 </Note>
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/bundled-product/index.ts` with the following content:
 
 ```ts title="src/modules/bundled-product/index.ts"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import BundledProductsModuleService from "./service"
 
 export const BUNDLED_PRODUCT_MODULE = "bundledProduct"
@@ -264,13 +264,13 @@ You use the `Module` function from the Modules SDK to create the module's defini
 
 You also export the module's name as `BUNDLED_PRODUCT_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -293,29 +293,29 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate the migrations for you. To generate a migration for the Bundled Product Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate the migrations for you. To generate a migration for the Bundled Product Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate bundledProduct
+npx switchyard db:generate bundledProduct
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/bundled-product` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/bundled-product` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The tables for the `Bundle` and `BundleItem` data models are now created in the database.
 
 ---
 
-## Step 3: Link Bundles to Medusa Products
+## Step 3: Link Bundles to Switchyard Products
 
-Medusa integrates modules into your application without implications or side effects by isolating modules from one another. This means you can't directly create relationships between data models in your module and data models in other modules.
+Switchyard integrates modules into your application without implications or side effects by isolating modules from one another. This means you can't directly create relationships between data models in your module and data models in other modules.
 
-Instead, Medusa provides the mechanism to define links between data models, and retrieve and manage linked records while maintaining module isolation. Links are useful to define associations between data models in different modules, or extend a model in another module to associate custom properties with it.
+Instead, Switchyard provides the mechanism to define links between data models, and retrieve and manage linked records while maintaining module isolation. Links are useful to define associations between data models in different modules, or extend a model in another module to associate custom properties with it.
 
 <Note>
 
@@ -341,8 +341,8 @@ You can define links between data models in a TypeScript or JavaScript file unde
 So, to define the link between a bundle and a product, create the file `src/links/bundle-product.ts` with the following content:
 
 ```ts title="src/links/bundle-product.ts"
-import { defineLink } from "@medusajs/framework/utils"
-import ProductModule from "@medusajs/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
 import BundledProductsModule from "../modules/bundled-product"
 
 export default defineLink(
@@ -363,8 +363,8 @@ You'll later learn how to query and manage the linked records.
 Next, you'll define the link between the `BundleItem` data model and the `Product` data model. Create the file `src/links/bundle-item-product.ts` with the following content:
 
 ```ts title="src/links/bundle-item-product.ts"
-import { defineLink } from "@medusajs/framework/utils"
-import ProductModule from "@medusajs/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
 import BundledProductsModule from "../modules/bundled-product"
 
 export default defineLink(
@@ -380,10 +380,10 @@ You define the link in the same way as the previous one, but you pass an object 
 
 ### Sync Links to Database
 
-Medusa creates a table in the database for each link you define. So, you must run the migrations again to create the necessary tables:
+Switchyard creates a table in the database for each link you define. So, you must run the migrations again to create the necessary tables:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 This will create tables for both links in the database. The tables will later store the IDs of the linked records.
@@ -400,7 +400,7 @@ Refer to the [Module Links](!docs!/learn/fundamentals/module-links) documentatio
 
 You're now ready to start implementing bundled-product features. The first one you'll implement is the ability to create a bundled product.
 
-To build custom commerce features in Medusa, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. By using workflows, you can track their executions' progress, define roll-back logic, and configure other advanced features.
+To build custom commerce features in Switchyard, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. By using workflows, you can track their executions' progress, define roll-back logic, and configure other advanced features.
 
 So, in this section, you'll learn how to create a workflow that creates a bundled product. Later, you'll execute this workflow in an API route.
 
@@ -431,21 +431,21 @@ The workflow will have the following steps:
       {
         name: "createProductsWorkflow",
         type: "workflow",
-        description: "Create the Medusa product associated with the bundle",
+        description: "Create the Switchyard product associated with the bundle",
         depth: 1,
         link: "/references/medusa-workflows/createProductsWorkflow"
       },
       {
         name: "createRemoteLinkStep",
         type: "step",
-        description: "Create the link between the bundle and the Medusa product",
+        description: "Create the link between the bundle and the Switchyard product",
         depth: 1,
         link: "/references/helper-steps/createRemoteLinkStep"
       },
       {
         name: "createRemoteLinkStep",
         type: "step",
-        description: "Create the link between the bundle items and the Medusa products",
+        description: "Create the link between the bundle items and the Switchyard products",
         depth: 1,
         link: "/references/helper-steps/createRemoteLinkStep"
       },
@@ -461,7 +461,7 @@ The workflow will have the following steps:
   hideLegend
 />
 
-You only need to implement the first two steps, as Medusa provides the rest in its `@medusajs/medusa/core-flows` package.
+You only need to implement the first two steps, as Switchyard provides the rest in its `@switchyard/medusa/core-flows` package.
 
 ### createBundleStep
 
@@ -478,7 +478,7 @@ export const createBundleStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-bundle.ts" highlights={createBundleStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import BundledProductModuleService from "../../modules/bundled-product/service"
 import { BUNDLED_PRODUCT_MODULE } from "../../modules/bundled-product"
 
@@ -515,11 +515,11 @@ You create a step with `createStep` from the Workflows SDK. It accepts two param
 1. The step's unique name, which is `create-bundle`.
 2. An async function that receives two parameters:
     - The step's input, which is in this case an object with the bundle's properties.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
-In the step function, you resolve the Bundled Product Module's service from the Medusa container using its `resolve` method, passing it the module's name as a parameter.
+In the step function, you resolve the Bundled Product Module's service from the Switchyard container using its `resolve` method, passing it the module's name as a parameter.
 
-Then, you create the bundle using the `createBundles` method. As you remember, the Bundled Product Module's service extends the `MedusaService` which generates data-management methods for you.
+Then, you create the bundle using the `createBundles` method. As you remember, the Bundled Product Module's service extends the `SwitchyardService` which generates data-management methods for you.
 
 A step function must return a `StepResponse` instance. The `StepResponse` constructor accepts two parameters:
 
@@ -539,9 +539,9 @@ The compensation function undoes the actions performed in a step. Then, if an er
 The compensation function accepts two parameters:
 
 1. The data passed from the step in the second parameter of `StepResponse`, which in this case is the ID of the created bundle.
-2. An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+2. An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 
-In the compensation function, you resolve the Bundled Product Module's service from the Medusa container and call the `deleteBundles` method to delete the bundle created in the step.
+In the compensation function, you resolve the Bundled Product Module's service from the Switchyard container and call the `deleteBundles` method to delete the bundle created in the step.
 
 <Note>
 
@@ -564,7 +564,7 @@ export const createBundleItemsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-bundle-items.ts" highlights={createBundleItemsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { BUNDLED_PRODUCT_MODULE } from "../../modules/bundled-product"
 import BundledProductModuleService from "../../modules/bundled-product/service"
 
@@ -618,21 +618,21 @@ To create the workflow, create the file `src/workflows/create-bundled-product.ts
 export const createBundledProductWorkflowHighlights = [
   ["23", "createBundleStep", "Create the bundle."],
   ["27", "createBundleItemsStep", "Create the bundle items."],
-  ["32", "createProductsWorkflow", "Create the Medusa product associated with the bundle."],
-  ["38", "createRemoteLinkStep", "Create a link between the bundle and the Medusa product."],
-  ["47", "transform", "Prepare the data to create links between bundle items and Medusa products."],
-  ["61", "createRemoteLinkStep", "Create the links between the bundle items and the Medusa products."],
+  ["32", "createProductsWorkflow", "Create the Switchyard product associated with the bundle."],
+  ["38", "createRemoteLinkStep", "Create a link between the bundle and the Switchyard product."],
+  ["47", "transform", "Prepare the data to create links between bundle items and Switchyard products."],
+  ["61", "createRemoteLinkStep", "Create the links between the bundle items and the Switchyard products."],
   ["66", "useQueryGraphStep", "Retrieve the created bundle and its items."],
 ]
 
 ```ts title="src/workflows/create-bundled-product.ts" highlights={createBundledProductWorkflowHighlights}
-import { CreateProductWorkflowInputDTO } from "@medusajs/framework/types"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { CreateProductWorkflowInputDTO } from "@switchyard/framework/types"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { createBundleStep } from "./steps/create-bundle"
 import { createBundleItemsStep } from "./steps/create-bundle-items"
-import { createProductsWorkflow, createRemoteLinkStep, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createProductsWorkflow, createRemoteLinkStep, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { BUNDLED_PRODUCT_MODULE } from "../modules/bundled-product"
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 export type CreateBundledProductWorkflowInput = {
   bundle: {
@@ -712,24 +712,24 @@ In the workflow's constructor function, you:
 
 1. Create the bundle using the `createBundleStep`.
 2. Create the bundle items using the `createBundleItemsStep`.
-3. Create the Medusa product associated with the bundle using the `createProductsWorkflow`.
-4. Create a link between the bundle and the Medusa product using the `createRemoteLinkStep`.
+3. Create the Switchyard product associated with the bundle using the `createProductsWorkflow`.
+4. Create a link between the bundle and the Switchyard product using the `createRemoteLinkStep`.
     - To create a link, you pass an array of objects. The keys of each object are the module names, and the values are objects with the IDs of the records to link.
 5. Use `transform` to prepare the data to link bundle items to products.
-    - You must use the `transform` function whenever you want to manipulate data in a workflow, as Medusa creates an internal representation of the workflow when the application starts, not when the workflow is executed. Learn more in the [Transform Data documentation](!docs!/learn/fundamentals/workflows/variable-manipulation).
-6. Create a link between the bundle items and the Medusa products using the `createRemoteLinkStep`.
+    - You must use the `transform` function whenever you want to manipulate data in a workflow, as Switchyard creates an internal representation of the workflow when the application starts, not when the workflow is executed. Learn more in the [Transform Data documentation](!docs!/learn/fundamentals/workflows/variable-manipulation).
+6. Create a link between the bundle items and the Switchyard products using the `createRemoteLinkStep`.
 7. Retrieve the bundle and its items using the `useQueryGraphStep`.
     - `useQueryGraphStep` uses [Query](!docs!/learn/fundamentals/module-links/query), which allows you to retrieve data across modules.
 
 A workflow must return an instance of `WorkflowResponse`. The `WorkflowResponse` constructor accepts the workflow's output as a parameter, which is the created bundle.
 
-You'll test out this API route in a later step when you customize the Medusa Admin dashboard.
+You'll test out this API route in a later step when you customize the Switchyard Admin dashboard.
 
 ---
 
 ## Step 5: Create Bundled Product API Route
 
-Now that you have the logic to create a bundled product, you need to expose it so that frontend clients, such as the Medusa Admin, can use it. You do this by creating an [API route](!docs!/learn/fundamentals/api-routes).
+Now that you have the logic to create a bundled product, you need to expose it so that frontend clients, such as the Switchyard Admin, can use it. You do this by creating an [API route](!docs!/learn/fundamentals/api-routes).
 
 An API Route is an endpoint that exposes commerce features to external applications and clients, such as admin dashboards or storefronts. You'll create an API route at the path `/admin/bundled-products` that executes the workflow from the previous step.
 
@@ -759,13 +759,13 @@ export const bundledProductsRouteHighlights = [
 
 ```ts title="src/api/admin/bundled-products/route.ts" highlights={bundledProductsRouteHighlights}
 import { 
-  AuthenticatedMedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { z } from "zod"
 import { 
   AdminCreateProduct,
-} from "@medusajs/medusa/api/admin/products/validators"
+} from "@switchyard/medusa/api/admin/products/validators"
 import { 
   createBundledProductWorkflow, 
   CreateBundledProductWorkflowInput,
@@ -783,8 +783,8 @@ export const PostBundledProductsSchema = z.object({
 type PostBundledProductsSchema = z.infer<typeof PostBundledProductsSchema>
 
 export async function POST(
-  req: AuthenticatedMedusaRequest<PostBundledProductsSchema>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<PostBundledProductsSchema>,
+  res: SwitchyardResponse
 ) {
   const { 
     result: bundledProduct,
@@ -810,11 +810,11 @@ Since you export a `POST` route handler function, you expose a `POST` API route 
 
 <Note title="Tip">
 
-`AuthenticatedMedusaRequest` accepts the request body's type as a type argument.
+`AuthenticatedSwitchyardRequest` accepts the request body's type as a type argument.
 
 </Note>
 
-In the route handler function, you execute the `createBundledProductWorkflow` by invoking it, passing it the Medusa container (which is available on the `scope` property of the request object), then calling its `run` method.
+In the route handler function, you execute the `createBundledProductWorkflow` by invoking it, passing it the Switchyard container (which is available on the `scope` property of the request object), then calling its `run` method.
 
 You pass the request body parameters as an input to the workflow.
 
@@ -846,7 +846,7 @@ export const middlewaresHighlights = [
 import {
   defineMiddlewares, 
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { PostBundledProductsSchema } from "./admin/bundled-products/route"
 
 export default defineMiddlewares({
@@ -869,18 +869,18 @@ To export the middlewares, you use the `defineMiddlewares` function. It accepts 
 - `middlewares`: An array of middleware functions to apply to the route. 
     - You apply the `validateAndTransformBody` that validates that the request body parameters match the Zod schema passed as a parameter.
 
-The create bundled product route is now ready for use. You'll use it in an upcoming step when you customize the Medusa Admin dashboard.
+The create bundled product route is now ready for use. You'll use it in an upcoming step when you customize the Switchyard Admin dashboard.
 
 ---
 
 ## Step 6: Retrieve Bundles API Route
 
-Before you start customizing the Medusa Admin, you need an API route that retrieves all bundles. You'll use this API route to show the bundles in a table on the Medusa Admin dashboard.
+Before you start customizing the Switchyard Admin, you need an API route that retrieves all bundles. You'll use this API route to show the bundles in a table on the Switchyard Admin dashboard.
 
 To create the API route, add the following at the end of `src/api/admin/bundled-products/route.ts`:
 
 export const getBundledProductsRouteHighlights = [
-  ["5", "query", "Resolve Query from the Medusa container."],
+  ["5", "query", "Resolve Query from the Switchyard container."],
   ["10", "graph", "Retrieve the bundles."],
   ["12", "queryConfig", "Pass the query configurations."],
   ["15", "json", "Return the bundles in the response."]
@@ -888,8 +888,8 @@ export const getBundledProductsRouteHighlights = [
 
 ```ts title="src/api/admin/bundled-products/route.ts" highlights={getBundledProductsRouteHighlights}
 export async function GET(
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const query = req.scope.resolve("query")
 
@@ -912,7 +912,7 @@ export async function GET(
 
 Since you export a `GET` route handler function, you expose a `GET` API route at `/admin/bundled-products`.
 
-In the route handler, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Medusa container. Then, you call its `graph` method to retrieve the bundles.
+In the route handler, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Switchyard container. Then, you call its `graph` method to retrieve the bundles.
 
 Notice that you pass to `query.graph` the `req.queryConfig` object. This object contains default query configurations related to pagination and the fields to be retrieved. You'll learn how to set the query configurations in a bit.
 
@@ -934,8 +934,8 @@ export const getBundledProductsMiddlewareHighlights = [
 
 ```ts title="src/api/middlewares.ts" highlights={getBundledProductsMiddlewareHighlights}
 // other imports...
-import { validateAndTransformQuery } from "@medusajs/framework/http"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+import { validateAndTransformQuery } from "@switchyard/framework/http"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 
 export default defineMiddlewares({
   routes: [
@@ -963,7 +963,7 @@ export default defineMiddlewares({
 
 You apply the `validateAndTransformQuery` middleware on `GET` requests to `/admin/bundled-products`. It accepts the following parameters:
 
-1. A Zod schema to validate query parameters. You use Medusa's `createFindParams` function, which creates a Zod schema containing the following query parameters:
+1. A Zod schema to validate query parameters. You use Switchyard's `createFindParams` function, which creates a Zod schema containing the following query parameters:
     - `fields`: The fields to retrieve in a bundle.
     - `limit`: The maximum number of bundles to retrieve.
     - `offset`: The number of bundles to skip before retrieving the bundles.
@@ -973,17 +973,17 @@ You apply the `validateAndTransformQuery` middleware on `GET` requests to `/admi
     - `isList`: Whether the API route returns a list of items.
     - `defaultLimit`: The default number of items to retrieve in a page.
 
-Your API route is now ready for use. You'll test it out in the next step as you customize the Medusa Admin dashboard.
+Your API route is now ready for use. You'll test it out in the next step as you customize the Switchyard Admin dashboard.
 
 ---
 
-## Step 7: Add Bundles Page to Medusa Admin
+## Step 7: Add Bundles Page to Switchyard Admin
 
-Now that you have the necessary routes for admin users to manage and view bundled products, you'll customize the Medusa Admin to allow admin users to use these features.
+Now that you have the necessary routes for admin users to manage and view bundled products, you'll customize the Switchyard Admin to allow admin users to use these features.
 
-You can add a new page to the Medusa Admin dashboard using a [UI route](!docs!/learn/fundamentals/admin/ui-routes). A UI route is a React component that specifies the content to be shown in a new page in the Medusa Admin dashboard.
+You can add a new page to the Switchyard Admin dashboard using a [UI route](!docs!/learn/fundamentals/admin/ui-routes). A UI route is a React component that specifies the content to be shown in a new page in the Switchyard Admin dashboard.
 
-You'll create a UI route to display the list of bundled products in the Medusa Admin. Later, you'll add a form to create a bundled product.
+You'll create a UI route to display the list of bundled products in the Switchyard Admin. Later, you'll add a form to create a bundled product.
 
 <Note>
 
@@ -993,14 +993,14 @@ Learn more in the [UI Routes documentation](!docs!/learn/fundamentals/admin/ui-r
 
 ### Initialize JS SDK
 
-Medusa provides a [JS SDK](../../../../js-sdk/page.mdx) that you can use to send requests to the Medusa server from any client application, including your Medusa Admin customizations.
+Switchyard provides a [JS SDK](../../../../js-sdk/page.mdx) that you can use to send requests to the Switchyard server from any client application, including your Switchyard Admin customizations.
 
-The JS SDK is installed by default in your Medusa application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
+The JS SDK is installed by default in your Switchyard application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: "http://localhost:9000",
   debug: process.env.NODE_ENV === "development",
   auth: {
@@ -1009,15 +1009,15 @@ export const sdk = new Medusa({
 })
 ```
 
-You create an instance of the JS SDK using the `Medusa` class from the JS SDK. You pass it an object having the following properties:
+You create an instance of the JS SDK using the `Switchyard` class from the JS SDK. You pass it an object having the following properties:
 
-- `baseUrl`: The base URL of the Medusa server.
+- `baseUrl`: The base URL of the Switchyard server.
 - `debug`: A boolean indicating whether to log debug information into the console.
 - `auth`: An object specifying the authentication type. When using the JS SDK for admin customizations, you use the `session` authentication type.
 
 ### Create UI Route
 
-UI routes are created under the `src/admin/routes` directory in a `page.tsx` file. The file's path, relative to `src/admin/routes`, is used as the page's path in the Medusa Admin dashboard.
+UI routes are created under the `src/admin/routes` directory in a `page.tsx` file. The file's path, relative to `src/admin/routes`, is used as the page's path in the Switchyard Admin dashboard.
 
 So, to create a new page that shows the list of bundled products, create the file `src/admin/routes/bundled-products/page.tsx` with the following content:
 
@@ -1027,8 +1027,8 @@ export const bundledProductsPageHighlights = [
 ]
 
 ```tsx title="src/admin/routes/bundled-products/page.tsx" highlights={bundledProductsPageHighlights}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { CubeSolid } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { CubeSolid } from "@switchyard/icons"
 
 const BundledProductsPage = () => {
   // TODO add implementation
@@ -1047,7 +1047,7 @@ In a UI route's file, you must export:
 1. A React component that defines the page's content. You'll add the content in a bit.
 2. A configuration object that indicates the title and icon used in the sidebar for the page.
 
-Next, you'll use the [DataTable](!ui!/components/data-table) component from Medusa UI to show the list of bundled products in a table.
+Next, you'll use the [DataTable](!ui!/components/data-table) component from Switchyard UI to show the list of bundled products in a table.
 
 Add the following before the `BundledProductsPage` component:
 
@@ -1065,7 +1065,7 @@ import {
   useDataTable,
   createDataTableColumnHelper,
   DataTablePaginationState,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { useMemo, useState } from "react"
 import { sdk } from "../../lib/sdk"
@@ -1126,12 +1126,12 @@ const columns = [
 const limit = 15
 ```
 
-You define the table's columns using `createDataTableColumnHelper` from Medusa UI. The table has the following columns:
+You define the table's columns using `createDataTableColumnHelper` from Switchyard UI. The table has the following columns:
 
 - `ID`: The ID of the bundle.
 - `Title`: The title of the bundle.
 - `Items`: The items in the bundle. You show the title and quantity of each associated product with a link to its page.
-- `Product`: A link to the Medusa product associated with the bundle.
+- `Product`: A link to the Switchyard product associated with the bundle.
 
 You also define a `limit` constant that indicates the maximum number of bundles to retrieve in a page.
 
@@ -1206,25 +1206,25 @@ In the component, you define a state variable `pagination` to manage the paginat
 
 Then, you use the `useQuery` hook from [Tanstack (React) Query](https://tanstack.com/query/latest) to retrieve the bundles from the API route. Tanstack Query is a data-fetching library with features like caching, pagination, and background updates.
 
-In the query function of `useQuery`, you use the JS SDK to send a `GET` request to `/admin/bundled-products` of the Medusa server. You pass the `limit` and `offset` query parameters to support paginating the bundles.
+In the query function of `useQuery`, you use the JS SDK to send a `GET` request to `/admin/bundled-products` of the Switchyard server. You pass the `limit` and `offset` query parameters to support paginating the bundles.
 
-Next, you initialize a table instance using the `useDataTable` hook from Medusa UI. Finally, you render the table in the page.
+Next, you initialize a table instance using the `useDataTable` hook from Switchyard UI. Finally, you render the table in the page.
 
 ### Test it Out
 
-To test out the UI route, start the Medusa application by running the following command:
+To test out the UI route, start the Switchyard application by running the following command:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard in your browser at `http://localhost:9000/app` and log in.
+Then, open the Switchyard Admin dashboard in your browser at `http://localhost:9000/app` and log in.
 
 After you log in, you'll see a new "Bundled Products" item in the sidebar. Click on it to open the Bundled Products page.
 
 The table will be empty as you haven't added any bundled products yet. You'll add the form to create a bundled product next.
 
-![Bundled Product page with empty table](https://res.cloudinary.com/dza7lstvk/image/upload/v1745919655/Medusa%20Resources/Screenshot_2025-04-29_at_12.30.30_PM_nvsezf.png)
+![Bundled Product page with empty table](https://res.cloudinary.com/dza7lstvk/image/upload/v1745919655/Switchyard%20Resources/Screenshot_2025-04-29_at_12.30.30_PM_nvsezf.png)
 
 ---
 
@@ -1256,11 +1256,11 @@ import {
   Label,
   Select,
   toast,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useState, useRef, useCallback, useMemo } from "react"
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 const CreateBundledProduct = () => {
   const [open, setOpen] = useState(false)
@@ -1289,7 +1289,7 @@ You create a `CreateBundledProduct` component that defines the following state v
 
 ### Fetch Products in Form Component
 
-Next, you need to retrieve the list of products in Medusa to show them in a selector input. Replace the `TODO` in the `CreateBundledProduct` with the following:
+Next, you need to retrieve the list of products in Switchyard to show them in a selector input. Replace the `TODO` in the `CreateBundledProduct` with the following:
 
 export const createBundledProductComponentHighlights2 = [
   ["1", "products", "The products to show in the selector."],
@@ -1339,13 +1339,13 @@ You define new state variables to store the products, the current page of produc
 
 You also define a `hasNextPage` memoized variable to determine whether there are more products to load.
 
-Then, you use the `useQuery` hook from Tanstack Query to retrieve the products from the Medusa server. You call the `sdk.admin.product.list` method to retrieve the products, passing it the `limit` and `offset` query parameters.
+Then, you use the `useQuery` hook from Tanstack Query to retrieve the products from the Switchyard server. You call the `sdk.admin.product.list` method to retrieve the products, passing it the `limit` and `offset` query parameters.
 
 Lastly, you define a `fetchMoreProducts` function that increments the current page of products, which triggers retrieving more products. You'll call this function whenever the user scrolls to the end of the products list.
 
 ### Add Creation Logic to Form Component
 
-Next, you'll define the logic to create the bundled product in the Medusa server once the user submits the form.
+Next, you'll define the logic to create the bundled product in the Switchyard server once the user submits the form.
 
 Replace the new `TODO` with the following:
 
@@ -1416,7 +1416,7 @@ Then, you define a `handleCreate` function that will be called when the user sub
 
 - Create the bundled product using the `createBundledProduct` mutation. You pass it the details of the bundle, its product, and its items.
     - Notice that you don't set the prices. You can use custom logic to set the prices, or [set the price](!user-guide!/products/variants#edit-product-variant-prices) from the bundle's associated product page.
-- Close the modal and show a success message using the `toast` component from Medusa UI.
+- Close the modal and show a success message using the `toast` component from Switchyard UI.
 
 ### Add Component for Each Item in the Form
 
@@ -1428,7 +1428,7 @@ export const createBundledProductComponentHighlights4 = [
   ["2", "item", "The item in the bundle."],
   ["6", "index", "The index of the item in the items array."],
   ["7", "setItems", "The state setter function to update the items."],
-  ["11", "products", "The products retrieved from the Medusa server."],
+  ["11", "products", "The products retrieved from the Switchyard server."],
   ["12", "fetchMoreProducts", "The function to fetch more products."],
   ["13", "hasNextPage", "Whether there are more products to load."],
   ["24", "observe", "Fetch more products when the user scrolls to the end of the list."],
@@ -1553,11 +1553,11 @@ You define a `BundledProductItem` component that accepts the following props:
 - `item`: The item in the bundle as stored in the `items` state variable.
 - `index`: The index of the item in the `items` state variable.
 - `setItems`: The state setter function to update the `items` state variable.
-- `products`: The list of products retrieved from the Medusa server.
+- `products`: The list of products retrieved from the Switchyard server.
 - `fetchMoreProducts`: The function to fetch more products when the user scrolls to the end of the list.
 - `hasNextPage`: A boolean indicating whether there are more products to load.
 
-In the component, you render the selector field using the [Select](!ui!/components/select) component from Medusa UI. You show the products as options in the select, and update the product ID in the `items` state variable whenever the user selects a product.
+In the component, you render the selector field using the [Select](!ui!/components/select) component from Switchyard UI. You show the products as options in the select, and update the product ID in the `items` state variable whenever the user selects a product.
 
 You also observe the last option in the list of products using the [Intersection Observer API](https://developer.mozilla.org/en-US/docs/Web/API/Intersection_Observer_API). This allows you to fetch more products when the user scrolls to the end of the list.
 
@@ -1638,7 +1638,7 @@ return (
 )
 ```
 
-You use the [FocusModal](!ui!/components/focus-modal) component from Medusa UI to show the form in a modal. The modal is opened when the "Create" button is clicked.
+You use the [FocusModal](!ui!/components/focus-modal) component from Switchyard UI to show the form in a modal. The modal is opened when the "Create" button is clicked.
 
 In the modal, you show an input field for the bundle title, and you show the list of bundle items using the `BundledProductItem` component. You also add a button to add new items to the bundle.
 
@@ -1667,13 +1667,13 @@ This will show the button to open the form at the right side of the page's heade
 
 ### Test it Out
 
-To test out the form, start the Medusa application by running the following command:
+To test out the form, start the Switchyard application by running the following command:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard in your browser at `http://localhost:9000/app`, log in, and open the Bundled Products page.
+Then, open the Switchyard Admin dashboard in your browser at `http://localhost:9000/app`, log in, and open the Bundled Products page.
 
 <Note title="Tip">
 
@@ -1683,7 +1683,7 @@ Before creating the bundle, you may want to create the products in that bundle f
 
 You'll see a new "Create" button at the top right. Click on it to open the modal with the form.
 
-![Create button shown at the top right of the Bundled Products page](https://res.cloudinary.com/dza7lstvk/image/upload/v1745922803/Medusa%20Resources/Screenshot_2025-04-29_at_1.32.36_PM_yoo23i.png)
+![Create button shown at the top right of the Bundled Products page](https://res.cloudinary.com/dza7lstvk/image/upload/v1745922803/Switchyard%20Resources/Screenshot_2025-04-29_at_1.32.36_PM_yoo23i.png)
 
 In the modal:
 
@@ -1694,7 +1694,7 @@ In the modal:
     - To add a new item, click on the "Add Item" button.
 - Once you're done, click on the "Create Bundle" button to create the bundle.
 
-![Create bundled product form](https://res.cloudinary.com/dza7lstvk/image/upload/v1745923393/Medusa%20Resources/Screenshot_2025-04-29_at_1.42.12_PM_mdyzsi.png)
+![Create bundled product form](https://res.cloudinary.com/dza7lstvk/image/upload/v1745923393/Switchyard%20Resources/Screenshot_2025-04-29_at_1.42.12_PM_mdyzsi.png)
 
 After you create the bundle, the modal will close, and you can see the bundle in the table.
 
@@ -1714,7 +1714,7 @@ Learn more about editing a product in the [User Guide](!user-guide!/products/edi
 
 </Note>
 
-![Associated product page](https://res.cloudinary.com/dza7lstvk/image/upload/v1745923661/Medusa%20Resources/Screenshot_2025-04-29_at_1.46.52_PM_iuplxc.png)
+![Associated product page](https://res.cloudinary.com/dza7lstvk/image/upload/v1745923661/Switchyard%20Resources/Screenshot_2025-04-29_at_1.46.52_PM_iuplxc.png)
 
 ---
 
@@ -1787,7 +1787,7 @@ The add-to-cart workflow for bundled products has the following steps:
   hideLegend
 />
 
-You only need to implement the second step, as the other steps are provided by Medusa's `@medusajs/medusa/core-flows` package.
+You only need to implement the second step, as the other steps are provided by Switchyard's `@switchyard/medusa/core-flows` package.
 
 #### a. prepareBundleCartDataStep
 
@@ -1808,10 +1808,10 @@ export const prepareBundleCartDataStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/prepare-bundle-cart-data.ts" highlights={prepareBundleCartDataStepHighlights} collapsibleLines="1-6" expandButtonLabel="Show Imports"
-import { InferTypeOf, ProductDTO } from "@medusajs/framework/types"
+import { InferTypeOf, ProductDTO } from "@switchyard/framework/types"
 import { Bundle } from "../../modules/bundled-product/models/bundle"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { BundleItem } from "../../modules/bundled-product/models/bundle-item"
 
 type BundleItemWithProduct = InferTypeOf<typeof BundleItem> & {
@@ -1835,8 +1835,8 @@ export const prepareBundleCartDataStep = createStep(
     const bundleItems = bundle.items.map((item: BundleItemWithProduct) => {
       const selectedItem = items.find((i) => i.item_id === item.id)
       if (!selectedItem) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA, 
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA, 
           `No variant selected for bundle item ${item.id}`
         )
       }
@@ -1844,8 +1844,8 @@ export const prepareBundleCartDataStep = createStep(
         v.id === selectedItem.variant_id
       )
       if (!variant) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA, 
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA, 
           `Variant ${
             selectedItem.variant_id
           } is invalid for bundle item ${item.id}`
@@ -1916,13 +1916,13 @@ import {
   createWorkflow, 
   transform, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep,
   addToCartWorkflow,
   releaseLockStep, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   prepareBundleCartDataStep, 
   PrepareBundleCartDataStepInput,
@@ -2011,7 +2011,7 @@ You'll now create the API route that exposes the workflow's functionalities to s
 To create the API route, create the file `src/api/store/carts/[id]/line-item-bundles/route.ts` with the following content:
 
 ```ts title="src/api/store/carts/[id]/line-item-bundles/route.ts" collapsibleLines="1-6" expandButtonLabel="Show Imports"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { z } from "zod"
 import { 
   addBundleToCartWorkflow,
@@ -2031,8 +2031,8 @@ type PostCartsBundledLineItemsSchema = z.infer<
 >
 
 export async function POST(
-  req: MedusaRequest<PostCartsBundledLineItemsSchema>,
-  res: MedusaResponse
+  req: SwitchyardRequest<PostCartsBundledLineItemsSchema>,
+  res: SwitchyardResponse
 ) {
   const { result: cart } = await addBundleToCartWorkflow(req.scope)
     .run({
@@ -2108,12 +2108,12 @@ export const bundleProductsRouteHighlights = [
 ]
 
 ```ts title="src/api/store/bundle-products/[id]/route.ts" highlights={bundleProductsRouteHighlights} 
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { QueryContext } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { QueryContext } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { id } = req.params
   const query = req.scope.resolve("query")
@@ -2159,7 +2159,7 @@ export async function GET(
 
 You export a `GET` route handler, which exposes a `GET` API route at `/store/bundle-products/:id`.
 
-In the route handler, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Medusa container.
+In the route handler, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Switchyard container.
 
 Then, you use Query to retrieve the bundle with its items and their products, variants, and options. These are useful to display to the customer the options for each product to select from, which will result in selecting a variant for a bundle item.
 
@@ -2179,13 +2179,13 @@ You'll use this API route next as you customize the storefront.
 
 ## Step 11: Show Bundled Product Details in Storefront
 
-In this step, you'll customize the [Next.js Starter Storefront](../../../../nextjs-starter/page.mdx) you installed with the Medusa application to show a bundled product's items.
+In this step, you'll customize the [Next.js Starter Storefront](../../../../nextjs-starter/page.mdx) you installed with the Switchyard application to show a bundled product's items.
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-bundled-products`, you can find the storefront by going back to the parent directory and changing to the `medusa-bundled-products-storefront` directory:
+So, if your Switchyard application's directory is `medusa-bundled-products`, you can find the storefront by going back to the parent directory and changing to the `medusa-bundled-products-storefront` directory:
 
 ```bash
 cd ../medusa-bundled-products-storefront # change based on your project name
@@ -2251,9 +2251,9 @@ Then, you define a `getBundleProduct` function that retrieves the bundle's detai
 
 ### Retrieve Bundle with Product
 
-Since a bundle is linked to a Medusa product, you can modify the request that retrieves the Medusa product to retrieve its associated bundle, if there's any.
+Since a bundle is linked to a Switchyard product, you can modify the request that retrieves the Switchyard product to retrieve its associated bundle, if there's any.
 
-By retrieving the bundle's details, you can check which Medusa product is a bundled product, then retrieve its full bundle details.
+By retrieving the bundle's details, you can check which Switchyard product is a bundled product, then retrieve its full bundle details.
 
 To retrieve a product's bundle details, first, change the signature of the `listProducts` function in `src/lib/data/products.ts` to the following:
 
@@ -2413,8 +2413,8 @@ export const bundleActionsComponentHighlights = [
 "use client"
 
 import { addBundleToCart } from "@lib/data/cart"
-import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Button } from "@switchyard/ui"
 import OptionSelect from "@modules/products/components/product-actions/option-select"
 import { BundleProduct } from "@lib/data/products"
 import { isEqual } from "lodash"
@@ -2737,9 +2737,9 @@ You pass the bundle using the `bundleProduct` variable you declared earlier.
 
 ### Test it Out
 
-To test it out, start the Medusa application by running the following command in the Medusa application's directory:
+To test it out, start the Switchyard application by running the following command in the Switchyard application's directory:
 
-```bash npm2yarn badgeLabel="Medusa application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard application" badgeColor="green"
 npm run dev
 ```
 
@@ -2761,19 +2761,19 @@ The items in the bundle must also be added to the same sales channel.
 
 </Note>
 
-![Product catalogue page with the bundled product showing](https://res.cloudinary.com/dza7lstvk/image/upload/v1745926664/Medusa%20Resources/Screenshot_2025-04-29_at_2.37.22_PM_ktk4e5.png)
+![Product catalogue page with the bundled product showing](https://res.cloudinary.com/dza7lstvk/image/upload/v1745926664/Switchyard%20Resources/Screenshot_2025-04-29_at_2.37.22_PM_ktk4e5.png)
 
 If you click on the bundled product, you can see in its details page the items in the bundle.
 
-![Bundled products detail page showing the items](https://res.cloudinary.com/dza7lstvk/image/upload/v1745926778/Medusa%20Resources/Screenshot_2025-04-29_at_2.39.16_PM_mskh01.png)
+![Bundled products detail page showing the items](https://res.cloudinary.com/dza7lstvk/image/upload/v1745926778/Switchyard%20Resources/Screenshot_2025-04-29_at_2.39.16_PM_mskh01.png)
 
 Once you select the necessary options for all products in the bundle, the "Add to cart" button will be enabled. You can click on it to add the bundle's items to the cart.
 
-![Cart with the bundled items in it](https://res.cloudinary.com/dza7lstvk/image/upload/v1745929244/Medusa%20Resources/Screenshot_2025-04-29_at_3.20.27_PM_qnbdds.png)
+![Cart with the bundled items in it](https://res.cloudinary.com/dza7lstvk/image/upload/v1745929244/Switchyard%20Resources/Screenshot_2025-04-29_at_3.20.27_PM_qnbdds.png)
 
-You can then place an order with the bundled items. Then, on the Medusa Admin dashboard, you can fulfill and process the items separately.
+You can then place an order with the bundled items. Then, on the Switchyard Admin dashboard, you can fulfill and process the items separately.
 
-![Example of fulfilling one item in the bundle](https://res.cloudinary.com/dza7lstvk/image/upload/v1745929701/Medusa%20Resources/Screenshot_2025-04-29_at_3.22.02_PM_nvrvvz.png)
+![Example of fulfilling one item in the bundle](https://res.cloudinary.com/dza7lstvk/image/upload/v1745929701/Switchyard%20Resources/Screenshot_2025-04-29_at_3.22.02_PM_nvrvvz.png)
 
 ---
 
@@ -2837,7 +2837,7 @@ The workflow has the following steps:
   hideLegend
 />
 
-Medusa provides all these steps and workflows in its `@medusajs/medusa/core-flows` package. So, you can create the workflow right away.
+Switchyard provides all these steps and workflows in its `@switchyard/medusa/core-flows` package. So, you can create the workflow right away.
 
 Create the file `src/workflows/remove-bundle-from-cart.ts` with the following content:
 
@@ -2855,13 +2855,13 @@ import {
   createWorkflow, 
   transform, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep,
   deleteLineItemsWorkflow, 
   releaseLockStep,
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 type RemoveBundleFromCartWorkflowInput = {
   bundle_id: string
@@ -2948,14 +2948,14 @@ Next, you'll create the API route that exposes the workflow's functionality to s
 Create the file `src/api/store/carts/[id]/line-item-bundles/[bundle_id]/route.ts` with the following content:
 
 ```ts title="src/api/store/carts/[id]/line-item-bundles/[bundle_id]/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { 
   removeBundleFromCartWorkflow,
 } from "../../../../../../workflows/remove-bundle-from-cart"
 
 export async function DELETE(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result: cart } = await removeBundleFromCartWorkflow(req.scope)
     .run({
@@ -3084,11 +3084,11 @@ Similarly, you pass the `bundle_id` prop to the `DeleteButton` component and cha
 
 ### Test it Out
 
-To test it out, start the Medusa application and the Next.js Starter Storefront as you did in the previous step.
+To test it out, start the Switchyard application and the Next.js Starter Storefront as you did in the previous step.
 
 Then, open the storefront in your browser at `http://localhost:8000`. Given you've already added a bundled product to the cart, you can now see a "Remove bundle" button next to the bundled product in the cart.
 
-![Cart with the Remove bundle button showing for bundle items](https://res.cloudinary.com/dza7lstvk/image/upload/v1746011200/Medusa%20Resources/Screenshot_2025-04-30_at_2.06.02_PM_cgtg45.png)
+![Cart with the Remove bundle button showing for bundle items](https://res.cloudinary.com/dza7lstvk/image/upload/v1746011200/Switchyard%20Resources/Screenshot_2025-04-30_at_2.06.02_PM_cgtg45.png)
 
 If you click on the "Remove bundle" button for any of the bundle's items, all items in the bundle will be removed from the cart.
 
@@ -3099,10 +3099,10 @@ If you click on the "Remove bundle" button for any of the bundle's items, all it
 Now that you have a working bundled product feature, you can customize it further to fit your use case:
 
 - Add API routes to update the bundled product and its items in the cart.
-- Add more CRUD management features to the Bundled Products page in the Medusa Admin.
+- Add more CRUD management features to the Bundled Products page in the Switchyard Admin.
 - Customize the Next.js Starter Storefront to show the bundled products together in the cart, rather than separately.
 - Use custom logic to set the price of the bundled product.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../../commerce-modules/page.mdx).

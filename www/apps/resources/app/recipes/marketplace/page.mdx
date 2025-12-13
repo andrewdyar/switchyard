@@ -5,7 +5,7 @@ products:
 ---
 
 import { ChildDocs } from "docs-ui"
-import { AcademicCapSolid } from "@medusajs/icons"
+import { AcademicCapSolid } from "@switchyard/icons"
 
 export const metadata = {
   title: `Marketplace Recipe`,
@@ -13,7 +13,7 @@ export const metadata = {
 
 # {metadata.title}
 
-This recipe provides the general steps to implement a marketplace in your Medusa application.
+This recipe provides the general steps to implement a marketplace in your Switchyard application.
 
 ## Example Guides
 
@@ -23,11 +23,11 @@ This recipe provides the general steps to implement a marketplace in your Medusa
 
 A marketplace is an online commerce store that allows different vendors to sell their products within the same commerce system. Customers can purchase products from any of these vendors, and vendors can manage their orders separately.
 
-Medusa's [Framework](!docs!/learn/fundamentals/framework) for customizations facilitates building a marketplace. You can create a Marketplace Module that implements custom data models, such as vendors or sellers, and link those data models to existing ones such as products and orders. You also expose custom features using API routes, and implement complex flows using workflows.
+Switchyard's [Framework](!docs!/learn/fundamentals/framework) for customizations facilitates building a marketplace. You can create a Marketplace Module that implements custom data models, such as vendors or sellers, and link those data models to existing ones such as products and orders. You also expose custom features using API routes, and implement complex flows using workflows.
 
 <Note title="Related use-case">
 
-[How Foraged built a custom marketplace with Medusa](https://medusajs.com/blog/foraged/).
+[How Foraged built a custom marketplace with Switchyard](https://switchyard.com/blog/foraged/).
 
 </Note>
 
@@ -77,13 +77,13 @@ Your marketplace will most likely provide custom features for vendors, such as m
 
 When you build these API routes, it's essential that you protect them to only allow authenticated vendors. For example, only a vendor's admin should be able to manage their products and orders.
 
-Medusa supports creating custom actor types that can be authenticated with your custom API routes.
+Switchyard supports creating custom actor types that can be authenticated with your custom API routes.
 
 <CardList items={[
   {
     href: "!docs!/learn/fundamentals/api-routes",
     title: "Create API Routes",
-    text: "Learn how to create an API Route in Medusa.",
+    text: "Learn how to create an API Route in Switchyard.",
     icon: AcademicCapSolid,
   },
   {
@@ -112,7 +112,7 @@ In the API route, you can create a workflow that splits the order into multiple 
   {
     href: "!docs!/learn/fundamentals/workflows",
     title: "Create a Workflow",
-    text: "Learn how to create a workflow in Medusa.",
+    text: "Learn how to create a workflow in Switchyard.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -121,15 +121,15 @@ In the API route, you can create a workflow that splits the order into multiple 
 
 ## Customize Admin Dashboard
 
-Based on your use case, you may need to customize the Medusa Admin to add new widgets or pages.
+Based on your use case, you may need to customize the Switchyard Admin to add new widgets or pages.
 
 For example, you can create a page that lists all vendors or a widget that shows a product's vendor information.
 
-The Medusa Admin is an extensible application within your Medusa application. You can customize it by:
+The Switchyard Admin is an extensible application within your Switchyard application. You can customize it by:
 
 - **Widgets**: Adding widgets to existing pages, such as the product page.
-- **UI Routes**: Adding new pages to the Medusa Admin, such as a page to manage vendors.
-- **Settings Pages**: Adding new pages to the Medusa Admin settings, such as a page to manage marketplace settings.
+- **UI Routes**: Adding new pages to the Switchyard Admin, such as a page to manage vendors.
+- **Settings Pages**: Adding new pages to the Switchyard Admin settings, such as a page to manage marketplace settings.
 
 <CardList items={[
   {
@@ -141,7 +141,7 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
   {
     href: "!docs!/learn/fundamentals/admin/ui-routes",
     title: "Create Admin UI Routes",
-    text: "Add new pages to your Medusa Admin.",
+    text: "Add new pages to your Switchyard Admin.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -149,7 +149,7 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
 <Card
   href="!docs!/learn/fundamentals/admin/ui-routes#create-settings-page"
   title="Create Admin Setting Page"
-  text="Add new page to the Medusa Admin settings."
+  text="Add new page to the Switchyard Admin settings."
   icon={AcademicCapSolid}
   className="mt-1"
 />
@@ -158,14 +158,14 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
 
 ## Build Dashboard for Vendors
 
-For more complex use cases, customizing the Medusa Admin may not be enough to allow vendors to manage their data.
+For more complex use cases, customizing the Switchyard Admin may not be enough to allow vendors to manage their data.
 
-In that case, you can build a custom dashboard for vendors that allows them to manage their data. This dashboard can interact with Medusa's Admin API and the custom API routes you created for vendors to provide a seamless experience.
+In that case, you can build a custom dashboard for vendors that allows them to manage their data. This dashboard can interact with Switchyard's Admin API and the custom API routes you created for vendors to provide a seamless experience.
 
 <Card
   href="!api!/admin"
-  title="Medusa Admin APIs"
-  text="Learn about available APIs for the Medusa Admin."
+  title="Switchyard Admin APIs"
+  text="Learn about available APIs for the Switchyard Admin."
   icon={AcademicCapSolid}
 />
 
@@ -173,9 +173,9 @@ In that case, you can build a custom dashboard for vendors that allows them to m
 
 ## Customize or Build Storefront
 
-Medusa provides a Next.js Starter Storefront to use with your application. You can customize it for your marketplace use case, such as showing products by vendor.
+Switchyard provides a Next.js Starter Storefront to use with your application. You can customize it for your marketplace use case, such as showing products by vendor.
 
-Alternatively, you can build your own storefront using the Medusa APIs. This headless approach gives you the flexibility to build a custom storefront without limitations on which tech stack you use, or the design of the storefront.
+Alternatively, you can build your own storefront using the Switchyard APIs. This headless approach gives you the flexibility to build a custom storefront without limitations on which tech stack you use, or the design of the storefront.
 
 <CardList items={[
   {

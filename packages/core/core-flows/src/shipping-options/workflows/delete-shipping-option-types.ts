@@ -1,8 +1,8 @@
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   ShippingOptionTypeWorkflowEvents,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -10,8 +10,8 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { removeRemoteLinkStep } from "../../common/steps/remove-remote-links"
 import { deleteShippingOptionTypesStep } from "../steps"
@@ -23,8 +23,8 @@ const validateDeleteShippingOptionTypesStep = createStep(
     const shippingOptions = input.shippingOptions
 
     if (shippingOptions.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Cannot delete shipping option type because some shipping options are using it."
       )
     }

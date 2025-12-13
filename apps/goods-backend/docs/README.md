@@ -1,6 +1,6 @@
 # Goods Backend Documentation
 
-Welcome to the Goods Grocery backend documentation. This documentation covers the custom extensions, integrations, and configurations for the Medusa-based backend.
+Welcome to the Goods Grocery backend documentation. This documentation covers the custom extensions, integrations, and configurations for the Switchyard-based backend.
 
 ## Documentation Index
 
@@ -59,7 +59,7 @@ GET  /scanner/orders/:id           - Order details
 # Database
 DATABASE_URL=postgresql://...
 
-# Medusa
+# Switchyard
 JWT_SECRET=your-jwt-secret
 COOKIE_SECRET=your-cookie-secret
 
@@ -99,7 +99,7 @@ apps/goods-backend/
 │   │   └── authorize-middleware.ts
 │   └── workflows/          # Custom workflows
 │       └── sync-supabase-user.ts
-├── medusa-config.ts        # Medusa configuration
+├── switchyard.config.ts        # Switchyard configuration
 └── SUPABASE_AUTH_DEPLOYMENT.md
 ```
 
@@ -118,8 +118,8 @@ apps/goods-backend/
 
 3. **Run migrations**
    ```bash
-   # Medusa migrations
-   npx medusa migrations run
+   # Switchyard migrations
+   npx switchyard migrations run
    
    # Supabase RBAC schema
    # Apply migrations/supabase_rbac_schema.sql to your Supabase database
@@ -143,5 +143,5 @@ When adding new documentation:
 
 For issues or questions:
 - Check the [Troubleshooting](./authentication.md#troubleshooting) section
-- Review Medusa documentation: https://docs.medusajs.com
+- Review Switchyard documentation: https://docs.switchyard.com
 - Review Supabase documentation: https://supabase.com/docs

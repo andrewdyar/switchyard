@@ -1,27 +1,27 @@
-import { MedusaModule } from "@medusajs/modules-sdk"
+import { SwitchyardModule } from "@switchyard/modules-sdk"
 import {
   DistributedTransactionEvents,
   DistributedTransactionType,
   LocalWorkflow,
   TransactionState,
-} from "@medusajs/orchestration"
+} from "@switchyard/orchestration"
 import {
   Context,
   IEventBusModuleService,
   LoadedModule,
   Logger,
-  MedusaContainer,
-} from "@medusajs/types"
+  SwitchyardContainer,
+} from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   isPresent,
   MedusaContextType,
   Modules,
   TransactionHandlerType,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { EOL } from "os"
 import { ulid } from "ulid"
-import { MedusaWorkflow } from "../medusa-workflow"
+import { SwitchyardWorkflow } from "../medusa-workflow"
 import { resolveValue } from "../utils/composer/helpers/resolve-value"
 import {
   ExportedWorkflow,
@@ -39,7 +39,7 @@ let cachedLoadedModules: LoadedModule[] | null = null
 
 function getCachedLoadedModules(): LoadedModule[] {
   if (!cachedLoadedModules) {
-    cachedLoadedModules = MedusaModule.getLoadedModules().map(
+    cachedLoadedModules = SwitchyardModule.getLoadedModules().map(
       (mod) => Object.values(mod)[0]
     )
   }
@@ -63,7 +63,7 @@ function createContextualWorkflowRunner<
     wrappedInput?: boolean
     sourcePath?: string
   }
-  container?: LoadedModule[] | MedusaContainer
+  container?: LoadedModule[] | SwitchyardContainer
 }): Omit<
   LocalWorkflow,
   "run" | "registerStepSuccess" | "registerStepFailure" | "cancel" | "retryStep"
@@ -91,7 +91,7 @@ function createContextualWorkflowRunner<
       logOnError?: boolean
       resultFrom?: string | Symbol
       isCancel?: boolean
-      container?: LoadedModule[] | MedusaContainer
+      container?: LoadedModule[] | SwitchyardContainer
       forcePermanentFailure?: boolean
     },
     transactionOrIdOrIdempotencyKey: DistributedTransactionType | string,
@@ -100,7 +100,7 @@ function createContextualWorkflowRunner<
     events: DistributedTransactionEvents | undefined = {}
   ) => {
     if (!executionContainer) {
-      const container_ = flow.container as MedusaContainer
+      const container_ = flow.container as SwitchyardContainer
 
       if (!container_ || !isPresent(container_?.registrations)) {
         executionContainer = getCachedLoadedModules()
@@ -423,7 +423,7 @@ export const exportWorkflow = <TData = unknown, TResult = unknown>(
     TResultOverride = undefined
   >(
     // TODO: rm when all usage have been migrated
-    container?: LoadedModule[] | MedusaContainer
+    container?: LoadedModule[] | SwitchyardContainer
   ): Omit<
     LocalWorkflow,
     | "run"
@@ -462,7 +462,7 @@ export const exportWorkflow = <TData = unknown, TResult = unknown>(
       | "registerStepFailure"
       | "cancel"
       | "retryStep",
-    container?: LoadedModule[] | MedusaContainer
+    container?: LoadedModule[] | SwitchyardContainer
   ) => {
     const contextualRunner = createContextualWorkflowRunner<
       TData,
@@ -583,7 +583,7 @@ export const exportWorkflow = <TData = unknown, TResult = unknown>(
     )(args)
   }
 
-  MedusaWorkflow.registerWorkflow(workflowId, exportedWorkflow)
+  SwitchyardWorkflow.registerWorkflow(workflowId, exportedWorkflow)
   return exportedWorkflow as MainExportedWorkflow<TData, TResult>
 }
 
@@ -607,7 +607,7 @@ function attachOnFinishReleaseEvents(
     const flowEventGroupId = transaction.getFlow().metadata?.eventGroupId
 
     const logger =
-      (flow.container as MedusaContainer).resolve<Logger>(
+      (flow.container as SwitchyardContainer).resolve<Logger>(
         ContainerRegistrationKeys.LOGGER,
         { allowUnregistered: true }
       ) || console
@@ -624,7 +624,7 @@ function attachOnFinishReleaseEvents(
     }
 
     const eventBusService = (
-      flow.container as MedusaContainer
+      flow.container as SwitchyardContainer
     ).resolve<IEventBusModuleService>(Modules.EVENT_BUS, {
       allowUnregistered: true,
     })

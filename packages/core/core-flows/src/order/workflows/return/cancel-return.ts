@@ -3,13 +3,13 @@ import {
   OrderWorkflow,
   PaymentCollectionDTO,
   ReturnDTO,
-} from "@medusajs/framework/types"
-import { MathBN, MedusaError } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { MathBN, SwitchyardError } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   createStep,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../../common"
 import { cancelOrderReturnStep } from "../../steps"
 import { throwIfIsCancelled } from "../../utils/order-validation"
@@ -67,7 +67,7 @@ export const cancelReturnValidateOrder = createStep(
       message: string
     ) => {
       if (arr?.some(pred)) {
-        throw new MedusaError(MedusaError.Types.NOT_ALLOWED, message)
+        throw new SwitchyardError(SwitchyardError.Types.NOT_ALLOWED, message)
       }
     }
 

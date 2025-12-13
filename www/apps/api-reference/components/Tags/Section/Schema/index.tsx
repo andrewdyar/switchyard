@@ -106,13 +106,13 @@ const TagSectionSchema = ({ schema, tagName }: TagSectionSchemaProps) => {
               <div>
                 <h2>{formattedName} Object</h2>
                 <Note>
-                  This object&apos;s schema is as returned by Medusa&apos;s{" "}
+                  This object&apos;s schema is as returned by Switchyard&apos;s{" "}
                   {displayedArea} API routes. However, the related model in the
-                  Medusa application may support more fields and relations. To
-                  view the models in the Medusa application and their relations,
+                  Switchyard application may support more fields and relations. To
+                  view the models in the Switchyard application and their relations,
                   visit the{" "}
                   <Link
-                    href="https://docs.medusajs.com/resources/commerce-modules"
+                    href="https://docs.switchyard.com/resources/commerce-modules"
                     variant="content"
                   >
                     Commerce Modules Documentation

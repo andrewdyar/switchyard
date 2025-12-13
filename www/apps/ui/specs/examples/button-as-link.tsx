@@ -1,10 +1,10 @@
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 
 export default function ButtonAsLink() {
   return (
     <Button asChild>
-      <a href="https://medusajs.com" target="_blank" rel="noopener noreferrer">
-        Open Medusa Website
+      <a href="https://switchyard.com" target="_blank" rel="noopener noreferrer">
+        Open Switchyard Website
       </a>
     </Button>
   )

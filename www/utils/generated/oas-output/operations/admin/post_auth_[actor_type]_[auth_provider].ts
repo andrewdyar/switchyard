@@ -9,7 +9,7 @@
  *   When used with a third-party provider, such as Google, the request returns a `location` property. You redirect to the
  *   specified URL in your frontend to continue authentication with the third-party service.
  * externalDocs:
- *   url: https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route#types-of-authentication-flows
+ *   url: https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route#types-of-authentication-flows
  *   description: Learn about different authentication flows.
  * x-authenticated: false
  * parameters:
@@ -31,14 +31,14 @@
  * 
  *           For example, for email-pass authentication, pass `email` and `password` properties. 
  * 
- *           For the Google and GitHub authentication providers, you can pass `callback_url` to indicate the URL in the frontend that the user should be redirected to after completing their authentication. This will override the provider's `callbackUrl` configurations in `medusa-config.ts`.
+ *           For the Google and GitHub authentication providers, you can pass `callback_url` to indicate the URL in the frontend that the user should be redirected to after completing their authentication. This will override the provider's `callbackUrl` configurations in `switchyard.config.ts`.
  * x-codeSamples:
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

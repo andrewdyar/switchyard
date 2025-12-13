@@ -1,9 +1,9 @@
-import type { UpdateReturnDTO } from "@medusajs/framework/types"
+import type { UpdateReturnDTO } from "@switchyard/framework/types"
 import {
   Modules,
   getSelectsAndRelationsFromObjectArray,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The returns to update.

@@ -1,11 +1,11 @@
 import {
   arrayDifference,
   ContainerRegistrationKeys,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 
-import type { InventoryTypes } from "@medusajs/framework/types"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import type { InventoryTypes } from "@switchyard/framework/types"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to validate the inventory levels.
@@ -39,8 +39,8 @@ export const validateInventoryLocationsStep = createStep(
       stockLocations.map((l) => l.id)
     )
     if (diff.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Stock locations with ids: ${diff.join(", ")} was not found`
       )
     }

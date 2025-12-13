@@ -1,11 +1,11 @@
-import type { SchedulerOptions } from "@medusajs/orchestration"
-import { MedusaContainer } from "@medusajs/types"
-import { isFileSkipped, isObject, MedusaError } from "@medusajs/utils"
+import type { SchedulerOptions } from "@switchyard/orchestration"
+import { SwitchyardContainer } from "@switchyard/types"
+import { isFileSkipped, isObject, SwitchyardError } from "@switchyard/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
-} from "@medusajs/workflows-sdk"
+} from "@switchyard/workflows-sdk"
 import { ResourceLoader } from "../utils/resource-loader"
 
 type CronJobConfig = {
@@ -14,12 +14,12 @@ type CronJobConfig = {
   numberOfExecutions?: SchedulerOptions["numberOfExecutions"]
 }
 
-type CronJobHandler = (container: MedusaContainer) => Promise<any>
+type CronJobHandler = (container: SwitchyardContainer) => Promise<any>
 
 export class JobLoader extends ResourceLoader {
   protected resourceName = "job"
 
-  constructor(sourceDir: string | string[], container: MedusaContainer) {
+  constructor(sourceDir: string | string[], container: SwitchyardContainer) {
     super(sourceDir, container)
   }
 
@@ -52,22 +52,22 @@ export class JobLoader extends ResourceLoader {
     name: string
   }) {
     if (!config) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Config is required for scheduled jobs."
       )
     }
 
     if (!config.schedule) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Cron schedule definition is required for scheduled jobs."
       )
     }
 
     if (!config.name) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Job name is required for scheduled jobs."
       )
     }

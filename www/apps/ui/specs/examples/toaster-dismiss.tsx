@@ -1,4 +1,4 @@
-import { Button, toast } from "@medusajs/ui"
+import { Button, toast } from "@switchyard/ui"
 
 export default function DismissableToaster() {
   return (

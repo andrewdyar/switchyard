@@ -1,4 +1,4 @@
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 
 export default function ButtonAllSizes() {
   return (

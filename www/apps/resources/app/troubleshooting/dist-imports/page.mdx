@@ -4,19 +4,19 @@ export const metadata = {
 
 # {metadata.title}
 
-Because of how Medusa packages are bundled and released, importing from the `/dist` sub-path of its packages is not allowed.
+Because of how Switchyard packages are bundled and released, importing from the `/dist` sub-path of its packages is not allowed.
 
 For example, this is not allowed:
 
 ```ts
 import { 
   AdminGetApiKeysParams,
-} from "@medusajs/medusa/dist/api/admin/api-keys" // <-- Not allowed
+} from "@switchyard/medusa/dist/api/admin/api-keys" // <-- Not allowed
 ```
 
 ## Importing from Exposed Directories
 
-The `@medusajs/medusa` package allows you to import from the following sub-directories:
+The `@switchyard/medusa` package allows you to import from the following sub-directories:
 
 - `api`
 - `subscribers`
@@ -32,5 +32,5 @@ So, this is allowed:
 ```ts
 import { 
   AdminGetApiKeysParams,
-} from "@medusajs/medusa/api/admin/api-keys" // <-- Allowed
+} from "@switchyard/medusa/api/admin/api-keys" // <-- Allowed
 ```

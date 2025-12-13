@@ -139,7 +139,7 @@
  *     type: object
  *     description: The order's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/store#manage-metadata
+ *       url: https://docs.switchyard.com/api/store#manage-metadata
  *       description: Learn how to manage metadata
  *   created_at:
  *     type: string
@@ -260,7 +260,7 @@
  *     title: custom_display_id
  *     description: The custom display ID of the order.
  *     externalDocs:
- *       url: https://docs.medusajs.com/resources/commerce-modules/order/custom-display-id
+ *       url: https://docs.switchyard.com/resources/commerce-modules/order/custom-display-id
  * 
 */
 

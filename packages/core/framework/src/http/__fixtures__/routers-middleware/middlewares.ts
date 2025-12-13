@@ -1,6 +1,6 @@
 import { raw } from "express"
 import { z } from "zod"
-import { MedusaNextFunction, MedusaRequest, MedusaResponse } from "../../types"
+import { SwitchyardNextFunction, SwitchyardRequest, SwitchyardResponse } from "../../types"
 import { defineMiddlewares } from "../../utils/define-middlewares"
 import {
   customersCreateMiddlewareMock,
@@ -10,18 +10,18 @@ import {
 } from "../mocks"
 
 const customersGlobalMiddleware = (
-  req: MedusaRequest,
-  res: MedusaResponse,
-  next: MedusaNextFunction
+  req: SwitchyardRequest,
+  res: SwitchyardResponse,
+  next: SwitchyardNextFunction
 ) => {
   customersGlobalMiddlewareMock()
   next()
 }
 
 const customersCreateMiddleware = (
-  req: MedusaRequest,
-  res: MedusaResponse,
-  next: MedusaNextFunction
+  req: SwitchyardRequest,
+  res: SwitchyardResponse,
+  next: SwitchyardNextFunction
 ) => {
   if (req.additionalDataValidator) {
     customersCreateMiddlewareValidatorMock()
@@ -31,9 +31,9 @@ const customersCreateMiddleware = (
 }
 
 const storeGlobal = (
-  req: MedusaRequest,
-  res: MedusaResponse,
-  next: MedusaNextFunction
+  req: SwitchyardRequest,
+  res: SwitchyardResponse,
+  next: SwitchyardNextFunction
 ) => {
   storeGlobalMiddlewareMock()
   next()

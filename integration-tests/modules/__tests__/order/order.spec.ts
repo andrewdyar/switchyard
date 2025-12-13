@@ -1,14 +1,14 @@
 import {
   createOrderChangeWorkflow,
   createOrderWorkflow,
-} from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   CreateOrderLineItemDTO,
   IOrderModuleService,
   OrderDTO,
-} from "@medusajs/types"
-import { Modules, ProductStatus } from "@medusajs/utils"
+} from "@switchyard/types"
+import { Modules, ProductStatus } from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,

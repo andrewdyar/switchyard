@@ -1,4 +1,4 @@
-import { raw } from "@medusajs/framework/mikro-orm/core"
+import { raw } from "@switchyard/framework/mikro-orm/core"
 import {
   DistributedTransactionType,
   IDistributedSchedulerStorage,
@@ -13,16 +13,16 @@ import {
   TransactionOptions,
   TransactionStep,
   TransactionStepError,
-} from "@medusajs/framework/orchestration"
-import { Logger, ModulesSdkTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework/orchestration"
+import { Logger, ModulesSdkTypes } from "@switchyard/framework/types"
 import {
   isDefined,
   isPresent,
-  MedusaError,
+  SwitchyardError,
   promiseAll,
   TransactionState,
   TransactionStepState,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { WorkflowOrchestratorService } from "@services"
 import { Queue, RepeatOptions, Worker } from "bullmq"
 import Redis from "ioredis"
@@ -241,8 +241,8 @@ export class RedisDistributedTransactionStorage
               "[Workflow-engine-redis] Failed to reconnect to Redis",
               error
             )
-            throw new MedusaError(
-              MedusaError.Types.DB_ERROR,
+            throw new SwitchyardError(
+              SwitchyardError.Types.DB_ERROR,
               `Redis connection failed: ${error.message}`
             )
           })
@@ -266,8 +266,8 @@ export class RedisDistributedTransactionStorage
               "[Workflow-engine-redis] Failed to reconnect to Redis worker connection",
               error
             )
-            throw new MedusaError(
-              MedusaError.Types.DB_ERROR,
+            throw new SwitchyardError(
+              SwitchyardError.Types.DB_ERROR,
               `Redis worker connection failed: ${error.message}`
             )
           })
@@ -392,7 +392,7 @@ export class RedisDistributedTransactionStorage
         logOnError: true,
       })
     } catch (e) {
-      if (e instanceof MedusaError && e.type === MedusaError.Types.NOT_FOUND) {
+      if (e instanceof SwitchyardError && e.type === SwitchyardError.Types.NOT_FOUND) {
         this.logger_?.warn(
           `Tried to execute a scheduled workflow with ID ${jobId} that does not exist, removing it from the scheduler.`
         )

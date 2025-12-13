@@ -1,15 +1,15 @@
 import type {
   AdditionalData,
   FulfillmentTypes,
-} from "@medusajs/framework/types"
-import { ShippingOptionTypeWorkflowEvents } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { ShippingOptionTypeWorkflowEvents } from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep } from "../../common"
 import { createShippingOptionTypesStep } from "../steps"
 

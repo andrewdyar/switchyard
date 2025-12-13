@@ -64,7 +64,7 @@ const mergerOptions: Partial<TypeDocOptions> = {
   entryDocument: "_index.mdx",
   out: path.join(rootPathPrefix, "www", "apps", "resources", "references"),
   name: "references",
-  indexTitle: "Medusa References",
+  indexTitle: "Switchyard References",
   plugin: [...(baseOptions.plugin || []), "typedoc-plugin-markdown-medusa"],
   excludeReferences: true,
   excludeNotDocumented: true,
@@ -84,7 +84,7 @@ const mergerOptions: Partial<TypeDocOptions> = {
       mdxImports: [`import { TypeList } from "docs-ui"`],
       parameterComponentExtraProps: {
         expandUrl:
-          "https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation",
+          "https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation",
       },
     },
     internal: {

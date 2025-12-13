@@ -28,7 +28,7 @@ export const Solutions = ({ feedback, message }: SolutionsProps) => {
   >([])
 
   function constructQuery(searchQuery: string) {
-    return `${searchQuery} repo:medusajs/medusa is:closed is:issue`
+    return `${searchQuery} repo:switchyard/medusa is:closed is:issue`
   }
 
   async function searchGitHub(query: string) {
@@ -90,7 +90,7 @@ export const Solutions = ({ feedback, message }: SolutionsProps) => {
           <span>
             Explore more issues in{" "}
             <Link
-              href={`https://github.com/medusajs/medusa/issues?q=${possibleSolutionsQuery}`}
+              href={`https://github.com/switchyard/medusa/issues?q=${possibleSolutionsQuery}`}
               target="_blank"
               rel="noreferrer"
               variant="content"

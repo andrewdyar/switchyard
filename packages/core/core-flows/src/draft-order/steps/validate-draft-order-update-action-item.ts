@@ -1,8 +1,8 @@
-import type { OrderChangeActionDTO } from "@medusajs/framework/types"
+import type { OrderChangeActionDTO } from "@switchyard/framework/types"
 
-import { ChangeActionType, MedusaError } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import type { OrderChangeDTO, OrderWorkflow } from "@medusajs/framework/types"
+import { ChangeActionType, SwitchyardError } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import type { OrderChangeDTO, OrderWorkflow } from "@switchyard/framework/types"
 
 /**
  * The details of the draft order and its change to validate.
@@ -52,15 +52,15 @@ export const validateDraftOrderUpdateActionItemStep = createStep(
     ) as OrderChangeActionDTO
 
     if (!associatedAction) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `No request to add item for order ${input.order_id} in order change ${orderChange.id}`
       )
     }
 
     if (associatedAction.action !== ChangeActionType.ITEM_ADD) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Action ${associatedAction.id} is not adding an item`
       )
     }

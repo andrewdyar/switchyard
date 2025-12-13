@@ -2,7 +2,7 @@
  * @oas [post] /admin/products/import/{transaction_id}/confirm
  * operationId: PostProductsImportTransaction_idConfirm
  * summary: Confirm Product Import
- * description: Confirm that a created product import should start importing the products into Medusa.
+ * description: Confirm that a created product import should start importing the products into Switchyard.
  * x-authenticated: true
  * parameters:
  *   - name: transaction_id
@@ -19,9 +19,9 @@
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

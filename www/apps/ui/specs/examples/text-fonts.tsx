@@ -1,4 +1,4 @@
-import { Text } from "@medusajs/ui"
+import { Text } from "@switchyard/ui"
 
 export default function TextFonts() {
   return (

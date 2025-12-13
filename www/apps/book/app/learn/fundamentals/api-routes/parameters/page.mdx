@@ -18,13 +18,13 @@ export const singlePathHighlights = [
 
 ```ts title="src/api/hello-world/[id]/route.ts" highlights={singlePathHighlights}
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: `[GET] Hello ${req.params.id}!`,
@@ -32,7 +32,7 @@ export const GET = async (
 }
 ```
 
-The `MedusaRequest` object has a `params` property. `params` holds the path parameters in key-value pairs.
+The `SwitchyardRequest` object has a `params` property. `params` holds the path parameters in key-value pairs.
 
 ### Multiple Path Parameters
 
@@ -47,13 +47,13 @@ export const multiplePathHighlights = [
 
 ```ts title="src/api/hello-world/[id]/name/[name]/route.ts" highlights={multiplePathHighlights}
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: `[GET] Hello ${
@@ -69,7 +69,7 @@ You access the `id` and `name` path parameters using the `req.params` property.
 
 ## Query Parameters
 
-You can access all query parameters in the `query` property of the `MedusaRequest` object. `query` is an object of key-value pairs, where the key is a query parameter's name, and the value is its value.
+You can access all query parameters in the `query` property of the `SwitchyardRequest` object. `query` is an object of key-value pairs, where the key is a query parameter's name, and the value is its value.
 
 For example:
 
@@ -79,13 +79,13 @@ export const queryHighlights = [
 
 ```ts title="src/api/hello-world/route.ts" highlights={queryHighlights}
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: `Hello ${req.query.name}`,
@@ -105,7 +105,7 @@ Learn more in the [API Route Validation](../validation/page.mdx#how-to-validate-
 
 ## Request Body Parameters
 
-The Medusa application parses the body of any request with JSON, URL-encoded, or text content types. The request body parameters are set in the `MedusaRequest`'s `body` property.
+The Switchyard application parses the body of any request with JSON, URL-encoded, or text content types. The request body parameters are set in the `SwitchyardRequest`'s `body` property.
 
 <Note title="Tip">
 
@@ -122,17 +122,17 @@ export const bodyHighlights = [
 
 ```ts title="src/api/hello-world/route.ts" highlights={bodyHighlights}
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 type HelloWorldReq = {
   name: string
 }
 
 export const POST = async (
-  req: MedusaRequest<HelloWorldReq>,
-  res: MedusaResponse
+  req: SwitchyardRequest<HelloWorldReq>,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: `[POST] Hello ${req.body.name}!`,
@@ -144,11 +144,11 @@ In this example, you use the `name` request body parameter to create the message
 
 <Note title="Tip">
 
-The `MedusaRequest` type accepts a type argument that indicates the type of the request body. This is useful for auto-completion and to avoid typing errors.
+The `SwitchyardRequest` type accepts a type argument that indicates the type of the request body. This is useful for auto-completion and to avoid typing errors.
 
 </Note>
 
-To test it out, send the following request to your Medusa application:
+To test it out, send the following request to your Switchyard application:
 
 ```bash
 curl -X POST 'http://localhost:9000/hello-world' \

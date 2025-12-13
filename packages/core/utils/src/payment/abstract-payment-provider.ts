@@ -20,7 +20,7 @@ import {
   RetrievePaymentOutput,
   UpdatePaymentInput,
   UpdatePaymentOutput,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
   implements IPaymentProvider
@@ -30,20 +30,20 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    */
   protected readonly container: Record<string, unknown>
   /**
-   * This method validates the options of the provider set in `medusa-config.ts`.
+   * This method validates the options of the provider set in `switchyard.config.ts`.
    * Implementing this method is optional, but it's useful to ensure that the required
    * options are passed to the provider, or if you have any custom validation logic.
    *
    * If the options aren't valid, throw an error.
    *
-   * @param options - The provider's options passed in `medusa-config.ts`.
+   * @param options - The provider's options passed in `switchyard.config.ts`.
    *
    * @example
    * class MyPaymentProviderService extends AbstractPaymentProvider<Options> {
    *   static validateOptions(options: Record<any, any>) {
    *     if (!options.apiKey) {
-   *       throw new MedusaError(
-   *         MedusaError.Types.INVALID_DATA,
+   *       throw new SwitchyardError(
+   *         SwitchyardError.Types.INVALID_DATA,
    *         "API key is required in the provider's options."
    *       )
    *     }
@@ -69,8 +69,8 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * @typeParam TConfig - The type of the provider's options passed as a second parameter.
    *
    * @example
-   * import { AbstractPaymentProvider } from "@medusajs/framework/utils"
-   * import { Logger } from "@medusajs/framework/types"
+   * import { AbstractPaymentProvider } from "@switchyard/framework/utils"
+   * import { Logger } from "@switchyard/framework/types"
    *
    * type Options = {
    *   apiKey: string
@@ -127,7 +127,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
   /**
    * Each payment provider has a unique identifier defined in its class. The provider's ID
    * will be stored as `pp_{identifier}_{id}`, where `{id}` is the provider's `id`
-   * property in the `medusa-config.ts`.
+   * property in the `switchyard.config.ts`.
    *
    * @example
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -182,7 +182,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * import {
    *   CapturePaymentInput,
    *   CapturePaymentOutput,
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
    *   Options
@@ -243,7 +243,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    *   AuthorizePaymentInput,
    *   AuthorizePaymentOutput,
    *   PaymentSessionStatus
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -292,7 +292,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * import {
    *   PaymentProviderError,
    *   PaymentProviderSessionResponse,
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -347,7 +347,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * import {
    *   InitiatePaymentInput,
    *   InitiatePaymentOutput,
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -406,7 +406,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * import {
    *   DeletePaymentInput,
    *   DeletePaymentOutput,
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -443,7 +443,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    *   GetPaymentStatusInput,
    *   GetPaymentStatusOutput,
    *   PaymentSessionStatus
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -505,7 +505,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * import {
    *   RefundPaymentInput,
    *   RefundPaymentOutput,
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -544,7 +544,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * import {
    *   RetrievePaymentInput,
    *   RetrievePaymentOutput,
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -576,7 +576,7 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * import {
    *   UpdatePaymentInput,
    *   UpdatePaymentOutput,
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<
@@ -629,11 +629,11 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * // other imports...
    * import {
    *   BigNumber
-   * } from "@medusajs/framework/utils"
+   * } from "@switchyard/framework/utils"
    * import {
    *   ProviderWebhookPayload,
    *   WebhookActionResult
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    *
    * class MyPaymentProviderService extends AbstractPaymentProvider<

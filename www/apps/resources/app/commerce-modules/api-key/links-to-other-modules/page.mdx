@@ -56,9 +56,9 @@ The API Key Module has the following links to other modules:
 
 ## Sales Channel Module
 
-You can create a publishable API key and associate it with a sales channel. Medusa defines a link between the `ApiKey` and the `SalesChannel` data models.
+You can create a publishable API key and associate it with a sales channel. Switchyard defines a link between the `ApiKey` and the `SalesChannel` data models.
 
-![A diagram showcasing an example of how data models from the API Key and Sales Channel modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1709812064/Medusa%20Resources/sales-channel-api-key_zmqi2l.jpg)
+![A diagram showcasing an example of how data models from the API Key and Sales Channel modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1709812064/Switchyard%20Resources/sales-channel-api-key_zmqi2l.jpg)
 
 This is useful to avoid passing the sales channel's ID as a parameter of every request, and instead pass the publishable API key in the header of any request to the Store API route.
 
@@ -86,7 +86,7 @@ const { data: apiKeys } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -111,7 +111,7 @@ To manage the sales channels of an API key, use [Link](!docs!/learn/fundamentals
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -129,8 +129,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 

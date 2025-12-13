@@ -10,10 +10,10 @@ products:
   - sales channel
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, CardList, WorkflowDiagram } from "docs-ui"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1737564127/Medusa%20Resources/plugins-wishlist_ktut0d.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1737564127/Switchyard%20Resources/plugins-wishlist_ktut0d.jpg"
 
 export const metadata = {
   title: `How to Build a Wishlist Plugin`,
@@ -41,25 +41,25 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to build a wishlist [plugin](!docs!/learn/fundamentals/plugins) in Medusa.
+In this guide, you'll learn how to build a wishlist [plugin](!docs!/learn/fundamentals/plugins) in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) which are available out-of-the-box.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) which are available out-of-the-box.
 
 Customers browsing your store may be interested in a product but not ready to buy it yet. They may want to save the product for later or share it with friends and family. A wishlist feature allows customers to save products they like and access them later.
 
 This guide will teach you how to:
 
-- Install and set up a Medusa application project.
-- Install and set up a Medusa plugin.
+- Install and set up a Switchyard application project.
+- Install and set up a Switchyard plugin.
 - Implement the wishlist features in the plugin.
   - Features include allowing customers to add products to a wishlist, view and manage their wishlist, and share their wishlist.
-- Test and use the wishlist plugin in your Medusa application.
+- Test and use the wishlist plugin in your Switchyard application.
 
-You can follow this guide whether you're new to Medusa or an advanced Medusa developer.
+You can follow this guide whether you're new to Switchyard or an advanced Switchyard developer.
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/wishlist-plugin",
+    href: "https://github.com/switchyard/examples/tree/main/wishlist-plugin",
     title: "Wishlist Plugin Example Repository",
     text: "Find the full code for this guide in, with the plugin to install.",
     icon: Github,
@@ -74,9 +74,9 @@ You can follow this guide whether you're new to Medusa or an advanced Medusa dev
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
-You'll first install a Medusa application that exposes core commerce features through REST APIs. You'll later install the wishlist plugin in this application to test it out.
+You'll first install a Switchyard application that exposes core commerce features through REST APIs. You'll later install the wishlist plugin in this application to test it out.
 
 <Prerequisites items={[
   {
@@ -93,35 +93,35 @@ You'll first install a Medusa application that exposes core commerce features th
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll be asked for the project's name. You can also optionally choose to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx).
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name. If you chose to install the Next.js starter, it'll be installed in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name. If you chose to install the Next.js starter, it'll be installed in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Medusa's architecture in [this documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Switchyard's architecture in [this documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
 ---
 
-## Step 2: Install a Medusa Plugin Project
+## Step 2: Install a Switchyard Plugin Project
 
-A plugin is a package of reusable Medusa customizations that you can install in any Medusa application. You can add in the plugin [API Routes](!docs!/learn/fundamentals/api-routes), [Workflows](!docs!/learn/fundamentals/workflows), and other customizations, as you'll see in this guide. Afterward, you can test it out locally in a Medusa application, then publish it to npm to install and use it in any Medusa application.
+A plugin is a package of reusable Switchyard customizations that you can install in any Switchyard application. You can add in the plugin [API Routes](!docs!/learn/fundamentals/api-routes), [Workflows](!docs!/learn/fundamentals/workflows), and other customizations, as you'll see in this guide. Afterward, you can test it out locally in a Switchyard application, then publish it to npm to install and use it in any Switchyard application.
 
 <Note>
 
@@ -129,53 +129,53 @@ Learn more about plugins in [this documentation](!docs!/learn/fundamentals/plugi
 
 </Note>
 
-A Medusa plugin is set up in a different project, giving you the flexibility in building and publishing it, while providing you with the tools to test it out locally in a Medusa application.
+A Switchyard plugin is set up in a different project, giving you the flexibility in building and publishing it, while providing you with the tools to test it out locally in a Switchyard application.
 
-To create a new Medusa plugin project, run the following command in a directory different than that of the Medusa application:
+To create a new Switchyard plugin project, run the following command in a directory different than that of the Switchyard application:
 
 ```bash npm2yarn
-npx create-medusa-app@latest medusa-plugin-wishlist --plugin
+npx create-switchyard-app@latest medusa-plugin-wishlist --plugin
 ```
 
 Where `medusa-plugin-wishlist` is the name of the plugin's directory and the name set in the plugin's `package.json`. So, if you wish to publish it to NPM later under a different name, you can change it here in the command or later in `package.json`.
 
 Once the installation process is done, a new directory named `medusa-plugin-wishlist` will be created with the plugin project files.
 
-![Directory structure of a plugin project](https://res.cloudinary.com/dza7lstvk/image/upload/v1737019441/Medusa%20Book/project-dir_q4xtri.jpg)
+![Directory structure of a plugin project](https://res.cloudinary.com/dza7lstvk/image/upload/v1737019441/Switchyard%20Book/project-dir_q4xtri.jpg)
 
 ---
 
-## Step 3: Set up Plugin in Medusa Application
+## Step 3: Set up Plugin in Switchyard Application
 
-Before you start your development, you'll set up the plugin in the Medusa application you installed in the first step. This will allow you to test the plugin during your development process.
+Before you start your development, you'll set up the plugin in the Switchyard application you installed in the first step. This will allow you to test the plugin during your development process.
 
 In the plugin's directory, run the following command to publish the plugin to the local package registry:
 
 ```bash title="Plugin project"
-npx medusa plugin:publish
+npx switchyard plugin:publish
 ```
 
 This command uses [Yalc](https://github.com/wclr/yalc) under the hood to publish the plugin to a local package registry. The plugin is published locally under the name you specified in `package.json`.
 
-Next, you'll install the plugin in the Medusa application from the local registry.
+Next, you'll install the plugin in the Switchyard application from the local registry.
 
 <Note>
 
-If you've installed your Medusa project before v2.3.1, you must install [yalc](https://github.com/wclr/yalc) as a development dependency first.
+If you've installed your Switchyard project before v2.3.1, you must install [yalc](https://github.com/wclr/yalc) as a development dependency first.
 
 </Note>
 
-Run the following command in the Medusa application's directory to install the plugin:
+Run the following command in the Switchyard application's directory to install the plugin:
 
-```bash title="Medusa application"
-npx medusa plugin:add medusa-plugin-wishlist
+```bash title="Switchyard application"
+npx switchyard plugin:add medusa-plugin-wishlist
 ```
 
-This command installs the plugin in the Medusa application from the local package registry.
+This command installs the plugin in the Switchyard application from the local package registry.
 
-Next, register the plugin in the `medusa-config.ts` file of the Medusa application:
+Next, register the plugin in the `switchyard.config.ts` file of the Switchyard application:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   plugins: [
@@ -190,16 +190,16 @@ module.exports = defineConfig({
 Finally, to ensure your plugin's changes are constantly published to the local registry, simplifying your testing process, keep the following command running in the plugin project during development:
 
 ```bash title="Plugin project"
-npx medusa plugin:develop
+npx switchyard plugin:develop
 ```
 
 ---
 
 ## Step 4: Implement Wishlist Module
 
-To add custom tables to the database, which are called data models, you create a module. A module is a package with functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+To add custom tables to the database, which are called data models, you create a module. A module is a package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
-While you can create modules outside of a plugin and install them in the Medusa application, plugins allow you to bundle modules with other customizations, such as API routes and workflows.
+While you can create modules outside of a plugin and install them in the Switchyard application, plugins allow you to bundle modules with other customizations, such as API routes and workflows.
 
 In this step, you'll create a Wishlist Module within the wishlist plugin. This module adds custom data models for wishlists and their items, which you'll use in later steps to store a customer's wishlist.
 
@@ -213,11 +213,11 @@ Learn more about modules in [this documentation](!docs!/learn/fundamentals/modul
 
 A module is created under the `src/modules` directory of your plugin. So, create the directory `src/modules/wishlist`.
 
-![Diagram showcasing the module directory to create](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461182/Medusa%20Resources/wishlist-1_z3kzfv.jpg)
+![Diagram showcasing the module directory to create](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461182/Switchyard%20Resources/wishlist-1_z3kzfv.jpg)
 
 ### Create Data Models
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -229,10 +229,10 @@ In the Wishlist Module, you'll create two data models: `Wishlist` and `WishlistI
 
 Starting with the `Wishlist` model, create a file `src/modules/wishlist/models/wishlist.ts` with the following content:
 
-![Directory structure after adding the Wishlist model](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461304/Medusa%20Resources/wishlist-2_co2lht.jpg)
+![Directory structure after adding the Wishlist model](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461304/Switchyard%20Resources/wishlist-2_co2lht.jpg)
 
 ```ts title="src/modules/wishlist/models/wishlist.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { WishlistItem } from "./wishlist-item"
 
 export const Wishlist = model.define("wishlist", {
@@ -255,7 +255,7 @@ The `Wishlist` model has the following properties:
 
 - `id`: A unique identifier for the wishlist.
 - `customer_id`: The ID of the customer who owns the wishlist.
-- `sales_channel_id`: The ID of the sales channel where the wishlist is created. In Medusa, product availability can differ between sales channels. This ensures only products available in the customer's sales channel are added to the wishlist.
+- `sales_channel_id`: The ID of the sales channel where the wishlist is created. In Switchyard, product availability can differ between sales channels. This ensures only products available in the customer's sales channel are added to the wishlist.
 - `items`: A relation to the `WishlistItem` model, representing the products in the wishlist. You'll add this data model next.
 
 <Note>
@@ -274,10 +274,10 @@ Learn more about data model indexes in [this documentation](!docs!/learn/fundame
 
 Next, create the `WishlistItem` model in the file `src/modules/wishlist/models/wishlist-item.ts`:
 
-![Directory structure after adding the WishlistItem model](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461521/Medusa%20Resources/wishlist-3_fxcjxy.jpg)
+![Directory structure after adding the WishlistItem model](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461521/Switchyard%20Resources/wishlist-3_fxcjxy.jpg)
 
 ```ts title="src/modules/wishlist/models/wishlist-item.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { Wishlist } from "./wishlist"
 
 export const WishlistItem = model.define("wishlist_item", {
@@ -315,26 +315,26 @@ Learn more about services in [this documentation](!docs!/learn/fundamentals/modu
 
 In this section, you'll create the Wishlist Module's service that's used to manage wishlists and wishlist items. Create the file `src/modules/wishlist/service.ts` with the following content:
 
-![Directory structure after adding the service file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461698/Medusa%20Resources/wishlist-4_j5ka26.jpg)
+![Directory structure after adding the service file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461698/Switchyard%20Resources/wishlist-4_j5ka26.jpg)
 
 ```ts title="src/modules/wishlist/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Wishlist } from "./models/wishlist"
 import { WishlistItem } from "./models/wishlist-item"
 
-export default class WishlistModuleService extends MedusaService({
+export default class WishlistModuleService extends SwitchyardService({
   Wishlist,
   WishlistItem,
 }) {}
 ```
 
-The `WishlistModuleService` extends `MedusaService` from the Modules SDK which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
+The `WishlistModuleService` extends `SwitchyardService` from the Modules SDK which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
 
 So, the `WishlistModuleService` class now has methods like `createWishlists` and `retrieveWishlist`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [this reference](../../../service-factory-reference/page.mdx).
+Find all methods generated by the `SwitchyardService` in [this reference](../../../service-factory-reference/page.mdx).
 
 </Note>
 
@@ -342,15 +342,15 @@ You'll use this service in a later method to store and manage wishlists and wish
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/wishlist/index.ts` with the following content:
 
-![Directory structure after adding the module definition file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461829/Medusa%20Resources/wishlist-5_mb4tjf.jpg)
+![Directory structure after adding the module definition file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737461829/Switchyard%20Resources/wishlist-5_mb4tjf.jpg)
 
 ```ts title="src/modules/wishlist/index.ts"
 import WishlistModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const WISHLIST_MODULE = "wishlist"
 
@@ -376,24 +376,24 @@ Learn more about migrations in [this documentation](!docs!/learn/fundamentals/mo
 
 </Note>
 
-Medusa's CLI tool generates the migrations for you. To generate a migration for the Wishlist Module, run the following command in the plugin project:
+Switchyard's CLI tool generates the migrations for you. To generate a migration for the Wishlist Module, run the following command in the plugin project:
 
 ```bash title="Plugin project"
-npx medusa plugin:db:generate
+npx switchyard plugin:db:generate
 ```
 
 You'll now have a `migrations` directory under `src/modules/wishlist` that holds the generated migration.
 
-Then, to reflect these migrations on the database of the Medusa application using this module, run the following command:
+Then, to reflect these migrations on the database of the Switchyard application using this module, run the following command:
 
 <Note>
 
-Make sure that `npx medusa plugin:develop` is running in the plugin project to publish the changes to the local registry.
+Make sure that `npx switchyard plugin:develop` is running in the plugin project to publish the changes to the local registry.
 
 </Note>
 
-```bash title="Medusa application"
-npx medusa db:migrate
+```bash title="Switchyard application"
+npx switchyard db:migrate
 ```
 
 The tables of the Wishlist Module's data models are now created in the database.
@@ -402,9 +402,9 @@ The tables of the Wishlist Module's data models are now created in the database.
 
 ## Step 5: Link Wishlist Data Models with Core Models
 
-The Wishlist Module's data models store IDs of records in data models implemented in Medusa's core Commerce Modules, such as the ID of a customer or a product variant.
+The Wishlist Module's data models store IDs of records in data models implemented in Switchyard's core Commerce Modules, such as the ID of a customer or a product variant.
 
-However, modules are [isolated](!docs!/learn/fundamentals/modules/isolation) to ensure they're re-usable and don't have side effects when integrated into the Medusa application. So, to build associations between modules, you define [module links](!docs!/learn/fundamentals/module-links). A Module link associates two modules' data models while maintaining module isolation.
+However, modules are [isolated](!docs!/learn/fundamentals/modules/isolation) to ensure they're re-usable and don't have side effects when integrated into the Switchyard application. So, to build associations between modules, you define [module links](!docs!/learn/fundamentals/module-links). A Module link associates two modules' data models while maintaining module isolation.
 
 In this section, you'll link the `Wishlist` data model to the [Customer Module](../../../commerce-modules/customer/page.mdx)'s `Customer` data model, and to the [Sales Channel](../../../commerce-modules/sales-channel/page.mdx) Module's `SalesChannel` data model. You'll also link the `WishlistItem` data model to the [Product Module](../../../commerce-modules/product/page.mdx)'s `ProductVariant` data model.
 
@@ -416,12 +416,12 @@ Learn more about module links in [this documentation](!docs!/learn/fundamentals/
 
 To create the link between the `Wishlist` data model and the `Customer` data model, create the file `src/modules/wishlist/links/wishlist-customer.ts` with the following content:
 
-![Directory structure after adding the link file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737462649/Medusa%20Resources/wishlist-6_xqytog.jpg)
+![Directory structure after adding the link file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737462649/Switchyard%20Resources/wishlist-6_xqytog.jpg)
 
 ```ts title="src/modules/wishlist/links/wishlist-customer.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import WishlistModule from "../modules/wishlist"
-import CustomerModule from "@medusajs/medusa/customer"
+import CustomerModule from "@switchyard/medusa/customer"
 
 export default defineLink(
   {
@@ -439,16 +439,16 @@ You define a link using `defineLink` from the Modules SDK. It accepts three para
 
 1. The first data model part of the link, which is the Wishlist Module's `wishlist` data model. A module has a special `linkable` property that contain link configurations for its data models. You also specify the field that points to the customer.
 1. The second data model part of the link, which is the Customer Module's `customer` data model.
-3. An object of configurations for the module link. By default, Medusa creates a table in the database to represent the link you define. However, in this guide, you only want this link to retrieve the customer associated with a wishlist. So, you enable `readOnly` telling Medusa not to create a table for this link.
+3. An object of configurations for the module link. By default, Switchyard creates a table in the database to represent the link you define. However, in this guide, you only want this link to retrieve the customer associated with a wishlist. So, you enable `readOnly` telling Switchyard not to create a table for this link.
 
 Next, to create the link between the `Wishlist` data model and the `SalesChannel` data model, create the file `src/modules/wishlist/links/wishlist-sales-channel.ts` with the following content:
 
-![Directory structure after adding the link file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737462829/Medusa%20Resources/wishlist-7_ddiwxy.jpg)
+![Directory structure after adding the link file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737462829/Switchyard%20Resources/wishlist-7_ddiwxy.jpg)
 
 ```ts title="src/modules/wishlist/links/wishlist-sales-channel.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import WishlistModule from "../modules/wishlist"
-import SalesChannelModule from "@medusajs/medusa/sales-channel"
+import SalesChannelModule from "@switchyard/medusa/sales-channel"
 
 export default defineLink(
   {
@@ -466,12 +466,12 @@ You define a link between the `Wishlist` data model and the `SalesChannel` data 
 
 Finally, to create the link between the `WishlistItem` data model and the `ProductVariant` data model, create the file `src/modules/wishlist/links/wishlist-product.ts` with the following content:
 
-![Directory structure after adding the link file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737467010/Medusa%20Resources/wishlist-8_hgoaby.jpg)
+![Directory structure after adding the link file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737467010/Switchyard%20Resources/wishlist-8_hgoaby.jpg)
 
 ```ts title="src/modules/wishlist/links/wishlist-product.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import WishlistModule from "../modules/wishlist"
-import ProductModule from "@medusajs/medusa/product"
+import ProductModule from "@switchyard/medusa/product"
 
 export default defineLink(
   {
@@ -536,7 +536,7 @@ The first step in the workflow will validate that a customer doesn't have an exi
 
 To create the step, create the file `src/workflows/steps/validate-customer-create-wishlist.ts` with the following content:
 
-![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737467678/Medusa%20Resources/wishlist-9_lzlifn.jpg)
+![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737467678/Switchyard%20Resources/wishlist-9_lzlifn.jpg)
 
 export const validateCustomerWishlistHighlights = [
   ["13", "graph", "Retrieve the wishlist based on the specified customer ID."],
@@ -546,8 +546,8 @@ export const validateCustomerWishlistHighlights = [
 ]
 
 ```ts title="src/workflows/steps/validate-customer-create-wishlist.ts" highlights={validateCustomerWishlistHighlights}
-import { MedusaError } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 type ValidateCustomerCreateWishlistStepInput = {
   customer_id: string
@@ -567,8 +567,8 @@ export const validateCustomerCreateWishlistStep = createStep(
     })
 
     if (data.length) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         "Customer already has a wishlist"
       )
     }
@@ -583,8 +583,8 @@ export const validateCustomerCreateWishlistStep = createStep(
     })
 
     if (customers.length === 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Specified customer was not found"
       )
     }
@@ -597,7 +597,7 @@ You create a step using `createStep` from the Workflows SDK. It accepts two para
 1. The step's name, which is `validate-customer-create-wishlist`.
 1. An async function that executes the step's logic. The function receives two parameters:
    - The input data for the step, which in this case is an object having a `customer_id` property.
-   - An object holding the workflow's context, including the [Medusa Container](!docs!/learn/fundamentals/medusa-container) that allows you to resolve Framework and commerce tools.
+   - An object holding the workflow's context, including the [Switchyard Container](!docs!/learn/fundamentals/medusa-container) that allows you to resolve Framework and commerce tools.
 
 In the step function, you use [Query](!docs!/learn/fundamentals/module-links/query) to retrieve the wishlist based on the specified customer ID. If a wishlist exists, you throw an error, stopping the workflow's execution.
 
@@ -607,7 +607,7 @@ You also try to retrieve the customer, and if they don't exist, you throw an err
 
 The second step in the workflow will create a wishlist for the customer. To create the step, create the file `src/workflows/steps/create-wishlist.ts` with the following content:
 
-![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737467998/Medusa%20Resources/wishlist-10_xex4d0.jpg)
+![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737467998/Switchyard%20Resources/wishlist-10_xex4d0.jpg)
 
 export const createWishlistStepHighlights = [
   ["13", "wishlistModuleService", "Resolve the Wishlist Module's service from the container."],
@@ -618,7 +618,7 @@ export const createWishlistStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-wishlist.ts" highlights={createWishlistStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { WISHLIST_MODULE } from "../../modules/wishlist"
 import WishlistModuleService from "../../modules/wishlist/service"
 
@@ -670,7 +670,7 @@ Learn more about the generated [create](../../../service-factory-reference/metho
 
 You can now add the `createWishlistWorkflow` to the plugin. Create the file `src/workflows/create-wishlist.ts` with the following content:
 
-![Directory structure after adding the workflow file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737468333/Medusa%20Resources/wishlist-11_absftb.jpg)
+![Directory structure after adding the workflow file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737468333/Switchyard%20Resources/wishlist-11_absftb.jpg)
 
 export const createWishlistWorkflowHighlights = [
   ["13", "validateCustomerCreateWishlistStep", "Validate that the customer doesn't already have a wishlist."],
@@ -679,7 +679,7 @@ export const createWishlistWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/create-wishlist.ts" highlights={createWishlistWorkflowHighlights}
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { validateCustomerCreateWishlistStep } from "./steps/validate-customer-create-wishlist"
 import { createWishlistStep } from "./steps/create-wishlist"
 
@@ -739,20 +739,20 @@ An API route is created in a `route.ts` file under a sub-directory of the `src/a
 
 So, to create the `/store/customers/me/wishlists` API route, create the file `src/api/store/customers/me/wishlists/route.ts` with the following content:
 
-![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737468859/Medusa%20Resources/wishlist-12_gvvb9z.jpg)
+![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737468859/Switchyard%20Resources/wishlist-12_gvvb9z.jpg)
 
 ```ts title="src/api/store/customers/me/wishlists/route.ts"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { createWishlistWorkflow } from "../../../../../workflows/create-wishlist"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export async function POST(
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   if (!req.publishable_key_context?.sales_channel_ids.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "At least one sales channel ID is required to be associated with the publishable API key in the request header."
     )
   }
@@ -783,15 +783,15 @@ In the route handler function, you execute the `createWishlistWorkflow`, passing
 
 ### Test API Route
 
-You'll now test that this API route defined in the plugin is working as expected using the Medusa application you installed in the first step.
+You'll now test that this API route defined in the plugin is working as expected using the Switchyard application you installed in the first step.
 
 <Note>
 
-Make sure that `npx medusa plugin:develop` is running in the plugin project to publish the changes to the local registry.
+Make sure that `npx switchyard plugin:develop` is running in the plugin project to publish the changes to the local registry.
 
 </Note>
 
-In the Medusa application's directory, run the following command to start the development server:
+In the Switchyard application's directory, run the following command to start the development server:
 
 ```bash npm2yarn
 npm run dev
@@ -799,15 +799,15 @@ npm run dev
 
 ### Retrieve Publishable API Key
 
-Before sending the request, you need to obtain a publishable API key. So, open the Medusa Admin at `http://localhost:9000/app` and log in with the user you created earlier.
+Before sending the request, you need to obtain a publishable API key. So, open the Switchyard Admin at `http://localhost:9000/app` and log in with the user you created earlier.
 
 To access your application's API keys in the admin, go to Settings -> Publishable API Keys. You'll have an API key created by default, which is associated with the default sales channel. You can use this publishable API key in the request header.
 
-![In the admin, click on Publishable API key in the sidebar. A table will show your API keys and allow you to create one.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733230421/Medusa%20Resources/Screenshot_2024-12-03_at_2.53.07_PM_gau9jy.png)
+![In the admin, click on Publishable API key in the sidebar. A table will show your API keys and allow you to create one.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733230421/Switchyard%20Resources/Screenshot_2024-12-03_at_2.53.07_PM_gau9jy.png)
 
 ### Retrieve Authenticated Customer Token
 
-Then, you need an authentication token of a registered customer. To create a customer, first, send the following request to the Medusa application:
+Then, you need an authentication token of a registered customer. To create a customer, first, send the following request to the Switchyard application:
 
 ```bash
 curl -X POST 'http://localhost:9000/auth/customer/emailpass/register' \
@@ -871,8 +871,8 @@ So, add to the `src/api/store/customers/me/wishlists/route.ts` the following:
 
 ```ts title="src/api/store/customers/me/wishlists/route.ts"
 export async function GET(
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const query = req.scope.resolve("query")
 
@@ -885,8 +885,8 @@ export async function GET(
   })
 
   if (!data.length) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       "No wishlist found for customer"
     )
   }
@@ -903,11 +903,11 @@ If the wishlist doesn't exist, you throw an error. Otherwise, you return the wis
 
 ### Test Retrieve Wishlist API Route
 
-To test the API route, start the Medusa application.
+To test the API route, start the Switchyard application.
 
 <Note>
 
-Make sure that `npx medusa plugin:develop` is running in the plugin project to publish the changes to the local registry.
+Make sure that `npx switchyard plugin:develop` is running in the plugin project to publish the changes to the local registry.
 
 </Note>
 
@@ -983,7 +983,7 @@ The workflow to add an item to a wishlist has the following steps:
   hideLegend
 />
 
-The `useQueryGraphStep` is from Medusa's workflows package. So, you'll only implement the other steps.
+The `useQueryGraphStep` is from Switchyard's workflows package. So, you'll only implement the other steps.
 
 #### validateWishlistExistsStep
 
@@ -991,12 +991,12 @@ The second step in the workflow validates that the customer's wishlist, retrieve
 
 To create the step, create the file `src/workflows/steps/validate-wishlist-exists.ts` with the following content:
 
-![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740071251/Medusa%20Resources/wishlist-29_bq6kcn.jpg)
+![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740071251/Switchyard%20Resources/wishlist-29_bq6kcn.jpg)
 
 ```ts title="src/workflows/steps/validate-wishlist-exists.ts"
-import { MedusaError } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { InferTypeOf } from "@medusajs/framework/types"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { Wishlist } from "../../modules/wishlist/models/wishlist"
 
 type Input = {
@@ -1007,8 +1007,8 @@ export const validateWishlistExistsStep = createStep(
   "validate-wishlist-exists",
   async (input: Input) => {
     if (!input.wishlists?.length) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         "No wishlist found for this customer"
       )
     }
@@ -1024,11 +1024,11 @@ The third step in the workflow validates that the wishlist belongs to the sales 
 
 To create the step, create the file `src/workflows/steps/validate-wishlist-sales-channel.ts` with the following content:
 
-![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470093/Medusa%20Resources/wishlist-13_nn924e.jpg)
+![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470093/Switchyard%20Resources/wishlist-13_nn924e.jpg)
 
 ```ts title="src/workflows/steps/validate-wishlist-sales-channel.ts"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { InferTypeOf } from "@medusajs/framework/types"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { Wishlist } from "../../modules/wishlist/models/wishlist"
 
 type ValidateWishlistSalesChannelStepInput = {
@@ -1062,7 +1062,7 @@ The next step in the workflow validates that the specified variant is not alread
 
 Create the file `src/workflows/steps/validate-variant-wishlist.ts` with the following content:
 
-![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470156/Medusa%20Resources/wishlist-14_ckoesz.jpg)
+![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470156/Switchyard%20Resources/wishlist-14_ckoesz.jpg)
 
 export const validateVariantWishlistHighlights = [
   ["20", "isInWishlist", "Check whether the variant is already in the wishlist."],
@@ -1071,10 +1071,10 @@ export const validateVariantWishlistHighlights = [
 ]
 
 ```ts title="src/workflows/steps/validate-variant-wishlist.ts" highlights={validateVariantWishlistHighlights}
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { Wishlist } from "../../modules/wishlist/models/wishlist"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type ValidateVariantWishlistStepInput = {
   variant_id: string
@@ -1095,8 +1095,8 @@ export const validateVariantWishlistStep = createStep(
     )
 
     if (isInWishlist) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Variant is already in wishlist"
       )
     }
@@ -1116,8 +1116,8 @@ export const validateVariantWishlistStep = createStep(
     )
 
     if (!variantInSalesChannel) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Variant is not available in the specified sales channel"
       )
     }
@@ -1136,7 +1136,7 @@ The fifth step in the workflow creates a wishlist item for the specified variant
 
 Create the file `src/workflows/steps/create-wishlist-item.ts` with the following content:
 
-![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470302/Medusa%20Resources/wishlist-15_oc696x.jpg)
+![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470302/Switchyard%20Resources/wishlist-15_oc696x.jpg)
 
 export const createWishlistItemStepHighlights = [
   ["16", "createWishlistItems", "Create the wishlist item."],
@@ -1144,7 +1144,7 @@ export const createWishlistItemStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-wishlist-item.ts" highlights={createWishlistItemStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import WishlistModuleService from "../../modules/wishlist/service"
 import { WISHLIST_MODULE } from "../../modules/wishlist"
 
@@ -1183,7 +1183,7 @@ You return the created wishlist item and pass the item's ID to the compensation 
 
 You can now add the `createWishlistItemWorkflow` to the plugin. Create the file `src/workflows/create-wishlist-item.ts` with the following content:
 
-![Directory structure after adding the workflow file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470660/Medusa%20Resources/wishlist-16_ovujwp.jpg)
+![Directory structure after adding the workflow file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470660/Switchyard%20Resources/wishlist-16_ovujwp.jpg)
 
 export const createWishlistItemWorkflowHighlights = [
   ["17", "useQueryGraphStep", "Retrieve the wishlist of the specified customer."],
@@ -1196,8 +1196,8 @@ export const createWishlistItemWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/create-wishlist-item.ts" collapsibleLines="1-6" expandButtonLabel="Show Imports" highlights={createWishlistItemWorkflowHighlights}
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { validateWishlistSalesChannelStep } from "./steps/validate-wishlist-sales-channel"
 import { createWishlistItemStep } from "./steps/create-wishlist-item"
 import { validateVariantWishlistStep } from "./steps/validate-variant-wishlist"
@@ -1273,24 +1273,24 @@ You'll now create an API route that executes the `createWishlistItemWorkflow` to
 
 Create the file `src/api/store/customers/me/wishlists/items/route.ts` with the following content:
 
-![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470985/Medusa%20Resources/wishlist-17_zmqk6c.jpg)
+![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737470985/Switchyard%20Resources/wishlist-17_zmqk6c.jpg)
 
 ```ts title="src/api/store/customers/me/wishlists/items/route.ts"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { createWishlistItemWorkflow } from "../../../../../../workflows/create-wishlist-item"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type PostStoreCreateWishlistItemType = {
   variant_id: string
 }
 
 export async function POST(
-  req: AuthenticatedMedusaRequest<PostStoreCreateWishlistItemType>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<PostStoreCreateWishlistItemType>,
+  res: SwitchyardResponse
 ) {
   if (!req.publishable_key_context?.sales_channel_ids.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "At least one sales channel ID is required to be associated with the publishable API key in the request header."
     )
   }
@@ -1309,7 +1309,7 @@ export async function POST(
 }
 ```
 
-This route exposes a `POST` endpoint at `/store/customers/me/wishlists/items`. Notice that the `AuthenticatedMedusaRequest` accepts a type parameter indicating the type of the accepted request body. In this case, the request body must have a `variant_id` property, indicating the ID of the variant to add to the wishlist.
+This route exposes a `POST` endpoint at `/store/customers/me/wishlists/items`. Notice that the `AuthenticatedSwitchyardRequest` accepts a type parameter indicating the type of the accepted request body. In this case, the request body must have a `variant_id` property, indicating the ID of the variant to add to the wishlist.
 
 In the route handler function, you execute the `createWishlistItemWorkflow` workflow, passing the authenticated customer ID, the variant ID, and the sales channel ID as input. You return in the response the updated wishlist.
 
@@ -1317,9 +1317,9 @@ In the route handler function, you execute the `createWishlistItemWorkflow` work
 
 To ensure that a variant ID is passed in the body of requests sent to this API route, you'll define a validation schema for the request body.
 
-In Medusa, you create validation schemas using [Zod](https://zod.dev/) in a TypeScript file under the `src/api` directory. So, create the file `src/api/store/customers/me/wishlists/items/validators.ts` with the following content:
+In Switchyard, you create validation schemas using [Zod](https://zod.dev/) in a TypeScript file under the `src/api` directory. So, create the file `src/api/store/customers/me/wishlists/items/validators.ts` with the following content:
 
-![Directory structure after adding the validation schema file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737471383/Medusa%20Resources/wishlist-18_hj9iom.jpg)
+![Directory structure after adding the validation schema file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737471383/Switchyard%20Resources/wishlist-18_hj9iom.jpg)
 
 ```ts title="src/api/store/customers/me/wishlists/items/validators.ts"
 import { z } from "zod"
@@ -1351,7 +1351,7 @@ type PostStoreCreateWishlistItemType = z.infer<
 
 Finally, to use the schema for validation, you need to apply the `validateAndTransformBody` middleware on the `/store/customers/me/wishlists/items` route. A middleware is a function executed before the API route when a request is sent to it.
 
-The `validateAndTransformBody` middleware is available out-of-the-box in Medusa, allowing you to validate and transform the request body using a Zod schema.
+The `validateAndTransformBody` middleware is available out-of-the-box in Switchyard, allowing you to validate and transform the request body using a Zod schema.
 
 <Note>
 
@@ -1361,13 +1361,13 @@ Learn more about middlewares in [this documentation](!docs!/learn/fundamentals/a
 
 To apply the middleware, create the file `src/api/middlewares.ts` with the following content:
 
-![Directory structure after adding the middleware file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737471615/Medusa%20Resources/wishlist-19_ryyzdk.jpg)
+![Directory structure after adding the middleware file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737471615/Switchyard%20Resources/wishlist-19_ryyzdk.jpg)
 
 ```ts title="src/api/middlewares.ts"
 import { 
   defineMiddlewares,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { 
   PostStoreCreateWishlistItem,
 } from "./store/customers/me/wishlists/items/validators"
@@ -1385,7 +1385,7 @@ export default defineMiddlewares({
 })
 ```
 
-In this file, you export the middlewares definition using `defineMiddlewares` from the Medusa Framework. This function accepts an object having a `routes` property, which is an array of middleware configurations to apply on routes.
+In this file, you export the middlewares definition using `defineMiddlewares` from the Switchyard Framework. This function accepts an object having a `routes` property, which is an array of middleware configurations to apply on routes.
 
 You pass in the `routes` array an object having the following properties:
 
@@ -1398,11 +1398,11 @@ Any request sent to `/store/customers/me/wishlists/items` will now automatically
 
 ### Test API Route
 
-Start the Medusa application to test out the API route.
+Start the Switchyard application to test out the API route.
 
 <Note>
 
-Make sure that `npx medusa plugin:develop` is running in the plugin project to publish the changes to the local registry.
+Make sure that `npx switchyard plugin:develop` is running in the plugin project to publish the changes to the local registry.
 
 </Note>
 
@@ -1492,7 +1492,7 @@ The workflow to remove an item from a wishlist has the following steps:
   hideLegend
 />
 
-The `useQueryGraphStep` is from Medusa's workflows package, and you implemented the `validateWishlistExistsStep` [previously](#validatewishlistexistsstep) . So, you'll only implement the other steps.
+The `useQueryGraphStep` is from Switchyard's workflows package, and you implemented the `validateWishlistExistsStep` [previously](#validatewishlistexistsstep) . So, you'll only implement the other steps.
 
 #### validateItemInWishlistStep
 
@@ -1500,13 +1500,13 @@ The second step of the workflow validates that the item to remove is in the auth
 
 To create the step, create the file `src/workflows/steps/validate-item-in-wishlist.ts` with the following content:
 
-![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737474621/Medusa%20Resources/wishlist-20_jcwrtf.jpg)
+![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737474621/Switchyard%20Resources/wishlist-20_jcwrtf.jpg)
 
 ```ts title="src/workflows/steps/validate-item-in-wishlist.ts"
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { Wishlist } from "../../modules/wishlist/models/wishlist"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type ValidateItemInWishlistStepInput = {
   wishlist: InferTypeOf<typeof Wishlist>
@@ -1522,8 +1522,8 @@ export const validateItemInWishlistStep = createStep(
     const item = wishlist.items.find((item) => item.id === wishlist_item_id)
 
     if (!item) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Item does not exist in customer's wishlist"
       )
     }
@@ -1539,10 +1539,10 @@ The third step of the workflow deletes the item from the wishlist.
 
 Create the file `src/workflows/steps/delete-wishlist-item.ts` with the following content:
 
-![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737474703/Medusa%20Resources/wishlist-21_e50lrg.jpg)
+![Directory structure after adding the step file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737474703/Switchyard%20Resources/wishlist-21_e50lrg.jpg)
 
 ```ts title="src/workflows/steps/delete-wishlist-item.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import WishlistModuleService from "../../modules/wishlist/service"
 import { WISHLIST_MODULE } from "../../modules/wishlist"
 
@@ -1583,7 +1583,7 @@ Learn more about the [softDelete](../../../service-factory-reference/methods/sof
 
 You can now add the `deleteWishlistItemWorkflow` to the plugin. Create the file `src/workflows/delete-wishlist-item.ts` with the following content:
 
-![Directory structure after adding the workflow file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737474872/Medusa%20Resources/wishlist-22_wt1g36.jpg)
+![Directory structure after adding the workflow file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737474872/Switchyard%20Resources/wishlist-22_wt1g36.jpg)
 
 export const deleteWishlistItemWorkflowHighlights = [
   ["15", "useQueryGraphStep", "Retrieve the wishlist of a customer."],
@@ -1595,9 +1595,9 @@ export const deleteWishlistItemWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/delete-wishlist-item.ts" highlights={deleteWishlistItemWorkflowHighlights}
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { deleteWishlistItemStep } from "./steps/delete-wishlist-item"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { validateItemInWishlistStep } from "./steps/validate-item-in-wishlist"
 import { validateWishlistExistsStep } from "./steps/validate-wishlist-exists"
 
@@ -1659,15 +1659,15 @@ You'll now create an API route that executes the `deleteWishlistItemWorkflow` to
 
 Create the file `src/api/store/customers/me/wishlists/items/[id]/route.ts` with the following content:
 
-![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737475074/Medusa%20Resources/wishlist-23_qatcia.jpg)
+![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737475074/Switchyard%20Resources/wishlist-23_qatcia.jpg)
 
 ```ts title="src/api/store/customers/me/wishlists/items/[id]/route.ts"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { deleteWishlistItemWorkflow } from "../../../../../../../workflows/delete-wishlist-item"
 
 export async function DELETE(
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await deleteWishlistItemWorkflow(req.scope)
     .run({
@@ -1689,11 +1689,11 @@ In the route handler function, you execute the `deleteWishlistItemWorkflow` work
 
 ### Test API Route
 
-Start the Medusa application to test out the API route.
+Start the Switchyard application to test out the API route.
 
 <Note>
 
-Make sure that `npx medusa plugin:develop` is running in the plugin project to publish the changes to the local registry.
+Make sure that `npx switchyard plugin:develop` is running in the plugin project to publish the changes to the local registry.
 
 </Note>
 
@@ -1746,20 +1746,20 @@ npm install jsonwebtoken
 
 Then, to create the API route, create the file `src/api/store/customers/me/wishlists/share/route.ts` with the following content:
 
-![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737475331/Medusa%20Resources/wishlist-24_tiwjpr.jpg)
+![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737475331/Switchyard%20Resources/wishlist-24_tiwjpr.jpg)
 
 ```ts title="src/api/store/customers/me/wishlists/share/route.ts"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@medusajs/framework"
-import { MedusaError } from "@medusajs/framework/utils"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import jwt from "jsonwebtoken"
 
 export async function POST(
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   if (!req.publishable_key_context?.sales_channel_ids.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "At least one sales channel ID is required to be associated with the publishable API key in the request header."
     )
   }
@@ -1775,15 +1775,15 @@ export async function POST(
   })
 
   if (!data.length) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       "No wishlist found for customer"
     )
   }
 
   if (data[0].sales_channel_id !== req.publishable_key_context.sales_channel_ids[0]) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Wishlist does not belong to the specified sales channel"
     )
   }
@@ -1810,15 +1810,15 @@ return res.json({
 })
 ```
 
-You first retrieve the [http Medusa configuration](!docs!/learn/configurations/medusa-config#http) which holds configurations related to JWT secrets and expiration times. You then use the `jsonwebtoken` package to sign a token containing the wishlist ID. You return the token in the response.
+You first retrieve the [http Switchyard configuration](!docs!/learn/configurations/switchyard.config#http) which holds configurations related to JWT secrets and expiration times. You then use the `jsonwebtoken` package to sign a token containing the wishlist ID. You return the token in the response.
 
 ### Test API Route
 
-Start the Medusa application to test out the API route.
+Start the Switchyard application to test out the API route.
 
 <Note>
 
-Make sure that `npx medusa plugin:develop` is running in the plugin project to publish the changes to the local registry.
+Make sure that `npx switchyard plugin:develop` is running in the plugin project to publish the changes to the local registry.
 
 </Note>
 
@@ -1845,20 +1845,20 @@ In this step, you'll add an API route that retrieves a wishlist shared using a t
 
 Create the file `src/api/store/wishlists/[token]/route.ts` with the following content:
 
-![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737475795/Medusa%20Resources/wishlist-25_sodzsr.jpg)
+![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737475795/Switchyard%20Resources/wishlist-25_sodzsr.jpg)
 
 ```ts title="src/api/store/wishlists/[token]/route.ts"
-import { MedusaResponse, MedusaStoreRequest } from "@medusajs/framework"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardResponse, SwitchyardStoreRequest } from "@switchyard/framework"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { decode, JwtPayload } from "jsonwebtoken"
 
 export async function GET(
-  req: MedusaStoreRequest,
-  res: MedusaResponse
+  req: SwitchyardStoreRequest,
+  res: SwitchyardResponse
 ) {
   if (!req.publishable_key_context?.sales_channel_ids.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "At least one sales channel ID is required to be associated with the publishable API key in the request header."
     )
   }
@@ -1866,8 +1866,8 @@ export async function GET(
   const decodedToken = decode(req.params.token) as JwtPayload
 
   if (!decodedToken.wishlist_id) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Invalid token"
     )
   }
@@ -1883,15 +1883,15 @@ export async function GET(
   })
 
   if (!data.length) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       "No wishlist found"
     )
   }
 
   if (data[0].sales_channel_id !== req.publishable_key_context.sales_channel_ids[0]) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Wishlist does not belong to the request's sales channel"
     )
   }
@@ -1912,11 +1912,11 @@ You return in the response the shared wishlist.
 
 ### Test API Route
 
-Start the Medusa application to test out the API route.
+Start the Switchyard application to test out the API route.
 
 <Note>
 
-Make sure that `npx medusa plugin:develop` is running in the plugin project to publish the changes to the local registry.
+Make sure that `npx switchyard plugin:develop` is running in the plugin project to publish the changes to the local registry.
 
 </Note>
 
@@ -1936,11 +1936,11 @@ You'll receive in the response the shared wishlist.
 
 ---
 
-## Step 13: Show Wishlist Count in Medusa Admin
+## Step 13: Show Wishlist Count in Switchyard Admin
 
-In this step, you'll customize the Medusa Admin dashboard to show for each product the number of wishlists it's in.
+In this step, you'll customize the Switchyard Admin dashboard to show for each product the number of wishlists it's in.
 
-The Medusa Admin dashboard's pages are customizable to insert widgets of custom content in pre-defined injection zones. You create these widgets as React components that allow admin users to perform custom actions.
+The Switchyard Admin dashboard's pages are customizable to insert widgets of custom content in pre-defined injection zones. You create these widgets as React components that allow admin users to perform custom actions.
 
 <Note>
 
@@ -1956,18 +1956,18 @@ In `src/modules/wishlist/service.ts`, add the following imports and method:
 
 ```ts title="src/modules/wishlist/service.ts"
 // other imports...
-import { InjectManager } from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+import { InjectManager } from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
-export default class WishlistModuleService extends MedusaService({
+export default class WishlistModuleService extends SwitchyardService({
   Wishlist,
   WishlistItem,
 }) {
   @InjectManager()
   async getWishlistsOfVariants(
     variantIds: string[],
-    @MedusaContext() context: Context<EntityManager> = {}
+    @SwitchyardContext() context: Context<EntityManager> = {}
   ): Promise<number> {
     return (await context.manager?.createQueryBuilder("wishlist_item", "wi")
       .select(["wi.wishlist_id"], true)
@@ -1979,7 +1979,7 @@ export default class WishlistModuleService extends MedusaService({
 
 To perform queries on the database in a method, add the `@InjectManager` decorator to the method. This will inject a [forked MikroORM entity manager](https://mikro-orm.io/docs/identity-map#forking-entity-manager) that you can use in your method.
 
-Methods with the `@InjectManager` decorator accept as a last parameter a context object that has the `@MedusaContext` decorator. The entity manager is injected into the `manager` property of this parameter.
+Methods with the `@InjectManager` decorator accept as a last parameter a context object that has the `@SwitchyardContext` decorator. The entity manager is injected into the `manager` property of this parameter.
 
 The method accepts an array of variant IDs as a parameter. In the method, you use the `createQueryBuilder` to construct a query, passing it the name of the `WishlistItem`'s table. You then select distinct `wishlist_id`s where the `product_variant_id` of the wishlist item is in the array of variant IDs.
 
@@ -1991,7 +1991,7 @@ Before creating the widget, you'll create the API route that retrieves the numbe
 
 Create the file `src/api/store/products/[id]/wishlist/route.ts` with the following content:
 
-![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737630927/Medusa%20Resources/wishlist-26_ervnfg.jpg)
+![Directory structure after adding the route file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737630927/Switchyard%20Resources/wishlist-26_ervnfg.jpg)
 
 export const wishlistCountRouteHighlights = [
   ["17", "graph", "Retrieve the product and its variants."],
@@ -2000,14 +2000,14 @@ export const wishlistCountRouteHighlights = [
 ]
 
 ```ts title="src/api/store/products/[id]/wishlist/route.ts" highlights={wishlistCountRouteHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import WishlistModuleService from "../../../../../modules/wishlist/service"
 import { WISHLIST_MODULE } from "../../../../../modules/wishlist"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { id } = req.params
 
@@ -2025,8 +2025,8 @@ export async function GET(
   })
 
   if (!product) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Product with id: ${id} was not found`
     )
   }
@@ -2045,24 +2045,24 @@ This route exposes a `GET` endpoint at `/store/products/:id/wishlist`. The `:id`
 
 In the route handler function, you use Query to retrieve the product and its variants, and throw an error if the product doesn't exist.
 
-Then, you resolve the `WishlistModuleService` from the Medusa Container and use its `getWishlistsOfVariants` method to retrieve the number of wishlists the product's variants are in. You return the count in the response.
+Then, you resolve the `WishlistModuleService` from the Switchyard Container and use its `getWishlistsOfVariants` method to retrieve the number of wishlists the product's variants are in. You return the count in the response.
 
 You'll use this API route in the widget next.
 
 ### Create Wishlist Count Widget
 
-You'll now create the widget that will be shown on a product's page in the Medusa Admin.
+You'll now create the widget that will be shown on a product's page in the Switchyard Admin.
 
-In the widget, you'll send a request to the API route you created to retrieve the wishlist count for the product. To send the request, you'll use the [JS SDK](../../../js-sdk/page.mdx), which is a JavaScript library that simplifies sending requests to Medusa's API routes.
+In the widget, you'll send a request to the API route you created to retrieve the wishlist count for the product. To send the request, you'll use the [JS SDK](../../../js-sdk/page.mdx), which is a JavaScript library that simplifies sending requests to Switchyard's API routes.
 
 To initialize the JS SDK, create the file `src/admin/lib/sdk.ts` with the following content:
 
-![Directory structure after adding the SDK file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737631853/Medusa%20Resources/wishlist-27_pkzeaj.jpg)
+![Directory structure after adding the SDK file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737631853/Switchyard%20Resources/wishlist-27_pkzeaj.jpg)
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -2081,7 +2081,7 @@ Learn more about the JS SDK and configuring it in [this documentation](../../../
 
 Then, to create the widget, create the file `src/admin/widgets/product-widget.tsx` with the following content:
 
-![Directory structure after adding the widget file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737631988/Medusa%20Resources/wishlist-28_fx8rw7.jpg)
+![Directory structure after adding the widget file](https://res.cloudinary.com/dza7lstvk/image/upload/v1737631988/Switchyard%20Resources/wishlist-28_fx8rw7.jpg)
 
 export const widgetHighlights = [
   ["10", "WishlistResponse", "Define the type of expected response."],
@@ -2094,14 +2094,14 @@ export const widgetHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-widget.tsx" highlights={widgetHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Text } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Text } from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
 import { 
   DetailWidgetProps, 
   AdminProduct,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 type WishlistResponse = {
   count: number
@@ -2146,36 +2146,36 @@ Find all widget injection zones in [this reference](../../../admin-widget-inject
 
 Since the widget is injected into a product's details page, it receives the product's details as a `data` prop. In the widget, you use [Tanstack Query](https://tanstack.com/query/latest) to benefit from features like data caching and invalidation. You use the `useQuery` hook to send a request to the API route you created to retrieve the wishlist count for the product.
 
-Finally, you display the widget's content using components from [Medusa UI](!ui!), allowing you to align the design of your widget with the Medusa Admin's design system.
+Finally, you display the widget's content using components from [Switchyard UI](!ui!), allowing you to align the design of your widget with the Switchyard Admin's design system.
 
 ### Test it Out
 
-To test it out, start the Medusa application.
+To test it out, start the Switchyard application.
 
 <Note>
 
-Make sure that `npx medusa plugin:develop` is running in the plugin project to publish the changes to the local registry.
+Make sure that `npx switchyard plugin:develop` is running in the plugin project to publish the changes to the local registry.
 
 </Note>
 
 Then:
 
-1. open the Medusa Admin at `localhost:9000/app` and log in.
+1. open the Switchyard Admin at `localhost:9000/app` and log in.
 
 2. Click on Products in the sidebar, then choose a product from the table.
 
-![Click on the "Products" in the sidebar on the right, then choose a product from the table shown in the middle](https://res.cloudinary.com/dza7lstvk/image/upload/v1737632826/Medusa%20Resources/Screenshot_2025-01-23_at_1.46.29_PM_xjsn8s.png)
+![Click on the "Products" in the sidebar on the right, then choose a product from the table shown in the middle](https://res.cloudinary.com/dza7lstvk/image/upload/v1737632826/Switchyard%20Resources/Screenshot_2025-01-23_at_1.46.29_PM_xjsn8s.png)
 
 3. You should see the widget you created showing the number of wishlists the product is in at the top of the page.
 
-![The widget is shown at the top of the product page before other sections](https://res.cloudinary.com/dza7lstvk/image/upload/v1737632826/Medusa%20Resources/Screenshot_2025-01-23_at_1.46.05_PM_hfyz7u.png)
+![The widget is shown at the top of the product page before other sections](https://res.cloudinary.com/dza7lstvk/image/upload/v1737632826/Switchyard%20Resources/Screenshot_2025-01-23_at_1.46.05_PM_hfyz7u.png)
 
 ---
 
 ## Next Steps
 
-You've now implemented the wishlist functionality in a Medusa plugin. You can publish that plugin as explained in [this documentation](!docs!/learn/fundamentals/plugins/create#5-publish-plugin-to-npm) to NPM and install it in any Medusa application. This will allow you to re-use your plugin or share it with the community.
+You've now implemented the wishlist functionality in a Switchyard plugin. You can publish that plugin as explained in [this documentation](!docs!/learn/fundamentals/plugins/create#5-publish-plugin-to-npm) to NPM and install it in any Switchyard application. This will allow you to re-use your plugin or share it with the community.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

@@ -57,7 +57,7 @@ export const useRequestRunner = ({
           pushLog(
             `\nPossible Solutions:\n`,
             `- If this is a custom API route, make sure you added it at the correct path.`,
-            `- If this API route accepts any parameters, such as an ID, make sure it exists\nin the Medusa application.`
+            `- If this API route accepts any parameters, such as an ID, make sure it exists\nin the Switchyard application.`
           )
           return
         }
@@ -65,8 +65,8 @@ export const useRequestRunner = ({
         if (!responseCode.length) {
           pushLog(
             `\nThis could be a CORS error. You can resolve it by adding\nthe docs' URLto your CORS configurations:\n`,
-            `STORE_CORS=http://localhost:8000,https://docs.medusajs.com`,
-            `ADMIN_CORS=http://localhost:7001,https://docs.medusajs.com`
+            `STORE_CORS=http://localhost:8000,https://docs.switchyard.com`,
+            `ADMIN_CORS=http://localhost:7001,https://docs.switchyard.com`
           )
         }
       })

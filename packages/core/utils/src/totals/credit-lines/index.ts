@@ -1,4 +1,4 @@
-import { BigNumberInput } from "@medusajs/types"
+import { BigNumberInput } from "@switchyard/types"
 import { isDefined } from "../../common"
 import { BigNumber, MEDUSA_EPSILON } from "../big-number"
 import { MathBN } from "../math"

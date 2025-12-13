@@ -4,16 +4,16 @@ import {
   CustomerDTO,
   RegionDTO,
   UpdateLineItemInCartWorkflowInputDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   CartWorkflowEvents,
   deduplicate,
   filterObjectByKeys,
   isDefined,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   QueryContext,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -22,7 +22,7 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { deleteLineItemsWorkflow } from "../../line-item"
@@ -88,8 +88,8 @@ export const updateLineItemInCartWorkflowId = "update-line-item-in-cart"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { addToCartWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { addToCartWorkflow } from "@switchyard/medusa/core-flows";
+ * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * addToCartWorkflow.hooks.setPricingContext((
  *   { cart, variantIds, items, additional_data }, { container }
@@ -137,8 +137,8 @@ export const updateLineItemInCartWorkflow = createWorkflow(
       }) => {
         const item = data.cart.items.find((i) => i.id === data.input.item_id)!
         if (!item) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `Line item with id: ${data.input.item_id} was not found`
           )
         }
@@ -285,8 +285,8 @@ export const updateLineItemInCartWorkflow = createWorkflow(
           }
 
           if (!isDefined(updateData.unit_price)) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Line item ${item.title} has no unit price`
             )
           }

@@ -1,6 +1,6 @@
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { IProductModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { IProductModuleService } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 
 export const removeImagesFromVariantStepId = "remove-images-from-variant"
 

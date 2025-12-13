@@ -1,10 +1,10 @@
-import { Logger, MedusaContainer } from "@medusajs/types"
+import { Logger, SwitchyardContainer } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   dynamicImport,
   promiseAll,
   readDirRecursive,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { Dirent } from "fs"
 import { access } from "fs/promises"
 import { join, parse } from "path"
@@ -29,7 +29,7 @@ export abstract class ResourceLoader {
 
   protected logger: Logger
 
-  constructor(sourceDir: string | string[], container: MedusaContainer) {
+  constructor(sourceDir: string | string[], container: SwitchyardContainer) {
     this.#sourceDir = sourceDir
     this.logger = container.resolve(ContainerRegistrationKeys.LOGGER)
   }

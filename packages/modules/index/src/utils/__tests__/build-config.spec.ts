@@ -1,22 +1,22 @@
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import { buildSchemaObjectRepresentation } from "../build-config"
 
-// Mock MedusaModule only
-jest.mock("@medusajs/framework/modules-sdk", () => ({
-  MedusaModule: {
+// Mock SwitchyardModule only
+jest.mock("@switchyard/framework/modules-sdk", () => ({
+  SwitchyardModule: {
     getAllJoinerConfigs: jest.fn(),
   },
 }))
 
-// No need to mock @medusajs/framework/utils since we're using the actual implementations
+// No need to mock @switchyard/framework/utils since we're using the actual implementations
 
 describe("buildSchemaObjectRepresentation", () => {
   // Setup mocks before each test
   beforeEach(() => {
     jest.clearAllMocks()
 
-    // Mock MedusaModule.getAllJoinerConfigs
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([])
+    // Mock SwitchyardModule.getAllJoinerConfigs
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([])
   })
 
   afterEach(() => {
@@ -83,7 +83,7 @@ describe("buildSchemaObjectRepresentation", () => {
       ],
     }
 
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
       productModuleJoinerConfig,
     ])
 
@@ -164,7 +164,7 @@ describe("buildSchemaObjectRepresentation", () => {
       ],
     }
 
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
       productModuleJoinerConfig,
     ])
 
@@ -317,7 +317,7 @@ describe("buildSchemaObjectRepresentation", () => {
       ],
     }
 
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
       moduleJoinerConfig,
     ])
 
@@ -603,7 +603,7 @@ describe("buildSchemaObjectRepresentation", () => {
       ],
     }
 
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
       productModuleJoinerConfig,
     ])
 
@@ -736,7 +736,7 @@ describe("buildSchemaObjectRepresentation", () => {
       ],
     }
 
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
       productModuleJoinerConfig,
     ])
 
@@ -895,7 +895,7 @@ describe("buildSchemaObjectRepresentation", () => {
       ],
     }
 
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
       productModuleJoinerConfig,
       orderModuleJoinerConfig,
       orderItemLinkModuleJoinerConfig,
@@ -1213,7 +1213,7 @@ describe("buildSchemaObjectRepresentation", () => {
       ],
     }
 
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
       productModuleJoinerConfig,
       priceModuleJoinerConfig,
       productVariantPriceSetLinkModuleJoinerConfig,
@@ -1588,7 +1588,7 @@ describe("buildSchemaObjectRepresentation", () => {
       ],
     }
 
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([
       productModuleJoinerConfig,
       priceModuleJoinerConfig,
       productPriceLinkModuleJoinerConfig,
@@ -1845,7 +1845,7 @@ describe("buildSchemaObjectRepresentation", () => {
     `
 
     // Return empty array for getAllJoinerConfigs so there's no module for the Product entity
-    ;(MedusaModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([])
+    ;(SwitchyardModule.getAllJoinerConfigs as jest.Mock).mockReturnValue([])
 
     // The function should throw an error because the entity has listeners but no module
     expect(() => {

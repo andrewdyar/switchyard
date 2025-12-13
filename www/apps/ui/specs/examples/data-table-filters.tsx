@@ -1,4 +1,4 @@
-import { DataTable, DataTableFilteringState, Heading, createDataTableColumnHelper, createDataTableFilterHelper, useDataTable } from "@medusajs/ui"
+import { DataTable, DataTableFilteringState, Heading, createDataTableColumnHelper, createDataTableFilterHelper, useDataTable } from "@switchyard/ui"
 import { useMemo, useState } from "react"
 
 const products = [

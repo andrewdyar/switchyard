@@ -1,4 +1,4 @@
-import { Tabs, Text } from "@medusajs/ui"
+import { Tabs, Text } from "@switchyard/ui"
 import { useState } from "react"
 
 export default function TabsControlled() {

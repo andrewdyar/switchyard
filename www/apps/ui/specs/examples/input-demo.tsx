@@ -1,4 +1,4 @@
-import { Input } from "@medusajs/ui"
+import { Input } from "@switchyard/ui"
 
 export default function InputDemo() {
   return (

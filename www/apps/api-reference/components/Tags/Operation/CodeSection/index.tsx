@@ -7,7 +7,7 @@ import type { TagOperationCodeSectionRequestSamplesProps } from "./RequestSample
 import dynamic from "next/dynamic"
 import clsx from "clsx"
 import { CopyButton } from "docs-ui"
-import { SquareTwoStack } from "@medusajs/icons"
+import { SquareTwoStack } from "@switchyard/icons"
 
 const TagOperationCodeSectionRequestSamples =
   dynamic<TagOperationCodeSectionRequestSamplesProps>(

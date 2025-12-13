@@ -48,18 +48,18 @@
  *         type: boolean
  *         description: Whether the tax rate should be combined with parent rates.
  *         externalDocs:
- *           url: https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates
+ *           url: https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates
  *       metadata:
  *         type: object
  *         description: The default tax rate's metadata, used to store custom key-value pairs.
  *         externalDocs:
- *           url: https://docs.medusajs.com/api/admin#manage-metadata
+ *           url: https://docs.switchyard.com/api/admin#manage-metadata
  *           description: Learn how to manage metadata
  *   metadata:
  *     type: object
  *     description: The tax region's metadata, used to store custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.com/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  *   provider_id:
  *     type: string

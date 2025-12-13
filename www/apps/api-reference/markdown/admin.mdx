@@ -18,11 +18,11 @@ import ClientLibraries from "./client-libraries.mdx"
 
 <DividedMarkdownContent>
 
-<H1 className={"!h2-docs scroll-m-[184px] lg:scroll-m-[264px]"} id="introduction">Medusa V2 Admin API Reference</H1>
+<H1 className={"!h2-docs scroll-m-[184px] lg:scroll-m-[264px]"} id="introduction">Switchyard V2 Admin API Reference</H1>
 
-This API reference includes Medusa v2's Admin APIs, which are REST APIs exposed by the Medusa application. They are used to perform admin functionalities or create an admin dashboard to access and manipulate your commerce store's data.
+This API reference includes Switchyard v2's Admin APIs, which are REST APIs exposed by the Switchyard application. They are used to perform admin functionalities or create an admin dashboard to access and manipulate your commerce store's data.
 
-All API Routes are prefixed with `/admin`. So, during development, the API Routes will be available under the path `http://localhost:9000/admin`. For production, replace `http://localhost:9000` with your Medusa application URL.
+All API Routes are prefixed with `/admin`. So, during development, the API Routes will be available under the path `http://localhost:9000/admin`. For production, replace `http://localhost:9000` with your Switchyard application URL.
 
 <Feedback
   extraData={{
@@ -51,7 +51,7 @@ All API Routes are prefixed with `/admin`. So, during development, the API Route
 
 ## Authentication
 
-There are three ways to send authenticated requests to the Medusa server: Using a JWT token in a bearer authorization header, using an admin user's API token, or using a cookie session ID.
+There are three ways to send authenticated requests to the Switchyard server: Using a JWT token in a bearer authorization header, using an admin user's API token, or using a cookie session ID.
 
 ### 1. Bearer Authorization with JWT Tokens
 
@@ -171,7 +171,7 @@ Use a user's secret API Token to send authenticated requests.
 
 #### How to Create an API Token for a User
 
-Create the API key token either from the [Medusa Admin](!user-guide!/settings/developer/secret-api-keys) or using the [Create API Key API Route](#api-keys_postapikeys).
+Create the API key token either from the [Switchyard Admin](!user-guide!/settings/developer/secret-api-keys) or using the [Create API Key API Route](#api-keys_postapikeys).
 
 <Note>
 
@@ -230,7 +230,7 @@ You pass the API Key token in the Authorization Basic header. For example:
 
 <Note>
 
-Previous versions of Medusa required passing the API key token as base64. This is still supported for backwards compatibility, but you can pass the API token without encoding it as well.
+Previous versions of Switchyard required passing the API key token as base64. This is still supported for backwards compatibility, but you can pass the API token without encoding it as well.
 
 </Note>
 
@@ -243,9 +243,9 @@ Previous versions of Medusa required passing the API key token as base64. This i
   <CodeTab label="JS SDK" value="js-sdk">
 
 ```js
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   // other options...
   apiKey: "{api_key_token}",
 })
@@ -398,7 +398,7 @@ fetch(`<BACKEND_URL>/admin/products`, {
 
 <DividedMarkdownContent>
 
-If you've enabled HTTP Compression in your Medusa configurations, and you 
+If you've enabled HTTP Compression in your Switchyard configurations, and you 
 want to disable it for some requests, you can pass the `x-no-compression`
 header in your requests.
 
@@ -458,9 +458,9 @@ x-no-compression: false
 
 ## Manage Metadata
 
-Many data models in Medusa, such as products and carts, have a `metadata` field that allows you to store custom information in key-value pairs.
+Many data models in Switchyard, such as products and carts, have a `metadata` field that allows you to store custom information in key-value pairs.
 
-When setting or updating the `metadata` field using the relevant API routes, Medusa will merge the new metadata with the existing metadata.
+When setting or updating the `metadata` field using the relevant API routes, Switchyard will merge the new metadata with the existing metadata.
 
 <Note>
 
@@ -567,7 +567,7 @@ sdk.admin.product.update("prod_123", {
 
 When updating a nested object in the `metadata`, you must pass the entire object in the request body.
 
-Medusa doesn't merge nested objects, so if you pass a partial object, the existing properties in the nested object will be removed.
+Switchyard doesn't merge nested objects, so if you pass a partial object, the existing properties in the nested object will be removed.
 
 </DividedMarkdownContent>
 
@@ -902,7 +902,7 @@ This returns the variants and options of each product, but the variants only hav
 
 Most of the API routes that accept a `fields` query parameter allow you to specify custom linked data models. For example, if you linked a `Brand` to a `Product`, you can pass `brand` in the `fields` query parameter to retrieve the brand of each product.
 
-However, some API routes restrict the fields and relations you can retrieve. To learn about those API routes and how to override the allowed fields and relations, refer to the [Retrieve Custom Linked Data Models from Medusa's API routes](!docs!/learn/fundamentals/api-routes/retrieve-custom-links) documentation.
+However, some API routes restrict the fields and relations you can retrieve. To learn about those API routes and how to override the allowed fields and relations, refer to the [Retrieve Custom Linked Data Models from Switchyard's API routes](!docs!/learn/fundamentals/api-routes/retrieve-custom-links) documentation.
 
 </DividedMarkdownContent>
 

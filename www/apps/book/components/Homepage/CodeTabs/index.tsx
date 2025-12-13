@@ -30,8 +30,8 @@ const HomepageCodeTabs = () => {
       code: {
         lang: "ts",
         source: `export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const query = req.scope.resolve("query")
 
@@ -102,7 +102,7 @@ const HomepageCodeTabs = () => {
       title: "Add a Data Model",
       textSection: {
         content:
-          "Create data models that represent tables in the database using Medusa's Data Model Language.",
+          "Create data models that represent tables in the database using Switchyard's Data Model Language.",
         link: {
           title: "DML",
           link: "/learn/fundamentals/modules#1-create-data-model",
@@ -124,7 +124,7 @@ const HomepageCodeTabs = () => {
           [
             "1",
             "model",
-            "Use Medusa's Data Model Language to\nrepresent custom tables in the database.",
+            "Use Switchyard's Data Model Language to\nrepresent custom tables in the database.",
           ],
           [
             "4",
@@ -146,7 +146,7 @@ const HomepageCodeTabs = () => {
       },
       code: {
         lang: "ts",
-        source: `class DigitalProductModuleService extends MedusaService({
+        source: `class DigitalProductModuleService extends SwitchyardService({
   DigitalProduct,
 }) {
   async authorizeLicense() {
@@ -155,8 +155,8 @@ const HomepageCodeTabs = () => {
 }
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const digitalProductModuleService = req.scope.resolve(
     "digitalProductModuleService"
@@ -174,13 +174,13 @@ export async function POST(
           ],
           [
             "1",
-            "MedusaService",
+            "SwitchyardService",
             "Generate data-management methods\nfor your data models automatically.",
           ],
           [
             "13",
             "digitalProductModuleService",
-            "Resolve the database from the Medusa container\nin routes and other resources.",
+            "Resolve the database from the Switchyard container\nin routes and other resources.",
           ],
           ["17", "authorizeLicense", "Use the service's custom methods."],
         ],
@@ -190,7 +190,7 @@ export async function POST(
       title: "Link Data Models",
       textSection: {
         content:
-          "Add custom properties to Medusa's data models using module links to build custom use cases.",
+          "Add custom properties to Switchyard's data models using module links to build custom use cases.",
         link: {
           title: "Module Links",
           link: "/learn/fundamentals/module-links",
@@ -220,7 +220,7 @@ export default defineLink(
       title: "Subscribe to Events",
       textSection: {
         content:
-          "Handle events emitted by the Medusa application to perform custom actions.",
+          "Handle events emitted by the Switchyard application to perform custom actions.",
         link: {
           title: "Subscribers",
           link: "/learn/fundamentals/events-and-subscribers",
@@ -269,7 +269,7 @@ export const config: SubscriberConfig = {
       title: "Customize Admin",
       textSection: {
         content:
-          "Inject widgets into predefined zones in the Medusa Admin, or add new pages.",
+          "Inject widgets into predefined zones in the Switchyard Admin, or add new pages.",
         link: {
           title: "Admin Widgets",
           link: "/learn/fundamentals/admin/widgets",
@@ -302,7 +302,7 @@ export const config = defineWidgetConfig({
           [
             "7",
             "Container",
-            "Use Medusa's UI components in your customizations.",
+            "Use Switchyard's UI components in your customizations.",
           ],
           [
             "15",
@@ -316,7 +316,7 @@ export const config = defineWidgetConfig({
       title: "Integrate Systems",
       textSection: {
         content:
-          "Build workflows around multiple systems to add more powerful features to Medusa.",
+          "Build workflows around multiple systems to add more powerful features to Switchyard.",
         link: {
           title: "Integrate Systems",
           link: "/learn/customization/integrate-systems",
@@ -329,7 +329,7 @@ export const config = defineWidgetConfig({
   () => {
     const toCreate = retrieveBrandsFromSystemStep()
 
-    const created = createBrandsInMedusaStep({ 
+    const created = createBrandsInSwitchyardStep({ 
       brands: toCreate
     })
 
@@ -345,7 +345,7 @@ export const config = defineWidgetConfig({
             "retrieveBrandsFromSystemStep",
             "Retrieve data from an external system.",
           ],
-          ["6", "createBrandsInMedusaStep", "Sync data to Medusa."],
+          ["6", "createBrandsInSwitchyardStep", "Sync data to Switchyard."],
         ],
       },
     },

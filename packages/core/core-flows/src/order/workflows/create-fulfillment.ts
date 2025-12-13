@@ -10,13 +10,13 @@ import {
   ProductVariantDTO,
   ReservationItemDTO,
   ShippingProfileDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   MathBN,
-  MedusaError,
+  SwitchyardError,
   Modules,
   OrderWorkflowEvents,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createHook,
   createStep,
@@ -25,7 +25,7 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   createRemoteLinkStep,
   emitEventStep,
@@ -104,8 +104,8 @@ export const createFulfillmentValidateOrder = createStep(
   "create-fulfillment-validate-order",
   ({ order, inputItems }: CreateFulfillmentValidateOrderStepInput) => {
     if (!inputItems.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "No items to fulfill"
       )
     }
@@ -186,8 +186,8 @@ function prepareFulfillmentData({
         orderItem.variant?.product.shipping_profile?.id !==
           shippingOption.shipping_profile_id
       ) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Shipping profile ${shippingOption.shipping_profile_id} does not match the shipping profile of the order item ${orderItem.id}`
         )
       }
@@ -236,8 +236,8 @@ function prepareFulfillmentData({
   }
 
   if (!locationId) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Cannot create fulfillment without stock location, either provide a location or you should link the shipping option ${shippingOption.id} to a stock location.`
     )
   }
@@ -297,8 +297,8 @@ function prepareInventoryUpdate({
 
     if (!reservations?.length) {
       if (item.variant?.manage_inventory) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `No stock reservation found for item ${item.id} - ${item.title} (${item.variant_title})`
         )
       }
@@ -323,8 +323,8 @@ function prepareInventoryUpdate({
       )
 
       if (MathBN.lt(remainingReservationQuantity, 0)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Quantity to fulfill exceeds the reserved quantity for the item: ${item.id}`
         )
       }

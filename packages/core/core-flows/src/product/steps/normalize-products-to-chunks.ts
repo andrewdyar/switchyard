@@ -1,13 +1,13 @@
 import { CsvError, parse, Parser } from "csv-parse"
-import type { HttpTypes, IFileModuleService } from "@medusajs/framework/types"
+import type { HttpTypes, IFileModuleService } from "@switchyard/framework/types"
 import {
   CSVNormalizer,
-  MedusaError,
+  SwitchyardError,
   Modules,
   productValidators,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { MedusaErrorTypes } from "@medusajs/utils"
+} from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardErrorTypes } from "@switchyard/utils"
 
 /**
  * The CSV file content to parse.
@@ -242,7 +242,7 @@ export const normalizeCsvToChunksStep = createStep(
       } catch (error) {
         if (error instanceof CsvError) {
           return reject(
-            new MedusaError(MedusaErrorTypes.INVALID_DATA, error.message)
+            new SwitchyardError(SwitchyardErrorTypes.INVALID_DATA, error.message)
           )
         }
         reject(error)

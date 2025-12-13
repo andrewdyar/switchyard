@@ -1,7 +1,7 @@
 import {
   ContainerRegistrationKeys,
-  createMedusaContainer,
-} from "@medusajs/utils"
+  createSwitchyardContainer,
+} from "@switchyard/utils"
 import { asValue } from "../../deps/awilix"
 import express from "express"
 import { resolve } from "path"
@@ -13,7 +13,7 @@ import {
   storeGlobalMiddlewareMock,
 } from "../__fixtures__/mocks"
 import { createServer } from "../__fixtures__/server"
-import { ApiLoader, MedusaNextFunction } from "../index"
+import { ApiLoader, SwitchyardNextFunction } from "../index"
 
 jest.setTimeout(30000)
 
@@ -22,7 +22,7 @@ jest.mock("../middlewares/ensure-publishable-api-key", () => {
     ensurePublishableApiKeyMiddleware: async (
       req: any,
       res: any,
-      next: MedusaNextFunction
+      next: SwitchyardNextFunction
     ) => next(),
   }
 })
@@ -341,7 +341,7 @@ describe("RoutesLoader", function () {
         __dirname,
         "../__fixtures__/routers-duplicate-parameter"
       )
-      const container = createMedusaContainer()
+      const container = createSwitchyardContainer()
       container.register(
         ContainerRegistrationKeys.LOGGER,
         asValue(defaultLogger)

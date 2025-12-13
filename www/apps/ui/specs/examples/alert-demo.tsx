@@ -1,5 +1,5 @@
-import { Alert } from "@medusajs/ui"
+import { Alert } from "@switchyard/ui"
 
 export default function AlertDemo() {
-  return <Alert>You are viewing Medusa docs.</Alert>
+  return <Alert>You are viewing Switchyard docs.</Alert>
 }

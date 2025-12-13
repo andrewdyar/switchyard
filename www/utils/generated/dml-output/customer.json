@@ -34,7 +34,7 @@
 			"last_name": "The last name of the customer",
 			"email": "The email of the customer",
 			"phone": "The phone of the customer",
-			"has_account": "Whether the customer has account. Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/customer/customer-accounts)",
+			"has_account": "Whether the customer has account. Learn more in [this documentation](https://docs.switchyard.com/resources/commerce-modules/customer/customer-accounts)",
 			"metadata": "Holds custom data in key-value pairs.",
 			"created_by": "The ID of the user that created the customer.",
 			"groups": "The associated groups.\n\n@expandable",

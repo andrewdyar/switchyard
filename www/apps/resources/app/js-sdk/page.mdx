@@ -1,33 +1,33 @@
 import { CodeTabs, CodeTab, Table } from "docs-ui"
 
 export const metadata = {
-  title: `Medusa JS SDK`,
+  title: `Switchyard JS SDK`,
 }
 
 # {metadata.title}
 
-In this documentation, you'll learn how to install and use Medusa's JS SDK.
+In this documentation, you'll learn how to install and use Switchyard's JS SDK.
 
-## What is Medusa JS SDK?
+## What is Switchyard JS SDK?
 
-Medusa's JS SDK is a library to easily send requests to your Medusa application. You can use it in your admin customizations or custom storefronts.
+Switchyard's JS SDK is a library to easily send requests to your Switchyard application. You can use it in your admin customizations or custom storefronts.
 
 ---
 
-## How to Install Medusa JS SDK?
+## How to Install Switchyard JS SDK?
 
-The Medusa JS SDK is available in your Medusa application by default. So, you don't need to install it before using it in your admin customizations.
+The Switchyard JS SDK is available in your Switchyard application by default. So, you don't need to install it before using it in your admin customizations.
 
-To install the Medusa JS SDK in other projects, such as a custom storefront, run the following command:
+To install the Switchyard JS SDK in other projects, such as a custom storefront, run the following command:
 
 ```bash npm2yarn
-npm install @medusajs/js-sdk@latest @medusajs/types@latest
+npm install @switchyard/js-sdk@latest @switchyard/types@latest
 ```
 
 You install two libraries:
 
-- `@medusajs/js-sdk`: the Medusa JS SDK.
-- `@medusajs/types`: Medusa's types library, which is useful if you're using TypeScript in your development.
+- `@switchyard/js-sdk`: the Switchyard JS SDK.
+- `@switchyard/types`: Switchyard's types library, which is useful if you're using TypeScript in your development.
 
 ---
 
@@ -42,12 +42,12 @@ For admin customizations, create this file at `src/admin/lib/config.ts`.
 </Note>
 
 <CodeTabs group="sdk-project">
-  <CodeTab label="Admin (Medusa project)" value="admin-medusa-project">
+  <CodeTab label="Admin (Switchyard project)" value="admin-medusa-project">
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -57,12 +57,12 @@ export const sdk = new Medusa({
 ```
 
   </CodeTab>
-  <CodeTab label="Admin (Medusa Plugin)" value="admin-medusa-plugin">
+  <CodeTab label="Admin (Switchyard Plugin)" value="admin-medusa-plugin">
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: __BACKEND_URL__ || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -75,7 +75,7 @@ export const sdk = new Medusa({
   <CodeTab label="Storefront" value="storefront">
 
 ```ts title="sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
 let MEDUSA_BACKEND_URL = "http://localhost:9000"
 
@@ -83,7 +83,7 @@ if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
   MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
 }
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: MEDUSA_BACKEND_URL,
   debug: process.env.NODE_ENV === "development",
   publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
@@ -95,13 +95,13 @@ export const sdk = new Medusa({
 
 <Note title="Tip">
 
-In Medusa Admin customizations that are created in a Medusa project, you use `import.meta.env` to access environment variables, whereas in customizations built in a Medusa plugin, you use the global variable `__BACKEND_URL__` to access the backend URL. You can learn more in the [Admin Environment Variables](!docs!/learn/fundamentals/admin/environment-variables) chapter.
+In Switchyard Admin customizations that are created in a Switchyard project, you use `import.meta.env` to access environment variables, whereas in customizations built in a Switchyard plugin, you use the global variable `__BACKEND_URL__` to access the backend URL. You can learn more in the [Admin Environment Variables](!docs!/learn/fundamentals/admin/environment-variables) chapter.
 
 </Note>
 
 ### JS SDK Configurations
 
-The `Medusa` initializer accepts as a parameter an object with the following properties:
+The `Switchyard` initializer accepts as a parameter an object with the following properties:
 
 <Table>
   <Table.Header>
@@ -120,7 +120,7 @@ The `Medusa` initializer accepts as a parameter an object with the following pro
       </Table.Cell>
       <Table.Cell>
 
-      A required string indicating the URL to the Medusa backend.
+      A required string indicating the URL to the Switchyard backend.
 
       </Table.Cell>
       <Table.Cell>
@@ -137,7 +137,7 @@ The `Medusa` initializer accepts as a parameter an object with the following pro
       </Table.Cell>
       <Table.Cell>
 
-      A string indicating the publishable API key to use in the storefront. You can retrieve it from the Medusa Admin.
+      A string indicating the publishable API key to use in the storefront. You can retrieve it from the Switchyard Admin.
 
       This is required for storefront applications. Otherwise, all requests will fail.
 
@@ -200,7 +200,7 @@ The `Medusa` initializer accepts as a parameter an object with the following pro
       - `local` for the Local Storage.
       - `session` for the Session Storage.
       - `memory` to store it within the SDK for the current application's runtime.
-      - `custom` to define custom storage using the `auth.storage` configuration. If `auth.storage` isn't defined, the SDK throws an error. This option is only available after Medusa v2.5.1.
+      - `custom` to define custom storage using the `auth.storage` configuration. If `auth.storage` isn't defined, the SDK throws an error. This option is only available after Switchyard v2.5.1.
       - `nostore` to not store the token.
 
       </Table.Cell>
@@ -218,7 +218,7 @@ The `Medusa` initializer accepts as a parameter an object with the following pro
       </Table.Cell>
       <Table.Cell>
 
-      This option is only available after Medusa v2.5.1. It's an object or class that's used when `auth.jwtTokenStorageMethod` is `custom` to store the JWT token. It's useful when using the JS SDK in an environment where Local or Session Storage isn't available. The object or class must have the following methods:
+      This option is only available after Switchyard v2.5.1. It's an object or class that's used when `auth.jwtTokenStorageMethod` is `custom` to store the JWT token. It's useful when using the JS SDK in an environment where Local or Session Storage isn't available. The object or class must have the following methods:
 
       - `setItem`: A function that accepts a key and value to store the JWT token.
       - `getItem`: A function that accepts a key to retrieve the JWT token.
@@ -249,7 +249,7 @@ The `Medusa` initializer accepts as a parameter an object with the following pro
       - `omit`: to pass the `credentials: omit` option.
       - `same-origin`: to pass the `credentials: same-origin` option.
 
-      This option is only available after [Medusa v2.1.1](https://github.com/medusajs/medusa/releases/tag/v2.1.1).
+      This option is only available after [Switchyard v2.1.1](https://github.com/switchyard/medusa/releases/tag/v2.1.1).
 
       </Table.Cell>
       <Table.Cell>
@@ -346,7 +346,7 @@ To learn more about configuring authentication in the JS SDK and sending authent
 
 ## Send Requests to Custom Routes
 
-The sidebar shows the different methods that you can use to send requests to Medusa's API routes.
+The sidebar shows the different methods that you can use to send requests to Switchyard's API routes.
 
 To send requests to custom routes, the JS SDK has a `client.fetch` method that wraps the [JavaScript Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch) that you can use. The method automatically appends configurations and headers, such as authentication headers, to your request.
 
@@ -405,11 +405,11 @@ The JS SDK supports streaming server-sent events (SSE) using the `client.fetchSt
 For example, consider you have the following custom API route at `src/api/admin/stream/route.ts`:
 
 ```ts title="src/api/admin/stream/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.writeHead(200, {
     "Content-Type": "text/event-stream",
@@ -436,8 +436,8 @@ export const GET = async (
 Then, you can use the `client.fetchStream` method in a UI route to receive the streaming data:
 
 ```tsx title="src/admin/route/stream/page.tsx"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Button, Text } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Button, Text } from "@switchyard/ui"
 import { useState } from "react"
 import { sdk } from "../../lib/sdk"
 
@@ -622,7 +622,7 @@ There are two ways to pass custom headers in requests when using the JS SDK:
 1. Using the `globalHeaders` configuration: This is useful when you want to pass the same headers in all requests. For example, if you want to pass a custom header for tracking purposes:
 
 ```ts
-const sdk = new Medusa({
+const sdk = new Switchyard({
   // ...
   globalHeaders: {
     "x-tracking-id": "123456789",
@@ -651,13 +651,13 @@ The JS SDK appends request-specific headers to authentication headers and header
 
 ---
 
-## Medusa JS SDK Tips
+## Switchyard JS SDK Tips
 
 ### Use Tanstack (React) Query in Admin Customizations
 
 In admin customizations, use [Tanstack Query](https://tanstack.com/query/latest) with the JS SDK to send requests to custom or existing API routes.
 
-Tanstack Query is installed by default in your Medusa application.
+Tanstack Query is installed by default in your Switchyard application.
 
 <Note type="warning">
 
@@ -679,11 +679,11 @@ export const queryHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-widget.ts"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, Container } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Button, Container } from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/config"
-import { DetailWidgetProps, HttpTypes } from "@medusajs/framework/types"
+import { DetailWidgetProps, HttpTypes } from "@switchyard/framework/types"
 
 const ProductWidget = () => {
   const { data, isLoading } = useQuery({
@@ -716,11 +716,11 @@ export default ProductWidget
   <CodeTab label="Mutation" value="mutation">
 
 ```tsx title="src/admin/widgets/product-widget.ts"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, Container } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Button, Container } from "@switchyard/ui"
 import { useMutation } from "@tanstack/react-query"
 import { sdk } from "../lib/config"
-import { DetailWidgetProps, HttpTypes } from "@medusajs/framework/types"
+import { DetailWidgetProps, HttpTypes } from "@switchyard/framework/types"
 
 const ProductWidget = ({ 
   data: productData,

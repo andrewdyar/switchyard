@@ -3,11 +3,11 @@ import {
   AuthenticationResponse,
   AuthIdentityProviderService,
   Logger,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   AbstractAuthModuleProvider,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 import { createClient, SupabaseClient } from "@supabase/supabase-js"
 import crypto from "crypto"
 
@@ -66,8 +66,8 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
   }
 
   async register(_: AuthenticationInput): Promise<AuthenticationResponse> {
-    throw new MedusaError(
-      MedusaError.Types.NOT_ALLOWED,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_ALLOWED,
       "Registration should be done through Supabase directly or via user invitation"
     )
   }
@@ -178,7 +178,7 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
           user_metadata: userMetadata,
         })
       } catch (error: any) {
-        if (error.type === MedusaError.Types.NOT_FOUND) {
+        if (error.type === SwitchyardError.Types.NOT_FOUND) {
           authIdentity = await authIdentityService.create({
             entity_id,
             user_metadata: userMetadata,
@@ -247,7 +247,7 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
           user_metadata: userMetadata,
         })
       } catch (error: any) {
-        if (error.type === MedusaError.Types.NOT_FOUND) {
+        if (error.type === SwitchyardError.Types.NOT_FOUND) {
           authIdentity = await authIdentityService.create({
             entity_id,
             user_metadata: userMetadata,

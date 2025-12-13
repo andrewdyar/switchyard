@@ -1,4 +1,4 @@
-import { StoreTypes } from "@medusajs/framework/types"
+import { StoreTypes } from "@switchyard/framework/types"
 
 export const createStoreFixture: StoreTypes.CreateStoreDTO = {
   name: "Test store",

@@ -1,5 +1,5 @@
-import { defineFileConfig, FeatureFlag } from "@medusajs/framework/utils"
-import { createStep, createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { defineFileConfig, FeatureFlag } from "@switchyard/framework/utils"
+import { createStep, createWorkflow } from "@switchyard/framework/workflows-sdk"
 
 const testWorkflowHandler = jest.fn()
 

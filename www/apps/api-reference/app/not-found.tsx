@@ -1,4 +1,4 @@
-import { AcademicCapSolid, BookOpen } from "@medusajs/icons"
+import { AcademicCapSolid, BookOpen } from "@switchyard/icons"
 import clsx from "clsx"
 import { CardList, H1, H2, MDXComponents, SimilarPages } from "docs-ui"
 import { config } from "../config"
@@ -24,12 +24,12 @@ const NotFoundPage = () => {
       <H1>Page Not Found</H1>
       <P>The page you were looking for isn&apos;t available.</P>
       <P>
-        If you&apos;re looking for Medusa v1 documentation, it&apos;s been moved
-        to <A href="https://docs.medusajs.com/v1">docs.medusajs.com/v1</A>.
+        If you&apos;re looking for Switchyard v1 documentation, it&apos;s been moved
+        to <A href="https://docs.switchyard.com/v1">docs.switchyard.com/v1</A>.
       </P>
       <P>
         If you think this is a mistake, please{" "}
-        <A href="https://github.com/medusajs/medusa/issues/new?assignees=&labels=type%3A+docs&template=docs.yml">
+        <A href="https://github.com/switchyard/medusa/issues/new?assignees=&labels=type%3A+docs&template=docs.yml">
           report this issue on GitHub
         </A>
         .

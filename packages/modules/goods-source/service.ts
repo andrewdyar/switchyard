@@ -4,10 +4,10 @@
  * Manages links between Medusa products and source catalog.
  */
 
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { SourceProductLink } from "./models/source-link"
 
-class GoodsSourceModuleService extends MedusaService({
+class GoodsSourceModuleService extends SwitchyardService({
   SourceProductLink,
 }) {
   /**

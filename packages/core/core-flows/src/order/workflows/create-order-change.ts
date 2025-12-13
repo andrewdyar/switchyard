@@ -1,12 +1,12 @@
 import type {
   CreateOrderChangeDTO,
   OrderChangeDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createOrderChangeStep } from "../steps"
 
 export const createOrderChangeWorkflowId = "create-order-change"

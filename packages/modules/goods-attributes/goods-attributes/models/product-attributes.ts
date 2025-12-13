@@ -8,7 +8,7 @@
  * - Pricing flags (priced by weight, on ad, etc.)
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const ProductAttributes = model.define("goods_product_attributes", {
   id: model.id().primaryKey(),

@@ -8,7 +8,7 @@ In this chapter, you'll learn how to use `transform` from the Workflows SDK to m
 
 ## Why Variable Manipulation isn't Allowed in Workflows
 
-Medusa creates an internal representation of the workflow definition you pass to `createWorkflow` to track and store its steps.
+Switchyard creates an internal representation of the workflow definition you pass to `createWorkflow` to track and store its steps.
 
 At that point, variables in the workflow don't have any values. They only do when you execute the workflow.
 
@@ -49,7 +49,7 @@ import {
   createWorkflow,
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 // step imports...
 
 const myWorkflow = createWorkflow(
@@ -90,7 +90,7 @@ import {
   createWorkflow,
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 // step imports...
 
 type WorkflowInput = {
@@ -125,7 +125,7 @@ You then pass the `ids` variable as a parameter to the `doSomethingStep`.
 
 ## Example: Creating a Date
 
-If you create a date with `new Date()` in a workflow's constructor function, Medusa evaluates the date's value when it creates the internal representation of the workflow, not when the workflow is executed.
+If you create a date with `new Date()` in a workflow's constructor function, Switchyard evaluates the date's value when it creates the internal representation of the workflow, not when the workflow is executed.
 
 So, use `transform` instead to create a date variable with `new Date()`.
 

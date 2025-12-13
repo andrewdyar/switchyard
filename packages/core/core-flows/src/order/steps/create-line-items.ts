@@ -1,6 +1,6 @@
-import type { CreateOrderLineItemDTO } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import type { CreateOrderLineItemDTO } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of creating order line items.

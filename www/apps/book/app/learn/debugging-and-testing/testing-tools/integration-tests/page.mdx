@@ -6,7 +6,7 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn about `medusaIntegrationTestRunner` from Medusa's Testing Framework and how to use it to write integration tests.
+In this chapter, you'll learn about `medusaIntegrationTestRunner` from Switchyard's Testing Framework and how to use it to write integration tests.
 
 <Prerequisites
   items={[
@@ -19,17 +19,17 @@ In this chapter, you'll learn about `medusaIntegrationTestRunner` from Medusa's 
 
 ## medusaIntegrationTestRunner Utility
 
-The `medusaIntegrationTestRunner` is from Medusa's Testing Framework and it's used to create integration tests in your Medusa project. It runs a full Medusa application, allowing you test API routes, workflows, or other customizations.
+The `medusaIntegrationTestRunner` is from Switchyard's Testing Framework and it's used to create integration tests in your Switchyard project. It runs a full Switchyard application, allowing you test API routes, workflows, or other customizations.
 
 For example:
 
 export const highlights = [
-  ["4", "api", "A set of utility methods used to send requests to the Medusa application."],
-  ["4", "getContainer", "A function to retrieve the Medusa container."]
+  ["4", "api", "A set of utility methods used to send requests to the Switchyard application."],
+  ["4", "getContainer", "A function to retrieve the Switchyard container."]
 ]
 
 ```ts title="integration-tests/http/test.spec.ts" highlights={highlights}
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 
 medusaIntegrationTestRunner({
   testSuite: ({ api, getContainer }) => {
@@ -44,11 +44,11 @@ The `medusaIntegrationTestRunner` function accepts an object as a parameter. The
 
 `testSuite`'s value is a function that defines the tests to run. The function accepts as a parameter an object that has the following properties:
 
-- `api`: a set of utility methods used to send requests to the Medusa application. It has the following methods:
+- `api`: a set of utility methods used to send requests to the Switchyard application. It has the following methods:
     - `get`: Send a `GET` request to an API route.
     - `post`: Send a `POST` request to an API route.
     - `delete`: Send a `DELETE` request to an API route.
-- `getContainer`: a function that retrieves the Medusa Container. Use the `getContainer().resolve` method to resolve resources from the Medusa Container.
+- `getContainer`: a function that retrieves the Switchyard Container. Use the `getContainer().resolve` method to resolve resources from the Switchyard Container.
 
 The tests in the `testSuite` function are written using [Jest](https://jestjs.io/).
 
@@ -73,11 +73,11 @@ npm run test:integration
 
 <Note title="Tip">
 
-If you don't have a `test:integration` script in `package.json`, refer to the [Medusa Testing Tools chapter](../page.mdx#add-test-commands).
+If you don't have a `test:integration` script in `package.json`, refer to the [Switchyard Testing Tools chapter](../page.mdx#add-test-commands).
 
 </Note>
 
-This runs your Medusa application and runs the tests available under the `src/integrations/http` directory.
+This runs your Switchyard application and runs the tests available under the `src/integrations/http` directory.
 
 ---
 

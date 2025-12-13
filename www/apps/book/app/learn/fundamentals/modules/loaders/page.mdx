@@ -10,15 +10,15 @@ In this chapter, you’ll learn about loaders and how to use them.
 
 ## What is a Loader?
 
-When building a commerce application, you'll often need to execute an action the first time the application starts. For example, if your application needs to connect to databases other than Medusa's PostgreSQL database, you might need to establish a connection on application startup.
+When building a commerce application, you'll often need to execute an action the first time the application starts. For example, if your application needs to connect to databases other than Switchyard's PostgreSQL database, you might need to establish a connection on application startup.
 
-In Medusa, you can execute an action when the application starts using a loader. A loader is a function exported by a [module](../page.mdx), which is a package of business logic for a single domain. When the Medusa application starts, it executes all loaders exported by configured modules.
+In Switchyard, you can execute an action when the application starts using a loader. A loader is a function exported by a [module](../page.mdx), which is a package of business logic for a single domain. When the Switchyard application starts, it executes all loaders exported by configured modules.
 
-Loaders are useful to register custom resources, such as database connections, in the [module's container](../container/page.mdx), which is similar to the [Medusa container](../../medusa-container/page.mdx) but includes only [resources available to the module](!resources!/medusa-container-resources#module-container-resources). Modules are isolated, so they can't access resources outside of them, such as a service in another module.
+Loaders are useful to register custom resources, such as database connections, in the [module's container](../container/page.mdx), which is similar to the [Switchyard container](../../medusa-container/page.mdx) but includes only [resources available to the module](!resources!/medusa-container-resources#module-container-resources). Modules are isolated, so they can't access resources outside of them, such as a service in another module.
 
 <Note title="Why are modules isolated?">
 
-Medusa isolates modules to ensure that they're re-usable across applications, aren't tightly coupled to other resources, and don't have implications when integrated into the Medusa application. Learn more about why modules are isolated in [this chapter](../isolation/page.mdx), and check out [this reference for the list of resources in the module's container](!resources!/medusa-container-resources#module-container-resources).
+Switchyard isolates modules to ensure that they're re-usable across applications, aren't tightly coupled to other resources, and don't have implications when integrated into the Switchyard application. Learn more about why modules are isolated in [this chapter](../isolation/page.mdx), and check out [this reference for the list of resources in the module's container](!resources!/medusa-container-resources#module-container-resources).
 
 </Note>
 
@@ -32,7 +32,7 @@ You create a loader function in a TypeScript or JavaScript file under a module's
 
 For example, consider you have a `hello` module, you can create a loader at `src/modules/hello/loaders/hello-world.ts` with the following content:
 
-![Example of loader file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732865671/Medusa%20Book/loader-dir-overview_eg6vtu.jpg)
+![Example of loader file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732865671/Switchyard%20Book/loader-dir-overview_eg6vtu.jpg)
 
 <Note title="Tip">
 
@@ -43,14 +43,14 @@ Learn how to create a module in [this chapter](../page.mdx).
 ```ts title="src/modules/hello/loaders/hello-world.ts"
 import {
   LoaderOptions,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 export default async function helloWorldLoader({
   container,
 }: LoaderOptions) {
   const logger = container.resolve("logger")
 
-  logger.info("[HELLO MODULE] Just started the Medusa application!")
+  logger.info("[HELLO MODULE] Just started the Switchyard application!")
 }
 ```
 
@@ -66,7 +66,7 @@ Find the list of resources in the module's container in [this reference](!resour
 
 ### 2. Export Loader in Module Definition
 
-After implementing the loader, you must export it in the module's definition in the `index.ts` file at the root of the module's directory. Otherwise, the Medusa application will not run it.
+After implementing the loader, you must export it in the module's definition in the `index.ts` file at the root of the module's directory. Otherwise, the Switchyard application will not run it.
 
 So, to export the loader you implemented above in the `hello` module, add the following to `src/modules/hello/index.ts`:
 
@@ -80,11 +80,11 @@ export default Module("hello", {
 })
 ```
 
-The second parameter of the `Module` function accepts a `loaders` property whose value is an array of loader functions. The Medusa application will execute these functions when it starts.
+The second parameter of the `Module` function accepts a `loaders` property whose value is an array of loader functions. The Switchyard application will execute these functions when it starts.
 
 ### Test the Loader
 
-Assuming your module is [added to Medusa's configuration](../page.mdx#4-add-module-to-medusas-configurations), you can test the loader by starting the Medusa application:
+Assuming your module is [added to Switchyard's configuration](../page.mdx#4-add-module-to-medusas-configurations), you can test the loader by starting the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -93,7 +93,7 @@ npm run dev
 Then, you'll find the following message logged in the terminal:
 
 ```plain
-info:   [HELLO MODULE] Just started the Medusa application!
+info:   [HELLO MODULE] Just started the Switchyard application!
 ```
 
 This indicates that the loader in the `hello` module ran and logged this message.
@@ -104,7 +104,7 @@ This indicates that the loader in the `hello` module ran and logged this message
 
 ### Loaders Executed on Application Startup
 
-When you start the Medusa application, it executes the loaders of all modules in their registration order.
+When you start the Switchyard application, it executes the loaders of all modules in their registration order.
 
 A loader is executed before the module's main service is instantiated. So, you can use loaders to register in the module's container resources that you want to use in the module's service. For example, you can register a database connection.
 
@@ -118,7 +118,7 @@ Loaders are also executed when you run [migrations](../../data-models/write-migr
 
 ## Avoid Heavy Operations in Loaders
 
-Since loaders are executed when the Medusa application starts, heavy operations will increase the startup time of the application.
+Since loaders are executed when the Switchyard application starts, heavy operations will increase the startup time of the application.
 
 So, avoid operations that take a long time to complete, such as fetching a large amount of data from an external API or database, in loaders.
 
@@ -144,7 +144,7 @@ Consider your have a MongoDB module that allows you to perform operations on a M
       link: "https://www.mongodb.com"
     },
     {
-      text: "Install the MongoDB SDK in your Medusa application.",
+      text: "Install the MongoDB SDK in your Switchyard application.",
       link: "https://www.mongodb.com/docs/drivers/node/current/quick-start/download-and-install/#install-the-node.js-driver"
     }
   ]}
@@ -154,7 +154,7 @@ To connect to the database, you create the following loader in your module:
 
 <Note>
 
-As of [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0), Awilix dependencies are included in the `@medusajs/framework` package. If you're using an older version of Medusa, change the import statement to `awilix`.
+As of [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0), Awilix dependencies are included in the `@switchyard/framework` package. If you're using an older version of Switchyard, change the import statement to `awilix`.
 
 </Note>
 
@@ -168,8 +168,8 @@ export const loaderHighlights = [
 ]
 
 ```ts title="src/modules/mongo/loaders/connection.ts" highlights={loaderHighlights}
-import { LoaderOptions } from "@medusajs/framework/types"
-import { asValue } from "@medusajs/framework/awilix"
+import { LoaderOptions } from "@switchyard/framework/types"
+import { asValue } from "@switchyard/framework/awilix"
 import { MongoClient } from "mongodb"
 
 type ModuleOptions = {
@@ -208,13 +208,13 @@ export default async function mongoConnectionLoader({
 }
 ```
 
-The loader function accepts in its object parameter an `options` property, which is the options passed to the module in Medusa's configurations. For example:
+The loader function accepts in its object parameter an `options` property, which is the options passed to the module in Switchyard's configurations. For example:
 
 export const optionHighlights = [
   ["6", "options", "The options to pass to the module."]
 ]
 
-```ts title="medusa-config.ts" highlights={optionHighlights}
+```ts title="switchyard.config.ts" highlights={optionHighlights}
 module.exports = defineConfig({
   // ...
   modules: [
@@ -239,7 +239,7 @@ In the loader, you check first that these options are set before proceeding. The
 After creating the client, you register it in the module's container using the container's `register` method. The method accepts two parameters:
 
 1. The key to register the resource under, which in this case is `mongoClient`. You'll use this name later to resolve the client.
-2. The resource to register in the container, which is the MongoDB client you created. However, you don't pass the resource as-is. Instead, you need to use an `asValue` function imported from the [`@medusajs/framework/awilix` package](https://github.com/jeffijoe/awilix), which is the package used to implement the container functionality in Medusa.
+2. The resource to register in the container, which is the MongoDB client you created. However, you don't pass the resource as-is. Instead, you need to use an `asValue` function imported from the [`@switchyard/framework/awilix` package](https://github.com/jeffijoe/awilix), which is the package used to implement the container functionality in Switchyard.
 
 ### Use Custom Registered Resource in Module's Service
 
@@ -301,7 +301,7 @@ The service `MongoModuleService` resolves the `mongoClient` resource you registe
 Make sure to export the loader in the module's definition in the `index.ts` file at the root directory of the module:
 
 ```ts title="src/modules/mongo/index.ts" highlights={[["9"]]}
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import MongoModuleService from "./service"
 import mongoConnectionLoader from "./loaders/connection"
 
@@ -315,7 +315,7 @@ export default Module(MONGO_MODULE, {
 
 ### Test it Out
 
-You can test the connection out by starting the Medusa application. If it's successful, you'll see the following message logged in the terminal:
+You can test the connection out by starting the Switchyard application. If it's successful, you'll see the following message logged in the terminal:
 
 ```bash
 info:    Connected to MongoDB

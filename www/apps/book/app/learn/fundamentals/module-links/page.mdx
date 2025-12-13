@@ -8,9 +8,9 @@ In this chapter, you’ll learn what a module link is and how to define one.
 
 ## What is a Module Link?
 
-Medusa's modular architecture isolates modules from one another to ensure they can be integrated into your application without side effects. Module isolation has other benefits, which you can learn about in the [Module Isolation chapter](../modules/isolation/page.mdx). Since modules are isolated, you can't access another module's data models to add a relation to it or extend it. Instead, you use a module link.
+Switchyard's modular architecture isolates modules from one another to ensure they can be integrated into your application without side effects. Module isolation has other benefits, which you can learn about in the [Module Isolation chapter](../modules/isolation/page.mdx). Since modules are isolated, you can't access another module's data models to add a relation to it or extend it. Instead, you use a module link.
 
-A module link forms an association between two data models of different modules while maintaining module isolation. Using module links, you can build virtual relations between your custom data models and data models in the Commerce Modules, which is useful as you extend the features provided by the Commerce Modules. Then, Medusa creates a link table in the database to store the IDs of the linked records. You'll learn more about link tables later in this chapter.
+A module link forms an association between two data models of different modules while maintaining module isolation. Using module links, you can build virtual relations between your custom data models and data models in the Commerce Modules, which is useful as you extend the features provided by the Commerce Modules. Then, Switchyard creates a link table in the database to store the IDs of the linked records. You'll learn more about link tables later in this chapter.
 
 For example, the [Brand Customizations Tutorial](../../customization/extend-features/page.mdx) shows how to create a Brand Module that adds the concept of brands to your application, then link those brands to a product.
 
@@ -31,8 +31,8 @@ export const highlights = [
 
 ```ts title="src/links/blog-product.ts" highlights={highlights}
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -49,10 +49,10 @@ In this example, you define a module link between the `blog` module's `post` dat
 After defining the link, run the `db:sync-links` command:
 
 ```bash
-npx medusa db:sync-links
+npx switchyard db:sync-links
 ```
 
-The Medusa application creates a new table for your module link to store the IDs of linked records.
+The Switchyard application creates a new table for your module link to store the IDs of linked records.
 
 You can also use the `db:migrate` command, which runs both the migrations and syncs the links.
 
@@ -62,7 +62,7 @@ Use either of these commands whenever you make changes to your link definitions.
 
 ### Module Link's Database Table
 
-When you define a module link, the Medusa application creates a table in the database for that module link. The table's name is a combination of the names of the two data models linked in the format `module1_table1_module2_table2`, where:
+When you define a module link, the Switchyard application creates a table in the database for that module link. The table's name is a combination of the names of the two data models linked in the format `module1_table1_module2_table2`, where:
 
 - `module1` and `module2` are the names of the modules.
 - `table1` and `table2` are the table names of the data models.
@@ -79,7 +79,7 @@ You can also add custom columns in the link table as explained in the [Add Colum
 
 </Note>
 
-![Diagram illustration for module links](https://res.cloudinary.com/dza7lstvk/image/upload/v1741696766/Medusa%20Book/custom-links_vezsx8.jpg)
+![Diagram illustration for module links](https://res.cloudinary.com/dza7lstvk/image/upload/v1741696766/Switchyard%20Book/custom-links_vezsx8.jpg)
 
 ---
 
@@ -110,8 +110,8 @@ For example:
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -137,8 +137,8 @@ For example:
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -162,8 +162,8 @@ For example:
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -190,7 +190,7 @@ A data model's table name is passed in the first parameter of `model.define`, an
 
 </Note>
 
-For example, if you have the link table `product_product_blog_post` and you rename the Blog Module from `blog` to `article`, Medusa considers the old link definition deleted. Then, when you run the `db:sync-links` or `db:migrate` command, Medusa will ask if you want to delete the old link table, and will create a new one with the new name `product_product_article_post`.
+For example, if you have the link table `product_product_blog_post` and you rename the Blog Module from `blog` to `article`, Switchyard considers the old link definition deleted. Then, when you run the `db:sync-links` or `db:migrate` command, Switchyard will ask if you want to delete the old link table, and will create a new one with the new name `product_product_article_post`.
 
 To resolve this, you can rename the link table in the link definition.
 
@@ -206,8 +206,8 @@ export const renameHighlights = [
 
 ```ts highlights={renameHighlights}
 import ArticleModule from "../modules/article"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -228,7 +228,7 @@ In this example, you set the `table` property in the `database` object to the ol
 This is enough to rename the link table when you rename a module. If you renamed a data model's table, you need to also run the `db:sync-links` or `db:migrate` commands, which will update the column names in the link table automatically:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 ---
@@ -238,5 +238,5 @@ npx medusa db:migrate
 To delete a module link definition, remove the link file from the `src/links` directory. Then, run the `db:sync-links` or `db:migrate` command to delete the link table from the database:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```

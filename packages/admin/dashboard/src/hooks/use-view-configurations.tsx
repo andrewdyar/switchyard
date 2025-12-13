@@ -1,6 +1,6 @@
 import { useMemo } from "react"
-import { toast } from "@medusajs/ui"
-import { FetchError } from "@medusajs/js-sdk"
+import { toast } from "@switchyard/ui"
+import { FetchError } from "@switchyard/js-sdk"
 import { useFeatureFlag } from "../providers/feature-flag-provider"
 import {
   useViewConfigurations as useViewConfigurationsBase,

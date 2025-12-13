@@ -1,4 +1,4 @@
-import { PencilSquare, Trash } from "@medusajs/icons"
+import { PencilSquare, Trash } from "@switchyard/icons"
 import {
   Container,
   Heading,
@@ -6,10 +6,10 @@ import {
   Text,
   toast,
   usePrompt,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
-import { SalesChannelDTO } from "@medusajs/types"
+import { SalesChannelDTO } from "@switchyard/types"
 import { useNavigate } from "react-router-dom"
 import { ActionMenu } from "../../../../../components/common/action-menu"
 import { useDeleteSalesChannel } from "../../../../../hooks/api/sales-channels"

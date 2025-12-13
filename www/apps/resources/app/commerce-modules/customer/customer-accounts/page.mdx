@@ -4,11 +4,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this document, you’ll learn how registered and unregistered accounts are distinguished in the Medusa application.
+In this document, you’ll learn how registered and unregistered accounts are distinguished in the Switchyard application.
 
 <Note title="Looking for no-code docs?">
 
-Refer to this [Medusa Admin User Guide](!user-guide!/customers) to learn how to manage customers using the dashboard.
+Refer to this [Switchyard Admin User Guide](!user-guide!/customers) to learn how to manage customers using the dashboard.
 
 </Note>
 
@@ -34,7 +34,7 @@ So, there can only be one guest customer (having `has_account=false`) and one re
 
 When a merchant deletes a customer, the `Customer` record is soft-deleted, meaning it is not permanently removed from the database.
 
-When using the Medusa Application with the [Auth Module](../../auth/page.mdx), possible confusion may arise in the following scenarios:
+When using the Switchyard Application with the [Auth Module](../../auth/page.mdx), possible confusion may arise in the following scenarios:
 
 1. An admin user is using the email address `john@example.com`, and a customer tries to register with the same email address.
 2. An admin user has deleted a customer with the email address `jane@example.com`, and another customer tries to register with the same email address.
@@ -55,5 +55,5 @@ To resolve this, you can amend the registration flow to:
 
 You can learn more about how to implement this flow in the following guides:
 
-- [Conceptual guide on how to implement this flow with Medusa's authentication routes](../../auth/authentication-route/page.mdx#handling-existing-identities).
+- [Conceptual guide on how to implement this flow with Switchyard's authentication routes](../../auth/authentication-route/page.mdx#handling-existing-identities).
 - [How-to guide on how to implement this in a storefront](../../../storefront-development/customers/register/page.mdx).

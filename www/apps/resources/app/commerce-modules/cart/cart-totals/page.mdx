@@ -14,9 +14,9 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to retrieve cart totals in your Medusa application using [Query](!docs!/learn/fundamentals/module-links/query).
+In this guide, you'll learn how to retrieve cart totals in your Switchyard application using [Query](!docs!/learn/fundamentals/module-links/query).
 
-You may need to retrieve cart totals in your Medusa customizations, such as workflows or custom API routes, to perform custom actions with them. The ideal way to retrieve totals is with Query.
+You may need to retrieve cart totals in your Switchyard customizations, such as workflows or custom API routes, to perform custom actions with them. The ideal way to retrieve totals is with Query.
 
 <Note title="Looking for a storefront guide?">
 
@@ -40,8 +40,8 @@ Use `useQueryGraphStep` in workflows, and `query.graph` in custom API routes, sc
   <CodeTab label="useQueryGraphStep" value="useQueryGraphStep">
 
 ```ts highlights={[["12"]]}
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 export const myWorkflow = createWorkflow(
   "my-workflow",

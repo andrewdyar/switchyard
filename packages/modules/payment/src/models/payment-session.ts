@@ -1,4 +1,4 @@
-import { model, PaymentSessionStatus } from "@medusajs/framework/utils"
+import { model, PaymentSessionStatus } from "@switchyard/framework/utils"
 import Payment from "./payment"
 import PaymentCollection from "./payment-collection"
 

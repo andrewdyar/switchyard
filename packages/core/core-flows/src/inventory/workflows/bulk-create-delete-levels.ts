@@ -3,13 +3,13 @@
 import type {
   InventoryLevelDTO,
   InventoryTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   createWorkflow,
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createInventoryLevelsStep } from "../steps"
 import { deleteInventoryLevelsWorkflow } from "./delete-inventory-levels"
 

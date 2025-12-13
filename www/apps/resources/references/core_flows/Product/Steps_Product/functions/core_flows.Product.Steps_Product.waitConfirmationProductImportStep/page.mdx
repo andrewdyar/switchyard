@@ -7,18 +7,18 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# waitConfirmationProductImportStep - Medusa Core Workflows Reference
+# waitConfirmationProductImportStep - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `waitConfirmationProductImportStep`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `waitConfirmationProductImportStep`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This step waits until a product import is confirmed. It's useful before executing the
 batchProductsWorkflow.
 
-This step is asynchronous and will make the workflow using it a [Long-Running Workflow](https://docs.medusajs.com/learn/fundamentals/workflows/long-running-workflow).
+This step is asynchronous and will make the workflow using it a [Long-Running Workflow](https://docs.switchyard.com/learn/fundamentals/workflows/long-running-workflow).
 
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { waitConfirmationProductImportStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { waitConfirmationProductImportStep } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",

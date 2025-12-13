@@ -1,13 +1,13 @@
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
-import { ICachingModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
+import { ICachingModuleService } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { setTimeout } from "timers/promises"
 import { EventBusServiceMock } from "../../__fixtures__/event-bus-mock"
 
 jest.setTimeout(300000)
 
-jest.spyOn(MedusaModule, "getAllJoinerConfigs").mockReturnValue([
+jest.spyOn(SwitchyardModule, "getAllJoinerConfigs").mockReturnValue([
   {
     schema: `
    type Product {

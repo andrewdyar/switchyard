@@ -1,12 +1,12 @@
-import { IPromotionModuleService } from "@medusajs/framework/types"
+import { IPromotionModuleService } from "@switchyard/framework/types"
 import {
   ApplicationMethodType,
   CampaignBudgetType,
   Module,
   Modules,
   PromotionType,
-} from "@medusajs/framework/utils"
-import { SuiteOptions, moduleIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@switchyard/framework/utils"
+import { SuiteOptions, moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { PromotionModuleService } from "@services"
 import { createCampaigns } from "../../../__fixtures__/campaigns"
 import {

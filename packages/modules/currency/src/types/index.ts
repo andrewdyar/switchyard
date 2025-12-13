@@ -1,4 +1,4 @@
-import { IEventBusModuleService, Logger } from "@medusajs/framework/types"
+import { IEventBusModuleService, Logger } from "@switchyard/framework/types"
 
 export type InitializeModuleInjectableDependencies = {
   logger?: Logger

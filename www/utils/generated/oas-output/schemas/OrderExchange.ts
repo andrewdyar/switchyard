@@ -51,14 +51,14 @@
  *     type: array
  *     description: The exchange's transactions.
  *     externalDocs:
- *       url: https://docs.medusajs.com/resources/commerce-modules/order/transactions
+ *       url: https://docs.switchyard.com/resources/commerce-modules/order/transactions
  *     items:
  *       $ref: "#/components/schemas/OrderTransaction"
  *   metadata:
  *     type: object
  *     description: The exchange's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/store#manage-metadata
+ *       url: https://docs.switchyard.com/api/store#manage-metadata
  *       description: Learn how to manage metadata
  *   created_at:
  *     type: string

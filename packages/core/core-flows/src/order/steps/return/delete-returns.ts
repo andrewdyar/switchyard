@@ -1,6 +1,6 @@
-import type { IOrderModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import type { IOrderModuleService } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of deleting the returns.

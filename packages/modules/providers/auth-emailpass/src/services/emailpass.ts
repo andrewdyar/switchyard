@@ -5,10 +5,10 @@ import {
   AuthIdentityProviderService,
   EmailPassAuthProviderOptions,
   Logger,
-} from "@medusajs/framework/types"
-import { AbstractAuthModuleProvider, isString, MedusaError, } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { AbstractAuthModuleProvider, isString, SwitchyardError, } from "@switchyard/framework/utils"
 import Scrypt from "scrypt-kdf"
-import { isPresent } from "@medusajs/utils"
+import { isPresent } from "@switchyard/utils"
 
 type InjectedDependencies = {
   logger: Logger
@@ -109,7 +109,7 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
         entity_id: email,
       })
     } catch (error) {
-      if (error.type === MedusaError.Types.NOT_FOUND) {
+      if (error.type === SwitchyardError.Types.NOT_FOUND) {
         return {
           success: false,
           error: "Invalid email or password",
@@ -192,7 +192,7 @@ export class EmailPassAuthService extends AbstractAuthModuleProvider {
         error: "Identity with email already exists",
       }
     } catch (error) {
-      if (error.type === MedusaError.Types.NOT_FOUND) {
+      if (error.type === SwitchyardError.Types.NOT_FOUND) {
         const createdAuthIdentity = await this.upsertAuthIdentity('create', {
           email,
           password,

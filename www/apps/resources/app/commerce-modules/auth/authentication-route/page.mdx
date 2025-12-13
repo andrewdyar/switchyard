@@ -8,7 +8,7 @@ In this document, you'll learn about the authentication routes and how to use th
 
 <Note>
 
-These routes are added by Medusa's HTTP layer, not the Auth Module.
+These routes are added by Switchyard's HTTP layer, not the Auth Module.
 
 </Note>
 
@@ -26,7 +26,7 @@ This authentication flow doesn't require validation with third-party services.
 
 The steps are:
 
-![Diagram showcasing the basic authentication flow between the frontend and the Medusa application](https://res.cloudinary.com/dza7lstvk/image/upload/v1725539370/Medusa%20Resources/basic-auth-routes_pgpjch.jpg)
+![Diagram showcasing the basic authentication flow between the frontend and the Switchyard application](https://res.cloudinary.com/dza7lstvk/image/upload/v1725539370/Switchyard%20Resources/basic-auth-routes_pgpjch.jpg)
 
 1. Register the user with the [Register Route](#register-route).
 2. Use the authentication token to create the user with their respective API route.
@@ -54,7 +54,7 @@ This authentication flow authenticates the user with a third-party service, such
 
 It requires the following steps:
 
-![Diagram showcasing the authentication flow between the frontend, Medusa application, and third-party service](https://res.cloudinary.com/dza7lstvk/image/upload/v1725528159/Medusa%20Resources/Third_Party_Auth_tvf4ng.jpg)
+![Diagram showcasing the authentication flow between the frontend, Switchyard application, and third-party service](https://res.cloudinary.com/dza7lstvk/image/upload/v1725528159/Switchyard%20Resources/Third_Party_Auth_tvf4ng.jpg)
 
 1. Authenticate the user with the [Auth Route](#login-route).
 2. The auth route returns a URL to authenticate with third-party service, such as login with Google. The frontend (such as a storefront), when it receives a `location` property in the response, must redirect to the returned location.
@@ -74,7 +74,7 @@ It requires the following steps:
 
 ## Register Route
 
-The Medusa application defines an API route at `/auth/{actor_type}/{provider}/register` that creates an auth identity for an actor type, such as a `customer`. It returns a JWT token that you pass to an API route that creates the user.
+The Switchyard application defines an API route at `/auth/{actor_type}/{provider}/register` that creates an auth identity for an actor type, such as a `customer`. It returns a JWT token that you pass to an API route that creates the user.
 
 ```bash
 curl -X POST http://localhost:9000/auth/{actor_type}/{providers}/register
@@ -123,7 +123,7 @@ Use that token in the header of subsequent requests to send authenticated reques
 
 ### Handling Existing Identities
 
-An auth identity with the same email may already exist in Medusa. This can happen if:
+An auth identity with the same email may already exist in Switchyard. This can happen if:
 
 - Another actor type is using that email. For example, an admin user is trying to register as a customer.
 - The same email belongs to a record of the same actor type. For example, another customer has the same email.
@@ -154,7 +154,7 @@ You can show that error message to the customer.
 
 ## Login Route
 
-The Medusa application defines an API route at `/auth/{actor_type}/{provider}` that authenticates a user of an actor type. It returns a JWT token that can be passed in [the header of subsequent requests](!api!/store#authentication) to send authenticated requests.
+The Switchyard application defines an API route at `/auth/{actor_type}/{provider}` that authenticates a user of an actor type. It returns a JWT token that can be passed in [the header of subsequent requests](!api!/store#authentication) to send authenticated requests.
 
 ```bash
 curl -X POST http://localhost:9000/auth/{actor_type}/{providers}
@@ -218,7 +218,7 @@ Redirect to that URL in the frontend to continue the authentication process with
 
 ## Validate Callback Route
 
-The Medusa application defines an API route at `/auth/{actor_type}/{provider}/callback` that's useful for validating the authentication callback or redirect from third-party services like Google.
+The Switchyard application defines an API route at `/auth/{actor_type}/{provider}/callback` that's useful for validating the authentication callback or redirect from third-party services like Google.
 
 ```bash
 curl -X POST http://localhost:9000/auth/{actor_type}/{providers}/callback?code=123&state=456
@@ -272,7 +272,7 @@ The decoded data may look like this:
 
 ## Refresh Token Route
 
-The Medusa application defines an API route at `/auth/token/refresh` that's useful after authenticating a user with a third-party service to populate the user's token with their new information.
+The Switchyard application defines an API route at `/auth/token/refresh` that's useful after authenticating a user with a third-party service to populate the user's token with their new information.
 
 It requires the user's JWT token that they received from the authentication or callback routes.
 
@@ -313,7 +313,7 @@ To reset a user's password:
 
 ### Generate Reset Password Token Route
 
-The Medusa application defines an API route at `/auth/{actor_type}/{auth_provider}/reset-password` that emits the `auth.password_reset` event, passing the token in the payload.
+The Switchyard application defines an API route at `/auth/{actor_type}/{auth_provider}/reset-password` that emits the `auth.password_reset` event, passing the token in the payload.
 
 ```bash
 curl -X POST http://localhost:9000/auth/{actor_type}/{providers}/reset-password
@@ -348,7 +348,7 @@ If the authentication is successful, the request returns a `201` response code.
 
 ### Reset Password Route
 
-The Medusa application defines an API route at `/auth/{actor_type}/{auth_provider}/update` that accepts a token and, if valid, updates the user's password.
+The Switchyard application defines an API route at `/auth/{actor_type}/{auth_provider}/update` that accepts a token and, if valid, updates the user's password.
 
 ```bash
 curl -X POST http://localhost:9000/auth/{actor_type}/{providers}/update
@@ -377,7 +377,7 @@ Its path parameters are:
 
 <Note>
 
-Before [Medusa v2.6](https://github.com/medusajs/medusa/releases/tag/v2.6), you passed the token as a query parameter. Now, you must pass it in the `Authorization` header.
+Before [Switchyard v2.6](https://github.com/switchyard/medusa/releases/tag/v2.6), you passed the token as a query parameter. Now, you must pass it in the `Authorization` header.
 
 </Note>
 

@@ -1,5 +1,5 @@
-import { HttpTypes } from "@medusajs/types"
-import { Badge, Container, Tooltip } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Badge, Container, Tooltip } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
 import { TaxRateLine } from "../../../common/components/tax-rate-line"

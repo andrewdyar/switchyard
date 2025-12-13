@@ -23,13 +23,13 @@ In this document, you’ll learn how to create a Payment Module Provider to be u
       
 As you implement your Payment Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [Stripe Payment Module Provider in the Medusa repository](https://github.com/medusajs/medusa/tree/develop/packages/modules/providers/payment-stripe).
+If you need to refer to an existing implementation as an example, check the [Stripe Payment Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/payment-stripe).
 
 ---
 
 ## Understanding Payment Module Provider Implementation
 
-The Payment Module Provider handles processing payment with a third-party provirder. However, it's not responsible for managing payment concepts within Medusa, such as payment sessions or collections. These concepts are handled by the Payment Module which uses your Payment Module Provider within core operations.
+The Payment Module Provider handles processing payment with a third-party provirder. However, it's not responsible for managing payment concepts within Switchyard, such as payment sessions or collections. These concepts are handled by the Payment Module which uses your Payment Module Provider within core operations.
 
 For example, when the merchant captures an order's payment, the Payment Module uses the Payment Module Provider to capture the payment, the makes updates to the `Payment` record associated with the order. So, you only have to implement the third-party payment processing logic in your Payment Module Provider.
 
@@ -39,7 +39,7 @@ For example, when the merchant captures an order's payment, the Payment Module u
 
 Start by creating a new directory for your module provider.
 
-If you're creating the module provider in a Medusa application, create it under the `src/modules` directory. For example, `src/modules/my-payment`.
+If you're creating the module provider in a Switchyard application, create it under the `src/modules` directory. For example, `src/modules/my-payment`.
 
 If you're creating the module provider in a plugin, create it under the `src/providers` directory. For example, `src/providers/my-payment`.
 
@@ -53,10 +53,10 @@ The rest of this guide always uses the `src/modules/my-payment` directory as an 
 
 ## 2. Create the Payment Module Provider's Service
 
-Create the file `src/modules/my-payment/service.ts` that holds the module provider's main service. It must extend the `AbstractPaymentProvider` class imported from `@medusajs/framework/utils`:
+Create the file `src/modules/my-payment/service.ts` that holds the module provider's main service. It must extend the `AbstractPaymentProvider` class imported from `@switchyard/framework/utils`:
 
 ```ts title="src/modules/my-payment/service.ts"
-import { AbstractPaymentProvider } from "@medusajs/framework/utils"
+import { AbstractPaymentProvider } from "@switchyard/framework/utils"
 
 type Options = {
   apiKey: string
@@ -73,22 +73,22 @@ export default MyPaymentProviderService
 
 ### constructor
 
-The constructor allows you to access resources from the [module's container](https://docs.medusajs.com/learn/fundamentals/modules/container)
+The constructor allows you to access resources from the [module's container](https://docs.switchyard.com/learn/fundamentals/modules/container)
 using the first parameter, and the module's options using the second parameter.
 
 If you're creating a client or establishing a connection with a third-party service, do it in the constructor.
 
 :::note
 
-A module's options are passed when you register it in the Medusa application.
+A module's options are passed when you register it in the Switchyard application.
 
 :::
 
 #### Example
 
 ```ts
-import { AbstractPaymentProvider } from "@medusajs/framework/utils"
-import { Logger } from "@medusajs/framework/types"
+import { AbstractPaymentProvider } from "@switchyard/framework/utils"
+import { Logger } from "@switchyard/framework/types"
 
 type Options = {
   apiKey: string
@@ -123,17 +123,17 @@ export default MyPaymentProviderService
 
 #### Type Parameters
 
-<TypeList types={[{"name":"TConfig","type":"`object`","description":"The type of the provider's options passed as a second parameter.","optional":true,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="AbstractPaymentProvider"/>
+<TypeList types={[{"name":"TConfig","type":"`object`","description":"The type of the provider's options passed as a second parameter.","optional":true,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="AbstractPaymentProvider"/>
 
 #### Parameters
 
-<TypeList types={[{"name":"cradle","type":"`Record<string, unknown>`","description":"The module's container used to resolve resources.","optional":false,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="AbstractPaymentProvider"/>
+<TypeList types={[{"name":"cradle","type":"`Record<string, unknown>`","description":"The module's container used to resolve resources.","optional":false,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="AbstractPaymentProvider"/>
 
 ### identifier
 
 Each payment provider has a unique identifier defined in its class. The provider's ID
 will be stored as `pp_{identifier}_{id}`, where `{id}` is the provider's `id`
-property in the `medusa-config.ts`.
+property in the `switchyard.config.ts`.
 
 #### Example
 
@@ -158,7 +158,7 @@ During cart-completion before placing the order, this method is used to authoriz
 third-party payment provider. The payment can later be captured
 using the [capturePayment](page.mdx#capturepayment) method.
 
-![Diagram showcasing authorize payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747307795/Medusa%20Resources/authorize-payment\_qzpy6e.jpg)
+![Diagram showcasing authorize payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747307795/Switchyard%20Resources/authorize-payment\_qzpy6e.jpg)
 
 When authorized successfully, a `Payment` is created by the Payment
 Module, and it's associated with the order.
@@ -171,7 +171,7 @@ returned by the [initiatePayment](page.mdx#initiatepayment) method.
 The `data` property returned by this method is then stored in the created `Payment` record. You can store data relevant to later capture or process the payment.
 For example, you can store the ID of the payment in the third-party provider to reference it later.
 
-![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747309278/Medusa%20Resources/authorize-data\_erjg7r.jpg)
+![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747309278/Switchyard%20Resources/authorize-data\_erjg7r.jpg)
 
 #### Example
 
@@ -181,7 +181,7 @@ import {
   AuthorizePaymentInput,
   AuthorizePaymentOutput,
   PaymentSessionStatus
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -206,11 +206,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[AuthorizePaymentInput](../../../types/interfaces/types.AuthorizePaymentInput/page.mdx)","description":"The input to authorize the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="authorizePayment"/>
+<TypeList types={[{"name":"input","type":"[AuthorizePaymentInput](../../../types/interfaces/types.AuthorizePaymentInput/page.mdx)","description":"The input to authorize the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="authorizePayment"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[AuthorizePaymentOutput](../../../types/interfaces/types.AuthorizePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The status of the authorization, along with the `data` field about the payment. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="authorizePayment"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[AuthorizePaymentOutput](../../../types/interfaces/types.AuthorizePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The status of the authorization, along with the `data` field about the payment. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="authorizePayment"/>
 
 ### cancelPayment
 
@@ -225,7 +225,7 @@ returned by the [authorizePayment](page.mdx#authorizepayment) method.
 
 The `data` property returned by this method is then stored in the `Payment` record. You can store data relevant for any further processing of the payment.
 
-![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310189/Medusa%20Resources/cancel-data\_gzcgbc.jpg)
+![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310189/Switchyard%20Resources/cancel-data\_gzcgbc.jpg)
 
 #### Example
 
@@ -234,7 +234,7 @@ The `data` property returned by this method is then stored in the `Payment` reco
 import {
   PaymentProviderError,
   PaymentProviderSessionResponse,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -255,11 +255,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[CancelPaymentInput](../../../types/interfaces/types.CancelPaymentInput/page.mdx)","description":"The input to cancel the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="cancelPayment"/>
+<TypeList types={[{"name":"input","type":"[CancelPaymentInput](../../../types/interfaces/types.CancelPaymentInput/page.mdx)","description":"The input to cancel the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="cancelPayment"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[CancelPaymentOutput](../../../types/interfaces/types.CancelPaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property, if any. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="cancelPayment"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[CancelPaymentOutput](../../../types/interfaces/types.CancelPaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property, if any. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="cancelPayment"/>
 
 ### capturePayment
 
@@ -268,7 +268,7 @@ This method captures a payment using the third-party provider. In this method, u
 When an order is placed, the payment is authorized using the [authorizePayment](page.mdx#authorizepayment) method. Then, the admin
 user can capture the payment, which triggers this method.
 
-![Diagram showcasing capture payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747307414/Medusa%20Resources/Klarna\_Payment\_Graphic\_2025\_1\_lii7bw.jpg)
+![Diagram showcasing capture payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747307414/Switchyard%20Resources/Klarna\_Payment\_Graphic\_2025\_1\_lii7bw.jpg)
 
 This method can also be triggered by a webhook event if the [getWebhookActionAndData](page.mdx#getwebhookactionanddata) method returns the action `captured`.
 
@@ -280,7 +280,7 @@ returned by the [authorizePayment](page.mdx#authorizepayment) method.
 The `data` property returned by this method is then stored in the `Payment` record. You can store data relevant to later refund or process the payment.
 For example, you can store the ID of the payment in the third-party provider to reference it later.
 
-![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747309870/Medusa%20Resources/capture-data\_acgdhf.jpg)
+![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747309870/Switchyard%20Resources/capture-data\_acgdhf.jpg)
 
 #### Example
 
@@ -289,7 +289,7 @@ For example, you can store the ID of the payment in the third-party provider to 
 import {
   CapturePaymentInput,
   CapturePaymentOutput,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -314,11 +314,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[CapturePaymentInput](../../../types/interfaces/types.CapturePaymentInput/page.mdx)","description":"The input to capture the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="capturePayment"/>
+<TypeList types={[{"name":"input","type":"[CapturePaymentInput](../../../types/interfaces/types.CapturePaymentInput/page.mdx)","description":"The input to capture the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="capturePayment"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[CapturePaymentOutput](../../../types/interfaces/types.CapturePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="capturePayment"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[CapturePaymentOutput](../../../types/interfaces/types.CapturePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="capturePayment"/>
 
 ### createAccountHolder
 
@@ -329,26 +329,26 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
   }
 ]} className="mb-1" />
 
-This method is used when creating an account holder in Medusa, allowing you to create
+This method is used when creating an account holder in Switchyard, allowing you to create
 the equivalent account in the third-party payment provider. An account holder is useful to
 later save payment methods, such as credit cards, for a customer in the
 third-party payment provider using the [savePaymentMethod](../../../types/interfaces/types.IPaymentProvider/page.mdx#savepaymentmethod) method.
 
-The returned data will be stored in the account holder created in Medusa. For example,
+The returned data will be stored in the account holder created in Switchyard. For example,
 the returned `id` property will be stored in the account holder's `external_id` property.
 
-Medusa creates an account holder when a payment session initialized for a registered customer.
+Switchyard creates an account holder when a payment session initialized for a registered customer.
 
 :::note
 
-This is available starting from [Medusa v2.5.0](https://github.com/medusajs/medusa/releases/tag/v2.5.0).
+This is available starting from [Switchyard v2.5.0](https://github.com/switchyard/medusa/releases/tag/v2.5.0).
 
 :::
 
 #### Example
 
 ```ts
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
  Options
@@ -361,8 +361,8 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
   }
 
   if (!customer) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Missing customer data."
     )
   }
@@ -382,11 +382,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"data","type":"[CreateAccountHolderInput](../../../types/interfaces/types.CreateAccountHolderInput/page.mdx)","description":"Input data including the details of the account holder to create.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"context","type":"Omit&#60;[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx), \"customer\"&#62; & `object`","description":"The context of creating the account holder.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createAccountHolder"/>
+<TypeList types={[{"name":"data","type":"[CreateAccountHolderInput](../../../types/interfaces/types.CreateAccountHolderInput/page.mdx)","description":"Input data including the details of the account holder to create.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"context","type":"Omit&#60;[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx), \"customer\"&#62; & `object`","description":"The context of creating the account holder.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createAccountHolder"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[CreateAccountHolderOutput](../../../types/interfaces/types.CreateAccountHolderOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The result of creating the account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.0"}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createAccountHolder"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[CreateAccountHolderOutput](../../../types/interfaces/types.CreateAccountHolderOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The result of creating the account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.0"}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createAccountHolder"/>
 
 ### deleteAccountHolder
 
@@ -397,19 +397,19 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
   }
 ]} className="mb-1" />
 
-This method is used when an account holder is deleted in Medusa, allowing you
+This method is used when an account holder is deleted in Switchyard, allowing you
 to also delete the equivalent account holder in the third-party payment provider.
 
 :::note
 
-This is available starting from [Medusa v2.5.0](https://github.com/medusajs/medusa/releases/tag/v2.5.0).
+This is available starting from [Switchyard v2.5.0](https://github.com/switchyard/medusa/releases/tag/v2.5.0).
 
 :::
 
 #### Example
 
 ```ts
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
  Options
@@ -418,8 +418,8 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
     const { account_holder } = context
     const accountHolderId = account_holder?.data?.id as string | undefined
     if (!accountHolderId) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Missing account holder ID."
       )
     }
@@ -436,11 +436,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"data","type":"[DeleteAccountHolderInput](../../../types/interfaces/types.DeleteAccountHolderInput/page.mdx)","description":"Input data including the details of the account holder to delete.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"context","type":"Omit&#60;[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx), \"account_holder\"&#62; & `object`","description":"The context of deleting the account holder.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="deleteAccountHolder"/>
+<TypeList types={[{"name":"data","type":"[DeleteAccountHolderInput](../../../types/interfaces/types.DeleteAccountHolderInput/page.mdx)","description":"Input data including the details of the account holder to delete.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"context","type":"Omit&#60;[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx), \"account_holder\"&#62; & `object`","description":"The context of deleting the account holder.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="deleteAccountHolder"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[DeleteAccountHolderOutput](../../../types/interfaces/types.DeleteAccountHolderOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The result of deleting the account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.0"}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="deleteAccountHolder"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[DeleteAccountHolderOutput](../../../types/interfaces/types.DeleteAccountHolderOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The result of deleting the account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.0"}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="deleteAccountHolder"/>
 
 ### deletePayment
 
@@ -452,14 +452,14 @@ this method is triggered to delete the previous payment session.
 If your provider doesn't support deleting a payment session, you can just return an empty object or
 an object that contains the same received `data` property.
 
-![Diagram showcasing delete payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311084/Medusa%20Resources/delete-payment\_smxsiq.jpg)
+![Diagram showcasing delete payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311084/Switchyard%20Resources/delete-payment\_smxsiq.jpg)
 
 #### Understanding `data` property
 
 The `data` property of the method's parameter contains the `PaymentSession` record's `data` property, which was
 returned by the [initiatePayment](page.mdx#initiatepayment) method.
 
-![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311084/Medusa%20Resources/delete-data\_xg65ck.jpg)
+![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311084/Switchyard%20Resources/delete-data\_xg65ck.jpg)
 
 #### Example
 
@@ -468,7 +468,7 @@ returned by the [initiatePayment](page.mdx#initiatepayment) method.
 import {
   DeletePaymentInput,
   DeletePaymentOutput,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -491,11 +491,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[DeletePaymentInput](../../../types/interfaces/types.DeletePaymentInput/page.mdx)","description":"The input to delete the payment session. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="deletePayment"/>
+<TypeList types={[{"name":"input","type":"[DeletePaymentInput](../../../types/interfaces/types.DeletePaymentInput/page.mdx)","description":"The input to delete the payment session. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="deletePayment"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[DeletePaymentOutput](../../../types/interfaces/types.DeletePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property, if any. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="deletePayment"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[DeletePaymentOutput](../../../types/interfaces/types.DeletePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property, if any. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="deletePayment"/>
 
 ### getPaymentStatus
 
@@ -509,7 +509,7 @@ import {
   GetPaymentStatusInput,
   GetPaymentStatusOutput,
   PaymentSessionStatus
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -540,19 +540,19 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[GetPaymentStatusInput](../../../types/interfaces/types.GetPaymentStatusInput/page.mdx)","description":"The input to get the payment status. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getPaymentStatus"/>
+<TypeList types={[{"name":"input","type":"[GetPaymentStatusInput](../../../types/interfaces/types.GetPaymentStatusInput/page.mdx)","description":"The input to get the payment status. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getPaymentStatus"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[GetPaymentStatusOutput](../../../types/interfaces/types.GetPaymentStatusOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The payment session's status. It can also return additional `data` from the payment provider.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getPaymentStatus"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[GetPaymentStatusOutput](../../../types/interfaces/types.GetPaymentStatusOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The payment session's status. It can also return additional `data` from the payment provider.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getPaymentStatus"/>
 
 ### getWebhookActionAndData
 
-This method is executed when a webhook event is received from the third-party payment provider. Medusa uses
-the data returned by this method to perform actions in the Medusa application, such as completing the associated cart
+This method is executed when a webhook event is received from the third-party payment provider. Switchyard uses
+the data returned by this method to perform actions in the Switchyard application, such as completing the associated cart
 if the payment was authorized successfully.
 
-Learn more in the [Webhook Events](https://docs.medusajs.com/resources/commerce-modules/payment/webhook-events) documentation.
+Learn more in the [Webhook Events](https://docs.switchyard.com/resources/commerce-modules/payment/webhook-events) documentation.
 
 #### Example
 
@@ -560,11 +560,11 @@ Learn more in the [Webhook Events](https://docs.medusajs.com/resources/commerce-
 // other imports...
 import {
   BigNumber
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   ProviderWebhookPayload,
   WebhookActionResult
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -628,11 +628,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"data","type":"`object`","description":"The webhook event's data","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"The parsed webhook body.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"rawData","type":"`string` \\| `Buffer`","description":"The raw webhook request body.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"headers","type":"`Record<string, unknown>`","description":"The headers of the webhook request.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getWebhookActionAndData"/>
+<TypeList types={[{"name":"data","type":"`object`","description":"The webhook event's data","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"The parsed webhook body.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"rawData","type":"`string` \\| `Buffer`","description":"The raw webhook request body.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"headers","type":"`Record<string, unknown>`","description":"The headers of the webhook request.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getWebhookActionAndData"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[WebhookActionResult](../../../types/interfaces/types.WebhookActionResult/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The webhook result. If the `action`'s value is `captured`, the payment is captured within Medusa as well.\nIf the `action`'s value is `authorized`, the associated payment session is authorized within Medusa and the associated cart\nwill be completed to create an order.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getWebhookActionAndData"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[WebhookActionResult](../../../types/interfaces/types.WebhookActionResult/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The webhook result. If the `action`'s value is `captured`, the payment is captured within Switchyard as well.\nIf the `action`'s value is `authorized`, the associated payment session is authorized within Switchyard and the associated cart\nwill be completed to create an order.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getWebhookActionAndData"/>
 
 ### initiatePayment
 
@@ -641,7 +641,7 @@ This method initializes a payment session with the third-party payment provider.
 When a customer chooses a payment method during checkout, this method is triggered to
 perform any initialization action with the third-party provider, such as creating a payment session.
 
-![Diagram showcasing initiate payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310624/Medusa%20Resources/initiate-payment\_dpoa2g.jpg)
+![Diagram showcasing initiate payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310624/Switchyard%20Resources/initiate-payment\_dpoa2g.jpg)
 
 #### Understanding `data` property
 
@@ -657,7 +657,7 @@ This also means you shouldn't store sensitive data and tokens in the `data` prop
 
 :::
 
-![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310699/Medusa%20Resources/initiate-data\_ikc05t.jpg)
+![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310699/Switchyard%20Resources/initiate-data\_ikc05t.jpg)
 
 #### Example
 
@@ -666,7 +666,7 @@ This also means you shouldn't store sensitive data and tokens in the `data` prop
 import {
   InitiatePaymentInput,
   InitiatePaymentOutput,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -697,11 +697,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[InitiatePaymentInput](../../../types/interfaces/types.InitiatePaymentInput/page.mdx)","description":"The input to create the payment session.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"amount","type":"[BigNumberInput](../../../types/types/types.BigNumberInput/page.mdx)","description":"The amount to be authorized.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"currency_code","type":"`string`","description":"The ISO 3 character currency code.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="initiatePayment"/>
+<TypeList types={[{"name":"input","type":"[InitiatePaymentInput](../../../types/interfaces/types.InitiatePaymentInput/page.mdx)","description":"The input to create the payment session.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"amount","type":"[BigNumberInput](../../../types/types/types.BigNumberInput/page.mdx)","description":"The amount to be authorized.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"currency_code","type":"`string`","description":"The ISO 3 character currency code.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="initiatePayment"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[InitiatePaymentOutput](../../../types/interfaces/types.InitiatePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="initiatePayment"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[InitiatePaymentOutput](../../../types/interfaces/types.InitiatePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="initiatePayment"/>
 
 ### listPaymentMethods
 
@@ -718,14 +718,14 @@ must implement this method.
 
 :::note
 
-This is available starting from [Medusa v2.5.0](https://github.com/medusajs/medusa/releases/tag/v2.5.0).
+This is available starting from [Switchyard v2.5.0](https://github.com/switchyard/medusa/releases/tag/v2.5.0).
 
 :::
 
 #### Example
 
 ```ts
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -735,8 +735,8 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
     const accountHolderId = account_holder?.data?.id as string | undefined
 
     if (!accountHolderId) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Missing account holder ID."
       )
     }
@@ -756,11 +756,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"data","type":"[ListPaymentMethodsInput](../../../types/interfaces/types.ListPaymentMethodsInput/page.mdx)","description":"Input data including the details of the account holder to list payment methods for.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="listPaymentMethods"/>
+<TypeList types={[{"name":"data","type":"[ListPaymentMethodsInput](../../../types/interfaces/types.ListPaymentMethodsInput/page.mdx)","description":"Input data including the details of the account holder to list payment methods for.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="listPaymentMethods"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[ListPaymentMethodsOutput](../../../types/interfaces/types.ListPaymentMethodsOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The list of payment methods saved for the account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.0"}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="listPaymentMethods"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[ListPaymentMethodsOutput](../../../types/interfaces/types.ListPaymentMethodsOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The list of payment methods saved for the account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.0"}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="listPaymentMethods"/>
 
 ### refundPayment
 
@@ -782,7 +782,7 @@ of the input parameter contains the data from the last refund.
 
 :::
 
-![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311296/Medusa%20Resources/refund-data\_plcjl0.jpg)
+![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311296/Switchyard%20Resources/refund-data\_plcjl0.jpg)
 
 #### Example
 
@@ -791,7 +791,7 @@ of the input parameter contains the data from the last refund.
 import {
   RefundPaymentInput,
   RefundPaymentOutput,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -817,11 +817,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[RefundPaymentInput](../../../types/interfaces/types.RefundPaymentInput/page.mdx)","description":"The input to refund the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"amount","type":"[BigNumberInput](../../../types/types/types.BigNumberInput/page.mdx)","description":"The amount to refund.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="refundPayment"/>
+<TypeList types={[{"name":"input","type":"[RefundPaymentInput](../../../types/interfaces/types.RefundPaymentInput/page.mdx)","description":"The input to refund the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"amount","type":"[BigNumberInput](../../../types/types/types.BigNumberInput/page.mdx)","description":"The amount to refund.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="refundPayment"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[RefundPaymentOutput](../../../types/interfaces/types.RefundPaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property, or an error object.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="refundPayment"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[RefundPaymentOutput](../../../types/interfaces/types.RefundPaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property, or an error object.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="refundPayment"/>
 
 ### retrieveAccountHolder
 
@@ -832,21 +832,21 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
   }
 ]} className="mb-1" />
 
-This method is used when retrieving an account holder in Medusa, allowing you to retrieve
+This method is used when retrieving an account holder in Switchyard, allowing you to retrieve
 the equivalent account in the third-party payment provider. An account holder is useful to
 later save payment methods, such as credit cards, for a customer in the
 third-party payment provider using the [savePaymentMethod](../../../types/interfaces/types.IPaymentProvider/page.mdx#savepaymentmethod) method.
 
 :::note
 
-This is available starting from [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0).
+This is available starting from [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0).
 
 :::
 
 #### Example
 
 ```ts
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
  Options
@@ -867,11 +867,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"data","type":"[RetrieveAccountHolderInput](../../../types/interfaces/types.RetrieveAccountHolderInput/page.mdx)","description":"Input data including the details of the account holder to retrieve.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the account holder to retrieve.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="retrieveAccountHolder"/>
+<TypeList types={[{"name":"data","type":"[RetrieveAccountHolderInput](../../../types/interfaces/types.RetrieveAccountHolderInput/page.mdx)","description":"Input data including the details of the account holder to retrieve.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the account holder to retrieve.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="retrieveAccountHolder"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[RetrieveAccountHolderOutput](../../../types/interfaces/types.RetrieveAccountHolderOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The retrieved account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.11.0"}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="retrieveAccountHolder"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[RetrieveAccountHolderOutput](../../../types/interfaces/types.RetrieveAccountHolderOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The retrieved account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.11.0"}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="retrieveAccountHolder"/>
 
 ### retrievePayment
 
@@ -884,7 +884,7 @@ This method retrieves the payment's data from the third-party payment provider.
 import {
   RetrievePaymentInput,
   RetrievePaymentOutput,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -903,11 +903,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[RetrievePaymentInput](../../../types/interfaces/types.RetrievePaymentInput/page.mdx)","description":"The input to retrieve the payment. The `data` field should contain the data from the payment provider when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="retrievePayment"/>
+<TypeList types={[{"name":"input","type":"[RetrievePaymentInput](../../../types/interfaces/types.RetrievePaymentInput/page.mdx)","description":"The input to retrieve the payment. The `data` field should contain the data from the payment provider when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="retrievePayment"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[RetrievePaymentOutput](../../../types/interfaces/types.RetrievePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The payment's data as found in the the payment provider.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="retrievePayment"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[RetrievePaymentOutput](../../../types/interfaces/types.RetrievePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The payment's data as found in the the payment provider.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="retrievePayment"/>
 
 ### savePaymentMethod
 
@@ -924,14 +924,14 @@ must implement this method.
 
 :::note
 
-This is available starting from [Medusa v2.5.0](https://github.com/medusajs/medusa/releases/tag/v2.5.0).
+This is available starting from [Switchyard v2.5.0](https://github.com/switchyard/medusa/releases/tag/v2.5.0).
 
 :::
 
 #### Example
 
 ```ts
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -942,8 +942,8 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
       | undefined
 
     if (!accountHolderId) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Missing account holder ID."
       )
     }
@@ -964,11 +964,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"data","type":"[SavePaymentMethodInput](../../../types/interfaces/types.SavePaymentMethodInput/page.mdx)","description":"The details of the payment method to save.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="savePaymentMethod"/>
+<TypeList types={[{"name":"data","type":"[SavePaymentMethodInput](../../../types/interfaces/types.SavePaymentMethodInput/page.mdx)","description":"The details of the payment method to save.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="savePaymentMethod"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[SavePaymentMethodOutput](../../../types/interfaces/types.SavePaymentMethodOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The result of saving the payment method. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.0"}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="savePaymentMethod"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[SavePaymentMethodOutput](../../../types/interfaces/types.SavePaymentMethodOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The result of saving the payment method. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.0"}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="savePaymentMethod"/>
 
 ### updateAccountHolder
 
@@ -979,22 +979,22 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
   }
 ]} className="mb-1" />
 
-This method is used when updating an account holder in Medusa, allowing you to update
+This method is used when updating an account holder in Switchyard, allowing you to update
 the equivalent account in the third-party payment provider.
 
-The returned data will be stored in the account holder created in Medusa. For example,
+The returned data will be stored in the account holder created in Switchyard. For example,
 the returned `id` property will be stored in the account holder's `external_id` property.
 
 :::note
 
-This is available starting from [Medusa v2.5.1](https://github.com/medusajs/medusa/releases/tag/v2.5.1).
+This is available starting from [Switchyard v2.5.1](https://github.com/switchyard/medusa/releases/tag/v2.5.1).
 
 :::
 
 #### Example
 
 ```ts
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
  Options
@@ -1003,8 +1003,8 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
   const { account_holder, customer } = context
 
   if (!account_holder?.data?.id) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Missing account holder ID."
     )
   }
@@ -1024,11 +1024,11 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"data","type":"[UpdateAccountHolderInput](../../../types/interfaces/types.UpdateAccountHolderInput/page.mdx)","description":"Input data including the details of the account holder to update.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx) & `object`","description":"The context of updating the account holder.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="updateAccountHolder"/>
+<TypeList types={[{"name":"data","type":"[UpdateAccountHolderInput](../../../types/interfaces/types.UpdateAccountHolderInput/page.mdx)","description":"Input data including the details of the account holder to update.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx) & `object`","description":"The context of updating the account holder.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="updateAccountHolder"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[UpdateAccountHolderOutput](../../../types/interfaces/types.UpdateAccountHolderOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The result of updating the account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.1"}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="updateAccountHolder"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[UpdateAccountHolderOutput](../../../types/interfaces/types.UpdateAccountHolderOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The result of updating the account holder. If an error occurs, throw it.","expandable":false,"children":[],"since":"2.5.1"}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="updateAccountHolder"/>
 
 ### updatePayment
 
@@ -1041,7 +1041,7 @@ This method updates a payment in the third-party service that was previously ini
 import {
   UpdatePaymentInput,
   UpdatePaymentOutput,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 class MyPaymentProviderService extends AbstractPaymentProvider<
   Options
@@ -1076,15 +1076,15 @@ class MyPaymentProviderService extends AbstractPaymentProvider<
 
 #### Parameters
 
-<TypeList types={[{"name":"input","type":"[UpdatePaymentInput](../../../types/interfaces/types.UpdatePaymentInput/page.mdx)","description":"The input to update the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"amount","type":"[BigNumberInput](../../../types/types/types.BigNumberInput/page.mdx)","description":"The payment session's amount.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"currency_code","type":"`string`","description":"The ISO 3 character code of the payment session.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="updatePayment"/>
+<TypeList types={[{"name":"input","type":"[UpdatePaymentInput](../../../types/interfaces/types.UpdatePaymentInput/page.mdx)","description":"The input to update the payment. The `data` field should contain the data from the payment provider. when the payment was created.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"amount","type":"[BigNumberInput](../../../types/types/types.BigNumberInput/page.mdx)","description":"The payment session's amount.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"currency_code","type":"`string`","description":"The ISO 3 character code of the payment session.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Data is a combination of the input from the user and what is stored in the database for the associated model.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"[PaymentProviderContext](../../../types/interfaces/types.PaymentProviderContext/page.mdx)","description":"The context for this payment operation. The data is guaranteed to be validated and not directly provided by the user.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="updatePayment"/>
 
 #### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;[UpdatePaymentOutput](../../../types/interfaces/types.UpdatePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="updatePayment"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;[UpdatePaymentOutput](../../../types/interfaces/types.UpdatePaymentOutput/page.mdx)&#62;","optional":false,"defaultValue":"","description":"The new data to store in the payment's `data` property. Throws in case of an error.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="updatePayment"/>
 
 ### validateOptions
 
-This method validates the options of the provider set in `medusa-config.ts`.
+This method validates the options of the provider set in `switchyard.config.ts`.
 Implementing this method is optional, but it's useful to ensure that the required
 options are passed to the provider, or if you have any custom validation logic.
 
@@ -1096,8 +1096,8 @@ If the options aren't valid, throw an error.
 class MyPaymentProviderService extends AbstractPaymentProvider<Options> {
   static validateOptions(options: Record<any, any>) {
     if (!options.apiKey) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "API key is required in the provider's options."
       )
     }
@@ -1107,7 +1107,7 @@ class MyPaymentProviderService extends AbstractPaymentProvider<Options> {
 
 #### Parameters
 
-<TypeList types={[{"name":"options","type":"`Record<any, any>`","description":"The provider's options passed in `medusa-config.ts`.","optional":false,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="validateOptions"/>
+<TypeList types={[{"name":"options","type":"`Record<any, any>`","description":"The provider's options passed in `switchyard.config.ts`.","optional":false,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="validateOptions"/>
 
 ---
 
@@ -1120,7 +1120,7 @@ import MyPaymentProviderService from "./service"
 import { 
   ModuleProvider, 
   Modules
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export default ModuleProvider(Modules.PAYMENT, {
   services: [MyPaymentProviderService],
@@ -1139,14 +1139,14 @@ A payment module provider can have export multiple provider services, where each
 
 ## 4. Use Module Provider
 
-To use your Payment Module Provider, add it to the `providers` array of the Payment Module in `medusa-config.ts`:
+To use your Payment Module Provider, add it to the `providers` array of the Payment Module in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/payment",
+      resolve: "@switchyard/medusa/payment",
       options: {
         providers: [
           {
@@ -1169,7 +1169,7 @@ module.exports = defineConfig({
 
 ## 5. Test it Out
 
-Before you use your Payment Module Provider, enable it in a region using the Medusa Admin.
+Before you use your Payment Module Provider, enable it in a region using the Switchyard Admin.
 
 Then, go through checkout to place an order. Your Payment Module Provider is used to authorize the payment.
 
@@ -1177,4 +1177,4 @@ Then, go through checkout to place an order. Your Payment Module Provider is use
 
 ## Useful Guides
 
-- [Storefront Guide: how to implement UI for your Payment Module Provider during checkout](https://docs.medusajs.com/resources/storefront-development/checkout/payment)
+- [Storefront Guide: how to implement UI for your Payment Module Provider during checkout](https://docs.switchyard.com/resources/storefront-development/checkout/payment)

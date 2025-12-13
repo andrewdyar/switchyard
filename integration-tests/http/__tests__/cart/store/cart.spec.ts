@@ -1,5 +1,5 @@
-import { createCartCreditLinesWorkflow } from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { createCartCreditLinesWorkflow } from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   Modules,
   PriceListStatus,
@@ -8,7 +8,7 @@ import {
   PromotionRuleOperator,
   PromotionStatus,
   PromotionType,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { setTimeout } from "timers/promises"
 import {
   createAdminUser,
@@ -17,7 +17,7 @@ import {
 } from "../../../../helpers/create-admin-user"
 import { setupTaxStructure } from "../../../../modules/__tests__/fixtures"
 import { createAuthenticatedCustomer } from "../../../../modules/helpers/create-authenticated-customer"
-import { medusaTshirtProduct } from "../../../__fixtures__/product"
+import { switchyardTshirtProduct } from "../../../__fixtures__/product"
 
 jest.setTimeout(100000)
 
@@ -102,7 +102,7 @@ medusaIntegrationTestRunner({
         product = (
           await api.post(
             "/admin/products",
-            { ...medusaTshirtProduct, shipping_profile_id: shippingProfile.id },
+            { ...switchyardTshirtProduct, shipping_profile_id: shippingProfile.id },
             adminHeaders
           )
         ).data.product

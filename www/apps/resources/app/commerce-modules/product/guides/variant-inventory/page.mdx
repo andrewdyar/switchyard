@@ -16,7 +16,7 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to retrieve the available inventory quantity of a product variant in your Medusa application customizations. That includes API routes, workflows, subscribers, scheduled jobs, and any resource that can access the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+In this guide, you'll learn how to retrieve the available inventory quantity of a product variant in your Switchyard application customizations. That includes API routes, workflows, subscribers, scheduled jobs, and any resource that can access the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 
 <Note title="Looking for storefront guide?">
 
@@ -26,11 +26,11 @@ Refer to the [Retrieve Product Variant Inventory](../../../../storefront-develop
 
 ## Understanding Product Variant Inventory Availability
 
-Product variants have a `manage_inventory` boolean field that indicates whether the Medusa application manages the inventory of the product variant. 
+Product variants have a `manage_inventory` boolean field that indicates whether the Switchyard application manages the inventory of the product variant. 
 
-When `manage_inventory` is disabled, the Medusa application always considers the product variant to be in stock. So, you can't retrieve the inventory quantity for those products.
+When `manage_inventory` is disabled, the Switchyard application always considers the product variant to be in stock. So, you can't retrieve the inventory quantity for those products.
 
-When `manage_inventory` is enabled, the Medusa application tracks the inventory of the product variant using the [Inventory Module](../../../inventory/page.mdx). For example, when a customer purchases a product variant, the Medusa application decrements the stocked quantity of the product variant.
+When `manage_inventory` is enabled, the Switchyard application tracks the inventory of the product variant using the [Inventory Module](../../../inventory/page.mdx). For example, when a customer purchases a product variant, the Switchyard application decrements the stocked quantity of the product variant.
 
 This guide explains how to retrieve the inventory quantity of a product variant when `manage_inventory` is enabled.
 
@@ -38,19 +38,19 @@ This guide explains how to retrieve the inventory quantity of a product variant 
 
 ## Retrieve Product Variant Inventory
 
-To retrieve the inventory quantity of a product variant, use the `getVariantAvailability` utility function imported from `@medusajs/framework/utils`. It returns the available quantity of the product variant.
+To retrieve the inventory quantity of a product variant, use the `getVariantAvailability` utility function imported from `@switchyard/framework/utils`. It returns the available quantity of the product variant.
 
 For example:
 
 export const variantAvailabilityHighlights = [
-  ["6", "query", "Resolve Query from the Medusa container."],
+  ["6", "query", "Resolve Query from the Switchyard container."],
   ["8", "query", "Pass Query as a parameter."],
   ["9", "variant_ids", "The IDs of the variants to retrieve their inventory availability."],
   ["10", "sales_channel_id", "The ID of the sales channel to retrieve the variant availability in."],
 ]
 
 ```ts highlights={variantAvailabilityHighlights}
-import { getVariantAvailability } from "@medusajs/framework/utils"
+import { getVariantAvailability } from "@switchyard/framework/utils"
 
 // ...
 
@@ -167,12 +167,12 @@ export const salesChannelScopeHighlights = [
 ]
 
 ```ts highlights={salesChannelScopeHighlights}
-import { MedusaStoreRequest, MedusaResponse } from "@medusajs/framework/http"
-import { getVariantAvailability } from "@medusajs/framework/utils"
+import { SwitchyardStoreRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { getVariantAvailability } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaStoreRequest,
-  res: MedusaResponse
+  req: SwitchyardStoreRequest,
+  res: SwitchyardResponse
 ) {
   const query = req.scope.resolve("query")
   const sales_channel_ids = req.publishable_key_context.sales_channel_ids
@@ -194,7 +194,7 @@ Then, you pass the first sales channel ID to the `getVariantAvailability` functi
 
 <Note title="Tip">
 
-Notice that the request object's type is `MedusaStoreRequest` instead of `MedusaRequest` to ensure the availability of the `publishable_key_context` property.
+Notice that the request object's type is `SwitchyardStoreRequest` instead of `SwitchyardRequest` to ensure the availability of the `publishable_key_context` property.
 
 </Note>
 
@@ -210,7 +210,7 @@ export const productSalesChannelHighlights = [
 ]
 
 ```ts highlights={productSalesChannelHighlights}
-import { getVariantAvailability } from "@medusajs/framework/utils"
+import { getVariantAvailability } from "@switchyard/framework/utils"
 
 // ...
 

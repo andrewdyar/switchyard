@@ -4,16 +4,16 @@
  * summary: Refresh Authentication Token
  * description: Refresh the authentication token of a user. This is useful after authenticating a user with a third-party service to ensure the token holds the new user's details, or when you don't want users to re-login every day.
  * externalDocs:
- *   url: https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route#2-third-party-service-authenticate-flow
+ *   url: https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route#2-third-party-service-authenticate-flow
  *   description: Learn about third-party authentication flow.
  * x-authenticated: true
  * x-codeSamples:
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

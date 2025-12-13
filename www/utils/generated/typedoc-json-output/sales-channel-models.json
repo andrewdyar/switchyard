@@ -18,7 +18,7 @@
 					"fileName": "sales-channel.ts",
 					"line": 3,
 					"character": 6,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L3"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L3"
 				}
 			],
 			"type": {
@@ -63,7 +63,7 @@
 													"fileName": "sales-channel.ts",
 													"line": 4,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L4"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L4"
 												}
 											],
 											"type": {
@@ -80,11 +80,11 @@
 															"qualifiedName": "IdProperty"
 														},
 														"name": "IdProperty",
-														"package": "@medusajs/utils"
+														"package": "@switchyard/utils"
 													}
 												],
 												"name": "PrimaryKeyModifier",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -107,7 +107,7 @@
 													"fileName": "sales-channel.ts",
 													"line": 5,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L5"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L5"
 												}
 											],
 											"type": {
@@ -117,7 +117,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -142,7 +142,7 @@
 													"fileName": "sales-channel.ts",
 													"line": 6,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L6"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L6"
 												}
 											],
 											"type": {
@@ -152,7 +152,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -175,7 +175,7 @@
 													"fileName": "sales-channel.ts",
 													"line": 7,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L7"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L7"
 												}
 											],
 											"type": {
@@ -185,7 +185,7 @@
 													"qualifiedName": "BooleanProperty"
 												},
 												"name": "BooleanProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -210,7 +210,7 @@
 													"fileName": "sales-channel.ts",
 													"line": 8,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L8"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L8"
 												}
 											],
 											"type": {
@@ -220,7 +220,7 @@
 													"qualifiedName": "JSONProperty"
 												},
 												"name": "JSONProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										}
@@ -242,14 +242,14 @@
 											"fileName": "sales-channel.ts",
 											"line": 3,
 											"character": 50,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L3"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/sales-channel/src/models/sales-channel.ts#L3"
 										}
 									]
 								}
 							}
 						],
 						"name": "DMLEntitySchemaBuilder",
-						"package": "@medusajs/utils"
+						"package": "@switchyard/utils"
 					},
 					{
 						"type": "literal",
@@ -257,7 +257,7 @@
 					}
 				],
 				"name": "DmlEntity",
-				"package": "@medusajs/utils"
+				"package": "@switchyard/utils"
 			},
 			"defaultValue": "..."
 		}
@@ -270,7 +270,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/sales-channel",
+	"packageName": "@switchyard/sales-channel",
 	"symbolIdMap": {
 		"15186": {
 			"sourceFileName": "../../../../packages/modules/sales-channel/src/models/index.ts",

@@ -12,9 +12,9 @@ In this document, you'll learn about the Locking Module and its providers.
 
 The Locking Module manages access to shared resources by multiple processes or threads. It prevents conflicts between processes that are trying to access the same resource at the same time, and ensures data consistency.
 
-Medusa uses the Locking Module to control concurrency, avoid race conditions, and protect parts of code that should not be executed by more than one process at a time. This is especially essential in distributed or multi-threaded environments.
+Switchyard uses the Locking Module to control concurrency, avoid race conditions, and protect parts of code that should not be executed by more than one process at a time. This is especially essential in distributed or multi-threaded environments.
 
-For example, Medusa uses the Locking Module in inventory management to ensure that only one transaction can update the stock levels at a time. By using the Locking Module in this scenario, Medusa prevents overselling an inventory item and keeps its quantity amounts accurate, even during high traffic periods or when receiving concurrent requests.
+For example, Switchyard uses the Locking Module in inventory management to ensure that only one transaction can update the stock levels at a time. By using the Locking Module in this scenario, Switchyard prevents overselling an inventory item and keeps its quantity amounts accurate, even during high traffic periods or when receiving concurrent requests.
 
 ---
 
@@ -24,7 +24,7 @@ You can use the Locking Module as part of the [workflows](!docs!/learn/fundament
 
 In a workflow, you can either use:
 
-- Medusa's [acquireLockStep](/references/medusa-workflows/steps/acquireLockStep) and [releaseLockStep](/references/medusa-workflows/steps/releaseLockStep) to create locks around critical steps in your workflow.
+- Switchyard's [acquireLockStep](/references/medusa-workflows/steps/acquireLockStep) and [releaseLockStep](/references/medusa-workflows/steps/releaseLockStep) to create locks around critical steps in your workflow.
 - The Locking Module's service directly in your steps to have more control over the locking mechanism
 
 For example:
@@ -38,8 +38,8 @@ For example:
     <TabsContent value="workflow">
 
     ```ts title="src/workflows/charge-customer.ts"
-    import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-    import { acquireLockStep, releaseLockStep } from "@medusajs/medusa/core-flows"
+    import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+    import { acquireLockStep, releaseLockStep } from "@switchyard/medusa/core-flows"
     import { chargeCustomerStep } from "./steps/charge-customer-step"
 
     type WorkflowInput = {
@@ -75,11 +75,11 @@ For example:
     <TabsContent value="step">
 
     ```ts
-    import { Modules } from "@medusajs/framework/utils"
+    import { Modules } from "@switchyard/framework/utils"
     import { 
       createStep,
       createWorkflow,
-    } from "@medusajs/framework/workflows-sdk"
+    } from "@switchyard/framework/workflows-sdk"
 
     const step1 = createStep(
       "step-1",
@@ -105,7 +105,7 @@ For example:
     )
     ```
 
-    In the example above, you create a workflow that has a step. In the step, you resolve the services of the Locking and Product modules from the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+    In the example above, you create a workflow that has a step. In the step, you resolve the services of the Locking and Product modules from the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 
     Then, you use the `execute` method of the Locking Module to acquire a lock for the product with the ID `prod_123` and execute an asynchronous function, which deletes the product.
 
@@ -127,20 +127,20 @@ In those scenarios, you can use the Locking Module to acquire a lock for a resou
 
 A Locking Module Provider implements the underlying logic of the Locking Module. It manages the locking mechanisms and ensures that only one process can access a shared resource at a time.
 
-Medusa provides [multiple Locking Module Providers](#list-of-locking-module-providers) that are suitable for development and production. You can also create a [custom Locking Module Provider](/references/locking-module-provider) to implement custom locking mechanisms or integrate with third-party services.
+Switchyard provides [multiple Locking Module Providers](#list-of-locking-module-providers) that are suitable for development and production. You can also create a [custom Locking Module Provider](/references/locking-module-provider) to implement custom locking mechanisms or integrate with third-party services.
 
 ### Default Locking Module Provider
 
-By default, Medusa uses the In-Memory Locking Module Provider. This provider uses a plain JavaScript map to store the locks. While this is useful for development, it is not recommended for production environments as it is only intended for use in a single-instance environment.
+By default, Switchyard uses the In-Memory Locking Module Provider. This provider uses a plain JavaScript map to store the locks. While this is useful for development, it is not recommended for production environments as it is only intended for use in a single-instance environment.
 
-To add more providers, you can register them in the `medusa-config.ts` file. For example:
+To add more providers, you can register them in the `switchyard.config.ts` file. For example:
 
 ```ts
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/locking",
+      resolve: "@switchyard/medusa/locking",
       options: {
         providers: [
           // add providers here...
@@ -151,7 +151,7 @@ module.exports = defineConfig({
 })
 ```
 
-When you register other providers in `medusa-config.ts`, Medusa will set the default provider based on the following scenarios:
+When you register other providers in `switchyard.config.ts`, Switchyard will set the default provider based on the following scenarios:
 
 <Table>
   <Table.Header>
@@ -192,7 +192,7 @@ When you register other providers in `medusa-config.ts`, Medusa will set the def
 
 ## List of Locking Module Providers
 
-Medusa provides the following Locking Module Providers. You can use one of them, or [Create a Locking Module Provider](/references/locking-module-provider).
+Switchyard provides the following Locking Module Providers. You can use one of them, or [Create a Locking Module Provider](/references/locking-module-provider).
 
 <CardList
   items={[

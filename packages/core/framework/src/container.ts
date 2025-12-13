@@ -1,4 +1,4 @@
 export * from "./types/container"
-import { createMedusaContainer } from "@medusajs/utils"
+import { createSwitchyardContainer } from "@switchyard/utils"
 
-export const container = createMedusaContainer()
+export const container = createSwitchyardContainer()

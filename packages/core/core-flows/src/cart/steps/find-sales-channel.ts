@@ -1,16 +1,16 @@
 import {
   ISalesChannelModuleService,
   IStoreModuleService,
-  MedusaContainer,
+  SwitchyardContainer,
   SalesChannelDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   isDefined,
   useCache,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the sales channel to find.
@@ -24,7 +24,7 @@ export interface FindSalesChannelStepInput {
 
 async function fetchSalesChannel(
   salesChannelId: string,
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const salesChannelService = container.resolve<ISalesChannelModuleService>(
     Modules.SALES_CHANNEL
@@ -38,7 +38,7 @@ async function fetchSalesChannel(
   })
 }
 
-async function fetchStore(container: MedusaContainer) {
+async function fetchStore(container: SwitchyardContainer) {
   const storeModule = container.resolve<IStoreModuleService>(Modules.STORE)
   return await useCache<Awaited<ReturnType<typeof storeModule.listStores>>>(
     async () =>
@@ -78,8 +78,8 @@ export const findSalesChannelStep = createStep(
     }
 
     if (salesChannel?.is_disabled) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Unable to assign cart to disabled Sales Channel: ${salesChannel.name}`
       )
     }

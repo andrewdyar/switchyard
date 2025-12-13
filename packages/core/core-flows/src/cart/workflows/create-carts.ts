@@ -3,12 +3,12 @@ import {
   ConfirmVariantInventoryWorkflowInputDTO,
   CreateCartDTO,
   CreateCartWorkflowInputDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   CartWorkflowEvents,
   deduplicate,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -16,7 +16,7 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import {
   createCartsStep,
@@ -88,8 +88,8 @@ export const createCartWorkflowId = "create-cart"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { createCartWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { createCartWorkflow } from "@switchyard/medusa/core-flows";
+ * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * createCartWorkflow.hooks.setPricingContext((
  *   { region, variantIds, salesChannel, customerData, additional_data }, { container }
@@ -179,7 +179,7 @@ export const createCartWorkflow = createWorkflow(
       { input, region, customerData, salesChannel },
       (data) => {
         if (!data.region) {
-          throw new MedusaError(MedusaError.Types.NOT_FOUND, "No regions found")
+          throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, "No regions found")
         }
 
         const data_ = {

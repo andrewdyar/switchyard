@@ -1,4 +1,4 @@
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import Scrypt from "scrypt-kdf"
 import { EmailPassAuthService } from "../../src/services/emailpass"
 
@@ -120,7 +120,7 @@ describe("Email password auth provider", () => {
   it("creates a new auth identity if it doesn't exist", async () => {
     const authServiceSpies = {
       retrieve: jest.fn().mockImplementation(() => {
-        throw new MedusaError(MedusaError.Types.NOT_FOUND, "Not found")
+        throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, "Not found")
       }),
       create: jest.fn().mockImplementation(() => {
         return {
@@ -258,7 +258,7 @@ describe("Email password auth provider", () => {
   it("throws if auth identity with email doesn't exist", async () => {
     const authServiceSpies = {
       retrieve: jest.fn().mockImplementation(() => {
-        throw new MedusaError(MedusaError.Types.NOT_FOUND, "Not found")
+        throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, "Not found")
       }),
       create: jest.fn().mockImplementation(() => {}),
     }

@@ -1,5 +1,5 @@
 import { Prerequisites, Card } from "docs-ui"
-import { Github } from "@medusajs/icons"
+import { Github } from "@switchyard/icons"
 
 export const metadata = {
   title: `Create Memcached Caching Module Provider`,
@@ -7,23 +7,23 @@ export const metadata = {
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to create a Memcached [Caching Module Provider](../../providers/page.mdx) for your Medusa application.
+In this tutorial, you'll learn how to create a Memcached [Caching Module Provider](../../providers/page.mdx) for your Switchyard application.
 
 [Memcached](https://memcached.org/) is a high-performance, distributed memory caching system that speeds up dynamic web applications by reducing database load.
 
-By the end of this tutorial, you'll be able to cache data in your Medusa application using Memcached.
+By the end of this tutorial, you'll be able to cache data in your Switchyard application using Memcached.
 
 <Note>
 
-Refer to the [Caching Module](../../page.mdx) documentation to learn more about caching in Medusa.
+Refer to the [Caching Module](../../page.mdx) documentation to learn more about caching in Switchyard.
 
 </Note>
 
-![Diagram illustrating the Memcached caching module provider in a Medusa application](https://res.cloudinary.com/dza7lstvk/image/upload/v1759925175/Medusa%20Resources/memcached-summary_ztlanl.jpg)
+![Diagram illustrating the Memcached caching module provider in a Switchyard application](https://res.cloudinary.com/dza7lstvk/image/upload/v1759925175/Switchyard%20Resources/memcached-summary_ztlanl.jpg)
 
 <Card
   title="Full Code"
-  href="https://github.com/medusajs/examples/tree/main/memcached-caching"
+  href="https://github.com/switchyard/examples/tree/main/memcached-caching"
   text="Find the complete code on GitHub"
   icon={Github}
 />
@@ -33,7 +33,7 @@ Refer to the [Caching Module](../../page.mdx) documentation to learn more about 
 <Prerequisites
   items={[
     {
-      text: "Medusa Application",
+      text: "Switchyard Application",
       href: "!docs!/learn/installation"
     },
     {
@@ -45,7 +45,7 @@ Refer to the [Caching Module](../../page.mdx) documentation to learn more about 
 
 ## 1. Install Memcached Client
 
-To interact with Memcached, you'll need to install the `memjs` client. You can install it in your Medusa project by running the following command:
+To interact with Memcached, you'll need to install the `memjs` client. You can install it in your Switchyard project by running the following command:
 
 ```bash npm2yarn
 npm install memjs
@@ -55,7 +55,7 @@ npm install memjs
 
 ## 2. Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/memcached` in your Medusa project.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/memcached` in your Switchyard project.
 
 ---
 
@@ -82,7 +82,7 @@ export const loaderHighlights = [
 ]
 
 ```ts title="src/modules/memcached/loaders/connection.ts" highlights={loaderHighlights}
-import { LoaderOptions } from "@medusajs/framework/types"
+import { LoaderOptions } from "@switchyard/framework/types"
 import * as memjs from "memjs"
 
 export type ModuleOptions = {
@@ -148,7 +148,7 @@ export default async function connection({
 }
 ```
 
-You first define module options that are passed to the Memcached Module Provider. You'll set those up later when you [register the module in your Medusa application](#register-memcached-module-provider). The module accepts the following options:
+You first define module options that are passed to the Memcached Module Provider. You'll set those up later when you [register the module in your Switchyard application](#register-memcached-module-provider). The module accepts the following options:
 
 - `serverUrls`: An array of Memcached server URLs. Defaults to `["127.0.0.1:11211"]`.
 - `username`: The username for authenticating with the Memcached server (if required).
@@ -164,7 +164,7 @@ You first define module options that are passed to the Memcached Module Provider
 Then, export a loader function. This function receives an object with the following properties:
 
 - `container`: The [Module container](!docs!/learn/fundamentals/modules/container) that holds Framework and module-specific resources.
-- `options`: The options passed to the module when it's registered in the Medusa application.
+- `options`: The options passed to the module when it's registered in the Switchyard application.
 
 In the loader, you create a Memcached client and test the connection. If the connection is successful, you register the client in the container, allowing you later to access it in the module's service.
 
@@ -184,7 +184,7 @@ export const serviceHighlights1 = [
 ]
 
 ```ts title="src/modules/memcached/service.ts" highlights={serviceHighlights1}
-import { ICachingProviderService } from "@medusajs/framework/types"
+import { ICachingProviderService } from "@switchyard/framework/types"
 import * as memjs from "memjs"
 import { ModuleOptions } from "./loaders/connection"
 
@@ -238,7 +238,7 @@ You create the service that implements the `ICachingProviderService` interface. 
 You also define a constructor in the service. Service constructors accept two parameters:
 
 1. The Module container, from which you can resolve dependencies. In this case, you resolve the `memcachedClient` that you registered in the loader.
-2. The options passed to the module when it's registered in the Medusa application.
+2. The options passed to the module when it's registered in the Switchyard application.
 
 You'll get a type error at this point because you haven't implemented the methods of the `ICachingProviderService` interface yet. You'll implement them next, along with utility methods.
 
@@ -926,12 +926,12 @@ You've now implemented all methods of the `ICachingProviderService` interface in
 
 ## 5. Export Memcached Module Provider Definition
 
-The final piece of a module provider is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa which module this provider belongs to, its loaders, and its service.
+The final piece of a module provider is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard which module this provider belongs to, its loaders, and its service.
 
 Create the file `src/modules/memcached/index.ts` with the following content:
 
 ```ts title="src/modules/memcached/index.ts"
-import { ModuleProvider, Modules } from "@medusajs/framework/utils"
+import { ModuleProvider, Modules } from "@switchyard/framework/utils"
 import MemcachedCachingProviderService from "./service"
 import connection from "./loaders/connection"
 
@@ -950,7 +950,7 @@ You use the `ModuleProvider` function from the Modules SDK to create the module 
 
 ## 6. Register Memcached Module Provider
 
-The last step is to register the Memcached Module Provider in your Medusa application.
+The last step is to register the Memcached Module Provider in your Switchyard application.
 
 ### Enable Caching Feature Flag
 
@@ -962,14 +962,14 @@ MEDUSA_FF_CACHING=true
 
 ### Register Memcached Module Provider
 
-Then, in `medusa-config.ts`, add a new entry in the `modules` array to register the Memcached Module Provider:
+Then, in `switchyard.config.ts`, add a new entry in the `modules` array to register the Memcached Module Provider:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/caching",
+      resolve: "@switchyard/medusa/caching",
       options: {
         in_memory: {
           enable: true,
@@ -994,7 +994,7 @@ module.exports = defineConfig({
 })
 ```
 
-You register the `@medusajs/medusa/caching` module and add the Memcached Module Provider to its `providers` array.
+You register the `@switchyard/medusa/caching` module and add the Memcached Module Provider to its `providers` array.
 
 You pass the options to configure the Memcached client and the module's behavior. These are the same [options you defined in the ModuleOptions type in the loader](#3-create-memcached-connection-loader).
 
@@ -1013,7 +1013,7 @@ You set the `MEMCACHED_SERVERS` variable to specify the Memcached server URLs. Y
 
 ## Test the Memcached Caching Provider
 
-To test that the Memcached Caching Provider is working, start the Medusa application with the following command:
+To test that the Memcached Caching Provider is working, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -1026,7 +1026,7 @@ info:    Connecting to Memcached...
 info:    Successfully connected to Memcached
 ```
 
-If you set the `is_default` option to `true` in the provider registration, the Memcached Caching Provider will be used for all caching operations in the Medusa application.
+If you set the `is_default` option to `true` in the provider registration, the Memcached Caching Provider will be used for all caching operations in the Switchyard application.
 
 ### Create Test API Route
 
@@ -1035,9 +1035,9 @@ To verify that the caching is working, you can create a simple [API route](!docs
 To create an API route, create a new file at `src/api/test-cache/route.ts` with the following content:
 
 ```ts title="src/api/test-cache/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   const query = req.scope.resolve("query")
     
   // Test caching with a simple query
@@ -1091,9 +1091,9 @@ Notice that you prefix the key with `medusa:`, which is the default prefix unles
 
 ## Next Steps
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -1103,5 +1103,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

@@ -37,7 +37,7 @@ For example, the EmailPass Auth Module Provider authenticates a user using their
 
 ## How to Create an Auth Module Provider?
 
-An Auth Module Provider is a module whose service extends the `AbstractAuthModuleProvider` imported from `@medusajs/framework/utils`.
+An Auth Module Provider is a module whose service extends the `AbstractAuthModuleProvider` imported from `@switchyard/framework/utils`.
 
 The module can have multiple auth provider services, where each is registered as a separate auth provider.
 
@@ -49,9 +49,9 @@ Refer to the [Create Auth Module Provider](/references/auth/provider) guide to l
 
 By default, users of all actor types can authenticate with all installed Auth Module Providers.
 
-To restrict the auth providers used for actor types, use the [authMethodsPerActor option](!docs!/learn/configurations/medusa-config#httpauthMethodsPerActor) in Medusa's configurations:
+To restrict the auth providers used for actor types, use the [authMethodsPerActor option](!docs!/learn/configurations/switchyard.config#httpauthMethodsPerActor) in Switchyard's configurations:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   projectConfig: {
     http: {

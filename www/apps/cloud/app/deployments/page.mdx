@@ -1,5 +1,5 @@
 import { Table, InlineIcon } from "docs-ui"
-import { EllipsisHorizontal } from "@medusajs/icons"
+import { EllipsisHorizontal } from "@switchyard/icons"
 
 export const metadata = {
   title: `Deployments`,
@@ -21,15 +21,15 @@ The latest deployment of an environment is the live version of that environment,
 
 ## How are Deployments Created?
 
-For long-lived environments, Medusa creates a new deployment every time you push a new commit to the environment's branch. For example, if your Production environment is connected to the `main` branch, Medusa will create a new Production deployment every time you push a new commit to the `main` branch.
+For long-lived environments, Switchyard creates a new deployment every time you push a new commit to the environment's branch. For example, if your Production environment is connected to the `main` branch, Switchyard will create a new Production deployment every time you push a new commit to the `main` branch.
 
-For short-lived preview environments, Medusa creates a new environment and deployment when you open a pull request. Medusa will redeploy the preview environment every time you push a new commit to the pull request branch.
+For short-lived preview environments, Switchyard creates a new environment and deployment when you open a pull request. Switchyard will redeploy the preview environment every time you push a new commit to the pull request branch.
 
 ---
 
 ## Build Process for Deployments
 
-Before deploying your application on Cloud, Medusa runs the `build` script defined in your project's `package.json` file, which must run the `medusa build` command, among other build steps you may have.
+Before deploying your application on Cloud, Switchyard runs the `build` script defined in your project's `package.json` file, which must run the `medusa build` command, among other build steps you may have.
 
 For example, your `build` script may look like this:
 
@@ -49,7 +49,7 @@ You can replace `npm run other-build-steps` with the appropriate command for you
 
 ### What Gets Deployed?
 
-Medusa deploys the contents of the `.medusa/server` directory created by the [build process](!docs!/learn/build). It includes the compiled JavaScript files in your project, the production build of the admin dashboard, and other necessary files to run your Medusa application in production.
+Switchyard deploys the contents of the `.medusa/server` directory created by the [build process](!docs!/learn/build). It includes the compiled JavaScript files in your project, the production build of the admin dashboard, and other necessary files to run your Switchyard application in production.
 
 <Note>
 
@@ -61,7 +61,7 @@ So, if you have custom assets like JSON files that your application needs at run
 
 For example, if your application needs a `src/data/custom.json` file at runtime, you can add a script that copies it to `.medusa/server/src/data/custom.json` after the build process is complete.
 
-You can also customize the Medusa Admin build configurations using the [admin.vite](!docs!/learn/configurations/medusa-config#adminvite) option in your `medusa-config.ts` file.
+You can also customize the Switchyard Admin build configurations using the [admin.vite](!docs!/learn/configurations/switchyard.config#adminvite) option in your `switchyard.config.ts` file.
 
 <Note type="warning">
 
@@ -160,7 +160,7 @@ For preview environments, refer to the [Preview Environments](../environments/pr
 
 </Note>
 
-An environment's URL is in the format `<subdomain>.medusajs.app`, where `<subdomain>` is the subdomain you set either when [creating its project](../projects/page.mdx#create-a-project) or when [creating the environment](../environments/long-lived/page.mdx#create-a-long-lived-environment).
+An environment's URL is in the format `<subdomain>.switchyard.app`, where `<subdomain>` is the subdomain you set either when [creating its project](../projects/page.mdx#create-a-project) or when [creating the environment](../environments/long-lived/page.mdx#create-a-long-lived-environment).
 
 You can also find the URL of a deployment's environment through the Cloud dashboard:
 
@@ -169,7 +169,7 @@ You can also find the URL of a deployment's environment through the Cloud dashbo
 
 <Note title="Why are there two URLs?">
 
-Aside from the subdomain you set when [creating the environment](../environments/long-lived/page.mdx#create-a-long-lived-environment), Medusa also provides a unique, randomly generated URL for each environment. Both of these URLs point to the same deployment.
+Aside from the subdomain you set when [creating the environment](../environments/long-lived/page.mdx#create-a-long-lived-environment), Switchyard also provides a unique, randomly generated URL for each environment. Both of these URLs point to the same deployment.
 
 </Note>
 
@@ -179,9 +179,9 @@ Aside from the subdomain you set when [creating the environment](../environments
 
 ![URL of environment in its dashboard under the environment's name](https://res.cloudinary.com/dza7lstvk/image/upload/v1750081257/Cloud/CleanShot_2025-06-16_at_16.40.37_2x_vxupew.png)
 
-### Access the Deployment's Medusa Admin
+### Access the Deployment's Switchyard Admin
 
-To access the Medusa Admin of a live deployment, click on [the environment's URL](#find-environments-url).
+To access the Switchyard Admin of a live deployment, click on [the environment's URL](#find-environments-url).
 
 You can then log in using the email and password set either [during project creation](../projects/page.mdx#create-a-project) or [in the environment's variables](../environments/long-lived/page.mdx#create-medusa-admin-user-in-environment).
 
@@ -192,14 +192,14 @@ You can send requests to a live deployment's API routes using its URL.
 For example, to check the health of the live deployment, you can send a `GET` request to the `/health` endpoint:
 
 ```bash
-curl https://my-project.medusajs.app/health
+curl https://my-project.switchyard.app/health
 ```
 
 Where `my-project` is the subdomain you set either when [creating the project](../projects/page.mdx#create-a-project) or when [creating the environment](../environments/long-lived/page.mdx#create-a-long-lived-environment).
 
 ### Access Deployment's Server through SSH
 
-Medusa doesn't support SSH access to the server instance of a deployment. However, you can still access the server's [runtime and build logs](../logs/page.mdx) to debug issues in your application.
+Switchyard doesn't support SSH access to the server instance of a deployment. However, you can still access the server's [runtime and build logs](../logs/page.mdx) to debug issues in your application.
 
 If this isn't sufficient for your use case, you can contact support to discuss alternatives.
 

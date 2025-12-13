@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import Product from "./product"
 import ProductVariant from "./product-variant"
 import ProductVariantProductImage from "./product-variant-product-image"

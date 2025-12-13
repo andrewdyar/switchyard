@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { createTableAdapter, TableAdapter } from "../../../../../lib/table/table-adapters"
 import { useOrders } from "../../../../../hooks/api/orders"
 import { useOrderTableFilters } from "./use-order-table-filters"

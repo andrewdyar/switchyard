@@ -1,5 +1,5 @@
-import { EllipsisHorizontal } from "@medusajs/icons"
-import { DropdownMenu, IconButton } from "@medusajs/ui"
+import { EllipsisHorizontal } from "@switchyard/icons"
+import { DropdownMenu, IconButton } from "@switchyard/ui"
 import React from "react"
 
 type SortingState = "asc" | "desc" | "alpha" | "alpha-reverse" | "none"

@@ -13,7 +13,7 @@ A JSON property in a data model is a flexible object that can contain various ty
 For example, you can create a `Brand` data model with a `metadata` JSON property to store additional information about the brand:
 
 ```ts highlights={[["6"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Brand = model.define("brand", {
   id: model.id().primaryKey(),
@@ -52,7 +52,7 @@ For example, a `metadata` JSON property can look like this:
 
 JSON properties allow you to store flexible and dynamic data structures that can evolve over time without requiring changes to the database schema.
 
-Most data models in Medusa's Commerce Modules have a `metadata` property that is a JSON object. `metadata` allows you to store custom information that is not part of the core data model.
+Most data models in Switchyard's Commerce Modules have a `metadata` property that is a JSON object. `metadata` allows you to store custom information that is not part of the core data model.
 
 Some examples of data to store in JSON properties:
 
@@ -70,17 +70,17 @@ For example, if you want to re-use brands across different products, it's better
 
 ## How to Manage JSON Properties?
 
-### How Medusa Updates JSON Properties
+### How Switchyard Updates JSON Properties
 
-Consider a Brand Module with a `Brand` data model as shown [in the previous section](#what-is-a-json-property). The [module's service](../../modules/page.mdx#2-create-service) will extend `MedusaService`, which generates methods like [updateBrands](!resources!/service-factory-reference/methods/update) to update a brand.
+Consider a Brand Module with a `Brand` data model as shown [in the previous section](#what-is-a-json-property). The [module's service](../../modules/page.mdx#2-create-service) will extend `SwitchyardService`, which generates methods like [updateBrands](!resources!/service-factory-reference/methods/update) to update a brand.
 
-When you pass a JSON property in the `updateBrands` method, Medusa will merge the provided JSON object with the existing one in the database. So, only the properties you pass will be updated, and the rest will remain unchanged.
+When you pass a JSON property in the `updateBrands` method, Switchyard will merge the provided JSON object with the existing one in the database. So, only the properties you pass will be updated, and the rest will remain unchanged.
 
 The following sections show examples of how to add, update, and remove properties in a JSON property.
 
 <Note title="Prerequisite" forceMultiline>
 
-The following examples assume you have a `brandModuleService` that is resolved from the [Medusa container](../../medusa-container/page.mdx). For example:
+The following examples assume you have a `brandModuleService` that is resolved from the [Switchyard container](../../medusa-container/page.mdx). For example:
 
 ```ts
 const brandModuleService = container.resolve(BRAND_MODULE)

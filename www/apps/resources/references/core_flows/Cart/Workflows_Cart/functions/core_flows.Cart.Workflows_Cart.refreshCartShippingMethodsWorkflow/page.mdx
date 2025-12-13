@@ -11,9 +11,9 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# refreshCartShippingMethodsWorkflow - Medusa Core Workflows Reference
+# refreshCartShippingMethodsWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `refreshCartShippingMethodsWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `refreshCartShippingMethodsWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow refreshes a cart's shipping methods, ensuring that their associated shipping options can still be used on the cart,
 and retrieve their correct pricing after a cart update. This workflow is used by the [refreshCartItemsWorkflow](../core_flows.Cart.Workflows_Cart.refreshCartItemsWorkflow/page.mdx).
@@ -22,11 +22,11 @@ You can use this workflow within your own customizations or custom workflows, al
 
 :::note
 
-If you use this workflow in another, you must acquire a lock before running it and release the lock after. Learn more in the [Locking Operations in Workflows](https://docs.medusajs.com/learn/fundamentals/workflows/locks#locks-in-nested-workflows) guide.
+If you use this workflow in another, you must acquire a lock before running it and release the lock after. Learn more in the [Locking Operations in Workflows](https://docs.switchyard.com/learn/fundamentals/workflows/locks#locks-in-nested-workflows) guide.
 
 :::
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/cart/workflows/refresh-cart-shipping-methods.ts#L54" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/cart/workflows/refresh-cart-shipping-methods.ts#L54" />
 
 ## Examples
 
@@ -35,14 +35,14 @@ If you use this workflow in another, you must acquire a lock before running it a
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { refreshCartShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { refreshCartShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await refreshCartShippingMethodsWorkflow(req.scope)
     .run({
@@ -62,8 +62,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { refreshCartShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { refreshCartShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -88,11 +88,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { refreshCartShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { refreshCartShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await refreshCartShippingMethodsWorkflow(container)
     .run({
@@ -114,8 +114,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { refreshCartShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { refreshCartShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -137,17 +137,17 @@ const myWorkflow = createWorkflow(
 
 ## Steps
 
-<WorkflowDiagram workflow={{"name":"refreshCartShippingMethodsWorkflow","steps":[{"type":"step","name":"validateCartStep","description":"This step validates a cart to ensure it exists and is not completed.\nIf not valid, the step throws an error.\n\n:::tip\n\nYou can use the [retrieveCartStep](../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.retrieveCartStep/page.mdx) to retrieve a cart's details.\n\n:::","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.validateCartStep/page.mdx","depth":2},{"type":"step","name":"acquireLockStep","description":"This step acquires a lock for a given key. Learn more about locks in the [Locking Module](https://docs.medusajs.com/resources/infrastructure-modules/locking)\nguide.","link":"../../../../Locking/Steps_Locking/functions/core_flows.Locking.Steps_Locking.acquireLockStep/page.mdx","depth":3},{"type":"hook","name":"validate","description":"This hook is executed before all operations. You can consume this hook to perform any custom validation. If validation fails, you can throw an error to stop the workflow execution.","link":"#validate","depth":4},{"type":"when","condition":"{\n        return !!listShippingOptionsInput?.length\n      }","depth":"5","steps":[{"type":"workflow","name":"listShippingOptionsForCartWithPricingWorkflow","description":"List a cart's shipping options with prices.","link":"../core_flows.Cart.Workflows_Cart.listShippingOptionsForCartWithPricingWorkflow/page.mdx","depth":5},{"type":"step","name":"removeShippingMethodFromCartStep","description":"This step removes shipping methods from a cart.","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.removeShippingMethodFromCartStep/page.mdx","depth":5},{"type":"step","name":"updateShippingMethodsStep","description":"This step updates a cart's shipping methods.","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.updateShippingMethodsStep/page.mdx","depth":5},{"type":"step","name":"releaseLockStep","description":"This step releases a lock for a given key. Learn more about locks in the [Locking Module](https://docs.medusajs.com/resources/infrastructure-modules/locking)\nguide.","link":"../../../../Locking/Steps_Locking/functions/core_flows.Locking.Steps_Locking.releaseLockStep/page.mdx","depth":5}]}]}} />
+<WorkflowDiagram workflow={{"name":"refreshCartShippingMethodsWorkflow","steps":[{"type":"step","name":"validateCartStep","description":"This step validates a cart to ensure it exists and is not completed.\nIf not valid, the step throws an error.\n\n:::tip\n\nYou can use the [retrieveCartStep](../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.retrieveCartStep/page.mdx) to retrieve a cart's details.\n\n:::","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.validateCartStep/page.mdx","depth":2},{"type":"step","name":"acquireLockStep","description":"This step acquires a lock for a given key. Learn more about locks in the [Locking Module](https://docs.switchyard.com/resources/infrastructure-modules/locking)\nguide.","link":"../../../../Locking/Steps_Locking/functions/core_flows.Locking.Steps_Locking.acquireLockStep/page.mdx","depth":3},{"type":"hook","name":"validate","description":"This hook is executed before all operations. You can consume this hook to perform any custom validation. If validation fails, you can throw an error to stop the workflow execution.","link":"#validate","depth":4},{"type":"when","condition":"{\n        return !!listShippingOptionsInput?.length\n      }","depth":"5","steps":[{"type":"workflow","name":"listShippingOptionsForCartWithPricingWorkflow","description":"List a cart's shipping options with prices.","link":"../core_flows.Cart.Workflows_Cart.listShippingOptionsForCartWithPricingWorkflow/page.mdx","depth":5},{"type":"step","name":"removeShippingMethodFromCartStep","description":"This step removes shipping methods from a cart.","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.removeShippingMethodFromCartStep/page.mdx","depth":5},{"type":"step","name":"updateShippingMethodsStep","description":"This step updates a cart's shipping methods.","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.updateShippingMethodsStep/page.mdx","depth":5},{"type":"step","name":"releaseLockStep","description":"This step releases a lock for a given key. Learn more about locks in the [Locking Module](https://docs.switchyard.com/resources/infrastructure-modules/locking)\nguide.","link":"../../../../Locking/Steps_Locking/functions/core_flows.Locking.Steps_Locking.releaseLockStep/page.mdx","depth":5}]}]}} />
 
 ## Input
 
-<TypeList types={[{"name":"RefreshCartShippingMethodsWorkflowInput & AdditionalData","type":"[RefreshCartShippingMethodsWorkflowInput](../../../../types/core_flows.RefreshCartShippingMethodsWorkflowInput/page.mdx) & [AdditionalData](../../../../../types/HttpTypes/types/types.HttpTypes.AdditionalData/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"RefreshCartShippingMethodsWorkflowInput","type":"[RefreshCartShippingMethodsWorkflowInput](../../../../types/core_flows.RefreshCartShippingMethodsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The details of the cart to refresh.","expandable":false,"children":[{"name":"cart_id","type":"`string`","description":"The cart's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"cart","type":"`any`","description":"The Cart reference.","optional":true,"defaultValue":"","expandable":false,"children":[]}]},{"name":"AdditionalData","type":"[AdditionalData](../../../../../types/HttpTypes/types/types.HttpTypes.AdditionalData/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"additional_data","type":"`Record<string, unknown>`","description":"Additional data that can be passed through the `additional_data` property in HTTP requests.\n\nLearn more in [this documentation](https://docs.medusajs.com/learn/fundamentals/api-routes/additional-data).","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="refreshCartShippingMethodsWorkflow"/>
+<TypeList types={[{"name":"RefreshCartShippingMethodsWorkflowInput & AdditionalData","type":"[RefreshCartShippingMethodsWorkflowInput](../../../../types/core_flows.RefreshCartShippingMethodsWorkflowInput/page.mdx) & [AdditionalData](../../../../../types/HttpTypes/types/types.HttpTypes.AdditionalData/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"RefreshCartShippingMethodsWorkflowInput","type":"[RefreshCartShippingMethodsWorkflowInput](../../../../types/core_flows.RefreshCartShippingMethodsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The details of the cart to refresh.","expandable":false,"children":[{"name":"cart_id","type":"`string`","description":"The cart's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"cart","type":"`any`","description":"The Cart reference.","optional":true,"defaultValue":"","expandable":false,"children":[]}]},{"name":"AdditionalData","type":"[AdditionalData](../../../../../types/HttpTypes/types/types.HttpTypes.AdditionalData/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"additional_data","type":"`Record<string, unknown>`","description":"Additional data that can be passed through the `additional_data` property in HTTP requests.\n\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="refreshCartShippingMethodsWorkflow"/>
 
 ## Hooks
 
 Hooks allow you to inject custom functionalities into the workflow. You'll receive data from the workflow, as well as additional data sent through an HTTP request.
 
-Learn more about [Hooks](https://docs.medusajs.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.medusajs.com/learn/fundamentals/api-routes/additional-data).
+Learn more about [Hooks](https://docs.switchyard.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).
 
 ### validate
 
@@ -156,7 +156,7 @@ This hook is executed before all operations. You can consume this hook to perfor
 #### Example
 
 ```ts
-import { refreshCartShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+import { refreshCartShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 refreshCartShippingMethodsWorkflow.hooks.validate(
   (async ({ input, cart }, { container }) => {
@@ -169,4 +169,4 @@ refreshCartShippingMethodsWorkflow.hooks.validate(
 
 Handlers consuming this hook accept the following input.
 
-<TypeList types={[{"name":"input","type":"[input](../../../core_flows.Cart.Workflows_Cart/page.mdx#__type-13)","description":"The input data for the hook.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"input","type":"[RefreshCartShippingMethodsWorkflowInput](../../../../types/core_flows.RefreshCartShippingMethodsWorkflowInput/page.mdx) & [AdditionalData](../../../../../types/HttpTypes/types/types.HttpTypes.AdditionalData/page.mdx)","description":"","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"cart_id","type":"`string`","description":"The cart's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"cart","type":"`any`","description":"The Cart reference.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"additional_data","type":"`Record<string, unknown>`","description":"Additional data that can be passed through the `additional_data` property in HTTP requests.\n\nLearn more in [this documentation](https://docs.medusajs.com/learn/fundamentals/api-routes/additional-data).","optional":true,"defaultValue":"","expandable":false,"children":[]}]},{"name":"cart","type":"`any`","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="validate"/>
+<TypeList types={[{"name":"input","type":"[input](../../../core_flows.Cart.Workflows_Cart/page.mdx#__type-13)","description":"The input data for the hook.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"input","type":"[RefreshCartShippingMethodsWorkflowInput](../../../../types/core_flows.RefreshCartShippingMethodsWorkflowInput/page.mdx) & [AdditionalData](../../../../../types/HttpTypes/types/types.HttpTypes.AdditionalData/page.mdx)","description":"","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"cart_id","type":"`string`","description":"The cart's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"cart","type":"`any`","description":"The Cart reference.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"additional_data","type":"`Record<string, unknown>`","description":"Additional data that can be passed through the `additional_data` property in HTTP requests.\n\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).","optional":true,"defaultValue":"","expandable":false,"children":[]}]},{"name":"cart","type":"`any`","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="validate"/>

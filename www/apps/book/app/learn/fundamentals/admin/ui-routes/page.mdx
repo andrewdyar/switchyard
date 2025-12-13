@@ -10,11 +10,11 @@ In this chapter, you’ll learn how to create a UI route in the admin dashboard.
 
 ## What is a UI Route?
 
-The Medusa Admin dashboard is customizable, allowing you to add new pages, called UI routes. You create a UI route as a React component showing custom content that allows admin users to perform custom actions.
+The Switchyard Admin dashboard is customizable, allowing you to add new pages, called UI routes. You create a UI route as a React component showing custom content that allows admin users to perform custom actions.
 
-For example, you can add a new page to show and manage product reviews, which aren't available natively in Medusa.
+For example, you can add a new page to show and manage product reviews, which aren't available natively in Switchyard.
 
-You can create a UI route directly in your Medusa application, or in a [plugin](../../plugins/page.mdx) if you want to share the UI route across multiple Medusa applications.
+You can create a UI route directly in your Switchyard application, or in a [plugin](../../plugins/page.mdx) if you want to share the UI route across multiple Switchyard applications.
 
 ---
 
@@ -23,7 +23,7 @@ You can create a UI route directly in your Medusa application, or in a [plugin](
 <Prerequisites
   items={[{
     link: "/learn/installation",
-    text: "Medusa application installed"
+    text: "Switchyard application installed"
   }]}
 />
 
@@ -31,10 +31,10 @@ You create a UI route in a `page.tsx` file under a sub-directory of `src/admin/r
 
 For example, create the file `src/admin/routes/custom/page.tsx` with the following content:
 
-![Example of UI route file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867243/Medusa%20Book/ui-route-dir-overview_tgju25.jpg)
+![Example of UI route file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867243/Switchyard%20Book/ui-route-dir-overview_tgju25.jpg)
 
 ```tsx title="src/admin/routes/custom/page.tsx"
-import { Container, Heading } from "@medusajs/ui"
+import { Container, Heading } from "@switchyard/ui"
 
 const CustomPage = () => {
   return (
@@ -51,7 +51,7 @@ export default CustomPage
 
 You add a new route at `http://localhost:9000/app/custom`. The `CustomPage` component holds the page's content, which currently only shows a heading.
 
-In the route, you use [Medusa UI](!ui!), a package that Medusa maintains to allow you to customize the dashboard with the same components used to build it.
+In the route, you use [Switchyard UI](!ui!), a package that Switchyard maintains to allow you to customize the dashboard with the same components used to build it.
 
 <Note title="Important" type="warning">
 
@@ -61,7 +61,7 @@ The UI route component must be created as an arrow function.
 
 ### Test the UI Route
 
-To test the UI route, start the Medusa application:
+To test the UI route, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -81,9 +81,9 @@ export const highlights = [
 ]
 
 ```tsx title="src/admin/routes/custom/page.tsx" highlights={highlights}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ChatBubbleLeftRight } from "@medusajs/icons"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ChatBubbleLeftRight } from "@switchyard/icons"
+import { Container, Heading } from "@switchyard/ui"
 
 const CustomPage = () => {
   return (
@@ -103,19 +103,19 @@ export const config = defineRouteConfig({
 export default CustomPage
 ```
 
-The configuration object is created using `defineRouteConfig` from the Medusa Framework. It accepts the following properties:
+The configuration object is created using `defineRouteConfig` from the Switchyard Framework. It accepts the following properties:
 
 - `label`: the sidebar item's label.
 - `icon`: an optional React component used as an icon in the sidebar.
 - `rank`: an optional number to order the route among sibling routes. Learn more in the [Specify UI Route Sidebar Rank](#specify-ui-route-sidebar-rank) section.
 
-The above example adds a new sidebar item with the label `Custom Route` and an icon from the [Medusa UI Icons package](!ui!/icons/overview).
+The above example adds a new sidebar item with the label `Custom Route` and an icon from the [Switchyard UI Icons package](!ui!/icons/overview).
 
 ### Specify UI Route Sidebar Rank
 
 <Note>
 
-UI route ranking is available starting [Medusa v2.11.4](https://github.com/medusajs/medusa/releases/tag/v2.11.4).
+UI route ranking is available starting [Switchyard v2.11.4](https://github.com/switchyard/medusa/releases/tag/v2.11.4).
 
 </Note>
 
@@ -129,9 +129,9 @@ For example, consider you have the following UI routes:
   <CodeTab label="UI Route 1" value="ui-route-1">
 
 ```tsx title="src/admin/routes/analytics/page.tsx" highlights={[["18"]]}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ChartBar } from "@medusajs/icons"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ChartBar } from "@switchyard/icons"
+import { Container, Heading } from "@switchyard/ui"
 
 const AnalyticsPage = () => {
   return (
@@ -156,9 +156,9 @@ export default AnalyticsPage
   <CodeTab label="UI Route 2" value="ui-route-2">
 
 ```tsx title="src/admin/routes/reports/page.tsx" highlights={[["18"]]}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { DocumentText } from "@medusajs/icons"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { DocumentText } from "@switchyard/icons"
+import { Container, Heading } from "@switchyard/ui"
 
 const ReportsPage = () => {
   return (
@@ -186,22 +186,22 @@ In the sidebar, "Analytics" with the rank `1` will be added before "Reports" wit
 
 #### How are UI Routes Sorted in the Sidebar
 
-Medusa sorts custom UI routes based on their rank:
+Switchyard sorts custom UI routes based on their rank:
 
 1. UI routes that have ranks are sorted in ascending order.
 2. UI routes without a rank are added after the ranked UI routes.
 
-Medusa also applies the same sorting logic to UI routes at the nested level. Learn more in the [Nested UI Routes Ranking](#nested-ui-routes-ranking) section.
+Switchyard also applies the same sorting logic to UI routes at the nested level. Learn more in the [Nested UI Routes Ranking](#nested-ui-routes-ranking) section.
 
 ### Nested UI Routes
 
 Consider that alongside the UI route above at `src/admin/routes/custom/page.tsx` you create a nested UI route at `src/admin/routes/custom/nested/page.tsx` that also exports route configurations:
 
-![Example of nested UI route file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867243/Medusa%20Book/ui-route-dir-overview_tgju25.jpg)
+![Example of nested UI route file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867243/Switchyard%20Book/ui-route-dir-overview_tgju25.jpg)
 
 ```tsx title="src/admin/routes/custom/nested/page.tsx"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 
 const NestedCustomPage = () => {
   return (
@@ -235,8 +235,8 @@ Some caveats for nested UI routes in the sidebar:
 You can add a custom UI route under an existing route. For example, you can add a route under the orders route:
 
 ```tsx title="src/admin/routes/orders/nested/page.tsx"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 
 const NestedOrdersPage = () => {
   return (
@@ -290,11 +290,11 @@ To create a page under the settings section of the admin dashboard, create a UI 
 
 For example, create a UI route at `src/admin/routes/settings/custom/page.tsx`:
 
-![Example of settings UI route file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867435/Medusa%20Book/setting-ui-route-dir-overview_kytbh8.jpg)
+![Example of settings UI route file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867435/Switchyard%20Book/setting-ui-route-dir-overview_kytbh8.jpg)
 
 ```tsx title="src/admin/routes/settings/custom/page.tsx"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 
 const CustomSettingPage = () => {
   return (
@@ -323,11 +323,11 @@ A UI route can accept path parameters if the name of any of the directories in i
 
 For example, create the file `src/admin/routes/custom/[id]/page.tsx` with the following content:
 
-![Example of UI route file with path parameters in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867748/Medusa%20Book/path-param-ui-route-dir-overview_kcfbev.jpg)
+![Example of UI route file with path parameters in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867748/Switchyard%20Book/path-param-ui-route-dir-overview_kcfbev.jpg)
 
 ```tsx title="src/admin/routes/custom/[id]/page.tsx" highlights={[["5", "", "Retrieve the path parameter."], ["10", "{id}", "Show the path parameter."]]}
 import { useParams } from "react-router-dom"
-import { Container, Heading } from "@medusajs/ui"
+import { Container, Heading } from "@switchyard/ui"
 
 const CustomPage = () => {
   const { id } = useParams()
@@ -346,18 +346,18 @@ export default CustomPage
 
 You access the passed parameter using `react-router-dom`'s [useParams hook](https://reactrouter.com/en/main/hooks/use-params).
 
-If you run the Medusa application and go to `http://localhost:9000/app/custom/123`, you'll see `123` printed in the page.
+If you run the Switchyard application and go to `http://localhost:9000/app/custom/123`, you'll see `123` printed in the page.
 
 ---
 
 ## Set UI Route Breadcrumbs
 
-The Medusa Admin dashboard shows breadcrumbs at the top of each page, if specified. This allows users to navigate through your custom UI routes.
+The Switchyard Admin dashboard shows breadcrumbs at the top of each page, if specified. This allows users to navigate through your custom UI routes.
 
 To set the breadcrumbs of a UI route, export a `handle` object with a `breadcrumb` property in the UI route's file:
 
 ```tsx title="src/admin/routes/custom/page.tsx" highlights={[["16", "breadcrumb", "Set the breadcrumbs of the UI route."]]}
-import { Container, Heading } from "@medusajs/ui"
+import { Container, Heading } from "@switchyard/ui"
 
 const CustomPage = () => {
   return (
@@ -380,12 +380,12 @@ The `breadcrumb`'s value is a function that returns the breadcrumb label as a st
 
 ### Set Breadcrumbs for Nested UI Routes
 
-If you set a breadcrumb for a nested UI route, and you open the route in the Medusa Admin, you'll see the breadcrumbs starting from its parent route to the nested route.
+If you set a breadcrumb for a nested UI route, and you open the route in the Switchyard Admin, you'll see the breadcrumbs starting from its parent route to the nested route.
 
 For example, if you have the following UI route at `src/admin/routes/custom/nested/page.tsx` that's nested under the previous one:
 
 ```tsx title="src/admin/routes/custom/nested/page.tsx" highlights={[["16", "breadcrumb", "Set the breadcrumbs of the nested UI route."]]}
-import { Container, Heading } from "@medusajs/ui"
+import { Container, Heading } from "@switchyard/ui"
 
 const NestedCustomPage = () => {
   return (
@@ -424,7 +424,7 @@ export const dynamicBreadcrumbsHighlights = [
 ]
 
 ```tsx title="src/admin/routes/brands/[id]/page.tsx" highlights={dynamicBreadcrumbsHighlights}
-import { Container, Heading } from "@medusajs/ui"
+import { Container, Heading } from "@switchyard/ui"
 import { LoaderFunctionArgs, UIMatch, useLoaderData } from "react-router-dom"
 import { sdk } from "../../../lib/sdk"
 
@@ -480,7 +480,7 @@ You also use the `useLoaderData` hook to access the data returned by the `loader
 
 ## Admin Components List
 
-To build admin customizations that match the Medusa Admin's designs and layouts, refer to [this guide](!resources!/admin-components) to find common components.
+To build admin customizations that match the Switchyard Admin's designs and layouts, refer to [this guide](!resources!/admin-components) to find common components.
 
 ---
 

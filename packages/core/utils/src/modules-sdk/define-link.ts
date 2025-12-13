@@ -1,4 +1,4 @@
-import { LinkModulesExtraFields, ModuleJoinerConfig } from "@medusajs/types"
+import { LinkModulesExtraFields, ModuleJoinerConfig } from "@switchyard/types"
 import { camelToSnakeCase, isObject, pluralize, toPascalCase } from "../common"
 import { composeLinkName } from "../link/compose-link-name"
 
@@ -233,7 +233,7 @@ export function defineLink(
     )!
 
     if (!serviceAInfo) {
-      throw new Error(`Service ${serviceAObj.module} was not found. If this is your module, make sure you set isQueryable to true in medusa-config.js:
+      throw new Error(`Service ${serviceAObj.module} was not found. If this is your module, make sure you set isQueryable to true in switchyard.config.js:
         
 ${serviceAObj.module}: {
   // ...
@@ -243,7 +243,7 @@ ${serviceAObj.module}: {
 }`)
     }
     if (!serviceBInfo) {
-      throw new Error(`Service ${serviceBObj.module} was not found. If this is your module, make sure you set isQueryable to true in medusa-config.js:
+      throw new Error(`Service ${serviceBObj.module} was not found. If this is your module, make sure you set isQueryable to true in switchyard.config.js:
         
 ${serviceBObj.module}: {
   // ...
@@ -463,7 +463,7 @@ ${serviceBObj.module}: {
     return linkDefinition
   }
 
-  global.MedusaModule.setCustomLink(register)
+  global.SwitchyardModule.setCustomLink(register)
 
   return output
 }
@@ -484,7 +484,7 @@ function defineReadOnlyLink(
     )!
 
     if (!serviceAInfo) {
-      throw new Error(`Service ${serviceAObj.module} was not found. If this is your module, make sure you set isQueryable to true in medusa-config.js:
+      throw new Error(`Service ${serviceAObj.module} was not found. If this is your module, make sure you set isQueryable to true in switchyard.config.js:
         
 ${serviceAObj.module}: {
   // ...
@@ -494,7 +494,7 @@ ${serviceAObj.module}: {
 }`)
     }
     if (!serviceBInfo) {
-      throw new Error(`Service ${serviceBObj.module} was not found. If this is your module, make sure you set isQueryable to true in medusa-config.js:
+      throw new Error(`Service ${serviceBObj.module} was not found. If this is your module, make sure you set isQueryable to true in switchyard.config.js:
         
 ${serviceBObj.module}: {
   // ...
@@ -525,5 +525,5 @@ ${serviceBObj.module}: {
     }
   }
 
-  global.MedusaModule.setCustomLink(register)
+  global.SwitchyardModule.setCustomLink(register)
 }

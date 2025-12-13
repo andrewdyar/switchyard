@@ -1,13 +1,13 @@
-import { MedusaContainer } from "@medusajs/types"
-import { isFileSkipped } from "@medusajs/utils"
-import { MedusaWorkflow } from "@medusajs/workflows-sdk"
+import { SwitchyardContainer } from "@switchyard/types"
+import { isFileSkipped } from "@switchyard/utils"
+import { SwitchyardWorkflow } from "@switchyard/workflows-sdk"
 import { logger } from "../logger"
 import { ResourceLoader } from "../utils/resource-loader"
 
 export class WorkflowLoader extends ResourceLoader {
   protected resourceName = "workflow"
 
-  constructor(sourceDir: string | string[], container: MedusaContainer) {
+  constructor(sourceDir: string | string[], container: SwitchyardContainer) {
     super(sourceDir, container)
   }
 
@@ -20,7 +20,7 @@ export class WorkflowLoader extends ResourceLoader {
       for (const exportedFn of exportedFns) {
         const fn = fileExports[exportedFn] as any
         if (fn?.getName?.()) {
-          MedusaWorkflow.unregisterWorkflow(fn.getName())
+          SwitchyardWorkflow.unregisterWorkflow(fn.getName())
         }
       }
       return

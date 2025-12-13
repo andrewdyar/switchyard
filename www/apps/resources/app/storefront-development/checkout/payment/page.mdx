@@ -22,7 +22,7 @@ In this guide, you'll learn how to implement the last step of the checkout flow,
 
 The payment step requires implementing the following flow:
 
-![Storefront payment checkout flow diagram illustrating the complete payment process: retrieving available payment providers, customer selection of payment method, payment collection creation, session initialization, and showing the necessary UI to complete the payment](https://res.cloudinary.com/dza7lstvk/image/upload/v1718029777/Medusa%20Resources/storefront-payment_dxry7l.jpg)
+![Storefront payment checkout flow diagram illustrating the complete payment process: retrieving available payment providers, customer selection of payment method, payment collection creation, session initialization, and showing the necessary UI to complete the payment](https://res.cloudinary.com/dza7lstvk/image/upload/v1718029777/Switchyard%20Resources/storefront-payment_dxry7l.jpg)
 
 1. Retrieve the payment providers using the [List Payment Providers API route](!api!/store#payment-providers_getpaymentproviders).
 2. Customer chooses the payment provider to use.
@@ -69,7 +69,7 @@ export const highlights = [
 
 import { useCallback, useEffect, useState } from "react"
 import { useCart } from "@/providers/cart"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { sdk } from "@/lib/sdk"
 
 export default function CheckoutPaymentStep() {
@@ -269,7 +269,7 @@ const handlePayment = () => {
 
 In the example above, you:
 
-- Retrieve the payment providers from the Medusa application using the [List Payment Providers API route](!api!/store#payment-providers_getpaymentproviders). You use those to show the customer the available options.
+- Retrieve the payment providers from the Switchyard application using the [List Payment Providers API route](!api!/store#payment-providers_getpaymentproviders). You use those to show the customer the available options.
 - When the customer chooses a payment provider, you use the `initiatePaymentSession` function to create a payment collection and initialize the payment session for the chosen provider.
     - If you're not using the JS SDK, you need to create a payment collection using the [Create Payment Collection API route](!api!/store#payment-collections_postpaymentcollections) if the cart doesn't have one. Then, you need to initialize the payment session using the [Initialize Payment Session API route](!api!/store#payment-collections_postpaymentcollectionsidpaymentsessions).
 - Once the cart has a payment session, you optionally render the UI to perform additional actions. For example, if the customer chose Stripe, you can show them the card form to enter their credit card.
@@ -290,11 +290,11 @@ In those cases, you can either:
 
 - Make sure the payment session is only initialized when the cart has a total greater than `0`.
 - Use payment providers like the Manual System Payment Provider, which doesn't create a payment session with a third-party provider.
-    - The Manual System Payment Provider is available by default in Medusa and can be used to handle payments without a third-party provider. It allows you to mark the order as paid without requiring any additional actions from the customer.
+    - The Manual System Payment Provider is available by default in Switchyard and can be used to handle payments without a third-party provider. It allows you to mark the order as paid without requiring any additional actions from the customer.
     - Make sure to configure the Manual System Payment Provider in your store's region. Learn more in the [Manage Region](!user-guide!/settings/regions#edit-region-details) user guide.
 
 ---
 
 ## Stripe Example
 
-If you're integrating Stripe in your Medusa application and storefront, refer to the [Stripe guide](./stripe/page.mdx) for an example of how to handle the payment process using Stripe.
+If you're integrating Stripe in your Switchyard application and storefront, refer to the [Stripe guide](./stripe/page.mdx) for an example of how to handle the payment process using Stripe.

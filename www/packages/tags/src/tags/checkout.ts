@@ -1,6 +1,6 @@
 export const checkout = [
   {
-    "title": "Implement Express Checkout with Medusa",
-    "path": "https://docs.medusajs.com/resources/storefront-development/guides/express-checkout"
+    "title": "Implement Express Checkout with Switchyard",
+    "path": "https://docs.switchyard.com/resources/storefront-development/guides/express-checkout"
   }
 ]

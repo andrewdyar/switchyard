@@ -1,6 +1,6 @@
 import { JoinerRelationship, JoinerServiceConfig } from "../joiner"
 
-import { MedusaContainer } from "../common"
+import { SwitchyardContainer } from "../common"
 import { RepositoryService } from "../dal"
 import { Logger } from "../logger"
 import { ModuleProviderExports } from "./module-provider"
@@ -124,7 +124,7 @@ export type LoadedModule = unknown & {
 }
 
 export type LoaderOptions<TOptions = Record<string, unknown>> = {
-  container: MedusaContainer
+  container: SwitchyardContainer
   options?: TOptions
   logger?: Logger
   dataLoaderOnly?: boolean

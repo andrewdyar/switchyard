@@ -23,7 +23,7 @@
 							"fileName": "analytics/service.ts",
 							"line": 16,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L16"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L16"
 						}
 					],
 					"signatures": [
@@ -41,7 +41,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -74,7 +74,7 @@
 									"fileName": "analytics/service.ts",
 									"line": 16,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L16"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L16"
 								}
 							],
 							"type": {
@@ -84,7 +84,7 @@
 									"qualifiedName": "IAnalyticsProvider"
 								},
 								"name": "IAnalyticsProvider",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -100,7 +100,7 @@
 							"fileName": "analytics/service.ts",
 							"line": 35,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L35"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L35"
 						}
 					],
 					"signatures": [
@@ -126,7 +126,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -159,7 +159,7 @@
 									"fileName": "analytics/service.ts",
 									"line": 35,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L35"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L35"
 								}
 							],
 							"parameters": [
@@ -184,7 +184,7 @@
 											"qualifiedName": "TrackAnalyticsEventDTO"
 										},
 										"name": "TrackAnalyticsEventDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -217,7 +217,7 @@
 							"fileName": "analytics/service.ts",
 							"line": 52,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L52"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L52"
 						}
 					],
 					"signatures": [
@@ -243,7 +243,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -276,7 +276,7 @@
 									"fileName": "analytics/service.ts",
 									"line": 52,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L52"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L52"
 								}
 							],
 							"parameters": [
@@ -301,7 +301,7 @@
 											"qualifiedName": "IdentifyAnalyticsEventDTO"
 										},
 										"name": "IdentifyAnalyticsEventDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -339,7 +339,7 @@
 					"fileName": "analytics/service.ts",
 					"line": 5,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L5"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/analytics/service.ts#L5"
 				}
 			],
 			"extendedTypes": [
@@ -350,7 +350,7 @@
 						"qualifiedName": "IModuleService"
 					},
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		}
@@ -363,7 +363,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"63037": {
 			"sourceFileName": "../../../../packages/core/types/src/analytics/service.ts",

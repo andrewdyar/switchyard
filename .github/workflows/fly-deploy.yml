@@ -42,4 +42,4 @@ jobs:
       - name: Verify deployment health
         run: |
           sleep 30
-          curl -f https://goods-medusa.fly.dev/health || exit 1
+          curl -f https://goods-switchyard.fly.dev/health || exit 1

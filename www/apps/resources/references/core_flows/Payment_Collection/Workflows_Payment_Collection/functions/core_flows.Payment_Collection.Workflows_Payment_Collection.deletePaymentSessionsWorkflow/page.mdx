@@ -10,9 +10,9 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# deletePaymentSessionsWorkflow - Medusa Core Workflows Reference
+# deletePaymentSessionsWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `deletePaymentSessionsWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `deletePaymentSessionsWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow deletes one or more payment sessions. It's used by other workflows, like
 refreshPaymentCollectionForCartWorkflow to delete payment sessions when the cart's total changes.
@@ -20,7 +20,7 @@ refreshPaymentCollectionForCartWorkflow to delete payment sessions when the cart
 You can use this workflow within your own customizations or custom workflows, allowing you
 to delete payment sessions in your custom flows.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/payment-collection/workflows/delete-payment-sessions.ts#L41" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/payment-collection/workflows/delete-payment-sessions.ts#L41" />
 
 ## Examples
 
@@ -29,14 +29,14 @@ to delete payment sessions in your custom flows.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { deletePaymentSessionsWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { deletePaymentSessionsWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await deletePaymentSessionsWorkflow(req.scope)
     .run({
@@ -56,8 +56,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { deletePaymentSessionsWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { deletePaymentSessionsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -82,11 +82,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { deletePaymentSessionsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { deletePaymentSessionsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await deletePaymentSessionsWorkflow(container)
     .run({
@@ -108,8 +108,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { deletePaymentSessionsWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { deletePaymentSessionsWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -133,8 +133,8 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"DeletePaymentSessionsWorkflowInput","type":"[DeletePaymentSessionsWorkflowInput](../../../../interfaces/core_flows.DeletePaymentSessionsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to delete payment sessions.","expandable":false,"children":[{"name":"ids","type":"`string`[]","description":"The IDs of the payment sessions to delete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deletePaymentSessionsWorkflow"/>
+<TypeList types={[{"name":"DeletePaymentSessionsWorkflowInput","type":"[DeletePaymentSessionsWorkflowInput](../../../../interfaces/core_flows.DeletePaymentSessionsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to delete payment sessions.","expandable":false,"children":[{"name":"ids","type":"`string`[]","description":"The IDs of the payment sessions to delete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deletePaymentSessionsWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"string[]","type":"`string`[]","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"string","type":"`string`","optional":false,"defaultValue":"","description":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deletePaymentSessionsWorkflow"/>
+<TypeList types={[{"name":"string[]","type":"`string`[]","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"string","type":"`string`","optional":false,"defaultValue":"","description":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deletePaymentSessionsWorkflow"/>

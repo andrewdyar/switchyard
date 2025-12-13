@@ -37,7 +37,7 @@ import {
   createWorkflow,
   WorkflowResponse,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep("step-1", async () => {
   return new StepResponse({})
@@ -90,7 +90,7 @@ A workflow is also considered long-running if:
 
 Once the workflow's execution reaches an async step, it'll wait in the background for the step to succeed or fail before it moves to the next step.
 
-To fail or succeed a step, use the Workflow Engine Module's main service that is registered in the Medusa Container under the `Modules.WORKFLOW_ENGINE` (or `workflowsModuleService`) key.
+To fail or succeed a step, use the Workflow Engine Module's main service that is registered in the Switchyard Container under the `Modules.WORKFLOW_ENGINE` (or `workflowsModuleService`) key.
 
 ### Retrieve Transaction ID
 
@@ -124,11 +124,11 @@ export const successStatusHighlights = [
 import {
   Modules,
   TransactionHandlerType,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { 
   StepResponse, 
   createStep,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 type SetStepSuccessStepInput = {
   transactionId: string
@@ -225,11 +225,11 @@ export const failureStatusHighlights = [
 import {
   Modules,
   TransactionHandlerType,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { 
   StepResponse, 
   createStep,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 type SetStepFailureStepInput = {
   transactionId: string
@@ -275,20 +275,20 @@ To retrieve the workflow execution's details at a later point, you must enable [
 For example:
 
 export const highlights = [
-  ["11", "resolve", "Resolve the workflow engine from the Medusa container."],
+  ["11", "resolve", "Resolve the workflow engine from the Switchyard container."],
   ["23", "subscribe", "Subscribe to status changes of the workflow execution."],
   ["29", "unsubscribe", "Unsubscribe once you have the result"]
 ]
 
 ```ts title="src/api/workflows/route.ts" highlights={highlights} collapsibleLines="1-11" expandButtonLabel="Show Imports"
-import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import type { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import myWorkflow from "../../../workflows/hello-world"
 import { 
   IWorkflowEngineService,
-} from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 
-export async function GET(req: MedusaRequest, res: MedusaResponse) {
+export async function GET(req: SwitchyardRequest, res: SwitchyardResponse) {
   const { transaction, result } = await myWorkflow(req.scope).run()
 
   const workflowEngineService = req.scope.resolve<
@@ -323,7 +323,7 @@ export async function GET(req: MedusaRequest, res: MedusaResponse) {
 }
 ```
 
-In the above example, you execute the long-running workflow `hello-world` and resolve the Workflow Engine Module's main service from the Medusa container.
+In the above example, you execute the long-running workflow `hello-world` and resolve the Workflow Engine Module's main service from the Switchyard container.
 
 ### subscribe Method
 

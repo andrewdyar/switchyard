@@ -15,11 +15,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how inventory kits can be used in the Medusa application to support use cases like multi-part products, bundled products, and shared inventory across products.
+In this guide, you'll learn how inventory kits can be used in the Switchyard application to support use cases like multi-part products, bundled products, and shared inventory across products.
 
 <Note title="Looking for no-code docs?">
 
-Refer to the following user guides to learn how to use the Medusa Admin dashboard to:
+Refer to the following user guides to learn how to use the Switchyard Admin dashboard to:
 
 - [Create Multi-Part Products](!user-guide!/products/create/multi-part).
 - [Create Bundled Products](!user-guide!/products/create/bundle).
@@ -30,7 +30,7 @@ Refer to the following user guides to learn how to use the Medusa Admin dashboar
 
 An inventory kit is a collection of inventory items that are linked to a single product variant. These inventory items can be used to represent different parts of a product, or to represent a bundle of products.
 
-The Medusa application links inventory items from the [Inventory Module](../page.mdx) to product variants in the [Product Module](../../product/page.mdx). Each variant can have multiple inventory items, and these inventory items can be re-used or shared across variants.
+The Switchyard application links inventory items from the [Inventory Module](../page.mdx) to product variants in the [Product Module](../../product/page.mdx). Each variant can have multiple inventory items, and these inventory items can be re-used or shared across variants.
 
 Using inventory kits, you can implement use cases like:
 
@@ -43,18 +43,18 @@ Using inventory kits, you can implement use cases like:
 
 Consider your store sells bicycles that consist of a frame, wheels, and seats, and you want to manage the inventory of these parts separately.
 
-To implement this in Medusa, you can:
+To implement this in Switchyard, you can:
 
 - Create inventory items for each of the different parts.
 - For each bicycle product, add a variant whose inventory kit consists of the inventory items of each of the parts.
 
 Then, whenever a customer purchases a bicycle, the inventory of each part is updated accordingly. You can also use the `required_quantity` of the variant's inventory items to set how much quantity is consumed of the part's inventory when a bicycle is sold. For example, the bicycle's wheels require 2 wheels inventory items to be sold when a bicycle is sold.
 
-![Diagram showcasing how a variant is linked to multi-part inventory items](https://res.cloudinary.com/dza7lstvk/image/upload/v1736414257/Medusa%20Resources/multi-part-product_kepbnx.jpg)
+![Diagram showcasing how a variant is linked to multi-part inventory items](https://res.cloudinary.com/dza7lstvk/image/upload/v1736414257/Switchyard%20Resources/multi-part-product_kepbnx.jpg)
 
 ### Create Multi-Part Product
 
-Using the [Medusa Admin](!user-guide!/products/create/multi-part), you can create a multi-part product by creating its inventory items first, then assigning these inventory items to the product's variant(s).
+Using the [Switchyard Admin](!user-guide!/products/create/multi-part), you can create a multi-part product by creating its inventory items first, then assigning these inventory items to the product's variant(s).
 
 Using [workflows](!docs!/learn/fundamentals/workflows), you can implement this by first creating the inventory items:
 
@@ -67,8 +67,8 @@ export const multiPartsHighlights1 = [
 import { 
   createInventoryItemsWorkflow, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
 
 export const createMultiPartProductsWorkflow = createWorkflow(
   "create-multi-part-products",
@@ -140,11 +140,11 @@ export const multiPartHighlights2 = [
 import { 
   // ...
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   // ...
   createProductsWorkflow,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 export const createMultiPartProductsWorkflow = createWorkflow(
   "create-multi-part-products",
@@ -207,23 +207,23 @@ You can now [execute the workflow](!docs!/learn/fundamentals/workflows#3-execute
 
 <Note>
 
-While inventory kits support bundled products, some features like custom pricing for a bundle or separate fulfillment for a bundle's items are not supported. To support those features, follow the [Bundled Products](../../../recipes/bundled-products/examples/standard/page.mdx) tutorial to learn how to customize the Medusa application to add bundled products.
+While inventory kits support bundled products, some features like custom pricing for a bundle or separate fulfillment for a bundle's items are not supported. To support those features, follow the [Bundled Products](../../../recipes/bundled-products/examples/standard/page.mdx) tutorial to learn how to customize the Switchyard application to add bundled products.
 
 </Note>
 
 Consider you have three products: shirt, pants, and shoes. You sell those products separately, but you also want to offer them as a bundle.
 
-![Diagram showcasing products each having their own variants and inventory](https://res.cloudinary.com/dza7lstvk/image/upload/v1736414787/Medusa%20Resources/bundled-product-1_vmzewk.jpg)
+![Diagram showcasing products each having their own variants and inventory](https://res.cloudinary.com/dza7lstvk/image/upload/v1736414787/Switchyard%20Resources/bundled-product-1_vmzewk.jpg)
 
 You can do that by creating a product, where each variant re-uses the inventory items of each of the shirt, pants, and shoes products.
 
 Then, when the bundled product's variant is purchased, the inventory quantity of the associated inventory items are updated.
 
-![Diagram showcasing a bundled product using the same inventory as the products part of the bundle](https://res.cloudinary.com/dza7lstvk/image/upload/v1736414780/Medusa%20Resources/bundled-product_x94ca1.jpg)
+![Diagram showcasing a bundled product using the same inventory as the products part of the bundle](https://res.cloudinary.com/dza7lstvk/image/upload/v1736414780/Switchyard%20Resources/bundled-product_x94ca1.jpg)
 
 ### Create Bundled Product
 
-You can create a bundled product in the [Medusa Admin](!user-guide!/products/create/bundle) by creating the products part of the bundle first, each having its own inventory items. Then, you create the bundled product whose variant(s) have inventory kits composed of inventory items from each of the products part of the bundle.
+You can create a bundled product in the [Switchyard Admin](!user-guide!/products/create/bundle) by creating the products part of the bundle first, each having its own inventory items. Then, you create the bundled product whose variant(s) have inventory kits composed of inventory items from each of the products part of the bundle.
 
 Using [workflows](!docs!/learn/fundamentals/workflows), you can implement this by first creating the products part of the bundle:
 
@@ -235,10 +235,10 @@ export const bundledHighlights1 = [
 ```ts highlights={bundledHighlights1}
 import { 
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   createProductsWorkflow,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 export const createBundledProducts = createWorkflow(
   "create-bundled-products",
@@ -344,10 +344,10 @@ export const bundledHighlights2 = [
 import { 
   // ...
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 export const createBundledProducts = createWorkflow(
   "create-bundled-products",

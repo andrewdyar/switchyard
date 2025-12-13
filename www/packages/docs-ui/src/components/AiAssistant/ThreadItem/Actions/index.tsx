@@ -7,7 +7,7 @@ import {
   Link as LinkIcon,
   CheckCircle,
   SquareTwoStack,
-} from "@medusajs/icons"
+} from "@switchyard/icons"
 import {
   AiAssistantThreadItem as AiAssistantThreadItemType,
   useSiteConfig,

@@ -6,7 +6,7 @@ import React, { useEffect, useMemo, useState } from "react"
 import { Sidebar } from "types"
 import { Badge, Loading, SidebarItem, useSidebar } from "../../../.."
 import clsx from "clsx"
-import { TriangleDownMini, TriangleUpMini } from "@medusajs/icons"
+import { TriangleDownMini, TriangleUpMini } from "@switchyard/icons"
 
 export type SidebarItemCategoryProps = {
   item: Sidebar.SidebarItemCategory

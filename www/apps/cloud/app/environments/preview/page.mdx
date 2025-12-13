@@ -18,7 +18,7 @@ Learn more about what environments are and their types in the [Environments](../
 
 Preview environments are designed for testing changes before merging them into production. So, they have a simpler setup compared to [production environments](../long-lived/page.mdx):
 
-- Medusa automatically scales preview environments to zero after ten minutes of inactivity. So, if no one is using the preview environment, it will automatically shut down to save resources.
+- Switchyard automatically scales preview environments to zero after ten minutes of inactivity. So, if no one is using the preview environment, it will automatically shut down to save resources.
 - Preview environments run on a single server instance, which is sufficient for testing changes.
 
 ### Preview Environment Inactivity
@@ -41,7 +41,7 @@ To view the preview environments for a project, go to the [project's dashboard](
 
 To create a new preview environment, create a PR towards a branch that has a long-lived environment in Cloud, such as Production.
 
-Medusa will automatically create a preview environment for the PR and deploy the changes to that environment. Everytime you push a new commit to the PR, Medusa will redeploy the preview environment with the latest changes.
+Switchyard will automatically create a preview environment for the PR and deploy the changes to that environment. Everytime you push a new commit to the PR, Switchyard will redeploy the preview environment with the latest changes.
 
 You can also view the preview deployment and its status in the comment made on your PR in GitHub.
 
@@ -72,27 +72,27 @@ This will increase the concurrent previews limit across projects in your organiz
 
 ## Access Deployed Preview Environment
 
-Once the preview environment has finished deploying, you can access its Medusa Admin either through the comment in the PR or by clicking the "Preview" button in the [project's dashboard](../../projects/page.mdx#open-project-dashboard).
+Once the preview environment has finished deploying, you can access its Switchyard Admin either through the comment in the PR or by clicking the "Preview" button in the [project's dashboard](../../projects/page.mdx#open-project-dashboard).
 
 ![Preview button in the project's dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1750158423/Cloud/CleanShot_2025-06-17_at_14.06.41_2x_yaw699.png)
 
-This will open the preview environment's Medusa Admin in a new tab, where you can test the changes made in the PR.
+This will open the preview environment's Switchyard Admin in a new tab, where you can test the changes made in the PR.
 
-To log into the Medusa Admin of the preview environment, use the admin credentials of the Production environment. If you [configured the shared previews settings](#manage-shared-previews-settings) to use a different environment's database, you can log in with the admin credentials of that environment instead.
+To log into the Switchyard Admin of the preview environment, use the admin credentials of the Production environment. If you [configured the shared previews settings](#manage-shared-previews-settings) to use a different environment's database, you can log in with the admin credentials of that environment instead.
 
 You can also [send requests to the preview deployment's API](../../deployments/page.mdx#send-requests-to-the-deployment).
 
 ### Preview URL Format
 
-Medusa generates the preview environment URL by:
+Switchyard generates the preview environment URL by:
 
 - Taking the first `42` characters of the PR's branch name.
 - Appending a dash (`-`) followed by the project's handle.
-    - You can find the project's handle in the project dashboard's URL, which is of the format `cloud.medusajs.com/:org_id/projects/:project_handle`.
+    - You can find the project's handle in the project dashboard's URL, which is of the format `cloud.switchyard.com/:org_id/projects/:project_handle`.
 - Removing unsafe characters.
-- Adding the `medusajs.app` subdomain.
+- Adding the `switchyard.app` subdomain.
 
-For example, if your PR's branch name is `feat/product-review` and the project's handle is `m1234`, the URL of the deployed preview environment would be `https://featproduct-review-m1234.medusajs.app`.
+For example, if your PR's branch name is `feat/product-review` and the project's handle is `m1234`, the URL of the deployed preview environment would be `https://featproduct-review-m1234.switchyard.app`.
 
 ---
 

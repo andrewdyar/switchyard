@@ -2,16 +2,16 @@ import {
   CreateShippingOptionDTO,
   IFulfillmentModuleService,
   UpdateShippingOptionDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   FulfillmentEvents,
   GeoZoneType,
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   MockEventBusService,
   moduleIntegrationTestRunner,
-} from "@medusajs/test-utils"
+} from "@switchyard/test-utils"
 import { FulfillmentProviderService } from "@services"
 import { resolve } from "path"
 import {

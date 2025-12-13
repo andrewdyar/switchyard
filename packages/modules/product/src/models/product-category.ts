@@ -5,7 +5,7 @@
  * Uses Goods' existing category hierarchy.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import Product from "./product"
 
 const ProductCategory = model

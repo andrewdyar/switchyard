@@ -69,13 +69,13 @@ For example, to disable authentication requirement for a custom API route create
 
 ```ts title="src/api/admin/custom/route.ts" highlights={[["15"]]}
 import type { 
-  AuthenticatedMedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest, 
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest, 
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: "Hello",
@@ -91,7 +91,7 @@ Now, any request sent to the `/admin/custom` API route is allowed, regardless if
 
 ## Protect Custom API Routes
 
-You can protect API routes using the `authenticate` [middleware](../middlewares/page.mdx) from the Medusa Framework. When applied to a route, the middleware checks that:
+You can protect API routes using the `authenticate` [middleware](../middlewares/page.mdx) from the Switchyard Framework. When applied to a route, the middleware checks that:
 
 - The correct actor type (for example, `user`, `customer`, or a custom actor type) is authenticated.
 - The correct authentication method is used (for example, `session`, `bearer`, or `api-key`).
@@ -115,7 +115,7 @@ export const highlights = [
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -147,7 +147,7 @@ For example, to require authentication of a custom actor type `manager` to an AP
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -173,7 +173,7 @@ To allow multiple actor types to access an API route, pass an array of actor typ
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -185,9 +185,9 @@ export default defineMiddlewares({
 })
 ```
 
-### Override Authentication for Medusa's API Routes
+### Override Authentication for Switchyard's API Routes
 
-In some cases, you may want to override the authentication requirement for Medusa's API routes. For example, you may want to allow custom actor types to access existing protected API routes.
+In some cases, you may want to override the authentication requirement for Switchyard's API routes. For example, you may want to allow custom actor types to access existing protected API routes.
 
 It's not possible to change the [authentication middleware](../middlewares/page.mdx) applied to an existing API route. Instead, you need to replicate the API route and apply the authentication middleware to it.
 
@@ -197,35 +197,35 @@ Learn more in the [Override API Routes](../override/page.mdx) chapter.
 
 ## Access Authentication Details in API Routes
 
-To access the authentication details in an API route, such as the logged-in user's ID, set the type of the first request parameter to `AuthenticatedMedusaRequest`. It extends `MedusaRequest`:
+To access the authentication details in an API route, such as the logged-in user's ID, set the type of the first request parameter to `AuthenticatedSwitchyardRequest`. It extends `SwitchyardRequest`:
 
-```ts highlights={[["7", "AuthenticatedMedusaRequest"]]}
+```ts highlights={[["7", "AuthenticatedSwitchyardRequest"]]}
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   // ...
 }
 ```
 
-The `auth_context.actor_id` property of `AuthenticatedMedusaRequest` holds the ID of the authenticated user or customer. If there isn't any authenticated user or customer, `auth_context` is `undefined`.
+The `auth_context.actor_id` property of `AuthenticatedSwitchyardRequest` holds the ID of the authenticated user or customer. If there isn't any authenticated user or customer, `auth_context` is `undefined`.
 
 For example:
 
 ```ts title="src/api/store/custom/route.ts" highlights={[["10", "actor_id"]]}
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const id = req.auth_context?.actor_id
 
@@ -233,7 +233,7 @@ export const GET = async (
 }
 ```
 
-In this example, you retrieve the ID of the authenticated user, customer, or custom actor type from the `auth_context` property of the `AuthenticatedMedusaRequest` object.
+In this example, you retrieve the ID of the authenticated user, customer, or custom actor type from the `auth_context` property of the `AuthenticatedSwitchyardRequest` object.
 
 <Note>
 
@@ -243,7 +243,7 @@ If you opt-out of authentication in a route as mentioned in the [Opt-Out section
 
 ### Retrieve Logged-In Customer's Details
 
-You can access the logged-in customer’s ID in all API routes starting with `/store` using the `auth_context.actor_id` property of the `AuthenticatedMedusaRequest` object. You can then use [Query](../../module-links/query/page.mdx) to retrieve the customer details, or pass the ID to a [workflow](../../workflows/page.mdx) that performs business logic.
+You can access the logged-in customer’s ID in all API routes starting with `/store` using the `auth_context.actor_id` property of the `AuthenticatedSwitchyardRequest` object. You can then use [Query](../../module-links/query/page.mdx) to retrieve the customer details, or pass the ID to a [workflow](../../workflows/page.mdx) that performs business logic.
 
 For example:
 
@@ -255,13 +255,13 @@ export const customerHighlights = [
 
 ```ts title="src/api/store/custom/route.ts" highlights={customerHighlights}
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const customerId = req.auth_context?.actor_id
   const query = req.scope.resolve("query")
@@ -280,7 +280,7 @@ export const GET = async (
 }
 ```
 
-In this example, you retrieve the customer's ID and resolve Query from the [Medusa container](../../medusa-container/page.mdx).
+In this example, you retrieve the customer's ID and resolve Query from the [Switchyard container](../../medusa-container/page.mdx).
 
 Then, you use Query to retrieve the customer details. The `throwIfKeyNotFound` option throws an error if the customer with the specified ID is not found.
 
@@ -288,7 +288,7 @@ After that, you can use the customer's details in your API route.
 
 ### Retrieve Logged-In Admin User's Details
 
-You can access the logged-in admin user’s ID in all API routes starting with `/admin` using the `auth_context.actor_id` property of the `AuthenticatedMedusaRequest` object. You can then use [Query](../../module-links/query/page.mdx) to retrieve the user details, or pass the ID to a [workflow](../../workflows/page.mdx) that performs business logic.
+You can access the logged-in admin user’s ID in all API routes starting with `/admin` using the `auth_context.actor_id` property of the `AuthenticatedSwitchyardRequest` object. You can then use [Query](../../module-links/query/page.mdx) to retrieve the user details, or pass the ID to a [workflow](../../workflows/page.mdx) that performs business logic.
 
 For example:
 
@@ -300,13 +300,13 @@ export const adminHighlights = [
 
 ```ts title="src/api/admin/custom/route.ts" highlights={adminHighlights}
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const userId = req.auth_context?.actor_id
   const query = req.scope.resolve("query")
@@ -325,7 +325,7 @@ export const GET = async (
 }
 ```
 
-In this example, you retrieve the admin user's ID and resolve Query from the [Medusa container](../../medusa-container/page.mdx).
+In this example, you retrieve the admin user's ID and resolve Query from the [Switchyard container](../../medusa-container/page.mdx).
 
 Then, you use Query to retrieve the user details. The `throwIfKeyNotFound` option throws an error if the user with the specified ID is not found.
 

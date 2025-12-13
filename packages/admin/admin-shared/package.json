@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/admin-shared",
+  "name": "@switchyard/admin-shared",
   "description": "Shared code for Medusa admin packages.",
   "version": "2.12.1",
   "author": "Kasper Kristensen <kasper@medusajs.com>",

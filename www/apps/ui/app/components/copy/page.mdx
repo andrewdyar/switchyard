@@ -16,11 +16,11 @@ In this guide, you'll learn how to use the Copy component.
 ## Usage
 
 ```tsx
-import { Copy } from "@medusajs/ui"
+import { Copy } from "@switchyard/ui"
 ```
 
 ```tsx
-<Copy content="yarn add @medusajs/ui" />
+<Copy content="yarn add @switchyard/ui" />
 ```
 
 ---
@@ -31,13 +31,13 @@ import { Copy } from "@medusajs/ui"
 
 ---
 
-## Usage Outside Medusa Admin
+## Usage Outside Switchyard Admin
 
-If you're using the `Copy` component in a project other than the Medusa Admin, make sure to include the `TooltipProvider` somewhere up in your component tree, as the `Copy` component uses a [Tooltip](../tooltip/page.mdx#usage-outside-medusa-admin):
+If you're using the `Copy` component in a project other than the Switchyard Admin, make sure to include the `TooltipProvider` somewhere up in your component tree, as the `Copy` component uses a [Tooltip](../tooltip/page.mdx#usage-outside-medusa-admin):
 
 ```tsx
 <TooltipProvider>
-  <Copy content="yarn add @medusajs/ui" />
+  <Copy content="yarn add @switchyard/ui" />
 </TooltipProvider>
 ```
 

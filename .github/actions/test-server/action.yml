@@ -1,5 +1,5 @@
 name: "Test server"
-description: "Test the currently running medusa server to see if a user has been created"
+description: "Test the currently running switchyard server to see if a user has been created"
 
 inputs:
   email:

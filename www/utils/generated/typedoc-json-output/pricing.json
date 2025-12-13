@@ -94,7 +94,7 @@
 										"type": "reference",
 										"target": 10974,
 										"name": "FindConfigOrder",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -188,7 +188,7 @@
 										"type": "reference",
 										"target": 10758,
 										"name": "Entity",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"qualifiedName": "FindConfig.Entity",
 										"refersToTypeParameter": true
 									}
@@ -283,7 +283,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead."
+								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead."
 							}
 						]
 					},
@@ -345,7 +345,7 @@
 						"type": "reference",
 						"target": 10974,
 						"name": "FindConfigOrder",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -554,19 +554,19 @@
 											"type": "reference",
 											"target": 10993,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 10993,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -610,19 +610,19 @@
 											"type": "reference",
 											"target": 10993,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 10993,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -738,7 +738,7 @@
 							"type": "reference",
 							"target": 10802,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -817,7 +817,7 @@
 							"type": "reference",
 							"target": 10805,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -880,7 +880,7 @@
 					"type": "reference",
 					"target": 11114,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -893,14 +893,14 @@
 						"type": "reference",
 						"target": 11114,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
 						"type": "reference",
 						"target": 11150,
 						"name": "Scalar",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"trueType": {
 						"type": "intrinsic",
@@ -914,12 +914,12 @@
 								"type": "reference",
 								"target": 11114,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQuery",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				"falseType": {
@@ -930,12 +930,12 @@
 							"type": "reference",
 							"target": 11114,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
 					"name": "FilterValue",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			}
 		},
@@ -974,7 +974,7 @@
 							"type": "reference",
 							"target": 11116,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"extendsType": {
@@ -1005,7 +1005,7 @@
 								"type": "reference",
 								"target": 11116,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -1039,7 +1039,7 @@
 								"type": "reference",
 								"target": 11116,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -1203,7 +1203,7 @@
 					"type": "reference",
 					"target": 11190,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1224,7 +1224,7 @@
 							"type": "reference",
 							"target": 11190,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
@@ -1235,7 +1235,7 @@
 					"type": "reference",
 					"target": 11190,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				}
 			}
@@ -1268,7 +1268,7 @@
 					"type": "reference",
 					"target": 11188,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1329,12 +1329,12 @@
 								"qualifiedName": "PK"
 							},
 							"name": "PK",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
 					"name": "ReadonlyPrimary",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				},
 				"falseType": {
 					"type": "conditional",
@@ -1342,7 +1342,7 @@
 						"type": "reference",
 						"target": 11188,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
@@ -1406,12 +1406,12 @@
 											"qualifiedName": "PK"
 										},
 										"name": "PK",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ReadonlyPrimary",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "intrinsic",
@@ -1425,7 +1425,7 @@
 							"type": "reference",
 							"target": 11188,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"extendsType": {
@@ -1486,12 +1486,12 @@
 										"qualifiedName": "PK"
 									},
 									"name": "PK",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							],
 							"name": "ReadonlyPrimary",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						},
 						"falseType": {
 							"type": "conditional",
@@ -1499,7 +1499,7 @@
 								"type": "reference",
 								"target": 11188,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -1560,12 +1560,12 @@
 											"qualifiedName": "PK"
 										},
 										"name": "PK",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ReadonlyPrimary",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							"falseType": {
 								"type": "intrinsic",
@@ -1632,12 +1632,12 @@
 											"type": "reference",
 											"target": 11027,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "Query",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1666,12 +1666,12 @@
 											"type": "reference",
 											"target": 11027,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "Query",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1701,12 +1701,12 @@
 												"type": "reference",
 												"target": 11027,
 												"name": "T",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "ExpandScalar",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "array",
@@ -1718,12 +1718,12 @@
 													"type": "reference",
 													"target": 11027,
 													"name": "T",
-													"package": "@medusajs/types",
+													"package": "@switchyard/types",
 													"refersToTypeParameter": true
 												}
 											],
 											"name": "ExpandScalar",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								]
@@ -1752,12 +1752,12 @@
 										"type": "reference",
 										"target": 11027,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1785,12 +1785,12 @@
 											"type": "reference",
 											"target": 11027,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "ExpandScalar",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1819,12 +1819,12 @@
 											"type": "reference",
 											"target": 11027,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "ExpandScalar",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1851,12 +1851,12 @@
 										"type": "reference",
 										"target": 11027,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "Query",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1882,12 +1882,12 @@
 										"type": "reference",
 										"target": 11027,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1913,12 +1913,12 @@
 										"type": "reference",
 										"target": 11027,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1944,12 +1944,12 @@
 										"type": "reference",
 										"target": 11027,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1975,12 +1975,12 @@
 										"type": "reference",
 										"target": 11027,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2218,7 +2218,7 @@
 						"type": "reference",
 						"target": 11177,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					{
@@ -2229,12 +2229,12 @@
 								"type": "reference",
 								"target": 11177,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "ExpandScalar",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
@@ -2244,12 +2244,12 @@
 								"type": "reference",
 								"target": 11177,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Primary",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -2291,16 +2291,16 @@
 										"type": "reference",
 										"target": 11158,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "FilterValue2",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
@@ -2310,12 +2310,12 @@
 								"type": "reference",
 								"target": 11158,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterValue2",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "array",
@@ -2327,12 +2327,12 @@
 									"type": "reference",
 									"target": 11158,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							],
 							"name": "FilterValue2",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					},
 					{
@@ -2424,7 +2424,7 @@
 						"type": "reference",
 						"target": 11174,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -2439,14 +2439,14 @@
 								"qualifiedName": "Key"
 							},
 							"name": "Key",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"objectType": {
 							"type": "reference",
 							"target": 11174,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					},
@@ -2496,14 +2496,14 @@
 										"qualifiedName": "Key"
 									},
 									"name": "Key",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								},
 								"objectType": {
 									"type": "reference",
 									"target": 11174,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							},
@@ -2520,20 +2520,20 @@
 												"qualifiedName": "Key"
 											},
 											"name": "Key",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										},
 										"objectType": {
 											"type": "reference",
 											"target": 11174,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -2548,14 +2548,14 @@
 									"qualifiedName": "Key"
 								},
 								"name": "Key",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"objectType": {
 								"type": "reference",
 								"target": 11174,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -2572,7 +2572,7 @@
 									"qualifiedName": "U"
 								},
 								"name": "U",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -2624,7 +2624,7 @@
 													"qualifiedName": "V"
 												},
 												"name": "V",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										}
@@ -2640,7 +2640,7 @@
 										"qualifiedName": "V"
 									},
 									"name": "V",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								},
 								"extendsType": {
@@ -2665,7 +2665,7 @@
 														"qualifiedName": "V"
 													},
 													"name": "V",
-													"package": "@medusajs/types",
+													"package": "@switchyard/types",
 													"refersToTypeParameter": true
 												}
 											],
@@ -2678,19 +2678,19 @@
 												"type": "reference",
 												"target": 11175,
 												"name": "Prev",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											},
 											"objectType": {
 												"type": "reference",
 												"target": 11178,
 												"name": "PrevLimit",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										}
 									],
 									"name": "FilterQuery",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								"falseType": {
 									"type": "intrinsic",
@@ -2758,7 +2758,7 @@
 					"type": "reference",
 					"target": 11156,
 					"name": "Prev",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -2775,7 +2775,7 @@
 						"type": "reference",
 						"target": 11155,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
@@ -2788,7 +2788,7 @@
 							}
 						],
 						"name": "Constructor",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"trueType": {
 						"type": "reference",
@@ -2801,19 +2801,19 @@
 									"qualifiedName": "Prototype"
 								},
 								"name": "Prototype",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							{
 								"type": "reference",
 								"target": 11156,
 								"name": "Prev",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQueryProperties",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"falseType": {
 						"type": "reference",
@@ -2823,19 +2823,19 @@
 								"type": "reference",
 								"target": 11155,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							{
 								"type": "reference",
 								"target": 11156,
 								"name": "Prev",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQueryProperties",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			}
@@ -3040,7 +3040,7 @@
 								"type": "reference",
 								"target": 11159,
 								"name": "EventMetadata",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -3068,7 +3068,7 @@
 								"type": "reference",
 								"target": 11146,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -3138,12 +3138,12 @@
 								"type": "reference",
 								"target": 11086,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Event",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -3280,7 +3280,7 @@
 								"type": "reference",
 								"target": 11103,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -3366,7 +3366,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -3874,7 +3874,7 @@
 								"type": "reference",
 								"target": 11126,
 								"name": "JoinerServiceConfigAlias",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -3882,7 +3882,7 @@
 									"type": "reference",
 									"target": 11126,
 									"name": "JoinerServiceConfigAlias",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						]
@@ -4045,7 +4045,7 @@
 							"type": "reference",
 							"target": 11131,
 							"name": "JoinerRelationship",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -4130,7 +4130,7 @@
 											"type": "reference",
 											"target": 11131,
 											"name": "JoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -4290,7 +4290,7 @@
 										"type": "reference",
 										"target": 11169,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									},
 									{
@@ -4319,7 +4319,7 @@
 														"type": "reference",
 														"target": 11169,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												}
@@ -4605,7 +4605,7 @@
 								"type": "reference",
 								"target": 11049,
 								"name": "JoinerServiceConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "union",
@@ -4725,7 +4725,7 @@
 											"type": "reference",
 											"target": 11064,
 											"name": "ModuleJoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -4947,7 +4947,7 @@
 																	"type": "reference",
 																	"target": 11064,
 																	"name": "ModuleJoinerRelationship",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																{
 																	"type": "literal",
@@ -5253,7 +5253,7 @@
 														"type": "reference",
 														"target": 11069,
 														"name": "LinkModulesExtraFields",
-														"package": "@medusajs/types"
+														"package": "@switchyard/types"
 													}
 												}
 											],
@@ -5328,7 +5328,7 @@
 						"type": "reference",
 						"target": 11131,
 						"name": "JoinerRelationship",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -5495,7 +5495,7 @@
 								"type": "reference",
 								"target": 10927,
 								"name": "ModuleJoinerConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -5869,7 +5869,7 @@
 						"type": "reference",
 						"target": 10968,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -5899,7 +5899,7 @@
 						"type": "reference",
 						"target": 10968,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -5929,7 +5929,7 @@
 						"type": "reference",
 						"target": 10968,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -5989,7 +5989,7 @@
 							"type": "reference",
 							"target": 10806,
 							"name": "PriceRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -6215,7 +6215,7 @@
 						"type": "reference",
 						"target": 10953,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6252,7 +6252,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -6291,7 +6291,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -6442,7 +6442,7 @@
 						"type": "reference",
 						"target": 10953,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6479,7 +6479,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -6518,7 +6518,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -6599,7 +6599,7 @@
 									"type": "reference",
 									"target": 10994,
 									"name": "FilterableMoneyAmountProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -6609,11 +6609,11 @@
 											"type": "reference",
 											"target": 10994,
 											"name": "FilterableMoneyAmountProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -6657,7 +6657,7 @@
 									"type": "reference",
 									"target": 10994,
 									"name": "FilterableMoneyAmountProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -6667,11 +6667,11 @@
 											"type": "reference",
 											"target": 10994,
 											"name": "FilterableMoneyAmountProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -6781,11 +6781,11 @@
 							"type": "reference",
 							"target": 10994,
 							"name": "FilterableMoneyAmountProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -7020,7 +7020,7 @@
 						"type": "reference",
 						"target": 11028,
 						"name": "PriceListStatus",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7050,7 +7050,7 @@
 						"type": "reference",
 						"target": 11029,
 						"name": "PriceListType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7150,7 +7150,7 @@
 							"type": "reference",
 							"target": 10786,
 							"name": "PriceDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -7186,7 +7186,7 @@
 							"type": "reference",
 							"target": 10979,
 							"name": "MoneyAmountDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -7222,7 +7222,7 @@
 							"type": "reference",
 							"target": 10877,
 							"name": "PriceListRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -7362,7 +7362,7 @@
 						"type": "reference",
 						"target": 10953,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"inheritedFrom": {
 						"type": "reference",
@@ -7405,7 +7405,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -7450,7 +7450,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -7513,7 +7513,7 @@
 						"type": "reference",
 						"target": 11117,
 						"name": "CreatePriceListPriceRules",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -7543,7 +7543,7 @@
 					"type": "reference",
 					"target": 11104,
 					"name": "CreateMoneyAmountDTO",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -7674,7 +7674,7 @@
 						"type": "reference",
 						"target": 10953,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"inheritedFrom": {
 						"type": "reference",
@@ -7717,7 +7717,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -7762,7 +7762,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -7825,7 +7825,7 @@
 						"type": "reference",
 						"target": 11117,
 						"name": "CreatePriceListPriceRules",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -7855,7 +7855,7 @@
 					"type": "reference",
 					"target": 11120,
 					"name": "UpdateMoneyAmountDTO",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -8171,7 +8171,7 @@
 						"type": "reference",
 						"target": 11028,
 						"name": "PriceListStatus",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8201,7 +8201,7 @@
 						"type": "reference",
 						"target": 11029,
 						"name": "PriceListType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8231,7 +8231,7 @@
 						"type": "reference",
 						"target": 11030,
 						"name": "CreatePriceListRules",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8263,7 +8263,7 @@
 							"type": "reference",
 							"target": 11033,
 							"name": "CreatePriceListPriceDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -8498,7 +8498,7 @@
 						"type": "reference",
 						"target": 11028,
 						"name": "PriceListStatus",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8528,7 +8528,7 @@
 						"type": "reference",
 						"target": 11030,
 						"name": "CreatePriceListRules",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -8602,7 +8602,7 @@
 									"type": "reference",
 									"target": 10851,
 									"name": "FilterablePriceListProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -8612,11 +8612,11 @@
 											"type": "reference",
 											"target": 10851,
 											"name": "FilterablePriceListProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -8660,7 +8660,7 @@
 									"type": "reference",
 									"target": 10851,
 									"name": "FilterablePriceListProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -8670,11 +8670,11 @@
 											"type": "reference",
 											"target": 10851,
 											"name": "FilterablePriceListProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -8786,7 +8786,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8822,7 +8822,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8854,7 +8854,7 @@
 							"type": "reference",
 							"target": 11028,
 							"name": "PriceListStatus",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -8921,11 +8921,11 @@
 							"type": "reference",
 							"target": 10851,
 							"name": "FilterablePriceListProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -8977,7 +8977,7 @@
 									"type": "reference",
 									"target": 10882,
 									"name": "FilterablePriceListRuleProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -8987,11 +8987,11 @@
 											"type": "reference",
 											"target": 10882,
 											"name": "FilterablePriceListRuleProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -9035,7 +9035,7 @@
 									"type": "reference",
 									"target": 10882,
 									"name": "FilterablePriceListRuleProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -9045,11 +9045,11 @@
 											"type": "reference",
 											"target": 10882,
 											"name": "FilterablePriceListRuleProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -9182,11 +9182,11 @@
 							"type": "reference",
 							"target": 10882,
 							"name": "FilterablePriceListRuleProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -9323,7 +9323,7 @@
 						"type": "reference",
 						"target": 10839,
 						"name": "PriceListDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -9414,7 +9414,7 @@
 							"type": "reference",
 							"target": 11033,
 							"name": "CreatePriceListPriceDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -9504,7 +9504,7 @@
 							"type": "reference",
 							"target": 11041,
 							"name": "UpdatePriceListPriceDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -10167,7 +10167,7 @@
 					"type": "reference",
 					"target": 10923,
 					"name": "UpdatePricePreferenceDTO",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -10464,7 +10464,7 @@
 									"type": "reference",
 									"target": 10908,
 									"name": "FilterablePricePreferenceProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -10474,11 +10474,11 @@
 											"type": "reference",
 											"target": 10908,
 											"name": "FilterablePricePreferenceProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -10522,7 +10522,7 @@
 									"type": "reference",
 									"target": 10908,
 									"name": "FilterablePricePreferenceProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -10532,11 +10532,11 @@
 											"type": "reference",
 											"target": 10908,
 											"name": "FilterablePricePreferenceProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -10606,7 +10606,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -10670,7 +10670,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -10734,7 +10734,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -10768,11 +10768,11 @@
 							"type": "reference",
 							"target": 10908,
 							"name": "FilterablePricePreferenceProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -10871,7 +10871,7 @@
 						"type": "reference",
 						"target": 10759,
 						"name": "PriceSetDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -11577,7 +11577,7 @@
 									"type": "reference",
 									"target": 10818,
 									"name": "FilterablePriceRuleProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -11587,11 +11587,11 @@
 											"type": "reference",
 											"target": 10818,
 											"name": "FilterablePriceRuleProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -11635,7 +11635,7 @@
 									"type": "reference",
 									"target": 10818,
 									"name": "FilterablePriceRuleProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -11645,11 +11645,11 @@
 											"type": "reference",
 											"target": 10818,
 											"name": "FilterablePriceRuleProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -11719,7 +11719,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -11783,7 +11783,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -11847,7 +11847,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -11911,7 +11911,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -11946,11 +11946,11 @@
 							"type": "reference",
 							"target": 10818,
 							"name": "FilterablePriceRuleProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -12086,7 +12086,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						],
 						"name": "Record",
@@ -12248,7 +12248,7 @@
 							"type": "reference",
 							"target": 10979,
 							"name": "MoneyAmountDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -12279,7 +12279,7 @@
 						"type": "reference",
 						"target": 10723,
 						"name": "CalculatedPriceSet",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -12446,7 +12446,7 @@
 								"type": "reference",
 								"target": 10968,
 								"name": "BigNumberValue",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -12475,7 +12475,7 @@
 								"type": "reference",
 								"target": 10969,
 								"name": "BigNumberRawValue",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -12584,7 +12584,7 @@
 								"type": "reference",
 								"target": 10968,
 								"name": "BigNumberValue",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -12613,7 +12613,7 @@
 								"type": "reference",
 								"target": 10969,
 								"name": "BigNumberRawValue",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -12830,7 +12830,7 @@
 												"type": "reference",
 												"target": 10968,
 												"name": "BigNumberValue",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										]
 									}
@@ -12875,7 +12875,7 @@
 												"type": "reference",
 												"target": 10968,
 												"name": "BigNumberValue",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										]
 									}
@@ -13080,7 +13080,7 @@
 												"type": "reference",
 												"target": 10968,
 												"name": "BigNumberValue",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										]
 									}
@@ -13125,7 +13125,7 @@
 												"type": "reference",
 												"target": 10968,
 												"name": "BigNumberValue",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										]
 									}
@@ -13205,7 +13205,7 @@
 						"type": "reference",
 						"target": 11162,
 						"name": "PricingRuleOperatorValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13298,7 +13298,7 @@
 									"type": "reference",
 									"target": 11147,
 									"name": "RuleWithOperator",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						]
@@ -13330,7 +13330,7 @@
 										"type": "reference",
 										"target": 11147,
 										"name": "RuleWithOperator",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							]
@@ -13450,7 +13450,7 @@
 						"type": "reference",
 						"target": 10953,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"inheritedFrom": {
 						"type": "reference",
@@ -13493,7 +13493,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -13538,7 +13538,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -13575,7 +13575,7 @@
 						"type": "reference",
 						"target": 11110,
 						"name": "CreatePriceSetPriceRules",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -13604,7 +13604,7 @@
 					"type": "reference",
 					"target": 11104,
 					"name": "CreateMoneyAmountDTO",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -13676,7 +13676,7 @@
 							"type": "reference",
 							"target": 10999,
 							"name": "CreatePricesDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -13742,7 +13742,7 @@
 							"type": "reference",
 							"target": 10999,
 							"name": "CreatePricesDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -13836,7 +13836,7 @@
 							"type": "reference",
 							"target": 10999,
 							"name": "CreatePricesDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					},
 					"inheritedFrom": {
@@ -13867,7 +13867,7 @@
 					"type": "reference",
 					"target": 10774,
 					"name": "UpdatePriceSetDTO",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -13915,7 +13915,7 @@
 							"type": "reference",
 							"target": 10999,
 							"name": "CreatePricesDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -13991,7 +13991,7 @@
 									"type": "reference",
 									"target": 10763,
 									"name": "FilterablePriceSetProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -14001,11 +14001,11 @@
 											"type": "reference",
 											"target": 10763,
 											"name": "FilterablePriceSetProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -14049,7 +14049,7 @@
 									"type": "reference",
 									"target": 10763,
 									"name": "FilterablePriceSetProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -14059,11 +14059,11 @@
 											"type": "reference",
 											"target": 10763,
 											"name": "FilterablePriceSetProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -14145,7 +14145,7 @@
 								"type": "reference",
 								"target": 10953,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						],
 						"name": "Record",
@@ -14215,7 +14215,7 @@
 						"type": "reference",
 						"target": 10994,
 						"name": "FilterableMoneyAmountProps",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -14247,17 +14247,17 @@
 							"type": "reference",
 							"target": 10763,
 							"name": "FilterablePriceSetProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				},
 				{
 					"type": "reference",
 					"target": 10704,
 					"name": "PricingContext",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -14385,7 +14385,7 @@
 						"type": "reference",
 						"target": 10968,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -14415,7 +14415,7 @@
 						"type": "reference",
 						"target": 10968,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -14445,7 +14445,7 @@
 						"type": "reference",
 						"target": 10968,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -14478,7 +14478,7 @@
 						"type": "reference",
 						"target": 10759,
 						"name": "PriceSetDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -14511,7 +14511,7 @@
 						"type": "reference",
 						"target": 10839,
 						"name": "PriceListDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -14574,7 +14574,7 @@
 							"type": "reference",
 							"target": 10806,
 							"name": "PriceRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -14757,7 +14757,7 @@
 									"type": "reference",
 									"target": 10779,
 									"name": "FilterablePriceProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -14767,11 +14767,11 @@
 											"type": "reference",
 											"target": 10779,
 											"name": "FilterablePriceProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -14815,7 +14815,7 @@
 									"type": "reference",
 									"target": 10779,
 									"name": "FilterablePriceProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -14825,11 +14825,11 @@
 											"type": "reference",
 											"target": 10779,
 											"name": "FilterablePriceProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -15003,11 +15003,11 @@
 							"type": "reference",
 							"target": 10779,
 							"name": "FilterablePriceProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -15037,7 +15037,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 102,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L102"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L102"
 						}
 					],
 					"signatures": [
@@ -15100,7 +15100,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 102,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L102"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L102"
 								}
 							],
 							"parameters": [
@@ -15122,7 +15122,7 @@
 										"type": "reference",
 										"target": 10702,
 										"name": "PricingFilters",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15145,7 +15145,7 @@
 										"type": "reference",
 										"target": 10704,
 										"name": "PricingContext",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15168,7 +15168,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15185,7 +15185,7 @@
 											"type": "reference",
 											"target": 10723,
 											"name": "CalculatedPriceSet",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15206,7 +15206,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 144,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L144"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L144"
 						}
 					],
 					"signatures": [
@@ -15246,7 +15246,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -15261,7 +15261,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 144,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L144"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L144"
 								}
 							],
 							"parameters": [
@@ -15324,11 +15324,11 @@
 												"type": "reference",
 												"target": 10759,
 												"name": "PriceSetDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15351,7 +15351,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15366,7 +15366,7 @@
 										"type": "reference",
 										"target": 10759,
 										"name": "PriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -15386,7 +15386,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 205,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L205"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L205"
 						}
 					],
 					"signatures": [
@@ -15426,7 +15426,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the price sets:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the price sets:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -15481,7 +15481,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 205,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L205"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L205"
 								}
 							],
 							"parameters": [
@@ -15505,7 +15505,7 @@
 										"type": "reference",
 										"target": 10763,
 										"name": "FilterablePriceSetProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15548,11 +15548,11 @@
 												"type": "reference",
 												"target": 10759,
 												"name": "PriceSetDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15575,7 +15575,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15592,7 +15592,7 @@
 											"type": "reference",
 											"target": 10759,
 											"name": "PriceSetDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15613,7 +15613,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 269,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L269"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L269"
 						}
 					],
 					"signatures": [
@@ -15653,7 +15653,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the price sets:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the price sets:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -15708,7 +15708,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 269,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L269"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L269"
 								}
 							],
 							"parameters": [
@@ -15732,7 +15732,7 @@
 										"type": "reference",
 										"target": 10763,
 										"name": "FilterablePriceSetProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15775,11 +15775,11 @@
 												"type": "reference",
 												"target": 10759,
 												"name": "PriceSetDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15802,7 +15802,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15822,7 +15822,7 @@
 													"type": "reference",
 													"target": 10759,
 													"name": "PriceSetDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -15849,13 +15849,13 @@
 							"fileName": "pricing/service.ts",
 							"line": 338,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L338"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L338"
 						},
 						{
 							"fileName": "pricing/service.ts",
 							"line": 401,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L401"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L401"
 						}
 					],
 					"signatures": [
@@ -15910,7 +15910,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 338,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L338"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L338"
 								}
 							],
 							"parameters": [
@@ -15932,7 +15932,7 @@
 										"type": "reference",
 										"target": 10769,
 										"name": "CreatePriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15955,7 +15955,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15970,7 +15970,7 @@
 										"type": "reference",
 										"target": 10759,
 										"name": "PriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -16016,7 +16016,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 401,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L401"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L401"
 								}
 							],
 							"parameters": [
@@ -16040,7 +16040,7 @@
 											"type": "reference",
 											"target": 10769,
 											"name": "CreatePriceSetDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16064,7 +16064,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16081,7 +16081,7 @@
 											"type": "reference",
 											"target": 10759,
 											"name": "PriceSetDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16102,13 +16102,13 @@
 							"fileName": "pricing/service.ts",
 							"line": 425,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L425"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L425"
 						},
 						{
 							"fileName": "pricing/service.ts",
 							"line": 443,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L443"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L443"
 						}
 					],
 					"signatures": [
@@ -16151,7 +16151,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 425,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L425"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L425"
 								}
 							],
 							"parameters": [
@@ -16175,7 +16175,7 @@
 											"type": "reference",
 											"target": 10771,
 											"name": "UpsertPriceSetDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16199,7 +16199,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16216,7 +16216,7 @@
 											"type": "reference",
 											"target": 10759,
 											"name": "PriceSetDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16263,7 +16263,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 443,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L443"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L443"
 								}
 							],
 							"parameters": [
@@ -16285,7 +16285,7 @@
 										"type": "reference",
 										"target": 10771,
 										"name": "UpsertPriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16308,7 +16308,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16323,7 +16323,7 @@
 										"type": "reference",
 										"target": 10759,
 										"name": "PriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -16343,13 +16343,13 @@
 							"fileName": "pricing/service.ts",
 							"line": 464,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L464"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L464"
 						},
 						{
 							"fileName": "pricing/service.ts",
 							"line": 488,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L488"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L488"
 						}
 					],
 					"signatures": [
@@ -16392,7 +16392,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 464,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L464"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L464"
 								}
 							],
 							"parameters": [
@@ -16433,7 +16433,7 @@
 										"type": "reference",
 										"target": 10774,
 										"name": "UpdatePriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16456,7 +16456,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16471,7 +16471,7 @@
 										"type": "reference",
 										"target": 10759,
 										"name": "PriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -16517,7 +16517,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 488,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L488"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L488"
 								}
 							],
 							"parameters": [
@@ -16539,7 +16539,7 @@
 										"type": "reference",
 										"target": 10763,
 										"name": "FilterablePriceSetProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16560,7 +16560,7 @@
 										"type": "reference",
 										"target": 10774,
 										"name": "UpdatePriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16583,7 +16583,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16600,7 +16600,7 @@
 											"type": "reference",
 											"target": 10759,
 											"name": "PriceSetDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16621,7 +16621,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 504,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L504"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L504"
 						}
 					],
 					"signatures": [
@@ -16664,7 +16664,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 504,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L504"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L504"
 								}
 							],
 							"parameters": [
@@ -16710,7 +16710,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16743,13 +16743,13 @@
 							"fileName": "pricing/service.ts",
 							"line": 564,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L564"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L564"
 						},
 						{
 							"fileName": "pricing/service.ts",
 							"line": 603,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L603"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L603"
 						}
 					],
 					"signatures": [
@@ -16812,7 +16812,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 564,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L564"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L564"
 								}
 							],
 							"parameters": [
@@ -16834,7 +16834,7 @@
 										"type": "reference",
 										"target": 10776,
 										"name": "AddPricesDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16857,7 +16857,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16872,7 +16872,7 @@
 										"type": "reference",
 										"target": 10759,
 										"name": "PriceSetDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -16918,7 +16918,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 603,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L603"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L603"
 								}
 							],
 							"parameters": [
@@ -16942,7 +16942,7 @@
 											"type": "reference",
 											"target": 10776,
 											"name": "AddPricesDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16966,7 +16966,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16983,7 +16983,7 @@
 											"type": "reference",
 											"target": 10759,
 											"name": "PriceSetDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -17004,7 +17004,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 663,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L663"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L663"
 						}
 					],
 					"signatures": [
@@ -17044,7 +17044,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the prices:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the prices:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -17099,7 +17099,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 663,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L663"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L663"
 								}
 							],
 							"parameters": [
@@ -17123,7 +17123,7 @@
 										"type": "reference",
 										"target": 10779,
 										"name": "FilterablePriceProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17166,11 +17166,11 @@
 												"type": "reference",
 												"target": 10786,
 												"name": "PriceDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17193,7 +17193,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17210,7 +17210,7 @@
 											"type": "reference",
 											"target": 10786,
 											"name": "PriceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -17231,7 +17231,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 687,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L687"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L687"
 						}
 					],
 					"signatures": [
@@ -17290,7 +17290,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 687,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L687"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L687"
 								}
 							],
 							"typeParameters": [
@@ -17357,12 +17357,12 @@
 												"type": "reference",
 												"target": 10506,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17385,7 +17385,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17445,7 +17445,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 713,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L713"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L713"
 						}
 					],
 					"signatures": [
@@ -17479,7 +17479,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 713,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L713"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L713"
 								}
 							],
 							"typeParameters": [
@@ -17570,12 +17570,12 @@
 												"type": "reference",
 												"target": 10512,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17590,7 +17590,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17650,7 +17650,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 777,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L777"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L777"
 						}
 					],
 					"signatures": [
@@ -17690,7 +17690,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the prices:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the prices:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -17745,7 +17745,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 777,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L777"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L777"
 								}
 							],
 							"parameters": [
@@ -17769,7 +17769,7 @@
 										"type": "reference",
 										"target": 10779,
 										"name": "FilterablePriceProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17812,11 +17812,11 @@
 												"type": "reference",
 												"target": 10786,
 												"name": "PriceDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17839,7 +17839,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17859,7 +17859,7 @@
 													"type": "reference",
 													"target": 10786,
 													"name": "PriceDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -17886,7 +17886,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 817,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L817"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L817"
 						}
 					],
 					"signatures": [
@@ -17926,7 +17926,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -17941,7 +17941,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 817,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L817"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L817"
 								}
 							],
 							"parameters": [
@@ -18004,11 +18004,11 @@
 												"type": "reference",
 												"target": 10806,
 												"name": "PriceRuleDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18031,7 +18031,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18046,7 +18046,7 @@
 										"type": "reference",
 										"target": 10806,
 										"name": "PriceRuleDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -18066,7 +18066,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 878,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L878"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L878"
 						}
 					],
 					"signatures": [
@@ -18106,7 +18106,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the price rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the price rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18161,7 +18161,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 878,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L878"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L878"
 								}
 							],
 							"parameters": [
@@ -18185,7 +18185,7 @@
 										"type": "reference",
 										"target": 10818,
 										"name": "FilterablePriceRuleProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18228,11 +18228,11 @@
 												"type": "reference",
 												"target": 10806,
 												"name": "PriceRuleDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18255,7 +18255,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18272,7 +18272,7 @@
 											"type": "reference",
 											"target": 10806,
 											"name": "PriceRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18293,7 +18293,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 942,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L942"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L942"
 						}
 					],
 					"signatures": [
@@ -18333,7 +18333,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the price rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the price rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18388,7 +18388,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 942,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L942"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L942"
 								}
 							],
 							"parameters": [
@@ -18412,7 +18412,7 @@
 										"type": "reference",
 										"target": 10818,
 										"name": "FilterablePriceRuleProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18455,11 +18455,11 @@
 												"type": "reference",
 												"target": 10806,
 												"name": "PriceRuleDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18482,7 +18482,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18502,7 +18502,7 @@
 													"type": "reference",
 													"target": 10806,
 													"name": "PriceRuleDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -18529,7 +18529,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 965,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L965"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L965"
 						}
 					],
 					"signatures": [
@@ -18572,7 +18572,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 965,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L965"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L965"
 								}
 							],
 							"parameters": [
@@ -18596,7 +18596,7 @@
 											"type": "reference",
 											"target": 10825,
 											"name": "CreatePriceRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -18620,7 +18620,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18637,7 +18637,7 @@
 											"type": "reference",
 											"target": 10806,
 											"name": "PriceRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18658,7 +18658,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 986,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L986"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L986"
 						}
 					],
 					"signatures": [
@@ -18701,7 +18701,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 986,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L986"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L986"
 								}
 							],
 							"parameters": [
@@ -18725,7 +18725,7 @@
 											"type": "reference",
 											"target": 10831,
 											"name": "UpdatePriceRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -18749,7 +18749,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18766,7 +18766,7 @@
 											"type": "reference",
 											"target": 10806,
 											"name": "PriceRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18787,7 +18787,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1004,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1004"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1004"
 						}
 					],
 					"signatures": [
@@ -18830,7 +18830,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1004,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1004"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1004"
 								}
 							],
 							"parameters": [
@@ -18876,7 +18876,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18909,7 +18909,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1043,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1043"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1043"
 						}
 					],
 					"signatures": [
@@ -18949,7 +18949,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18964,7 +18964,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1043,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1043"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1043"
 								}
 							],
 							"parameters": [
@@ -19027,11 +19027,11 @@
 												"type": "reference",
 												"target": 10839,
 												"name": "PriceListDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19054,7 +19054,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19069,7 +19069,7 @@
 										"type": "reference",
 										"target": 10839,
 										"name": "PriceListDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -19089,7 +19089,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1104,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1104"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1104"
 						}
 					],
 					"signatures": [
@@ -19129,7 +19129,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the price lists:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the price lists:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -19184,7 +19184,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1104,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1104"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1104"
 								}
 							],
 							"parameters": [
@@ -19208,7 +19208,7 @@
 										"type": "reference",
 										"target": 10851,
 										"name": "FilterablePriceListProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19251,11 +19251,11 @@
 												"type": "reference",
 												"target": 10839,
 												"name": "PriceListDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19278,7 +19278,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19295,7 +19295,7 @@
 											"type": "reference",
 											"target": 10839,
 											"name": "PriceListDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -19316,7 +19316,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1168,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1168"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1168"
 						}
 					],
 					"signatures": [
@@ -19356,7 +19356,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the price lists:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the price lists:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -19411,7 +19411,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1168,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1168"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1168"
 								}
 							],
 							"parameters": [
@@ -19435,7 +19435,7 @@
 										"type": "reference",
 										"target": 10851,
 										"name": "FilterablePriceListProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19478,11 +19478,11 @@
 												"type": "reference",
 												"target": 10839,
 												"name": "PriceListDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19505,7 +19505,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19525,7 +19525,7 @@
 													"type": "reference",
 													"target": 10839,
 													"name": "PriceListDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -19552,7 +19552,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1195,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1195"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1195"
 						}
 					],
 					"signatures": [
@@ -19595,7 +19595,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1195,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1195"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1195"
 								}
 							],
 							"parameters": [
@@ -19619,7 +19619,7 @@
 											"type": "reference",
 											"target": 10860,
 											"name": "CreatePriceListDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -19643,7 +19643,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19660,7 +19660,7 @@
 											"type": "reference",
 											"target": 10839,
 											"name": "PriceListDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -19681,7 +19681,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1220,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1220"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1220"
 						}
 					],
 					"signatures": [
@@ -19724,7 +19724,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1220,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1220"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1220"
 								}
 							],
 							"parameters": [
@@ -19756,7 +19756,7 @@
 											"type": "reference",
 											"target": 10869,
 											"name": "UpdatePriceListDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -19780,7 +19780,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19797,7 +19797,7 @@
 											"type": "reference",
 											"target": 10839,
 											"name": "PriceListDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -19818,7 +19818,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1238,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1238"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1238"
 						}
 					],
 					"signatures": [
@@ -19861,7 +19861,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1238,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1238"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1238"
 								}
 							],
 							"parameters": [
@@ -19907,7 +19907,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19940,7 +19940,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1261,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1261"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1261"
 						}
 					],
 					"signatures": [
@@ -19999,7 +19999,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1261,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1261"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1261"
 								}
 							],
 							"typeParameters": [
@@ -20066,12 +20066,12 @@
 												"type": "reference",
 												"target": 10577,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20094,7 +20094,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20154,7 +20154,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1287,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1287"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1287"
 						}
 					],
 					"signatures": [
@@ -20213,7 +20213,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1287,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1287"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1287"
 								}
 							],
 							"typeParameters": [
@@ -20296,12 +20296,12 @@
 												"type": "reference",
 												"target": 10583,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20324,7 +20324,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20384,7 +20384,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1332,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1332"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1332"
 						}
 					],
 					"signatures": [
@@ -20424,7 +20424,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -20439,7 +20439,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1332,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1332"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1332"
 								}
 							],
 							"parameters": [
@@ -20502,11 +20502,11 @@
 												"type": "reference",
 												"target": 10877,
 												"name": "PriceListRuleDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20529,7 +20529,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20544,7 +20544,7 @@
 										"type": "reference",
 										"target": 10877,
 										"name": "PriceListRuleDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -20564,7 +20564,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1396,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1396"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1396"
 						}
 					],
 					"signatures": [
@@ -20604,7 +20604,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the price list rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the price list rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -20659,7 +20659,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1396,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1396"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1396"
 								}
 							],
 							"parameters": [
@@ -20683,7 +20683,7 @@
 										"type": "reference",
 										"target": 10882,
 										"name": "FilterablePriceListRuleProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20726,11 +20726,11 @@
 												"type": "reference",
 												"target": 10877,
 												"name": "PriceListRuleDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20753,7 +20753,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20770,7 +20770,7 @@
 											"type": "reference",
 											"target": 10877,
 											"name": "PriceListRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -20791,7 +20791,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1460,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1460"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1460"
 						}
 					],
 					"signatures": [
@@ -20831,7 +20831,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the price list rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the price list rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -20886,7 +20886,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1460,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1460"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1460"
 								}
 							],
 							"parameters": [
@@ -20910,7 +20910,7 @@
 										"type": "reference",
 										"target": 10882,
 										"name": "FilterablePriceListRuleProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20953,11 +20953,11 @@
 												"type": "reference",
 												"target": 10877,
 												"name": "PriceListRuleDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20980,7 +20980,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21000,7 +21000,7 @@
 													"type": "reference",
 													"target": 10877,
 													"name": "PriceListRuleDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -21027,7 +21027,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1479,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1479"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1479"
 						}
 					],
 					"signatures": [
@@ -21070,7 +21070,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1479,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1479"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1479"
 								}
 							],
 							"parameters": [
@@ -21116,7 +21116,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21149,7 +21149,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1506,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1506"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1506"
 						}
 					],
 					"signatures": [
@@ -21192,7 +21192,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1506,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1506"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1506"
 								}
 							],
 							"parameters": [
@@ -21216,7 +21216,7 @@
 											"type": "reference",
 											"target": 10888,
 											"name": "AddPriceListPricesDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -21240,7 +21240,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21257,7 +21257,7 @@
 											"type": "reference",
 											"target": 10786,
 											"name": "PriceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -21278,7 +21278,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1535,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1535"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1535"
 						}
 					],
 					"signatures": [
@@ -21321,7 +21321,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1535,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1535"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1535"
 								}
 							],
 							"parameters": [
@@ -21353,7 +21353,7 @@
 											"type": "reference",
 											"target": 10891,
 											"name": "UpdatePriceListPricesDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -21377,7 +21377,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21394,7 +21394,7 @@
 											"type": "reference",
 											"target": 10786,
 											"name": "PriceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -21415,7 +21415,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1557,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1557"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1557"
 						}
 					],
 					"signatures": [
@@ -21458,7 +21458,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1557,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1557"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1557"
 								}
 							],
 							"parameters": [
@@ -21488,7 +21488,7 @@
 										"type": "reference",
 										"target": 10894,
 										"name": "SetPriceListRulesDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -21511,7 +21511,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21526,7 +21526,7 @@
 										"type": "reference",
 										"target": 10839,
 										"name": "PriceListDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -21546,7 +21546,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1577,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1577"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1577"
 						}
 					],
 					"signatures": [
@@ -21589,7 +21589,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1577,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1577"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1577"
 								}
 							],
 							"parameters": [
@@ -21619,7 +21619,7 @@
 										"type": "reference",
 										"target": 10897,
 										"name": "RemovePriceListRulesDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -21642,7 +21642,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21657,7 +21657,7 @@
 										"type": "reference",
 										"target": 10839,
 										"name": "PriceListDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -21677,7 +21677,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1595,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1595"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1595"
 						}
 					],
 					"signatures": [
@@ -21720,7 +21720,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1595,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1595"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1595"
 								}
 							],
 							"parameters": [
@@ -21766,7 +21766,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21799,7 +21799,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1615,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1615"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1615"
 						}
 					],
 					"signatures": [
@@ -21846,7 +21846,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1615,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1615"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1615"
 								}
 							],
 							"parameters": [
@@ -21909,11 +21909,11 @@
 												"type": "reference",
 												"target": 10900,
 												"name": "PricePreferenceDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -21936,7 +21936,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21951,7 +21951,7 @@
 										"type": "reference",
 										"target": 10900,
 										"name": "PricePreferenceDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -21971,7 +21971,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1655,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1655"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1655"
 						}
 					],
 					"signatures": [
@@ -22058,7 +22058,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1655,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1655"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1655"
 								}
 							],
 							"parameters": [
@@ -22082,7 +22082,7 @@
 										"type": "reference",
 										"target": 10908,
 										"name": "FilterablePricePreferenceProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22125,11 +22125,11 @@
 												"type": "reference",
 												"target": 10900,
 												"name": "PricePreferenceDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22152,7 +22152,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22169,7 +22169,7 @@
 											"type": "reference",
 											"target": 10900,
 											"name": "PricePreferenceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -22190,13 +22190,13 @@
 							"fileName": "pricing/service.ts",
 							"line": 1679,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1679"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1679"
 						},
 						{
 							"fileName": "pricing/service.ts",
 							"line": 1698,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1698"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1698"
 						}
 					],
 					"signatures": [
@@ -22243,7 +22243,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1679,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1679"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1679"
 								}
 							],
 							"parameters": [
@@ -22265,7 +22265,7 @@
 										"type": "reference",
 										"target": 10914,
 										"name": "CreatePricePreferenceDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22288,7 +22288,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22303,7 +22303,7 @@
 										"type": "reference",
 										"target": 10900,
 										"name": "PricePreferenceDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -22349,7 +22349,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1698,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1698"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1698"
 								}
 							],
 							"parameters": [
@@ -22373,7 +22373,7 @@
 											"type": "reference",
 											"target": 10914,
 											"name": "CreatePricePreferenceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -22397,7 +22397,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22414,7 +22414,7 @@
 											"type": "reference",
 											"target": 10900,
 											"name": "PricePreferenceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -22435,13 +22435,13 @@
 							"fileName": "pricing/service.ts",
 							"line": 1720,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1720"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1720"
 						},
 						{
 							"fileName": "pricing/service.ts",
 							"line": 1742,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1742"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1742"
 						}
 					],
 					"signatures": [
@@ -22484,7 +22484,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1720,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1720"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1720"
 								}
 							],
 							"parameters": [
@@ -22508,7 +22508,7 @@
 											"type": "reference",
 											"target": 10918,
 											"name": "UpsertPricePreferenceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -22532,7 +22532,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22549,7 +22549,7 @@
 											"type": "reference",
 											"target": 10900,
 											"name": "PricePreferenceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -22596,7 +22596,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1742,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1742"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1742"
 								}
 							],
 							"parameters": [
@@ -22618,7 +22618,7 @@
 										"type": "reference",
 										"target": 10918,
 										"name": "UpsertPricePreferenceDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22641,7 +22641,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22656,7 +22656,7 @@
 										"type": "reference",
 										"target": 10900,
 										"name": "PricePreferenceDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -22676,13 +22676,13 @@
 							"fileName": "pricing/service.ts",
 							"line": 1763,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1763"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1763"
 						},
 						{
 							"fileName": "pricing/service.ts",
 							"line": 1787,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1787"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1787"
 						}
 					],
 					"signatures": [
@@ -22725,7 +22725,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1763,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1763"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1763"
 								}
 							],
 							"parameters": [
@@ -22766,7 +22766,7 @@
 										"type": "reference",
 										"target": 10923,
 										"name": "UpdatePricePreferenceDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22789,7 +22789,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22804,7 +22804,7 @@
 										"type": "reference",
 										"target": 10900,
 										"name": "PricePreferenceDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -22850,7 +22850,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1787,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1787"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1787"
 								}
 							],
 							"parameters": [
@@ -22872,7 +22872,7 @@
 										"type": "reference",
 										"target": 10908,
 										"name": "FilterablePricePreferenceProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22893,7 +22893,7 @@
 										"type": "reference",
 										"target": 10923,
 										"name": "UpdatePricePreferenceDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22916,7 +22916,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22933,7 +22933,7 @@
 											"type": "reference",
 											"target": 10900,
 											"name": "PricePreferenceDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -22954,7 +22954,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1810,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1810"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1810"
 						}
 					],
 					"signatures": [
@@ -23005,7 +23005,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1810,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1810"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1810"
 								}
 							],
 							"typeParameters": [
@@ -23072,12 +23072,12 @@
 												"type": "reference",
 												"target": 10661,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -23100,7 +23100,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -23160,7 +23160,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1834,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1834"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1834"
 						}
 					],
 					"signatures": [
@@ -23211,7 +23211,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1834,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1834"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1834"
 								}
 							],
 							"typeParameters": [
@@ -23278,12 +23278,12 @@
 												"type": "reference",
 												"target": 10667,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -23306,7 +23306,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -23366,7 +23366,7 @@
 							"fileName": "pricing/service.ts",
 							"line": 1850,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1850"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1850"
 						}
 					],
 					"signatures": [
@@ -23409,7 +23409,7 @@
 									"fileName": "pricing/service.ts",
 									"line": 1850,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1850"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L1850"
 								}
 							],
 							"parameters": [
@@ -23455,7 +23455,7 @@
 										"type": "reference",
 										"target": 10706,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -23534,7 +23534,7 @@
 					"fileName": "pricing/service.ts",
 					"line": 43,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L43"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/pricing/service.ts#L43"
 				}
 			],
 			"extendedTypes": [
@@ -23542,7 +23542,7 @@
 					"type": "reference",
 					"target": 10688,
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -23756,7 +23756,7 @@
 												"type": "reference",
 												"target": 11083,
 												"name": "Message",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -23764,7 +23764,7 @@
 													"type": "reference",
 													"target": 11083,
 													"name": "Message",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -23818,7 +23818,7 @@
 										"type": "reference",
 										"target": 11087,
 										"name": "MessageAggregatorFormat",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -23839,7 +23839,7 @@
 											"type": "reference",
 											"target": 11083,
 											"name": "Message",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -23937,12 +23937,12 @@
 														"type": "reference",
 														"target": 10965,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												],
 												"name": "RawMessageFormat",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -23954,12 +23954,12 @@
 															"type": "reference",
 															"target": 10965,
 															"name": "T",
-															"package": "@medusajs/types",
+															"package": "@switchyard/types",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "RawMessageFormat",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -24053,7 +24053,7 @@
 					],
 					"type": {
 						"type": "literal",
-						"value": "MedusaContext"
+						"value": "SwitchyardContext"
 					}
 				},
 				{
@@ -24099,7 +24099,7 @@
 						"type": "reference",
 						"target": 10722,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -24146,7 +24146,7 @@
 						"type": "reference",
 						"target": 10722,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -24349,7 +24349,7 @@
 						"type": "reference",
 						"target": 10954,
 						"name": "IMessageAggregator",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -24608,7 +24608,7 @@
 						"type": "reference",
 						"target": 10969,
 						"name": "BigNumberRawValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -24851,7 +24851,7 @@
 						"type": "reference",
 						"target": 10969,
 						"name": "BigNumberRawValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "intrinsic",
@@ -24875,7 +24875,7 @@
 						"type": "reference",
 						"target": 11075,
 						"name": "IBigNumber",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -24918,7 +24918,7 @@
 						"type": "reference",
 						"target": 11075,
 						"name": "IBigNumber",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -25016,7 +25016,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"10443": {
 			"sourceFileName": "../../../../packages/core/types/src/pricing/service.ts",

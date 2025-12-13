@@ -1,4 +1,4 @@
-import { AdminProductCategoryResponse } from "@medusajs/types"
+import { AdminProductCategoryResponse } from "@switchyard/types"
 import { TFunction } from "i18next"
 
 import { CategoryTreeItem } from "./types"

@@ -1,4 +1,4 @@
-import { dynamicImport, FileSystem, isFileSkipped } from "@medusajs/utils"
+import { dynamicImport, FileSystem, isFileSkipped } from "@switchyard/utils"
 import { join } from "path"
 import zod from "zod"
 
@@ -7,7 +7,7 @@ import {
   type AdditionalDataValidatorRoute,
   type BodyParserConfigRoute,
   HTTP_METHODS,
-  type MedusaErrorHandlerFunction,
+  type SwitchyardErrorHandlerFunction,
   type MiddlewareDescriptor,
   type MiddlewaresConfig,
 } from "./types"
@@ -26,7 +26,7 @@ export class MiddlewareFileLoader {
   /**
    * Global error handler exported from the middleware file loader
    */
-  #errorHandler?: MedusaErrorHandlerFunction
+  #errorHandler?: SwitchyardErrorHandlerFunction
 
   /**
    * Middleware collected manually or by scanning directories

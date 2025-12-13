@@ -58,7 +58,7 @@ type RetrieveSymbolOptions = Omit<RetrieveOptions, "str"> & {
 }
 
 /**
- * A class that holds common Medusa patterns and acts as a knowledge base for possible summaries/examples/general templates.
+ * A class that holds common Switchyard patterns and acts as a knowledge base for possible summaries/examples/general templates.
  */
 class KnowledgeBaseFactory {
   private TYPE_PLACEHOLDER = `{type name}`
@@ -707,7 +707,7 @@ class KnowledgeBaseFactory {
   }
 
   /**
-   * This method retrieves plural configuration for Medusa service's functions.
+   * This method retrieves plural configuration for Switchyard service's functions.
    *
    * @param param0 - The function's input.
    * @returns The plural configurations.

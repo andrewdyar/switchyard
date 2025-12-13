@@ -1,4 +1,4 @@
-import { deepCopy, isDefined } from "@medusajs/utils"
+import { deepCopy, isDefined } from "@switchyard/utils"
 import { logger } from "../logger"
 import { ConfigModule } from "./types"
 

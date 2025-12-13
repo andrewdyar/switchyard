@@ -16,7 +16,7 @@
     "allowJs": true,
     "skipLibCheck": true
   },
-  "include": ["src/**/*", "medusa-config.ts"],
+  "include": ["src/**/*", "switchyard.config.ts"],
   "exclude": ["dist", "node_modules", "packages", "apps", "integration-tests", "www"]
 }
 

@@ -6,7 +6,7 @@ export const metadata = {
 
 # {metadata.title}
 
-Thank you for your interest in contributing to the documentation! You will be helping the open source community and other developers interested in learning more about Medusa and using it.
+Thank you for your interest in contributing to the documentation! You will be helping the open source community and other developers interested in learning more about Switchyard and using it.
 
 <Note title="Tip">
 
@@ -16,34 +16,34 @@ Making a quick fix to a page's content? You can scroll down to the bottom of the
 
 <Note title="Tip">
 
-This guide is specific to contributing to the documentation. If you’re interested in contributing to Medusa’s codebase, check out the [contributing guidelines in the Medusa GitHub repository](https://github.com/medusajs/medusa/blob/develop/CONTRIBUTING.md).
+This guide is specific to contributing to the documentation. If you’re interested in contributing to Switchyard’s codebase, check out the [contributing guidelines in the Switchyard GitHub repository](https://github.com/switchyard/medusa/blob/develop/CONTRIBUTING.md).
 
 </Note>
 
 ## What Can You Contribute?
 
-You can contribute to the Medusa documentation in the following ways:
+You can contribute to the Switchyard documentation in the following ways:
 
 - Fixes to existing content. This includes small fixes like typos, or adding missing information.
 - Additions to the documentation. If you think a documentation page can be useful to other developers, you can contribute by adding it.
-    - Make sure to open an issue first in the [medusa repository](https://github.com/medusajs/medusa) to confirm that you can add that documentation page.
+    - Make sure to open an issue first in the [medusa repository](https://github.com/switchyard/medusa) to confirm that you can add that documentation page.
 - Fixes to UI components and tooling. If you find a bug while browsing the documentation, you can contribute by fixing it.
 
 ---
 
 ## Documentation Workspace
 
-Medusa's documentation projects are all part of the documentation `yarn` workspace, which you can find in the [medusa repository](https://github.com/medusajs/medusa) under the `www` directory.
+Switchyard's documentation projects are all part of the documentation `yarn` workspace, which you can find in the [medusa repository](https://github.com/switchyard/medusa) under the `www` directory.
 
 The workspace has the following two directories:
 
 - `apps`: this directory holds the different documentation websites and projects. All projects are built with [Next.js 15](https://nextjs.org/).
-  - `book`: includes the codebase and content for the [main Medusa documentation](../../../page.mdx).
+  - `book`: includes the codebase and content for the [main Switchyard documentation](../../../page.mdx).
   - `resources`: includes the codebase and content for the resources documentation, which powers different sections of the docs such as the [Integrations](!resources!/integrations) or [How-to & Tutorials](!resources!/how-to-tutorials) sections.
   - `api-reference`: includes the codebase and content for the [API reference](!api!/store).
-  - `ui`: includes the codebase and content for the [Medusa UI documentation](!ui!).
+  - `ui`: includes the codebase and content for the [Switchyard UI documentation](!ui!).
   - `user-guide`: includes the codebase and content for the [user guide documentation](!user-guide!).
-  - `cloud`: includes the codebase and content for the [Medusa Cloud documentation](!cloud!).
+  - `cloud`: includes the codebase and content for the [Switchyard Cloud documentation](!cloud!).
 - `packages`: this directory holds the shared packages and components necessary for the development of the projects in the `apps` directory.
   - `docs-ui` includes the shared React components between the different apps.
   - `remark-rehype-plugins` includes Remark and Rehype plugins used by the documentation projects.
@@ -83,11 +83,11 @@ After that, you can change into the directory of any documentation project under
 
 All documentation projects are built with Next.js. The content is writtin in MDX files.
 
-### Medusa Main Docs Content
+### Switchyard Main Docs Content
 
-The content of the Medusa main docs are under the `www/apps/book/app` directory.
+The content of the Switchyard main docs are under the `www/apps/book/app` directory.
 
-### Medusa Resources Content
+### Switchyard Resources Content
 
 The content of all pages under the `/resources` path are under the `www/apps/resources/app` directory.
 
@@ -104,19 +104,19 @@ The API reference's content is split into two types:
 1. Static content, which are the content related to getting started, expanding fields, and more. These are located in the `www/apps/api-reference/markdown` directory. They are MDX files.
 2. OpenAPI specs that are shown to developers when checking the reference of an API Route. These are generated from OpenApi Spec comments, which are under the `www/utils/generated/oas-output` directory.
 
-### Medusa UI Documentation
+### Switchyard UI Documentation
 
-The content of the Medusa UI documentation are located under the `www/apps/ui/app` directory. They are MDX files.
+The content of the Switchyard UI documentation are located under the `www/apps/ui/app` directory. They are MDX files.
 
 The UI documentation also shows code examples, which are under the `www/apps/ui/specs/examples` directory.
 
 The UI component props are generated from the source code and placed into the `www/apps/ui/specs/components` directory. To contribute to these props and their comments, check the comments in the source code under the `packages/design-system/ui` directory.
 
-### Medusa User Guide
+### Switchyard User Guide
 
 The content of all pages under the `/user-guide` path are under the `www/apps/user-guide/app` directory.
 
-### Medusa Cloud Docs
+### Switchyard Cloud Docs
 
 The content of all pages under the `/cloud` path are under the `www/apps/cloud/app` directory.
 
@@ -177,7 +177,7 @@ When you contribute to the documentation content, make sure to follow the [docum
 
 If you’re fixing small errors in an existing documentation page, you can scroll down to the end of the page and click on the “Edit this page” link. You’ll be redirected to the GitHub edit form of that page and you can make edits directly and submit a pull request (PR).
 
-If you’re adding a new page or contributing to the codebase, fork the repository, create a new branch, and make all changes necessary in your repository. Then, once you’re done, create a PR in the Medusa repository.
+If you’re adding a new page or contributing to the codebase, fork the repository, create a new branch, and make all changes necessary in your repository. Then, once you’re done, create a PR in the Switchyard repository.
 
 ### Base Branch
 
@@ -236,14 +236,14 @@ The code snippet must be written using NPM.
 When a command uses the global option `-g`, add it at the end of the NPM command to ensure that it’s transformed to a Yarn command properly. For example:
 
 ```bash npm2yarn
-npm install @medusajs/cli -g
+npm install @switchyard/cli -g
 ```
 
 ---
 
 ## Linting with Vale
 
-Medusa uses [Vale](https://vale.sh/) to lint documentation pages and perform checks on incoming PRs into the repository.
+Switchyard uses [Vale](https://vale.sh/) to lint documentation pages and perform checks on incoming PRs into the repository.
 
 ### Result of Vale PR Checks
 
@@ -269,7 +269,7 @@ cd www/vale
 ./run-vale.sh resources/app error
 # to lint content for the API reference
 ./run-vale.sh api-reference/markdown error
-# to lint content for the Medusa UI documentation
+# to lint content for the Switchyard UI documentation
 ./run-vale.sh ui/app error
 # to lint content for the user guide
 ./run-vale.sh user-guide/app error
@@ -294,7 +294,7 @@ You can also disable specific rules. For example:
 ```md
 <!-- vale docs.Numbers = NO -->
 
-Medusa supports Node versions 14 and 16.
+Switchyard supports Node versions 14 and 16.
 
 <!-- vale docs.Numbers = YES -->
 ```
@@ -305,7 +305,7 @@ If you use this in your PR, you must justify its usage. */}
 
 ## Linting with ESLint
 
-Medusa uses ESlint to lint code blocks both in the content and the code base of the documentation apps.
+Switchyard uses ESlint to lint code blocks both in the content and the code base of the documentation apps.
 
 ### Linting Content with ESLint
 

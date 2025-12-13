@@ -1,14 +1,14 @@
-import { MedusaContainer, Query } from "@medusajs/framework"
+import { SwitchyardContainer, Query } from "@switchyard/framework"
 import {
   CalculatedPriceSet,
   IPricingModuleService,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the variants to get price sets for.
@@ -101,8 +101,8 @@ function validateVariantPriceSets(
     .map((v) => v.id)
 
   if (notFound.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Variants with IDs ${notFound.join(", ")} do not have a price`
     )
   }
@@ -116,7 +116,7 @@ function validateVariantPriceSets(
 async function processVariantPriceSets(
   pricingService: IPricingModuleService,
   items: PriceCalculationItem[],
-  container: MedusaContainer
+  container: SwitchyardContainer
 ): Promise<GetVariantPriceSetsStepOutput> {
   const result: GetVariantPriceSetsStepOutput = {}
 

@@ -1,4 +1,4 @@
-import { OrderTypes } from "@medusajs/framework/types"
+import { OrderTypes } from "@switchyard/framework/types"
 
 export type CreateOrderLineItemAdjustmentDTO =
   OrderTypes.CreateOrderLineItemAdjustmentDTO

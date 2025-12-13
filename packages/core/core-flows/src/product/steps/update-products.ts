@@ -1,13 +1,13 @@
 import type {
   IProductModuleService,
   ProductTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   getSelectsAndRelationsFromObjectArray,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the products update.
@@ -68,8 +68,8 @@ export const updateProductsStep = createStep(
 
     if ("products" in data) {
       if (data.products.some((p) => !p.id)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Product ID is required when doing a batch update of products"
         )
       }

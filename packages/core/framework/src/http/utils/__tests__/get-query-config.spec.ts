@@ -1,5 +1,5 @@
 import { prepareListQuery } from "../get-query-config"
-import { RequestQueryFields, QueryConfig } from "@medusajs/types"
+import { RequestQueryFields, QueryConfig } from "@switchyard/types"
 
 describe("prepareListQuery", () => {
   describe("buildOrder functionality", () => {

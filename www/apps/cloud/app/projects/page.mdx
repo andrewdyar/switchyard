@@ -1,5 +1,5 @@
 import { Prerequisites, InlineIcon } from "docs-ui"
-import { ChevronUpDown } from "@medusajs/icons"
+import { ChevronUpDown } from "@switchyard/icons"
 
 export const metadata = {
   title: `Create Projects and Deploy to Cloud`,
@@ -11,9 +11,9 @@ In this guide, you'll learn about projects, how to create them, view their detai
 
 ## What is a Project?
 
-A project is the collection of resources, environments, deployments, and settings related to a Medusa application deployed to the Cloud. The project is linked to a GitHub repository that hosts the Medusa application's code.
+A project is the collection of resources, environments, deployments, and settings related to a Switchyard application deployed to the Cloud. The project is linked to a GitHub repository that hosts the Switchyard application's code.
 
-To deploy a Medusa application to the Cloud, you create a project for it. Medusa will automatically set up and configure the necessary resources in the project to run the application, such as PostgreSQL, Redis, and S3.
+To deploy a Switchyard application to the Cloud, you create a project for it. Switchyard will automatically set up and configure the necessary resources in the project to run the application, such as PostgreSQL, Redis, and S3.
 
 Each project can have multiple environments, such as production and staging. These environments allow you to test changes before pushing them live to users. You can learn more in the [Environments documentation](../environments/page.mdx).
 
@@ -27,7 +27,7 @@ If you've reached the limit of projects allowed in your organization's plan, you
 
 </Note>
 
-In this section, you'll learn how to create a project in Cloud to deploy your Medusa application.
+In this section, you'll learn how to create a project in Cloud to deploy your Switchyard application.
 
 <Note title="Prerequisites">
 
@@ -46,10 +46,10 @@ In the project-creation page, you can either [create from a starter](#1-create-p
 
 ## 1. Create Project from a Starter
 
-Medusa provides you with the following starters that you can use to quickly set up your ecommerce application:
+Switchyard provides you with the following starters that you can use to quickly set up your ecommerce application:
 
-- **DTC Starter**: Standard Medusa application with fully-fledged commerce features.
-- **B2B Starter**: Medusa application with powerful B2B and commerce features.
+- **DTC Starter**: Standard Switchyard application with fully-fledged commerce features.
+- **B2B Starter**: Switchyard application with powerful B2B and commerce features.
 
 To create a project from either of these starters:
 
@@ -67,36 +67,36 @@ The repository will be cloned and you'll move forward to the [Configure step](#c
 
 ## 2. Create Project from an Existing Application
 
-If you already have a Medusa application, you can create a project from it.
+If you already have a Switchyard application, you can create a project from it.
 
-### Prerequisite: Medusa Application Configurations
+### Prerequisite: Switchyard Application Configurations
 
-Your existing Medusa application doesn't need specific configurations to be deployed to Cloud. Medusa will automatically:
+Your existing Switchyard application doesn't need specific configurations to be deployed to Cloud. Switchyard will automatically:
 
 - Create the necessary [server and worker instances](!docs!/learn/production/worker-mode).
-- Scale your Medusa application's resources based on the traffic it receives.
-- Set up and configure production resources and modules for your Medusa application:
+- Scale your Switchyard application's resources based on the traffic it receives.
+- Set up and configure production resources and modules for your Switchyard application:
     - [Redis Caching Module Provider](!resources!/infrastructure-modules/caching/providers/redis)
     - [Redis Event Module](!resources!/infrastructure-modules/event/redis)
     - [Redis Locking Module Provider](!resources!/infrastructure-modules/locking/redis)
     - [Redis Workflow Engine Module](!resources!/infrastructure-modules/workflow-engine/redis)
     - [S3 File Provider Module](!resources!/infrastructure-modules/file/s3)
 
-So, make sure to remove any of these modules from your `medusa-config.ts` file, unless you want to use custom options for them. In that case, you're expected to manually set up and manage those resources externally and configure them in your Medusa application.
+So, make sure to remove any of these modules from your `switchyard.config.ts` file, unless you want to use custom options for them. In that case, you're expected to manually set up and manage those resources externally and configure them in your Switchyard application.
 
 <Note>
 
-The Caching Module was introduced in [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0) to replace the deprecated Cache Module. If you're still using the Cache Module, make sure to remove it from your `medusa-config.ts` file as well.
+The Caching Module was introduced in [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0) to replace the deprecated Cache Module. If you're still using the Cache Module, make sure to remove it from your `switchyard.config.ts` file as well.
 
 </Note>
 
 ### Project Creation Steps
 
-To create a project from an existing Medusa application:
+To create a project from an existing Switchyard application:
 
 1. In the GitHub section of the [project-creation page](#create-a-project), authenticate with your GitHub account if you haven't already.
 2. Under the Repository section, choose the repository to create the project from.
-    - If you don't see your repository, you can click the **Configure repositories** link to manage the GitHub repositories that Medusa can access.
+    - If you don't see your repository, you can click the **Configure repositories** link to manage the GitHub repositories that Switchyard can access.
 3. Once you're done, click the **Continue** button.
 
 You'll move forward to the [Configure step](#configure-project-during-creation).
@@ -108,17 +108,17 @@ You'll move forward to the [Configure step](#configure-project-during-creation).
 After selecting the repository, you'll move on to the project configuration step. You can set the following information:
 
 1. **Project name**: Enter the name of the project.
-2. **Project subdomain**: Enter a custom subdomain for the project. All projects are subdomains of `medusajs.app`.
-    - For example, if you enter `my-project`, the project will be accessible at `my-project.medusajs.app`. Refer to the [subdomain restrictions](#subdomain-restrictions-for-projects) section for more details.
+2. **Project subdomain**: Enter a custom subdomain for the project. All projects are subdomains of `switchyard.app`.
+    - For example, if you enter `my-project`, the project will be accessible at `my-project.switchyard.app`. Refer to the [subdomain restrictions](#subdomain-restrictions-for-projects) section for more details.
 3. You can expand the "Build details" section to optionally change its configurations:
     - **Region**: Select a [region](#available-regions-for-projects-in-cloud) to deploy the project. For better performance, choose a region that's closer to your target users. The region can't be changed later.
-    - **Project root directory**: If your project is in a monorepo, specify the path to the Medusa project in the repository. Otherwise, leave it empty.
+    - **Project root directory**: If your project is in a monorepo, specify the path to the Switchyard project in the repository. Otherwise, leave it empty.
 4. You can expand the "Environment variables" section to optionally add environment variables:
     - Enter the key and value for each environment variable you want to add.
     - Mark the variable as "Sensitive" to hide its value in the UI.
     - To add more variables, click the "Add another" button.
     - You can also add and change environment variables later in the project's environment settings.
-5. You can expand the "Initial user" section to optionally set up the credentials of the initial admin user for the Medusa Admin:
+5. You can expand the "Initial user" section to optionally set up the credentials of the initial admin user for the Switchyard Admin:
     - **Email**: The email of the initial admin user.
     - **Password**: The password of the initial admin user.
 6. Once you're done configuring the project, click the "Create" button.
@@ -149,7 +149,7 @@ If you encounter any issues while creating a project, [check common deployment i
 
 ## Subdomain Restrictions for Projects
 
-Your project's URL must be a subdomain of `medusajs.app`. For example, if you choose `my-store` as your subdomain, your project's URL will be `my-store.medusajs.app`.
+Your project's URL must be a subdomain of `switchyard.app`. For example, if you choose `my-store` as your subdomain, your project's URL will be `my-store.switchyard.app`.
 
 When you choose a subdomain for your project, it must be at least five characters long. It also can't be one of the following reserved subdomains:
 
@@ -165,13 +165,13 @@ When you choose a subdomain for your project, it must be at least five character
 
 ## Available Regions for Projects in Cloud
 
-Medusa supports hosting your Medusa projects on Cloud in the following regions:
+Switchyard supports hosting your Switchyard projects on Cloud in the following regions:
 
 - US East (`us-east-1`)
 - Europe Central (`eu-central-1`)
 - Asia Southeast (`ap-southeast-1`)
 
-All your project's deployments will be in the selected region. For better performance, choose a region that's closer to your target users. If you need to host your Medusa project in a different region, contact support.
+All your project's deployments will be in the selected region. For better performance, choose a region that's closer to your target users. If you need to host your Switchyard project in a different region, contact support.
 
 ---
 
@@ -202,10 +202,10 @@ On the project's dashboard, you can view the following details:
 
 1. **Region**: The region where the project is deployed. You'll find it below the project name.
 2. **Environments**: The environments for the project are shown as cards. By default, you'll find Production and Previews environments. You can learn more about environments in the [Environments](../environments/page.mdx) guide.
-    - The Production environment is the live environment where your Medusa application is deployed and clients connect to.
+    - The Production environment is the live environment where your Switchyard application is deployed and clients connect to.
     - The Previews environments are created whenever you create a pull request in the linked GitHub repository. They allow you to preview changes before merging them into the main branch.
     - Other [Long-lived environments](../environments/long-lived/page.mdx) like Staging will be shown here if you create them.
-3. **Production URL**: The URL of the project's production deployment. You'll find it in the "Production" card under the title. Clicking it will open the production Medusa Admin in a new tab.
+3. **Production URL**: The URL of the project's production deployment. You'll find it in the "Production" card under the title. Clicking it will open the production Switchyard Admin in a new tab.
 4. **Repository**: The GitHub repository linked to the project. You'll find it as a "Repository" button at the top right of the project's dashboard. Clicking it will open the repository in a new tab.
 5. **Production Deployment Status**: The deployment status of the project's environment, which may be "Live" or "Building". Learn more in the [Deployments](../deployments/page.mdx#deployment-statuses-and-lifecycle) guide.
 

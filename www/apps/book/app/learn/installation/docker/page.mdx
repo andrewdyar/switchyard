@@ -6,14 +6,14 @@ import {
 import Feedback from "@/components/Feedback"
 
 export const metadata = {
-  title: `${pageNumber} Install Medusa with Docker`,
+  title: `${pageNumber} Install Switchyard with Docker`,
 }
 
 # {metadata.title}
 
-In this chapter, you'll learn how to install and run a Medusa application using Docker.
+In this chapter, you'll learn how to install and run a Switchyard application using Docker.
 
-The main supported installation method is using [create-medusa-app](../page.mdx). However, since it requires prerequisites like PostgreSQL, Docker may be a preferred and easier option for some users. You can follow this guide to set up a Medusa application with Docker in this case.
+The main supported installation method is using [create-switchyard-app](../page.mdx). However, since it requires prerequisites like PostgreSQL, Docker may be a preferred and easier option for some users. You can follow this guide to set up a Switchyard application with Docker in this case.
 
 You can follow this guide on any operating system that supports Docker, including Windows, macOS, and Linux.
 
@@ -33,12 +33,12 @@ You can follow this guide on any operating system that supports Docker, includin
     },
   ]} />
 
-## 1. Clone Medusa Starter Repository
+## 1. Clone Switchyard Starter Repository
 
-To get started, clone the Medusa Starter repository that a Medusa application is based on:
+To get started, clone the Switchyard Starter repository that a Switchyard application is based on:
 
 ```bash
-git clone https://github.com/medusajs/medusa-starter-default.git --depth=1 my-medusa-store
+git clone https://github.com/switchyard/medusa-starter-default.git --depth=1 my-medusa-store
 ```
 
 This command clones the repository into a directory named `my-medusa-store`.
@@ -85,8 +85,8 @@ services:
     networks:
       - medusa_network
 
-  # Medusa Server
-  # This service runs the Medusa backend application
+  # Switchyard Server
+  # This service runs the Switchyard backend application
   # and the admin dashboard.
   medusa:
     build: .
@@ -119,15 +119,15 @@ networks:
 
 You define three services in this file:
 
-- `postgres`: The PostgreSQL database service that stores your Medusa application's data.
+- `postgres`: The PostgreSQL database service that stores your Switchyard application's data.
 - `redis`: The Redis service that stores session data.
-- `medusa`: The Medusa service that runs the server and the admin dashboard. It connects to the PostgreSQL and Redis services.
+- `medusa`: The Switchyard service that runs the server and the admin dashboard. It connects to the PostgreSQL and Redis services.
 
 You can add environment variables either in the `environment` section of the `medusa` service or in a separate `.env` file.
 
 ### Recommendations for Multiple Local Projects
 
-If this isn't the first Medusa project you're setting up with Docker on your machine, make sure to:
+If this isn't the first Switchyard project you're setting up with Docker on your machine, make sure to:
 
 - Change the `container_name` for each service to avoid conflicts.
     - For example, use `medusa_postgres_myproject`, `medusa_redis_myproject`, and `medusa_backend_myproject` instead of the current names.
@@ -138,14 +138,14 @@ If this isn't the first Medusa project you're setting up with Docker on your mac
 - Change the ports to avoid conflicts with other projects. For example:
     - Use `"5433:5432"` for PostgreSQL.
     - Use `"6380:6379"` for Redis.
-    - Use `"9001:9000"` for the Medusa server.
+    - Use `"9001:9000"` for the Switchyard server.
 - Update the `DATABASE_URL` and `REDIS_URL` environment variables accordingly.
 
 ---
 
 ## 3. Create `start.sh`
 
-Next, you need to create a script file that [runs database migrations](../../fundamentals/data-models/write-migration/page.mdx) and starts the Medusa development server.
+Next, you need to create a script file that [runs database migrations](../../fundamentals/data-models/write-migration/page.mdx) and starts the Switchyard development server.
 
 Create the file `start.sh` with the following content:
 
@@ -162,12 +162,12 @@ Ensure that the `start.sh` file uses LF line endings instead of CRLF. Git on Win
 
 # Run migrations and start server
 echo "Running database migrations..."
-npx medusa db:migrate
+npx switchyard db:migrate
 
 echo "Seeding database..."
 yarn seed || echo "Seeding failed, continuing..."
 
-echo "Starting Medusa development server..."
+echo "Starting Switchyard development server..."
 yarn dev
 ```
 
@@ -178,12 +178,12 @@ yarn dev
 
 # Run migrations and start server
 echo "Running database migrations..."
-npx medusa db:migrate
+npx switchyard db:migrate
 
 echo "Seeding database..."
 npm run seed || echo "Seeding failed, continuing..."
 
-echo "Starting Medusa development server..."
+echo "Starting Switchyard development server..."
 npm run dev
 ```
   </CodeTab>
@@ -205,14 +205,14 @@ chmod +x start.sh
 
 ## 4. Create `Dockerfile`
 
-The `Dockerfile` defines how the Medusa service is built.
+The `Dockerfile` defines how the Switchyard service is built.
 
 Create a file named `Dockerfile` with the following content:
 
 <CodeTabs group="npm2yarn" defaultValue="yarn">
   <CodeTab value="yarn" label="Yarn">
 ```dockerfile title="Dockerfile"
-# Development Dockerfile for Medusa
+# Development Dockerfile for Switchyard
 FROM node:20-alpine
 
 # Set working directory
@@ -227,7 +227,7 @@ RUN yarn install
 # Copy source code
 COPY . .
 
-# Expose the port Medusa runs on
+# Expose the port Switchyard runs on
 EXPOSE 9000
 
 # Start with migrations and then the development server
@@ -236,7 +236,7 @@ CMD ["./start.sh"]
   </CodeTab>
   <CodeTab value="npm" label="NPM">
 ```dockerfile title="Dockerfile"
-# Development Dockerfile for Medusa
+# Development Dockerfile for Switchyard
 FROM node:20-alpine
 
 # Set working directory
@@ -251,7 +251,7 @@ RUN npm install --legacy-peer-deps
 # Copy source code
 COPY . .
 
-# Expose the port Medusa runs on
+# Expose the port Switchyard runs on
 EXPOSE 9000
 
 # Start with migrations and then the development server
@@ -260,13 +260,13 @@ CMD ["./start.sh"]
   </CodeTab>
 </CodeTabs>
 
-In the `Dockerfile`, you use the `node:20-alpine` image as the base since Medusa requires Node.js v20 or later.
+In the `Dockerfile`, you use the `node:20-alpine` image as the base since Switchyard requires Node.js v20 or later.
 
-Then, you set the working directory to `/server`, copy the necessary files, install dependencies, expose the `9000` port that Medusa uses, and run the `start.sh` script to start the server.
+Then, you set the working directory to `/server`, copy the necessary files, install dependencies, expose the `9000` port that Switchyard uses, and run the `start.sh` script to start the server.
 
 <Note>
 
-While it's more common to use `/app` as the working directory, it's highly recommended to use `/server` for the Medusa service to avoid conflicts with Medusa Admin customizations. Learn more in [this troubleshooting guide](!resources!/troubleshooting/medusa-admin/no-widget-route#errors-in-docker).
+While it's more common to use `/app` as the working directory, it's highly recommended to use `/server` for the Switchyard service to avoid conflicts with Switchyard Admin customizations. Learn more in [this troubleshooting guide](!resources!/troubleshooting/medusa-admin/no-widget-route#errors-in-docker).
 
 </Note>
 
@@ -274,7 +274,7 @@ While it's more common to use `/app` as the working directory, it's highly recom
 
 ## 5. Install Dependencies
 
-The Medusa Starter repository has a `yarn.lock` file that was generated by installing dependencies with Yarn v1.22.19.
+The Switchyard Starter repository has a `yarn.lock` file that was generated by installing dependencies with Yarn v1.22.19.
 
 If you're using a different Yarn version, or you're using NPM, you need to install the dependencies again to ensure compatibility with the Docker setup.
 
@@ -331,14 +331,14 @@ Where:
 
 ---
 
-## 7. Update Medusa Configuration
+## 7. Update Switchyard Configuration
 
-If you try to run the Medusa application now with Docker, you'll encounter an SSL error as the server tries to connect to the PostgreSQL database.
+If you try to run the Switchyard application now with Docker, you'll encounter an SSL error as the server tries to connect to the PostgreSQL database.
 
-To resolve the error, add the following configurations in `medusa-config.ts`:
+To resolve the error, add the following configurations in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
-import { loadEnv, defineConfig } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { loadEnv, defineConfig } from "@switchyard/framework/utils"
 
 loadEnv(process.env.NODE_ENV || "development", process.cwd())
 
@@ -353,7 +353,7 @@ module.exports = defineConfig({
 })
 ```
 
-You add the [projectConfig.databaseDriverOptions](../../configurations/medusa-config/page.mdx#databasedriveroptions) to disable SSL for the PostgreSQL database connection.
+You add the [projectConfig.databaseDriverOptions](../../configurations/switchyard.config/page.mdx#databasedriveroptions) to disable SSL for the PostgreSQL database connection.
 
 ---
 
@@ -390,15 +390,15 @@ Otherwise, copy the `.env.template` file to `.env` and update the values as need
 
 ---
 
-## 10. Start the Medusa Application with Docker
+## 10. Start the Switchyard Application with Docker
 
-All configurations are now ready. You can start the Medusa application using Docker by running the following command:
+All configurations are now ready. You can start the Switchyard application using Docker by running the following command:
 
 ```bash npm2yarn
 npm run docker:up
 ```
 
-Docker will pull the necessary images, start the PostgreSQL and Redis services, build the Medusa service, and run the development server in a Docker container.
+Docker will pull the necessary images, start the PostgreSQL and Redis services, build the Switchyard service, and run the development server in a Docker container.
 
 You can check the logs to ensure everything is running smoothly with the following command:
 
@@ -406,14 +406,14 @@ You can check the logs to ensure everything is running smoothly with the followi
 docker compose logs -f
 ```
 
-Once you see the following message, the Medusa server and admin are ready:
+Once you see the following message, the Switchyard server and admin are ready:
 
 ```shell
 ✔ Server is ready on port: 9000 – 3ms
 info:    Admin URL → http://localhost:9000/app
 ```
 
-You can now access the Medusa server at `http://localhost:9000` and the Medusa Admin dashboard at `http://localhost:9000/app`.
+You can now access the Switchyard server at `http://localhost:9000` and the Switchyard Admin dashboard at `http://localhost:9000/app`.
 
 <Feedback
   question="Did the Docker installation finish successfully?"
@@ -430,18 +430,18 @@ You can now access the Medusa server at `http://localhost:9000` and the Medusa A
 To create an admin user, run the following command:
 
 ```bash
-docker compose run --rm medusa npx medusa user -e admin@example.com -p supersecret
+docker compose run --rm medusa npx switchyard user -e admin@example.com -p supersecret
 ```
 
 Make sure to replace `admin@example.com` and `supersecret` with your desired email and password.
 
-You can now log in to the Medusa Admin dashboard at `http://localhost:9000/app` using the email and password you just created.
+You can now log in to the Switchyard Admin dashboard at `http://localhost:9000/app` using the email and password you just created.
 
 ---
 
-## Stop the Medusa Application Running in Docker
+## Stop the Switchyard Application Running in Docker
 
-To stop the Medusa application running in Docker, run the following command:
+To stop the Switchyard application running in Docker, run the following command:
 
 ```bash npm2yarn
 npm run docker:down
@@ -455,13 +455,13 @@ This doesn't delete any data in your application or its database. You can start 
 
 ## Check Logs
 
-You can check the logs of the Medusa application running in Docker using the following command:
+You can check the logs of the Switchyard application running in Docker using the following command:
 
 ```bash
 docker compose logs -f medusa
 ```
 
-This command shows the logs of the `medusa` service, allowing you to see any errors or messages from the Medusa application.
+This command shows the logs of the `medusa` service, allowing you to see any errors or messages from the Switchyard application.
 
 ---
 
@@ -469,7 +469,7 @@ This command shows the logs of the `medusa` service, allowing you to see any err
 
 ### start.sh Not Found Error
 
-If you get the following error when starting the Medusa application with Docker:
+If you get the following error when starting the Switchyard application with Docker:
 
 ```bash
 medusa_backend exited with code 127 (restarting)
@@ -482,7 +482,7 @@ To fix this, ensure that the `start.sh` file uses LF line endings. You can confi
 
 ### Couldn't Find X File or Directory Errors
 
-If you encounter errors indicating that certain files or directories couldn't be found, make sure you're running the commands from the root directory of your Medusa application (the same directory where the `docker-compose.yml` file is located).
+If you encounter errors indicating that certain files or directories couldn't be found, make sure you're running the commands from the root directory of your Switchyard application (the same directory where the `docker-compose.yml` file is located).
 
 For example, if you run the `docker:up` command and see an error like this:
 
@@ -490,11 +490,11 @@ For example, if you run the `docker:up` command and see an error like this:
 error Couldn't find a package.json file in "/"
 ```
 
-Ensure that your terminal's current working directory is the root of your Medusa application, then try running the command again.
+Ensure that your terminal's current working directory is the root of your Switchyard application, then try running the command again.
 
 ### Container Name Conflicts
 
-If you're running multiple Medusa projects with Docker or have previously run this guide, you may encounter container name conflicts.
+If you're running multiple Switchyard projects with Docker or have previously run this guide, you may encounter container name conflicts.
 
 To resolve this, ensure that the `container_name` values in your `docker-compose.yml` file are unique for each project. You can modify them by appending a unique identifier to each name.
 
@@ -512,6 +512,6 @@ container_name: medusa_postgres_myproject
 
 ---
 
-## Learn More about your Medusa Application
+## Learn More about your Switchyard Application
 
-You can learn more about your Medusa application and its setup in the [Installation chapter](../page.mdx).
+You can learn more about your Switchyard application and its setup in the [Installation chapter](../page.mdx).

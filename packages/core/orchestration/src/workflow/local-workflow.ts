@@ -1,14 +1,14 @@
-import { Context, LoadedModule, MedusaContainer } from "@medusajs/types"
+import { Context, LoadedModule, SwitchyardContainer } from "@switchyard/types"
 import {
-  createMedusaContainer,
+  createSwitchyardContainer,
   isDefined,
   isString,
   MedusaContext,
   MedusaContextType,
-  MedusaError,
-  MedusaModuleType,
-} from "@medusajs/utils"
-import { asValue } from "@medusajs/deps/awilix"
+  SwitchyardError,
+  SwitchyardModuleType,
+} from "@switchyard/utils"
+import { asValue } from "@switchyard/deps/awilix"
 import {
   DistributedTransactionEvent,
   DistributedTransactionEvents,
@@ -31,7 +31,7 @@ type StepHandler = {
 }
 
 export class LocalWorkflow {
-  protected container_: MedusaContainer
+  protected container_: SwitchyardContainer
   protected workflowId: string
   protected flow: OrchestratorBuilder
   protected customOptions: Partial<TransactionModelOptions> = {}
@@ -39,22 +39,22 @@ export class LocalWorkflow {
   protected handlers: Map<string, StepHandler>
   protected medusaContext?: Context
 
-  get container(): MedusaContainer {
+  get container(): SwitchyardContainer {
     return this.container_
   }
 
-  set container(modulesLoaded: LoadedModule[] | MedusaContainer) {
+  set container(modulesLoaded: LoadedModule[] | SwitchyardContainer) {
     this.resolveContainer(modulesLoaded)
   }
 
   constructor(
     workflowId: string,
-    modulesLoaded?: LoadedModule[] | MedusaContainer
+    modulesLoaded?: LoadedModule[] | SwitchyardContainer
   ) {
     const globalWorkflow = WorkflowManager.getWorkflow(workflowId)
     if (!globalWorkflow) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Workflow with id "${workflowId}" not found.`
       )
     }
@@ -72,17 +72,17 @@ export class LocalWorkflow {
     this.resolveContainer(modulesLoaded)
   }
 
-  private resolveContainer(modulesLoaded?: LoadedModule[] | MedusaContainer) {
+  private resolveContainer(modulesLoaded?: LoadedModule[] | SwitchyardContainer) {
     let container
 
     if (!Array.isArray(modulesLoaded) && modulesLoaded) {
       if (!("cradle" in modulesLoaded)) {
-        container = createMedusaContainer(modulesLoaded)
+        container = createSwitchyardContainer(modulesLoaded)
       } else {
-        container = createMedusaContainer({}, modulesLoaded) // copy container
+        container = createSwitchyardContainer({}, modulesLoaded) // copy container
       }
     } else if (Array.isArray(modulesLoaded) && modulesLoaded.length) {
-      container = createMedusaContainer()
+      container = createSwitchyardContainer()
 
       for (const mod of modulesLoaded || []) {
         const keyName = mod.__definition.key
@@ -90,12 +90,12 @@ export class LocalWorkflow {
       }
     }
 
-    this.container_ = this.contextualizedMedusaModules(container)
+    this.container_ = this.contextualizedSwitchyardModules(container)
   }
 
-  private contextualizedMedusaModules(container) {
+  private contextualizedSwitchyardModules(container) {
     if (!container) {
-      return createMedusaContainer()
+      return createSwitchyardContainer()
     }
 
     // eslint-disable-next-line
@@ -103,7 +103,7 @@ export class LocalWorkflow {
     const originalResolver = container.resolve
     container.resolve = function (keyName, opts) {
       const resolved = originalResolver(keyName, opts)
-      if (resolved?.constructor?.__type !== MedusaModuleType) {
+      if (resolved?.constructor?.__type !== SwitchyardModuleType) {
         return resolved
       }
 

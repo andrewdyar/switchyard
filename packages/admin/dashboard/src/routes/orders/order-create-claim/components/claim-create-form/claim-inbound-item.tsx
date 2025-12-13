@@ -1,6 +1,6 @@
-import { ChatBubble, DocumentText, XCircle, XMark } from "@medusajs/icons"
-import { AdminOrderLineItem, HttpTypes } from "@medusajs/types"
-import { IconButton, Input, Text } from "@medusajs/ui"
+import { ChatBubble, DocumentText, XCircle, XMark } from "@switchyard/icons"
+import { AdminOrderLineItem, HttpTypes } from "@switchyard/types"
+import { IconButton, Input, Text } from "@switchyard/ui"
 import { UseFormReturn } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 

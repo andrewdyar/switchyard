@@ -3,7 +3,7 @@ import {
   OrchestrationUtils,
   parseStringifyIfNecessary,
   promiseAll,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import * as util from "node:util"
 
 type InputPrimitive = string | Symbol
@@ -17,7 +17,7 @@ function resolveProperty(property: any, transactionContext: any) {
   if (property.__type === OrchestrationUtils.SymbolInputReference) {
     res = transactionContext.payload
   } else if (
-    property.__type === OrchestrationUtils.SymbolMedusaWorkflowResponse
+    property.__type === OrchestrationUtils.SymbolSwitchyardWorkflowResponse
   ) {
     res = resolveValue(property.$result, transactionContext)
   } else if (

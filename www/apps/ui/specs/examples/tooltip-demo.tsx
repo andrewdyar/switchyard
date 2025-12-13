@@ -1,5 +1,5 @@
-import { InformationCircleSolid } from "@medusajs/icons"
-import { Tooltip } from "@medusajs/ui"
+import { InformationCircleSolid } from "@switchyard/icons"
+import { Tooltip } from "@switchyard/ui"
 
 export default function TooltipDemo() {
   return (

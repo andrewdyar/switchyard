@@ -26,7 +26,7 @@ In those cases, you can use the data model repository.
 
 ## Data Model Repository Registration Name
 
-When the Medusa application injects a data model repository into a module's container, it formats the registration name by:
+When the Switchyard application injects a data model repository into a module's container, it formats the registration name by:
 
 - Taking the data model's name that's passed as the first parameter of `model.define`
 - Lower-casing the first character
@@ -50,8 +50,8 @@ export const resolveRepoHighlights = [
 ]
 
 ```ts highlights={resolveRepoHighlights}
-import { MedusaService } from "@medusajs/framework/utils"
-import { InferTypeOf, DAL } from "@medusajs/framework/types"
+import { SwitchyardService } from "@switchyard/framework/utils"
+import { InferTypeOf, DAL } from "@switchyard/framework/types"
 import Post from "./models/post"
 
 type Post = InferTypeOf<typeof Post>
@@ -60,7 +60,7 @@ type InjectedDependencies = {
   postRepository: DAL.RepositoryService<Post>
 }
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   protected postRepository_: DAL.RepositoryService<Post>

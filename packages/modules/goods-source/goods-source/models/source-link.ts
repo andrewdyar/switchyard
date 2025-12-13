@@ -5,7 +5,7 @@
  * This enables tracing commerce products back to their source data.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const SourceProductLink = model.define("goods_source_product_link", {
   id: model.id().primaryKey(),

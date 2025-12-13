@@ -22,7 +22,7 @@ You'll create a `Custom` data model in a module. This data model will have a `cu
 You'll then learn how to:
 
 - Link the `Custom` data model to the `Cart` data model.
-- Set the `custom_name` property when a cart is created or updated using Medusa's API routes.
+- Set the `custom_name` property when a cart is created or updated using Switchyard's API routes.
 - Retrieve the `custom_name` property with the cart's details, in custom or existing API routes.
 
 ## Step 1: Define Custom Data Model
@@ -40,7 +40,7 @@ To add the `custom_name` property to the `Cart` data model, you'll create in the
 Create the file `src/modules/hello/models/custom.ts` with the following content:
 
 ```ts title="src/modules/hello/models/custom.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const Custom = model.define("custom", {
   id: model.id().primaryKey(),
@@ -71,9 +71,9 @@ Learn more about module links in [this guide](!docs!/learn/fundamentals/module-l
 Create the file `src/links/cart-custom.ts` with the following content:
 
 ```ts title="src/links/cart-custom.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import HelloModule from "../modules/hello"
-import CartModule from "@medusajs/medusa/cart"
+import CartModule from "@switchyard/medusa/cart"
 
 export default defineLink(
   CartModule.linkable.cart,
@@ -90,7 +90,7 @@ This defines a link between the `Cart` and `Custom` data models. Using this link
 <Prerequisites
   items={[
     {
-      text: "Module must be registered in medusa-config.ts",
+      text: "Module must be registered in switchyard.config.ts",
       link: "!docs!/learn/fundamentals/modules#4-add-module-to-configurations"
     }
   ]}
@@ -98,10 +98,10 @@ This defines a link between the `Cart` and `Custom` data models. Using this link
 
 To reflect the `Custom` data model in the database, generate a migration that defines the table to be created for it.
 
-Run the following command in your Medusa project's root:
+Run the following command in your Switchyard project's root:
 
 ```bash
-npx medusa db:generate helloModuleService
+npx switchyard db:generate helloModuleService
 ```
 
 Where `helloModuleService` is your module's name.
@@ -109,7 +109,7 @@ Where `helloModuleService` is your module's name.
 Then, run the `db:migrate` command to run the migrations and create a table in the database for the link between the `Cart` and `Custom` data models:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 A table for the link is now created in the database. You can now retrieve and manage the link between records of the data models.
@@ -132,12 +132,12 @@ The API route accepts in its request body an `additional_data` parameter. You ca
 
 ### Add custom_name to Additional Data Validation
 
-To pass the `custom_name` in the `additional_data` parameter, you must add a validation rule that tells the Medusa application about this custom property.
+To pass the `custom_name` in the `additional_data` parameter, you must add a validation rule that tells the Switchyard application about this custom property.
 
 Create the file `src/api/middlewares.ts` with the following content:
 
 ```ts title="src/api/middlewares.ts"
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 import { z } from "zod"
 
 export default defineMiddlewares({
@@ -172,7 +172,7 @@ This workflow will create a `Custom` record, then link it to the cart.
 Start by creating the step that creates the `Custom` record. Create the file `src/workflows/create-custom-from-cart/steps/create-custom.ts` with the following content:
 
 ```ts title="src/workflows/create-custom-from-cart/steps/create-custom.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import HelloModuleService from "../../../modules/hello/service"
 import { HELLO_MODULE } from "../../../modules/hello"
 
@@ -218,11 +218,11 @@ Learn more about compensation functions in [this guide](!docs!/learn/fundamental
 Then, create the workflow at `src/workflows/create-custom-from-cart/index.ts` with the following content:
 
 ```ts title="src/workflows/create-custom-from-cart/index.ts" collapsibleLines="1-7" expandButtonLabel="Show Imports"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { CartDTO } from "@medusajs/framework/types"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { CartDTO } from "@switchyard/framework/types"
 import { createCustomStep } from "./steps/create-custom"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
-import { Modules } from "@medusajs/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
 import { HELLO_MODULE } from "../../modules/hello"
 
 export type CreateCustomFromCartWorkflowInput = {
@@ -282,7 +282,7 @@ You can now consume the `cartCreated` hook, which is executed in the `createCart
 To consume the hook, create the file `src/workflow/hooks/cart-created.ts` with the following content:
 
 ```ts title="src/workflow/hooks/cart-created.ts" collapsibleLines="1-6" expandButtonLabel="Show Imports"
-import { createCartWorkflow } from "@medusajs/medusa/core-flows"
+import { createCartWorkflow } from "@switchyard/medusa/core-flows"
 import { 
   createCustomFromCartWorkflow, 
   CreateCustomFromCartWorkflowInput,
@@ -316,7 +316,7 @@ curl -X POST 'localhost:9000/store/carts' \
 }'
 ```
 
-Make sure to replace `{publishable_api_key}` with your publishable API key, which you can retrieve from the Medusa Admin. Also, replace the value of `region_id` with an ID of a region in your application.
+Make sure to replace `{publishable_api_key}` with your publishable API key, which you can retrieve from the Switchyard Admin. Also, replace the value of `region_id` with an ID of a region in your application.
 
 The request will return the cart's details. You'll learn how to retrieve the `custom_name` property with the cart's details in the next section.
 
@@ -343,7 +343,7 @@ curl -X POST 'localhost:9000/store/carts/{cart_id}?fields=+custom.*' \
 -H 'x-publishable-api-key: {publishable_api_key}'
 ```
 
-Make sure to replace `{cart_id}` with the cart's ID, and `{publishable_api_key}` with your publishable API key, which you can retrieve from the Medusa Admin.
+Make sure to replace `{cart_id}` with the cart's ID, and `{publishable_api_key}` with your publishable API key, which you can retrieve from the Switchyard Admin.
 
 Among the returned `cart` object, you'll find a `custom` property which holds the details of the linked `Custom` record:
 
@@ -393,7 +393,7 @@ The `updateCartWorkflow` is executed by the [Update Cart API route](!api!/store#
 To allow passing `custom_name` in the `additional_data` parameter of the update cart route, add in `src/api/middlewares.ts` a new route middleware configuration object:
 
 ```ts title="src/api/middlewares.ts"
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 import { z } from "zod"
 
 export default defineMiddlewares({
@@ -423,7 +423,7 @@ Next, you'll create a workflow that creates, updates, or deletes `Custom` record
 Start by creating the step that updates a `Custom` record. Create the file `src/workflows/update-custom-from-cart/steps/update-custom.ts` with the following content:
 
 ```ts title="src/workflows/update-custom-from-cart/steps/update-custom.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { HELLO_MODULE } from "../../../modules/hello"
 import HelloModuleService from "../../../modules/hello/service"
 
@@ -463,9 +463,9 @@ In this step, you update a `Custom` record. In the compensation function, you re
 Next, you'll create the step that deletes a `Custom` record. Create the file `src/workflows/update-custom-from-cart/steps/delete-custom.ts` with the following content:
 
 ```ts title="src/workflows/update-custom-from-cart/steps/delete-custom.ts" collapsibleLines="1-6" expandButtonLabel="Show Imports"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { Custom } from "../../../modules/hello/models/custom"
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 import HelloModuleService from "../../../modules/hello/service"
 import { HELLO_MODULE } from "../../../modules/hello"
 
@@ -499,11 +499,11 @@ In this step, you delete a `Custom` record. In the compensation function, you cr
 Finally, you'll create the workflow. Create the file `src/workflows/update-custom-from-cart/index.ts` with the following content:
 
 ```ts title="src/workflows/update-custom-from-cart/index.ts" collapsibleLines="1-9" expandButtonLabel="Show Imports"
-import { CartDTO } from "@medusajs/framework/types"
-import { createWorkflow, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { createRemoteLinkStep, dismissRemoteLinkStep, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { CartDTO } from "@switchyard/framework/types"
+import { createWorkflow, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { createRemoteLinkStep, dismissRemoteLinkStep, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { createCustomStep } from "../create-custom-from-cart/steps/create-custom"
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 import { HELLO_MODULE } from "../../modules/hello"
 import { deleteCustomStep } from "./steps/delete-custom"
 import { updateCustomStep } from "./steps/update-custom"
@@ -637,7 +637,7 @@ You can now consume the `cartUpdated` and execute the workflow you created.
 Create the file `src/workflows/hooks/cart-updated.ts` with the following content:
 
 ```ts title="src/workflows/hooks/cart-updated.ts"
-import { updateCartWorkflow } from "@medusajs/medusa/core-flows"
+import { updateCartWorkflow } from "@switchyard/medusa/core-flows"
 import { 
   UpdateCustomFromCartStepInput, 
   updateCustomFromCartWorkflow,
@@ -670,6 +670,6 @@ curl -X POST 'localhost:9000/store/carts/{cart_id}?fields=+custom.*' \
 }'
 ```
 
-Make sure to replace `{cart_id}` with the cart's ID, and `{publishable_api_key}` with your publishable API key, which you can retrieve from the Medusa Admin.
+Make sure to replace `{cart_id}` with the cart's ID, and `{publishable_api_key}` with your publishable API key, which you can retrieve from the Switchyard Admin.
 
 The request will return the cart's details with the updated `custom` linked record.

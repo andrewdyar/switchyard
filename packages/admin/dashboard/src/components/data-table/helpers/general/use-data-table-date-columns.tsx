@@ -2,7 +2,7 @@ import {
   createDataTableColumnHelper,
   DataTableColumnDef,
   Tooltip,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { useDate } from "../../../../hooks/use-date"

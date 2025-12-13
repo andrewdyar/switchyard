@@ -1,10 +1,10 @@
-import { Tooltip } from "@medusajs/ui"
+import { Tooltip } from "@switchyard/ui"
 import {
   ArrowLongDown,
   ArrowLongLeft,
   ArrowLongRight,
   ArrowLongUp,
-} from "@medusajs/icons"
+} from "@switchyard/icons"
 
 export default function TooltipSides() {
   return (

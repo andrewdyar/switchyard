@@ -1,4 +1,4 @@
-import { BigNumberRawValue } from "@medusajs/types"
+import { BigNumberRawValue } from "@switchyard/types"
 import {
   BeforeCreate,
   Collection,
@@ -13,8 +13,8 @@ import {
   Property,
   Unique,
   wrap,
-} from "@medusajs/deps/mikro-orm/core"
-import { defineConfig } from "@medusajs/deps/mikro-orm/postgresql"
+} from "@switchyard/deps/mikro-orm/core"
+import { defineConfig } from "@switchyard/deps/mikro-orm/postgresql"
 import BigNumber from "bignumber.js"
 import { dropDatabase } from "pg-god"
 import { MikroOrmBigNumberProperty } from "../../big-number-field"
@@ -1349,7 +1349,7 @@ describe("mikroOrmRepository", () => {
   })
 
   describe("error mapping", () => {
-    it("should map UniqueConstraintViolationException to MedusaError on upsertWithReplace", async () => {
+    it("should map UniqueConstraintViolationException to SwitchyardError on upsertWithReplace", async () => {
       const entity3 = { title: "en3" }
 
       await manager3().upsertWithReplace([entity3])
@@ -1361,7 +1361,7 @@ describe("mikroOrmRepository", () => {
       expect(err).toEqual("Entity3 with title: en3, already exists.")
     })
 
-    it("should map NotNullConstraintViolationException MedusaError on upsertWithReplace", async () => {
+    it("should map NotNullConstraintViolationException SwitchyardError on upsertWithReplace", async () => {
       const entity3 = { title: null }
       const err = await manager3()
         .upsertWithReplace([entity3])
@@ -1370,7 +1370,7 @@ describe("mikroOrmRepository", () => {
       expect(err).toEqual("Cannot set field 'title' of Entity3 to null")
     })
 
-    it("should map InvalidFieldNameException MedusaError on upsertWithReplace", async () => {
+    it("should map InvalidFieldNameException SwitchyardError on upsertWithReplace", async () => {
       const entity3 = { othertitle: "en3" }
       const err = await manager3()
         .upsertWithReplace([entity3])
@@ -1381,7 +1381,7 @@ describe("mikroOrmRepository", () => {
       )
     })
 
-    it("should map ForeignKeyConstraintViolationException MedusaError on upsertWithReplace", async () => {
+    it("should map ForeignKeyConstraintViolationException SwitchyardError on upsertWithReplace", async () => {
       const entity2 = {
         title: "en2",
         handle: "some-handle",

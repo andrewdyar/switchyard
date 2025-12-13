@@ -1,4 +1,4 @@
-import { ModuleProvider, Modules } from "@medusajs/framework/utils"
+import { ModuleProvider, Modules } from "@switchyard/framework/utils"
 import Loader from "./loaders"
 import { RedisLockingProvider } from "./services/redis-lock"
 

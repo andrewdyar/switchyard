@@ -6,13 +6,13 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn about the different ways you can debug workflows in Medusa.
+In this chapter, you'll learn about the different ways you can debug workflows in Switchyard.
 
 Debugging workflows is essential to ensure your custom features work as expected. It helps you identify unexpected issues and bugs in your workflow logic.
 
 ## Approaches to Debug Workflows
 
-There are several ways to debug workflows in Medusa:
+There are several ways to debug workflows in Switchyard:
 
 <Table>
   <Table.Header>
@@ -52,7 +52,7 @@ There are several ways to debug workflows in Medusa:
     </Table.Row>
     <Table.Row>
       <Table.Cell>
-        [View Workflow Executions in Medusa Admin](#approach-4-monitor-workflow-executions-in-medusa-admin)
+        [View Workflow Executions in Switchyard Admin](#approach-4-monitor-workflow-executions-in-medusa-admin)
       </Table.Cell>
       <Table.Cell>
         To monitor stored workflow executions and long-running workflows, especially in production environments.
@@ -87,7 +87,7 @@ Use breakpoints when you need to debug specific steps in your workflow, rather t
 
 ### Where Can You Add Breakpoints
 
-Since Medusa stores an internal representation of the workflow constructor on application startup, breakpoints within the workflow's constructor won't work during execution. Learn more in the [Data Manipulation](../../fundamentals/workflows/variable-manipulation/page.mdx) chapter.
+Since Switchyard stores an internal representation of the workflow constructor on application startup, breakpoints within the workflow's constructor won't work during execution. Learn more in the [Data Manipulation](../../fundamentals/workflows/variable-manipulation/page.mdx) chapter.
 
 Instead, you can add breakpoints in:
 
@@ -106,7 +106,7 @@ import {
   createWorkflow, 
   StepResponse, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -140,7 +140,7 @@ import {
   createWorkflow, 
   StepResponse, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -186,7 +186,7 @@ import {
   StepResponse, 
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -242,7 +242,7 @@ Logging is also useful when you want to verify variable values between steps or 
 
 ### How to Log Messages
 
-Since Medusa stores an internal representation of the workflow constructor on application startup, you can't directly log messages in the workflow's constructor.
+Since Switchyard stores an internal representation of the workflow constructor on application startup, you can't directly log messages in the workflow's constructor.
 
 Instead, you can log messages in:
 
@@ -263,7 +263,7 @@ import {
   createWorkflow, 
   StepResponse, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -300,7 +300,7 @@ import {
   createWorkflow, 
   StepResponse, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -342,7 +342,7 @@ import {
   StepResponse, 
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -389,15 +389,15 @@ Learn more about logging in the [Logger](../logging/page.mdx) chapter.
 
 ---
 
-## Approach 4: Monitor Workflow Executions in Medusa Admin
+## Approach 4: Monitor Workflow Executions in Switchyard Admin
 
-The Medusa Admin has a [Workflows](!user-guide!/settings/developer/workflows) settings page that provides a user-friendly interface to view stored workflow executions.
+The Switchyard Admin has a [Workflows](!user-guide!/settings/developer/workflows) settings page that provides a user-friendly interface to view stored workflow executions.
 
 ### When to Use Admin Monitoring
 
-Use the Medusa Admin to monitor [stored workflow executions](../../fundamentals/workflows/store-executions/page.mdx) when debugging unexpected issues and edge cases, especially in production environments and long-running workflows that run in the background.
+Use the Switchyard Admin to monitor [stored workflow executions](../../fundamentals/workflows/store-executions/page.mdx) when debugging unexpected issues and edge cases, especially in production environments and long-running workflows that run in the background.
 
-By viewing the workflow executions through the Medusa Admin, you can:
+By viewing the workflow executions through the Switchyard Admin, you can:
 
 - View the status of stored workflow executions.
 - Inspect input and output data for each execution and its steps.
@@ -405,7 +405,7 @@ By viewing the workflow executions through the Medusa Admin, you can:
 
 ### How to Monitor Workflow Executions in the Admin
 
-The Workflows settings page in the Medusa Admin shows you the history of stored workflow executions only. Workflow executions are stored if a workflow is [long-running](../../fundamentals/workflows/long-running-workflow/page.mdx), or if the `store` and `retentionTime` options are set on the workflow.
+The Workflows settings page in the Switchyard Admin shows you the history of stored workflow executions only. Workflow executions are stored if a workflow is [long-running](../../fundamentals/workflows/long-running-workflow/page.mdx), or if the `store` and `retentionTime` options are set on the workflow.
 
 For example, to store workflow executions:
 
@@ -424,7 +424,7 @@ import {
   createWorkflow, 
   StepResponse, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -459,4 +459,4 @@ Refer to the [Store Workflow Executions](../../fundamentals/workflows/store-exec
 
 </Note>
 
-You can view all executions of this workflow in the Medusa Admin under the [Workflows settings page](!user-guide!/settings/developer/workflows). Each execution will show you the status, input, and output data.
+You can view all executions of this workflow in the Switchyard Admin under the [Workflows settings page](!user-guide!/settings/developer/workflows). Each execution will show you the status, input, and output data.

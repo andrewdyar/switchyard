@@ -1,13 +1,13 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IFulfillmentModuleService,
   IStockLocationService,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   remoteQueryObjectFromString,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 
 jest.setTimeout(50000)
 

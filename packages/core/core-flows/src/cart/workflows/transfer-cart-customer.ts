@@ -1,4 +1,4 @@
-import { CartWorkflowEvents } from "@medusajs/framework/utils"
+import { CartWorkflowEvents } from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -7,8 +7,8 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { AdditionalData } from "@medusajs/types"
+} from "@switchyard/framework/workflows-sdk"
+import { AdditionalData } from "@switchyard/types"
 import { emitEventStep, useQueryGraphStep } from "../../common"
 import { acquireLockStep, releaseLockStep } from "../../locking"
 import { updateCartsStep } from "../steps"

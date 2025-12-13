@@ -4,7 +4,7 @@ products:
   - payment
 ---
 
-import { AcademicCapSolid, Github } from "@medusajs/icons"
+import { AcademicCapSolid, Github } from "@switchyard/icons"
 
 export const metadata = {
   title: `Subscriptions Recipe`,
@@ -12,7 +12,7 @@ export const metadata = {
 
 # {metadata.title}
 
-This recipe provides the general steps to build subscription-based purchase with Medusa.
+This recipe provides the general steps to build subscription-based purchase with Switchyard.
 
 ## Overview
 
@@ -20,13 +20,13 @@ Subscription-based purchase allows customers to purchase products for a specifie
 
 For example, a customer can purchase a book subscription box for a period of three months. Each month, the payment is captured for that order and, if the payment is successful, the fulfillment is processed.
 
-Medusa's [Framework](!docs!/learn/fundamentals/framework) for customizations facilitates building subscription-based purchases. You can create a Subscription Module that implements data models for subscriptions, and link those data models to existing ones such as products and orders.
+Switchyard's [Framework](!docs!/learn/fundamentals/framework) for customizations facilitates building subscription-based purchases. You can create a Subscription Module that implements data models for subscriptions, and link those data models to existing ones such as products and orders.
 
 You can also expose custom features using API routes, and implement complex flows using workflows.
 
 <Note title="Related use-case">
 
-[How Goodchef built subscription-based purchases with Medusa](https://medusajs.com/blog/goodchef/).
+[How Goodchef built subscription-based purchases with Switchyard](https://switchyard.com/blog/goodchef/).
 
 </Note>
 
@@ -76,7 +76,7 @@ If you want to create subscriptions on the product level, you can link the subsc
 
 ## Implement Subscription Approach
 
-There are different ways to implement subscriptions in your Medusa application. This recipe covers two options.
+There are different ways to implement subscriptions in your Switchyard application. This recipe covers two options.
 
 ### Option 1: Custom Subscription Logic
 
@@ -118,7 +118,7 @@ Stripe provides a [subscription payments feature](https://stripe.com/docs/billin
 
 This approach allows you to delegate the complications of implementing the subscription logic to Stripe, but doesn't support using other payment providers.
 
-Although Medusa provides a [Stripe Payment Module Provider](../../commerce-modules/payment/payment-provider/stripe/page.mdx), it doesn't handle subscriptions. You can create a custom Stripe Subscription Module Provider instead.
+Although Switchyard provides a [Stripe Payment Module Provider](../../commerce-modules/payment/payment-provider/stripe/page.mdx), it doesn't handle subscriptions. You can create a custom Stripe Subscription Module Provider instead.
 
 <Card
   href="/references/payment/provider"
@@ -131,15 +131,15 @@ Although Medusa provides a [Stripe Payment Module Provider](../../commerce-modul
 
 ## Customize Admin Dashboard
 
-Based on your use case, you may need to customize the Medusa Admin to add new widgets or pages.
+Based on your use case, you may need to customize the Switchyard Admin to add new widgets or pages.
 
 For example, you can create a page that lists all subscriptions or a widget that shows an order's subscription information.
 
-The Medusa Admin is an extensible application within your Medusa application. You can customize it by:
+The Switchyard Admin is an extensible application within your Switchyard application. You can customize it by:
 
 - **Widgets**: Adding widgets to existing pages, such as the order page.
-- **UI Routes**: Adding new pages to the Medusa Admin, such as a page to manage subscriptions.
-- **Settings Pages**: Adding new pages to the Medusa Admin settings, such as a page to manage subscription settings.
+- **UI Routes**: Adding new pages to the Switchyard Admin, such as a page to manage subscriptions.
+- **Settings Pages**: Adding new pages to the Switchyard Admin settings, such as a page to manage subscription settings.
 
 <CardList items={[
   {
@@ -151,7 +151,7 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
   {
     href: "!docs!/learn/fundamentals/admin/ui-routes",
     title: "Create Admin UI Routes",
-    text: "Add new pages to your Medusa Admin.",
+    text: "Add new pages to your Switchyard Admin.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -159,7 +159,7 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
 <Card
   href="!docs!/learn/fundamentals/admin/ui-routes#create-settings-page"
   title="Create Admin Setting Page"
-  text="Add new page to the Medusa Admin settings."
+  text="Add new page to the Switchyard Admin settings."
   icon={AcademicCapSolid}
   className="mt-1"
 />
@@ -168,9 +168,9 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
 
 ## Customize or Build Storefront
 
-Medusa provides a Next.js Starter Storefront to use with your application. You can customize it for your subscription use case, such as allowing customers to manage their subscriptions.
+Switchyard provides a Next.js Starter Storefront to use with your application. You can customize it for your subscription use case, such as allowing customers to manage their subscriptions.
 
-Alternatively, you can build your own storefront using the Medusa APIs. This headless approach gives you the flexibility to build a custom storefront without limitations on which tech stack you use, or the design of the storefront.
+Alternatively, you can build your own storefront using the Switchyard APIs. This headless approach gives you the flexibility to build a custom storefront without limitations on which tech stack you use, or the design of the storefront.
 
 <CardList items={[
   {

@@ -2,7 +2,7 @@ import {
   DataTableColumnDef,
   DataTableEmptyStateProps,
   DataTableFilter,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { ColumnAdapter } from "../../hooks/table/columns/use-configurable-table-columns"
 
 /**

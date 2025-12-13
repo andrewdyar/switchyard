@@ -58,7 +58,7 @@ Read-only links are used to query data across modules, but the relations aren't 
 
 The Store Module has a `Currency` data model that stores the supported currencies of a store. However, these currencies don't hold all the details of a currency, such as its name or symbol.
 
-Instead, Medusa defines a read-only link between the [Store Module](../../store/page.mdx)'s `StoreCurrency` data model and the Currency Module's `Currency` data model. Because the link is read-only from the `Store`'s side, you can only retrieve the details of a store's supported currencies, and not the other way around.
+Instead, Switchyard defines a read-only link between the [Store Module](../../store/page.mdx)'s `StoreCurrency` data model and the Currency Module's `Currency` data model. Because the link is read-only from the `Store`'s side, you can only retrieve the details of a store's supported currencies, and not the other way around.
 
 ### Retrieve with Query
 
@@ -82,7 +82,7 @@ const { data: stores } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 

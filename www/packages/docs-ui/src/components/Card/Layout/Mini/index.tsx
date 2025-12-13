@@ -11,7 +11,7 @@ import {
 } from "../../../.."
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowUpRightOnBox, TriangleRightMini, XMark } from "@medusajs/icons"
+import { ArrowUpRightOnBox, TriangleRightMini, XMark } from "@switchyard/icons"
 
 export const CardLayoutMini = ({
   icon,

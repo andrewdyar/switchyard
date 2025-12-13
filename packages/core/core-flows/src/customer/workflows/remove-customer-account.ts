@@ -1,11 +1,11 @@
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { setAuthAppMetadataStep } from "../../auth"
 import { useRemoteQueryStep } from "../../common"
 import { deleteCustomersWorkflow } from "./delete-customers"
@@ -80,8 +80,8 @@ export const removeCustomerAccountWorkflow = createWorkflow(
           const authIdentity = authIdentities[0]
 
           if (!authIdentity) {
-            throw new MedusaError(
-              MedusaError.Types.NOT_FOUND,
+            throw new SwitchyardError(
+              SwitchyardError.Types.NOT_FOUND,
               "Auth identity not found"
             )
           }

@@ -1,7 +1,7 @@
 import { QueryKey, useInfiniteQuery } from "@tanstack/react-query"
 import { ReactNode, useEffect, useMemo, useRef } from "react"
-import { toast } from "@medusajs/ui"
-import { Spinner } from "@medusajs/icons"
+import { toast } from "@switchyard/ui"
+import { Spinner } from "@switchyard/icons"
 
 type InfiniteListProps<TResponse, TEntity, TParams> = {
   queryKey: QueryKey

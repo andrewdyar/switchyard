@@ -1,5 +1,5 @@
-import { AdminCampaign } from "@medusajs/types"
-import { Heading, Text } from "@medusajs/ui"
+import { AdminCampaign } from "@switchyard/types"
+import { Heading, Text } from "@switchyard/ui"
 import { Fragment } from "react"
 import { useTranslation } from "react-i18next"
 

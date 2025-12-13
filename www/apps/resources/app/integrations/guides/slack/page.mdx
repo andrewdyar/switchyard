@@ -9,44 +9,44 @@ products:
 ---
 
 import { Card, Prerequisites, Details, WorkflowDiagram } from "docs-ui"
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 
 export const metadata = {
-  title: `Integrate Slack (Notification) with Medusa`,
+  title: `Integrate Slack (Notification) with Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to integrate Slack with Medusa to receive notifications about created orders.
+In this tutorial, you'll learn how to integrate Slack with Switchyard to receive notifications about created orders.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. Medusa's architecture facilitates integrating third-party services to customize Medusa's infrastructure for your business needs.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. Switchyard's architecture facilitates integrating third-party services to customize Switchyard's infrastructure for your business needs.
 
-Medusa's [Notification Module](../../../infrastructure-modules/notification/page.mdx) allows you to customize Medusa's infrastructure to send notifications using the third-party provider that fits your business needs, such as [Slack](https://slack.com/).
+Switchyard's [Notification Module](../../../infrastructure-modules/notification/page.mdx) allows you to customize Switchyard's infrastructure to send notifications using the third-party provider that fits your business needs, such as [Slack](https://slack.com/).
 
-In this tutorial, you'll integrate Slack with Medusa to receive notifications about created orders.
+In this tutorial, you'll integrate Slack with Switchyard to receive notifications about created orders.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
-- Integrate Slack with Medusa.
-- Handle Medusa's `order.placed` event to send notifications to Slack.
+- Install and set up Switchyard.
+- Integrate Slack with Switchyard.
+- Handle Switchyard's `order.placed` event to send notifications to Slack.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Slack integration workflow diagram showing the complete integration flow: when ecommerce events occur in Medusa (such as order placement), the system automatically sends webhook notifications to Slack channels, enabling real-time team communication and order monitoring for business operations](https://res.cloudinary.com/dza7lstvk/image/upload/v1748943447/slack-integration-overview_vkdijx.jpg)
+![Slack integration workflow diagram showing the complete integration flow: when ecommerce events occur in Switchyard (such as order placement), the system automatically sends webhook notifications to Slack channels, enabling real-time team communication and order monitoring for business operations](https://res.cloudinary.com/dza7lstvk/image/upload/v1748943447/slack-integration-overview_vkdijx.jpg)
 
 <Card
   title="Example Repository"
   text="Find the full code of the guide in this repository."
-  href="https://github.com/medusajs/examples/tree/main/slack-integration"
+  href="https://github.com/switchyard/examples/tree/main/slack-integration"
   icon={Github}
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -63,27 +63,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 First, you'll be asked for the project's name. Then, when prompted about installing the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -91,21 +91,21 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Slack Module Provider
 
-To integrate third-party services into Medusa, you create a custom [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain.
+To integrate third-party services into Switchyard, you create a custom [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain.
 
-Medusa's [Notification Module](../../../infrastructure-modules/notification/page.mdx) provides an interface to send notifications in your Medusa application. It delegates the actual sending of notifications to the underlying provider, such as Slack.
+Switchyard's [Notification Module](../../../infrastructure-modules/notification/page.mdx) provides an interface to send notifications in your Switchyard application. It delegates the actual sending of notifications to the underlying provider, such as Slack.
 
 In this step, you'll integrate Slack as a Notification Module Provider. Later, you'll use it to send a notification when an order is created.
 
 <Note>
 
-Refer to the [Modules](!docs!/learn/fundamentals/modules) documentation to learn more about modules in Medusa.
+Refer to the [Modules](!docs!/learn/fundamentals/modules) documentation to learn more about modules in Switchyard.
 
 </Note>
 
 ### a. Install Axios
 
-To send requests to Slack, you'll use the [Axios](https://axios-http.com/) library. So, run the following command to install it in your Medusa application:
+To send requests to Slack, you'll use the [Axios](https://axios-http.com/) library. So, run the following command to install it in your Switchyard application:
 
 ```bash npm2yarn
 npm install axios
@@ -115,7 +115,7 @@ You'll use Axios in the module's service.
 
 ### b. Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/slack`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/slack`.
 
 ### c. Create Slack Module's Service
 
@@ -125,14 +125,14 @@ To create the service of the Slack Notification Module Provider, create the file
 
 export const serviceHighlights = [
   ["6", "webhook_url", "The Slack webhook URL to send notifications to."],
-  ["7", "admin_url", "The URL of the Medusa Admin dashboard, used to add links in the notifications."],
+  ["7", "admin_url", "The URL of the Switchyard Admin dashboard, used to add links in the notifications."],
   ["13", "identifier", "The unique identifier for the module provider."],
 ]
 
 ```ts title="src/modules/slack/service.ts" highlights={serviceHighlights}
 import { 
   AbstractNotificationProviderService,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 type Options = {
   webhook_url: string
@@ -154,18 +154,18 @@ class SlackNotificationProviderService extends AbstractNotificationProviderServi
 
 A Notification Module Provider's service must extend the `AbstractNotificationProviderService` class. You'll implement its methods in a bit.
 
-The service must also have an `identifier` static property, which is a unique identifier for the module. This identifier is used when registering the module in the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+The service must also have an `identifier` static property, which is a unique identifier for the module. This identifier is used when registering the module in the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 
 The service's constructor receives two parameters:
 
 - `container`: The [module's container](!docs!/learn/fundamentals/modules/container) that contains Framework resources available to the module. You don't need to access any resources for this provider.
-- `options`: Options that are passed to the module provider when it's registered in Medusa's configurations. You define the following options:
+- `options`: Options that are passed to the module provider when it's registered in Switchyard's configurations. You define the following options:
     - `webhook_url`: The Slack webhook URL to send notifications to.
-    - `admin_url`: The URL of the Medusa Admin dashboard, which you'll use to add links in the notifications.
+    - `admin_url`: The URL of the Switchyard Admin dashboard, which you'll use to add links in the notifications.
 
 <Note>
 
-You'll learn how to set these options when you [add the module provider to Medusa's configurations](#g-add-module-provider-to-medusas-configurations).
+You'll learn how to set these options when you [add the module provider to Switchyard's configurations](#g-add-module-provider-to-medusas-configurations).
 
 </Note>
 
@@ -181,28 +181,28 @@ Refer to the [Create Notification Module Provider](/references/notification-prov
 
 ### d. Implement validateOptions Method
 
-The `validateOptions` method is used to validate the options passed to the module provider. If the method throws an error, the Medusa application won't start.
+The `validateOptions` method is used to validate the options passed to the module provider. If the method throws an error, the Switchyard application won't start.
 
 So, add the `validateOptions` method to the `SlackNotificationProviderService` class:
 
 ```ts title="src/modules/slack/service.ts"
 // other imports...
 import { 
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 
 class SlackNotificationProviderService extends AbstractNotificationProviderService {
   // ...
   static validateOptions(options: Record<any, any>): void | never {
     if (!options.webhook_url) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Webhook URL is required"
       )
     }
     if (!options.admin_url) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Admin URL is required"
       )
     }
@@ -216,7 +216,7 @@ In the method, you throw an error if any of the options are not set.
 
 ### e. Implement send Method
 
-When the Medusa application needs to send a notification through a channel (such as Slack), it calls the `send` method of the channel's module provider.
+When the Switchyard application needs to send a notification through a channel (such as Slack), it calls the `send` method of the channel's module provider.
 
 You'll first add helper methods that you'll use in the `send` method. Then, you'll implement the `send` method itself.
 
@@ -254,7 +254,7 @@ import {
   OrderDTO, 
   ProviderSendNotificationDTO, 
   ProviderSendNotificationResultsDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import axios from "axios"
 
 class SlackNotificationProviderService extends AbstractNotificationProviderService {
@@ -262,8 +262,8 @@ class SlackNotificationProviderService extends AbstractNotificationProviderServi
   async sendOrderNotification(notification: ProviderSendNotificationDTO) {
     const order = notification.data?.order as OrderDTO
     if (!order) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         "Order not found"
       )
     }
@@ -358,13 +358,13 @@ class SlackNotificationProviderService extends AbstractNotificationProviderServi
 
 The `sendOrderNotification` method receives a `ProviderSendNotificationDTO` object, which is the object passed to the `send` method that you'll implement next. The object has a `data` property that contains the order data.
 
-In the method, you format the Slack message to show the order's ID, customer information, shipping address, order items, and total amounts. You also add a link to the order's details page in the Medusa Admin dashboard.
+In the method, you format the Slack message to show the order's ID, customer information, shipping address, order items, and total amounts. You also add a link to the order's details page in the Switchyard Admin dashboard.
 
 Finally, you send the formatted message to Slack using the `axios.post` method with the configured webhook URL.
 
 #### send Method
 
-You can now implement the `send` method, which is the method that Medusa calls to send notifications using the provider. Add the `send` method to the `SlackNotificationProviderService` class:
+You can now implement the `send` method, which is the method that Switchyard calls to send notifications using the provider. Add the `send` method to the `SlackNotificationProviderService` class:
 
 ```ts title="src/modules/slack/service.ts"
 class SlackNotificationProviderService extends AbstractNotificationProviderService {
@@ -378,8 +378,8 @@ class SlackNotificationProviderService extends AbstractNotificationProviderServi
       case "order-created":
         return this.sendOrderNotification(notification)
       default:
-        throw new MedusaError(
-          MedusaError.Types.NOT_FOUND,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_FOUND,
           `Template ${template} not supported`
         )
     }
@@ -401,7 +401,7 @@ In the method, you check the `template` property of the notification object. If 
 
 You've now finished implementing the necessary methods for the Slack Notification Module Provider.
 
-The final piece to a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Medusa the module's details, including its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Switchyard the module's details, including its service.
 
 To create the module's definition, create the file `src/modules/slack/index.ts` with the following content:
 
@@ -410,7 +410,7 @@ import SlackNotificationProvider from "./service"
 import { 
   ModuleProvider, 
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export default ModuleProvider(Modules.NOTIFICATION, {
   services: [SlackNotificationProvider],
@@ -422,25 +422,25 @@ You use `ModuleProvider` from the Modules SDK to create the module provider's de
 1. The name of the module that this provider belongs to, which is `Modules.NOTIFICATION` in this case.
 2. An object with a required property `services` indicating the Module Provider's services.
 
-### g. Add Module Provider to Medusa's Configurations
+### g. Add Module Provider to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property:
+In `switchyard.config.ts`, add a `modules` property:
 
 export const configHighlights = [
   ["10", "id", "The ID of the module provider, used to register it."],
   ["12", "channels", "The channels that this provider is used to send notifications."],
   ["13", "webhook_url", "The Slack webhook URL to send notifications to."],
-  ["14", "admin_url", "The URL of the Medusa Admin dashboard, used to add links in the notifications."]
+  ["14", "admin_url", "The URL of the Switchyard Admin dashboard, used to add links in the notifications."]
 ]
 
-```ts title="medusa-config.ts" highlights={configHighlights}
+```ts title="switchyard.config.ts" highlights={configHighlights}
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: "@switchyard/medusa/notification",
       options: {
         providers: [
           {
@@ -459,7 +459,7 @@ module.exports = defineConfig({
 })
 ```
 
-To pass a Notification Module Provider to the Notification Module, you add the `modules` property to the Medusa configuration and pass the Notification Module in its value.
+To pass a Notification Module Provider to the Notification Module, you add the `modules` property to the Switchyard configuration and pass the Notification Module in its value.
 
 The Notification Module accepts a `providers` option, which is an array of Notification Module Providers to register.
 
@@ -481,36 +481,36 @@ To set the webhook URL, you need to create a Slack application and configure a w
 1. Go to your [Slack Apps](https://api.slack.com/apps) page.
 2. Click the "Create New App" button.
 
-![Slack Apps page interface showing the prominent green "Create New App" button in the top navigation area, which initiates the process of creating a new Slack application for integrating with external services like Medusa](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940543/Medusa%20Resources/CleanShot_2025-06-03_at_10.43.01_2x_zadmwn.png)
+![Slack Apps page interface showing the prominent green "Create New App" button in the top navigation area, which initiates the process of creating a new Slack application for integrating with external services like Switchyard](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940543/Switchyard%20Resources/CleanShot_2025-06-03_at_10.43.01_2x_zadmwn.png)
 
 3. In the pop-up, choose "From scratch".
 4. Enter the app's name and select the workspace to install it in.
 5. Once you're done, click the "Create App" button.
 
-![Slack app creation modal dialog with options to create app "From scratch" or "From an app manifest", including form fields for app name and workspace selection, with a "Create App" button to confirm the new Slack application setup](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940602/Medusa%20Resources/CleanShot_2025-06-03_at_10.43.52_2x_edqawv.png)
+![Slack app creation modal dialog with options to create app "From scratch" or "From an app manifest", including form fields for app name and workspace selection, with a "Create App" button to confirm the new Slack application setup](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940602/Switchyard%20Resources/CleanShot_2025-06-03_at_10.43.52_2x_edqawv.png)
 
 6. In the app's settings, go to the "Incoming Webhooks" section.
 7. Enable the "Activate Incoming Webhooks" toggle.
 
-![Slack app configuration page showing the Incoming Webhooks settings with the "Activate Incoming Webhooks" toggle switch prominently displayed, which enables the app to receive webhook notifications from external services like Medusa](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940647/Medusa%20Resources/CleanShot_2025-06-03_at_10.44.07_2x_rykabg.png)
+![Slack app configuration page showing the Incoming Webhooks settings with the "Activate Incoming Webhooks" toggle switch prominently displayed, which enables the app to receive webhook notifications from external services like Switchyard](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940647/Switchyard%20Resources/CleanShot_2025-06-03_at_10.44.07_2x_rykabg.png)
 
 8. In the "Webhook URLs for Your Workspace" section, click the "Add New Webhook" button.
 
-![Webhook configuration section displaying the "Add New Webhook" button in the "Webhook URLs for Your Workspace" area, allowing users to create a new webhook endpoint for receiving automated notifications in their Slack workspace](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940671/Medusa%20Resources/CleanShot_2025-06-03_at_10.44.33_2x_e7qk8o.png)
+![Webhook configuration section displaying the "Add New Webhook" button in the "Webhook URLs for Your Workspace" area, allowing users to create a new webhook endpoint for receiving automated notifications in their Slack workspace](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940671/Switchyard%20Resources/CleanShot_2025-06-03_at_10.44.33_2x_e7qk8o.png)
 
 9. Select the channel or conversation to send notifications to and click the "Allow" button.
 10. Copy the generated webhook URL.
 
-![Slack webhook URL generation interface showing the newly created webhook URL with a copy button, which provides the unique endpoint URL needed to configure Medusa for sending automated notifications to the selected Slack channel](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940718/Medusa%20Resources/CleanShot_2025-06-03_at_10.45.51_2x_xet5u5.png)
+![Slack webhook URL generation interface showing the newly created webhook URL with a copy button, which provides the unique endpoint URL needed to configure Switchyard for sending automated notifications to the selected Slack channel](https://res.cloudinary.com/dza7lstvk/image/upload/v1748940718/Switchyard%20Resources/CleanShot_2025-06-03_at_10.45.51_2x_xet5u5.png)
 
-Then, in the `.env` file of your Medusa application, set the `SLACK_WEBHOOK_URL` and `SLACK_ADMIN_URL` environment variables:
+Then, in the `.env` file of your Switchyard application, set the `SLACK_WEBHOOK_URL` and `SLACK_ADMIN_URL` environment variables:
 
 ```shell title=".env"
 SLACK_WEBHOOK_URL=https://hooks.slack.com/...
 SLACK_ADMIN_URL=http://localhost:9000/app
 ```
 
-In development, the Medusa Admin dashboard is running on `http://localhost:9000/app`, so you can use that URL for the `SLACK_ADMIN_URL` environment variable.
+In development, the Switchyard Admin dashboard is running on `http://localhost:9000/app`, so you can use that URL for the `SLACK_ADMIN_URL` environment variable.
 
 You'll test out the integration when you handle the `order.placed` event in the next step.
 
@@ -518,7 +518,7 @@ You'll test out the integration when you handle the `order.placed` event in the 
 
 ## Step 3: Handle the `order.placed` Event
 
-Now that you've integrated Slack with Medusa, you can send notifications to Slack at any point, including when an order is created.
+Now that you've integrated Slack with Switchyard, you can send notifications to Slack at any point, including when an order is created.
 
 To send a notification to Slack when an order is created, you will:
 
@@ -552,7 +552,7 @@ The workflow to send notifications to Slack will have the following steps:
   hideLegend
 />
 
-Medusa provides both steps in its `@medusajs/medusa/core-flows` package.
+Switchyard provides both steps in its `@switchyard/medusa/core-flows` package.
 
 So, to create the workflow, create the file `src/workflows/order-placed-notification.ts` with the following content:
 
@@ -564,8 +564,8 @@ export const orderPlacedNotificationWorkflowHighlights = [
 ```ts title="src/workflows/order-placed-notification.ts" highlights={orderPlacedNotificationWorkflowHighlights}
 import { 
   createWorkflow, 
-} from "@medusajs/framework/workflows-sdk"
-import { sendNotificationsStep, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { sendNotificationsStep, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 type WorkflowInput = {
   id: string
@@ -613,7 +613,7 @@ It accepts as a second parameter a constructor function, which is the workflow's
 
 In the workflow's constructor function, you:
 
-- Retrieve the order's details using the `useQueryGraphStep`. This step uses Medusa's [Query](!docs!/learn/fundamentals/module-links/query) tool to retrieve data across modules. You pass it the order ID to retrieve.
+- Retrieve the order's details using the `useQueryGraphStep`. This step uses Switchyard's [Query](!docs!/learn/fundamentals/module-links/query) tool to retrieve data across modules. You pass it the order ID to retrieve.
 - Send a notification using the `sendNotificationsStep`. You pass the step an array of notifications to send, and each notification is an object with the following properties:
   - `to`: The channel to send the notification to. Since you configure this in the Slack app, you just set it to `slack-channel`.
   - `channel`: The channel to use for sending the notification. By setting it to `slack`, the Notification Module will use the Slack Notification Module Provider to send the notification.
@@ -635,7 +635,7 @@ To execute the workflow when an order is placed, you need to create a subscriber
 To create the subscriber, create the file `src/subscribers/order-placed.ts` with the following content:
 
 ```ts title="src/subscribers/order-placed.ts"
-import { SubscriberArgs, SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, SubscriberConfig } from "@switchyard/framework"
 import { 
   orderPlacedNotificationWorkflow,
 } from "../workflows/order-placed-notification"
@@ -663,9 +663,9 @@ A subscriber file must export:
 The subscriber function receives an object as a parameter that has the following properties:
 
 - `event`: An object that holds the event's data payload. The payload of the `order.placed` event is the ID of the order placed.
-- `container`: The [Medusa container](!docs!/learn/fundamentals/medusa-container) to access the Framework and commerce tools.
+- `container`: The [Switchyard container](!docs!/learn/fundamentals/medusa-container) to access the Framework and commerce tools.
 
-In the subscriber function, you execute the `orderPlacedNotificationWorkflow` by invoking it, passing the Medusa container as a parameter. Then, you chain a `run` method, passing it the order ID from the event's data payload as input.
+In the subscriber function, you execute the `orderPlacedNotificationWorkflow` by invoking it, passing the Switchyard container as a parameter. Then, you chain a `run` method, passing it the order ID from the event's data payload as input.
 
 <Note>
 
@@ -679,9 +679,9 @@ You'll now test out the integration by placing an order using the [Next.js Start
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-slack`, you can find the storefront by going back to the parent directory and changing to the `medusa-slack-storefront` directory:
+So, if your Switchyard application's directory is `medusa-slack`, you can find the storefront by going back to the parent directory and changing to the `medusa-slack-storefront` directory:
 
 ```bash
 cd ../medusa-slack-storefront # change based on your project name
@@ -689,9 +689,9 @@ cd ../medusa-slack-storefront # change based on your project name
 
 </Note>
 
-First, start the Medusa application by running the following command in the Medusa application's directory:
+First, start the Switchyard application by running the following command in the Switchyard application's directory:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -705,21 +705,21 @@ Next, open the Next.js Starter Storefront in your browser at `http://localhost:8
 
 Afterwards, you'll receive a notification in the Slack channel you configured in the Slack app. The notification will contain the order details.
 
-You can also click on the order's ID in the notification to open the order's details page in the Medusa Admin dashboard.
+You can also click on the order's ID in the notification to open the order's details page in the Switchyard Admin dashboard.
 
-![Slack Notification Example](https://res.cloudinary.com/dza7lstvk/image/upload/v1748942706/Medusa%20Resources/CleanShot_2025-06-03_at_11.24.16_2x_umecps.png)
+![Slack Notification Example](https://res.cloudinary.com/dza7lstvk/image/upload/v1748942706/Switchyard%20Resources/CleanShot_2025-06-03_at_11.24.16_2x_umecps.png)
 
 ---
 
 ## Next Steps
 
-You've now integrated Slack with Medusa to receive notifications about created orders. You can expand on this integration to send other types of notifications, such as order updates. Refer to the [Events Reference](/references/events) for a list of events you can listen to in your subscribers.
+You've now integrated Slack with Switchyard to receive notifications about created orders. You can expand on this integration to send other types of notifications, such as order updates. Refer to the [Events Reference](/references/events) for a list of events you can listen to in your subscribers.
 
 You can also customize the notifications to include more information or change the format of the messages. Refer to [Slack's documentation](https://api.slack.com/reference/surfaces/formatting) for more information on how to format messages in Slack.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -729,6 +729,6 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
-3. Contact the [sales team](https://medusajs.com/contact/) to get help from the Medusa team.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.
+3. Contact the [sales team](https://switchyard.com/contact/) to get help from the Switchyard team.

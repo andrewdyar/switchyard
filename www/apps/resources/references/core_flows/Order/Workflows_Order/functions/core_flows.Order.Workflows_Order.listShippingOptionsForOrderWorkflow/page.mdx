@@ -8,23 +8,23 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# listShippingOptionsForOrderWorkflow - Medusa Core Workflows Reference
+# listShippingOptionsForOrderWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `listShippingOptionsForOrderWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `listShippingOptionsForOrderWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow lists the shipping options of an order. It's executed by the
-[List Shipping Options Store API Route](https://docs.medusajs.com/api/store#orders\_getidshippingoptions).
+[List Shipping Options Store API Route](https://docs.switchyard.com/api/store#orders\_getidshippingoptions).
 
 You can use this workflow within your own customizations or custom workflows, allowing you to wrap custom logic around to retrieve the shipping options of an order
 in your custom flows.
 
 :::note
 
-This is available starting from [Medusa v2.10.0](https://github.com/medusajs/medusa/releases/tag/v2.10.0).
+This is available starting from [Switchyard v2.10.0](https://github.com/switchyard/medusa/releases/tag/v2.10.0).
 
 :::
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/order/workflows/list-shipping-options-for-order.ts#L35" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/order/workflows/list-shipping-options-for-order.ts#L35" />
 
 ## Examples
 
@@ -33,14 +33,14 @@ This is available starting from [Medusa v2.10.0](https://github.com/medusajs/med
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { listShippingOptionsForOrderWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { listShippingOptionsForOrderWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await listShippingOptionsForOrderWorkflow(req.scope)
     .run({
@@ -60,8 +60,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { listShippingOptionsForOrderWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { listShippingOptionsForOrderWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -86,11 +86,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { listShippingOptionsForOrderWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { listShippingOptionsForOrderWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await listShippingOptionsForOrderWorkflow(container)
     .run({
@@ -112,8 +112,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { listShippingOptionsForOrderWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { listShippingOptionsForOrderWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -137,8 +137,8 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"ListShippingOptionsForOrderWorkflowInput","type":"[ListShippingOptionsForOrderWorkflowInput](../../../../../types/types/types.ListShippingOptionsForOrderWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The context for retrieving the shipping options.","expandable":false,"children":[{"name":"order_id","type":"`string`","description":"The order's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_return","type":"`boolean`","description":"Whether to retrieve return shipping options.\nBy default, non-return shipping options are retrieved.","optional":true,"defaultValue":"false","expandable":false,"children":[]},{"name":"enabled_in_store","type":"`boolean`","description":"Whether to retrieve the shipping option's enabled in the store, which is the default.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="listShippingOptionsForOrderWorkflow"/>
+<TypeList types={[{"name":"ListShippingOptionsForOrderWorkflowInput","type":"[ListShippingOptionsForOrderWorkflowInput](../../../../../types/types/types.ListShippingOptionsForOrderWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The context for retrieving the shipping options.","expandable":false,"children":[{"name":"order_id","type":"`string`","description":"The order's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_return","type":"`boolean`","description":"Whether to retrieve return shipping options.\nBy default, non-return shipping options are retrieved.","optional":true,"defaultValue":"false","expandable":false,"children":[]},{"name":"enabled_in_store","type":"`boolean`","description":"Whether to retrieve the shipping option's enabled in the store, which is the default.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="listShippingOptionsForOrderWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"any[]","type":"`any`[]","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"any","type":"`any`","optional":false,"defaultValue":"","description":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="listShippingOptionsForOrderWorkflow"/>
+<TypeList types={[{"name":"any[]","type":"`any`[]","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"any","type":"`any`","optional":false,"defaultValue":"","description":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="listShippingOptionsForOrderWorkflow"/>

@@ -1,43 +1,43 @@
 import { Card, Prerequisites, Details, WorkflowDiagram } from "docs-ui"
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 
 export const metadata = {
-  title: `Integrate Sentry (Instrumentation) with Medusa`,
+  title: `Integrate Sentry (Instrumentation) with Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to integrate Sentry with your Medusa application to monitor performance and track errors effectively.
+In this tutorial, you'll learn how to integrate Sentry with your Switchyard application to monitor performance and track errors effectively.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. An essential part of building customizations is tracking errors in them and ensuring they have good performance.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. An essential part of building customizations is tracking errors in them and ensuring they have good performance.
 
-Medusa facilitates error tracking and performance monitoring by integrating with instrumentation tools like [Sentry](https://sentry.io/). Sentry provides real-time tracking of errors and performance issues in your application, allowing you to identify and fix them quickly.
+Switchyard facilitates error tracking and performance monitoring by integrating with instrumentation tools like [Sentry](https://sentry.io/). Sentry provides real-time tracking of errors and performance issues in your application, allowing you to identify and fix them quickly.
 
-In this tutorial, you'll integrate Sentry with Medusa to monitor your application's performance and errors.
+In this tutorial, you'll integrate Sentry with Switchyard to monitor your application's performance and errors.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Set up instrumentation with Sentry. You'll trace HTTP requests, workflows, Query usages, and database operations.
 - Capture HTTP request errors in Sentry.
 - Test monitoring and error tracking.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram showcasing what is traced in Sentry](https://res.cloudinary.com/dza7lstvk/image/upload/v1750069550/Medusa%20Resources/sentry-integration_xb2ior.jpg)
+![Diagram showcasing what is traced in Sentry](https://res.cloudinary.com/dza7lstvk/image/upload/v1750069550/Switchyard%20Resources/sentry-integration_xb2ior.jpg)
 
 <Card
   title="Example Repository"
   text="Find the full code of the guide in this repository."
-  href="https://github.com/medusajs/examples/tree/main/sentry-integration"
+  href="https://github.com/switchyard/examples/tree/main/sentry-integration"
   icon={Github}
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -54,27 +54,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 First, you'll be asked for the project's name. Then, when prompted about installing the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -82,19 +82,19 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Set Up Instrumentation with Sentry
 
-Medusa supports instrumentation and reporting through OpenTelemetry, which allows you to integrate with various monitoring tools, including Sentry. This also gives you the flexibility to switch between different monitoring tools without changing your codebase.
+Switchyard supports instrumentation and reporting through OpenTelemetry, which allows you to integrate with various monitoring tools, including Sentry. This also gives you the flexibility to switch between different monitoring tools without changing your codebase.
 
-In this step, you'll set up instrumentation in your Medusa application using Sentry.
+In this step, you'll set up instrumentation in your Switchyard application using Sentry.
 
 <Note>
 
-Refer to the [Instrumentation](!docs!/learn/debugging-and-testing/instrumentation) documentation for more details on how to set up instrumentation in Medusa.
+Refer to the [Instrumentation](!docs!/learn/debugging-and-testing/instrumentation) documentation for more details on how to set up instrumentation in Switchyard.
 
 </Note>
 
 ### a. Install Instrumentation Dependencies
 
-To set up instrumentation in Medusa, you need to install the dependencies necessary for the monitoring tool you want to use, which is Sentry in this case.
+To set up instrumentation in Switchyard, you need to install the dependencies necessary for the monitoring tool you want to use, which is Sentry in this case.
 
 So, run the following command to install the necessary Sentry dependencies:
 
@@ -104,16 +104,16 @@ npm install @sentry/node @opentelemetry/api @opentelemetry/exporter-trace-otlp-g
 
 ### b. Configure Instrumentation
 
-Now that you have the necessary dependencies installed, you need to configure instrumentation in your Medusa application.
+Now that you have the necessary dependencies installed, you need to configure instrumentation in your Switchyard application.
 
-You can configure instrumentation in a special `instrumentation.ts` file at the root of your Medusa application. The Medusa application automatically loads this file when it starts.
+You can configure instrumentation in a special `instrumentation.ts` file at the root of your Switchyard application. The Switchyard application automatically loads this file when it starts.
 
-You should already have a file named `instrumentation.ts` in your Medusa application with commented-out code. Replace the file's content with the following:
+You should already have a file named `instrumentation.ts` in your Switchyard application with commented-out code. Replace the file's content with the following:
 
 ```ts title="instrumentation.ts"
 import Sentry from "@sentry/node"
 import otelApi from "@opentelemetry/api"
-import { registerOtel } from "@medusajs/medusa"
+import { registerOtel } from "@switchyard/medusa"
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-grpc" 
 import { 
   SentrySpanProcessor, 
@@ -148,16 +148,16 @@ You first initialize Sentry with your Data Source Name (DSN), which you'll retri
 
 Next, you set the global propagator to Sentry's propagator, which allows Sentry to propagate trace context across your application.
 
-Finally, you export a `register` function that registers OpenTelemetry. It uses the `registerOtel` function from Medusa, which accepts [OpenTelemetry configurations](https://open-telemetry.github.io/opentelemetry-js/interfaces/_opentelemetry_sdk-node.NodeSDKConfiguration.html) with the following custom Medusa options:
+Finally, you export a `register` function that registers OpenTelemetry. It uses the `registerOtel` function from Switchyard, which accepts [OpenTelemetry configurations](https://open-telemetry.github.io/opentelemetry-js/interfaces/_opentelemetry_sdk-node.NodeSDKConfiguration.html) with the following custom Switchyard options:
 
 - `serviceName`: The name of your service, which you set to "medusa". You can change it to a more descriptive name if needed.
-- `instrument`: An object that specifies what to trace in your Medusa application. You enable tracing for HTTP requests, workflows, Query usages, and database operations by setting their respective properties to `true`.
+- `instrument`: An object that specifies what to trace in your Switchyard application. You enable tracing for HTTP requests, workflows, Query usages, and database operations by setting their respective properties to `true`.
 
 You can add any additional configurations to either Sentry or OpenTelemetry as needed for your use case.
 
 ### c. Set Up a Sentry Project
 
-The final piece to get the Sentry integration working is to set up a Sentry project and get your DSN. The DSN is a unique identifier for your Sentry project that allows your Medusa application to send error and performance data to Sentry.
+The final piece to get the Sentry integration working is to set up a Sentry project and get your DSN. The DSN is a unique identifier for your Sentry project that allows your Switchyard application to send error and performance data to Sentry.
 
 To set up a Sentry project:
 
@@ -165,15 +165,15 @@ To set up a Sentry project:
 2. In your Sentry dashboard, if you're new to Sentry, click the "Start" button. Otherwise, go to Projects from the sidebar and click the "Create Project" button.
 3. In the "Select Platform" step, select "Node.js" as the platform, then select "Node, Vanilla" in the pop-up.
 
-![Screenshot of the pop up with Node, Vanilla selected](https://res.cloudinary.com/dza7lstvk/image/upload/v1750064385/Medusa%20Resources/CleanShot_2025-06-16_at_10.29.29_2x_dkmwtn.png)
+![Screenshot of the pop up with Node, Vanilla selected](https://res.cloudinary.com/dza7lstvk/image/upload/v1750064385/Switchyard%20Resources/CleanShot_2025-06-16_at_10.29.29_2x_dkmwtn.png)
 
 4. In the "Configure Node.js SDK" step, you can find your DSN in the second code block. Copy the DSN, as you'll need it in the next step.
 
-![Screenshot of the Configure Node.js SDK step with the DSN highlighted](https://res.cloudinary.com/dza7lstvk/image/upload/v1750064502/Medusa%20Resources/CleanShot_2025-06-16_at_12.00.36_2x_wlc0o1.png)
+![Screenshot of the Configure Node.js SDK step with the DSN highlighted](https://res.cloudinary.com/dza7lstvk/image/upload/v1750064502/Switchyard%20Resources/CleanShot_2025-06-16_at_12.00.36_2x_wlc0o1.png)
 
 You can skip onboarding or the next steps for now. You'll test out the integration in the next step.
 
-Then, add the following environment variable to your `.env` file in your Medusa application:
+Then, add the following environment variable to your `.env` file in your Switchyard application:
 
 ```shell title=".env"
 SENTRY_DSN=your_sentry_dsn_here
@@ -185,7 +185,7 @@ Replace `your_sentry_dsn_here` with the DSN you copied from Sentry.
 
 You can now test the integration to ensure operations are traced in Sentry.
 
-First, start your Medusa application by running the following command in your Medusa application's directory:
+First, start your Switchyard application by running the following command in your Switchyard application's directory:
 
 ```bash npm2yarn
 npm run dev
@@ -198,18 +198,18 @@ info:    OTEL registered
 ```
 This message indicates that OpenTelemetry has been successfully registered and instrumentation is set up successfully.
 
-Then, open your Medusa Admin dashboard in your browser at `http://localhost:9000/app` and log in with the user you created earlier.
+Then, open your Switchyard Admin dashboard in your browser at `http://localhost:9000/app` and log in with the user you created earlier.
 
 You can already find the database, workflow executions, and HTTP requests traced in your Sentry project:
 
 1. In your Sentry dashboard, go to Explore → Traces from the sidebar.
-2. You'll find a list of traces on this page, including HTTP requests made to log in to the Medusa Admin dashboard.
+2. You'll find a list of traces on this page, including HTTP requests made to log in to the Switchyard Admin dashboard.
 
-![Sentry dashboard with traces listed](https://res.cloudinary.com/dza7lstvk/image/upload/v1750065824/Medusa%20Resources/CleanShot_2025-06-16_at_12.23.29_2x_at87kq.png)
+![Sentry dashboard with traces listed](https://res.cloudinary.com/dza7lstvk/image/upload/v1750065824/Switchyard%20Resources/CleanShot_2025-06-16_at_12.23.29_2x_at87kq.png)
 
 If you click on a trace, you can see more details about the trace. For example, if you click on an HTTP request trace, you can see the middlewares and workflows executed, the time taken for each operation, the status of the request, and more.
 
-![Sentry trace details with HTTP request and workflow execution](https://res.cloudinary.com/dza7lstvk/image/upload/v1750065922/Medusa%20Resources/CleanShot_2025-06-16_at_12.25.10_2x_w8jzgl.png)
+![Sentry trace details with HTTP request and workflow execution](https://res.cloudinary.com/dza7lstvk/image/upload/v1750065922/Switchyard%20Resources/CleanShot_2025-06-16_at_12.25.10_2x_w8jzgl.png)
 
 ### Test Tracing for Customizations
 
@@ -228,15 +228,15 @@ An API route is created in a `route.ts` file under a sub-directory of the `src/a
 So, to create an API route at the path `/test-sentry`, create the file `src/api/test-sentry/route.ts` with the following content:
 
 ```ts title="src/api/test-sentry/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
-  throw new MedusaError(
-    MedusaError.Types.UNEXPECTED_STATE,
+  throw new SwitchyardError(
+    SwitchyardError.Types.UNEXPECTED_STATE,
     "This is a test error for Sentry integration."
   )
 }
@@ -247,9 +247,9 @@ Since you export a `GET` route handler function, you expose a `GET` API route at
 1. A request object with details and context on the request, such as body parameters.
 2. A response object to manipulate and send the response.
 
-In the route handler, you throw a `MedusaError` with a custom message. This error will be returned as a response to the request. Later, when you configure error capturing in Sentry, this error will be captured and displayed in the Sentry dashboard.
+In the route handler, you throw a `SwitchyardError` with a custom message. This error will be returned as a response to the request. Later, when you configure error capturing in Sentry, this error will be captured and displayed in the Sentry dashboard.
 
-To test the API route, make sure your Medusa application is running, then go to `http://localhost:9000/test-sentry` in your browser or use `curl`:
+To test the API route, make sure your Switchyard application is running, then go to `http://localhost:9000/test-sentry` in your browser or use `curl`:
 
 ```bash
 curl http://localhost:9000/test-sentry
@@ -272,11 +272,11 @@ It may take a few seconds for the trace to appear in Sentry, so if you don't see
 
 </Note>
 
-![Trace dashboard with the test API route trace](https://res.cloudinary.com/dza7lstvk/image/upload/v1750066376/Medusa%20Resources/CleanShot_2025-06-16_at_12.32.37_2x_uox6r1.png)
+![Trace dashboard with the test API route trace](https://res.cloudinary.com/dza7lstvk/image/upload/v1750066376/Switchyard%20Resources/CleanShot_2025-06-16_at_12.32.37_2x_uox6r1.png)
 
 If you click on the Trace ID, you'll see the details of the trace.
 
-![Sentry trace details with error breadcrumbs](https://res.cloudinary.com/dza7lstvk/image/upload/v1750066493/Medusa%20Resources/CleanShot_2025-06-16_at_12.34.33_2x_unzktq.png)
+![Sentry trace details with error breadcrumbs](https://res.cloudinary.com/dza7lstvk/image/upload/v1750066493/Switchyard%20Resources/CleanShot_2025-06-16_at_12.34.33_2x_unzktq.png)
 
 ---
 
@@ -284,11 +284,11 @@ If you click on the Trace ID, you'll see the details of the trace.
 
 In the previous step, you tested tracing in Sentry by creating a custom API route that throws an error. However, the error was not captured by Sentry. So, you couldn't see the error details in the Sentry dashboard or get notified about it.
 
-In this step, you'll capture HTTP request errors in Sentry. You'll do that by customizing Medusa's default error handler that is used to handle errors in API routes.
+In this step, you'll capture HTTP request errors in Sentry. You'll do that by customizing Switchyard's default error handler that is used to handle errors in API routes.
 
 <Note>
 
-Refer to the [Throwing and Handling Errors](!docs!/learn/fundamentals/api-routes/errors) guide to learn more about Medusa's default error handling behavior.
+Refer to the [Throwing and Handling Errors](!docs!/learn/fundamentals/api-routes/errors) guide to learn more about Switchyard's default error handling behavior.
 
 </Note>
 
@@ -296,28 +296,28 @@ To customize the error handler, create the file `src/api/middlewares.ts` with th
 
 export const errorHandlerHighlights = [
   ["20", "captureException", "Capture the error in Sentry."],
-  ["21", "originalErrorHandler", "Call Medusa's default error handler."],
+  ["21", "originalErrorHandler", "Call Switchyard's default error handler."],
 ]
 
 ```ts title="src/api/middlewares.ts" highlights={errorHandlerHighlights}
 import { 
   defineMiddlewares, 
   errorHandler, 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import * as Sentry from "@sentry/node"
 
 const originalErrorHandler = errorHandler()
 
 export default defineMiddlewares({
   errorHandler: (
-    error: MedusaError | any, 
-    req: MedusaRequest, 
-    res: MedusaResponse, 
-    next: MedusaNextFunction
+    error: SwitchyardError | any, 
+    req: SwitchyardRequest, 
+    res: SwitchyardResponse, 
+    next: SwitchyardNextFunction
   ) => {
     Sentry.captureException(error)
     return originalErrorHandler(error, req, res, next)
@@ -325,17 +325,17 @@ export default defineMiddlewares({
 })
 ```
 
-You export the `defineMiddlewares` function that allows you to apply middlewares and customize Medusa's default error handler.
+You export the `defineMiddlewares` function that allows you to apply middlewares and customize Switchyard's default error handler.
 
 The function accepts an object with the `errorHandler` property, whose value is a custom function that handles errors thrown in API routes.
 
 In the custom error handler, you first capture the error in Sentry using `Sentry.captureException(error)`. This allows Sentry to track the error and its context.
 
-Then, you call the original error handler function that Medusa uses to handle errors in API routes. By using this function, you retain Medusa's default error handling behavior of returning the error response to the client.
+Then, you call the original error handler function that Switchyard uses to handle errors in API routes. By using this function, you retain Switchyard's default error handling behavior of returning the error response to the client.
 
 ### Test Error Capturing in Sentry
 
-To test out error capturing in Sentry, start the Medusa application if it's not already running:
+To test out error capturing in Sentry, start the Switchyard application if it's not already running:
 
 ```bash npm2yarn
 npm run dev
@@ -360,19 +360,19 @@ If you check the tracing page in your Sentry dashboard, you'll see a new trace f
 
 You'll find in the tracing page the thrown error highlighted in red, indicating that it was captured by Sentry.
 
-![Sentry trace details with error message](https://res.cloudinary.com/dza7lstvk/image/upload/v1750347022/Medusa%20Resources/CleanShot_2025-06-19_at_18.29.57_2x_aenvrd.png)
+![Sentry trace details with error message](https://res.cloudinary.com/dza7lstvk/image/upload/v1750347022/Switchyard%20Resources/CleanShot_2025-06-19_at_18.29.57_2x_aenvrd.png)
 
 If you click on the error, you can view more details about it, such as its stack trace, how many times it occurred, its breadcrumbs, and more.
 
-![Error details in Sentry](https://res.cloudinary.com/dza7lstvk/image/upload/v1750347022/Medusa%20Resources/CleanShot_2025-06-19_at_18.30.07_2x_oz5y9e.png)
+![Error details in Sentry](https://res.cloudinary.com/dza7lstvk/image/upload/v1750347022/Switchyard%20Resources/CleanShot_2025-06-19_at_18.30.07_2x_oz5y9e.png)
 
-By capturing HTTP request errors in Sentry, you can now monitor and track errors in your Medusa application effectively. You can also set up alerts in Sentry to get notified about critical issues and handle them promptly.
+By capturing HTTP request errors in Sentry, you can now monitor and track errors in your Switchyard application effectively. You can also set up alerts in Sentry to get notified about critical issues and handle them promptly.
 
 ---
 
 ## Next Steps
 
-You've now integrated Sentry with your Medusa application. You can continue using Sentry to monitor your application's performance and track errors.
+You've now integrated Sentry with your Switchyard application. You can continue using Sentry to monitor your application's performance and track errors.
 
 You can also expand on your Sentry integration by enabling more features, such as:
 
@@ -380,9 +380,9 @@ You can also expand on your Sentry integration by enabling more features, such a
 - [Profiling](https://docs.sentry.io/platforms/javascript/guides/nextjs/profiling/node/) to analyze your application's performance and identify bottlenecks.
 - [User feedback](https://docs.sentry.io/product/user-feedback/) to collect feedback in your frontend from users about their experience with your application.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -392,6 +392,6 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
-3. Contact the [sales team](https://medusajs.com/contact/) to get help from the Medusa team.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.
+3. Contact the [sales team](https://switchyard.com/contact/) to get help from the Switchyard team.

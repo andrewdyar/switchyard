@@ -2,8 +2,8 @@ import {
   Adjustments,
   AdjustmentsDone,
   ExclamationCircle,
-} from "@medusajs/icons"
-import { Button, DropdownMenu, clx } from "@medusajs/ui"
+} from "@switchyard/icons"
+import { Button, DropdownMenu, clx } from "@switchyard/ui"
 import {
   Cell,
   CellContext,

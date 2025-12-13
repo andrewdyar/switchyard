@@ -1,5 +1,5 @@
-import { ApiKeyType } from "@medusajs/utils"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { ApiKeyType } from "@switchyard/utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,

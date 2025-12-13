@@ -20,7 +20,7 @@
  *     type: object
  *     description: The return reason's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.com/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  * required:
  *   - value

@@ -28,7 +28,7 @@ const allReferences = [
   "fulfillment-provider",
   "helper-steps",
   "js-sdk",
-  "medusa",
+  "switchyard",
   "modules-sdk",
   "notification",
   "payment-provider",

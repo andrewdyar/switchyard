@@ -8,9 +8,9 @@ export const metadata = {
 
 In the previous two chapters, you created a [Brand Module](../module/page.mdx) that added the concepts of brands to your application, then created a [workflow to create a brand](../workflow/page.mdx). In this chapter, you'll expose an API route that allows admin users to create a brand using the workflow from the previous chapter.
 
-An API Route is an endpoint that acts as an entry point for other clients to interact with your Medusa customizations, such as the admin dashboard, storefronts, or third-party systems.
+An API Route is an endpoint that acts as an entry point for other clients to interact with your Switchyard customizations, such as the admin dashboard, storefronts, or third-party systems.
 
-The Medusa core application provides a set of [admin](!api!/admin) and [store](!api!/store) API routes out-of-the-box. You can also create custom API routes to expose your custom functionalities.
+The Switchyard core application provides a set of [admin](!api!/admin) and [store](!api!/store) API routes out-of-the-box. You can also create custom API routes to expose your custom functionalities.
 
 <Prerequisites
   items={[
@@ -33,13 +33,13 @@ Learn more about API routes [in this guide](../../../fundamentals/api-routes/pag
 
 The route's path is the path of `route.{ts,js}` relative to `src/api`. So, to create the API route at `/admin/brands`, create the file `src/api/admin/brands/route.ts` with the following content:
 
-![Directory structure of the Medusa application after adding the route](https://res.cloudinary.com/dza7lstvk/image/upload/v1732869882/Medusa%20Book/brand-route-dir-overview-2_hjqlnf.jpg)
+![Directory structure of the Switchyard application after adding the route](https://res.cloudinary.com/dza7lstvk/image/upload/v1732869882/Switchyard%20Book/brand-route-dir-overview-2_hjqlnf.jpg)
 
 ```ts title="src/api/admin/brands/route.ts"
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { 
   createBrandWorkflow,
 } from "../../../workflows/create-brand"
@@ -49,8 +49,8 @@ type PostAdminCreateBrandType = {
 }
 
 export const POST = async (
-  req: MedusaRequest<PostAdminCreateBrandType>,
-  res: MedusaResponse
+  req: SwitchyardRequest<PostAdminCreateBrandType>,
+  res: SwitchyardResponse
 ) => {
   const { result } = await createBrandWorkflow(req.scope)
     .run({
@@ -63,15 +63,15 @@ export const POST = async (
 
 You export a route handler function with its name (`POST`) being the HTTP method of the API route you're exposing.
 
-The function receives two parameters: a `MedusaRequest` object to access request details, and `MedusaResponse` object to return or manipulate the response. The `MedusaRequest` object's `scope` property is the [Medusa container](../../../fundamentals/medusa-container/page.mdx) that holds Framework tools and custom and core modules' services.
+The function receives two parameters: a `SwitchyardRequest` object to access request details, and `SwitchyardResponse` object to return or manipulate the response. The `SwitchyardRequest` object's `scope` property is the [Switchyard container](../../../fundamentals/medusa-container/page.mdx) that holds Framework tools and custom and core modules' services.
 
 <Note title="Tip">
 
-`MedusaRequest` accepts the request body's type as a type argument.
+`SwitchyardRequest` accepts the request body's type as a type argument.
 
 </Note>
 
-In the API route's handler, you execute the `createBrandWorkflow` by invoking it and passing the Medusa container `req.scope` as a parameter, then invoking its `run` method. You pass the workflow's input in the `input` property of the `run` method's parameter. You pass the request body's parameters using the `validatedBody` property of `MedusaRequest`.
+In the API route's handler, you execute the `createBrandWorkflow` by invoking it and passing the Switchyard container `req.scope` as a parameter, then invoking its `run` method. You pass the workflow's input in the `input` property of the `run` method's parameter. You pass the request body's parameters using the `validatedBody` property of `SwitchyardRequest`.
 
 You return a JSON response with the created brand using the `res.json` method.
 
@@ -81,7 +81,7 @@ You return a JSON response with the created brand using the `res.json` method.
 
 The API route you created accepts the brand's name in the request body. So, you'll create a schema used to validate incoming request body parameters.
 
-Medusa uses [Zod](https://zod.dev/) to create validation schemas. These schemas are then used to validate incoming request bodies or query parameters.
+Switchyard uses [Zod](https://zod.dev/) to create validation schemas. These schemas are then used to validate incoming request bodies or query parameters.
 
 <Note>
 
@@ -91,7 +91,7 @@ Learn more about API route validation in [this chapter](../../../fundamentals/ap
 
 You create a validation schema in a TypeScript or JavaScript file under a sub-directory of the `src/api` directory. So, create the file `src/api/admin/brands/validators.ts` with the following content:
 
-![Directory structure of Medusa application after adding validators file](https://res.cloudinary.com/dza7lstvk/image/upload/v1732869806/Medusa%20Book/brand-route-dir-overview-1_yfyjss.jpg)
+![Directory structure of Switchyard application after adding validators file](https://res.cloudinary.com/dza7lstvk/image/upload/v1732869806/Switchyard%20Book/brand-route-dir-overview-1_yfyjss.jpg)
 
 ```ts title="src/api/admin/brands/validators.ts"
 import { z } from "zod"
@@ -127,17 +127,17 @@ Learn more about middlewares in [this chapter](../../../fundamentals/api-routes/
 
 </Note>
 
-Medusa provides a `validateAndTransformBody` middleware that accepts a Zod validation schema and returns a response error if a request is sent with body parameters that don't satisfy the validation schema.
+Switchyard provides a `validateAndTransformBody` middleware that accepts a Zod validation schema and returns a response error if a request is sent with body parameters that don't satisfy the validation schema.
 
 Middlewares are defined in the special file `src/api/middlewares.ts`. So, to add the validation middleware on the API route you created in the previous step, create the file `src/api/middlewares.ts` with the following content:
 
-![Directory structure of the Medusa application after adding the middleware](https://res.cloudinary.com/dza7lstvk/image/upload/v1732869977/Medusa%20Book/brand-route-dir-overview-3_kcx511.jpg)
+![Directory structure of the Switchyard application after adding the middleware](https://res.cloudinary.com/dza7lstvk/image/upload/v1732869977/Switchyard%20Book/brand-route-dir-overview-3_kcx511.jpg)
 
 ```ts title="src/api/middlewares.ts"
 import { 
   defineMiddlewares,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { PostAdminCreateBrand } from "./admin/brands/validators"
 
 export default defineMiddlewares({
@@ -161,13 +161,13 @@ In the middleware object, you define three properties:
 - `method`: The HTTP method to restrict the middleware to, which is `POST`.
 - `middlewares`: An array of middlewares to apply on the route. You pass the `validateAndTransformBody` middleware, passing it the Zod schema you created earlier.
 
-The Medusa application will now validate the body parameters of `POST` requests sent to `/admin/brands` to ensure they match the Zod validation schema. If not, an error is returned in the response specifying the issues to fix in the request body.
+The Switchyard application will now validate the body parameters of `POST` requests sent to `/admin/brands` to ensure they match the Zod validation schema. If not, an error is returned in the response specifying the issues to fix in the request body.
 
 ---
 
 ## Test API Route
 
-To test out the API route, start the Medusa application with the following command:
+To test out the API route, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -238,6 +238,6 @@ By following the previous example chapters, you implemented a custom feature tha
 
 ## Next Steps: Associate Brand with Product
 
-Now that you have brands in your Medusa application, you want to associate a brand with a product, which is defined in the [Product Module](!resources!/commerce-modules/product).
+Now that you have brands in your Switchyard application, you want to associate a brand with a product, which is defined in the [Product Module](!resources!/commerce-modules/product).
 
 In the next chapters, you'll learn how to build associations between data models defined in different modules.

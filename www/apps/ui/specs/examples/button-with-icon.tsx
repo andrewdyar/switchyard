@@ -1,5 +1,5 @@
-import { PlusMini } from "@medusajs/icons"
-import { Button } from "@medusajs/ui"
+import { PlusMini } from "@switchyard/icons"
+import { Button } from "@switchyard/ui"
 
 export default function ButtonWithIcon() {
   return (

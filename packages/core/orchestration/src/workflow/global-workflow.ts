@@ -1,6 +1,6 @@
-import { Context, LoadedModule, MedusaContainer } from "@medusajs/types"
-import { createMedusaContainer } from "@medusajs/utils"
-import { asValue } from "@medusajs/deps/awilix"
+import { Context, LoadedModule, SwitchyardContainer } from "@switchyard/types"
+import { createSwitchyardContainer } from "@switchyard/utils"
+import { asValue } from "@switchyard/deps/awilix"
 
 import {
   DistributedTransactionEvents,
@@ -10,12 +10,12 @@ import { WorkflowDefinition, WorkflowManager } from "./workflow-manager"
 
 export class GlobalWorkflow extends WorkflowManager {
   protected static workflows: Map<string, WorkflowDefinition> = new Map()
-  protected container: MedusaContainer
+  protected container: SwitchyardContainer
   protected context: Context
   protected subscribe: DistributedTransactionEvents
 
   constructor(
-    modulesLoaded?: LoadedModule[] | MedusaContainer,
+    modulesLoaded?: LoadedModule[] | SwitchyardContainer,
     context?: Context,
     subscribe?: DistributedTransactionEvents
   ) {
@@ -25,12 +25,12 @@ export class GlobalWorkflow extends WorkflowManager {
 
     if (!Array.isArray(modulesLoaded) && modulesLoaded) {
       if (!("cradle" in modulesLoaded)) {
-        container = createMedusaContainer(modulesLoaded)
+        container = createSwitchyardContainer(modulesLoaded)
       } else {
         container = modulesLoaded
       }
     } else if (Array.isArray(modulesLoaded) && modulesLoaded.length) {
-      container = createMedusaContainer()
+      container = createSwitchyardContainer()
 
       for (const mod of modulesLoaded || []) {
         const keyName = mod.__definition.key

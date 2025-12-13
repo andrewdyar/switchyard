@@ -6,11 +6,11 @@ export const metadata = {
 
 # {metadata.title}
 
-The Local Analytics Module Provider is a simple analytics provider for Medusa that logs analytics events to the console. It's useful for development and debugging purposes.
+The Local Analytics Module Provider is a simple analytics provider for Switchyard that logs analytics events to the console. It's useful for development and debugging purposes.
 
 <Note>
 
-The Analytics Module and its providers are available starting [Medusa v2.8.3](https://github.com/medusajs/medusa/releases/tag/v2.8.3).
+The Analytics Module and its providers are available starting [Switchyard v2.8.3](https://github.com/switchyard/medusa/releases/tag/v2.8.3).
 
 </Note>
 
@@ -22,20 +22,20 @@ Add the module into the `provider` object of the Analytics Module:
 
 <Note>
 
-You can use only one Analytics Module Provider in your Medusa application.
+You can use only one Analytics Module Provider in your Switchyard application.
 
 </Note>
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/analytics",
+      resolve: "@switchyard/medusa/analytics",
       options: {
         providers: [
           {
-            resolve: "@medusajs/analytics-local",
+            resolve: "@switchyard/analytics-local",
             id: "local",
           },
         ],
@@ -77,11 +77,11 @@ export const workflowHighlights = [
 ]
 
 ```ts title="src/workflows/track-order-placed.ts" highlights={workflowHighlights}
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
-import { Modules } from "@medusajs/framework/utils"
-import { OrderDTO } from "@medusajs/framework/types"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { OrderDTO } from "@switchyard/framework/types"
 
 type StepInput = {
   order: OrderDTO
@@ -136,7 +136,7 @@ export const trackOrderPlacedWorkflow = createWorkflow(
 
 This workflow retrieves the order details using the `useQueryGraphStep` and then tracks the order placement event using the `trackOrderPlacedStep`.
 
-In the step, you resolve the service of the Analytics Module from the [Medusa container](!docs!/learn/fundamentals/medusa-container) and use its `track` method to track the event. This method will use the underlying provider configured (which is the Local Analytics Module Provider, in this case) to track the event.
+In the step, you resolve the service of the Analytics Module from the [Switchyard container](!docs!/learn/fundamentals/medusa-container) and use its `track` method to track the event. This method will use the underlying provider configured (which is the Local Analytics Module Provider, in this case) to track the event.
 
 Next, create a subscriber at `src/subscribers/order-placed.ts` with the following content:
 
@@ -144,7 +144,7 @@ Next, create a subscriber at `src/subscribers/order-placed.ts` with the followin
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { trackOrderPlacedWorkflow } from "../workflows/track-order-placed"
 
 export default async function orderPlacedHandler({
@@ -165,7 +165,7 @@ export const config: SubscriberConfig = {
 
 This subscriber listens to the `order.placed` event and executes the `trackOrderPlacedWorkflow` workflow, passing the order ID as input.
 
-You'll now track the order placement event whenever an order is placed in your Medusa application. You can test this out by placing an order and checking the server's logs for the tracked event.
+You'll now track the order placement event whenever an order is placed in your Switchyard application. You can test this out by placing an order and checking the server's logs for the tracked event.
 
 ---
 

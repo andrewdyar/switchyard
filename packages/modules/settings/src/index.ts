@@ -1,6 +1,6 @@
 import { SettingsModuleService } from "@/services"
-import { Module } from "@medusajs/framework/utils"
-import { Modules } from "@medusajs/utils"
+import { Module } from "@switchyard/framework/utils"
+import { Modules } from "@switchyard/utils"
 
 export default Module(Modules.SETTINGS, {
   service: SettingsModuleService,

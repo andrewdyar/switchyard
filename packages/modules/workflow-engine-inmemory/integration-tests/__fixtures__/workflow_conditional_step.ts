@@ -1,10 +1,10 @@
-import { isPresent } from "@medusajs/framework/utils"
+import { isPresent } from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { when } from "@medusajs/framework/workflows-sdk/composer"
+} from "@switchyard/framework/workflows-sdk"
+import { when } from "@switchyard/framework/workflows-sdk/composer"
 
 const step_1 = createStep(
   "step_1",

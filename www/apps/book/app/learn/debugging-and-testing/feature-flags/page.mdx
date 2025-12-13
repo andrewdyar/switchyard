@@ -4,36 +4,36 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn what feature flags are, what the available feature flags in Medusa are, and how to toggle them.
+In this chapter, you'll learn what feature flags are, what the available feature flags in Switchyard are, and how to toggle them.
 
 ## What are Feature Flags?
 
 Feature flags allow you to ship new features that are still under development and testing, but not ready for production or wide use yet.
 
-Medusa uses feature flags to ship new versions even when some features are not fully ready. This approach allows our team to continuously deliver updates and improvements while stabilizing new features.
+Switchyard uses feature flags to ship new versions even when some features are not fully ready. This approach allows our team to continuously deliver updates and improvements while stabilizing new features.
 
 ---
 
-## Available Feature Flags in Medusa
+## Available Feature Flags in Switchyard
 
-For a list of features hidden behind a feature flag in Medusa, check out the [feature-flags](https://github.com/medusajs/medusa/tree/develop/packages/medusa/src/feature-flags) directory in the `@medusajs/medusa` package.
+For a list of features hidden behind a feature flag in Switchyard, check out the [feature-flags](https://github.com/switchyard/medusa/tree/develop/packages/medusa/src/feature-flags) directory in the `@switchyard/medusa` package.
 
 ---
 
 ## Toggle Feature Flags
 
-There are multiple ways to enable or disable feature flags in Medusa:
+There are multiple ways to enable or disable feature flags in Switchyard:
 
-- In the `medusa-config.ts` file;
+- In the `switchyard.config.ts` file;
 - Or using environment variables.
 
-### 1. Using the `medusa-config.ts` file
+### 1. Using the `switchyard.config.ts` file
 
-The Medusa configurations in `medusa-config.ts` accept a `featureFlags` configuration to toggle feature flags. Its value is an object whose key is the feature flag key (defined in the feature flag's file), and the value is a boolean indicating whether the feature is enabled.
+The Switchyard configurations in `switchyard.config.ts` accept a `featureFlags` configuration to toggle feature flags. Its value is an object whose key is the feature flag key (defined in the feature flag's file), and the value is a boolean indicating whether the feature is enabled.
 
-For example, to enable the [Index Module](../../fundamentals/module-links/index-module/page.mdx)'s feature flag in `medusa-config.ts`:
+For example, to enable the [Index Module](../../fundamentals/module-links/index-module/page.mdx)'s feature flag in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   featureFlags: {
@@ -86,8 +86,8 @@ export const middlewareHighlights = [
 ]
 
 ```ts title="src/api/middlewares.ts" highlights={middlewareHighlights}
-import { defineMiddlewares } from "@medusajs/framework/http"
-import { FeatureFlag } from "@medusajs/framework/utils"
+import { defineMiddlewares } from "@switchyard/framework/http"
+import { FeatureFlag } from "@switchyard/framework/utils"
 
 export default defineMiddlewares({
   routes: [
@@ -123,12 +123,12 @@ export const apiRouteHighlights = [
 ]
 
 ```ts title="src/api/routes/custom.ts" highlights={apiRouteHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
-import { defineFileConfig, FeatureFlag } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
+import { defineFileConfig, FeatureFlag } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   res.json({
     message: "Hello World",
@@ -162,7 +162,7 @@ export const widgetHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-details.tsx" highlights={widgetHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
 import { sdk } from "../lib/sdk"
 import { useQuery } from "@tanstack/react-query"
 

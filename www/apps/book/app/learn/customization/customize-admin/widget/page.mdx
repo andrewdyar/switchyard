@@ -11,7 +11,7 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll customize the product details page of the Medusa Admin dashboard to show the product's [brand](../../custom-features/module/page.mdx). You'll create a widget that is injected into a pre-defined zone in the page, and in the widget you'll retrieve the product's brand from the server and display it.
+In this chapter, you'll customize the product details page of the Switchyard Admin dashboard to show the product's [brand](../../custom-features/module/page.mdx). You'll create a widget that is injected into a pre-defined zone in the page, and in the widget you'll retrieve the product's brand from the server and display it.
 
 <Prerequisites
   items={[
@@ -24,16 +24,16 @@ In this chapter, you'll customize the product details page of the Medusa Admin d
 
 ## 1. Initialize JS SDK
 
-In your custom widget, you'll retrieve the product's brand by sending a request to the Medusa server. Medusa has a [JS SDK](!resources!/js-sdk) that simplifies sending requests to the server's API routes.
+In your custom widget, you'll retrieve the product's brand by sending a request to the Switchyard server. Switchyard has a [JS SDK](!resources!/js-sdk) that simplifies sending requests to the server's API routes.
 
 So, you'll start by configuring the JS SDK. Create the file `src/admin/lib/sdk.ts` with the following content:
 
-![The directory structure of the Medusa application after adding the file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733414606/Medusa%20Book/brands-admin-dir-overview-1_jleg0t.jpg)
+![The directory structure of the Switchyard application after adding the file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733414606/Switchyard%20Book/brands-admin-dir-overview-1_jleg0t.jpg)
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -44,13 +44,13 @@ export const sdk = new Medusa({
 
 You initialize the SDK passing it the following options:
 
-- `baseUrl`: The URL to the Medusa server.
+- `baseUrl`: The URL to the Switchyard server.
 - `debug`: Whether to enable logging debug messages. This should only be enabled in development.
-- `auth.type`: The authentication method used in the client application, which is `session` in the Medusa Admin dashboard.
+- `auth.type`: The authentication method used in the client application, which is `session` in the Switchyard Admin dashboard.
 
-Notice that you use `import.meta.env` to access environment variables in your customizations because the Medusa Admin is built on top of Vite. Learn more in [this chapter](../../../fundamentals/admin/environment-variables/page.mdx).
+Notice that you use `import.meta.env` to access environment variables in your customizations because the Switchyard Admin is built on top of Vite. Learn more in [this chapter](../../../fundamentals/admin/environment-variables/page.mdx).
 
-You can now use the SDK to send requests to the Medusa server.
+You can now use the SDK to send requests to the Switchyard server.
 
 <Note>
 
@@ -62,7 +62,7 @@ Learn more about the JS SDK and its options in [this reference](!resources!/js-s
 
 ## 2. Add Widget to Product Details Page
 
-You'll now add a widget to the product-details page. A widget is a React component that's injected into pre-defined zones in the Medusa Admin dashboard. It's created in a `.tsx` file under the `src/admin/widgets` directory.
+You'll now add a widget to the product-details page. A widget is a React component that's injected into pre-defined zones in the Switchyard Admin dashboard. It's created in a `.tsx` file under the `src/admin/widgets` directory.
 
 <Note>
 
@@ -72,7 +72,7 @@ Learn more about widgets in [this documentation](../../../fundamentals/admin/wid
 
 To create a widget that shows a product's brand in its details page, create the file `src/admin/widgets/product-brand.tsx` with the following content:
 
-![Directory structure of the Medusa application after adding the widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1733414684/Medusa%20Book/brands-admin-dir-overview-2_eq5xhi.jpg)
+![Directory structure of the Switchyard application after adding the widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1733414684/Switchyard%20Book/brands-admin-dir-overview-2_eq5xhi.jpg)
 
 export const highlights = [
   ["14", "ProductBrandWidget", "Widget to inject into the page"],
@@ -86,9 +86,9 @@ export const highlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-brand.tsx" highlights={highlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { DetailWidgetProps, AdminProduct } from "@medusajs/framework/types"
-import { clx, Container, Heading, Text } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { DetailWidgetProps, AdminProduct } from "@switchyard/framework/types"
+import { clx, Container, Heading, Text } from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
 
@@ -152,7 +152,7 @@ A widget's file must export:
 
 Since the widget is injected at the top of the product details page, the widget receives the product's details as a parameter.
 
-In the widget, you use [Tanstack (React) Query](https://tanstack.com/query/latest) to query the Medusa server. Tanstack Query provides features like asynchronous state management and optimized caching. In the `queryFn` function that executes the query, you use the JS SDK to send a request to the [Get Product API Route](!api!/admin#products_getproductsid), passing `+brand.*` in the `fields` query parameter to retrieve the product's brand.
+In the widget, you use [Tanstack (React) Query](https://tanstack.com/query/latest) to query the Switchyard server. Tanstack Query provides features like asynchronous state management and optimized caching. In the `queryFn` function that executes the query, you use the JS SDK to send a request to the [Get Product API Route](!api!/admin#products_getproductsid), passing `+brand.*` in the `fields` query parameter to retrieve the product's brand.
 
 <Note type="warning">
 
@@ -160,13 +160,13 @@ Do not install Tanstack Query as that will cause unexpected errors in your devel
 
 </Note>
 
-You then render a section that shows the brand's name. In admin customizations, use components from the [Medusa UI package](!ui!) to maintain a consistent user interface and design in the dashboard.
+You then render a section that shows the brand's name. In admin customizations, use components from the [Switchyard UI package](!ui!) to maintain a consistent user interface and design in the dashboard.
 
 ---
 
 ## Test it Out
 
-To test out your widget, start the Medusa application:
+To test out your widget, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -174,7 +174,7 @@ npm run dev
 
 Then, open the admin dashboard at `http://localhost:9000/app`. After you log in, open the page of a product that has a brand. You'll see a new section at the top showing the brand's name.
 
-![The widget is added as the first section of the product details page.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733414415/Medusa%20Book/Screenshot_2024-12-05_at_5.59.25_PM_y85m14.png)
+![The widget is added as the first section of the product details page.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733414415/Switchyard%20Book/Screenshot_2024-12-05_at_5.59.25_PM_y85m14.png)
 
 ---
 
@@ -182,7 +182,7 @@ Then, open the admin dashboard at `http://localhost:9000/app`. After you log in,
 
 When building your widget, you may need more complicated components. For example, you may add a form to the above widget to set the product's brand.
 
-The [Admin Components guides](!resources!/admin-components) show you how to build and use common components in the Medusa Admin, such as forms, tables, JSON data viewer, and more. The components in the guides also follow the Medusa Admin's design convention.
+The [Admin Components guides](!resources!/admin-components) show you how to build and use common components in the Switchyard Admin, such as forms, tables, JSON data viewer, and more. The components in the guides also follow the Switchyard Admin's design convention.
 
 ---
 

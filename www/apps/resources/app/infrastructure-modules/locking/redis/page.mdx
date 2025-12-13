@@ -6,9 +6,9 @@ export const metadata = {
 
 # {metadata.title}
 
-The Redis Locking Module Provider uses Redis to manage locks across multiple instances of Medusa. Redis ensures that locks are globally available, which is ideal for distributed environments.
+The Redis Locking Module Provider uses Redis to manage locks across multiple instances of Switchyard. Redis ensures that locks are globally available, which is ideal for distributed environments.
 
-This provider is recommended for production environments where Medusa is running in a multi-instance setup.
+This provider is recommended for production environments where Switchyard is running in a multi-instance setup.
 
 <Note title="Using Cloud?">
 
@@ -29,18 +29,18 @@ Our Cloud offering automatically provisions a Redis instance and configures the 
   ]}
 />
 
-To register the Redis Locking Module Provider, add it to the list of providers of the Locking Module in `medusa-config.ts`:
+To register the Redis Locking Module Provider, add it to the list of providers of the Locking Module in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/locking",
+      resolve: "@switchyard/medusa/locking",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/locking-redis",
+            resolve: "@switchyard/medusa/locking-redis",
             id: "locking-redis",
             // set this if you want this provider to be used by default
             // and you have other Locking Module Providers registered.
@@ -223,7 +223,7 @@ The default Redis URL in a local environment is `redis://localhost:6379`.
 
 ## Test out the Module
 
-To test out the Redis Locking Module Provider, start the Medusa application:
+To test out the Redis Locking Module Provider, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -249,16 +249,16 @@ export const defaultHighlights = [
   ["11", "is_default"]
 ]
 
-```ts title="medusa-config.ts" highlights={defaultHighlights}
+```ts title="switchyard.config.ts" highlights={defaultHighlights}
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/locking",
+      resolve: "@switchyard/medusa/locking",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/locking-redis",
+            resolve: "@switchyard/medusa/locking-redis",
             id: "locking-redis",
             is_default: true,
             options: {
@@ -277,8 +277,8 @@ If you use the Locking Module in your customizations, the Redis Locking Module P
 For example, when using the `acquire` method in a [workflow step](!docs!/learn/fundamentals/workflows):
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",

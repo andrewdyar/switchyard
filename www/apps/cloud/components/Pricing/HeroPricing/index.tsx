@@ -1,5 +1,5 @@
 import React from "react"
-import { CheckCircleSolid } from "@medusajs/icons"
+import { CheckCircleSolid } from "@switchyard/icons"
 import { HeroPricingFields } from "../../../utils/types"
 import { H3, Button } from "docs-ui"
 import clsx from "clsx"
@@ -141,7 +141,7 @@ const HeroPricing: React.FC<HeroPricingProps> = ({ data }) => {
               {option.buttons.map((button) => (
                 <Link
                   key={button._key}
-                  href={`https://medusajs.com${button.link.path}`}
+                  href={`https://switchyard.com${button.link.path}`}
                   target="_blank"
                   rel="noreferrer"
                 >

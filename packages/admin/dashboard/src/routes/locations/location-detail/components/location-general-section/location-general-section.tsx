@@ -6,8 +6,8 @@ import {
   Plus,
   Trash,
   TriangleDownMini,
-} from "@medusajs/icons"
-import { HttpTypes } from "@medusajs/types"
+} from "@switchyard/icons"
+import { HttpTypes } from "@switchyard/types"
 import {
   Badge,
   Container,
@@ -18,7 +18,7 @@ import {
   Text,
   toast,
   usePrompt,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"

@@ -1,12 +1,12 @@
-import { IWorkflowEngineService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { IWorkflowEngineService } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@switchyard/framework/workflows-sdk"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { setTimeout as setTimeoutSync } from "timers"
 import { setTimeout as setTimeoutPromise } from "timers/promises"
 import { ulid } from "ulid"

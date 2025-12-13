@@ -2,7 +2,7 @@
  * Medusa JS SDK initialization for admin widgets
  */
 
-import Medusa from "@medusajs/js-sdk"
+import Medusa from "@switchyard/js-sdk"
 
 export const sdk = new Medusa({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",

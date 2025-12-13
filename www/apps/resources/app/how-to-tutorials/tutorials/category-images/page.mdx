@@ -10,7 +10,7 @@ products:
   - product
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
@@ -19,26 +19,26 @@ export const metadata = {
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to add images to product categories in Medusa.
+In this tutorial, you'll learn how to add images to product categories in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with the Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out of the box.
+When you install a Switchyard application, you get a fully-fledged commerce platform with the Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out of the box.
 
-Medusa doesn't natively support adding images to product categories. However, it provides the customization capabilities you need to implement this feature.
+Switchyard doesn't natively support adding images to product categories. However, it provides the customization capabilities you need to implement this feature.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa with the Next.js Starter Storefront.
+- Install and set up Switchyard with the Next.js Starter Storefront.
 - Define data models for product category images and the logic to manage them.
-- Customize the Medusa Admin dashboard to manage category images.
+- Customize the Switchyard Admin dashboard to manage category images.
 - Customize the Next.js Starter Storefront to add a megamenu that shows category thumbnails, and show a banner image on category pages.
 
-![Diagram showing the relation between product categories and their images](https://res.cloudinary.com/dza7lstvk/image/upload/v1760522310/Medusa%20Resources/category-images-summary_l1duwj.jpg)
+![Diagram showing the relation between product categories and their images](https://res.cloudinary.com/dza7lstvk/image/upload/v1760522310/Switchyard%20Resources/category-images-summary_l1duwj.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/category-images",
+    href: "https://github.com/switchyard/examples/tree/main/category-images",
     title: "Full Code",
     text: "Find the full code for this tutorial in this repository.",
     icon: Github,
@@ -53,7 +53,7 @@ By following this tutorial, you'll learn how to:
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -70,27 +70,27 @@ By following this tutorial, you'll learn how to:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -98,7 +98,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Product Media Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 <Note>
 
@@ -114,7 +114,7 @@ Create the directory `src/modules/product-media` that will hold the Product Medi
 
 ### b. Create Data Models
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -136,7 +136,7 @@ export const dataModelHighlights = [
 ]
 
 ```ts title="src/modules/product-media/models/product-category-image.ts" highlights={dataModelHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const ProductCategoryImage = model.define("product_category_image", {
   id: model.id().primaryKey(),
@@ -188,35 +188,35 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Product Media module's service, create the file `src/modules/product-media/service.ts` with the following content:
 
 ```ts title="src/modules/product-media/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import ProductCategoryImage from "./models/product-category-image"
 
-class ProductMediaModuleService extends MedusaService({
+class ProductMediaModuleService extends SwitchyardService({
   ProductCategoryImage,
 }) {}
 
 export default ProductMediaModuleService
 ```
 
-The `ProductMediaModuleService` extends `MedusaService`, which generates a class with data-management methods for your module's data models. This saves you time implementing Create, Read, Update, and Delete (CRUD) methods.
+The `ProductMediaModuleService` extends `SwitchyardService`, which generates a class with data-management methods for your module's data models. This saves you time implementing Create, Read, Update, and Delete (CRUD) methods.
 
 The `ProductMediaModuleService` class now has methods like `createProductCategoryImages` and `retrieveProductCategoryImages`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory](../../../service-factory-reference/page.mdx) reference.
+Find all methods generated by the `SwitchyardService` in [the Service Factory](../../../service-factory-reference/page.mdx) reference.
 
 </Note>
 
 ### d. Create the Module Definition
 
-The final piece of a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Medusa the module's name and its service.
+The final piece of a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Switchyard the module's name and its service.
 
 So, create the file `src/modules/product-media/index.ts` with the following content:
 
 ```ts title="src/modules/product-media/index.ts"
 import ProductMediaModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const PRODUCT_MEDIA_MODULE = "productMedia"
 
@@ -232,13 +232,13 @@ You use the `Module` function to create the module's definition. It accepts two 
 
 You also export the module's name as `PRODUCT_MEDIA_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-After building the module, add it to Medusa's configurations to start using it.
+After building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property with an array containing your custom module:
+In `switchyard.config.ts`, add a `modules` property with an array containing your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -261,18 +261,18 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate migrations for you. To generate a migration for the Product Media Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate migrations for you. To generate a migration for the Product Media Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate productMedia
+npx switchyard db:generate productMedia
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/product-media` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/product-media` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The tables for the data models are now created in the database.
@@ -283,7 +283,7 @@ The tables for the data models are now created in the database.
 
 In this step, you'll implement the logic to create product category images using the Product Media module.
 
-When building commerce features in Medusa that client applications consume, such as the Medusa Admin dashboard or a storefront, you need to implement:
+When building commerce features in Switchyard that client applications consume, such as the Switchyard Admin dashboard or a storefront, you need to implement:
 
 1. A [workflow](!docs!/learn/fundamentals/workflows) with steps that define the feature's business logic.
 2. An [API route](!docs!/learn/fundamentals/api-routes) that exposes the workflow's functionality to client applications.
@@ -292,7 +292,7 @@ In this step, you'll create a workflow and an API route to create product catego
 
 <Note>
 
-You won't implement the functionality to upload the image, as Medusa already exposes an API route to upload files. You'll use that route in the Medusa Admin dashboard to upload images and get their URLs and file IDs.
+You won't implement the functionality to upload the image, as Switchyard already exposes an API route to upload files. You'll use that route in the Switchyard Admin dashboard to upload images and get their URLs and file IDs.
 
 </Note>
 
@@ -344,7 +344,7 @@ The `convertCategoryThumbnailsStep` converts existing thumbnails of a category t
 To create the step, create the file `src/workflows/steps/convert-category-thumbnails.ts` with the following content:
 
 ```ts title="src/workflows/steps/convert-category-thumbnails.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_MEDIA_MODULE } from "../../modules/product-media"
 import ProductMediaModuleService from "../../modules/product-media/service"
 
@@ -368,7 +368,7 @@ You create a step with the `createStep` function. It accepts three parameters:
 1. The step's unique name.
 2. An async function that receives two parameters:
     - The step's input, which is an object containing the categories whose thumbnails to convert.
-    - An object with properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools accessible in the step.
+    - An object with properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools accessible in the step.
 3. An async compensation function that undoes the actions performed by the step function. This function executes only if an error occurs during workflow execution.
 
 Next, define the step's logic that converts existing thumbnails of a category to regular images. Replace the `// TODO: implement step logic` comment in the step function with the following:
@@ -403,7 +403,7 @@ return new StepResponse(existingThumbnails, compensationData)
 
 In the step function, you:
 
-1. Resolve the `ProductMediaModuleService` from the Medusa container to manage product category images.
+1. Resolve the `ProductMediaModuleService` from the Switchyard container to manage product category images.
 2. Retrieve existing thumbnail images for the categories in the input.
 3. If there are no existing thumbnails, return an empty `StepResponse`.
 4. Otherwise, update the existing thumbnails to regular images.
@@ -443,16 +443,16 @@ To create the step, create the file `src/workflows/steps/create-category-images.
 export const createCategoryImagesStepHighlights = [
   ["22", "imagesByCategory", "Group images by category to handle thumbnails efficiently."],
   ["32", "thumbnailImages", "Filter thumbnail images for each category."],
-  ["36", "MedusaError", "Throw an error if more than one thumbnail is being added for a category."],
+  ["36", "SwitchyardError", "Throw an error if more than one thumbnail is being added for a category."],
   ["44", "createProductCategoryImages", "Create all category images."],
   ["58", "deleteProductCategoryImages", "Delete created category images in case of an error."]
 ]
 
 ```ts title="src/workflows/steps/create-category-images.ts" highlights={createCategoryImagesStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_MEDIA_MODULE } from "../../modules/product-media"
 import ProductMediaModuleService from "../../modules/product-media/service"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export type CreateCategoryImagesStepInput = {
   category_images: {
@@ -484,8 +484,8 @@ export const createCategoryImagesStep = createStep(
       
       // If there are new thumbnails for this category, convert existing ones to "image"
       if (thumbnailImages.length > 1) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Only one thumbnail is allowed per category"
         )
       }
@@ -538,7 +538,7 @@ import {
   transform,
   when,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createCategoryImagesStep } from "./steps/create-category-images"
 import { convertCategoryThumbnailsStep } from "./steps/convert-category-thumbnails"
 
@@ -595,7 +595,7 @@ A workflow must return an instance of `WorkflowResponse` that accepts the data t
 
 <Note>
 
-In a workflow, you can't manipulate data or check conditions because Medusa stores an internal representation of the workflow on application startup. Learn more in the [Data Manipulation](!docs!/learn/fundamentals/workflows/variable-manipulation) and [Conditions](!docs!/learn/fundamentals/workflows/conditions) documentation.
+In a workflow, you can't manipulate data or check conditions because Switchyard stores an internal representation of the workflow on application startup. Learn more in the [Data Manipulation](!docs!/learn/fundamentals/workflows/variable-manipulation) and [Conditions](!docs!/learn/fundamentals/workflows/conditions) documentation.
 
 </Note>
 
@@ -620,7 +620,7 @@ export const createApiRouteHighlights = [
 ]
 
 ```ts title="src/api/admin/categories/[category_id]/images/route.ts" highlights={createApiRouteHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { createCategoryImagesWorkflow } from "../../../../../workflows/create-category-images"
 import { z } from "zod"
 
@@ -637,8 +637,8 @@ export const CreateCategoryImagesSchema = z.object({
 type CreateCategoryImagesInput = z.infer<typeof CreateCategoryImagesSchema>
 
 export async function POST(
-  req: MedusaRequest<CreateCategoryImagesInput>,
-  res: MedusaResponse
+  req: SwitchyardRequest<CreateCategoryImagesInput>,
+  res: SwitchyardResponse
 ): Promise<void> {
   const { category_id } = req.params
   const { images } = req.validatedBody
@@ -677,7 +677,7 @@ To apply middleware to a route, create the file `src/api/middlewares.ts` with th
 import { 
   defineMiddlewares, 
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { 
   CreateCategoryImagesSchema,
 } from "./admin/categories/[category_id]/images/route"
@@ -695,7 +695,7 @@ export default defineMiddlewares({
 })
 ```
 
-You apply Medusa's `validateAndTransformBody` middleware to `POST` requests sent to the `/admin/categories/:category_id/images` route. The middleware function accepts a Zod schema that you created in the API route's file.
+You apply Switchyard's `validateAndTransformBody` middleware to `POST` requests sent to the `/admin/categories/:category_id/images` route. The middleware function accepts a Zod schema that you created in the API route's file.
 
 <Note title="Tip">
 
@@ -703,7 +703,7 @@ Refer to the [Middlewares](!docs!/learn/fundamentals/api-routes/middlewares) doc
 
 </Note>
 
-You'll test this API route later when you customize the Medusa Admin.
+You'll test this API route later when you customize the Switchyard Admin.
 
 ---
 
@@ -715,8 +715,8 @@ In `src/api/admin/categories/[category_id]/images/route.ts`, add the following a
 
 ```ts title="src/api/admin/categories/[category_id]/images/route.ts"
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const { category_id } = req.params
   const query = req.scope.resolve("query")
@@ -741,15 +741,15 @@ You use Query to retrieve the images for the category whose ID is specified in t
 
 Finally, you return the retrieved category images in the response.
 
-You'll test this API route next when you customize the Medusa Admin.
+You'll test this API route next when you customize the Switchyard Admin.
 
 ---
 
-## Step 5: Create Product Category Images in Medusa Admin
+## Step 5: Create Product Category Images in Switchyard Admin
 
-In this step, you'll customize the Medusa Admin dashboard to manage a product category's images.
+In this step, you'll customize the Switchyard Admin dashboard to manage a product category's images.
 
-The Medusa Admin dashboard is customizable, allowing you to insert widgets into existing pages or create new pages.
+The Switchyard Admin dashboard is customizable, allowing you to insert widgets into existing pages or create new pages.
 
 <Note title="Tip">
 
@@ -761,14 +761,14 @@ In this step, you'll insert a widget into the product category details page to d
 
 ### a. Initialize JS SDK
 
-To send requests to the Medusa server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Medusa project, but you need to initialize it before using it in your customizations.
+To send requests to the Switchyard server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Switchyard project, but you need to initialize it before using it in your customizations.
 
 Create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -817,13 +817,13 @@ export const categoryMediaWidgetHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/category-media-widget.tsx" highlights={categoryMediaWidgetHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
-import { DetailWidgetProps, AdminProductCategory } from "@medusajs/framework/types"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
+import { DetailWidgetProps, AdminProductCategory } from "@switchyard/framework/types"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
 import { CategoryImage } from "../types"
-import { ThumbnailBadge } from "@medusajs/icons"
+import { ThumbnailBadge } from "@switchyard/icons"
 
 type CategoryImagesResponse = {
   category_images: CategoryImage[]
@@ -893,7 +893,7 @@ export default CategoryMediaWidget
 A widget file must export:
 
 - A default React component. This component renders the widget's UI.
-- A `config` object created with `defineWidgetConfig` from the Admin SDK. It accepts an object with the `zone` property that indicates where the widget will be rendered in the Medusa Admin dashboard.
+- A `config` object created with `defineWidgetConfig` from the Admin SDK. It accepts an object with the `zone` property that indicates where the widget will be rendered in the Switchyard Admin dashboard.
 
 In the widget's component, you use [Tanstack (React) Query](https://tanstack.com/query/latest) to fetch the category images with the JS SDK. You display the images in a grid.
 
@@ -910,7 +910,7 @@ First, you'll create a component that represents a category image in the modal.
 Create the file `src/admin/components/category-media/category-image-item.tsx` with the following content:
 
 ```tsx title="src/admin/components/category-media/category-image-item.tsx"
-import { ThumbnailBadge } from "@medusajs/icons"
+import { ThumbnailBadge } from "@switchyard/icons"
 
 type CategoryImageItemProps = {
   id: string
@@ -955,7 +955,7 @@ Next, you'll create a component that displays a gallery of category images, incl
 Create the file `src/admin/components/category-media/category-image-gallery.tsx` with the following content:
 
 ```tsx title="src/admin/components/category-media/category-image-gallery.tsx"
-import { Text } from "@medusajs/ui"
+import { Text } from "@switchyard/ui"
 import { CategoryImage, UploadedFile } from "../../types"
 import { CategoryImageItem } from "./category-image-item"
 
@@ -1042,7 +1042,7 @@ Create the file `src/admin/components/category-media/category-image-upload.tsx` 
 
 ```tsx title="src/admin/components/category-media/category-image-upload.tsx"
 import { RefObject } from "react"
-import { ArrowDownTray } from "@medusajs/icons"
+import { ArrowDownTray } from "@switchyard/icons"
 
 type CategoryImageUploadProps = {
   fileInputRef: RefObject<HTMLInputElement>
@@ -1198,7 +1198,7 @@ The `useCategoryImageMutations` hook accepts the following parameters:
 
 The hook returns two mutations:
 
-1. `uploadFilesMutation`: A mutation that uploads files using Medusa's existing API route for uploads. This will upload the images to the [configured File Module Provider](../../../infrastructure-modules/file/page.mdx#what-is-a-file-module-provider).
+1. `uploadFilesMutation`: A mutation that uploads files using Switchyard's existing API route for uploads. This will upload the images to the [configured File Module Provider](../../../infrastructure-modules/file/page.mdx#what-is-a-file-module-provider).
 2. `createImagesMutation`: A mutation that creates category images by sending a `POST` request to the API route you created earlier.
 
 You'll later add mutations to update and delete category images.
@@ -1223,7 +1223,7 @@ export const categoryMediaModalHighlights1 = [
 
 ```tsx title="src/admin/components/category-media/category-media-modal.tsx" highlights={categoryMediaModalHighlights1} collapsibleLines="1-8" expandButtonLabel="Show Imports"
 import { useState, useRef } from "react"
-import { FocusModal, Button, Heading, toast } from "@medusajs/ui"
+import { FocusModal, Button, Heading, toast } from "@switchyard/ui"
 import { useQueryClient } from "@tanstack/react-query"
 import { CategoryImage, UploadedFile } from "../../types"
 import { CategoryImageGallery } from "./category-image-gallery"
@@ -1433,7 +1433,7 @@ return (
 )
 ```
 
-You render a modal using the `FocusModal` component from [Medusa UI](!ui!). The modal displays the `CategoryImageGallery` component on the left and the `CategoryImageUpload` component on the right.
+You render a modal using the `FocusModal` component from [Switchyard UI](!ui!). The modal displays the `CategoryImageGallery` component on the left and the `CategoryImageUpload` component on the right.
 
 You also render an "Edit" button that opens the modal when clicked.
 
@@ -1457,9 +1457,9 @@ You add the `CategoryMediaModal` component, passing the category ID and existing
 
 ### Test the Media Widget
 
-You can now test the media widget in the Medusa Admin dashboard.
+You can now test the media widget in the Switchyard Admin dashboard.
 
-Run the following command in the Medusa project directory to start the Medusa server:
+Run the following command in the Switchyard project directory to start the Switchyard server:
 
 ```bash npm2yarn
 npm run dev
@@ -1477,15 +1477,15 @@ If you click the "Edit" button, a modal will open where you can upload new image
 
 <Note>
 
-Images are uploaded to the [configured File Module Provider](../../../infrastructure-modules/file/page.mdx#what-is-a-file-module-provider). If you haven't configured one, images will be uploaded to the `static` folder in your Medusa project.
+Images are uploaded to the [configured File Module Provider](../../../infrastructure-modules/file/page.mdx#what-is-a-file-module-provider). If you haven't configured one, images will be uploaded to the `static` folder in your Switchyard project.
 
 </Note>
 
-![Media widget showing images with upload form](https://res.cloudinary.com/dza7lstvk/image/upload/v1760455846/Medusa%20Resources/CleanShot_2025-10-14_at_18.29.49_2x_vhbn6z.png)
+![Media widget showing images with upload form](https://res.cloudinary.com/dza7lstvk/image/upload/v1760455846/Switchyard%20Resources/CleanShot_2025-10-14_at_18.29.49_2x_vhbn6z.png)
 
 After uploading images, you can click the "Save" button to create the category images. The images will be displayed in the Media section of the category details page.
 
-![Media widget showing images after upload](https://res.cloudinary.com/dza7lstvk/image/upload/v1760456027/Medusa%20Resources/CleanShot_2025-10-14_at_18.33.27_2x_au7nxg.png)
+![Media widget showing images after upload](https://res.cloudinary.com/dza7lstvk/image/upload/v1760456027/Switchyard%20Resources/CleanShot_2025-10-14_at_18.33.27_2x_au7nxg.png)
 
 ---
 
@@ -1495,7 +1495,7 @@ In this step, you'll implement the functionality to update a category image's ty
 
 - Creating a workflow that updates category images.
 - Adding an API route that exposes the workflow's functionality.
-- Updating the Medusa Admin modal to allow updating image types.
+- Updating the Switchyard Admin modal to allow updating image types.
 
 ### a. Update Category Images Workflow
 
@@ -1535,7 +1535,7 @@ The workflow that updates category images has the following steps:
   }}
 />
 
-Medusa provides the `useQueryGraphStep`, and you've already created the `convertCategoryThumbnailsStep` in [step 3](#convertcategorythumbnailsstep). You only need to create the `updateCategoryImagesStep`.
+Switchyard provides the `useQueryGraphStep`, and you've already created the `convertCategoryThumbnailsStep` in [step 3](#convertcategorythumbnailsstep). You only need to create the `updateCategoryImagesStep`.
 
 #### updateCategoryImagesStep
 
@@ -1550,7 +1550,7 @@ export const updateCategoryImagesStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/update-category-images.ts" highlights={updateCategoryImagesStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_MEDIA_MODULE } from "../../modules/product-media"
 import ProductMediaModuleService from "../../modules/product-media/service"
 
@@ -1623,9 +1623,9 @@ import {
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { updateCategoryImagesStep } from "./steps/update-category-images"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { convertCategoryThumbnailsStep } from "./steps/convert-category-thumbnails"
 
 export type UpdateCategoryImagesInput = {
@@ -1690,7 +1690,7 @@ Next, you'll create an API route that exposes the `updateCategoryImagesWorkflow`
 Create the file `src/api/admin/categories/[category_id]/images/batch/route.ts` with the following content:
 
 ```ts title="src/api/admin/categories/[category_id]/images/batch/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import {
   updateCategoryImagesWorkflow,
 } from "../../../../../../workflows/update-category-images"
@@ -1706,8 +1706,8 @@ export const UpdateCategoryImagesSchema = z.object({
 type UpdateCategoryImagesInput = z.infer<typeof UpdateCategoryImagesSchema>
 
 export async function POST(
-  req: MedusaRequest<UpdateCategoryImagesInput>,
-  res: MedusaResponse
+  req: SwitchyardRequest<UpdateCategoryImagesInput>,
+  res: SwitchyardResponse
 ): Promise<void> {
   const { updates } = req.validatedBody
 
@@ -1824,7 +1824,7 @@ Next, add the ability to select a category image in the `CategoryImageItem` comp
 In `src/admin/components/category-media/category-image-item.tsx`, add the following imports at the top of the file:
 
 ```tsx title="src/admin/components/category-media/category-image-item.tsx"
-import { Checkbox, clx } from "@medusajs/ui"
+import { Checkbox, clx } from "@switchyard/ui"
 ```
 
 Then update the `CategoryImageItemProps` type to include two new props:
@@ -1949,10 +1949,10 @@ Lastly, you'll update the `CategoryMediaModal` component to manage the selection
 In `src/admin/components/category-media/category-media-modal.tsx`, add the following import at the top of the file:
 
 ```tsx title="src/admin/components/category-media/category-media-modal.tsx"
-import { CommandBar } from "@medusajs/ui"
+import { CommandBar } from "@switchyard/ui"
 ```
 
-You'll use the `CommandBar` component from Medusa UI to show actions like "Set as Thumbnail" and "Delete".
+You'll use the `CommandBar` component from Switchyard UI to show actions like "Set as Thumbnail" and "Delete".
 
 Then, in the `CategoryMediaModal` component, add a new state variable to manage the selected image IDs:
 
@@ -2139,20 +2139,20 @@ You pass the `selectedImageIds` state and the `handleImageSelection` function to
 
 ### Test Update Functionality
 
-You can now test the update functionality in the Medusa Admin dashboard.
+You can now test the update functionality in the Switchyard Admin dashboard.
 
-Start the Medusa server if it's not already running, and go to a category's details page:
+Start the Switchyard server if it's not already running, and go to a category's details page:
 
 1. Click the "Edit" button in the Media section to open the modal.
 2. Hover over an image and click the checkbox to select it.
 3. You'll see a command bar at the bottom, where you can click "Set as thumbnail" to set the selected image as the thumbnail. You can also press the "t" key as a shortcut.
 4. Click the "Save" button to save the changes.
 
-![Media widget showing command bar with set as thumbnail action](https://res.cloudinary.com/dza7lstvk/image/upload/v1760514879/Medusa%20Resources/CleanShot_2025-10-15_at_10.54.18_2x_qfrwgy.png)
+![Media widget showing command bar with set as thumbnail action](https://res.cloudinary.com/dza7lstvk/image/upload/v1760514879/Switchyard%20Resources/CleanShot_2025-10-15_at_10.54.18_2x_qfrwgy.png)
 
 You'll now see the thumbnail icon on the image in the Media section of the category details page.
 
-![Media widget showing updated thumbnail](https://res.cloudinary.com/dza7lstvk/image/upload/v1760515015/Medusa%20Resources/CleanShot_2025-10-15_at_10.56.24_2x_suv0qr.png)
+![Media widget showing updated thumbnail](https://res.cloudinary.com/dza7lstvk/image/upload/v1760515015/Switchyard%20Resources/CleanShot_2025-10-15_at_10.56.24_2x_suv0qr.png)
 
 ---
 
@@ -2162,7 +2162,7 @@ In this step, you'll implement the functionality to delete category images. This
 
 1. Creating a workflow that deletes category images.
 2. Adding an API route that exposes the workflow's functionality.
-3. Updating the Medusa Admin modal to allow deleting images.
+3. Updating the Switchyard Admin modal to allow deleting images.
 
 ### a. Delete Category Images Workflow
 
@@ -2196,7 +2196,7 @@ The workflow that deletes category images has the following steps:
   }}
 />
 
-The first two steps are available out-of-the-box in Medusa. You only need to create the last step.
+The first two steps are available out-of-the-box in Switchyard. You only need to create the last step.
 
 #### deleteCategoryImagesStep
 
@@ -2211,7 +2211,7 @@ export const deleteCategoryImagesStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/delete-category-images.ts" highlights={deleteCategoryImagesStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_MEDIA_MODULE } from "../../modules/product-media"
 import ProductMediaModuleService from "../../modules/product-media/service"
 
@@ -2286,8 +2286,8 @@ import {
   createWorkflow,
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
-import { deleteFilesWorkflow, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { deleteFilesWorkflow, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { deleteCategoryImagesStep } from "./steps/delete-category-image"
 
 export type DeleteCategoryImagesInput = {
@@ -2361,8 +2361,8 @@ export const DeleteCategoryImagesSchema = z.object({
 type DeleteCategoryImagesInput = z.infer<typeof DeleteCategoryImagesSchema>
 
 export async function DELETE(
-  req: MedusaRequest<DeleteCategoryImagesInput>,
-  res: MedusaResponse
+  req: SwitchyardRequest<DeleteCategoryImagesInput>,
+  res: SwitchyardResponse
 ): Promise<void> {
   const { ids } = req.validatedBody
 
@@ -2700,20 +2700,20 @@ You pass the `imagesToDelete` state to hide images that are marked for deletion.
 
 ### Test Delete Functionality
 
-You can now test the delete functionality in the Medusa Admin dashboard.
+You can now test the delete functionality in the Switchyard Admin dashboard.
 
-Start the Medusa server if it's not already running, and go to a category's details page:
+Start the Switchyard server if it's not already running, and go to a category's details page:
 
 1. Click the "Edit" button in the Media section to open the modal.
 2. Hover over an image and click the checkbox to select it.
 3. You'll see a command bar at the bottom, where you can click "Delete" to mark the selected images for deletion. You can also press the "d" key as a shortcut.
 4. Click the "Save" button to save the changes.
 
-![Media widget showing command bar with delete action](https://res.cloudinary.com/dza7lstvk/image/upload/v1760516694/Medusa%20Resources/CleanShot_2025-10-15_at_11.23.42_2x_k1folo.png)
+![Media widget showing command bar with delete action](https://res.cloudinary.com/dza7lstvk/image/upload/v1760516694/Switchyard%20Resources/CleanShot_2025-10-15_at_11.23.42_2x_k1folo.png)
 
 You'll see the selected images are removed from the Media section of the category details page.
 
-![Media widget showing updated images after deletion](https://res.cloudinary.com/dza7lstvk/image/upload/v1760516693/Medusa%20Resources/CleanShot_2025-10-15_at_11.24.30_2x_rmgtqn.png)
+![Media widget showing updated images after deletion](https://res.cloudinary.com/dza7lstvk/image/upload/v1760516693/Switchyard%20Resources/CleanShot_2025-10-15_at_11.24.30_2x_rmgtqn.png)
 
 ---
 
@@ -2726,9 +2726,9 @@ In the last step, you'll update the [Next.js Starter Storefront](../../../nextjs
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-category-images`, you can find the storefront by going back to the parent directory and changing to the `medusa-category-images-storefront` directory:
+So, if your Switchyard application's directory is `medusa-category-images`, you can find the storefront by going back to the parent directory and changing to the `medusa-category-images-storefront` directory:
 
 ```bash
 cd ../medusa-category-images-storefront # change based on your project name
@@ -2738,7 +2738,7 @@ cd ../medusa-category-images-storefront # change based on your project name
 
 ### a. Add Read-Only Link
 
-Before customizing the storefront, you need a way to retrieve a category's images from the Medusa backend.
+Before customizing the storefront, you need a way to retrieve a category's images from the Switchyard backend.
 
 You can do this by creating a [read-only link](!docs!/learn/fundamentals/module-links/read-only). A read-only link allows you to retrieve data related to a model from another module without compromising [module isolation](!docs!/learn/fundamentals/modules/isolation).
 
@@ -2746,9 +2746,9 @@ You'll create an inverse read-only link from the `ProductCategory` model in the 
 
 To create the link, create the file `src/links/product-category-image.ts` with the following content:
 
-```ts title="src/links/product-category-image.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { defineLink } from "@medusajs/framework/utils"
-import ProductModule from "@medusajs/medusa/product"
+```ts title="src/links/product-category-image.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { defineLink } from "@switchyard/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
 import ProductMediaModule from "../modules/product-media"
 
 export default defineLink(
@@ -2852,7 +2852,7 @@ Next, you'll add a megamenu that shows categories with their thumbnail. You'll t
 To create the megamenu component, create the file `src/modules/layout/components/megamenu/index.tsx` with the following content:
 
 ```tsx title="src/modules/layout/components/megamenu/index.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import { CategoryImage } from "../../../../types/global"
 import Thumbnail from "../../../products/components/thumbnail"
@@ -2962,7 +2962,7 @@ export default async function Nav() {
               className="txt-compact-xlarge-plus hover:text-ui-fg-base uppercase"
               data-testid="nav-store-link"
             >
-              Medusa Store
+              Switchyard Store
             </LocalizedClientLink>
           </div>
 
@@ -3011,9 +3011,9 @@ You make the following key changes:
 
 #### Test Megamenu
 
-To test out the megamenu, start the Medusa application with the following command:
+To test out the megamenu, start the Switchyard application with the following command:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -3027,7 +3027,7 @@ Open the storefront at `http://localhost:8000` in your browser. You'll see the "
 
 Hover over the "Shop" item to see the megamenu with categories and their thumbnails.
 
-![Storefront showing megamenu with categories and their thumbnails](https://res.cloudinary.com/dza7lstvk/image/upload/v1760518332/Medusa%20Resources/CleanShot_2025-10-15_at_11.51.56_2x_mifvqx.png)
+![Storefront showing megamenu with categories and their thumbnails](https://res.cloudinary.com/dza7lstvk/image/upload/v1760518332/Switchyard%20Resources/CleanShot_2025-10-15_at_11.51.56_2x_mifvqx.png)
 
 ### e. Show Banner Image on Category Page
 
@@ -3093,7 +3093,7 @@ import { SortOptions } from "@modules/store/components/refinement-list/sort-prod
 import PaginatedProducts from "@modules/store/templates/paginated-products"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import CategoryBanner from "@modules/categories/components/category-banner"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { CategoryImage } from ".././../../types/global"
 
 type CategoryWithImages = HttpTypes.StoreProductCategory & {
@@ -3203,30 +3203,30 @@ You make the following key changes:
 
 #### Test Category Banner
 
-To test out the category banner, ensure both the Medusa application and the Next.js Starter Storefront are running.
+To test out the category banner, ensure both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, open the storefront at `http://localhost:8000` in your browser. You can navigate to a category page by clicking on a category in the megamenu.
 
-You'll see the banner image at the top of the category page. If you don't see a banner image, ensure that the category has an image of type "image" (not "thumbnail") in the Medusa Admin dashboard.
+You'll see the banner image at the top of the category page. If you don't see a banner image, ensure that the category has an image of type "image" (not "thumbnail") in the Switchyard Admin dashboard.
 
-![Storefront showing category page with banner image](https://res.cloudinary.com/dza7lstvk/image/upload/v1760518495/Medusa%20Resources/CleanShot_2025-10-15_at_11.54.44_2x_muadjw.png)
+![Storefront showing category page with banner image](https://res.cloudinary.com/dza7lstvk/image/upload/v1760518495/Switchyard%20Resources/CleanShot_2025-10-15_at_11.54.44_2x_muadjw.png)
 
 ---
 
 ## Next Steps
 
-You've now added support for category images in Medusa. You can expand on this by:
+You've now added support for category images in Switchyard. You can expand on this by:
 
 - Adding images to other models, such as collections.
 - Adding support for reordering category images.
 - Allowing setting multiple thumbnails for different use cases (for example, mobile vs. desktop).
 - Adding alt text for category images for better accessibility and SEO.
 
-### Learn More About Medusa
+### Learn More About Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn) for a more in-depth understanding of the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn) for a more in-depth understanding of the concepts you've used in this guide and more.
 
-To learn more about the commerce features Medusa provides, check out [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features Switchyard provides, check out [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -3236,5 +3236,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

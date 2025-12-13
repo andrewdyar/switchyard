@@ -4,8 +4,8 @@ import {
   InformationCircle,
   Spinner,
   XCircle,
-} from "@medusajs/icons"
-import { Button, toast } from "@medusajs/ui"
+} from "@switchyard/icons"
+import { Button, toast } from "@switchyard/ui"
 
 export default function ToasterAllVariants() {
   return (

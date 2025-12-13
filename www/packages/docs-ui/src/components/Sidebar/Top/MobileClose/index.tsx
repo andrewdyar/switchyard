@@ -2,7 +2,7 @@
 
 import React from "react"
 import { Button, useSidebar } from "../../../.."
-import { XMarkMini } from "@medusajs/icons"
+import { XMarkMini } from "@switchyard/icons"
 
 export const SidebarTopMobileClose = () => {
   const { setMobileSidebarOpen } = useSidebar()

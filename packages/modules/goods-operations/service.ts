@@ -4,13 +4,13 @@
  * Handles sweeps, pick lists, and driver management.
  */
 
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Sweep } from "./models/sweep"
 import { SweepItem } from "./models/sweep-item"
 import { Driver } from "./models/driver"
 import { PickList, PickListItem } from "./models/pick-list"
 
-class GoodsOperationsModuleService extends MedusaService({
+class GoodsOperationsModuleService extends SwitchyardService({
   Sweep,
   SweepItem,
   Driver,

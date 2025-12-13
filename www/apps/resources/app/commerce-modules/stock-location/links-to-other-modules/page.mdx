@@ -108,13 +108,13 @@ Read-only links are used to query data across modules, but the relations aren't 
 
 A fulfillment set can be conditioned to a specific stock location.
 
-Medusa defines a link between the `FulfillmentSet` and `StockLocation` data models.
+Switchyard defines a link between the `FulfillmentSet` and `StockLocation` data models.
 
-![A diagram showcasing an example of how data models from the Fulfillment and Stock Location modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1712567101/Medusa%20Resources/fulfillment-stock-location_nlkf7e.jpg)
+![A diagram showcasing an example of how data models from the Fulfillment and Stock Location modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1712567101/Switchyard%20Resources/fulfillment-stock-location_nlkf7e.jpg)
 
-Medusa also defines a link between the `FulfillmentProvider` and `StockLocation` data models to indicate the providers that can be used in a location.
+Switchyard also defines a link between the `FulfillmentProvider` and `StockLocation` data models to indicate the providers that can be used in a location.
 
-![A diagram showcasing an example of how data models from the Fulfillment and Stock Location modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1728399492/Medusa%20Resources/fulfillment-provider-stock-location_b0mulo.jpg)
+![A diagram showcasing an example of how data models from the Fulfillment and Stock Location modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1728399492/Switchyard%20Resources/fulfillment-provider-stock-location_b0mulo.jpg)
 
 ### Retrieve with Query
 
@@ -144,7 +144,7 @@ const { data: stockLocations } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -169,7 +169,7 @@ To manage the stock location of a fulfillment set, use [Link](!docs!/learn/funda
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -187,8 +187,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -209,7 +209,7 @@ createRemoteLinkStep({
 
 ## Inventory Module
 
-Medusa defines a read-only link between the [Inventory Module](../../inventory/page.mdx)'s `InventoryLevel` data model and the `StockLocation` data model. Because the link is read-only from the `InventoryLevel`'s side, you can only retrieve the stock location of an inventory level, and not the other way around.
+Switchyard defines a read-only link between the [Inventory Module](../../inventory/page.mdx)'s `InventoryLevel` data model and the `StockLocation` data model. Because the link is read-only from the `InventoryLevel`'s side, you can only retrieve the stock location of an inventory level, and not the other way around.
 
 ### Retrieve with Query
 
@@ -233,7 +233,7 @@ const { data: inventoryLevels } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -256,9 +256,9 @@ const { data: inventoryLevels } = useQueryGraphStep({
 
 A stock location is associated with a sales channel. This scopes inventory quantities in a stock location by the associated sales channel.
 
-Medusa defines a link between the `SalesChannel` and `StockLocation` data models.
+Switchyard defines a link between the `SalesChannel` and `StockLocation` data models.
 
-![A diagram showcasing an example of how resources from the Sales Channel and Stock Location modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1716796872/Medusa%20Resources/sales-channel-location_cqrih1.jpg)
+![A diagram showcasing an example of how resources from the Sales Channel and Stock Location modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1716796872/Switchyard%20Resources/sales-channel-location_cqrih1.jpg)
 
 ### Retrieve with Query
 
@@ -282,7 +282,7 @@ const { data: stockLocations } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -307,7 +307,7 @@ To manage the stock locations of a sales channel, use [Link](!docs!/learn/fundam
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -325,8 +325,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 

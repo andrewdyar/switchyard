@@ -8,14 +8,14 @@ import {
   ReturnDTO,
   ShippingOptionDTO,
   WithCalculatedPrice,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   MathBN,
-  MedusaError,
+  SwitchyardError,
   Modules,
   OrderWorkflowEvents,
   isDefined,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
@@ -24,7 +24,7 @@ import {
   createWorkflow,
   parallelize,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { pricingContextResult } from "../../../cart/utils/schemas"
 import {
   createRemoteLinkStep,
@@ -94,8 +94,8 @@ function validateCustomRefundAmount({
   // validate that the refund prop input is less than order.item_total (item total)
   // TODO: Probably this amount should be retrieved from the payments linked to the order
   if (refundAmount && MathBN.gt(refundAmount, order.item_total)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Refund amount cannot be greater than order total.`
     )
   }
@@ -167,8 +167,8 @@ function prepareFulfillmentData({
   }
 
   if (!locationId) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Cannot create return without stock location, either provide a location or you should link the shipping option ${returnShippingOption.id} to a stock location.`
     )
   }
@@ -268,8 +268,8 @@ export const createCompleteReturnValidationStep = createStep(
     context
   ) {
     if (!input.items) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Items are required to create a return.`
       )
     }
@@ -327,8 +327,8 @@ export const createAndCompleteReturnOrderWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { createAndCompleteReturnOrderWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { createAndCompleteReturnOrderWorkflow } from "@switchyard/medusa/core-flows";
+ * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * createAndCompleteReturnOrderWorkflow.hooks.setPricingContext((
  *   { order, additional_data }, { container }

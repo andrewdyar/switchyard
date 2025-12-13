@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useRef, useState } from "react"
 import clsx from "clsx"
-import { Star, StarSolid } from "@medusajs/icons"
+import { Star, StarSolid } from "@switchyard/icons"
 import { Button, Label, TextArea } from "@/components"
 import { useAnalytics, useNotifications } from "@/providers"
 

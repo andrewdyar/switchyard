@@ -6,7 +6,7 @@
  */
 
 import GoodsAttributesModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const GOODS_ATTRIBUTES_MODULE = "goodsAttributesModuleService"
 

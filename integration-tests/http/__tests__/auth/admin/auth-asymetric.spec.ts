@@ -1,6 +1,6 @@
-import { generateResetPasswordTokenWorkflow } from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { ContainerRegistrationKeys } from "@medusajs/utils"
+import { generateResetPasswordTokenWorkflow } from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { ContainerRegistrationKeys } from "@switchyard/utils"
 import jwt from "jsonwebtoken"
 import path from "path"
 import {

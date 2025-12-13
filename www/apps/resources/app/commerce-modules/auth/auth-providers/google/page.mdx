@@ -19,16 +19,16 @@ The Google Auth Module Provider allows you to authenticate users with their Goog
       link: "https://cloud.google.com/resource-manager/docs/creating-managing-projects"
     },
     {
-      text: "Create Oauth client ID credentials. When setting the Redirect Uri, set it to a URL in your frontend (for example, storefront) that later uses Medusa's callback route to validate the authentication.",
+      text: "Create Oauth client ID credentials. When setting the Redirect Uri, set it to a URL in your frontend (for example, storefront) that later uses Switchyard's callback route to validate the authentication.",
       link: "https://developers.google.com/identity/protocols/oauth2/web-server#creatingcred"
     }
   ]}
 />
 
-To use the Google Auth Module Provider, add the module to the array of providers passed to the Auth Module in your `medusa-config.ts`:
+To use the Google Auth Module Provider, add the module to the array of providers passed to the Auth Module in your `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
-import { Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules, ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 // ...
 
@@ -37,17 +37,17 @@ module.exports = defineConfig({
   modules: [
     // ...
     {
-      resolve: "@medusajs/medusa/auth",
+      resolve: "@switchyard/medusa/auth",
       dependencies: [Modules.CACHE, ContainerRegistrationKeys.LOGGER],
       options: {
         providers: [
           // other providers...
           {
-            resolve: "@medusajs/medusa/auth-emailpass",
+            resolve: "@switchyard/medusa/auth-emailpass",
             id: "emailpass",
           },
           {
-            resolve: "@medusajs/medusa/auth-google",
+            resolve: "@switchyard/medusa/auth-google",
             id: "google",
             options: {
               clientId: process.env.GOOGLE_CLIENT_ID,
@@ -127,7 +127,7 @@ GOOGLE_CALLBACK_URL=<YOUR_GOOGLE_CALLBACK_URL>
       
       A string indicating the URL to redirect to in your frontend after the user completes their authentication in Google.
 
-      At this URL, the frontend will receive a `code` query parameter. It then sends that  `code` query parameter to the Medusa application's `/auth/{actor_type}/google/callback` route.
+      At this URL, the frontend will receive a `code` query parameter. It then sends that  `code` query parameter to the Switchyard application's `/auth/{actor_type}/google/callback` route.
       
       </Table.Cell>
       <Table.Cell>

@@ -5,15 +5,15 @@ import {
   OrderPreviewDTO,
   OrderReturnItemDTO,
   ReturnDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   Modules,
   OrderChangeStatus,
   OrderWorkflowEvents,
   ReturnStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   WorkflowResponse,
   createStep,
@@ -21,7 +21,7 @@ import {
   parallelize,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   createRemoteLinkStep,
   emitEventStep,
@@ -105,8 +105,8 @@ const confirmIfReturnItemsArePresent = createStep(
       return
     }
 
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Order return request should have at least 1 item`
     )
   }

@@ -1,9 +1,9 @@
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the region to find.
@@ -15,7 +15,7 @@ export type FindOneOrAnyRegionStepInput = {
   regionId?: string
 }
 
-async function fetchRegionById(regionId: string, container: MedusaContainer) {
+async function fetchRegionById(regionId: string, container: SwitchyardContainer) {
   const query = container.resolve(ContainerRegistrationKeys.QUERY)
 
   const { data } = await query.graph(
@@ -32,7 +32,7 @@ async function fetchRegionById(regionId: string, container: MedusaContainer) {
   return data?.[0]
 }
 
-async function fetchDefaultStore(container: MedusaContainer) {
+async function fetchDefaultStore(container: SwitchyardContainer) {
   const query = container.resolve(ContainerRegistrationKeys.QUERY)
 
   const { data } = await query.graph(
@@ -50,7 +50,7 @@ async function fetchDefaultStore(container: MedusaContainer) {
 
 async function fetchDefaultRegion(
   defaultRegionId: string,
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const query = container.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -85,7 +85,7 @@ export const findOneOrAnyRegionStep = createStep(
     const store = await fetchDefaultStore(container)
 
     if (!store) {
-      throw new MedusaError(MedusaError.Types.NOT_FOUND, "Store not found")
+      throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, "Store not found")
     }
 
     const region = await fetchDefaultRegion(store.default_region_id!, container)

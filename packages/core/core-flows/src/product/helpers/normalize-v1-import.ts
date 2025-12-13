@@ -2,8 +2,8 @@ import {
   ProductTypes,
   SalesChannelTypes,
   ShippingProfileDTO,
-} from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 const basicFieldsToOmit = [
   // Fields with slightly different naming
@@ -87,8 +87,8 @@ export const normalizeV1Products = (
     const productTypeValue = product["Product Type"]
     if (productTypeValue) {
       if (!productTypesMap.has(productTypeValue)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Product type with value '${productTypeValue}' does not exist`
         )
       }
@@ -99,8 +99,8 @@ export const normalizeV1Products = (
     const productCollectionHandle = product["Product Collection Handle"]
     if (productCollectionHandle) {
       if (!productCollectionsMap.has(productCollectionHandle)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Product collection with handle '${productCollectionHandle}' does not exist`
         )
       }
@@ -137,8 +137,8 @@ export const normalizeV1Products = (
         delete finalRes[key]
         if (key.endsWith("Id") && value) {
           if (!salesChannelsMap.has(value)) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Sales channel with name '${value}' does not exist`
             )
           }
@@ -150,14 +150,14 @@ export const normalizeV1Products = (
 
       if (key.startsWith("Shipping Profile Id")) {
         if (!value) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             "Shipping Profile Id is required when importing products"
           )
         }
         if (!shippingProfilesIds.has(value)) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Shipping profile: '${value}' does not exist`
           )
         }

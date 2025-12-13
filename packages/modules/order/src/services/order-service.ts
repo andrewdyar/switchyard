@@ -5,13 +5,13 @@ import {
   InferEntityType,
   OrderTypes,
   RepositoryService,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   InjectManager,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { Order } from "@models"
 
 type InjectedDependencies = {
@@ -49,8 +49,8 @@ export default class OrderService extends ModulesSdkUtils.MedusaInternalService<
     )
 
     if (!result) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Order with id: "${id}" and version: "${version}" not found`
       )
     }

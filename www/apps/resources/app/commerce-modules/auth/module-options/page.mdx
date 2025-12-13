@@ -16,7 +16,7 @@ In this document, you'll learn about the options of the Auth Module.
 
 The `providers` option is an array of auth module providers.
 
-When the Medusa application starts, these providers are registered and can be used to handle authentication.
+When the Switchyard application starts, these providers are registered and can be used to handle authentication.
 
 <Note title="Tip">
 
@@ -26,8 +26,8 @@ By default, the `emailpass` provider is registered to authenticate customers and
 
 For example:
 
-```ts title="medusa-config.ts"
-import { Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules, ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 // ...
 
@@ -35,12 +35,12 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/auth",
+      resolve: "@switchyard/medusa/auth",
       dependencies: [Modules.CACHE, ContainerRegistrationKeys.LOGGER],
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/auth-emailpass",
+            resolve: "@switchyard/medusa/auth-emailpass",
             id: "emailpass",
             options: {
               // provider options...
@@ -63,16 +63,16 @@ The `providers` option is an array of objects that accept the following properti
 
 ## Auth CORS
 
-The Medusa application's authentication API routes are defined under the `/auth` prefix that requires setting the `authCors` property of the `http` configuration.
+The Switchyard application's authentication API routes are defined under the `/auth` prefix that requires setting the `authCors` property of the `http` configuration.
 
-By default, the Medusa application you created will have an `AUTH_CORS` environment variable, which is used as the value of `authCors`.
+By default, the Switchyard application you created will have an `AUTH_CORS` environment variable, which is used as the value of `authCors`.
 
-Refer to [Medusa's configuration guide](!docs!/learn/configurations/medusa-config#httpauthCors) to learn more about the `authCors` configuration.
+Refer to [Switchyard's configuration guide](!docs!/learn/configurations/switchyard.config#httpauthCors) to learn more about the `authCors` configuration.
 
 ---
 
 ## authMethodsPerActor Configuration
 
-The Medusa application's configuration accept an `authMethodsPerActor` configuration which restricts the allowed auth providers used with an actor type.
+The Switchyard application's configuration accept an `authMethodsPerActor` configuration which restricts the allowed auth providers used with an actor type.
 
 Learn more about the `authMethodsPerActor` configuration in [this guide](../auth-providers/page.mdx#configure-allowed-auth-providers-of-actor-types).

@@ -35,7 +35,7 @@ export const HomepageCloudSection = () => {
               <span>
                 Deploy directly from your GitHub repository on a
                 security-compliant infrastructure that is pre-configured for
-                optimal operation and scaling of your Medusa application.
+                optimal operation and scaling of your Switchyard application.
               </span>
               <span>
                 Access our support team and receive guidance as you build your
@@ -44,7 +44,7 @@ export const HomepageCloudSection = () => {
             </div>
           </div>
           <Link
-            href={"https://docs.medusajs.com/cloud"}
+            href={"https://docs.switchyard.com/cloud"}
             className="flex gap-0.25 items-center text-compact-small-plus"
             withIcon
           >

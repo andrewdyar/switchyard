@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { OrderExchangeItem } from "./exchange-item"
 import { Order } from "./order"
 import { OrderShipping } from "./order-shipping-method"

@@ -6,10 +6,10 @@ import {
   isDefined,
   isPresent,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PromotionType,
-} from "@medusajs/framework/utils"
-import { InferEntityType } from "@medusajs/types"
+} from "@switchyard/framework/utils"
+import { InferEntityType } from "@switchyard/types"
 import { Promotion } from "@models"
 import { CreateApplicationMethodDTO, UpdateApplicationMethodDTO } from "@types"
 
@@ -50,44 +50,44 @@ export function validateApplicationMethodAttributes(
     type === ApplicationMethodType.PERCENTAGE &&
     (MathBN.lte(value, 0) || MathBN.gt(value, 100))
   ) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Application Method value should be a percentage number between 0 and 100`
     )
   }
 
   if (promotion?.type === PromotionType.BUYGET) {
     if (!isPresent(applyToQuantity)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `apply_to_quantity is a required field for Promotion type of ${PromotionType.BUYGET}`
       )
     }
 
     if (!isPresent(buyRulesMinQuantity)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `buy_rules_min_quantity is a required field for Promotion type of ${PromotionType.BUYGET}`
       )
     }
 
     if (!isPresent(maxQuantity)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `application_method.max_quantity is a required field for Promotion type of ${PromotionType.BUYGET}`
       )
     }
 
     if (!isPresent(applyToQuantity)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `application_method.apply_to_quantity is a required field for Promotion type of ${PromotionType.BUYGET}`
       )
     }
 
     if (MathBN.lt(maxQuantity!, applyToQuantity!)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `max_quantity (${maxQuantity}) must be greater than or equal to apply_to_quantity (${applyToQuantity}) for BUYGET promotions.`
       )
     }
@@ -97,15 +97,15 @@ export function validateApplicationMethodAttributes(
     allocation === ApplicationMethodAllocation.ACROSS &&
     isPresent(maxQuantity)
   ) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `application_method.max_quantity is not allowed to be set for allocation (${ApplicationMethodAllocation.ACROSS})`
     )
   }
 
   if (!allTargetTypes.includes(targetType)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `application_method.target_type should be one of ${allTargetTypes.join(
         ", "
       )}`
@@ -115,8 +115,8 @@ export function validateApplicationMethodAttributes(
   const allTypes: string[] = Object.values(ApplicationMethodType)
 
   if (!allTypes.includes(applicationMethodType)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `application_method.type should be one of ${allTypes.join(", ")}`
     )
   }
@@ -125,8 +125,8 @@ export function validateApplicationMethodAttributes(
     allowedAllocationTargetTypes.includes(targetType) &&
     !allowedAllocationTypes.includes(allocation || "")
   ) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `application_method.allocation should be either '${allowedAllocationTypes.join(
         " OR "
       )}' when application_method.target_type is either '${allowedAllocationTargetTypes.join(
@@ -140,8 +140,8 @@ export function validateApplicationMethodAttributes(
   )
 
   if (allocation && !allAllocationTypes.includes(allocation)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `application_method.allocation should be one of ${allAllocationTypes.join(
         ", "
       )}`
@@ -153,8 +153,8 @@ export function validateApplicationMethodAttributes(
     allowedAllocationForQuantity.includes(allocation) &&
     !isDefined(maxQuantity)
   ) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `application_method.max_quantity is required when application_method.allocation is '${allowedAllocationForQuantity.join(
         " OR "
       )}'`
@@ -165,8 +165,8 @@ export function validateApplicationMethodAttributes(
     allocation === ApplicationMethodAllocation.ONCE &&
     targetType === ApplicationMethodTargetType.ORDER
   ) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `application_method.allocation 'once' is not compatible with target_type 'order'`
     )
   }

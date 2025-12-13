@@ -9,17 +9,17 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# updatePriceListsWorkflow - Medusa Core Workflows Reference
+# updatePriceListsWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `updatePriceListsWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `updatePriceListsWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow updates one or more price lists. It's used by the
-[Update Price List Admin API Route](https://docs.medusajs.com/api/admin#price-lists\_postpricelistsid).
+[Update Price List Admin API Route](https://docs.switchyard.com/api/admin#price-lists\_postpricelistsid).
 
 You can use this workflow within your customizations or your own custom workflows, allowing you to
 update price lists in your custom flows.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/price-list/workflows/update-price-lists.ts#L40" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/price-list/workflows/update-price-lists.ts#L40" />
 
 ## Examples
 
@@ -28,14 +28,14 @@ update price lists in your custom flows.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { updatePriceListsWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { updatePriceListsWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await updatePriceListsWorkflow(req.scope)
     .run({
@@ -58,8 +58,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { updatePriceListsWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { updatePriceListsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -87,11 +87,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { updatePriceListsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { updatePriceListsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await updatePriceListsWorkflow(container)
     .run({
@@ -116,8 +116,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { updatePriceListsWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { updatePriceListsWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -144,4 +144,4 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"price_lists_data","type":"[UpdatePriceListWorkflowInputDTO](../../../../../types/interfaces/types.UpdatePriceListWorkflowInputDTO/page.mdx)[]","description":"","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the price list to update.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"title","type":"`string`","description":"The title of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"description","type":"`null` \\| `string`","description":"The description of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"starts_at","type":"`null` \\| `string`","description":"The start date of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"ends_at","type":"`null` \\| `string`","description":"The end date of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"status","type":"[PriceListStatus](../../../../../pricing/types/pricing.PriceListStatus/page.mdx)","description":"The status of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"rules","type":"`Record<string, string[]>`","description":"The rules associated with the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updatePriceListsWorkflow"/>
+<TypeList types={[{"name":"price_lists_data","type":"[UpdatePriceListWorkflowInputDTO](../../../../../types/interfaces/types.UpdatePriceListWorkflowInputDTO/page.mdx)[]","description":"","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the price list to update.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"title","type":"`string`","description":"The title of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"description","type":"`null` \\| `string`","description":"The description of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"starts_at","type":"`null` \\| `string`","description":"The start date of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"ends_at","type":"`null` \\| `string`","description":"The end date of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"status","type":"[PriceListStatus](../../../../../pricing/types/pricing.PriceListStatus/page.mdx)","description":"The status of the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"rules","type":"`Record<string, string[]>`","description":"The rules associated with the price list.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updatePriceListsWorkflow"/>

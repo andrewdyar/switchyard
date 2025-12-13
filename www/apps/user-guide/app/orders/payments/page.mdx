@@ -12,11 +12,11 @@ products:
 
 import { 
   EllipsisHorizontal, 
-} from "@medusajs/icons"
+} from "@switchyard/icons"
 import { Table } from "docs-ui"
 
 export const metadata = {
-  title: `Manage Order Payments in Medusa Admin`,
+  title: `Manage Order Payments in Switchyard Admin`,
 }
 
 # {metadata.title}
@@ -97,7 +97,7 @@ You can refund a payment either partially or in full. This can be done for vario
 
 <Note>
 
-Prior to [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0), you were only able to refund a payment after creating a return or making an order change. From Medusa v2.11.0 onwards, you can refund a payment directly from the order details page without needing to create a return or make an order change. If you're unable to refund a payment, contact your technical team to [update your Medusa application](!docs!/learn/update).
+Prior to [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0), you were only able to refund a payment after creating a return or making an order change. From Switchyard v2.11.0 onwards, you can refund a payment directly from the order details page without needing to create a return or make an order change. If you're unable to refund a payment, contact your technical team to [update your Switchyard application](!docs!/learn/update).
 
 </Note>
 
@@ -142,7 +142,7 @@ You can handle it by either:
 
 ### Mark Outstanding Amount as Paid
 
-By marking a positive outstanding amount as paid, you're capturing the payment without processing it through the associated payment provider. Instead, you handle capturing the payment outside of Medusa.
+By marking a positive outstanding amount as paid, you're capturing the payment without processing it through the associated payment provider. Instead, you handle capturing the payment outside of Switchyard.
 
 To mark a positive outstanding amount as paid:
 
@@ -163,6 +163,6 @@ The link is then copied and you can share it with the customer to authorize the 
 
 <Note title="Tip">
 
-If the payment link doesn't start with a domain or has a domain that doesn't match your storefront, refer your technical team to [this guide](!docs!/learn/configurations/medusa-config#storefronturl) to set up the storefront domain.
+If the payment link doesn't start with a domain or has a domain that doesn't match your storefront, refer your technical team to [this guide](!docs!/learn/configurations/switchyard.config#storefronturl) to set up the storefront domain.
 
 </Note>

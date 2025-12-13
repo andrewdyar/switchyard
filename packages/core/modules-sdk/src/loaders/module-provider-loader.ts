@@ -1,4 +1,4 @@
-import { MedusaContainer, ModuleProvider } from "@medusajs/types"
+import { SwitchyardContainer, ModuleProvider } from "@switchyard/types"
 import {
   dynamicImport,
   isFileSkipped,
@@ -6,19 +6,19 @@ import {
   lowerCaseFirst,
   normalizeImportPathWithSource,
   promiseAll,
-} from "@medusajs/utils"
-import { asFunction, Lifetime } from "@medusajs/deps/awilix"
+} from "@switchyard/utils"
+import { asFunction, Lifetime } from "@switchyard/deps/awilix"
 
 export async function moduleProviderLoader({
   container,
   providers,
   registerServiceFn,
 }: {
-  container: MedusaContainer
+  container: SwitchyardContainer
   providers: ModuleProvider[]
   registerServiceFn?: (
     klass,
-    container: MedusaContainer,
+    container: SwitchyardContainer,
     moduleDetails: any
   ) => Promise<void>
 }) {
@@ -34,7 +34,7 @@ export async function moduleProviderLoader({
 }
 
 export async function loadModuleProvider(
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   provider: ModuleProvider,
   registerServiceFn?: (klass, container, moduleDetails) => Promise<void>
 ) {

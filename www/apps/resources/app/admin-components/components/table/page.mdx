@@ -12,17 +12,17 @@ export const metadata = {
 
 <Note>
 
-If you're using [Medusa v2.4.0+](https://github.com/medusajs/medusa/releases/tag/v2.4.0), it's recommended to use the [Data Table](../data-table/page.mdx) component instead as it provides features for sorting, filtering, pagination, and more with a simpler API.
+If you're using [Switchyard v2.4.0+](https://github.com/switchyard/medusa/releases/tag/v2.4.0), it's recommended to use the [Data Table](../data-table/page.mdx) component instead as it provides features for sorting, filtering, pagination, and more with a simpler API.
 
 </Note>
 
-You can use the `Table` component from Medusa UI to display data in a table. It's mostly recommended for simpler tables.
+You can use the `Table` component from Switchyard UI to display data in a table. It's mostly recommended for simpler tables.
 
 To create a component that shows a table with pagination, create the file `src/admin/components/table.tsx` with the following content:
 
 ```tsx title="src/admin/components/table.tsx"
 import { useMemo } from "react"
-import { Table as UiTable } from "@medusajs/ui"
+import { Table as UiTable } from "@switchyard/ui"
 
 export type TableProps = {
   columns: {
@@ -189,8 +189,8 @@ Use the `Table` component in any widget or UI route.
 For example, create the widget `src/admin/widgets/product-widget.tsx` with the following content:
 
 ```tsx title="src/admin/widgets/product-widget.tsx"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { StatusBadge } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { StatusBadge } from "@switchyard/ui"
 import { Table } from "../components/table"
 import { useState } from "react"
 import { Container } from "../components/container"
@@ -252,7 +252,7 @@ This widget also uses the [Container](../container.mdx) custom component.
 
 ## Example With Data Fetching
 
-This section shows you how to use the `Table` component when fetching data from the Medusa application's API routes.
+This section shows you how to use the `Table` component when fetching data from the Switchyard application's API routes.
 
 Assuming you've set up the JS SDK as explained in [this guide](../../../js-sdk/page.mdx), create the UI route `src/admin/routes/custom/page.tsx` with the following content:
 
@@ -261,12 +261,12 @@ export const tableExampleHighlights = [
   ["13", "limit", "The maximum number of items per page."],
   ["14", "offset", "The number of items to skip before retrieving the current page's items."],
   ["18", "data", "The response fields."],
-  ["18", "useQuery", "Fetch products from the Medusa application."]
+  ["18", "useQuery", "Fetch products from the Switchyard application."]
 ]
 
 ```tsx title="src/admin/routes/custom/page.tsx" collapsibleLines="1-10" expandButtonLabel="Show Imports" highlights={tableExampleHighlights}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ChatBubbleLeftRight } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ChatBubbleLeftRight } from "@switchyard/icons"
 import { useQuery } from "@tanstack/react-query"
 import { SingleColumnLayout } from "../../layouts/single-column"
 import { Table } from "../../components/table"
@@ -363,4 +363,4 @@ If `data` isn't `undefined`, you display the `Table` component passing it the fo
 - `pageSize`: The maximum number of items per page. You pass it the `count` property of `data`.
 - `currentPage` and `setCurrentPage`: The current page and the function to change it.
 
-To test it out, log into the Medusa Admin and open `http://localhost:9000/app/custom`. You'll find a table of products with pagination.
+To test it out, log into the Switchyard Admin and open `http://localhost:9000/app/custom`. You'll find a table of products with pagination.

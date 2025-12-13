@@ -33,7 +33,7 @@ import {
   createStep, 
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   {
@@ -82,7 +82,7 @@ You can disable automatic retries by setting the `autoRetry` property to `false`
 
 <Note>
 
-The `autoRetry` property is available since [Medusa v2.10.2](https://github.com/medusajs/medusa/releases/tag/v2.10.2).
+The `autoRetry` property is available since [Switchyard v2.10.2](https://github.com/switchyard/medusa/releases/tag/v2.10.2).
 
 </Note>
 
@@ -168,31 +168,31 @@ Instead, you must subscribe to the workflow's execution using the Workflow Engin
 In some cases, you may need to manually retry a step. For example:
 
 - If a step's `autoRetry` property is set to `false`.
-- If the machine running the Medusa application in development or [worker mode](../../../configurations/medusa-config/page.mdx#workermode) dies or shuts down.
+- If the machine running the Switchyard application in development or [worker mode](../../../configurations/switchyard.config/page.mdx#workermode) dies or shuts down.
 - If the step takes longer than expected to complete.
 
-To retry a step manually, resolve the Workflow Engine Module's service from the Medusa container and call its `retryStep` method.
+To retry a step manually, resolve the Workflow Engine Module's service from the Switchyard container and call its `retryStep` method.
 
 <Note>
 
-The `retryStep` method is available since [Medusa v2.10.2](https://github.com/medusajs/medusa/releases/tag/v2.10.2).
+The `retryStep` method is available since [Switchyard v2.10.2](https://github.com/switchyard/medusa/releases/tag/v2.10.2).
 
 </Note>
 
 For example, to do it in an API route:
 
 export const retryHighlights = [
-  ["8", "workflowEngine", "Resolve the Workflow Engine Module's service from the Medusa container."],
+  ["8", "workflowEngine", "Resolve the Workflow Engine Module's service from the Switchyard container."],
   ["10", "retryStep", "Retry the step."],
 ]
 
 ```ts title="src/api/retry-step/route.ts" highlights={retryHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { TransactionHandlerType } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { TransactionHandlerType } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const workflowEngine = req.scope.resolve("workflows")
 

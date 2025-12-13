@@ -4,7 +4,7 @@ export const metadata = {
 
 # {metadata.title}
 
-This troubleshooting guide covers common errors you may encounter when running tests in your Medusa application and how to resolve them.
+This troubleshooting guide covers common errors you may encounter when running tests in your Switchyard application and how to resolve them.
 
 ## Loaders for module Workflows failed
 
@@ -27,12 +27,12 @@ Then, create the `integration-tests/setup.js` file with the following content:
 
 <Note>
 
-If you're using a version prior to Medusa v2.11.0, change `@medusajs/framework/mikro-orm/core` to `@mikro-orm/core`. Learn more in the [v2.11.0 codemod](!docs!/learn/codemods/replace-imports).
+If you're using a version prior to Switchyard v2.11.0, change `@switchyard/framework/mikro-orm/core` to `@mikro-orm/core`. Learn more in the [v2.11.0 codemod](!docs!/learn/codemods/replace-imports).
 
 </Note>
 
 ```js title="integration-tests/setup.js"
-const { MetadataStorage } = require("@medusajs/framework/mikro-orm/core")
+const { MetadataStorage } = require("@switchyard/framework/mikro-orm/core")
 
 MetadataStorage.clear()
 ```

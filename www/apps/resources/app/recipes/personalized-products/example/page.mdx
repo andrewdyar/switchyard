@@ -11,18 +11,18 @@ products:
   - order
 ---
 
-import { Github, PlaySolid, ArrowUpRightOnBox } from "@medusajs/icons"
+import { Github, PlaySolid, ArrowUpRightOnBox } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList, InlineIcon } from "docs-ui"
 
 export const metadata = {
-  title: `Implement Personalized Products in Medusa`,
+  title: `Implement Personalized Products in Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you will learn how to implement personalized products in Medusa.
+In this tutorial, you will learn how to implement personalized products in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. You can benefit from existing features and extend them to implement your business requirements.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. You can benefit from existing features and extend them to implement your business requirements.
 
 Personalized products allow customers to enter custom values for product attributes, such as text or images, before adding them to the cart. This is useful for businesses that offer customizable products, such as furniture, clothing, or gifts.
 
@@ -30,20 +30,20 @@ Personalized products allow customers to enter custom values for product attribu
 
 By following this tutorial, you will learn how to:
 
-- Install and set up a Medusa application.
+- Install and set up a Switchyard application.
 - Store personalized product data.
 - Calculate custom pricing based on personalized attributes.
 - Validate personalized product data before adding to the cart.
 - Add personalized products to the cart.
-- Extend the Medusa Admin dashboard to show personalized product data in an order.
+- Extend the Switchyard Admin dashboard to show personalized product data in an order.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram showcasing requests sent from the storefront to the server to get custom price, add product to cart, and place order. Then the admin user views the personalized items in an order.](https://res.cloudinary.com/dza7lstvk/image/upload/v1753167036/Medusa%20Resources/personalized-products_fgxy6s.jpg)
+![Diagram showcasing requests sent from the storefront to the server to get custom price, add product to cart, and place order. Then the admin user views the personalized items in an order.](https://res.cloudinary.com/dza7lstvk/image/upload/v1753167036/Switchyard%20Resources/personalized-products_fgxy6s.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/personalized-products",
+    href: "https://github.com/switchyard/examples/tree/main/personalized-products",
     title: "Full Code",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -58,7 +58,7 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -75,27 +75,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -109,20 +109,20 @@ When the customer adds the product variant to the cart, you'll store the persona
 
 When the customer places the order, the line items' `metadata` property are copied to the order's line items, allowing you to access the personalized data later.
 
-So, to create a personalized product, you can just create a [regular product using the Medusa Admin](!user-guide!/products/create).
+So, to create a personalized product, you can just create a [regular product using the Switchyard Admin](!user-guide!/products/create).
 
 ### Differentiate Personalized Products
 
 If you want to support both personalized and non-personalized products, you can set an `is_personalized` flag in the personalized product's `metadata` property to differentiate them from regular products.
 
-To do that from the Medusa Admin dashboard:
+To do that from the Switchyard Admin dashboard:
 
 1. Go to Products from the sidebar and click on the product you want to edit.
 2. Click on the <InlineIcon Icon={ArrowUpRightOnBox} alt="external link icon to open metadata editor" /> icon in the "Metadata" section.
 3. In the side window, enter `is_personalized` as the key and `true` as the value.
 4. Once you're done, click on the "Save" button.
 
-![Screenshot of Medusa Admin metadata editor showing a form field with 'is_personalized' as the key and 'true' as the value](https://res.cloudinary.com/dza7lstvk/image/upload/v1753108787/Medusa%20Resources/CleanShot_2025-07-21_at_14.55.50_2x_m7ynd7.png)
+![Screenshot of Switchyard Admin metadata editor showing a form field with 'is_personalized' as the key and 'true' as the value](https://res.cloudinary.com/dza7lstvk/image/upload/v1753108787/Switchyard%20Resources/CleanShot_2025-07-21_at_14.55.50_2x_m7ynd7.png)
 
 The rest of this tutorial will always check for this `is_personalized` flag to determine whether the product is personalized or not.
 
@@ -147,7 +147,7 @@ In this step, you'll implement the logic to calculate the custom price, then exp
 
 A [workflow](!docs!/learn/fundamentals/workflows) is a series of queries and actions, called steps, that complete a task. A workflow is similar to a function, but it allows you to track its executions' progress, define roll-back logic, and configure other advanced features.
 
-In Medusa, you implement your custom commerce flows in workflows. Then, you execute those workflows from other customizations, such as API routes.
+In Switchyard, you implement your custom commerce flows in workflows. Then, you execute those workflows from other customizations, such as API routes.
 
 The workflow that calculates the personalized product variant's price will have the following steps:
 
@@ -180,7 +180,7 @@ The workflow that calculates the personalized product variant's price will have 
   hideLegend
 />
 
-Medusa provides the `useQueryGraphStep`, so you only need to implement the `getCustomPriceStep` step.
+Switchyard provides the `useQueryGraphStep`, so you only need to implement the `getCustomPriceStep` step.
 
 #### getCustomPriceStep
 
@@ -196,9 +196,9 @@ export const getCustomPriceStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/get-custom-price.ts" highlights={getCustomPriceStepHighlights}
-import { ProductVariantDTO } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { ProductVariantDTO } from "@switchyard/framework/types"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 export type GetCustomPriceStepInput = {
   variant: ProductVariantDTO & {
@@ -220,8 +220,8 @@ export const getCustomPriceStep = createStep(
       return new StepResponse(variant.calculated_price?.calculated_amount || 0)
     }
     if (!metadata.height || !metadata.width) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Custom price requires width and height metadata to be set."
       )
     }
@@ -241,7 +241,7 @@ You create a step with the `createStep` function. It accepts two parameters:
 1. The step's unique name.
 2. An async function that receives two parameters:
     - The step's input, which is an object with the variant's data and the `metadata` object containing the height and width values.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
 In the step function, you first check if the product is personalized by checking the `is_personalized` flag in the product's metadata. If it is not personalized, you return the original price.
 
@@ -262,9 +262,9 @@ export const getCustomPriceWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/get-custom-price.ts" highlights={getCustomPriceWorkflowHighlights}
-import { QueryContext } from "@medusajs/framework/utils"
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { QueryContext } from "@switchyard/framework/utils"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { getCustomPriceStep, GetCustomPriceStepInput } from "./steps/get-custom-price"
 
 type WorkflowInput = {
@@ -350,7 +350,7 @@ export const getPriceApiRouteHighlights =[
 ]
 
 ```ts title="src/api/store/variants/[id]/price/route.ts" highlights={getPriceApiRouteHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { getCustomPriceWorkflow } from "../../../../../workflows/get-custom-price"
 import { z } from "zod"
 
@@ -365,8 +365,8 @@ export const PostCustomPriceSchema = z.object({
 type PostCustomPriceSchemaType = z.infer<typeof PostCustomPriceSchema>
 
 export async function POST(
-  req: MedusaRequest<PostCustomPriceSchemaType>,
-  res: MedusaResponse
+  req: SwitchyardRequest<PostCustomPriceSchemaType>,
+  res: SwitchyardResponse
 ) {
   const { id: variantId } = req.params
   const { 
@@ -392,7 +392,7 @@ You create the `PostCustomPriceSchema` schema that is used to validate request b
 
 Then, you export a `POST` route handler function, which will expose a `POST` API route at `/store/variants/:id/price`.
 
-In the route handler, you execute the `getCustomPriceWorkflow` workflow by invoking it, passing the Medusa container (stored in `req.scope`), then executing its `run` method.
+In the route handler, you execute the `getCustomPriceWorkflow` workflow by invoking it, passing the Switchyard container (stored in `req.scope`), then executing its `run` method.
 
 Finally, you return the price in the response.
 
@@ -410,7 +410,7 @@ export const validateAndTransformBodyHighlights = [
 ]
 
 ```ts title="src/api/middlewares.ts" highlights={validateAndTransformBodyHighlights}
-import { defineMiddlewares, validateAndTransformBody } from "@medusajs/framework/http"
+import { defineMiddlewares, validateAndTransformBody } from "@switchyard/framework/http"
 import { PostCustomPriceSchema } from "./store/variants/[id]/price/route"
 
 export default defineMiddlewares({
@@ -426,7 +426,7 @@ export default defineMiddlewares({
 })
 ```
 
-You apply Medusa's `validateAndTransformBody` middleware to `POST` requests sent to the `/store/variants/:id/price` route.
+You apply Switchyard's `validateAndTransformBody` middleware to `POST` requests sent to the `/store/variants/:id/price` route.
 
 The middleware function accepts a Zod schema used for validation. This is the schema you created in the API route's file.
 
@@ -446,9 +446,9 @@ In this step, you'll customize the [Next.js Starter Storefront](../../../nextjs-
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-personalized`, you can find the storefront by going back to the parent directory and changing to the `medusa-personalized-storefront` directory:
+So, if your Switchyard application's directory is `medusa-personalized`, you can find the storefront by going back to the parent directory and changing to the `medusa-personalized-storefront` directory:
 
 ```bash
 cd ../medusa-personalized-storefront # change based on your project name
@@ -512,8 +512,8 @@ export const productPriceHighlights = [
 ]
 
 ```tsx title="src/modules/products/components/product-price/index.tsx" badgeLabel="Storefront" badgeColor="blue" highlights={productPriceHighlights}
-import { clx } from "@medusajs/ui"
-import { HttpTypes } from "@medusajs/types"
+import { clx } from "@switchyard/ui"
+import { HttpTypes } from "@switchyard/types"
 import { useEffect, useMemo, useState } from "react"
 import { getCustomVariantPrice } from "../../../../lib/data/products"
 import { convertToLocale } from "../../../../lib/util/money"
@@ -689,9 +689,9 @@ return (
 
 You can now test the price customization in the storefront.
 
-First, start the Medusa application with the following command:
+First, start the Switchyard application with the following command:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -705,7 +705,7 @@ Open the storefront in your browser at `http://localhost:8000`. Go to Menu -> St
 
 You should see the height and width inputs below other product variant options. Once you enter the height and width values, the price will be shown and updated based on the values you entered.
 
-![Screenshot of a product page in the Next.js storefront showing a fabric product with two input fields labeled 'Width (cm)' and 'Height (cm)' below the product options, and a calculated price displayed underneath the dimension inputs](https://res.cloudinary.com/dza7lstvk/image/upload/v1753111095/Medusa%20Resources/CleanShot_2025-07-21_at_18.17.55_2x_hnzfiz.png)
+![Screenshot of a product page in the Next.js storefront showing a fabric product with two input fields labeled 'Width (cm)' and 'Height (cm)' below the product options, and a calculated price displayed underneath the dimension inputs](https://res.cloudinary.com/dza7lstvk/image/upload/v1753111095/Switchyard%20Resources/CleanShot_2025-07-21_at_18.17.55_2x_hnzfiz.png)
 
 ---
 
@@ -715,11 +715,11 @@ In this step, you'll implement custom logic to add personalized products to the 
 
 When the customer adds a personalized product to the cart, you need to add the item to the cart with the calculated price.
 
-So, you'll create a workflow that wraps around Medusa's existing add-to-cart logic to add the personalized product to the cart with the custom price. Then, you'll create an API route that executes this workflow.
+So, you'll create a workflow that wraps around Switchyard's existing add-to-cart logic to add the personalized product to the cart with the custom price. Then, you'll create an API route that executes this workflow.
 
 <Note title="Tip">
 
-If you're not using custom pricing, you can skip this step and keep on using Medusa's existing [Add-to-Cart API route](!api!/store#carts_postcartsidlineitems).
+If you're not using custom pricing, you can skip this step and keep on using Switchyard's existing [Add-to-Cart API route](!api!/store#carts_postcartsidlineitems).
 
 </Note>
 
@@ -791,13 +791,13 @@ export const customAddToCartWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/custom-add-to-cart.ts" highlights={customAddToCartWorkflowHighlights}
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { 
   addToCartWorkflow, 
   acquireLockStep, 
   releaseLockStep, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { getCustomPriceWorkflow } from "./get-custom-price"
 
 type CustomAddToCartWorkflowInput = {
@@ -901,7 +901,7 @@ export const PostAddCustomLineItemSchemaHighlights = [
 ]
 
 ```ts title="src/api/store/carts/[id]/line-items-custom/route.ts" highlights={PostAddCustomLineItemSchemaHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { z } from "zod"
 import { 
   customAddToCartWorkflow,
@@ -918,8 +918,8 @@ type PostAddCustomLineItemSchemaType = z.infer<
 >;
 
 export async function POST(
-  req: MedusaRequest<PostAddCustomLineItemSchemaType>,
-  res: MedusaResponse
+  req: SwitchyardRequest<PostAddCustomLineItemSchemaType>,
+  res: SwitchyardResponse
 ) {
   const { id: cartId } = req.params
   const { result: cart } = await customAddToCartWorkflow(req.scope).run({
@@ -983,21 +983,21 @@ You'll test out this API route when you customize the storefront in the next ste
 
 In this step, you'll ensure that the personalized products added to the cart include the height and width values in their `metadata` property.
 
-Medusa's `addToCartWorkflow` workflow supports performing custom validation on the items being added to the cart using [workflow hooks](!docs!/learn/fundamentals/workflows/workflow-hooks). A workflow hook is a point in a workflow where you can inject custom functionality as a step function.
+Switchyard's `addToCartWorkflow` workflow supports performing custom validation on the items being added to the cart using [workflow hooks](!docs!/learn/fundamentals/workflows/workflow-hooks). A workflow hook is a point in a workflow where you can inject custom functionality as a step function.
 
 To consume the `validate` hook that runs before an item is added to the cart, create the file `src/workflows/hooks/validate-personalized-product.ts` with the following content:
 
 export const validatePersonalizedProductHighlights = [
   ["4", "validate", "Consume the `validate` hook of the `addToCartWorkflow`."],
-  ["6", "query", "Resolve Query from the Medusa container."],
+  ["6", "query", "Resolve Query from the Switchyard container."],
   ["7", "variants", "Retrieve the product variants being added to the cart."],
   ["16", "", "Validate that the product is personalized."],
   ["19", "", "Validate that the height and width metadata are set."],
 ]
 
 ```ts title="src/workflows/hooks/validate-personalized-product.ts" highlights={validatePersonalizedProductHighlights}
-import { MedusaError } from "@medusajs/framework/utils"
-import { addToCartWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { addToCartWorkflow } from "@switchyard/medusa/core-flows"
 
 addToCartWorkflow.hooks.validate(
   async ({ input }, { container }) => {
@@ -1018,8 +1018,8 @@ addToCartWorkflow.hooks.validate(
         !item.metadata?.height || !item.metadata.width ||
         isNaN(Number(item.metadata.height)) || isNaN(Number(item.metadata.width))
       ) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Please set height and width metadata for each item."
         )
       }
@@ -1032,7 +1032,7 @@ You consume the hook by calling `addToCartWorkflow.hooks.validate`, passing it a
 
 In the step function, you:
 
-1. Resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Medusa container to retrieve data across modules.
+1. Resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Switchyard container to retrieve data across modules.
 2. Retrieve the product variants being added to the cart.
 3. Loop through the items being added to the cart.
 4. If an item's product is personalized, you validate that the `metadata` object contains the `height` and `width` values, and that they are valid numbers. Otherwise, you throw an error.
@@ -1172,13 +1172,13 @@ Similarly, you show the height and width values from the item's `metadata` objec
 
 ### Test the Custom Add-to-Cart Logic
 
-To test out the custom add-to-cart logic, ensure that both the Medusa application and the Next.js Starter Storefront are running.
+To test out the custom add-to-cart logic, ensure that both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, add a personalized product to the cart after choosing any necessary product options and entering the height and width values. You should see the product added to the cart with the correct price based on the dimensions you entered.
 
 If you open the cart page by clicking on "Cart" at the top right, you can see the personalized product's height and width values displayed after the product variant options.
 
-![Screenshot of the shopping cart page showing a personalized fabric product with 'Width: 100cm' and 'Height: 80cm' displayed below the product variant information, demonstrating how custom dimensions are preserved in the cart](https://res.cloudinary.com/dza7lstvk/image/upload/v1753112339/Medusa%20Resources/CleanShot_2025-07-21_at_18.38.30_2x_ersc2m.png)
+![Screenshot of the shopping cart page showing a personalized fabric product with 'Width: 100cm' and 'Height: 80cm' displayed below the product variant information, demonstrating how custom dimensions are preserved in the cart](https://res.cloudinary.com/dza7lstvk/image/upload/v1753112339/Switchyard%20Resources/CleanShot_2025-07-21_at_18.38.30_2x_ersc2m.png)
 
 #### Place Order with Personalized Product
 
@@ -1186,11 +1186,11 @@ You can also proceed to the checkout page and complete the order. The order conf
 
 ---
 
-## Step 8: Show an Order's Personalized Items in Medusa Admin
+## Step 8: Show an Order's Personalized Items in Switchyard Admin
 
-In this step, you'll customize the Medusa Admin to show the personalized item's height and width values in an order's details page.
+In this step, you'll customize the Switchyard Admin to show the personalized item's height and width values in an order's details page.
 
-The Medusa Admin dashboard is extensible, allowing you to either inject custom components into existing pages, or create new pages.
+The Switchyard Admin dashboard is extensible, allowing you to either inject custom components into existing pages, or create new pages.
 
 In this case, you'll inject a custom component, called a [widget](!docs!/learn/fundamentals/admin/widgets), into the order details page.
 
@@ -1206,9 +1206,9 @@ export const personalizedOrderItemsWidgetHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/order-personalized.tsx" highlights={personalizedOrderItemsWidgetHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Text } from "@medusajs/ui"
-import { AdminOrder, DetailWidgetProps } from "@medusajs/framework/types"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Text } from "@switchyard/ui"
+import { AdminOrder, DetailWidgetProps } from "@switchyard/framework/types"
 
 const PersonalizedOrderItemsWidget = ({ 
   data: order,
@@ -1262,7 +1262,7 @@ export default PersonalizedOrderItemsWidget
 A widget file must export:
 
 - A default React component. This component renders the widget's UI.
-- A `config` object created with the `defineWidgetConfig` function. It accepts an object with the `zone` property that indicates where the widget will be rendered in the Medusa Admin dashboard.
+- A `config` object created with the `defineWidgetConfig` function. It accepts an object with the `zone` property that indicates where the widget will be rendered in the Switchyard Admin dashboard.
 
 The widget component accepts a `data` prop that contains the order data.
 
@@ -1272,27 +1272,27 @@ If there are no personalized items in the order, you don't show the widget.
 
 ### Test the Personalized Order Items Widget
 
-To test out the personalized order items widget, start the Medusa application and open the Medusa Admin dashboard in your browser at `http://localhost:9000/app`.
+To test out the personalized order items widget, start the Switchyard application and open the Switchyard Admin dashboard in your browser at `http://localhost:9000/app`.
 
 Go to Orders and click on an order that contains a personalized product. You should see the "Personalized Order Items" widget displaying the personalized items with their dimensions.
 
-![Screenshot of Medusa Admin order details page showing a custom widget titled 'Personalized Order Items' with a fabric product entry displaying the product image, title, and dimensions 'Width (cm): 100' and 'Height (cm): 80' in a clean list format](https://res.cloudinary.com/dza7lstvk/image/upload/v1753113169/Medusa%20Resources/CleanShot_2025-07-21_at_18.52.21_2x_i7shff.png)
+![Screenshot of Switchyard Admin order details page showing a custom widget titled 'Personalized Order Items' with a fabric product entry displaying the product image, title, and dimensions 'Width (cm): 100' and 'Height (cm): 80' in a clean list format](https://res.cloudinary.com/dza7lstvk/image/upload/v1753113169/Switchyard%20Resources/CleanShot_2025-07-21_at_18.52.21_2x_i7shff.png)
 
 ---
 
 ## Next Steps
 
-You've now implemented personalized products in Medusa, allowing customers to customize product dimensions and see the calculated price in the storefront. You can expand on this feature to:
+You've now implemented personalized products in Switchyard, allowing customers to customize product dimensions and see the calculated price in the storefront. You can expand on this feature to:
 
 - Add more personalization options, such as text engraving.
 - Implement more complex pricing calculations based on additional metadata.
 - Create a [custom fulfillment provider](/references/fulfillment/provider) to handle personalized products differently during fulfillment.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -1302,5 +1302,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

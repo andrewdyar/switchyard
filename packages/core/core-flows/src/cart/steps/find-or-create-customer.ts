@@ -1,15 +1,15 @@
 import type {
   CustomerDTO,
   ICustomerModuleService,
-  MedusaContainer,
-} from "@medusajs/framework/types"
+  SwitchyardContainer,
+} from "@switchyard/framework/types"
 import {
   isDefined,
   Modules,
   useCache,
   validateEmail,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the customer to find or create.
@@ -47,7 +47,7 @@ interface StepCompensateInput {
 
 async function fetchCustomerById(
   customerId: string,
-  container: MedusaContainer
+  container: SwitchyardContainer
 ): Promise<CustomerDTO> {
   const service = container.resolve<ICustomerModuleService>(Modules.CUSTOMER)
 
@@ -62,7 +62,7 @@ async function fetchCustomerById(
 
 async function fetchCustomersByEmail(
   email: string,
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   hasAccount?: boolean
 ): Promise<CustomerDTO[]> {
   const service = container.resolve<ICustomerModuleService>(Modules.CUSTOMER)

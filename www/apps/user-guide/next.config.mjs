@@ -124,10 +124,10 @@ const nextConfig = {
     "/md\\-content/\\[\\[\\.\\.\\.slug\\]\\]": ["./app/**/*.mdx"],
   },
   outputFileTracingExcludes: {
-    "*": ["node_modules/@medusajs/icons"],
+    "*": ["node_modules/@switchyard/icons"],
   },
   experimental: {
-    optimizePackageImports: ["@medusajs/icons", "@medusajs/ui"],
+    optimizePackageImports: ["@switchyard/icons", "@switchyard/ui"],
   },
   rewrites: async () => {
     return {

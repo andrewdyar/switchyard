@@ -1,4 +1,4 @@
-import { ModuleProviderExports } from "@medusajs/types"
+import { ModuleProviderExports } from "@switchyard/types"
 
 /**
  * Wrapper to build the module provider export

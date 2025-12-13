@@ -1,12 +1,12 @@
 import type {
   FulfillmentWorkflow,
   ServiceZoneDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { updateServiceZonesStep } from "../steps/update-service-zones"
 
 /**

@@ -1,5 +1,5 @@
-import { Tabs, Text } from "@medusajs/ui"
-import { TruckFast, CreditCard, InformationCircle } from "@medusajs/icons"
+import { Tabs, Text } from "@switchyard/ui"
+import { TruckFast, CreditCard, InformationCircle } from "@switchyard/icons"
 
 export default function TabsIcons() {
   return (

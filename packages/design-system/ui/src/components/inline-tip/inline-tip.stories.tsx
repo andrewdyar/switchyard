@@ -35,7 +35,7 @@ export const Warning: Story = {
     variant: "warning",
     label: "Warning",
     children:
-      "If you have multiple storage plugins configured, the last plugin declared in the medusa-config.js file will be used.",
+      "If you have multiple storage plugins configured, the last plugin declared in the switchyard.config.js file will be used.",
   },
 }
 

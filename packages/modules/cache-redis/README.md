@@ -1,11 +1,11 @@
-# Medusa Cache Redis
+# Switchyard Cache Redis
 
-Use Redis as a Medusa cache store.
+Use Redis as a Switchyard cache store.
 
 ## Installation
 
 ```
-yarn add @medusajs/cache-redis
+yarn add @switchyard/cache-redis
 ```
 
 ## Options
@@ -24,4 +24,4 @@ yarn add @medusajs/cache-redis
 
 ### Other caching modules
 
-- [Medusa Cache In-Memory](../cache-inmemory/README.md)
+- [Switchyard Cache In-Memory](../cache-inmemory/README.md)

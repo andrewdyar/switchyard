@@ -1,0 +1,30 @@
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
+import { HttpTypes } from "@switchyard/framework/types"
+import {
+  declineOrderTransferRequestWorkflow,
+  getOrderDetailWorkflow,
+} from "@switchyard/core-flows"
+
+export const POST = async (
+  req: AuthenticatedSwitchyardRequest<
+    HttpTypes.StoreDeclineOrderTransfer,
+    HttpTypes.SelectParams
+  >,
+  res: SwitchyardResponse<HttpTypes.StoreOrderResponse>
+) => {
+  await declineOrderTransferRequestWorkflow(req.scope).run({
+    input: {
+      order_id: req.params.id,
+      token: req.validatedBody.token,
+    },
+  })
+
+  const { result } = await getOrderDetailWorkflow(req.scope).run({
+    input: {
+      fields: req.queryConfig.fields,
+      order_id: req.params.id,
+    },
+  })
+
+  res.status(200).json({ order: result as HttpTypes.StoreOrder })
+}

@@ -1,12 +1,12 @@
 import { CodeTabs, CodeTab } from "docs-ui"
 
 export const metadata = {
-  title: `Medusa Examples`,
+  title: `Switchyard Examples`,
 }
 
 # {metadata.title}
 
-This documentation page has examples of customizations useful for your custom development in the Medusa application.
+This documentation page has examples of customizations useful for your custom development in the Switchyard application.
 
 Each section links to the associated documentation page to learn more about it.
 
@@ -20,13 +20,13 @@ Create the file `src/api/hello-world/route.ts` with the following content:
 
 ```ts title="src/api/hello-world/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: "[GET] Hello world!",
@@ -40,15 +40,15 @@ Learn more in [this documentation](!docs!/learn/fundamentals/api-routes).
 
 ### Resolve Resources in API Route
 
-To resolve resources from the Medusa container in an API route:
+To resolve resources from the Switchyard container in an API route:
 
-```ts highlights={[["8", "resolve", "Resolve the Product Module's\nmain service from the Medusa container."]]}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+```ts highlights={[["8", "resolve", "Resolve the Product Module's\nmain service from the Switchyard container."]]}
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: MedusaRequest, 
-  res: MedusaResponse
+  req: SwitchyardRequest, 
+  res: SwitchyardResponse
 ) => {
   const productModuleService = req.scope.resolve(
     Modules.PRODUCT
@@ -79,13 +79,13 @@ export const singlePathHighlights = [
 
 ```ts title="src/api/hello-world/[id]/route.ts" highlights={singlePathHighlights}
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: `[GET] Hello ${req.params.id}!`,
@@ -105,13 +105,13 @@ export const queryHighlights = [
 
 ```ts highlights={queryHighlights}
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: `Hello ${req.query.name}`,
@@ -132,17 +132,17 @@ export const bodyHighlights = [
 
 ```ts highlights={bodyHighlights}
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 type HelloWorldReq = {
   name: string
 }
 
 export const POST = async (
-  req: MedusaRequest<HelloWorldReq>,
-  res: MedusaResponse
+  req: SwitchyardRequest<HelloWorldReq>,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: `[POST] Hello ${req.body.name}!`,
@@ -157,11 +157,11 @@ Learn more about request body parameters in [this documentation](!docs!/learn/fu
 You can change the response code of an API route:
 
 ```ts highlights={[["7", "status", "Change the response's status."]]}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.status(201).json({
     message: "Hello, World!",
@@ -177,14 +177,14 @@ To execute a workflow in an API route:
 
 ```ts
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import myWorkflow from "../../workflows/hello-world"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await myWorkflow(req.scope)
     .run({
@@ -203,18 +203,18 @@ Learn more in [this documentation](!docs!/learn/fundamentals/workflows#3-execute
 
 By default, an API route's response has the content type `application/json`.
 
-To change it to another content type, use the `writeHead` method of `MedusaResponse`:
+To change it to another content type, use the `writeHead` method of `SwitchyardResponse`:
 
 export const responseContentTypeHighlights = [
   ["7", "writeHead", "Change the content type in the header."]
 ]
 
 ```ts highlights={responseContentTypeHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.writeHead(200, {
     "Content-Type": "text/event-stream",
@@ -245,11 +245,11 @@ Create the file `src/api/middlewares.ts` with the following content:
 
 ```ts title="src/api/middlewares.ts"
 import type { 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
   defineMiddlewares,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -257,9 +257,9 @@ export default defineMiddlewares({
       matcher: "/custom*",
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           console.log("Received a request!")
 
@@ -271,9 +271,9 @@ export default defineMiddlewares({
       matcher: "/custom/:id",
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           console.log("With Path Parameter")
 
@@ -297,11 +297,11 @@ export const middlewareMethodHighlights = [
 
 ```ts title="src/api/middlewares.ts" highlights={middlewareMethodHighlights}
 import type { 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
   defineMiddlewares,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -335,7 +335,7 @@ export const PostStoreCustomSchema = z.object({
 import { 
   validateAndTransformBody,
   defineMiddlewares,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { PostStoreCustomSchema } from "./custom/validators"
 
 export default defineMiddlewares({
@@ -354,7 +354,7 @@ export default defineMiddlewares({
 3. Use the validated body in the `/custom` API route:
 
 ```ts title="src/api/custom/route.ts" highlights={[["14", "validatedBody"]]}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { z } from "zod"
 import { PostStoreCustomSchema } from "./validators"
 
@@ -363,8 +363,8 @@ type PostStoreCustomSchemaType = z.infer<
 >
 
 export const POST = async (
-  req: MedusaRequest<PostStoreCustomSchemaType>,
-  res: MedusaResponse
+  req: SwitchyardRequest<PostStoreCustomSchemaType>,
+  res: SwitchyardResponse
 ) => {
   res.json({
     sum: req.validatedBody.a + req.validatedBody.b,
@@ -387,7 +387,7 @@ Find this example in details in [this documentation](!docs!/learn/customization/
 1. Create the file `src/api/middlewares.ts` with the following content:
 
 ```ts title="src/api/middlewares.ts" highlights={[["10", "brand_id", "Replace with your custom field."]]}
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 import { z } from "zod"
 
 export default defineMiddlewares({
@@ -412,8 +412,8 @@ Learn more about additional data in [this documentation](!docs!/learn/fundamenta
 2. Create the file `src/workflows/hooks/created-product.ts` with the following content:
 
 ```ts
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
-import { StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
+import { StepResponse } from "@switchyard/framework/workflows-sdk"
 
 createProductsWorkflow.hooks.productsCreated(
   (async ({ products, additional_data }, { container }) => {
@@ -446,7 +446,7 @@ Add the following middleware in `src/api/middlewares.ts`:
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -475,7 +475,7 @@ Add the following middleware in `src/api/middlewares.ts`:
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -503,14 +503,14 @@ Requires setting up the authentication middleware as explained in [this example]
 
 ```ts highlights={[["16", "req.auth_context.actor_id", "Access the user's ID."]]}
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const userModuleService = req.scope.resolve(
     Modules.USER
@@ -538,14 +538,14 @@ Requires setting up the authentication middleware as explained in [this example]
 
 ```ts highlights={[["18", "req.auth_context.actor_id", "Access the customer's ID."]]}
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   if (req.auth_context?.actor_id) {
     // retrieve customer
@@ -566,19 +566,19 @@ Learn more in [this documentation](!docs!/learn/fundamentals/api-routes/protecte
 
 ### Throw Errors in API Route
 
-To throw errors in an API route, use `MedusaError` from the Medusa Framework:
+To throw errors in an API route, use `SwitchyardError` from the Switchyard Framework:
 
-```ts highlights={[["9", "MedusaError"]]}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+```ts highlights={[["9", "SwitchyardError"]]}
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   if (!req.query.q) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "The `q` query parameter is required."
     )
   }
@@ -596,18 +596,18 @@ To override the error handler of API routes, create the file `src/api/middleware
 ```ts title="src/api/middlewares.ts" highlights={[["10", "errorHandler"]]}
 import { 
   defineMiddlewares, 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export default defineMiddlewares({
   errorHandler: (
-    error: MedusaError | any, 
-    req: MedusaRequest, 
-    res: MedusaResponse, 
-    next: MedusaNextFunction
+    error: SwitchyardError | any, 
+    req: SwitchyardRequest, 
+    res: SwitchyardResponse, 
+    next: SwitchyardNextFunction
   ) => {
     res.status(400).json({
       error: "Something happened.",
@@ -620,19 +620,19 @@ Learn more in [this documentation](!docs!/learn/fundamentals/api-routes/errors#o
 
 ### Setting up CORS for Custom API Routes
 
-By default, Medusa configures CORS for all routes starting with `/admin`, `/store`, and `/auth`.
+By default, Switchyard configures CORS for all routes starting with `/admin`, `/store`, and `/auth`.
 
 To configure CORS for routes under other prefixes, create the file `src/api/middlewares.ts` with the following content:
 
 ```ts title="src/api/middlewares.ts"
 import type { 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
   defineMiddlewares,
-} from "@medusajs/framework/http"
-import { ConfigModule } from "@medusajs/framework/types"
-import { parseCorsOrigins } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { ConfigModule } from "@switchyard/framework/types"
+import { parseCorsOrigins } from "@switchyard/framework/utils"
 import cors from "cors"
 
 export default defineMiddlewares({
@@ -641,9 +641,9 @@ export default defineMiddlewares({
       matcher: "/custom*",
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           const configModule: ConfigModule =
             req.scope.resolve("configModule")
@@ -663,14 +663,14 @@ export default defineMiddlewares({
 
 ### Parse Webhook Body
 
-By default, the Medusa application parses a request's body using JSON.
+By default, the Switchyard application parses a request's body using JSON.
 
 To parse a webhook's body, create the file `src/api/middlewares.ts` with the following content:
 
 ```ts title="src/api/middlewares.ts" highlights={[["9"]]}
 import { 
   defineMiddlewares, 
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -687,13 +687,13 @@ To access the raw body data in your route, use the `req.rawBody` property:
 
 ```ts title="src/api/webhooks/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const POST = (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   console.log(req.rawBody)
 }
@@ -717,7 +717,7 @@ Find this example explained in details in [this documentation](!docs!/learn/fund
 2. Create the file `src/modules/blog/models/post.ts` with the following data model:
 
 ```ts title="src/modules/blog/models/post.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   id: model.id().primaryKey(),
@@ -730,10 +730,10 @@ export default Post
 3. Create the file `src/modules/blog/service.ts` with the following service:
 
 ```ts title="src/modules/blog/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Post from "./models/post"
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
 }
@@ -745,7 +745,7 @@ export default BlogModuleService
 
 ```ts title="src/modules/blog/index.ts"
 import BlogModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const BLOG_MODULE = "blog"
 
@@ -754,9 +754,9 @@ export default Module(BLOG_MODULE, {
 })
 ```
 
-5. Add the module to the configurations in `medusa-config.ts`:
+5. Add the module to the configurations in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   projectConfig: {
     // ...
@@ -772,20 +772,20 @@ module.exports = defineConfig({
 6. Generate and run migrations:
 
 ```bash
-npx medusa db:generate blog
-npx medusa db:migrate
+npx switchyard db:generate blog
+npx switchyard db:migrate
 ```
 
 7. Use the module's main service in an API route:
 
 ```ts title="src/api/custom/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import BlogModuleService from "../../modules/blog/service"
 import { BLOG_MODULE } from "../../modules/blog"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const blogModuleService: BlogModuleService = req.scope.resolve(
     BLOG_MODULE
@@ -822,7 +822,7 @@ export * from "./category"
 Finally, resolve the service in your module's main service or loader:
 
 ```ts title="src/modules/blog/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Post from "./models/post"
 import { CategoryService } from "./services"
 
@@ -830,7 +830,7 @@ type InjectedDependencies = {
   categoryService: CategoryService
 }
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   private categoryService: CategoryService
@@ -853,9 +853,9 @@ A module can accept options for configurations and secrets.
 
 To accept options in your module:
 
-1. Pass options to the module in `medusa-config.ts`:
+1. Pass options to the module in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts" highlights={[["6", "options"]]}
+```ts title="switchyard.config.ts" highlights={[["6", "options"]]}
 module.exports = defineConfig({
   // ...
   modules: [
@@ -872,7 +872,7 @@ module.exports = defineConfig({
 2. Access the options in the module's main service:
 
 ```ts title="src/modules/blog/service.ts" highlights={[["14", "options"]]}
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Post from "./models/post"
 
 // recommended to define type in another file
@@ -880,7 +880,7 @@ type ModuleOptions = {
   apiKey?: boolean
 }
 
-export default class BlogModuleService extends MedusaService({
+export default class BlogModuleService extends SwitchyardService({
   Post,
 }){
   protected options_: ModuleOptions
@@ -904,7 +904,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/modules/options).
 An example of integrating a dummy third-party system in a module's service:
 
 ```ts title="src/modules/blog/service.ts"
-import { Logger } from "@medusajs/framework/types"
+import { Logger } from "@switchyard/framework/types"
 import { BLOG_MODULE } from ".."
 
 export type ModuleOptions = {
@@ -944,7 +944,7 @@ Find a longer example of integrating a third-party service in [this documentatio
 
 ## Data Models
 
-A data model represents a table in the database. Medusa provides a data model language to intuitively create data models.
+A data model represents a table in the database. Switchyard provides a data model language to intuitively create data models.
 
 ### Create Data Model
 
@@ -959,7 +959,7 @@ This assumes you already have a module. If not, follow [this example](#create-mo
 1. Create the file `src/modules/blog/models/post.ts` with the following data model:
 
 ```ts title="src/modules/blog/models/post.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   id: model.id().primaryKey(),
@@ -972,8 +972,8 @@ export default Post
 2. Generate and run migrations:
 
 ```bash
-npx medusa db:generate blog
-npx medusa db:migrate
+npx switchyard db:generate blog
+npx switchyard db:migrate
 ```
 
 Learn more in [this documentation](!docs!/learn/fundamentals/modules#1-create-data-model).
@@ -1070,7 +1070,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/propert
 To set an `id` property as the primary key of a data model:
 
 ```ts highlights={[["4", "primaryKey"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   id: model.id().primaryKey(),
@@ -1083,7 +1083,7 @@ export default Post
 To set a `text` property as the primary key:
 
 ```ts highlights={[["4", "primaryKey"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   title: model.text().primaryKey(),
@@ -1096,7 +1096,7 @@ export default Post
 To set a `number` property as the primary key:
 
 ```ts highlights={[["4", "primaryKey"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   views: model.number().primaryKey(),
@@ -1113,7 +1113,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/propert
 To set the default value of a property:
 
 ```ts highlights={[["6"], ["9"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   status: model
@@ -1135,7 +1135,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/propert
 To allow `null` values for a property:
 
 ```ts highlights={[["4", "nullable"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   price: model.bigNumber().nullable(),
@@ -1152,7 +1152,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/propert
 To create a unique index on a property:
 
 ```ts highlights={[["4", "unique"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   title: model.text().unique(),
@@ -1169,7 +1169,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/propert
 To define a database index on a property:
 
 ```ts highlights={[["5", "index"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const MyCustom = model.define("my_custom", {
   id: model.id().primaryKey(),
@@ -1188,7 +1188,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/propert
 To define a composite index on a data model:
 
 ```ts highlights={[["7", "indexes"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const MyCustom = model.define("my_custom", {
   id: model.id().primaryKey(),
@@ -1215,7 +1215,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/index).
 To make a property searchable using terms or keywords:
 
 ```ts highlights={[["4", "searchable"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Post = model.define("post", {
   title: model.text().searchable(),
@@ -1246,7 +1246,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/propert
 The following creates a one-to-one relationship between the `User` and `Email` data models:
 
 ```ts highlights={[["5", "hasOne"], ["12", "belongsTo"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const User = model.define("user", {
   id: model.id().primaryKey(),
@@ -1270,7 +1270,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/relatio
 The following creates a one-to-many relationship between the `Store` and `Product` data models:
 
 ```ts highlights={[["5", "hasMany"], ["12", "belongsTo"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Store = model.define("store", {
   id: model.id().primaryKey(),
@@ -1294,7 +1294,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/relatio
 The following creates a many-to-many relationship between the `Order` and `Product` data models:
 
 ```ts highlights={[["5", "manyToMany"], ["12", "manyToMany"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Order = model.define("order", {
   id: model.id().primaryKey(),
@@ -1318,7 +1318,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/data-models/relatio
 To configure cascade on a data model:
 
 ```ts highlights={[["10", "cascades"]]}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import Product from "./product"
 
 const Store = model.define("store", {
@@ -1482,15 +1482,15 @@ A service is the main resource in a module. It manages the records of your custo
 
 ### Extend Service Factory
 
-The service factory `MedusaService` generates data-management methods for your data models.
+The service factory `SwitchyardService` generates data-management methods for your data models.
 
 To extend the service factory in your module's service:
 
-```ts highlights={[["4", "MedusaService"]]}
-import { MedusaService } from "@medusajs/framework/utils"
+```ts highlights={[["4", "SwitchyardService"]]}
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Post from "./models/post"
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   // TODO implement custom methods
@@ -1513,15 +1513,15 @@ To resolve resources from the module's container in a service:
   <CodeTab label="With Service Factory" value="service-factory">
 
 ```ts highlights={[["14"]]}
-import { Logger } from "@medusajs/framework/types"
-import { MedusaService } from "@medusajs/framework/utils"
+import { Logger } from "@switchyard/framework/types"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Post from "./models/post"
 
 type InjectedDependencies = {
   logger: Logger
 }
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   protected logger_: Logger
@@ -1543,7 +1543,7 @@ export default BlogModuleService
   <CodeTab label="Without Service Factory" value="no-service-factory">
 
 ```ts highlights={[["10"]]}
-import { Logger } from "@medusajs/framework/types"
+import { Logger } from "@switchyard/framework/types"
 
 type InjectedDependencies = {
   logger: Logger
@@ -1572,7 +1572,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/modules/container).
 To access options passed to a module in its service:
 
 ```ts highlights={[["14", "options"]]}
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Post from "./models/post"
 
 // recommended to define type in another file
@@ -1580,7 +1580,7 @@ type ModuleOptions = {
   apiKey?: boolean
 }
 
-export default class BlogModuleService extends MedusaService({
+export default class BlogModuleService extends SwitchyardService({
   Post,
 }){
   protected options_: ModuleOptions
@@ -1607,22 +1607,22 @@ To run database query in your service:
 // other imports...
 import { 
   InjectManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
 
 class BlogModuleService {
   // ...
 
   @InjectManager()
   async getCount(
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<number> {
     return await sharedContext.manager.count("post")
   }
   
   @InjectManager()
   async getCountSql(
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<number> {
     const data = await sharedContext.manager.execute(
       "SELECT COUNT(*) as num FROM post"
@@ -1643,10 +1643,10 @@ To execute database operations within a transaction in your service:
 import { 
   InjectManager,
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
 class BlogModuleService {
   // ...
@@ -1656,7 +1656,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<any> {
     const transactionManager = sharedContext.transactionManager
     await transactionManager.nativeUpdate(
@@ -1683,7 +1683,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ) {
     return await this.update_(input, sharedContext)
   }
@@ -1706,8 +1706,8 @@ To define a link between your custom module and a Commerce Module, such as the P
 
 ```ts title="src/links/blog-product.ts"
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -1718,7 +1718,7 @@ export default defineLink(
 2. Run the following command to sync the links:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 Learn more in [this documentation](!docs!/learn/fundamentals/module-links).
@@ -1729,8 +1729,8 @@ To define a list link, where multiple records of a model can be linked to a reco
 
 ```ts highlights={[["9", "isList"]]}
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -1749,8 +1749,8 @@ To ensure a model's records linked to another model are deleted when the linked 
 
 ```ts highlights={[["9", "deleteCascades"]]}
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -1769,8 +1769,8 @@ To add a custom column to the table that stores the linked records of two data m
 
 ```ts highlights={[["9", "database"]]}
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -1828,7 +1828,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/module-links/custom
 To create a link between two records using Link:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 import { BLOG_MODULE } from "../../modules/blog"
 
 // ...
@@ -1850,7 +1850,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/module-links/link#c
 To dismiss links between records using Link:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 import { BLOG_MODULE } from "../../modules/blog"
 
 // ...
@@ -1872,7 +1872,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/module-links/link#d
 To cascade delete records linked to a deleted record:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -1892,7 +1892,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/module-links/link#c
 To restore records that were soft-deleted because they were linked to a soft-deleted record:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -1911,7 +1911,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/module-links/link#r
 
 ## Query
 
-Query fetches data across modules. It’s a set of methods registered in the Medusa container under the `query` key.
+Query fetches data across modules. It’s a set of methods registered in the Switchyard container under the `query` key.
 
 ### Retrieve Records of Data Model
 
@@ -1919,16 +1919,16 @@ To retrieve records using Query in an API route:
 
 ```ts highlights={[["15", "graph"]]}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -1949,16 +1949,16 @@ To retrieve records linked to a data model:
 
 ```ts highlights={[["20"]]}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -1983,16 +1983,16 @@ To filter the retrieved records:
 
 ```ts highlights={[["18", "filters"]]}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -2019,16 +2019,16 @@ To paginate and sort retrieved records:
 
 ```ts highlights={[["21", "pagination"]]}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -2073,7 +2073,7 @@ To create a workflow:
 1. Create the first step at `src/workflows/hello-world/steps/step-1.ts` with the following content:
 
 ```ts title="src/workflows/hello-world/steps/step-1.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 export const step1 = createStep("step-1", async () => {
   return new StepResponse(`Hello from step one!`)
@@ -2083,7 +2083,7 @@ export const step1 = createStep("step-1", async () => {
 2. Create the second step at `src/workflows/hello-world/steps/step-2.ts` with the following content:
 
 ```ts title="src/workflows/hello-world/steps/step-2.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 type StepInput = {
   name: string
@@ -2103,7 +2103,7 @@ export const step2 = createStep(
 import {
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { step1 } from "./steps/step-1"
 import { step2 } from "./steps/step-2"
 
@@ -2132,14 +2132,14 @@ Learn more in [this documentation](!docs!/learn/fundamentals/workflows).
     
     ```ts title="src/api/workflow/route.ts" highlights={[["11"], ["12"], ["13"], ["14"], ["15"], ["16"]]} collapsibleLines="1-6" expandButtonLabel="Show Imports"
     import type {
-      MedusaRequest,
-      MedusaResponse,
-    } from "@medusajs/framework/http"
+      SwitchyardRequest,
+      SwitchyardResponse,
+    } from "@switchyard/framework/http"
     import myWorkflow from "../../workflows/hello-world"
 
     export async function GET(
-      req: MedusaRequest,
-      res: MedusaResponse
+      req: SwitchyardRequest,
+      res: SwitchyardResponse
     ) {
       const { result } = await myWorkflow(req.scope)
         .run({
@@ -2159,10 +2159,10 @@ Learn more in [this documentation](!docs!/learn/fundamentals/workflows).
     import {
       type SubscriberConfig,
       type SubscriberArgs,
-    } from "@medusajs/framework"
+    } from "@switchyard/framework"
     import myWorkflow from "../workflows/hello-world"
-    import { Modules } from "@medusajs/framework/utils"
-    import { IUserModuleService } from "@medusajs/framework/types"
+    import { Modules } from "@switchyard/framework/utils"
+    import { IUserModuleService } from "@switchyard/framework/types"
 
     export default async function handleCustomerCreate({
       event: { data },
@@ -2194,11 +2194,11 @@ Learn more in [this documentation](!docs!/learn/fundamentals/workflows).
   <CodeTab label="Scheduled Job" value="scheduled-job">
     
     ```ts title="src/jobs/message-daily.ts" highlights={[["7"], ["8"], ["9"], ["10"], ["11"], ["12"]]}
-    import { MedusaContainer } from "@medusajs/framework/types"
+    import { SwitchyardContainer } from "@switchyard/framework/types"
     import myWorkflow from "../workflows/hello-world"
 
     export default async function myCustomJob(
-      container: MedusaContainer
+      container: SwitchyardContainer
     ) {
       const { result } = await myWorkflow(container)
         .run({
@@ -2229,7 +2229,7 @@ Pass a compensation function that undoes what a step did as a second parameter t
 import { 
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -2257,7 +2257,7 @@ import {
   createWorkflow,
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 // step imports...
 
 const myWorkflow = createWorkflow(
@@ -2287,7 +2287,7 @@ import {
   createWorkflow,
   WorkflowResponse,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 // step imports...
 
 const workflow = createWorkflow(
@@ -2322,10 +2322,10 @@ To run a workflow in another, use the workflow's `runAsStep` special method:
 ```ts highlights={[["11", "runAsStep"]]}
 import {
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   createProductsWorkflow,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 const workflow = createWorkflow(
   "hello-world",
@@ -2350,7 +2350,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/workflows/execute-a
 To consume a workflow hook, create a file under `src/workflows/hooks`:
 
 ```ts title="src/workflows/hooks/product-created.ts"
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 createProductsWorkflow.hooks.productsCreated(
   async ({ products, additional_data }, { container }) => {
@@ -2376,7 +2376,7 @@ import {
   createHook,
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createProductStep } from "./steps/create-product"
 
 export const myWorkflow = createWorkflow(
@@ -2404,7 +2404,7 @@ To configure steps to retry in case of errors, pass the `maxRetries` step option
 ```ts highlights={[["10"]]}
 import { 
   createStep, 
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 export const step1 = createStep(
   {
@@ -2430,7 +2430,7 @@ import {
   createWorkflow,
   WorkflowResponse,
   parallelize,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   createProductStep,
   getProductStep,
@@ -2471,7 +2471,7 @@ import {
   createStep,  
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 // step import...
 
 const myWorkflow = createWorkflow({
@@ -2604,11 +2604,11 @@ Use the Workflow Engine Module's `subscribe` and `unsubscribe` methods to access
 For example, in an API route:
 
 ```ts highlights={[["18", "subscribe", "Subscribe to the workflow's status changes."]]}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import myWorkflow from "../../../workflows/hello-world"
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
-export async function GET(req: MedusaRequest, res: MedusaResponse) {
+export async function GET(req: SwitchyardRequest, res: SwitchyardResponse) {
   const { transaction, result } = await myWorkflow(req.scope).run()
 
   const workflowEngineService = req.scope.resolve(
@@ -2657,7 +2657,7 @@ To create a subscriber that listens to the `product.created` event, create the f
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 
 export default async function productCreateHandler({
   event,
@@ -2675,11 +2675,11 @@ Learn more in [this documentation](!docs!/learn/fundamentals/events-and-subscrib
 
 ### Resolve Resources in Subscriber
 
-To resolve resources from the Medusa container in a subscriber, use the `container` property of its parameter:
+To resolve resources from the Switchyard container in a subscriber, use the `container` property of its parameter:
 
 ```ts highlights={[["6", "container"], ["8", "resolve", "Resolve the Product Module's main service."]]}
-import { SubscriberArgs, SubscriberConfig } from "@medusajs/framework"
-import { Modules } from "@medusajs/framework/utils"
+import { SubscriberArgs, SubscriberConfig } from "@switchyard/framework"
+import { Modules } from "@switchyard/framework/utils"
 
 export default async function productCreateHandler({
   event: { data },
@@ -2711,8 +2711,8 @@ To send a notification, such as an email when a user requests to reset their pas
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@medusajs/medusa"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/medusa"
+import { Modules } from "@switchyard/framework/utils"
 
 export default async function resetPasswordTokenHandler({
   event: { data: {
@@ -2756,9 +2756,9 @@ To execute a workflow in a subscriber:
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import myWorkflow from "../workflows/hello-world"
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 export default async function handleCustomerCreate({
   event: { data },
@@ -2792,7 +2792,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/workflows#3-execute
 
 ## Scheduled Jobs
 
-A scheduled job is a function executed at a specified interval of time in the background of your Medusa application.
+A scheduled job is a function executed at a specified interval of time in the background of your Switchyard application.
 
 ### Create a Scheduled Job
 
@@ -2819,11 +2819,11 @@ Learn more in [this documentation](!docs!/learn/fundamentals/scheduled-jobs).
 To resolve resources in a scheduled job, use the `container` accepted as a first parameter:
 
 ```ts highlights={[["5", "container"], ["7", "resolve", "Resolve the Product Module's main service."]]}
-import { MedusaContainer } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const productModuleService = container.resolve(Modules.PRODUCT)
 
@@ -2845,7 +2845,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/scheduled-jobs#reso
 
 ### Specify a Job's Execution Number
 
-To limit the scheduled job's execution to a number of times during the Medusa application's runtime, use the `numberOfExecutions` configuration:
+To limit the scheduled job's execution to a number of times during the Switchyard application's runtime, use the `numberOfExecutions` configuration:
 
 ```ts highlights={[["9", "numberOfExecutions"]]}
 export default async function myCustomJob() {
@@ -2867,11 +2867,11 @@ Learn more in [this documentation](!docs!/learn/fundamentals/scheduled-jobs/exec
 To execute a workflow in a scheduled job:
 
 ```ts
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import myWorkflow from "../workflows/hello-world"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await myWorkflow(container)
     .run({
@@ -2895,7 +2895,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/workflows#3-execute
 
 ## Loaders
 
-A loader is a function defined in a module that's executed when the Medusa application starts.
+A loader is a function defined in a module that's executed when the Switchyard application starts.
 
 ### Create a Loader
 
@@ -2906,7 +2906,7 @@ For example, create the file `src/modules/hello/loaders/hello-world.ts` with the
 ```ts title="src/modules/hello/loaders/hello-world.ts"
 export default async function helloWorldLoader() {
   console.log(
-    "[HELLO MODULE] Just started the Medusa application!"
+    "[HELLO MODULE] Just started the Switchyard application!"
   )
 }
 ```
@@ -2920,10 +2920,10 @@ To resolve resources in a loader, use the `container` property of its first para
 ```ts highlights={[["9", "container"], ["11", "resolve", "Resolve the Logger from the module's container."]]}
 import {
   LoaderOptions,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { 
   ContainerRegistrationKeys,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export default async function helloWorldLoader({
   container,
@@ -2943,7 +2943,7 @@ To access a module's options in its loader, use the `options` property of its fi
 ```ts highlights={[["11", "options"]]}
 import {
   LoaderOptions,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 // recommended to define type in another file
 type ModuleOptions = {
@@ -2955,7 +2955,7 @@ export default async function helloWorldLoader({
 }: LoaderOptions<ModuleOptions>) {
   
   console.log(
-    "[HELLO MODULE] Just started the Medusa application!",
+    "[HELLO MODULE] Just started the Switchyard application!",
     options
   )
 }
@@ -2970,8 +2970,8 @@ To register a resource in the Module's container using a loader, use the `contai
 ```ts highlights={[["9", "registerAdd"]]}
 import {
   LoaderOptions,
-} from "@medusajs/framework/types"
-import { asValue } from "@medusajs/framework/awilix"
+} from "@switchyard/framework/types"
+import { asValue } from "@switchyard/framework/awilix"
 
 export default async function helloWorldLoader({
   container,
@@ -2991,7 +2991,7 @@ Where the first parameter of `registerAdd` is the name to register the resource 
 
 ## Admin Customizations
 
-You can customize the Medusa Admin to inject widgets in existing pages, or create new pages using UI routes.
+You can customize the Switchyard Admin to inject widgets in existing pages, or create new pages using UI routes.
 
 <Note>
 
@@ -3006,8 +3006,8 @@ A widget is a React component that can be injected into an existing page in the 
 To create a widget in the admin dashboard, create the file `src/admin/widgets/products-widget.tsx` with the following content:
 
 ```tsx title="src/admin/widgets/products-widget.tsx"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 
 const ProductWidget = () => {
   return (
@@ -3033,12 +3033,12 @@ Learn more about widgets in [this documentation](!docs!/learn/fundamentals/admin
 Widgets created in a details page, such as widgets in the `product.details.before` injection zone, receive a prop of the data of the details page (for example, the product):
 
 ```tsx highlights={[["10", "data"]]}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 import { 
   DetailWidgetProps, 
   AdminProduct,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 // The widget
 const ProductWidget = ({ 
@@ -3072,9 +3072,9 @@ A UI route is a React Component that adds a new page to your admin dashboard. Th
 To create a UI route in the admin dashboard, create the file `src/admin/routes/custom/page.tsx` with the following content:
 
 ```tsx title="src/admin/routes/custom/page.tsx"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ChatBubbleLeftRight } from "@medusajs/icons"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ChatBubbleLeftRight } from "@switchyard/icons"
+import { Container, Heading } from "@switchyard/ui"
 
 const CustomPage = () => {
   return (
@@ -3105,8 +3105,8 @@ To create a settings page, create a UI route under the `src/admin/routes/setting
 For example, create the file `src/admin/routes/settings/custom/page.tsx` with the following content:
 
 ```tsx title="src/admin/routes/settings/custom/page.tsx"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 
 const CustomSettingPage = () => {
   return (
@@ -3137,7 +3137,7 @@ For example, create the file `src/admin/routes/custom/[id]/page.tsx` with the fo
 
 ```tsx title="src/admin/routes/custom/[id]/page.tsx"
 import { useParams } from "react-router-dom"
-import { Container } from "@medusajs/ui"
+import { Container } from "@switchyard/ui"
 
 const CustomPage = () => {
   const { id } = useParams()
@@ -3165,8 +3165,8 @@ To send a request to custom API routes from the admin dashboard, use the Fetch A
 For example:
 
 ```tsx
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container } from "@switchyard/ui"
 import { useEffect, useState } from "react"
 
 const ProductWidget = () => {
@@ -3210,8 +3210,8 @@ Learn more in [this documentation](!docs!/learn/fundamentals/admin/tips#send-req
 To add a link to another page in a UI route or a widget, use `react-router-dom`'s `Link` component:
 
 ```tsx
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container } from "@switchyard/ui"
 import { Link } from "react-router-dom"
 
 // The widget
@@ -3237,7 +3237,7 @@ Learn more in [this documentation](!docs!/learn/fundamentals/admin/tips#routing-
 
 ## Integration Tests
 
-Medusa provides a `@medusajs/test-utils` package with utility tools to create integration tests for your custom API routes, modules, or other Medusa customizations.
+Switchyard provides a `@switchyard/test-utils` package with utility tools to create integration tests for your custom API routes, modules, or other Switchyard customizations.
 
 <Note>
 
@@ -3250,7 +3250,7 @@ For details on setting up your project for integration tests, refer to [this doc
 To create a test for a custom API route, create the file `integration-tests/http/custom-routes.spec.ts` with the following content:
 
 ```ts title="integration-tests/http/custom-routes.spec.ts"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 
 medusaIntegrationTestRunner({
   testSuite: ({ api, getContainer }) => {
@@ -3284,7 +3284,7 @@ Learn more in [this documentation](!docs!/learn/debugging-and-testing/testing-to
 To create a test for a workflow, create the file `integration-tests/http/workflow.spec.ts` with the following content:
 
 ```ts title="integration-tests/http/workflow.spec.ts"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import { helloWorldWorkflow } from "../../src/workflows/hello-world"
 
 medusaIntegrationTestRunner({
@@ -3316,7 +3316,7 @@ To create a test for a module's service, create the test under the `__tests__` d
 For example, create the file `src/modules/blog/__tests__/service.spec.ts` with the following content:
 
 ```ts title="src/modules/blog/__tests__/service.spec.ts"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { BLOG_MODULE } from ".."
 import BlogModuleService from "../service"
 import Post from "../models/post"
@@ -3347,7 +3347,7 @@ npm run test:modules
 
 ## Commerce Modules
 
-Medusa provides all its commerce features as separate Commerce Modules, such as the Product or Order modules.
+Switchyard provides all its commerce features as separate Commerce Modules, such as the Product or Order modules.
 
 <Note>
 
@@ -3357,12 +3357,12 @@ Refer to the [Commerce Modules](../commerce-modules/page.mdx) documentation for 
 
 ### Create an Actor Type to Authenticate
 
-To create an actor type that can authenticate to the Medusa application, such as a `manager`:
+To create an actor type that can authenticate to the Switchyard application, such as a `manager`:
 
 1. Create the data model in a module:
 
 ```ts
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Manager = model.define("manager", {
   id: model.id().primaryKey(),
@@ -3380,10 +3380,10 @@ export default Manager
 import { 
   createWorkflow, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   setAuthAppMetadataStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 // other imports...
 
 const createManagerWorkflow = createWorkflow(
@@ -3408,10 +3408,10 @@ const createManagerWorkflow = createWorkflow(
 
 ```ts
 import type { 
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import createManagerWorkflow from "../../workflows/create-manager"
 
 type RequestBody = {
@@ -3421,14 +3421,14 @@ type RequestBody = {
 }
 
 export async function POST(
-  req: AuthenticatedMedusaRequest<RequestBody>, 
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<RequestBody>, 
+  res: SwitchyardResponse
 ) {
   // If `actor_id` is present, the request carries 
   // authentication for an existing manager
   if (req.auth_context.actor_id) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Request already authenticated as a manager."
     )
   }
@@ -3451,7 +3451,7 @@ export async function POST(
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -3490,7 +3490,7 @@ import {
   AddItemAdjustmentAction,
   AddShippingMethodAdjustment,
   // ...
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 // retrieve the cart
 const cart = await cartModuleService.retrieveCart("cart_123", {
@@ -3615,7 +3615,7 @@ import {
   AddItemAdjustmentAction,
   AddShippingMethodAdjustment,
   // ...
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 // ...
 
@@ -3698,7 +3698,7 @@ To accept payment using the Payment Module's main service:
 import { 
   ContainerRegistrationKeys,
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 // ...
 
@@ -3760,7 +3760,7 @@ Learn more in [this documentation](../commerce-modules/payment/payment-flow/page
 To get prices of a product variant for a region and currency using [Query](!docs!/learn/fundamentals/module-links/query):
 
 ```ts
-import { QueryContext } from "@medusajs/framework/utils"
+import { QueryContext } from "@switchyard/framework/utils"
 
 // ...
 
@@ -3818,11 +3818,11 @@ import {
   HttpTypes,
   TaxableItemDTO,
   ItemTaxLineDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { 
   QueryContext,
   calculateAmountsWithTax,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 // other imports...
 
 // ...

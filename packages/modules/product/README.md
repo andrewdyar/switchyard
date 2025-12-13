@@ -2,7 +2,7 @@
 
 The Product Module gives you access Products, Variants, Categories, and more through a standalone package that can be installed and run in Next.js functions and other Node.js compatible runtimes.
 
-[Product Module documentation](https://docs.medusajs.com/v2/resources/commerce-modules/product) | [Medusa Website](https://medusajs.com/) | [Medusa Repository](https://github.com/medusajs/medusa)
+[Product Module documentation](https://docs.switchyard.com/v2/resources/commerce-modules/product) | [Switchyard Website](https://switchyard.com/) | [Switchyard Repository](https://github.com/switchyard/medusa)
 
 > The Product Module is currently in beta. The beta version comes with limited functionality, primarily centered around retrieving products. In the official version, the product module will be fully-fledged and on par with the product functionality in our core package.
 
@@ -17,7 +17,7 @@ The Product Module gives you access Products, Variants, Categories, and more thr
 1\. Run the following command in your project
 
 ```bash
-npm install @medusajs/product
+npm install @switchyard/product
 ```
 
 2\. Add Database URL to your environment variables
@@ -28,7 +28,7 @@ DATABASE_URL=<URL_GOES_HERE>
 
 3\. Apply database migrations
 
-> If you are using an existing Medusa database, you can skip this step. This step is only applicable when the module is used in isolation from a full Medusa setup
+> If you are using an existing Switchyard database, you can skip this step. This step is only applicable when the module is used in isolation from a full Switchyard setup
 
 Before you can run migrations, add in your `package.json` the following scripts:
 
@@ -157,7 +157,7 @@ To do that, add the serverComponentsExternalPackages option in `next.config.js`:
 
 const nextConfig = {
   experimental: {
-    serverComponentsExternalPackages: ["@medusajs/product"],
+    serverComponentsExternalPackages: ["@switchyard/product"],
   },
 }
 
@@ -173,7 +173,7 @@ For example, create the file `app/api/products/route.ts` with the following cont
 ```ts
 import { NextResponse } from "next/server"
 
-import { initialize as initializeProductModule } from "@medusajs/product"
+import { initialize as initializeProductModule } from "@switchyard/product"
 
 export async function GET(request: Request) {
   const productService = await initializeProductModule()
@@ -191,4 +191,4 @@ To test the endpoint you added, start your Next.js application with the followin
 npm run dev
 ```
 
-Then, open in your browser the URL `http://localhost:3000/api/products`. If you seeded your database with demo products, or you’re using a Medusa database schema, you’ll receive the products in your database. Otherwise, the request will return an empty array.
+Then, open in your browser the URL `http://localhost:3000/api/products`. If you seeded your database with demo products, or you’re using a Switchyard database schema, you’ll receive the products in your database. Otherwise, the request will return an empty array.

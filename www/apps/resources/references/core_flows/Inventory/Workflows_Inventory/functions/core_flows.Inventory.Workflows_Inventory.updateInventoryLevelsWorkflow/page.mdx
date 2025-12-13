@@ -9,17 +9,17 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# updateInventoryLevelsWorkflow - Medusa Core Workflows Reference
+# updateInventoryLevelsWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `updateInventoryLevelsWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `updateInventoryLevelsWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow updates one or more inventory levels. It's used by the
-[Update Inventory Level Admin API Route](https://docs.medusajs.com/api/admin#inventory-items\_postinventoryitemsidlocationlevelslocation\_id).
+[Update Inventory Level Admin API Route](https://docs.switchyard.com/api/admin#inventory-items\_postinventoryitemsidlocationlevelslocation\_id).
 
 You can use this workflow within your own customizations or custom workflows, allowing you
 to update inventory levels in your custom flows.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/inventory/workflows/update-inventory-levels.ts#L56" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/inventory/workflows/update-inventory-levels.ts#L56" />
 
 ## Examples
 
@@ -28,14 +28,14 @@ to update inventory levels in your custom flows.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { updateInventoryLevelsWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { updateInventoryLevelsWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await updateInventoryLevelsWorkflow(req.scope)
     .run({
@@ -60,8 +60,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { updateInventoryLevelsWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { updateInventoryLevelsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -91,11 +91,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { updateInventoryLevelsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { updateInventoryLevelsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await updateInventoryLevelsWorkflow(container)
     .run({
@@ -122,8 +122,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { updateInventoryLevelsWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { updateInventoryLevelsWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -152,8 +152,8 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"UpdateInventoryLevelsWorkflowInput","type":"[UpdateInventoryLevelsWorkflowInput](../../../../interfaces/core_flows.UpdateInventoryLevelsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to update the inventory levels.","expandable":false,"children":[{"name":"updates","type":"[UpdateInventoryLevelInput](../../../../../types/InventoryTypes/interfaces/types.InventoryTypes.UpdateInventoryLevelInput/page.mdx)[]","description":"The inventory levels to update.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"inventory_item_id","type":"`string`","description":"The ID of the associated inventory item.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"location_id","type":"`string`","description":"The ID of the associated location.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"id","type":"`string`","description":"ID of the inventory level to update","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"stocked_quantity","type":"`number`","description":"The stocked quantity of the associated inventory item in the associated location.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"incoming_quantity","type":"`number`","description":"The incoming quantity of the associated inventory item in the associated location.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateInventoryLevelsWorkflow"/>
+<TypeList types={[{"name":"UpdateInventoryLevelsWorkflowInput","type":"[UpdateInventoryLevelsWorkflowInput](../../../../interfaces/core_flows.UpdateInventoryLevelsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to update the inventory levels.","expandable":false,"children":[{"name":"updates","type":"[UpdateInventoryLevelInput](../../../../../types/InventoryTypes/interfaces/types.InventoryTypes.UpdateInventoryLevelInput/page.mdx)[]","description":"The inventory levels to update.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"inventory_item_id","type":"`string`","description":"The ID of the associated inventory item.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"location_id","type":"`string`","description":"The ID of the associated location.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"id","type":"`string`","description":"ID of the inventory level to update","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"stocked_quantity","type":"`number`","description":"The stocked quantity of the associated inventory item in the associated location.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"incoming_quantity","type":"`number`","description":"The incoming quantity of the associated inventory item in the associated location.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateInventoryLevelsWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"UpdateInventoryLevelsWorkflowOutput","type":"[UpdateInventoryLevelsWorkflowOutput](../../../../types/core_flows.UpdateInventoryLevelsWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"The updated inventory levels.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"inventory_item_id","type":"`string`","description":"The associated inventory item's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"location_id","type":"`string`","description":"The associated location's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"stocked_quantity","type":"`number`","description":"The stocked quantity of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"reserved_quantity","type":"`number`","description":"The reserved quantity of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"incoming_quantity","type":"`number`","description":"The incoming quantity of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"available_quantity","type":"`number`","description":"The available quantity of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"`null` \\| `Record<string, unknown>`","description":"Holds custom data in key-value pairs.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"The creation date of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"The update date of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`null` \\| `string` \\| `Date`","description":"The deletion date of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateInventoryLevelsWorkflow"/>
+<TypeList types={[{"name":"UpdateInventoryLevelsWorkflowOutput","type":"[UpdateInventoryLevelsWorkflowOutput](../../../../types/core_flows.UpdateInventoryLevelsWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"The updated inventory levels.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"inventory_item_id","type":"`string`","description":"The associated inventory item's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"location_id","type":"`string`","description":"The associated location's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"stocked_quantity","type":"`number`","description":"The stocked quantity of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"reserved_quantity","type":"`number`","description":"The reserved quantity of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"incoming_quantity","type":"`number`","description":"The incoming quantity of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"available_quantity","type":"`number`","description":"The available quantity of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"`null` \\| `Record<string, unknown>`","description":"Holds custom data in key-value pairs.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"The creation date of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"The update date of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`null` \\| `string` \\| `Date`","description":"The deletion date of the inventory level.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateInventoryLevelsWorkflow"/>

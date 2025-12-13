@@ -1,7 +1,7 @@
-import { IStoreModuleService } from "@medusajs/framework/types"
-import { Module, Modules } from "@medusajs/framework/utils"
+import { IStoreModuleService } from "@switchyard/framework/types"
+import { Module, Modules } from "@switchyard/framework/utils"
 import { StoreModuleService } from "@services"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { createStoreFixture } from "../__fixtures__"
 
 jest.setTimeout(100000)

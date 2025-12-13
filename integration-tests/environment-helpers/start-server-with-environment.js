@@ -24,7 +24,7 @@ const startServerWithEnvironment = async ({
     })
   }
 
-  const medusaProcess = await setupServer({
+  const switchyardProcess = await setupServer({
     cwd,
     verbose,
     redisUrl,
@@ -32,7 +32,7 @@ const startServerWithEnvironment = async ({
     env,
   })
 
-  return [medusaProcess, dbConnection]
+  return [switchyardProcess, dbConnection]
 }
 
 export default startServerWithEnvironment

@@ -5,7 +5,7 @@ import React, { useMemo } from "react"
 import { MarkdownIcon } from "../../Icons/Markdown"
 import { useAiAssistant, useSiteConfig } from "../../../providers"
 import { usePathname } from "next/navigation"
-import { BroomSparkle } from "@medusajs/icons"
+import { BroomSparkle } from "@switchyard/icons"
 import { useChat } from "@kapaai/react-sdk"
 
 export const ContentMenuActions = () => {

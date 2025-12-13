@@ -1,1 +1,1 @@
-# @medusajs/admin-vite-plugin
+# @switchyard/admin-vite-plugin

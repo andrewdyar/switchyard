@@ -45,7 +45,7 @@ export const highlights = [
   "use client" // include with Next.js 13+
 
   import { useEffect, useState } from "react"
-  import { HttpTypes } from "@medusajs/types"
+  import { HttpTypes } from "@switchyard/types"
   import { sdk } from "@/lib/sdk"
 
   export default function Categories() {
@@ -117,7 +117,7 @@ For example:
 
 export const paginateHighlights = [
   ["21", "offset", "Calculate the number of product categories to skip based on the current page and limit."],
-  ["27", "count", "The total number of product categories in the Medusa application."],
+  ["27", "count", "The total number of product categories in the Switchyard application."],
   ["39", "setHasMorePages", "Set whether there are more pages based on the total count."],
   ["58", "button", "Show a button to load more product categories if there are more pages."]
 ]
@@ -126,7 +126,7 @@ export const paginateHighlights = [
 "use client" // include with Next.js 13+
 
 import { useEffect, useState } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { sdk } from "@/lib/sdk"
 
 export default function Categories() {

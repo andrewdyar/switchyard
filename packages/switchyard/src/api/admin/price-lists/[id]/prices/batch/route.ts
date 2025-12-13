@@ -1,0 +1,65 @@
+import { promiseAll } from "@switchyard/framework/utils"
+import {
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { listPrices } from "../../../queries"
+import { adminPriceListPriceRemoteQueryFields } from "../../../query-config"
+import { BatchMethodRequest, HttpTypes } from "@switchyard/framework/types"
+import {
+  AdminCreatePriceListPriceType,
+  AdminUpdatePriceListPriceType,
+} from "../../../validators"
+import { batchPriceListPricesWorkflow } from "@switchyard/core-flows"
+
+export const POST = async (
+  req: AuthenticatedSwitchyardRequest<
+    BatchMethodRequest<
+      AdminCreatePriceListPriceType,
+      AdminUpdatePriceListPriceType
+    >
+  >,
+  res: SwitchyardResponse<HttpTypes.AdminPriceListBatchResponse>
+) => {
+  const id = req.params.id
+  const {
+    create = [],
+    update = [],
+    delete: deletePriceIds = [],
+  } = req.validatedBody
+
+  const workflow = batchPriceListPricesWorkflow(req.scope)
+  const { result } = await workflow.run({
+    input: {
+      data: {
+        id,
+        create,
+        update,
+        delete: deletePriceIds,
+      },
+    },
+  })
+
+  const [created, updated] = await promiseAll([
+    listPrices(
+      result.created.map((c) => c.id),
+      req.scope,
+      adminPriceListPriceRemoteQueryFields
+    ),
+    listPrices(
+      result.updated.map((c) => c.id),
+      req.scope,
+      adminPriceListPriceRemoteQueryFields
+    ),
+  ])
+
+  res.status(200).json({
+    created,
+    updated,
+    deleted: {
+      ids: deletePriceIds,
+      object: "price",
+      deleted: true,
+    },
+  })
+}

@@ -14,7 +14,7 @@
  * - Slots 13-16: Shelf 2
  * - Slots 17-20: Shelf 1 (bottom)
  */
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const InventoryGroup = model
   .define(

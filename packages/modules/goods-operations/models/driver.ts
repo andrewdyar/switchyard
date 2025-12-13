@@ -5,7 +5,7 @@
  * Can optionally link to a Customer account.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const Driver = model.define("goods_driver", {
   id: model.id().primaryKey(),

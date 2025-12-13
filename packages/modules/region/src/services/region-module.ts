@@ -12,7 +12,7 @@ import {
   SoftDeleteReturn,
   UpdateRegionDTO,
   UpsertRegionDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   arrayDifference,
   EmitEvents,
@@ -21,11 +21,11 @@ import {
   InjectTransactionManager,
   isString,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
   promiseAll,
   removeUndefined,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { Country, Region } from "@models"
 import { UpdateRegionInput } from "@types"
 
@@ -36,7 +36,7 @@ type InjectedDependencies = {
 }
 
 export default class RegionModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     Region: {
       dto: RegionDTO
       model: typeof Region
@@ -333,8 +333,8 @@ export default class RegionModuleService
     // The new regions being created have a country conflict
     const uniqueCountries = Array.from(new Set(countries))
     if (uniqueCountries.length !== countries.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Countries with codes: "${getDuplicates(countries).join(
           ", "
         )}" are already assigned to a region`
@@ -355,8 +355,8 @@ export default class RegionModuleService
         countryCodesInDb
       )
 
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Countries with codes: "${missingCountries.join(", ")}" do not exist`
       )
     }
@@ -365,8 +365,8 @@ export default class RegionModuleService
     // @ts-ignore
     const countriesWithRegion = countriesInDb.filter((c) => !!c.region_id)
     if (countriesWithRegion.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Countries with codes: "${countriesWithRegion
           .map((c) => c.iso_2)
           .join(", ")}" are already assigned to a region`

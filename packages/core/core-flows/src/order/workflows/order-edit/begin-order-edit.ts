@@ -2,14 +2,14 @@ import {
   OrderChangeDTO,
   OrderDTO,
   OrderWorkflow,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../../common"
 import { createOrderChangeStep } from "../../steps/create-order-change"
 import { throwIfOrderIsCancelled } from "../../utils/order-validation"

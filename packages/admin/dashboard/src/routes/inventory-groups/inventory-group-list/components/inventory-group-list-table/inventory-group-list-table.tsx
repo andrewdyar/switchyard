@@ -1,5 +1,5 @@
-import { PencilSquare, Trash } from "@medusajs/icons"
-import { Button, Container, Heading, Text } from "@medusajs/ui"
+import { PencilSquare, Trash } from "@switchyard/icons"
+import { Button, Container, Heading, Text } from "@switchyard/ui"
 import { keepPreviousData } from "@tanstack/react-query"
 import { createColumnHelper } from "@tanstack/react-table"
 import { useMemo } from "react"

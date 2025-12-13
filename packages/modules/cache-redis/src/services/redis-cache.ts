@@ -1,8 +1,8 @@
-import { ICacheService } from "@medusajs/framework/types"
+import { ICacheService } from "@switchyard/framework/types"
 import { Redis } from "ioredis"
 import { RedisCacheModuleOptions } from "../types"
 
-const DEFAULT_NAMESPACE = "medusa"
+const DEFAULT_NAMESPACE = "switchyard"
 const DEFAULT_CACHE_TIME = 30 // 30 seconds
 const EXPIRY_MODE = "EX" // "EX" stands for an expiry time in second
 

@@ -15,7 +15,7 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to create and use the publishable API key in your storefront to interact with the Medusa application's Store API routes.
+In this guide, you'll learn how to create and use the publishable API key in your storefront to interact with the Switchyard application's Store API routes.
 
 ## What is a Publishable API Key?
 
@@ -23,13 +23,13 @@ When sending requests to the `/store` API routes, you must pass a publishable AP
 
 Publishable API keys specify the scope of a request. Admin users create them, and they can only be used on the client-side, such as in a storefront.
 
-Publishable API keys are associated with sales channels. Then, when the publishable API key is passed in the header of a request, the Medusa application automatically infers what sales channel is being used.
+Publishable API keys are associated with sales channels. Then, when the publishable API key is passed in the header of a request, the Switchyard application automatically infers what sales channel is being used.
 
 ---
 
 ## How to Create a Publishable API Key?
 
-You create a publishable API key either using the [Medusa Admin](!user-guide!/settings/developer/publishable-api-keys) or the [Admin API routes](!api!/admin#api-keys_postapikeys).
+You create a publishable API key either using the [Switchyard Admin](!user-guide!/settings/developer/publishable-api-keys) or the [Admin API routes](!api!/admin#api-keys_postapikeys).
 
 For example, using the [Create API Key API Route](!api!/admin#api-keys_postapikeys):
 
@@ -51,7 +51,7 @@ Learn how to send authenticated admin requests in the [Admin API reference](!api
 
 ### Add Sales Channels to the Publishable API Key's Scope
 
-To add sales channels to the publishable API key's scope, you can either use the [Medusa Admin](!user-guide!/settings/developer/publishable-api-keys#manage-publishable-api-keys-sales-channels), or send a request to the [Manage Sales Channels API route](!api!/admin#api-keys_postapikeysidsaleschannels):
+To add sales channels to the publishable API key's scope, you can either use the [Switchyard Admin](!user-guide!/settings/developer/publishable-api-keys#manage-publishable-api-keys-sales-channels), or send a request to the [Manage Sales Channels API route](!api!/admin#api-keys_postapikeysidsaleschannels):
 
 ```bash
 curl -X POST 'http://localhost:9000/admin/api-keys/apk_123/sales-channels' \
@@ -68,7 +68,7 @@ Make sure to replace `apk_123` with the ID of the publishable API key, and `sc_1
 
 ## How to Use Publishable API Key in Storefront Requests
 
-In your storefront, pass the `x-publishable-api-key` in the header of all your requests to the Medusa application.
+In your storefront, pass the `x-publishable-api-key` in the header of all your requests to the Switchyard application.
 
 When using the JS SDK, set the publishable API key as an environment variable and pass it to the JS SDK's configurations.
 
@@ -79,7 +79,7 @@ export const highlights = [
 ]
 
 ```ts
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
 let MEDUSA_BACKEND_URL = "http://localhost:9000"
 
@@ -87,7 +87,7 @@ if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
   MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
 }
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: MEDUSA_BACKEND_URL,
   debug: process.env.NODE_ENV === "development",
   publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
@@ -96,4 +96,4 @@ export const sdk = new Medusa({
 
 Where `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY` is an environment variable that holds your publishable API key's token.
 
-The JS SDK will now take care of passing the publishable API key in the header of all requests to the Medusa application.
+The JS SDK will now take care of passing the publishable API key in the header of all requests to the Switchyard application.

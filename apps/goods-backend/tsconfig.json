@@ -9,6 +9,6 @@
     "experimentalSpecifierResolution": "node",
     "transpileOnly": true
   },
-  "include": ["src/**/*", "medusa-config.ts"],
+  "include": ["src/**/*", "switchyard.config.ts"],
   "exclude": ["node_modules", "dist"]
 }

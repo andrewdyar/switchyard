@@ -6,12 +6,12 @@ export const metadata = {
 
 # {metadata.title}
 
-The Local File Module Provider stores files uploaded to your Medusa application in the `/uploads` directory.
+The Local File Module Provider stores files uploaded to your Switchyard application in the `/uploads` directory.
 
 <Note type="warning">
 
 - The Local File Module Provider is only for development purposes. Use the [S3 File Module Provider](../s3/page.mdx) in production instead.
-- The Local File Module Provider will only read files uploaded through Medusa. It will not read files uploaded manually to the `static` (or other configured) directory.
+- The Local File Module Provider will only read files uploaded through Switchyard. It will not read files uploaded manually to the `static` (or other configured) directory.
 
 </Note>
 
@@ -33,8 +33,8 @@ The File Module accepts one provider only.
 
 </Note>
 
-```ts title="medusa-config.ts"
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -42,11 +42,11 @@ module.exports = {
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/file",
+      resolve: "@switchyard/medusa/file",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/file-local",
+            resolve: "@switchyard/medusa/file-local",
             id: "local",
             options: {
               // provider options...
@@ -78,7 +78,7 @@ module.exports = {
       </Table.Cell>
       <Table.Cell>
       
-      The directory to upload files to. Medusa exposes the content of the `static` directory publicly. If you change the directory, it must be served and publicly accessible.
+      The directory to upload files to. Switchyard exposes the content of the `static` directory publicly. If you change the directory, it must be served and publicly accessible.
       
       </Table.Cell>
       <Table.Cell>

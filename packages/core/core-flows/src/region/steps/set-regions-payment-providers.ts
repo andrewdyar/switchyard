@@ -1,17 +1,17 @@
-import { Link } from "@medusajs/framework/modules-sdk"
+import { Link } from "@switchyard/framework/modules-sdk"
 import {
   IPaymentModuleService,
   RemoteQueryFunction,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   LINKS,
-  MedusaError,
+  SwitchyardError,
   Modules,
   arrayDifference,
   promiseAll,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to set the payment providers available in regions.
@@ -59,8 +59,8 @@ async function validatePaymentProvidersExists(
   )
 
   if (missingProviders.length) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Payment providers with ids ${missingProviders.join(
         ", "
       )} not found or not enabled`

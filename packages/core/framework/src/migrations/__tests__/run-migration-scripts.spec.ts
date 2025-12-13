@@ -1,6 +1,6 @@
 import { jest } from "@jest/globals"
-import { MedusaContainer } from "@medusajs/types"
-import { ContainerRegistrationKeys, Modules } from "@medusajs/utils"
+import { SwitchyardContainer } from "@switchyard/types"
+import { ContainerRegistrationKeys, Modules } from "@switchyard/utils"
 import path from "path"
 import { MigrationScriptsMigrator } from "../run-migration-scripts"
 
@@ -24,7 +24,7 @@ const mockContainer = {
 
     throw new Error(`Unknown key: ${key}`)
   },
-} as unknown as MedusaContainer
+} as unknown as SwitchyardContainer
 
 describe("MigrationScriptsMigrator", () => {
   let migrator: MigrationScriptsMigrator

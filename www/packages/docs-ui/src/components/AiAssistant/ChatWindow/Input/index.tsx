@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef } from "react"
 import clsx from "clsx"
-import { ArrowUpCircleSolid, LightBulb, LightBulbSolid } from "@medusajs/icons"
+import { ArrowUpCircleSolid, LightBulb, LightBulbSolid } from "@switchyard/icons"
 import {
   useAiAssistant,
   useAnalytics,
@@ -168,7 +168,7 @@ export const AiAssistantChatWindowInput = ({
           onTouchMove={handleTouch}
           onTouchEnd={handleTouch}
           ref={inputRef as React.RefObject<HTMLTextAreaElement | null>}
-          placeholder="Ask me a question about Medusa..."
+          placeholder="Ask me a question about Switchyard..."
           disabled={loading}
         />
         <div className="flex items-center justify-end gap-docs_1">

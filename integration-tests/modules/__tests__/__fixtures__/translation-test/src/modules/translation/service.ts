@@ -1,7 +1,7 @@
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Translation } from "./models"
 
-export class TranslationModule extends MedusaService({
+export class TranslationModule extends SwitchyardService({
   Translation,
 }) {
   private manager_

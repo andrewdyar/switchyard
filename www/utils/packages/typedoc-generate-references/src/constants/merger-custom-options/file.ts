@@ -28,12 +28,12 @@ const fileOptions: FormattingOptionsType = {
       
 As you implement your File Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [S3 File Module Provider in the Medusa repository](https://github.com/medusajs/medusa/tree/develop/packages/modules/providers/file-s3).`,
+If you need to refer to an existing implementation as an example, check the [S3 File Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/file-s3).`,
       `## Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
 
-If you're creating the module provider in a Medusa application, create it under the \`src/modules\` directory. For example, \`src/modules/my-file\`.
+If you're creating the module provider in a Switchyard application, create it under the \`src/modules\` directory. For example, \`src/modules/my-file\`.
 
 If you're creating the module provider in a plugin, create it under the \`src/providers\` directory. For example, \`src/providers/my-file\`.
 
@@ -44,10 +44,10 @@ The rest of this guide always uses the \`src/modules/my-file\` directory as an e
 </Note>`,
       `## 2. Create the File Module Provider's Service
 
-Create the file \`src/modules/my-file/service.ts\` that holds the implementation of the module provider's main service. It must extend the \`AbstractFileProviderService\` class imported from \`@medusajs/framework/utils\`:
+Create the file \`src/modules/my-file/service.ts\` that holds the implementation of the module provider's main service. It must extend the \`AbstractFileProviderService\` class imported from \`@switchyard/framework/utils\`:
 
 \`\`\`ts title="src/modules/my-file/service.ts"
-import { AbstractFileProviderService } from "@medusajs/framework/utils"
+import { AbstractFileProviderService } from "@switchyard/framework/utils"
 
 class MyFileProviderService extends AbstractFileProviderService {
   // TODO implement methods
@@ -66,7 +66,7 @@ import MyFileProviderService from "./service"
 import { 
   ModuleProvider, 
   Modules
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export default ModuleProvider(Modules.FILE, {
   services: [MyFileProviderService],
@@ -76,7 +76,7 @@ export default ModuleProvider(Modules.FILE, {
 This exports the module provider's definition, indicating that the \`MyFileProviderService\` is the module provider's service.`,
       `## 4. Use Module Provider
 
-To use your File Module Provider, add it to the \`providers\` array of the File Module in \`medusa-config.ts\`:
+To use your File Module Provider, add it to the \`providers\` array of the File Module in \`switchyard.config.ts\`:
 
 <Note>
 
@@ -84,17 +84,17 @@ The File Module accepts one provider only.
 
 </Note>
 
-\`\`\`ts title="medusa-config.ts"
+\`\`\`ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/file",
+      resolve: "@switchyard/medusa/file",
       options: {
         providers: [
           // default provider
           {
-            resolve: "@medusajs/medusa/file-local",
+            resolve: "@switchyard/medusa/file-local",
             id: "local",
           },
           {
@@ -114,7 +114,7 @@ module.exports = defineConfig({
 `,
       `## 5. Test it Out
 
-To test out your File Module Provider, use the Medusa Admin or the [Upload API route](https://docs.medusajs.com/v2/api/admin#uploads_postuploads) to upload a file.
+To test out your File Module Provider, use the Switchyard Admin or the [Upload API route](https://docs.switchyard.com/v2/api/admin#uploads_postuploads) to upload a file.
 `,
     ],
   },

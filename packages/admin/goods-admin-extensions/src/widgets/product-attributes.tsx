@@ -1,7 +1,7 @@
 /* @refresh reload */
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Button, Label, Input, Select, Text, Switch } from "@medusajs/ui"
-import { DetailWidgetProps, AdminProduct } from "@medusajs/framework/types"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Button, Label, Input, Select, Text, Switch } from "@switchyard/ui"
+import { DetailWidgetProps, AdminProduct } from "@switchyard/framework/types"
 import { useState, useEffect } from "react"
 import { sdk } from "../lib/sdk"
 

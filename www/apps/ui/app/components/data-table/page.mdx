@@ -16,11 +16,11 @@ A component to display a table of data with advanced functionalities like pagina
 
 In this guide, you'll learn how to use the DataTable component.
 
-The `DataTable` component is useful if you're displaying large data with functionalities like pagination, filtering, sorting, and searching. It's also the recommended table component to use when creating customizations in the Medusa Admin.
+The `DataTable` component is useful if you're displaying large data with functionalities like pagination, filtering, sorting, and searching. It's also the recommended table component to use when creating customizations in the Switchyard Admin.
 
 <Note>
 
-This component is available after Medusa UI v4.0.4 (or Medusa v2.4.0). It is built on top of the [Table](../table/page.mdx) component. If you want a table with more control over its styling and functionality, use that component instead.
+This component is available after Switchyard UI v4.0.4 (or Switchyard v2.4.0). It is built on top of the [Table](../table/page.mdx) component. If you want a table with more control over its styling and functionality, use that component instead.
 
 </Note>
 
@@ -28,12 +28,12 @@ This component is available after Medusa UI v4.0.4 (or Medusa v2.4.0). It is bui
 
 ## Usage
 
-You import the `DataTable` component from `@medusajs/ui`.
+You import the `DataTable` component from `@switchyard/ui`.
 
 ```tsx
 import { 
   DataTable,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 ```
 
 ### Data Table Columns Preparation
@@ -44,7 +44,7 @@ Before using the `DataTable` component, you need to prepare its columns using th
 import {
   // ...
   createDataTableColumnHelper,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 
 const data = [
   {
@@ -77,13 +77,13 @@ For each column in the table, use the `accessor` method of the column helper to 
 
 ### Create Data Table Instance
 
-The `DataTable` component expects a table instance created using the `useDataTable` hook. Import that hook from `@medusajs/ui`:
+The `DataTable` component expects a table instance created using the `useDataTable` hook. Import that hook from `@switchyard/ui`:
 
 ```tsx
 import {
   // ...
   useDataTable,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 ```
 
 Then, inside the component that will render `DataTable`, create a table instance using the `useDataTable` hook:
@@ -105,8 +105,8 @@ The `useDataTable` hook accepts an object with the following properties:
 - `columns`: An array of column configurations generated using the `createDataTableColumnHelper` utility.
 - `data`: The data to be displayed in the table.
 - `getRowId`: A function that returns the unique identifier of a row. The identifier must be a string.
-- `rowCount`: The total number of rows in the table. If you're fetching data from the Medusa application with pagination or filters, this will be the total count, not the count of the data returned in the current page.
-- `isLoading`: A boolean that indicates whether the table is loading data. This is useful when loading data from the Medusa application for the first time or in between pages.
+- `rowCount`: The total number of rows in the table. If you're fetching data from the Switchyard application with pagination or filters, this will be the total count, not the count of the data returned in the current page.
+- `isLoading`: A boolean that indicates whether the table is loading data. This is useful when loading data from the Switchyard application for the first time or in between pages.
 
 ### Render DataTable
 
@@ -151,7 +151,7 @@ Refer to the examples later on this page to learn how to add pagination, filteri
 
 ## Example with Data Fetching
 
-Refer to [this Admin Components guide](https://docs.medusajs.com/resources/admin-components/components/data-table) for an example on using the `DataTable` component with data fetching from the Medusa application.
+Refer to [this Admin Components guide](https://docs.switchyard.com/resources/admin-components/components/data-table) for an example on using the `DataTable` component with data fetching from the Switchyard application.
 
 ---
 
@@ -259,7 +259,7 @@ const table = useDataTable({
 - `state`: The search query string. This must be a React state variable, as its value will be used for the table's search input.
 - `onSearchChange`: A function that updates the search query string. Typically, this would be the setter function of the state variable, but you can also perform custom actions if necessary.
 
-Next, you must implement the search filtering. For example, if you're retrieving data from the Medusa application, you pass the search query to the API to filter the data.
+Next, you must implement the search filtering. For example, if you're retrieving data from the Switchyard application, you pass the search query to the API to filter the data.
 
 For example, when using a simple array as in the example above, this is how you filter the data by the search query:
 
@@ -309,13 +309,13 @@ This will show a search input at the top of the table, in the data table's toolb
 
 The object passed to the `useDataTable` hook accepts a `pagination` property that you can use to enable and configure the pagination functionality in the `DataTable` component.
 
-First, import the `DataTablePaginationState` type from `@medusajs/ui`:
+First, import the `DataTablePaginationState` type from `@switchyard/ui`:
 
 ```tsx
 import {
   // ...
   DataTablePaginationState,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 ```
 
 Then, create a state variable to manage the pagination:
@@ -349,7 +349,7 @@ const table = useDataTable({
 - `state`: The pagination state object. This must be a React state variable of type `DataTablePaginationState`.
 - `onPaginationChange`: A function that updates the pagination state object. Typically, this would be the setter function of the state variable, but you can also perform custom actions if necessary.
 
-You must also implement the pagination logic, such as fetching data from the Medusa application with the pagination parameters.
+You must also implement the pagination logic, such as fetching data from the Switchyard application with the pagination parameters.
 
 For example, when using a simple array as in the example above, this is how you paginate the data:
 
@@ -405,14 +405,14 @@ This will show the pagination controls at the end of the table.
 
 The object passed to the `useDataTable` hook accepts a `filters` property that you can use to enable and configure the filtering functionality in the `DataTable` component.
 
-First, add the following imports from the `@medusajs/ui` package:
+First, add the following imports from the `@switchyard/ui` package:
 
 ```tsx
 import {
   // ...
   createDataTableFilterHelper,
   DataTableFilteringState,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 ```
 
 The `createDataTableFilterHelper` utility is a function that returns a helper function to generate filter configurations for the `DataTable` component. The `DataTableFilteringState` type is an object that represents the filtering state of the table.
@@ -479,7 +479,7 @@ The `useDataTable` hook accepts the following properties for filtering:
     - `state`: The filtering state object. This must be a React state variable of type `DataTableFilteringState`.
     - `onFilteringChange`: A function that updates the filtering state object. Typically, this would be the setter function of the state variable, but you can also perform custom actions if necessary.
 
-You must also implement the logic of filtering the data based on the filter conditions, such as sending the filter conditions to the Medusa application when fetching data.
+You must also implement the logic of filtering the data based on the filter conditions, such as sending the filter conditions to the Switchyard application when fetching data.
 
 For example, when using a simple array as in the example above, this is how you filter the data based on the filter conditions:
 
@@ -706,7 +706,7 @@ Next, in the component rendering the `DataTable` component, create a state varia
 import {
   // ...
   DataTableSortingState,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 
 export default function ProductTable() {
   const [sorting, setSorting] = useState<DataTableSortingState | null>(null)
@@ -730,7 +730,7 @@ The `sorting` object passed to the `useDataTable` hook accepts the following pro
 - `state`: The sorting state object. This must be a React state variable of type `DataTableSortingState`.
 - `onSortingChange`: A function that updates the sorting state object. Typically, this would be the setter function of the state variable, but you can also perform custom actions if necessary.
 
-You must also implement the sorting logic, such as sending the sorting conditions to the Medusa application when fetching data.
+You must also implement the sorting logic, such as sending the sorting conditions to the Switchyard application when fetching data.
 
 For example, when using a simple array as in the example above, this is how you sort the data based on the sorting conditions:
 
@@ -815,14 +815,14 @@ The user can still change the sort values, but the initial values will be applie
 
 The object passed to the `useDataTable` hook accepts a `commands` object property that you can use to add custom actions to the `DataTable` component.
 
-First, add the following imports from `@medusajs/ui`:
+First, add the following imports from `@switchyard/ui`:
 
 ```tsx
 import {
   // ...
   createDataTableCommandHelper,
   DataTableRowSelectionState,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 ```
 
 The `createDataTableCommandHelper` utility is a function that returns a helper function to generate command configurations for the `DataTable` component. The `DataTableRowSelectionState` type is an object that represents the row selection state of the table.

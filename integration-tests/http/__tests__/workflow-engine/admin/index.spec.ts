@@ -4,15 +4,15 @@ import {
   StepResponse,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { Modules, TransactionState } from "@medusajs/utils"
+} from "@switchyard/framework/workflows-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { Modules, TransactionState } from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,
 } from "../../../../helpers/create-admin-user"
 import { setTimeout } from "timers/promises"
-import { IWorkflowEngineService } from "@medusajs/framework/types"
+import { IWorkflowEngineService } from "@switchyard/framework/types"
 
 jest.setTimeout(300000)
 

@@ -1,4 +1,4 @@
-import { AcademicCapSolid, UsersSolid, PuzzleSolid } from "@medusajs/icons"
+import { AcademicCapSolid, UsersSolid, PuzzleSolid } from "@switchyard/icons"
 
 export const metadata = {
   title: `Ecommerce Recipe`,
@@ -6,7 +6,7 @@ export const metadata = {
 
 # {metadata.title}
 
-This recipe provides the general steps to create an ecommerce store with Medusa.
+This recipe provides the general steps to create an ecommerce store with Switchyard.
 
 ## Overview
 
@@ -16,30 +16,30 @@ Businesses use ecommerce stores to:
 - Accept customer orders and payment.
 - Manage their store's data and logistics.
 
-Medusa provides all essential commerce features out-of-the-box. Businesses can go live and start selling without making any adjustments.
+Switchyard provides all essential commerce features out-of-the-box. Businesses can go live and start selling without making any adjustments.
 
 Businesses can also power-up their store by integrating third-party services for payments, fulfillment, and more.
 
 <Note title="Related use-case">
 
-[How Tekla created an ecommerce store using Medusa](https://medusajs.com/blog/tekla/).
+[How Tekla created an ecommerce store using Switchyard](https://switchyard.com/blog/tekla/).
 
 </Note>
 
 ---
 
-## Install Ecommerce Store Powered by Medusa
+## Install Ecommerce Store Powered by Switchyard
 
-You can use the following command to install an ecommerce store with Medusa:
+You can use the following command to install an ecommerce store with Switchyard:
 
 ```bash
-npx create-medusa-app@latest --with-nextjs-starter
+npx create-switchyard-app@latest --with-nextjs-starter
 ```
 
 This installs:
 
-- The Medusa application, which is composed of a Node.js server and a Medusa Admin dashboard. The dashboard opens right after the installation finishes, where you can create a user and start managing your store's data.
-- A [Next.js Starter Storefront](../../nextjs-starter/page.mdx) that connects to your Medusa application to provide customers with ecommerce features.
+- The Switchyard application, which is composed of a Node.js server and a Switchyard Admin dashboard. The dashboard opens right after the installation finishes, where you can create a user and start managing your store's data.
+- A [Next.js Starter Storefront](../../nextjs-starter/page.mdx) that connects to your Switchyard application to provide customers with ecommerce features.
 
 ---
 
@@ -52,15 +52,15 @@ For example, you can integrate [Stripe](../../commerce-modules/payment/payment-p
 <Card
   href="/integrations"
   title="Integrations"
-  text="Check out available integrations for your Medusa application."
+  text="Check out available integrations for your Switchyard application."
   icon={PuzzleSolid}
 />
 
 ---
 
-## Deploy the Medusa Application
+## Deploy the Switchyard Application
 
-The most efficient way to deploy your Medusa application is to use [Cloud](!cloud!). Cloud is our managed services offering that makes deploying and operating Medusa applications possible without having to worry about configuring, scaling, and maintaining infrastructure. Cloud hosts your server, Admin dashboard, database, and Redis instance.
+The most efficient way to deploy your Switchyard application is to use [Cloud](!cloud!). Cloud is our managed services offering that makes deploying and operating Switchyard applications possible without having to worry about configuring, scaling, and maintaining infrastructure. Cloud hosts your server, Admin dashboard, database, and Redis instance.
 
 With Cloud, you maintain full customization control as you deploy your own modules and customizations directly from GitHub:
 
@@ -69,7 +69,7 @@ With Cloud, you maintain full customization control as you deploy your own modul
 - Preview environments for new PRs.
 - Test on production-like data.
 
-Our documentation also provides a step-by-step guides to deploy your Medusa application and the Next.js Starter Storefront.
+Our documentation also provides a step-by-step guides to deploy your Switchyard application and the Next.js Starter Storefront.
 
 <CardList itemsPerRow={2} items={[
   {
@@ -81,7 +81,7 @@ Our documentation also provides a step-by-step guides to deploy your Medusa appl
   {
     href: "/deployment",
     title: "Deployment Guides",
-    text: "Learn how to deploy the Medusa application and Next.js Starter Storefront.",
+    text: "Learn how to deploy the Switchyard application and Next.js Starter Storefront.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -90,6 +90,6 @@ Our documentation also provides a step-by-step guides to deploy your Medusa appl
 
 ## Add Custom Features
 
-Along with the extensive ecommerce features, Medusa also provides the architecture and Framework to customize your application and build custom features that are tailored for your business use case.
+Along with the extensive ecommerce features, Switchyard also provides the architecture and Framework to customize your application and build custom features that are tailored for your business use case.
 
-To learn how to develop customizations with Medusa, refer to the [Get Started](!docs!/learn) documentation.
+To learn how to develop customizations with Switchyard, refer to the [Get Started](!docs!/learn) documentation.

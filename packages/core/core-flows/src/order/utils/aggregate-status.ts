@@ -1,5 +1,5 @@
-import type { OrderDetailDTO } from "@medusajs/framework/types"
-import { isDefined, MathBN, MEDUSA_EPSILON } from "@medusajs/framework/utils"
+import type { OrderDetailDTO } from "@switchyard/framework/types"
+import { isDefined, MathBN, MEDUSA_EPSILON } from "@switchyard/framework/utils"
 
 export const getLastPaymentStatus = (order: OrderDetailDTO) => {
   const PaymentStatus = {

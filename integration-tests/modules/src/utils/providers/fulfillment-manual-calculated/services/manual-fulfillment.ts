@@ -1,4 +1,4 @@
-import { AbstractFulfillmentProviderService } from "@medusajs/framework/utils"
+import { AbstractFulfillmentProviderService } from "@switchyard/framework/utils"
 
 export class ManualFulfillmentService extends AbstractFulfillmentProviderService {
   static identifier = "manual-calculated"

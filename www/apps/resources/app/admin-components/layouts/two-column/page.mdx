@@ -8,9 +8,9 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to create a layout component that matches the Medusa Admin's design conventions for pages with two columns of content.
+In this guide, you'll learn how to create a layout component that matches the Switchyard Admin's design conventions for pages with two columns of content.
 
-The Medusa Admin has pages with two columns of content.
+The Switchyard Admin has pages with two columns of content.
 
 <Note>
 
@@ -18,7 +18,7 @@ This doesn't include the sidebar, only the main content.
 
 </Note>
 
-![An example of an admin page with two columns](https://res.cloudinary.com/dza7lstvk/image/upload/v1728286690/Medusa%20Resources/two-column_sdnkg0.png)
+![An example of an admin page with two columns](https://res.cloudinary.com/dza7lstvk/image/upload/v1728286690/Switchyard%20Resources/two-column_sdnkg0.png)
 
 To create a layout that you can use in UI routes to support two columns of content, create the component `src/admin/layouts/two-column.tsx` with the following content:
 
@@ -57,8 +57,8 @@ The `TwoColumnLayout` accepts two props:
 Use the `TwoColumnLayout` component in your UI routes that have a single column. For example:
 
 ```tsx title="src/admin/routes/custom/page.tsx" highlights={[["9"]]}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ChatBubbleLeftRight } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ChatBubbleLeftRight } from "@switchyard/icons"
 import { Container } from "../../components/container"
 import { Header } from "../../components/header"
 import { TwoColumnLayout } from "../../layouts/two-column"

@@ -217,7 +217,7 @@
  *               type: object
  *               description: The item's metadata, can hold custom key-value pairs.
  *               externalDocs:
- *                 url: https://docs.medusajs.com/api/admin#manage-metadata
+ *                 url: https://docs.switchyard.com/api/admin#manage-metadata
  *                 description: Learn how to manage metadata
  *             original_total:
  *               type: number
@@ -341,12 +341,12 @@
  *               type: object
  *               description: The data relevant for the fulfillment provider to process this shipment.
  *               externalDocs:
- *                 url: https://docs.medusajs.com/resources/commerce-modules/order/concepts#data-property
+ *                 url: https://docs.switchyard.com/resources/commerce-modules/order/concepts#data-property
  *             metadata:
  *               type: object
  *               description: The shipping method's metadata, can hold custom key-value pairs.
  *               externalDocs:
- *                 url: https://docs.medusajs.com/api/admin#manage-metadata
+ *                 url: https://docs.switchyard.com/api/admin#manage-metadata
  *                 description: Learn how to manage metadata
  *             tax_lines:
  *               type: array
@@ -526,7 +526,7 @@
  *     type: object
  *     description: The order's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.com/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  *   created_at:
  *     type: string
@@ -658,7 +658,7 @@
  *     title: custom_display_id
  *     description: The custom display ID of the draft order.
  *     externalDocs:
- *       url: https://docs.medusajs.com/resources/commerce-modules/order/custom-display-id
+ *       url: https://docs.switchyard.com/resources/commerce-modules/order/custom-display-id
  * 
 */
 

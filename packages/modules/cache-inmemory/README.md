@@ -1,11 +1,11 @@
-# Medusa Cache In-memory
+# Switchyard Cache In-memory
 
-Medusa in-memory cache module. Use plain JS Map as a cache store.
+Switchyard in-memory cache module. Use plain JS Map as a cache store.
 
 ## Installation
 
 ```
-yarn add @medusajs/cache-inmemory
+yarn add @switchyard/cache-inmemory
 ```
 
 ## Options
@@ -22,4 +22,4 @@ Recommended for testing and development. For production, use Redis cache module.
 
 ### Other caching modules
 
-- [Medusa Cache Redis](../cache-redis/README.md)
+- [Switchyard Cache Redis](../cache-redis/README.md)

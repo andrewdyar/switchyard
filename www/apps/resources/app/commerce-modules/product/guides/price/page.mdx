@@ -14,11 +14,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this document, you'll learn how to retrieve product variant prices in the Medusa application using [Query](!docs!/learn/fundamentals/module-links/query).
+In this document, you'll learn how to retrieve product variant prices in the Switchyard application using [Query](!docs!/learn/fundamentals/module-links/query).
 
 <Note title="Why use Query?">
 
-The Product Module doesn't provide pricing functionalities. The Medusa application links the Product Module's `ProductVariant` data model to the Pricing Module's `PriceSet` data model.
+The Product Module doesn't provide pricing functionalities. The Switchyard application links the Product Module's `ProductVariant` data model to the Pricing Module's `PriceSet` data model.
 
 So, to retrieve data across the linked records of the two modules, you use Query.
 
@@ -68,7 +68,7 @@ To retrieve calculated prices of variants based on a context, retrieve the produ
 For example:
 
 ```ts highlights={[["10"], ["15"], ["16"], ["17"], ["18"], ["19"], ["20"], ["21"], ["22"]]}
-import { QueryContext } from "@medusajs/framework/utils"
+import { QueryContext } from "@switchyard/framework/utils"
 
 // ...
 

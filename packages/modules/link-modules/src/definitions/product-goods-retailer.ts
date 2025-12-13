@@ -5,8 +5,8 @@
  * One product can have multiple retailer mappings (one per store).
  */
 
-import { ModuleJoinerConfig } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { ModuleJoinerConfig } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 
 const GOODS_RETAILER_MODULE = "goodsRetailerModuleService"
 const LINK_PRODUCT_GOODS_RETAILER = "ProductGoodsRetailerLink"

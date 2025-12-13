@@ -8,28 +8,28 @@ In this chapter, you’ll learn what Link is and how to use it to manage links.
 
 <Note>
 
-As of [Medusa v2.2.0](https://github.com/medusajs/medusa/releases/tag/v2.2.0), Remote Link has been deprecated in favor of Link. They have the same usage, so you only need to change the key used to resolve the tool from the Medusa container as explained below.
+As of [Switchyard v2.2.0](https://github.com/switchyard/medusa/releases/tag/v2.2.0), Remote Link has been deprecated in favor of Link. They have the same usage, so you only need to change the key used to resolve the tool from the Switchyard container as explained below.
 
 </Note>
 
 ## What is Link?
 
-Link is a class with utility methods to manage links between data models. It’s registered in the Medusa container under the `link` registration name.
+Link is a class with utility methods to manage links between data models. It’s registered in the Switchyard container under the `link` registration name.
 
 For example:
 
 ```ts collapsibleLines="1-9" expandButtonLabel="Show Imports"
 import { 
-  MedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { 
   ContainerRegistrationKeys,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const link = req.scope.resolve(
     ContainerRegistrationKeys.LINK
@@ -50,7 +50,7 @@ To create a link between records of two data models, use the `create` method of 
 For example:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -78,7 +78,7 @@ So, in the example above, you link a record of the `MyCustom` data model in a `h
 
 ### Enforced Integrity Constraints on Link Creation
 
-Medusa enforces integrity constraints on links based on the link's relation type. So, an error is thrown in the following scenarios:
+Switchyard enforces integrity constraints on links based on the link's relation type. So, an error is thrown in the following scenarios:
 
 - If the link is one-to-one and one of the linked records already has a link to another record of the same data model. For example:
 
@@ -149,7 +149,7 @@ To remove a link between records of two data models, use the `dismiss` method of
 For example:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -180,7 +180,7 @@ If you delete a record using a workflow or its module's service, use the `delete
 For example:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -204,7 +204,7 @@ If a record that was previously soft-deleted is now restored, use the `restore` 
 For example:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 

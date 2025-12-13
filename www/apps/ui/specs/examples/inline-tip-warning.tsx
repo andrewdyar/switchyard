@@ -1,4 +1,4 @@
-import { InlineTip } from "@medusajs/ui"
+import { InlineTip } from "@switchyard/ui"
 
 export default function InlineTipWarning() {
   return (

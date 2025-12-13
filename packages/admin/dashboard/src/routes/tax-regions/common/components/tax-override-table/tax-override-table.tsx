@@ -1,5 +1,5 @@
-import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Button } from "@switchyard/ui"
 import { Table } from "@tanstack/react-table"
 import { ReactNode } from "react"
 import { Link } from "react-router-dom"

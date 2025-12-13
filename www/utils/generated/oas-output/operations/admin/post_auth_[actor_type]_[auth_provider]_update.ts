@@ -3,9 +3,9 @@
  * operationId: PostActor_typeAuth_providerUpdate
  * summary: Reset an Admin User's Password
  * x-sidebar-summary: Reset Password
- * description: Reset an admin user's password using a reset-password token generated with the [Generate Reset Password Token API route](https://docs.medusajs.com/api/admin#auth_postactor_typeauth_providerresetpassword). You pass the token as a bearer token in the request's Authorization header.
+ * description: Reset an admin user's password using a reset-password token generated with the [Generate Reset Password Token API route](https://docs.switchyard.com/api/admin#auth_postactor_typeauth_providerresetpassword). You pass the token as a bearer token in the request's Authorization header.
  * externalDocs:
- *   url: https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route#reset-password-route
+ *   url: https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route#reset-password-route
  *   description: Learn more about this API route.
  * x-authenticated: true
  * parameters:
@@ -30,9 +30,9 @@
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

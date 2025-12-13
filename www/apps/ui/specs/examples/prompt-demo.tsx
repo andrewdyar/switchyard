@@ -1,4 +1,4 @@
-import { Button, Prompt } from "@medusajs/ui"
+import { Button, Prompt } from "@switchyard/ui"
 
 export default function PromptDemo() {
   return (

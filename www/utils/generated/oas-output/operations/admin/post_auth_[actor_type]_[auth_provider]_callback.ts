@@ -10,7 +10,7 @@
  *   You can decode the JWT token using libraries like [react-jwt](https://www.npmjs.com/package/react-jwt) in the frontend. If the decoded data doesn't 
  *   have an `actor_id` property, then you must create a user, typically using the Accept Invite route passing the token in the request's Authorization header.
  * externalDocs:
- *   url: https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route#2-third-party-service-authenticate-flow
+ *   url: https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route#2-third-party-service-authenticate-flow
  *   description: Learn about third-party authentication flow.
  * x-authenticated: false
  * parameters:
@@ -25,10 +25,10 @@
  *   - lang: JavaScript
  *     label: Google Provider
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  *       import { decodeToken } from "react-jwt"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {
@@ -69,10 +69,10 @@
  *   - lang: TypeScript
  *     label: GitHub Provider
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  *       import { decodeToken } from "react-jwt"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

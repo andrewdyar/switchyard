@@ -1,1 +1,1 @@
-# Docs: Medusa UI
+# Docs: Switchyard UI

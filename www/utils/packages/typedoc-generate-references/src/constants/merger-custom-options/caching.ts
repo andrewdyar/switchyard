@@ -10,7 +10,7 @@ const cachingOptions: FormattingOptionsType = {
     
 :::note
 
-The Caching Module and its providers are available starting [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0).
+The Caching Module and its providers are available starting [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0).
 
 :::`,
     frontmatterData: {
@@ -37,12 +37,12 @@ The Caching Module and its providers are available starting [Medusa v2.11.0](htt
 
 As you implement your Caching Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [Redis Caching Module Provider in the Medusa repository](https://github.com/medusajs/medusa/tree/develop/packages/modules/providers/caching-redis).`,
+If you need to refer to an existing implementation as an example, check the [Redis Caching Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/caching-redis).`,
       `## 1. Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
 
-If you're creating the module provider in a Medusa application, create it under the \`src/modules\` directory. For example, \`src/modules/my-caching\`.
+If you're creating the module provider in a Switchyard application, create it under the \`src/modules\` directory. For example, \`src/modules/my-caching\`.
 
 If you're creating the module provider in a plugin, create it under the \`src/providers\` directory. For example, \`src/providers/my-caching\`.
 
@@ -53,10 +53,10 @@ The rest of this guide always uses the \`src/modules/my-caching\` directory as a
 </Note>`,
       `## 2. Create the Caching Module Provider Service
 
-Create the file \`src/modules/my-caching/service.ts\` that holds the module provider's main service. It must implement the \`ICachingProviderService\` interface imported from \`@medusajs/framework/types\`:
+Create the file \`src/modules/my-caching/service.ts\` that holds the module provider's main service. It must implement the \`ICachingProviderService\` interface imported from \`@switchyard/framework/types\`:
 
 \`\`\`ts title="src/modules/my-caching/service.ts"
-import { ICachingProviderService } from "@medusajs/framework/types"
+import { ICachingProviderService } from "@switchyard/framework/types"
 
 class MyCachingProviderService implements ICachingProviderService {
   // TODO implement methods
@@ -71,7 +71,7 @@ export default MyCachingProviderService
 Create the file \`src/modules/my-caching/index.ts\` with the following content:
 
 \`\`\`ts title="src/modules/my-caching/index.ts"
-import { ModuleProvider, Modules } from "@medusajs/framework/utils"
+import { ModuleProvider, Modules } from "@switchyard/framework/utils"
 import MyCachingProviderService from "./service"
 
 export default ModuleProvider(Modules.CACHING, {
@@ -82,14 +82,14 @@ export default ModuleProvider(Modules.CACHING, {
 This exports the module provider's definition, indicating that the \`MyCachingProviderService\` is the module provider's service.`,
       `## 4. Use Module Provider
 
-To use your Caching Module Provider, add it to the \`providers\` array of the Caching Module in \`medusa-config.ts\`:
+To use your Caching Module Provider, add it to the \`providers\` array of the Caching Module in \`switchyard.config.ts\`:
 
-\`\`\`ts title="medusa-config.ts"
+\`\`\`ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/caching",
+      resolve: "@switchyard/medusa/caching",
       options: {
         providers: [
           {
@@ -116,9 +116,9 @@ module.exports = defineConfig({
 To test out your Caching Module Provider, create a simple API route that retrieves cached data with Query:
 
 \`\`\`ts title="src/api/test-caching/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   const query = req.scope.resolve("query")
 
   const { data } = await query.graph({
@@ -135,7 +135,7 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
 }
 \`\`\`
 
-Then, start your Medusa server with the following command:
+Then, start your Switchyard server with the following command:
 
 \`\`\`bash npm2yarn
 npm run dev
@@ -163,7 +163,7 @@ You will receive a response with the list of products. The first time you make t
     
 :::note
 
-The Caching Module and its providers are available starting [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0).
+The Caching Module and its providers are available starting [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0).
 
 :::
 
@@ -186,11 +186,11 @@ You should use the Caching Module's service when you're caching computed data or
     startSections: [
       `## Resolve Caching Module's Service
 
-In your workflow's step, you can resolve the Caching Module's service from the Medusa container:
+In your workflow's step, you can resolve the Caching Module's service from the Switchyard container:
 
 \`\`\`ts
-import { Modules } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",

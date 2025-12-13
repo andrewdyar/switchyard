@@ -13,18 +13,18 @@ products:
   - order
 ---
 
-import { Github, PlaySolid, EllipsisHorizontal } from "@medusajs/icons"
+import { Github, PlaySolid, EllipsisHorizontal } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList, InlineIcon } from "docs-ui"
 
 export const metadata = {
-  title: `Implement Product Rentals in Medusa`,
+  title: `Implement Product Rentals in Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to implement product rentals in Medusa.
+In this tutorial, you'll learn how to implement product rentals in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) that are available out-of-the-box.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) that are available out-of-the-box.
 
 Product rentals allow customers to rent products for a specified period. This feature is particularly useful for businesses that offer items like equipment, vehicles, or formal wear.
 
@@ -32,20 +32,20 @@ Product rentals allow customers to rent products for a specified period. This fe
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa with the Next.js Starter Storefront.
+- Install and set up Switchyard with the Next.js Starter Storefront.
 - Define and manage data models useful for product rentals.
 - Allow admin users to manage rental configurations of products.
 - Allow customers to rent products for specified periods through the storefront.
 - Allow admin users to manage rented items in orders.
 - Handle events like order cancellation and fulfillment for rented products.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram of the Rentals Module and its connection with Medusa's Product, Order, and Customer Modules](https://res.cloudinary.com/dza7lstvk/image/upload/v1761722702/Medusa%20Resources/product-rentals-summary_rhjwjn.jpg)
+![Diagram of the Rentals Module and its connection with Switchyard's Product, Order, and Customer Modules](https://res.cloudinary.com/dza7lstvk/image/upload/v1761722702/Switchyard%20Resources/product-rentals-summary_rhjwjn.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/product-rentals",
+    href: "https://github.com/switchyard/examples/tree/main/product-rentals",
     title: "Full Code",
     text: "Find the full code for this tutorial in this repository.",
     icon: Github,
@@ -60,7 +60,7 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -77,27 +77,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -105,7 +105,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Rental Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 <Note>
 
@@ -121,7 +121,7 @@ Create the directory `src/modules/rental` that will hold the Rental Module's cod
 
 ### b. Create Data Models 
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -138,7 +138,7 @@ The `RentalConfiguration` data model holds rental configurations for products. P
 To create the data model, create the file `src/modules/rental/models/rental-configuration.ts` with the following content:
 
 ```ts title="src/modules/rental/models/rental-configuration.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { Rental } from "./rental"
 
 export const RentalConfiguration = model.define("rental_configuration", {
@@ -156,13 +156,13 @@ export const RentalConfiguration = model.define("rental_configuration", {
 The `RentalConfiguration` data model has the following properties:
 
 - `id`: The primary key of the table.
-- `product_id`: The ID of the Medusa product associated with the rental configuration.
+- `product_id`: The ID of the Switchyard product associated with the rental configuration.
 - `min_rental_days`: The minimum number of days a product can be rented.
 - `max_rental_days`: The maximum number of days a product can be rented.
 - `status`: The status of the rental configuration, which can be either "active" or "inactive".
 - `rentals`: A one-to-many relation to the `Rental` data model, which you'll create next.
 
-Notice that you'll handle pricing and inventory through Medusa's existing [Product](../../../commerce-modules/product/page.mdx) and [Inventory](../../../commerce-modules/inventory/page.mdx) modules.
+Notice that you'll handle pricing and inventory through Switchyard's existing [Product](../../../commerce-modules/product/page.mdx) and [Inventory](../../../commerce-modules/inventory/page.mdx) modules.
 
 <Note>
 
@@ -177,7 +177,7 @@ The `Rental` data model holds individual rentals. They will be created for each 
 To create the data model, create the file `src/modules/rental/models/rental.ts` with the following content:
 
 ```ts title="src/modules/rental/models/rental.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { RentalConfiguration } from "./rental-configuration"
 
 export const Rental = model.define("rental", {
@@ -200,10 +200,10 @@ export const Rental = model.define("rental", {
 The `Rental` data model has the following properties:
 
 - `id`: The primary key of the table.
-- `variant_id`: The ID of the Medusa product variant being rented.
+- `variant_id`: The ID of the Switchyard product variant being rented.
 - `customer_id`: The ID of the customer renting the product.
-- `order_id`: The ID of the Medusa order associated with the rental.
-- `line_item_id`: The ID of the Medusa line item associated with the rental.
+- `order_id`: The ID of the Switchyard order associated with the rental.
+- `line_item_id`: The ID of the Switchyard line item associated with the rental.
 - `rental_start_date`: The start date of the rental period.
 - `rental_end_date`: The end date of the rental period.
 - `actual_return_date`: The actual return date of the rented product.
@@ -226,11 +226,11 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Rental Module's service, create the file `src/modules/rental/service.ts` with the following content:
 
 ```ts title="src/modules/rental/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Rental } from "./models/rental"
 import { RentalConfiguration } from "./models/rental-configuration"
 
-class RentalModuleService extends MedusaService({
+class RentalModuleService extends SwitchyardService({
   Rental,
   RentalConfiguration,
 }) {
@@ -240,25 +240,25 @@ class RentalModuleService extends MedusaService({
 export default RentalModuleService
 ```
 
-The `RentalModuleService` extends `MedusaService`, which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
+The `RentalModuleService` extends `SwitchyardService`, which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
 
 So, the `RentalModuleService` class now has methods like `createRentals` and `retrieveRentalConfiguration`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory](../../../service-factory-reference/page.mdx) reference.
+Find all methods generated by the `SwitchyardService` in [the Service Factory](../../../service-factory-reference/page.mdx) reference.
 
 </Note>
 
 ### d. Create the Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/rental/index.ts` with the following content:
 
 ```ts title="src/modules/rental/index.ts"
 import RentalModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const RENTAL_MODULE = "rental"
 
@@ -274,13 +274,13 @@ You use the `Module` function to create the module's definition. It accepts two 
 
 You also export the module's name as `RENTAL_MODULE` so you can reference it later.
 
-### e. Add Module to Medusa's Configurations
+### e. Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass it an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass it an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -303,18 +303,18 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate the migrations for you. To generate a migration for the Rental Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate the migrations for you. To generate a migration for the Rental Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate rental
+npx switchyard db:generate rental
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/rental` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/rental` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The tables for the data models are now created in the database.
@@ -323,9 +323,9 @@ The tables for the data models are now created in the database.
 
 ## Step 3: Define Links between Data Models
 
-Since Medusa isolates modules to integrate them into your application without side effects, you can't directly create relationships between data models of different modules.
+Since Switchyard isolates modules to integrate them into your application without side effects, you can't directly create relationships between data models of different modules.
 
-Instead, Medusa provides a mechanism to define links between data models and retrieve and manage linked records while maintaining module isolation.
+Instead, Switchyard provides a mechanism to define links between data models and retrieve and manage linked records while maintaining module isolation.
 
 <Note>
 
@@ -333,7 +333,7 @@ Refer to the [Module Links](!docs!/learn/fundamentals/module-links) documentatio
 
 </Note>
 
-In this step, you'll define links between the data models in the Rental Module and the data models in Medusa's modules:
+In this step, you'll define links between the data models in the Rental Module and the data models in Switchyard's modules:
 
 1. `RentalConfiguration` ↔ `Product`: The rental configuration of a product.
 2. `Rental` -> `Order`: The order that the rental belongs to.
@@ -346,9 +346,9 @@ In this step, you'll define links between the data models in the Rental Module a
 To define the link between `RentalConfiguration` and `Product`, create the file `src/links/product-rental-config.ts` with the following content:
 
 ```ts title="src/links/product-rental-config.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import RentalModule from "../modules/rental"
-import ProductModule from "@medusajs/medusa/product"
+import ProductModule from "@switchyard/medusa/product"
 
 export default defineLink(
   ProductModule.linkable.product,
@@ -366,9 +366,9 @@ You define a link using the `defineLink` function. It accepts two parameters:
 To define the link from a `Rental` to an `Order`, create the file `src/links/rental-order.ts` with the following content:
 
 ```ts title="src/links/rental-order.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import RentalModule from "../modules/rental"
-import OrderModule from "@medusajs/medusa/order"
+import OrderModule from "@switchyard/medusa/order"
 
 export default defineLink(
   {
@@ -389,9 +389,9 @@ You define a link similar to the previous one, but with an additional configurat
 To define the link from a `Rental` to an `OrderLineItem`, create the file `src/links/rental-line-item.ts` with the following content:
 
 ```ts title="src/links/rental-line-item.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import RentalModule from "../modules/rental"
-import OrderModule from "@medusajs/medusa/order"
+import OrderModule from "@switchyard/medusa/order"
 
 export default defineLink(
   {
@@ -412,9 +412,9 @@ You define the link similarly to the previous one, enabling the `readOnly` prope
 To define the link from a `Customer` to a `Rental`, create the file `src/links/rental-customer.ts` with the following content:
 
 ```ts title="src/links/rental-customer.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import RentalModule from "../modules/rental"
-import CustomerModule from "@medusajs/medusa/customer"
+import CustomerModule from "@switchyard/medusa/customer"
 
 export default defineLink(
   {
@@ -438,9 +438,9 @@ You define the link similarly to the previous ones, enabling the `readOnly` prop
 To define the link from a `Rental` to a `ProductVariant`, create the file `src/links/rental-variant.ts` with the following content:
 
 ```ts title="src/links/rental-variant.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import RentalModule from "../modules/rental"
-import ProductModule from "@medusajs/medusa/product"
+import ProductModule from "@switchyard/medusa/product"
 
 export default defineLink(
   {
@@ -460,10 +460,10 @@ You define the link similarly to the previous ones, enabling the `readOnly` prop
 
 After defining links, you need to sync them to the database. This creates the necessary tables to store the link between the `RentalConfiguration` and `Product` data models.
 
-To sync the links to the database, run the migrations command again in the Medusa application's directory:
+To sync the links to the database, run the migrations command again in the Switchyard application's directory:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 This command will create the necessary table to store the link. The other links are read-only and don't require database changes.
@@ -472,7 +472,7 @@ This command will create the necessary table to store the link. The other links 
 
 ## Step 4: Manage Rental Configurations Workflow
 
-In this step, you'll implement the logic to create or update a rental configuration for a product. Later, you'll execute this logic from an API route, and allow admin users to manage rental configurations from the Medusa Admin dashboard.
+In this step, you'll implement the logic to create or update a rental configuration for a product. Later, you'll execute this logic from an API route, and allow admin users to manage rental configurations from the Switchyard Admin dashboard.
 
 You create custom functionalities in [workflows](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. A workflow is similar to a function, but it allows you to track its executions' progress, define roll-back logic, and configure other advanced features.
 
@@ -532,7 +532,7 @@ The workflow to manage rental configurations will have the following steps:
   }}
 />
 
-Medusa provides the `useQueryGraphStep` and `createRemoteLinkStep` out-of-the-box. So, you only need to implement the other steps.
+Switchyard provides the `useQueryGraphStep` and `createRemoteLinkStep` out-of-the-box. So, you only need to implement the other steps.
 
 ### createRentalConfigurationStep
 
@@ -541,7 +541,7 @@ The `createRentalConfigurationStep` creates a rental configuration.
 To create the step, create the file `src/workflows/steps/create-rental-configuration.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-rental-configuration.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { RENTAL_MODULE } from "../../modules/rental"
 import RentalModuleService from "../../modules/rental/service"
 
@@ -586,10 +586,10 @@ You create a step with the `createStep` function. It accepts three parameters:
 1. The step's unique name.
 2. An async function that receives two parameters:
     - The step's input, which is an object with the rental configuration's details.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An async compensation function that undoes the actions performed by the step function. This function is only executed if an error occurs during the workflow's execution.
 
-In the step function, you resolve the Rental Module's service from the Medusa container, and use it to create a rental configuration.
+In the step function, you resolve the Rental Module's service from the Switchyard container, and use it to create a rental configuration.
 
 A step function must return a `StepResponse` instance with the step's output as a first parameter, and the data to pass to the compensation function as a second parameter.
 
@@ -602,7 +602,7 @@ The `updateRentalConfigurationStep` updates a rental configuration.
 To create the step, create the file `src/workflows/steps/update-rental-configuration.ts` with the following content:
 
 ```ts title="src/workflows/steps/update-rental-configuration.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { RENTAL_MODULE } from "../../modules/rental"
 import RentalModuleService from "../../modules/rental/service"
 
@@ -671,12 +671,12 @@ import {
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   useQueryGraphStep, 
   createRemoteLinkStep,
-} from "@medusajs/medusa/core-flows"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
 import { 
   createRentalConfigurationStep,
 } from "./steps/create-rental-configuration"
@@ -793,7 +793,7 @@ In workflows, you need `transform` and `when-then` to perform operations or chec
 
 ## Step 5: Manage Rental Configurations API Route
 
-In this step, you'll create API routes that allow you to retrieve and manage rental configurations. Later, you'll use these API routes in the Medusa Admin dashboard to allow admin users to manage rental configurations.
+In this step, you'll create API routes that allow you to retrieve and manage rental configurations. Later, you'll use these API routes in the Switchyard Admin dashboard to allow admin users to manage rental configurations.
 
 ### a. Manage Rental Configurations API Route
 
@@ -809,9 +809,9 @@ To create an API route that upserts rental configurations of a product, create t
 
 ```ts title="src/api/admin/products/[id]/rental-config/route.ts"
 import type { 
-  MedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { 
   upsertRentalConfigWorkflow,
 } from "../../../../../workflows/upsert-rental-config"
@@ -824,8 +824,8 @@ export const PostRentalConfigBodySchema = z.object({
 })
 
 export const POST = async (
-  req: MedusaRequest<z.infer<typeof PostRentalConfigBodySchema>>,
-  res: MedusaResponse
+  req: SwitchyardRequest<z.infer<typeof PostRentalConfigBodySchema>>,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
 
@@ -846,7 +846,7 @@ You first define a [Zod](https://zod.dev/) schema to validate the request body.
 
 Then, since you export a `POST` function, you expose a `POST` API route at `/admin/products/:id/rental-config`.
 
-In the API route handler, you execute the `upsertRentalConfigWorkflow` by invoking it, passing it the Medusa container from the request's scope. Then, you call its `run` method, passing the workflow's input from the request's parameters and validated body.
+In the API route handler, you execute the `upsertRentalConfigWorkflow` by invoking it, passing it the Switchyard container from the request's scope. Then, you call its `run` method, passing the workflow's input from the request's parameters and validated body.
 
 Finally, you return the created or updated rental configuration in the response.
 
@@ -860,7 +860,7 @@ To apply a middleware, create the file `src/api/middlewares.ts` with the followi
 import { 
   defineMiddlewares, 
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { 
   PostRentalConfigBodySchema,
 } from "./admin/products/[id]/rental-config/route"
@@ -895,7 +895,7 @@ Next, you'll add an API route at the same path to retrieve a product's rental co
 In `src/api/admin/products/[id]/rental-config/route.ts`, add the following at the end of the file:
 
 ```ts title="src/api/admin/products/[id]/rental-config/route.ts"
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   const { id } = req.params
   const query = req.scope.resolve("query")
 
@@ -910,19 +910,19 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
 }
 ```
 
-You expose a `GET` API route at `/admin/products/:id/rental-config`. In the route handler, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Medusa container and use it to query the rental configuration for the product.
+You expose a `GET` API route at `/admin/products/:id/rental-config`. In the route handler, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Switchyard container and use it to query the rental configuration for the product.
 
 Then, you return the rental configuration in the response.
 
-In the next step, you'll consume these API routes in the Medusa Admin dashboard.
+In the next step, you'll consume these API routes in the Switchyard Admin dashboard.
 
 ---
 
-## Step 6: Manage Rental Configurations in Medusa Admin
+## Step 6: Manage Rental Configurations in Switchyard Admin
 
-In this step, you'll customize the Medusa Admin dashboard to allow admin users to manage rental configurations for products.
+In this step, you'll customize the Switchyard Admin dashboard to allow admin users to manage rental configurations for products.
 
-The Medusa Admin dashboard is customizable, allowing you to insert widgets into existing pages, or create new pages.
+The Switchyard Admin dashboard is customizable, allowing you to insert widgets into existing pages, or create new pages.
 
 <Note title="Tip">
 
@@ -934,21 +934,21 @@ In this step, you'll insert a widget into the Product Details page to allow admi
 
 ### a. Initialize JS SDK
 
-To send requests to the Medusa server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Medusa project, but you need to initialize it before using it in your customizations.
+To send requests to the Switchyard server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Switchyard project, but you need to initialize it before using it in your customizations.
 
 Create the file `src/admin/lib/sdk.ts` with the following content:
 
 export const sdkHighlights = [
-  ["3", "new Medusa", "Initialize the Medusa JS SDK."],
+  ["3", "new Switchyard", "Initialize the Switchyard JS SDK."],
   ["4", "baseUrl", "Backend server URL."],
   ["5", "debug", "Enable debug mode in development."],
   ["7", "type: \"session\"", "Use session-based authentication."]
 ]
 
 ```ts title="src/admin/lib/sdk.ts" highlights={sdkHighlights}
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: process.env.MEDUSA_BACKEND_URL || "http://localhost:9000",
   debug: process.env.NODE_ENV === "development",
   auth: {
@@ -966,7 +966,7 @@ Next, you'll create the widget to manage rental configurations on the Product De
 To create the widget, create the file `src/admin/widgets/product-rental-config.tsx` with the following content:
 
 ```tsx title="src/admin/widgets/product-rental-config.tsx" collapsibleLines="1-18" expandButtonLabel="Show Imports"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
 import {
   Container,
   Heading,
@@ -978,10 +978,10 @@ import {
   toast,
   Badge,
   usePrompt,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useQuery, useMutation } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
-import { DetailWidgetProps, AdminProduct } from "@medusajs/framework/types"
+import { DetailWidgetProps, AdminProduct } from "@switchyard/framework/types"
 import { useEffect, useState } from "react"
 
 type RentalConfig = {
@@ -1012,7 +1012,7 @@ export default ProductRentalConfigWidget
 A widget file must export:
 
 - A default React component. This component renders the widget's UI.
-- A `config` object created with `defineWidgetConfig` from the Admin SDK. It accepts an object with the `zone` property that indicates where the widget will be rendered in the Medusa Admin dashboard.
+- A `config` object created with `defineWidgetConfig` from the Admin SDK. It accepts an object with the `zone` property that indicates where the widget will be rendered in the Switchyard Admin dashboard.
 
 Next, you'll add the implementation of the `ProductRentalConfigWidget` component.
 
@@ -1057,7 +1057,7 @@ const upsertMutation = useMutation({
 You define the following state variables and hooks:
 
 1. `drawerOpen`, `minRentalDays`, and `maxRentalDays` state variables to manage the drawer visibility and form inputs.
-2. `confirm` to show confirmation prompts using [Medusa's UI package](!ui!/components/prompt).
+2. `confirm` to show confirmation prompts using [Switchyard's UI package](!ui!/components/prompt).
 3. `data`, `isLoading`, and `refetch` from a `useQuery` hook to fetch the product's rental configuration using the `GET` API route you created earlier.
 4. `upsertMutation` from a `useMutation` hook to upsert the rental configuration using the `POST` API route you created earlier.
 
@@ -1248,27 +1248,27 @@ If the product has a rental configuration, you show a button to toggle its statu
 
 ### Test Rental Configuration Widget
 
-You can now test the rental configuration widget in the Medusa Admin dashboard.
+You can now test the rental configuration widget in the Switchyard Admin dashboard.
 
-Run the following command in your Medusa application's directory to start the Medusa server:
+Run the following command in your Switchyard application's directory to start the Switchyard server:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard in your browser at `http://localhost:9000/app` and login with the user you created in the first step.
+Then, open the Switchyard Admin dashboard in your browser at `http://localhost:9000/app` and login with the user you created in the first step.
 
 Navigate to the Products page, open any product's page, and scroll down to the Rental Configuration section. Click the "Make Rentable" button to set up the product's rental configuration.
 
-![Rental Configuration Widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1761650341/Medusa%20Resources/CleanShot_2025-10-28_at_13.17.54_2x_ip1stl.png)
+![Rental Configuration Widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1761650341/Switchyard%20Resources/CleanShot_2025-10-28_at_13.17.54_2x_ip1stl.png)
 
 In the rental configuration form, you can set the minimum and maximum rental days. Click the "Save" button to create the rental configuration.
 
-![Rental configuration form with minimum and maximum rental days fields](https://res.cloudinary.com/dza7lstvk/image/upload/v1761650449/Medusa%20Resources/CleanShot_2025-10-28_at_13.20.02_2x_zvixfc.png)
+![Rental configuration form with minimum and maximum rental days fields](https://res.cloudinary.com/dza7lstvk/image/upload/v1761650449/Switchyard%20Resources/CleanShot_2025-10-28_at_13.20.02_2x_zvixfc.png)
 
 After saving, you should see the rental configuration details in the widget. You can edit the configuration or toggle its status.
 
-![Rental configuration details in the widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1761650526/Medusa%20Resources/CleanShot_2025-10-28_at_13.21.43_2x_t7ktgq.png)
+![Rental configuration details in the widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1761650526/Switchyard%20Resources/CleanShot_2025-10-28_at_13.21.43_2x_t7ktgq.png)
 
 ---
 
@@ -1283,7 +1283,7 @@ Before you implement the API route, you'll add a method to the Rental Module's s
 In `src/modules/rental/service.ts`, add the following method to the `RentalModuleService` class:
 
 ```ts title="src/modules/rental/service.ts"
-class RentalModuleService extends MedusaService({
+class RentalModuleService extends SwitchyardService({
   Rental,
   RentalConfiguration,
 }) {
@@ -1321,7 +1321,7 @@ Next, you'll create a utility function to validate rental dates.
 Create the file `src/utils/validate-rental-dates.ts` with the following content:
 
 ```ts title="src/utils/validate-rental-dates.ts"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export default function validateRentalDates(
   rentalStartDate: string | Date,
@@ -1338,8 +1338,8 @@ export default function validateRentalDates(
 
   // Validate rental period meets configuration requirements
   if (days < rentalConfiguration.min_rental_days) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Rental period of ${days} days is less than the minimum of ${rentalConfiguration.min_rental_days} days`
     )
   }
@@ -1348,8 +1348,8 @@ export default function validateRentalDates(
     rentalConfiguration.max_rental_days !== null &&
     days > rentalConfiguration.max_rental_days
   ) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Rental period of ${days} days exceeds the maximum of ${rentalConfiguration.max_rental_days} days`
     )
   }
@@ -1358,15 +1358,15 @@ export default function validateRentalDates(
   const now = new Date()
   now.setHours(0, 0, 0, 0) // Reset to start of day
   if (startDate < now || endDate < now) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Rental dates cannot be in the past. Received start date: ${startDate.toISOString()}, end date: ${endDate.toISOString()}`
     )
   }
 
   if (endDate <= startDate) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `rentalEndDate must be after rentalStartDate`
     )
   }
@@ -1381,7 +1381,7 @@ In the function, you validate:
 2. That the rental dates are not in the past.
 3. That the end date is after the start date.
 
-If any validation fails, you throw a `MedusaError` with the `INVALID_DATA` type.
+If any validation fails, you throw a `SwitchyardError` with the `INVALID_DATA` type.
 
 You'll use this utility function in your customizations.
 
@@ -1392,8 +1392,8 @@ Next, you'll create the API route to retrieve the rental availability of a produ
 To create the API route, create the file `src/api/store/products/[id]/rental-availability/route.ts` with the following content:
 
 ```ts title="src/api/store/products/[id]/rental-availability/route.ts" collapsibleLines="1-6" expandButtonLabel="Show Imports"
-import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { MedusaError, QueryContext } from "@medusajs/framework/utils"
+import type { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { SwitchyardError, QueryContext } from "@switchyard/framework/utils"
 import { z } from "zod"
 import { RENTAL_MODULE } from "../../../../../modules/rental"
 import RentalModuleService from "../../../../../modules/rental/service"
@@ -1414,8 +1414,8 @@ export const GetRentalAvailabilitySchema = z.object({
 })
 
 export const GET = async (
-  req: MedusaRequest<{}, z.infer<typeof GetRentalAvailabilitySchema>>, 
-  res: MedusaResponse
+  req: SwitchyardRequest<{}, z.infer<typeof GetRentalAvailabilitySchema>>, 
+  res: SwitchyardResponse
 ) => {
   const { id: productId } = req.params
  
@@ -1461,8 +1461,8 @@ const { data: [rentalConfig] } = await query.graph({
 })
 
 if (!rentalConfig) {
-  throw new MedusaError(
-    MedusaError.Types.NOT_FOUND,
+  throw new SwitchyardError(
+    SwitchyardError.Types.NOT_FOUND,
     "product is not rentable"
   )
 }
@@ -1538,7 +1538,7 @@ In `src/api/middlewares.ts`, add the following imports at the top of the file:
 ```ts title="src/api/middlewares.ts"
 import { 
   validateAndTransformQuery,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { 
   GetRentalAvailabilitySchema,
 } from "./store/products/[id]/rental-availability/route"
@@ -1573,9 +1573,9 @@ In this step, you'll customize the [Next.js Starter Storefront](../../../nextjs-
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-product-rental`, you can find the storefront by going back to the parent directory and changing to the `medusa-product-rental-storefront` directory:
+So, if your Switchyard application's directory is `medusa-product-rental`, you can find the storefront by going back to the parent directory and changing to the `medusa-product-rental-storefront` directory:
 
 ```bash
 cd ../medusa-product-rental-storefront # change based on your project name
@@ -1719,8 +1719,8 @@ Create the file `src/modules/products/components/rental-date-picker/index.tsx` w
 "use client"
 
 import { useState, useCallback, useMemo } from "react"
-import { DatePicker } from "@medusajs/ui"
-import { HttpTypes } from "@medusajs/types"
+import { DatePicker } from "@switchyard/ui"
+import { HttpTypes } from "@switchyard/types"
 import { getRentalAvailability } from "@lib/data/rentals"
 import { RentalConfiguration } from "../../../../types/rental"
 
@@ -1957,10 +1957,10 @@ Next, you'll customize the product price component to show the rental price for 
 Replace the file content in `src/modules/products/components/product-price/index.tsx` with the following code:
 
 ```tsx title="src/modules/products/components/product-price/index.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { clx } from "@medusajs/ui"
+import { clx } from "@switchyard/ui"
 
 import { getProductPrice } from "@lib/util/get-product-price"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { convertToLocale } from "../../../../lib/util/money"
 import { RentalAvailabilityResponse } from "../../../../types/rental"
 
@@ -2177,9 +2177,9 @@ Finally, update the "Add to Cart" button to be disabled if rental dates are requ
 
 You can now view and select the rental options in the Next.js Starter Storefront.
 
-First, run the following command in the Medusa application's directory to start the Medusa server:
+First, run the following command in the Switchyard application's directory to start the Switchyard server:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -2195,13 +2195,13 @@ On the right side, you'll find the rental date picker component where you can se
 
 You haven't implemented the add-to-cart functionality for rentable products yet. You'll do that in the next step.
 
-![Rental options on product details page in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1761653559/Medusa%20Resources/CleanShot_2025-10-28_at_14.12.25_2x_g09h85.png)
+![Rental options on product details page in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1761653559/Switchyard%20Resources/CleanShot_2025-10-28_at_14.12.25_2x_g09h85.png)
 
 ---
 
 ## Step 9: Add Rental Products to Cart
 
-In this step, you'll implement the logic to add rentable products to the cart in the Medusa application. You'll wrap Medusa's existing add-to-cart logic to include rental-specific data and validation.
+In this step, you'll implement the logic to add rentable products to the cart in the Switchyard application. You'll wrap Switchyard's existing add-to-cart logic to include rental-specific data and validation.
 
 You'll create a workflow with the logic to add rental products to the cart, and an API route that uses this workflow.
 
@@ -2274,7 +2274,7 @@ The workflow will have the following steps:
   }}
 />
 
-Medusa provides all the steps and workflows out-of-the-box, except for the `validateRentalCartItemStep` step, which you'll implement.
+Switchyard provides all the steps and workflows out-of-the-box, except for the `validateRentalCartItemStep` step, which you'll implement.
 
 #### hasCartOverlap Utility
 
@@ -2282,7 +2282,7 @@ Before you implement the workflow and its steps, you'll create a utility functio
 
 Create the file `src/utils/has-cart-overlap.ts` with the following content:
 
-```ts title="src/utils/has-cart-overlap.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="src/utils/has-cart-overlap.ts" badgeLabel="Switchyard Application" badgeColor="green"
 export default function hasCartOverlap(
   item: {
     variant_id: string
@@ -2337,12 +2337,12 @@ The `validateRentalCartItemStep` validates the rental data provided and retrieve
 
 To create the step, create the file `src/workflows/steps/validate-rental-cart-item.ts` with the following content:
 
-```ts title="src/workflows/steps/validate-rental-cart-item.ts" badgeLabel="Medusa Application" badgeColor="green" collapsibleLines="1-8" expandButtonLabel="Show Imports"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
+```ts title="src/workflows/steps/validate-rental-cart-item.ts" badgeLabel="Switchyard Application" badgeColor="green" collapsibleLines="1-8" expandButtonLabel="Show Imports"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { RENTAL_MODULE } from "../../modules/rental"
 import RentalModuleService from "../../modules/rental/service"
-import { InferTypeOf, ProductVariantDTO } from "@medusajs/framework/types"
+import { InferTypeOf, ProductVariantDTO } from "@switchyard/framework/types"
 import { RentalConfiguration } from "../../modules/rental/models/rental-configuration"
 import hasCartOverlap from "../../utils/has-cart-overlap"
 import validateRentalDates from "../../utils/validate-rental-dates"
@@ -2377,8 +2377,8 @@ export const validateRentalCartItemStep = createStep(
 
     // This is a rental product - validate quantity
     if (quantity !== 1) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Rental items must have a quantity of 1. Cannot add ${quantity} of variant ${variant.id}`
       )
     }
@@ -2400,15 +2400,15 @@ In the step, you first return early if the product is not a rental product or if
 
 Next, you'll validate that the necessary rental options are provided in the item's metadata. Replace the `// TODO validate metadata` comment with the following code:
 
-```ts title="src/workflows/steps/validate-rental-cart-item.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="src/workflows/steps/validate-rental-cart-item.ts" badgeLabel="Switchyard Application" badgeColor="green"
 // Validate metadata
 const rentalStartDate = metadata?.rental_start_date
 const rentalEndDate = metadata?.rental_end_date
 const rentalDays = metadata?.rental_days
 
 if (!rentalStartDate || !rentalEndDate || !rentalDays) {
-  throw new MedusaError(
-    MedusaError.Types.INVALID_DATA,
+  throw new SwitchyardError(
+    SwitchyardError.Types.INVALID_DATA,
     `Rental product variant ${variant.id} requires rental_start_date, rental_end_date and rental_days in metadata`
   )
 }
@@ -2436,7 +2436,7 @@ You also validate the rental dates using the `validateRentalDates` utility funct
 
 Next, you'll validate that the rental period does not overlap with existing rentals in the cart or existing rentals for the same variant. Replace the `// TODO validate that there's no overlap with cart items or existing rentals` comment with the following code:
 
-```ts title="src/workflows/steps/validate-rental-cart-item.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="src/workflows/steps/validate-rental-cart-item.ts" badgeLabel="Switchyard Application" badgeColor="green"
 // Check if this rental variant is already in the cart with overlapping dates
 const hasCartOverlapResult = hasCartOverlap(
   {
@@ -2449,8 +2449,8 @@ const hasCartOverlapResult = hasCartOverlap(
 )
 
 if (hasCartOverlapResult) {
-  throw new MedusaError(
-    MedusaError.Types.INVALID_DATA,
+  throw new SwitchyardError(
+    SwitchyardError.Types.INVALID_DATA,
     `Rental variant ${variant.id} is already in the cart with overlapping dates (${startDate.toISOString().split("T")[0]} to ${endDate.toISOString().split("T")[0]})`
   )
 }
@@ -2459,8 +2459,8 @@ if (hasCartOverlapResult) {
 const hasOverlap = await rentalModuleService.hasRentalOverlap(variant.id, startDate, endDate)
 
 if (hasOverlap) {
-  throw new MedusaError(
-    MedusaError.Types.NOT_ALLOWED,
+  throw new SwitchyardError(
+    SwitchyardError.Types.NOT_ALLOWED,
     `Variant ${variant.id} is already rented during the requested period (${startDate.toISOString()} to ${endDate.toISOString()})`
   )
 }
@@ -2486,20 +2486,20 @@ You can now create the `addToCartWithRentalWorkflow` that uses the `validateRent
 
 Create the file `src/workflows/add-to-cart-with-rental.ts` with the following content:
 
-```ts title="src/workflows/add-to-cart-with-rental.ts" badgeLabel="Medusa Application" badgeColor="green" collapsibleLines="1-18" expandButtonLabel="Show Imports"
+```ts title="src/workflows/add-to-cart-with-rental.ts" badgeLabel="Switchyard Application" badgeColor="green" collapsibleLines="1-18" expandButtonLabel="Show Imports"
 import { 
   createWorkflow, 
   WorkflowResponse, 
   transform,
   when, 
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep, 
   addToCartWorkflow, 
   releaseLockStep, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
-import { QueryContext } from "@medusajs/framework/utils"
+} from "@switchyard/medusa/core-flows"
+import { QueryContext } from "@switchyard/framework/utils"
 import { 
   ValidateRentalCartItemInput, 
   validateRentalCartItemStep,
@@ -2583,7 +2583,7 @@ export const addToCartWithRentalWorkflow = createWorkflow(
         }]
       }
 
-      // For non-rental products, don't specify unit_price (let Medusa calculate it)
+      // For non-rental products, don't specify unit_price (let Switchyard calculate it)
       return [baseItem]
     })
 
@@ -2623,7 +2623,7 @@ In the workflow, you:
 4. Acquire a lock on the cart using the `acquireLockStep`.
 5. Prepare the item to add to the cart.
     - If it's a rentable product, you set the `unit_price` to the calculated rental price.
-    - For non-rentable products, you don't specify the `unit_price`; Medusa will use the variant's price.
+    - For non-rentable products, you don't specify the `unit_price`; Switchyard will use the variant's price.
 6. Add the item to the cart using the existing `addToCartWorkflow`.
 7. Retrieve the updated cart details.
 8. Release the lock on the cart using the `releaseLockStep`.
@@ -2636,11 +2636,11 @@ Next, you'll create an API route that uses the `addToCartWithRentalWorkflow` to 
 
 Create the file `src/api/store/carts/[id]/line-items/rentals/route.ts` with the following content:
 
-```ts title="src/api/store/carts/[id]/line-items/rentals/route.ts" badgeLabel="Medusa Application" badgeColor="green" collapsibleLines="1-9" expandButtonLabel="Show Imports"
+```ts title="src/api/store/carts/[id]/line-items/rentals/route.ts" badgeLabel="Switchyard Application" badgeColor="green" collapsibleLines="1-9" expandButtonLabel="Show Imports"
 import type { 
-  MedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { 
   addToCartWithRentalWorkflow,
 } from "../../../../../../workflows/add-to-cart-with-rental"
@@ -2653,8 +2653,8 @@ export const PostCartItemsRentalsBody = z.object({
 })
 
 export const POST = async (
-  req: MedusaRequest<z.infer<typeof PostCartItemsRentalsBody>>,
-  res: MedusaResponse
+  req: SwitchyardRequest<z.infer<typeof PostCartItemsRentalsBody>>,
+  res: SwitchyardResponse
 ) => {
   const { id: cart_id } = req.params
   const { variant_id, quantity, metadata } = req.validatedBody
@@ -2684,13 +2684,13 @@ Next, you'll add validation middleware to ensure that the request body for addin
 
 In `src/api/middlewares.ts`, add the following import at the top of the file:
 
-```ts title="src/api/middlewares.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="src/api/middlewares.ts" badgeLabel="Switchyard Application" badgeColor="green"
 import { PostCartItemsRentalsBody } from "./store/carts/[id]/line-items/rentals/route"
 ```
 
 Then, pass a new object to the `routes` array in `defineMiddlewares`:
 
-```ts title="src/api/middlewares.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="src/api/middlewares.ts" badgeLabel="Switchyard Application" badgeColor="green"
 export default defineMiddlewares({
   routes: [
     // ...
@@ -2813,19 +2813,19 @@ You show the rental start and end dates if they're available in the line item's 
 
 You can now test adding rentable products to the cart in the Next.js Starter Storefront.
 
-First, run both the Medusa server and the Next.js Starter Storefront.
+First, run both the Switchyard server and the Next.js Starter Storefront.
 
 Then, in the storefront, open the product details page for a rentable product. Select the rental start and end dates, then click the "Add to cart" button.
 
 The product will be added to the cart with the rental options. You can click the cart icon at the top right to view the cart, where you'll see the rental dates displayed under the product name.
 
-![Rental product added to cart in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1761660048/Medusa%20Resources/CleanShot_2025-10-28_at_15.38.24_2x_yfo50v.png)
+![Rental product added to cart in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1761660048/Switchyard%20Resources/CleanShot_2025-10-28_at_15.38.24_2x_yfo50v.png)
 
 ---
 
 ## Step 11: Create Rental Orders
 
-In this step, you'll implement the logic to create rental orders in the Medusa application. You'll wrap Medusa's existing order creation logic to handle rental-specific data and validation.
+In this step, you'll implement the logic to create rental orders in the Switchyard application. You'll wrap Switchyard's existing order creation logic to handle rental-specific data and validation.
 
 You'll create a workflow with the logic to create rental orders and an API route that uses this workflow.
 
@@ -2904,7 +2904,7 @@ The workflow will have the following steps:
   }}
 />
 
-You'll implement the `validateRentalStep` and `createRentalsStep` steps used in the workflow. The rest are provided by Medusa out-of-the-box.
+You'll implement the `validateRentalStep` and `createRentalsStep` steps used in the workflow. The rest are provided by Switchyard out-of-the-box.
 
 #### validateRentalStep
 
@@ -2912,16 +2912,16 @@ The `validateRentalStep` validates the rental items in the cart before creating 
 
 To create the step, create the file `src/workflows/steps/validate-rental.ts` with the following content:
 
-```ts title="src/workflows/steps/validate-rental.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
+```ts title="src/workflows/steps/validate-rental.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { RENTAL_MODULE } from "../../modules/rental"
 import RentalModuleService from "../../modules/rental/service"
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { RentalConfiguration } from "../../modules/rental/models/rental-configuration"
 import hasCartOverlap from "../../utils/has-cart-overlap"
 import validateRentalDates from "../../utils/validate-rental-dates"
-import { cancelOrderWorkflow } from "@medusajs/medusa/core-flows"
+import { cancelOrderWorkflow } from "@switchyard/medusa/core-flows"
 
 export type ValidateRentalInput = {
   rental_items: {
@@ -2954,24 +2954,24 @@ export const validateRentalStep = createStep(
       } = rentalItem
 
       if (rental_configuration.status !== "active") {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Rental configuration for variant ${variant_id} is not active`
         )
       }
 
       // Validate quantity is 1 for rental items
       if (quantity !== 1) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Rental items must have a quantity of 1. Line item ${line_item_id} has quantity ${quantity}`
         )
       }
 
       // Validate metadata presence
       if (!rental_start_date || !rental_end_date || !rental_days) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Line item ${line_item_id} is for a rentable product but is missing required metadata: rental_start_date, rental_end_date, and/or rental_days`
         )
       }
@@ -3009,15 +3009,15 @@ export const validateRentalStep = createStep(
       )
 
       if (hasCartOverlapResult) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Cannot have multiple rental items for variant ${variant_id} with overlapping dates in the cart`
         )
       }
 
       if (await rentalModuleService.hasRentalOverlap(variant_id, startDate, endDate)) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_ALLOWED,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_ALLOWED,
           `Variant ${variant_id} is already rented during the requested period (${startDate.toISOString()} to ${endDate.toISOString()})`
         )
       }
@@ -3057,11 +3057,11 @@ The `createRentalsForOrderStep` creates rental records for rental items in the o
 
 To create the step, create the file `src/workflows/steps/create-rentals-for-order.ts` with the following content:
 
-```ts title="src/workflows/steps/create-rentals-for-order.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/create-rentals-for-order.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { RENTAL_MODULE } from "../../modules/rental"
 import RentalModuleService from "../../modules/rental/service"
-import { OrderDTO } from "@medusajs/framework/types"
+import { OrderDTO } from "@switchyard/framework/types"
 
 export type CreateRentalsForOrderInput = {
   order: OrderDTO
@@ -3132,19 +3132,19 @@ You can now create the `createRentalsWorkflow` that uses the above steps.
 
 Create the file `src/workflows/create-rentals.ts` with the following content:
 
-```ts title="src/workflows/create-rentals.ts" badgeLabel="Medusa Application" badgeColor="green" collapsibleLines="1-21" expandButtonLabel="Show Imports"
+```ts title="src/workflows/create-rentals.ts" badgeLabel="Switchyard Application" badgeColor="green" collapsibleLines="1-21" expandButtonLabel="Show Imports"
 import { 
   createWorkflow, 
   WorkflowResponse, 
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep,
   completeCartWorkflow, 
   releaseLockStep, 
   useQueryGraphStep, 
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   ValidateRentalInput, 
   validateRentalStep,
@@ -3286,13 +3286,13 @@ Next, you'll create an API route that uses the `createRentalsWorkflow` to create
 
 Create the file `src/api/store/rentals/[cart_id]/route.ts` with the following content:
 
-```ts title="src/api/store/rentals/[cart_id]/route.ts" badgeLabel="Medusa Application" badgeColor="green"
-import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+```ts title="src/api/store/rentals/[cart_id]/route.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import type { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { createRentalsWorkflow } from "../../../../workflows/create-rentals"
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { cart_id } = req.params
 
@@ -3381,19 +3381,19 @@ You show the rental start and end dates if they're available in the line item's 
 
 You can now test creating rental orders in the Next.js Starter Storefront.
 
-First, run both the Medusa server and the Next.js Starter Storefront.
+First, run both the Switchyard server and the Next.js Starter Storefront.
 
 Then, in the storefront, open the cart that contains rental products. Proceed to checkout and complete the order.
 
 After placing the order, you'll be redirected to the order confirmation page, where you'll see the rental dates displayed under the product name and options.
 
-![Rental order confirmation in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1761661870/Medusa%20Resources/CleanShot_2025-10-28_at_16.30.14_2x_v8wbb7.png)
+![Rental order confirmation in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1761661870/Switchyard%20Resources/CleanShot_2025-10-28_at_16.30.14_2x_v8wbb7.png)
 
 ---
 
 ## Step 13: Manage Rentals in Admin
 
-In this step, you'll allow admin users to manage rentals in the Medusa Admin Dashboard. You will:
+In this step, you'll allow admin users to manage rentals in the Switchyard Admin Dashboard. You will:
 
 1. Create an API route to retrieve rentals of an order.
 2. Create a workflow to update a rental's status.
@@ -3406,10 +3406,10 @@ First, you'll create an API route to retrieve the rentals associated with a spec
 
 Create the file `src/api/admin/orders/[id]/rentals/route.ts` with the following content:
 
-```ts title="src/api/admin/orders/[id]/rentals/route.ts" badgeLabel="Medusa Application" badgeColor="green"
-import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+```ts title="src/api/admin/orders/[id]/rentals/route.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import type { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   const { id } = req.params
   const query = req.scope.resolve("query")
 
@@ -3446,11 +3446,11 @@ The `updateRentalStep` updates the rental's status with validation.
 
 To create the step, create the file `src/workflows/steps/update-rental.ts` with the following content:
 
-```ts title="src/workflows/steps/update-rental.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/update-rental.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { RENTAL_MODULE } from "../../modules/rental"
 import RentalModuleService from "../../modules/rental/service"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type UpdateRentalInput = {
   rental_id: string
@@ -3466,22 +3466,22 @@ export const updateRentalStep = createStep(
     const actualReturnDate = status === "returned" ? new Date() : null
 
     if (status === "active" && existingRental.status !== "pending") {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA, 
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA, 
         "Can't activate a rental that is not in a pending state."
       )
     }
 
     if (status === "returned" && existingRental.status !== "active") {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Can't return a rental that is not in an active state."
       )
     }
     
     if (status === "cancelled" && !["active", "pending"].includes(existingRental.status)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Can't cancel a rental that is not in an active or pending state."
       )
     }
@@ -3522,8 +3522,8 @@ Next, you'll create the `updateRentalWorkflow` that uses the above step.
 
 Create the file `src/workflows/update-rental.ts` with the following content:
 
-```ts title="src/workflows/update-rental.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/update-rental.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { updateRentalStep } from "./steps/update-rental"
 
 type UpdateRentalWorkflowInput = {
@@ -3555,8 +3555,8 @@ Next, you'll create an API route that uses the `updateRentalWorkflow` to update 
 
 Create the file `src/api/admin/rentals/[id]/route.ts` with the following content:
 
-```ts title="src/api/admin/rentals/[id]/route.ts" badgeLabel="Medusa Application" badgeColor="green"
-import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+```ts title="src/api/admin/rentals/[id]/route.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import type { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { updateRentalWorkflow } from "../../../../workflows/update-rental"
 import { z } from "zod"
 
@@ -3565,8 +3565,8 @@ export const PostRentalStatusBodySchema = z.object({
 })
 
 export const POST = async (
-  req: MedusaRequest<z.infer<typeof PostRentalStatusBodySchema>>,
-  res: MedusaResponse
+  req: SwitchyardRequest<z.infer<typeof PostRentalStatusBodySchema>>,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
   const { status } = req.validatedBody
@@ -3592,13 +3592,13 @@ Next, you'll add validation middleware to ensure that the request body for updat
 
 In `src/api/middlewares.ts`, add the following import at the top of the file:
 
-```ts title="src/api/middlewares.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="src/api/middlewares.ts" badgeLabel="Switchyard Application" badgeColor="green"
 import { PostRentalStatusBodySchema } from "./admin/rentals/[id]/route"
 ```
 
 Then, pass a new object to the `routes` array in `defineMiddlewares`:
 
-```ts title="src/api/middlewares.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="src/api/middlewares.ts" badgeLabel="Switchyard Application" badgeColor="green"
 export default defineMiddlewares({
   routes: [
     // ...
@@ -3621,8 +3621,8 @@ Finally, you'll inject an admin widget into the order details page to view and m
 
 Create the file `src/admin/widgets/order-rental-items.tsx` with the following content:
 
-```tsx title="src/admin/widgets/order-rental-items.tsx" badgeLabel="Medusa Application" badgeColor="green" collapsibleLines="1-18" expandButtonLabel="Show Imports"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
+```tsx title="src/admin/widgets/order-rental-items.tsx" badgeLabel="Switchyard Application" badgeColor="green" collapsibleLines="1-18" expandButtonLabel="Show Imports"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
 import {
   Container,
   Heading,
@@ -3634,10 +3634,10 @@ import {
   toast,
   Badge,
   Table,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useQuery, useMutation } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
-import { DetailWidgetProps, AdminOrder } from "@medusajs/framework/types"
+import { DetailWidgetProps, AdminOrder } from "@switchyard/framework/types"
 import { useEffect, useState } from "react"
 
 type Rental = {
@@ -3710,7 +3710,7 @@ You also retrieve the rentals associated with the order, and set the initial sel
 
 Next, you'll add a mutation for updating a rental's status. Replace the `// TODO add mutation` comment with the following code:
 
-```tsx title="src/admin/widgets/order-rental-items.tsx" badgeLabel="Medusa Application" badgeColor="green"
+```tsx title="src/admin/widgets/order-rental-items.tsx" badgeLabel="Switchyard Application" badgeColor="green"
 const updateMutation = useMutation({
   mutationFn: async (params: { rentalId: string; status: string }) => {
     return sdk.client.fetch(`/admin/rentals/${params.rentalId}`, {
@@ -3736,7 +3736,7 @@ The mutation sends a `POST` request to the rental update API route with the new 
 
 Next, you'll add helper functions to handle events and formatting. Replace the `// TODO add helper functions` comment with the following code:
 
-```tsx title="src/admin/widgets/order-rental-items.tsx" badgeLabel="Medusa Application" badgeColor="green"
+```tsx title="src/admin/widgets/order-rental-items.tsx" badgeLabel="Switchyard Application" badgeColor="green"
 const handleOpenDrawer = (rental: Rental) => {
   setSelectedRental(rental)
   setNewStatus(rental.status)
@@ -3790,7 +3790,7 @@ You define the following functions:
 
 Finally, you'll add the return statement to render the component UI. Replace the `// TODO add return statement` comment with the following code:
 
-```tsx title="src/admin/widgets/order-rental-items.tsx" badgeLabel="Medusa Application" badgeColor="green"
+```tsx title="src/admin/widgets/order-rental-items.tsx" badgeLabel="Switchyard Application" badgeColor="green"
 if (!data?.rentals.length) {
   return null
 }
@@ -3936,19 +3936,19 @@ When the "Update Status" button is clicked, a drawer opens, allowing the admin u
 
 ### Test Managing Rentals in Admin
 
-You can now test managing rentals in the Medusa Admin Dashboard.
+You can now test managing rentals in the Switchyard Admin Dashboard.
 
-First, start the Medusa application and log in.
+First, start the Switchyard application and log in.
 
 Then, go to Orders and click on an order that contains rental items.
 
 In the order details page, you'll see a new "Rental Items" section with a table listing the rental items associated with the order.
 
-![Rental items in admin order details page](https://res.cloudinary.com/dza7lstvk/image/upload/v1761662993/Medusa%20Resources/CleanShot_2025-10-28_at_16.49.29_2x_usufnn.png)
+![Rental items in admin order details page](https://res.cloudinary.com/dza7lstvk/image/upload/v1761662993/Switchyard%20Resources/CleanShot_2025-10-28_at_16.49.29_2x_usufnn.png)
 
 You can click the "Update Status" button for a rental item to open the drawer and edit its status.
 
-![Update rental status drawer in admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1761663069/Medusa%20Resources/CleanShot_2025-10-28_at_16.50.35_2x_bzmaoq.png)
+![Update rental status drawer in admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1761663069/Switchyard%20Resources/CleanShot_2025-10-28_at_16.50.35_2x_bzmaoq.png)
 
 You can change the rental status and save the changes. The rental status will be updated accordingly.
 
@@ -3956,7 +3956,7 @@ You can change the rental status and save the changes. The rental status will be
 
 ## Step 14: Handle Order Cancellation
 
-Medusa Admin users can cancel orders. So, in this step, you'll customize the order cancellation flow to validate that rental items in the order can be cancelled based on their rental status. You'll also update the rental statuses when an order is cancelled.
+Switchyard Admin users can cancel orders. So, in this step, you'll customize the order cancellation flow to validate that rental items in the order can be cancelled based on their rental status. You'll also update the rental statuses when an order is cancelled.
 
 ### a. Validate Rental Items on Order Cancellation
 
@@ -3964,9 +3964,9 @@ To add custom validation when cancelling an order, you'll consume the `orderCanc
 
 To consume the `orderCanceled` hook, create the file `src/workflows/hooks/validate-order-cancel.ts` with the following content:
 
-```ts title="src/workflows/hooks/validate-order-cancel.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { cancelOrderWorkflow } from "@medusajs/medusa/core-flows"
-import { MedusaError, ContainerRegistrationKeys } from "@medusajs/framework/utils"
+```ts title="src/workflows/hooks/validate-order-cancel.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { cancelOrderWorkflow } from "@switchyard/medusa/core-flows"
+import { SwitchyardError, ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 cancelOrderWorkflow.hooks.orderCanceled(
   async ({ order }, { container }) => {
@@ -3991,8 +3991,8 @@ cancelOrderWorkflow.hooks.orderCanceled(
       const problematicRentals = nonCancelableRentals
         .map((r: any) => `${r.id} (${r.status})`)
         .join(", ")
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Cannot cancel order. Some rentals cannot be canceled: ${problematicRentals}. Only rentals with status "pending", "active", or "cancelled" can be canceled with the order.`
       )
     }
@@ -4006,20 +4006,20 @@ In the subscriber function, you retrieve all rentals associated with the order b
 
 #### Test Order Cancellation Validation
 
-To test the order cancellation validation, try to cancel an order from the Medusa Admin that has rental items with `returned` status. The order cancellation should fail.
+To test the order cancellation validation, try to cancel an order from the Switchyard Admin that has rental items with `returned` status. The order cancellation should fail.
 
 ### b. Update Rental Statuses on Order Cancellation
 
 Next, you'll update the rental statuses when an order is cancelled.
 
-When an order is cancelled, Medusa emits an `order.canceled` event. You can handle this event in a [subscriber](!docs!/learn/fundamentals/events-and-subscribers).
+When an order is cancelled, Switchyard emits an `order.canceled` event. You can handle this event in a [subscriber](!docs!/learn/fundamentals/events-and-subscribers).
 
 A subscriber is an asynchronous function that executes actions in the background when specific events are emitted.
 
 To create the subscriber, create the file `src/subscribers/order-canceled.ts` with the following content:
 
-```ts title="src/subscribers/order-canceled.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/order-canceled.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { updateRentalWorkflow } from "../workflows/update-rental"
 
 export default async function orderCanceledHandler({
@@ -4097,11 +4097,11 @@ Then, you iterate over the rentals and update their status to `cancelled` using 
 
 #### Test Rental Status Update on Order Cancellation
 
-To test the rental status update on order cancellation, cancel an order from the Medusa Admin that has rental items with `pending` or `active` status.
+To test the rental status update on order cancellation, cancel an order from the Switchyard Admin that has rental items with `pending` or `active` status.
 
 Then, refresh the page. You'll see that the rental items' statuses have been updated to `cancelled`.
 
-![Cancelled rentals in admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1761665415/Medusa%20Resources/CleanShot_2025-10-28_at_17.29.55_2x_apkc5n.png)
+![Cancelled rentals in admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1761665415/Switchyard%20Resources/CleanShot_2025-10-28_at_17.29.55_2x_apkc5n.png)
 
 ---
 
@@ -4118,16 +4118,16 @@ You can also implement other approaches based on your use case.
 
 ### a. Scheduled Job for Rental Status Updates
 
-A scheduled job is an asynchronous function that runs tasks at specific intervals while the Medusa application is running. You can use scheduled jobs to change a rental's status based on the rental period.
+A scheduled job is an asynchronous function that runs tasks at specific intervals while the Switchyard application is running. You can use scheduled jobs to change a rental's status based on the rental period.
 
 For example, to automatically mark rentals as `active` when their rental start date is reached, create a scheduled job at `src/jobs/activate-rentals.ts` with the following content:
 
-```ts title="src/jobs/activate-rentals.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+```ts title="src/jobs/activate-rentals.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import { updateRentalWorkflow } from "../workflows/update-rental"
 
-export default async function activateRentalsJob(container: MedusaContainer) {
+export default async function activateRentalsJob(container: SwitchyardContainer) {
   const logger = container.resolve("logger")
   const query = container.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -4207,24 +4207,24 @@ Then, you update their status to `active` using the `updateRentalWorkflow`.
 
 To test the scheduled job, you can change its `schedule` property to run every minute:
 
-```ts title="src/jobs/activate-rentals.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="src/jobs/activate-rentals.ts" badgeLabel="Switchyard Application" badgeColor="green"
 export const config = {
   name: "activate-rentals",
   schedule: "*/1 * * * *", // Every minute
 }
 ```
 
-Then, start the Medusa application and wait for a minute. You should see log messages indicating that the job is running and has activated any pending rentals whose start date is today.
+Then, start the Switchyard application and wait for a minute. You should see log messages indicating that the job is running and has activated any pending rentals whose start date is today.
 
 ### b. Event-Driven Rental Status Updates
 
-You can also update rental statuses based on specific [events](/references/events) in Medusa.
+You can also update rental statuses based on specific [events](/references/events) in Switchyard.
 
 For example, you might want to mark rentals as `active` when their associated shipments are created. You can do this by creating a subscriber that listens to the `shipment.created` event:
 
-```ts title="src/subscribers/shipment-created.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+```ts title="src/subscribers/shipment-created.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import { updateRentalWorkflow } from "../workflows/update-rental"
 
 export default async function shipmentCreatedHandler({
@@ -4322,11 +4322,11 @@ You create a subscriber that listens to the `shipment.created` event. In the sub
 
 #### Test Event-Driven Rental Status Update
 
-To test the event-driven rental status update, create a fulfillment for an order that has rental items with `pending` status from the Medusa Admin. Then, mark the fulfillment as shipped.
+To test the event-driven rental status update, create a fulfillment for an order that has rental items with `pending` status from the Switchyard Admin. Then, mark the fulfillment as shipped.
 
 If you refresh the order details page, you should see that the rental items' statuses have been updated to `active`.
 
-![Activated rentals after shipment creation in admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1761665929/Medusa%20Resources/CleanShot_2025-10-28_at_17.38.04_2x_xgwwan.png)
+![Activated rentals after shipment creation in admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1761665929/Switchyard%20Resources/CleanShot_2025-10-28_at_17.38.04_2x_xgwwan.png)
 
 ---
 
@@ -4336,7 +4336,7 @@ In some scenarios, a rentable item might not require shipping. For example, if t
 
 You can remove the shipping requirement for rentable items by:
 
-1. Removing the associated shipping profile of the product. You can do this from the Medusa Admin.
+1. Removing the associated shipping profile of the product. You can do this from the Switchyard Admin.
 2. Customizing the checkout flow in the storefront to remove the delivery step for orders that only contain rentable items.
 
 Learn more about customizing shipping requirements for products in the [Selling Products](../../../commerce-modules/product/selling-products/page.mdx) guide.
@@ -4345,7 +4345,7 @@ Learn more about customizing shipping requirements for products in the [Selling 
 
 ## Optional: Handling Inventory for Rental Items
 
-Medusa provides optional [inventory management for product variants](../../../commerce-modules/product/variant-inventory/page.mdx). If enabled, Medusa will increment and decrement inventory levels for product variants when orders are placed, fulfilled, or returned.
+Switchyard provides optional [inventory management for product variants](../../../commerce-modules/product/variant-inventory/page.mdx). If enabled, Switchyard will increment and decrement inventory levels for product variants when orders are placed, fulfilled, or returned.
 
 Handling inventory for rental products depends on your specific use case:
 
@@ -4356,14 +4356,14 @@ For example, in the `updateRentalWorkflow`, you might want to increment inventor
 
 <Note title="Tip">
 
-Medusa creates a reservation for the inventory of a product variant when an order is placed, and decrements the inventory when the order is fulfilled. So, you don't need to manually adjust inventory when a rental is created or activated.
+Switchyard creates a reservation for the inventory of a product variant when an order is placed, and decrements the inventory when the order is fulfilled. So, you don't need to manually adjust inventory when a rental is created or activated.
 
 </Note>
 
-```ts title="src/workflows/update-rental.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/update-rental.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { updateRentalStep } from "./steps/update-rental"
-import { adjustInventoryLevelsStep, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { adjustInventoryLevelsStep, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 type UpdateRentalWorkflowInput = {
   rental_id: string
@@ -4429,13 +4429,13 @@ export const updateRentalWorkflow = createWorkflow(
 
 ## Next Steps
 
-You have now implemented product rentals in your Medusa application. You can expand on this foundation by adding more features, such as allowing customers to view and manage their rentals from the storefront.
+You have now implemented product rentals in your Switchyard application. You can expand on this foundation by adding more features, such as allowing customers to view and manage their rentals from the storefront.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -4445,5 +4445,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

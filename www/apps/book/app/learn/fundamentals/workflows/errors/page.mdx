@@ -12,7 +12,7 @@ In this chapter, you’ll learn about what happens when an error occurs in a wor
 
 When an error occurs in a workflow, such as when a step throws an error, the workflow execution stops. Then, [the compensation function](../compensation-function/page.mdx) of every step in the workflow is called to undo the actions performed by their respective steps.
 
-The workflow's caller, such as an API route, subscriber, or scheduled job, will also fail and stop execution. Medusa then logs the error in the console. For API routes, an appropriate error is returned to the client based on the thrown error.
+The workflow's caller, such as an API route, subscriber, or scheduled job, will also fail and stop execution. Switchyard then logs the error in the console. For API routes, an appropriate error is returned to the client based on the thrown error.
 
 <Note>
 
@@ -30,7 +30,7 @@ When an error is thrown in the workflow, that means the caller of the workflow, 
 
 While this is the common behavior, there are certain cases where you want to handle the error differently. For example, you may want to check the errors thrown by the workflow and return a custom error response to the client.
 
-The object parameter of a workflow's `run` method accepts a `throwOnError` property. When this property is set to `false`, the workflow will stop execution if an error occurs, but the Medusa's workflow engine will catch that error and return it to the caller instead of throwing it.
+The object parameter of a workflow's `run` method accepts a `throwOnError` property. When this property is set to `false`, the workflow will stop execution if an error occurs, but the Switchyard's workflow engine will catch that error and return it to the caller instead of throwing it.
 
 For example:
 
@@ -41,14 +41,14 @@ export const highlights = [
 
 ```ts title="src/api/workflows/route.ts" highlights={highlights} collapsibleLines="1-6" expandButtonLabel="Show Imports"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import myWorkflow from "../../../workflows/hello-world"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result, errors } = await myWorkflow(req.scope)
     .run({
@@ -105,7 +105,7 @@ If you want to use try-catch mechanism in a workflow to undo step actions, use a
 
 ### Why You Can't Use Try-Catch in Workflow Definitions
 
-Medusa creates an internal representation of the workflow definition you pass to `createWorkflow` to track and store its steps.
+Switchyard creates an internal representation of the workflow definition you pass to `createWorkflow` to track and store its steps.
 
 At that point, variables in the workflow don't have any values. They only do when you execute the workflow.
 
@@ -145,7 +145,7 @@ export const skipOnPermanentFailureEnabledHighlights = [
 ```ts title="Workflow Equivalent" highlights={skipOnPermanentFailureEnabledHighlights}
 import {
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   actionThatThrowsError,
   moreActions,
@@ -205,7 +205,7 @@ export const skipOnPermanentFailureStepHighlights = [
 ```ts title="Workflow Equivalent" highlights={skipOnPermanentFailureStepHighlights}
 import {
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   actionThatThrowsError,
   moreActions,
@@ -279,7 +279,7 @@ export const continueOnPermanentFailureHighlights = [
 ```ts title="Workflow Equivalent" highlights={continueOnPermanentFailureHighlights}
 import {
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   actionThatThrowsError,
   moreActions,

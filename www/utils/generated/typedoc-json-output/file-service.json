@@ -23,7 +23,7 @@
 							"fileName": "file/service.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L20"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L20"
 						}
 					],
 					"signatures": [
@@ -41,7 +41,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -74,7 +74,7 @@
 									"fileName": "file/service.ts",
 									"line": 20,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L20"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L20"
 								}
 							],
 							"type": {
@@ -84,7 +84,7 @@
 									"qualifiedName": "IFileProvider"
 								},
 								"name": "IFileProvider",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -100,13 +100,13 @@
 							"fileName": "file/service.ts",
 							"line": 36,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L36"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L36"
 						},
 						{
 							"fileName": "file/service.ts",
 							"line": 56,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L56"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L56"
 						}
 					],
 					"signatures": [
@@ -149,7 +149,7 @@
 									"fileName": "file/service.ts",
 									"line": 36,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L36"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L36"
 								}
 							],
 							"parameters": [
@@ -176,7 +176,7 @@
 												"qualifiedName": "CreateFileDTO"
 											},
 											"name": "CreateFileDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -203,7 +203,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -223,7 +223,7 @@
 												"qualifiedName": "FileDTO"
 											},
 											"name": "FileDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -270,7 +270,7 @@
 									"fileName": "file/service.ts",
 									"line": 56,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L56"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L56"
 								}
 							],
 							"parameters": [
@@ -295,7 +295,7 @@
 											"qualifiedName": "CreateFileDTO"
 										},
 										"name": "CreateFileDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -321,7 +321,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -339,7 +339,7 @@
 											"qualifiedName": "FileDTO"
 										},
 										"name": "FileDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -359,13 +359,13 @@
 							"fileName": "file/service.ts",
 							"line": 72,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L72"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L72"
 						},
 						{
 							"fileName": "file/service.ts",
 							"line": 90,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L90"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L90"
 						}
 					],
 					"signatures": [
@@ -408,7 +408,7 @@
 									"fileName": "file/service.ts",
 									"line": 72,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L72"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L72"
 								}
 							],
 							"parameters": [
@@ -433,7 +433,7 @@
 											"qualifiedName": "GetUploadFileUrlDTO"
 										},
 										"name": "GetUploadFileUrlDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -459,7 +459,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -477,7 +477,7 @@
 											"qualifiedName": "UploadFileUrlDTO"
 										},
 										"name": "UploadFileUrlDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -523,7 +523,7 @@
 									"fileName": "file/service.ts",
 									"line": 90,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L90"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L90"
 								}
 							],
 							"parameters": [
@@ -550,7 +550,7 @@
 												"qualifiedName": "GetUploadFileUrlDTO"
 											},
 											"name": "GetUploadFileUrlDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -577,7 +577,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -597,7 +597,7 @@
 												"qualifiedName": "UploadFileUrlDTO"
 											},
 											"name": "UploadFileUrlDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -618,13 +618,13 @@
 							"fileName": "file/service.ts",
 							"line": 105,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L105"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L105"
 						},
 						{
 							"fileName": "file/service.ts",
 							"line": 117,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L117"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L117"
 						}
 					],
 					"signatures": [
@@ -667,7 +667,7 @@
 									"fileName": "file/service.ts",
 									"line": 105,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L105"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L105"
 								}
 							],
 							"parameters": [
@@ -716,7 +716,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -775,7 +775,7 @@
 									"fileName": "file/service.ts",
 									"line": 117,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L117"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L117"
 								}
 							],
 							"parameters": [
@@ -821,7 +821,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -854,7 +854,7 @@
 							"fileName": "file/service.ts",
 							"line": 131,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L131"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L131"
 						}
 					],
 					"signatures": [
@@ -897,7 +897,7 @@
 									"fileName": "file/service.ts",
 									"line": 131,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L131"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L131"
 								}
 							],
 							"parameters": [
@@ -966,11 +966,11 @@
 													"qualifiedName": "FileDTO"
 												},
 												"name": "FileDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -996,7 +996,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1014,7 +1014,7 @@
 											"qualifiedName": "FileDTO"
 										},
 										"name": "FileDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -1034,7 +1034,7 @@
 							"fileName": "file/service.ts",
 							"line": 150,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L150"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L150"
 						}
 					],
 					"signatures": [
@@ -1077,7 +1077,7 @@
 									"fileName": "file/service.ts",
 									"line": 150,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L150"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L150"
 								}
 							],
 							"parameters": [
@@ -1104,7 +1104,7 @@
 											"qualifiedName": "FilterableFileProps"
 										},
 										"name": "FilterableFileProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -1153,11 +1153,11 @@
 													"qualifiedName": "FileDTO"
 												},
 												"name": "FileDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -1183,7 +1183,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1203,7 +1203,7 @@
 												"qualifiedName": "FileDTO"
 											},
 											"name": "FileDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -1224,7 +1224,7 @@
 							"fileName": "file/service.ts",
 							"line": 169,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L169"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L169"
 						}
 					],
 					"signatures": [
@@ -1267,7 +1267,7 @@
 									"fileName": "file/service.ts",
 									"line": 169,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L169"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L169"
 								}
 							],
 							"parameters": [
@@ -1294,7 +1294,7 @@
 											"qualifiedName": "FilterableFileProps"
 										},
 										"name": "FilterableFileProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -1343,11 +1343,11 @@
 													"qualifiedName": "FileDTO"
 												},
 												"name": "FileDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -1373,7 +1373,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1396,7 +1396,7 @@
 														"qualifiedName": "FileDTO"
 													},
 													"name": "FileDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -1423,7 +1423,7 @@
 							"fileName": "file/service.ts",
 							"line": 189,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L189"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L189"
 						}
 					],
 					"signatures": [
@@ -1475,7 +1475,7 @@
 									"fileName": "file/service.ts",
 									"line": 189,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L189"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L189"
 								}
 							],
 							"parameters": [
@@ -1521,7 +1521,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1560,7 +1560,7 @@
 							"fileName": "file/service.ts",
 							"line": 205,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L205"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L205"
 						}
 					],
 					"signatures": [
@@ -1612,7 +1612,7 @@
 									"fileName": "file/service.ts",
 									"line": 205,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L205"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L205"
 								}
 							],
 							"parameters": [
@@ -1658,7 +1658,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1708,7 +1708,7 @@
 					"fileName": "file/service.ts",
 					"line": 9,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L9"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/file/service.ts#L9"
 				}
 			],
 			"extendedTypes": [
@@ -1719,7 +1719,7 @@
 						"qualifiedName": "IModuleService"
 					},
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		}
@@ -1732,7 +1732,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"62711": {
 			"sourceFileName": "../../../../packages/core/types/src/file/service.ts",

@@ -14,11 +14,11 @@ A middleware is a function executed when a request is sent to an API Route. It's
 
 Middlewares are used to guard API routes, parse request content types other than `application/json`, manipulate request data, and more.
 
-![API middleware execution flow diagram showing how HTTP requests first pass through middleware functions for authentication, validation, and data processing before reaching the actual route handler, providing a secure and flexible request processing pipeline in Medusa applications](https://res.cloudinary.com/dza7lstvk/image/upload/v1746775148/Medusa%20Book/middleware-overview_wc2ws5.jpg)
+![API middleware execution flow diagram showing how HTTP requests first pass through middleware functions for authentication, validation, and data processing before reaching the actual route handler, providing a secure and flexible request processing pipeline in Switchyard applications](https://res.cloudinary.com/dza7lstvk/image/upload/v1746775148/Switchyard%20Book/middleware-overview_wc2ws5.jpg)
 
 <Note title="Tip">
 
-As Medusa's server is based on Express, you can use any [Express middleware](https://expressjs.com/en/resources/middleware.html).
+As Switchyard's server is based on Express, you can use any [Express middleware](https://expressjs.com/en/resources/middleware.html).
 
 </Note>
 
@@ -72,7 +72,7 @@ These middlewares generally have the same definition and usage, but they differ 
 
 ## How to Create a Middleware?
 
-Middlewares of all types are defined in the special file `src/api/middlewares.ts`. Use the `defineMiddlewares` function from the Medusa Framework to define the middlewares, and export its value.
+Middlewares of all types are defined in the special file `src/api/middlewares.ts`. Use the `defineMiddlewares` function from the Switchyard Framework to define the middlewares, and export its value.
 
 For example:
 
@@ -82,10 +82,10 @@ For example:
 ```ts title="src/api/middlewares.ts"
 import { 
   defineMiddlewares,
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
-} from "@medusajs/framework/http"
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -93,9 +93,9 @@ export default defineMiddlewares({
       matcher: "/custom*",
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           console.log("Received a request!")
 
@@ -115,10 +115,10 @@ export const highlights = [["12", "method", "Apply the middleware only on `POST`
 ```ts title="src/api/middlewares.ts" highlights={highlights}
 import { 
   defineMiddlewares,
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
-} from "@medusajs/framework/http"
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -127,9 +127,9 @@ export default defineMiddlewares({
       method: ["POST", "PUT"],
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           console.log("Received a request!")
 
@@ -188,9 +188,9 @@ Middlewares are useful for:
 
 The middleware function accepts three parameters:
 
-1. A request object of type `MedusaRequest`.
-2. A response object of type `MedusaResponse`.
-3. A function of type `MedusaNextFunction` that executes the next middleware in the stack.
+1. A request object of type `SwitchyardRequest`.
+2. A response object of type `SwitchyardResponse`.
+3. A function of type `SwitchyardNextFunction` that executes the next middleware in the stack.
 
 <Note title="Important">
 
@@ -202,11 +202,11 @@ For example:
 
 ```ts title="src/api/middlewares.ts"
 import { 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
   defineMiddlewares,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -214,9 +214,9 @@ export default defineMiddlewares({
       matcher: "/custom*",
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           console.log("Received a request!", req.body)
 
@@ -248,11 +248,11 @@ export const pathParamHighlights = [["11", ":id", "Indicates that the API route 
 
 ```ts title="src/api/middlewares.ts" collapsibleLines="1-7" expandMoreLabel="Show Imports" highlights={pathParamHighlights}
 import { 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
   defineMiddlewares,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -278,11 +278,11 @@ For example, consider you have the following middleware:
 
 ```ts title="src/api/middlewares.ts" collapsibleLines="1-7" expandMoreLabel="Show Imports"
 import { 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
   defineMiddlewares,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -290,9 +290,9 @@ export default defineMiddlewares({
       matcher: "/custom",
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           console.log("Received a request!")
 
@@ -316,32 +316,32 @@ In general, avoid adding trailing backslashes when sending requests to API route
 
 <Note>
 
-The information explained in this section is applicable starting from [Medusa v2.6](https://github.com/medusajs/medusa/releases/tag/v2.6).
+The information explained in this section is applicable starting from [Switchyard v2.6](https://github.com/switchyard/medusa/releases/tag/v2.6).
 
 </Note>
 
 ### Middleware and Routes Execution Order
 
-The Medusa application registers middlewares and API route handlers in the following order, stacking them on top of each other:
+The Switchyard application registers middlewares and API route handlers in the following order, stacking them on top of each other:
 
-![Diagram showcasing the order in which middlewares and route handlers are registered.](https://res.cloudinary.com/dza7lstvk/image/upload/v1746776911/Medusa%20Book/middleware-registration-overview_spc02f.jpg)
+![Diagram showcasing the order in which middlewares and route handlers are registered.](https://res.cloudinary.com/dza7lstvk/image/upload/v1746776911/Switchyard%20Book/middleware-registration-overview_spc02f.jpg)
 
 1. Global middlewares in the following order:
-    1. Global middleware defined in the Medusa's core.
+    1. Global middleware defined in the Switchyard's core.
     2. Global middleware defined in the plugins (in the order the plugins are registered in).
     3. Global middleware you define in the application.
 2. Route middlewares in the following order:
-    1. Route middleware defined in the Medusa's core.
+    1. Route middleware defined in the Switchyard's core.
     2. Route middleware defined in the plugins (in the order the plugins are registered in).
     3. Route middleware you define in the application.
 3. API routes in the following order:
-    1. API routes defined in the Medusa's core.
+    1. API routes defined in the Switchyard's core.
     2. API routes defined in the plugins (in the order the plugins are registered in).
     3. API routes you define in the application.
 
 Then, when a request is sent to an API route, the stack is executed in order: global middlewares are executed first, then the route middlewares, and finally the route handlers.
 
-![Diagram showcasing the order in which middlewares and route handlers are executed when a request is sent to an API route.](https://res.cloudinary.com/dza7lstvk/image/upload/v1746776172/Medusa%20Book/middleware-order-overview_h7kzfl.jpg)
+![Diagram showcasing the order in which middlewares and route handlers are executed when a request is sent to an API route.](https://res.cloudinary.com/dza7lstvk/image/upload/v1746776172/Switchyard%20Book/middleware-order-overview_h7kzfl.jpg)
 
 For example, consider you have the following middlewares:
 
@@ -383,7 +383,7 @@ The global middleware runs first, then the route middleware, and finally the rou
 
 ### Middlewares Sorting
 
-On top of the previous ordering, Medusa sorts global and route middlewares based on their matcher pattern in the following order:
+On top of the previous ordering, Switchyard sorts global and route middlewares based on their matcher pattern in the following order:
 
 1. Wildcard matchers. For example, `/custom*`.
 2. Regex matchers. For example, `/custom/(products|collections)`.
@@ -427,7 +427,7 @@ And the route middlewares are sorted into the following order before they're reg
 1. Route middleware `/custom*`.
 2. Route middleware `/custom/:id`.
 
-![Diagram showcasing the order in which middlewares are sorted before being registered.](https://res.cloudinary.com/dza7lstvk/image/upload/v1746777297/Medusa%20Book/middleware-registration-sorting_oyfqhw.jpg)
+![Diagram showcasing the order in which middlewares are sorted before being registered.](https://res.cloudinary.com/dza7lstvk/image/upload/v1746777297/Switchyard%20Book/middleware-registration-sorting_oyfqhw.jpg)
 
 Then, the middlwares are registered in the order mentioned earlier, with global middlewares first, then the route middlewares.
 

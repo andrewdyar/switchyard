@@ -8,7 +8,7 @@
  * to handle Goods' unique multi-retailer product sourcing model.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const RetailerMapping = model.define("goods_retailer_mapping", {
   id: model.id().primaryKey(),

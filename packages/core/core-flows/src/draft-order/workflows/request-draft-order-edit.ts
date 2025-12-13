@@ -1,10 +1,10 @@
-import { OrderChangeStatus } from "@medusajs/framework/utils"
+import { OrderChangeStatus } from "@switchyard/framework/utils"
 import {
   createWorkflow,
   transform,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import type { OrderChangeDTO, OrderDTO } from "@medusajs/framework/types"
+} from "@switchyard/framework/workflows-sdk"
+import type { OrderChangeDTO, OrderDTO } from "@switchyard/framework/types"
 import { useRemoteQueryStep } from "../../common"
 import {
   createOrUpdateOrderPaymentCollectionWorkflow,

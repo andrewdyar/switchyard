@@ -12,8 +12,8 @@ afterEach(async () => {
 
 describe("getResolvedPlugins | relative paths", () => {
   test("resolve configured plugins", async () => {
-    await fs.createJson("node_modules/@medusajs/draft-order/package.json", {
-      name: "@medusajs/draft-order",
+    await fs.createJson("node_modules/@switchyard/draft-order/package.json", {
+      name: "@switchyard/draft-order",
       version: "1.0.0",
     })
 
@@ -33,7 +33,7 @@ describe("getResolvedPlugins | relative paths", () => {
             },
           },
           {
-            resolve: "@medusajs/draft-order",
+            resolve: "@switchyard/draft-order",
             options: {},
           },
         ],
@@ -44,18 +44,18 @@ describe("getResolvedPlugins | relative paths", () => {
     expect(plugins).toEqual(
       expect.arrayContaining([
         {
-          id: "@medusajs/draft-order",
+          id: "@switchyard/draft-order",
           modules: [],
-          name: "@medusajs/draft-order",
+          name: "@switchyard/draft-order",
           options: {},
           resolve: path.join(
             fs.basePath,
-            "node_modules/@medusajs/draft-order/.medusa/server/src"
+            "node_modules/@switchyard/draft-order/.switchyard/server/src"
           ),
           version: "1.0.0",
         },
         {
-          resolve: path.join(fs.basePath, "./plugins/dummy/.medusa/server/src"),
+          resolve: path.join(fs.basePath, "./plugins/dummy/.switchyard/server/src"),
           admin: undefined,
           name: "my-dummy-plugin",
           id: "my-dummy-plugin",
@@ -68,8 +68,8 @@ describe("getResolvedPlugins | relative paths", () => {
   })
 
   test("scan plugin modules", async () => {
-    await fs.createJson("node_modules/@medusajs/draft-order/package.json", {
-      name: "@medusajs/draft-order",
+    await fs.createJson("node_modules/@switchyard/draft-order/package.json", {
+      name: "@switchyard/draft-order",
       version: "1.0.0",
     })
     await fs.createJson("plugins/dummy/package.json", {
@@ -77,7 +77,7 @@ describe("getResolvedPlugins | relative paths", () => {
       version: "1.0.0",
     })
     await fs.create(
-      "plugins/dummy/.medusa/server/src/modules/blog/index.js",
+      "plugins/dummy/.switchyard/server/src/modules/blog/index.js",
       ``
     )
 
@@ -98,7 +98,7 @@ describe("getResolvedPlugins | relative paths", () => {
 
     expect(plugins).toEqual(expect.arrayContaining([
       {
-        resolve: path.join(fs.basePath, "./plugins/dummy/.medusa/server/src"),
+        resolve: path.join(fs.basePath, "./plugins/dummy/.switchyard/server/src"),
         admin: undefined,
         name: "my-dummy-plugin",
         id: "my-dummy-plugin",
@@ -109,18 +109,18 @@ describe("getResolvedPlugins | relative paths", () => {
             options: {
               apiKey: "asecret",
             },
-            resolve: "./plugins/dummy/.medusa/server/src/modules/blog",
+            resolve: "./plugins/dummy/.switchyard/server/src/modules/blog",
           },
         ],
       },
       {
-        id: "@medusajs/draft-order",
+        id: "@switchyard/draft-order",
         modules: [],
-        name: "@medusajs/draft-order",
+        name: "@switchyard/draft-order",
         options: {},
         resolve: path.join(
           fs.basePath,
-          "node_modules/@medusajs/draft-order/.medusa/server/src"
+          "node_modules/@switchyard/draft-order/.switchyard/server/src"
         ),
         version: "1.0.0",
       },
@@ -128,8 +128,8 @@ describe("getResolvedPlugins | relative paths", () => {
   })
 
   test("throw error when package.json file is missing", async () => {
-    await fs.createJson("node_modules/@medusajs/draft-order/package.json", {
-      name: "@medusajs/draft-order",
+    await fs.createJson("node_modules/@switchyard/draft-order/package.json", {
+      name: "@switchyard/draft-order",
       version: "1.0.0",
     })
 
@@ -155,8 +155,8 @@ describe("getResolvedPlugins | relative paths", () => {
   })
 
   test("resolve admin source from medusa-plugin-options file", async () => {
-    await fs.createJson("node_modules/@medusajs/draft-order/package.json", {
-      name: "@medusajs/draft-order",
+    await fs.createJson("node_modules/@switchyard/draft-order/package.json", {
+      name: "@switchyard/draft-order",
       version: "1.0.0",
     })
     await fs.createJson("plugins/dummy/package.json", {
@@ -164,11 +164,11 @@ describe("getResolvedPlugins | relative paths", () => {
       version: "1.0.0",
     })
     await fs.create(
-      "plugins/dummy/.medusa/server/src/modules/blog/index.js",
+      "plugins/dummy/.switchyard/server/src/modules/blog/index.js",
       ``
     )
     await fs.createJson(
-      "plugins/dummy/.medusa/server/medusa-plugin-options.json",
+      "plugins/dummy/.switchyard/server/medusa-plugin-options.json",
       {
         srcDir: path.join(fs.basePath, "plugins/dummy/src"),
       }
@@ -185,7 +185,7 @@ describe("getResolvedPlugins | relative paths", () => {
             },
           },
           {
-            resolve: "@medusajs/draft-order",
+            resolve: "@switchyard/draft-order",
             options: {},
           },
         ],
@@ -195,7 +195,7 @@ describe("getResolvedPlugins | relative paths", () => {
 
     expect(plugins).toEqual(expect.arrayContaining([
       {
-        resolve: path.join(fs.basePath, "./plugins/dummy/.medusa/server/src"),
+        resolve: path.join(fs.basePath, "./plugins/dummy/.switchyard/server/src"),
         admin: {
           type: "local",
           resolve: path.join(fs.basePath, "./plugins/dummy/src/admin"),
@@ -209,18 +209,18 @@ describe("getResolvedPlugins | relative paths", () => {
             options: {
               apiKey: "asecret",
             },
-            resolve: "./plugins/dummy/.medusa/server/src/modules/blog",
+            resolve: "./plugins/dummy/.switchyard/server/src/modules/blog",
           },
         ],
       },
       {
-        id: "@medusajs/draft-order",
+        id: "@switchyard/draft-order",
         modules: [],
-        name: "@medusajs/draft-order",
+        name: "@switchyard/draft-order",
         options: {},
         resolve: path.join(
           fs.basePath,
-          "node_modules/@medusajs/draft-order/.medusa/server/src"
+          "node_modules/@switchyard/draft-order/.switchyard/server/src"
         ),
         version: "1.0.0",
       },
@@ -230,8 +230,8 @@ describe("getResolvedPlugins | relative paths", () => {
 
 describe("getResolvedPlugins | package reference", () => {
   test("resolve configured plugins", async () => {
-    await fs.createJson("node_modules/@medusajs/draft-order/package.json", {
-      name: "@medusajs/draft-order",
+    await fs.createJson("node_modules/@switchyard/draft-order/package.json", {
+      name: "@switchyard/draft-order",
       version: "1.0.0",
     })
     await fs.createJson("package.json", {})
@@ -259,7 +259,7 @@ describe("getResolvedPlugins | package reference", () => {
       {
         resolve: path.join(
           fs.basePath,
-          "node_modules/@plugins/dummy/.medusa/server/src"
+          "node_modules/@plugins/dummy/.switchyard/server/src"
         ),
         admin: undefined,
         name: "my-dummy-plugin",
@@ -269,13 +269,13 @@ describe("getResolvedPlugins | package reference", () => {
         modules: [],
       },
       {
-        id: "@medusajs/draft-order",
+        id: "@switchyard/draft-order",
         modules: [],
-        name: "@medusajs/draft-order",
+        name: "@switchyard/draft-order",
         options: {},
         resolve: path.join(
           fs.basePath,
-          "node_modules/@medusajs/draft-order/.medusa/server/src"
+          "node_modules/@switchyard/draft-order/.switchyard/server/src"
         ),
         version: "1.0.0",
       },
@@ -283,8 +283,8 @@ describe("getResolvedPlugins | package reference", () => {
   })
 
   test("scan plugin modules", async () => {
-    await fs.createJson("node_modules/@medusajs/draft-order/package.json", {
-      name: "@medusajs/draft-order",
+    await fs.createJson("node_modules/@switchyard/draft-order/package.json", {
+      name: "@switchyard/draft-order",
       version: "1.0.0",
     })
     await fs.createJson("package.json", {})
@@ -293,7 +293,7 @@ describe("getResolvedPlugins | package reference", () => {
       version: "1.0.0",
     })
     await fs.create(
-      "node_modules/@plugins/dummy/.medusa/server/src/modules/blog/index.js",
+      "node_modules/@plugins/dummy/.switchyard/server/src/modules/blog/index.js",
       ``
     )
 
@@ -316,7 +316,7 @@ describe("getResolvedPlugins | package reference", () => {
       {
         resolve: path.join(
           fs.basePath,
-          "node_modules/@plugins/dummy/.medusa/server/src"
+          "node_modules/@plugins/dummy/.switchyard/server/src"
         ),
         admin: undefined,
         name: "my-dummy-plugin",
@@ -328,18 +328,18 @@ describe("getResolvedPlugins | package reference", () => {
             options: {
               apiKey: "asecret",
             },
-            resolve: "@plugins/dummy/.medusa/server/src/modules/blog",
+            resolve: "@plugins/dummy/.switchyard/server/src/modules/blog",
           },
         ],
       },
       {
-        id: "@medusajs/draft-order",
+        id: "@switchyard/draft-order",
         modules: [],
-        name: "@medusajs/draft-order",
+        name: "@switchyard/draft-order",
         options: {},
         resolve: path.join(
           fs.basePath,
-          "node_modules/@medusajs/draft-order/.medusa/server/src"
+          "node_modules/@switchyard/draft-order/.switchyard/server/src"
         ),
         version: "1.0.0",
       },
@@ -347,8 +347,8 @@ describe("getResolvedPlugins | package reference", () => {
   })
 
   test("throw error when package.json file is missing", async () => {
-    await fs.createJson("node_modules/@medusajs/draft-order/package.json", {
-      name: "@medusajs/draft-order",
+    await fs.createJson("node_modules/@switchyard/draft-order/package.json", {
+      name: "@switchyard/draft-order",
       version: "1.0.0",
     })
     const resolvePlugins = async () =>
@@ -363,7 +363,7 @@ describe("getResolvedPlugins | package reference", () => {
               },
             },
             {
-              resolve: "@medusajs/draft-order",
+              resolve: "@switchyard/draft-order",
               options: {},
             },
           ],

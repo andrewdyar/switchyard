@@ -1,4 +1,4 @@
-import { InternalModuleDeclaration } from "@medusajs/types"
+import { InternalModuleDeclaration } from "@switchyard/types"
 
 export class ModuleService {
   constructor(

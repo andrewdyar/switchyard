@@ -28,7 +28,7 @@
  *               type: object
  *               description: The geo zone's metadata.
  *               externalDocs:
- *                 url: https://docs.medusajs.com/api/admin#manage-metadata
+ *                 url: https://docs.switchyard.com/api/admin#manage-metadata
  *                 description: Learn how to manage metadata
  *             country_code:
  *               type: string
@@ -55,7 +55,7 @@
  *               type: object
  *               description: The geo zone's metadata.
  *               externalDocs:
- *                 url: https://docs.medusajs.com/api/admin#manage-metadata
+ *                 url: https://docs.switchyard.com/api/admin#manage-metadata
  *                 description: Learn how to manage metadata
  *             country_code:
  *               type: string
@@ -91,7 +91,7 @@
  *               type: object
  *               description: The geo zone's metadata.
  *               externalDocs:
- *                 url: https://docs.medusajs.com/api/admin#manage-metadata
+ *                 url: https://docs.switchyard.com/api/admin#manage-metadata
  *                 description: Learn how to manage metadata
  *             city:
  *               type: string
@@ -132,7 +132,7 @@
  *               type: object
  *               description: The geo zone's metadata.
  *               externalDocs:
- *                 url: https://docs.medusajs.com/api/admin#manage-metadata
+ *                 url: https://docs.switchyard.com/api/admin#manage-metadata
  *                 description: Learn how to manage metadata
  *             city:
  *               type: string

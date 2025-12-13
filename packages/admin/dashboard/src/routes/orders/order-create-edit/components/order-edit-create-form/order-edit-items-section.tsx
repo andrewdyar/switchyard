@@ -1,5 +1,5 @@
-import { AdminOrder, AdminOrderPreview } from "@medusajs/types"
-import { Button, Heading, Input, toast } from "@medusajs/ui"
+import { AdminOrder, AdminOrderPreview } from "@switchyard/types"
+import { Button, Heading, Input, toast } from "@switchyard/ui"
 import { useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import {

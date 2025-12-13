@@ -16,7 +16,7 @@ const PageTitleProvider = ({ children }: PageTitleProviderProps) => {
   const { displayedArea } = useArea()
 
   useEffect(() => {
-    const titleSuffix = `Medusa ${displayedArea} API Reference`
+    const titleSuffix = `Switchyard ${displayedArea} API Reference`
 
     if (!activePath?.length) {
       document.title = titleSuffix

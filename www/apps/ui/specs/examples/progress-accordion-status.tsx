@@ -1,4 +1,4 @@
-import { ProgressAccordion, Text } from "@medusajs/ui"
+import { ProgressAccordion, Text } from "@switchyard/ui"
 
 export default function ProgressAccordionStatus() {
   return (

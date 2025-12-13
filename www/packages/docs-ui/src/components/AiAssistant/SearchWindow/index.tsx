@@ -3,7 +3,7 @@
 import React, { Fragment, useCallback, useState } from "react"
 import { Badge, Button, InputText, Kbd, Tooltip, Link } from "@/components"
 import { useAiAssistant, useSearch } from "@/providers"
-import { ArrowUturnLeft } from "@medusajs/icons"
+import { ArrowUturnLeft } from "@switchyard/icons"
 import clsx from "clsx"
 import { AiAssistantThreadItem } from "../ThreadItem"
 import { AiAssistantSuggestions } from "../Suggestions"
@@ -90,7 +90,7 @@ export const AiAssistantSearchWindow = () => {
             "!shadow-none flex-1 text-medusa-fg-base",
             "disabled:!bg-transparent disabled:cursor-not-allowed"
           )}
-          placeholder="Ask me a question about Medusa..."
+          placeholder="Ask me a question about Switchyard..."
           autoFocus={true}
           passedRef={inputRef as React.RefObject<HTMLInputElement | null>}
           disabled={loading}

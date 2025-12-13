@@ -1,1 +1,1 @@
-export * from "@medusajs/deps/mikro-orm/migrations"
+export * from "@switchyard/deps/mikro-orm/migrations"

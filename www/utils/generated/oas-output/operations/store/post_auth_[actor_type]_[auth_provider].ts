@@ -9,7 +9,7 @@
  *   When used with a third-party provider, such as Google, the request returns a `location` property. You redirect to the
  *   specified URL in your storefront to continue authentication with the third-party service.
  * externalDocs:
- *   url: https://docs.medusajs.com/resources/storefront-development/customers/login#1-using-a-jwt-token
+ *   url: https://docs.switchyard.com/resources/storefront-development/customers/login#1-using-a-jwt-token
  *   description: "Storefront development: How to login as a customer"
  * x-authenticated: false
  * parameters:
@@ -31,12 +31,12 @@
  * 
  *           For example, for email-pass authentication, pass `email` and `password` properties. 
  * 
- *           For the Google and GitHub authentication providers, you can pass `callback_url` to indicate the URL in the frontend that the customer should be redirected to after completing their authentication. This will override the provider's `callbackUrl` configurations in `medusa-config.ts`.
+ *           For the Google and GitHub authentication providers, you can pass `callback_url` to indicate the URL in the frontend that the customer should be redirected to after completing their authentication. This will override the provider's `callbackUrl` configurations in `switchyard.config.ts`.
  * x-codeSamples:
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
  *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
  * 
@@ -44,7 +44,7 @@
  *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
  *       }
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: MEDUSA_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
  *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,

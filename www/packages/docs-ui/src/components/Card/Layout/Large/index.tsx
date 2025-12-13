@@ -2,7 +2,7 @@ import React from "react"
 import { CardProps } from "../.."
 import { useIsExternalLink } from "../../../.."
 import clsx from "clsx"
-import { ArrowUpRightOnBox, TriangleRightMini } from "@medusajs/icons"
+import { ArrowUpRightOnBox, TriangleRightMini } from "@switchyard/icons"
 import Link from "next/link"
 
 export const CardLargeLayout = ({

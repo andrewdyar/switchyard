@@ -10,7 +10,7 @@ In this chapter, you'll learn the difference between using intervals and crons f
 
 ## What is a Scheduled Job Interval?
 
-A scheduled job interval is a specific duration that must pass between the execution of scheduled jobs. The timer starts when the Medusa application starts, and it resets every time a job is executed.
+A scheduled job interval is a specific duration that must pass between the execution of scheduled jobs. The timer starts when the Switchyard application starts, and it resets every time a job is executed.
 
 For example, if you have a scheduled job that runs on an interval of 5 minutes, the job will run after 5 minutes from application startup. Then, it will run again 5 minutes after the last execution, and so on.
 
@@ -25,9 +25,9 @@ export const highlights = [
 ]
 
 ```ts title="src/jobs/hello-world.ts" highlights={highlights}
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 
-export default async function greetingJob(container: MedusaContainer) {
+export default async function greetingJob(container: SwitchyardContainer) {
   const logger = container.resolve("logger")
 
   logger.info("Greeting!")
@@ -43,11 +43,11 @@ export const config = {
 
 The `interval` property accepts a number indicating the duration in milliseconds.
 
-So, the above scheduled job will run every minute, starting one minute after the Medusa application starts.
+So, the above scheduled job will run every minute, starting one minute after the Switchyard application starts.
 
 ### Test the Scheduled Job Interval
 
-To test out your scheduled job, start the Medusa application:
+To test out your scheduled job, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev

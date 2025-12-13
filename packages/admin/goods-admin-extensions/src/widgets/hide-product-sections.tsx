@@ -1,5 +1,5 @@
 /* @refresh reload */
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
 import { useEffect } from "react"
 
 const HideProductSectionsWidget = () => {

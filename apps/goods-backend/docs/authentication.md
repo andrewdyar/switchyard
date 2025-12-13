@@ -28,7 +28,7 @@ This document provides comprehensive documentation for the Goods Grocery authent
 
 ## Architecture Overview
 
-The authentication system uses a hybrid approach combining Medusa's auth framework with Supabase Auth:
+The authentication system uses a hybrid approach combining Switchyard's auth framework with Supabase Auth:
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -38,7 +38,7 @@ The authentication system uses a hybrid approach combining Medusa's auth framewo
                                   │
                                   ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│                       Medusa Backend                             │
+│                       Switchyard Backend                             │
 │  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐ │
 │  │  Auth Provider  │  │   Middleware    │  │  Route Handlers │ │
 │  │   (Supabase)    │  │ (authenticate,  │  │                 │ │
@@ -48,7 +48,7 @@ The authentication system uses a hybrid approach combining Medusa's auth framewo
 │           ▼                    ▼                                 │
 │  ┌─────────────────────────────────────────────────────────────┐│
 │  │                    Auth Identity Store                       ││
-│  │              (Medusa auth_identity table)                    ││
+│  │              (Switchyard auth_identity table)                    ││
 │  └─────────────────────────────────────────────────────────────┘│
 └─────────────────────────────────────────────────────────────────┘
                                   │
@@ -68,7 +68,7 @@ The authentication system uses a hybrid approach combining Medusa's auth framewo
 |-----------|---------|
 | Supabase Auth | User authentication, session management, password reset |
 | Supabase RBAC Tables | Roles, permissions, and their assignments |
-| Medusa Auth Provider | Bridge between Supabase and Medusa's auth system |
+| Switchyard Auth Provider | Bridge between Supabase and Switchyard's auth system |
 | Auth Middleware | Validates authentication on protected routes |
 | Authorization Middleware | Checks permissions before allowing access |
 
@@ -91,18 +91,18 @@ The authentication system uses a hybrid approach combining Medusa's auth framewo
    Response: { access_token, refresh_token, user }
                     │
                     ▼
-4. Frontend calls Medusa auth endpoint with Supabase token
+4. Frontend calls Switchyard auth endpoint with Supabase token
    POST /auth/user/supabase
    Body: { access_token }
                     │
                     ▼
-5. Medusa Auth Provider validates token with Supabase
+5. Switchyard Auth Provider validates token with Supabase
    - Fetches user info from Supabase
    - Retrieves roles from RBAC tables
-   - Creates/updates auth_identity in Medusa
+   - Creates/updates auth_identity in Switchyard
                     │
                     ▼
-6. Medusa creates session cookie
+6. Switchyard creates session cookie
    Set-Cookie: connect.sid=...
                     │
                     ▼
@@ -120,7 +120,7 @@ The authentication system uses a hybrid approach combining Medusa's auth framewo
    Authorization: Bearer <supabase_jwt>
                     │
                     ▼
-3. Medusa middleware extracts and validates token
+3. Switchyard middleware extracts and validates token
                     │
                     ▼
 4. Request proceeds with auth_context populated
@@ -132,7 +132,7 @@ The authentication system uses a hybrid approach combining Medusa's auth framewo
 1. Robot uses pre-generated API key
                     │
                     ▼
-2. Robot calls Medusa endpoint
+2. Robot calls Switchyard endpoint
    POST /auth/user/supabase
    Body: { api_key: "sk_robot_..." }
                     │
@@ -149,7 +149,7 @@ The authentication system uses a hybrid approach combining Medusa's auth framewo
 
 ### Configuration
 
-The Supabase auth provider is configured in `medusa-config.ts`:
+The Supabase auth provider is configured in `switchyard.config.ts`:
 
 ```typescript
 export default defineConfig({
@@ -164,11 +164,11 @@ export default defineConfig({
   modules: {
     authProviders: [
       {
-        resolve: "@medusajs/auth-emailpass",
+        resolve: "@switchyard/auth-emailpass",
         id: "emailpass",
       },
       {
-        resolve: "@medusajs/auth-supabase",
+        resolve: "@switchyard/auth-supabase",
         id: "supabase",
         options: {
           supabaseUrl: process.env.SUPABASE_URL,
@@ -192,14 +192,14 @@ export default defineConfig({
 
 ### Auth Provider Capabilities
 
-The Supabase auth provider (`@medusajs/auth-supabase`) supports:
+The Supabase auth provider (`@switchyard/auth-supabase`) supports:
 
 - **Email/Password Authentication**: Standard login with Supabase credentials
 - **Token Validation**: Validate existing Supabase JWTs
 - **Service Account Auth**: API key authentication for robots
 - **Role Fetching**: Automatically retrieves user roles from RBAC tables
 - **Permission Fetching**: Retrieves permissions for authorization checks
-- **Identity Sync**: Creates/updates Medusa auth_identity records
+- **Identity Sync**: Creates/updates Switchyard auth_identity records
 
 ---
 
@@ -412,7 +412,7 @@ The system supports multiple actor types, each with different authentication met
 
 ### Configuring Actor Types
 
-Actor types and their allowed auth methods are configured in `medusa-config.ts`:
+Actor types and their allowed auth methods are configured in `switchyard.config.ts`:
 
 ```typescript
 authMethodsPerActor: {
@@ -478,7 +478,7 @@ The authentication system uses two types of middleware:
 Validates that a request is authenticated.
 
 ```typescript
-import { authenticate } from "@medusajs/framework/http"
+import { authenticate } from "@switchyard/framework/http"
 
 // Require authentication for admin users
 authenticate("user", ["session", "bearer", "api-key"])
@@ -534,12 +534,12 @@ Routes are protected by combining `AUTHENTICATE = false` with explicit middlewar
 
 ```typescript
 // src/api/admin/my-route/route.ts
-import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import type { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 // Disable global authentication - we handle it explicitly
 export const AUTHENTICATE = false
 
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   // Route handler
 }
 ```
@@ -548,7 +548,7 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
 
 ```typescript
 // src/api/middlewares.ts
-import { defineMiddlewares, authenticate } from "@medusajs/framework/http"
+import { defineMiddlewares, authenticate } from "@switchyard/framework/http"
 import { authorize } from "../middlewares/authorize-middleware"
 
 export default defineMiddlewares({
@@ -718,9 +718,9 @@ FROM public.roles
 WHERE name = 'manager';
 ```
 
-### Syncing Users to Medusa
+### Syncing Users to Switchyard
 
-Use the sync workflow to ensure Medusa has the user's auth identity:
+Use the sync workflow to ensure Switchyard has the user's auth identity:
 
 ```typescript
 import { syncSupabaseUserWorkflow } from "../workflows"
@@ -738,7 +738,7 @@ const { result } = await syncSupabaseUserWorkflow(container).run({
 
 ### Migrating Existing Users
 
-For migrating users from Medusa's built-in auth to Supabase:
+For migrating users from Switchyard's built-in auth to Supabase:
 
 ```bash
 # Preview migration
@@ -749,11 +749,11 @@ npx ts-node scripts/migrate-users-to-supabase.ts
 ```
 
 The migration script:
-1. Reads users from Medusa's `user` table
+1. Reads users from Switchyard's `user` table
 2. Creates users in Supabase Auth
 3. Assigns the default `manager` role
 4. Generates password reset links
-5. Updates Medusa `auth_identity` records
+5. Updates Switchyard `auth_identity` records
 
 ---
 
@@ -762,11 +762,11 @@ The migration script:
 ### Checking Permissions in a Route Handler
 
 ```typescript
-import type { AuthenticatedMedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import type { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const authContext = req.auth_context
   
@@ -957,4 +957,4 @@ Check Supabase logs:
 
 1. Check the deployment guide: `SUPABASE_AUTH_DEPLOYMENT.md`
 2. Review Supabase documentation: https://supabase.com/docs/guides/auth
-3. Review Medusa auth documentation: https://docs.medusajs.com/resources/commerce-modules/auth
+3. Review Switchyard auth documentation: https://docs.switchyard.com/resources/commerce-modules/auth

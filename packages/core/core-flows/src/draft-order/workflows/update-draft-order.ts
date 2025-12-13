@@ -1,4 +1,4 @@
-import { Modules, OrderWorkflowEvents } from "@medusajs/framework/utils"
+import { Modules, OrderWorkflowEvents } from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
@@ -6,14 +6,14 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   IOrderModuleService,
   OrderDTO,
   RegisterOrderChangeDTO,
   UpdateOrderDTO,
   UpsertOrderAddressDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { emitEventStep, useRemoteQueryStep } from "../../common"
 import { previewOrderChangeStep, registerOrderChangesStep } from "../../order"
 import { validateDraftOrderStep } from "../steps/validate-draft-order"

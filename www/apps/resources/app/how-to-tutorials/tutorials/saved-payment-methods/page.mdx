@@ -15,7 +15,7 @@ products:
   - payment
 ---
 
-import { Github, PlaySolid, EllipsisHorizontal } from "@medusajs/icons"
+import { Github, PlaySolid, EllipsisHorizontal } from "@switchyard/icons"
 import { Prerequisites, Card, InlineIcon } from "docs-ui"
 
 export const metadata = {
@@ -33,13 +33,13 @@ export const metadata = {
 
 In this tutorial, you'll learn how to allow customers to save their payment methods and use them for future purchases.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) which are available out-of-the-box.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) which are available out-of-the-box.
 
-Medusa's architecture facilitates integrating third-party services, such as payment providers. These payment providers can process payments and securely store customers' payment methods for future use.
+Switchyard's architecture facilitates integrating third-party services, such as payment providers. These payment providers can process payments and securely store customers' payment methods for future use.
 
-In this tutorial, you'll expand on Medusa's [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) to allow customers to re-use their saved payment methods during checkout.
+In this tutorial, you'll expand on Switchyard's [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) to allow customers to re-use their saved payment methods during checkout.
 
-You can follow this guide whether you're new to Medusa or an advanced Medusa developer.
+You can follow this guide whether you're new to Switchyard or an advanced Switchyard developer.
 
 <Note>
 
@@ -51,15 +51,15 @@ While this tutorial uses Stripe as an example, you can follow the same steps to 
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa and the Next.js Starter Storefront.
-- Set up the Stripe Module Provider in Medusa.
+- Install and set up Switchyard and the Next.js Starter Storefront.
+- Set up the Stripe Module Provider in Switchyard.
 - Customize the checkout flow to save customers' payment methods.
 - Allow customers to select saved payment methods during checkout.
 
-![Diagram illustrating the features of this guide](https://res.cloudinary.com/dza7lstvk/image/upload/v1745309355/Medusa%20Resources/saved-payment-methods_orjnix.jpg)
+![Diagram illustrating the features of this guide](https://res.cloudinary.com/dza7lstvk/image/upload/v1745309355/Switchyard%20Resources/saved-payment-methods_orjnix.jpg)
 
 <Card
-  href="https://github.com/medusajs/examples/tree/main/stripe-saved-payment"
+  href="https://github.com/switchyard/examples/tree/main/stripe-saved-payment"
   title="Saved Payment Methods Repository"
   text="Find the full code for this guide in this repository."
   icon={Github}
@@ -67,7 +67,7 @@ By following this tutorial, you'll learn how to:
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -84,27 +84,27 @@ By following this tutorial, you'll learn how to:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -112,11 +112,11 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Set Up the Stripe Module Provider
 
-Medusa's [Payment Module](../../../commerce-modules/payment/page.mdx) provides payment-related models and the interface to manage and process payments. However, it delegates the actual payment processing to module providers that integrate third-party payment services.
+Switchyard's [Payment Module](../../../commerce-modules/payment/page.mdx) provides payment-related models and the interface to manage and process payments. However, it delegates the actual payment processing to module providers that integrate third-party payment services.
 
-The [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) is a Payment Module Provider that integrates Stripe into your Medusa application to process payments. It can also save payment methods securely.
+The [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) is a Payment Module Provider that integrates Stripe into your Switchyard application to process payments. It can also save payment methods securely.
 
-In this section, you'll set up the Stripe Module Provider in your Medusa application.
+In this section, you'll set up the Stripe Module Provider in your Switchyard application.
 
 <Prerequisites
   items={[
@@ -133,18 +133,18 @@ In this section, you'll set up the Stripe Module Provider in your Medusa applica
 
 ### Register the Stripe Module Provider
 
-To register the Stripe Module Provider in your Medusa application, add it to the array of providers passed to the Payment Module in `medusa-config.ts`:
+To register the Stripe Module Provider in your Switchyard application, add it to the array of providers passed to the Payment Module in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/payment",
+      resolve: "@switchyard/medusa/payment",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/payment-stripe",
+            resolve: "@switchyard/medusa/payment-stripe",
             id: "stripe",
             options: {
               apiKey: process.env.STRIPE_API_KEY,
@@ -157,12 +157,12 @@ module.exports = defineConfig({
 })
 ```
 
-The Medusa configuration accepts a `modules` array, which contains the modules to be loaded. While the Payment Module is loaded by default, you need to add it again when registering a new provider.
+The Switchyard configuration accepts a `modules` array, which contains the modules to be loaded. While the Payment Module is loaded by default, you need to add it again when registering a new provider.
 
 You register provides in the `providers` option of the Payment Module. Each provider is an object with the following properties:
 
 - `resolve`: The package name of the provider.
-- `id`: The ID of the provider. This is used to identify the provider in the Medusa application.
+- `id`: The ID of the provider. This is used to identify the provider in the Switchyard application.
 - `options`: The options to be passed to the provider. In this case, the `apiKey` option is required for the Stripe Module Provider.
 
 <Note>
@@ -181,13 +181,13 @@ STRIPE_API_KEY=sk_...
 
 Where `STRIPE_API_KEY` is your Stripe Secret API Key. You can find it in the Stripe dashboard under Developers > API keys.
 
-![Secret API Key in the Stripe dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1745313823/Medusa%20Resources/Screenshot_2025-04-22_at_12.20.08_PM_w6rxxo.png)
+![Secret API Key in the Stripe dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1745313823/Switchyard%20Resources/Screenshot_2025-04-22_at_12.20.08_PM_w6rxxo.png)
 
 ### Enable Stripe in a Region
 
-In Medusa, each [region](../../../commerce-modules/region/page.mdx) (which is a geographical area where your store operates) can have different payment methods enabled. So, after registering the Stripe Module Provider, you need to enable it in a region.
+In Switchyard, each [region](../../../commerce-modules/region/page.mdx) (which is a geographical area where your store operates) can have different payment methods enabled. So, after registering the Stripe Module Provider, you need to enable it in a region.
 
-To enable it in a region, start the Medusa application with the following command:
+To enable it in a region, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -212,7 +212,7 @@ The Stripe Module Provider supports different payment methods in Stripe, such as
 
 </Note>
 
-![Stripe in the dropdown](https://res.cloudinary.com/dza7lstvk/image/upload/v1745245433/Medusa%20Resources/Screenshot_2025-04-21_at_5.23.07_PM_yd7xji.png)
+![Stripe in the dropdown](https://res.cloudinary.com/dza7lstvk/image/upload/v1745245433/Switchyard%20Resources/Screenshot_2025-04-21_at_5.23.07_PM_yd7xji.png)
 
 ### Add Evnironement Variable to Storefront
 
@@ -220,9 +220,9 @@ The [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) supports paym
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-payment`, you can find the storefront by going back to the parent directory and changing to the `medusa-payment-storefront` directory:
+So, if your Switchyard application's directory is `medusa-payment`, you can find the storefront by going back to the parent directory and changing to the `medusa-payment-storefront` directory:
 
 ```bash
 cd ../medusa-payment-storefront # change based on your project name
@@ -242,9 +242,9 @@ Where `NEXT_PUBLIC_STRIPE_KEY` is your Stripe public API key. You can find it in
 
 ## Step 3: List Payment Methods API Route
 
-The Payment Module uses [account holders](../../../commerce-modules/payment/account-holder/page.mdx) to represent a customer's details that are stored in a third-party payment provider. Medusa creates an account holder for each customer, allowing you later to retrieve the customer's saved payment methods in the third-party provider.
+The Payment Module uses [account holders](../../../commerce-modules/payment/account-holder/page.mdx) to represent a customer's details that are stored in a third-party payment provider. Switchyard creates an account holder for each customer, allowing you later to retrieve the customer's saved payment methods in the third-party provider.
 
-![Diagram illustrating the relation between customers and account holders in Medusa, and customers in Stripe](https://res.cloudinary.com/dza7lstvk/image/upload/v1745314344/Medusa%20Resources/customer-account-stripe_in5ei6.jpg)
+![Diagram illustrating the relation between customers and account holders in Switchyard, and customers in Stripe](https://res.cloudinary.com/dza7lstvk/image/upload/v1745314344/Switchyard%20Resources/customer-account-stripe_in5ei6.jpg)
 
 While this feature is available out-of-the-box, you need to expose it to clients, like storefronts, by creating an [API route](!docs!/learn/fundamentals/api-routes). An API Route is an endpoint that exposes commerce features to external applications and clients.
 
@@ -263,19 +263,19 @@ An API route is created in a `route.ts` file under a sub-directory of the `src/a
 So, to create an API route at the path `/store/payment-methods/:account-holder-id`, create the file `src/api/store/payment-methods/[account_holder_id]/route.ts` with the following content:
 
 export const apiRouteHighlights = [
-  ["9", "query", "Resolve Query from the Medusa container"],
-  ["10", "paymentModuleService", "Resolve the Payment Module's service from the Medusa container."],
+  ["9", "query", "Resolve Query from the Switchyard container"],
+  ["10", "paymentModuleService", "Resolve the Payment Module's service from the Switchyard container."],
   ["12", "accountHolder", "Retrieve the account holder by its ID."],
   ["30", "paymentMethods", "Retrieve the saved payment methods in the account holder's provider."]
 ]
 
 ```ts title="src/api/store/payment-methods/[account_holder_id]/route.ts" highlights={apiRouteHighlights}
-import { MedusaError } from "@medusajs/framework/utils"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { account_holder_id } = req.params
   const query = req.scope.resolve("query")
@@ -293,8 +293,8 @@ export async function GET(
   })
 
   if (!accountHolder) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND, 
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND, 
       "Account holder not found"
     )
   }
@@ -323,11 +323,11 @@ Since you export a route handler function named `GET`, you expose a `GET` API ro
 1. A request object with details and context on the request, such as body parameters or authenticated customer details.
 2. A response object to manipulate and send the response.
 
-The request object has a `scope` property, which is an instance of the [Medusa container](!docs!/learn/fundamentals/medusa-container). The Medusa container is a registry of Framework and commerce tools that you can access in the API route.
+The request object has a `scope` property, which is an instance of the [Switchyard container](!docs!/learn/fundamentals/medusa-container). The Switchyard container is a registry of Framework and commerce tools that you can access in the API route.
 
-You use the Medusa container to resolve:
+You use the Switchyard container to resolve:
 
-- [Query](!docs!/learn/fundamentals/module-links/query), which is a tool that retrieves data across modules in the Medusa application.
+- [Query](!docs!/learn/fundamentals/module-links/query), which is a tool that retrieves data across modules in the Switchyard application.
 - The [Payment Module](../../../commerce-modules/payment/page.mdx)'s service, which provides an interface to manage and process payments with third-party providers.
 
 You use Query to retrieve the account holder with the ID passed as a path parameter. If the account holder is not found, you throw an error.
@@ -354,7 +354,7 @@ Refer to the [Middlewares](!docs!/learn/fundamentals/api-routes/middlewares) doc
 Middlewares are added in the `src/api/middlewares.ts` file. So, create the file with the following content:
 
 ```ts title="src/api/middlewares.ts"
-import { authenticate, defineMiddlewares } from "@medusajs/framework/http"
+import { authenticate, defineMiddlewares } from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -393,9 +393,9 @@ In this step, you'll customize the checkout flow in the [Next.js Starter Storefr
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-payment`, you can find the storefront by going back to the parent directory and changing to the `medusa-payment-storefront` directory:
+So, if your Switchyard application's directory is `medusa-payment`, you can find the storefront by going back to the parent directory and changing to the `medusa-payment-storefront` directory:
 
 ```bash
 cd ../medusa-payment-storefront # change based on your project name
@@ -403,9 +403,9 @@ cd ../medusa-payment-storefront # change based on your project name
 
 </Note>
 
-During checkout, when the customer chooses a payment method, such as Stripe, the Next.js Starter Storefront creates a [payment session](../../../commerce-modules/payment/payment-session/page.mdx) in Medusa using the [Initialize Payment Session](!api!/store#payment-collections_postpaymentcollectionsidpaymentsessions) API route.
+During checkout, when the customer chooses a payment method, such as Stripe, the Next.js Starter Storefront creates a [payment session](../../../commerce-modules/payment/payment-session/page.mdx) in Switchyard using the [Initialize Payment Session](!api!/store#payment-collections_postpaymentcollectionsidpaymentsessions) API route.
 
-Under the hood, Medusa uses the associated payment provider (Stripe) to initiate the payment process with the associated third-party payment provider. The [Initialize Payment Session](!api!/store#payment-collections_postpaymentcollectionsidpaymentsessions) API route accepts a `data` object parameter in the request body that allows you to pass data relevant to the third-party payment provider.
+Under the hood, Switchyard uses the associated payment provider (Stripe) to initiate the payment process with the associated third-party payment provider. The [Initialize Payment Session](!api!/store#payment-collections_postpaymentcollectionsidpaymentsessions) API route accepts a `data` object parameter in the request body that allows you to pass data relevant to the third-party payment provider.
 
 So, to save the payment method that the customer uses during checkout with Stripe, you must pass the `setup_future_usage` property in the `data` object. The `setup_future_usage` property is a Stripe-specific property that allows you to save the payment method for future use.
 
@@ -431,7 +431,7 @@ By making this change, you always save the payment method that the customer uses
 
 ### Test it Out
 
-To test it out, start the Medusa application by running the following command in the Medusa application's directory:
+To test it out, start the Switchyard application by running the following command in the Switchyard application's directory:
 
 ```bash npm2yarn
 npm run dev
@@ -453,7 +453,7 @@ Then, place the order. Once the order is placed, you can check on the Stripe das
 2. Clicking on the customer you just placed the order with.
 3. Scrolling down to the "Payment methods" section. You'll find the payment method you just used to place the order.
 
-![Saved payment method on the Stripe dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1745249064/Medusa%20Resources/Screenshot_2025-04-21_at_6.24.00_PM_peotrd.png)
+![Saved payment method on the Stripe dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1745249064/Switchyard%20Resources/Screenshot_2025-04-21_at_6.24.00_PM_peotrd.png)
 
 In the next step, you'll show the saved payment methods to the customer during checkout and allow them to select one of them.
 
@@ -472,7 +472,7 @@ Add the following in `src/lib/data/payment.ts`:
 export const paymentHighlights = [
   ["1", "SavedPaymentMethod", "Define a type for the saved payment methods."],
   ["2", "id", "The ID of the payment method\nin the third-party provider."],
-  ["3", "provider_id", "The ID of the provider in the Medusa application,\nsuch as Stripe's ID."],
+  ["3", "provider_id", "The ID of the provider in the Switchyard application,\nsuch as Stripe's ID."],
   ["4", "data", "Additional data retrieved from the third-party provider\nrelated to the saved payment method."],
   ["14", "getSavedPaymentMethods", "Create a function to retrieve the saved payment methods."],
 ]
@@ -515,7 +515,7 @@ export const getSavedPaymentMethods = async (accountHolderId: string) => {
 You define a type for the retrieved payment methods. It contains the following properties:
 
 - `id`: The ID of the payment method in the third-party provider.
-- `provider_id`: The ID of the provider in the Medusa application, such as Stripe's ID.
+- `provider_id`: The ID of the provider in the Switchyard application, such as Stripe's ID.
 - `data`: Additional data retrieved from the third-party provider related to the saved payment method. The type is modeled after the data returned by Stripe, but you can change it to match other payment providers.
 
 You also create a `getSavedPaymentMethods` function that retrieves the saved payment methods from the API route you created earlier. The function accepts the account holder ID as a parameter and returns the saved payment methods.
@@ -529,9 +529,9 @@ The component that shows the Stripe card element is defined in `src/modules/chec
 Start by adding the following import statements at the top of the file:
 
 ```ts title="src/modules/checkout/components/payment-container/index.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 import { useEffect, useState } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { SavedPaymentMethod, getSavedPaymentMethods } from "@lib/data/payment"
 import { initiatePaymentSession } from "../../../../lib/data/cart"
 import { capitalize } from "lodash"
@@ -943,7 +943,7 @@ In particular, you're changing the `payment_method` property to either be the ID
 
 You can now test out placing orders with a saved payment method.
 
-To do that, start the Medusa application by running the following command in the Medusa application's directory:
+To do that, start the Switchyard application by running the following command in the Switchyard application's directory:
 
 ```bash npm2yarn
 npm run dev
@@ -959,20 +959,20 @@ In the Next.js Starter Storefront, login with the customer account you created e
 
 Then, proceed to the checkout flow. In the payment step, you should see the saved payment method you used earlier. You can select it and place the order.
 
-![Saved payment method in checkout](https://res.cloudinary.com/dza7lstvk/image/upload/v1745308047/Medusa%20Resources/Screenshot_2025-04-21_at_4.07.34_PM_krudjq.png)
+![Saved payment method in checkout](https://res.cloudinary.com/dza7lstvk/image/upload/v1745308047/Switchyard%20Resources/Screenshot_2025-04-21_at_4.07.34_PM_krudjq.png)
 
-Once the order is placed successfully, you can check it in the Medusa Admin dashboard. You can view the order and capture the payment.
+Once the order is placed successfully, you can check it in the Switchyard Admin dashboard. You can view the order and capture the payment.
 
-![Order in the Medusa Admin dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1745318042/Medusa%20Resources/Screenshot_2025-04-22_at_1.33.39_PM_uynlfp.png)
+![Order in the Switchyard Admin dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1745318042/Switchyard%20Resources/Screenshot_2025-04-22_at_1.33.39_PM_uynlfp.png)
 
 ---
 
 ## Next Steps
 
-You've added support for saved payment methods in your Medusa application and Next.js Starter Storefront, allowing customers to save their payment methods during checkout and use them in future orders.
+You've added support for saved payment methods in your Switchyard application and Next.js Starter Storefront, allowing customers to save their payment methods during checkout and use them in future orders.
 
-You can add more features to the saved payment methods, such as allowing customers to delete saved payment methods. You can use [Stripe's APIs](https://docs.stripe.com/api/payment_methods/detach) in the storefront or add an [API route](!docs!/learn/fundamentals/api-routes) in Medusa to delete the saved payment method.
+You can add more features to the saved payment methods, such as allowing customers to delete saved payment methods. You can use [Stripe's APIs](https://docs.stripe.com/api/payment_methods/detach) in the storefront or add an [API route](!docs!/learn/fundamentals/api-routes) in Switchyard to delete the saved payment method.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

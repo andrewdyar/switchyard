@@ -1,4 +1,4 @@
-import { Avatar } from "@medusajs/ui"
+import { Avatar } from "@switchyard/ui"
 
 export default function AvatarCustomStyle() {
   return (

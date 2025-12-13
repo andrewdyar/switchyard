@@ -1,5 +1,5 @@
-import { createWorkflow, WorkflowData } from "@medusajs/framework/workflows-sdk"
-import { AdditionalData } from "@medusajs/types"
+import { createWorkflow, WorkflowData } from "@switchyard/framework/workflows-sdk"
+import { AdditionalData } from "@switchyard/types"
 import { refreshCartItemsWorkflow } from "../../cart/workflows/refresh-cart-items"
 import { acquireLockStep, releaseLockStep } from "../../locking"
 import { deleteLineItemsStep } from "../steps/delete-line-items"

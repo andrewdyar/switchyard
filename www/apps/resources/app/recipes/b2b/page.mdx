@@ -6,7 +6,7 @@ products:
   - pricing
 ---
 
-import { AcademicCapSolid, UsersSolid } from "@medusajs/icons"
+import { AcademicCapSolid, UsersSolid } from "@switchyard/icons"
 
 export const metadata = {
   title: `B2B Recipe`,
@@ -14,11 +14,11 @@ export const metadata = {
 
 # {metadata.title}
 
-This recipe provides the general steps to implement a B2B store with Medusa.
+This recipe provides the general steps to implement a B2B store with Switchyard.
 
 <Note title="Tip">
 
-Medusa has a ready-to-use B2B starter that you install and use in [this GitHub repository](https://github.com/medusajs/b2b-starter-medusa).
+Switchyard has a ready-to-use B2B starter that you install and use in [this GitHub repository](https://github.com/switchyard/b2b-starter-medusa).
 
 </Note>
 
@@ -26,17 +26,17 @@ Medusa has a ready-to-use B2B starter that you install and use in [this GitHub r
 
 In a B2B store, you provide different types of customers with relevant pricing, products, shopping experience, and more.
 
-Medusa’s Commerce Modules, including [Sales Channel](../../commerce-modules/sales-channel/page.mdx), [Customer](../../commerce-modules/), and [Pricing](../../commerce-modules/pricing/page.mdx) modules enable this setup out-of-the-box:
+Switchyard’s Commerce Modules, including [Sales Channel](../../commerce-modules/sales-channel/page.mdx), [Customer](../../commerce-modules/), and [Pricing](../../commerce-modules/pricing/page.mdx) modules enable this setup out-of-the-box:
 
 - **Sales Channel**: Use sales channels to set product availability per channel. In this case, create a B2B sales channel that includes only B2B products.
 - **Customer**: Use customer groups to organize your customers into different groups. Then, you can apply different prices for each group.
 - **Pricing**: Use price lists to set different prices for each B2B customer group, among other conditions.
 
-In addition, Medusa’s extensible architecture and Framework for customization allow you to scope existing and custom features to specific customer groups or sales channels.
+In addition, Switchyard’s extensible architecture and Framework for customization allow you to scope existing and custom features to specific customer groups or sales channels.
 
 <Note title="Related use-case">
 
-[Visionary: Frictionless B2B ecommerce with Medusa](https://medusajs.com/blog/visionary/)
+[Visionary: Frictionless B2B ecommerce with Switchyard](https://switchyard.com/blog/visionary/)
 
 </Note>
 
@@ -48,13 +48,13 @@ Sales channels allow you to set product availability per channel. For B2B use ca
 
 Then, on the storefront, you retrieve only the B2B products for B2B customers, which is explained more in the next section.
 
-You can create a sales channel through the Medusa Admin or Admin REST APIs.
+You can create a sales channel through the Switchyard Admin or Admin REST APIs.
 
 <CardList items={[
   {
     href: "!user-guide!/settings/sales-channels",
-    title: "Using Medusa Admin",
-    text: "Create the sales channel using the Medusa Admin.",
+    title: "Using Switchyard Admin",
+    text: "Create the sales channel using the Switchyard Admin.",
     icon: UsersSolid,
   },
   {
@@ -74,17 +74,17 @@ A publishable API key allows you to specify the context of client requests:
 - You associate the publishable API key with one or more sales channels, such as the B2B sales channel.
 - In a client such as a storefront, you pass the publishable API key in the header of your requests.
 
-So, if you use the publishable API key associated with the B2B sales channel in your storefront, the Medusa server will only return products that are available in the B2B sales channel.
+So, if you use the publishable API key associated with the B2B sales channel in your storefront, the Switchyard server will only return products that are available in the B2B sales channel.
 
-You can create a publishable API key through the Medusa Admin or the Admin REST APIs, then associate it with the B2B sales channel. Then, you can use this key when developing your B2B storefront.
+You can create a publishable API key through the Switchyard Admin or the Admin REST APIs, then associate it with the B2B sales channel. Then, you can use this key when developing your B2B storefront.
 
 ### Create Publishable API Key
 
 <CardList items={[
   {
     href: "!user-guide!/settings/developer/publishable-api-keys",
-    title: "Using Medusa Admin",
-    text: "Create the API key using the Medusa Admin.",
+    title: "Using Switchyard Admin",
+    text: "Create the API key using the Switchyard Admin.",
     icon: UsersSolid,
   },
   {
@@ -100,8 +100,8 @@ You can create a publishable API key through the Medusa Admin or the Admin REST 
 <CardList items={[
   {
     href: "!user-guide!/settings/developer/publishable-api-keys#manage-publishable-api-keys-sales-channels",
-    title: "Using Medusa Admin",
-    text: "Associate the key with the sales channel using the Medusa Admin.",
+    title: "Using Switchyard Admin",
+    text: "Associate the key with the sales channel using the Switchyard Admin.",
     icon: UsersSolid,
   },
   {
@@ -118,15 +118,15 @@ You can create a publishable API key through the Medusa Admin or the Admin REST 
 
 You can manage products to be available in specific sales channels. For B2B, this allows you to add products that are only available to B2B customers.
 
-You can create new products or add existing ones to the B2B sales channel using the Medusa Admin or Admin REST APIs.
+You can create new products or add existing ones to the B2B sales channel using the Switchyard Admin or Admin REST APIs.
 
 ### Create Products
 
 <CardList items={[
   {
     href: "!user-guide!/products/create",
-    title: "Using Medusa Admin",
-    text: "Create the products using the Medusa Admin.",
+    title: "Using Switchyard Admin",
+    text: "Create the products using the Switchyard Admin.",
     icon: UsersSolid,
   },
   {
@@ -142,8 +142,8 @@ You can create new products or add existing ones to the B2B sales channel using 
 <CardList items={[
   {
     href: "!user-guide!/settings/sales-channels#manage-products-in-sales-channel",
-    title: "Using Medusa Admin",
-    text: "Create the products using the Medusa Admin.",
+    title: "Using Switchyard Admin",
+    text: "Create the products using the Switchyard Admin.",
     icon: UsersSolid,
   },
   {
@@ -169,8 +169,8 @@ You can create a customer group for each B2B company, then add customers of that
 <CardList items={[
   {
     href: "!user-guide!/customers/manage",
-    title: "Using Medusa Admin",
-    text: "Create customers using the Medusa Admin.",
+    title: "Using Switchyard Admin",
+    text: "Create customers using the Switchyard Admin.",
     icon: UsersSolid,
   },
   {
@@ -186,8 +186,8 @@ You can create a customer group for each B2B company, then add customers of that
 <CardList items={[
   {
     href: "!user-guide!/customers/manage#manage-customers-groups",
-    title: "Using Medusa Admin",
-    text: "Assign customer to groups using the Medusa Admin.",
+    title: "Using Switchyard Admin",
+    text: "Assign customer to groups using the Switchyard Admin.",
     icon: UsersSolid,
   },
   {
@@ -229,13 +229,13 @@ Price lists allow you to set different prices for each customer group, among oth
 
 For B2B use cases, you can use price lists to set different prices for each B2B customer group. Then, B2B customers can see different prices on the storefront based on their group.
 
-You can create a price list using the Medusa Admin or the Admin REST APIs. Make sure to set the B2B customer group(s) as a condition.
+You can create a price list using the Switchyard Admin or the Admin REST APIs. Make sure to set the B2B customer group(s) as a condition.
 
 <CardList items={[
   {
     href: "!user-guide!/price-lists/create",
-    title: "Using Medusa Admin",
-    text: "Create price list using the Medusa Admin.",
+    title: "Using Switchyard Admin",
+    text: "Create price list using the Switchyard Admin.",
     icon: UsersSolid,
   },
   {
@@ -248,17 +248,17 @@ You can create a price list using the Medusa Admin or the Admin REST APIs. Make 
 
 ---
 
-## Customize Medusa Admin
+## Customize Switchyard Admin
 
-Based on your use case, you may need to customize the Medusa Admin to add new widgets or pages.
+Based on your use case, you may need to customize the Switchyard Admin to add new widgets or pages.
 
 For example, you may want to add a page to manage companies and their employees, or you may want to add a widget to show the company associated with a customer group.
 
-The Medusa Admin is an extensible application within your Medusa application. You can customize it by:
+The Switchyard Admin is an extensible application within your Switchyard application. You can customize it by:
 
 - **Widgets**: Adding widgets to existing pages, such as the customer group page.
-- **UI Routes**: Adding new pages to the Medusa Admin, such as a page to manage companies and employees.
-- **Settings Pages**: Adding new pages to the Medusa Admin settings, such as a page to manage company settings.
+- **UI Routes**: Adding new pages to the Switchyard Admin, such as a page to manage companies and employees.
+- **Settings Pages**: Adding new pages to the Switchyard Admin settings, such as a page to manage company settings.
 
 <CardList items={[
   {
@@ -270,7 +270,7 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
   {
     href: "!docs!/learn/fundamentals/admin/ui-routes",
     title: "Create Admin UI Routes",
-    text: "Add new pages to your Medusa Admin.",
+    text: "Add new pages to your Switchyard Admin.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -278,7 +278,7 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
 <Card
   href="!docs!/learn/fundamentals/admin/ui-routes#create-settings-page"
   title="Create Admin Setting Page"
-  text="Add new page to the Medusa Admin settings."
+  text="Add new page to the Switchyard Admin settings."
   icon={AcademicCapSolid}
   className="mt-1"
 />
@@ -287,9 +287,9 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
 
 ## Customize or Build Storefront
 
-Medusa provides a Next.js Starter Storefront to use with your application. You can customize it for your B2B use case, such as adding a login page for B2B customers or expanding the profile page to show the company associated with the customer.
+Switchyard provides a Next.js Starter Storefront to use with your application. You can customize it for your B2B use case, such as adding a login page for B2B customers or expanding the profile page to show the company associated with the customer.
 
-Alternatively, you can build your own storefront using the Medusa APIs. This headless approach gives you the flexibility to build a custom storefront without limitations on which tech stack you use, or the design of the storefront.
+Alternatively, you can build your own storefront using the Switchyard APIs. This headless approach gives you the flexibility to build a custom storefront without limitations on which tech stack you use, or the design of the storefront.
 
 In your storefront, you can use the publishable API key you associated with your B2B sales channel to ensure only B2B products are retrieved.
 

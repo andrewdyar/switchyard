@@ -8,7 +8,7 @@ import Footer from "../components/Footer"
 import { inter, robotoMono } from "./fonts"
 
 const ogImage =
-  "https://res.cloudinary.com/dza7lstvk/image/upload/v1732200992/Medusa%20Resources/opengraph-image_daq6nx.jpg"
+  "https://res.cloudinary.com/dza7lstvk/image/upload/v1732200992/Switchyard%20Resources/opengraph-image_daq6nx.jpg"
 
 export const metadata: Metadata = {
   title: {

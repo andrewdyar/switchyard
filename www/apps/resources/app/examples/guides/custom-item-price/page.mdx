@@ -12,13 +12,13 @@ products:
   - product
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram } from "docs-ui"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1738682676/Medusa%20Resources/guide-custom-item-pricing_lrilmb.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1738682676/Switchyard%20Resources/guide-custom-item-pricing_lrilmb.jpg"
 
 export const metadata = {
-  title: `Implement Custom Line Item Pricing in Medusa`,
+  title: `Implement Custom Line Item Pricing in Switchyard`,
   openGraph: {
     images: [
       {
@@ -43,29 +43,29 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to add line items with custom prices to a cart in Medusa.
+In this guide, you'll learn how to add line items with custom prices to a cart in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) which are available out-of-the-box. These features include managing carts and adding line items to them.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) which are available out-of-the-box. These features include managing carts and adding line items to them.
 
 By default, you can add product variants to the cart, where the price of its associated line item is based on the product variant's price. However, you can build customizations to add line items with custom prices to the cart. This is useful when integrating an Enterprise Resource Planning (ERP), Product Information Management (PIM), or other third-party services that provide real-time prices for your products.
 
 To showcase how to add line items with custom prices to the cart, this guide uses [GoldAPI.io](https://www.goldapi.io) as an example of a third-party system that you can integrate for real-time prices. You can follow the same approach for other third-party integrations that provide custom pricing.
 
-You can follow this guide whether you're new to Medusa or an advanced Medusa developer.
+You can follow this guide whether you're new to Switchyard or an advanced Switchyard developer.
 
 ### Summary
 
 This guide will teach you how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Integrate the third-party service [GoldAPI.io](https://www.goldapi.io) that retrieves real-time prices for metals like Gold and Silver.
 - Add an API route to add a product variant that has metals, such as a gold ring, to the cart with the real-time price retrieved from the third-party service.
 
-![Diagram showcasing overview of implementation for adding an item to cart from storefront.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738920014/Medusa%20Resources/custom-line-item-3_zu3qh2.jpg)
+![Diagram showcasing overview of implementation for adding an item to cart from storefront.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738920014/Switchyard%20Resources/custom-line-item-3_zu3qh2.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/custom-item-price",
+    href: "https://github.com/switchyard/examples/tree/main/custom-item-price",
     title: "Custom Item Price Repository",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -80,7 +80,7 @@ This guide will teach you how to:
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -97,27 +97,27 @@ This guide will teach you how to:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. You can also optionally choose to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx).
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name. If you chose to install the Next.js starter, it'll be installed in a separate directory with the `{project-name}-storefront` name.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name. If you chose to install the Next.js starter, it'll be installed in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Medusa's architecture in [this documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Switchyard's architecture in [this documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -134,7 +134,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
   ]}
 />
 
-To integrate third-party services into Medusa, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+To integrate third-party services into Switchyard, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 In this step, you'll create a Metal Price Module that uses the GoldAPI.io service to retrieve real-time prices for metals like Gold and Silver. You'll use this module later to retrieve the real-time price of a product variant based on the metals in it, and add it to the cart with that custom price.
 
@@ -146,9 +146,9 @@ Learn more about modules in [this documentation](!docs!/learn/fundamentals/modul
 
 ### Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/metal-prices`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/metal-prices`.
 
-![Diagram showcasing the module directory to create](https://res.cloudinary.com/dza7lstvk/image/upload/v1738247192/Medusa%20Resources/custom-item-price-1_q16evr.jpg)
+![Diagram showcasing the module directory to create](https://res.cloudinary.com/dza7lstvk/image/upload/v1738247192/Switchyard%20Resources/custom-item-price-1_q16evr.jpg)
 
 ### Create Module's Service
 
@@ -158,7 +158,7 @@ In this section, you'll create the Metal Prices Module's service that connects t
 
 Start by creating the file `src/modules/metal-prices/service.ts` with the following content:
 
-![Diagram showcasing the service file to create](https://res.cloudinary.com/dza7lstvk/image/upload/v1738247303/Medusa%20Resources/custom-item-price-2_eaefis.jpg)
+![Diagram showcasing the service file to create](https://res.cloudinary.com/dza7lstvk/image/upload/v1738247303/Switchyard%20Resources/custom-item-price-2_eaefis.jpg)
 
 ```ts title="src/modules/metal-prices/service.ts"
 type Options = {
@@ -184,7 +184,7 @@ The service's constructor receives the module's options as a second parameter. Y
 
 <Note title="What is the first parameter in the constructor?">
 
-A module has a container of Medusa Framework tools and local resources in the module that you can access in the service constructor's first parameter. Learn more in [this documentation](!docs!/learn/fundamentals/modules/container).
+A module has a container of Switchyard Framework tools and local resources in the module that you can access in the service constructor's first parameter. Learn more in [this documentation](!docs!/learn/fundamentals/modules/container).
 
 </Note>
 
@@ -218,7 +218,7 @@ The `MetalSymbols` enum defines the symbols for metals like Gold, Silver, Platin
 Next, add the method `getMetalPrices` to the `MetalPricesModuleService` class:
 
 ```ts title="src/modules/metal-prices/service.ts"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 // ...
 
@@ -240,8 +240,8 @@ export default class MetalPricesModuleService {
     }).then((response) => response.json())
     .then((response) => {
       if (response.error) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           response.error
         )
       }
@@ -254,7 +254,7 @@ export default class MetalPricesModuleService {
 
 The `getMetalPrice` method accepts the metal symbol and currency as parameters. You send a request to GoldAPI.io's `/api/{symbol}/{currency}` endpoint to retrieve the metal's price, also passing the access token in the request's headers.
 
-If the response contains an error, you throw a `MedusaError` with the error message. Otherwise, you return the response, which is of type `PriceResponse`.
+If the response contains an error, you throw a `SwitchyardError` with the error message. Otherwise, you return the response, which is of type `PriceResponse`.
 
 #### Add Helper Methods
 
@@ -285,14 +285,14 @@ You'll use these methods in later steps.
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/metal-prices/index.ts` with the following content:
 
-![The directory structure of the Metal Prices Module after adding the definition file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738248049/Medusa%20Resources/custom-item-price-3_imtbuw.jpg)
+![The directory structure of the Metal Prices Module after adding the definition file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738248049/Switchyard%20Resources/custom-item-price-3_imtbuw.jpg)
 
 ```ts title="src/modules/metal-prices/index.ts"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import MetalPricesModuleService from "./service"
 
 export const METAL_PRICES_MODULE = "metal-prices"
@@ -307,13 +307,13 @@ You use the `Module` function from the Modules SDK to create the module's defini
 1. The module's name, which is `metal-prices`.
 2. An object with a required property `service` indicating the module's service.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -334,7 +334,7 @@ The object also has an `options` property that accepts the module's options. You
 
 You'll find the access token at the top of your GoldAPI.io dashboard.
 
-![The access token is below the "API Token" header of your GoldAPI.io dashboard.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738248335/Medusa%20Resources/Screenshot_2025-01-30_at_4.44.07_PM_xht3j4.png)
+![The access token is below the "API Token" header of your GoldAPI.io dashboard.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738248335/Switchyard%20Resources/Screenshot_2025-01-30_at_4.44.07_PM_xht3j4.png)
 
 Set the access token as an environment variable in `.env`:
 
@@ -418,7 +418,7 @@ The workflow you'll implement in this section has the following steps:
   hideLegend
 />
 
-You'll only implement the `getVariantMetalPricesStep`. Medusa provides the other steps out-of-the-box.
+You'll only implement the `getVariantMetalPricesStep`. Switchyard provides the other steps out-of-the-box.
 
 ### getVariantMetalPricesStep
 
@@ -426,11 +426,11 @@ The `getVariantMetalPricesStep` will retrieve the real-time metal price of a var
 
 To create the step, create the file `src/workflows/steps/get-variant-metal-prices.ts` with the following content:
 
-![The directory structure after adding the step file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738249036/Medusa%20Resources/custom-item-price-4_kumzdc.jpg)
+![The directory structure after adding the step file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738249036/Switchyard%20Resources/custom-item-price-4_kumzdc.jpg)
 
 ```ts title="src/workflows/steps/get-variant-metal-prices.ts"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { ProductVariantDTO } from "@medusajs/framework/types"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { ProductVariantDTO } from "@switchyard/framework/types"
 import { METAL_PRICES_MODULE } from "../../modules/metal-prices"
 import MetalPricesModuleService from "../../modules/metal-prices/service"
 
@@ -463,15 +463,15 @@ You create a step with `createStep` from the Workflows SDK. It accepts two param
 
 1. The step's unique name, which is `get-variant-metal-prices`.
 2. An async function that receives two parameters:
-    - An input object with the variant, currency code, and quantity. The variant has a `calculated_price` property that holds the variant's fixed price in the Medusa application. This is useful when you want to add a fixed price to the real-time custom price, such as handling fees.
-    - The [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An input object with the variant, currency code, and quantity. The variant has a `calculated_price` property that holds the variant's fixed price in the Switchyard application. This is useful when you want to add a fixed price to the real-time custom price, such as handling fees.
+    - The [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
-In the step function, so far you only resolve the Metal Prices Module's service from the Medusa container.
+In the step function, so far you only resolve the Metal Prices Module's service from the Switchyard container.
 
 Next, you'll validate that the specified variant can have its price calculated. Add the following import at the top of the file:
 
 ```ts title="src/workflows/steps/get-variant-metal-prices.ts"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 ```
 
 And replace the `TODO` in the step function with the following:
@@ -484,15 +484,15 @@ const metalSymbol = await metalPricesModuleService
   .getMetalSymbol(variantMetal || "")
 
 if (!metalSymbol) {
-  throw new MedusaError(
-    MedusaError.Types.INVALID_DATA,
+  throw new SwitchyardError(
+    SwitchyardError.Types.INVALID_DATA,
     "Variant doesn't have metal. Make sure the variant's SKU matches a metal symbol."
   )
 }
 
 if (!variant.weight) {
-  throw new MedusaError(
-    MedusaError.Types.INVALID_DATA,
+  throw new SwitchyardError(
+    SwitchyardError.Types.INVALID_DATA,
     "Variant doesn't have weight. Make sure the variant has weight to calculate its price."
   )
 }
@@ -529,7 +529,7 @@ Now that you have the `getVariantMetalPricesStep`, you can create the workflow t
 
 Create the file `src/workflows/add-custom-to-cart.ts` with the following content:
 
-![The directory structure after adding the workflow file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738251380/Medusa%20Resources/custom-item-price-5_zorahv.jpg)
+![The directory structure after adding the workflow file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738251380/Switchyard%20Resources/custom-item-price-5_zorahv.jpg)
 
 export const workflowHighlights = [
   ["17", "useQueryGraphStep", "Retrieve the cart's details."],
@@ -537,9 +537,9 @@ export const workflowHighlights = [
 ]
 
 ```ts title="src/workflows/add-custom-to-cart.ts" highlights={workflowHighlights}
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
-import { QueryContext } from "@medusajs/framework/utils"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
+import { QueryContext } from "@switchyard/framework/utils"
 
 type AddCustomToCartWorkflowInput = {
   cart_id: string
@@ -623,11 +623,11 @@ You execute the `getVariantMetalPricesStep` passing it the variant's details, th
 Next, you'll add the item with the custom price to the cart. First, add the following imports at the top of the file:
 
 ```ts title="src/workflows/add-custom-to-cart.ts"
-import { transform } from "@medusajs/framework/workflows-sdk"
+import { transform } from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep, 
   addToCartWorkflow, 
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 ```
 
 Then, replace the `TODO` in the workflow with the following:
@@ -661,7 +661,7 @@ addToCartWorkflow.runAsStep({
 
 You prepare the item to add to the cart using `transform` from the Workflows SDK. It allows you to manipulate and create variables in a workflow.
 
-After that, you use Medusa's `acquireLockStep` to acquire a lock on the cart, and `addToCartWorkflow` to add the item with the custom price to the cart.
+After that, you use Switchyard's `acquireLockStep` to acquire a lock on the cart, and `addToCartWorkflow` to add the item with the custom price to the cart.
 
 <Note title="Tip">
 
@@ -672,10 +672,10 @@ A workflow's constructor function has some constraints in implementation, which 
 Lastly, you'll retrieve the cart's details again and return them. Add the following import at the beginning of the file:
 
 ```ts title="src/workflows/add-custom-to-cart.ts"
-import { WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { 
   releaseLockStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 ```
 
 And replace the last `TODO` in the workflow with the following:
@@ -722,16 +722,16 @@ An API route is created in a `route.ts` file under a sub-directory of the `src/a
 
 The path of the API route is the file's path relative to `src/api`. So, to create the `/store/carts/:id/line-items-metals` API route, create the file `src/api/store/carts/[id]/line-items-metals/route.ts` with the following content:
 
-![The directory structure after adding the API route file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738252712/Medusa%20Resources/custom-item-price-6_deecbu.jpg)
+![The directory structure after adding the API route file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738252712/Switchyard%20Resources/custom-item-price-6_deecbu.jpg)
 
 ```ts title="src/api/store/carts/[id]/line-items-metals/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
-import { HttpTypes } from "@medusajs/framework/types"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
+import { HttpTypes } from "@switchyard/framework/types"
 import { addCustomToCartWorkflow } from "../../../../../workflows/add-custom-to-cart"
 
 export const POST = async (
-  req: MedusaRequest<HttpTypes.StoreAddCartLineItem>, 
-  res: MedusaResponse
+  req: SwitchyardRequest<HttpTypes.StoreAddCartLineItem>, 
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
   const item = req.validatedBody
@@ -753,9 +753,9 @@ Since you export a `POST` function in this file, you're exposing a `POST` API ro
 1. A request object with details and context on the request, such as path and body parameters.
 2. A response object to manipulate and send the response.
 
-In the function, you retrieve the cart's ID from the path parameter, and the item's details from the request body. This API route will accept the same request body parameters as Medusa's [Add Item to Cart API Route](!api!/store#carts_postcartsidlineitems).
+In the function, you retrieve the cart's ID from the path parameter, and the item's details from the request body. This API route will accept the same request body parameters as Switchyard's [Add Item to Cart API Route](!api!/store#carts_postcartsidlineitems).
 
-Then, you execute the `addCustomToCartWorkflow` by invoking it, passing it the Medusa container, which is available in the request's `scope` property, then executing its `run` method. You pass the workflow's input object with the cart's ID and the item to add to the cart.
+Then, you execute the `addCustomToCartWorkflow` by invoking it, passing it the Switchyard container, which is available in the request's `scope` property, then executing its `run` method. You pass the workflow's input object with the cart's ID and the item to add to the cart.
 
 Finally, you return a response with the updated cart's details.
 
@@ -763,7 +763,7 @@ Finally, you return a response with the updated cart's details.
 
 To ensure that the request body contains the required parameters, you'll add a middleware that validates the incoming request's body based on a defined schema.
 
-A middleware is a function executed before the API route when a request is sent to it. You define middlewares in Medusa in the `src/api/middlewares.ts` directory.
+A middleware is a function executed before the API route when a request is sent to it. You define middlewares in Switchyard in the `src/api/middlewares.ts` directory.
 
 <Note>
 
@@ -773,16 +773,16 @@ Learn more about middlewares in [this documentation](!docs!/learn/fundamentals/a
 
 To add a validation middleware to the custom API route, create the file `src/api/middlewares.ts` with the following content:
 
-![The directory structure after adding the middleware file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738253099/Medusa%20Resources/custom-item-price-7_l7iw2a.jpg)
+![The directory structure after adding the middleware file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1738253099/Switchyard%20Resources/custom-item-price-7_l7iw2a.jpg)
 
 ```ts title="src/api/middlewares.ts"
 import { 
   defineMiddlewares,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { 
   StoreAddCartLineItem,
-} from "@medusajs/medusa/api/store/carts/validators"
+} from "@switchyard/medusa/api/store/carts/validators"
 
 export default defineMiddlewares({
   routes: [
@@ -799,13 +799,13 @@ export default defineMiddlewares({
 })
 ```
 
-In this file, you export the middlewares definition using `defineMiddlewares` from the Medusa Framework. This function accepts an object having a `routes` property, which is an array of middleware configurations to apply on routes.
+In this file, you export the middlewares definition using `defineMiddlewares` from the Switchyard Framework. This function accepts an object having a `routes` property, which is an array of middleware configurations to apply on routes.
 
 You pass in the `routes` array an object having the following properties:
 
 - `matcher`: The route to apply the middleware on.
 - `method`: The HTTP method to apply the middleware on for the specified API route.
-- `middlewares`: An array of the middlewares to apply. You apply the `validateAndTransformBody` middleware, which validates the request body based on the `StoreAddCartLineItem` schema. This validation schema is the same schema used for Medusa's [Add Item to Cart API Route](!api!/store#carts_postcartsidlineitems).
+- `middlewares`: An array of the middlewares to apply. You apply the `validateAndTransformBody` middleware, which validates the request body based on the `StoreAddCartLineItem` schema. This validation schema is the same schema used for Switchyard's [Add Item to Cart API Route](!api!/store#carts_postcartsidlineitems).
 
 Any request sent to the `/store/carts/:id/line-items-metals` API route will now fail if it doesn't have the required parameters.
 
@@ -823,17 +823,17 @@ Before you test the API route, you'll prepare and retrieve the necessary data to
 
 You'll first create a product that has a `Metal` option, and variant(s) with values for this option.
 
-Start the Medusa application with the following command:
+Start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard at `localhost:9000/app` and log in with the email and password you created when you installed the Medusa application in the first step.
+Then, open the Switchyard Admin dashboard at `localhost:9000/app` and log in with the email and password you created when you installed the Switchyard application in the first step.
 
 Once you log in, click on Products in the sidebar, then click the Create button at the top right.
 
-![Click on Products in the sidebar at the left, then click on the Create button at the top right of the content](https://res.cloudinary.com/dza7lstvk/image/upload/v1738253415/Medusa%20Resources/Screenshot_2025-01-30_at_6.09.36_PM_ee0jr2.png)
+![Click on Products in the sidebar at the left, then click on the Create button at the top right of the content](https://res.cloudinary.com/dza7lstvk/image/upload/v1738253415/Switchyard%20Resources/Screenshot_2025-01-30_at_6.09.36_PM_ee0jr2.png)
 
 Then, in the Create Product form:
 
@@ -843,7 +843,7 @@ Then, in the Create Product form:
 
 Once you're done, click the Continue button.
 
-![Fill in the product details, enable the "Yes, this is a product with variants" toggle, and add the "Metal" option with "Gold" value](https://res.cloudinary.com/dza7lstvk/image/upload/v1738253520/Medusa%20Resources/Screenshot_2025-01-30_at_6.11.29_PM_lqxth9.png)
+![Fill in the product details, enable the "Yes, this is a product with variants" toggle, and add the "Metal" option with "Gold" value](https://res.cloudinary.com/dza7lstvk/image/upload/v1738253520/Switchyard%20Resources/Screenshot_2025-01-30_at_6.11.29_PM_lqxth9.png)
 
 You can skip the next two steps by clicking the Continue button again, then the Publish button.
 
@@ -853,41 +853,41 @@ Once you're done, the product's page will open. You'll now add weight to the pro
 - Click on the three-dots icon at its right.
 - Choose "Edit" from the dropdown.
 
-![Find the Gold variant in the Variants section, click on the three-dots icon, and choose "Edit"](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254038/Medusa%20Resources/Screenshot_2025-01-30_at_6.19.52_PM_j3hjcx.png)
+![Find the Gold variant in the Variants section, click on the three-dots icon, and choose "Edit"](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254038/Switchyard%20Resources/Screenshot_2025-01-30_at_6.19.52_PM_j3hjcx.png)
 
 In the side window that opens, find the Weight field, enter the weight, and click the Save button.
 
-![Enter the weight in the Weight field, then click the Save button](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254165/Medusa%20Resources/Screenshot_2025-01-30_at_6.22.15_PM_yplzdp.png)
+![Enter the weight in the Weight field, then click the Save button](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254165/Switchyard%20Resources/Screenshot_2025-01-30_at_6.22.15_PM_yplzdp.png)
 
 Finally, you need to set fixed prices for the variant, even if they're just `0`. To do that:
 
 1. Click on the three-dots icon at the top right of the Variants section.
 2. Choose "Edit Prices" from the dropdown.
 
-![Click on the three-dots icon at the top right of the Variants section, then choose "Edit Prices"](https://res.cloudinary.com/dza7lstvk/image/upload/v1738255203/Medusa%20Resources/Screenshot_2025-01-30_at_6.39.35_PM_s3jpxh.png)
+![Click on the three-dots icon at the top right of the Variants section, then choose "Edit Prices"](https://res.cloudinary.com/dza7lstvk/image/upload/v1738255203/Switchyard%20Resources/Screenshot_2025-01-30_at_6.39.35_PM_s3jpxh.png)
 
 For each cell in the table, either enter a fixed price for the specified currency or leave it as `0`. Once you're done, click the Save button.
 
-![Enter fixed prices for the variant in the table, then click the Save button](https://res.cloudinary.com/dza7lstvk/image/upload/v1738255272/Medusa%20Resources/Screenshot_2025-01-30_at_6.40.45_PM_zw1l59.png)
+![Enter fixed prices for the variant in the table, then click the Save button](https://res.cloudinary.com/dza7lstvk/image/upload/v1738255272/Switchyard%20Resources/Screenshot_2025-01-30_at_6.40.45_PM_zw1l59.png)
 
 You'll use this variant to add it to the cart later. You can find its ID by clicking on the variant, opening its details page. Then, on the details page, click on the icon at the right of the JSON section, and copy the ID from the JSON data.
 
-![Click on the icon at the right of the JSON section to copy the variant's ID](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254314/Medusa%20Resources/Screenshot_2025-01-30_at_6.24.49_PM_ka7xew.png)
+![Click on the icon at the right of the JSON section to copy the variant's ID](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254314/Switchyard%20Resources/Screenshot_2025-01-30_at_6.24.49_PM_ka7xew.png)
 
 #### Retrieve Publishable API Key
 
 All requests sent to API routes starting with `/store` must have a publishable API key in the header. This ensures the request's operations are scoped to the publishable API key's associated sales channels. For example, products that aren't available in a cart's sales channel can't be added to it.
 
-To retrieve the publishable API key, on the Medusa Admin:
+To retrieve the publishable API key, on the Switchyard Admin:
 
 1. Click on Settings in the sidebar at the bottom left.
 2. Click on Publishable API Keys from the sidebar, then click on a publishable API key in the list.
 
-![Click on publishable API keys in the Settings sidebar, then click on a publishable API key in the list](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254523/Medusa%20Resources/Screenshot_2025-01-30_at_6.28.17_PM_mldscc.png)
+![Click on publishable API keys in the Settings sidebar, then click on a publishable API key in the list](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254523/Switchyard%20Resources/Screenshot_2025-01-30_at_6.28.17_PM_mldscc.png)
 
 3. Click on the publishable API key to copy it.
 
-![Click on the publishable API key to copy it](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254601/Medusa%20Resources/Screenshot_2025-01-30_at_6.29.26_PM_vvatki.png)
+![Click on the publishable API key to copy it](https://res.cloudinary.com/dza7lstvk/image/upload/v1738254601/Switchyard%20Resources/Screenshot_2025-01-30_at_6.29.26_PM_vvatki.png)
 
 You'll use this key when you test the API route.
 
@@ -963,8 +963,8 @@ This price will be reflected in the cart's total price, and you can proceed to c
 
 ## Next Steps
 
-You've now implemented custom item pricing in Medusa. You can also customize the [storefront](../../../nextjs-starter/page.mdx) to use the new API route to add custom-priced items to the cart.
+You've now implemented custom item pricing in Switchyard. You can also customize the [storefront](../../../nextjs-starter/page.mdx) to use the new API route to add custom-priced items to the cart.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

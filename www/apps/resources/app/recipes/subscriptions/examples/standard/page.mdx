@@ -6,7 +6,7 @@ products:
   - customer
 ---
 
-import { Github, PlaySolid, EllipsisHorizontal } from "@medusajs/icons"
+import { Github, PlaySolid, EllipsisHorizontal } from "@switchyard/icons"
 import { Prerequisites, InlineIcon } from "docs-ui"
 
 export const metadata = {
@@ -15,11 +15,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to support subscription purchases with Medusa.
+In this guide, you'll learn how to support subscription purchases with Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with support for customizations. While Medusa doesn't provide subscription-based purchases natively, it provides the Framework to support you in implementing this feature.
+When you install a Switchyard application, you get a fully-fledged commerce platform with support for customizations. While Switchyard doesn't provide subscription-based purchases natively, it provides the Framework to support you in implementing this feature.
 
-In this guide, you'll customize Medusa to implement subscription-based purchases with the following features:
+In this guide, you'll customize Switchyard to implement subscription-based purchases with the following features:
 
 1. Subscription-based purchases for a specified interval (monthly or yearly) and period.
 2. Customize the admin dashboard to view subscriptions and associated orders.
@@ -31,13 +31,13 @@ This guide uses Stripe as an example to capture the subscription payments. You'r
 
 <Note>
 
-This guide provides an example of an approach to implement subscriptions. You're free to choose a different approach using the Medusa Framework.
+This guide provides an example of an approach to implement subscriptions. You're free to choose a different approach using the Switchyard Framework.
 
 </Note>
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/subscription",
+    href: "https://github.com/switchyard/examples/tree/main/subscription",
     title: "Subscription Example Repository",
     text: "Find the full code for this recipe example in this repository.",
     icon: Github,
@@ -52,7 +52,7 @@ This guide provides an example of an approach to implement subscriptions. You're
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -69,29 +69,29 @@ This guide provides an example of an approach to implement subscriptions. You're
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when you're asked whether you want to install the Next.js Starter Storefront, choose `Y` for yes.
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a directory with the `{project-name}-storefront` name.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Medusa's architecture in [this documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Switchyard's architecture in [this documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form.
 
 Afterwards, you can log in with the new user and explore the dashboard. The Next.js Starter Storefront is also running at `http://localhost:8000`.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -99,7 +99,7 @@ Check out the [troubleshooting guides](../../../../troubleshooting/create-medusa
 
 ## Step 2: Configure Stripe Module Provider
 
-As mentioned in the introduction, you'll use Stripe as the payment provider for the subscription payments. In this step, you'll configure the [Stripe Module Provider](../../../../commerce-modules/payment/payment-provider/stripe/page.mdx) in your Medusa application.
+As mentioned in the introduction, you'll use Stripe as the payment provider for the subscription payments. In this step, you'll configure the [Stripe Module Provider](../../../../commerce-modules/payment/payment-provider/stripe/page.mdx) in your Switchyard application.
 
 <Prerequisites items={[
   {
@@ -112,18 +112,18 @@ As mentioned in the introduction, you'll use Stripe as the payment provider for 
   },
 ]} />
 
-To add the Stripe Module Provider to the Medusa configurations, add the following to the `medusa-config.ts` file:
+To add the Stripe Module Provider to the Switchyard configurations, add the following to the `switchyard.config.ts` file:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/payment",
+      resolve: "@switchyard/medusa/payment",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/payment-stripe",
+            resolve: "@switchyard/medusa/payment-stripe",
             id: "stripe",
             options: {
               apiKey: process.env.STRIPE_API_KEY,
@@ -136,7 +136,7 @@ module.exports = defineConfig({
 })
 ```
 
-The Medusa configurations accept a `modules` property to add modules to your application. You'll learn more about modules in the next section.
+The Switchyard configurations accept a `modules` property to add modules to your application. You'll learn more about modules in the next section.
 
 You add the Stripe Module Provider to the [Payment Module](../../../../commerce-modules/payment/page.mdx)'s options. Learn more about these options in the [Payment Module's options documentation](../../../../commerce-modules/payment/module-options/page.mdx).
 
@@ -156,9 +156,9 @@ Learn more about other Stripe options and configurations in the [Stripe Module P
 
 ### Enable Stripe in Regions
 
-To allow customers to use Stripe during checkout, you must enable it in at least one region. Customers can only choose from payment providers available in their region. You can enable the payment provider in the Medusa Admin dashboard.
+To allow customers to use Stripe during checkout, you must enable it in at least one region. Customers can only choose from payment providers available in their region. You can enable the payment provider in the Switchyard Admin dashboard.
 
-To do that, start the Medusa application:
+To do that, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -172,15 +172,15 @@ Then, open the dashboard at `localhost:9000/app`. After you log in:
 4. In the side window that opens, edit the region's payment provider to choose "Stripe (STRIPE)". 
 5. Once you're done, click the Save button.
 
-![Choose "Stripe (STRIPE)" in the payment provider dropdown](https://res.cloudinary.com/dza7lstvk/image/upload/v1740654408/Medusa%20Resources/Screenshot_2025-02-27_at_1.06.12_PM_esql1c.png)
+![Choose "Stripe (STRIPE)" in the payment provider dropdown](https://res.cloudinary.com/dza7lstvk/image/upload/v1740654408/Switchyard%20Resources/Screenshot_2025-02-27_at_1.06.12_PM_esql1c.png)
 
 ---
 
 ## Step 3: Create Subscription Module
 
-Medusa creates commerce features in modules. For example, product features and data models are created in the Product Module.
+Switchyard creates commerce features in modules. For example, product features and data models are created in the Product Module.
 
-You also create custom commerce data models and features in custom modules. They're integrated into the Medusa application similar to Medusa's modules without side effects.
+You also create custom commerce data models and features in custom modules. They're integrated into the Switchyard application similar to Switchyard's modules without side effects.
 
 So, you'll create a subscription module that holds the data models related to a subscription and allows you to manage them.
 
@@ -202,7 +202,7 @@ export const subscriptionHighlights = [
 ]
 
 ```ts title="src/modules/subscription/models/subscription.ts" highlights={subscriptionHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { SubscriptionInterval, SubscriptionStatus } from "../types"
 
 const Subscription = model.define("subscription", {
@@ -252,10 +252,10 @@ export enum SubscriptionInterval {
 Create the module’s main service in the file `src/modules/subscription/service.ts` with the following content:
 
 ```ts title="src/modules/subscription/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Subscription from "./models/subscription"
 
-class SubscriptionModuleService extends MedusaService({
+class SubscriptionModuleService extends SwitchyardService({
   Subscription,
 }) {
 }
@@ -270,7 +270,7 @@ The main service extends the service factory to provide data-management features
 Create the file `src/modules/subscription/index.ts` that holds the module’s definition:
 
 ```ts title="src/modules/subscription/index.ts"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import SubscriptionModuleService from "./service"
 
 export const SUBSCRIPTION_MODULE = "subscriptionModuleService"
@@ -282,11 +282,11 @@ export default Module(SUBSCRIPTION_MODULE, {
 
 This sets the module’s name to `subscriptionModuleService` and its main service to `SubscriptionModuleService`.
 
-### Register Module in Medusa’s Configuration
+### Register Module in Switchyard’s Configuration
 
-Finally, add the module into `medusa-config.ts`:
+Finally, add the module into `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -308,13 +308,13 @@ module.exports = defineConfig({
 
 ## Step 4: Define Links
 
-Modules are isolated in Medusa, making them reusable, replaceable, and integrable in your application without side effects.
+Modules are isolated in Switchyard, making them reusable, replaceable, and integrable in your application without side effects.
 
 So, you can't have relations between data models in modules. Instead, you define a link between them.
 
 Links are relations between data models of different modules that maintain the isolation between the modules.
 
-In this step, you’ll define links between the Subscription Module’s `Subscription` data model and the data models of Medusa’s Commerce Modules:
+In this step, you’ll define links between the Subscription Module’s `Subscription` data model and the data models of Switchyard’s Commerce Modules:
 
 1. Link between the `Subscription` data model and the Cart Module's `Cart` model.
 2. Link between the `Subscription` data model and the Customer Module's `Customer` model.
@@ -325,9 +325,9 @@ In this step, you’ll define links between the Subscription Module’s `Subscri
 To link a subscription to the cart used to make the purchase, create the file `src/links/subscription-cart.ts` with the following content:
 
 ```ts title="src/links/subscription-cart.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import SubscriptionModule from "../modules/subscription"
-import CartModule from "@medusajs/medusa/cart"
+import CartModule from "@switchyard/medusa/cart"
 
 export default defineLink(
   SubscriptionModule.linkable.subscription,
@@ -348,9 +348,9 @@ When you create a new order for the subscription, you’ll retrieve the linked c
 To link a subscription to the customer who purchased it, create the file `src/links/subscription-customer.ts` with the following content:
 
 ```ts title="src/links/subscription-customer.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import SubscriptionModule from "../modules/subscription"
-import CustomerModule from "@medusajs/medusa/customer"
+import CustomerModule from "@switchyard/medusa/customer"
 
 export default defineLink(
   {
@@ -368,9 +368,9 @@ This defines a list link to the `Subscription` data model, since a customer may 
 To link a subscription to the orders created for it, create the file `src/links/subscription-order.ts` with the following content:
 
 ```ts title="src/links/subscription-order.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import SubscriptionModule from "../modules/subscription"
-import OrderModule from "@medusajs/medusa/order"
+import OrderModule from "@switchyard/medusa/order"
 
 export default defineLink(
   SubscriptionModule.linkable.subscription,
@@ -394,7 +394,7 @@ This defines a list link to the `Order` data model since a subscription has mult
 To create a table for the `Subscription` data model in the database, start by generating the migrations for the Subscription Module with the following command:
 
 ```bash
-npx medusa db:generate subscriptionModuleService
+npx switchyard db:generate subscriptionModuleService
 ```
 
 This generates a migration in the `src/modules/subscriptions/migrations` directory.
@@ -402,7 +402,7 @@ This generates a migration in the `src/modules/subscriptions/migrations` directo
 Then, to reflect the migration and links in the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 ---
@@ -438,7 +438,7 @@ import {
   SubscriptionInterval,
 } from "./types"
 
-class SubscriptionModuleService extends MedusaService({
+class SubscriptionModuleService extends SwitchyardService({
   Subscription,
 }) {
   getNextOrderDate({
@@ -475,7 +475,7 @@ If the next order date, calculated from the last order date, exceeds the expirat
 In the same file, add the following method to `SubscriptionModuleService`:
 
 ```ts title="src/modules/subscription/service.ts"
-class SubscriptionModuleService extends MedusaService({
+class SubscriptionModuleService extends SwitchyardService({
   Subscription,
 }) {
   // ...
@@ -505,7 +505,7 @@ The `getExpirationDate` method accepts a subscription’s date, interval, and pe
 Before overriding the `createSubscriptions` method, add the following types to `src/modules/subscription/types/index.ts`:
 
 ```ts title="src/modules/subscription/types/index.ts"
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 import Subscription from "../models/subscription"
 
 // ...
@@ -530,7 +530,7 @@ Since the `Subscription` data model is a variable, use `InferTypeOf` to infer it
 Then, in `src/modules/subscription/service.ts`, add the following to override the `createSubscriptions` method:
 
 ```ts title="src/modules/subscription/service.ts"
-class SubscriptionModuleService extends MedusaService({
+class SubscriptionModuleService extends SwitchyardService({
   Subscription,
 }) {
   // ...
@@ -588,7 +588,7 @@ The workflow accepts a cart’s ID, and it has three steps:
 2. Create a subscription.
 3. Link the subscription to the order, cart, and customer.
 
-Medusa provides the first and last steps in the `@medusajs/medusa/core-flows` package, so you only need to implement the second step.
+Switchyard provides the first and last steps in the `@switchyard/medusa/core-flows` package, so you only need to implement the second step.
 
 ### Create a Subscription Step (Second Step)
 
@@ -602,9 +602,9 @@ export const createSubscriptionsHighlights = [
 ]
 
 ```ts title="src/workflows/create-subscription/steps/create-subscription.ts" highlights={createSubscriptionsHighlights} collapsibleLines="1-7" expandMoreLabel="Show Imports"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
-import { LinkDefinition } from "@medusajs/framework/types"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { LinkDefinition } from "@switchyard/framework/types"
 import { SubscriptionInterval } from "../../../modules/subscription/types"
 import SubscriptionModuleService from "../../../modules/subscription/service"
 import { SUBSCRIPTION_MODULE } from "../../../modules/subscription"
@@ -735,12 +735,12 @@ import {
   useQueryGraphStep,
   acquireLockStep,
   releaseLockStep,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   createRemoteLinkStep,
   completeCartWorkflow,
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   SubscriptionInterval,
 } from "../../modules/subscription/types"
@@ -901,19 +901,19 @@ export const completeCartHighlights = [
 
 ```ts title="src/api/store/carts/[id]/subscribe/route.ts" highlights={completeCartHighlights} collapsibleLines="1-10" expandMoreLabel="Show Imports"
 import { 
-  MedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { 
   ContainerRegistrationKeys,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 import createSubscriptionWorkflow from "../../../../../workflows/create-subscription"
 import { SubscriptionInterval } from "../../../../../modules/subscription/types"
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -930,8 +930,8 @@ export const POST = async (
   const { metadata } = cart
 
   if (!metadata?.subscription_interval || !metadata.subscription_period) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Please set the subscription's interval and period first."
     )
   }
@@ -975,7 +975,7 @@ Before continuing with the customizations, you must understand the payment chang
 
 By default, the checkout flow requires you to create a [payment collection](../../../../commerce-modules/payment/payment-collection/page.mdx), then a [payment session](../../../../commerce-modules/payment/payment-session/page.mdx) in that collection. When you create the payment session, that subsequently performs the necessary action to initialize the payment in the payment provider. For example, it creates a payment intent in Stripe.
 
-![Diagram showcasing payment flow overview](https://res.cloudinary.com/dza7lstvk/image/upload/v1740657136/Medusa%20Resources/subscriptions-stripe_ycw4ig.jpg)
+![Diagram showcasing payment flow overview](https://res.cloudinary.com/dza7lstvk/image/upload/v1740657136/Switchyard%20Resources/subscriptions-stripe_ycw4ig.jpg)
 
 To support subscriptions, you need to support capturing the payment each time the subscription renews. When creating the payment session using the [Initialize Payment Session API route](!api!/store#payment-collections_postpaymentcollectionsidpaymentsessions), you must pass the data that your payment provider requires to support capturing the payment again in the future. You can pass the data that the provider requires in the `data` property.
 
@@ -985,7 +985,7 @@ If you're using a custom payment provider, you can handle that additional data i
 
 </Note>
 
-When you create the payment session, Medusa creates an account holder for the customer. An account holder represents a customer's saved payment information, including saved methods, in a third-party provider and may hold data from that provider. Learn more in the [Account Holder](../../../../commerce-modules/payment/account-holder/page.mdx) documentation.
+When you create the payment session, Switchyard creates an account holder for the customer. An account holder represents a customer's saved payment information, including saved methods, in a third-party provider and may hold data from that provider. Learn more in the [Account Holder](../../../../commerce-modules/payment/account-holder/page.mdx) documentation.
 
 The account holder allows you to retrieve the saved payment method and use it to capture the payment when the subscription renews. You'll see how this works later when you implement the logic to renew the subscription.
 
@@ -1036,8 +1036,8 @@ Then, you'll add the subscription form that shows as part of the checkout to sel
 ```tsx title="src/modules/checkout/components/subscriptions/index.tsx" badgeLabel="Storefront" badgeColor="orange" collapsibleLines="1-12" expandMoreLabel="Show Imports"
 "use client"
 
-import { Button, clx, Heading, Text } from "@medusajs/ui"
-import { CheckCircleSolid } from "@medusajs/icons"
+import { Button, clx, Heading, Text } from "@switchyard/ui"
+import { CheckCircleSolid } from "@switchyard/icons"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
 import { useCallback, useState } from "react"
 import Divider from "../../../common/components/divider"
@@ -1170,7 +1170,7 @@ const SubscriptionForm = () => {
 export default SubscriptionForm
 ```
 
-This adds a component that displays a form to choose the subscription's interval and period during checkout. When the customer submits the form, you use the `updateSubscriptionData` function that sends a request to the Medusa application to update the cart with the subscription details.
+This adds a component that displays a form to choose the subscription's interval and period during checkout. When the customer submits the form, you use the `updateSubscriptionData` function that sends a request to the Switchyard application to update the cart with the subscription details.
 
 Next, you want the subscription step to show after the address step. So, change the last line of the `setAddresses` function in `src/lib/data/cart.ts` to redirect to the subscription step once the customer enters their address:
 
@@ -1260,7 +1260,7 @@ You change the request to send a `POST` request to the `/store/carts/[id]/subscr
 
 To test out the cart completion flow:
 
-1. In the Medusa application's directory, run the following command to start the application:
+1. In the Switchyard application's directory, run the following command to start the application:
 
 ```bash npm2yarn
 npm run dev
@@ -1295,14 +1295,14 @@ export const listSubscriptionsAdminHighlight = [
 
 ```ts title="src/api/admin/subscriptions/route.ts" highlights={listSubscriptionsAdminHighlight}
 import { 
-  AuthenticatedMedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
   
@@ -1343,8 +1343,8 @@ To add a middleware, create the file `src/api/middlewares.ts` with the following
 import { 
   validateAndTransformQuery,
   defineMiddlewares,
-} from "@medusajs/framework/http"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+} from "@switchyard/framework/http"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 
 export const GetCustomSchema = createFindParams()
 
@@ -1377,7 +1377,7 @@ export default defineMiddlewares({
 
 You add the `validateAndTransformQuery` middleware to `GET` requests sent to routes starting with `/admin/subscriptions`. This middleware accepts the following parameters:
 
-- A validation schema indicating which query parameters are accepted. You create the schema with [Zod](https://zod.dev/). Medusa has a createFindParams utility that generates a Zod schema accepting four query parameters:
+- A validation schema indicating which query parameters are accepted. You create the schema with [Zod](https://zod.dev/). Switchyard has a createFindParams utility that generates a Zod schema accepting four query parameters:
     - `fields`: The fields and relations to retrieve in the returned resources.
     - `offset`: The number of items to skip before retrieving the returned items.
     - `limit`: The maximum number of items to return.
@@ -1400,14 +1400,14 @@ export const getSubscriptionsAdminHighlight = [
 
 ```ts title="src/api/admin/subscriptions/[id]/route.ts" highlights={getSubscriptionsAdminHighlight}
 import { 
-  AuthenticatedMedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -1439,13 +1439,13 @@ You can also use Query configuration as explained for the previous route.
 
 </Note>
 
-In the next section, you’ll extend the Medusa Admin and use these API routes to show the subscriptions.
+In the next section, you’ll extend the Switchyard Admin and use these API routes to show the subscriptions.
 
 ---
 
 ## Step 11: Extend Admin
 
-The Medusa Admin is customizable, allowing you to inject widgets into existing pages or add UI routes to create new pages.
+The Switchyard Admin is customizable, allowing you to inject widgets into existing pages or add UI routes to create new pages.
 
 In this step, you’ll add two UI routes:
 
@@ -1460,7 +1460,7 @@ Before creating the UI routes, create the file `src/admin/types/index.ts` that h
 import { 
   OrderDTO,
   CustomerDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 export enum SubscriptionStatus {
   ACTIVE = "active",
@@ -1493,14 +1493,14 @@ You define types for the subscription status and interval, as well as a `Subscri
 
 ### Configure JS SDK
 
-Medusa provides a [JS SDK](../../../../js-sdk/page.mdx) that facilitates sending requests to the server. You can use this SDK in any JavaScript client-side application, including your admin customizations.
+Switchyard provides a [JS SDK](../../../../js-sdk/page.mdx) that facilitates sending requests to the server. You can use this SDK in any JavaScript client-side application, including your admin customizations.
 
 To configure the JS SDK, create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -1511,7 +1511,7 @@ export const sdk = new Medusa({
 
 This initializes the SDK, setting the following options:
 
-- `baseUrl`: The URL of the Medusa server. You use the Vite environment variable `VITE_BACKEND_URL`.
+- `baseUrl`: The URL of the Switchyard server. You use the Vite environment variable `VITE_BACKEND_URL`.
 - `debug`: A boolean indicating whether to log debug information. You use the Vite environment variable `DEV`.
 - `auth`: An object indicating the authentication type. You use the session authentication type, which is the recommended approach for admin customizations.
 
@@ -1519,7 +1519,7 @@ Learn more about other customizations in the [JS SDK documentation](../../../../
 
 ### Create Subscriptions List UI Route
 
-You'll now create the subscriptions list UI route. Since you'll show the subscriptions in a table, you'll use the [DataTable component](!ui!/components/data-table) from Medusa UI. It facilitates displaying data in a tabular format with sorting, filtering, and pagination.
+You'll now create the subscriptions list UI route. Since you'll show the subscriptions in a table, you'll use the [DataTable component](!ui!/components/data-table) from Switchyard UI. It facilitates displaying data in a tabular format with sorting, filtering, and pagination.
 
 Start by creating the file `src/admin/routes/subscriptions/page.tsx` with the following content:
 
@@ -1533,9 +1533,9 @@ export const list1Highlights = [
 ]
 
 ```tsx title="src/admin/routes/subscriptions/page.tsx" highlights={list1Highlights} collapsibleLines="1-9" expandMoreLabel="Show Imports"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ClockSolid } from "@medusajs/icons"
-import { Container, Heading, Badge, createDataTableColumnHelper, useDataTable, DataTablePaginationState, DataTable } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ClockSolid } from "@switchyard/icons"
+import { Container, Heading, Badge, createDataTableColumnHelper, useDataTable, DataTablePaginationState, DataTable } from "@switchyard/ui"
 import { useMemo, useState } from "react"
 import { SubscriptionData, SubscriptionStatus } from "../../types"
 import { useQuery } from "@tanstack/react-query"
@@ -1691,7 +1691,7 @@ import {
   Container,
   Heading,
   Table,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useParams, Link } from "react-router-dom"
 import { SubscriptionData } from "../../../types/index.js"
 import { useQuery } from "@tanstack/react-query"
@@ -1749,7 +1749,7 @@ Then, you render the subscription’s orders in a table. For each order, you sho
 
 ### Test the UI Routes
 
-To test the UI routes, run the Medusa application and go to `http://localhost:9000/app`.
+To test the UI routes, run the Switchyard application and go to `http://localhost:9000/app`.
 
 After you log-in, you’ll find a new sidebar item “Subscriptions”. Once you click on it, you’ll see the list of subscription purchases.
 
@@ -1770,24 +1770,24 @@ The workflow has eight steps:
 
 ```mermaid
 graph TD
-  useQueryGraphStep["Retrieve Cart (useQueryGraphStep by Medusa)"] --> createPaymentCollectionStep["createPaymentCollectionStep (Medusa)"]
-  createPaymentCollectionStep["createPaymentCollectionStep (Medusa)"] --> getPaymentMethodStep
-  getPaymentMethodStep --> createPaymentSessionsWorkflow["createPaymentSessionsWorkflow (Medusa)"]
-  createPaymentSessionsWorkflow["createPaymentSessionsWorkflow (Medusa)"] --> authorizePaymentSessionStep["authorizePaymentSessionStep (Medusa)"]
-  authorizePaymentSessionStep["authorizePaymentSessionStep (Medusa)"] --> createSubscriptionOrderStep
-  createSubscriptionOrderStep --> createRemoteLinkStep["Create Links (createRemoteLinkStep by Medusa)"]
-  createRemoteLinkStep["Create Links (createRemoteLinkStep by Medusa)"] --> capturePaymentStep["capturePaymentStep (Medusa)"]
-  capturePaymentStep["capturePaymentStep (Medusa)"] --> updateSubscriptionStep
+  useQueryGraphStep["Retrieve Cart (useQueryGraphStep by Switchyard)"] --> createPaymentCollectionStep["createPaymentCollectionStep (Switchyard)"]
+  createPaymentCollectionStep["createPaymentCollectionStep (Switchyard)"] --> getPaymentMethodStep
+  getPaymentMethodStep --> createPaymentSessionsWorkflow["createPaymentSessionsWorkflow (Switchyard)"]
+  createPaymentSessionsWorkflow["createPaymentSessionsWorkflow (Switchyard)"] --> authorizePaymentSessionStep["authorizePaymentSessionStep (Switchyard)"]
+  authorizePaymentSessionStep["authorizePaymentSessionStep (Switchyard)"] --> createSubscriptionOrderStep
+  createSubscriptionOrderStep --> createRemoteLinkStep["Create Links (createRemoteLinkStep by Switchyard)"]
+  createRemoteLinkStep["Create Links (createRemoteLinkStep by Switchyard)"] --> capturePaymentStep["capturePaymentStep (Switchyard)"]
+  capturePaymentStep["capturePaymentStep (Switchyard)"] --> updateSubscriptionStep
 ```
 
-1. Retrieve the subscription’s linked cart. Medusa provides a `useQueryGraphStep` in the `@medusajs/medusa/core-flows` package that can be used as a step.
-2. Create a payment collection for the new order. Medusa provides a `createPaymentCollectionsStep` in the `@medusajs/medusa/core-flows` package that you can use.
+1. Retrieve the subscription’s linked cart. Switchyard provides a `useQueryGraphStep` in the `@switchyard/medusa/core-flows` package that can be used as a step.
+2. Create a payment collection for the new order. Switchyard provides a `createPaymentCollectionsStep` in the `@switchyard/medusa/core-flows` package that you can use.
 3. Get the customer's saved payment method. This payment method will be used to charge the customer.
-4. Create payment sessions in the payment collection. Medusa provides a `createPaymentSessionsWorkflow` in the `@medusajs/medusa/core-flows` package that can be used as a step.
-5. Authorize the payment session. Medusa also provides the `authorizePaymentSessionStep` in the `@medusajs/medusa/core-flows` package, which can be used.
+4. Create payment sessions in the payment collection. Switchyard provides a `createPaymentSessionsWorkflow` in the `@switchyard/medusa/core-flows` package that can be used as a step.
+5. Authorize the payment session. Switchyard also provides the `authorizePaymentSessionStep` in the `@switchyard/medusa/core-flows` package, which can be used.
 6. Create the subscription’s new order.
-7. Create links between the subscription and the order using the `createRemoteLinkStep` provided in the `@medusajs/medusa/core-flows` package.
-8. Capture the order’s payment using the `capturePaymentStep` provided by Medusa in the `@medusajs/medusa/core-flows` package.
+7. Create links between the subscription and the order using the `createRemoteLinkStep` provided in the `@switchyard/medusa/core-flows` package.
+8. Capture the order’s payment using the `capturePaymentStep` provided by Switchyard in the `@switchyard/medusa/core-flows` package.
 9. Update the subscription’s `last_order_date` and `next_order_date` properties.
 
 You’ll only implement the third, sixth, and ninth steps.
@@ -1799,9 +1799,9 @@ To charge the customer using their payment method saved in Stripe, you need to r
 To create the step, create the file `src/workflows/create-subscription-order/steps/get-payment-method.ts` with the following content:
 
 ```tsx title="src/workflows/create-subscription-order/steps/get-payment-method.ts"
-import { MedusaError, Modules } from "@medusajs/framework/utils"
-import { AccountHolderDTO, CustomerDTO, PaymentMethodDTO } from "@medusajs/framework/types"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
+import { AccountHolderDTO, CustomerDTO, PaymentMethodDTO } from "@switchyard/framework/types"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 export interface GetPaymentMethodStepInput {
   customer?: CustomerDTO & {
@@ -1838,8 +1838,8 @@ export const getPaymentMethodStep = createStep(
     const paymentModuleService = container.resolve(Modules.PAYMENT)
 
     if (!customer?.account_holder) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "No account holder found for the customer while retrieving payment method"
       )
     }
@@ -1855,8 +1855,8 @@ export const getPaymentMethodStep = createStep(
     )
 
     if (!paymentMethods.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "At least one saved payment method is required for performing a payment"
       )
     }
@@ -1882,22 +1882,22 @@ Create the file `src/workflows/create-subscription-order/steps/create-subscripti
 export const createSubscriptionOrderStep1Highlights = [
   ["21", "getOrderData", "Format the order's input data from the cart."],
   ["31", "linkDefs", "An array of links to be created."],
-  ["33", "createOrderWorkflow", "Use Medusa's workflow to create the order."],
+  ["33", "createOrderWorkflow", "Use Switchyard's workflow to create the order."],
   ["45", "order", "Pass the order to the compensation function."]
 ]
 
 ```ts title="src/workflows/create-subscription-order/steps/create-subscription-order.ts" highlights={createSubscriptionOrderStep1Highlights} collapsibleLines="1-14" expandMoreLabel="Show Imports"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { 
   CartWorkflowDTO,
   PaymentCollectionDTO,
   IOrderModuleService,
   LinkDefinition,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { 
   Modules,
-} from "@medusajs/framework/utils"
-import { createOrderWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/utils"
+import { createOrderWorkflow } from "@switchyard/medusa/core-flows"
 import { SubscriptionData } from "../../../modules/subscription/types"
 import { SUBSCRIPTION_MODULE } from "../../../modules/subscription"
 
@@ -1942,7 +1942,7 @@ const createSubscriptionOrderStep = createStep(
 export default createSubscriptionOrderStep
 ```
 
-This creates a `createSubscriptionOrderStep` that uses the `createOrdersWorkflow`, which Medusa provides in the `@medusajs/medusa/core-flows` package. The step returns the created order and an array of links to be created.
+This creates a `createSubscriptionOrderStep` that uses the `createOrdersWorkflow`, which Switchyard provides in the `@switchyard/medusa/core-flows` package. The step returns the created order and an array of links to be created.
 
 In this step, you use a `getOrderData` function to format the order’s input data.
 
@@ -2038,7 +2038,7 @@ await orderModuleService.cancel(data.order.id)
 Before creating the seventh step, add in `src/modules/subscription/service.ts` the following new method:
 
 ```ts title="src/modules/subscription/service.ts"
-class SubscriptionModuleService extends MedusaService({
+class SubscriptionModuleService extends SwitchyardService({
   Subscription,
 }) {
   // ...
@@ -2075,7 +2075,7 @@ export const updateSubscriptionStepHighlights = [
 import { 
   createStep, 
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   SUBSCRIPTION_MODULE,
 } from "../../../modules/subscription"
@@ -2161,20 +2161,20 @@ export const createSubscriptionOrderWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/create-subscription-order/index.ts" highlights={createSubscriptionOrderWorkflowHighlights} collapsibleLines="1-23" expandMoreLabel="Show Imports"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { 
   useQueryGraphStep,
   createPaymentSessionsWorkflow,
   createRemoteLinkStep,
   capturePaymentStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   SubscriptionData,
 } from "../../modules/subscription/types"
 import { 
   authorizePaymentSessionStep,
   createPaymentCollectionsStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import createSubscriptionOrderStep, { 
   CreateSubscriptionOrderStepInput,
 } from "./steps/create-subscription-order"
@@ -2340,7 +2340,7 @@ export const createSubscriptionOrdersJob1Highlights = [
 ]
 
 ```ts title="src/jobs/create-subscription-orders.ts" highlights={createSubscriptionOrdersJob1Highlights} collapsibleLines="1-7" expandMoreLabel="Show Imports"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import SubscriptionModuleService from "../modules/subscription/service"
 import { SUBSCRIPTION_MODULE } from "../modules/subscription"
 import moment from "moment"
@@ -2348,7 +2348,7 @@ import createSubscriptionOrderWorkflow from "../workflows/create-subscription-or
 import { SubscriptionStatus } from "../modules/subscription/types"
 
 export default async function createSubscriptionOrdersJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const subscriptionModuleService: SubscriptionModuleService =
     container.resolve(SUBSCRIPTION_MODULE)
@@ -2445,7 +2445,7 @@ In this step, you’ll create a scheduled job that finds subscriptions whose `ex
 Before creating the scheduled job, add in `src/modules/subscription/service.ts` a new method:
 
 ```ts title="src/modules/subscription/service.ts"
-class SubscriptionModuleService extends MedusaService({
+class SubscriptionModuleService extends SwitchyardService({
   Subscription,
 }) {
   // ...
@@ -2484,14 +2484,14 @@ export const expireSubscriptionOrdersJobHighlights = [
 ]
 
 ```ts title="src/jobs/expire-subscription-orders.ts" highlights={expireSubscriptionOrdersJobHighlights} collapsibleLines="1-6" expandMoreLabel="Show Imports"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import SubscriptionModuleService from "../modules/subscription/service"
 import { SUBSCRIPTION_MODULE } from "../modules/subscription"
 import moment from "moment"
 import { SubscriptionStatus } from "../modules/subscription/types"
 
 export default async function expireSubscriptionOrdersJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const subscriptionModuleService: SubscriptionModuleService =
     container.resolve(SUBSCRIPTION_MODULE)
@@ -2568,14 +2568,14 @@ Create the file `src/api/store/customers/me/subscriptions/route.ts` with the fol
 
 ```ts title="src/api/store/customers/me/subscriptions/route.ts"
 import { 
-  AuthenticatedMedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -2604,7 +2604,7 @@ In the route handler, you retrieve the authenticated customer’s subscriptions 
 Before creating this API route, add in `src/modules/subscription/service.ts` the following new method:
 
 ```ts title="src/modules/subscription/service.ts"
-class SubscriptionModuleService extends MedusaService({
+class SubscriptionModuleService extends SwitchyardService({
   Subscription,
 }) {
   // ...
@@ -2632,17 +2632,17 @@ Then, create the file `src/api/store/customers/me/subscriptions/[id]/route.ts` w
 
 ```ts title="src/api/store/customers/me/subscriptions/[id]/route.ts"
 import { 
-  AuthenticatedMedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import SubscriptionModuleService from "../../../../../../modules/subscription/service"
 import { 
   SUBSCRIPTION_MODULE,
 } from "../../../../../../modules/subscription"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const subscriptionModuleService: SubscriptionModuleService =
     req.scope.resolve(SUBSCRIPTION_MODULE)
@@ -2706,7 +2706,7 @@ The next steps of this example depend on your use case. This section provides so
 
 ### Use Existing Features
 
-To manage the orders created for a subscription, or other functionalities, use Medusa’s existing [Admin API routes](!api!/admin).
+To manage the orders created for a subscription, or other functionalities, use Switchyard’s existing [Admin API routes](!api!/admin).
 
 ### Link Subscriptions to Other Data Models
 
@@ -2716,4 +2716,4 @@ For example, you can link a subscription to a promotion to offer a subscription-
 
 ### Storefront Development
 
-Medusa provides a Next.js Starter storefront that you can customize to your use case. You can also create a custom storefront. To learn how visit the [Storefront Development](../../../../storefront-development/page.mdx) section.
+Switchyard provides a Next.js Starter storefront that you can customize to your use case. You can also create a custom storefront. To learn how visit the [Storefront Development](../../../../storefront-development/page.mdx) section.

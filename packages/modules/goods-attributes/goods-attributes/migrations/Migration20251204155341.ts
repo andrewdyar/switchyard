@@ -1,4 +1,4 @@
-import { Migration } from "@medusajs/framework/mikro-orm/migrations";
+import { Migration } from "@switchyard/framework/mikro-orm/migrations";
 
 export class Migration20251204155341 extends Migration {
 

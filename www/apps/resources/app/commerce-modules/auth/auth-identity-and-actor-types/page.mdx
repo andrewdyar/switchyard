@@ -48,7 +48,7 @@ export const highlights = [
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -68,7 +68,7 @@ By specifying `user` as the first parameter of `authenticate`, only authenticate
 
 ## Custom Actor Types
 
-You can define custom actor types that allow a custom user, managed by your custom module, to authenticate into Medusa.
+You can define custom actor types that allow a custom user, managed by your custom module, to authenticate into Switchyard.
 
 For example, if you have a custom module with a `Manager` data model, you can authenticate managers with the `manager` actor type.
 

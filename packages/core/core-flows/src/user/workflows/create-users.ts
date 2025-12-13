@@ -1,11 +1,11 @@
-import type { UserDTO, UserWorkflow } from "@medusajs/framework/types"
-import { UserWorkflowEvents } from "@medusajs/framework/utils"
+import type { UserDTO, UserWorkflow } from "@switchyard/framework/types"
+import { UserWorkflowEvents } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { createUsersStep } from "../steps"
 

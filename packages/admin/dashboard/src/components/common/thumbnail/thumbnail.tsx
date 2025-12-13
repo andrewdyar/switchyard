@@ -1,5 +1,5 @@
-import { Photo } from "@medusajs/icons"
-import { clx } from "@medusajs/ui"
+import { Photo } from "@switchyard/icons"
+import { clx } from "@switchyard/ui"
 
 type ThumbnailProps = {
   src?: string | null

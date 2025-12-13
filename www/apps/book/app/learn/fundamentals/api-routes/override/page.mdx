@@ -6,13 +6,13 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn the approach recommended when you need to override an existing API route in Medusa.
+In this chapter, you'll learn the approach recommended when you need to override an existing API route in Switchyard.
 
 ## Approaches to Consider Before Overriding API Routes
 
-While building customizations in your Medusa application, you may need to make changes to existing API routes for your business use case.
+While building customizations in your Switchyard application, you may need to make changes to existing API routes for your business use case.
 
-Medusa provides the following approaches to customize API routes:
+Switchyard provides the following approaches to customize API routes:
 
 <Table>
   <Table.Header>
@@ -69,17 +69,17 @@ If the above approaches do not meet your needs, you can consider the approaches 
 
 If the approaches mentioned in the [section above](#approaches-to-consider-before-overriding-api-routes) do not meet your needs, you can replicate an existing API route and modify it to suit your requirements.
 
-By replicating instead of overriding, the original API route remains intact, allowing you to easily revert to the original functionality if needed. You can also update your Medusa version without worrying about breaking changes in the original API route.
+By replicating instead of overriding, the original API route remains intact, allowing you to easily revert to the original functionality if needed. You can also update your Switchyard version without worrying about breaking changes in the original API route.
 
 ---
 
 ## How to Replicate an API Route?
 
-Medusa's API routes are generally slim and use logic contained in [workflows](../../workflows/page.mdx). So, creating a custom route based on the original route is straightforward.
+Switchyard's API routes are generally slim and use logic contained in [workflows](../../workflows/page.mdx). So, creating a custom route based on the original route is straightforward.
 
-You can view the source code for Medusa's API routes in the [Medusa GitHub repository](https://github.com/medusajs/medusa/tree/develop/packages/medusa/src/api).
+You can view the source code for Switchyard's API routes in the [Switchyard GitHub repository](https://github.com/switchyard/medusa/tree/develop/packages/medusa/src/api).
 
-For example, if you need to allow vendors to access the `POST /admin/products` API route, you can create an API route in your Medusa project at `src/api/vendor/products/route.ts` with the [same code as the original route](https://github.com/medusajs/medusa/blob/develop/packages/medusa/src/api/admin/products/route.ts#L88). Then, you can make changes to it or its middlewares.
+For example, if you need to allow vendors to access the `POST /admin/products` API route, you can create an API route in your Switchyard project at `src/api/vendor/products/route.ts` with the [same code as the original route](https://github.com/switchyard/medusa/blob/develop/packages/medusa/src/api/admin/products/route.ts#L88). Then, you can make changes to it or its middlewares.
 
 ---
 

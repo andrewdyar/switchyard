@@ -1,8 +1,8 @@
-import { MathBN } from "@medusajs/framework/utils"
+import { MathBN } from "@switchyard/framework/utils"
 import {
     ComputeActionItemLine,
     ComputeActionShippingLine,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 export function sortLineItemByPriceAscending(
   a: ComputeActionItemLine,

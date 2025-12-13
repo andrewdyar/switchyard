@@ -64,7 +64,7 @@
  *   manage_inventory:
  *     type: boolean
  *     title: manage_inventory
- *     description: Whether the Medusa application manages the variant's inventory quantity and availablility. If disabled, the variant is always considered in stock.
+ *     description: Whether the Switchyard application manages the variant's inventory quantity and availablility. If disabled, the variant is always considered in stock.
  *   inventory_quantity:
  *     type: number
  *     title: inventory_quantity
@@ -137,7 +137,7 @@
  *     type: object
  *     description: The variant's metadata, can hold custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.com/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  *   inventory_items:
  *     type: array

@@ -182,7 +182,7 @@ Read-only links are used to query data across modules, but the relations aren't 
 
 ## Customer Module
 
-Medusa defines a read-only link between the `Cart` data model and the [Customer Module](../../customer/page.mdx)'s `Customer` data model. This means you can retrieve the details of a cart's customer, but you don't manage the links in a pivot table in the database. The customer of a cart is determined by the `customer_id` property of the `Cart` data model.
+Switchyard defines a read-only link between the `Cart` data model and the [Customer Module](../../customer/page.mdx)'s `Customer` data model. This means you can retrieve the details of a cart's customer, but you don't manage the links in a pivot table in the database. The customer of a cart is determined by the `customer_id` property of the `Cart` data model.
 
 ### Retrieve with Query
 
@@ -206,7 +206,7 @@ const { data: carts } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -227,13 +227,13 @@ const { data: carts } = useQueryGraphStep({
 
 ## Fulfillment Module
 
-Medusa defines a read-only link between the `ShippingMethod` data model and the [Fulfillment Module](../../fulfillment/page.mdx)'s `ShippingOption` data model. This means you can retrieve the details of a shipping method's shipping option, but you don't manage the links in a pivot table in the database. The shipping option of a shipping method is determined by the `shipping_option_id` property of the `ShippingMethod` data model.
+Switchyard defines a read-only link between the `ShippingMethod` data model and the [Fulfillment Module](../../fulfillment/page.mdx)'s `ShippingOption` data model. This means you can retrieve the details of a shipping method's shipping option, but you don't manage the links in a pivot table in the database. The shipping option of a shipping method is determined by the `shipping_option_id` property of the `ShippingMethod` data model.
 
 This link allows you to retrieve the shipping option that a shipping method was created from.
 
 <Note>
 
-This read-only link was added in [Medusa v2.10.0](https://github.com/medusajs/medusa/releases/tag/v2.10.0)
+This read-only link was added in [Switchyard v2.10.0](https://github.com/switchyard/medusa/releases/tag/v2.10.0)
 
 </Note>
 
@@ -259,7 +259,7 @@ const { data: shippingMethods } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -280,9 +280,9 @@ const { data: shippingMethods } = useQueryGraphStep({
 
 The [Order Module](../../order/page.mdx) provides order-management features.
 
-Medusa defines a link between the `Cart` and `Order` data models. The cart is linked to the order created once the cart is completed.
+Switchyard defines a link between the `Cart` and `Order` data models. The cart is linked to the order created once the cart is completed.
 
-![A diagram showcasing an example of how data models from the Cart and Order modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1728375735/Medusa%20Resources/cart-order_ijwmfs.jpg)
+![A diagram showcasing an example of how data models from the Cart and Order modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1728375735/Switchyard%20Resources/cart-order_ijwmfs.jpg)
 
 ### Retrieve with Query
 
@@ -306,7 +306,7 @@ const { data: carts } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -331,7 +331,7 @@ To manage the order of a cart, use [Link](!docs!/learn/fundamentals/module-links
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -349,8 +349,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -373,9 +373,9 @@ createRemoteLinkStep({
 
 The [Payment Module](../../payment/page.mdx) handles payment processing and management.
 
-Medusa defines a link between the `Cart` and `PaymentCollection` data models. A cart has a payment collection which holds all the authorized payment sessions and payments made related to the cart.
+Switchyard defines a link between the `Cart` and `PaymentCollection` data models. A cart has a payment collection which holds all the authorized payment sessions and payments made related to the cart.
 
-![A diagram showcasing an example of how data models from the Cart and Payment modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1711537849/Medusa%20Resources/cart-payment_ixziqm.jpg)
+![A diagram showcasing an example of how data models from the Cart and Payment modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1711537849/Switchyard%20Resources/cart-payment_ixziqm.jpg)
 
 ### Retrieve with Query
 
@@ -399,7 +399,7 @@ const { data: carts } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -424,7 +424,7 @@ To manage the payment collection of a cart, use [Link](!docs!/learn/fundamentals
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -442,7 +442,7 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -463,7 +463,7 @@ createRemoteLinkStep({
 
 ## Product Module
 
-Medusa defines read-only links between:
+Switchyard defines read-only links between:
 
 - the `LineItem` data model and the [Product Module](../../product/page.mdx)'s `Product` data model. This means you can retrieve the details of a line item's product, but you don't manage the links in a pivot table in the database. The product of a line item is determined by the `product_id` property of the `LineItem` data model.
 - the `LineItem` data model and the [Product Module](../../product/page.mdx)'s `ProductVariant` data model. This means you can retrieve the details of a line item's variant, but you don't manage the links in a pivot table in the database. The variant of a line item is determined by the `variant_id` property of the `LineItem` data model.
@@ -496,7 +496,7 @@ const { data: lineItems } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -519,11 +519,11 @@ const { data: lineItems } = useQueryGraphStep({
 
 The [Promotion Module](../../promotion/page.mdx) provides discount features.
 
-Medusa defines a link between the `Cart` and `Promotion` data models. This indicates the promotions applied on a cart.
+Switchyard defines a link between the `Cart` and `Promotion` data models. This indicates the promotions applied on a cart.
 
-![A diagram showcasing an example of how data models from the Cart and Promotion modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1711538015/Medusa%20Resources/cart-promotion_kuh9vm.jpg)
+![A diagram showcasing an example of how data models from the Cart and Promotion modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1711538015/Switchyard%20Resources/cart-promotion_kuh9vm.jpg)
 
-Medusa also defines a read-only link between the `LineItemAdjustment` and `Promotion` data models. This means you can retrieve the details of the promotion applied on a line item, but you don't manage the links in a pivot table in the database. The promotion of a line item is determined by the `promotion_id` property of the `LineItemAdjustment` data model.
+Switchyard also defines a read-only link between the `LineItemAdjustment` and `Promotion` data models. This means you can retrieve the details of the promotion applied on a line item, but you don't manage the links in a pivot table in the database. The promotion of a line item is determined by the `promotion_id` property of the `LineItemAdjustment` data model.
 
 ### Retrieve with Query
 
@@ -553,7 +553,7 @@ const { data: carts } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -578,7 +578,7 @@ To manage the promotions of a cart, use [Link](!docs!/learn/fundamentals/module-
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -596,8 +596,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -618,7 +618,7 @@ createRemoteLinkStep({
 
 ## Region Module
 
-Medusa defines a read-only link between the `Cart` data model and the [Region Module](../../region/page.mdx)'s `Region` data model. This means you can retrieve the details of a cart's region, but you don't manage the links in a pivot table in the database. The region of a cart is determined by the `region_id` property of the `Cart` data model.
+Switchyard defines a read-only link between the `Cart` data model and the [Region Module](../../region/page.mdx)'s `Region` data model. This means you can retrieve the details of a cart's region, but you don't manage the links in a pivot table in the database. The region of a cart is determined by the `region_id` property of the `Cart` data model.
 
 ### Retrieve with Query
 
@@ -642,7 +642,7 @@ const { data: carts } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -663,7 +663,7 @@ const { data: carts } = useQueryGraphStep({
 
 ## Sales Channel Module
 
-Medusa defines a read-only link between the `Cart` data model and the [Sales Channel Module](../../sales-channel/page.mdx)'s `SalesChannel` data model. This means you can retrieve the details of a cart's sales channel, but you don't manage the links in a pivot table in the database. The sales channel of a cart is determined by the `sales_channel_id` property of the `Cart` data model.
+Switchyard defines a read-only link between the `Cart` data model and the [Sales Channel Module](../../sales-channel/page.mdx)'s `SalesChannel` data model. This means you can retrieve the details of a cart's sales channel, but you don't manage the links in a pivot table in the database. The sales channel of a cart is determined by the `sales_channel_id` property of the `Cart` data model.
 
 ### Retrieve with Query
 
@@ -687,7 +687,7 @@ const { data: carts } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 

@@ -1,5 +1,5 @@
-import { FetchError } from "@medusajs/js-sdk"
-import { HttpTypes, LinkMethodRequest } from "@medusajs/types"
+import { FetchError } from "@switchyard/js-sdk"
+import { HttpTypes, LinkMethodRequest } from "@switchyard/types"
 import {
   QueryKey,
   UseMutationOptions,

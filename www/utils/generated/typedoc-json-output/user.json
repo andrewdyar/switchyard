@@ -94,7 +94,7 @@
 										"type": "reference",
 										"target": 17198,
 										"name": "FindConfigOrder",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -188,7 +188,7 @@
 										"type": "reference",
 										"target": 17113,
 										"name": "Entity",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"qualifiedName": "FindConfig.Entity",
 										"refersToTypeParameter": true
 									}
@@ -283,7 +283,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead."
+								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead."
 							}
 						]
 					},
@@ -345,7 +345,7 @@
 						"type": "reference",
 						"target": 17198,
 						"name": "FindConfigOrder",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -554,19 +554,19 @@
 											"type": "reference",
 											"target": 17206,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 17206,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -610,19 +610,19 @@
 											"type": "reference",
 											"target": 17206,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 17206,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -708,7 +708,7 @@
 							"type": "reference",
 							"target": 17146,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -787,7 +787,7 @@
 							"type": "reference",
 							"target": 17149,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -1022,7 +1022,7 @@
 								"type": "reference",
 								"target": 17275,
 								"name": "EventMetadata",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1050,7 +1050,7 @@
 								"type": "reference",
 								"target": 17274,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -1120,12 +1120,12 @@
 								"type": "reference",
 								"target": 17236,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Event",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -1262,7 +1262,7 @@
 								"type": "reference",
 								"target": 17253,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -1348,7 +1348,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -1856,7 +1856,7 @@
 								"type": "reference",
 								"target": 17254,
 								"name": "JoinerServiceConfigAlias",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -1864,7 +1864,7 @@
 									"type": "reference",
 									"target": 17254,
 									"name": "JoinerServiceConfigAlias",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						]
@@ -2027,7 +2027,7 @@
 							"type": "reference",
 							"target": 17259,
 							"name": "JoinerRelationship",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -2112,7 +2112,7 @@
 											"type": "reference",
 											"target": 17259,
 											"name": "JoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -2475,7 +2475,7 @@
 								"type": "reference",
 								"target": 17207,
 								"name": "JoinerServiceConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "union",
@@ -2595,7 +2595,7 @@
 											"type": "reference",
 											"target": 17222,
 											"name": "ModuleJoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -2817,7 +2817,7 @@
 																	"type": "reference",
 																	"target": 17222,
 																	"name": "ModuleJoinerRelationship",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																{
 																	"type": "literal",
@@ -3123,7 +3123,7 @@
 														"type": "reference",
 														"target": 17227,
 														"name": "LinkModulesExtraFields",
-														"package": "@medusajs/types"
+														"package": "@switchyard/types"
 													}
 												}
 											],
@@ -3198,7 +3198,7 @@
 						"type": "reference",
 						"target": 17259,
 						"name": "JoinerRelationship",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -3365,7 +3365,7 @@
 								"type": "reference",
 								"target": 17158,
 								"name": "ModuleJoinerConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -3853,7 +3853,7 @@
 												"type": "reference",
 												"target": 17233,
 												"name": "Message",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -3861,7 +3861,7 @@
 													"type": "reference",
 													"target": 17233,
 													"name": "Message",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -3915,7 +3915,7 @@
 										"type": "reference",
 										"target": 17237,
 										"name": "MessageAggregatorFormat",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -3936,7 +3936,7 @@
 											"type": "reference",
 											"target": 17233,
 											"name": "Message",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -4034,12 +4034,12 @@
 														"type": "reference",
 														"target": 17195,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												],
 												"name": "RawMessageFormat",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -4051,12 +4051,12 @@
 															"type": "reference",
 															"target": 17195,
 															"name": "T",
-															"package": "@medusajs/types",
+															"package": "@switchyard/types",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "RawMessageFormat",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -4150,7 +4150,7 @@
 					],
 					"type": {
 						"type": "literal",
-						"value": "MedusaContext"
+						"value": "SwitchyardContext"
 					}
 				},
 				{
@@ -4196,7 +4196,7 @@
 						"type": "reference",
 						"target": 17092,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -4243,7 +4243,7 @@
 						"type": "reference",
 						"target": 17092,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -4446,7 +4446,7 @@
 						"type": "reference",
 						"target": 17184,
 						"name": "IMessageAggregator",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -5058,7 +5058,7 @@
 									"type": "reference",
 									"target": 17124,
 									"name": "FilterableUserProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -5068,11 +5068,11 @@
 											"type": "reference",
 											"target": 17124,
 											"name": "FilterableUserProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -5116,7 +5116,7 @@
 									"type": "reference",
 									"target": 17124,
 									"name": "FilterableUserProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -5126,11 +5126,11 @@
 											"type": "reference",
 											"target": 17124,
 											"name": "FilterableUserProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -5360,11 +5360,11 @@
 							"type": "reference",
 							"target": 17124,
 							"name": "FilterableUserProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -6187,7 +6187,7 @@
 									"type": "reference",
 									"target": 17132,
 									"name": "CreateUserDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "literal",
@@ -6513,7 +6513,7 @@
 									"type": "reference",
 									"target": 17150,
 									"name": "CreateInviteDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "literal",
@@ -6555,7 +6555,7 @@
 							"fileName": "user/service.ts",
 							"line": 31,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L31"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L31"
 						}
 					],
 					"signatures": [
@@ -6598,7 +6598,7 @@
 									"fileName": "user/service.ts",
 									"line": 31,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L31"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L31"
 								}
 							],
 							"parameters": [
@@ -6641,7 +6641,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -6656,7 +6656,7 @@
 										"type": "reference",
 										"target": 17093,
 										"name": "InviteDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -6676,7 +6676,7 @@
 							"fileName": "user/service.ts",
 							"line": 49,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L49"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L49"
 						}
 					],
 					"signatures": [
@@ -6719,7 +6719,7 @@
 									"fileName": "user/service.ts",
 									"line": 49,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L49"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L49"
 								}
 							],
 							"parameters": [
@@ -6765,7 +6765,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -6782,7 +6782,7 @@
 											"type": "reference",
 											"target": 17093,
 											"name": "InviteDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -6803,7 +6803,7 @@
 							"fileName": "user/service.ts",
 							"line": 66,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L66"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L66"
 						}
 					],
 					"signatures": [
@@ -6846,7 +6846,7 @@
 									"fileName": "user/service.ts",
 									"line": 66,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L66"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L66"
 								}
 							],
 							"parameters": [
@@ -6909,11 +6909,11 @@
 												"type": "reference",
 												"target": 17114,
 												"name": "UserDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -6936,7 +6936,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -6951,7 +6951,7 @@
 										"type": "reference",
 										"target": 17114,
 										"name": "UserDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -6971,7 +6971,7 @@
 							"fileName": "user/service.ts",
 							"line": 104,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L104"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L104"
 						}
 					],
 					"signatures": [
@@ -7058,7 +7058,7 @@
 									"fileName": "user/service.ts",
 									"line": 104,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L104"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L104"
 								}
 							],
 							"parameters": [
@@ -7082,7 +7082,7 @@
 										"type": "reference",
 										"target": 17124,
 										"name": "FilterableUserProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -7125,11 +7125,11 @@
 												"type": "reference",
 												"target": 17114,
 												"name": "UserDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -7152,7 +7152,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -7169,7 +7169,7 @@
 											"type": "reference",
 											"target": 17114,
 											"name": "UserDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -7190,7 +7190,7 @@
 							"fileName": "user/service.ts",
 							"line": 142,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L142"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L142"
 						}
 					],
 					"signatures": [
@@ -7277,7 +7277,7 @@
 									"fileName": "user/service.ts",
 									"line": 142,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L142"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L142"
 								}
 							],
 							"parameters": [
@@ -7301,7 +7301,7 @@
 										"type": "reference",
 										"target": 17124,
 										"name": "FilterableUserProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -7344,11 +7344,11 @@
 												"type": "reference",
 												"target": 17114,
 												"name": "UserDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -7371,7 +7371,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -7391,7 +7391,7 @@
 													"type": "reference",
 													"target": 17114,
 													"name": "UserDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -7418,13 +7418,13 @@
 							"fileName": "user/service.ts",
 							"line": 165,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L165"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L165"
 						},
 						{
 							"fileName": "user/service.ts",
 							"line": 182,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L182"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L182"
 						}
 					],
 					"signatures": [
@@ -7467,7 +7467,7 @@
 									"fileName": "user/service.ts",
 									"line": 165,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L165"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L165"
 								}
 							],
 							"parameters": [
@@ -7491,7 +7491,7 @@
 											"type": "reference",
 											"target": 17132,
 											"name": "CreateUserDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -7515,7 +7515,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -7532,7 +7532,7 @@
 											"type": "reference",
 											"target": 17114,
 											"name": "UserDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -7579,7 +7579,7 @@
 									"fileName": "user/service.ts",
 									"line": 182,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L182"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L182"
 								}
 							],
 							"parameters": [
@@ -7601,7 +7601,7 @@
 										"type": "reference",
 										"target": 17132,
 										"name": "CreateUserDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -7624,7 +7624,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -7639,7 +7639,7 @@
 										"type": "reference",
 										"target": 17114,
 										"name": "UserDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -7659,13 +7659,13 @@
 							"fileName": "user/service.ts",
 							"line": 203,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L203"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L203"
 						},
 						{
 							"fileName": "user/service.ts",
 							"line": 221,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L221"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L221"
 						}
 					],
 					"signatures": [
@@ -7708,7 +7708,7 @@
 									"fileName": "user/service.ts",
 									"line": 203,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L203"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L203"
 								}
 							],
 							"parameters": [
@@ -7732,7 +7732,7 @@
 											"type": "reference",
 											"target": 17138,
 											"name": "UpdateUserDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -7756,7 +7756,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -7773,7 +7773,7 @@
 											"type": "reference",
 											"target": 17114,
 											"name": "UserDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -7820,7 +7820,7 @@
 									"fileName": "user/service.ts",
 									"line": 221,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L221"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L221"
 								}
 							],
 							"parameters": [
@@ -7842,7 +7842,7 @@
 										"type": "reference",
 										"target": 17138,
 										"name": "UpdateUserDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -7865,7 +7865,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -7880,7 +7880,7 @@
 										"type": "reference",
 										"target": 17114,
 										"name": "UserDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -7900,7 +7900,7 @@
 							"fileName": "user/service.ts",
 							"line": 235,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L235"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L235"
 						}
 					],
 					"signatures": [
@@ -7943,7 +7943,7 @@
 									"fileName": "user/service.ts",
 									"line": 235,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L235"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L235"
 								}
 							],
 							"parameters": [
@@ -7989,7 +7989,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -8022,7 +8022,7 @@
 							"fileName": "user/service.ts",
 							"line": 251,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L251"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L251"
 						}
 					],
 					"signatures": [
@@ -8073,7 +8073,7 @@
 									"fileName": "user/service.ts",
 									"line": 251,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L251"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L251"
 								}
 							],
 							"typeParameters": [
@@ -8140,12 +8140,12 @@
 												"type": "reference",
 												"target": 16994,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -8168,7 +8168,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -8197,7 +8197,7 @@
 														"type": "reference",
 														"target": 16994,
 														"name": "TReturnableLinkableKeys",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													},
 													{
@@ -8231,7 +8231,7 @@
 							"fileName": "user/service.ts",
 							"line": 273,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L273"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L273"
 						}
 					],
 					"signatures": [
@@ -8282,7 +8282,7 @@
 									"fileName": "user/service.ts",
 									"line": 273,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L273"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L273"
 								}
 							],
 							"typeParameters": [
@@ -8357,12 +8357,12 @@
 												"type": "reference",
 												"target": 17000,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -8385,7 +8385,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -8414,7 +8414,7 @@
 														"type": "reference",
 														"target": 17000,
 														"name": "TReturnableLinkableKeys",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													},
 													{
@@ -8448,7 +8448,7 @@
 							"fileName": "user/service.ts",
 							"line": 293,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L293"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L293"
 						}
 					],
 					"signatures": [
@@ -8491,7 +8491,7 @@
 									"fileName": "user/service.ts",
 									"line": 293,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L293"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L293"
 								}
 							],
 							"parameters": [
@@ -8554,11 +8554,11 @@
 												"type": "reference",
 												"target": 17093,
 												"name": "InviteDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -8581,7 +8581,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -8596,7 +8596,7 @@
 										"type": "reference",
 										"target": 17093,
 										"name": "InviteDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -8616,7 +8616,7 @@
 							"fileName": "user/service.ts",
 							"line": 331,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L331"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L331"
 						}
 					],
 					"signatures": [
@@ -8703,7 +8703,7 @@
 									"fileName": "user/service.ts",
 									"line": 331,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L331"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L331"
 								}
 							],
 							"parameters": [
@@ -8727,7 +8727,7 @@
 										"type": "reference",
 										"target": 17124,
 										"name": "FilterableUserProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -8770,11 +8770,11 @@
 												"type": "reference",
 												"target": 17093,
 												"name": "InviteDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -8797,7 +8797,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -8814,7 +8814,7 @@
 											"type": "reference",
 											"target": 17093,
 											"name": "InviteDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -8835,7 +8835,7 @@
 							"fileName": "user/service.ts",
 							"line": 371,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L371"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L371"
 						}
 					],
 					"signatures": [
@@ -8922,7 +8922,7 @@
 									"fileName": "user/service.ts",
 									"line": 371,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L371"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L371"
 								}
 							],
 							"parameters": [
@@ -8946,7 +8946,7 @@
 										"type": "reference",
 										"target": 17124,
 										"name": "FilterableUserProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -8989,11 +8989,11 @@
 												"type": "reference",
 												"target": 17093,
 												"name": "InviteDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -9016,7 +9016,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -9036,7 +9036,7 @@
 													"type": "reference",
 													"target": 17093,
 													"name": "InviteDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -9063,13 +9063,13 @@
 							"fileName": "user/service.ts",
 							"line": 394,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L394"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L394"
 						},
 						{
 							"fileName": "user/service.ts",
 							"line": 411,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L411"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L411"
 						}
 					],
 					"signatures": [
@@ -9112,7 +9112,7 @@
 									"fileName": "user/service.ts",
 									"line": 394,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L394"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L394"
 								}
 							],
 							"parameters": [
@@ -9136,7 +9136,7 @@
 											"type": "reference",
 											"target": 17150,
 											"name": "CreateInviteDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -9160,7 +9160,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -9177,7 +9177,7 @@
 											"type": "reference",
 											"target": 17093,
 											"name": "InviteDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -9224,7 +9224,7 @@
 									"fileName": "user/service.ts",
 									"line": 411,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L411"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L411"
 								}
 							],
 							"parameters": [
@@ -9246,7 +9246,7 @@
 										"type": "reference",
 										"target": 17150,
 										"name": "CreateInviteDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -9269,7 +9269,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -9284,7 +9284,7 @@
 										"type": "reference",
 										"target": 17093,
 										"name": "InviteDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -9304,13 +9304,13 @@
 							"fileName": "user/service.ts",
 							"line": 437,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L437"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L437"
 						},
 						{
 							"fileName": "user/service.ts",
 							"line": 455,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L455"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L455"
 						}
 					],
 					"signatures": [
@@ -9353,7 +9353,7 @@
 									"fileName": "user/service.ts",
 									"line": 437,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L437"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L437"
 								}
 							],
 							"parameters": [
@@ -9377,7 +9377,7 @@
 											"type": "reference",
 											"target": 17154,
 											"name": "UpdateInviteDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -9401,7 +9401,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -9418,7 +9418,7 @@
 											"type": "reference",
 											"target": 17093,
 											"name": "InviteDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -9465,7 +9465,7 @@
 									"fileName": "user/service.ts",
 									"line": 455,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L455"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L455"
 								}
 							],
 							"parameters": [
@@ -9487,7 +9487,7 @@
 										"type": "reference",
 										"target": 17154,
 										"name": "UpdateInviteDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -9510,7 +9510,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -9525,7 +9525,7 @@
 										"type": "reference",
 										"target": 17093,
 										"name": "InviteDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -9545,7 +9545,7 @@
 							"fileName": "user/service.ts",
 							"line": 472,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L472"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L472"
 						}
 					],
 					"signatures": [
@@ -9588,7 +9588,7 @@
 									"fileName": "user/service.ts",
 									"line": 472,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L472"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L472"
 								}
 							],
 							"parameters": [
@@ -9634,7 +9634,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -9667,7 +9667,7 @@
 							"fileName": "user/service.ts",
 							"line": 489,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L489"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L489"
 						}
 					],
 					"signatures": [
@@ -9718,7 +9718,7 @@
 									"fileName": "user/service.ts",
 									"line": 489,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L489"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L489"
 								}
 							],
 							"typeParameters": [
@@ -9785,12 +9785,12 @@
 												"type": "reference",
 												"target": 17039,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -9813,7 +9813,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -9842,7 +9842,7 @@
 														"type": "reference",
 														"target": 17039,
 														"name": "TReturnableLinkableKeys",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													},
 													{
@@ -9876,7 +9876,7 @@
 							"fileName": "user/service.ts",
 							"line": 511,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L511"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L511"
 						}
 					],
 					"signatures": [
@@ -9927,7 +9927,7 @@
 									"fileName": "user/service.ts",
 									"line": 511,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L511"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L511"
 								}
 							],
 							"typeParameters": [
@@ -10002,12 +10002,12 @@
 												"type": "reference",
 												"target": 17045,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -10030,7 +10030,7 @@
 										"type": "reference",
 										"target": 17076,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -10059,7 +10059,7 @@
 														"type": "reference",
 														"target": 17045,
 														"name": "TReturnableLinkableKeys",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													},
 													{
@@ -10113,7 +10113,7 @@
 					"fileName": "user/service.ts",
 					"line": 16,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L16"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/user/service.ts#L16"
 				}
 			],
 			"extendedTypes": [
@@ -10121,7 +10121,7 @@
 					"type": "reference",
 					"target": 17062,
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		}
@@ -10165,7 +10165,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"16949": {
 			"sourceFileName": "../../../../packages/core/types/src/user/service.ts",

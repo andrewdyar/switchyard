@@ -10,7 +10,7 @@ In this chapter, you'll learn how to seed data using a [custom CLI script](../pa
 
 To seed dummy data for development or demo purposes, use a custom CLI script.
 
-In the CLI script, use your custom workflows or Medusa's existing workflows, which you can browse in [this reference](!resources!/medusa-workflows-reference), to seed data.
+In the CLI script, use your custom workflows or Switchyard's existing workflows, which you can browse in [this reference](!resources!/medusa-workflows-reference), to seed data.
 
 ---
 
@@ -38,17 +38,17 @@ export const highlights = [
 ]
 
 ```ts title="src/scripts/demo-products.ts" highlights={highlights} collapsibleLines="1-12" expandButtonLabel="Show Imports"
-import { ExecArgs } from "@medusajs/framework/types"
+import { ExecArgs } from "@switchyard/framework/types"
 import { faker } from "@faker-js/faker"
 import { 
   ContainerRegistrationKeys, 
   Modules, 
   ProductStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { 
   createInventoryLevelsWorkflow,
   createProductsWorkflow,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 export default async function seedDummyProducts({
   container,
@@ -154,7 +154,7 @@ logger.info(`Seeded ${products.length} products.`)
 // TODO add inventory levels
 ```
 
-You create the generated products using the `createProductsWorkflow` imported previously from `@medusajs/medusa/core-flows`. It accepts the product data as input, and returns the created products.
+You create the generated products using the `createProductsWorkflow` imported previously from `@switchyard/medusa/core-flows`. It accepts the product data as input, and returns the created products.
 
 The only thing left is to create [inventory levels](!resources!/commerce-modules/inventory/concepts#inventorylevel) for the product variants. So, replace the last `TODO` with the following:
 
@@ -190,14 +190,14 @@ You use [Query](../../module-links/query/page.mdx) to retrieve the first stock l
 
 Then, you generate inventory levels for each inventory item, associating it with the first stock location.
 
-Finally, you use the `createInventoryLevelsWorkflow` from Medusa's core workflows to create the inventory levels.
+Finally, you use the `createInventoryLevelsWorkflow` from Switchyard's core workflows to create the inventory levels.
 
 ### Test Script
 
 To test out the script, run the following command in your project's directory:
 
 ```bash
-npx medusa exec ./src/scripts/demo-products.ts
+npx switchyard exec ./src/scripts/demo-products.ts
 ```
 
-This seeds the products to your database. If you run your Medusa application and view the products in the dashboard, you'll find fifty new products.
+This seeds the products to your database. If you run your Switchyard application and view the products in the dashboard, you'll find fifty new products.

@@ -1,206 +1,206 @@
 export const query = [
   {
     "title": "Get Variant Prices",
-    "path": "https://docs.medusajs.com/resources/commerce-modules/product/guides/price"
+    "path": "https://docs.switchyard.com/resources/commerce-modules/product/guides/price"
   },
   {
     "title": "Get Variant Price with Taxes",
-    "path": "https://docs.medusajs.com/resources/commerce-modules/product/guides/price-with-taxes"
+    "path": "https://docs.switchyard.com/resources/commerce-modules/product/guides/price-with-taxes"
   },
   {
     "title": "prepareAdjustmentsFromPromotionActionsStep",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/steps/prepareAdjustmentsFromPromotionActionsStep"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/prepareAdjustmentsFromPromotionActionsStep"
   },
   {
     "title": "addShippingMethodToCartWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/addShippingMethodToCartWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/addShippingMethodToCartWorkflow"
   },
   {
     "title": "addToCartWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/addToCartWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/addToCartWorkflow"
   },
   {
     "title": "completeCartWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/completeCartWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/completeCartWorkflow"
   },
   {
     "title": "createCartWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/createCartWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/createCartWorkflow"
   },
   {
     "title": "refreshCartItemsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/refreshCartItemsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/refreshCartItemsWorkflow"
   },
   {
     "title": "transferCartCustomerWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/transferCartCustomerWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/transferCartCustomerWorkflow"
   },
   {
     "title": "updateCartPromotionsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateCartPromotionsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateCartPromotionsWorkflow"
   },
   {
     "title": "updateCartWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateCartWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateCartWorkflow"
   },
   {
     "title": "updateLineItemInCartWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateLineItemInCartWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateLineItemInCartWorkflow"
   },
   {
     "title": "useQueryGraphStep",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/steps/useQueryGraphStep"
   },
   {
     "title": "addDraftOrderItemsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/addDraftOrderItemsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/addDraftOrderItemsWorkflow"
   },
   {
     "title": "addDraftOrderPromotionWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/addDraftOrderPromotionWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/addDraftOrderPromotionWorkflow"
   },
   {
     "title": "addDraftOrderShippingMethodsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/addDraftOrderShippingMethodsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/addDraftOrderShippingMethodsWorkflow"
   },
   {
     "title": "computeDraftOrderAdjustmentsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/computeDraftOrderAdjustmentsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/computeDraftOrderAdjustmentsWorkflow"
   },
   {
     "title": "confirmDraftOrderEditWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/confirmDraftOrderEditWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/confirmDraftOrderEditWorkflow"
   },
   {
     "title": "removeDraftOrderActionItemWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/removeDraftOrderActionItemWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/removeDraftOrderActionItemWorkflow"
   },
   {
     "title": "removeDraftOrderActionShippingMethodWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/removeDraftOrderActionShippingMethodWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/removeDraftOrderActionShippingMethodWorkflow"
   },
   {
     "title": "removeDraftOrderPromotionsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/removeDraftOrderPromotionsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/removeDraftOrderPromotionsWorkflow"
   },
   {
     "title": "removeDraftOrderShippingMethodWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/removeDraftOrderShippingMethodWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/removeDraftOrderShippingMethodWorkflow"
   },
   {
     "title": "requestDraftOrderEditWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/requestDraftOrderEditWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/requestDraftOrderEditWorkflow"
   },
   {
     "title": "updateDraftOrderActionItemWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateDraftOrderActionItemWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateDraftOrderActionItemWorkflow"
   },
   {
     "title": "updateDraftOrderActionShippingMethodWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateDraftOrderActionShippingMethodWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateDraftOrderActionShippingMethodWorkflow"
   },
   {
     "title": "updateDraftOrderItemWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateDraftOrderItemWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateDraftOrderItemWorkflow"
   },
   {
     "title": "updateDraftOrderShippingMethodWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateDraftOrderShippingMethodWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateDraftOrderShippingMethodWorkflow"
   },
   {
     "title": "deleteInventoryItemWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/deleteInventoryItemWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/deleteInventoryItemWorkflow"
   },
   {
     "title": "deleteLineItemsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/deleteLineItemsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/deleteLineItemsWorkflow"
   },
   {
     "title": "beginOrderEditOrderWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/beginOrderEditOrderWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/beginOrderEditOrderWorkflow"
   },
   {
     "title": "computeAdjustmentsForPreviewWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/computeAdjustmentsForPreviewWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/computeAdjustmentsForPreviewWorkflow"
   },
   {
     "title": "confirmClaimRequestWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/confirmClaimRequestWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/confirmClaimRequestWorkflow"
   },
   {
     "title": "confirmExchangeRequestWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/confirmExchangeRequestWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/confirmExchangeRequestWorkflow"
   },
   {
     "title": "confirmOrderEditRequestWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/confirmOrderEditRequestWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/confirmOrderEditRequestWorkflow"
   },
   {
     "title": "confirmReturnReceiveWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/confirmReturnReceiveWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/confirmReturnReceiveWorkflow"
   },
   {
     "title": "confirmReturnRequestWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/confirmReturnRequestWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/confirmReturnRequestWorkflow"
   },
   {
     "title": "createOrUpdateOrderPaymentCollectionWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/createOrUpdateOrderPaymentCollectionWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/createOrUpdateOrderPaymentCollectionWorkflow"
   },
   {
     "title": "onCarryPromotionsFlagSet",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/onCarryPromotionsFlagSet"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/onCarryPromotionsFlagSet"
   },
   {
     "title": "orderEditAddNewItemWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/orderEditAddNewItemWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/orderEditAddNewItemWorkflow"
   },
   {
     "title": "orderEditUpdateItemQuantityWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/orderEditUpdateItemQuantityWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/orderEditUpdateItemQuantityWorkflow"
   },
   {
     "title": "orderExchangeAddNewItemWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/orderExchangeAddNewItemWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/orderExchangeAddNewItemWorkflow"
   },
   {
     "title": "orderExchangeRequestItemReturnWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/orderExchangeRequestItemReturnWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/orderExchangeRequestItemReturnWorkflow"
   },
   {
     "title": "removeItemOrderEditActionWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/removeItemOrderEditActionWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/removeItemOrderEditActionWorkflow"
   },
   {
     "title": "updateExchangeAddItemWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateExchangeAddItemWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateExchangeAddItemWorkflow"
   },
   {
     "title": "updateOrderChangeWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateOrderChangeWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateOrderChangeWorkflow"
   },
   {
     "title": "updateOrderEditAddItemWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateOrderEditAddItemWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateOrderEditAddItemWorkflow"
   },
   {
     "title": "updateOrderEditItemQuantityWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/updateOrderEditItemQuantityWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/updateOrderEditItemQuantityWorkflow"
   },
   {
     "title": "batchProductVariantsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/batchProductVariantsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/batchProductVariantsWorkflow"
   },
   {
     "title": "deleteProductVariantsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/deleteProductVariantsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/deleteProductVariantsWorkflow"
   },
   {
     "title": "deleteProductsWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/deleteProductsWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/deleteProductsWorkflow"
   },
   {
     "title": "deleteShippingProfileWorkflow",
-    "path": "https://docs.medusajs.com/resources/references/medusa-workflows/deleteShippingProfileWorkflow"
+    "path": "https://docs.switchyard.com/resources/references/medusa-workflows/deleteShippingProfileWorkflow"
   }
 ]

@@ -37,8 +37,8 @@
  *                 required_quantity:
  *                   type: number
  *                   title: required_quantity
- *                   description: The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Medusa checks the availability of the quantity multiplied by the
- *                     value set for `required_quantity`. When the customer orders the quantity, Medusa reserves the ordered quantity multiplied by the value set for `required_quantity`.
+ *                   description: The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Switchyard checks the availability of the quantity multiplied by the
+ *                     value set for `required_quantity`. When the customer orders the quantity, Switchyard reserves the ordered quantity multiplied by the value set for `required_quantity`.
  *                 inventory_item_id:
  *                   type: string
  *                   title: inventory_item_id
@@ -61,8 +61,8 @@
  *                 required_quantity:
  *                   type: number
  *                   title: required_quantity
- *                   description: The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Medusa checks the availability of the quantity multiplied by the
- *                     value set for `required_quantity`. When the customer orders the quantity, Medusa reserves the ordered quantity multiplied by the value set for `required_quantity`.
+ *                   description: The number of units a single quantity is equivalent to. For example, if a customer orders one quantity of the variant, Switchyard checks the availability of the quantity multiplied by the
+ *                     value set for `required_quantity`. When the customer orders the quantity, Switchyard reserves the ordered quantity multiplied by the value set for `required_quantity`.
  *                 inventory_item_id:
  *                   type: string
  *                   title: inventory_item_id
@@ -93,9 +93,9 @@
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

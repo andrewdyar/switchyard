@@ -1,6 +1,6 @@
-import { ProductStatus } from "@medusajs/utils"
+import { ProductStatus } from "@switchyard/utils"
 
-export const medusaTshirtProduct = {
+export const switchyardTshirtProduct = {
   title: "Medusa T-Shirt",
   handle: "t-shirt",
   status: ProductStatus.PUBLISHED,

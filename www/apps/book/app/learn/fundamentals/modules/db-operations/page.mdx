@@ -18,18 +18,18 @@ This chapter is intended for more advanced database use-cases where you need mor
 
 [MikroORM's entity manager](https://mikro-orm.io/docs/entity-manager) is a class that has methods to run queries on the database and perform operations.
 
-Medusa provides an `InjectManager` decorator from the Modules SDK that injects a service's method with a [forked entity manager](https://mikro-orm.io/docs/identity-map#forking-entity-manager).
+Switchyard provides an `InjectManager` decorator from the Modules SDK that injects a service's method with a [forked entity manager](https://mikro-orm.io/docs/identity-map#forking-entity-manager).
 
 So, to run database queries in a service:
 
 1. Add the `InjectManager` decorator to the method.
-2. Add as a last parameter an optional `sharedContext` parameter that has the `MedusaContext` decorator from the Modules SDK. This context holds database-related context, including the manager injected by `InjectManager`
+2. Add as a last parameter an optional `sharedContext` parameter that has the `SwitchyardContext` decorator from the Modules SDK. This context holds database-related context, including the manager injected by `InjectManager`
 
 For example, in your service, add the following methods:
 
 <Note>
 
-As of [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0), MikroORM dependencies are included in the `@medusajs/framework` package. If you're using an older version of Medusa, change the import statement to `@mikro-orm/knex`.
+As of [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0), MikroORM dependencies are included in the `@switchyard/framework` package. If you're using an older version of Switchyard, change the import statement to `@mikro-orm/knex`.
 
 </Note>
 
@@ -42,24 +42,24 @@ export const methodsHighlight = [
 // other imports...
 import { 
   InjectManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
 class BlogModuleService {
   // ...
 
   @InjectManager()
   async getCount(
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<number | undefined> {
     return await sharedContext?.manager?.count("my_custom")
   }
   
   @InjectManager()
   async getCountSql(
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<number> {
     const data = await sharedContext?.manager?.execute(
       "SELECT COUNT(*) as num FROM my_custom"
@@ -70,9 +70,9 @@ class BlogModuleService {
 }
 ```
 
-You add two methods `getCount` and `getCountSql` that have the `InjectManager` decorator. Each of the methods also accept the `sharedContext` parameter which has the `MedusaContext` decorator.
+You add two methods `getCount` and `getCountSql` that have the `InjectManager` decorator. Each of the methods also accept the `sharedContext` parameter which has the `SwitchyardContext` decorator.
 
-The entity manager is injected to the `sharedContext.manager` property, which is an instance of [EntityManager from the `@medusajs/framework/mikro-orm/knex` package](https://mikro-orm.io/api/knex/class/EntityManager).
+The entity manager is injected to the `sharedContext.manager` property, which is an instance of [EntityManager from the `@switchyard/framework/mikro-orm/knex` package](https://mikro-orm.io/api/knex/class/EntityManager).
 
 You use the manager in the `getCount` method to retrieve the number of records in a table, and in the `getCountSql` to run a PostgreSQL query that retrieves the count.
 
@@ -102,13 +102,13 @@ To wrap database operations in a transaction, you create two methods:
 1. A private or protected method that's wrapped in a transaction. To wrap it in a transaction, you use the `InjectTransactionManager` decorator from the Modules SDK.
 2. A public method that calls the transactional method. You use on it the `InjectManager` decorator as explained in the previous section.
 
-Both methods must accept as a last parameter an optional `sharedContext` parameter that has the `MedusaContext` decorator from the Modules SDK. It holds database-related contexts passed through the Medusa application.
+Both methods must accept as a last parameter an optional `sharedContext` parameter that has the `SwitchyardContext` decorator from the Modules SDK. It holds database-related contexts passed through the Switchyard application.
 
 For example:
 
 export const opHighlights = [
   ["11", "InjectTransactionManager", "A decorator that injects the a transactional entity manager into the `sharedContext` parameter."],
-  ["17", "MedusaContext", "A decorator to use Medusa's shared context."],
+  ["17", "SwitchyardContext", "A decorator to use Switchyard's shared context."],
   ["24", "InjectManager", "A decorator that injects a forked entity manager into the context."],
 ]
 
@@ -116,10 +116,10 @@ export const opHighlights = [
 import { 
   InjectManager,
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
 class BlogModuleService {
   // ...
@@ -129,7 +129,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<any> {
     const transactionManager = sharedContext?.transactionManager
     
@@ -142,7 +142,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ) {
     return await this.update_(input, sharedContext)
   }
@@ -177,10 +177,10 @@ For example, the `update` method may call other methods than `update_` to perfor
 import { 
   InjectManager,
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
 class BlogModuleService {
   // ...
@@ -196,7 +196,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ) {
     const newData = await this.update_(input, sharedContext)
 
@@ -212,7 +212,7 @@ In this case, only the `update_` method is wrapped in a transaction. The returne
 
 #### Using Methods in Transactional Methods
 
-If your protected transactional method uses other methods that accept a Medusa context, pass the shared context to those methods.
+If your protected transactional method uses other methods that accept a Switchyard context, pass the shared context to those methods.
 
 For example:
 
@@ -224,16 +224,16 @@ export const anotherMethodHighlights = [
 // other imports...
 import { 
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
 class BlogModuleService {
   // ...
   @InjectTransactionManager()
   protected async anotherMethod(
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ) {
     // ...
   }
@@ -244,7 +244,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<any> {
     this.anotherMethod(sharedContext)
   }
@@ -257,7 +257,7 @@ The `anotherMethod` now runs in the same transaction as the `update_` method.
 
 ### Perform Database Operations with Data Model Repositories
 
-For every data model in your module, Medusa generates a data model repository that has methods to perform database operations.
+For every data model in your module, Switchyard generates a data model repository that has methods to perform database operations.
 
 For example, if your module has a `Post` model, it has a `postRepository` in the container.
 
@@ -271,7 +271,7 @@ To use the low-level entity manager, use the [transactional entity manager](#per
 
 #### Resolve Data Model Repository
 
-When the Medusa application injects a data model repository into a module's container, it formats the registration name by:
+When the Switchyard application injects a data model repository into a module's container, it formats the registration name by:
 
 - Taking the data model's name that's passed as the first parameter of `model.define`
 - Lower-casing the first character
@@ -294,8 +294,8 @@ export const serviceFactoryRepoHighlights = [
 ]
 
 ```ts highlights={serviceFactoryRepoHighlights}
-import { MedusaService } from "@medusajs/framework/utils"
-import { InferTypeOf, DAL } from "@medusajs/framework/types"
+import { SwitchyardService } from "@switchyard/framework/utils"
+import { InferTypeOf, DAL } from "@switchyard/framework/types"
 import Post from "./models/post"
 
 type Post = InferTypeOf<typeof Post>
@@ -304,7 +304,7 @@ type InjectedDependencies = {
   postRepository: DAL.RepositoryService<Post>
 }
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   protected postRepository_: DAL.RepositoryService<Post>
@@ -327,7 +327,7 @@ export const noServiceFactoryRepoHighlights = [
 ]
 
 ```ts highlights={noServiceFactoryRepoHighlights}
-import { InferTypeOf, DAL } from "@medusajs/framework/types"
+import { InferTypeOf, DAL } from "@switchyard/framework/types"
 import Post from "./models/post"
 
 type Post = InferTypeOf<typeof Post>
@@ -383,10 +383,10 @@ export const transactionalEntityManagerHighlights = [
 import { 
   InjectManager,
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
 class BlogModuleService {
   // ...
@@ -396,7 +396,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<any> {
     const transactionManager = sharedContext?.transactionManager
     await transactionManager?.nativeUpdate(
@@ -423,7 +423,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ) {
     return await this.update_(input, sharedContext)
   }
@@ -454,15 +454,15 @@ export const baseRepoHighlights = [
 ]
 
 ```ts highlights={baseRepoHighlights}
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Post from "./models/post"
-import { DAL } from "@medusajs/framework/types"
+import { DAL } from "@switchyard/framework/types"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
 }
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   protected baseRepository_: DAL.RepositoryService
@@ -484,7 +484,7 @@ export const noServiceFactoryBaseRepoHighlights = [
 ]
 
 ```ts highlights={noServiceFactoryBaseRepoHighlights}
-import { DAL } from "@medusajs/framework/types"
+import { DAL } from "@switchyard/framework/types"
 
 type InjectedDependencies = {
   baseRepository: DAL.RepositoryService
@@ -515,10 +515,10 @@ export const repoHighlights = [
 import { 
   InjectManager,
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
 class BlogModuleService {
   // ...
@@ -528,7 +528,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<any> {
     return await this.baseRepository_.transaction(
       async (transactionManager) => {
@@ -561,7 +561,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ) {
     return await this.update_(input, sharedContext)
   }
@@ -588,12 +588,12 @@ The second parameter of the `baseRepository_.transaction` method is an object of
 
 ```ts highlights={[["24"]]}
 // other imports...
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 import { 
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
 
 class BlogModuleService {
   // ...
@@ -603,7 +603,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<any> {
     return await this.baseRepository_.transaction<EntityManager>(
       async (transactionManager) => {
@@ -628,11 +628,11 @@ class BlogModuleService {
 // other imports...
 import { 
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
-import { IsolationLevel } from "@medusajs/framework/mikro-orm/core"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
+import { IsolationLevel } from "@switchyard/framework/mikro-orm/core"
 
 class BlogModuleService {
   // ...
@@ -642,7 +642,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<any> {
     return await this.baseRepository_.transaction<EntityManager>(
       async (transactionManager) => {
@@ -663,10 +663,10 @@ class BlogModuleService {
 // other imports...
 import { 
   InjectTransactionManager,
-  MedusaContext,
-} from "@medusajs/framework/utils"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+  SwitchyardContext,
+} from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
 class BlogModuleService {
   // ...
@@ -676,7 +676,7 @@ class BlogModuleService {
       id: string,
       name: string
     },
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<any> {
     return await this.baseRepository_.transaction<EntityManager>(
       async (transactionManager) => {

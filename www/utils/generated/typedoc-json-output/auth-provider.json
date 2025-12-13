@@ -21,7 +21,7 @@
 					},
 					{
 						"kind": "code",
-						"text": "```ts\nimport { AbstractAuthModuleProvider } from \"@medusajs/framework/utils\"\nimport { Logger } from \"@medusajs/framework/types\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  apiKey: string\n}\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  static identifier = \"my-auth\"\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    super(...arguments)\n\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n\n  // ...\n}\n\nexport default MyAuthProviderService\n```"
+						"text": "```ts\nimport { AbstractAuthModuleProvider } from \"@switchyard/framework/utils\"\nimport { Logger } from \"@switchyard/framework/types\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  apiKey: string\n}\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  static identifier = \"my-auth\"\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    super(...arguments)\n\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n\n  // ...\n}\n\nexport default MyAuthProviderService\n```"
 					}
 				]
 			},
@@ -74,7 +74,7 @@
 							},
 							{
 								"kind": "code",
-								"text": "`medusa-config.ts`"
+								"text": "`switchyard.config.ts`"
 							},
 							{
 								"kind": "text",
@@ -98,7 +98,7 @@
 							"fileName": "abstract-auth-provider.ts",
 							"line": 68,
 							"character": 9,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L68"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L68"
 						}
 					],
 					"type": {
@@ -138,7 +138,7 @@
 							"fileName": "abstract-auth-provider.ts",
 							"line": 79,
 							"character": 9,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L79"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L79"
 						}
 					],
 					"type": {
@@ -159,7 +159,7 @@
 							"fileName": "abstract-auth-provider.ts",
 							"line": 129,
 							"character": 9,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L129"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L129"
 						}
 					],
 					"signatures": [
@@ -177,7 +177,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -190,7 +190,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  static validateOptions(options: Record<any, any>) {\n    if (!options.apiKey) {\n      throw new MedusaError(\n        MedusaError.Types.INVALID_DATA,\n        \"API key is required in the provider's options.\"\n      )\n    }\n  }\n  // ...\n}\n```"
+												"text": "```ts\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  static validateOptions(options: Record<any, any>) {\n    if (!options.apiKey) {\n      throw new SwitchyardError(\n        SwitchyardError.Types.INVALID_DATA,\n        \"API key is required in the provider's options.\"\n      )\n    }\n  }\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -201,7 +201,7 @@
 									"fileName": "abstract-auth-provider.ts",
 									"line": 129,
 									"character": 9,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L129"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L129"
 								}
 							],
 							"parameters": [
@@ -264,7 +264,7 @@
 								"type": "reference",
 								"target": 43401,
 								"name": "AbstractAuthModuleProvider",
-								"package": "@medusajs/utils"
+								"package": "@switchyard/utils"
 							}
 						}
 					]
@@ -282,7 +282,7 @@
 							"fileName": "abstract-auth-provider.ts",
 							"line": 236,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L236"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L236"
 						}
 					],
 					"signatures": [
@@ -296,7 +296,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method authenticates the user.\n\nThe authentication happens either by directly authenticating or returning a redirect URL to continue\nthe authentication with a third party provider.\n\nRelated Read: [Learn about the different authentication flows in Medusa](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route)."
+										"text": "This method authenticates the user.\n\nThe authentication happens either by directly authenticating or returning a redirect URL to continue\nthe authentication with a third party provider.\n\nRelated Read: [Learn about the different authentication flows in Switchyard](https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route)."
 									}
 								],
 								"blockTags": [
@@ -318,7 +318,7 @@
 											},
 											{
 												"kind": "code",
-												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@medusajs/framework/types\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async authenticate(\n    data: AuthenticationInput,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    const isAuthenticated = false\n    // TODO perform custom logic to authenticate the user\n    // for example, verifying a password\n\n    if (!isAuthenticated) {\n      // if the authentication didn't succeed, return\n      // an object of the following format\n      return {\n        success: false,\n        error: \"Incorrect credentials\"\n      }\n    }\n\n    // authentication is successful, retrieve the identity\n    const authIdentity = await authIdentityProviderService.retrieve({\n      entity_id: data.body.email, // email or some ID\n    })\n\n    return {\n      success: true,\n      authIdentity\n    }\n  }\n}\n```"
+												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@switchyard/framework/types\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async authenticate(\n    data: AuthenticationInput,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    const isAuthenticated = false\n    // TODO perform custom logic to authenticate the user\n    // for example, verifying a password\n\n    if (!isAuthenticated) {\n      // if the authentication didn't succeed, return\n      // an object of the following format\n      return {\n        success: false,\n        error: \"Incorrect credentials\"\n      }\n    }\n\n    // authentication is successful, retrieve the identity\n    const authIdentity = await authIdentityProviderService.retrieve({\n      entity_id: data.body.email, // email or some ID\n    })\n\n    return {\n      success: true,\n      authIdentity\n    }\n  }\n}\n```"
 											},
 											{
 												"kind": "text",
@@ -326,7 +326,7 @@
 											},
 											{
 												"kind": "code",
-												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@medusajs/framework/types\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async authenticate(\n    data: AuthenticationInput,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    const isAuthenticated = false\n    // TODO perform custom logic to authenticate the user\n    // ...\n\n    if (!isAuthenticated) {\n      // if the authentication didn't succeed, return\n      // an object of the following format\n      return {\n        success: false,\n        error: \"Incorrect credentials\"\n      }\n    }\n\n    // optional, useful for third-party providers that require a redirect URL\n    // to continue the authentication flow\n    // const stateKey = crypto.randomBytes(32).toString(\"hex\")\n    // const state = {\n    //   callback_url: body?.callback_url ?? this.config_.callbackUrl,\n    // }\n    \n    // verify this later in the `validateCallback` method\n    // await authIdentityService.setState(stateKey, state)\n\n    return {\n      success: true,\n      location: \"some-url.com\"\n    }\n  }\n}\n```"
+												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@switchyard/framework/types\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async authenticate(\n    data: AuthenticationInput,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    const isAuthenticated = false\n    // TODO perform custom logic to authenticate the user\n    // ...\n\n    if (!isAuthenticated) {\n      // if the authentication didn't succeed, return\n      // an object of the following format\n      return {\n        success: false,\n        error: \"Incorrect credentials\"\n      }\n    }\n\n    // optional, useful for third-party providers that require a redirect URL\n    // to continue the authentication flow\n    // const stateKey = crypto.randomBytes(32).toString(\"hex\")\n    // const state = {\n    //   callback_url: body?.callback_url ?? this.config_.callbackUrl,\n    // }\n    \n    // verify this later in the `validateCallback` method\n    // await authIdentityService.setState(stateKey, state)\n\n    return {\n      success: true,\n      location: \"some-url.com\"\n    }\n  }\n}\n```"
 											}
 										]
 									}
@@ -337,7 +337,7 @@
 									"fileName": "abstract-auth-provider.ts",
 									"line": 236,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L236"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L236"
 								}
 							],
 							"parameters": [
@@ -362,7 +362,7 @@
 											"qualifiedName": "AuthenticationInput"
 										},
 										"name": "AuthenticationInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -402,7 +402,7 @@
 											"qualifiedName": "AuthIdentityProviderService"
 										},
 										"name": "AuthIdentityProviderService",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -420,7 +420,7 @@
 											"qualifiedName": "AuthenticationResponse"
 										},
 										"name": "AuthenticationResponse",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -450,7 +450,7 @@
 							"fileName": "abstract-auth-provider.ts",
 							"line": 305,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L305"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L305"
 						}
 					],
 					"signatures": [
@@ -472,7 +472,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " provider, this method ensures that the provided email doesn't exist\nbefore creating the auth identity.\n\nThis method is only used in a basic authentication flow, such as when using an email and password\nto register and authenticate a user.\n\nRelated Read: [Learn about the different authentication flows in Medusa](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route)."
+										"text": " provider, this method ensures that the provided email doesn't exist\nbefore creating the auth identity.\n\nThis method is only used in a basic authentication flow, such as when using an email and password\nto register and authenticate a user.\n\nRelated Read: [Learn about the different authentication flows in Switchyard](https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route)."
 									}
 								],
 								"blockTags": [
@@ -490,7 +490,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@medusajs/framework/types\"\nimport { MedusaError } from \"@medusajs/framework/utils\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async register(\n    data: AuthenticationInput,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    try {\n      await authIdentityService.retrieve({\n        entity_id: data.body.email, // email or some ID\n      })\n\n      return {\n        success: false,\n        error: \"Identity with email already exists\",\n      }\n    } catch (error) {\n      if (error.type === MedusaError.Types.NOT_FOUND) {\n        const createdAuthIdentity = await authIdentityProviderService.create({\n          entity_id: data.body.email, // email or some ID\n          provider: this.provider,\n          provider_metadata: {\n            // can include password or any other relevant information\n          }\n        })\n\n        return {\n          success: true,\n          authIdentity: createdAuthIdentity,\n        }\n      }\n\n      return { success: false, error: error.message }\n    }\n  }\n}\n```"
+												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@switchyard/framework/types\"\nimport { SwitchyardError } from \"@switchyard/framework/utils\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async register(\n    data: AuthenticationInput,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    try {\n      await authIdentityService.retrieve({\n        entity_id: data.body.email, // email or some ID\n      })\n\n      return {\n        success: false,\n        error: \"Identity with email already exists\",\n      }\n    } catch (error) {\n      if (error.type === SwitchyardError.Types.NOT_FOUND) {\n        const createdAuthIdentity = await authIdentityProviderService.create({\n          entity_id: data.body.email, // email or some ID\n          provider: this.provider,\n          provider_metadata: {\n            // can include password or any other relevant information\n          }\n        })\n\n        return {\n          success: true,\n          authIdentity: createdAuthIdentity,\n        }\n      }\n\n      return { success: false, error: error.message }\n    }\n  }\n}\n```"
 											}
 										]
 									}
@@ -501,7 +501,7 @@
 									"fileName": "abstract-auth-provider.ts",
 									"line": 305,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L305"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L305"
 								}
 							],
 							"parameters": [
@@ -526,7 +526,7 @@
 											"qualifiedName": "AuthenticationInput"
 										},
 										"name": "AuthenticationInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -566,7 +566,7 @@
 											"qualifiedName": "AuthIdentityProviderService"
 										},
 										"name": "AuthIdentityProviderService",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -584,7 +584,7 @@
 											"qualifiedName": "AuthenticationResponse"
 										},
 										"name": "AuthenticationResponse",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -614,7 +614,7 @@
 							"fileName": "abstract-auth-provider.ts",
 							"line": 357,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L357"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L357"
 						}
 					],
 					"signatures": [
@@ -654,7 +654,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@medusajs/framework/types\"\nimport { MedusaError } from \"@medusajs/framework/utils\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async update(\n    data: Record<string, unknown>,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    try {\n      const authIdentity = await authIdentityService.update(\n        data.email, // email or some ID used to identify the auth identity\n        {\n          user: data.user // example\n        }\n      )\n\n      return { success: true, authIdentity }\n    } catch (error) {\n      return { success: false, error: error.message }\n    }\n  }\n}\n```"
+												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@switchyard/framework/types\"\nimport { SwitchyardError } from \"@switchyard/framework/utils\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async update(\n    data: Record<string, unknown>,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    try {\n      const authIdentity = await authIdentityService.update(\n        data.email, // email or some ID used to identify the auth identity\n        {\n          user: data.user // example\n        }\n      )\n\n      return { success: true, authIdentity }\n    } catch (error) {\n      return { success: false, error: error.message }\n    }\n  }\n}\n```"
 											}
 										]
 									}
@@ -665,7 +665,7 @@
 									"fileName": "abstract-auth-provider.ts",
 									"line": 357,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L357"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L357"
 								}
 							],
 							"parameters": [
@@ -764,7 +764,7 @@
 											"qualifiedName": "AuthIdentityProviderService"
 										},
 										"name": "AuthIdentityProviderService",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -782,7 +782,7 @@
 											"qualifiedName": "AuthenticationResponse"
 										},
 										"name": "AuthenticationResponse",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -812,7 +812,7 @@
 							"fileName": "abstract-auth-provider.ts",
 							"line": 460,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L460"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L460"
 						}
 					],
 					"signatures": [
@@ -844,7 +844,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " query parameter.\nThe frontend should then send a request to the Medusa application's validate callback API route, passing it the code.\nThat route uses this method to verify the callback's code.\n\nIf the callback is verified successfully, the provider creates an auth identity for the user, or updates the auth identity's user information.\n\nIn the auth identity, use the following properties to store additional data:\n\n- "
+										"text": " query parameter.\nThe frontend should then send a request to the Switchyard application's validate callback API route, passing it the code.\nThat route uses this method to verify the callback's code.\n\nIf the callback is verified successfully, the provider creates an auth identity for the user, or updates the auth identity's user information.\n\nIn the auth identity, use the following properties to store additional data:\n\n- "
 									},
 									{
 										"kind": "code",
@@ -860,7 +860,7 @@
 									},
 									{
 										"kind": "text",
-										"text": ": Store metadata of the user's details. For example, if the third-party service returns the user's information such as email\nor name, you store this data in this property.\n\nRelated Guide: [Learn about the different authentication flows in Medusa](https://docs.medusajs.com/resources/commerce-modules/auth/authentication-route)."
+										"text": ": Store metadata of the user's details. For example, if the third-party service returns the user's information such as email\nor name, you store this data in this property.\n\nRelated Guide: [Learn about the different authentication flows in Switchyard](https://docs.switchyard.com/resources/commerce-modules/auth/authentication-route)."
 									}
 								],
 								"blockTags": [
@@ -878,7 +878,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@medusajs/framework/types\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async validateCallback(\n    data: AuthenticationInput,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    const isAuthenticated = false\n\n    // optional, useful for third-party providers that require a redirect URL\n    // to continue the authentication flow\n    // const stateKey = data.query?.state as string\n    // const state = await authIdentityService.getState(stateKey)\n    // if (!state) {\n    //   return { success: false, error: \"No state provided, or session expired\" }\n    // }\n    // // use callback URL with the third-party service\n    // const callbackUrl = state.callback_url\n    // TODO perform custom logic to authenticate the user\n    // ...\n\n    if (!isAuthenticated) {\n      // if the authentication didn't succeed, return\n      // an object of the following format\n      return {\n        success: false,\n        error: \"Something went wrong\"\n      }\n    }\n\n    // authentication is successful, create an auth identity\n    // if doesn't exist\n    let authIdentity\n\n    try {\n      authIdentity = await authIdentityProviderService.retrieve({\n        entity_id: data.body.email, // email or some ID\n        provider: this.provider\n      })\n    } catch (e) {\n      // The auth identity doesn't exist so create it\n      authIdentity = await authIdentityProviderService.create({\n        entity_id: data.body.email, // email or some ID\n        provider: this.provider,\n        provider_metadata: {\n          // can include password or any other relevant information\n        },\n        user_metadata: {\n          // can include data retrieved from the third-party service\n        }\n      })\n    }\n\n    return {\n      success: true,\n      authIdentity\n    }\n  }\n}\n```"
+												"text": "```ts\nimport {\n  AuthIdentityProviderService,\n  AuthenticationInput,\n  AuthenticationResponse\n} from \"@switchyard/framework/types\"\n// ...\n\nclass MyAuthProviderService extends AbstractAuthModuleProvider {\n  // ...\n  async validateCallback(\n    data: AuthenticationInput,\n    authIdentityProviderService: AuthIdentityProviderService\n  ): Promise<AuthenticationResponse> {\n    const isAuthenticated = false\n\n    // optional, useful for third-party providers that require a redirect URL\n    // to continue the authentication flow\n    // const stateKey = data.query?.state as string\n    // const state = await authIdentityService.getState(stateKey)\n    // if (!state) {\n    //   return { success: false, error: \"No state provided, or session expired\" }\n    // }\n    // // use callback URL with the third-party service\n    // const callbackUrl = state.callback_url\n    // TODO perform custom logic to authenticate the user\n    // ...\n\n    if (!isAuthenticated) {\n      // if the authentication didn't succeed, return\n      // an object of the following format\n      return {\n        success: false,\n        error: \"Something went wrong\"\n      }\n    }\n\n    // authentication is successful, create an auth identity\n    // if doesn't exist\n    let authIdentity\n\n    try {\n      authIdentity = await authIdentityProviderService.retrieve({\n        entity_id: data.body.email, // email or some ID\n        provider: this.provider\n      })\n    } catch (e) {\n      // The auth identity doesn't exist so create it\n      authIdentity = await authIdentityProviderService.create({\n        entity_id: data.body.email, // email or some ID\n        provider: this.provider,\n        provider_metadata: {\n          // can include password or any other relevant information\n        },\n        user_metadata: {\n          // can include data retrieved from the third-party service\n        }\n      })\n    }\n\n    return {\n      success: true,\n      authIdentity\n    }\n  }\n}\n```"
 											}
 										]
 									}
@@ -889,7 +889,7 @@
 									"fileName": "abstract-auth-provider.ts",
 									"line": 460,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L460"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L460"
 								}
 							],
 							"parameters": [
@@ -914,7 +914,7 @@
 											"qualifiedName": "AuthenticationInput"
 										},
 										"name": "AuthenticationInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -954,7 +954,7 @@
 											"qualifiedName": "AuthIdentityProviderService"
 										},
 										"name": "AuthIdentityProviderService",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -972,7 +972,7 @@
 											"qualifiedName": "AuthenticationResponse"
 										},
 										"name": "AuthenticationResponse",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -1022,7 +1022,7 @@
 					"fileName": "abstract-auth-provider.ts",
 					"line": 56,
 					"character": 22,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L56"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/auth/abstract-auth-provider.ts#L56"
 				}
 			],
 			"implementedTypes": [
@@ -1033,7 +1033,7 @@
 						"qualifiedName": "IAuthProvider"
 					},
 					"name": "IAuthProvider",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		}
@@ -1046,7 +1046,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/utils",
+	"packageName": "@switchyard/utils",
 	"symbolIdMap": {
 		"43400": {
 			"sourceFileName": "../../../../packages/core/utils/src/auth/abstract-auth-provider.ts",

@@ -6,24 +6,24 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn about the types Medusa automatically generates under the `.medusa` directory and how you should use them.
+In this chapter, you'll learn about the types Switchyard automatically generates under the `.medusa` directory and how you should use them.
 
 ## What are Automatically Generated Types?
 
-Medusa automatically generates TypeScript types for:
+Switchyard automatically generates TypeScript types for:
 
 1. Data models collected in the [Query's graph](../module-links/query/page.mdx#querying-the-graph). These types provide you with auto-completion and type checking when using Query.
     - Generated data model types are located in the `.medusa/types/query-entry-points.d.ts` file.
-2. Modules registered in the [Medusa container](../medusa-container/page.mdx). These types provide you with auto-completion and type checking when resolving modules from the container.
+2. Modules registered in the [Switchyard container](../medusa-container/page.mdx). These types provide you with auto-completion and type checking when resolving modules from the container.
     - Generated module registration names are located in the `.medusa/types/modules-bindings.d.ts` file.
 
-![Diagram showcasing the directory structure of the `.medusa` directory, highlighting the `types` folder and its contents.](https://res.cloudinary.com/dza7lstvk/image/upload/v1753448927/Medusa%20Book/generated-types-dir_bmvdts.jpg)
+![Diagram showcasing the directory structure of the `.medusa` directory, highlighting the `types` folder and its contents.](https://res.cloudinary.com/dza7lstvk/image/upload/v1753448927/Switchyard%20Book/generated-types-dir_bmvdts.jpg)
 
 ---
 
 ## How to Trigger Type Generation?
 
-The Medusa application generates these types automatically when you run the application with the `dev` command:
+The Switchyard application generates these types automatically when you run the application with the `dev` command:
 
 ```bash npm2yarn
 npm run dev
@@ -79,7 +79,7 @@ Instead, if you need to use a data model's type in your customizations, you can 
 For example, if you want to use the `Brand` data model's type in your customizations, you can do the following:
 
 ```ts
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { Brand } from "../modules/brand/models/brand" // relative path to the model
 
 export type BrandType = InferTypeOf<typeof Brand>

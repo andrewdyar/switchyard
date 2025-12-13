@@ -5,8 +5,8 @@ import {
   OrderClaimDTO,
   OrderPreviewDTO,
   OrderWorkflow,
-} from "@medusajs/framework/types"
-import { ChangeActionType, OrderChangeStatus } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { ChangeActionType, OrderChangeStatus } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
@@ -16,7 +16,7 @@ import {
   parallelize,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../../common"
 import {
   updateOrderChangeActionsStep,
@@ -146,8 +146,8 @@ export const updateClaimShippingMethodWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { updateClaimShippingMethodWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { updateClaimShippingMethodWorkflow } from "@switchyard/medusa/core-flows";
+ * import { StepResponse } from "@switchyard/workflows-sdk";
  * 
  * updateClaimShippingMethodWorkflow.hooks.setPricingContext((
  *   { order_claim, order_change, additional_data }, { container }

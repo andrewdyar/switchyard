@@ -4,13 +4,13 @@ export const metadata = {
 
 # {metadata.title}
 
-The Medusa Admin dashboard uses [React Router](https://reactrouter.com) under the hood to manage routing. This gives you more flexibility in routing-related customizations using React Router's utilities, hooks, and components.
+The Switchyard Admin dashboard uses [React Router](https://reactrouter.com) under the hood to manage routing. This gives you more flexibility in routing-related customizations using React Router's utilities, hooks, and components.
 
 In this chapter, you'll learn about routing-related customizations that you can use in your widgets, UI routes, and settings pages using React Router.
 
 <Note>
 
-`react-router-dom` is available in your project by default through the Medusa packages. You don't need to install it separately.
+`react-router-dom` is available in your project by default through the Switchyard packages. You don't need to install it separately.
 
 </Note>
 
@@ -24,8 +24,8 @@ export const highlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-widget.tsx" highlights={highlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container } from "@switchyard/ui"
 import { Link } from "react-router-dom"
 
 // The widget
@@ -53,7 +53,7 @@ This adds a widget to a product's details page with a link to the Orders page. T
 
 <Note>
 
-Route loaders are available starting from Medusa v2.5.1.
+Route loaders are available starting from Switchyard v2.5.1.
 
 </Note>
 
@@ -76,7 +76,7 @@ export const loaderHighlights = [
 ]
 
 ```tsx title="src/admin/routes/custom/page.tsx" highlights={loaderHighlights}
-import { Container, Heading } from "@medusajs/ui"
+import { Container, Heading } from "@switchyard/ui"
 import {
   useLoaderData,
 } from "react-router-dom"
@@ -116,7 +116,7 @@ Route loaders block the rendering of your UI route until the data is fetched, wh
 
 Otherwise, use the JS SDK with Tanstack (React) Query in the UI route component as explained in the [Tips](../tips/page.mdx#send-requests-to-api-routes) chapter to fetch data asynchronously and update the UI when the data is available.
 
-![Timeline comparison of a UI route with and without a route loader](https://res.cloudinary.com/dza7lstvk/image/upload/v1753428567/Medusa%20Book/ui-route-loading_vycev8.jpg)
+![Timeline comparison of a UI route with and without a route loader](https://res.cloudinary.com/dza7lstvk/image/upload/v1753428567/Switchyard%20Book/ui-route-loading_vycev8.jpg)
 
 ### Access Route Parameters in Loader
 
@@ -127,7 +127,7 @@ export const loaderParamHighlights = [
 ]
 
 ```tsx title="src/admin/routes/custom/[id]/page.tsx" highlights={loaderParamHighlights}
-import { Container, Heading } from "@medusajs/ui"
+import { Container, Heading } from "@switchyard/ui"
 import {
   useLoaderData,
   LoaderFunctionArgs,
@@ -171,7 +171,7 @@ In the loader, you can fetch data asynchronously using the route parameter and r
 
 <Note>
 
-Route handles are available starting from Medusa v2.5.1.
+Route handles are available starting from Switchyard v2.5.1.
 
 </Note>
 

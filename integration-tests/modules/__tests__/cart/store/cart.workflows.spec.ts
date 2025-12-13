@@ -16,9 +16,9 @@ import {
   updateLineItemsStepId,
   updatePaymentCollectionStepId,
   updateTaxLinesWorkflow,
-} from "@medusajs/core-flows"
-import { StepResponse } from "@medusajs/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@switchyard/core-flows"
+import { StepResponse } from "@switchyard/framework/workflows-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   ICartModuleService,
   ICustomerModuleService,
@@ -30,7 +30,7 @@ import {
   IRegionModuleService,
   ISalesChannelModuleService,
   IStockLocationService,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   Modules,
@@ -38,7 +38,7 @@ import {
   PriceListType,
   ProductStatus,
   RuleOperator,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,

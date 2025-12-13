@@ -10,17 +10,17 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# createStoresWorkflow - Medusa Core Workflows Reference
+# createStoresWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `createStoresWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `createStoresWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
-This workflow creates one or more stores. By default, Medusa uses a single store. This is useful
+This workflow creates one or more stores. By default, Switchyard uses a single store. This is useful
 if you're building a multi-tenant application or a marketplace where each tenant has its own store.
 
 You can use this workflow within your customizations or your own custom workflows, allowing you to
 create stores within your custom flows.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/store/workflows/create-stores.ts#L54" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/store/workflows/create-stores.ts#L54" />
 
 ## Examples
 
@@ -29,14 +29,14 @@ create stores within your custom flows.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { createStoresWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { createStoresWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await createStoresWorkflow(req.scope)
     .run({
@@ -62,8 +62,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { createStoresWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { createStoresWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -94,11 +94,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { createStoresWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { createStoresWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await createStoresWorkflow(container)
     .run({
@@ -126,8 +126,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { createStoresWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { createStoresWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -157,8 +157,8 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"CreateStoresWorkflowInput","type":"[CreateStoresWorkflowInput](../../../../types/core_flows.CreateStoresWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to create stores.","expandable":false,"children":[{"name":"stores","type":"[CreateStoreWorkflowInput](../../../../../types/WorkflowTypes/StoreWorkflow/types/types.WorkflowTypes.StoreWorkflow.CreateStoreWorkflowInput/page.mdx)[]","description":"The stores to create.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"supported_currencies","type":"`object`[]","description":"The supported currencies of the store.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"currency_code","type":"`string`","description":"The currency ISO 3 code.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_default","type":"`boolean`","description":"Whether this currency is the default currency in the store.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"is_tax_inclusive","type":"`boolean`","description":"Whether prices in this currency are tax inclusive.\n\nLearn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/pricing/tax-inclusive-pricing).","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="createStoresWorkflow"/>
+<TypeList types={[{"name":"CreateStoresWorkflowInput","type":"[CreateStoresWorkflowInput](../../../../types/core_flows.CreateStoresWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to create stores.","expandable":false,"children":[{"name":"stores","type":"[CreateStoreWorkflowInput](../../../../../types/WorkflowTypes/StoreWorkflow/types/types.WorkflowTypes.StoreWorkflow.CreateStoreWorkflowInput/page.mdx)[]","description":"The stores to create.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"supported_currencies","type":"`object`[]","description":"The supported currencies of the store.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"currency_code","type":"`string`","description":"The currency ISO 3 code.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_default","type":"`boolean`","description":"Whether this currency is the default currency in the store.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"is_tax_inclusive","type":"`boolean`","description":"Whether prices in this currency are tax inclusive.\n\nLearn more in [this documentation](https://docs.switchyard.com/resources/commerce-modules/pricing/tax-inclusive-pricing).","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="createStoresWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"CreateStoresWorkflowOutput","type":"[CreateStoresWorkflowOutput](../../../../types/core_flows.CreateStoresWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"The created stores.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"name","type":"`string`","description":"The name of the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"`null` \\| `Record<string, any>`","description":"Holds custom data in key-value pairs.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string`","description":"The created at of the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string`","description":"The updated at of the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"supported_currencies","type":"[StoreCurrencyDTO](../../../../../store/interfaces/store.StoreCurrencyDTO/page.mdx)[]","description":"The supported currency codes of the store.","optional":true,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the store currency.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"currency_code","type":"`string`","description":"The currency code of the store currency.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_default","type":"`boolean`","description":"Whether the currency is the default one for the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"store_id","type":"`string`","description":"The store ID associated with the currency.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string`","description":"The created date of the currency","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string`","description":"The updated date of the currency","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`null` \\| `string`","description":"The deleted date of the currency","optional":false,"defaultValue":"","expandable":false,"children":[]}]},{"name":"default_sales_channel_id","type":"`string`","description":"The associated default sales channel's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"default_region_id","type":"`string`","description":"The associated default region's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"default_location_id","type":"`string`","description":"The associated default location's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="createStoresWorkflow"/>
+<TypeList types={[{"name":"CreateStoresWorkflowOutput","type":"[CreateStoresWorkflowOutput](../../../../types/core_flows.CreateStoresWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"The created stores.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"name","type":"`string`","description":"The name of the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"`null` \\| `Record<string, any>`","description":"Holds custom data in key-value pairs.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string`","description":"The created at of the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string`","description":"The updated at of the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"supported_currencies","type":"[StoreCurrencyDTO](../../../../../store/interfaces/store.StoreCurrencyDTO/page.mdx)[]","description":"The supported currency codes of the store.","optional":true,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the store currency.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"currency_code","type":"`string`","description":"The currency code of the store currency.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_default","type":"`boolean`","description":"Whether the currency is the default one for the store.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"store_id","type":"`string`","description":"The store ID associated with the currency.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string`","description":"The created date of the currency","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string`","description":"The updated date of the currency","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`null` \\| `string`","description":"The deleted date of the currency","optional":false,"defaultValue":"","expandable":false,"children":[]}]},{"name":"default_sales_channel_id","type":"`string`","description":"The associated default sales channel's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"default_region_id","type":"`string`","description":"The associated default region's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"default_location_id","type":"`string`","description":"The associated default location's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="createStoresWorkflow"/>

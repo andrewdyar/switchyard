@@ -33,9 +33,9 @@ const SearchProvider = ({ children }: SearchProviderProps) => {
           {
             title: "Search Suggestions",
             items: [
-              "Medusa Configurations",
+              "Switchyard Configurations",
               "Commerce Modules",
-              "Medusa Workflows Reference",
+              "Switchyard Workflows Reference",
               "Storefront Development",
             ],
           },

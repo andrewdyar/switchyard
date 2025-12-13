@@ -9,7 +9,7 @@ const cacheOptions: FormattingOptionsType = {
 
 :::note[Deprecation Notice]
 
-The Cache Module is deprecated starting from [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0). [Use the Caching Module](https://docs.medusajs.com/resources/infrastructure-modules/caching) instead.
+The Cache Module is deprecated starting from [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0). [Use the Caching Module](https://docs.switchyard.com/resources/infrastructure-modules/caching) instead.
 
 :::
     `,
@@ -27,11 +27,11 @@ The Cache Module is deprecated starting from [Medusa v2.11.0](https://github.com
     startSections: [
       `## Resolve Cache Module's Service
 
-In your workflow's step, you can resolve the Cache Module's service from the Medusa container:
+In your workflow's step, you can resolve the Cache Module's service from the Switchyard container:
 
 \`\`\`ts
-import { Modules } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -45,7 +45,7 @@ const step1 = createStep(
 )
 \`\`\`
 
-This will resolve the service of the configured Cache Module, which is the [In-Memory Cache Module](https://docs.medusajs.com/resources/infrastructure-modules/cache/in-memory) by default.
+This will resolve the service of the configured Cache Module, which is the [In-Memory Cache Module](https://docs.switchyard.com/resources/infrastructure-modules/cache/in-memory) by default.
 
 You can then use the Cache Module's service's methods in the step. The rest of this guide details these methods.
 

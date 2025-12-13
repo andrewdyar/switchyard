@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/caching",
+  "name": "@switchyard/caching",
   "version": "2.12.1",
   "description": "Caching Module for Medusa",
   "main": "dist/index.js",
@@ -28,12 +28,12 @@
     "test:integration": "../../../node_modules/.bin/jest --passWithNoTests --forceExit --testPathPattern=\"integration-tests/__tests__/.*\\.ts\""
   },
   "devDependencies": {
-    "@medusajs/framework": "2.12.1",
-    "@medusajs/test-utils": "2.12.1",
+    "@switchyard/framework": "2.12.1",
+    "@switchyard/test-utils": "2.12.1",
     "awilix": "^8.0.1"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1",
+    "@switchyard/framework": "2.12.1",
     "awilix": "^8.0.1"
   },
   "dependencies": {

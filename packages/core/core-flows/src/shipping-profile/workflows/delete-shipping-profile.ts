@@ -2,8 +2,8 @@ import {
   createStep,
   createWorkflow,
   WorkflowData,
-} from "@medusajs/framework/workflows-sdk"
-import { MedusaError, Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
 
 import { deleteShippingProfilesStep } from "../steps"
 import { removeRemoteLinkStep, useQueryGraphStep } from "../../common"
@@ -47,8 +47,8 @@ export const validateStepShippingProfileDelete = createStep(
     const { links } = data
 
     if (links.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot delete following shipping profiles because they are linked to products: ${links
           .map((l) => l.product_id)
           .join(", ")}`

@@ -1,26 +1,26 @@
 export const metadata = {
-  title: `${pageNumber} Medusa Testing Tools`,
+  title: `${pageNumber} Switchyard Testing Tools`,
 }
 
 # {metadata.title}
 
-In this chapter, you'll learn about Medusa's testing tools and how to install and configure them.
+In this chapter, you'll learn about Switchyard's testing tools and how to install and configure them.
 
-## @medusajs/test-utils Package
+## @switchyard/test-utils Package
 
-Medusa provides a Testing Framework to create integration tests for your custom API routes, modules, or other Medusa customizations.
+Switchyard provides a Testing Framework to create integration tests for your custom API routes, modules, or other Switchyard customizations.
 
-To use the Testing Framework, install `@medusajs/test-utils` as a `devDependency`:
+To use the Testing Framework, install `@switchyard/test-utils` as a `devDependency`:
 
 ```bash npm2yarn
-npm install --save-dev @medusajs/test-utils@latest
+npm install --save-dev @switchyard/test-utils@latest
 ```
 
 ---
 
 ## Install and Configure Jest
 
-Writing tests with `@medusajs/test-utils`'s tools requires installing and configuring Jest in your project.
+Writing tests with `@switchyard/test-utils`'s tools requires installing and configuring Jest in your project.
 
 Run the following command to install the required Jest dependencies:
 
@@ -31,7 +31,7 @@ npm install --save-dev jest @types/jest @swc/jest
 Then, create the file `jest.config.js` with the following content:
 
 ```js title="jest.config.js"
-const { loadEnv } = require("@medusajs/framework/utils")
+const { loadEnv } = require("@switchyard/framework/utils")
 loadEnv("test", process.cwd())
 
 module.exports = {
@@ -65,12 +65,12 @@ Next, create the `integration-tests/setup.js` file with the following content:
 
 <Note>
 
-As of [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0), MikroORM dependencies are included in the `@medusajs/framework` package. If you're using an older version of Medusa, change the require statement to `@mikro-orm/core`.
+As of [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0), MikroORM dependencies are included in the `@switchyard/framework` package. If you're using an older version of Switchyard, change the require statement to `@mikro-orm/core`.
 
 </Note>
 
 ```js title="integration-tests/setup.js"
-const { MetadataStorage } = require("@medusajs/framework/mikro-orm/core")
+const { MetadataStorage } = require("@switchyard/framework/mikro-orm/core")
 
 MetadataStorage.clear()
 ```
@@ -98,7 +98,7 @@ You now have two commands:
 
 <Note>
 
-Medusa's Testing Framework works for integration tests only. You can write unit tests using Jest.
+Switchyard's Testing Framework works for integration tests only. You can write unit tests using Jest.
 
 </Note>
 
@@ -106,4 +106,4 @@ Medusa's Testing Framework works for integration tests only. You can write unit 
 
 ## Test Tools and Writing Tests
 
-The next chapters explain how to use the testing tools provided by `@medusajs/test-utils` to write tests.
+The next chapters explain how to use the testing tools provided by `@switchyard/test-utils` to write tests.

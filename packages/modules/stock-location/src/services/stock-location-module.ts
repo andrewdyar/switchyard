@@ -15,17 +15,17 @@ import {
   UpdateStockLocationInput,
   UpsertStockLocationAddressInput,
   UpsertStockLocationInput,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   EmitEvents,
   InjectManager,
   InjectTransactionManager,
   isString,
   MedusaContext,
-  MedusaService,
+  SwitchyardService,
   Modules,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { joinerConfig } from "../joiner-config"
 import { StockLocation, StockLocationAddress } from "../models"
 
@@ -40,7 +40,7 @@ type InjectedDependencies = {
  * Service for managing stock locations.
  */
 export default class StockLocationModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     StockLocation: { dto: StockLocationTypes.StockLocationDTO }
     StockLocationAddress: { dto: StockLocationTypes.StockLocationAddressDTO }
   }>({ StockLocation, StockLocationAddress })

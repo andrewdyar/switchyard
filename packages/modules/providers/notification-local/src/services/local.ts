@@ -2,11 +2,11 @@ import {
   LocalNotificationServiceOptions,
   Logger,
   NotificationTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   AbstractNotificationProviderService,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 
 type InjectedDependencies = {
   logger: Logger
@@ -32,8 +32,8 @@ export class LocalNotificationService extends AbstractNotificationProviderServic
     notification: NotificationTypes.ProviderSendNotificationDTO
   ): Promise<NotificationTypes.ProviderSendNotificationResultsDTO> {
     if (!notification) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `No notification information provided`
       )
     }

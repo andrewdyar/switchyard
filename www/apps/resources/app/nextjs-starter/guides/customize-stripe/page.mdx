@@ -8,9 +8,9 @@ products:
 ---
 
 import { Prerequisites, InlineIcon } from "docs-ui"
-import { EllipsisHorizontal } from "@medusajs/icons"
+import { EllipsisHorizontal } from "@switchyard/icons"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1734007558/Medusa%20Resources/integrations-stripe_qfnwtf.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1734007558/Switchyard%20Resources/integrations-stripe_qfnwtf.jpg"
 
 export const metadata = {
   title: `Use Stripe's Payment Element in the Next.js Starter Storefront`,
@@ -48,16 +48,16 @@ By using the Payment Element, you can offer a unified payment experience that su
 
 By following this tutorial, you'll learn how to:
 
-- Set up a Medusa application with the Stripe Module Provider.
+- Set up a Switchyard application with the Stripe Module Provider.
 - Customize the Next.js Starter Storefront to use Stripe's Payment Element.
 
 ---
 
-## Step 1: Set Up Medusa Project
+## Step 1: Set Up Switchyard Project
 
-In this step, you'll set up a Medusa application and configure the Stripe Module Provider. You can skip this step if you already have a Medusa application running with the Stripe Module Provider configured.
+In this step, you'll set up a Switchyard application and configure the Stripe Module Provider. You can skip this step if you already have a Switchyard application running with the Stripe Module Provider configured.
 
-### a. Install Medusa Application
+### a. Install Switchyard Application
 
 <Prerequisites items={[
   {
@@ -74,35 +74,35 @@ In this step, you'll set up a Medusa application and configure the Stripe Module
   }
 ]} />
 
-To install the Medusa application, run the following command:
+To install the Switchyard application, run the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when you're asked whether you want to install the Next.js Starter Storefront, choose `Y` for yes.
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a directory with the `{project-name}-storefront` name.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Medusa's architecture in [this documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Switchyard's architecture in [this documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form.
 
 Afterwards, you can log in with the new user and explore the dashboard. The Next.js Starter Storefront is also running at `http://localhost:8000`.
 
 <Note title="Ran to Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
 ### b. Configure Stripe Module Provider
 
-Next, you'll configure the [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) in your Medusa application. The Stripe Module Provider allows you to accept payments through Stripe in your Medusa application.
+Next, you'll configure the [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) in your Switchyard application. The Stripe Module Provider allows you to accept payments through Stripe in your Switchyard application.
 
 <Prerequisites items={[
   {
@@ -115,18 +115,18 @@ Next, you'll configure the [Stripe Module Provider](../../../commerce-modules/pa
   }
 ]} />
 
-The Stripe Module Provider is installed by default in your application. To use it, add it to the array of providers passed to the Payment Module in `medusa-config.ts`:
+The Stripe Module Provider is installed by default in your application. To use it, add it to the array of providers passed to the Payment Module in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts" badgeLabel="Medusa Application" badgeColor="green"
+```ts title="switchyard.config.ts" badgeLabel="Switchyard Application" badgeColor="green"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/payment",
+      resolve: "@switchyard/medusa/payment",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/payment-stripe",
+            resolve: "@switchyard/medusa/payment-stripe",
             id: "stripe",
             options: {
               apiKey: process.env.STRIPE_API_KEY,
@@ -139,13 +139,13 @@ module.exports = defineConfig({
 })
 ```
 
-For more details about other available options and the webhook URLs that Medusa provides, refer to the [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) documentation.
+For more details about other available options and the webhook URLs that Switchyard provides, refer to the [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) documentation.
 
 ### c. Set Environment Variables
 
-Next, make sure to add the necessary environment variables for the above options in `.env` in your Medusa application:
+Next, make sure to add the necessary environment variables for the above options in `.env` in your Switchyard application:
 
-```bash badgeLabel="Medusa Application" badgeColor="green"
+```bash badgeLabel="Switchyard Application" badgeColor="green"
 STRIPE_API_KEY=<YOUR_STRIPE_API_KEY>
 ```
 
@@ -161,11 +161,11 @@ Where `<YOUR_STRIPE_PUBLISHABLE_API_KEY>` is your Stripe [Publishable API Key](h
 
 ### d. Enable Stripe in a Region
 
-Finally, you need to add Stripe as a payment provider to one or more regions in your Medusa Admin. This will allow customers to use Stripe as a payment method during checkout.
+Finally, you need to add Stripe as a payment provider to one or more regions in your Switchyard Admin. This will allow customers to use Stripe as a payment method during checkout.
 
 To do that:
 
-1. Log in to your Medusa Admin dashboard at `http://localhost:9000/app`.
+1. Log in to your Switchyard Admin dashboard at `http://localhost:9000/app`.
 2. Go to Settings -> Regions.
 3. Select a region you want to enable Stripe for (or create a new one).
 4. Click the <InlineIcon Icon={EllipsisHorizontal} alt="three-dots" /> icon on the upper right corner.
@@ -305,7 +305,7 @@ Next, to make sure a payment session is initialized when the customer reaches th
 const initStripe = async () => {
   try {
     await initiatePaymentSession(cart, {
-      // TODO: change the provider ID if using a different ID in medusa-config.ts
+      // TODO: change the provider ID if using a different ID in switchyard.config.ts
       provider_id: "pp_stripe_stripe",
     })
   } catch (err) {
@@ -321,7 +321,7 @@ useEffect(() => {
 }, [cart, isOpen, activeSession])
 ```
 
-You add an `initStripe` function that initiates a payment session in the Medusa server. Notice that you set the provider ID to `pp_stripe_stripe`, which is the ID of the Stripe payment provider in your Medusa application if the ID in `medusa-config.ts` is `stripe`.
+You add an `initStripe` function that initiates a payment session in the Switchyard server. Notice that you set the provider ID to `pp_stripe_stripe`, which is the ID of the Stripe payment provider in your Switchyard application if the ID in `switchyard.config.ts` is `stripe`.
 
 If you used a different ID, change the `stripe` in the middle accordingly. For example, if you set the ID to `payment`, you would set the `provider_id` to `pp_payment_stripe`.
 
@@ -362,7 +362,7 @@ And replace them with the following:
 }
 ```
 
-You replace the radio group with the payment methods available in Medusa with the `PaymentElement` component from the Stripe SDK. You pass it the following props:
+You replace the radio group with the payment methods available in Switchyard with the `PaymentElement` component from the Stripe SDK. You pass it the following props:
 
 - `onChange`: A callback function that is called when the payment element's state changes. You pass the `handlePaymentElementChange` function you defined earlier.
 - `options`: An object that contains options for the payment element, such as the `layout`. Refer to [Stripe's documentation](https://docs.stripe.com/payments/payment-element#options) for other options available.
@@ -440,8 +440,8 @@ Feel free to remove unused imports, variables, and functions in the file.
 
 import { isStripe as isStripeFunc, paymentInfoMap } from "@lib/constants"
 import { initiatePaymentSession } from "@lib/data/cart"
-import { CheckCircleSolid, CreditCard } from "@medusajs/icons"
-import { Button, Container, Heading, Text, clx } from "@medusajs/ui"
+import { CheckCircleSolid, CreditCard } from "@switchyard/icons"
+import { Button, Container, Heading, Text, clx } from "@switchyard/ui"
 import ErrorMessage from "@modules/checkout/components/error-message"
 import Divider from "@modules/common/components/divider"
 import { usePathname, useRouter, useSearchParams } from "next/navigation"
@@ -740,7 +740,7 @@ export const paymentInfoMap: Record<
 For every payment method you want to customize its display, add an entry in the `paymentInfoMap` object. The key should match the [type enum in Stripe's Payment Element](https://docs.stripe.com/api/payment_methods/object#payment_method_object-type), and the value is an object with the following properties:
 
 - `title`: The title to display for the payment method.
-- `icon`: A JSX element representing the icon for the payment method. You can use icons from [Medusa UI](!ui!/icons/overview) or custom icons.
+- `icon`: A JSX element representing the icon for the payment method. You can use icons from [Switchyard UI](!ui!/icons/overview) or custom icons.
 
 ### Test it out
 
@@ -748,9 +748,9 @@ Before you test out the payment checkout step, make sure you have the necessary 
 
 Then, follow these steps to test the payment checkout step in your Next.js Starter Storefront:
 
-1. Start the Medusa application with the following command:
+1. Start the Switchyard application with the following command:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -766,15 +766,15 @@ npm run dev
 6. Complete the Address and Delivery steps that are before the Payment step.
 7. Once you reach the Payment step, your Stripe Payment Element should appear and list the different payment methods you’ve enabled in your Stripe account.
 
-At this point, you can proceed to the Review step, but you can't confirm the payment with Stripe and place an order in Medusa. You'll customize the payment button in the next step to handle the payment confirmation with Stripe.
+At this point, you can proceed to the Review step, but you can't confirm the payment with Stripe and place an order in Switchyard. You'll customize the payment button in the next step to handle the payment confirmation with Stripe.
 
-![The Stripe Payment Element allows you to pay with different payment methods like PayPal](https://res.cloudinary.com/dza7lstvk/image/upload/v1734005395/Medusa%20Resources/Screenshot_2024-12-10_at_18.04.52_wemqwg.jpg)
+![The Stripe Payment Element allows you to pay with different payment methods like PayPal](https://res.cloudinary.com/dza7lstvk/image/upload/v1734005395/Switchyard%20Resources/Screenshot_2024-12-10_at_18.04.52_wemqwg.jpg)
 
 ---
 
 ## Step 3: Update the Payment Button
 
-Next, you'll update the payment button in the Review step of the checkout process. This button is used to confirm the payment with Stripe, then place the order in Medusa.
+Next, you'll update the payment button in the Review step of the checkout process. This button is used to confirm the payment with Stripe, then place the order in Switchyard.
 
 In this step, you'll customize the `PaymentButton` component in `src/modules/checkout/components/payment-button/index.tsx` to support confirming the payment with Stripe's Payment Element.
 
@@ -799,7 +799,7 @@ const { countryCode } = useParams()
 const router = useRouter()
 const pathname = usePathname()
 const paymentSession = cart.payment_collection?.payment_sessions?.find(
-  // TODO change the provider_id if using a different ID in medusa-config.ts
+  // TODO change the provider_id if using a different ID in switchyard.config.ts
   (session) => session.provider_id === "pp_stripe_stripe"
 )
 ```
@@ -809,8 +809,8 @@ You define the following variables:
 - `countryCode`: The country code of the customer's region, fetched from the URL. You'll use this later to create Stripe's redirect URL.
 - `router`: The Next.js router instance. You'll use this to redirect back to the payment step if necessary.
 - `pathname`: The current pathname. You'll use this when redirecting back to the payment step if necessary.
-- `paymentSession`: The Medusa payment session for the Stripe payment provider. This is used to get the `clientSecret` needed to confirm the payment.
-    - Notice that the provider ID is set to `pp_stripe_stripe`, which is the ID of the Stripe payment provider in your Medusa application if the ID in `medusa-config.ts` is `stripe`. If you used a different ID, change the `stripe` in the middle accordingly.
+- `paymentSession`: The Switchyard payment session for the Stripe payment provider. This is used to get the `clientSecret` needed to confirm the payment.
+    - Notice that the provider ID is set to `pp_stripe_stripe`, which is the ID of the Stripe payment provider in your Switchyard application if the ID in `switchyard.config.ts` is `stripe`. If you used a different ID, change the `stripe` in the middle accordingly.
 
 After that, change the `handlePayment` function to the following:
 
@@ -939,8 +939,8 @@ You still need to add the redirect URL route before you can test the payment but
 
 import { isManual, isStripe } from "@lib/constants"
 import { placeOrder } from "@lib/data/cart"
-import { HttpTypes } from "@medusajs/types"
-import { Button } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Button } from "@switchyard/ui"
 import { useElements, useStripe } from "@stripe/react-stripe-js"
 import React, { useState, useEffect } from "react"
 import ErrorMessage from "../error-message"
@@ -1235,7 +1235,7 @@ Stripe will redirect the customer back to this route when using payment methods 
 
 You can now test out the entire checkout flow with payment confirmation and order placement.
 
-Start the Medusa application and the Next.js Starter Storefront as you did in the previous steps, and proceed to checkout.
+Start the Switchyard application and the Next.js Starter Storefront as you did in the previous steps, and proceed to checkout.
 
 In the payment step, select a payment method, such as card or PayPal. Fill out the necessary details in the Payment Element, then click the "Continue to review" button.
 
@@ -1247,7 +1247,7 @@ Find test cards in [Stripe's documentation](https://docs.stripe.com/testing#use-
 
 After that, click the "Place order" button. If you selected a payment method that requires external confirmation, such as PayPal, you will be redirected to the PayPal payment page.
 
-![Example of handling payment through PayPal](https://res.cloudinary.com/dza7lstvk/image/upload/v1734006541/Medusa%20Resources/Screenshot_2024-12-10_at_19.27.13_q0w6u1.jpg)
+![Example of handling payment through PayPal](https://res.cloudinary.com/dza7lstvk/image/upload/v1734006541/Switchyard%20Resources/Screenshot_2024-12-10_at_19.27.13_q0w6u1.jpg)
 
 Once the payment is confirmed and the order is placed, the customer will be redirected to the order confirmation page, where they can see the order details.
 
@@ -1257,11 +1257,11 @@ Stripe's Payment Element also supports 3D Secure payments. You can use one of [S
 
 When a customer uses a 3D Secure card, a pop-up will open prompting them to complete the authentication process. If successful, the order will be placed, and the customer will be redirected to the order confirmation page.
 
-![Stripe 3D Secure pop-up](https://res.cloudinary.com/dza7lstvk/image/upload/v1752577384/Medusa%20Resources/CleanShot_2025-07-15_at_11.12.44_2x_ibjxvx.png)
+![Stripe 3D Secure pop-up](https://res.cloudinary.com/dza7lstvk/image/upload/v1752577384/Switchyard%20Resources/CleanShot_2025-07-15_at_11.12.44_2x_ibjxvx.png)
 
 ### Server Webhook Verification
 
-Webhook verification is useful to ensure that payment events are handled despite connection issues. The Stripe Module Provider in Medusa provides webhook verification out of the box, so you don't need to implement it yourself.
+Webhook verification is useful to ensure that payment events are handled despite connection issues. The Stripe Module Provider in Switchyard provides webhook verification out of the box, so you don't need to implement it yourself.
 
 Learn more about the webhook API routes and how to configure them in the [Stripe Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) guide.
 

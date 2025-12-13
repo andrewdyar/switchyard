@@ -2,24 +2,24 @@ import {
   configLoader,
   container,
   logger,
-  MedusaAppLoader,
+  SwitchyardAppLoader,
   Migrator,
-} from "@medusajs/framework"
-import { asValue } from "@medusajs/framework/awilix"
-import { EntityManager } from "@medusajs/framework/mikro-orm/postgresql"
-import { MedusaAppOutput, MedusaModule } from "@medusajs/framework/modules-sdk"
-import { EventBusTypes, IndexTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework"
+import { asValue } from "@switchyard/framework/awilix"
+import { EntityManager } from "@switchyard/framework/mikro-orm/postgresql"
+import { SwitchyardAppOutput, SwitchyardModule } from "@switchyard/framework/modules-sdk"
+import { EventBusTypes, IndexTypes } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   toMikroORMEntity,
-} from "@medusajs/framework/utils"
-import { initDb, TestDatabaseUtils } from "@medusajs/test-utils"
+} from "@switchyard/framework/utils"
+import { initDb, TestDatabaseUtils } from "@switchyard/test-utils"
 import { IndexData, IndexRelation } from "@models"
 import * as path from "path"
 import { setTimeout } from "timers/promises"
 import { EventBusServiceMock } from "../__fixtures__"
-import { dbName } from "../__fixtures__/medusa-config"
+import { dbName } from "../__fixtures__/switchyard.config"
 
 const eventBusMock = new EventBusServiceMock()
 const queryMock = {
@@ -102,14 +102,14 @@ const sendEvents = async (eventDataToEmit) => {
 }
 
 let isFirstTime = true
-let medusaAppLoader!: MedusaAppLoader
+let medusaAppLoader!: SwitchyardAppLoader
 let index!: IndexTypes.IIndexService
 
 const beforeAll_ = async () => {
   try {
     await configLoader(
       path.join(__dirname, "./../__fixtures__"),
-      "medusa-config"
+      "switchyard.config"
     )
 
     console.log(`Creating database ${dbName}`)
@@ -122,7 +122,7 @@ const beforeAll_ = async () => {
       [ContainerRegistrationKeys.PG_CONNECTION]: asValue(dbUtils.pgConnection_),
     })
 
-    medusaAppLoader = new MedusaAppLoader(container as any)
+    medusaAppLoader = new SwitchyardAppLoader(container as any)
 
     // Migrations
     const migrator = new Migrator({ container })
@@ -134,7 +134,7 @@ const beforeAll_ = async () => {
     await linkPlanner.executePlan(plan)
 
     // Clear partially loaded instances
-    MedusaModule.clearInstances()
+    SwitchyardModule.clearInstances()
 
     // Bootstrap modules
     const globalApp = await medusaAppLoader.load()
@@ -185,7 +185,7 @@ const afterEach_ = async () => {
 }
 
 describe("IndexModuleService", function () {
-  let medusaApp: MedusaAppOutput
+  let medusaApp: SwitchyardAppOutput
   let onApplicationPrepareShutdown!: () => Promise<void>
   let onApplicationShutdown!: () => Promise<void>
 

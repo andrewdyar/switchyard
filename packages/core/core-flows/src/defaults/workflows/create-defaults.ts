@@ -1,7 +1,7 @@
 import {
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createDefaultSalesChannelStep } from "../../sales-channel"
 import { createDefaultStoreStep } from "../steps/create-default-store"
 

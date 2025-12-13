@@ -1,5 +1,5 @@
-import type { AdminOptions, ConfigModule, Logger } from "@medusajs/types"
-import { FileSystem, getConfigFile, getResolvedPlugins } from "@medusajs/utils"
+import type { AdminOptions, ConfigModule, Logger } from "@switchyard/types"
+import { FileSystem, getConfigFile, getResolvedPlugins } from "@switchyard/utils"
 import chokidar from "chokidar"
 import { access, constants, copyFile, mkdir, rm } from "fs/promises"
 import path from "path"
@@ -14,7 +14,7 @@ import type tsStatic from "typescript"
  *   will be reported using the logger.
  *
  * - buildAppBackend: Compile the Medusa application backend source code to the
- *   ".medusa/server" directory. The admin source and integration-tests are
+ *   ".switchyard/server" directory. The admin source and integration-tests are
  *   skipped.
  *
  * - buildAppFrontend: Compile the admin extensions using the "@medusjs/admin-bundler"
@@ -34,8 +34,8 @@ export class Compiler {
     this.#projectRoot = projectRoot
     this.#logger = logger
     this.#tsConfigPath = path.join(this.#projectRoot, "tsconfig.json")
-    this.#adminOnlyDistFolder = path.join(this.#projectRoot, ".medusa/admin")
-    this.#pluginsDistFolder = path.join(this.#projectRoot, ".medusa/server")
+    this.#adminOnlyDistFolder = path.join(this.#projectRoot, ".switchyard/admin")
+    this.#pluginsDistFolder = path.join(this.#projectRoot, ".switchyard/server")
     this.#backendIgnoreFiles = [
       "/integration-tests/",
       "/test/",
@@ -59,10 +59,10 @@ export class Compiler {
 
   /**
    * Returns the dist folder from the tsconfig.outDir property
-   * or uses the ".medusa/server" folder
+   * or uses the ".switchyard/server" folder
    */
   #computeDist(tsConfig: { options: { outDir?: string } }): string {
-    const distFolder = tsConfig.options.outDir ?? ".medusa/server"
+    const distFolder = tsConfig.options.outDir ?? ".switchyard/server"
     return path.isAbsolute(distFolder)
       ? distFolder
       : path.join(this.#projectRoot, distFolder)
@@ -152,9 +152,9 @@ export class Compiler {
    */
   async #loadMedusaConfig() {
     const { configModule, configFilePath, error } =
-      await getConfigFile<ConfigModule>(this.#projectRoot, "medusa-config")
+      await getConfigFile<ConfigModule>(this.#projectRoot, "switchyard.config")
     if (error) {
-      this.#logger.error(`Failed to load medusa-config.(js|ts) file`)
+      this.#logger.error(`Failed to load switchyard.config.(js|ts) file`)
       this.#logger.error(error)
       return
     }
@@ -329,7 +329,7 @@ export class Compiler {
 
   /**
    * Builds the frontend source code of a Medusa application
-   * using the "@medusajs/admin-bundler" package.
+   * using the "@switchyard/admin-bundler" package.
    */
   async buildAppFrontend(
     adminOnly: boolean,
@@ -361,7 +361,7 @@ export class Compiler {
      */
     if (configFile.configModule.admin.disable && !adminOnly) {
       this.#logger.info(
-        "Skipping admin build, since its disabled inside the medusa-config file"
+        "Skipping admin build, since its disabled inside the switchyard.config file"
       )
       return true
     }
@@ -372,7 +372,7 @@ export class Compiler {
      */
     if (!configFile.configModule.admin.disable && adminOnly) {
       this.#logger.warn(
-        `You are building using the flag --admin-only but the admin is enabled in your medusa-config, If you intend to host the dashboard separately you should disable the admin in your medusa config`
+        `You are building using the flag --admin-only but the admin is enabled in your switchyard.config, If you intend to host the dashboard separately you should disable the admin in your medusa config`
       )
     }
 
@@ -423,7 +423,7 @@ export class Compiler {
    */
   async buildPluginBackend(tsConfig: tsStatic.ParsedCommandLine) {
     const tracker = this.#trackDuration()
-    const dist = ".medusa/server"
+    const dist = ".switchyard/server"
     this.#logger.info("Compiling plugin source...")
 
     /**
@@ -495,7 +495,7 @@ export class Compiler {
         "dist",
         "static",
         "private",
-        ".medusa/**/*",
+        ".switchyard/**/*",
         ...this.#backendIgnoreFiles,
       ],
     })

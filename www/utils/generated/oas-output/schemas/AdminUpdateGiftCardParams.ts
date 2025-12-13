@@ -35,7 +35,7 @@
  *     type: object
  *     description: The gift card's metadata.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.com/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  * 
 */

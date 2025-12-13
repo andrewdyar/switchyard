@@ -4,13 +4,13 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll find solutions to common issues that may arise when deploying your Medusa applications on Cloud.
+In this guide, you'll find solutions to common issues that may arise when deploying your Switchyard applications on Cloud.
 
 ## Files Not Found After Deployment
 
-Before deploying your Medusa application on Cloud, Medusa runs the `build` script defined in your `package.json` file, then copies only the output of the [build process](!docs!/learn/build), which is the `.medusa/server` directory.
+Before deploying your Switchyard application on Cloud, Switchyard runs the `build` script defined in your `package.json` file, then copies only the output of the [build process](!docs!/learn/build), which is the `.medusa/server` directory.
 
-The `.medusa/server` directory holds the compiled JavaScript files of your project, the production build of the admin dashboard, and other necessary files to run your Medusa application in production.
+The `.medusa/server` directory holds the compiled JavaScript files of your project, the production build of the admin dashboard, and other necessary files to run your Switchyard application in production.
 
 If you have custom files needed at runtime, such as a `src/data` directory that holds JSON files, modify the `build` script in your `package.json` file to copy these files to the `.medusa/server` directory after the build process.
 
@@ -42,5 +42,5 @@ You can replace `npm run postbuild` with the appropriate command for your packag
 To troubleshoot other Cloud deployment issues, you can:
 
 - [Check the build and runtime logs of your deployment](../../logs/page.mdx).
-- [Refer to Medusa's troubleshooting guides](!resources!/troubleshooting).
+- [Refer to Switchyard's troubleshooting guides](!resources!/troubleshooting).
 - Contact support for help.

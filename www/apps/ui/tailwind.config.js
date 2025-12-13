@@ -1,8 +1,8 @@
 import path from "path"
 import coreConfig from "tailwind"
 
-// Get two levels up from require.resolve("@medusajs/ui")
-const root = path.join(require.resolve("@medusajs/ui"), "../..")
+// Get two levels up from require.resolve("@switchyard/ui")
+const root = path.join(require.resolve("@switchyard/ui"), "../..")
 const uiPath = path.join(root, "**/*.{js,ts,jsx,tsx,mdx}")
 
 // filter out unwanted config from the core theme

@@ -1,4 +1,4 @@
-import { ICachingModuleService, Logger, MedusaContainer } from "@medusajs/types"
+import { ICachingModuleService, Logger, SwitchyardContainer } from "@switchyard/types"
 import { MedusaContextType, Modules } from "../modules-sdk"
 import { FeatureFlag } from "../feature-flags"
 import { ContainerRegistrationKeys, isObject } from "../common"
@@ -22,7 +22,7 @@ export async function useCache<T>(
      */
     autoInvalidate?: boolean
     providers?: string[]
-    container: MedusaContainer
+    container: SwitchyardContainer
   }
 ): Promise<T> {
   const cachingModule = options.container.resolve<ICachingModuleService>(
@@ -139,7 +139,7 @@ export function Cached<
     | string[]
     | ((args: TargetMethodArgs<Target, PropertyKey>) => string[] | undefined)
 
-  container: MedusaContainer | ((this: Target) => MedusaContainer)
+  container: SwitchyardContainer | ((this: Target) => SwitchyardContainer)
 }) {
   return function (
     target: Target,
@@ -159,7 +159,7 @@ export function Cached<
         ? Parameters<Target[PropertyKey & keyof Target]>
         : never
     ) {
-      const container: MedusaContainer =
+      const container: SwitchyardContainer =
         typeof options.container === "function"
           ? options.container.call(this)
           : options.container

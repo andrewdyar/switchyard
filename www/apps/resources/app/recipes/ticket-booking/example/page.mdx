@@ -11,16 +11,16 @@ products:
   - order
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
-  title: `Implement a Ticket Booking System with Medusa`,
+  title: `Implement a Ticket Booking System with Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to implement a ticket booking system using Medusa.
+In this tutorial, you'll learn how to implement a ticket booking system using Switchyard.
 
 <Note>
 
@@ -28,13 +28,13 @@ This tutorial is divided into two parts: this part that covers the backend and a
 
 </Note>
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) that are available out-of-the-box.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) that are available out-of-the-box.
 
-Medusa's [Framework](!docs!/learn/fundamentals/framework) facilitates customizing Medusa's core features for your specific use case, such as ticket booking.
+Switchyard's [Framework](!docs!/learn/fundamentals/framework) facilitates customizing Switchyard's core features for your specific use case, such as ticket booking.
 
 <Note>
 
-This tutorial provides an approach to implement a ticket booking system using Medusa. Depending on your specific requirements, you might need to adjust the implementation details or explore a different approach.
+This tutorial provides an approach to implement a ticket booking system using Switchyard. Depending on your specific requirements, you might need to adjust the implementation details or explore a different approach.
 
 </Note>
 
@@ -42,18 +42,18 @@ This tutorial provides an approach to implement a ticket booking system using Me
 
 By following this tutorial, you will learn how to:
 
-- Install and set up Medusa with the Next.js Starter Storefront.
-- Create data models for venues and tickets, and link them to Medusa's data models.
-- Customize the Medusa Admin to manage venues and shows or events.
+- Install and set up Switchyard with the Next.js Starter Storefront.
+- Create data models for venues and tickets, and link them to Switchyard's data models.
+- Customize the Switchyard Admin to manage venues and shows or events.
 - Implement custom validation and flows for ticket booking.
 - Generate QR codes for tickets and verify them at the venue.
 - [Extend the Next.js Starter Storefront to allow booking tickets and choosing seats](./storefront/page.mdx): This part of the tutorial is covered separately.
 
-![Diagram showing the architecture of the ticket booking system with Medusa](https://res.cloudinary.com/dza7lstvk/image/upload/v1757512301/Medusa%20Resources/ticket-booking-diagram_egbpye.jpg)
+![Diagram showing the architecture of the ticket booking system with Switchyard](https://res.cloudinary.com/dza7lstvk/image/upload/v1757512301/Switchyard%20Resources/ticket-booking-diagram_egbpye.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/ticket-booking",
+    href: "https://github.com/switchyard/examples/tree/main/ticket-booking",
     title: "Full Code",
     text: "Find the full code for this tutorial in this repository.",
     icon: Github,
@@ -68,7 +68,7 @@ By following this tutorial, you will learn how to:
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -85,27 +85,27 @@ By following this tutorial, you will learn how to:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -113,7 +113,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Ticket Booking Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionality related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionality related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 In this step, you'll build a Ticket Booking Module that defines the data models and logic to manage venues and tickets. Later, you'll build commerce flows related to ticket booking around the module.
 
@@ -129,7 +129,7 @@ Create the directory `src/modules/ticket-booking` that will hold the Ticket Book
 
 ### b. Define Data Models
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -137,7 +137,7 @@ Refer to the [Data Models documentation](!docs!/learn/fundamentals/modules#1-cre
 
 </Note>
 
-You'll define data models to represent venues, tickets, and purchases. Later, you'll link these data models to Medusa's data models, such as products and orders.
+You'll define data models to represent venues, tickets, and purchases. Later, you'll link these data models to Switchyard's data models, such as products and orders.
 
 #### Venue Model
 
@@ -146,7 +146,7 @@ The `Venue` data model represents a venue where shows or events take place.
 To create the `Venue` data model, create the file `src/modules/ticket-booking/models/venue.ts` with the following content:
 
 ```ts title="src/modules/ticket-booking/models/venue.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { VenueRow } from "./venue-row"
 
 export const Venue = model.define("venue", {
@@ -184,7 +184,7 @@ The `VenueRow` data model represents a row in a venue, each with a specific type
 To create the `VenueRow` data model, create the file `src/modules/ticket-booking/models/venue-row.ts` with the following content:
 
 ```ts title="src/modules/ticket-booking/models/venue-row.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { Venue } from "./venue"
 
 export enum RowType {
@@ -225,12 +225,12 @@ You also add a unique index on the combination of `venue_id` and `row_number` to
 
 #### TicketProduct Model
 
-The `TicketProduct` data model represents a product purchased as a ticket, such as a show or event. It will be linked to Medusa's `Product` data model.
+The `TicketProduct` data model represents a product purchased as a ticket, such as a show or event. It will be linked to Switchyard's `Product` data model.
 
 To create the `TicketProduct` data model, create the file `src/modules/ticket-booking/models/ticket-product.ts` with the following content:
 
 ```ts title="src/modules/ticket-booking/models/ticket-product.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { Venue } from "./venue"
 import { TicketProductVariant } from "./ticket-product-variant"
 import { TicketPurchase } from "./ticket-purchase"
@@ -259,7 +259,7 @@ export default TicketProduct
 The `TicketProduct` data model has the following properties:
 
 - `id`: The primary key of the table.
-- `product_id`: The ID of the linked product in Medusa's `Product` data model.
+- `product_id`: The ID of the linked product in Switchyard's `Product` data model.
 - `venue`: A many-to-one relation with the `Venue` data model, which represents the venue where the show takes place.
 - `dates`: An array of dates when the show takes place.
 - `variants`: A one-to-many relation with the `TicketProductVariant` data model, which you'll create next.
@@ -275,12 +275,12 @@ Data relevant for ticket sales like price, inventory, etc., are all either inclu
 
 #### TicketProductVariant Model
 
-The `TicketProductVariant` data model represents a variant of a ticket product, such as a specific row type. It will be linked to Medusa's `ProductVariant` data model.
+The `TicketProductVariant` data model represents a variant of a ticket product, such as a specific row type. It will be linked to Switchyard's `ProductVariant` data model.
 
 To create the `TicketProductVariant` data model, create the file `src/modules/ticket-booking/models/ticket-product-variant.ts` with the following content:
 
 ```ts title="src/modules/ticket-booking/models/ticket-product-variant.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { TicketProduct } from "./ticket-product"
 import { RowType } from "./venue-row"
 import { TicketPurchase } from "./ticket-purchase"
@@ -308,19 +308,19 @@ export default TicketProductVariant
 The `TicketProductVariant` data model has the following properties:
 
 - `id`: The primary key of the table.
-- `product_variant_id`: The ID of the linked product variant in Medusa's `ProductVariant` data model.
+- `product_variant_id`: The ID of the linked product variant in Switchyard's `ProductVariant` data model.
 - `ticket_product`: A many-to-one relation with the `TicketProduct` data model, which represents the ticket product the variant belongs to.
 - `row_type`: The type of the row associated with the variant, which can be "premium", "balcony", "standard", or "vip".
 - `purchases`: A one-to-many relation with the `TicketPurchase` data model, which you'll create next.
 
 #### TicketPurchase Model
 
-The `TicketPurchase` data model represents the purchase of a seat for a specific `TicketProduct`. It will be linked to Medusa's `Order` data model.
+The `TicketPurchase` data model represents the purchase of a seat for a specific `TicketProduct`. It will be linked to Switchyard's `Order` data model.
 
 To create the `TicketPurchase` data model, create the file `src/modules/ticket-booking/models/ticket-purchase.ts` with the following content:
 
 ```ts title="src/modules/ticket-booking/models/ticket-purchase.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { TicketProduct } from "./ticket-product"
 import { TicketProductVariant } from "./ticket-product-variant"
 import { VenueRow } from "./venue-row"
@@ -351,7 +351,7 @@ export default TicketPurchase
 The `TicketPurchase` data model has the following properties:
 
 - `id`: The primary key of the table.
-- `order_id`: The ID of the linked order in Medusa's `Order` data model.
+- `order_id`: The ID of the linked order in Switchyard's `Order` data model.
 - `ticket_product`: A many-to-one relation with the `TicketProduct` data model, which represents the ticket product purchased.
 - `ticket_variant`: A many-to-one relation with the `TicketProductVariant` data model, which represents the variant (row type) of the ticket product purchased.
 - `venue_row`: A many-to-one relation with the `VenueRow` data model, which represents the row of the seat purchased.
@@ -379,14 +379,14 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Ticket Booking Module's service, create the file `src/modules/ticket-booking/service.ts` with the following content:
 
 ```ts title="src/modules/ticket-booking/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Venue from "./models/venue"
 import VenueRow from "./models/venue-row"
 import TicketProduct from "./models/ticket-product"
 import TicketProductVariant from "./models/ticket-product-variant"
 import TicketPurchase from "./models/ticket-purchase"
 
-export class TicketBookingModuleService extends MedusaService({
+export class TicketBookingModuleService extends SwitchyardService({
   Venue,
   VenueRow,
   TicketProduct,
@@ -397,25 +397,25 @@ export class TicketBookingModuleService extends MedusaService({
 export default TicketBookingModuleService
 ```
 
-The `TicketBookingModuleService` extends `MedusaService`, which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
+The `TicketBookingModuleService` extends `SwitchyardService`, which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
 
 The `TicketBookingModuleService` class now has methods like `createTicketProducts` and `retrieveVenue`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
+Find all methods generated by the `SwitchyardService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
 
 </Note>
 
 ### d. Export Module Definition
 
-The final piece of a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece of a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/ticket-booking/index.ts` with the following content:
 
 ```ts title="src/modules/ticket-booking/index.ts"
 import TicketBookingModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const TICKET_BOOKING_MODULE = "ticketBooking"
 
@@ -431,13 +431,13 @@ You use the `Module` function to create the module's definition. It accepts two 
 
 You also export the module's name as `TICKET_BOOKING_MODULE` so you can reference it later.
 
-### e. Add Module to Medusa's Configurations
+### e. Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -460,29 +460,29 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate the migrations for you. To generate a migration for the Ticket Booking Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate the migrations for you. To generate a migration for the Ticket Booking Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate ticketBooking
+npx switchyard db:generate ticketBooking
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/ticket-booking` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/ticket-booking` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The tables for the Ticket Booking Module's data models are now created in the database.
 
 ---
 
-## Step 3: Link Ticket Booking to Medusa Data Models
+## Step 3: Link Ticket Booking to Switchyard Data Models
 
-Since Medusa isolates modules to integrate them into your application without side effects, you can't directly create relationships between data models of different modules.
+Since Switchyard isolates modules to integrate them into your application without side effects, you can't directly create relationships between data models of different modules.
 
-Instead, Medusa provides a mechanism to define links between data models and retrieve and manage linked records while maintaining module isolation.
+Instead, Switchyard provides a mechanism to define links between data models and retrieve and manage linked records while maintaining module isolation.
 
 <Note>
 
@@ -490,16 +490,16 @@ Refer to the [Module Isolation documentation](!docs!/learn/fundamentals/modules/
 
 </Note>
 
-In this step, you'll define a link between the data models in the Ticket Booking Module and Medusa's Commerce Modules.
+In this step, you'll define a link between the data models in the Ticket Booking Module and Switchyard's Commerce Modules.
 
 ### a. TicketProduct \<\> Product Link
 
-To define a link between the `TicketProduct` data model and Medusa's `Product` data model, create the file `src/links/ticket-product.ts` with the following content:
+To define a link between the `TicketProduct` data model and Switchyard's `Product` data model, create the file `src/links/ticket-product.ts` with the following content:
 
 ```ts title="src/links/ticket-product.ts"
 import TicketingModule from "../modules/ticket-booking"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -516,7 +516,7 @@ You define a link using the `defineLink` function. It accepts two parameters:
 1. An object indicating the first data model part of the link. A module has a special `linkable` property that contains link configurations for its data models. You pass the linkable configurations of the Ticket Booking Module's `TicketProduct` data model. You also set the `deleteCascade` property to `true`, indicating that a ticket product should be deleted if its linked product is deleted.
 2. An object indicating the second data model part of the link. You pass the linkable configurations of the Product Module's `Product` data model.
 
-In later steps, you'll learn how this link allows you to retrieve and manage ticket products and their related Medusa products.
+In later steps, you'll learn how this link allows you to retrieve and manage ticket products and their related Switchyard products.
 
 <Note title="Tip">
 
@@ -526,12 +526,12 @@ Refer to the [Module Links](!docs!/learn/fundamentals/module-links) documentatio
 
 ### b. TicketProductVariant \<\> ProductVariant Link
 
-To define a link between the `TicketProductVariant` data model and Medusa's `ProductVariant` data model, create the file `src/links/ticket-product-variant.ts` with the following content:
+To define a link between the `TicketProductVariant` data model and Switchyard's `ProductVariant` data model, create the file `src/links/ticket-product-variant.ts` with the following content:
 
 ```ts title="src/links/ticket-product-variant.ts"
 import TicketingModule from "../modules/ticket-booking"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -546,12 +546,12 @@ You define a link in a similar way as the previous link, but this time between t
 
 ### c. TicketPurchase \<\> Order Link
 
-Finally, to define a link between the `TicketPurchase` data model and Medusa's `Order` data model, create the file `src/links/ticket-purchase-order.ts` with the following content:
+Finally, to define a link between the `TicketPurchase` data model and Switchyard's `Order` data model, create the file `src/links/ticket-purchase-order.ts` with the following content:
 
 ```ts title="src/links/ticket-purchase-order.ts"
 import TicketingModule from "../modules/ticket-booking"
-import OrderModule from "@medusajs/medusa/order"
-import { defineLink } from "@medusajs/framework/utils"
+import OrderModule from "@switchyard/medusa/order"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -570,13 +570,13 @@ You define a link in a similar way as the previous links, but this time between 
 
 After defining links, you need to sync them to the database. This creates the necessary tables to manage the links.
 
-To sync the links to the database, run the migrations command again in the Medusa application's directory:
+To sync the links to the database, run the migrations command again in the Switchyard application's directory:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
-This command will create the necessary tables to manage the links between the Ticket Booking Module's data models and Medusa's data models.
+This command will create the necessary tables to manage the links between the Ticket Booking Module's data models and Switchyard's data models.
 
 ---
 
@@ -584,7 +584,7 @@ This command will create the necessary tables to manage the links between the Ti
 
 In this step, you'll implement the logic to create a venue.
 
-When you build commerce features in Medusa that can be consumed by client applications, such as the Medusa Admin dashboard or storefront, you need to implement:
+When you build commerce features in Switchyard that can be consumed by client applications, such as the Switchyard Admin dashboard or storefront, you need to implement:
 
 1. A [workflow](!docs!/learn/fundamentals/workflows) with steps that define the business logic of the feature.
 2. An [API route](!docs!/learn/fundamentals/api-routes) that exposes the workflow's functionality to client applications.
@@ -631,7 +631,7 @@ The workflow to create a venue will have the following steps:
   hideLegend
 />
 
-The `useQueryGraphStep` is available through Medusa's `@medusajs/medusa/core-flows` package. You'll implement other steps in the workflow.
+The `useQueryGraphStep` is available through Switchyard's `@switchyard/medusa/core-flows` package. You'll implement other steps in the workflow.
 
 #### createVenueStep
 
@@ -640,7 +640,7 @@ The `createVenueStep` creates a venue.
 To create the step, create the file `src/workflows/steps/create-venue.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-venue.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TICKET_BOOKING_MODULE } from "../../modules/ticket-booking"
 
 export type CreateVenueStepInput = {
@@ -672,10 +672,10 @@ You create a step with the `createStep` function. It accepts three parameters:
 1. The step's unique name.
 2. An async function that receives two parameters:
     - The step's input, which is an object with the `name` and `address` properties of the venue to create.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An async compensation function that undoes the actions performed by the step function. This function is only executed if an error occurs during the workflow's execution.
 
-In the step function, you resolve the Ticket Booking Module's service from the Medusa container using its `resolve` method, passing it the module's name as a parameter.
+In the step function, you resolve the Ticket Booking Module's service from the Switchyard container using its `resolve` method, passing it the module's name as a parameter.
 
 Then, you use the generated `createVenues` method of the Ticket Booking Module's service to create a venue with the provided input.
 
@@ -693,7 +693,7 @@ The `createVenueRowsStep` creates rows in a venue.
 To create the step, create the file `src/workflows/steps/create-venue-rows.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-venue-rows.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TICKET_BOOKING_MODULE } from "../../modules/ticket-booking"
 import { RowType } from "../../modules/ticket-booking/models/venue-row"
 
@@ -742,11 +742,11 @@ You can now create the workflow that uses the steps you implemented.
 To create the workflow, create the file `src/workflows/create-venue.ts` with the following content:
 
 ```ts title="src/workflows/create-venue.ts"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { createVenueStep } from "./steps/create-venue"
 import { createVenueRowsStep } from "./steps/create-venue-rows"
 import { RowType } from "../modules/ticket-booking/models/venue-row"
-import { useQueryGraphStep } from "@medusajs/core-flows"
+import { useQueryGraphStep } from "@switchyard/core-flows"
 
 export type CreateVenueWorkflowInput = {
   name: string
@@ -832,7 +832,7 @@ Refer to the [API routes](!docs!/learn/fundamentals/api-routes) documentation to
 Create the file `src/api/admin/venues/route.ts` with the following content:
 
 ```ts title="src/api/admin/venues/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { createVenueWorkflow } from "../../../workflows/create-venue"
 import { RowType } from "../../../modules/ticket-booking/models/venue-row"
 import { z } from "zod"
@@ -850,8 +850,8 @@ export const CreateVenueSchema = z.object({
 type CreateVenueSchema = z.infer<typeof CreateVenueSchema>
 
 export async function POST(
-  req: MedusaRequest<CreateVenueSchema>,
-  res: MedusaResponse
+  req: SwitchyardRequest<CreateVenueSchema>,
+  res: SwitchyardResponse
 ) {
   const { result } = await createVenueWorkflow(req.scope).run({
     input: req.validatedBody,
@@ -869,7 +869,7 @@ In the route handler, you execute the `createVenueWorkflow`, passing it the requ
 
 Finally, you return the created venue with its rows in the response.
 
-You'll test this API route later when you customize the Medusa Admin.
+You'll test this API route later when you customize the Switchyard Admin.
 
 #### Add Validation Middleware for Create Venue API Route
 
@@ -881,7 +881,7 @@ To apply a middleware to a route, create the file `src/api/middlewares.ts` with 
 import { 
   defineMiddlewares, 
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { CreateTicketProductSchema } from "./admin/ticket-products/route"
 
 export default defineMiddlewares({
@@ -897,7 +897,7 @@ export default defineMiddlewares({
 })
 ```
 
-You apply Medusa's `validateAndTransformBody` middleware to `POST` requests sent to the `/admin/venues` route.
+You apply Switchyard's `validateAndTransformBody` middleware to `POST` requests sent to the `/admin/venues` route.
 
 The middleware function accepts a Zod schema, which you created in the API route's file.
 
@@ -911,14 +911,14 @@ Refer to the [Middlewares](!docs!/learn/fundamentals/api-routes/middlewares) doc
 
 ## Step 5: List Venues API Route
 
-In this step, you'll add an API route to retrieve a list of venues. You'll use this API route later to display a list of venues in the Medusa Admin.
+In this step, you'll add an API route to retrieve a list of venues. You'll use this API route later to display a list of venues in the Switchyard Admin.
 
 To create the API route, add the following to the `src/api/admin/venues/route.ts` file:
 
 ```ts title="src/api/admin/venues/route.ts"
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const query = req.scope.resolve("query")
 
@@ -941,13 +941,13 @@ export async function GET(
 
 You export a `GET` route handler function, which will expose a `GET` API route at `/admin/venues`.
 
-In the route handler, you resolve Query from the Medusa container and use it to retrieve a list of venues.
+In the route handler, you resolve Query from the Switchyard container and use it to retrieve a list of venues.
 
 Notice that you spread the `req.queryConfig` object into the `query.graph` method. This allows clients to pass query parameters for pagination and configure returned fields. You'll learn how to set these configurations in a bit.
 
 Finally, you return the list of venues and pagination details in the response.
 
-You'll test out this API route later when you customize the Medusa Admin.
+You'll test out this API route later when you customize the Switchyard Admin.
 
 ### Add Validation Middleware for List Venues API Route
 
@@ -956,8 +956,8 @@ To validate the query parameters of requests sent to the API route, and to allow
 To apply a middleware to the route, add the following imports at the top of the `src/api/middlewares.ts` file:
 
 ```ts title="src/api/middlewares.ts"
-import { validateAndTransformQuery } from "@medusajs/framework/http"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+import { validateAndTransformQuery } from "@switchyard/framework/http"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 ```
 
 Then, add the following object to the `routes` array passed to `defineMiddlewares`:
@@ -984,7 +984,7 @@ You apply the `validateAndTransformQuery` middleware to `GET` requests sent to t
 
 The middleware function accepts two parameters:
 
-1. A Zod schema to validate the query parameters. You use Medusa's `createFindParams` utility function to create a schema that validates common query parameters like `limit`, `offset`, `fields`, and `order`.
+1. A Zod schema to validate the query parameters. You use Switchyard's `createFindParams` utility function to create a schema that validates common query parameters like `limit`, `offset`, `fields`, and `order`.
 2. Query configurations that you use in the API route using the `req.queryConfig` object. You set the following configurations:
     - `isList`: Set to `true` to indicate that the API route returns a list of records.
     - `defaults`: An array of fields to return by default if the client doesn't specify any fields in the request.
@@ -997,11 +997,11 @@ Refer to the [Query](!docs!/learn/fundamentals/module-links/query#request-query-
 
 ---
 
-## Step 6: Manage Venues in Medusa Admin
+## Step 6: Manage Venues in Switchyard Admin
 
-In this step, you'll customize the Medusa Admin to allow admin users to manage venues.
+In this step, you'll customize the Switchyard Admin to allow admin users to manage venues.
 
-The Medusa Admin dashboard is customizable, allowing you to insert widgets into existing pages, or create new pages.
+The Switchyard Admin dashboard is customizable, allowing you to insert widgets into existing pages, or create new pages.
 
 <Note title="Tip">
 
@@ -1009,18 +1009,18 @@ Refer to the [Admin Development](!docs!/learn/fundamentals/admin) documentation 
 
 </Note>
 
-In this step, you'll create a new page or UI route in the Medusa Admin to view a list of venues and create new venues.
+In this step, you'll create a new page or UI route in the Switchyard Admin to view a list of venues and create new venues.
 
 ### a. Initialize JS SDK
 
-To send requests to the Medusa server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Medusa project, but you need to initialize it before using it in your customizations.
+To send requests to the Switchyard server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Switchyard project, but you need to initialize it before using it in your customizations.
 
 Create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -1093,8 +1093,8 @@ You create a page by creating a UI route. A UI route is a React component define
 To create the venues page, create the file `src/admin/routes/venues/page.tsx` with the following content:
 
 ```tsx title="src/admin/routes/venues/page.tsx" collapsibleLines="1-15" expandButtonLabel="Show Imports"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Buildings } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Buildings } from "@switchyard/icons"
 import { 
   createDataTableColumnHelper, 
   Container, 
@@ -1102,7 +1102,7 @@ import {
   useDataTable, 
   Heading, 
   DataTablePaginationState,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { useState, useMemo } from "react"
 import { sdk } from "../../lib/sdk"
@@ -1227,7 +1227,7 @@ const VenuesPage = () => {
 
 In the component, you use React Query's `useQuery` hook to fetch the list of venues from the `GET /admin/venues` API route you created earlier. You pass the `offset` and `limit` query parameters to paginate the results.
 
-Then, you use the `useDataTable` hook from Medusa UI to create a data table instance with the fetched venues and the columns you defined earlier.
+Then, you use the `useDataTable` hook from Switchyard UI to create a data table instance with the fetched venues and the columns you defined earlier.
 
 Finally, you render the data table.
 
@@ -1241,7 +1241,7 @@ To create the seat chart component, create the file `src/admin/components/seat-c
 
 ```tsx title="src/admin/components/seat-chart.tsx"
 import React from "react"
-import { Heading } from "@medusajs/ui"
+import { Heading } from "@switchyard/ui"
 import { RowType, VenueRow } from "../types"
 
 interface ChartVenueRow extends Pick<VenueRow, "row_number" | "row_type" | "seat_count"> {}
@@ -1376,7 +1376,7 @@ import {
   Label,
   Button,
   toast,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { CreateVenueRequest, RowType, VenueRow } from "../types"
 import { SeatChart } from "./seat-chart"
 
@@ -1663,7 +1663,7 @@ return (
 )
 ```
 
-You use Medusa UI's `FocusModal` component to render the modal. Inside the modal, you render a form with input fields for the venue's name and address, and fields to add rows.
+You use Switchyard UI's `FocusModal` component to render the modal. Inside the modal, you render a form with input fields for the venue's name and address, and fields to add rows.
 
 You also render the `SeatChart` component to visualize the added rows.
 
@@ -1674,7 +1674,7 @@ In `src/admin/routes/venues/page.tsx`, add the following imports at the top of t
 ```tsx title="src/admin/routes/venues/page.tsx"
 import { 
   Button,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { CreateVenueModal } from "../../components/create-venue-modal"
 ```
 
@@ -1752,19 +1752,19 @@ You render the `CreateVenueModal` component, passing it the `isModalOpen` state,
 
 ### Test the Venues Page
 
-You can now test the venues page in the Medusa Admin.
+You can now test the venues page in the Switchyard Admin.
 
-Run the following command to start the Medusa server:
+Run the following command to start the Switchyard server:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open `http://localhost:9000/app` in your browser to access the Medusa Admin. Log in with the admin user you created earlier.
+Then, open `http://localhost:9000/app` in your browser to access the Switchyard Admin. Log in with the admin user you created earlier.
 
 You should see a new "Venues" item in the sidebar. Click on it to navigate to the venues page. You'll see an empty table with a "Create Venue" button.
 
-![Venues Page in the Medusa Admin with an empty table](https://res.cloudinary.com/dza7lstvk/image/upload/v1757430925/Medusa%20Resources/CleanShot_2025-09-09_at_18.15.02_2x_o0pf16.png)
+![Venues Page in the Switchyard Admin with an empty table](https://res.cloudinary.com/dza7lstvk/image/upload/v1757430925/Switchyard%20Resources/CleanShot_2025-09-09_at_18.15.02_2x_o0pf16.png)
 
 To create a venue:
 
@@ -1773,7 +1773,7 @@ To create a venue:
 3. Add rows and visualize them in the seat chart.
 4. Once you're done, click the "Create Venue" button to create the venue.
 
-![Create Venue Modal in the Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1757431196/Medusa%20Resources/CleanShot_2025-09-09_at_18.19.45_2x_qyov67.png)
+![Create Venue Modal in the Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1757431196/Switchyard%20Resources/CleanShot_2025-09-09_at_18.19.45_2x_qyov67.png)
 
 After creating the venue, you can see it listed in the table.
 
@@ -1785,7 +1785,7 @@ In this step, you'll add functionality to create a ticket product for a show. Yo
 
 ### a. Create Create Ticket Product Workflow
 
-The workflow that creates a ticket product will also create the Medusa product and its variants. It will create a variant for each show date and row type. For example, if a show has two dates and three row types, the workflow will create six variants for the Medusa product.
+The workflow that creates a ticket product will also create the Switchyard product and its variants. It will create a variant for each show date and row type. For example, if a show has two dates and three row types, the workflow will create six variants for the Switchyard product.
 
 The workflow will also create inventory items for each variant, ensuring that customers can't purchase more tickets than the venue's capacity.
 
@@ -1806,21 +1806,21 @@ The workflow will have the following steps:
       {
         type: "step",
         name: "useQueryGraphStep",
-        description: "Retrieve default store configuration that are useful for creating the Medusa product.",
+        description: "Retrieve default store configuration that are useful for creating the Switchyard product.",
         depth: 2,
         link: "/references/helper-steps/useQueryGraphStep",
       },
       {
         type: "step",
         name: "createInventoryItemsWorkflow",
-        description: "Creates inventory items for the Medusa product.",
+        description: "Creates inventory items for the Switchyard product.",
         depth: 3,
         link: "/references/medusa-workflows/createInventoryItemsWorkflow"
       },
       {
         type: "step",
         name: "createProductsWorkflow",
-        description: "Creates the Medusa product and its variants.",
+        description: "Creates the Switchyard product and its variants.",
         depth: 4,
         link: "/references/medusa-workflows/createProductsWorkflow"
       },
@@ -1839,7 +1839,7 @@ The workflow will have the following steps:
       {
         type: "step",
         name: "createRemoteLinkStep",
-        description: "Create links between the ticket product and variants and the Medusa product and variants.",
+        description: "Create links between the ticket product and variants and the Switchyard product and variants.",
         depth: 7
       },
       {
@@ -1854,7 +1854,7 @@ The workflow will have the following steps:
   hideLegend
 />
 
-You only need to implement the `validateVenueAvailabilityStep`, `createTicketProductsStep`, and `createTicketProductVariantsStep` steps. The other steps are provided by Medusa.
+You only need to implement the `validateVenueAvailabilityStep`, `createTicketProductsStep`, and `createTicketProductVariantsStep` steps. The other steps are provided by Switchyard.
 
 #### validateVenueAvailabilityStep
 
@@ -1863,9 +1863,9 @@ The `validateVenueAvailabilityStep` validates that the selected venue is availab
 To create the step, create the file `src/workflows/steps/validate-venue-availability.ts` with the following content:
 
 ```ts title="src/workflows/steps/validate-venue-availability.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TICKET_BOOKING_MODULE } from "../../modules/ticket-booking"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export type ValidateVenueAvailabilityStepInput = {
   venue_id: string
@@ -1888,8 +1888,8 @@ export const validateVenueAvailabilityStep = createStep(
     )
 
     if (hasConflict) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA, 
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA, 
         `Venue has conflicting shows on dates: ${input.dates.join(", ")}`
       )
     }
@@ -1908,7 +1908,7 @@ The `createTicketProductsStep` creates ticket products.
 To create the step, create the file `src/workflows/steps/create-ticket-products.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-ticket-products.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TICKET_BOOKING_MODULE } from "../../modules/ticket-booking"
 
 export type CreateTicketProductsStepInput = {
@@ -1963,7 +1963,7 @@ The `createTicketProductVariantsStep` creates ticket product variants.
 To create the step, create the file `src/workflows/steps/create-ticket-product-variants.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-ticket-product-variants.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TICKET_BOOKING_MODULE } from "../../modules/ticket-booking"
 import { RowType } from "../../modules/ticket-booking/models/venue-row"
 
@@ -1980,7 +1980,7 @@ export const createTicketProductVariantsStep = createStep(
   async (input: CreateTicketProductVariantsStepInput, { container }) => {
     const ticketBookingModuleService = container.resolve(TICKET_BOOKING_MODULE)
 
-    // Create ticket product variants for each Medusa variant
+    // Create ticket product variants for each Switchyard variant
     const ticketVariants = await ticketBookingModuleService
       .createTicketProductVariants(
         input.variants
@@ -2018,12 +2018,12 @@ You can now create the workflow that creates a ticket product.
 To create the workflow, create the file `src/workflows/create-ticket-product.ts` with the following content:
 
 ```ts title="src/workflows/create-ticket-product.ts" collapsibleLines="1-10" expandButtonLabel="Show Imports"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { validateVenueAvailabilityStep } from "./steps/validate-venue-availability"
 import { createTicketProductsStep } from "./steps/create-ticket-products"
-import { useQueryGraphStep, createProductsWorkflow, createRemoteLinkStep, createInventoryItemsWorkflow } from "@medusajs/medusa/core-flows"
-import { CreateProductWorkflowInputDTO, CreateMoneyAmountDTO } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { useQueryGraphStep, createProductsWorkflow, createRemoteLinkStep, createInventoryItemsWorkflow } from "@switchyard/medusa/core-flows"
+import { CreateProductWorkflowInputDTO, CreateMoneyAmountDTO } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 import { TICKET_BOOKING_MODULE } from "../modules/ticket-booking"
 import { RowType } from "../modules/ticket-booking/models/venue-row"
 import { createTicketProductVariantsStep } from "./steps/create-ticket-product-variants"
@@ -2061,15 +2061,15 @@ You create the `createTicketProductWorkflow` workflow that accepts the details o
 
 In the workflow, you validate the venue's availability using the `validateVenueAvailabilityStep`.
 
-Then, you retrieve the default store configuration using the `useQueryGraphStep`. These configurations are useful when creating the Medusa inventory items and product.
+Then, you retrieve the default store configuration using the `useQueryGraphStep`. These configurations are useful when creating the Switchyard inventory items and product.
 
 <Note>
 
-Make sure you have [default location and sales channel set up in your Medusa store](!user-guide!/settings/store).
+Make sure you have [default location and sales channel set up in your Switchyard store](!user-guide!/settings/store).
 
 </Note>
 
-Next, you'll create inventory items for each variant before creating the Medusa product. Replace the `TODO` with the following:
+Next, you'll create inventory items for each variant before creating the Switchyard product. Replace the `TODO` with the following:
 
 ```ts title="src/workflows/create-ticket-product.ts"
 const inventoryItemsData = transform({
@@ -2102,7 +2102,7 @@ const inventoryItems = createInventoryItemsWorkflow.runAsStep({
   },
 })
 
-// TODO create the Medusa product
+// TODO create the Switchyard product
 ```
 
 You prepare the inventory items to be created using the `transform` function. You create an inventory item for each combination of show date and variant.
@@ -2111,7 +2111,7 @@ Notice that for each inventory item, you set the `stocked_quantity` to the `seat
 
 Then, you create the inventory items using the `createInventoryItemsWorkflow`.
 
-Next, you'll create the Medusa product and variants. Replace the `TODO` with the following:
+Next, you'll create the Switchyard product and variants. Replace the `TODO` with the following:
 
 ```ts title="src/workflows/create-ticket-product.ts"
 const productData = transform({
@@ -2179,11 +2179,11 @@ const medusaProduct = createProductsWorkflow.runAsStep({
 // TODO create the ticket product and variants
 ```
 
-You prepare the Medusa product data using the `transform` function. You create options for "Date" and "Row Type" and create a variant for each combination of show date and row type.
+You prepare the Switchyard product data using the `transform` function. You create options for "Date" and "Row Type" and create a variant for each combination of show date and row type.
 
 You associate each variant with the corresponding inventory item created earlier, ensuring that the inventory is correctly linked to the product variants.
 
-Then, you create the Medusa product using the `createProductsWorkflow`.
+Then, you create the Switchyard product using the `createProductsWorkflow`.
 
 Next, you'll create the ticket product and its variants. Replace the `TODO` with the following:
 
@@ -2235,7 +2235,7 @@ You prepare the ticket product data using the `transform` function, then create 
 
 You also prepare the ticket product variants data, then create the ticket product variants using the `createTicketProductVariantsStep`.
 
-Finally, you'll create links between the ticket product and variants and the Medusa product and variants, and retrieve the created ticket product with its relations. Replace the `TODO` with the following:
+Finally, you'll create links between the ticket product and variants and the Switchyard product and variants, and retrieve the created ticket product with its relations. Replace the `TODO` with the following:
 
 ```ts title="src/workflows/create-ticket-product.ts"
 const linksData = transform({
@@ -2243,7 +2243,7 @@ const linksData = transform({
   ticket_products,
   ticket_product_variants,
 }, (data) => {
-  // Create links between ticket product and Medusa product
+  // Create links between ticket product and Switchyard product
   const productLinks = [{
     [TICKET_BOOKING_MODULE]: {
       ticket_product_id: data.ticket_products[0].id,
@@ -2253,7 +2253,7 @@ const linksData = transform({
     },
   }]
 
-  // Create links between ticket variants and Medusa variants
+  // Create links between ticket variants and Switchyard variants
   const variantLinks = data.ticket_product_variants.map((variant) => ({
     [TICKET_BOOKING_MODULE]: {
       ticket_product_variant_id: variant.id,
@@ -2289,7 +2289,7 @@ return new WorkflowResponse({
 })
 ```
 
-You create links between the ticket product and the Medusa product, and between the ticket product variants and the Medusa product variants using the `createRemoteLinkStep`.
+You create links between the ticket product and the Switchyard product, and between the ticket product variants and the Switchyard product variants using the `createRemoteLinkStep`.
 
 Then, you retrieve the created ticket product with its relations using the `useQueryGraphStep`.
 
@@ -2302,7 +2302,7 @@ Next, you'll create an API route that allows admin users to create a ticket prod
 To create the API route, create the file `src/api/admin/ticket-products/route.ts` with the following content:
 
 ```ts title="src/api/admin/ticket-products/route.ts" collapsibleLines="1-7" expandButtonLabel="Show Imports"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import {
   createTicketProductWorkflow,
 } from "../../../workflows/create-ticket-product"
@@ -2328,8 +2328,8 @@ export const CreateTicketProductSchema = z.object({
 type CreateTicketProductSchema = z.infer<typeof CreateTicketProductSchema>
 
 export async function POST(
-  req: MedusaRequest<CreateTicketProductSchema>,
-  res: MedusaResponse
+  req: SwitchyardRequest<CreateTicketProductSchema>,
+  res: SwitchyardResponse
 ) {
   const { result } = await createTicketProductWorkflow(req.scope).run({
     input: req.validatedBody,
@@ -2345,7 +2345,7 @@ Then, you export a `POST` route handler function, which will expose a `POST` API
 
 In the route handler, you execute the `createTicketProductWorkflow` and return the created ticket product in the response.
 
-You'll test the API route when you customize the Medusa Admin later.
+You'll test the API route when you customize the Switchyard Admin later.
 
 ### c. Create Ticket Product Validation Middleware
 
@@ -2380,14 +2380,14 @@ You apply the `validateAndTransformBody` middleware to the `POST /admin/ticket-p
 
 ## Step 8: List Ticket Products API Route
 
-In this step, you'll add an API route to list ticket products. This will be useful when you customize the Medusa Admin to display ticket products.
+In this step, you'll add an API route to list ticket products. This will be useful when you customize the Switchyard Admin to display ticket products.
 
 To create the API route, add the following to the `src/api/admin/ticket-products/route.ts` file:
 
 ```ts title="src/api/admin/ticket-products/route.ts"
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const query = req.scope.resolve("query")
 
@@ -2414,7 +2414,7 @@ In the route handler, you use Query to retrieve ticket products. You pass the `r
 
 Finally, you return the ticket products along with pagination metadata in the response.
 
-You'll test the API route when you customize the Medusa Admin later.
+You'll test the API route when you customize the Switchyard Admin later.
 
 ### Add Validation Middleware for List Ticket Products API Route
 
@@ -2454,13 +2454,13 @@ You also define the default fields of a ticket product to be returned in the res
 
 ---
 
-## Step 9: Manage Ticket Products in Medusa Admin
+## Step 9: Manage Ticket Products in Switchyard Admin
 
-In this step, you'll customize the Medusa Admin to add a new page that shows a list of ticket products and allows creating new ticket products.
+In this step, you'll customize the Switchyard Admin to add a new page that shows a list of ticket products and allows creating new ticket products.
 
 ### a. Define Ticket Product Type
 
-Before you customize the Medusa Admin, you'll define a type for the ticket product to use in your customizations.
+Before you customize the Switchyard Admin, you'll define a type for the ticket product to use in your customizations.
 
 In `src/admin/types.ts`, add the following interface at the end of the file:
 
@@ -2497,8 +2497,8 @@ Next, you'll create the UI route for the ticket products page.
 Create the file `src/admin/routes/ticket-products/page.tsx` with the following content:
 
 ```tsx title="src/admin/routes/ticket-products/page.tsx" collapsibleLines="1-20" expandButtonLabel="Show Imports"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ReceiptPercent } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ReceiptPercent } from "@switchyard/icons"
 import {
   createDataTableColumnHelper,
   Container,
@@ -2508,7 +2508,7 @@ import {
   DataTablePaginationState,
   Badge,
   toast,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useQuery, useQueryClient } from "@tanstack/react-query"
 import { Link } from "react-router-dom"
 import React, { useState, useMemo } from "react"
@@ -2572,7 +2572,7 @@ export const config = defineRouteConfig({
 export default TicketProductsPage
 ```
 
-First, you define the columns for the data table that will display ticket products. You create columns for the ticket product's name, venue, dates, and a link to view the associated Medusa product.
+First, you define the columns for the data table that will display ticket products. You create columns for the ticket product's name, venue, dates, and a link to view the associated Switchyard product.
 
 Then, you create the `TicketProductsPage` component and export a configuration object that defines the route's sidebar label and icon.
 
@@ -2638,7 +2638,7 @@ const TicketProductsPage = () => {
 
 In the component, you define variables to manage pagination in the data table. You also use Tanstack Query and the JS SDK to retrieve the ticket products from the `GET /admin/ticket-products` API route you created earlier.
 
-Then, you use Medusa UI's `DataTable` component to render the table of ticket products.
+Then, you use Switchyard UI's `DataTable` component to render the table of ticket products.
 
 ### c. Create Ticket Product Modal
 
@@ -2661,8 +2661,8 @@ import {
   Text,
   Heading,
   Badge,
-} from "@medusajs/ui"
-import { XMark } from "@medusajs/icons"
+} from "@switchyard/ui"
+import { XMark } from "@switchyard/icons"
 import { Venue } from "../types"
 
 interface ProductDetailsStepProps {
@@ -2876,7 +2876,7 @@ import {
   Heading,
   Container,
   Badge,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { RowType, Venue } from "../types"
 
 export interface CurrencyRegionCombination {
@@ -2915,7 +2915,7 @@ You define the `PricingStep` component that accepts props for the selected venue
 
 <Note title="Tip">
 
-In Medusa, you can set the price of a product variant in multiple currencies and regions. This allows you to sell products in different markets with localized pricing. Learn more in the [Pricing documentation](../../../commerce-modules/pricing/concepts/page.mdx).
+In Switchyard, you can set the price of a product variant in multiple currencies and regions. This allows you to sell products in different markets with localized pricing. Learn more in the [Pricing documentation](../../../commerce-modules/pricing/concepts/page.mdx).
 
 </Note>
 
@@ -3054,7 +3054,7 @@ import {
   FocusModal,
   ProgressTabs,
   toast,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
 import { RowType, Venue } from "../types"
@@ -3091,7 +3091,7 @@ You define the `CreateTicketProductModal` component that accepts props for manag
 
 In the component, you define state variables to manage the current step, loading state, and form data for both steps.
 
-Next, you'll fetch the list of venues, regions, and store currencies from the Medusa backend. Replace the `TODO` with the following:
+Next, you'll fetch the list of venues, regions, and store currencies from the Switchyard backend. Replace the `TODO` with the following:
 
 ```tsx title="src/admin/components/create-ticket-product-modal.tsx"
 // Fetch venues
@@ -3400,7 +3400,7 @@ In `src/admin/routes/ticket-products/page.tsx`, add the following imports at the
 ```tsx title="src/admin/routes/ticket-products/page.tsx"
 import {
   Button,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { CreateTicketProductModal } from "../../components/create-ticket-product-modal"
 ```
 
@@ -3474,11 +3474,11 @@ return (
 
 ### Test the Ticket Products Page
 
-You can now test the ticket products page in the Medusa Admin.
+You can now test the ticket products page in the Switchyard Admin.
 
-Start the Medusa server if it isn't already running. If you open the Medusa Admin and log in, you should see a new "Shows" item in the sidebar. If you click on it, you can see a table of ticket products with a button to create a new show.
+Start the Switchyard server if it isn't already running. If you open the Switchyard Admin and log in, you should see a new "Shows" item in the sidebar. If you click on it, you can see a table of ticket products with a button to create a new show.
 
-![Shows page with the table of ticket products and a button to create a new show](https://res.cloudinary.com/dza7lstvk/image/upload/v1757490157/Medusa%20Resources/CleanShot_2025-09-10_at_10.42.00_2x_jsaq7v.png)
+![Shows page with the table of ticket products and a button to create a new show](https://res.cloudinary.com/dza7lstvk/image/upload/v1757490157/Switchyard%20Resources/CleanShot_2025-09-10_at_10.42.00_2x_jsaq7v.png)
 
 To create a new show (or ticket product):
 
@@ -3486,16 +3486,16 @@ To create a new show (or ticket product):
 2. In the "Product Details" step, enter a name for the show, select a venue, and select one or more dates using the date pickers.
 3. Click "Next" to go to the "Pricing" step.
 
-![Create Show modal with the Product Details step](https://res.cloudinary.com/dza7lstvk/image/upload/v1757490395/Medusa%20Resources/CleanShot_2025-09-10_at_10.46.23_2x_v2pbuo.png)
+![Create Show modal with the Product Details step](https://res.cloudinary.com/dza7lstvk/image/upload/v1757490395/Switchyard%20Resources/CleanShot_2025-09-10_at_10.46.23_2x_v2pbuo.png)
 
 4. In the "Pricing" step, set prices for each row type. You can set prices in different currencies and regions. All prices are optional.
 5. Once you're done, click "Create Show" to submit the form.
 
-![Create Show modal with the Pricing step](https://res.cloudinary.com/dza7lstvk/image/upload/v1757490725/Medusa%20Resources/CleanShot_2025-09-10_at_10.51.55_2x_bijkab.png)
+![Create Show modal with the Pricing step](https://res.cloudinary.com/dza7lstvk/image/upload/v1757490725/Switchyard%20Resources/CleanShot_2025-09-10_at_10.51.55_2x_bijkab.png)
 
-This will create a new ticket product with a Medusa product. You can view the ticket product in the table, and you can click the link to view the associated Medusa product.
+This will create a new ticket product with a Switchyard product. You can view the ticket product in the table, and you can click the link to view the associated Switchyard product.
 
-You can edit the associated Medusa product to add images, descriptions, and other details for the show.
+You can edit the associated Switchyard product to add images, descriptions, and other details for the show.
 
 ---
 
@@ -3503,15 +3503,15 @@ You can edit the associated Medusa product to add images, descriptions, and othe
 
 In this step, you'll add custom validation to the core add-to-cart operation that ensures a seat isn't purchased more than once for the same date.
 
-Medusa implements cart operations in workflows. Specifically, you'll focus on the `addToCartWorkflow`. Medusa allows you to inject custom logic into workflows using [hooks](!docs!/learn/fundamentals/workflows/workflow-hooks).
+Switchyard implements cart operations in workflows. Specifically, you'll focus on the `addToCartWorkflow`. Switchyard allows you to inject custom logic into workflows using [hooks](!docs!/learn/fundamentals/workflows/workflow-hooks).
 
 A workflow hook is a point in a workflow where you can inject custom functionality as a step function.
 
 To consume the `validate` hook of the `addToCartWorkflow` that holds the add-to-cart logic, create the file `src/workflows/hooks/add-to-cart-validation.ts` with the following content:
 
 ```ts title="src/workflows/hooks/add-to-cart-validation.ts"
-import { addToCartWorkflow } from "@medusajs/medusa/core-flows"
-import { MedusaError } from "@medusajs/framework/utils"
+import { addToCartWorkflow } from "@switchyard/medusa/core-flows"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 // Hook for addToCartWorkflow to validate seat availability
 addToCartWorkflow.hooks.validate(
@@ -3542,8 +3542,8 @@ addToCartWorkflow.hooks.validate(
     // Check each item being added to cart
     for (const item of items) {
       if (item.quantity !== 1) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA, 
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA, 
           "You can only purchase one ticket for a seat."
         )
       }
@@ -3554,8 +3554,8 @@ addToCartWorkflow.hooks.validate(
       if (!productVariant || !item.metadata?.seat_number) {continue}
 
       if (!item.metadata?.show_date) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Show date is required for seat ${item.metadata?.seat_number} in product ${productVariant.product_id}`
         )
       }
@@ -3567,8 +3567,8 @@ addToCartWorkflow.hooks.validate(
       )
 
       if (existingPurchase) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Seat ${item.metadata?.seat_number} has already been purchased for show date ${item.metadata?.show_date}`
         )
       }
@@ -3580,8 +3580,8 @@ addToCartWorkflow.hooks.validate(
       )
 
       if (existingCartItem) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Seat ${item.metadata?.seat_number} is already in your cart for show date ${item.metadata?.show_date}`
         )
       }
@@ -3630,7 +3630,7 @@ The custom workflow that completes the cart has the following steps:
       {
         type: "workflow",
         name: "completeCartWorkflow",
-        description: "Complete the cart using Medusa's default completeCartWorkflow",
+        description: "Complete the cart using Switchyard's default completeCartWorkflow",
         depth: 2,
         link: "/references/medusa-workflows/completeCartWorkflow"
       },
@@ -3693,7 +3693,7 @@ The custom workflow that completes the cart has the following steps:
   hideLegend
 />
 
-You only need to implement the `createTicketPurchasesStep` and `validateTicketOrderStep` steps, as the other steps and workflows are provided by Medusa.
+You only need to implement the `createTicketPurchasesStep` and `validateTicketOrderStep` steps, as the other steps and workflows are provided by Switchyard.
 
 #### createTicketPurchasesStep
 
@@ -3702,13 +3702,13 @@ The `createTicketPurchasesStep` creates ticket purchases for each ticket product
 To create the step, create the file `src/workflows/steps/create-ticket-purchases.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-ticket-purchases.ts" collapsibleLines="1-10" expandButtonLabel="Show Imports"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { 
   CartDTO, 
   CartLineItemDTO, 
   ProductVariantDTO,
   InferTypeOf,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { TICKET_BOOKING_MODULE } from "../../modules/ticket-booking"
 import TicketProductVariant from "../../modules/ticket-booking/models/ticket-product-variant"
 
@@ -3795,9 +3795,9 @@ The `validateTicketOrderStep` validates that the tickets can be purchased based 
 To create the step, create the file `src/workflows/steps/validate-ticket-order.ts` with the following content:
 
 ```ts title="src/workflows/steps/validate-ticket-order.ts"
-import { MedusaError } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { cancelOrderWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { cancelOrderWorkflow } from "@switchyard/medusa/core-flows"
 
 export type ValidateTicketOrderStepInput = {
   items: {
@@ -3827,8 +3827,8 @@ export const validateTicketOrderStep = createStep(
     
     for (const item of items) {
       if (item.quantity !== 1) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA, 
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA, 
           "You can only purchase one ticket for a seat."
         )
       }
@@ -3836,8 +3836,8 @@ export const validateTicketOrderStep = createStep(
       if (!item.variant || !item.metadata?.seat_number) {continue}
 
       if (!item.metadata?.show_date) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA, 
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA, 
           `Show date is required for seat ${item.metadata?.seat_number} in product ${item.variant.product_id}`
         )
       }
@@ -3847,8 +3847,8 @@ export const validateTicketOrderStep = createStep(
       
       // Check if this seat-date combination already exists in the cart
       if (seatDateCombinations.has(seatDateKey)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA, 
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA, 
           `Duplicate seat ${item.metadata?.seat_number} found for show date ${item.metadata?.show_date} in cart`
         )
       }
@@ -3863,8 +3863,8 @@ export const validateTicketOrderStep = createStep(
       )
 
       if (existingPurchase) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA, 
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA, 
           `Seat ${item.metadata?.seat_number} has already been purchased for show date ${item.metadata?.show_date}`
         )
       }
@@ -3904,17 +3904,17 @@ You can now create the custom workflow that completes the cart and creates ticke
 Create the file `src/workflows/complete-cart-with-tickets.ts` with the following content:
 
 ```ts title="src/workflows/complete-cart-with-tickets.ts" collapsibleLines="1-14" expandButtonLabel="Show Imports"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { 
   completeCartWorkflow, 
   createRemoteLinkStep, 
   acquireLockStep, 
   releaseLockStep, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { createTicketPurchasesStep, CreateTicketPurchasesStepInput } from "./steps/create-ticket-purchases"
 import { TICKET_BOOKING_MODULE } from "../modules/ticket-booking"
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 import ticketPurchaseOrderLink from "../links/ticket-purchase-order"
 import { validateTicketOrderStep, ValidateTicketOrderStepInput } from "./steps/validate-ticket-order"
 
@@ -4030,7 +4030,7 @@ The `completeCartWithTicketsWorkflow` accepts the cart ID as input.
 In the workflow function, you:
 
 1. Acquire a lock on the cart to prevent concurrent modifications using the `acquireLockStep`.
-2. Complete the cart using Medusa's `completeCartWorkflow`.
+2. Complete the cart using Switchyard's `completeCartWorkflow`.
 3. Retrieve the cart details using the `useQueryGraphStep`.
 4. Retrieve existing ticket purchases linked to the order to ensure idempotency using the `useQueryGraphStep`.
     - This is important because if the workflow is retried, you don't want to create duplicate ticket purchases.
@@ -4050,12 +4050,12 @@ Next, you'll create a custom API route that executes the `completeCartWithTicket
 Create the file `src/api/store/carts/[id]/complete-tickets/route.ts` with the following content:
 
 ```ts title="src/api/store/carts/[id]/complete-tickets/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { completeCartWithTicketsWorkflow } from "../../../../../workflows/complete-cart-with-tickets"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await completeCartWithTicketsWorkflow(req.scope).run({
     input: {
@@ -4094,10 +4094,10 @@ The first API route you'll create fetches the available dates for a ticket produ
 Create the file `src/api/store/ticket-products/[id]/availability/route.ts` with the following content:
 
 ```ts title="src/api/store/ticket-products/[id]/availability/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   const { id } = req.params
   const query = req.scope.resolve("query")
 
@@ -4122,7 +4122,7 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
   })
 
   if (!ticketProduct) {
-    throw new MedusaError(MedusaError.Types.NOT_FOUND, "Ticket product not found")
+    throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, "Ticket product not found")
   }
 
   // Calculate availability for each date and row type
@@ -4202,7 +4202,7 @@ You expose a `GET` API route at `/store/ticket-products/{id}/availability`.
 
 In the route handler, you:
 
-1. Retrieve the ticket product by its associated Medusa product ID, including its dates, venue, variants, and purchases.
+1. Retrieve the ticket product by its associated Switchyard product ID, including its dates, venue, variants, and purchases.
 2. For each show date, you group the venue rows by `row_type` to calculate the total seats per row type.
 3. For each row type, you find the corresponding variant for the date and row type, count the purchased seats, and calculate the available seats.
 4. You also determine if a row type or an entire date is sold out.
@@ -4215,15 +4215,15 @@ The second API route you'll create fetches the seating layout for a venue, inclu
 Create the file `src/api/store/ticket-products/[id]/seats/route.ts` with the following content:
 
 ```ts title="src/api/store/ticket-products/[id]/seats/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { z } from "zod"
 
 export const GetTicketProductSeatsSchema = z.object({
   date: z.string(),
 })
 
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   const { id } = req.params
   const { date } = req.validatedQuery
   const query = req.scope.resolve("query")
@@ -4248,7 +4248,7 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
   })
 
   if (!ticketProduct) {
-    throw new MedusaError(MedusaError.Types.NOT_FOUND, "Ticket product not found")
+    throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, "Ticket product not found")
   }
 
   // Build seat map for the specified date
@@ -4301,7 +4301,7 @@ You expose a `GET` API route at `/store/ticket-products/{id}/seats`. You also de
 
 In the route handler, you:
 
-1. Retrieve the ticket product by its associated Medusa product ID, including its venue, rows, variants, and purchases.
+1. Retrieve the ticket product by its associated Switchyard product ID, including its venue, rows, variants, and purchases.
 2. For each venue row, you find the corresponding variant for the specified date and row type.
 3. You get the purchased seats for that variant and generate a list of seats for the row, marking which seats are already purchased.
 4. Finally, you return the venue details, the specified date, and the seat map in the response.
@@ -4335,7 +4335,7 @@ You apply the `validateAndTransformQuery` middleware to the `/store/ticket-produ
 
 The last step is to send order confirmation emails to customers with their tickets as QR codes.
 
-To send an email in Medusa when an order is placed, you'll need:
+To send an email in Switchyard when an order is placed, you'll need:
 
 - A [Notification Module Provider](../../../infrastructure-modules/notification/page.mdx) to handle sending emails. For example, [SendGrid](../../../infrastructure-modules/notification/sendgrid/page.mdx) or [Resend](../../../integrations/guides/resend/page.mdx).
     - You also need to define an email template for the order confirmation email in the provider.
@@ -4345,21 +4345,21 @@ To send an email in Medusa when an order is placed, you'll need:
 
 ### a. Set Up Notification Module
 
-First, set up a Notification Module Provider in your Medusa application.
+First, set up a Notification Module Provider in your Switchyard application.
 
-For example, to set up the SendGrid Notification Module Provider, add it to `medusa-config.ts`:
+For example, to set up the SendGrid Notification Module Provider, add it to `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     // ...
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: "@switchyard/medusa/notification",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/notification-sendgrid",
+            resolve: "@switchyard/medusa/notification-sendgrid",
             id: "sendgrid",
             options: {
               channels: ["email"],
@@ -4424,7 +4424,7 @@ You also need to define an email template for the order confirmation email in Se
           <!-- Header -->
           <tr>
             <td class="header">
-              <div class="brand">Medusa</div>
+              <div class="brand">Switchyard</div>
             </td>
           </tr>
 
@@ -4504,7 +4504,7 @@ You can customize the template to fit your brand and requirements. If you change
 
 Next, you'll add a method in the Ticket Booking Module's service that generates the ticket QR codes.
 
-Start by installing the `qrcode` package in your Medusa application with the following command:
+Start by installing the `qrcode` package in your Switchyard application with the following command:
 
 ```bash npm2yarn
 npm install qrcode
@@ -4514,14 +4514,14 @@ npm install --save-dev @types/qrcode
 Then, in `src/modules/ticket-booking/service.ts`, add the following imports at the top of the file:
 
 ```ts title="src/modules/ticket-booking/service.ts"
-import { promiseAll } from "@medusajs/framework/utils"
+import { promiseAll } from "@switchyard/framework/utils"
 import QRCode from "qrcode"
 ```
 
 And add the following method to `TicketBookingModuleService`:
 
 ```ts title="src/modules/ticket-booking/service.ts"
-export class TicketBookingModuleService extends MedusaService({
+export class TicketBookingModuleService extends SwitchyardService({
   Venue,
   VenueRow,
   TicketProduct,
@@ -4562,7 +4562,7 @@ A subscriber is an asynchronous function that is executed when its associated ev
 To create a subscriber that sends a notification to the customer when an order is placed, create the file `src/subscribers/order-placed.ts` with the following content:
 
 ```ts title="src/subscribers/order-placed.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/medusa"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/medusa"
 import { TICKET_BOOKING_MODULE } from "../modules/ticket-booking"
 
 export default async function handleOrderPlaced({
@@ -4659,9 +4659,9 @@ In the subscriber, you:
 
 ### Test Order Confirmation Email
 
-To test the order confirmation email, [customize the storefront](./storefront/page.mdx) first. Then, start the Medusa application and the Next.js Starter Storefront.
+To test the order confirmation email, [customize the storefront](./storefront/page.mdx) first. Then, start the Switchyard application and the Next.js Starter Storefront.
 
-Place an order with at least one ticket product. After placing the order, you'll see the following message in your Medusa application's terminal:
+Place an order with at least one ticket product. After placing the order, you'll see the following message in your Switchyard application's terminal:
 
 ```bash
 info:    Processing order.placed which has 1 subscribers
@@ -4707,9 +4707,9 @@ The `verifyTicketPurchaseStep` verifies that a ticket purchase is valid and has 
 To create the step, create the file `src/workflows/steps/verify-ticket-purchase-step.ts` with the following content:
 
 ```ts title="src/workflows/steps/verify-ticket-purchase-step.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TICKET_BOOKING_MODULE } from "../../modules/ticket-booking"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export type VerifyTicketPurchaseStepInput = {
   ticket_purchase_id: string
@@ -4725,15 +4725,15 @@ export const verifyTicketPurchaseStep = createStep(
     )
 
     if (ticketPurchase.status !== "pending") {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Ticket has already been scanned"
       )
     }
 
     if (ticketPurchase.show_date < new Date()) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Ticket is expired or show date has passed"
       )
     }
@@ -4752,7 +4752,7 @@ The `updateTicketPurchaseStatusStep` updates the status of a ticket purchase.
 To create the step, create the file `src/workflows/steps/update-ticket-purchase-status-step.ts` with the following content:
 
 ```ts title="src/workflows/steps/update-ticket-purchase-status-step.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TICKET_BOOKING_MODULE } from "../../modules/ticket-booking"
 
 export type UpdateTicketPurchaseStatusStepInput = {
@@ -4802,7 +4802,7 @@ You can now create the workflow that verifies a ticket QR code.
 Create the file `src/workflows/verify-ticket-purchase.ts` with the following content:
 
 ```ts title="src/workflows/verify-ticket-purchase.ts"
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { verifyTicketPurchaseStep } from "./steps/verify-ticket-purchase-step"
 import { updateTicketPurchaseStatusStep } from "./steps/update-ticket-purchase-status-step"
 
@@ -4836,10 +4836,10 @@ Finally, you'll create an API route that executes the `verifyTicketPurchaseWorkf
 To create the API route, create the file `src/api/tickets/[id]/verify/route.ts` with the following content:
 
 ```ts title="src/api/tickets/[id]/verify/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { verifyTicketPurchaseWorkflow } from "../../../../workflows/verify-ticket-purchase"
 
-export async function POST(req: MedusaRequest, res: MedusaResponse) {
+export async function POST(req: SwitchyardRequest, res: SwitchyardResponse) {
   const { id } = req.params
 
   await verifyTicketPurchaseWorkflow(req.scope).run({
@@ -4860,7 +4860,7 @@ If the ticket is valid, the route returns a success response with `200` status c
 
 ### Test Ticket Verification
 
-To test the ticket verification functionality, start the Medusa application.
+To test the ticket verification functionality, start the Switchyard application.
 
 Then, place an order with at least one ticket product. After placing the order, check your email for the order confirmation email containing the tickets with QR codes.
 
@@ -4888,11 +4888,11 @@ You can expand on this tutorial by adding more features, such as:
 - Allow purchasing tickets for specific times in a day.
 - Handle [order events](/references/events#order-events), such as `order.canceled`, to make changes to ticket purchases.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -4902,5 +4902,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

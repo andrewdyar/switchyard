@@ -1,10 +1,10 @@
 import {
-  MedusaError,
+  SwitchyardError,
   RuleOperator,
   isObject,
   isString,
   pickValueFromObject,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 /**
  * The rule engine here is kept inside the module as of now, but it could be moved
@@ -97,29 +97,29 @@ export function isContextValid(
  */
 export function validateRule(rule: Record<string, unknown>): boolean {
   if (!rule.attribute || !rule.operator || !rule.value) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Rule must have an attribute, an operator and a value"
     )
   }
 
   if (!isString(rule.attribute)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Rule attribute must be a string"
     )
   }
 
   if (!isString(rule.operator)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Rule operator must be a string"
     )
   }
 
   if (!availableOperators.includes(rule.operator as RuleOperator)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Rule operator ${
         rule.operator
       } is not supported. Must be one of ${availableOperators.join(", ")}`
@@ -128,15 +128,15 @@ export function validateRule(rule: Record<string, unknown>): boolean {
 
   if (rule.operator === RuleOperator.IN || rule.operator === RuleOperator.NIN) {
     if (!Array.isArray(rule.value)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Rule value must be an array for in/nin operators"
       )
     }
   } else {
     if (Array.isArray(rule.value) || isObject(rule.value)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Rule value must be a string, bool, number value for the selected operator ${rule.operator}`
       )
     }

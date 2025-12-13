@@ -1,11 +1,11 @@
 import {
   isPresent,
-  MedusaError,
+  SwitchyardError,
   normalizeCSVValue,
   tryConvertToBoolean,
   tryConvertToNumber,
 } from "../common"
-import { AdminCreateProduct, AdminCreateProductVariant } from "@medusajs/types"
+import { AdminCreateProduct, AdminCreateProductVariant } from "@switchyard/types"
 
 /**
  * Column processor is a function that process the CSV column
@@ -36,8 +36,8 @@ type NormalizedRow =
  * Creates an error with the CSV row number
  */
 function createError(rowNumber: number, message: string) {
-  return new MedusaError(
-    MedusaError.Types.INVALID_DATA,
+  return new SwitchyardError(
+    SwitchyardError.Types.INVALID_DATA,
     `Row ${rowNumber}: ${message}`
   )
 }
@@ -418,8 +418,8 @@ export class CSVNormalizer {
     }, {})
 
     if (unknownColumns.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Invalid column name(s) "${unknownColumns.join('","')}"`
       )
     }

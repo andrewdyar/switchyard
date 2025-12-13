@@ -1,4 +1,4 @@
-import { isDefined, isObject, OrchestrationUtils } from "@medusajs/utils"
+import { isDefined, isObject, OrchestrationUtils } from "@switchyard/utils"
 import { ulid } from "ulid"
 import { createStep } from "./create-step"
 import { StepResponse } from "./helpers/step-response"
@@ -33,7 +33,7 @@ type ThenFunc = <ThenResolver extends () => any>(
  *   createWorkflow,
  *   WorkflowResponse,
  *   when,
- * } from "@medusajs/framework/workflows-sdk"
+ * } from "@switchyard/framework/workflows-sdk"
  * // step imports...
  *
  * export const workflow = createWorkflow(
@@ -94,7 +94,7 @@ export function when(...args) {
     throw new Error(`"when condition" must be a function`)
   }
 
-  global[OrchestrationUtils.SymbolMedusaWorkflowComposerCondition] = {
+  global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerCondition] = {
     input,
     condition,
     steps: [],
@@ -114,7 +114,7 @@ export function when(...args) {
       let returnStep = ret
 
       const applyCondition =
-        global[OrchestrationUtils.SymbolMedusaWorkflowComposerCondition].steps
+        global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerCondition].steps
 
       if (
         isDefined(ret) &&
@@ -123,7 +123,7 @@ export function when(...args) {
         if (!isDefined(name)) {
           name = "when-then-" + ulid()
           const context =
-            global[OrchestrationUtils.SymbolMedusaWorkflowComposerContext]
+            global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext]
 
           console.warn(
             `${context.workflowId}: "when" name should be defined. A random one will be assigned to it, which is not recommended for production.\n`,
@@ -153,7 +153,7 @@ export function when(...args) {
         step.if(input, condition)
       }
 
-      delete global[OrchestrationUtils.SymbolMedusaWorkflowComposerCondition]
+      delete global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerCondition]
 
       return returnStep
     },

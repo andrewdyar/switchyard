@@ -1,6 +1,6 @@
-# Goods Medusa Fork
+# Goods Switchyard Fork
 
-This is a fork of the MedusaJS monorepo customized for Goods Grocery.
+This is a fork of the SwitchyardJS monorepo customized for Goods Grocery.
 
 ## Key Modifications
 
@@ -9,8 +9,8 @@ This is a fork of the MedusaJS monorepo customized for Goods Grocery.
 The Product module has been modified to use Goods' existing Supabase tables:
 
 #### Product Model (`packages/modules/product/src/models/product.ts`)
-- Uses `source_products` table instead of Medusa's default `product` table
-- Maps Medusa fields to Goods columns:
+- Uses `source_products` table instead of Switchyard's default `product` table
+- Maps Switchyard fields to Goods columns:
   - `title` → `name`
   - `thumbnail` → `image_url`
   - `description` → `description`
@@ -21,7 +21,7 @@ The Product module has been modified to use Goods' existing Supabase tables:
   - `full_category_hierarchy`, `product_page_url`
 
 #### Product Variant Model (`packages/modules/product/src/models/product-variant.ts`)
-- Uses `product_skus` table instead of Medusa's `product_variant` table
+- Uses `product_skus` table instead of Switchyard's `product_variant` table
 - Maps fields:
   - `sku` → `sku_id`
   - `barcode` → `upc`
@@ -29,7 +29,7 @@ The Product module has been modified to use Goods' existing Supabase tables:
 - Includes `store_name` and `is_primary` for retailer-specific SKUs
 
 #### Product Category Model (`packages/modules/product/src/models/product-category.ts`)
-- Uses Goods `categories` table instead of Medusa's `product_category` table
+- Uses Goods `categories` table instead of Switchyard's `product_category` table
 - Uses existing `parent_id` hierarchy
 - Includes Goods-specific fields:
   - `source` (for filtering by category source)
@@ -103,7 +103,7 @@ ALTER TABLE product_skus
 1. Copy `env.example.goods` to `.env` and fill in your Supabase credentials
 2. Install dependencies: `yarn install`
 3. Build modules: `yarn build`
-4. Run migrations: `npx medusa db:migrate`
+4. Run migrations: `npx switchyard db:migrate`
 5. Start development: `yarn dev`
 
 ## Development
@@ -117,7 +117,7 @@ This monorepo uses Yarn workspaces. Key commands:
 
 ## Upstream Sync
 
-To sync with upstream Medusa:
+To sync with upstream Switchyard:
 
 ```bash
 git fetch upstream
@@ -147,7 +147,7 @@ Each product can be sourced from multiple retailers (HEB, Walmart, Costco, etc.)
 ## Architecture
 
 ```
-Supabase Tables                    Medusa Modules
+Supabase Tables                    Switchyard Modules
 ─────────────────────────────────────────────────────
 source_products  ─────────────────→ Product (modified)
 product_skus     ─────────────────→ ProductVariant (modified)

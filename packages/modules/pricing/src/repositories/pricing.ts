@@ -1,22 +1,22 @@
 import {
   flattenObjectToKeyValuePairs,
   isPresent,
-  MedusaError,
+  SwitchyardError,
   MikroOrmBase,
   PriceListStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 import {
   Knex,
   SqlEntityManager,
-} from "@medusajs/framework/mikro-orm/postgresql"
+} from "@switchyard/framework/mikro-orm/postgresql"
 import {
   CalculatedPriceSetDTO,
   Context,
   PricingContext,
   PricingFilters,
   PricingRepositoryService,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 export class PricingRepository
   extends MikroOrmBase
@@ -80,8 +80,8 @@ export class PricingRepository
     delete context.currency_code
 
     if (!currencyCode) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Method calculatePrices requires currency_code in the pricing context`
       )
     }

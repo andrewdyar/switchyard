@@ -1,33 +1,33 @@
 <p align="center">
-  <a href="https://www.medusajs.com">
+  <a href="https://www.switchyard.com">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="https://user-images.githubusercontent.com/59018053/229103275-b5e482bb-4601-46e6-8142-244f531cebdb.svg">
     <source media="(prefers-color-scheme: light)" srcset="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
-    <img alt="Medusa logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
+    <img alt="Switchyard logo" src="https://user-images.githubusercontent.com/59018053/229103726-e5b529a3-9b3f-4970-8a1f-c6af37f087bf.svg">
     </picture>
   </a>
 </p>
 <h1 align="center">
-  Medusa UI
+  Switchyard UI
 </h1>
 
 <h4 align="center">
-  <a href="https://docs.medusajs.com/ui">Documentation</a> |
-  <a href="https://www.medusajs.com">Website</a>
+  <a href="https://docs.switchyard.com/ui">Documentation</a> |
+  <a href="https://www.switchyard.com">Website</a>
 </h4>
 
 <p align="center">
-  Medusa's admin component library.
+  Switchyard's admin component library.
 </p>
 <p align="center">
-  <a href="https://github.com/medusajs/medusa/blob/develop/LICENSE">
-    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Medusa is released under the MIT license." />
+  <a href="https://github.com/switchyard/medusa/blob/develop/LICENSE">
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="Switchyard is released under the MIT license." />
   </a>
   <a href="https://discord.gg/xpCwq3Kfn8">
     <img src="https://img.shields.io/badge/chat-on%20discord-7289DA.svg" alt="Discord Chat" />
   </a>
-  <a href="https://twitter.com/intent/follow?screen_name=medusajs">
-    <img src="https://img.shields.io/twitter/follow/medusajs.svg?label=Follow%20@medusajs" alt="Follow @medusajs" />
+  <a href="https://twitter.com/intent/follow?screen_name=switchyard">
+    <img src="https://img.shields.io/twitter/follow/switchyard.svg?label=Follow%20@switchyard" alt="Follow @switchyard" />
   </a>
 </p>
 
@@ -36,17 +36,17 @@
 ### Installation
 
 ```sh
-yarn add @medusajs/ui
+yarn add @switchyard/ui
 ```
 
 ### Usage
 
 ```jsx
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 
 const App = () => <Button variant="primary">Hello World</Button>
 ```
 
 ## Documentation
 
-You can find the documentation for Medusa UI [on the documentation site](https://docs.medusajs.com/ui).
+You can find the documentation for Switchyard UI [on the documentation site](https://docs.switchyard.com/ui).

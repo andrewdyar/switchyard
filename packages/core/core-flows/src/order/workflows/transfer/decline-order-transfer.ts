@@ -2,18 +2,18 @@ import {
   OrderChangeDTO,
   OrderDTO,
   OrderWorkflow,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   OrderChangeStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   WorkflowData,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 import { useQueryGraphStep } from "../../../common"
 import { declineOrderChangeStep } from "../../steps"
@@ -83,7 +83,7 @@ export const declineTransferOrderRequestValidationStep = createStep(
     )?.details!.token
 
     if (!input.token?.length || token !== input.token) {
-      throw new MedusaError(MedusaError.Types.NOT_ALLOWED, "Invalid token.")
+      throw new SwitchyardError(SwitchyardError.Types.NOT_ALLOWED, "Invalid token.")
     }
   }
 )

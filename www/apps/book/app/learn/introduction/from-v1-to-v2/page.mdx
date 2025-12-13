@@ -1,26 +1,26 @@
 import { Table, CardList } from "docs-ui"
 
 export const metadata = {
-  title: `${pageNumber} From Medusa v1 to v2: Conceptual Differences`,
+  title: `${pageNumber} From Switchyard v1 to v2: Conceptual Differences`,
 }
 
 # {metadata.title}
 
-In this chapter, you'll learn about the differences and changes between concepts in Medusa v1 to v2.
+In this chapter, you'll learn about the differences and changes between concepts in Switchyard v1 to v2.
 
 ## What to Expect in This Chapter
 
-This chapter is designed to help developers migrate from Medusa v1 to v2 by understanding the conceptual differences between the two versions.
+This chapter is designed to help developers migrate from Switchyard v1 to v2 by understanding the conceptual differences between the two versions.
 
 This chapter will cover:
 
-- The general steps to update your project from Medusa v1 to v2.
-- The changes in tools and plugins between Medusa v1 and v2.
-- The high-level changes in the concepts and commerce features between Medusa v1 and v2.
+- The general steps to update your project from Switchyard v1 to v2.
+- The changes in tools and plugins between Switchyard v1 and v2.
+- The high-level changes in the concepts and commerce features between Switchyard v1 and v2.
 
 By following this chapter, you'll learn about the general changes you need to make in your project, with links to read more about each topic. Only topics documented in the v1 documentation are covered.
 
-This chapter is also useful for developers who are already familiar with Medusa v1 and want to learn about the main differences from Medusa v2. However, it doesn't cover all the new and improved concepts in Medusa v2. Instead, it's highly recommended to read the rest of this documentation to learn about them.
+This chapter is also useful for developers who are already familiar with Switchyard v1 and want to learn about the main differences from Switchyard v2. However, it doesn't cover all the new and improved concepts in Switchyard v2. Instead, it's highly recommended to read the rest of this documentation to learn about them.
 
 ---
 
@@ -28,27 +28,27 @@ This chapter is also useful for developers who are already familiar with Medusa 
 
 ### Node.js Version
 
-While Medusa v1 supported Node.js v16+, Medusa v2 requires Node.js v20+. So, make sure to update your Node.js version if it's older.
+While Switchyard v1 supported Node.js v16+, Switchyard v2 requires Node.js v20+. So, make sure to update your Node.js version if it's older.
 
 Refer to the [Node.js documentation](https://nodejs.org/en/docs/) for instructions on how to update your Node.js version.
 
 ### New Database
 
-Medusa v2 makes big changes to the database. So, your existing database will not be compatible with the database for your v2 project.
+Switchyard v2 makes big changes to the database. So, your existing database will not be compatible with the database for your v2 project.
 
-If you want to keep your product catalog, you should export the products from the admin dashboard, as explained in [this V1 User Guide](https://docs.medusajs.com/v1/user-guide/products/export). Then, you can import them into your new v2 project from the [Medusa Admin](!user-guide!/products/import).
+If you want to keep your product catalog, you should export the products from the admin dashboard, as explained in [this V1 User Guide](https://docs.switchyard.com/v1/user-guide/products/export). Then, you can import them into your new v2 project from the [Switchyard Admin](!user-guide!/products/import).
 
 For other data types, you'll probably need to migrate them manually through custom scripts. [Custom CLI scripts](../../fundamentals/custom-cli-scripts/page.mdx) may be useful for this.
 
 ---
 
-## How to Upgrade from Medusa v1 to v2
+## How to Upgrade from Switchyard v1 to v2
 
-In this section, you'll learn how to upgrade your Medusa project from v1 to v2.
+In this section, you'll learn how to upgrade your Switchyard project from v1 to v2.
 
 <Note>
 
-To create a fresh new Medusa v2 project, check out the [Installation chapter](../../installation/page.mdx).
+To create a fresh new Switchyard v2 project, check out the [Installation chapter](../../installation/page.mdx).
 
 </Note>
 
@@ -67,13 +67,13 @@ A basic v2 project has the following dependencies in `package.json`:
 ```json
 {
   "dependencies": {
-    "@medusajs/admin-sdk": "2.8.2",
-    "@medusajs/cli": "2.8.2",
-    "@medusajs/framework": "2.8.2",
-    "@medusajs/medusa": "2.8.2"
+    "@switchyard/admin-sdk": "2.8.2",
+    "@switchyard/cli": "2.8.2",
+    "@switchyard/framework": "2.8.2",
+    "@switchyard/medusa": "2.8.2"
   },
   "devDependencies": {
-    "@medusajs/test-utils": "2.8.2",
+    "@switchyard/test-utils": "2.8.2",
     "@swc/core": "1.5.7",
     "@swc/jest": "^0.2.36",
     "@types/jest": "^29.5.13",
@@ -94,12 +94,12 @@ A basic v2 project has the following dependencies in `package.json`:
 
 The main changes are:
 
-- You need to install the following Medusa packages (All these packages use the same version):
-    - `@medusajs/admin-sdk`
-    - `@medusajs/cli`
-    - `@medusajs/framework`
-    - `@medusajs/medusa`
-    - `@medusajs/test-utils` (as a dev dependency)
+- You need to install the following Switchyard packages (All these packages use the same version):
+    - `@switchyard/admin-sdk`
+    - `@switchyard/cli`
+    - `@switchyard/framework`
+    - `@switchyard/medusa`
+    - `@switchyard/test-utils` (as a dev dependency)
 - You need to install the following extra packages for development and testing:
     - `@swc/core@1.5.7`
     - `@swc/jest@^0.2.36`
@@ -113,7 +113,7 @@ The main changes are:
 
 <Note>
 
-Notice that Medusa now uses MikroORM instead of TypeORM for database functionalities.
+Notice that Switchyard now uses MikroORM instead of TypeORM for database functionalities.
 
 </Note>
 
@@ -123,9 +123,9 @@ Once you're done, run the following command to install the new dependencies:
 npm install
 ```
 
-<Note title="Medusa Module Dependencies" forceMultiline>
+<Note title="Switchyard Module Dependencies" forceMultiline>
 
-In Medusa v1, you needed to install Medusa modules like the Event, Product, or Pricing modules.
+In Switchyard v1, you needed to install Switchyard modules like the Event, Product, or Pricing modules.
 
 These modules are now available out of the box, and you don't need to install or configure them separately.
 
@@ -133,15 +133,15 @@ These modules are now available out of the box, and you don't need to install or
 
 ### 2. Update Script in package.json
 
-Medusa v2 comes with changes and improvements to its CLI tool. So, update your `package.json` with the following scripts:
+Switchyard v2 comes with changes and improvements to its CLI tool. So, update your `package.json` with the following scripts:
 
 ```json
 {
   "scripts": {
     "build": "medusa build",
     "seed": "medusa exec ./src/scripts/seed.ts",
-    "start": "medusa start",
-    "dev": "medusa develop",
+    "start": "switchyard start",
+    "dev": "switchyard develop",
     "test:integration:http": "TEST_TYPE=integration:http NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
     "test:integration:modules": "TEST_TYPE=integration:modules NODE_OPTIONS=--experimental-vm-modules jest --silent=false --runInBand --forceExit",
     "test:unit": "TEST_TYPE=unit NODE_OPTIONS=--experimental-vm-modules jest --silent --runInBand --forceExit"
@@ -151,36 +151,36 @@ Medusa v2 comes with changes and improvements to its CLI tool. So, update your `
 
 Where:
 
-- `build`: Builds the Medusa application for production.
+- `build`: Builds the Switchyard application for production.
 - `seed`: Seeds the database with initial data.
-- `start`: Starts the Medusa server in production.
-- `dev`: Starts the Medusa server in development mode.
+- `start`: Starts the Switchyard server in production.
+- `dev`: Starts the Switchyard server in development mode.
 - `test:integration:http`: Runs HTTP integration tests.
 - `test:integration:modules`: Runs module integration tests.
 - `test:unit`: Runs unit tests.
 
-You'll learn more about the [changes in the CLI tool later in this chapter](#medusa-cli-changes). You can also refer to the following documents to learn more about these changes:
+You'll learn more about the [changes in the CLI tool later in this chapter](#switchyard-cli-changes). You can also refer to the following documents to learn more about these changes:
 
-- [Medusa CLI reference](!resources!/medusa-cli)
-- [Build Medusa Application](../../build/page.mdx)
+- [Switchyard CLI reference](!resources!/switchyard-cli)
+- [Build Switchyard Application](../../build/page.mdx)
 - [Integration and Module Tests](../../debugging-and-testing/testing-tools/page.mdx).
 
 ### 3. TSConfig Changes
 
-In Medusa v1, you had multiple TSConfig configuration files for different customization types. For example, you had `tsconfig.admin.json` for admin customizations and `tsconfig.server.json` for server customizations.
+In Switchyard v1, you had multiple TSConfig configuration files for different customization types. For example, you had `tsconfig.admin.json` for admin customizations and `tsconfig.server.json` for server customizations.
 
-In Medusa v2, you only need one [root tsconfig.json](https://github.com/medusajs/medusa-starter-default/blob/master/tsconfig.json) file in your project. For admin customizations, you create a [src/admin/tsconfig.json file](https://github.com/medusajs/medusa-starter-default/blob/master/src/admin/tsconfig.json). Refer to each of those links for the recommended configurations.
+In Switchyard v2, you only need one [root tsconfig.json](https://github.com/switchyard/medusa-starter-default/blob/master/tsconfig.json) file in your project. For admin customizations, you create a [src/admin/tsconfig.json file](https://github.com/switchyard/medusa-starter-default/blob/master/src/admin/tsconfig.json). Refer to each of those links for the recommended configurations.
 
 ### 4. Update Configuration File
 
-In Medusa v1, you configured your application in the `medusa-config.js` file. Medusa v2 supports this file as `medusa-config.ts`, so make sure to rename it.
+In Switchyard v1, you configured your application in the `switchyard.config.js` file. Switchyard v2 supports this file as `switchyard.config.ts`, so make sure to rename it.
 
-`medusa-config.ts` now exports configurations created with the `defineConfig` utility. It also uses the [loadEnv](../../fundamentals/environment-variables/page.mdx) utility to load environment variables based on the current environment.
+`switchyard.config.ts` now exports configurations created with the `defineConfig` utility. It also uses the [loadEnv](../../fundamentals/environment-variables/page.mdx) utility to load environment variables based on the current environment.
 
-For example, this is the configuration file for a basic Medusa v2 project:
+For example, this is the configuration file for a basic Switchyard v2 project:
 
-```ts title="medusa-config.ts"
-import { loadEnv, defineConfig } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { loadEnv, defineConfig } from "@switchyard/framework/utils"
 
 loadEnv(process.env.NODE_ENV || "development", process.cwd())
 
@@ -198,16 +198,16 @@ module.exports = defineConfig({
 })
 ```
 
-You can refer to the full list of configurations in the [Medusa Configurations](../../configurations/medusa-config/page.mdx) chapter. The following table highlights the main changes between v1 and v2:
+You can refer to the full list of configurations in the [Switchyard Configurations](../../configurations/switchyard.config/page.mdx) chapter. The following table highlights the main changes between v1 and v2:
 
 <Table>
   <Table.Header>
     <Table.Row>
       <Table.HeaderCell>
-        Medusa v1
+        Switchyard v1
       </Table.HeaderCell>
       <Table.HeaderCell>
-        Medusa v2
+        Switchyard v2
       </Table.HeaderCell>
     </Table.Row>
   </Table.Header>
@@ -217,7 +217,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.store_cors`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.http.storeCors](../../configurations/medusa-config/page.mdx#httpstorecors)
+        [projectConfig.http.storeCors](../../configurations/switchyard.config/page.mdx#httpstorecors)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -225,7 +225,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.admin_cors`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.http.adminCors](../../configurations/medusa-config/page.mdx#httpadmincors)
+        [projectConfig.http.adminCors](../../configurations/switchyard.config/page.mdx#httpadmincors)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -233,7 +233,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.auth_cors`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.http.authCors](../../configurations/medusa-config/page.mdx#httpauthcors)
+        [projectConfig.http.authCors](../../configurations/switchyard.config/page.mdx#httpauthcors)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -241,7 +241,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.cookie_secret`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.http.cookieSecret](../../configurations/medusa-config/page.mdx#httpcookiesecret)
+        [projectConfig.http.cookieSecret](../../configurations/switchyard.config/page.mdx#httpcookiesecret)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -249,7 +249,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.jwt_secret`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.http.jwtSecret](../../configurations/medusa-config/page.mdx#httpjwtsecret)
+        [projectConfig.http.jwtSecret](../../configurations/switchyard.config/page.mdx#httpjwtsecret)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -257,7 +257,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.database_database`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.databaseName](../../configurations/medusa-config/page.mdx#databasename)
+        [projectConfig.databaseName](../../configurations/switchyard.config/page.mdx#databasename)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -265,7 +265,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.database_url`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.databaseUrl](../../configurations/medusa-config/page.mdx#databaseurl)
+        [projectConfig.databaseUrl](../../configurations/switchyard.config/page.mdx#databaseurl)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -273,7 +273,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.database_schema`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.databaseSchema](../../configurations/medusa-config/page.mdx#databaseschema)
+        [projectConfig.databaseSchema](../../configurations/switchyard.config/page.mdx#databaseschema)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -281,7 +281,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.database_logging`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.databaseLogging](../../configurations/medusa-config/page.mdx#databaselogging)
+        [projectConfig.databaseLogging](../../configurations/switchyard.config/page.mdx#databaselogging)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -289,7 +289,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.database_extra`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.databaseDriverOptions](../../configurations/medusa-config/page.mdx#databasedriveroptions)
+        [projectConfig.databaseDriverOptions](../../configurations/switchyard.config/page.mdx#databasedriveroptions)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -297,7 +297,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.database_driver_options`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.databaseDriverOptions](../../configurations/medusa-config/page.mdx#databasedriveroptions)
+        [projectConfig.databaseDriverOptions](../../configurations/switchyard.config/page.mdx#databasedriveroptions)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -305,7 +305,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.redis_url`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.redisUrl](../../configurations/medusa-config/page.mdx#redisurl)
+        [projectConfig.redisUrl](../../configurations/switchyard.config/page.mdx#redisurl)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -313,7 +313,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.redis_prefix`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.redisPrefix](../../configurations/medusa-config/page.mdx#redisprefix)
+        [projectConfig.redisPrefix](../../configurations/switchyard.config/page.mdx#redisprefix)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -321,7 +321,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.redis_options`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.redisOptions](../../configurations/medusa-config/page.mdx#redisoptions)
+        [projectConfig.redisOptions](../../configurations/switchyard.config/page.mdx#redisoptions)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -329,7 +329,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.session_options`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.sessionOptions](../../configurations/medusa-config/page.mdx#sessionoptions)
+        [projectConfig.sessionOptions](../../configurations/switchyard.config/page.mdx#sessionoptions)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -337,7 +337,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.http_compression`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.http.compression](../../configurations/medusa-config/page.mdx#httpcompression)
+        [projectConfig.http.compression](../../configurations/switchyard.config/page.mdx#httpcompression)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -353,7 +353,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `projectConfig.worker_mode`
       </Table.Cell>
       <Table.Cell>
-        [projectConfig.workerMode](../../configurations/medusa-config/page.mdx#workermode)
+        [projectConfig.workerMode](../../configurations/switchyard.config/page.mdx#workermode)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -361,7 +361,7 @@ You can refer to the full list of configurations in the [Medusa Configurations](
         `modules`
       </Table.Cell>
       <Table.Cell>
-        [Array of modules](../../configurations/medusa-config/page.mdx#module-configurations-modules)
+        [Array of modules](../../configurations/switchyard.config/page.mdx#module-configurations-modules)
       </Table.Cell>
     </Table.Row>
   </Table.Body>
@@ -369,11 +369,11 @@ You can refer to the full list of configurations in the [Medusa Configurations](
 
 #### Plugin Changes
 
-While the `plugins` configuration hasn't changed, plugins available in Medusa v1 are not compatible with Medusa v2. These are covered later in the [Plugin Changes](#plugin-changes) section.
+While the `plugins` configuration hasn't changed, plugins available in Switchyard v1 are not compatible with Switchyard v2. These are covered later in the [Plugin Changes](#plugin-changes) section.
 
 #### Module Changes
 
-In Medusa v1, you had to configure modules like Inventory, Stock Location, Pricing, and Product. These modules are now available out of the box, and you don't need to install or configure them separately.
+In Switchyard v1, you had to configure modules like Inventory, Stock Location, Pricing, and Product. These modules are now available out of the box, and you don't need to install or configure them separately.
 
 For the Cache and Event modules, refer to the [Redis Caching Module Provider](!resources!/infrastructure-modules/caching/providers/redis) and [Redis Event Module](!resources!/infrastructure-modules/event/redis) documentations to learn how to configure them in v2 if you had them configured in v1.
 
@@ -385,9 +385,9 @@ All of these features are now available out-of-the-box. So, you don't need to en
 
 #### Admin Configurations
 
-In v1, the admin dashboard was installed as a plugin with configurations. In v2, the Medusa Admin is available out-of-the-box with different configurations.
+In v1, the admin dashboard was installed as a plugin with configurations. In v2, the Switchyard Admin is available out-of-the-box with different configurations.
 
-The [Medusa Admin Changes](#medusa-admin-changes) section covers the changes in the Medusa Admin configurations and customizations.
+The [Switchyard Admin Changes](#medusa-admin-changes) section covers the changes in the Switchyard Admin configurations and customizations.
 
 ### 5. Setup New Database
 
@@ -407,16 +407,16 @@ You can change `medusa-v2` to any database name you prefer.
 Then, run the following commands to create the database and tables:
 
 ```bash npm2yarn
-npx medusa db:setup
+npx switchyard db:setup
 ```
 
 This command will create the database and tables for your v2 project.
 
-After that, you can start your Medusa application with the `dev` command. Note that you may have errors if you need to make implementation changes that are covered in the rest of this guide, so it's better to wait until you finish the v2 migration process before starting the Medusa application.
+After that, you can start your Switchyard application with the `dev` command. Note that you may have errors if you need to make implementation changes that are covered in the rest of this guide, so it's better to wait until you finish the v2 migration process before starting the Switchyard application.
 
 ### (Optional) 6. Seed with Demo Data
 
-If you want to seed your Medusa v2 project with demo data, you can copy the content of [this file](https://github.com/medusajs/medusa-starter-default/blob/master/src/scripts/seed.ts) to your `src/scripts/seed.ts` file.
+If you want to seed your Switchyard v2 project with demo data, you can copy the content of [this file](https://github.com/switchyard/medusa-starter-default/blob/master/src/scripts/seed.ts) to your `src/scripts/seed.ts` file.
 
 Then, run the following command to seed the database:
 
@@ -428,25 +428,25 @@ This will seed your database with demo data.
 
 ---
 
-## Medusa Admin Changes
+## Switchyard Admin Changes
 
-In this section, you'll learn about the changes in the Medusa Admin between v1 and v2.
+In this section, you'll learn about the changes in the Switchyard Admin between v1 and v2.
 
 <Note>
 
-This section doesn't cover changes related to Medusa Admin customizations. They're covered later in the [Admin Customization Changes](#admin-customization-changes) section.
+This section doesn't cover changes related to Switchyard Admin customizations. They're covered later in the [Admin Customization Changes](#admin-customization-changes) section.
 
 </Note>
 
-The Medusa Admin is now available out-of-the-box. It's built with [Vite v5](https://vite.dev/) and runs at `http://localhost:9000/app` by default when you start your Medusa application.
+The Switchyard Admin is now available out-of-the-box. It's built with [Vite v5](https://vite.dev/) and runs at `http://localhost:9000/app` by default when you start your Switchyard application.
 
 ### Admin Configurations
 
-You previously configured the admin dashboard when you added it as a plugin in Medusa v1.
+You previously configured the admin dashboard when you added it as a plugin in Switchyard v1.
 
-In Medusa v2, you configure the Medusa Admin within the `defineConfig` utility in `medusa-config.ts`. `defineConfig` accepts an `admin` property to configure the Medusa Admin:
+In Switchyard v2, you configure the Switchyard Admin within the `defineConfig` utility in `switchyard.config.ts`. `defineConfig` accepts an `admin` property to configure the Switchyard Admin:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   admin: {
@@ -455,16 +455,16 @@ module.exports = defineConfig({
 })
 ```
 
-You can refer to the [Medusa Configuration](../../configurations/medusa-config/page.mdx#admin-configurations-admin) chapter to learn about all the admin configurations. The following table highlights the main changes between v1 and v2:
+You can refer to the [Switchyard Configuration](../../configurations/switchyard.config/page.mdx#admin-configurations-admin) chapter to learn about all the admin configurations. The following table highlights the main changes between v1 and v2:
 
 <Table>
   <Table.Header>
     <Table.Row>
       <Table.HeaderCell>
-        Medusa v1
+        Switchyard v1
       </Table.HeaderCell>
       <Table.HeaderCell>
-        Medusa v2
+        Switchyard v2
       </Table.HeaderCell>
     </Table.Row>
   </Table.Header>
@@ -474,7 +474,7 @@ You can refer to the [Medusa Configuration](../../configurations/medusa-config/p
         `serve`
       </Table.Cell>
       <Table.Cell>
-        [admin.disable](../../configurations/medusa-config/page.mdx#disable)
+        [admin.disable](../../configurations/switchyard.config/page.mdx#disable)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -482,7 +482,7 @@ You can refer to the [Medusa Configuration](../../configurations/medusa-config/p
         `autoRebuild`
       </Table.Cell>
       <Table.Cell>
-        No longer supported. The Medusa Admin is always built when you run the `medusa build` command.
+        No longer supported. The Switchyard Admin is always built when you run the `medusa build` command.
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -490,7 +490,7 @@ You can refer to the [Medusa Configuration](../../configurations/medusa-config/p
         `backend`
       </Table.Cell>
       <Table.Cell>
-        [admin.backendUrl](../../configurations/medusa-config/page.mdx#backendurl)
+        [admin.backendUrl](../../configurations/switchyard.config/page.mdx#backendurl)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -498,7 +498,7 @@ You can refer to the [Medusa Configuration](../../configurations/medusa-config/p
         `outDir`
       </Table.Cell>
       <Table.Cell>
-        No longer supported. The Medusa Admin is now built in the `.medusa/server/public/admin` directory. Learn more in the [Build](../../build/page.mdx) chapter.
+        No longer supported. The Switchyard Admin is now built in the `.medusa/server/public/admin` directory. Learn more in the [Build](../../build/page.mdx) chapter.
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -506,7 +506,7 @@ You can refer to the [Medusa Configuration](../../configurations/medusa-config/p
         `develop` options
       </Table.Cell>
       <Table.Cell>
-        No longer supported. The [admin.vite](../../configurations/medusa-config/page.mdx#vite) property may be used to achieve similar results.
+        No longer supported. The [admin.vite](../../configurations/switchyard.config/page.mdx#vite) property may be used to achieve similar results.
       </Table.Cell>
     </Table.Row>
   </Table.Body>
@@ -516,32 +516,32 @@ You can refer to the [Medusa Configuration](../../configurations/medusa-config/p
 
 In v1, you were able to modify Webpack configurations of the admin dashboard.
 
-Since Medusa Admin is now built with Vite, you can modify the Vite configurations with the `admin.vite` configuration. Learn more in the [Medusa Configuration](../../configurations/medusa-config/page.mdx#vite) chapter.
+Since Switchyard Admin is now built with Vite, you can modify the Vite configurations with the `admin.vite` configuration. Learn more in the [Switchyard Configuration](../../configurations/switchyard.config/page.mdx#vite) chapter.
 
 ### Admin CLI Tool
 
-In Medusa v1, you used the `medusa-admin` CLI tool to build and run the admin dashboard.
+In Switchyard v1, you used the `medusa-admin` CLI tool to build and run the admin dashboard.
 
-In Medusa v2, the Medusa Admin doesn't have a CLI tool. Instead, running `medusa build` and `medusa develop` also builds and runs the Medusa Admin, respectively.
+In Switchyard v2, the Switchyard Admin doesn't have a CLI tool. Instead, running `medusa build` and `switchyard develop` also builds and runs the Switchyard Admin, respectively.
 
-In addition, you can build the Medusa Admin separately from the Medusa application using the `--admin-only` option. Learn more in the [Build Medusa Application](../../build/page.mdx#separate-admin-build) chapter.
+In addition, you can build the Switchyard Admin separately from the Switchyard application using the `--admin-only` option. Learn more in the [Build Switchyard Application](../../build/page.mdx#separate-admin-build) chapter.
 
 ---
 
-## Medusa CLI Changes
+## Switchyard CLI Changes
 
-The Medusa CLI for v2 is now in the `@medusajs/cli` package. However, you don't need to install it globally. You can just use `npx medusa` in your Medusa projects.
+The Switchyard CLI for v2 is now in the `@switchyard/cli` package. However, you don't need to install it globally. You can just use `npx medusa` in your Switchyard projects.
 
-Refer to the [Medusa CLI reference](!resources!/medusa-cli) for the full list of commands and options. The following table highlights the main changes between v1 and v2:
+Refer to the [Switchyard CLI reference](!resources!/switchyard-cli) for the full list of commands and options. The following table highlights the main changes between v1 and v2:
 
 <Table>
   <Table.Header>
     <Table.Row>
       <Table.HeaderCell>
-        Medusa v1
+        Switchyard v1
       </Table.HeaderCell>
       <Table.HeaderCell>
-        Medusa v2
+        Switchyard v2
       </Table.HeaderCell>
     </Table.Row>
   </Table.Header>
@@ -551,7 +551,7 @@ Refer to the [Medusa CLI reference](!resources!/medusa-cli) for the full list of
         `migrations run`
       </Table.Cell>
       <Table.Cell>
-        [db:migrate](!resources!/medusa-cli/commands/db#dbmigrate)
+        [db:migrate](!resources!/switchyard-cli/commands/db#dbmigrate)
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -559,7 +559,7 @@ Refer to the [Medusa CLI reference](!resources!/medusa-cli) for the full list of
         `migrations revert`
       </Table.Cell>
       <Table.Cell>
-        [db:rollback](!resources!/medusa-cli/commands/db#dbrollback). However, this command reverts migrations of specific modules, not all migrations.
+        [db:rollback](!resources!/switchyard-cli/commands/db#dbrollback). However, this command reverts migrations of specific modules, not all migrations.
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -583,7 +583,7 @@ Refer to the [Medusa CLI reference](!resources!/medusa-cli) for the full list of
         `start-cluster`
       </Table.Cell>
       <Table.Cell>
-        [start --cluster \<number\>](!resources!/medusa-cli/commands/start)
+        [start --cluster \<number\>](!resources!/switchyard-cli/commands/start)
       </Table.Cell>
     </Table.Row>
   </Table.Body>
@@ -593,29 +593,29 @@ Refer to the [Medusa CLI reference](!resources!/medusa-cli) for the full list of
 
 ## Plugin Changes
 
-Medusa v2 supports plugins similar to Medusa v1, but with changes in its usage, development, and configuration.
+Switchyard v2 supports plugins similar to Switchyard v1, but with changes in its usage, development, and configuration.
 
-In Medusa v1, you created plugins that contained customizations like services that integrated third-party providers, custom API routes, and more.
+In Switchyard v1, you created plugins that contained customizations like services that integrated third-party providers, custom API routes, and more.
 
-In Medusa v2, a plugin can contain customizations like modules that integrate third-party providers, custom API routes, workflows, and more. The plugin development experience has also been improved to resolve big pain points that developers faced in v1.
+In Switchyard v2, a plugin can contain customizations like modules that integrate third-party providers, custom API routes, workflows, and more. The plugin development experience has also been improved to resolve big pain points that developers faced in v1.
 
-Refer to the [Plugins](../../fundamentals/plugins/page.mdx) chapter to learn more about plugins in Medusa v2.
+Refer to the [Plugins](../../fundamentals/plugins/page.mdx) chapter to learn more about plugins in Switchyard v2.
 
 The rest of this section will cover some of the main changes in plugins between v1 and v2.
 
-### Medusa Plugins Alternative
+### Switchyard Plugins Alternative
 
-In v1, Medusa provided a set of plugins that you could use in your project. For example, the Stripe and SendGrid plugins.
+In v1, Switchyard provided a set of plugins that you could use in your project. For example, the Stripe and SendGrid plugins.
 
 In v2, some of these plugins are now available as module providers out-of-the-box. For example, the Stripe and SendGrid module providers. Other plugins may no longer be available, but you can still find guides to create them.
 
-The following table highlights the alternatives for the Medusa v1 plugins:
+The following table highlights the alternatives for the Switchyard v1 plugins:
 
 <Table>
   <Table.Header>
     <Table.Row>
       <Table.HeaderCell>
-        Medusa v1
+        Switchyard v1
       </Table.HeaderCell>
       <Table.HeaderCell>
         v2 Alternative
@@ -802,11 +802,11 @@ The following table highlights the alternatives for the Medusa v1 plugins:
   </Table.Body>
 </Table>
 
-You can also find Medusa and community integrations in the [Integrations](https://medusajs.com/integrations/) page.
+You can also find Switchyard and community integrations in the [Integrations](https://switchyard.com/integrations/) page.
 
 ### Plugin Options
 
-Similar to Medusa v1, you can pass options to plugins in Medusa v2.
+Similar to Switchyard v1, you can pass options to plugins in Switchyard v2.
 
 However, plugin options are now only passed to modules and module providers created in a plugin.
 
@@ -815,7 +815,7 @@ So, if you previously accessed options in a plugin's subscriber, for example, th
 For example, this is how you can access options in a plugin's subscriber in v2:
 
 ```ts title="src/subscribers/order-placed.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 
 export default async function orderPlacedHandler({
   event: { data },
@@ -839,23 +839,23 @@ Learn more in the [Create Plugin](../../fundamentals/plugins/create/page.mdx) ch
 
 Plugins in v1 accepted an `enableUI` option to configure whether a plugin's admin customizations should be shown.
 
-In v2, this option is no longer supported. All admin customizations in a plugin will be shown in the Medusa Admin.
+In v2, this option is no longer supported. All admin customizations in a plugin will be shown in the Switchyard Admin.
 
 ---
 
 
 ## Tool Changes
 
-This section covers changes to tools that were available in Medusa v1.
+This section covers changes to tools that were available in Switchyard v1.
 
 <Table>
   <Table.Header>
     <Table.Row>
       <Table.HeaderCell>
-        Medusa v1
+        Switchyard v1
       </Table.HeaderCell>
       <Table.HeaderCell>
-        Medusa v2
+        Switchyard v2
       </Table.HeaderCell>
     </Table.Row>
   </Table.Header>
@@ -870,7 +870,7 @@ This section covers changes to tools that were available in Medusa v1.
     </Table.Row>
     <Table.Row>
       <Table.Cell>
-        Medusa React
+        Switchyard React
       </Table.Cell>
       <Table.Cell>
         No longer supported. Instead, you can [use the JS SDK with Tanstack Query](!resources!/js-sdk#use-tanstack-react-query-in-admin-customizations) or similar approaches.
@@ -886,7 +886,7 @@ This section covers changes to tools that were available in Medusa v1.
     </Table.Row>
     <Table.Row>
       <Table.Cell>
-        Medusa Dev CLI
+        Switchyard Dev CLI
       </Table.Cell>
       <Table.Cell>
         No longer supported.
@@ -899,40 +899,40 @@ This section covers changes to tools that were available in Medusa v1.
 
 ## Changes in Concepts and Development
 
-In the next sections, you'll learn about the changes in specific concepts and development practices between Medusa v1 and v2.
+In the next sections, you'll learn about the changes in specific concepts and development practices between Switchyard v1 and v2.
 
 ### Entities, Services, and Modules
 
-In Medusa v1, entities, services, and modules were created separately:
+In Switchyard v1, entities, services, and modules were created separately:
 
 - You create an entity to add a new table to the database.
-- You create a service to add new business logic to the Medusa application.
-- You create a module to add new features to the Medusa application. It may include entities and services.
+- You create a service to add new business logic to the Switchyard application.
+- You create a module to add new features to the Switchyard application. It may include entities and services.
 
-In Medusa v2, you create entities (now called data models) and services in a module. You can't create them separately anymore. The data models define new tables to add to the database, and the service provides data-management features for those data models.
+In Switchyard v2, you create entities (now called data models) and services in a module. You can't create them separately anymore. The data models define new tables to add to the database, and the service provides data-management features for those data models.
 
 In this section, you'll learn about the most important changes related to these concepts. You can also learn more in the [Modules](../../fundamentals/modules/page.mdx) chapter.
 
 #### Modules
 
-A module is a reusable package of functionalities related to a single domain or integration. For example, Medusa provides a Product Module for product-related data models and features.
+A module is a reusable package of functionalities related to a single domain or integration. For example, Switchyard provides a Product Module for product-related data models and features.
 
-So, if in Medusa v1 you had a `Brand` entity and a service to manage it, in v2, you create a Brand Module that defines a `Brand` data model and a service to manage it.
+So, if in Switchyard v1 you had a `Brand` entity and a service to manage it, in v2, you create a Brand Module that defines a `Brand` data model and a service to manage it.
 
 To learn how to create a module, refer to the [Modules](../../fundamentals/modules/page.mdx) chapter.
 
-![Diagram showcasing the directory structure difference between Medusa v1 and v2](https://res.cloudinary.com/dza7lstvk/image/upload/v1748277500/Medusa%20Book/modules-v1-v2_dsnzyl.jpg)
+![Diagram showcasing the directory structure difference between Switchyard v1 and v2](https://res.cloudinary.com/dza7lstvk/image/upload/v1748277500/Switchyard%20Book/modules-v1-v2_dsnzyl.jpg)
 
 #### Data Models
 
-In Medusa v1, you created data models (entities) using TypeORM.
+In Switchyard v1, you created data models (entities) using TypeORM.
 
-In Medusa v2, you use Medusa's Data Model Language (DML) to create data models. It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+In Switchyard v2, you use Switchyard's Data Model Language (DML) to create data models. It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 For example:
 
 ```ts title="src/modules/brand/models/brand.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const Brand = model.define("brand", {
   id: model.id().primaryKey(),
@@ -944,29 +944,29 @@ Learn more about data models in the [Data Models](../../fundamentals/data-models
 
 #### Migrations
 
-In Medusa v1, you had to write migrations manually to create or update tables in the database. Migrations were based on TypeORM.
+In Switchyard v1, you had to write migrations manually to create or update tables in the database. Migrations were based on TypeORM.
 
-In Medusa v2, you can use the Medusa CLI to generate migrations based on MikroORM. For example:
+In Switchyard v2, you can use the Switchyard CLI to generate migrations based on MikroORM. For example:
 
 ```bash npm2yarn
-npx medusa db:generate brand
+npx switchyard db:generate brand
 ```
 
 This generates migrations for data models in the Brand Module. Learn more in the [Migrations](../../fundamentals/data-models/write-migration/page.mdx) chapter.
 
 #### Services
 
-In Medusa v1, you created a service with business logic related to a feature within your Medusa project. For example, you created a `BrandService` at `src/services/brand.ts` to manage the `Brand` entity.
+In Switchyard v1, you created a service with business logic related to a feature within your Switchyard project. For example, you created a `BrandService` at `src/services/brand.ts` to manage the `Brand` entity.
 
-In Medusa v2, you can only create a service in a module, and the service either manages the module's data models in the database, or connects to third-party services.
+In Switchyard v2, you can only create a service in a module, and the service either manages the module's data models in the database, or connects to third-party services.
 
 For example, you create a `BrandService` in the Brand Module at `src/modules/brand/service.ts`:
 
 ```ts title="src/modules/brand/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Brand } from "./models/brand"
 
-class BrandModuleService extends MedusaService({
+class BrandModuleService extends SwitchyardService({
   Brand,
 }) {
 
@@ -975,22 +975,22 @@ class BrandModuleService extends MedusaService({
 export default BrandModuleService
 ```
 
-The service has automatically generated data-management methods by extending `MedusaService` from the Modules SDK. So, you now have methods like `retrieveBrand` and `createBrands` available in the service.
+The service has automatically generated data-management methods by extending `SwitchyardService` from the Modules SDK. So, you now have methods like `retrieveBrand` and `createBrands` available in the service.
 
 Learn more in the [Service Factory](../../fundamentals/modules/service-factory/page.mdx) chapter.
 
-When you register the module in the Medusa application, the service is registered in the [Medusa container](../../fundamentals/medusa-container/page.mdx), allowing you to use its methods in workflows, subscribers, scheduled jobs, and API routes.
+When you register the module in the Switchyard application, the service is registered in the [Switchyard container](../../fundamentals/medusa-container/page.mdx), allowing you to use its methods in workflows, subscribers, scheduled jobs, and API routes.
 
 #### Repositories
 
-In Medusa v1, you used the repository of a data model in a service to provide data-management features. For example, you used the `BrandRepository` to manage the `Brand` entity. Repositories were also based on TypeORM.
+In Switchyard v1, you used the repository of a data model in a service to provide data-management features. For example, you used the `BrandRepository` to manage the `Brand` entity. Repositories were also based on TypeORM.
 
-In Medusa v2, you generally don't need repositories for basic data-management features, as they're generated by the service factory. However, for more complex use cases, you can use the data model repository based on MikroORM.
+In Switchyard v2, you generally don't need repositories for basic data-management features, as they're generated by the service factory. However, for more complex use cases, you can use the data model repository based on MikroORM.
 
 For example:
 
 ```ts title="src/modules/brand/service.ts"
-import { InferTypeOf, DAL } from "@medusajs/framework/types"
+import { InferTypeOf, DAL } from "@switchyard/framework/types"
 import Post from "./models/post"
 
 type Post = InferTypeOf<typeof Post>
@@ -1017,24 +1017,24 @@ Learn more in the [Database Operations](../../fundamentals/modules/db-operations
 
 #### Module Isolation
 
-In Medusa v1, you had access to all entities and services in the Medusa application. While this approach was flexible, it introduced complexities, was difficult to maintain, and resulted in hacky workarounds.
+In Switchyard v1, you had access to all entities and services in the Switchyard application. While this approach was flexible, it introduced complexities, was difficult to maintain, and resulted in hacky workarounds.
 
-In Medusa v2, modules are isolated. This means that you can only access entities and services within the module. This isolation allows you to integrate modules into your application without side effects, while still providing you with the necessary flexibility to build your use cases.
+In Switchyard v2, modules are isolated. This means that you can only access entities and services within the module. This isolation allows you to integrate modules into your application without side effects, while still providing you with the necessary flexibility to build your use cases.
 
-The [Module Isolation](../../fundamentals/modules/isolation/page.mdx) chapter explains this concept in detail. The rest of this section gives a general overview of how module isolation affects your Medusa v1 customizations.
+The [Module Isolation](../../fundamentals/modules/isolation/page.mdx) chapter explains this concept in detail. The rest of this section gives a general overview of how module isolation affects your Switchyard v1 customizations.
 
 #### Extending Entities
 
-In Medusa v1, you were able to extend entities by creating a new entity that extended the original one. For example, you could create a custom `Product` entity that extended the original `Product` entity to add a `brand` column.
+In Switchyard v1, you were able to extend entities by creating a new entity that extended the original one. For example, you could create a custom `Product` entity that extended the original `Product` entity to add a `brand` column.
 
-In Medusa v2, you can no longer extend entities. Instead, you need to create a new data model that contains the columns you want to add. Then, you can create a [Module Link](../../fundamentals/module-links/page.mdx) that links your data model to the one you want to extend.
+In Switchyard v2, you can no longer extend entities. Instead, you need to create a new data model that contains the columns you want to add. Then, you can create a [Module Link](../../fundamentals/module-links/page.mdx) that links your data model to the one you want to extend.
 
 For example, you create a Brand Module that has a `Brand` data model. Then, you create a Module Link that links the `Brand` data model to the `Product` data model in the Product Module:
 
 ```ts title="src/links/product-brand.ts"
 import BrandModule from "../modules/brand"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -1051,9 +1051,9 @@ Learn more in the [Module Links](../../fundamentals/module-links/page.mdx) chapt
 
 #### Extending Services
 
-In Medusa v1, you were able to extend services by creating a new service that extended the original one. For example, you could create a custom `ProductService` that extended the original `ProductService` to add a new method.
+In Switchyard v1, you were able to extend services by creating a new service that extended the original one. For example, you could create a custom `ProductService` that extended the original `ProductService` to add a new method.
 
-In Medusa v2, you can no longer extend services. Instead, you need to [create a module](../../fundamentals/modules/page.mdx) with a service that contains the methods you want to add. Then, you can:
+In Switchyard v2, you can no longer extend services. Instead, you need to [create a module](../../fundamentals/modules/page.mdx) with a service that contains the methods you want to add. Then, you can:
 
 - Build [workflows](../../fundamentals/workflows/page.mdx) that use both services to achieve a custom feature.
 - Consume [Workflow Hooks](../../fundamentals/workflows/workflow-hooks/page.mdx) to run custom actions in existing workflows.
@@ -1066,8 +1066,8 @@ import {
   createWorkflow,
   transform,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { addToCartWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { addToCartWorkflow } from "@switchyard/medusa/core-flows"
 import { 
   getCustomPriceStep, 
 } from "./steps/get-custom-price"
@@ -1111,23 +1111,23 @@ export const addCustomToCartWorkflow = createWorkflow(
 )
 ```
 
-Refer to the [Workflows](../../fundamentals/workflows/page.mdx) chapters to learn more about workflows in Medusa v2.
+Refer to the [Workflows](../../fundamentals/workflows/page.mdx) chapters to learn more about workflows in Switchyard v2.
 
 #### Integrating Third-Party Services
 
-In Medusa v1, you integrated third-party services by creating a service under `src/services` and using it in your customizations.
+In Switchyard v1, you integrated third-party services by creating a service under `src/services` and using it in your customizations.
 
-In Medusa v2, you can integrate third-party services by creating a module with a service that contains the methods to interact with the third-party service. You can then use the module's service in a [workflow](../../fundamentals/workflows/page.mdx) to build custom features.
+In Switchyard v2, you can integrate third-party services by creating a module with a service that contains the methods to interact with the third-party service. You can then use the module's service in a [workflow](../../fundamentals/workflows/page.mdx) to build custom features.
 
-![Directory structure change between v1 and v2](https://res.cloudinary.com/dza7lstvk/image/upload/v1748278103/Medusa%20Book/integrations-v1-v2_cjzkus.jpg)
+![Directory structure change between v1 and v2](https://res.cloudinary.com/dza7lstvk/image/upload/v1748278103/Switchyard%20Book/integrations-v1-v2_cjzkus.jpg)
 
 ---
 
-### Medusa and Module Containers
+### Switchyard and Module Containers
 
-In Medusa v1, you accessed dependencies from the container in all your customizations, such as services, API routes, and subscribers.
+In Switchyard v1, you accessed dependencies from the container in all your customizations, such as services, API routes, and subscribers.
 
-In Medusa v2, there are two containers:
+In Switchyard v2, there are two containers:
 
 <Table>
   <Table.Header>
@@ -1146,7 +1146,7 @@ In Medusa v2, there are two containers:
   <Table.Body>
     <Table.Row>
       <Table.Cell>
-        [Medusa container](../../fundamentals/medusa-container/page.mdx)
+        [Switchyard container](../../fundamentals/medusa-container/page.mdx)
       </Table.Cell>  
       <Table.Cell>
         Main container that contains Framework and commerce resources, such as services of registered modules.
@@ -1179,7 +1179,7 @@ You can view the list of resources in each container in the [Container Resources
 
 ### Workflow Changes
 
-In Medusa v2, workflows are the main way to implement custom features spanning across modules and systems.
+In Switchyard v2, workflows are the main way to implement custom features spanning across modules and systems.
 
 Workflows have been optimized for data reliability, flexibility, and orchestration across systems. You can learn more in the [Workflows](../../fundamentals/workflows/page.mdx) chapters.
 
@@ -1187,19 +1187,19 @@ This section highlights the main changes in workflows between v1 and v2.
 
 #### Workflows SDK Imports
 
-In Medusa v1, you imported all Workflows SDK functions and types from the `@medusajs/workflows-sdk` package.
+In Switchyard v1, you imported all Workflows SDK functions and types from the `@switchyard/workflows-sdk` package.
 
-In Medusa v2, you import them from the `@medusajs/framework/workflows-sdk` package. For example:
+In Switchyard v2, you import them from the `@switchyard/framework/workflows-sdk` package. For example:
 
 ```ts title="src/workflows/hello-world.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 ```
 
 #### Workflow Return Value
 
-In Medusa v1, you returned any value from a workflow, such as a string or an object.
+In Switchyard v1, you returned any value from a workflow, such as a string or an object.
 
-In Medusa v2, you must return an instance of `WorkflowResponse` from a workflow. The data passed to `WorkflowResponse`'s constructor is returned to the caller of the workflow.
+In Switchyard v2, you must return an instance of `WorkflowResponse` from a workflow. The data passed to `WorkflowResponse`'s constructor is returned to the caller of the workflow.
 
 For example:
 
@@ -1207,7 +1207,7 @@ For example:
 import { 
   createWorkflow, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 export const helloWorldWorkflow = createWorkflow(
   "hello-world", 
@@ -1218,13 +1218,13 @@ export const helloWorldWorkflow = createWorkflow(
 
 // in API route, for example:
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   // message is "Hello, world!"
   const { result: message } = await helloWorldWorkflow(req.scope)
@@ -1246,40 +1246,40 @@ export const GET = (
 
 ### API Route Changes
 
-API routes are generally similar in Medusa v1 and v2, but with minor changes.
+API routes are generally similar in Switchyard v1 and v2, but with minor changes.
 
 You can learn more about creating API routes in the [API Routes](../../fundamentals/api-routes/page.mdx) chapters. This section highlights the main changes in API routes between v1 and v2.
 
 #### HTTP Imports
 
-In Medusa v1, you imported API-route related types and functions from the `@medusajs/medusa` package.
+In Switchyard v1, you imported API-route related types and functions from the `@switchyard/medusa` package.
 
-In Medusa v2, you import them from the `@medusajs/framework/http` package. For example:
+In Switchyard v2, you import them from the `@switchyard/framework/http` package. For example:
 
 ```ts title="src/api/store/custom/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 ```
 
 #### Protected API Routes
 
-In Medusa v1, routes starting with `/store/me` and `/admin` were protected by default.
+In Switchyard v1, routes starting with `/store/me` and `/admin` were protected by default.
 
-In Medusa v2, routes starting with `/store/customers/me` are accessible by registered customers, and `/admin` routes are accessible by admin users.
+In Switchyard v2, routes starting with `/store/customers/me` are accessible by registered customers, and `/admin` routes are accessible by admin users.
 
-In an API route, you can access the logged in user or customer using the `auth_context.actor_id` property of `AuthenticatedMedusaRequest`. For example:
+In an API route, you can access the logged in user or customer using the `auth_context.actor_id` property of `AuthenticatedSwitchyardRequest`. For example:
 
 ```ts title="src/api/store/custom/route.ts"
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const id = req.auth_context?.actor_id
 
@@ -1291,19 +1291,19 @@ Learn more in the [Protected API Routes](../../fundamentals/api-routes/protected
 
 #### Authentication Middlewares
 
-In Medusa v1, you had three middlewares to protect API routes:
+In Switchyard v1, you had three middlewares to protect API routes:
 
 - `authenticate` to protect API routes for admin users.
 - `authenticateCustomer` to optionally authenticate customers.
 - `requireCustomerAuthentication` to require customer authentication.
 
-In Medusa v2, you can use a single `authenticate` middleware for the three use cases. For example:
+In Switchyard v2, you can use a single `authenticate` middleware for the three use cases. For example:
 
 ```ts title="src/api/middlewares.ts"
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -1331,17 +1331,17 @@ Learn more in the [Protected API Routes](../../fundamentals/api-routes/protected
 
 #### Middlewares
 
-In Medusa v1, you created middlewares by exporting an object in the `src/api/middlewares.ts` file.
+In Switchyard v1, you created middlewares by exporting an object in the `src/api/middlewares.ts` file.
 
-In Medusa v2, you create middlewares by exporting an object created with `defineMiddlewares`, which accepts an object with the same properties as in v1. For example:
+In Switchyard v2, you create middlewares by exporting an object created with `defineMiddlewares`, which accepts an object with the same properties as in v1. For example:
 
 ```ts title="src/api/middlewares.ts"
 import { 
   defineMiddlewares,
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
-} from "@medusajs/framework/http"
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -1349,9 +1349,9 @@ export default defineMiddlewares({
       matcher: "/custom*",
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           console.log("Received a request!")
 
@@ -1367,12 +1367,12 @@ Learn more in the [Middlewares](../../fundamentals/api-routes/middlewares/page.m
 
 #### Disable Body Parser
 
-In Medusa v1, you disabled the body parser in API routes by setting `bodyParser: false` in the route's middleware configuration.
+In Switchyard v1, you disabled the body parser in API routes by setting `bodyParser: false` in the route's middleware configuration.
 
-In Medusa v2, you disable the body parser by setting `bodyParser.preserveRawBody` to `true` in the route's middleware configuration. For example:
+In Switchyard v2, you disable the body parser by setting `bodyParser.preserveRawBody` to `true` in the route's middleware configuration. For example:
 
 ```ts title="src/api/middlewares.ts"
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -1389,14 +1389,14 @@ Learn more in the [Body Parser](../../fundamentals/api-routes/parse-body/page.md
 
 #### Extending Validators
 
-In Medusa v1, you passed custom request parameters to Medusa's API routes by extending a request's validator.
+In Switchyard v1, you passed custom request parameters to Switchyard's API routes by extending a request's validator.
 
-In Medusa v2, some Medusa API routes support passing additional data in the request body. You can then configure the validation of that additional data and consume them in the hooks of the workflow used in the API route.
+In Switchyard v2, some Switchyard API routes support passing additional data in the request body. You can then configure the validation of that additional data and consume them in the hooks of the workflow used in the API route.
 
 For example:
 
 ```ts title="src/api/middlewares.ts"
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 import { z } from "zod"
 
 export default defineMiddlewares({
@@ -1422,32 +1422,32 @@ If a route doesn't support passing additional data, you need to [replicate it](.
 
 ### Events and Subscribers Changes
 
-Events and subscribers are similar in Medusa v1 and v2, but with minor changes.
+Events and subscribers are similar in Switchyard v1 and v2, but with minor changes.
 
 You can learn more in the [Events and Subscribers](../../fundamentals/events-and-subscribers/page.mdx) chapters. This section highlights the main changes in events and subscribers between v1 and v2.
 
 #### Emitted Events
 
-Medusa v2 doesn't emit the same events as v1. Refer to the [Events Reference](!resources!/references/events) for the full list of events emitted in v2.
+Switchyard v2 doesn't emit the same events as v1. Refer to the [Events Reference](!resources!/references/events) for the full list of events emitted in v2.
 
 #### Subscriber Type Imports
 
-In Medusa v1, you imported subscriber types from the `@medusajs/medusa` package.
+In Switchyard v1, you imported subscriber types from the `@switchyard/medusa` package.
 
-In Medusa v2, you import them from the `@medusajs/framework` package. For example:
+In Switchyard v2, you import them from the `@switchyard/framework` package. For example:
 
 ```ts title="src/subscribers/order-placed.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 ```
 
 #### Subscriber Parameter Change
 
-In Medusa v1, a subscriber function received an object parameter that has `eventName` and `data` properties.
+In Switchyard v1, a subscriber function received an object parameter that has `eventName` and `data` properties.
 
-In Medusa v2, the subscriber function receives an object parameter that has an `event` property. The `event` property contains the event name and data. For example:
+In Switchyard v2, the subscriber function receives an object parameter that has an `event` property. The `event` property contains the event name and data. For example:
 
 ```ts title="src/subscribers/order-placed.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 
 export default async function orderPlacedHandler({
   event: { data },
@@ -1467,14 +1467,14 @@ Learn more in the [Events and Subscribers](../../fundamentals/events-and-subscri
 
 #### Subscriber Implementation Change
 
-In Medusa v1, you implemented functionalities, such as sending confirmation email, directly within a subscriber.
+In Switchyard v1, you implemented functionalities, such as sending confirmation email, directly within a subscriber.
 
-In Medusa v2, you should implement these functionalities in a [workflow](../../fundamentals/workflows/page.mdx) and call the workflow in the subscriber. By using workflows, you benefit from rollback mechanism, among other features.
+In Switchyard v2, you should implement these functionalities in a [workflow](../../fundamentals/workflows/page.mdx) and call the workflow in the subscriber. By using workflows, you benefit from rollback mechanism, among other features.
 
 For example:
 
 ```ts title="src/subscribers/order-placed.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { 
   sendOrderConfirmationWorkflow,
 } from "../workflows/send-order-confirmation"
@@ -1498,17 +1498,17 @@ export const config: SubscriberConfig = {
 
 #### Emitting Events
 
-In Medusa v1, you emitted events in services and API routes by resolving the Event Module's service from the container.
+In Switchyard v1, you emitted events in services and API routes by resolving the Event Module's service from the container.
 
-In Medusa v2, you should emit events in workflows instead. For example:
+In Switchyard v2, you should emit events in workflows instead. For example:
 
 ```ts title="src/workflows/hello-world.ts"
 import { 
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   emitEventStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 const helloWorldWorkflow = createWorkflow(
   "hello-world",
@@ -1534,24 +1534,24 @@ Learn more in the [Emit Events](../../fundamentals/events-and-subscribers/emit-e
 
 ### Loader Changes
 
-In Medusa v1, you created loaders in the `src/loaders` directory to perform tasks at application startup.
+In Switchyard v1, you created loaders in the `src/loaders` directory to perform tasks at application startup.
 
-In Medusa v2, loaders can only be created in a module. You can create loaders in the `src/modules/<module-name>/loaders` directory. That also means the loader can only access resources in the module's container.
+In Switchyard v2, loaders can only be created in a module. You can create loaders in the `src/modules/<module-name>/loaders` directory. That also means the loader can only access resources in the module's container.
 
 Learn more in the [Loaders](../../fundamentals/modules/loaders/page.mdx) chapter.
 
 #### Loader Parameter Changes
 
-In Medusa v1, a loader function receives two parameters: `container` and `config`. If the loader was created in a module, it also received a `logger` parameter.
+In Switchyard v1, a loader function receives two parameters: `container` and `config`. If the loader was created in a module, it also received a `logger` parameter.
 
-In Medusa v2, a loader function receives a single object parameter that has a `container` and `options` properties. The `options` property contains the properties passed to the module.
+In Switchyard v2, a loader function receives a single object parameter that has a `container` and `options` properties. The `options` property contains the properties passed to the module.
 
 For example:
 
 ```ts title="src/modules/hello/loaders/hello-world.ts"
 import {
   LoaderOptions,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 export default async function helloWorldLoader({
   container,
@@ -1559,7 +1559,7 @@ export default async function helloWorldLoader({
 }: LoaderOptions) {
   const logger = container.resolve("logger")
 
-  logger.info("[HELLO MODULE] Just started the Medusa application!")
+  logger.info("[HELLO MODULE] Just started the Switchyard application!")
 }
 ```
 
@@ -1567,20 +1567,20 @@ export default async function helloWorldLoader({
 
 ### Scheduled Job Changes
 
-Scheduled jobs are similar in Medusa v1 and v2, but with minor changes.
+Scheduled jobs are similar in Switchyard v1 and v2, but with minor changes.
 
 You can learn more about scheduled jobs in the [Scheduled Jobs](../../fundamentals/scheduled-jobs/page.mdx) chapters. This section highlights the main changes in scheduled jobs between v1 and v2.
 
 #### Scheduled Job Parameter Changes
 
-In Medusa v1, a scheduled job function received an object of parameters.
+In Switchyard v1, a scheduled job function received an object of parameters.
 
-In Medusa v2, a scheduled job function receives only the Medusa container as a parameter. For example:
+In Switchyard v2, a scheduled job function receives only the Switchyard container as a parameter. For example:
 
 ```ts title="src/jobs/hello-world.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 
-export default async function greetingJob(container: MedusaContainer) {
+export default async function greetingJob(container: SwitchyardContainer) {
   const logger = container.resolve("logger")
 
   logger.info("Greeting!")
@@ -1598,21 +1598,21 @@ The `data` property is also no longer available, as you can't pass data in the s
 
 #### Scheduled Job Configuration Changes
 
-In Medusa v2, the `data` property is removed from the scheduled job's configuration object.
+In Switchyard v2, the `data` property is removed from the scheduled job's configuration object.
 
 #### Scheduled Job Implementation Changes
 
-In Medusa v1, you implemented functionalities directly in the job function.
+In Switchyard v1, you implemented functionalities directly in the job function.
 
-In Medusa v2, you should implement these functionalities in a [workflow](../../fundamentals/workflows/page.mdx) and call the workflow in the scheduled job. By using workflows, you benefit from rollback mechanism, among other features.
+In Switchyard v2, you should implement these functionalities in a [workflow](../../fundamentals/workflows/page.mdx) and call the workflow in the scheduled job. By using workflows, you benefit from rollback mechanism, among other features.
 
 For example:
 
 ```ts title="src/jobs/sync-products.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import { syncProductToErpWorkflow } from "../workflows/sync-products-to-erp"
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   await syncProductToErpWorkflow(container)
     .run()
 }
@@ -1627,16 +1627,16 @@ export const config = {
 
 ### Removed Concepts and Alternatives
 
-The following table highlights concepts that have been removed or changed in Medusa v2 and their alternatives:
+The following table highlights concepts that have been removed or changed in Switchyard v2 and their alternatives:
 
 <Table>
   <Table.Header>
     <Table.Row>
       <Table.HeaderCell>
-        Medusa v1
+        Switchyard v1
       </Table.HeaderCell>
       <Table.HeaderCell>
-        Medusa v2
+        Switchyard v2
       </Table.HeaderCell>
     </Table.Row>
   </Table.Header>
@@ -1680,24 +1680,24 @@ The following table highlights concepts that have been removed or changed in Med
 
 ### Admin Customization Changes
 
-This section covers changes to the admin customizations between Medusa v1 and v2.
+This section covers changes to the admin customizations between Switchyard v1 and v2.
 
 #### Custom Admin Environment Variables
 
-In Medusa v1, you set custom environment variables to be passed to the admin dashboard by prefixing them with `MEDUSA_ADMIN_`.
+In Switchyard v1, you set custom environment variables to be passed to the admin dashboard by prefixing them with `MEDUSA_ADMIN_`.
 
-In Medusa v2, you can set custom environment variables to be passed to the admin dashboard by prefixing them with `VITE_`. Learn more in the [Admin Environment Variables](../../fundamentals/admin/environment-variables/page.mdx) chapter.
+In Switchyard v2, you can set custom environment variables to be passed to the admin dashboard by prefixing them with `VITE_`. Learn more in the [Admin Environment Variables](../../fundamentals/admin/environment-variables/page.mdx) chapter.
 
 #### Admin Widgets
 
-Due to design changes in the Medusa Admin, some widget injection zones may have been changed or removed. Refer to the [Admin Widgets Injection Zones](!resources!/admin-widget-injection-zones) reference for the full list of injection zones in v2.
+Due to design changes in the Switchyard Admin, some widget injection zones may have been changed or removed. Refer to the [Admin Widgets Injection Zones](!resources!/admin-widget-injection-zones) reference for the full list of injection zones in v2.
 
-Also, In Medusa v1, you exported in the widget's file a `config` object with the widget's configurations, such as its injection zone.
+Also, In Switchyard v1, you exported in the widget's file a `config` object with the widget's configurations, such as its injection zone.
 
-In Medusa v2, you export a configuration object defined with `defineWidgetConfig` from the Admin Extension SDK. For example:
+In Switchyard v2, you export a configuration object defined with `defineWidgetConfig` from the Admin Extension SDK. For example:
 
 ```tsx title="src/admin/widgets/product-widget.tsx" highlights={[["9"], ["10"], ["11"]]}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
 
 // The widget
 const ProductWidget = () => {
@@ -1714,21 +1714,21 @@ export default ProductWidget
 
 The function accepts an object with a `zone` property, indicating the zone to inject the widget.
 
-Refer to the [Admin Widgets](../../fundamentals/admin/widgets/page.mdx) chapter to learn more about creating widgets in Medusa v2.
+Refer to the [Admin Widgets](../../fundamentals/admin/widgets/page.mdx) chapter to learn more about creating widgets in Switchyard v2.
 
 ### Admin UI Routes
 
-In Medusa v1, UI Routes were prefixed by `/a`. For example, a route created at `src/admin/routes/custom/page.tsx` would be available at `http://localhost:9000/a/custom`.
+In Switchyard v1, UI Routes were prefixed by `/a`. For example, a route created at `src/admin/routes/custom/page.tsx` would be available at `http://localhost:9000/a/custom`.
 
-In Medusa v2, the `/a` prefix has been removed. So, that same route would be available at `http://localhost:9000/app/custom` (where `/app` is the path to the admin dashboard, not a prefix).
+In Switchyard v2, the `/a` prefix has been removed. So, that same route would be available at `http://localhost:9000/app/custom` (where `/app` is the path to the admin dashboard, not a prefix).
 
 Also, in v1, you exported a `config` object with the route's configurations to show the route in the dashboard's sidebar.
 
 In v2, you export a configuration object defined with `defineRouteConfig` from the Admin Extension SDK. For example:
 
 ```tsx title="src/admin/routes/custom/page.tsx" highlights={[["8"], ["9"], ["10"], ["11"]]}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ChatBubbleLeftRight } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ChatBubbleLeftRight } from "@switchyard/icons"
 
 const CustomPage = () => {
   // ...
@@ -1747,21 +1747,21 @@ The `defineRouteConfig` function accepts an object with the following properties
 - `label`: The label of the route to show in the sidebar.
 - `icon`: The icon to use in the sidebar for the route.
 
-Refer to the [Admin UI Routes](../../fundamentals/admin/ui-routes/page.mdx) chapter to learn more about creating UI routes in Medusa v2.
+Refer to the [Admin UI Routes](../../fundamentals/admin/ui-routes/page.mdx) chapter to learn more about creating UI routes in Switchyard v2.
 
 ### Admin Setting Routes
 
-In Medusa v1, you created setting pages under the `src/admin/settings` directory with their own configurations.
+In Switchyard v1, you created setting pages under the `src/admin/settings` directory with their own configurations.
 
-In Medusa v2, setting pages are UI routes created under the `src/admin/routes/settings` directory.
+In Switchyard v2, setting pages are UI routes created under the `src/admin/routes/settings` directory.
 
 For example, if you had a `src/admin/settings/custom/page.tsx` file in v1, you should move it to `src/admin/routes/settings/custom/page.tsx` in v2. The file's content will be the same as a UI route.
 
 For example:
 
 ```tsx title="src/admin/routes/settings/custom/page.tsx" highlights={[["14"], ["15"], ["16"]]}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 
 const CustomSettingPage = () => {
   return (
@@ -1786,15 +1786,15 @@ Learn more about creating setting pages in the [Admin UI Routes](../../fundament
 
 ### notify Props in Widgets, UI Routes, and Settings
 
-In Medusa v1, admin widgets, UI routes, and setting pages received a `notify` prop to show notifications in the admin dashboard.
+In Switchyard v1, admin widgets, UI routes, and setting pages received a `notify` prop to show notifications in the admin dashboard.
 
-This prop is no longer passed in v2. Instead, use the [toast utility from Medusa UI](!ui!/components/toast) to show notifications.
+This prop is no longer passed in v2. Instead, use the [toast utility from Switchyard UI](!ui!/components/toast) to show notifications.
 
 For example:
 
 ```tsx title="src/admin/widgets/product-details.tsx" highlights={[["7"], ["8"], ["9"]]}
-import { toast } from "@medusajs/ui"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
+import { toast } from "@switchyard/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
 
 // The widget
 const ProductWidget = () => {
@@ -1814,37 +1814,37 @@ export const config = defineWidgetConfig({
 export default ProductWidget
 ```
 
-Learn more about the `toast` utility in the [Medusa UI Toasts](!ui!/components/toast) documentation.
+Learn more about the `toast` utility in the [Switchyard UI Toasts](!ui!/components/toast) documentation.
 
-### Sending Requests to Medusa Server
+### Sending Requests to Switchyard Server
 
-In Medusa v1, you used Medusa React to send requests to the Medusa server.
+In Switchyard v1, you used Switchyard React to send requests to the Switchyard server.
 
-Medusa v2 no longer supports Medusa React. Instead, you can use the JS SDK with Tanstack Query to send requests from your admin customizations to the Medusa server.
+Switchyard v2 no longer supports Switchyard React. Instead, you can use the JS SDK with Tanstack Query to send requests from your admin customizations to the Switchyard server.
 
 Learn more in the [Admin Development Tips](../../fundamentals/admin/tips/page.mdx#send-requests-to-api-routes) chapter.
 
 ### Admin Languages
 
-Medusa Admin v2 supports different languages out-of-the-box, and you can contribute with new translations.
+Switchyard Admin v2 supports different languages out-of-the-box, and you can contribute with new translations.
 
-Refer to the [User Guide](!user-guide!/tips/languages) for the list of languages supported in the Medusa Admin.
+Refer to the [User Guide](!user-guide!/tips/languages) for the list of languages supported in the Switchyard Admin.
 
 ---
 
 ## Commerce Features Changes
 
-In Medusa v2, commerce features are implemented as [Commerce Modules](!resources!/commerce-modules). For example, the [Product Module](!resources!/commerce-modules/product) implements the product-related features, whereas the [Cart Module](!resources!/commerce-modules/cart) implements the cart-related features.
+In Switchyard v2, commerce features are implemented as [Commerce Modules](!resources!/commerce-modules). For example, the [Product Module](!resources!/commerce-modules/product) implements the product-related features, whereas the [Cart Module](!resources!/commerce-modules/cart) implements the cart-related features.
 
-So, it's difficult to cover all changes in commerce features between v1 and v2. Instead, this section will highlight changes to customizations that were documented in the Medusa v1 documentation.
+So, it's difficult to cover all changes in commerce features between v1 and v2. Instead, this section will highlight changes to customizations that were documented in the Switchyard v1 documentation.
 
-To learn about all commerce features in Medusa v2, refer to the [Commerce Modules](!resources!/commerce-modules) documentation.
+To learn about all commerce features in Switchyard v2, refer to the [Commerce Modules](!resources!/commerce-modules) documentation.
 
 ### Providers are now Module Providers
 
-In Medusa v1, you created providers for payment, fulfillment, and tax in services under `src/services`.
+In Switchyard v1, you created providers for payment, fulfillment, and tax in services under `src/services`.
 
-In Medusa v2, you create these providers as module providers that belong to the Payment, Fulfillment, and Tax modules respectively.
+In Switchyard v2, you create these providers as module providers that belong to the Payment, Fulfillment, and Tax modules respectively.
 
 Refer to the following guides to learn how to create these module providers:
 
@@ -1854,9 +1854,9 @@ Refer to the following guides to learn how to create these module providers:
 
 ### Overridden Cart Completion
 
-In Medusa v1, you were able to override the cart completion strategy to customize the cart completion process.
+In Switchyard v1, you were able to override the cart completion strategy to customize the cart completion process.
 
-In Medusa v2, the cart completion process is now implemented in the [completeCartWorkflow](!resources!/references/medusa-workflows/completeCartWorkflow). There are two ways you can customize the completion process:
+In Switchyard v2, the cart completion process is now implemented in the [completeCartWorkflow](!resources!/references/medusa-workflows/completeCartWorkflow). There are two ways you can customize the completion process:
 
 - [Consuming hooks](../../fundamentals/workflows/workflow-hooks/page.mdx) like the [validate](!resources!/references/medusa-workflows/completeCartWorkflow#validate) hook. This is useful if you only want to make changes in key points of the cart completion process.
     - You can view available hooks in the [completeCartWorkflow reference](!resources!/references/medusa-workflows/completeCartWorkflow#hooks)
@@ -1864,38 +1864,38 @@ In Medusa v2, the cart completion process is now implemented in the [completeCar
 
 ### Overridden Tax Calculation
 
-In Medusa v1, you were able to override the tax calculation strategy to customize the tax calculation process.
+In Switchyard v1, you were able to override the tax calculation strategy to customize the tax calculation process.
 
-In Medusa v2, the tax calculation process is now implemented in a [Tax Module Provider](!resources!/commerce-modules/tax/tax-provider). So, you can [create a custom tax provider](!resources!/references/tax/provider) with the calculation logic you want, then [use it in a tax region](!user-guide!/settings/tax-regions#edit-tax-region).
+In Switchyard v2, the tax calculation process is now implemented in a [Tax Module Provider](!resources!/commerce-modules/tax/tax-provider). So, you can [create a custom tax provider](!resources!/references/tax/provider) with the calculation logic you want, then [use it in a tax region](!user-guide!/settings/tax-regions#edit-tax-region).
 
 ### Overridden Price Selection
 
-In Medusa v1, you were able to override the price selection strategy to customize the price selection process.
+In Switchyard v1, you were able to override the price selection strategy to customize the price selection process.
 
-In Medusa v2, the price selection process is now implemented in the [Pricing Module's calculate method](!resources!/commerce-modules/pricing/price-calculation). The Pricing Module allows you to set [flexible rules and tiers](!resources!/commerce-modules/pricing/price-rules) to support your use case.
+In Switchyard v2, the price selection process is now implemented in the [Pricing Module's calculate method](!resources!/commerce-modules/pricing/price-calculation). The Pricing Module allows you to set [flexible rules and tiers](!resources!/commerce-modules/pricing/price-rules) to support your use case.
 
 If your use case is complex and these rules are not enough, you can create a new [module](../../fundamentals/modules/page.mdx) with the necessary logic, then use that module in your custom workflows.
 
 ## Prices are Stored in Major Units
 
-In Medusa v1, prices were stored in the smallest currency unit. For example, a price of $10.00 was stored as `1000` (cents).
+In Switchyard v1, prices were stored in the smallest currency unit. For example, a price of $10.00 was stored as `1000` (cents).
 
-In Medusa v2, prices are stored in the major unit. For example, a price of $10.00 is stored as `10` (dollars).
+In Switchyard v2, prices are stored in the major unit. For example, a price of $10.00 is stored as `10` (dollars).
 
 Learn more in the [Pricing Concepts](!resources!/commerce-modules/pricing/concepts) guide.
 
 ### Gift Card Features
 
-Medusa v1 has gift card features out-of-the-box.
+Switchyard v1 has gift card features out-of-the-box.
 
-In Medusa v2, gift card features are now only available to [Cloud](https://medusajs.com/cloud/) users.
+In Switchyard v2, gift card features are now only available to [Cloud](https://switchyard.com/cloud/) users.
 
 ---
 
 ## Deployment Changes
 
-The deployment process in Medusa v2 is similar to v1, but with some changes. For example, the Medusa server is now deployed with Medusa Admin.
+The deployment process in Switchyard v2 is similar to v1, but with some changes. For example, the Switchyard server is now deployed with Switchyard Admin.
 
-Medusa also provides [Cloud](https://medusajs.com/cloud/), a managed services offering that makes deploying and operating Medusa applications possible without having to worry about configuring, scaling, and maintaining infrastructure.
+Switchyard also provides [Cloud](https://switchyard.com/cloud/), a managed services offering that makes deploying and operating Switchyard applications possible without having to worry about configuring, scaling, and maintaining infrastructure.
 
-Refer to the [Deployment](!resources!/deployment) documentation to learn about the deployment process for Medusa applications and Next.js Starter Storefront.
+Refer to the [Deployment](!resources!/deployment) documentation to learn about the deployment process for Switchyard applications and Next.js Starter Storefront.

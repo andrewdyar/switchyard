@@ -8,25 +8,25 @@ products:
 ---
 
 import { Table } from "docs-ui"
-import { EllipsisHorizontal } from "@medusajs/icons"
+import { EllipsisHorizontal } from "@switchyard/icons"
 
 export const metadata = {
-  title: `Manage Secret API Keys in Medusa Admin`,
+  title: `Manage Secret API Keys in Switchyard Admin`,
 }
 
 # {metadata.title}
 
-In this guide, you'll learn how to create and manage secret API keys in the Medusa Admin.
+In this guide, you'll learn how to create and manage secret API keys in the Switchyard Admin.
 
 <Note>
 
-This guide is mainly useful for developers and technical teams building customizations for a Medusa application.
+This guide is mainly useful for developers and technical teams building customizations for a Switchyard application.
 
 </Note>
 
 ## What is a Secret API Key?
 
-A secret API key is an authentication token that allows you to access Medusa's Admin APIs. You can pass it in request headers to send requests as an authenticated admin user. So, it's important to not expose the secret API key in client-side code or public repositories.
+A secret API key is an authentication token that allows you to access Switchyard's Admin APIs. You can pass it in request headers to send requests as an authenticated admin user. So, it's important to not expose the secret API key in client-side code or public repositories.
 
 To learn how to pass the secret API key in request headers, refer to the [API Reference](!api!/admin#2-api-token).
 
@@ -34,7 +34,7 @@ To learn how to pass the secret API key in request headers, refer to the [API Re
 
 ## View Secret API Keys
 
-To view the secret API keys of the currently logged-in user in the Medusa Admin, go to Settings -> Secret API Keys.
+To view the secret API keys of the currently logged-in user in the Switchyard Admin, go to Settings -> Secret API Keys.
 
 Here, you can see a list of all the secret API keys for the logged-in user. You can also search, filter, and sort the API keys to find the one you are looking for.
 
@@ -48,7 +48,7 @@ When you create a secret API key, you create it for the currently logged-in user
 
 <Note>
 
-Prior to [Medusa v2.11.0], users could only have one active secret API key at a time. To create a new secret API key, you had to [revoke](#revoke-secret-api-key) the existing key first. If you can't create multiple secret API keys, request your technical team to [upgrade your Medusa application](!docs!/learn/update).
+Prior to [Switchyard v2.11.0], users could only have one active secret API key at a time. To create a new secret API key, you had to [revoke](#revoke-secret-api-key) the existing key first. If you can't create multiple secret API keys, request your technical team to [upgrade your Switchyard application](!docs!/learn/update).
 
 </Note>
 

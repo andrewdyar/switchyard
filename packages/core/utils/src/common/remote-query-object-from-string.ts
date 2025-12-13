@@ -1,7 +1,7 @@
 import {
   RemoteQueryObjectConfig,
   RemoteQueryObjectFromStringResult,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import { isObject } from "./is-object"
 
 /**

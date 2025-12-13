@@ -1,6 +1,6 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { ICustomerModuleService } from "@medusajs/types"
-import { Modules } from "@medusajs/utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { ICustomerModuleService } from "@switchyard/types"
+import { Modules } from "@switchyard/utils"
 import {
   generatePublishableKey,
   generateStoreHeaders,

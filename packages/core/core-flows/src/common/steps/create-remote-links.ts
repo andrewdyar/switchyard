@@ -1,7 +1,7 @@
-import { Link } from "@medusajs/framework/modules-sdk"
-import type { LinkDefinition } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { Link } from "@switchyard/framework/modules-sdk"
+import type { LinkDefinition } from "@switchyard/framework/types"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 export const createLinksStepId = "create-remote-links"
 /**

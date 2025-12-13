@@ -23,7 +23,7 @@ In this tutorial, you'll customize the Next.js Starter Storefront based on the [
 <Prerequisites
   items={[
     {
-      text: "Medusa backend with ticket booking functionality",
+      text: "Switchyard backend with ticket booking functionality",
       link: "../page.mdx",
     },
     {
@@ -42,13 +42,13 @@ In this tutorial, you'll customize the [Next.js Starter Storefront](../../../../
 3. **Checkout Page**: Remove the shipping steps and complete the cart using the custom complete cart API route you created earlier.
 4. **Order Confirmation Page**: Display ticket details for ticket items.
 
-![Preview of the seat selection on the product page](https://res.cloudinary.com/dza7lstvk/image/upload/v1757422831/Medusa%20Resources/CleanShot_2025-09-09_at_15.59.33_2x_afkysa.png)
+![Preview of the seat selection on the product page](https://res.cloudinary.com/dza7lstvk/image/upload/v1757422831/Switchyard%20Resources/CleanShot_2025-09-09_at_15.59.33_2x_afkysa.png)
 
 <Note title="Reminder" forceMultiline>
 
-If you installed the Next.js Starter Storefront with the Medusa backend, the storefront was installed in a separate directory. The directory's name is `{your-project}-storefront`.
+If you installed the Next.js Starter Storefront with the Switchyard backend, the storefront was installed in a separate directory. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-ticketing`, you can find the storefront by going back to the parent directory and changing to the `medusa-ticketing-storefront` directory:
+So, if your Switchyard application's directory is `medusa-ticketing`, you can find the storefront by going back to the parent directory and changing to the `medusa-ticketing-storefront` directory:
 
 ```bash
 cd ../medusa-ticketing-storefront # change based on your project name
@@ -63,7 +63,7 @@ Before you customize the storefront, you'll create some types and utility functi
 Create the file `src/lib/util/ticket-product.ts` with the following content:
 
 ```ts title="src/lib/util/ticket-product.ts"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 export interface TicketProductAvailability {
   date: string
@@ -138,7 +138,7 @@ You define types for the ticket product availability and seating layout API resp
 
 Next, you'll add support for adding items to the cart with metadata. This is necessary because when adding tickets to the cart, you need to include metadata such as the seat number and show date.
 
-This functionality is supported by the Medusa APIs, but you need to update the `addToCart` function in the storefront to accept and send metadata.
+This functionality is supported by the Switchyard APIs, but you need to update the `addToCart` function in the storefront to accept and send metadata.
 
 In `src/lib/data/cart.ts`, find the `addToCart` function and update its object parameter to include an optional `metadata` property:
 
@@ -168,7 +168,7 @@ await sdk.store.cart
   )
 ```
 
-Now, the `addToCart` function accepts an optional `metadata` property and sends it to the Medusa backend when creating a line item.
+Now, the `addToCart` function accepts an optional `metadata` property and sends it to the Switchyard backend when creating a line item.
 
 ---
 
@@ -222,7 +222,7 @@ You create a server function `getTicketProductAvailability` that fetches the ava
 
 Next, you'll create the date selector component. It will show an input to select the number of tickets and a calendar to select a date.
 
-![Preview of the date selector component](https://res.cloudinary.com/dza7lstvk/image/upload/v1757495634/Medusa%20Resources/CleanShot_2025-09-10_at_12.13.25_2x_adyjpu.png)
+![Preview of the date selector component](https://res.cloudinary.com/dza7lstvk/image/upload/v1757495634/Switchyard%20Resources/CleanShot_2025-09-10_at_12.13.25_2x_adyjpu.png)
 
 Create the file `src/modules/products/components/ticket-product-layout/date-quantity-selection.tsx` with the following content:
 
@@ -231,9 +231,9 @@ Create the file `src/modules/products/components/ticket-product-layout/date-quan
 
 import { getTicketProductAvailability } from "@lib/data/ticket-products"
 import { TicketProductAvailability } from "@lib/util/ticket-product"
-import { HttpTypes } from "@medusajs/types"
-import { Button, Calendar, Label, IconButton, toast } from "@medusajs/ui"
-import { Minus, Plus } from "@medusajs/icons"
+import { HttpTypes } from "@switchyard/types"
+import { Button, Calendar, Label, IconButton, toast } from "@switchyard/ui"
+import { Minus, Plus } from "@switchyard/icons"
 import { useState, useEffect } from "react"
 
 type TicketDateSelectionProps = {
@@ -314,7 +314,7 @@ export default function TicketDateSelection({
 
 The `TicketDateSelection` component accepts the following props:
 
-- `product`: The Medusa product to select a date for.
+- `product`: The Switchyard product to select a date for.
 - `onDateSelect`: A callback function that is called when the date and number of tickets are selected.
 - `disabled`: A boolean to disable the component.
 
@@ -454,7 +454,7 @@ You create a server function `getTicketProductSeats` that fetches the seating la
 
 Next, you'll create the seat selector component. It will show a modal with a seat chart to select seats, and a button to add the seats to the cart and proceed to checkout.
 
-![Preview of the seat selector component](https://res.cloudinary.com/dza7lstvk/image/upload/v1757496623/Medusa%20Resources/CleanShot_2025-09-10_at_12.30.07_2x_ylhhk1.png)
+![Preview of the seat selector component](https://res.cloudinary.com/dza7lstvk/image/upload/v1757496623/Switchyard%20Resources/CleanShot_2025-09-10_at_12.30.07_2x_ylhhk1.png)
 
 You'll first create the seat chart component that displays the seating layout and allows selecting seats. Create the file `src/modules/products/components/ticket-product-layout/seat-selection.tsx` with the following content:
 
@@ -462,8 +462,8 @@ You'll first create the seat chart component that displays the seating layout an
 "use client"
 
 import { TicketProductSeatsData } from "@lib/util/ticket-product"
-import { Tooltip, TooltipProvider } from "@medusajs/ui"
-import { HttpTypes } from "@medusajs/types"
+import { Tooltip, TooltipProvider } from "@switchyard/ui"
+import { HttpTypes } from "@switchyard/types"
 import { convertToLocale } from "../../../../lib/util/money"
 
 export type SelectedSeat = {
@@ -542,7 +542,7 @@ The `SeatSelection` component accepts the following props:
 - `selectedSeats`: An array of currently selected seats.
 - `onSeatSelect`: A callback function that is called when a seat is selected.
 - `disabled`: A boolean to disable seat selection.
-- `product`: The Medusa product to select seats for.
+- `product`: The Switchyard product to select seats for.
 - `maxSeats`: The maximum number of seats that can be selected.
 
 In the component, you define the following functions:
@@ -707,8 +707,8 @@ Next, you'll create the seat selector modal component that renders the `SeatSele
 import { addToCart } from "@lib/data/cart"
 import { getTicketProductSeats } from "@lib/data/ticket-products"
 import { TicketProductSeatsData } from "@lib/util/ticket-product"
-import { HttpTypes } from "@medusajs/types"
-import { Button, toast } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Button, toast } from "@switchyard/ui"
 import { useParams, useRouter } from "next/navigation"
 import { useEffect, useMemo, useState } from "react"
 import { convertToLocale } from "@lib/util/money"
@@ -782,7 +782,7 @@ export default function SeatSelectionModal({
 
 The `SeatSelectionModal` component accepts the following props:
 
-- `product`: The Medusa product to select seats for.
+- `product`: The Switchyard product to select seats for.
 - `selectedDate`: The selected show date.
 - `selectedQuantity`: The number of tickets to select.
 - `isOpen`: A boolean to control the visibility of the modal.
@@ -946,7 +946,7 @@ Create the file `src/modules/products/components/ticket-product-layout/index.tsx
 "use client"
 
 import React, { useState } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import TicketDateSelection from "./date-quantity-selection"
 import SeatSelectionModal from "./seat-selection-modal"
 
@@ -1012,7 +1012,7 @@ import RelatedProducts from "@modules/products/components/related-products"
 import ProductInfo from "@modules/products/templates/product-info"
 import SkeletonRelatedProducts from "@modules/skeletons/templates/skeleton-related-products"
 import { notFound } from "next/navigation"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import TicketLayout from "../components/ticket-product-layout"
 
 type ProductTemplateProps = {
@@ -1131,7 +1131,7 @@ Since you used the `toast` function in your customization to show toast messages
 In `src/app/layout.tsx`, add the following import at the top of the file:
 
 ```tsx title="src/app/layout.tsx"
-import { Toaster } from "@medusajs/ui"
+import { Toaster } from "@switchyard/ui"
 ```
 
 Then, add the `<Toaster />` component at the end of the body tag in the `return` statement:
@@ -1149,9 +1149,9 @@ return (
 
 ### Test Product Page
 
-To test the product page in the Next.js Starter Storefront, run the following command in the Medusa application's directory:
+To test the product page in the Next.js Starter Storefront, run the following command in the Switchyard application's directory:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -1169,11 +1169,11 @@ Then:
 
 You'll see on the product page the date selector component on the right side of the product images.
 
-![Product page for a ticket product with date selector](https://res.cloudinary.com/dza7lstvk/image/upload/v1757498728/Medusa%20Resources/CleanShot_2025-09-10_at_13.05.15_2x_ktdgil.png)
+![Product page for a ticket product with date selector](https://res.cloudinary.com/dza7lstvk/image/upload/v1757498728/Switchyard%20Resources/CleanShot_2025-09-10_at_13.05.15_2x_ktdgil.png)
 
 Select a date and number of tickets, then click the "Pick Seats" button. A modal will open with the seat selection component. You can select seats and click the "Buy Tickets" button to add them to the cart and proceed to checkout.
 
-![Seat selection modal on the product page](https://res.cloudinary.com/dza7lstvk/image/upload/v1757496623/Medusa%20Resources/CleanShot_2025-09-10_at_12.30.07_2x_ylhhk1.png)
+![Seat selection modal on the product page](https://res.cloudinary.com/dza7lstvk/image/upload/v1757496623/Switchyard%20Resources/CleanShot_2025-09-10_at_12.30.07_2x_ylhhk1.png)
 
 This will open the checkout page with the selected tickets in the cart. You'll customize the checkout and cart components next.
 
@@ -1269,8 +1269,8 @@ Next, you'll add a component that shows a step to enter the billing address duri
 Create the file `src/modules/checkout/components/billing-address/index.tsx` with the following content:
 
 ```tsx title="src/modules/checkout/components/billing-address/index.tsx" collapsibleLines="1-8" expandButtonLabel="Show Imports"
-import { HttpTypes } from "@medusajs/types"
-import { Container } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Container } from "@switchyard/ui"
 import Input from "@modules/common/components/input"
 import { mapKeys } from "lodash"
 import React, { useEffect, useMemo, useState } from "react"
@@ -1767,11 +1767,11 @@ This updates the function to call the `/store/carts/{id}/complete-tickets` endpo
 
 ### Test Checkout Page
 
-To test the latest cart and checkout changes, start both the Medusa application and the Next.js Starter Storefront.
+To test the latest cart and checkout changes, start both the Switchyard application and the Next.js Starter Storefront.
 
 Then, add a ticket product to the cart by selecting a date, quantity, and seats on the product page. You'll be taken to the checkout page where you can see only three steps: Billing Address, Payment, and Review.
 
-![Checkout page with three steps: Billing Address, Payment, and Review](https://res.cloudinary.com/dza7lstvk/image/upload/v1757500461/Medusa%20Resources/CleanShot_2025-09-10_at_13.34.07_2x_bkevfs.png)
+![Checkout page with three steps: Billing Address, Payment, and Review](https://res.cloudinary.com/dza7lstvk/image/upload/v1757500461/Switchyard%20Resources/CleanShot_2025-09-10_at_13.34.07_2x_bkevfs.png)
 
 Fill out the billing address form, choose a payment method, and click "Place Order" in the Review step. Once the order is placed, you'll be redirected to the order confirmation page. You may see an error related to shipping details missing, which you'll fix by customizing the order confirmation page next.
 
@@ -1792,8 +1792,8 @@ Create the file `src/modules/order/components/billing-details/index.tsx` with th
 
 ```tsx title="src/modules/order/components/billing-details/index.tsx"
 import { convertToLocale } from "@lib/util/money"
-import { HttpTypes } from "@medusajs/types"
-import { Heading, Text } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Heading, Text } from "@switchyard/ui"
 
 import Divider from "@modules/common/components/divider"
 
@@ -1881,7 +1881,7 @@ And replace the `ShippingDetails` component in the `return` statement of the `Or
 
 The order confirmation page now should show the billing details instead of shipping details.
 
-![Order confirmation page showing billing details](https://res.cloudinary.com/dza7lstvk/image/upload/v1757504448/Medusa%20Resources/CleanShot_2025-09-10_at_14.40.34_2x_pwfyyf.png)
+![Order confirmation page showing billing details](https://res.cloudinary.com/dza7lstvk/image/upload/v1757504448/Switchyard%20Resources/CleanShot_2025-09-10_at_14.40.34_2x_pwfyyf.png)
 
 ### Show Selected Seats in Order Items
 
@@ -1914,7 +1914,7 @@ This prevents displaying the quantity for ticket products, as it's redundant.
 
 If you check the order confirmation page now, you'll see the selected seats and show dates for each ticket item.
 
-![Order confirmation page showing selected seats and show date for ticket items](https://res.cloudinary.com/dza7lstvk/image/upload/v1757504846/Medusa%20Resources/CleanShot_2025-09-10_at_14.47.16_2x_mfnh3f.png)
+![Order confirmation page showing selected seats and show date for ticket items](https://res.cloudinary.com/dza7lstvk/image/upload/v1757504846/Switchyard%20Resources/CleanShot_2025-09-10_at_14.47.16_2x_mfnh3f.png)
 
 ---
 
@@ -1922,11 +1922,11 @@ If you check the order confirmation page now, you'll see the selected seats and 
 
 You've now customized the Next.js Starter Storefront to support ticket products. You can further customize the storefront to change the styling and user experience to fit your brand.
 
-### Learn More About Medusa
+### Learn More About Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../..//commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../..//commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -1936,5 +1936,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

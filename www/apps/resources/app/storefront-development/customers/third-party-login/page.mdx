@@ -23,7 +23,7 @@ In this guide, you'll learn how to implement third-party or social login in your
 By following the steps in this guide, you'll learn how to:
 
 - Create a login page with a button that starts the third-party login process. This redirects customers to the third-party service for authentication.
-- Create a callback page that the third-party service redirects to after authentication. This page receives query parameters from the third-party service and uses them to validate the authentication in Medusa.
+- Create a callback page that the third-party service redirects to after authentication. This page receives query parameters from the third-party service and uses them to validate the authentication in Switchyard.
 
 These are the pages you need in your storefront to allow customers to log in or create an account using a third-party service.
 
@@ -35,7 +35,7 @@ These are the pages you need in your storefront to allow customers to log in or 
       text: "Google OAuth credentials configured. This is required for using the Google Auth Module Provider.",
     },
     {
-      text: "Install the Google Auth Module Provider in your Medusa application, or the provider you're using.",
+      text: "Install the Google Auth Module Provider in your Switchyard application, or the provider you're using.",
       link: "/commerce-modules/auth/auth-providers/google"
     },
     {
@@ -177,7 +177,7 @@ First, install the [react-jwt library](https://www.npmjs.com/package/react-jwt) 
 npm install react-jwt
 ```
 
-You'll use it to decode the token that Medusa returns after validating the authentication callback.
+You'll use it to decode the token that Switchyard returns after validating the authentication callback.
 
 ### b. Implement the Callback Page
 
@@ -195,7 +195,7 @@ export const sendCallbackReactHighlights = [
 ```tsx highlights={sendCallbackReactHighlights}
 "use client" // include with Next.js 13+
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { useEffect, useMemo, useState } from "react"
 import { decodeToken } from "react-jwt"
 import { sdk } from "@/lib/sdk"
@@ -351,12 +351,12 @@ This method assumes that the token received from the [Validate Callback API rout
 
 ### e. Validate Callback Function
 
-Finally, you'll add to the page a function that validates the authentication callback in Medusa and creates or retrieves the customer account. It will use the functions added earlier.
+Finally, you'll add to the page a function that validates the authentication callback in Switchyard and creates or retrieves the customer account. It will use the functions added earlier.
 
 Add in the place of the new `TODO` the `validateCallback` function that runs when the page first loads to validate the authentication:
 
 export const validateReactHighlights = [
-  ["2", "sendCallback", "Validate the callback in Medusa and retrieve the authentication token"],
+  ["2", "sendCallback", "Validate the callback in Switchyard and retrieve the authentication token"],
   ["6", "shouldCreateCustomer", "Check if the decoded token has an `actor_id` property to decide whether a customer needs to be created"],
   ["9", "createCustomer", "Create a customer if the decoded token doesn't have `actor_id`"],
   ["11", "refreshToken", "Fetch a new token for the created customer"],
@@ -394,7 +394,7 @@ The `validateCallback` function uses the functions added earlier to implement th
 2. Decode the token to check if it has an `actor_id` property.
   - If the property exists, the customer is already registered. The authentication token can be used for subsequent authenticated requests.
   - If the property doesn't exist, this is the first time the customer is authenticating with the third-party service. So:
-      1. Create a customer. The `user_metadata` in the decoded token will hold the customer's information in the third-party provider, such as their `email`. You can use this value as the customer's email in Medusa.
+      1. Create a customer. The `user_metadata` in the decoded token will hold the customer's information in the third-party provider, such as their `email`. You can use this value as the customer's email in Switchyard.
       2. Refetch the customer's authentication token.
       3. Use the token for subsequent authenticated requests.
 3. Retrieve the customer's details as an example of testing authentication.
@@ -438,7 +438,7 @@ useEffect(() => {
 ```tsx
 "use client" // include with Next.js 13+
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { useEffect, useMemo, useState } from "react"
 import { decodeToken } from "react-jwt"
 import { sdk } from "@/lib/sdk"
@@ -475,7 +475,7 @@ export default function GoogleCallback() {
   const createCustomer = async () => {
     // create customer
     await sdk.store.customer.create({
-      email: "example@medusajs.com",
+      email: "example@switchyard.com",
     })
   }
 
@@ -565,7 +565,7 @@ const sendCallback = async () => {
 const createCustomer = async () => {
   // create customer
   await sdk.store.customer.create({
-    email: "example@medusajs.com",
+    email: "example@switchyard.com",
   })
 }
 
@@ -602,16 +602,16 @@ const validateCallback = async () => {
 
 In this section, you'll find a general overview of the third-party login flow in the storefront. This is useful if you're not using the JS SDK or want to understand the flow better.
 
-If you already set up the [Auth Module Provider](../../../commerce-modules/auth/auth-providers/page.mdx) in your Medusa application, you can log in a customer with a third-party service, such as Google or GitHub, using the following flow:
+If you already set up the [Auth Module Provider](../../../commerce-modules/auth/auth-providers/page.mdx) in your Switchyard application, you can log in a customer with a third-party service, such as Google or GitHub, using the following flow:
 
-![Diagram illustrating the authentication flow between the storefront, Medusa application, and the third-party service.](https://res.cloudinary.com/dza7lstvk/image/upload/v1725531068/Medusa%20Resources/Social_Media_Graphics_third-party-auth-customer_kfn3k3.jpg)
+![Diagram illustrating the authentication flow between the storefront, Switchyard application, and the third-party service.](https://res.cloudinary.com/dza7lstvk/image/upload/v1725531068/Switchyard%20Resources/Social_Media_Graphics_third-party-auth-customer_kfn3k3.jpg)
 
 1. Authenticate the customer with the [Authenticate Customer API route](!api!/store#auth_postactor_typeauth_provider). It may return:
     - A URL in a `location` property to authenticate with a third-party service, such as Google. When you receive this property, redirect to the returned location.
     - A token in a `token` property. In this case, the customer was previously logged in with the third-party service. No additional actions are required. You can use the token to send subsequent authenticated requests.
 2. Once authentication with the third-party service finishes, it redirects back to the storefront with query parameters such as `code` and `state`. Make sure your third-party service is configured to redirect to your storefront's callback page after successful authentication.
 3. In the storefront's callback page, send a request to the [Validate Authentication Callback API route](!api!/store#auth_postactor_typeauth_providercallback). Pass the query parameters (`code`, `state`, etc.) received from the third-party service.
-    - Medusa validates the authentication with the third-party service.
+    - Switchyard validates the authentication with the third-party service.
 4. If the callback validation is successful, you'll receive the authentication token. Decode the received token in the storefront using tools like [react-jwt](https://www.npmjs.com/package/react-jwt).
     - If the decoded data has an `actor_id` property, the customer is already registered. Use this token for subsequent authenticated requests.
     - If not, follow the rest of the steps.

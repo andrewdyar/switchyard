@@ -1,14 +1,14 @@
-import { RemoteJoiner } from "@medusajs/framework/orchestration"
-import CustomerModule from "@medusajs/medusa/customer"
-import RegionModule from "@medusajs/medusa/region"
-import { MedusaModule } from "@medusajs/modules-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { RemoteJoiner } from "@switchyard/framework/orchestration"
+import CustomerModule from "@switchyard/medusa/customer"
+import RegionModule from "@switchyard/medusa/region"
+import { SwitchyardModule } from "@switchyard/modules-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IRegionModuleService,
   ModuleJoinerConfig,
   RemoteQueryFunction,
-} from "@medusajs/types"
-import { ContainerRegistrationKeys, defineLink, Modules } from "@medusajs/utils"
+} from "@switchyard/types"
+import { ContainerRegistrationKeys, defineLink, Modules } from "@switchyard/utils"
 import { createAdminUser } from "../../..//helpers/create-admin-user"
 import { adminHeaders } from "../../../helpers/create-admin-user"
 
@@ -450,7 +450,7 @@ medusaIntegrationTestRunner({
         defineLink(customer, country)
         defineLink(customerGroup, country)
 
-        const modulesLoaded = MedusaModule.getLoadedModules().map(
+        const modulesLoaded = SwitchyardModule.getLoadedModules().map(
           (mod) => Object.values(mod)[0]
         )
 
@@ -463,10 +463,10 @@ medusaIntegrationTestRunner({
 
           servicesConfig_!.push(mod.__joinerConfig)
         }
-        const linkDefinition = MedusaModule.getCustomLinks().map(
+        const linkDefinition = SwitchyardModule.getCustomLinks().map(
           (linkDefinition: any) => {
             const definition = linkDefinition(
-              MedusaModule.getAllJoinerConfigs()
+              SwitchyardModule.getAllJoinerConfigs()
             )
             return definition
           }

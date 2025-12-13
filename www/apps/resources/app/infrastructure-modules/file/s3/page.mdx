@@ -17,11 +17,11 @@ export const metadata = {
 
 # {metadata.title}
 
-The S3 File Module Provider integrates Amazon S3 and services following a compatible API (such as MinIO or DigitalOcean Spaces) to store files uploaded to your Medusa application.
+The S3 File Module Provider integrates Amazon S3 and services following a compatible API (such as MinIO or DigitalOcean Spaces) to store files uploaded to your Switchyard application.
 
 <Note title="Looking for managed storage?">
 
-Cloud offers a managed file storage solution with AWS S3 for your Medusa application. Refer to the [S3](!cloud!/s3) Cloud documentation for more details.
+Cloud offers a managed file storage solution with AWS S3 for your Switchyard application. Refer to the [S3](!cloud!/s3) Cloud documentation for more details.
 
 </Note>
 
@@ -159,8 +159,8 @@ The File Module accepts one provider only.
 
 </Note>
 
-```ts title="medusa-config.ts"
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -169,11 +169,11 @@ module.exports = {
   modules: [
     // ...
     {
-      resolve: "@medusajs/medusa/file",
+      resolve: "@switchyard/medusa/file",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/file-s3",
+            resolve: "@switchyard/medusa/file-s3",
             id: "s3",
             options: {
               file_url: process.env.S3_FILE_URL,
@@ -198,16 +198,16 @@ If you're using MinIO or Supabase, set `forcePathStyle` to `true` in the `additi
 
 For example:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/file",
+      resolve: "@switchyard/medusa/file",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/file-s3",
+            resolve: "@switchyard/medusa/file-s3",
             id: "s3",
             options: {
               // ...

@@ -1,5 +1,5 @@
 # =============================================================================
-# Production Dockerfile for Medusa Application
+# Production Dockerfile for Switchyard Application
 # =============================================================================
 # Builds from source on Fly.io's remote builder
 # Optimized for Docker layer caching
@@ -45,11 +45,11 @@ ENV NODE_ENV=production
 RUN yarn build
 
 # =============================================================================
-# Layer 4: Medusa build (creates public/admin with transpiled files)
+# Layer 4: Switchyard build (creates public/admin with transpiled files)
 # =============================================================================
-# Build Medusa app - this creates public/admin with Vite's transpiled output
+# Build Switchyard app - this creates public/admin with Vite's transpiled output
 RUN cd apps/goods-backend && \
-    npx medusa build
+    npx switchyard build
 
 # =============================================================================
 # Layer 5: Verify admin build and fix HTML paths
@@ -109,8 +109,8 @@ EXPOSE 9000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD node -e "require('http').get('http://localhost:9000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
 
-# Start medusa - it will use the .medusa/server directory created by medusa build
+# Start switchyard - it will use the .switchyard/server directory created by switchyard build
 # Bind to 0.0.0.0 so Fly.io proxy can reach it
 # Note: When host is undefined, Node.js http.listen() binds to all interfaces (0.0.0.0) by default
 # We explicitly set --host 0.0.0.0 to ensure it works correctly with Fly.io's proxy
-CMD ["npx", "medusa", "start", "--host", "0.0.0.0"]
+CMD ["npx", "switchyard", "start", "--host", "0.0.0.0"]

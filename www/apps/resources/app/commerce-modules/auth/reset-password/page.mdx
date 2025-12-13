@@ -18,25 +18,25 @@ In this guide, you'll learn how to handle the `auth.password_reset` event to sen
 
 <Note title="Looking for no-code docs?">
 
-Refer to this [Medusa Admin User Guide](!user-guide!/reset-password) to learn how to reset your user admin password using the dashboard.
+Refer to this [Switchyard Admin User Guide](!user-guide!/reset-password) to learn how to reset your user admin password using the dashboard.
 
 </Note>
 
 ## Reset Password Flow Overview
 
-![Diagram showcasing the reset password flow detailed below](https://res.cloudinary.com/dza7lstvk/image/upload/v1754050032/Medusa%20Resources/reset-password_qheixj.jpg)
+![Diagram showcasing the reset password flow detailed below](https://res.cloudinary.com/dza7lstvk/image/upload/v1754050032/Switchyard%20Resources/reset-password_qheixj.jpg)
 
 Users of any actor type (admin, customer, or custom actor type) can request to reset their password. The flow for resetting a password is as follows:
 
-1. The user requests to reset their password either through the frontend (for example, [Medusa Admin](!user-guide!/reset-password)) or the [Generate Reset Password Token API route](../authentication-route/page.mdx#generate-reset-password-token-route).
-2. The Medusa application generates a password reset token and emits the `auth.password_reset` event.
+1. The user requests to reset their password either through the frontend (for example, [Switchyard Admin](!user-guide!/reset-password)) or the [Generate Reset Password Token API route](../authentication-route/page.mdx#generate-reset-password-token-route).
+2. The Switchyard application generates a password reset token and emits the `auth.password_reset` event.
     - At this point, you can handle the event to send a notification to the user with instructions on how to reset their password.
 3. The user receives the notification and clicks on the link to reset their password.
-    - The user can reset their password either through the frontend (for example, [Medusa Admin](!user-guide!/reset-password)) or the [Reset Password API route](../authentication-route/page.mdx#reset-password-route).
+    - The user can reset their password either through the frontend (for example, [Switchyard Admin](!user-guide!/reset-password)) or the [Reset Password API route](../authentication-route/page.mdx#reset-password-route).
 
 In this guide, you'll implement a subscriber that handles the `auth.password_reset` event to send an email notification to the user with instructions on how to reset their password.
 
-After adding the subscriber, you will have a complete reset password flow you can utilize using the Medusa Admin, storefront, or API routes.
+After adding the subscriber, you will have a complete reset password flow you can utilize using the Switchyard Admin, storefront, or API routes.
 
 ---
 
@@ -44,25 +44,25 @@ After adding the subscriber, you will have a complete reset password flow you ca
 
 To send an email or notification to the user, you must have a Notification Module Provider set up.
 
-Medusa provides providers like [SendGrid](../../../infrastructure-modules/notification/sendgrid/page.mdx) and [Resend](../../../integrations/guides/resend/page.mdx), and you can also [create your own custom provider](/references/notification-provider-module).
+Switchyard provides providers like [SendGrid](../../../infrastructure-modules/notification/sendgrid/page.mdx) and [Resend](../../../integrations/guides/resend/page.mdx), and you can also [create your own custom provider](/references/notification-provider-module).
 
 Refer to the [Notification Module](../../../infrastructure-modules/notification/page.mdx#what-is-a-notification-module-provider) documentation for a list of available providers and how to set them up.
 
 ### Testing with the Local Notification Module Provider
 
-For testing purposes, you can use the [Local Notification Module Provider](../../../infrastructure-modules/notification/local/page.mdx) by adding this to your `medusa-config.ts`:
+For testing purposes, you can use the [Local Notification Module Provider](../../../infrastructure-modules/notification/local/page.mdx) by adding this to your `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: "@switchyard/medusa/notification",
       options: {
         providers: [
           // ...
           {
-            resolve: "@medusajs/medusa/notification-local",
+            resolve: "@switchyard/medusa/notification-local",
             id: "local",
             options: {
               channels: ["email"],
@@ -100,8 +100,8 @@ export const highlights=[
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@medusajs/medusa"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/medusa"
+import { Modules } from "@switchyard/framework/utils"
 
 export default async function resetPasswordTokenHandler({
   event: { data: {
@@ -152,7 +152,7 @@ The subscriber receives the following data through the event payload:
 
 <Note>
 
-This event's payload previously had an `actorType` field. It was renamed to `actor_type` after [Medusa v2.0.7](https://github.com/medusajs/medusa/releases/tag/v2.0.7).
+This event's payload previously had an `actorType` field. It was renamed to `actor_type` after [Switchyard v2.0.7](https://github.com/switchyard/medusa/releases/tag/v2.0.7).
 
 </Note>
 
@@ -163,7 +163,7 @@ Based on the user's actor type, you set the URL prefix to redirect the user to t
 - If the user is a customer, you set the URL prefix to the storefront URL.
 - If the user is an admin, you set the URL prefix to the backend URL, which is constructed from the `config.admin.backendUrl` and `config.admin.path` values.
 
-Note that the Medusa Admin has a reset password form at `/reset-password?token={token}&email={email}`.
+Note that the Switchyard Admin has a reset password form at `/reset-password?token={token}&email={email}`.
 
 ### Notification Configurations
 
@@ -179,13 +179,13 @@ For the notification, you can configure the following fields:
 
 After you set up the Notification Module Provider, create a template in the provider, and create the subscriber, you can test the reset password flow.
 
-Start the Medusa application with the following command:
+Start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin (locally at `http://localhost:9000/app`) and click on "Reset" in the login form. Then, enter the email of the user you want to reset the password for.
+Then, open the Switchyard Admin (locally at `http://localhost:9000/app`) and click on "Reset" in the login form. Then, enter the email of the user you want to reset the password for.
 
 Once you reset the password, you should see that the `auth.password_reset` event is emitted in the server's logs:
 
@@ -205,7 +205,7 @@ In your frontend, you must have a page that accepts `token` and `email` query pa
 
 The page shows the user password fields to enter their new password, then submits the new password, token, and email to the [Reset Password Route](../authentication-route/page.mdx#reset-password-route).
 
-The Medusa Admin already has a reset password page at `/reset-password?token={token}&email={email}`. So, you only need to implement this page in your storefront or custom admin dashboard.
+The Switchyard Admin already has a reset password page at `/reset-password?token={token}&email={email}`. So, you only need to implement this page in your storefront or custom admin dashboard.
 
 ### Examples
 

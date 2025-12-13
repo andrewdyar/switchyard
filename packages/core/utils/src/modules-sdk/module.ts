@@ -1,4 +1,4 @@
-import { Constructor, IDmlEntity, ModuleExports } from "@medusajs/types"
+import { Constructor, IDmlEntity, ModuleExports } from "@switchyard/types"
 import { DmlEntity } from "../dml"
 import {
   buildIdPrefixToEntityNameFromDmlObjects,
@@ -6,7 +6,7 @@ import {
   buildLinkConfigFromModelObjects,
   defineJoinerConfig,
 } from "./joiner-config-builder"
-import { MedusaServiceModelObjectsSymbol } from "./medusa-service"
+import { SwitchyardServiceModelObjectsSymbol } from "./medusa-service"
 import { InfersLinksConfig } from "./types/links-config"
 
 /**
@@ -34,7 +34,7 @@ export function Module<
 ): ModuleExports<Service> & {
   linkable: Linkable
 } {
-  const modelObjects = service[MedusaServiceModelObjectsSymbol] ?? {}
+  const modelObjects = service[SwitchyardServiceModelObjectsSymbol] ?? {}
 
   service.prototype.__joinerConfig ??= () =>
     defineJoinerConfig(serviceName, {

@@ -7,7 +7,7 @@
  * This enables margin calculation and price comparison.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const RetailerPricing = model.define("goods_retailer_pricing", {
   id: model.id().primaryKey(),

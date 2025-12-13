@@ -1,12 +1,12 @@
-import type { BigNumberInput, PaymentDTO } from "@medusajs/framework/types"
-import { isDefined, MathBN, MedusaError } from "@medusajs/framework/utils"
+import type { BigNumberInput, PaymentDTO } from "@switchyard/framework/types"
+import { isDefined, MathBN, SwitchyardError } from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { addOrderTransactionStep } from "../../order/steps/add-order-transaction"
 import { refundPaymentsStep } from "../steps/refund-payments"
@@ -73,8 +73,8 @@ export const validatePaymentsRefundStep = createStep(
       const amountToRefund = paymentIdAmountMap.get(payment.id)!
 
       if (MathBN.gt(amountToRefund, refundableAmount)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Payment with id ${payment.id} is trying to refund amount greater than the refundable amount`
         )
       }

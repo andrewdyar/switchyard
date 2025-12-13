@@ -1,4 +1,4 @@
-import { BigNumberInput } from "@medusajs/framework/types"
+import { BigNumberInput } from "@switchyard/framework/types"
 
 export interface CreateShippingMethodAdjustmentDTO {
   shipping_method_id: string

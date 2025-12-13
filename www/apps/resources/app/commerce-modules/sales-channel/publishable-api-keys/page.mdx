@@ -24,13 +24,13 @@ curl http://localhost:9000/store/products \
   x-publishable-api-key: {your_publishable_api_key}
 ```
 
-The Medusa application infers the associated sales channels and ensures that only data relevant to the sales channel are used.
+The Switchyard application infers the associated sales channels and ensures that only data relevant to the sales channel are used.
 
 ---
 
 ## How to Create a Publishable API Key?
 
-To create a publishable API key, either use the [Medusa Admin](!user-guide!/settings/developer/publishable-api-keys) or the [Admin API Routes](!api!/admin#publishable-api-keys).
+To create a publishable API key, either use the [Switchyard Admin](!user-guide!/settings/developer/publishable-api-keys) or the [Admin API Routes](!api!/admin#publishable-api-keys).
 
 ---
 
@@ -41,12 +41,12 @@ If you create an API route under the `/store` prefix, you can access the sales c
 For example:
 
 ```ts
-import { MedusaStoreRequest, MedusaResponse } from "@medusajs/framework/http"
-import { getVariantAvailability } from "@medusajs/framework/utils"
+import { SwitchyardStoreRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { getVariantAvailability } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaStoreRequest,
-  res: MedusaResponse
+  req: SwitchyardStoreRequest,
+  res: SwitchyardResponse
 ) {
   const query = req.scope.resolve("query")
   const sales_channel_ids = req.publishable_key_context.sales_channel_ids
@@ -63,6 +63,6 @@ You can then use these IDs based on your business logic. For example, you can re
 
 <Note title="Tip">
 
-Notice that the request object's type is `MedusaStoreRequest` instead of `MedusaRequest` to ensure the availability of the `publishable_key_context` property.
+Notice that the request object's type is `SwitchyardStoreRequest` instead of `SwitchyardRequest` to ensure the availability of the `publishable_key_context` property.
 
 </Note>

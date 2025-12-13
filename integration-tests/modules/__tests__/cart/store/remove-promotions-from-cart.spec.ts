@@ -1,12 +1,12 @@
-import { RemoteLink } from "@medusajs/modules-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { ICartModuleService, IPromotionModuleService } from "@medusajs/types"
+import { RemoteLink } from "@switchyard/modules-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { ICartModuleService, IPromotionModuleService } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   PromotionStatus,
   PromotionType,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,

@@ -1,3 +1,3 @@
-import logger from "@medusajs/cli/dist/reporter"
+import logger from "@switchyard/cli/dist/reporter"
 
 export { logger }

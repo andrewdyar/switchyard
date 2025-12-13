@@ -79,7 +79,7 @@ export const MainNav = ({ className, itemsClassName }: MainNavProps) => {
                   {
                     type: "link",
                     title: "Troubleshooting",
-                    link: "https://docs.medusajs.com/resources/troubleshooting",
+                    link: "https://docs.switchyard.com/resources/troubleshooting",
                   },
                   {
                     type: "link",
@@ -89,7 +89,7 @@ export const MainNav = ({ className, itemsClassName }: MainNavProps) => {
                   {
                     type: "link",
                     title: "Discord Community",
-                    link: "https://discord.gg/medusajs",
+                    link: "https://discord.gg/switchyard",
                   },
                   {
                     type: "divider",
@@ -97,7 +97,7 @@ export const MainNav = ({ className, itemsClassName }: MainNavProps) => {
                   {
                     type: "link",
                     title: "Contact Sales",
-                    link: "https://medusajs.com/contact/",
+                    link: "https://switchyard.com/contact/",
                   },
                 ],
               }}

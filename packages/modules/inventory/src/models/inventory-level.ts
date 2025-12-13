@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import InventoryItem from "./inventory-item"
 
 const InventoryLevel = model

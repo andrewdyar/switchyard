@@ -1,6 +1,6 @@
-import type { ITaxModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import type { ITaxModuleService } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The IDs of the tax rate rules to delete.

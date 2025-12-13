@@ -1,6 +1,6 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { AdminShippingOption } from "@medusajs/types"
-import { ModuleRegistrationName, ProductStatus } from "@medusajs/utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { AdminShippingOption } from "@switchyard/types"
+import { ModuleRegistrationName, ProductStatus } from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,

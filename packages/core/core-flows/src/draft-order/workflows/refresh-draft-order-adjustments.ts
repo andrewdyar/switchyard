@@ -1,11 +1,11 @@
-import { PromotionActions } from "@medusajs/framework/utils"
+import { PromotionActions } from "@switchyard/framework/utils"
 import {
   createWorkflow,
   parallelize,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import type { OrderDTO } from "@medusajs/framework/types"
+} from "@switchyard/framework/workflows-sdk"
+import type { OrderDTO } from "@switchyard/framework/types"
 import {
   getActionsToComputeFromPromotionsStep,
   getPromotionCodesToApply,
@@ -71,7 +71,7 @@ export interface RefreshDraftOrderAdjustmentsWorkflowInput {
  *   input: {
  *     order: order,
  *     promo_codes: ["PROMO_CODE_1", "PROMO_CODE_2"],
- *     // imported from "@medusajs/framework/utils"
+ *     // imported from "@switchyard/framework/utils"
  *     action: PromotionActions.ADD,
  *   }
  * })

@@ -1,9 +1,9 @@
-import type { FulfillmentWorkflow } from "@medusajs/framework/types"
+import type { FulfillmentWorkflow } from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { updateFulfillmentStep } from "../steps"
 
 export const updateFulfillmentWorkflowId = "update-fulfillment-workflow"

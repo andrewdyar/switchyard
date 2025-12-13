@@ -2,18 +2,18 @@ import {
   TransactionModelOptions,
   WorkflowHandler,
   WorkflowManager,
-} from "@medusajs/orchestration"
+} from "@switchyard/orchestration"
 import {
   IWorkflowEngineService,
   LoadedModule,
-  MedusaContainer,
-} from "@medusajs/types"
+  SwitchyardContainer,
+} from "@switchyard/types"
 import {
   getCallerFilePath,
   isString,
   Modules,
   OrchestrationUtils,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { ulid } from "ulid"
 import { exportWorkflow, WorkflowResult } from "../../helper"
 import { createStep } from "./create-step"
@@ -29,7 +29,7 @@ import {
   WorkflowData,
 } from "./type"
 
-global[OrchestrationUtils.SymbolMedusaWorkflowComposerContext] = null
+global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext] = null
 
 const buildTransactionId = (
   step: { __step__: string },
@@ -59,8 +59,8 @@ const buildTransactionId = (
  * import {
  *   createWorkflow,
  *   WorkflowResponse
- * } from "@medusajs/framework/workflows-sdk"
- * import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+ * } from "@switchyard/framework/workflows-sdk"
+ * import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
  * import {
  *   createProductStep,
  *   getProductStep,
@@ -82,8 +82,8 @@ const buildTransactionId = (
  * )
  *
  * export async function GET(
- *   req: MedusaRequest,
- *   res: MedusaResponse
+ *   req: SwitchyardRequest,
+ *   res: SwitchyardResponse
  * ) {
  *   const { result: product } = await myWorkflow(req.scope)
  *     .run({
@@ -125,7 +125,7 @@ export function createWorkflow<TData, TResult, THooks extends any[]>(
   }
 
   const context: CreateWorkflowComposerContext = {
-    __type: OrchestrationUtils.SymbolMedusaWorkflowComposerContext,
+    __type: OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext,
     workflowId: name,
     flow: WorkflowManager.getEmptyTransactionDefinition(),
     isAsync: false,
@@ -149,7 +149,7 @@ export function createWorkflow<TData, TResult, THooks extends any[]>(
     },
   }
 
-  global[OrchestrationUtils.SymbolMedusaWorkflowComposerContext] = context
+  global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext] = context
 
   const inputPlaceHolder = proxify<WorkflowData>({
     __type: OrchestrationUtils.SymbolInputReference,
@@ -162,7 +162,7 @@ export function createWorkflow<TData, TResult, THooks extends any[]>(
 
   const returnedStep = composer.apply(context, [inputPlaceHolder])
 
-  delete global[OrchestrationUtils.SymbolMedusaWorkflowComposerContext]
+  delete global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext]
 
   if (newWorkflow) {
     WorkflowManager.update(name, context.flow, handlers, options)
@@ -176,7 +176,7 @@ export function createWorkflow<TData, TResult, THooks extends any[]>(
   })
 
   const mainFlow = <TDataOverride = undefined, TResultOverride = undefined>(
-    container?: LoadedModule[] | MedusaContainer
+    container?: LoadedModule[] | SwitchyardContainer
   ) => {
     const workflow_ = workflow<TDataOverride, TResultOverride>(container)
     const expandedFlow: any = workflow_
@@ -201,7 +201,7 @@ export function createWorkflow<TData, TResult, THooks extends any[]>(
   }): ReturnType<StepFunction<TData, TResult>> => {
     // Get current workflow composition context
     const workflowCompositionContext =
-      global[OrchestrationUtils.SymbolMedusaWorkflowComposerContext]
+      global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext]
 
     const runAsAsync = workflowCompositionContext.isAsync || context.isAsync
     const step = createStep(

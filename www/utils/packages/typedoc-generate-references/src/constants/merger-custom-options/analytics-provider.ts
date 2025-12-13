@@ -28,12 +28,12 @@ const analyticsProviderOptions: FormattingOptionsType = {
       
 As you implement your Analytics Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [PostHog Analytics Module Provider in the Medusa repository](https://github.com/medusajs/medusa/tree/develop/packages/modules/providers/analytics-posthog).`,
+If you need to refer to an existing implementation as an example, check the [PostHog Analytics Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/analytics-posthog).`,
       `## Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
 
-If you're creating the module provider in a Medusa application, create it under the \`src/modules\` directory. For example, \`src/modules/my-analytics\`.
+If you're creating the module provider in a Switchyard application, create it under the \`src/modules\` directory. For example, \`src/modules/my-analytics\`.
 
 If you're creating the module provider in a plugin, create it under the \`src/providers\` directory. For example, \`src/providers/my-analytics\`.
 
@@ -44,10 +44,10 @@ The rest of this guide always uses the \`src/modules/my-analytics\` directory as
 </Note>`,
       `## 2. Create the Analytics Module Provider's Service
 
-Create the file \`src/modules/my-analytics/service.ts\` that holds the implementation of the module provider's main service. It must extend the \`AbstractAnalyticsProviderService\` class imported from \`@medusajs/framework/utils\`:
+Create the file \`src/modules/my-analytics/service.ts\` that holds the implementation of the module provider's main service. It must extend the \`AbstractAnalyticsProviderService\` class imported from \`@switchyard/framework/utils\`:
 
 \`\`\`ts title="src/modules/my-analytics/service.ts"
-import { AbstractAnalyticsProviderService } from "@medusajs/framework/utils"
+import { AbstractAnalyticsProviderService } from "@switchyard/framework/utils"
 
 class MyAnalyticsProviderService extends AbstractAnalyticsProviderService {
   // TODO implement methods
@@ -66,7 +66,7 @@ import MyAnalyticsProviderService from "./service"
 import { 
   ModuleProvider, 
   Modules
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export default ModuleProvider(Modules.ANALYTICS, {
   services: [MyAnalyticsProviderService],
@@ -76,7 +76,7 @@ export default ModuleProvider(Modules.ANALYTICS, {
 This exports the module provider's definition, indicating that the \`MyAnalyticsProviderService\` is the module provider's service.`,
       `## 4. Use Module Provider
 
-To use your Analytics Module Provider, add it to the \`providers\` array of the Analytics Module in \`medusa-config.ts\`:
+To use your Analytics Module Provider, add it to the \`providers\` array of the Analytics Module in \`switchyard.config.ts\`:
 
 <Note>
 
@@ -84,12 +84,12 @@ The Analytics Module accepts one provider only.
 
 </Note>
 
-\`\`\`ts title="medusa-config.ts"
+\`\`\`ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/analytics",
+      resolve: "@switchyard/medusa/analytics",
       options: {
         providers: [
           {
@@ -116,10 +116,10 @@ You'll first create a [workflow](!docs!/learn/fundamentals/workflows) that track
 For example, create a workflow at \`src/workflows/track-order-placed.ts\` with the following content:
 
 \`\`\`ts title="src/workflows/track-order-created.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
-import { OrderDTO } from "@medusajs/framework/types"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { OrderDTO } from "@switchyard/framework/types"
 
 type StepInput = {
   order: OrderDTO
@@ -174,7 +174,7 @@ export const trackOrderCreatedWorkflow = createWorkflow(
 
 This workflow retrieves the order details using the \`useQueryGraphStep\` and then tracks the order creation event using the \`trackOrderCreatedStep\`.
 
-In the step, you resolve the service of the Analytics Module from the [Medusa container](!docs!/learn/fundamentals/medusa-container) and use its \`track\` method to track the event. This method will use the underlying provider configured (which is your provider, in this case) to track the event.
+In the step, you resolve the service of the Analytics Module from the [Switchyard container](!docs!/learn/fundamentals/medusa-container) and use its \`track\` method to track the event. This method will use the underlying provider configured (which is your provider, in this case) to track the event.
 
 Next, create a subscriber at \`src/subscribers/order-placed.ts\` with the following content:
 
@@ -182,7 +182,7 @@ Next, create a subscriber at \`src/subscribers/order-placed.ts\` with the follow
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { trackOrderCreatedWorkflow } from "../workflows/track-order-created"
 
 export default async function orderPlacedHandler({
@@ -203,7 +203,7 @@ export const config: SubscriberConfig = {
 
 This subscriber listens to the \`order.placed\` event and executes the \`trackOrderCreatedWorkflow\` workflow, passing the order ID as input.
 
-You'll now track the order creation event whenever an order is placed in your Medusa application. You can test this out by placing an order and checking in your third-party provider if the event was tracked successfully.
+You'll now track the order creation event whenever an order is placed in your Switchyard application. You can test this out by placing an order and checking in your third-party provider if the event was tracked successfully.
 `,
       `## Additional Resources
 

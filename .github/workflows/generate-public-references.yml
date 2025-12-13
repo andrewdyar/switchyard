@@ -18,7 +18,7 @@ jobs:
           curl -X POST \
           -H "Authorization: Bearer ${{ secrets.STARTER_ACCESS_TOKEN }}" \
           -H "Accept: application/vnd.github.v3+json" \
-          https://api.github.com/repos/medusajs/medusa-starter-default/actions/workflows/update-preview-deps.yml/dispatches \
+          https://api.github.com/repos/switchyardjs/switchyard-starter-default/actions/workflows/update-preview-deps.yml/dispatches \
           -d '{"ref":"master"}'
   references:
     runs-on: ubuntu-latest
@@ -70,7 +70,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_OWNER: ${{ github.repository_owner }}
-          GIT_REPO: medusa
+          GIT_REPO: switchyard
 
       - name: Run docblock generator
         run: "yarn generate:events"
@@ -78,7 +78,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_OWNER: ${{ github.repository_owner }}
-          GIT_REPO: medusa
+          GIT_REPO: switchyard
 
       - name: Generate References
         if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -165,7 +165,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_OWNER: ${{ github.repository_owner }}
-          GIT_REPO: medusa
+          GIT_REPO: switchyard
 
       - name: Generate API Reference
         run: yarn openapi:generate
@@ -231,7 +231,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GIT_OWNER: ${{ github.repository_owner }}
-          GIT_REPO: medusa
+          GIT_REPO: switchyard
 
       - name: Create Pull Request
         uses: peter-evans/create-pull-request@v4
@@ -292,8 +292,8 @@ jobs:
         run: yarn generate:ui
         working-directory: www/utils/packages/react-docs-generator
 
-      - name: Update Medusa Dependencies
-        run: yarn up:medusa
+      - name: Update Switchyard Dependencies
+        run: yarn up:switchyard
         working-directory: www
 
       - name: Generate Colors

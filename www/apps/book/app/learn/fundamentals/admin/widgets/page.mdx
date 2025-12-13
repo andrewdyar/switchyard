@@ -10,11 +10,11 @@ In this chapter, you’ll learn about widgets and how to use them.
 
 ## What is an Admin Widget?
 
-The Medusa Admin's pages are customizable for inserting widgets of custom content in pre-defined injection zones. For example, you can add a widget on the product details page that allows admin users to sync products to a third-party service.
+The Switchyard Admin's pages are customizable for inserting widgets of custom content in pre-defined injection zones. For example, you can add a widget on the product details page that allows admin users to sync products to a third-party service.
 
 You create these widgets as React components that render the content and functionality of the widget.
 
-You can create an admin widget directly in your Medusa application, or in a [plugin](../../plugins/page.mdx) if you want to share the widget across multiple Medusa applications.
+You can create an admin widget directly in your Switchyard application, or in a [plugin](../../plugins/page.mdx) if you want to share the widget across multiple Switchyard applications.
 
 ---
 
@@ -23,7 +23,7 @@ You can create an admin widget directly in your Medusa application, or in a [plu
 <Prerequisites
   items={[{
     link: "/learn/installation",
-    text: "Medusa application installed"
+    text: "Switchyard application installed"
   }]}
 />
 
@@ -34,7 +34,7 @@ You create a widget in a `.tsx` file under the `src/admin/widgets` directory. Th
 
 For example, create the file `src/admin/widgets/product-widget.tsx` with the following content:
 
-![Example of widget file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867137/Medusa%20Book/widget-dir-overview_dqsbct.jpg)
+![Example of widget file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732867137/Switchyard%20Book/widget-dir-overview_dqsbct.jpg)
 
 export const widgetHighlights = [
   ["5", "ProductWidget", "The React component of the product widget."], 
@@ -42,8 +42,8 @@ export const widgetHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-widget.tsx" highlights={widgetHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 
 // The widget
 const ProductWidget = () => {
@@ -66,7 +66,7 @@ export default ProductWidget
 
 In the example above, the widget is injected at the top of a product’s details.
 
-You export the `ProductWidget` component, which displays the heading `Product Widget`. In the widget, you use [Medusa UI](!ui!) to customize the dashboard with the same components used to build it.
+You export the `ProductWidget` component, which displays the heading `Product Widget`. In the widget, you use [Switchyard UI](!ui!) to customize the dashboard with the same components used to build it.
 
 To export the widget's configuration, you use `defineWidgetConfig` from the Admin Extension SDK. It accepts an object as a parameter with the `zone` property, whose value is a string or an array of strings, each being the name of the zone to inject the widget into.
 
@@ -78,7 +78,7 @@ The widget component must be created as an arrow function.
 
 ### Test the Widget
 
-To test out the widget, start the Medusa application:
+To test out the widget, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -101,12 +101,12 @@ export const detailHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-widget.tsx" highlights={detailHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 import { 
   DetailWidgetProps, 
   AdminProduct,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 // The widget
 const ProductWidget = ({ 
@@ -143,9 +143,9 @@ Refer to the [Admin Widget Injection Zones](!resources!/admin-widget-injection-z
 
 ## Admin Components List
 
-While the Medusa Admin uses the [Medusa UI](!ui!) components, it also expands on them for styling and design purposes.
+While the Switchyard Admin uses the [Switchyard UI](!ui!) components, it also expands on them for styling and design purposes.
 
-To build admin customizations that match the Medusa Admin's designs and layouts, refer to the [Admin Components](!resources!/admin-components) guide. You'll find components like `Header`, `JSON View`, and more that match the Medusa Admin's design.
+To build admin customizations that match the Switchyard Admin's designs and layouts, refer to the [Admin Components](!resources!/admin-components) guide. You'll find components like `Header`, `JSON View`, and more that match the Switchyard Admin's design.
 
 ---
 
@@ -156,12 +156,12 @@ In some cases, you may want to show a widget only if certain conditions are met.
 To prevent the widget from showing, return an empty fragment from the widget component:
 
 ```tsx title="src/admin/widgets/product-widget.tsx"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading } from "@switchyard/ui"
 import { 
   DetailWidgetProps, 
   AdminProduct,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 // The widget
 const ProductWidget = ({ 

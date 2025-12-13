@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/modules-sdk",
+  "name": "@switchyard/modules-sdk",
   "version": "2.12.1",
   "description": "SDK for medusa modules",
   "main": "dist/index.js",
@@ -31,11 +31,11 @@
     "watch": "yarn run -T tsc --build --watch"
   },
   "devDependencies": {
-    "@medusajs/types": "2.12.1"
+    "@switchyard/types": "2.12.1"
   },
   "dependencies": {
-    "@medusajs/deps": "2.12.1",
-    "@medusajs/orchestration": "2.12.1",
-    "@medusajs/utils": "2.12.1"
+    "@switchyard/deps": "2.12.1",
+    "@switchyard/orchestration": "2.12.1",
+    "@switchyard/utils": "2.12.1"
   }
 }

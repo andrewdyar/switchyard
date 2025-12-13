@@ -6,27 +6,27 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn how to add translations to your Medusa Admin widgets and UI routes.
+In this chapter, you'll learn how to add translations to your Switchyard Admin widgets and UI routes.
 
 <Note>
 
-Translations for admin customizations are available from [Medusa v2.11.1](https://github.com/medusajs/medusa/releases/tag/v2.11.1).
+Translations for admin customizations are available from [Switchyard v2.11.1](https://github.com/switchyard/medusa/releases/tag/v2.11.1).
 
 </Note>
 
-## Translations in the Medusa Admin
+## Translations in the Switchyard Admin
 
-The Medusa Admin dashboard supports [multiple languages](!user-guide!/tips/languages) for its interface. Medusa uses [react-i18next](https://react.i18next.com/) to manage translations in the admin dashboard.
+The Switchyard Admin dashboard supports [multiple languages](!user-guide!/tips/languages) for its interface. Switchyard uses [react-i18next](https://react.i18next.com/) to manage translations in the admin dashboard.
 
 <Note>
 
-Medusa Admin translations apply to the interface only. Medusa doesn't support translating store content, such as product names or descriptions. To implement localization for store content, [integrate a CMS](!resources!/integrations#cms).
+Switchyard Admin translations apply to the interface only. Switchyard doesn't support translating store content, such as product names or descriptions. To implement localization for store content, [integrate a CMS](!resources!/integrations#cms).
 
 </Note>
 
-When you create [Widgets](../widgets/page.mdx) or [UI Routes](../ui-routes/page.mdx) to customize the Medusa Admin, you can provide translations for the text content in your customizations, allowing users to view your customizations in their preferred language.
+When you create [Widgets](../widgets/page.mdx) or [UI Routes](../ui-routes/page.mdx) to customize the Switchyard Admin, you can provide translations for the text content in your customizations, allowing users to view your customizations in their preferred language.
 
-You can add translations for your admin customizations within your Medusa project or as part of a plugin.
+You can add translations for your admin customizations within your Switchyard project or as part of a plugin.
 
 ---
 
@@ -40,11 +40,11 @@ For example, to add English translations, create the file `src/admin/i18n/json/e
 
 <Note>
 
-English is the default language for Medusa Admin, so it's recommended to always include an English translation file.
+English is the default language for Switchyard Admin, so it's recommended to always include an English translation file.
 
 </Note>
 
-![Directory structure showing where to place translation files](https://res.cloudinary.com/dza7lstvk/image/upload/v1761555573/Medusa%20Book/translations-json_m2pvet.jpg)
+![Directory structure showing where to place translation files](https://res.cloudinary.com/dza7lstvk/image/upload/v1761555573/Switchyard%20Book/translations-json_m2pvet.jpg)
 
 ```json title="src/admin/i18n/json/en.json"
 {
@@ -58,7 +58,7 @@ English is the default language for Medusa Admin, so it's recommended to always 
 
 You can create additional translation files for other languages by following the same structure. For example, for Spanish, create `src/admin/i18n/json/es.json`:
 
-![Directory structure showing where to place translation files](https://res.cloudinary.com/dza7lstvk/image/upload/v1761555573/Medusa%20Book/translations-json-es_s1etna.jpg)
+![Directory structure showing where to place translation files](https://res.cloudinary.com/dza7lstvk/image/upload/v1761555573/Switchyard%20Book/translations-json-es_s1etna.jpg)
 
 ```json title="src/admin/i18n/json/es.json"
 {
@@ -74,7 +74,7 @@ You can create additional translation files for other languages by following the
 
 Next, to load the translation files, create the file `src/admin/i18n/index.ts` with the following content:
 
-![Directory structure showing i18n index file](https://res.cloudinary.com/dza7lstvk/image/upload/v1761555573/Medusa%20Book/translations-index_cgrj0t.jpg)
+![Directory structure showing i18n index file](https://res.cloudinary.com/dza7lstvk/image/upload/v1761555573/Switchyard%20Book/translations-index_cgrj0t.jpg)
 
 ```ts title="src/admin/i18n/index.ts"
 import en from "./json/en.json" with { type: "json" }
@@ -100,7 +100,7 @@ Finally, you can use the translations in your admin customizations by using the 
 
 <Note>
 
-The `react-i18next` package is already included in the Medusa Admin's dependencies, so you don't need to install it separately. However, `pnpm` users may need to install it manually due to package resolution issues.
+The `react-i18next` package is already included in the Switchyard Admin's dependencies, so you don't need to install it separately. However, `pnpm` users may need to install it manually due to package resolution issues.
 
 </Note>
 
@@ -113,8 +113,8 @@ export const translationHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-brand.tsx" highlights={translationHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, Container, Heading } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Button, Container, Heading } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
 const ProductWidget = () => {
@@ -145,13 +145,13 @@ Nested keys are joined using dot notation. For example, `brands.title` refers to
 
 ### Test Translations
 
-To test the translations, start the Medusa application with the following command:
+To test the translations, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, go to a product details page in the Medusa Admin dashboard. If your default language is set to English, you'll see the widget displaying text in English.
+Then, go to a product details page in the Switchyard Admin dashboard. If your default language is set to English, you'll see the widget displaying text in English.
 
 Next, [change the admin language](!user-guide!/settings/profile#edit-profile-details) to Spanish. The widget will now display the text in Spanish.
 
@@ -161,17 +161,17 @@ Next, [change the admin language](!user-guide!/settings/profile#edit-profile-det
 
 <Note>
 
-Translation auto-completion is available from [Medusa v2.11.2](https://github.com/medusajs/medusa/releases/tag/v2.11.2).
+Translation auto-completion is available from [Switchyard v2.11.2](https://github.com/switchyard/medusa/releases/tag/v2.11.2).
 
 </Note>
 
-To enhance your development experience, you can set up auto-completion for translation keys. This will allow you to auto-complete translation keys from Medusa's default translations as well as your custom translations.
+To enhance your development experience, you can set up auto-completion for translation keys. This will allow you to auto-complete translation keys from Switchyard's default translations as well as your custom translations.
 
 To set up auto-completion, create the file `src/admin/i18next.d.ts` with the following content:
 
 ```ts title="src/admin/i18n/i18next.d.ts"
-// Import Medusa keys
-import type { Resources } from "@medusajs/dashboard"
+// Import Switchyard keys
+import type { Resources } from "@switchyard/dashboard"
 // Import your custom translation keys
 // For example, import the English translation file
 import type enTranslation from "./i18n/en.json"
@@ -195,10 +195,10 @@ declare module "i18next" {
 
 ## How Translations are Loaded
 
-When you load the translations with the `translation` key in `src/admin/i18n/index.ts`, your custom Medusa Admin translations are merged with the default Medusa Admin translations:
+When you load the translations with the `translation` key in `src/admin/i18n/index.ts`, your custom Switchyard Admin translations are merged with the default Switchyard Admin translations:
 
-- Translation keys in your custom translations override the default Medusa Admin translations.
-- The default Medusa Admin translations are used as a fallback when a key is not defined in your custom translations.
+- Translation keys in your custom translations override the default Switchyard Admin translations.
+- The default Switchyard Admin translations are used as a fallback when a key is not defined in your custom translations.
 
 For example, consider the following widget and translation file:
 
@@ -206,8 +206,8 @@ For example, consider the following widget and translation file:
   <CodeTab label="Widget" value="widget">
 
 ```tsx title="src/admin/widgets/product-brand.tsx"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, Container, Heading } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Button, Container, Heading } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
 const ProductWidget = () => {
@@ -271,13 +271,13 @@ export default {
 The widget will render the following for each translation key:
 
 - `brands.title`: Defined in your custom translation file, so it outputs `Custom Brands Title`.
-- `brands.description`: Not defined in your custom translation file or the default Medusa Admin translations, so it outputs the key itself: `brands.description`.
+- `brands.description`: Not defined in your custom translation file or the default Switchyard Admin translations, so it outputs the key itself: `brands.description`.
 - `actions.save`: Defined in your custom translation file, so it outputs `Custom Save`.
-- `actions.delete`: Not defined in your custom translation file, so it falls back to the default Medusa Admin translation and outputs `Delete`.
+- `actions.delete`: Not defined in your custom translation file, so it falls back to the default Switchyard Admin translation and outputs `Delete`.
 
 ### Custom Translation Namespaces
 
-To avoid potential key conflicts between your custom translations and the default Medusa Admin translations, you can use custom namespaces. This is particularly useful when developing plugins that add admin customizations, as it prevents naming collisions with other plugins or the default Medusa Admin translations.
+To avoid potential key conflicts between your custom translations and the default Switchyard Admin translations, you can use custom namespaces. This is particularly useful when developing plugins that add admin customizations, as it prevents naming collisions with other plugins or the default Switchyard Admin translations.
 
 To add translations under a custom namespace, change the `[language].translation` key in the `src/admin/i18n/index.ts` file to your desired namespace:
 
@@ -305,8 +305,8 @@ The translation files will now be loaded under the `brands` namespace.
 Then, in your admin customizations, specify the namespace when using the `useTranslation` hook:
 
 ```tsx title="src/admin/widgets/product-brand.tsx" highlights={[["7"]]}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, Container, Heading } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Button, Container, Heading } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
 // The widget
@@ -333,7 +333,7 @@ export const config = defineWidgetConfig({
 export default ProductWidget
 ```
 
-Translations are now loaded only from the `brands` namespace without conflicting with other translation keys in the Medusa Admin.
+Translations are now loaded only from the `brands` namespace without conflicting with other translation keys in the Switchyard Admin.
 
 ---
 

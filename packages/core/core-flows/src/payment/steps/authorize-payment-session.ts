@@ -2,14 +2,14 @@ import {
   IPaymentModuleService,
   Logger,
   PaymentDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
   PaymentSessionStatus,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to authorize the payment session.
@@ -58,8 +58,8 @@ export const authorizePaymentSessionStep = createStep(
       logger.error(
         `Error was thrown trying to authorize payment session - ${input.id} - ${e}`
       )
-      // this implies the error is already a MedusaError, so we can throw it safely,
-      if (MedusaError.isMedusaError(e)) {
+      // this implies the error is already a SwitchyardError, so we can throw it safely,
+      if (SwitchyardError.isSwitchyardError(e)) {
         throw e
       }
       
@@ -75,8 +75,8 @@ export const authorizePaymentSessionStep = createStep(
     // Throw a special error type when the status is requires_more as it requires a specific further action
     // from the consumer
     if (paymentSession.status === PaymentSessionStatus.REQUIRES_MORE) {
-      throw new MedusaError(
-        MedusaError.Types.PAYMENT_REQUIRES_MORE_ERROR,
+      throw new SwitchyardError(
+        SwitchyardError.Types.PAYMENT_REQUIRES_MORE_ERROR,
         `More information is required for payment`
       )
     }
@@ -84,8 +84,8 @@ export const authorizePaymentSessionStep = createStep(
     // If any other error other than requires_more shows up, this usually requires the consumer to create a new payment session
     // This could also be a system error thats caused by invalid setup or a failure in connecting to external providers
     if (paymentSession.status !== PaymentSessionStatus.AUTHORIZED || !payment) {
-      throw new MedusaError(
-        MedusaError.Types.PAYMENT_AUTHORIZATION_ERROR,
+      throw new SwitchyardError(
+        SwitchyardError.Types.PAYMENT_AUTHORIZATION_ERROR,
         `Payment authorization failed`
       )
     }

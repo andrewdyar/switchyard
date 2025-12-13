@@ -2,9 +2,9 @@ import {
   CommonEvents,
   composeMessage,
   Modules,
-} from "@medusajs/framework/utils"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
-import { IEventBusModuleService } from "@medusajs/types"
+} from "@switchyard/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
+import { IEventBusModuleService } from "@switchyard/types"
 
 moduleIntegrationTestRunner<IEventBusModuleService>({
   moduleName: Modules.EVENT_BUS,

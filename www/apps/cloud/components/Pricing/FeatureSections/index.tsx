@@ -15,7 +15,7 @@ import {
   Shopping,
   Users,
   WIP,
-} from "@medusajs/icons"
+} from "@switchyard/icons"
 import { config } from "../../../config"
 
 const P = MDXComponents.p
@@ -68,7 +68,7 @@ const featureIcons: Record<string, React.FC> = {
   "Hosting & Deployment": ServerStack,
   "Compute & Resources": WIP,
   "Organization & Billing": CurrencyDollar,
-  "Medusa Support": Users,
+  "Switchyard Support": Users,
 }
 
 // Helper function to render Block content (Sanity rich text)

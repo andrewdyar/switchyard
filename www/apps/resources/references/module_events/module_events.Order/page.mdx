@@ -8,7 +8,7 @@ import { TypeList } from "docs-ui"
 
 # Order Module Events Reference
 
-This reference shows all the events emitted by the Medusa application related to the Order Module. If you use the module outside the Medusa application, these events aren't emitted.
+This reference shows all the events emitted by the Switchyard application related to the Order Module. If you use the module outside the Switchyard application, these events aren't emitted.
 
 ## Order Edit Events
 
@@ -62,7 +62,7 @@ Emitted when an order edit request is canceled.
 </Tooltip></>), className: "flex flex-wrap justify-center gap-docs_0.25" }} eventName="order-edit.requested" payload={`\`\`\`ts
 {
   order_id, // The ID of the order
-  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
 }
 \`\`\``} />
 
@@ -73,13 +73,13 @@ Emitted when an order edit is requested.
 ```ts
 {
   order_id, // The ID of the order
-  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
 }
 ```
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [requestOrderEditRequestWorkflow](/references/medusa-workflows/requestOrderEditRequestWorkflow)
 
@@ -91,7 +91,7 @@ The following workflows emit this event when they're executed. These workflows a
 </Tooltip></>), className: "flex flex-wrap justify-center gap-docs_0.25" }} eventName="order-edit.confirmed" payload={`\`\`\`ts
 {
   order_id, // The ID of the order
-  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
 }
 \`\`\``} />
 
@@ -102,13 +102,13 @@ Emitted when an order edit request is confirmed.
 ```ts
 {
   order_id, // The ID of the order
-  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
 }
 ```
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [confirmOrderEditRequestWorkflow](/references/medusa-workflows/confirmOrderEditRequestWorkflow)
 
@@ -120,7 +120,7 @@ The following workflows emit this event when they're executed. These workflows a
 </Tooltip></>), className: "flex flex-wrap justify-center gap-docs_0.25" }} eventName="order-edit.canceled" payload={`\`\`\`ts
 {
   order_id, // The ID of the order
-  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
 }
 \`\`\``} />
 
@@ -131,13 +131,13 @@ Emitted when an order edit request is canceled.
 ```ts
 {
   order_id, // The ID of the order
-  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
 }
 ```
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [cancelBeginOrderEditWorkflow](/references/medusa-workflows/cancelBeginOrderEditWorkflow)
 
@@ -280,7 +280,7 @@ doesn't include updates made by an edit.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [updateOrderWorkflow](/references/medusa-workflows/updateOrderWorkflow)
 - [updateDraftOrderWorkflow](/references/medusa-workflows/updateDraftOrderWorkflow)
@@ -306,7 +306,7 @@ order.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [convertDraftOrderWorkflow](/references/medusa-workflows/convertDraftOrderWorkflow)
 - [completeCartWorkflow](/references/medusa-workflows/completeCartWorkflow)
@@ -331,7 +331,7 @@ Emitted when an order is canceld.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [cancelOrderWorkflow](/references/medusa-workflows/cancelOrderWorkflow)
 
@@ -355,7 +355,7 @@ Emitted when orders are completed.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [completeOrderWorkflow](/references/medusa-workflows/completeOrderWorkflow)
 
@@ -379,7 +379,7 @@ Emitted when an order is archived.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [archiveOrderWorkflow](/references/medusa-workflows/archiveOrderWorkflow)
 
@@ -407,7 +407,7 @@ Emitted when a fulfillment is created for an order.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [createOrderFulfillmentWorkflow](/references/medusa-workflows/createOrderFulfillmentWorkflow)
 
@@ -435,7 +435,7 @@ Emitted when an order's fulfillment is canceled.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [cancelOrderFulfillmentWorkflow](/references/medusa-workflows/cancelOrderFulfillmentWorkflow)
 
@@ -461,7 +461,7 @@ Emitted when a return request is confirmed.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [createAndCompleteReturnOrderWorkflow](/references/medusa-workflows/createAndCompleteReturnOrderWorkflow)
 - [confirmReturnRequestWorkflow](/references/medusa-workflows/confirmReturnRequestWorkflow)
@@ -488,7 +488,7 @@ Emitted when a return is marked as received.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [createAndCompleteReturnOrderWorkflow](/references/medusa-workflows/createAndCompleteReturnOrderWorkflow)
 - [confirmReturnReceiveWorkflow](/references/medusa-workflows/confirmReturnReceiveWorkflow)
@@ -515,7 +515,7 @@ Emitted when a claim is created for an order.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [confirmClaimRequestWorkflow](/references/medusa-workflows/confirmClaimRequestWorkflow)
 
@@ -541,7 +541,7 @@ Emitted when an exchange is created for an order.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [confirmExchangeRequestWorkflow](/references/medusa-workflows/confirmExchangeRequestWorkflow)
 
@@ -568,6 +568,6 @@ another customer.
 
 #### Workflows Emitting this Event
 
-The following workflows emit this event when they're executed. These workflows are executed by Medusa's API routes. You can also view the events emitted by API routes in the [Store](https://docs.medusajs.com/api/store) and [Admin](https://docs.medusajs.com/api/admin) API references.
+The following workflows emit this event when they're executed. These workflows are executed by Switchyard's API routes. You can also view the events emitted by API routes in the [Store](https://docs.switchyard.com/api/store) and [Admin](https://docs.switchyard.com/api/admin) API references.
 
 - [requestOrderTransferWorkflow](/references/medusa-workflows/requestOrderTransferWorkflow)

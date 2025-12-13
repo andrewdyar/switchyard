@@ -1,5 +1,5 @@
 import React from "react"
-import { IconProps } from "@medusajs/icons/dist/types"
+import { IconProps } from "@switchyard/icons/dist/types"
 
 export const QuestionMarkIcon = (props: IconProps) => {
   return (

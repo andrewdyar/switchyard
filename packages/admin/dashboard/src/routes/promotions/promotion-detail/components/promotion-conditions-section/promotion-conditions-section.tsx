@@ -1,6 +1,6 @@
-import { PencilSquare } from "@medusajs/icons"
-import { ApplicationMethodTargetTypeValues, HttpTypes, PromotionRuleTypes, } from "@medusajs/types"
-import { Badge, Container, Heading } from "@medusajs/ui"
+import { PencilSquare } from "@switchyard/icons"
+import { ApplicationMethodTargetTypeValues, HttpTypes, PromotionRuleTypes, } from "@switchyard/types"
+import { Badge, Container, Heading } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
 import { ActionMenu } from "../../../../../components/common/action-menu"

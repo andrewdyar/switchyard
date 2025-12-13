@@ -1,0 +1,58 @@
+import {
+  AuthenticationInput,
+  ConfigModule,
+  IAuthModuleService,
+} from "@switchyard/framework/types"
+import {
+  ContainerRegistrationKeys,
+  SwitchyardError,
+  Modules,
+} from "@switchyard/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { generateJwtTokenForAuthIdentity } from "../../../utils/generate-jwt-token"
+
+export const POST = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
+  const { actor_type, auth_provider } = req.params
+  const config: ConfigModule = req.scope.resolve(
+    ContainerRegistrationKeys.CONFIG_MODULE
+  )
+
+  const service: IAuthModuleService = req.scope.resolve(Modules.AUTH)
+
+  const authData = {
+    url: req.url,
+    headers: req.headers,
+    query: req.query,
+    body: req.body,
+    protocol: req.protocol,
+  } as AuthenticationInput
+
+  const { success, error, authIdentity } = await service.register(
+    auth_provider,
+    authData
+  )
+
+  if (success && authIdentity) {
+    const { http } = config.projectConfig
+
+    const token = generateJwtTokenForAuthIdentity(
+      {
+        authIdentity,
+        actorType: actor_type,
+        authProvider: auth_provider,
+      },
+      {
+        secret: http.jwtSecret!,
+        expiresIn: http.jwtExpiresIn,
+        options: http.jwtOptions,
+      }
+    )
+
+    return res.status(200).json({ token })
+  }
+
+  throw new SwitchyardError(
+    SwitchyardError.Types.UNAUTHORIZED,
+    error || "Authentication failed"
+  )
+}

@@ -1,4 +1,4 @@
-import { TransactionStepsDefinition } from "@medusajs/orchestration"
+import { TransactionStepsDefinition } from "@switchyard/orchestration"
 import getRandomString from "../utils/get-random-string.js"
 
 type DiagramBuilderOptions = {

@@ -1,5 +1,5 @@
-import { HttpTypes } from "@medusajs/types"
-import { Button, toast } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Button, toast } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 import * as zod from "zod"
 

@@ -2,13 +2,13 @@ import {
   FulfillmentDTO,
   FulfillmentWorkflow,
   StockLocationDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createFulfillmentStep } from "../steps"
 import { useRemoteQueryStep } from "../../common"
 

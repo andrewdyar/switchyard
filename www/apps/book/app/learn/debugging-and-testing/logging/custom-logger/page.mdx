@@ -4,15 +4,15 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to override the default [Logger](../page.mdx) in Medusa with your custom implementation.
+In this guide, you'll learn how to override the default [Logger](../page.mdx) in Switchyard with your custom implementation.
 
 ## Why Override the Logger?
 
-Medusa's default `Logger` logs your application's events, errors, and general log messages into the console. However, you might want to customize this behavior for your specific use case.
+Switchyard's default `Logger` logs your application's events, errors, and general log messages into the console. However, you might want to customize this behavior for your specific use case.
 
 For example, you might want to change the logs format, or add additional metadata to your logs. In those cases, it's useful to override the default `Logger` with your custom implementation.
 
-After overriding the `Logger`, Medusa will use your custom logger whenever it needs to log a message.
+After overriding the `Logger`, Switchyard will use your custom logger whenever it needs to log a message.
 
 ---
 
@@ -20,15 +20,15 @@ After overriding the `Logger`, Medusa will use your custom logger whenever it ne
 
 To override the default `Logger`:
 
-1. Create a class that extends the `Logger` interface from `@medusajs/framework/types`.
-2. Pass the class in the Medusa configurations.
+1. Create a class that extends the `Logger` interface from `@switchyard/framework/types`.
+2. Pass the class in the Switchyard configurations.
 
 ### Step 1: Create a Custom Logger Class
 
 To create a custom logger class, create a new file at `src/utils/custom-logger.ts` with the following content:
 
 ```ts title="src/utils/custom-logger.ts"
-import { Logger } from "@medusajs/framework/types"
+import { Logger } from "@switchyard/framework/types"
 
 class MyLogger implements Logger {
   panic(data: unknown): void {
@@ -94,7 +94,7 @@ export const logger = new MyLogger()
 
 You can implement the methods as per your requirements. For simplicity, the above example logs messages to the console with a prefix indicating the log level.
 
-Notice that you must export an instance of your custom logger class to use it in the Medusa configurations.
+Notice that you must export an instance of your custom logger class to use it in the Switchyard configurations.
 
 <Note>
 
@@ -102,11 +102,11 @@ You can learn more about the methods in the [Logger](../page.mdx) chapter.
 
 </Note>
 
-### Step 2: Pass the Custom Logger in Medusa Configurations
+### Step 2: Pass the Custom Logger in Switchyard Configurations
 
-Next, to use the custom logger, set the `logger` configuration in your `medusa-config.ts` file:
+Next, to use the custom logger, set the `logger` configuration in your `switchyard.config.ts` file:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 import { logger } from "./src/logger/my-logger"
 
 module.exports = defineConfig({
@@ -119,7 +119,7 @@ The `logger` configuration accepts an instance of a class that extends the `Logg
 
 ### Test Custom Logger
 
-To test that your custom logger is working, start the Medusa application:
+To test that your custom logger is working, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev

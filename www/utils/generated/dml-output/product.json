@@ -73,7 +73,7 @@
 			"ean": "The EAN of the product variant",
 			"upc": "The UPC of the product variant",
 			"allow_backorder": "Whether customers can purchase this variant even if it's out of stock.",
-			"manage_inventory": "Whether Medusa manages the variant's inventory. If disabled, the variant is always considered in stock.",
+			"manage_inventory": "Whether Switchyard manages the variant's inventory. If disabled, the variant is always considered in stock.",
 			"hs_code": "The HS code of the product variant",
 			"origin_country": "The origin country of the product variant",
 			"mid_code": "The MID code of the product variant",

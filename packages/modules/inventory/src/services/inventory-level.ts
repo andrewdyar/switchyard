@@ -1,5 +1,5 @@
-import { Context } from "@medusajs/framework/types"
-import { BigNumber, ModulesSdkUtils } from "@medusajs/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { BigNumber, ModulesSdkUtils } from "@switchyard/framework/utils"
 import { applyEntityHooks } from "../utils/apply-decorators"
 
 import { InventoryLevel } from "@models"

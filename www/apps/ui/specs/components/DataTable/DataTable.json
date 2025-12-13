@@ -1,5 +1,5 @@
 {
-  "description": "This component creates a data table with filters, pagination, sorting, and more.\nIt's built on top of the `Table` component while expanding its functionality.\nThe `DataTable` is useful to create tables similar to those in the Medusa Admin dashboard.",
+  "description": "This component creates a data table with filters, pagination, sorting, and more.\nIt's built on top of the `Table` component while expanding its functionality.\nThe `DataTable` is useful to create tables similar to those in the Switchyard Admin dashboard.",
   "methods": [],
   "displayName": "DataTable",
   "props": {

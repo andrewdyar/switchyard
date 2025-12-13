@@ -11,7 +11,7 @@ export const metadata = {
 
 # {metadata.title}
 
-After linking the [custom Brand data model](../../custom-features/module/page.mdx) and Medusa's [Product Module](!resources!/commerce-modules/product) in the [previous chapter](../define-link/page.mdx), you'll extend the create product workflow and API route to allow associating a brand with a product.
+After linking the [custom Brand data model](../../custom-features/module/page.mdx) and Switchyard's [Product Module](!resources!/commerce-modules/product) in the [previous chapter](../define-link/page.mdx), you'll extend the create product workflow and API route to allow associating a brand with a product.
 
 Some API routes, including the [Create Product API route](!api!/admin#products_postproducts), accept an `additional_data` request body parameter. This parameter can hold custom data that's passed to the [hooks](../../../fundamentals/workflows/workflow-hooks/page.mdx) of the workflow executed in the API route, allowing you to consume those hooks and perform actions with the custom data.
 
@@ -55,7 +55,7 @@ The [createProductsWorkflow](!resources!/references/medusa-workflows/createProdu
 
 To consume the `productsCreated` hook, create the file `src/workflows/hooks/created-product.ts` with the following content:
 
-![Directory structure after creating the hook's file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733384338/Medusa%20Book/brands-hook-dir-overview_ltwr5h.jpg)
+![Directory structure after creating the hook's file.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733384338/Switchyard%20Book/brands-hook-dir-overview_ltwr5h.jpg)
 
 export const hook1Highlights = [
   ["8", "productsCreated", "Access the hook in the `hooks` property."],
@@ -65,10 +65,10 @@ export const hook1Highlights = [
 ]
 
 ```ts title="src/workflows/hooks/created-product.ts" highlights={hook1Highlights}
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
-import { StepResponse } from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
-import { LinkDefinition } from "@medusajs/framework/types"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
+import { StepResponse } from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { LinkDefinition } from "@switchyard/framework/types"
 import { BRAND_MODULE } from "../../modules/brand"
 import BrandModuleService from "../../modules/brand/service"
 
@@ -92,7 +92,7 @@ createProductsWorkflow.hooks.productsCreated(
 Workflows have a special `hooks` property to access its hooks and consume them. Each hook, such as `productsCreated`, accepts a step function as a parameter. The step function accepts the following parameters:
 
 1. An object having an `additional_data` property, which is the custom data passed in the request body under `additional_data`. The object will also have properties passed from the workflow to the hook, which in this case is the `products` property that holds an array of the created products.
-2. An object of properties related to the step's context. It has a `container` property whose value is the [Medusa container](../../../fundamentals/medusa-container/page.mdx) to resolve Framework and commerce tools.
+2. An object of properties related to the step's context. It has a `container` property whose value is the [Switchyard container](../../../fundamentals/medusa-container/page.mdx) to resolve Framework and commerce tools.
 
 In the step, if a brand ID is passed in `additional_data`, you resolve the Brand Module's service and use its generated `retrieveBrand` method to retrieve the brand by its ID. The `retrieveBrand` method will throw an error if the brand doesn't exist.
 
@@ -143,7 +143,7 @@ You resolve Link from the container. Then you loop over the created products to 
 
 Each property in the link object is the name of a module, and its value is an object having a `{model_name}_id` property, where `{model_name}` is the snake-case name of the module's data model. Its value is the ID of the record to be linked. The link object's properties must be set in the same order as the link configurations passed to `defineLink`.
 
-![Diagram showcasing how the order of defining a link affects creating the link](https://res.cloudinary.com/dza7lstvk/image/upload/v1733386156/Medusa%20Book/remote-link-brand-product-exp_fhjmg4.jpg)
+![Diagram showcasing how the order of defining a link affects creating the link](https://res.cloudinary.com/dza7lstvk/image/upload/v1733386156/Switchyard%20Book/remote-link-brand-product-exp_fhjmg4.jpg)
 
 Finally, you return an instance of `StepResponse` returning the created links.
 
@@ -178,10 +178,10 @@ Now that you've consumed the `productsCreated` hook, you want to configure the `
 
 You configure the properties accepted in `additional_data` in the `src/api/middlewares.ts` that exports middleware configurations. So, create the file (or, if already existing, add to the file) `src/api/middlewares.ts` the following content:
 
-![Directory structure after adding the middelwares file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733386868/Medusa%20Book/brands-middleware-dir-overview_uczos1.jpg)
+![Directory structure after adding the middelwares file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733386868/Switchyard%20Book/brands-middleware-dir-overview_uczos1.jpg)
 
 ```ts title="src/api/middlewares.ts"
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 import { z } from "zod"
 
 // ...
@@ -242,11 +242,11 @@ curl -X POST 'http://localhost:9000/admin/products' \
 }'
 ```
 
-Make sure to replace `{token}` with the token you received from the previous request, `shipping_profile_id` with the ID of a shipping profile in your application, and `{brand_id}` with the ID of a brand in your application. You can retrieve the ID of a shipping profile either from the Medusa Admin, or the [List Shipping Profiles API route](!api!/admin#shipping-profiles_getshippingprofiles).
+Make sure to replace `{token}` with the token you received from the previous request, `shipping_profile_id` with the ID of a shipping profile in your application, and `{brand_id}` with the ID of a brand in your application. You can retrieve the ID of a shipping profile either from the Switchyard Admin, or the [List Shipping Profiles API route](!api!/admin#shipping-profiles_getshippingprofiles).
 
 The request creates a product and returns it.
 
-In the Medusa application's logs, you'll find the message `Linked brand to products`, indicating that the workflow hook handler ran and linked the brand to the products.
+In the Switchyard application's logs, you'll find the message `Linked brand to products`, indicating that the workflow hook handler ran and linked the brand to the products.
 
 ---
 

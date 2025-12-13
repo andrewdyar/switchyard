@@ -1,11 +1,11 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   ICustomerModuleService,
   IPricingModuleService,
   IProductModuleService,
   IRegionModuleService,
-} from "@medusajs/types"
-import { Modules, PriceListStatus, PriceListType } from "@medusajs/utils"
+} from "@switchyard/types"
+import { Modules, PriceListStatus, PriceListType } from "@switchyard/utils"
 import { createAdminUser } from "../../../../helpers/create-admin-user"
 import { createVariantPriceSet } from "../../../helpers/create-variant-price-set"
 

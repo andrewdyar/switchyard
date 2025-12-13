@@ -1,9 +1,9 @@
 import z from "zod"
-import { MedusaError } from "@medusajs/utils"
+import { SwitchyardError } from "@switchyard/utils"
 import { validateAndTransformQuery } from "../utils/validate-query"
-import { MedusaNextFunction, MedusaRequest, MedusaResponse } from "../types"
+import { SwitchyardNextFunction, SwitchyardRequest, SwitchyardResponse } from "../types"
 import { RestrictedFields } from "../utils/restricted-fields"
-import { QueryConfig } from "@medusajs/types"
+import { QueryConfig } from "@switchyard/types"
 
 export const createSelectParams = () => {
   return z.object({
@@ -64,9 +64,9 @@ describe("validateAndTransformQuery", () => {
     let mockRequest = {
       restrictedFields: new RestrictedFields(),
       query: {},
-    } as MedusaRequest
-    const mockResponse = {} as MedusaResponse
-    const nextFunction: MedusaNextFunction = jest.fn()
+    } as SwitchyardRequest
+    const mockResponse = {} as SwitchyardResponse
+    const nextFunction: SwitchyardNextFunction = jest.fn()
 
     const expectations = ({
       offset,
@@ -157,7 +157,7 @@ describe("validateAndTransformQuery", () => {
         offset: "5",
         order: "created_at",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     middleware = validateAndTransformQuery(createFindParams(), queryConfig)
 
@@ -177,7 +177,7 @@ describe("validateAndTransformQuery", () => {
         offset: "5",
         order: "created_at",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -211,9 +211,9 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "id",
       },
-    } as unknown as MedusaRequest
-    const mockResponse = {} as MedusaResponse
-    const nextFunction: MedusaNextFunction = jest.fn()
+    } as unknown as SwitchyardRequest
+    const mockResponse = {} as SwitchyardResponse
+    const nextFunction: SwitchyardNextFunction = jest.fn()
 
     let queryConfig: any = {
       defaults: [
@@ -244,7 +244,7 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "+test_prop,-prop-test-something",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -286,7 +286,7 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "+test_prop,-updated_at",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -329,12 +329,12 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "product.*, *product.variants,+product.id",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     restrictedFields.add(["product"])
 
-    const mockResponse = {} as MedusaResponse
-    const nextFunction: MedusaNextFunction = jest.fn()
+    const mockResponse = {} as SwitchyardResponse
+    const nextFunction: SwitchyardNextFunction = jest.fn()
 
     let queryConfig: any = {
       defaults: [
@@ -409,7 +409,7 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "store.name",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -460,9 +460,9 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "+test_prop",
       },
-    } as unknown as MedusaRequest
-    const mockResponse = {} as MedusaResponse
-    const nextFunction: MedusaNextFunction = jest.fn()
+    } as unknown as SwitchyardRequest
+    const mockResponse = {} as SwitchyardResponse
+    const nextFunction: SwitchyardNextFunction = jest.fn()
 
     let queryConfig: any = {
       defaults: [
@@ -493,8 +493,8 @@ describe("validateAndTransformQuery", () => {
     await middleware(mockRequest, mockResponse, nextFunction)
 
     expect(nextFunction).toHaveBeenLastCalledWith(
-      new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Requested fields [test_prop] are not valid`
       )
     )
@@ -504,7 +504,7 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "product",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -535,8 +535,8 @@ describe("validateAndTransformQuery", () => {
     await middleware(mockRequest, mockResponse, nextFunction)
 
     expect(nextFunction).toHaveBeenLastCalledWith(
-      new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Requested fields [product] are not valid`
       )
     )
@@ -546,7 +546,7 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "store",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -579,8 +579,8 @@ describe("validateAndTransformQuery", () => {
     await middleware(mockRequest, mockResponse, nextFunction)
 
     expect(nextFunction).toHaveBeenLastCalledWith(
-      new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Requested fields [store] are not valid`
       )
     )
@@ -590,7 +590,7 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "*product",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -621,8 +621,8 @@ describe("validateAndTransformQuery", () => {
     await middleware(mockRequest, mockResponse, nextFunction)
 
     expect(nextFunction).toHaveBeenLastCalledWith(
-      new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Requested fields [product] are not valid`
       )
     )
@@ -632,7 +632,7 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "*product.variants",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -664,8 +664,8 @@ describe("validateAndTransformQuery", () => {
     await middleware(mockRequest, mockResponse, nextFunction)
 
     expect(nextFunction).toHaveBeenLastCalledWith(
-      new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Requested fields [product.variants] are not valid`
       )
     )
@@ -675,7 +675,7 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "*product",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     queryConfig = {
       defaults: [
@@ -707,8 +707,8 @@ describe("validateAndTransformQuery", () => {
     await middleware(mockRequest, mockResponse, nextFunction)
 
     expect(nextFunction).toHaveBeenLastCalledWith(
-      new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Requested fields [product] are not valid`
       )
     )
@@ -721,12 +721,12 @@ describe("validateAndTransformQuery", () => {
       query: {
         fields: "*product",
       },
-    } as unknown as MedusaRequest
+    } as unknown as SwitchyardRequest
 
     restrictedFields.add(["product"])
 
-    const mockResponse = {} as MedusaResponse
-    const nextFunction: MedusaNextFunction = jest.fn()
+    const mockResponse = {} as SwitchyardResponse
+    const nextFunction: SwitchyardNextFunction = jest.fn()
 
     const queryConfig: QueryConfig<any> = {
       defaults: [
@@ -750,8 +750,8 @@ describe("validateAndTransformQuery", () => {
     await middleware(mockRequest, mockResponse, nextFunction)
 
     expect(nextFunction).toHaveBeenLastCalledWith(
-      new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Requested fields [metadata.product.id, product] are not valid`
       )
     )

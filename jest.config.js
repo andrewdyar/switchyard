@@ -12,18 +12,18 @@ const pkgs = [
     .map((p) => p.replace(/^\./, `<rootDir>`)),
 ].flat(Infinity)
 
-const reMedusa = /medusa$/
-const medusaDir = pkgs.find((p) => reMedusa.exec(p))
-const medusaBuildDirs = [`dist`].map((dir) => path.join(medusaDir, dir))
+const reSwitchyard = /medusa$/
+const switchyardDir = pkgs.find((p) => reSwitchyard.exec(p))
+const switchyardBuildDirs = [`dist`].map((dir) => path.join(switchyardDir, dir))
 const builtTestsDirs = pkgs
   .filter((p) => fs.existsSync(path.join(p, `src`)))
   .map((p) => path.join(p, `__tests__`))
 const distDirs = pkgs.map((p) => path.join(p, `dist`))
 const ignoreDirs = [].concat(
-  medusaBuildDirs,
+  switchyardBuildDirs,
   builtTestsDirs,
   distDirs,
-  "<rootDir>/packages/medusa-react/*"
+  "<rootDir>/packages/switchyard-react/*"
 )
 
 const coverageDirs = pkgs.map((p) => path.join(p, `src/**/*.js`))

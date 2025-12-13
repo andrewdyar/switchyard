@@ -9,38 +9,38 @@ products:
   - order
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
-  title: `Generate Invoices for Orders in Medusa`,
+  title: `Generate Invoices for Orders in Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you will learn how to generate invoices for orders in your Medusa application.
+In this tutorial, you will learn how to generate invoices for orders in your Switchyard application.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include order management capabilities.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include order management capabilities.
 
-You can extend the Medusa application to automatically generate invoices (or sales orders), manage invoice configurations through the admin dashboard, and provide customers with easy access to their invoices through the storefront.
+You can extend the Switchyard application to automatically generate invoices (or sales orders), manage invoice configurations through the admin dashboard, and provide customers with easy access to their invoices through the storefront.
 
 ## Summary
 
 By following this tutorial, you will learn how to:
 
-- Install and set up Medusa.
-- Store default invoice configurations and manage them from the Medusa Admin dashboard.
+- Install and set up Switchyard.
+- Store default invoice configurations and manage them from the Switchyard Admin dashboard.
 - Generate PDF invoices for orders, and allow admin users and customers to download them.
 - Send PDF invoices as attachments in order confirmation emails.
 - Mark previously generated invoices as stale when orders are updated.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram illustrating the flow from the customer placing the order, them receiving the invoice, and the admin downloading the invoice](https://res.cloudinary.com/dza7lstvk/image/upload/v1753793501/Medusa%20Resources/invoices-summary_ieja9e.jpg)
+![Diagram illustrating the flow from the customer placing the order, them receiving the invoice, and the admin downloading the invoice](https://res.cloudinary.com/dza7lstvk/image/upload/v1753793501/Switchyard%20Resources/invoices-summary_ieja9e.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/invoice-generator",
+    href: "https://github.com/switchyard/examples/tree/main/invoice-generator",
     title: "Full Code",
     text: "Find the full code for this tutorial.",
     icon: Github,
@@ -55,7 +55,7 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -72,27 +72,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -100,7 +100,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Invoice Generator Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 In this step, you'll build an Invoice Generator Module that defines the data models and logic to manage invoices. Later, you'll build commerce flows related to invoices around the module.
 
@@ -116,7 +116,7 @@ Create the directory `src/modules/invoice-generator` that will hold the Invoice 
 
 ### b. Create Data Models
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -141,7 +141,7 @@ export const invoiceConfigHighlights = [
 ]
 
 ```ts title="src/modules/invoice-generator/models/invoice-config.ts" highlights={invoiceConfigHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const InvoiceConfig = model.define("invoice_config", {
   id: model.id().primaryKey(),
@@ -187,7 +187,7 @@ export const invoiceHighlights = [
 ]
 
 ```ts title="src/modules/invoice-generator/models/invoice.ts" highlights={invoiceHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export enum InvoiceStatus {
   LATEST = "latest",
@@ -228,11 +228,11 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Invoice Generator Module's service, create the file `src/modules/invoice-generator/service.ts` with the following content:
 
 ```ts title="src/modules/invoice-generator/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { InvoiceConfig } from "./models/invoice-config"
 import { Invoice } from "./models/invoice"
 
-class InvoiceGeneratorService extends MedusaService({
+class InvoiceGeneratorService extends SwitchyardService({
   InvoiceConfig,
   Invoice,
 }) { }
@@ -240,25 +240,25 @@ class InvoiceGeneratorService extends MedusaService({
 export default InvoiceGeneratorService
 ```
 
-The `InvoiceGeneratorService` extends `MedusaService`, which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
+The `InvoiceGeneratorService` extends `SwitchyardService`, which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
 
 So, the `InvoiceGeneratorService` class now has methods like `createInvoices` and `retrieveInvoice`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
+Find all methods generated by the `SwitchyardService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
 
 </Note>
 
 ### d. Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/invoice-generator/index.ts` with the following content:
 
 ```ts title="src/modules/invoice-generator/index.ts"
 import InvoiceModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const INVOICE_MODULE = "invoiceGenerator"
 
@@ -274,11 +274,11 @@ You use the `Module` function to create the module's definition. It accepts two 
 
 ### e. Register the Module
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -301,18 +301,18 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate the migrations for you. To generate a migration for the Invoice Generator Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate the migrations for you. To generate a migration for the Invoice Generator Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate invoice-generator
+npx switchyard db:generate invoice-generator
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/invoice-generator` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/invoice-generator` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The tables for the `InvoiceConfig` and `Invoice` data models are now created in the database.
@@ -321,9 +321,9 @@ The tables for the `InvoiceConfig` and `Invoice` data models are now created in 
 
 ## Step 3: Create Default Invoice Configurations
 
-In this step, you'll create default invoice configurations that admins can later manage through the Medusa Admin dashboard.
+In this step, you'll create default invoice configurations that admins can later manage through the Switchyard Admin dashboard.
 
-Since you need to create the default configurations when the Medusa application starts, you'll use a [loader](!docs!/learn/fundamentals/modules/loaders). A loader is a script in your module that Medusa runs on application startup.
+Since you need to create the default configurations when the Switchyard application starts, you'll use a [loader](!docs!/learn/fundamentals/modules/loaders). A loader is a script in your module that Switchyard runs on application startup.
 
 ### a. Create Loader
 
@@ -339,14 +339,14 @@ export const createDefaultConfigHighlights = [
 ```ts title="src/modules/invoice-generator/loaders/create-default-config.ts" highlights={createDefaultConfigHighlights}
 import {
   LoaderOptions,
-  IMedusaInternalService,
-} from "@medusajs/framework/types"
+  ISwitchyardInternalService,
+} from "@switchyard/framework/types"
 import { InvoiceConfig } from "../models/invoice-config"
 
 export default async function createDefaultConfigLoader({
   container,
 }: LoaderOptions) {
-  const service: IMedusaInternalService<
+  const service: ISwitchyardInternalService<
     typeof InvoiceConfig
   > = container.resolve("invoiceConfigService")
 
@@ -367,7 +367,7 @@ export default async function createDefaultConfigLoader({
 
 The loader function accepts an object having the [module's container](!docs!/learn/fundamentals/modules/container) as a parameter. You can use this container to resolve Framework tools and the module's resources.
 
-In the loader, you resolve a service that Medusa generates for the `InvoiceConfig` data model. You use that service to create default configurations if none exist.
+In the loader, you resolve a service that Switchyard generates for the `InvoiceConfig` data model. You use that service to create default configurations if none exist.
 
 ### b. Register the Loader
 
@@ -399,25 +399,25 @@ Refer to the [Loaders](!docs!/learn/fundamentals/modules/loaders) documentation 
 
 ### c. Run the Loader
 
-To run the loader, start the Medusa application:
+To run the loader, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-The Medusa application will run your loader to create the default invoice configurations in the database. You'll verify that it worked in the next step after adding the admin settings page.
+The Switchyard application will run your loader to create the default invoice configurations in the database. You'll verify that it worked in the next step after adding the admin settings page.
 
 ---
 
 ## Step 4: Allow Admins to Manage Invoice Configurations
 
-In this step, you'll customize the Medusa application to allow admin users to manage the default invoice configurations through the Medusa Admin dashboard.
+In this step, you'll customize the Switchyard application to allow admin users to manage the default invoice configurations through the Switchyard Admin dashboard.
 
 To build this feature, you need to create:
 
 1. A [workflow](!docs!/learn/fundamentals/workflows) with the business logic to manage invoice configurations.
 2. An [API route](!docs!/learn/fundamentals/api-routes) that exposes the invoice configuration management functionality to clients.
-3. A [settings page](!docs!/learn/fundamentals/admin/ui-routes#create-settings-page) in the Medusa Admin dashboard that allows admin users to manage the invoice configurations.
+3. A [settings page](!docs!/learn/fundamentals/admin/ui-routes#create-settings-page) in the Switchyard Admin dashboard that allows admin users to manage the invoice configurations.
 
 ### a. Invoice Configuration Management Workflow
 
@@ -437,7 +437,7 @@ To create a step, create the file `src/workflows/steps/update-invoice-config.ts`
 
 <Note>
 
-If you get a type error on resolving the Invoice Generator Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Invoice Generator Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
@@ -451,7 +451,7 @@ export const updateInvoiceConfigHighlights = [
 ]
 
 ```ts title="src/workflows/steps/update-invoice-config.ts" highlights={updateInvoiceConfigHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { INVOICE_MODULE } from "../../modules/invoice-generator"
 
 type StepInput = {
@@ -504,10 +504,10 @@ You create a step with the `createStep` function. It accepts three parameters:
 1. The step's unique name.
 2. An async function that receives two parameters:
     - The step's input, which is an object having the data to update in the invoice configuration.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An async compensation function that undoes the actions performed by the step function. This function is only executed if an error occurs during the workflow's execution.
 
-In the step function, you resolve the Invoice Generator Module's service from the Medusa container. Then, you either retrieve the invoice configuration by its ID, or list all invoice configurations and use the first one.
+In the step function, you resolve the Invoice Generator Module's service from the Switchyard container. Then, you either retrieve the invoice configuration by its ID, or list all invoice configurations and use the first one.
 
 Next, you update the invoice configuration with the data passed to the step function.
 
@@ -525,7 +525,7 @@ Next, you'll create a workflow that uses the `updateInvoiceConfigStep` step to u
 Create the file `src/workflows/update-invoice-config.ts` with the following content:
 
 ```ts title="src/workflows/update-invoice-config.ts"
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { updateInvoiceConfigStep } from "./steps/update-invoice-config"
 
 type WorkflowInput = {
@@ -579,17 +579,17 @@ Create the file `src/api/admin/invoice-config/route.ts` with the following conte
 
 export const retrieveInvoiceConfigHighlights = [
   ["3", "GET", "Expose a `GET` API route at `/admin/invoice-config`."],
-  ["7", "query", "Resolve Query from the Medusa container."],
+  ["7", "query", "Resolve Query from the Switchyard container."],
   ["9", "invoiceConfig", "Retrieve the default invoice configuration."],
   ["14", "json", "Return the invoice configuration in the response."]
 ]
 
 ```ts title="src/api/admin/invoice-config/route.ts" highlights={retrieveInvoiceConfigHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const query = req.scope.resolve("query")
 
@@ -606,7 +606,7 @@ export async function GET(
 
 Since you export a `GET` route handler function, you expose a `GET` API route at `/admin/invoice-config`.
 
-In the route handler, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Medusa container. It allows you to retrieve data across modules.
+In the route handler, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Switchyard container. It allows you to retrieve data across modules.
 
 You retrieve the default invoice configuration and return it in the response.
 
@@ -645,8 +645,8 @@ export const PostInvoiceConfigSchema = z.object({
 type PostInvoiceConfig = z.infer<typeof PostInvoiceConfigSchema>
 
 export async function POST(
-  req: MedusaRequest<PostInvoiceConfig>,
-  res: MedusaResponse
+  req: SwitchyardRequest<PostInvoiceConfig>,
+  res: SwitchyardResponse
 ) {
   const { result: { invoice_config } } = await updateInvoiceConfigWorkflow(
     req.scope
@@ -664,7 +664,7 @@ You define a validation schema with [Zod](https://zod.dev/) to validate incoming
 
 Next, since you export a `POST` route handler function, you expose a `POST` API route at `/admin/invoice-config`.
 
-In the route handler, you execute the `updateInvoiceConfigWorkflow` by invoking it, passing it the Medusa container, then executing its `run` method.
+In the route handler, you execute the `updateInvoiceConfigWorkflow` by invoking it, passing it the Switchyard container, then executing its `run` method.
 
 You return the updated invoice configuration in the response.
 
@@ -675,7 +675,7 @@ To validate the body parameters of requests sent to the API route, you need to a
 To apply a middleware to a route, create the file `src/api/middlewares.ts` with the following content:
 
 ```ts title="src/api/middlewares.ts"
-import { defineMiddlewares, validateAndTransformBody } from "@medusajs/framework/http"
+import { defineMiddlewares, validateAndTransformBody } from "@switchyard/framework/http"
 import { PostInvoiceConfigSchema } from "./admin/invoice-config/route"
 
 export default defineMiddlewares({
@@ -691,7 +691,7 @@ export default defineMiddlewares({
 })
 ```
 
-You apply Medusa's `validateAndTransformBody` middleware to `POST` requests sent to the `/admin/invoice-config` API route.
+You apply Switchyard's `validateAndTransformBody` middleware to `POST` requests sent to the `/admin/invoice-config` API route.
 
 The middleware function accepts a Zod schema, which you created in the API route's file.
 
@@ -703,18 +703,18 @@ Refer to the [Middlewares](!docs!/learn/fundamentals/api-routes/middlewares) doc
 
 ### c. Create Settings Page
 
-Next, you'll create a settings page in the Medusa Admin dashboard that allows admin users to manage the invoice configurations.
+Next, you'll create a settings page in the Switchyard Admin dashboard that allows admin users to manage the invoice configurations.
 
 #### Initialize JS SDK
 
-To send requests to the Medusa server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Medusa project, but you need to initialize it before using it in your customizations.
+To send requests to the Switchyard server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Switchyard project, but you need to initialize it before using it in your customizations.
 
 Create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -727,7 +727,7 @@ Learn more about the initialization options in the [JS SDK](../../../js-sdk/page
 
 #### Create Settings Page Component
 
-Settings pages are [UI routes](!docs!/learn/fundamentals/admin/ui-routes#create-settings-page) created under the `/src/admin/routes/settings` directory. Medusa will then add the settings page under the Settings section of the Medusa Admin dashboard.
+Settings pages are [UI routes](!docs!/learn/fundamentals/admin/ui-routes#create-settings-page) created under the `/src/admin/routes/settings` directory. Switchyard will then add the settings page under the Settings section of the Switchyard Admin dashboard.
 
 <Note>
 
@@ -745,8 +745,8 @@ export const invoiceConfigPageHighlights = [
 ]
 
 ```tsx title="src/admin/routes/settings/invoice-config/page.tsx" highlights={invoiceConfigPageHighlights}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Button, Input, Label, Textarea, toast } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Button, Input, Label, Textarea, toast } from "@switchyard/ui"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { sdk } from "../../../lib/sdk"
 import { useForm } from "react-hook-form"
@@ -802,7 +802,7 @@ export const InvoiceConfigPageHighlights = [
   ["20", "getFormDefaultValues", "Function to get the current invoice configuration data for the form."],
   ["31", "form", "Create a form instance using `react-hook-form`."],
   ["35", "handleSubmit", "Handle form submission."],
-  ["37", "uploadLogo", "Upload a logo using Medusa's Upload API route."],
+  ["37", "uploadLogo", "Upload a logo using Switchyard's Upload API route."],
   ["50", "useEffect", "Reset the form's default values when the data changes."]
 ]
 
@@ -872,7 +872,7 @@ In the component, you:
 3. Define a function that returns the current invoice configuration data, which is useful to create the form.
 4. Define a `form` instance with `useForm` from `react-hook-form`. You pass it the Zod validation schema as a type argument, and the default values using the `getFormDefaultValues` function.
 5. Define a `handleSubmit` function that updates the invoice configuration using the mutation.
-6. Define an `uploadLogo` function that uploads a logo using Medusa's [Upload API route](!api!/admin#uploads_postuploads).
+6. Define an `uploadLogo` function that uploads a logo using Switchyard's [Upload API route](!api!/admin#uploads_postuploads).
 7. Reset the form's default values when the `data` changes, ensuring the form reflects the latest invoice configuration.
 
 Finally, replace the `TODO` comment with the following `return` statement:
@@ -1004,7 +1004,7 @@ You render the form and its fields. When the form is submitted, you execute the 
 
 <Note>
 
-Refer to the [Admin Components](../../../admin-components/components/forms/page.mdx) documentation to learn more about creating forms in the Medusa Admin dashboard.
+Refer to the [Admin Components](../../../admin-components/components/forms/page.mdx) documentation to learn more about creating forms in the Switchyard Admin dashboard.
 
 </Note>
 
@@ -1012,7 +1012,7 @@ Refer to the [Admin Components](../../../admin-components/components/forms/page.
 
 You'll now test out the invoice configuration management feature.
 
-First, start the Medusa application with the following command:
+First, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -1020,12 +1020,12 @@ npm run dev
 
 Then:
 
-1. Open the Medusa Admin dashboard in your browser at `http://localhost:9000/admin` and log in.
+1. Open the Switchyard Admin dashboard in your browser at `http://localhost:9000/admin` and log in.
 2. Go to Settings -> Default Invoice Config.
 
 You can edit any of the configurations and upload a company logo. When you click the Save button, it will update the configurations and display a success message.
 
-![Invoice Configurations Settings Page](https://res.cloudinary.com/dza7lstvk/image/upload/v1753788482/Medusa%20Resources/CleanShot_2025-07-29_at_13.54.11_2x_zs2h9w.png)
+![Invoice Configurations Settings Page](https://res.cloudinary.com/dza7lstvk/image/upload/v1753788482/Switchyard%20Resources/CleanShot_2025-07-29_at_13.54.11_2x_zs2h9w.png)
 
 ---
 
@@ -1056,13 +1056,13 @@ import {
   InferTypeOf, 
   OrderDTO, 
   OrderLineItemDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import axios from "axios"
 ```
 
 <Note>
 
-`axios` is available in your Medusa project by default, so you don't need to install it.
+`axios` is available in your Switchyard project by default, so you don't need to install it.
 
 </Note>
 
@@ -1100,7 +1100,7 @@ export const generatePdfHighlights = [
 ]
 
 ```ts title="src/modules/invoice-generator/service.ts" highlights={generatePdfHighlights}
-class InvoiceGeneratorService extends MedusaService({
+class InvoiceGeneratorService extends SwitchyardService({
   InvoiceConfig,
   Invoice,
 }) {
@@ -1140,7 +1140,7 @@ export const createInvoiceContentHighlights = [
 ]
 
 ```ts title="src/modules/invoice-generator/service.ts" collapsibleLines="65-425" expandButtonLabel="Show Full Code" highlights={createInvoiceContentHighlights}
-class InvoiceGeneratorService extends MedusaService({
+class InvoiceGeneratorService extends SwitchyardService({
   InvoiceConfig,
   Invoice,
 }) {
@@ -1592,7 +1592,7 @@ export const generatePdfMethodHighlights = [
 ]
 
 ```ts title="src/modules/invoice-generator/service.ts" highlights={generatePdfMethodHighlights}
-class InvoiceGeneratorService extends MedusaService({
+class InvoiceGeneratorService extends SwitchyardService({
   InvoiceConfig,
   Invoice,
 }) {
@@ -1682,7 +1682,7 @@ The workflow that generates the invoice PDF will have the following steps:
   hideLegend
 />
 
-You only need to implement the third and fourth steps, as the other two steps are helper steps that Medusa provides.
+You only need to implement the third and fourth steps, as the other two steps are helper steps that Switchyard provides.
 
 #### getOrderInvoiceStep
 
@@ -1698,7 +1698,7 @@ export const getOrderInvoiceStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/get-order-invoice.ts" highlights={getOrderInvoiceStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { INVOICE_MODULE } from "../../modules/invoice-generator"
 import { InvoiceStatus } from "../../modules/invoice-generator/models/invoice"
 
@@ -1760,9 +1760,9 @@ export const generateInvoicePdfStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/generate-invoice-pdf.ts" highlights={generateInvoicePdfStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { INVOICE_MODULE } from "../../modules/invoice-generator"
-import { OrderDTO, OrderLineItemDTO } from "@medusajs/framework/types"
+import { OrderDTO, OrderLineItemDTO } from "@switchyard/framework/types"
 
 export type GenerateInvoicePdfStepInput = {
   order: OrderDTO
@@ -1822,9 +1822,9 @@ export const generateInvoicePdfWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/generate-invoice-pdf.ts" highlights={generateInvoicePdfWorkflowHighlights}
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { generateInvoicePdfStep, GenerateInvoicePdfStepInput } from "./steps/generate-invoice-pdf"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { getOrderInvoiceStep } from "./steps/get-order-invoice"
 
 type WorkflowInput = {
@@ -1942,12 +1942,12 @@ export const adminInvoiceHighlights = [
 ]
 
 ```ts title="src/api/admin/orders/[id]/invoices/route.ts" highlights={adminInvoiceHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { generateInvoicePdfWorkflow } from "../../../../../workflows/generate-invoice-pdf"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const { id } = req.params
 
@@ -1987,12 +1987,12 @@ You'll also create an identical API route for the storefront, allowing customers
 Create the file `src/api/store/orders/[id]/invoices/route.ts` with the following content:
 
 ```ts title="src/api/store/orders/[id]/invoices/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { generateInvoicePdfWorkflow } from "../../../../../workflows/generate-invoice-pdf"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const { id } = req.params
 
@@ -2034,13 +2034,13 @@ To create the widget, create the file `src/admin/widgets/order-invoice.tsx` with
 export const orderInvoiceWidgetHighlights1 = [
   ["7", "OrderInvoiceWidget", "React component for the widget."],
   ["11", "defineWidgetConfig", "Define the widget configuration."],
-  ["12", "zone", "Where the widget should be injected in the Medusa Admin."]
+  ["12", "zone", "Where the widget should be injected in the Switchyard Admin."]
 ]
 
 ```tsx title="src/admin/widgets/order-invoice.tsx" highlights={orderInvoiceWidgetHighlights1}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, Container, Heading, Text, toast } from "@medusajs/ui"
-import { AdminOrder, DetailWidgetProps } from "@medusajs/framework/types"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Button, Container, Heading, Text, toast } from "@switchyard/ui"
+import { AdminOrder, DetailWidgetProps } from "@switchyard/framework/types"
 import { sdk } from "../lib/sdk"
 import { useState } from "react"
 
@@ -2058,7 +2058,7 @@ export default OrderInvoiceWidget
 A widget file must export:
 
 1. A React component that contains the widget UI. It's the default export of the file.
-2. A widget configuration object that defines where the widget should be injected in the Medusa Admin.
+2. A widget configuration object that defines where the widget should be injected in the Switchyard Admin.
 
 Next, you'll add the implementation of the widget. Replace the implementation of the `OrderInvoiceWidget` component with the following code:
 
@@ -2137,15 +2137,15 @@ You return a container with a button to download the invoice.
 
 ### Test Admin Widget
 
-To test the admin widget, start the Medusa Admin application again.
+To test the admin widget, start the Switchyard Admin application again.
 
 Next, start the Next.js Starter Storefront to easily place an order:
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-invoice`, you can find the storefront by going back to the parent directory and changing to the `medusa-invoice-storefront` directory:
+So, if your Switchyard application's directory is `medusa-invoice`, you can find the storefront by going back to the parent directory and changing to the `medusa-invoice-storefront` directory:
 
 ```bash
 cd ../medusa-invoice-storefront # change based on your project name
@@ -2159,9 +2159,9 @@ npm run dev
 
 Open the storefront at `http://localhost:8000`. Add a product to the cart, then place an order.
 
-In the Medusa Admin, open the order's detail page. You'll see an "Invoice" section at the top right of the page. Click on the "Download Invoice" button to generate and download the invoice PDF.
+In the Switchyard Admin, open the order's detail page. You'll see an "Invoice" section at the top right of the page. Click on the "Download Invoice" button to generate and download the invoice PDF.
 
-![Download Invoice Button in Admin Widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1753788505/Medusa%20Resources/CleanShot_2025-07-29_at_14.27.08_2x_rnn1er.png)
+![Download Invoice Button in Admin Widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1753788505/Switchyard%20Resources/CleanShot_2025-07-29_at_14.27.08_2x_rnn1er.png)
 
 You can view the downloaded invoice PDF to make sure all information is correct.
 
@@ -2185,7 +2185,7 @@ First, add the following at the top of the file:
 "use client"
 
 // other imports...
-import { Button, toast } from "@medusajs/ui"
+import { Button, toast } from "@switchyard/ui"
 import { useState } from "react"
 import { sdk } from "../../../../lib/config"
 ```
@@ -2282,11 +2282,11 @@ You show the "Download Invoice" button next to the order number. When the custom
 
 ### Test Storefront Invoice Download
 
-To test the storefront changes, ensure both the Medusa application and the Next.js Starter Storefront are running.
+To test the storefront changes, ensure both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, place an order in the storefront. You'll see the "Download Invoice" button on the order confirmation page. You can click the button to generate and download the invoice PDF.
 
-![Download Invoice Button in Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1753789117/Medusa%20Resources/CleanShot_2025-07-29_at_14.38.21_2x_oyydri.png)
+![Download Invoice Button in Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1753789117/Switchyard%20Resources/CleanShot_2025-07-29_at_14.38.21_2x_oyydri.png)
 
 ---
 
@@ -2294,7 +2294,7 @@ Then, place an order in the storefront. You'll see the "Download Invoice" button
 
 In this step, you'll send an order confirmation email with the invoice PDF attached when an order is placed.
 
-You can listen to events that occur in your Medusa application, such as when an order is placed, using [subscribers](!docs!/learn/fundamentals/events-and-subscribers). A subscriber is an asynchronous function that is executed whenever its associated event is emitted.
+You can listen to events that occur in your Switchyard application, such as when an order is placed, using [subscribers](!docs!/learn/fundamentals/events-and-subscribers). A subscriber is an asynchronous function that is executed whenever its associated event is emitted.
 
 To create a subscriber, create the file `src/subscribers/order-placed.ts` with the following content:
 
@@ -2307,7 +2307,7 @@ export const orderPlacedHighlights = [
 ]
 
 ```ts title="src/subscribers/order-placed.ts" highlights={orderPlacedHighlights}
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { generateInvoicePdfWorkflow } from "../workflows/generate-invoice-pdf"
 
 export default async function orderPlacedHandler({
@@ -2417,9 +2417,9 @@ await notificationModuleService.createNotifications({
 
 ### Test Order Confirmation Email with Invoice
 
-To test the order confirmation email, make sure that the Medusa application and the Next.js Starter Storefront are running.
+To test the order confirmation email, make sure that the Switchyard application and the Next.js Starter Storefront are running.
 
-Then, place an order in the storefront. You'll see the following message in the Medusa application's console:
+Then, place an order in the storefront. You'll see the following message in the Switchyard application's console:
 
 ```bash
 info:    Processing order.placed which has 1 subscribers
@@ -2452,7 +2452,7 @@ export const updateInvoicesStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/update-invoices.ts" highlights={updateInvoicesStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { InvoiceStatus } from "../../modules/invoice-generator/models/invoice"
 import { INVOICE_MODULE } from "../../modules/invoice-generator"
 
@@ -2507,8 +2507,8 @@ The step returns the updated invoices.
 Next, to create the workflow that marks invoices as stale, create the file `src/workflows/mark-invoices-stale.ts` with the following content:
 
 ```ts title="src/workflows/mark-invoices-stale.ts"
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { updateInvoicesStep } from "./steps/update-invoices"
 import { InvoiceStatus } from "../modules/invoice-generator/models/invoice"
 
@@ -2546,7 +2546,7 @@ Next, you'll create a subscriber that listens to order updates and marks the ord
 Create the subscriber `src/subscribers/order-updated.ts` with the following content:
 
 ```ts title="src/subscribers/order-updated.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { markInvoicesStaleWorkflow } from "../workflows/mark-invoices-stale"
 
 type EventPayload = {
@@ -2592,13 +2592,13 @@ In the subscriber, you execute the `markInvoicesStaleWorkflow` to mark the order
 
 <Note>
 
-Refer to the [Events Reference](/references/events) for a complete list of events that Medusa emits.
+Refer to the [Events Reference](/references/events) for a complete list of events that Switchyard emits.
 
 </Note>
 
 ### Test Order Updates
 
-To test the order updates subscriber, start the Medusa application and go to an order's page.
+To test the order updates subscriber, start the Switchyard application and go to an order's page.
 
 On the order's page, try editing its billing or shipping address, or edit the order's items. You'll see the following message in the console:
 
@@ -2612,17 +2612,17 @@ Afterward, try clicking the "Download Invoice" button. The new invoice will cont
 
 ## Next Steps
 
-You've successfully implemented the invoice generator feature in Medusa. You can expand on this feature to:
+You've successfully implemented the invoice generator feature in Switchyard. You can expand on this feature to:
 
 1. Customize the PDF's content and layout to match your branding or include more details.
 2. Show all invoices for an order in the admin and storefront, allowing users to download previous invoices.
-3. Trigger sending invoices to customers from the Medusa Admin dashboard.
+3. Trigger sending invoices to customers from the Switchyard Admin dashboard.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -2632,5 +2632,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

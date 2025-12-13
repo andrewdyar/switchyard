@@ -231,7 +231,7 @@ To retrieve the logged-in customer's addresses, use the [List Customer Addresses
 
 <Note title="Good to Know">
 
-A customer's address and a cart's address are represented by different data models in the Medusa application, as they're managed by the [Customer Module](../../../commerce-modules/customer/page.mdx) and the [Cart Module](../../../commerce-modules/cart/page.mdx), respectively. So, addresses that the customer used previously during checkout aren't automatically saved to their account. You need to save the customer's address using the [Create Customer Address API route](!api!/store#customers_postcustomersmeaddresses).
+A customer's address and a cart's address are represented by different data models in the Switchyard application, as they're managed by the [Customer Module](../../../commerce-modules/customer/page.mdx) and the [Cart Module](../../../commerce-modules/cart/page.mdx), respectively. So, addresses that the customer used previously during checkout aren't automatically saved to their account. You need to save the customer's address using the [Create Customer Address API route](!api!/store#customers_postcustomersmeaddresses).
 
 </Note>
 
@@ -337,7 +337,7 @@ export default function CheckoutAddressStep() {
 
 export const fetch2Highlights = [
   ["1", "cartId", "Assuming the cart's ID is stored in the local storage."],
-  ["3", "retrieveCustomerAddresses", "Retrieve the customer's addresses from Medusa."],
+  ["3", "retrieveCustomerAddresses", "Retrieve the customer's addresses from Switchyard."],
   ["11", "updateCartAddress", "Update the cart's address with the selected customer address."],
   ["12", "address", "Map the customer address to the expected cart address."],
   ["25", "shipping_address", "Pass the selected address as a shipping address."],

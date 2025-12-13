@@ -17,7 +17,7 @@ import {
   Link,
 } from "@/components"
 import clsx from "clsx"
-import { Text } from "@medusajs/ui"
+import { Text } from "@switchyard/ui"
 
 export const MDXComponents: MDXComponentsType = {
   code: CodeMdx,

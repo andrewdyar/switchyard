@@ -1,8 +1,8 @@
 import {
   ChangeActionType,
   MathBN,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 import { OrderChangeProcessing } from "../calculate-order-change"
 import { setActionReference } from "../set-action-reference"
 
@@ -42,8 +42,8 @@ OrderChangeProcessing.registerActionType(
     validate({ action, currentOrder }) {
       const refId = action.details?.reference_id
       if (refId == null) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Details reference ID is required."
         )
       }
@@ -51,23 +51,23 @@ OrderChangeProcessing.registerActionType(
       const existing = currentOrder.items.find((item) => item.id === refId)
 
       if (!existing) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Item ID "${refId}" not found.`
         )
       }
 
       if (!action.details?.quantity) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Quantity to return of item ${refId} is required.`
         )
       }
 
       const quantityRequested = existing?.detail.return_requested_quantity || 0
       if (action.details?.quantity > quantityRequested) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Cannot receive more items than what was requested to be returned for item ${refId}.`
         )
       }

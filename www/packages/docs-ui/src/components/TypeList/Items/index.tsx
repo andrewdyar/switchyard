@@ -19,7 +19,7 @@ import {
   FlagMini,
   Link,
   TriangleRightMini,
-} from "@medusajs/icons"
+} from "@switchyard/icons"
 import { decodeStr, isInView } from "@/utils"
 import { usePathname } from "next/navigation"
 import { useIsBrowser, useSiteConfig } from "../../.."

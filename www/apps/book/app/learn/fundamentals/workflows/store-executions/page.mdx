@@ -10,13 +10,13 @@ In this chapter, you'll learn how to store workflow executions in the database a
 
 ## Workflow Execution Retention
 
-Medusa doesn't store your workflow's execution details by default. However, you can configure a workflow to keep its execution details stored in the database.
+Switchyard doesn't store your workflow's execution details by default. However, you can configure a workflow to keep its execution details stored in the database.
 
 This is useful for auditing and debugging purposes. When you store a workflow's execution, you can view details around its steps, their states and their output. You can also check whether the workflow or any of its steps failed.
 
 <Note title="Tip">
 
-You can view stored workflow executions from the Medusa Admin dashboard by going to Settings -> Workflows.
+You can view stored workflow executions from the Switchyard Admin dashboard by going to Settings -> Workflows.
 
 </Note>
 
@@ -46,7 +46,7 @@ export const highlights = [
 ]
 
 ```ts highlights={highlights}
-import { createStep, createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { createStep, createWorkflow } from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   {
@@ -77,7 +77,7 @@ Whenever you execute the `helloWorkflow` now, its execution details will be stor
 
 <Note title="Tip">
 
-You can view stored workflow executions from the Medusa Admin dashboard by going to Settings -> Workflows.
+You can view stored workflow executions from the Switchyard Admin dashboard by going to Settings -> Workflows.
 
 </Note>
 
@@ -98,12 +98,12 @@ export const retrieveHighlights = [
 ]
 
 ```ts title="src/workflows/[id]/route.ts" highlights={retrieveHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
-import { Modules } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
+import { Modules } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { transaction_id } = req.params
   

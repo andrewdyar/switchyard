@@ -13,7 +13,7 @@ Expose a hook in your workflow where you can inject custom functionality as a st
 
 A handler hook can later be registered to consume the hook and perform custom functionality.
 
-Learn more in [this documentation](https://docs.medusajs.com/learn/fundamentals/workflows/workflow-hooks).
+Learn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/workflows/workflow-hooks).
 
 ## Example
 
@@ -23,7 +23,7 @@ import {
   createHook,
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createProductStep } from "./steps/create-product"
 
 export const myWorkflow = createWorkflow(
@@ -44,12 +44,12 @@ export const myWorkflow = createWorkflow(
 
 ## Type Parameters
 
-<TypeList types={[{"name":"Name","type":"`string`","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"TInvokeInput","type":"`object`","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"TInvokeOutput","type":"`object`","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createHook"/>
+<TypeList types={[{"name":"Name","type":"`string`","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"TInvokeInput","type":"`object`","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"TInvokeOutput","type":"`object`","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createHook"/>
 
 ## Parameters
 
-<TypeList types={[{"name":"name","type":"Name","description":"The hook's name. This is used when the hook handler is registered to consume the workflow.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"hookInput","type":"TInvokeInput","description":"The input to pass to the hook handler.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"options","type":"`object`","description":"","optional":false,"defaultValue":"{}","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createHook"/>
+<TypeList types={[{"name":"name","type":"Name","description":"The hook's name. This is used when the hook handler is registered to consume the workflow.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"hookInput","type":"TInvokeInput","description":"The input to pass to the hook handler.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"options","type":"`object`","description":"","optional":false,"defaultValue":"{}","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createHook"/>
 
 ## Returns
 
-<TypeList types={[{"name":"Hook","type":"[Hook](../../types/workflows.Hook/page.mdx)&#60;Name, TInvokeInput, TInvokeOutput&#62;","optional":false,"defaultValue":"","description":"A workflow hook.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createHook"/>
+<TypeList types={[{"name":"Hook","type":"[Hook](../../types/workflows.Hook/page.mdx)&#60;Name, TInvokeInput, TInvokeOutput&#62;","optional":false,"defaultValue":"","description":"A workflow hook.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="createHook"/>

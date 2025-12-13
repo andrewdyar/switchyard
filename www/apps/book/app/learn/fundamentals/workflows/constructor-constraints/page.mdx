@@ -6,7 +6,7 @@ export const metadata = {
 
 This chapter lists constraints of defining a workflow or its steps.
 
-Medusa creates an internal representation of the workflow definition you pass to `createWorkflow` to track and store its steps. At that point, variables in the workflow don't have any values. They only do when you execute the workflow.
+Switchyard creates an internal representation of the workflow definition you pass to `createWorkflow` to track and store its steps. At that point, variables in the workflow don't have any values. They only do when you execute the workflow.
 
 This creates restrictions related to variable manipulations, using if-conditions, and other constraints. This chapter lists these constraints and provides their alternatives.
 
@@ -85,13 +85,13 @@ const myWorkflow = createWorkflow(
 
 #### Create Dates in transform
 
-When you use `new Date()` in a workflow's constructor function, the date is evaluated when Medusa creates the internal representation of the workflow, not during execution.
+When you use `new Date()` in a workflow's constructor function, the date is evaluated when Switchyard creates the internal representation of the workflow, not during execution.
 
 Instead, create the date using `transform`.
 
 <Note>
 
-Learn more about how Medusa creates an internal representation of a workflow [in this chapter](../variable-manipulation/page.mdx).
+Learn more about how Switchyard creates an internal representation of a workflow [in this chapter](../variable-manipulation/page.mdx).
 
 </Note>
 
@@ -187,7 +187,7 @@ const myWorkflow = createWorkflow(
 
 // Do
 // other imports...
-import { transform } from "@medusajs/framework/workflows-sdk"
+import { transform } from "@switchyard/framework/workflows-sdk"
 
 const myWorkflow = createWorkflow(
   "hello-world", 
@@ -213,7 +213,7 @@ const myWorkflow = createWorkflow(
 
 // Do
 // other imports...
-import { transform } from "@medusajs/framework/workflows-sdk"
+import { transform } from "@switchyard/framework/workflows-sdk"
 
 const myWorkflow = createWorkflow(
   "hello-world", 
@@ -241,7 +241,7 @@ const myWorkflow = createWorkflow(
 
 // Do
 // other imports...
-import { transform } from "@medusajs/framework/workflows-sdk"
+import { transform } from "@switchyard/framework/workflows-sdk"
 
 const myWorkflow = createWorkflow(
   "hello-world", 
@@ -273,7 +273,7 @@ const myWorkflow = createWorkflow(
 
 // Do
 // other imports...
-import { transform } from "@medusajs/framework/workflows-sdk"
+import { transform } from "@switchyard/framework/workflows-sdk"
 
 const myWorkflow = createWorkflow(
   "hello-world", 
@@ -307,7 +307,7 @@ const myWorkflow = createWorkflow(
 
 // Do
 // other imports...
-import { transform } from "@medusajs/framework/workflows-sdk"
+import { transform } from "@switchyard/framework/workflows-sdk"
 
 const myWorkflow = createWorkflow(
   "hello-world", 
@@ -335,7 +335,7 @@ Instead, refer to the [Error Handling](../errors/page.mdx) chapter for alternati
 
 ## Returned Value Constraints
 
-Data returned from workflows and steps are serialized, allowing Medusa to store them in the database. So, you must only return serializable values, such as [primitive values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values) or an object, from workflows and steps.
+Data returned from workflows and steps are serialized, allowing Switchyard to store them in the database. So, you must only return serializable values, such as [primitive values](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#primitive_values) or an object, from workflows and steps.
 
 Values of other types, such as Maps, aren't allowed.
 
@@ -344,7 +344,7 @@ Values of other types, such as Maps, aren't allowed.
 import { 
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -363,7 +363,7 @@ const step1 = createStep(
 import { 
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -393,7 +393,7 @@ import {
   createStep,
   WorkflowResponse,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -422,14 +422,14 @@ Then, in an API route that executes this workflow, you can recreate the buffer f
 
 ```ts
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import myWorkflow from "../../workflows/hello-world"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await myWorkflow(req.scope)
     .run()

@@ -4,7 +4,7 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you’ll learn how you can handle payment webhook events in your Medusa application and using the Payment Module.
+In this guide, you’ll learn how you can handle payment webhook events in your Switchyard application and using the Payment Module.
 
 ## What's a Payment Webhook Event?
 
@@ -14,7 +14,7 @@ This is useful in many cases such as:
 
 - When a payment is processed (authorized or captured) asynchronously.
 - When a payment is managed on the third-party payment provider's side.
-- When a payment action on the frontend was interrupted, leading the payment to be processed without an order being created in the Medusa application.
+- When a payment action on the frontend was interrupted, leading the payment to be processed without an order being created in the Switchyard application.
 
 So, it's essential to handle webhook events to ensure that your application is aware of updated payment statuses and can take appropriate actions.
 
@@ -24,7 +24,7 @@ So, it's essential to handle webhook events to ensure that your application is a
 
 ### Webhook Listener API Route
 
-The Medusa application has a `/hooks/payment/[identifier]_[provider]` API route out-of-the-box that allows you to listen to webhook events from third-party payment providers, where:
+The Switchyard application has a `/hooks/payment/[identifier]_[provider]` API route out-of-the-box that allows you to listen to webhook events from third-party payment providers, where:
 
 - `[identifier]` is the `identifier` static property defined in the payment provider. For example, `stripe`.
 - `[provider]` is the ID of the provider. For example, `stripe`.
@@ -43,9 +43,9 @@ Payment providers have a similar [getWebhookActionAndData method](/references/pa
 
 </Note>
 
-![A diagram showcasing the steps of how the getWebhookActionAndData method words](https://res.cloudinary.com/dza7lstvk/image/upload/v1711567415/Medusa%20Resources/payment-webhook_seaocg.jpg)
+![A diagram showcasing the steps of how the getWebhookActionAndData method words](https://res.cloudinary.com/dza7lstvk/image/upload/v1711567415/Switchyard%20Resources/payment-webhook_seaocg.jpg)
 
-If the `getWebhookActionAndData` method returns an `authorized` or `captured` action, the Medusa application will perform one of the following actions:
+If the `getWebhookActionAndData` method returns an `authorized` or `captured` action, the Switchyard application will perform one of the following actions:
 
 <Note>
 
@@ -53,6 +53,6 @@ View the full flow of the webhook event processing in the [processPaymentWorkflo
 
 </Note>
 
-- If the method returns an `authorized` action, Medusa will set the associated payment session to `authorized`.
-- If the method returns a `captured` action, Medusa will set the associated payment session to `captured`.
-- In either cases, if the cart associated with the payment session is not completed yet, Medusa will complete the cart.
+- If the method returns an `authorized` action, Switchyard will set the associated payment session to `authorized`.
+- If the method returns a `captured` action, Switchyard will set the associated payment session to `captured`.
+- In either cases, if the cart associated with the payment session is not completed yet, Switchyard will complete the cart.

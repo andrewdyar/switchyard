@@ -1,3 +1,3 @@
 # User Module
 
-The User Module is Medusa’s user engine.
+The User Module is Switchyard’s user engine.

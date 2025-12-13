@@ -2,7 +2,7 @@ import React from "react"
 import clsx from "clsx"
 import { useModal } from "@/providers"
 import { Button } from "@/components"
-import { XMark } from "@medusajs/icons"
+import { XMark } from "@switchyard/icons"
 
 export type ModalHeaderProps = {
   title?: React.ReactNode

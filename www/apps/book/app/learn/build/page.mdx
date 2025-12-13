@@ -1,39 +1,39 @@
 export const metadata = {
-  title: `${pageNumber} Build Medusa Application`,
+  title: `${pageNumber} Build Switchyard Application`,
 }
 
 # {metadata.title}
 
-In this chapter, you'll learn how to create a production build of your Medusa application for deployment to a hosting provider.
+In this chapter, you'll learn how to create a production build of your Switchyard application for deployment to a hosting provider.
 
-The next chapter explains how to deploy your Medusa application.
+The next chapter explains how to deploy your Switchyard application.
 
 <Note title="Deploy with Cloud" type="success">
 
-The below instructions are useful for self-hosting your Medusa application. You can also use [Cloud](!cloud!) to deploy and manage your Medusa application without worrying about infrastructure. Medusa will handle the configurations, deployment, and scaling for you.
+The below instructions are useful for self-hosting your Switchyard application. You can also use [Cloud](!cloud!) to deploy and manage your Switchyard application without worrying about infrastructure. Switchyard will handle the configurations, deployment, and scaling for you.
 
 </Note>
 
 ## build Command
 
-The Medusa CLI tool provides a [build](!resources!/medusa-cli/commands/build) command that creates a standalone build of the Medusa application that:
+The Switchyard CLI tool provides a [build](!resources!/switchyard-cli/commands/build) command that creates a standalone build of the Switchyard application that:
 
 - Doesn't rely on the source TypeScript files.
 - Can be copied to a production server reliably.
 
-So, to create the production build, run the following command in the root of your Medusa application:
+So, to create the production build, run the following command in the root of your Switchyard application:
 
 ```bash
-npx medusa build
+npx switchyard build
 ```
 
 The command will create a `.medusa/server` directory in the root of your project that contains your build assets. The next sections explain how to use the build output.
 
 ---
 
-## Start Built Medusa Application
+## Start Built Switchyard Application
 
-To start the Medusa application after running the `build` command:
+To start the Switchyard application after running the `build` command:
 
 <Note>
 
@@ -55,7 +55,7 @@ cp ../../.env .env.production
 
 <Note>
 
-When `NODE_ENV=production`, the Medusa application loads the environment variables from `.env.production`. Learn more in the [environment variables guide](../fundamentals/environment-variables/page.mdx).
+When `NODE_ENV=production`, the Switchyard application loads the environment variables from `.env.production`. Learn more in the [environment variables guide](../fundamentals/environment-variables/page.mdx).
 
 </Note>
 
@@ -65,7 +65,7 @@ When `NODE_ENV=production`, the Medusa application loads the environment variabl
 export NODE_ENV=production
 ```
 
-4. Start the Medusa application from `.medusa/server`:
+4. Start the Switchyard application from `.medusa/server`:
 
 ```bash npm2yarn title=".medusa/server"
 npm run start
@@ -73,13 +73,13 @@ npm run start
 
 ### Authentication Locally in Production Build
 
-When the Medusa application is started in production (`NODE_ENV=production`) or staging mode, cookie settings are stricter. Cookie authentication only works if the client application is served from the same domain as the Medusa server, and the domain is not `localhost` or part of the [public suffix list](https://publicsuffix.org/).
+When the Switchyard application is started in production (`NODE_ENV=production`) or staging mode, cookie settings are stricter. Cookie authentication only works if the client application is served from the same domain as the Switchyard server, and the domain is not `localhost` or part of the [public suffix list](https://publicsuffix.org/).
 
-So if you try to access the Medusa Admin locally in production mode, you won't be able to log in.
+So if you try to access the Switchyard Admin locally in production mode, you won't be able to log in.
 
-To access the Medusa Admin locally in production mode, set the `projectConfig.cookieOptions` in your `medusa-config.ts` file to be less strict. For example:
+To access the Switchyard Admin locally in production mode, set the `projectConfig.cookieOptions` in your `switchyard.config.ts` file to be less strict. For example:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   projectConfig: {
     // ...
@@ -93,7 +93,7 @@ module.exports = defineConfig({
 
 In this example, you set `sameSite` to `lax` and `secure` to `false`, which allows cookies to be sent over non-secure connections and from different domains.
 
-Then rebuild the Medusa application and start it again as described in the [steps above](#start-built-medusa-application). You can now access the Medusa Admin locally in production mode.
+Then rebuild the Switchyard application and start it again as described in the [steps above](#start-built-medusa-application). You can now access the Switchyard Admin locally in production mode.
 
 <Note type="warning">
 
@@ -109,19 +109,19 @@ The `build` command creates a `.medusa/server` directory in the root of your pro
 
 The `.medusa/server` directory contains the following:
 
-![.medusa/server directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1760709518/Medusa%20Book/output-dir_dlklk6.jpg)
+![.medusa/server directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1760709518/Switchyard%20Book/output-dir_dlklk6.jpg)
 
 - `public/admin`: Contains the production build of the admin dashboard. The `public` directory is publicly accessible.
 - `src`: Contains the compiled JavaScript files of your `src` directory.
 - `instrumentation.js`: The compiled [instrumentation configuration file](../debugging-and-testing/instrumentation/page.mdx), if you have one.
-- `medusa-config.js`: The compiled Medusa configuration file.
-- `package.json` and a lock file: The dependencies required to run the Medusa application in production.
+- `switchyard.config.js`: The compiled Switchyard configuration file.
+- `package.json` and a lock file: The dependencies required to run the Switchyard application in production.
 
 ### Built Assets
 
 The `build` command compiles and copies `.{ts,js,tsx,jsx}` files in your project, such as those in the root directory and in the `src` directory.
 
-If you have other assets, such as JSON files or fonts, that you need in your Medusa backend at runtime, you need to copy them to the `.medusa/server` directory as part of your build process.
+If you have other assets, such as JSON files or fonts, that you need in your Switchyard backend at runtime, you need to copy them to the `.medusa/server` directory as part of your build process.
 
 For example, consider you have a `src/data` directory that contains JSON files needed at runtime. You can add a `postbuild` script to your `package.json` file to copy this directory after the build process:
 
@@ -144,14 +144,14 @@ Do not expose sensitive files in your deployments, especially in the `.medusa/se
 
 ### Customize Admin Build
 
-The admin dashboard is built with [Vite](!https://vitejs.dev/). If you need to customize the build process to include additional static assets, you can modify the Vite configuration with the [admin.vite](../configurations/medusa-config/page.mdx) option in your `medusa-config.ts` file.
+The admin dashboard is built with [Vite](!https://vitejs.dev/). If you need to customize the build process to include additional static assets, you can modify the Vite configuration with the [admin.vite](../configurations/switchyard.config/page.mdx) option in your `switchyard.config.ts` file.
 
 ### Separate Admin Build
 
 The `build` command accepts a `--admin-only` option that outputs the admin to the `.medusa/admin` directory. This is useful when deploying the admin dashboard separately, such as on Vercel:
 
 ```bash
-npx medusa build --admin-only
+npx switchyard build --admin-only
 ```
 
 ---

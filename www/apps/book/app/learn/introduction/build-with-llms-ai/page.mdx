@@ -8,7 +8,7 @@ import {
   Button,
   Link
 } from "docs-ui"
-import { AiAssistent, AiAssistentLuminosity } from "@medusajs/icons"
+import { AiAssistent, AiAssistentLuminosity } from "@switchyard/icons"
 
 export const metadata = {
   title: `${pageNumber} Build with AI Assistants and LLMs`,
@@ -16,11 +16,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn how you can use AI assistants and LLMs effectively in your Medusa development.
+In this chapter, you'll learn how you can use AI assistants and LLMs effectively in your Switchyard development.
 
 ## AI Assistant in Documentation
 
-The Medusa documentation is equipped with an AI Assistant that can answer your questions and help you build customizations with Medusa.
+The Switchyard documentation is equipped with an AI Assistant that can answer your questions and help you build customizations with Switchyard.
 
 ### Open the AI Assistant
 
@@ -29,11 +29,11 @@ To open the AI Assistant, either:
 - Use the keyboard shortcut `Ctrl + I` for Windows/Linux, or `Cmd + I` for macOS.
 - Click the <InlineIcon Icon={AiAssistent} alt="AI Assistant" /> icon in the top right corner of the documentation.
 
-You can then ask the AI Assistant any questions about Medusa, such as:
+You can then ask the AI Assistant any questions about Switchyard, such as:
 
 - What is a workflow?
 - How to create a product review module?
-- How to update Medusa?
+- How to update Switchyard?
 - How to fix this error?
 
 The AI Assistant will provide you with relevant documentation links, code snippets, and explanations to help you with your development.
@@ -64,9 +64,9 @@ You can add new lines using the `Shift + Enter` shortcut.
 
 ## MCP Remote Server
 
-The Medusa documentation provides a remote Model Context Protocol (MCP) server that allows you to find information from the Medusa documentation right in your IDEs or AI tools, such as Cursor.
+The Switchyard documentation provides a remote Model Context Protocol (MCP) server that allows you to find information from the Switchyard documentation right in your IDEs or AI tools, such as Cursor.
 
-Medusa hosts a Streamable HTTP MCP server available at `https://docs.medusajs.com/mcp`. you can add it to AI agents that support connecting to MCP servers.
+Switchyard hosts a Streamable HTTP MCP server available at `https://docs.switchyard.com/mcp`. you can add it to AI agents that support connecting to MCP servers.
 
 <Tabs defaultValue="cursor">
   <TabsList>
@@ -77,15 +77,15 @@ Medusa hosts a Streamable HTTP MCP server available at `https://docs.medusajs.co
   <TabsContentWrapper className="mt-1">
     <TabsContent value="cursor">
 
-      <Link href="cursor://anysphere.cursor-deeplink/mcp/install?name=medusa&config=eyJ1cmwiOiJodHRwczovL2RvY3MubWVkdXNhanMuY29tL21jcCJ9" target="_blank" rel="noopener noreferrer" variant="content">Click here</Link> to add the Medusa MCP server to Cursor.
+      <Link href="cursor://anysphere.cursor-deeplink/mcp/install?name=medusa&config=eyJ1cmwiOiJodHRwczovL2RvY3MubWVkdXNhanMuY29tL21jcCJ9" target="_blank" rel="noopener noreferrer" variant="content">Click here</Link> to add the Switchyard MCP server to Cursor.
 
-      To manually connect to the Medusa MCP server in Cursor, add the following to your `.cursor/mcp.json` file or Cursor settings, as explained in the [Cursor documentation](https://docs.cursor.com/context/model-context-protocol):
+      To manually connect to the Switchyard MCP server in Cursor, add the following to your `.cursor/mcp.json` file or Cursor settings, as explained in the [Cursor documentation](https://docs.cursor.com/context/model-context-protocol):
 
 ```json
 {
   "mcpServers": {
     "medusa": {
-      "url": "https://docs.medusajs.com/mcp"
+      "url": "https://docs.switchyard.com/mcp"
     }
   }
 }
@@ -95,16 +95,16 @@ Medusa hosts a Streamable HTTP MCP server available at `https://docs.medusajs.co
     </TabsContent>
     <TabsContent value="vscode">
 
-      <Link href="https://vscode.dev/redirect/mcp/install?name=medusa&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fdocs.medusajs.com%2Fmcp%22%7D" target="_blank" rel="noopener noreferrer" variant="content">Click here</Link> to add the Medusa MCP server to VSCode.
+      <Link href="https://vscode.dev/redirect/mcp/install?name=medusa&config=%7B%22type%22%3A%22http%22%2C%22url%22%3A%22https%3A%2F%2Fdocs.switchyard.com%2Fmcp%22%7D" target="_blank" rel="noopener noreferrer" variant="content">Click here</Link> to add the Switchyard MCP server to VSCode.
 
-      To manually connect to the Medusa MCP server in VSCode, add the following to your `.vscode/mcp.json` file in your workspace:
+      To manually connect to the Switchyard MCP server in VSCode, add the following to your `.vscode/mcp.json` file in your workspace:
 
 ```json
 {
   "servers": {
     "medusa": {
       "type": "http",
-      "url": "https://docs.medusajs.com/mcp"
+      "url": "https://docs.switchyard.com/mcp"
     }
   }
 }
@@ -114,10 +114,10 @@ Medusa hosts a Streamable HTTP MCP server available at `https://docs.medusajs.co
 
     </TabsContent>
     <TabsContent value="claude-code">
-      To manually connect to the Medusa MCP server in Claude Code, run the following command in your terminal:
+      To manually connect to the Switchyard MCP server in Claude Code, run the following command in your terminal:
 
 ```sh
-claude mcp add --transport http medusa https://docs.medusajs.com/mcp
+claude mcp add --transport http medusa https://docs.switchyard.com/mcp
 ```
 
 </TabsContent>
@@ -128,12 +128,12 @@ claude mcp add --transport http medusa https://docs.medusajs.com/mcp
 
 ## Plain Text Documentation
 
-The Medusa documentation is available in plain text format, which allows LLMs and AI tools to easily parse and understand the content.
+The Switchyard documentation is available in plain text format, which allows LLMs and AI tools to easily parse and understand the content.
 
 You can access the following plain text documentation files:
 
-- [llms.txt](https://docs.medusajs.com/llms.txt) - Contains a short structure of links to important documentation pages.
-- [llms-full.txt](https://docs.medusajs.com/llms-full.txt) - Contains the full documentation content, including all pages and sections.
-- **Markdown version of any page** - You can access the Markdown version of any documentation page by appending `/index.html.md` to the page URL. For example, the plain text content of the current page is available at [https://docs.medusajs.com/learn/introduction/build-with-llms-ai/index.html.md](https://docs.medusajs.com/learn/introduction/build-with-llms-ai/index.html.md).
+- [llms.txt](https://docs.switchyard.com/llms.txt) - Contains a short structure of links to important documentation pages.
+- [llms-full.txt](https://docs.switchyard.com/llms-full.txt) - Contains the full documentation content, including all pages and sections.
+- **Markdown version of any page** - You can access the Markdown version of any documentation page by appending `/index.html.md` to the page URL. For example, the plain text content of the current page is available at [https://docs.switchyard.com/learn/introduction/build-with-llms-ai/index.html.md](https://docs.switchyard.com/learn/introduction/build-with-llms-ai/index.html.md).
 
-You can provide these files to your AI tools or LLM editors like [Cursor](https://docs.cursor.com/context/@-symbols/@-docs). This will help them understand the Medusa documentation and provide better assistance when building customizations or answering questions.
+You can provide these files to your AI tools or LLM editors like [Cursor](https://docs.cursor.com/context/@-symbols/@-docs). This will help them understand the Switchyard documentation and provide better assistance when building customizations or answering questions.

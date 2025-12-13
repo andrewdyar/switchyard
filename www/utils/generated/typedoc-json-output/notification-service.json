@@ -23,13 +23,13 @@
 							"fileName": "notification/service.ts",
 							"line": 29,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L29"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L29"
 						},
 						{
 							"fileName": "notification/service.ts",
 							"line": 48,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L48"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L48"
 						}
 					],
 					"signatures": [
@@ -72,7 +72,7 @@
 									"fileName": "notification/service.ts",
 									"line": 29,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L29"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L29"
 								}
 							],
 							"parameters": [
@@ -99,7 +99,7 @@
 												"qualifiedName": "CreateNotificationDTO"
 											},
 											"name": "CreateNotificationDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -126,7 +126,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -146,7 +146,7 @@
 												"qualifiedName": "NotificationDTO"
 											},
 											"name": "NotificationDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -193,7 +193,7 @@
 									"fileName": "notification/service.ts",
 									"line": 48,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L48"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L48"
 								}
 							],
 							"parameters": [
@@ -218,7 +218,7 @@
 											"qualifiedName": "CreateNotificationDTO"
 										},
 										"name": "CreateNotificationDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -244,7 +244,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -262,7 +262,7 @@
 											"qualifiedName": "NotificationDTO"
 										},
 										"name": "NotificationDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -282,7 +282,7 @@
 							"fileName": "notification/service.ts",
 							"line": 89,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L89"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L89"
 						}
 					],
 					"signatures": [
@@ -322,7 +322,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -337,7 +337,7 @@
 									"fileName": "notification/service.ts",
 									"line": 89,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L89"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L89"
 								}
 							],
 							"parameters": [
@@ -406,11 +406,11 @@
 													"qualifiedName": "NotificationDTO"
 												},
 												"name": "NotificationDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -436,7 +436,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -454,7 +454,7 @@
 											"qualifiedName": "NotificationDTO"
 										},
 										"name": "NotificationDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -474,7 +474,7 @@
 							"fileName": "notification/service.ts",
 							"line": 149,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L149"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L149"
 						}
 					],
 					"signatures": [
@@ -514,7 +514,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the notifications:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the notifications:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -569,7 +569,7 @@
 									"fileName": "notification/service.ts",
 									"line": 149,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L149"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L149"
 								}
 							],
 							"parameters": [
@@ -596,7 +596,7 @@
 											"qualifiedName": "FilterableNotificationProps"
 										},
 										"name": "FilterableNotificationProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -645,11 +645,11 @@
 													"qualifiedName": "NotificationDTO"
 												},
 												"name": "NotificationDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -675,7 +675,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -695,7 +695,7 @@
 												"qualifiedName": "NotificationDTO"
 											},
 											"name": "NotificationDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -716,7 +716,7 @@
 							"fileName": "notification/service.ts",
 							"line": 212,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L212"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L212"
 						}
 					],
 					"signatures": [
@@ -756,7 +756,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the notifications:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the notifications:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -811,7 +811,7 @@
 									"fileName": "notification/service.ts",
 									"line": 212,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L212"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L212"
 								}
 							],
 							"parameters": [
@@ -838,7 +838,7 @@
 											"qualifiedName": "FilterableNotificationProps"
 										},
 										"name": "FilterableNotificationProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -887,11 +887,11 @@
 													"qualifiedName": "NotificationDTO"
 												},
 												"name": "NotificationDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -917,7 +917,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -940,7 +940,7 @@
 														"qualifiedName": "NotificationDTO"
 													},
 													"name": "NotificationDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -973,7 +973,7 @@
 					"fileName": "notification/service.ts",
 					"line": 7,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L7"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/notification/service.ts#L7"
 				}
 			],
 			"extendedTypes": [
@@ -984,7 +984,7 @@
 						"qualifiedName": "IModuleService"
 					},
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		}
@@ -997,7 +997,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"62772": {
 			"sourceFileName": "../../../../packages/core/types/src/notification/service.ts",

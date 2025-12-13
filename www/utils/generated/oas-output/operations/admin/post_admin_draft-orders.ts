@@ -288,7 +288,7 @@
  *                       type: object
  *                       description: The shipping method's data, useful for fulfillment providers.
  *                       externalDocs:
- *                         url: https://docs.medusajs.com/resources/commerce-modules/order/concepts#data-property
+ *                         url: https://docs.switchyard.com/resources/commerce-modules/order/concepts#data-property
  *                     amount:
  *                       oneOf:
  *                         - type: string
@@ -325,9 +325,9 @@
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

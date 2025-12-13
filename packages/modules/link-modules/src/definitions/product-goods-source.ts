@@ -5,8 +5,8 @@
  * This enables tracing commerce products back to their source catalog.
  */
 
-import { ModuleJoinerConfig } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { ModuleJoinerConfig } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 
 const GOODS_SOURCE_MODULE = "goodsSourceModuleService"
 const LINK_PRODUCT_GOODS_SOURCE = "ProductGoodsSourceLink"

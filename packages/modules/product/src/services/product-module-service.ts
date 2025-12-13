@@ -9,7 +9,7 @@ import {
   ModuleJoinerConfig,
   ModulesSdkTypes,
   ProductTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   Product,
   ProductCategory,
@@ -37,15 +37,15 @@ import {
   isValidHandle,
   kebabCase,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
   MessageAggregator,
   Modules,
   partitionArray,
   ProductStatus,
   removeUndefined,
   toHandle,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { EntityManager } from "@mikro-orm/core"
 import { ProductRepository } from "../repositories"
 import {
@@ -79,7 +79,7 @@ type InjectedDependencies = {
 }
 
 export default class ProductModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     Product: {
       dto: ProductTypes.ProductDTO
     }
@@ -370,8 +370,8 @@ export default class ProductModuleService
     @MedusaContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ProductVariant>[]> {
     if (data.some((v) => !v.product_id)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Unable to create variants without specifying a product_id"
       )
     }
@@ -525,8 +525,8 @@ export default class ProductModuleService
     )
 
     if (variants.length !== data.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot update non-existing variants with ids: ${arrayDifference(
           variantIdsToUpdate,
           variants.map(({ id }) => id)
@@ -877,8 +877,8 @@ export default class ProductModuleService
     @MedusaContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ProductOption>[]> {
     if (data.some((v) => !v.product_id)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Tried to create options without specifying a product_id"
       )
     }
@@ -995,8 +995,8 @@ export default class ProductModuleService
   ): Promise<InferEntityType<typeof ProductOption>[]> {
     // Validation step
     if (data.some((option) => !option.id)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Tried to update options without specifying an ID"
       )
     }
@@ -1008,8 +1008,8 @@ export default class ProductModuleService
     )
 
     if (dbOptions.length !== data.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot update non-existing options with ids: ${arrayDifference(
           data.map(({ id }) => id),
           dbOptions.map(({ id }) => id)
@@ -1704,8 +1704,8 @@ export default class ProductModuleService
               return existingTag
             }
 
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Tag with id ${tag.id} not found. Please create the tag before associating it with the product.`
             )
           }
@@ -1734,7 +1734,7 @@ export default class ProductModuleService
       sharedContext.manager) as EntityManager
     const subscriber = createMedusaMikroOrmEventSubscriber(
       ["updateProducts_"],
-      this as unknown as ReturnType<typeof MedusaService<any>>
+      this as unknown as ReturnType<typeof SwitchyardService<any>>
     )
 
     if (manager && subscriber) {
@@ -1883,8 +1883,8 @@ export default class ProductModuleService
     productData: UpdateProductInput | ProductTypes.CreateProductDTO
   ) {
     if (productData.handle && !isValidHandle(productData.handle)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Invalid product handle '${productData.handle}'. It must contain URL safe characters`
       )
     }
@@ -1896,8 +1896,8 @@ export default class ProductModuleService
     this.validateProductPayload(productData)
 
     if (!productData.title) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Product title is required`
       )
     }
@@ -1916,8 +1916,8 @@ export default class ProductModuleService
     }
 
     if (missingOptionsVariants.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Product "${
           productData.title
         }" has variants with missing options: [${missingOptionsVariants.join(
@@ -2150,8 +2150,8 @@ export default class ProductModuleService
         numOfProvidedVariantOptionValues &&
         productsOptions.length !== numOfProvidedVariantOptionValues
       ) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Product has ${productsOptions.length} option values but there were ${numOfProvidedVariantOptionValues} provided option values for the variant: ${(variant as any).title || (variant as any).customer_friendly_size || variant.id}.`
         )
       }
@@ -2165,8 +2165,8 @@ export default class ProductModuleService
           )
 
           if (!optionValue) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Option value ${val} does not exist for option ${key}`
             )
           }
@@ -2228,8 +2228,8 @@ export default class ProductModuleService
       })
 
       if (existingVariant) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Variant (${(existingVariant as any).customer_friendly_size || (existingVariant as any).title || (existingVariant as any).id || 'variant'}) with provided options already exists.`
         )
       }
@@ -2259,8 +2259,8 @@ export default class ProductModuleService
         )
 
         if (exists) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Variant "${(variant as any).title || (variant as any).customer_friendly_size || (variant as any).id || 'variant'}" has same combination of option values as "${(compareVariant as any).title || (compareVariant as any).customer_friendly_size || (compareVariant as any).id || 'variant'}".`
           )
         }

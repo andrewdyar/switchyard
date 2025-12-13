@@ -4,13 +4,13 @@ import {
   LinkDefinition,
   PromotionDTO,
   UsageComputedActions,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   isDefined,
   Modules,
   OrderStatus,
   OrderWorkflowEvents,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -19,7 +19,7 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   createRemoteLinkStep,
   emitEventStep,
@@ -103,13 +103,13 @@ export const completeCartWorkflowId = "complete-cart"
  *   createWorkflow,
  *   when,
  *   WorkflowResponse
- * } from "@medusajs/framework/workflows-sdk"
+ * } from "@switchyard/framework/workflows-sdk"
  * import { 
  *   useQueryGraphStep,
  *   completeCartWorkflow,
  *   acquireLockStep,
  *   releaseLockStep
- * } from "@medusajs/framework/workflows-sdk"
+ * } from "@switchyard/framework/workflows-sdk"
  * import digitalProductOrderOrderLink from "../../links/digital-product-order"
  * 
  * type WorkflowInput = {
@@ -177,9 +177,9 @@ export const completeCartWorkflowId = "complete-cart"
  * you can cancel the order if the validation fails. For example:
  * 
  * ```ts
- * import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
- * import { MedusaError } from "@medusajs/framework/utils"
- * import { cancelOrderWorkflow } from "@medusajs/medusa/core-flows"
+ * import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+ * import { SwitchyardError } from "@switchyard/framework/utils"
+ * import { cancelOrderWorkflow } from "@switchyard/medusa/core-flows"
  * 
  * type StepInput = {
  *   order_id: string
@@ -192,8 +192,8 @@ export const completeCartWorkflowId = "complete-cart"
  *     const isValid = true // replace with actual validation logic
  * 
  *     if (!isValid) {
- *       throw new MedusaError(
- *         MedusaError.Types.INVALID_DATA,
+ *       throw new SwitchyardError(
+ *         SwitchyardError.Types.INVALID_DATA,
  *         "Custom cart validation failed"
  *       )
  *     }
@@ -222,8 +222,8 @@ export const completeCartWorkflowId = "complete-cart"
  *   createWorkflow,
  *   when,
  *   WorkflowResponse
- * } from "@medusajs/framework/workflows-sdk"
- * import { useQueryGraphStep } from "@medusajs/framework/workflows-sdk"
+ * } from "@switchyard/framework/workflows-sdk"
+ * import { useQueryGraphStep } from "@switchyard/framework/workflows-sdk"
  * import ticketOrderLink from "../../links/ticket-order"
  * 
  * type WorkflowInput = {

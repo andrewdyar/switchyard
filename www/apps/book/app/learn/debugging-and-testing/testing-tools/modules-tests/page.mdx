@@ -6,7 +6,7 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn about `moduleIntegrationTestRunner` from Medusa's Testing Framework and how to use it to write integration tests for a module's main service.
+In this chapter, you'll learn about `moduleIntegrationTestRunner` from Switchyard's Testing Framework and how to use it to write integration tests for a module's main service.
 
 <Prerequisites
   items={[
@@ -19,15 +19,15 @@ In this chapter, you'll learn about `moduleIntegrationTestRunner` from Medusa's 
 
 ## moduleIntegrationTestRunner Utility
 
-`moduleIntegrationTestRunner` creates integration tests for a module's service. The integration tests run on a test Medusa application with only the specified module enabled.
+`moduleIntegrationTestRunner` creates integration tests for a module's service. The integration tests run on a test Switchyard application with only the specified module enabled.
 
 For example, consider a Blog Module with a `BlogModuleService` that has a `getMessage` method:
 
 ```ts title="src/modules/blog/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Post from "./models/post"
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   async getMessage(): Promise<string> {
@@ -41,7 +41,7 @@ export default BlogModuleService
 To create an integration test for the module's service, create the file `src/modules/blog/__tests__/service.spec.ts` with the following content:
 
 ```ts title="src/modules/blog/__tests__/service.spec.ts"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { BLOG_MODULE } from ".."
 import BlogModuleService from "../service"
 import Post from "../models/post"
@@ -93,11 +93,11 @@ npm run test:integration:modules
 
 <Note title="Tip">
 
-If you don't have a `test:integration:modules` script in `package.json`, refer to the [Medusa Testing Tools chapter](../page.mdx#add-test-commands).
+If you don't have a `test:integration:modules` script in `package.json`, refer to the [Switchyard Testing Tools chapter](../page.mdx#add-test-commands).
 
 </Note>
 
-This runs your Medusa application and runs the tests available in any `__tests__` directory under the `src/modules` directory.
+This runs your Switchyard application and runs the tests available in any `__tests__` directory under the `src/modules` directory.
 
 ---
 
@@ -108,7 +108,7 @@ If your module accepts options, you can set them using the `moduleOptions` prope
 For example:
 
 ```ts
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import BlogModuleService from "../service"
 
 moduleIntegrationTestRunner<BlogModuleService>({
@@ -130,9 +130,9 @@ If your module doesn't have a data model, pass a dummy model in the `moduleModel
 For example:
 
 ```ts
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import BlogModuleService from "../service"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const DummyModel = model.define("dummy_model", {
   id: model.id().primaryKey(),
@@ -165,11 +165,11 @@ export const mockDependenciesHighlights = [
 ]
 
 ```ts title="src/modules/blog/__tests__/service.spec.ts" highlights={mockDependenciesHighlights}
-import { MockEventBusService, moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { MockEventBusService, moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { BLOG_MODULE } from ".."
 import BlogModuleService from "../service"
 import Post from "../models/post"
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 moduleIntegrationTestRunner<BlogModuleService>({
   moduleName: BLOG_MODULE,
@@ -194,7 +194,7 @@ jest.setTimeout(60 * 1000)
 
 `injectedDependencies`'s value is an object whose keys are registration names of the dependencies you want to inject, and the values are the mock services.
 
-In this example, you inject a mock Event Module service into the `BlogModuleService`. Medusa exposes a `MockEventBusService` class that you can use to mock the Event Module's service.
+In this example, you inject a mock Event Module service into the `BlogModuleService`. Switchyard exposes a `MockEventBusService` class that you can use to mock the Event Module's service.
 
 For other modules, you can create a mock service that implements the same interface as the original service. Make sure to use the same registration name as the original service when injecting it.
 

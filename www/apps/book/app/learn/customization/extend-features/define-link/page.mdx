@@ -11,11 +11,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn how to define a module link between a brand defined in the [custom Brand Module](../../custom-features/module/page.mdx), and a product defined in the [Product Module](!resources!/commerce-modules/product) that's available in your Medusa application out-of-the-box.
+In this chapter, you'll learn how to define a module link between a brand defined in the [custom Brand Module](../../custom-features/module/page.mdx), and a product defined in the [Product Module](!resources!/commerce-modules/product) that's available in your Switchyard application out-of-the-box.
 
-Modules are [isolated](../../../fundamentals/modules/isolation/page.mdx) from other resources, ensuring that they're integrated into the Medusa application without side effects. However, you may need to associate data models of different modules, or you're trying to extend data models from Commerce Modules with custom properties. To do that, you define module links.
+Modules are [isolated](../../../fundamentals/modules/isolation/page.mdx) from other resources, ensuring that they're integrated into the Switchyard application without side effects. However, you may need to associate data models of different modules, or you're trying to extend data models from Commerce Modules with custom properties. To do that, you define module links.
 
-A module link forms an association between two data models of different modules while maintaining module isolation. You can then manage and query linked records of the data models using Medusa's Modules SDK.
+A module link forms an association between two data models of different modules while maintaining module isolation. You can then manage and query linked records of the data models using Switchyard's Modules SDK.
 
 In this chapter, you'll define a module link between the `Brand` data model of the Brand Module, and the `Product` data model of the Product Module. In later chapters, you'll manage and retrieve linked product and brand records.
 
@@ -40,7 +40,7 @@ Links are defined in a TypeScript or JavaScript file under the `src/links` direc
 
 So, to define a link between the `Product` and `Brand` models, create the file `src/links/product-brand.ts` with the following content:
 
-![The directory structure of the Medusa application after adding the link.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733329897/Medusa%20Book/brands-link-dir-overview_t1rhlp.jpg)
+![The directory structure of the Switchyard application after adding the link.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733329897/Switchyard%20Book/brands-link-dir-overview_t1rhlp.jpg)
 
 export const highlights = [
   ["7", "linkable", "Special `linkable` property that holds the linkable data models of `ProductModule`."],
@@ -49,8 +49,8 @@ export const highlights = [
 
 ```ts title="src/links/product-brand.ts" highlights={highlights}
 import BrandModule from "../modules/brand"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -79,14 +79,14 @@ So, in the above code snippet, you define a link between the `Product` and `Bran
 A module link is represented in the database as a table that stores the IDs of linked records. So, after defining the link, run the following command to create the module link's table in the database:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 This command reflects migrations on the database and syncs module links, which creates a table for the `product-brand` link.
 
 <Note title="Tip">
 
-You can also run the `npx medusa db:sync-links` to just sync module links without running migrations.
+You can also run the `npx switchyard db:sync-links` to just sync module links without running migrations.
 
 </Note>
 
@@ -94,4 +94,4 @@ You can also run the `npx medusa db:sync-links` to just sync module links withou
 
 ## Next Steps: Extend Create Product Flow
 
-In the next chapter, you'll extend Medusa's workflow and API route that create a product to allow associating a brand with a product. You'll also learn how to link brand and product records.
+In the next chapter, you'll extend Switchyard's workflow and API route that create a product to allow associating a brand with a product. You'll also learn how to link brand and product records.

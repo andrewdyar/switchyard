@@ -1,3 +1,3 @@
-import { IModuleService } from "@medusajs/types"
+import { IModuleService } from "@switchyard/types"
 
 export class ModuleService implements IModuleService {}

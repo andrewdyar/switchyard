@@ -24,7 +24,7 @@
  *     title: is_calculated_price_tax_inclusive
  *     description: Whether the calculated price is tax inclusive.
  *     externalDocs:
- *       url: https://docs.medusajs.com/resources/commerce-modules/pricing/tax-inclusive-pricing
+ *       url: https://docs.switchyard.com/resources/commerce-modules/pricing/tax-inclusive-pricing
  *   calculated_amount:
  *     type: number
  *     title: calculated_amount
@@ -46,7 +46,7 @@
  *     title: is_original_price_tax_inclusive
  *     description: Whether the original price is tax inclusive.
  *     externalDocs:
- *       url: https://docs.medusajs.com/resources/commerce-modules/pricing/tax-inclusive-pricing
+ *       url: https://docs.switchyard.com/resources/commerce-modules/pricing/tax-inclusive-pricing
  *   original_amount:
  *     type: number
  *     title: original_amount

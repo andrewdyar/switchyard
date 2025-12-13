@@ -73,9 +73,9 @@ The Pricing Module has the following links to other modules:
 
 The Fulfillment Module provides fulfillment-related functionalities, including shipping options that the customer chooses from when they place their order. However, it doesn't provide pricing-related functionalities for these options.
 
-Medusa defines a link between the `PriceSet` and `ShippingOption` data models. A shipping option's price is stored as a price set.
+Switchyard defines a link between the `PriceSet` and `ShippingOption` data models. A shipping option's price is stored as a price set.
 
-![A diagram showcasing an example of how data models from the Pricing and Fulfillment modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1716561747/Medusa%20Resources/pricing-fulfillment_spywwa.jpg)
+![A diagram showcasing an example of how data models from the Pricing and Fulfillment modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1716561747/Switchyard%20Resources/pricing-fulfillment_spywwa.jpg)
 
 ### Retrieve with Query
 
@@ -99,7 +99,7 @@ const { data: priceSets } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -124,7 +124,7 @@ To manage the price set of a shipping option, use [Link](!docs!/learn/fundamenta
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -142,8 +142,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -166,9 +166,9 @@ createRemoteLinkStep({
 
 The Product Module doesn't store or manage the prices of product variants.
 
-Medusa defines a link between the `ProductVariant` and the `PriceSet`. A product variant’s prices are stored as prices belonging to a price set.
+Switchyard defines a link between the `ProductVariant` and the `PriceSet`. A product variant’s prices are stored as prices belonging to a price set.
 
-![A diagram showcasing an example of how data models from the Pricing and Product Module are linked. The PriceSet is linked to the ProductVariant of the Product Module.](https://res.cloudinary.com/dza7lstvk/image/upload/v1709651039/Medusa%20Resources/pricing-product_m4xaut.jpg)
+![A diagram showcasing an example of how data models from the Pricing and Product Module are linked. The PriceSet is linked to the ProductVariant of the Product Module.](https://res.cloudinary.com/dza7lstvk/image/upload/v1709651039/Switchyard%20Resources/pricing-product_m4xaut.jpg)
 
 So, when you want to add prices for a product variant, you create a price set and add the prices to it.
 
@@ -196,7 +196,7 @@ const { data: priceSets } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -221,7 +221,7 @@ To manage the price set of a variant, use [Link](!docs!/learn/fundamentals/modul
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -239,8 +239,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 

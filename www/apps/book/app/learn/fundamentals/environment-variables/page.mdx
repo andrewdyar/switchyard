@@ -6,13 +6,13 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn how environment variables are loaded in Medusa.
+In this chapter, you'll learn how environment variables are loaded in Switchyard.
 
 ## System Environment Variables
 
-The Medusa application loads and uses system environment variables.
+The Switchyard application loads and uses system environment variables.
 
-For example, if you set the `PORT` environment variable to `8000`, the Medusa application runs on that port instead of `9000`.
+For example, if you set the `PORT` environment variable to `8000`, the Switchyard application runs on that port instead of `9000`.
 
 In production, you should always use system environment variables that you set through your hosting provider.
 
@@ -22,11 +22,11 @@ In production, you should always use system environment variables that you set t
 
 During development, it's easier to set environment variables in a `.env` file in your repository.
 
-Based on your `NODE_ENV` system environment variable, Medusa will try to load environment variables from the following `.env` files:
+Based on your `NODE_ENV` system environment variable, Switchyard will try to load environment variables from the following `.env` files:
 
 <Note title="Tip">
 
-As of [Medusa v2.5.0](https://github.com/medusajs/medusa/releases/tag/v2.5.0), `NODE_ENV` defaults to `production` when using `medusa start`. Otherwise, it defaults to `development`.
+As of [Switchyard v2.5.0](https://github.com/switchyard/medusa/releases/tag/v2.5.0), `NODE_ENV` defaults to `production` when using `switchyard start`. Otherwise, it defaults to `development`.
 
 </Note>
 
@@ -95,7 +95,7 @@ As of [Medusa v2.5.0](https://github.com/medusajs/medusa/releases/tag/v2.5.0), `
 
 ### Set Environment in `loadEnv`
 
-In the `medusa-config.ts` file of your Medusa application, you'll find a `loadEnv` function used that accepts `process.env.NODE_ENV` as a first parameter.
+In the `switchyard.config.ts` file of your Switchyard application, you'll find a `loadEnv` function used that accepts `process.env.NODE_ENV` as a first parameter.
 
 This function is responsible for loading the correct `.env` file based on the value of `process.env.NODE_ENV`.
 
@@ -105,19 +105,19 @@ To ensure that the correct `.env` file is loaded as shown in the table above, on
 
 ## Environment Variables for Admin Customizations
 
-Since the Medusa Admin is built on top of [Vite](https://vite.dev/), you prefix the environment variables you want to use in a widget or UI route with `VITE_`. Then, you can access or use them with the `import.meta.env` object.
+Since the Switchyard Admin is built on top of [Vite](https://vite.dev/), you prefix the environment variables you want to use in a widget or UI route with `VITE_`. Then, you can access or use them with the `import.meta.env` object.
 
 Learn more in the [Admin Environment Variables](../admin/environment-variables/page.mdx) chapter.
 
 ---
 
-## Predefined Medusa Environment Variables
+## Predefined Switchyard Environment Variables
 
-You can further customize the Medusa application behavior using the following predefined environment variables. You can set the environment variables in your `.env` file or in your deployment platform.
+You can further customize the Switchyard application behavior using the following predefined environment variables. You can set the environment variables in your `.env` file or in your deployment platform.
 
 <Note title="Tip">
 
-You should opt for setting configurations in `medusa-config.ts` where possible. For a full list of Medusa configurations, refer to the [Medusa Configurations chapter](../../configurations/medusa-config/page.mdx).
+You should opt for setting configurations in `switchyard.config.ts` where possible. For a full list of Switchyard configurations, refer to the [Switchyard Configurations chapter](../../configurations/switchyard.config/page.mdx).
 
 </Note>
 
@@ -141,7 +141,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
         `HOST`
       </Table.Cell>
       <Table.Cell>
-        The host to run the Medusa application on.
+        The host to run the Switchyard application on.
       </Table.Cell>
       <Table.Cell>
         `localhost`
@@ -152,7 +152,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
         `PORT`
       </Table.Cell>
       <Table.Cell>
-        The port to run the Medusa application on.
+        The port to run the Switchyard application on.
       </Table.Cell>
       <Table.Cell>
         `9000`
@@ -163,7 +163,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
         `DATABASE_URL`
       </Table.Cell>
       <Table.Cell>
-        The URL to connect to the PostgreSQL database. Only used if [projectConfig.databaseUrl](../../configurations/medusa-config/page.mdx#databaseurl) isn't set in `medusa-config.ts`.
+        The URL to connect to the PostgreSQL database. Only used if [projectConfig.databaseUrl](../../configurations/switchyard.config/page.mdx#databaseurl) isn't set in `switchyard.config.ts`.
       </Table.Cell>
       <Table.Cell>
         `postgres://localhost/medusa-starter-default`
@@ -174,7 +174,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
         `STORE_CORS`
       </Table.Cell>
       <Table.Cell>
-        URLs of storefronts that can access the Medusa backend's Store APIs. Only used if [projectConfig.http.storeCors](../../configurations/medusa-config/page.mdx#http-storeCors-1-1) isn't set in `medusa-config.ts`.
+        URLs of storefronts that can access the Switchyard backend's Store APIs. Only used if [projectConfig.http.storeCors](../../configurations/switchyard.config/page.mdx#http-storeCors-1-1) isn't set in `switchyard.config.ts`.
       </Table.Cell>
       <Table.Cell>
         `http://localhost:8000`
@@ -183,7 +183,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
     <Table.Row>
       <Table.Cell>`ADMIN_CORS`</Table.Cell>
       <Table.Cell>
-        URLs of admin dashboards that can access the Medusa backend's Admin APIs. Only used if [projectConfig.http.adminCors](../../configurations/medusa-config/page.mdx#http-adminCors-1-2) isn't set in `medusa-config.ts`.
+        URLs of admin dashboards that can access the Switchyard backend's Admin APIs. Only used if [projectConfig.http.adminCors](../../configurations/switchyard.config/page.mdx#http-adminCors-1-2) isn't set in `switchyard.config.ts`.
       </Table.Cell>
       <Table.Cell>
         `http://localhost:7000,http://localhost:7001,http://localhost:5173`
@@ -192,7 +192,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
     <Table.Row>
       <Table.Cell>`AUTH_CORS`</Table.Cell>
       <Table.Cell>
-        URLs of clients that can access the Medusa backend's authentication routes. Only used if [projectConfig.http.authCors](../../configurations/medusa-config/page.mdx#http-authCors-1-0) isn't set in `medusa-config.ts`.
+        URLs of clients that can access the Switchyard backend's authentication routes. Only used if [projectConfig.http.authCors](../../configurations/switchyard.config/page.mdx#http-authCors-1-0) isn't set in `switchyard.config.ts`.
       </Table.Cell>
       <Table.Cell>
         `http://localhost:7000,http://localhost:7001,http://localhost:5173`
@@ -201,7 +201,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
     <Table.Row>
       <Table.Cell>`JWT_SECRET`</Table.Cell>
       <Table.Cell>
-        A random string used to create authentication tokens in the http layer. Only used if [projectConfig.http.jwtSecret](../../configurations/medusa-config/page.mdx#http-jwtSecret-1-3) isn't set in `medusa-config.ts`.
+        A random string used to create authentication tokens in the http layer. Only used if [projectConfig.http.jwtSecret](../../configurations/switchyard.config/page.mdx#http-jwtSecret-1-3) isn't set in `switchyard.config.ts`.
       </Table.Cell>
       <Table.Cell>
         \-
@@ -212,7 +212,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
         `COOKIE_SECRET`
       </Table.Cell>
       <Table.Cell>
-        A random string used to create cookie tokens in the http layer. Only used if [projectConfig.http.cookieSecret](../../configurations/medusa-config/page.mdx#http-cookieSecret-1-5) isn't set in `medusa-config.ts`.
+        A random string used to create cookie tokens in the http layer. Only used if [projectConfig.http.cookieSecret](../../configurations/switchyard.config/page.mdx#http-cookieSecret-1-5) isn't set in `switchyard.config.ts`.
       </Table.Cell>
       <Table.Cell>
         \-
@@ -223,7 +223,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
         `MEDUSA_BACKEND_URL`
       </Table.Cell>
       <Table.Cell>
-        The URL to the Medusa backend. Only used if [admin.backendUrl](../../configurations/medusa-config/page.mdx#backendurl) isn't set in `medusa-config.ts`.
+        The URL to the Switchyard backend. Only used if [admin.backendUrl](../../configurations/switchyard.config/page.mdx#backendurl) isn't set in `switchyard.config.ts`.
       </Table.Cell>
       <Table.Cell>
         \-
@@ -309,12 +309,12 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
     <Table.Row>
       <Table.Cell>
 
-      `ADMIN_AUTH_TYPE` ([v2.12.0+](https://github.com/medusajs/medusa/releases/tag/v2.12.0))
+      `ADMIN_AUTH_TYPE` ([v2.12.0+](https://github.com/switchyard/medusa/releases/tag/v2.12.0))
 
       </Table.Cell>
       <Table.Cell>
 
-      A string indicating the authentication method that the JS SDK instance uses in the Medusa Admin. Possible values are `session` and `jwt`. Learn more in the [JS SDK Authentication guide](!resources!/js-sdk/auth/overview).
+      A string indicating the authentication method that the JS SDK instance uses in the Switchyard Admin. Possible values are `session` and `jwt`. Learn more in the [JS SDK Authentication guide](!resources!/js-sdk/auth/overview).
 
       </Table.Cell>
       <Table.Cell>
@@ -326,7 +326,7 @@ You should opt for setting configurations in `medusa-config.ts` where possible. 
     <Table.Row>
       <Table.Cell>
       
-      `ADMIN_JWT_TOKEN_STORAGE_KEY` ([v2.12.0+](https://github.com/medusajs/medusa/releases/tag/v2.12.0))
+      `ADMIN_JWT_TOKEN_STORAGE_KEY` ([v2.12.0+](https://github.com/switchyard/medusa/releases/tag/v2.12.0))
 
       </Table.Cell>
       <Table.Cell>

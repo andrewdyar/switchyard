@@ -5,8 +5,8 @@ import type {
   Logger,
   ModuleProviderExports,
   ModuleServiceInitializeOptions,
-} from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 import { default as CacheProviderService } from "../services/cache-provider"
 
 export const CachingDefaultProvider = "default_provider"

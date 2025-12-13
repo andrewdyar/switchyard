@@ -42,7 +42,7 @@
  *   manage_inventory:
  *     type: boolean
  *     title: manage_inventory
- *     description: Whether Medusa manages the variant's inventory quantity. If disabled, the product variant is always considered in stock.
+ *     description: Whether Switchyard manages the variant's inventory quantity. If disabled, the product variant is always considered in stock.
  *   variant_rank:
  *     type: number
  *     title: variant_rank
@@ -75,7 +75,7 @@
  *     type: object
  *     description: The variant's metadata, used to store custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.com/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  *   prices:
  *     type: array

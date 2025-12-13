@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/cart",
+  "name": "@switchyard/cart",
   "version": "2.12.1",
   "description": "Medusa Cart module",
   "main": "dist/index.js",
@@ -36,10 +36,10 @@
     "orm:cache:clear": "MIKRO_ORM_CLI_CONFIG=./mikro-orm.config.dev.ts MIKRO_ORM_ALLOW_GLOBAL_CLI=true medusa-mikro-orm cache:clear"
   },
   "devDependencies": {
-    "@medusajs/framework": "2.12.1",
-    "@medusajs/test-utils": "2.12.1"
+    "@switchyard/framework": "2.12.1",
+    "@switchyard/test-utils": "2.12.1"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "2.12.1"
   }
 }

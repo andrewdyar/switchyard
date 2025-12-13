@@ -1,9 +1,9 @@
 import {
   TrackAnalyticsEventDTO,
   IdentifyAnalyticsEventDTO,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import AnalyticsProviderService from "./provider-service"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type InjectedDependencies = {
   analyticsProviderService: AnalyticsProviderService
@@ -30,8 +30,8 @@ export default class AnalyticsService {
     try {
       await this.analyticsProviderService_.track(data)
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `Error tracking event for ${data.event}: ${error.message}`
       )
     }
@@ -41,8 +41,8 @@ export default class AnalyticsService {
     try {
       await this.analyticsProviderService_.identify(data)
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `Error identifying event for ${
           "group" in data ? data.group.id : data.actor_id
         }: ${error.message}`

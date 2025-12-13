@@ -4,9 +4,9 @@ import {
   ReceiptPercent,
   XCircle,
   XMark,
-} from "@medusajs/icons"
-import { AdminOrderLineItem, HttpTypes } from "@medusajs/types"
-import { IconButton, Input, Text, Tooltip } from "@medusajs/ui"
+} from "@switchyard/icons"
+import { AdminOrderLineItem, HttpTypes } from "@switchyard/types"
+import { IconButton, Input, Text, Tooltip } from "@switchyard/ui"
 import { UseFormReturn } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 

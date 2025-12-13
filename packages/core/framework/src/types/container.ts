@@ -1,4 +1,4 @@
-import { Link } from "@medusajs/modules-sdk"
+import { Link } from "@switchyard/modules-sdk"
 import {
   ConfigModule,
   IAnalyticsModuleService,
@@ -32,12 +32,12 @@ import {
   Logger,
   ModuleImplementations,
   RemoteQueryFunction,
-} from "@medusajs/types"
-import { ContainerRegistrationKeys, Modules } from "@medusajs/utils"
+} from "@switchyard/types"
+import { ContainerRegistrationKeys, Modules } from "@switchyard/utils"
 import { Knex } from "../deps/mikro-orm-knex"
 import { AwilixContainer, ResolveOptions } from "../deps/awilix"
 
-declare module "@medusajs/types" {
+declare module "@switchyard/types" {
   export interface ModuleImplementations {
     /**
      * @deprecated use {@link ContainerRegistrationKeys.LINK} instead.
@@ -83,7 +83,7 @@ declare module "@medusajs/types" {
   }
 }
 
-export type MedusaContainer<Cradle extends object = ModuleImplementations> =
+export type SwitchyardContainer<Cradle extends object = ModuleImplementations> =
   Omit<AwilixContainer, "resolve"> & {
     resolve<K extends keyof Cradle>(
       key: K,
@@ -94,11 +94,11 @@ export type MedusaContainer<Cradle extends object = ModuleImplementations> =
     /**
      * @ignore
      */
-    registerAdd: <T>(name: string, registration: T) => MedusaContainer
+    registerAdd: <T>(name: string, registration: T) => SwitchyardContainer
     /**
      * @ignore
      */
-    createScope: () => MedusaContainer
+    createScope: () => SwitchyardContainer
   }
 
 export type ContainerLike = {

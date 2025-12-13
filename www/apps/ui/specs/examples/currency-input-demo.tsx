@@ -1,4 +1,4 @@
-import { CurrencyInput } from "@medusajs/ui"
+import { CurrencyInput } from "@switchyard/ui"
 
 export default function CurrencyInputDemo() {
   return (

@@ -218,7 +218,7 @@ Consider disabling automatic invalidation in the following cases:
 
 1. You're caching data that rarely changes, such as a list of countries.
 2. You want to manage cache invalidation manually, such as when caching data as part of a custom workflow where you want to control when the cache is invalidated.
-3. You're caching data that does not belong to a Medusa data model, such as data from an external API or computed values. This data is not automatically invalidated by default.
+3. You're caching data that does not belong to a Switchyard data model, such as data from an external API or computed values. This data is not automatically invalidated by default.
 
 Disable automatic invalidation by setting the `autoInvalidate` option to `false` when caching data with Query, the Index Module, or the Caching Module's service.
 

@@ -1,6 +1,6 @@
 # Settings Module
 
-The settings module provides functionality for managing user preferences and configurations in Medusa.
+The settings module provides functionality for managing user preferences and configurations in Switchyard.
 
 ## Features
 

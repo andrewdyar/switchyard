@@ -1,4 +1,4 @@
-import { asValue } from "@medusajs/framework/awilix"
+import { asValue } from "@switchyard/framework/awilix"
 import {
   DistributedTransactionType,
   TransactionState,
@@ -6,13 +6,13 @@ import {
   TransactionStepTimeoutError,
   TransactionTimeoutError,
   WorkflowManager,
-} from "@medusajs/framework/orchestration"
+} from "@switchyard/framework/orchestration"
 import {
   IWorkflowEngineService,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
   RemoteQueryFunction,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   Module,
@@ -20,14 +20,14 @@ import {
   promiseAll,
   TransactionHandlerType,
   TransactionStepState,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@switchyard/framework/workflows-sdk"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { setTimeout as setTimeoutSync } from "timers"
 import { setTimeout } from "timers/promises"
 import { ulid } from "ulid"
@@ -111,7 +111,7 @@ moduleIntegrationTestRunner<IWorkflowEngineService>({
       })
 
       let query: RemoteQueryFunction
-      let sharedContainer_: MedusaContainer
+      let sharedContainer_: SwitchyardContainer
 
       it(`should export the appropriate linkable configuration`, () => {
         const linkable = Module(Modules.WORKFLOW_ENGINE, {

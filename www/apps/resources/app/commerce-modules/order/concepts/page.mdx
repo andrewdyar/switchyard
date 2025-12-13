@@ -23,7 +23,7 @@ An order holds information about:
 
 The items purchased in an order are represented by the [OrderItem data model](/references/order/models/OrderItem). An order can have multiple items.
 
-![A diagram showcasing the relation between an order and its items.](https://res.cloudinary.com/dza7lstvk/image/upload/v1712304722/Medusa%20Resources/order-order-items_uvckxd.jpg)
+![A diagram showcasing the relation between an order and its items.](https://res.cloudinary.com/dza7lstvk/image/upload/v1712304722/Switchyard%20Resources/order-order-items_uvckxd.jpg)
 
 ### Item’s Product Details
 
@@ -37,7 +37,7 @@ An order has one or more shipping methods used to handle item shipment.
 
 Each shipping method is represented by the [OrderShippingMethod data model](/references/order/models/OrderShippingMethod) that holds its details. The shipping method is linked to the order through the [OrderShipping data model](/references/order/models/OrderShipping).
 
-![A diagram showcasing the relation between an order and its items.](https://res.cloudinary.com/dza7lstvk/image/upload/v1719570409/Medusa%20Resources/order-shipping-method_tkggvd.jpg)
+![A diagram showcasing the relation between an order and its items.](https://res.cloudinary.com/dza7lstvk/image/upload/v1719570409/Switchyard%20Resources/order-shipping-method_tkggvd.jpg)
 
 ### data Property
 
@@ -45,7 +45,7 @@ When fulfilling an order, you can use a third-party fulfillment provider that re
 
 The `OrderShippingMethod` data model has a `data` property. It’s an object used to store custom data relevant later for fulfillment.
 
-The Medusa application passes the `data` property to the Fulfillment Module when fulfilling items.
+The Switchyard application passes the `data` property to the Fulfillment Module when fulfilling items.
 
 ---
 

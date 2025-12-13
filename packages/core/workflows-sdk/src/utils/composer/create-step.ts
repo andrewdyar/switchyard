@@ -3,8 +3,8 @@ import {
   WorkflowManager,
   WorkflowStepHandler,
   WorkflowStepHandlerArguments,
-} from "@medusajs/orchestration"
-import { isDefined, isString, OrchestrationUtils } from "@medusajs/utils"
+} from "@switchyard/orchestration"
+import { isDefined, isString, OrchestrationUtils } from "@switchyard/utils"
 import { ulid } from "ulid"
 import { resolveValue, StepResponse } from "./helpers"
 import { createStepHandler } from "./helpers/create-step-handler"
@@ -235,9 +235,9 @@ export function applyStep<
       ret.__step__ = newStepName
       WorkflowManager.update(this.workflowId, this.flow, this.handlers)
 
-      if (global[OrchestrationUtils.SymbolMedusaWorkflowComposerCondition]) {
+      if (global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerCondition]) {
         const flagSteps =
-          global[OrchestrationUtils.SymbolMedusaWorkflowComposerCondition].steps
+          global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerCondition].steps
 
         const idx = flagSteps.findIndex((a) => a.__step__ === ret.__step__)
         if (idx > -1) {
@@ -267,9 +267,9 @@ export function applyStep<
       return refRet
     }
 
-    if (global[OrchestrationUtils.SymbolMedusaWorkflowComposerCondition]) {
+    if (global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerCondition]) {
       global[
-        OrchestrationUtils.SymbolMedusaWorkflowComposerCondition
+        OrchestrationUtils.SymbolSwitchyardWorkflowComposerCondition
       ].steps.push(refRet)
     }
 
@@ -383,7 +383,7 @@ export function wrapConditionalStep(
  * import {
  *   createStep,
  *   StepResponse
- * } from "@medusajs/framework/workflows-sdk"
+ * } from "@switchyard/framework/workflows-sdk"
  *
  * interface CreateProductInput {
  *   title: string
@@ -462,7 +462,7 @@ export function createStep<
       | undefined
   ): WorkflowData<TInvokeResultOutput> {
     const context = global[
-      OrchestrationUtils.SymbolMedusaWorkflowComposerContext
+      OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext
     ] as CreateWorkflowComposerContext
 
     if (!context) {

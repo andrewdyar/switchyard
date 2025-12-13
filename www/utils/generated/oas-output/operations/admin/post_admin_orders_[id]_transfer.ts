@@ -4,7 +4,7 @@
  * x-sidebar-summary: Request Transfer
  * summary: Request Order Transfer
  * description: Request an order to be transfered to another customer. The transfer is confirmed by sending a request to the [Accept Order
- *   Transfer](https://docs.medusajs.com/api/store#orders_postordersidtransferaccept) Store API route.
+ *   Transfer](https://docs.switchyard.com/api/store#orders_postordersidtransferaccept) Store API route.
  * x-authenticated: true
  * parameters:
  *   - name: id
@@ -40,9 +40,9 @@
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

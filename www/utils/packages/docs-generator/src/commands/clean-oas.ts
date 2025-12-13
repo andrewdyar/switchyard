@@ -33,7 +33,7 @@ export default async function () {
   const apiRoutesPath = path.join(
     getMonorepoRoot(),
     "packages",
-    "medusa",
+    "switchyard",
     "src",
     "api"
   )

@@ -4,13 +4,13 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   BatchWorkflowInput,
   BatchWorkflowOutput,
   InventoryLevelDTO,
   InventoryTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { createInventoryLevelsStep, updateInventoryLevelsStep } from "../steps"
 import { deleteInventoryLevelsWorkflow } from "./delete-inventory-levels"
 

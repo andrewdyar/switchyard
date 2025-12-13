@@ -1,4 +1,4 @@
-import { CodeBlock, Label } from "@medusajs/ui"
+import { CodeBlock, Label } from "@switchyard/ui"
 
 const snippets = [
   {
@@ -8,7 +8,7 @@ const snippets = [
     hideLineNumbers: true,
   },
   {
-    label: "Medusa JS SDK",
+    label: "Switchyard JS SDK",
     language: "jsx",
     code: `const { product } = await medusa.store.products.retrieve("prod_123")\nconsole.log(product.id)`,
   },

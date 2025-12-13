@@ -5,11 +5,11 @@ import {
   AuthIdentityProviderService,
   GoogleAuthProviderOptions,
   Logger,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   AbstractAuthModuleProvider,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 import jwt, { type JwtPayload } from "jsonwebtoken"
 
 type InjectedDependencies = {
@@ -49,8 +49,8 @@ export class GoogleAuthService extends AbstractAuthModuleProvider {
   }
 
   async register(_): Promise<AuthenticationResponse> {
-    throw new MedusaError(
-      MedusaError.Types.NOT_ALLOWED,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_ALLOWED,
       "Google does not support registration. Use method `authenticate` instead."
     )
   }
@@ -112,8 +112,8 @@ export class GoogleAuthService extends AbstractAuthModuleProvider {
         method: "POST",
       }).then((r) => {
         if (!r.ok) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Could not exchange token, ${r.status}, ${r.statusText}`
           )
         }
@@ -149,8 +149,8 @@ export class GoogleAuthService extends AbstractAuthModuleProvider {
     const payload = jwtData.payload
 
     if (!payload.email_verified) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Email not verified, cannot proceed with authentication"
       )
     }
@@ -171,7 +171,7 @@ export class GoogleAuthService extends AbstractAuthModuleProvider {
         entity_id,
       })
     } catch (error) {
-      if (error.type === MedusaError.Types.NOT_FOUND) {
+      if (error.type === SwitchyardError.Types.NOT_FOUND) {
         const createdAuthIdentity = await authIdentityService.create({
           entity_id,
           user_metadata: userMetadata,

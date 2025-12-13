@@ -1,7 +1,7 @@
-import { getMigrationPlanner, initialize } from "@medusajs/link-modules"
-import { MedusaModule } from "@medusajs/modules-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { ModuleJoinerConfig } from "@medusajs/types"
+import { getMigrationPlanner, initialize } from "@switchyard/link-modules"
+import { SwitchyardModule } from "@switchyard/modules-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { ModuleJoinerConfig } from "@switchyard/types"
 
 jest.setTimeout(5000000)
 
@@ -53,7 +53,7 @@ medusaIntegrationTestRunner({
         },
       }
 
-      jest.spyOn(MedusaModule, "getLoadedModules").mockImplementation((() => {
+      jest.spyOn(SwitchyardModule, "getLoadedModules").mockImplementation((() => {
         return [
           {
             moduleA: {

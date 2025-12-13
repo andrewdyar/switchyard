@@ -1,7 +1,7 @@
-import { IAuthModuleService } from "@medusajs/types"
-import { Modules } from "@medusajs/utils"
+import { IAuthModuleService } from "@switchyard/types"
+import { Modules } from "@switchyard/utils"
 import jwt from "jsonwebtoken"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,

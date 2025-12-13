@@ -9,7 +9,7 @@ import {
   NullableModifier,
   PrimaryKeyModifier,
   TextProperty,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 import { ServiceZone } from "./service-zone"
 

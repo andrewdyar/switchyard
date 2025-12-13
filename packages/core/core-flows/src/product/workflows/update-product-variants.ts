@@ -2,15 +2,15 @@ import {
   AdditionalData,
   PricingTypes,
   ProductTypes,
-} from "@medusajs/framework/types"
-import { ProductVariantWorkflowEvents } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { ProductVariantWorkflowEvents } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createHook,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep } from "../../common"
 import { updatePriceSetsStep } from "../../pricing"
 import { updateProductVariantsStep } from "../steps"

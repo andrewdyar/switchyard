@@ -1,1 +1,1 @@
-# @medusajs/admin-sdk
+# @switchyard/admin-sdk

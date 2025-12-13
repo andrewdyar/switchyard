@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IInventoryServiceNext,
   IPricingModuleService,
@@ -7,14 +7,14 @@ import {
   ISalesChannelModuleService,
   IStockLocationServiceNext,
   ITaxModuleService,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   ProductStatus,
   PromotionStatus,
   PromotionType,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,

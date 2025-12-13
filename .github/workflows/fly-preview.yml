@@ -37,14 +37,14 @@ jobs:
       - name: Build all packages
         run: yarn build
 
-      - name: Build goods-backend (Medusa app)
+      - name: Build goods-backend (Switchyard app)
         working-directory: apps/goods-backend
-        run: npx medusa build
+        run: npx switchyard build
 
       - name: Verify build output
         run: |
-          echo "Checking .medusa/server directory..."
-          ls -la apps/goods-backend/.medusa/server/
+          echo "Checking .switchyard/server directory..."
+          ls -la apps/goods-backend/.switchyard/server/
 
       - name: Setup Fly.io CLI
         uses: superfly/flyctl-actions/setup-flyctl@master
@@ -52,7 +52,7 @@ jobs:
       - name: Create or update preview app
         id: deploy
         run: |
-          APP_NAME="goods-medusa-pr-${{ github.event.pull_request.number }}"
+          APP_NAME="goods-switchyard-pr-${{ github.event.pull_request.number }}"
           
           # Check if app exists
           if ! flyctl apps list | grep -q "$APP_NAME"; then
@@ -130,7 +130,7 @@ jobs:
 
       - name: Destroy preview app
         run: |
-          APP_NAME="goods-medusa-pr-${{ github.event.pull_request.number }}"
+          APP_NAME="goods-switchyard-pr-${{ github.event.pull_request.number }}"
           
           echo "Destroying preview app: $APP_NAME"
           flyctl apps destroy "$APP_NAME" --yes || echo "App may not exist or already destroyed"
@@ -139,7 +139,7 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const appName = 'goods-medusa-pr-${{ github.event.pull_request.number }}';
+            const appName = 'goods-switchyard-pr-${{ github.event.pull_request.number }}';
             
             const body = `## 🗑️ Preview Environment Destroyed
             

@@ -8,20 +8,20 @@ import {
   RegionDTO,
   UpdateLineItemDTO,
   UpdateLineItemWithSelectorDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   filterObjectByKeys,
   isDefined,
-  MedusaError,
+  SwitchyardError,
   ProductStatus,
   simpleHash,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createWorkflow,
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { getVariantPriceSetsStep } from "../steps"
 import {
@@ -223,14 +223,14 @@ export const getVariantsAndItemsWithPrices = createWorkflow(
         })
 
         if (variantNotFoundOrPublished.length > 0) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Variants ${variantNotFoundOrPublished.join(", ")} do not exist or belong to a product that is not published`
           )
         }
         if (priceNotFound.length > 0) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Variants with IDs ${priceNotFound.join(", ")} do not have a price`
           )
         }

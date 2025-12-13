@@ -7,12 +7,12 @@ Creates a StepResponse that indicates that the step has failed and the retry mec
 ## Example
 
 ```ts
-import { Product } from "@medusajs/medusa"
+import { Product } from "@switchyard/medusa"
 import {
   createStep,
   StepResponse,
   createWorkflow
-} from "@medusajs/workflows-sdk"
+} from "@switchyard/workflows-sdk"
 
 interface CreateProductInput {
   title: string
@@ -78,4 +78,4 @@ myWorkflow()
 
 ## Parameters
 
-<TypeList types={[{"name":"message","type":"`string`","description":"An optional message to be logged.","optional":false,"defaultValue":"\"Permanent failure\"","expandable":false,"children":[]},{"name":"compensateInput","type":"`unknown`","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="permanentFailure"/>
+<TypeList types={[{"name":"message","type":"`string`","description":"An optional message to be logged.","optional":false,"defaultValue":"\"Permanent failure\"","expandable":false,"children":[]},{"name":"compensateInput","type":"`unknown`","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="permanentFailure"/>

@@ -7,13 +7,13 @@ import {
   ShippingOptionRule,
   ShippingOptionType,
 } from "@models"
-import { Context, InferEntityType } from "@medusajs/framework/types"
+import { Context, InferEntityType } from "@switchyard/framework/types"
 import {
   CommonEvents,
   FulfillmentEvents,
   moduleEventBuilderFactory,
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export const eventBuilders = {
   createdFulfillment: moduleEventBuilderFactory({

@@ -1,12 +1,12 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { Modules, PromotionStatus, PromotionType } from "@medusajs/utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { Modules, PromotionStatus, PromotionType } from "@switchyard/utils"
 import {
   createAdminUser,
   generatePublishableKey,
   generateStoreHeaders,
 } from "../../../../helpers/create-admin-user"
 import { setupTaxStructure } from "../../../../modules/__tests__/fixtures/tax"
-import { medusaTshirtProduct } from "../../../__fixtures__/product"
+import { switchyardTshirtProduct } from "../../../__fixtures__/product"
 
 jest.setTimeout(500000)
 
@@ -105,7 +105,7 @@ medusaIntegrationTestRunner({
         product = (
           await api.post(
             `/admin/products`,
-            { ...medusaTshirtProduct, shipping_profile_id: shippingProfile.id },
+            { ...switchyardTshirtProduct, shipping_profile_id: shippingProfile.id },
             adminHeaders
           )
         ).data.product

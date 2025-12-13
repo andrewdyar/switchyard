@@ -1,6 +1,6 @@
-import { IAuthModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { IAuthModuleService } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { createAuthIdentities } from "../../__fixtures__/auth-identity"
 
 jest.setTimeout(30000)

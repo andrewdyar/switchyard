@@ -1,9 +1,9 @@
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to validate inventory items for creation.
@@ -52,8 +52,8 @@ export const validateInventoryItemsForCreate = createStep(
       // @ts-expect-error
       const ids = existingItems.map((i) => i.variant_id).join(", ")
 
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Inventory items already exist for variants with ids: ${ids}`
       )
     }

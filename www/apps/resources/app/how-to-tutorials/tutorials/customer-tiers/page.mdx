@@ -14,18 +14,18 @@ products:
   - cart
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
-  title: `Implement Customer Tiers in Medusa`,
+  title: `Implement Customer Tiers in Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to implement a customer tiers system in Medusa.
+In this tutorial, you'll learn how to implement a customer tiers system in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include customer and promotion management capabilities.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include customer and promotion management capabilities.
 
 A customer tiers system allows you to segment customers based on their purchase history and automatically apply promotions to their carts. Customers are assigned to tiers based on their total purchase value, and each tier can have an associated promotion that is automatically applied to their carts.
 
@@ -33,20 +33,20 @@ A customer tiers system allows you to segment customers based on their purchase 
 
 By following this tutorial, you will learn how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Create a Tier Module to manage customer tiers and tier rules.
-- Customize the Medusa Admin to manage tiers.
+- Customize the Switchyard Admin to manage tiers.
 - Automatically assign customers to tiers based on their purchase history.
 - Automatically apply tier promotions to customer carts.
 - Customize the Next.js Starter Storefront to display tier information to customers.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram illustrating how the customer tiers system works, starting from the customer adding a product to the cart, Medusa applying the tier promotion automatically, customer placing the order, and Medusa updating the customer's tier.](https://res.cloudinary.com/dza7lstvk/image/upload/v1764079847/Medusa%20Resources/customer-tiers_hx504i.jpg)
+![Diagram illustrating how the customer tiers system works, starting from the customer adding a product to the cart, Switchyard applying the tier promotion automatically, customer placing the order, and Switchyard updating the customer's tier.](https://res.cloudinary.com/dza7lstvk/image/upload/v1764079847/Switchyard%20Resources/customer-tiers_hx504i.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/customer-tiers",
+    href: "https://github.com/switchyard/examples/tree/main/customer-tiers",
     title: "Customer Tiers Repository",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -61,7 +61,7 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -78,27 +78,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -106,7 +106,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Tier Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without affecting your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without affecting your setup.
 
 In the module, you define the data models necessary for a feature and the logic to manage these data models. Later, you can build commerce flows around your module.
 
@@ -120,11 +120,11 @@ Refer to the [Modules documentation](!docs!/learn/fundamentals/modules) to learn
 
 ### Create Module Directory
 
-Modules are created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/tier`.
+Modules are created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/tier`.
 
 ### Create Data Models
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML), which simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML), which simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -140,7 +140,7 @@ For the Tier Module, you need to define two data models:
 So, create the file `src/modules/tier/models/tier.ts` with the following content:
 
 ```ts title="src/modules/tier/models/tier.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { TierRule } from "./tier-rule"
 
 export const Tier = model.define("tier", {
@@ -171,7 +171,7 @@ Learn more about defining data model properties in the [Property Types documenta
 Next, create the file `src/modules/tier/models/tier-rule.ts` with the following content:
 
 ```ts title="src/modules/tier/models/tier-rule.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { Tier } from "./tier"
 
 export const TierRule = model.define("tier_rule", {
@@ -220,11 +220,11 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Tier Module's service, create the file `src/modules/tier/service.ts` with the following content:
 
 ```ts title="src/modules/tier/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Tier } from "./models/tier"
 import { TierRule } from "./models/tier-rule"
 
-class TierModuleService extends MedusaService({
+class TierModuleService extends SwitchyardService({
   Tier,
   TierRule,
 }) {
@@ -233,25 +233,25 @@ class TierModuleService extends MedusaService({
 export default TierModuleService
 ```
 
-The `TierModuleService` extends `MedusaService` from the Modules SDK, which generates a class with data-management methods for your module's data models. This saves you time implementing Create, Read, Update, and Delete (CRUD) methods.
+The `TierModuleService` extends `SwitchyardService` from the Modules SDK, which generates a class with data-management methods for your module's data models. This saves you time implementing Create, Read, Update, and Delete (CRUD) methods.
 
 So, the `TierModuleService` class now has methods like `createTiers`, `retrieveTier`, `listTierRules`, and more.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
+Find all methods generated by the `SwitchyardService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
 
 </Note>
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/tier/index.ts` with the following content:
 
 ```ts title="src/modules/tier/index.ts"
 import TierModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const TIER_MODULE = "tier"
 
@@ -267,13 +267,13 @@ You use the `Module` function from the Modules SDK to create the module's defini
 
 You also export the module's name as `TIER_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -296,18 +296,18 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate the migrations for you. To generate a migration for the Tier Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate the migrations for you. To generate a migration for the Tier Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate tier
+npx switchyard db:generate tier
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/tier` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/tier` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The tables for the `Tier` and `TierRule` data models are now created in the database.
@@ -318,9 +318,9 @@ The tables for the `Tier` and `TierRule` data models are now created in the data
 
 When you defined the `Tier` data model, you added properties that store IDs of records managed by other modules. For example, the `promo_id` property stores a promotion ID, but promotions are managed by the [Promotion Module](../../../commerce-modules/promotion/page.mdx).
 
-Medusa integrates modules into your application without side effects by isolating them from one another. This means you can't directly create relationships between data models in your module and data models in other modules.
+Switchyard integrates modules into your application without side effects by isolating them from one another. This means you can't directly create relationships between data models in your module and data models in other modules.
 
-Instead, Medusa provides a mechanism to define links between data models and to retrieve and manage linked records while maintaining module isolation. Links are useful for defining associations between data models in different modules or for extending a model in another module to associate custom properties with it.
+Instead, Switchyard provides a mechanism to define links between data models and to retrieve and manage linked records while maintaining module isolation. Links are useful for defining associations between data models in different modules or for extending a model in another module to associate custom properties with it.
 
 <Note>
 
@@ -338,9 +338,9 @@ In this step, you'll define:
 You can define links between data models in a TypeScript or JavaScript file under the `src/links` directory. So, create the file `src/links/tier-customer.ts` with the following content:
 
 ```ts title="src/links/tier-customer.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import TierModule from "../modules/tier"
-import CustomerModule from "@medusajs/medusa/customer"
+import CustomerModule from "@switchyard/medusa/customer"
 
 export default defineLink(
   {
@@ -366,9 +366,9 @@ This link allows you to retrieve and manage customers associated with a tier, an
 Next, create the file `src/links/tier-promotion.ts` with the following content:
 
 ```ts title="src/links/tier-promotion.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import TierModule from "../modules/tier"
-import PromotionModule from "@medusajs/medusa/promotion"
+import PromotionModule from "@switchyard/medusa/promotion"
 
 export default defineLink(
   {
@@ -395,11 +395,11 @@ Now that you have the Tier Module set up, you'll add the functionality to create
 - A [workflow](!docs!/learn/fundamentals/workflows) with steps to create a tier.
 - An [API route](!docs!/learn/fundamentals/api-routes) that exposes the workflow's functionality to client applications.
 
-Later, you'll customize the Medusa Admin to allow creating tiers from the dashboard.
+Later, you'll customize the Switchyard Admin to allow creating tiers from the dashboard.
 
 ### a. Create Tier Workflow
 
-To build custom commerce features in Medusa, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You can track the workflow's execution progress, define rollback logic, and configure other advanced features.
+To build custom commerce features in Switchyard, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You can track the workflow's execution progress, define rollback logic, and configure other advanced features.
 
 <Note>
 
@@ -457,7 +457,7 @@ The workflow to create a tier has the following steps:
   }}
 />
 
-Medusa provides the last step out of the box. You'll create the other steps before creating the workflow.
+Switchyard provides the last step out of the box. You'll create the other steps before creating the workflow.
 
 
 #### Create Tier Step
@@ -465,7 +465,7 @@ Medusa provides the last step out of the box. You'll create the other steps befo
 First, you'll create a step that creates a tier. Create the file `src/workflows/steps/create-tier.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-tier.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TIER_MODULE } from "../../modules/tier"
 
 export type CreateTierStepInput = {
@@ -501,10 +501,10 @@ You create a step with `createStep` from the Workflows SDK. It accepts three par
 1. The step's unique name, which is `create-tier`.
 2. An async function that receives two parameters:
    - The step's input, which is in this case an object with the tier's properties.
-   - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+   - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An async compensation function that undoes the actions performed in the step if an error occurs during the workflow's execution.
 
-In the step function, you resolve the Tier Module's service from the Medusa container and create the tier using the `createTiers` method.
+In the step function, you resolve the Tier Module's service from the Switchyard container and create the tier using the `createTiers` method.
 
 A step function must return a `StepResponse` instance. The `StepResponse` constructor accepts two parameters:
 
@@ -520,7 +520,7 @@ The `createTierRulesStep` creates tier rules for a tier.
 Create the file `src/workflows/steps/create-tier-rules.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-tier-rules.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TIER_MODULE } from "../../modules/tier"
 
 export type CreateTierRulesStepInput = {
@@ -574,8 +574,8 @@ import {
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { createTierStep } from "./steps/create-tier"
 import { createTierRulesStep } from "./steps/create-tier-rules"
 
@@ -674,9 +674,9 @@ Create the file `src/api/admin/tiers/route.ts` with the following content:
 
 ```ts title="src/api/admin/tiers/route.ts"
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { z } from "zod"
 import { createTierWorkflow } from "../../../workflows/create-tier"
 
@@ -692,8 +692,8 @@ export const CreateTierSchema = z.object({
 type CreateTierInput = z.infer<typeof CreateTierSchema>
 
 export async function POST(
-  req: MedusaRequest<CreateTierInput>,
-  res: MedusaResponse
+  req: SwitchyardRequest<CreateTierInput>,
+  res: SwitchyardResponse
 ): Promise<void> {
   const { name, promo_id, tier_rules } = req.validatedBody
 
@@ -713,11 +713,11 @@ First, you define a Zod schema that validates the request body.
 
 Then, you export a `POST` function, which exposes a `POST` API route at `/admin/tiers`.
 
-In the route handler function, you execute the `createTierWorkflow` by invoking it, passing it the Medusa container, then executing its `run` method.
+In the route handler function, you execute the `createTierWorkflow` by invoking it, passing it the Switchyard container, then executing its `run` method.
 
 You return the created tier in the response.
 
-You'll test out this API route later when you customize the Medusa Admin dashboard.
+You'll test out this API route later when you customize the Switchyard Admin dashboard.
 
 ### c. Apply Validation Middleware
 
@@ -729,7 +729,7 @@ To apply a middleware to the API route, create the file `src/api/middlewares.ts`
 import {
   defineMiddlewares,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { CreateTierSchema } from "./admin/tiers/route"
 
 export default defineMiddlewares({
@@ -757,14 +757,14 @@ Refer to the [Middlewares](!docs!/learn/fundamentals/api-routes/middlewares) doc
 
 ## Step 5: Retrieve Tiers API Route
 
-In this step, you'll add an API route that retrieves tiers. You'll use this API route later when you customize the Medusa Admin to display tiers in the Medusa Admin.
+In this step, you'll add an API route that retrieves tiers. You'll use this API route later when you customize the Switchyard Admin to display tiers in the Switchyard Admin.
 
 To create the API route, add the following function to the `src/api/admin/tiers/route.ts` file:
 
 ```ts title="src/api/admin/tiers/route.ts"
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const query = req.scope.resolve("query")
 
@@ -784,13 +784,13 @@ export async function GET(
 
 You export a `GET` route handler function, which will expose a `GET` API route at `/admin/tiers`.
 
-In the route handler, you resolve Query from the Medusa container and use it to retrieve a list of tiers.
+In the route handler, you resolve Query from the Switchyard container and use it to retrieve a list of tiers.
 
 Notice that you spread the `req.queryConfig` object into the `query.graph` method. This allows clients to pass query parameters for pagination and configure returned fields. You'll learn how to set these configurations in a bit.
 
 You return the list of tiers in the response.
 
-You'll test out this API route later when you customize the Medusa Admin dashboard.
+You'll test out this API route later when you customize the Switchyard Admin dashboard.
 
 ### Apply Query Configurations Middleware
 
@@ -801,8 +801,8 @@ In `src/api/middlewares.ts`, add the following imports at the top of the file:
 ```ts title="src/api/middlewares.ts"
 import {
   validateAndTransformQuery,
-} from "@medusajs/framework/http"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+} from "@switchyard/framework/http"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 ```
 
 Then, add the following object to the `routes` array passed to `defineMiddlewares`:
@@ -838,11 +838,11 @@ Refer to the [Request Query Configuration](!docs!/learn/fundamentals/module-link
 
 ---
 
-## Step 6: Manage Customer Tiers in Medusa Admin
+## Step 6: Manage Customer Tiers in Switchyard Admin
 
-In this step, you'll customize the Medusa Admin to display and create tiers.
+In this step, you'll customize the Switchyard Admin to display and create tiers.
 
-The Medusa Admin dashboard is customizable, allowing you to insert widgets into existing pages, or create new pages.
+The Switchyard Admin dashboard is customizable, allowing you to insert widgets into existing pages, or create new pages.
 
 <Note title="Tip">
 
@@ -852,21 +852,21 @@ Refer to the [Admin Development](!docs!/learn/fundamentals/admin) documentation 
 
 ### a. Initialize JS SDK
 
-To send requests to the Medusa server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Medusa project, but you need to initialize it before using it in your customizations.
+To send requests to the Switchyard server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Switchyard project, but you need to initialize it before using it in your customizations.
 
 Create the file `src/admin/lib/sdk.ts` with the following content:
 
 export const sdkHighlights = [
-  ["3", "new Medusa", "Initialize the Medusa JS SDK."],
+  ["3", "new Switchyard", "Initialize the Switchyard JS SDK."],
   ["4", "baseUrl", "Backend server URL."],
   ["5", "debug", "Enable debug mode in development."],
   ["7", "type: \"session\"", "Use session-based authentication."]
 ]
 
 ```ts title="src/admin/lib/sdk.ts" highlights={sdkHighlights}
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: process.env.MEDUSA_BACKEND_URL || "http://localhost:9000",
   debug: process.env.NODE_ENV === "development",
   auth: {
@@ -879,9 +879,9 @@ Learn more about the initialization options in the [JS SDK](../../../js-sdk/page
 
 ### b. Tiers UI Route
 
-Next, you'll create a UI route that displays the list of tiers in the Medusa Admin.
+Next, you'll create a UI route that displays the list of tiers in the Switchyard Admin.
 
-A UI route is a React component that specifies the content to be shown in a new page in the Medusa Admin dashboard.
+A UI route is a React component that specifies the content to be shown in a new page in the Switchyard Admin dashboard.
 
 <Note>
 
@@ -892,7 +892,7 @@ Learn more about UI routes in the [UI Routes documentation](!docs!/learn/fundame
 To create the UI route, create the file `src/admin/routes/tiers/page.tsx` with the following content:
 
 ```tsx title="src/admin/routes/tiers/page.tsx" collapsibleLines="1-16" expandButtonLabel="Show Imports"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
 import {
   Container,
   Heading,
@@ -901,9 +901,9 @@ import {
   createDataTableColumnHelper,
   useDataTable,
   DataTablePaginationState,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useNavigate, Link } from "react-router-dom"
-import { UserGroup } from "@medusajs/icons"
+import { UserGroup } from "@switchyard/icons"
 import { useQuery } from "@tanstack/react-query"
 import { useState, useMemo } from "react"
 import { sdk } from "../../lib/sdk"
@@ -1018,7 +1018,7 @@ In the component, you:
 
 - Define state variables to configure pagination.
 - Fetch the tiers using the JS SDK and Tanstack Query. By using Tanstack Query, you can easily manage the data fetching state, handle pagination, and cache the data.
-- Create a DataTable instance from [Medusa UI](!ui!). You pass the columns, data, and pagination configurations to the hook.
+- Create a DataTable instance from [Switchyard UI](!ui!). You pass the columns, data, and pagination configurations to the hook.
 - Render the DataTable component with a toolbar and pagination controls.
 
 ### c. Create Tier Modal Component
@@ -1028,8 +1028,8 @@ Next, you'll create a component that shows a form to create a tier in a modal.
 Create the file `src/admin/components/create-tier-modal.tsx` with the following content:
 
 ```tsx title="src/admin/components/create-tier-modal.tsx" collapsibleLines="1-9" expandButtonLabel="Show Imports"
-import { FocusModal, Heading, Label, Input, Button, Select, IconButton, toast } from "@medusajs/ui"
-import { Trash } from "@medusajs/icons"
+import { FocusModal, Heading, Label, Input, Button, Select, IconButton, toast } from "@switchyard/ui"
+import { Trash } from "@switchyard/icons"
 import { useForm, Controller, FormProvider } from "react-hook-form"
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
@@ -1335,7 +1335,7 @@ return (
 )
 ```
 
-You display a `FocusModal` from Medusa UI. In the modal, you render a form with the following fields:
+You display a `FocusModal` from Switchyard UI. In the modal, you render a form with the following fields:
 
 1. **Name**: The name of the tier.
 2. **Promotion**: A select input to choose a promotion that's associated with the tier.
@@ -1359,19 +1359,19 @@ Next, replace the `TODO` in the `TiersPage` component's `return` statement with 
 
 You display the create tier modal when the user clicks the "Create Tier" button in the tiers page.
 
-### Test Customer Tiers in Medusa Admin
+### Test Customer Tiers in Switchyard Admin
 
-To test out the customer tiers in the Medusa Admin, start the Medusa application:
+To test out the customer tiers in the Switchyard Admin, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard at `http://localhost:9000/app` and log in using the credentials you set up earlier.
+Then, open the Switchyard Admin dashboard at `http://localhost:9000/app` and log in using the credentials you set up earlier.
 
 You'll find a new sidebar item labeled "Customer Tiers." Click on it to view the list of tiers.
 
-![Customer Tiers page showing list of tiers](https://res.cloudinary.com/dza7lstvk/image/upload/v1764065196/Medusa%20Resources/CleanShot_2025-11-25_at_12.05.51_2x_u2khaj.png)
+![Customer Tiers page showing list of tiers](https://res.cloudinary.com/dza7lstvk/image/upload/v1764065196/Switchyard%20Resources/CleanShot_2025-11-25_at_12.05.51_2x_u2khaj.png)
 
 Before creating a tier, you should [create a promotion](!user-guide!/promotions/create).
 
@@ -1379,7 +1379,7 @@ Then, on the Customer Tiers page, click the "Create Tier" button to open the cre
 
 In the modal, enter the tier's name, select the promotion you created, and add tier rules for the currencies in your store. Once you're done, click the "Create" button to create the tier.
 
-![Create tier modal showing form to create a tier](https://res.cloudinary.com/dza7lstvk/image/upload/v1764065361/Medusa%20Resources/CleanShot_2025-11-25_at_12.08.18_2x_nid87p.png)
+![Create tier modal showing form to create a tier](https://res.cloudinary.com/dza7lstvk/image/upload/v1764065361/Switchyard%20Resources/CleanShot_2025-11-25_at_12.08.18_2x_nid87p.png)
 
 You'll see the new tier in the list of tiers. Later, you'll add a page to view and edit a single tier's details.
 
@@ -1393,13 +1393,13 @@ To create the API route, create the file `src/api/admin/tiers/[id]/route.ts` wit
 
 ```ts title="src/api/admin/tiers/[id]/route.ts"
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const query = req.scope.resolve("query")
   const { id } = req.params
@@ -1420,11 +1420,11 @@ export async function GET(
 
 You export a `GET` route handler function, which will expose a `GET` API route at `/admin/tiers/:id`.
 
-In the route handler, you resolve Query from the Medusa container and use it to retrieve the tier with the given ID.
+In the route handler, you resolve Query from the Switchyard container and use it to retrieve the tier with the given ID.
 
 You return the tier in the response.
 
-You'll test out this API route later when you customize the Medusa Admin dashboard.
+You'll test out this API route later when you customize the Switchyard Admin dashboard.
 
 ### Apply Query Configurations Middleware
 
@@ -1523,7 +1523,7 @@ The workflow to update a tier has the following steps:
   }}
 />
 
-Medusa provides the `useQueryGraphStep` out-of-the-box, and you've implemented the `createTierRulesStep`. You'll create the other steps before creating the workflow.
+Switchyard provides the `useQueryGraphStep` out-of-the-box, and you've implemented the `createTierRulesStep`. You'll create the other steps before creating the workflow.
 
 #### Update Tier Step
 
@@ -1532,7 +1532,7 @@ The `updateTierStep` updates a tier.
 To create the step, create the file `src/workflows/steps/update-tier.ts` with the following content:
 
 ```ts title="src/workflows/steps/update-tier.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TIER_MODULE } from "../../modules/tier"
 import TierModuleService from "../../modules/tier/service"
 
@@ -1582,7 +1582,7 @@ The `deleteTierRulesStep` deletes tier rules.
 To create the step, create the file `src/workflows/steps/delete-tier-rules.ts` with the following content:
 
 ```ts title="src/workflows/steps/delete-tier-rules.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TIER_MODULE } from "../../modules/tier"
 import TierModuleService from "../../modules/tier/service"
 
@@ -1641,8 +1641,8 @@ import {
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { updateTierStep } from "./steps/update-tier"
 import { deleteTierRulesStep } from "./steps/delete-tier-rules"
 import { createTierRulesStep } from "./steps/create-tier-rules"
@@ -1770,8 +1770,8 @@ export const UpdateTierSchema = z.object({
 type UpdateTierInput = z.infer<typeof UpdateTierSchema>
 
 export async function POST(
-  req: MedusaRequest<UpdateTierInput>,
-  res: MedusaResponse
+  req: SwitchyardRequest<UpdateTierInput>,
+  res: SwitchyardResponse
 ): Promise<void> {
   const { id } = req.params
   const { name, promo_id, tier_rules } = req.validatedBody
@@ -1795,7 +1795,7 @@ Then, you export a `POST` function, which exposes a `POST` API route at `/admin/
 
 In the route handler, you execute the `updateTierWorkflow` and return the updated tier in the response.
 
-You'll test out the API route later when you customize the Medusa Admin dashboard.
+You'll test out the API route later when you customize the Switchyard Admin dashboard.
 
 #### c. Apply Validation Middleware
 
@@ -1830,7 +1830,7 @@ Any request that doesn't conform to the schema will receive a `400` Bad Request 
 
 ## Step 9: Retrieve Customers in Tier API Route
 
-In this step, you'll add an API route that retrieves customers in a tier. This will be useful to show the customers in the tier's page on the Medusa Admin.
+In this step, you'll add an API route that retrieves customers in a tier. This will be useful to show the customers in the tier's page on the Switchyard Admin.
 
 ### a. Retrieve Customers in Tier API Route
 
@@ -1838,14 +1838,14 @@ To create the API route, create the file `src/api/admin/tiers/[id]/customers/rou
 
 ```ts title="src/api/admin/tiers/[id]/customers/route.ts"
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
   const { id } = req.params
@@ -1872,13 +1872,13 @@ export async function GET(
 
 You export a `GET` function, which exposes a `GET` API route at `/admin/tiers/:id/customers`.
 
-In the route handler, you resolve Query from the Medusa container and use it to retrieve customers linked to the tier with the given ID.
+In the route handler, you resolve Query from the Switchyard container and use it to retrieve customers linked to the tier with the given ID.
 
 Notice that you use the `query.index` method. This method is similar to `query.graph` but allows you to filter by linked records using the [Index Module](!docs!/learn/fundamentals/module-links/index-module).
 
 You return the customers in the response.
 
-You'll test out this API route later when you customize the Medusa Admin dashboard.
+You'll test out this API route later when you customize the Switchyard Admin dashboard.
 
 ### b. Apply Query Configurations Middleware
 
@@ -1917,20 +1917,20 @@ The [Index Module](!docs!/learn/fundamentals/module-links/index-module) is a too
 
 The Index Module is currently experimental, so you need to install and configure it manually.
 
-To install the Index Module, run the following command in your Medusa application's directory:
+To install the Index Module, run the following command in your Switchyard application's directory:
 
 ```bash npm2yarn
-npm install @medusajs/index
+npm install @switchyard/index
 ```
 
-Then, add the following to your Medusa application's configuration file:
+Then, add the following to your Switchyard application's configuration file:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 export default config({
   modules: [
     // ...
     {
-      resolve: "@medusajs/index",
+      resolve: "@switchyard/index",
     },
   ],
 })
@@ -1939,16 +1939,16 @@ export default config({
 Next, run the migrations to create the necessary tables for the Index Module in your database:
 
 ```bash npm2yarn
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
-Lastly, start the Medusa application to ingest the data into the Index Module:
+Lastly, start the Switchyard application to ingest the data into the Index Module:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-You can now use the Index Module to filter customers by their tier. You'll test out the API route when you customize the Medusa Admin dashboard in the next step.
+You can now use the Index Module to filter customers by their tier. You'll test out the API route when you customize the Switchyard Admin dashboard in the next step.
 
 <Note>
 
@@ -1977,13 +1977,13 @@ You'll first create a drawer component that displays a form to edit the tier's d
 To create the drawer component, create the file `src/admin/components/edit-tier-drawer.tsx` with the following content:
 
 ```tsx title="src/admin/components/edit-tier-drawer.tsx"
-import { Drawer, Heading, Label, Input, Button, Select, IconButton, toast } from "@medusajs/ui"
+import { Drawer, Heading, Label, Input, Button, Select, IconButton, toast } from "@switchyard/ui"
 import { useForm, Controller, FormProvider } from "react-hook-form"
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
 import { useState, useEffect } from "react"
 import { Tier } from "../routes/tiers/page"
-import { Trash } from "@medusajs/icons"
+import { Trash } from "@switchyard/icons"
 
 type EditTierFormData = {
   name: string
@@ -2309,7 +2309,7 @@ return (
 )
 ```
 
-You display a `Drawer` from Medusa UI. In the drawer, you render a form with the following fields:
+You display a `Drawer` from Switchyard UI. In the drawer, you render a form with the following fields:
 
 1. **Name**: The name of the tier.
 2. **Promotion**: A select input to choose a promotion that's associated with the tier.
@@ -2322,7 +2322,7 @@ Next, you'll create a component that displays the details of a tier, with a butt
 To create the component, create the file `src/admin/components/tier-details-section.tsx` with the following content:
 
 ```tsx title="src/admin/components/tier-details-section.tsx"
-import { Code, Container, Heading, Text } from "@medusajs/ui"
+import { Code, Container, Heading, Text } from "@switchyard/ui"
 import { Link } from "react-router-dom"
 import { Tier } from "../routes/tiers/page"
 import { EditTierDrawer } from "./edit-tier-drawer"
@@ -2378,7 +2378,7 @@ Next, you'll create a component that displays the tier rules in a table.
 To create the component, create the file `src/admin/components/tier-rules-table.tsx` with the following content:
 
 ```tsx title="src/admin/components/tier-rules-table.tsx"
-import { Heading, DataTable, createDataTableColumnHelper, useDataTable, Container } from "@medusajs/ui"
+import { Heading, DataTable, createDataTableColumnHelper, useDataTable, Container } from "@switchyard/ui"
 import { Tier } from "../routes/tiers/page"
 
 type TierRulesTableProps = {
@@ -2440,7 +2440,7 @@ Next, you'll create a component that displays the customers in a tier in a table
 To create the component, create the file `src/admin/components/tier-customers-table.tsx` with the following content:
 
 ```tsx title="src/admin/components/tier-customers-table.tsx"
-import { Heading, DataTable, createDataTableColumnHelper, useDataTable, Container, DataTablePaginationState } from "@medusajs/ui"
+import { Heading, DataTable, createDataTableColumnHelper, useDataTable, Container, DataTablePaginationState } from "@switchyard/ui"
 import { sdk } from "../lib/sdk"
 import { useQuery } from "@tanstack/react-query"
 import { useMemo, useState } from "react"
@@ -2544,7 +2544,7 @@ Finally, you'll create the UI route that displays the details of a tier.
 To create the UI route, create the file `src/admin/routes/tiers/[id]/page.tsx` with the following content:
 
 ```tsx title="src/admin/routes/tiers/[id]/page.tsx"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
 import { useParams } from "react-router-dom"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../../../lib/sdk"
@@ -2615,25 +2615,25 @@ navigate(`/tiers/${data.tier.id}`)
 
 You navigate to the tier details page after creating a tier.
 
-### Test Customer Tiers in Medusa Admin
+### Test Customer Tiers in Switchyard Admin
 
-To test out the customer tiers in the Medusa Admin, start the Medusa application:
+To test out the customer tiers in the Switchyard Admin, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard at `http://localhost:9000/app` and log in using the credentials you set up earlier.
+Then, open the Switchyard Admin dashboard at `http://localhost:9000/app` and log in using the credentials you set up earlier.
 
 You'll find a new sidebar item labeled "Customer Tiers." Click on it to view the list of tiers.
 
 Click on the tier you created earlier. This will open its details page where you can view the tier's details, its rules, and its customers.
 
-![Tier details page showing tier details, rules, and customers](https://res.cloudinary.com/dza7lstvk/image/upload/v1764067752/Medusa%20Resources/CleanShot_2025-11-25_at_12.48.45_2x_ahjflr.png)
+![Tier details page showing tier details, rules, and customers](https://res.cloudinary.com/dza7lstvk/image/upload/v1764067752/Switchyard%20Resources/CleanShot_2025-11-25_at_12.48.45_2x_ahjflr.png)
 
 To edit the tier's details, click the Edit button. This will open a drawer where you can edit the tier's name, its associated promotion, and its tier rules.
 
-![Edit tier drawer showing form to edit tier details](https://res.cloudinary.com/dza7lstvk/image/upload/v1764068307/Medusa%20Resources/CleanShot_2025-11-25_at_12.58.17_2x_me8gbo.png)
+![Edit tier drawer showing form to edit tier details](https://res.cloudinary.com/dza7lstvk/image/upload/v1764068307/Switchyard%20Resources/CleanShot_2025-11-25_at_12.58.17_2x_me8gbo.png)
 
 ---
 
@@ -2652,7 +2652,7 @@ To determine the qualifying tier based on the customer's purchase history, you'l
 In `src/modules/tier/service.ts`, add the following method to the `TierModuleService` class:
 
 ```ts title="src/modules/tier/service.ts"
-class TierModuleService extends MedusaService({
+class TierModuleService extends SwitchyardService({
   Tier,
   TierRule,
 }) {
@@ -2758,7 +2758,7 @@ The workflow to update a customer's tier on order placement has the following st
   }}
 />
 
-You only need to create the `validateCustomerStep` and `determineTierStep` steps. Medusa provides the other steps out of the box.
+You only need to create the `validateCustomerStep` and `determineTierStep` steps. Switchyard provides the other steps out of the box.
 
 #### Validate Customer Step
 
@@ -2767,8 +2767,8 @@ The `validateCustomerStep` validates that the customer is a registered customer.
 To create the step, create the file `src/workflows/steps/validate-customer.ts` with the following content:
 
 ```ts title="src/workflows/steps/validate-customer.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export type ValidateCustomerStepInput = {
   customer: any
@@ -2778,15 +2778,15 @@ export const validateCustomerStep = createStep(
   "validate-customer",
   async (input: ValidateCustomerStepInput, { container }) => {
     if (!input.customer) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         "Customer not found"
       )
     }
 
     if (!input.customer.has_account) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Customer must be registered to be assigned a tier"
       )
     }
@@ -2807,7 +2807,7 @@ The `determineTierStep` determines the appropriate tier based on the customer's 
 To create the step, create the file `src/workflows/steps/determine-tier.ts` with the following content:
 
 ```ts title="src/workflows/steps/determine-tier.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { TIER_MODULE } from "../../modules/tier"
 import TierModuleService from "../../modules/tier/service"
 
@@ -2833,7 +2833,7 @@ export const determineTierStep = createStep(
 
 The step receives the currency code and the purchase value of a customer.
 
-In the step, you resolve the Tier Module's service from the Medusa container and call the `calculateQualifyingTier` method to determine the qualifying tier.
+In the step, you resolve the Tier Module's service from the Switchyard container and call the `calculateQualifyingTier` method to determine the qualifying tier.
 
 You return the ID of the qualifying tier.
 
@@ -2849,13 +2849,13 @@ import {
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   useQueryGraphStep,
   createRemoteLinkStep,
   dismissRemoteLinkStep,
-} from "@medusajs/medusa/core-flows"
-import { Modules, OrderStatus } from "@medusajs/framework/utils"
+} from "@switchyard/medusa/core-flows"
+import { Modules, OrderStatus } from "@switchyard/framework/utils"
 import { validateCustomerStep } from "./steps/validate-customer"
 import { determineTierStep } from "./steps/determine-tier"
 import { TIER_MODULE } from "../modules/tier"
@@ -2973,7 +2973,7 @@ To create the subscriber, create the file `src/subscribers/order-placed.ts` with
 import {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { updateCustomerTierOnOrderWorkflow } from "../workflows/update-customer-tier-on-order"
 
 export default async function orderPlacedHandler({
@@ -3005,9 +3005,9 @@ A subscriber file must export:
 The subscriber function receives an object with the following properties:
 
 - `event`: An object holding the event's details. It has a `data` property, which is the event's data payload.
-- `container`: The Medusa container. Use it to resolve modules' main services and other registered resources.
+- `container`: The Switchyard container. Use it to resolve modules' main services and other registered resources.
 
-In the subscriber function, you resolve the logger from the Medusa container and execute the workflow. If an error occurs, you log it.
+In the subscriber function, you resolve the logger from the Switchyard container and execute the workflow. If an error occurs, you log it.
 
 ### Test Update Customer Tier on Order
 
@@ -3015,9 +3015,9 @@ To test the workflow and subscriber, you'll need to place an order using the [Ne
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-customer-tiers`, you can find the storefront by going back to the parent directory and changing to the `medusa-customer-tiers-storefront` directory:
+So, if your Switchyard application's directory is `medusa-customer-tiers`, you can find the storefront by going back to the parent directory and changing to the `medusa-customer-tiers-storefront` directory:
 
 ```bash
 cd ../medusa-customer-tiers-storefront # change based on your project name
@@ -3025,9 +3025,9 @@ cd ../medusa-customer-tiers-storefront # change based on your project name
 
 </Note>
 
-First, start the Medusa application by running the following command in the Medusa application's directory:
+First, start the Switchyard application by running the following command in the Switchyard application's directory:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -3043,11 +3043,11 @@ Next:
 2. Click on "Account" in the navigation bar and create a new account.
 3. After you're logged in, add products to the cart and complete the checkout process.
     - Make sure the order total is high enough to qualify for the next tier.
-4. After you place the order, open the Medusa Admin dashboard at `http://localhost:9000/app` and log in.
+4. After you place the order, open the Switchyard Admin dashboard at `http://localhost:9000/app` and log in.
 5. Go to the Customer Tiers page and click on the tier that the customer should have been assigned to.
 6. You'll see the customer in the tier's customers list section.
 
-![Customer in tier's customers list section](https://res.cloudinary.com/dza7lstvk/image/upload/v1764070515/Medusa%20Resources/CleanShot_2025-11-25_at_13.34.32_2x_wro2yk.png)
+![Customer in tier's customers list section](https://res.cloudinary.com/dza7lstvk/image/upload/v1764070515/Switchyard%20Resources/CleanShot_2025-11-25_at_13.34.32_2x_wro2yk.png)
 
 ---
 
@@ -3116,7 +3116,7 @@ The workflow to add a customer's tier promotion to a cart has the following step
   }}
 />
 
-You only need to create the `validateTierPromotionStep`. Medusa provides the other steps and workflows out-of-the-box.
+You only need to create the `validateTierPromotionStep`. Switchyard provides the other steps and workflows out-of-the-box.
 
 #### Validate Tier Promotion Step
 
@@ -3125,7 +3125,7 @@ The `validateTierPromotionStep` validates that the customer is registered and ha
 To create the step, create the file `src/workflows/steps/validate-tier-promotion.ts` with the following content:
 
 ```ts title="src/workflows/steps/validate-tier-promotion.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 export type ValidateTierPromotionStepInput = {
   customer: {
@@ -3177,14 +3177,14 @@ import {
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep,
   releaseLockStep,
   updateCartPromotionsWorkflow, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
-import { PromotionActions } from "@medusajs/framework/utils"
+} from "@switchyard/medusa/core-flows"
+import { PromotionActions } from "@switchyard/framework/utils"
 import { validateTierPromotionStep } from "./steps/validate-tier-promotion"
 
 export type AddTierPromotionToCartWorkflowInput = {
@@ -3294,7 +3294,7 @@ To create the subscriber, create the file `src/subscribers/cart-updated.ts` with
 import {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { addTierPromotionToCartWorkflow } from "../workflows/add-tier-promotion-to-cart"
 
 export default async function cartUpdatedHandler({
@@ -3317,7 +3317,7 @@ The subscriber listens to the `cart.updated` event and executes the workflow.
 
 ### Test Add Tier Promotion to Cart
 
-To test the automated tier promotion, make sure both the Medusa application and the Next.js Starter Storefront are running.
+To test the automated tier promotion, make sure both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, in the Next.js Starter Storefront, log in as a customer in a tier, and add a product to the cart.
 
@@ -3329,7 +3329,7 @@ If you don't see the promotion applied, try to refresh the page.
 
 </Note>
 
-![Cart showing the promotion of the tier applied](https://res.cloudinary.com/dza7lstvk/image/upload/v1764072761/Medusa%20Resources/CleanShot_2025-11-25_at_13.47.49_2x_xmewsm.png)
+![Cart showing the promotion of the tier applied](https://res.cloudinary.com/dza7lstvk/image/upload/v1764072761/Switchyard%20Resources/CleanShot_2025-11-25_at_13.47.49_2x_xmewsm.png)
 
 ---
 
@@ -3346,9 +3346,9 @@ To ensure that customers don't add promotions that belong to different tiers, yo
 To consume the hook, create the file `src/workflows/hooks/update-cart-promotions-validate.ts` with the following content:
 
 ```ts title="src/workflows/hooks/update-cart-promotions-validate.ts"
-import { updateCartPromotionsWorkflow } from "@medusajs/medusa/core-flows"
-import { MedusaError } from "@medusajs/framework/utils"
-import { PromotionActions } from "@medusajs/framework/utils"
+import { updateCartPromotionsWorkflow } from "@switchyard/medusa/core-flows"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { PromotionActions } from "@switchyard/framework/utils"
 
 updateCartPromotionsWorkflow.hooks.validate(async ({ input, cart }, { container }) => {
   const query = container.resolve("query")
@@ -3397,8 +3397,8 @@ updateCartPromotionsWorkflow.hooks.validate(async ({ input, cart }, { container 
     
     // If this promotion belongs to a tier
     if (tierId && customerTier?.id !== tierId) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Promotion ${promotion.code || promotion.id} can only be applied by customers in the corresponding tier.`
         )
     }
@@ -3419,13 +3419,13 @@ In the hook, you:
 
 ### Test Validate Promotion Addition
 
-To test the promotion addition validation, make sure both the Medusa application and the Next.js Starter Storefront are running.
+To test the promotion addition validation, make sure both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, in the Next.js Starter Storefront, log in as a customer in a tier, and add a product to the cart.
 
 Try to add a promotion that belongs to a different tier. You should see an error message.
 
-![Error message when trying to add a promotion of a different tier to the cart](https://res.cloudinary.com/dza7lstvk/image/upload/v1764074555/Medusa%20Resources/CleanShot_2025-11-25_at_14.42.18_2x_uxkfgk.png)
+![Error message when trying to add a promotion of a different tier to the cart](https://res.cloudinary.com/dza7lstvk/image/upload/v1764074555/Switchyard%20Resources/CleanShot_2025-11-25_at_14.42.18_2x_uxkfgk.png)
 
 ### Validate Cart Completion
 
@@ -3434,8 +3434,8 @@ Next, you'll add similar validation for the cart's promotions when completing th
 Create the file `src/workflows/hooks/complete-cart-validate.ts` with the following content:
 
 ```ts title="src/workflows/hooks/complete-cart-validate.ts"
-import { completeCartWorkflow } from "@medusajs/medusa/core-flows"
-import { MedusaError } from "@medusajs/framework/utils"
+import { completeCartWorkflow } from "@switchyard/medusa/core-flows"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 completeCartWorkflow.hooks.validate(async ({ cart }, { container }) => {
   const query = container.resolve("query")
@@ -3471,8 +3471,8 @@ completeCartWorkflow.hooks.validate(async ({ cart }, { container }) => {
   for (const promotion of detailedCart.promotions) {
     const tierId = allTiers.find((t) => t.promo_id === promotion?.id)?.id
     if (tierId && customerTier?.id !== tierId) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Promotion ${promotion?.code || promotion?.id} can only be applied by customers in the corresponding tier.`
       )
     }
@@ -3503,7 +3503,7 @@ To calculate the customer's next tier, you'll add a method to the Tier Module's 
 In `src/modules/tier/service.ts`, add the following method to the `TierModuleService` class:
 
 ```ts title="src/modules/tier/service.ts"
-class TierModuleService extends MedusaService({
+class TierModuleService extends SwitchyardService({
   Tier,
   TierRule,
 }) {
@@ -3564,13 +3564,13 @@ To create the API route, create the file `src/api/store/customers/me/next-tier/r
 
 ```ts title="src/api/store/customers/me/next-tier/route.ts"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { TIER_MODULE } from "../../../../../modules/tier"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { z } from "zod"
-import { OrderStatus } from "@medusajs/framework/utils"
+import { OrderStatus } from "@switchyard/framework/utils"
 
 export const NextTierSchema = z.object({
   region_id: z.string(),
@@ -3579,15 +3579,15 @@ export const NextTierSchema = z.object({
 type NextTierInput = z.infer<typeof NextTierSchema>
 
 export async function GET(
-  req: AuthenticatedMedusaRequest<{}, NextTierInput>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<{}, NextTierInput>,
+  res: SwitchyardResponse
 ): Promise<void> {
   // Validate customer is authenticated
   const customerId = req.auth_context?.actor_id
 
   if (!customerId) {
-    throw new MedusaError(
-      MedusaError.Types.UNAUTHORIZED,
+    throw new SwitchyardError(
+      SwitchyardError.Types.UNAUTHORIZED,
       "Customer must be authenticated"
     )
   }
@@ -3607,8 +3607,8 @@ export async function GET(
   })
 
   if (!customer.has_account) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Customer must be registered to view tier information"
     )
   }
@@ -3681,7 +3681,7 @@ Then, you export a `GET` function, which exposes a `GET` API route at `/store/cu
 In the route handler, you:
 
 - Validate that the customer is authenticated.
-- Resolve Query and the Tier Module service from the Medusa container.
+- Resolve Query and the Tier Module service from the Switchyard container.
 - Retrieve the customer details to validate that they're registered.
 - Retrieve the currency code from the cart or region context.
 - Calculate the total purchase value of the customer.
@@ -3722,7 +3722,7 @@ Next, you'll customize the Next.js Starter Storefront to show a tier progress in
 
 #### Define Tier Types
 
-First, you'll define types for the tier information received from the Medusa server.
+First, you'll define types for the tier information received from the Switchyard server.
 
 Create the file `src/types/tier.ts` in the storefront with the following content:
 
@@ -3803,7 +3803,7 @@ Create the file `src/modules/common/customer-tier/index.tsx` with the following 
 
 ```tsx title="src/modules/common/customer-tier/index.tsx" badgeLabel="Storefront" badgeColor="blue"
 import { convertToLocale } from "@lib/util/money"
-import { clx } from "@medusajs/ui"
+import { clx } from "@switchyard/ui"
 import { CustomerNextTier } from "types/tier"
 
 type CustomerTierProps = {
@@ -3931,7 +3931,7 @@ const CustomerTier = ({ tierData }: CustomerTierProps) => {
 export default CustomerTier
 ```
 
-The component receives the tier data retrieved from the Medusa server as a prop. It then calculates and displays a progress bar indicating how much the customer needs to spend to unlock the next tier.
+The component receives the tier data retrieved from the Switchyard server as a prop. It then calculates and displays a progress bar indicating how much the customer needs to spend to unlock the next tier.
 
 #### Show Customer Tier on Account Page
 
@@ -4016,11 +4016,11 @@ You make the following key changes:
 
 #### Test Customer Tier on Account Page
 
-To test the customer tier component on the account page, make sure both the Medusa server and the Next.js Starter Storefront are running.
+To test the customer tier component on the account page, make sure both the Switchyard server and the Next.js Starter Storefront are running.
 
 Then, on the storefront, click "Account" in the navigation bar. The main account page will display the customer's current tier with a progress bar showing their progress toward the next tier.
 
-![Customer tier component on account page](https://res.cloudinary.com/dza7lstvk/image/upload/v1764078181/Medusa%20Resources/CleanShot_2025-11-25_at_15.42.44_2x_hhguzm.png)
+![Customer tier component on account page](https://res.cloudinary.com/dza7lstvk/image/upload/v1764078181/Switchyard%20Resources/CleanShot_2025-11-25_at_15.42.44_2x_hhguzm.png)
 
 #### Show Customer Tier on Order Confirmation Page
 
@@ -4104,26 +4104,26 @@ You make the following key changes:
 
 #### Test Customer Tier on Order Confirmation Page
 
-To test the customer tier component on the order confirmation page, make sure both the Medusa server and the Next.js Starter Storefront are running.
+To test the customer tier component on the order confirmation page, make sure both the Switchyard server and the Next.js Starter Storefront are running.
 
 Then, on the storefront, place an order. The order confirmation page will display the customer's tier with a progress bar showing their progress toward the next tier.
 
-![Customer tier component on order confirmation page](https://res.cloudinary.com/dza7lstvk/image/upload/v1764078663/Medusa%20Resources/CleanShot_2025-11-25_at_15.50.50_2x_liqi8r.png)
+![Customer tier component on order confirmation page](https://res.cloudinary.com/dza7lstvk/image/upload/v1764078663/Switchyard%20Resources/CleanShot_2025-11-25_at_15.50.50_2x_liqi8r.png)
 
 ---
 
 ## Next Steps
 
-You've now implemented customer tiers in Medusa. You can expand on this feature to add more features like:
+You've now implemented customer tiers in Switchyard. You can expand on this feature to add more features like:
 
-- Automated emails to customers when they reach a new tier. Cloud users can benefit from zero-config email setup with [Medusa Emails](!cloud!/emails).
+- Automated emails to customers when they reach a new tier. Cloud users can benefit from zero-config email setup with [Switchyard Emails](!cloud!/emails).
 - More complex tier rules, such as rules based on product categories or collections.
 - Other tier privileges, such as early access to new products or free shipping.
 
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn) for a more in-depth understanding of the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn) for a more in-depth understanding of the concepts you've used in this guide and more.
 
-To learn more about the commerce features Medusa provides, check out [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features Switchyard provides, check out [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -4133,5 +4133,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

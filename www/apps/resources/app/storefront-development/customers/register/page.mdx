@@ -24,7 +24,7 @@ This guide covers registration using email and password. For authentication with
 
 To register a customer, you implement the following steps:
 
-![A diagram illustrating the flow of the register customer flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1743086184/Medusa%20Resources/register-flow_yv5uw2.jpg)
+![A diagram illustrating the flow of the register customer flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1743086184/Switchyard%20Resources/register-flow_yv5uw2.jpg)
 
 1. Show the customer a form to enter their details.
 2. Send a `POST` request to the `/auth/customer/emailpass/register` [Get Registration Token](!api!/store#auth_postactor_typeauth_provider_register) API route to obtain a registration JWT token.
@@ -68,7 +68,7 @@ export const highlights = [
 
   import { useState } from "react"
   import { sdk } from "@/lib/sdk"
-  import { FetchError } from "@medusajs/js-sdk"
+  import { FetchError } from "@switchyard/js-sdk"
 
   export default function Register() {
     const [loading, setLoading] = useState(false)
@@ -193,7 +193,7 @@ export const fetchHighlights = [
 
   ```ts highlights={fetchHighlights}
   // other imports...
-  import { FetchError } from "@medusajs/js-sdk"
+  import { FetchError } from "@switchyard/js-sdk"
 
   const handleRegistration = async () => {
     // obtain registration JWT token
@@ -256,7 +256,7 @@ In the above example, you create a `handleRegistration` function that:
     - If the error is an existing identity error, try retrieving the login JWT token from `/auth/customer/emailpass` API route using the `auth.login` method. This will fail if the existing identity has a different password, which doesn't allow the customer from registering.
     - For other errors, show an alert and exit execution.
     - The JS SDK automatically stores an re-uses the authentication headers or session in the `auth.register` and `auth.login` methods. So, if you're not using the JS SDK, make sure to pass the received authentication tokens as explained in the [API reference](!api!/store#1-bearer-authorization-with-jwt-tokens)
-- Send a request to the [Register Customer API route](!api!/store#customers_postcustomers) to register the customer in Medusa.
+- Send a request to the [Register Customer API route](!api!/store#customers_postcustomers) to register the customer in Switchyard.
     - If an error occurs, show an alert and exit execution.
     - As mentioned, the JS SDK automatically sends the authentication headers or session in all requests after registration or logging in. If you're not using the JS SDK, make sure to pass the received authentication tokens as explained in the [API reference](!api!/store#1-bearer-authorization-with-jwt-tokens).
 - Once the customer is registered successfully, you can either redirect the customer to the login page or log them in automatically, as explained in the [Login](../login/page.mdx) guide.

@@ -7,12 +7,12 @@
  * parameters:
  *   - name: x-publishable-api-key
  *     in: header
- *     description: Publishable API Key created in the Medusa Admin.
+ *     description: Publishable API Key created in the Switchyard Admin.
  *     required: true
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.medusajs.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.com/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: |-

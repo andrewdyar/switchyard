@@ -19,7 +19,7 @@
 					},
 					{
 						"kind": "code",
-						"text": "```ts\nimport { Logger } from \"@medusajs/framework/types\"\nimport { AbstractAnalyticsProviderService } from \"@medusajs/framework/utils\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  apiKey: string\n}\n\nclass MyAnalyticsProviderService extends AbstractAnalyticsProviderService {\n  protected logger_: Logger\n  protected options_: Options\n  static identifier = \"my-analytics\"\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    super()\n\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n}\n\nexport default MyAnalyticsProviderService\n```"
+						"text": "```ts\nimport { Logger } from \"@switchyard/framework/types\"\nimport { AbstractAnalyticsProviderService } from \"@switchyard/framework/utils\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  apiKey: string\n}\n\nclass MyAnalyticsProviderService extends AbstractAnalyticsProviderService {\n  protected logger_: Logger\n  protected options_: Options\n  static identifier = \"my-analytics\"\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    super()\n\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n}\n\nexport default MyAnalyticsProviderService\n```"
 					}
 				]
 			},
@@ -64,7 +64,7 @@
 							},
 							{
 								"kind": "code",
-								"text": "`medusa-config.ts`"
+								"text": "`switchyard.config.ts`"
 							},
 							{
 								"kind": "text",
@@ -88,7 +88,7 @@
 							"fileName": "abstract-analytics-provider.ts",
 							"line": 65,
 							"character": 9,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L65"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L65"
 						}
 					],
 					"type": {
@@ -113,7 +113,7 @@
 								"type": "reference",
 								"target": 63061,
 								"name": "AbstractAnalyticsProviderService",
-								"package": "@medusajs/utils"
+								"package": "@switchyard/utils"
 							}
 						}
 					]
@@ -129,7 +129,7 @@
 							"fileName": "abstract-analytics-provider.ts",
 							"line": 96,
 							"character": 8,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L96"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L96"
 						}
 					],
 					"signatures": [
@@ -155,7 +155,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -188,7 +188,7 @@
 									"fileName": "abstract-analytics-provider.ts",
 									"line": 96,
 									"character": 8,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L96"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L96"
 								}
 							],
 							"parameters": [
@@ -213,7 +213,7 @@
 											"qualifiedName": "TrackAnalyticsEventDTO"
 										},
 										"name": "TrackAnalyticsEventDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -256,7 +256,7 @@
 							"fileName": "abstract-analytics-provider.ts",
 							"line": 120,
 							"character": 8,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L120"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L120"
 						}
 					],
 					"signatures": [
@@ -282,7 +282,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -315,7 +315,7 @@
 									"fileName": "abstract-analytics-provider.ts",
 									"line": 120,
 									"character": 8,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L120"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L120"
 								}
 							],
 							"parameters": [
@@ -340,7 +340,7 @@
 											"qualifiedName": "IdentifyAnalyticsEventDTO"
 										},
 										"name": "IdentifyAnalyticsEventDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -399,7 +399,7 @@
 					"fileName": "abstract-analytics-provider.ts",
 					"line": 53,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L53"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/analytics/abstract-analytics-provider.ts#L53"
 				}
 			],
 			"implementedTypes": [
@@ -410,7 +410,7 @@
 						"qualifiedName": "IAnalyticsProvider"
 					},
 					"name": "IAnalyticsProvider",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		}
@@ -423,7 +423,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/utils",
+	"packageName": "@switchyard/utils",
 	"symbolIdMap": {
 		"63060": {
 			"sourceFileName": "../../../../packages/core/utils/src/analytics/abstract-analytics-provider.ts",

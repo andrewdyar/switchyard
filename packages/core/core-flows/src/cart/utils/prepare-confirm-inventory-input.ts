@@ -1,13 +1,13 @@
 import {
   BigNumberInput,
   ConfirmVariantInventoryWorkflowInputDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   BigNumber,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   deepFlatMap,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export const requiredOrderFieldsForInventoryConfirmation = [
   "id",
@@ -80,8 +80,8 @@ interface ConfirmInventoryItem {
  * In essesnce, it maps a list of cart items to a list of inventory items,
  * serving as a bridge between the cart and inventory domains.
  *
- * @throws {MedusaError} INVALID_DATA if any cart item is for a variant that has no inventory items.
- * @throws {MedusaError} INVALID_DATA if any cart item is for a variant with no stock locations in the input.sales_channel_id. An exception is made for variants with allow_backorder set to true.
+ * @throws {SwitchyardError} INVALID_DATA if any cart item is for a variant that has no inventory items.
+ * @throws {SwitchyardError} INVALID_DATA if any cart item is for a variant with no stock locations in the input.sales_channel_id. An exception is made for variants with allow_backorder set to true.
  *
  * @returns {ConfirmInventoryPreparationInput}
  * A list of inventory items to confirm. Only inventory items for variants with managed inventory are included.
@@ -192,8 +192,8 @@ export const prepareConfirmInventoryInput = (data: {
         !variantsWithLocationForChannel.has(variant.id) &&
         !variant.allow_backorder
       ) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Sales channel ${salesChannelId} is not associated with any stock location for variant ${variant.id}.`
         )
       }
@@ -243,8 +243,8 @@ const formatInventoryInput = ({
     )
 
     if (!variantInventoryItems.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Variant ${item.variant_id} does not have any inventory items associated with it.`
       )
     }

@@ -7,9 +7,9 @@ const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000"
 
 export const config: DocsConfig = {
   ...globalConfig,
-  titleSuffix: "Medusa Admin User Guide",
+  titleSuffix: "Switchyard Admin User Guide",
   description:
-    "Explore and learn how to use the Medusa Admin. Learn how to manage products, orders, customers, and more within the Medusa Admin dashboard.",
+    "Explore and learn how to use the Switchyard Admin. Learn how to manage products, orders, customers, and more within the Switchyard Admin dashboard.",
   baseUrl,
   basePath: process.env.NEXT_PUBLIC_BASE_PATH,
   sidebars: generatedSidebars as Sidebar.Sidebar[],

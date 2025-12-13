@@ -13,7 +13,7 @@ products:
   - payment
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
@@ -22,11 +22,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to implement [Agentic Commerce](https://developers.openai.com/commerce) specifications in Medusa that allow you to sell through ChatGPT.
+In this tutorial, you'll learn how to implement [Agentic Commerce](https://developers.openai.com/commerce) specifications in Switchyard that allow you to sell through ChatGPT.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with the Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box.
+When you install a Switchyard application, you get a fully-fledged commerce platform with the Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box.
 
-The [Agentic Commerce Protocol](https://developers.openai.com/commerce) supports instant checkout experiences within AI agents. By implementing Agentic Commerce specifications in your Medusa application, customers can purchase products through ChatGPT and other AI agents.
+The [Agentic Commerce Protocol](https://developers.openai.com/commerce) supports instant checkout experiences within AI agents. By implementing Agentic Commerce specifications in your Switchyard application, customers can purchase products through ChatGPT and other AI agents.
 
 <Note>
 
@@ -44,13 +44,13 @@ By following this tutorial, you will learn how to:
 
 By the end of this tutorial, you'll have all necessary resources to apply for [Instant Checkout](https://chatgpt.com/merchants) and start selling in ChatGPT. You can also sell through other AI agents that support the Agentic Commerce Protocol.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram showing the Agentic Commerce integration between user, ChatGPT, and Medusa application](https://res.cloudinary.com/dza7lstvk/image/upload/v1759333742/Medusa%20Resources/agentic-commerce_jqr5wn.jpg)
+![Diagram showing the Agentic Commerce integration between user, ChatGPT, and Switchyard application](https://res.cloudinary.com/dza7lstvk/image/upload/v1759333742/Switchyard%20Resources/agentic-commerce_jqr5wn.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/agentic-commerce",
+    href: "https://github.com/switchyard/examples/tree/main/agentic-commerce",
     title: "Full Code",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -65,7 +65,7 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -82,27 +82,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Begin by installing the Medusa application on your machine with the following command:
+Begin by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. You can optionally choose to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) as well.
 
-After that, the installation process will begin. This will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+After that, the installation process will begin. This will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Then, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Then, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -110,7 +110,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Agentic Commerce Module
 
-To integrate third-party services into Medusa, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+To integrate third-party services into Switchyard, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 In this step, you'll create a module that integrates with an AI agent through the Agentic Commerce Protocol. This module is useful to send the product feed and webhook events to the AI agent.
 
@@ -122,7 +122,7 @@ Refer to the [Modules documentation](!docs!/learn/fundamentals/modules) to learn
 
 ### a. Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/agentic-commerce`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/agentic-commerce`.
 
 ### b. Create Module Service
 
@@ -150,7 +150,7 @@ export default class AgenticCommerceService {
 The service's constructor receives two parameters:
 
 - The [Module's container](!docs!/learn/fundamentals/modules/container) that allows you to resolve Framework tools.
-- The module's options that you'll later pass when registering the module in the Medusa application. You can add more options based on your integration.
+- The module's options that you'll later pass when registering the module in the Switchyard application. You can add more options based on your integration.
 
 If you're connecting to AI agents through an SDK or API client, you can initialize it in the constructor.
 
@@ -292,13 +292,13 @@ When you apply for [Instant Checkout](https://chatgpt.com/merchants), you'll get
 
 ### c. Export Module Definition
 
-The final piece of a module is its definition, which you export in an `index.ts` file at the root directory. This definition tells Medusa the module name and its service.
+The final piece of a module is its definition, which you export in an `index.ts` file at the root directory. This definition tells Switchyard the module name and its service.
 
 So, create the file `src/modules/agentic-commerce/index.ts` with the following content:
 
 ```ts title="src/modules/agentic-commerce/index.ts"
 import AgenticCommerceService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const AGENTIC_COMMERCE_MODULE = "agenticCommerce"
 
@@ -314,13 +314,13 @@ You use the `Module` function from the Modules SDK to create module definitions.
 
 You also export the module name as `AGENTIC_COMMERCE_MODULE` for later reference.
 
-### d. Add Module to Medusa's Configurations
+### d. Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -401,9 +401,9 @@ export const getProductFeedItemsStepHighlights1 = [
 ]
 
 ```ts title="src/workflows/steps/get-product-feed-items.ts" highlights={getProductFeedItemsStepHighlights1}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { getVariantAvailability, QueryContext } from "@medusajs/framework/utils"
-import { CalculatedPriceSet, ShippingOptionDTO } from "@medusajs/framework/types"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { getVariantAvailability, QueryContext } from "@switchyard/framework/utils"
+import { CalculatedPriceSet, ShippingOptionDTO } from "@switchyard/framework/types"
 
 export type FeedItem = {
   id: string
@@ -464,7 +464,7 @@ Finally, you create a step with `createStep` from the Workflows SDK. It accepts 
 1. The step's unique name, which is `get-product-feed-items`.
 2. An async function that receives two parameters:
     - The step's input.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
 Next, you'll implement the step's logic. Replace the step implementation with the following:
 
@@ -584,7 +584,7 @@ export const getProductFeedItemsStep = createStep(
           brand: "", // TODO add brands if supported
           color: color || undefined,
           size: size || undefined,
-          seller_name: "Medusa", // TODO add seller name if supported
+          seller_name: "Switchyard", // TODO add seller name if supported
           seller_url: storefrontUrl || "",
           seller_privacy_policy: `${storefrontUrl}/privacy-policy`, // TODO update
           seller_tos: `${storefrontUrl}/terms-of-service`, // TODO update
@@ -615,7 +615,7 @@ Next, you'll create the step that generates the product feed XML from the feed i
 To create the step, create the file `src/workflows/steps/build-product-feed-xml.ts` with the following content:
 
 ```ts title="src/workflows/steps/build-product-feed-xml.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { FeedItem } from "./get-product-feed-items"
 
 type StepInput = {
@@ -653,7 +653,7 @@ export const buildProductFeedXmlStep = createStep(
           (item.sale_price ? `<sale_price>${escape(item.sale_price)}</sale_price>` : "") +
           `<condition>${escape(item.condition || "new")}</condition>` +
           `<product_category>${escape(item.product_category || "")}</product_category>` +
-          `<brand>${escape(item.brand || "Medusa")}</brand>` +
+          `<brand>${escape(item.brand || "Switchyard")}</brand>` +
           `<material>${escape(item.material || "")}</material>` +
           `<weight>${escape(item.weight || "")}</weight>` +
           `<item_group_id>${escape(item.item_group_id)}</item_group_id>` +
@@ -699,12 +699,12 @@ Create the file `src/workflows/steps/send-product-feed.ts` with the following co
 
 <Note>
 
-If you get a type error on resolving the Agentic Commerce Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Agentic Commerce Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
 ```ts title="src/workflows/steps/send-product-feed.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { AGENTIC_COMMERCE_MODULE } from "../../modules/agentic-commerce"
 
 type StepInput = {
@@ -727,7 +727,7 @@ export const sendProductFeedStep = createStep(
 
 This step receives the product feed XML as input.
 
-In the step, you resolve the Agentic Commerce Module's service from the Medusa container and call its `sendProductFeed` method to send the product feed to the AI agent.
+In the step, you resolve the Agentic Commerce Module's service from the Switchyard container and call its `sendProductFeed` method to send the product feed to the AI agent.
 
 #### Create Workflow
 
@@ -736,7 +736,7 @@ You can now create the workflow that uses the steps you created.
 Create the file `src/workflows/send-product-feed.ts` with the following content:
 
 ```ts title="src/workflows/send-product-feed.ts"
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { getProductFeedItemsStep } from "./steps/get-product-feed-items"
 import { buildProductFeedXmlStep } from "./steps/build-product-feed-xml"
 import { sendProductFeedStep } from "./steps/send-product-feed"
@@ -780,17 +780,17 @@ Finally, a workflow function must return a `WorkflowResponse` instance. You retu
 
 ### b. Schedule Job to Send Product Feed
 
-Next, you'll create a [scheduled job](!docs!/learn/fundamentals/scheduled-jobs) that executes the `sendProductFeedWorkflow` every fifteen minutes. A scheduled job is an asynchronous function that the Medusa application runs at the interval you specify during the Medusa application's runtime.
+Next, you'll create a [scheduled job](!docs!/learn/fundamentals/scheduled-jobs) that executes the `sendProductFeedWorkflow` every fifteen minutes. A scheduled job is an asynchronous function that the Switchyard application runs at the interval you specify during the Switchyard application's runtime.
 
 Create the file `src/jobs/sync-product-feed.ts` with the following content:
 
 ```ts title="src/jobs/sync-product-feed.ts"
 import {
-  MedusaContainer,
-} from "@medusajs/framework/types"
+  SwitchyardContainer,
+} from "@switchyard/framework/types"
 import sendProductFeedWorkflow from "../workflows/send-product-feed"
 
-export default async function syncProductFeed(container: MedusaContainer) {
+export default async function syncProductFeed(container: SwitchyardContainer) {
   const logger = container.resolve("logger")
   const query = container.resolve("query")
 
@@ -821,16 +821,16 @@ export const config = {
 
 In a scheduled job file, you must export:
 
-1. An asynchronous function that holds the job's logic. The function receives the [Medusa container](!docs!/learn/fundamentals/medusa-container) as a parameter.
+1. An asynchronous function that holds the job's logic. The function receives the [Switchyard container](!docs!/learn/fundamentals/medusa-container) as a parameter.
 2. A `config` object that specifies the job name and schedule. The schedule is a [cron expression](https://crontab.guru/) that defines the interval at which the job runs.
 
-In the scheduled job function, you use Query to retrieve regions in your Medusa application, including their countries and currency codes.
+In the scheduled job function, you use Query to retrieve regions in your Switchyard application, including their countries and currency codes.
 
 Then, for each country in each region, you execute `sendProductFeedWorkflow`, passing the region's currency code and the country's ISO 2 code as input.
 
 ### Use the Scheduled Job
 
-To use the scheduled job, start the Medusa application with the following command:
+To use the scheduled job, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -844,7 +844,7 @@ This job runs every fifteen minutes. The current implementation only logs produc
 
 In this step, you'll start creating [Agentic Checkout APIs](https://developers.openai.com/commerce/specs/checkout#rest-endpoints) to handle checkout requests from AI agents.
 
-You'll implement the `POST /checkout_sessions` API route for creating checkout sessions. AI agents call this endpoint when customers want to purchase products. This is equivalent to creating a new cart in Medusa.
+You'll implement the `POST /checkout_sessions` API route for creating checkout sessions. AI agents call this endpoint when customers want to purchase products. This is equivalent to creating a new cart in Switchyard.
 
 To implement this API route, you'll create:
 
@@ -882,7 +882,7 @@ The workflow has the following steps:
   }}
 />
 
-These steps and workflows are available in Medusa out-of-the-box. So, you can implement the workflow without creating custom steps.
+These steps and workflows are available in Switchyard out-of-the-box. So, you can implement the workflow without creating custom steps.
 
 To create the workflow, create the file `src/workflows/prepare-checkout-session-data.ts` with the following content:
 
@@ -891,11 +891,11 @@ import {
   createWorkflow, 
   transform, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   listShippingOptionsForCartWithPricingWorkflow, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 export type PrepareCheckoutSessionDataWorkflowInput = {
   buyer?: {
@@ -934,7 +934,7 @@ The `prepareCheckoutSessionDataWorkflow` accepts input with the following proper
 
 - `buyer`: Buyer information received from AI agents.
 - `fulfillment_address`: Fulfillment address information received from AI agents.
-- `cart_id`: Cart ID in Medusa, which is also the checkout session ID.
+- `cart_id`: Cart ID in Switchyard, which is also the checkout session ID.
 - `messages`: Messages to include in checkout session responses. This is useful for sending error or info messages to AI agents.
 
 Next, you'll implement the workflow's logic. Replace the `TODO` in the workflow with the following:
@@ -1220,7 +1220,7 @@ The workflow has the following steps:
   }}
 />
 
-These steps and workflows are available in Medusa out-of-the-box. So, you can implement the workflow without creating custom steps.
+These steps and workflows are available in Switchyard out-of-the-box. So, you can implement the workflow without creating custom steps.
 
 Create the file `src/workflows/create-checkout-session.ts` with the following content:
 
@@ -1230,7 +1230,7 @@ import {
   transform, 
   when, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep,
   addShippingMethodToCartWorkflow, 
@@ -1240,7 +1240,7 @@ import {
   listShippingOptionsForCartWithPricingWorkflow, 
   releaseLockStep, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   prepareCheckoutSessionDataWorkflow,
 } from "./prepare-checkout-session-data"
@@ -1537,10 +1537,10 @@ Refer to the [API routes](!docs!/learn/fundamentals/api-routes) to learn more ab
 So, to create an API route, create the file `src/api/checkout_sessions/route.ts` with the following content:
 
 ```ts title="src/api/checkout_sessions/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { z } from "zod"
 import { createCheckoutSessionWorkflow } from "../../workflows/create-checkout-session"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export const PostCreateSessionSchema = z.object({
   items: z.array(z.object({
@@ -1565,10 +1565,10 @@ export const PostCreateSessionSchema = z.object({
 })
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     z.infer<typeof PostCreateSessionSchema>
   >,
-  res: MedusaResponse
+  res: SwitchyardResponse
 ) => {
   const logger = req.scope.resolve("logger")
   const responseHeaders = {
@@ -1586,7 +1586,7 @@ export const POST = async (
 
     res.set(responseHeaders).json(result)
   } catch (error) {
-    const medusaError = error as MedusaError
+    const medusaError = error as SwitchyardError
     logger.error(medusaError)
     res.set(responseHeaders).json({
       messages: [
@@ -1619,13 +1619,13 @@ Next, you'll create a [middleware](!docs!/learn/fundamentals/api-routes/middlewa
 Create the file `src/api/middlewares/validate-agentic-request.ts` with the following content:
 
 ```ts title="src/api/middlewares/validate-agentic-request.ts"
-import { MedusaNextFunction, MedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { SwitchyardNextFunction, SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { AGENTIC_COMMERCE_MODULE } from "../../modules/agentic-commerce"
 
 export async function validateAgenticRequest(
-  req: MedusaRequest, 
-  res: MedusaResponse, 
-  next: MedusaNextFunction
+  req: SwitchyardRequest, 
+  res: SwitchyardResponse, 
+  next: SwitchyardNextFunction
 ) {
   const agenticCommerceModuleService = req.scope.resolve(AGENTIC_COMMERCE_MODULE)
   const apiKeyModuleService = req.scope.resolve("api_key")
@@ -1658,7 +1658,7 @@ In this middleware, you:
 4. If either the API key or signature is invalid, you return a `401 Unauthorized` response.
 5. Otherwise, you call the `next` function to proceed to the next middleware or route handler.
 
-The headers are expected based on [Agentic Commerce specifications](https://developers.openai.com/commerce/specs/checkout#rest-endpoints). You can create an API key that AI agents can use in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Medusa Admin dashboard.
+The headers are expected based on [Agentic Commerce specifications](https://developers.openai.com/commerce/specs/checkout#rest-endpoints). You can create an API key that AI agents can use in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Switchyard Admin dashboard.
 
 To use this middleware, you need to apply it to checkout API routes.
 
@@ -1668,7 +1668,7 @@ You apply middlewares in the `src/api/middlewares.ts` file. Create this file wit
 import { 
   defineMiddlewares, 
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { validateAgenticRequest } from "./middlewares/validate-agentic-request"
 import { PostCreateSessionSchema } from "./checkout_sessions/route"
 
@@ -1704,7 +1704,7 @@ In `src/api/middlewares.ts`, add the following import at the top of the file:
 ```ts title="src/api/middlewares.ts"
 import { 
   errorHandler,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 const originalErrorHandler = errorHandler()
 ```
@@ -1744,7 +1744,7 @@ Otherwise, you return errors in the format required by Agentic Commerce specific
 To use the `POST /checkout_sessions` API:
 
 - Apply to ChatGPT's [Instant Checkout](https://chatgpt.com/merchants) and access a signature key.
-- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Medusa Admin dashboard.
+- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Switchyard Admin dashboard.
 - Setup the API key in the Instant Checkout settings.
 
 ChatGPT will then use these to create checkout sessions.
@@ -1756,12 +1756,12 @@ To test the `POST /checkout_sessions` API locally, you'll add an API route to re
 Create the file `src/api/signature/route.ts` with the following content:
 
 ```ts title="src/api/signature/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { AGENTIC_COMMERCE_MODULE } from "../../modules/agentic-commerce"
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const agenticCommerceModuleService = req.scope.resolve(AGENTIC_COMMERCE_MODULE)
   const signature = await agenticCommerceModuleService.getSignature(req.body)
@@ -1771,7 +1771,7 @@ export const POST = async (
 
 This API route accepts payloads in request bodies and returns signatures generated using the Agentic Commerce Module's service.
 
-Then, start the Medusa application with the following command:
+Then, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -1781,7 +1781,7 @@ After that, send a `POST` request to `http://localhost:9000/signature` with the 
 
 <Note title="Tip">
 
-Make sure you [have a region with the US added to its countries](!user-guide!/settings/regions#create-region) in your Medusa store.
+Make sure you [have a region with the US added to its countries](!user-guide!/settings/regions#create-region) in your Switchyard store.
 
 </Note>
 
@@ -1850,7 +1850,7 @@ curl -X POST 'http://localhost:9000/checkout_sessions' \
 Make sure to replace:
 
 - `{your_signature}` with the signature you copied from the previous request.
-- `{your_api_key}` with the API key you created in the Medusa Admin dashboard.
+- `{your_api_key}` with the API key you created in the Switchyard Admin dashboard.
 - The variant ID with an actual variant ID from your store.
 
 You'll receive in the response the checkout session based on the Agentic Commerce specifications.
@@ -1966,7 +1966,7 @@ The workflow has the following steps:
   }}
 />
 
-These steps and workflows are available in Medusa out-of-the-box. So, you can implement the workflow without creating custom steps.
+These steps and workflows are available in Switchyard out-of-the-box. So, you can implement the workflow without creating custom steps.
 
 Create the file `src/workflows/update-checkout-session.ts` with the following content:
 
@@ -1976,7 +1976,7 @@ import {
   transform, 
   when, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep,
   addShippingMethodToCartWorkflow, 
@@ -1984,7 +1984,7 @@ import {
   releaseLockStep, 
   updateCartWorkflow, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   prepareCheckoutSessionDataWorkflow,
 } from "./prepare-checkout-session-data"
@@ -2205,12 +2205,12 @@ Next, you'll create an API route that executes the `updateCheckoutSessionWorkflo
 Create the file `src/api/checkout_sessions/[id]/route.ts` with the following content:
 
 ```ts title="src/api/checkout_sessions/[id]/route.ts" collapsibleLines="1-7" expandButtonLabel="Show Imports"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { updateCheckoutSessionWorkflow } from "../../../workflows/update-checkout-session"
 import { z } from "zod"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { prepareCheckoutSessionDataWorkflow } from "../../../workflows/prepare-checkout-session-data"
-import { refreshPaymentCollectionForCartWorkflow } from "@medusajs/medusa/core-flows"
+import { refreshPaymentCollectionForCartWorkflow } from "@switchyard/medusa/core-flows"
 
 export const PostUpdateSessionSchema = z.object({
   buyer: z.object({
@@ -2236,10 +2236,10 @@ export const PostUpdateSessionSchema = z.object({
 })
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     z.infer<typeof PostUpdateSessionSchema>
   >,
-  res: MedusaResponse
+  res: SwitchyardResponse
 ) => {
   const responseHeaders = {
     "Idempotency-Key": req.headers["idempotency-key"] as string,
@@ -2259,7 +2259,7 @@ export const POST = async (
 
     res.set(responseHeaders).json(result)
   } catch (error) {
-    const medusaError = error as MedusaError
+    const medusaError = error as SwitchyardError
 
     await refreshPaymentCollectionForCartWorkflow(req.scope).run({
       input: {
@@ -2275,7 +2275,7 @@ export const POST = async (
           messages: [
             {
               type: "error",
-              code: medusaError.type === MedusaError.Types.PAYMENT_AUTHORIZATION_ERROR ? 
+              code: medusaError.type === SwitchyardError.Types.PAYMENT_AUTHORIZATION_ERROR ? 
                 "payment_declined" : "invalid",
               content_type: "plain",
               content: medusaError.message,
@@ -2330,7 +2330,7 @@ You apply the `validateAndTransformBody` middleware to the `POST /checkout_sessi
 To use the `POST /checkout_sessions/:id` API, you need to:
 
 - Apply to ChatGPT's [Instant Checkout](https://chatgpt.com/merchants) and access a signature key.
-- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Medusa Admin dashboard.
+- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Switchyard Admin dashboard.
 - Setup the API key in the Instant Checkout settings.
 
 ChatGPT will then use it to update a checkout session.
@@ -2369,7 +2369,7 @@ Make sure to replace:
 
 - `{cart_id}` with the cart ID of the checkout session you created earlier.
 - `{signature}` with the signature you copied from the previous request.
-- `{api_key}` with the API key you created in the Medusa Admin dashboard.
+- `{api_key}` with the API key you created in the Switchyard Admin dashboard.
 - The fulfillment option ID with an actual shipping option ID from your store.
 
 You'll receive in the response the updated checkout session based on the Agentic Commerce specifications.
@@ -2386,8 +2386,8 @@ To create the API route, add the following function to `src/api/checkout_session
 
 ```ts title="src/api/checkout_sessions/[id]/route.ts"
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const responseHeaders = {
     "Idempotency-Key": req.headers["idempotency-key"] as string,
@@ -2406,8 +2406,8 @@ export const GET = async (
 
     res.set(responseHeaders).status(201).json(result)
   } catch (error) {
-    const medusaError = error as MedusaError
-    const statusCode = medusaError.type === MedusaError.Types.NOT_FOUND ? 404 : 500
+    const medusaError = error as SwitchyardError
+    const statusCode = medusaError.type === SwitchyardError.Types.NOT_FOUND ? 404 : 500
     res.set(responseHeaders).status(statusCode).json({
       type: "invalid_request",
       code: "request_not_idempotent",
@@ -2426,7 +2426,7 @@ In the route handler, you execute the `prepareCheckoutSessionDataWorkflow`, pass
 To use the `GET /checkout_sessions/:id` API, you need to:
 
 - Apply to ChatGPT's [Instant Checkout](https://chatgpt.com/merchants) and access a signature key.
-- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Medusa Admin dashboard.
+- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Switchyard Admin dashboard.
 - Setup the API key in the Instant Checkout settings.
 
 ChatGPT will then use it to get a checkout session.
@@ -2445,7 +2445,7 @@ curl 'http://localhost:9000/checkout_sessions/{cart_id}' \
 Make sure to replace:
 
 - `{cart_id}` with the cart ID of the checkout session you created earlier.
-- `{api_key}` with the API key you created in the Medusa Admin dashboard.
+- `{api_key}` with the API key you created in the Switchyard Admin dashboard.
 
 You'll receive in the response the checkout session based on the Agentic Commerce specifications.
 
@@ -2559,7 +2559,7 @@ The workflow that completes a checkout session has the following steps:
   }}
 />
 
-These steps and workflows are available in Medusa out-of-the-box. So, you can implement the workflow without creating custom steps.
+These steps and workflows are available in Switchyard out-of-the-box. So, you can implement the workflow without creating custom steps.
 
 To create the workflow, create the file `src/workflows/complete-checkout-session.ts` with the following content:
 
@@ -2569,7 +2569,7 @@ import {
   transform, 
   when, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep,
   completeCartWorkflow, 
@@ -2579,7 +2579,7 @@ import {
   releaseLockStep, 
   updateCartWorkflow, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   prepareCheckoutSessionDataWorkflow, 
   PrepareCheckoutSessionDataWorkflowInput,
@@ -2752,7 +2752,7 @@ const completeCartResponse = when({
 // TODO handle invalid payment provider
 ```
 
-You use `transform` to prepare the input for the `prepareCheckoutSessionDataWorkflow` workflow and to map the payment provider from the input to the payment provider ID used in your Medusa store.
+You use `transform` to prepare the input for the `prepareCheckoutSessionDataWorkflow` workflow and to map the payment provider from the input to the payment provider ID used in your Switchyard store.
 
 Then, you use the `when` function to check if the payment provider is valid for the cart's region. If so, you:
 
@@ -2838,11 +2838,11 @@ Next, you'll create an API route at `POST /checkout_sessions/{id}/complete` that
 Create the file `src/api/checkout_sessions/[id]/complete/route.ts` with the following content:
 
 ```ts title="src/api/checkout_sessions/[id]/complete/route.ts" collapsibleLines="1-7" expandButtonLabel="Show Imports"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { z } from "zod"
 import { completeCheckoutSessionWorkflow } from "../../../../workflows/complete-checkout-session"
-import { MedusaError } from "@medusajs/framework/utils"
-import { refreshPaymentCollectionForCartWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { refreshPaymentCollectionForCartWorkflow } from "@switchyard/medusa/core-flows"
 import { prepareCheckoutSessionDataWorkflow } from "../../../../workflows/prepare-checkout-session-data"
 
 export const PostCompleteSessionSchema = z.object({
@@ -2868,10 +2868,10 @@ export const PostCompleteSessionSchema = z.object({
 })
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     z.infer<typeof PostCompleteSessionSchema>
   >,
-  res: MedusaResponse
+  res: SwitchyardResponse
 ) => {
   const responseHeaders = {
     "Idempotency-Key": req.headers["idempotency-key"] as string,
@@ -2891,7 +2891,7 @@ export const POST = async (
 
     res.set(responseHeaders).json(result)
   } catch (error) {
-    const medusaError = error as MedusaError
+    const medusaError = error as SwitchyardError
 
     await refreshPaymentCollectionForCartWorkflow(req.scope).run({
       input: {
@@ -2906,7 +2906,7 @@ export const POST = async (
           messages: [
             {
               type: "error",
-              code: medusaError.type === MedusaError.Types.PAYMENT_AUTHORIZATION_ERROR ? 
+              code: medusaError.type === SwitchyardError.Types.PAYMENT_AUTHORIZATION_ERROR ? 
                 "payment_declined" : "invalid",
               content_type: "plain",
               content: medusaError.message,
@@ -2958,21 +2958,21 @@ You apply the `validateAndTransformBody` middleware to the `POST /checkout_sessi
 
 ### d. Setup Stripe Payment Module Provider
 
-To support payments with Stripe, you'll need to set up the [Stripe Payment Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) in your Medusa store.
+To support payments with Stripe, you'll need to set up the [Stripe Payment Module Provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx) in your Switchyard store.
 
-In `medusa-config.ts`, add a new entry to the `modules` array:
+In `switchyard.config.ts`, add a new entry to the `modules` array:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     // ...
     {
-      resolve: "@medusajs/medusa/payment",
+      resolve: "@switchyard/medusa/payment",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/payment-stripe",
+            resolve: "@switchyard/medusa/payment-stripe",
             id: "stripe",
             options: {
               apiKey: process.env.STRIPE_API_KEY,
@@ -2986,7 +2986,7 @@ module.exports = defineConfig({
 })
 ```
 
-This will add Stripe as a payment provider in your Medusa store.
+This will add Stripe as a payment provider in your Switchyard store.
 
 Make sure to set the `STRIPE_API_KEY` environment variable with your Stripe secret key, which you can retrieve from the [Stripe Dashboard](https://support.stripe.com/questions/locate-api-keys-in-the-dashboard):
 
@@ -3001,7 +3001,7 @@ Finally, you must enable Stripe as a payment provider in the US region. Learn ho
 To use the `POST /checkout_sessions/:id/complete` API, you need to:
 
 - Apply to ChatGPT's [Instant Checkout](https://chatgpt.com/merchants) and access a signature key.
-- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Medusa Admin dashboard.
+- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Switchyard Admin dashboard.
 - Setup the API key in the Instant Checkout settings.
 
 ChatGPT will then use it to complete a checkout session.
@@ -3057,7 +3057,7 @@ Make sure to replace:
 - `{cart_id}` with the cart ID of the checkout session you created earlier.
 - `{signature}` with the signature you copied from the previous request.
 - `{token}` with the shared payment token you generated with Stripe.
-- `{api_key}` with the API key you created in the Medusa Admin dashboard.
+- `{api_key}` with the API key you created in the Switchyard Admin dashboard.
 
 You'll receive in the response the completed checkout session based on the Agentic Commerce specifications.
 
@@ -3139,7 +3139,7 @@ The workflow that cancels a checkout session has the following steps:
   }}
 />
 
-You only need to implement the `validateCartCancelationStep` and `cancelPaymentSessionsStep` steps. The other steps and workflows are available in Medusa out-of-the-box.
+You only need to implement the `validateCartCancelationStep` and `cancelPaymentSessionsStep` steps. The other steps and workflows are available in Switchyard out-of-the-box.
 
 #### validateCartCancelationStep
 
@@ -3148,9 +3148,9 @@ The `validateCartCancelationStep` step throws an error if the cart cannot be can
 To create the step, create the file `src/workflows/steps/validate-cart-cancelation.ts` with the following content:
 
 ```ts title="src/workflows/steps/validate-cart-cancelation.ts"
-import { CartDTO, OrderDTO, PaymentCollectionDTO } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { CartDTO, OrderDTO, PaymentCollectionDTO } from "@switchyard/framework/types"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 export type ValidateCartCancelationStepInput = {
   cart: CartDTO & {
@@ -3163,14 +3163,14 @@ export const validateCartCancelationStep = createStep(
   "validate-cart-cancelation",
   async ({ cart }: ValidateCartCancelationStepInput) => {
     if (cart.metadata?.checkout_session_canceled) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Cart is already canceled"
       )
     }
     if (!!cart.order) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Cart is already associated with an order"
       )
     }
@@ -3178,8 +3178,8 @@ export const validateCartCancelationStep = createStep(
       ?.some((session) => session.status === "authorized" || session.status === "canceled")
 
     if (!!cart.completed_at || !!invalidPaymentSessions) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Cart cannot be canceled"
       )
     }
@@ -3203,8 +3203,8 @@ The `cancelPaymentSessionsStep` step cancels payment sessions associated with th
 To create the step, create the file `src/workflows/steps/cancel-payment-sessions.ts` with the following content:
 
 ```ts title="src/workflows/steps/cancel-payment-sessions.ts"
-import { promiseAll } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { promiseAll } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 type StepInput = {
   payment_session_ids: string[]
@@ -3267,9 +3267,9 @@ You can now implement the `cancelCheckoutSessionWorkflow`.
 Create the file `src/workflows/cancel-checkout-session.ts` with the following content:
 
 ```ts title="src/workflows/cancel-checkout-session.ts" collapsibleLines="1-6" expandButtonLabel="Show Imports"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { validateCartCancelationStep, ValidateCartCancelationStepInput } from "./steps/validate-cart-cancelation"
-import { acquireLockStep, releaseLockStep, updateCartWorkflow, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { acquireLockStep, releaseLockStep, updateCartWorkflow, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { cancelPaymentSessionsStep } from "./steps/cancel-payment-sessions"
 import { prepareCheckoutSessionDataWorkflow } from "./prepare-checkout-session-data"
 
@@ -3377,13 +3377,13 @@ Next, you'll create a `POST` API route at `/checkout_sessions/{id}/cancel` that 
 Create the file `src/api/checkout_sessions/[id]/cancel/route.ts` with the following content:
 
 ```ts title="src/api/checkout_sessions/[id]/cancel/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { cancelCheckoutSessionWorkflow } from "../../../../workflows/cancel-checkout-session"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const responseHeaders = {
     "Idempotency-Key": req.headers["idempotency-key"] as string,
@@ -3402,7 +3402,7 @@ export const POST = async (
     
     res.set(responseHeaders).json(result)
   } catch (error) {
-    const medusaError = error as MedusaError
+    const medusaError = error as SwitchyardError
     res.set(responseHeaders).status(405).json({
       messages: [
         {
@@ -3426,7 +3426,7 @@ In the route handler, you execute the `cancelCheckoutSessionWorkflow`, passing t
 To use the `POST /checkout_sessions/:id/cancel` API, you need to:
 
 - Apply to ChatGPT's [Instant Checkout](https://chatgpt.com/merchants) and access a signature key.
-- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Medusa Admin dashboard.
+- Create an API key in the [Secret API Key Settings](!user-guide!/settings/developer/secret-api-keys) of the Switchyard Admin dashboard.
 - Setup the API key in the Instant Checkout settings.
 
 ChatGPT will then use it to cancel a checkout session.
@@ -3445,7 +3445,7 @@ curl -X POST 'http://localhost:9000/checkout_sessions/{cart_id}/cancel' \
 Make sure to replace:
 
 - `{cart_id}` with the cart ID of the checkout session you created earlier.
-- `{api_key}` with the API key you created in the Medusa Admin dashboard.
+- `{api_key}` with the API key you created in the Switchyard Admin dashboard.
 
 You'll receive in the response the canceled checkout session based on the Agentic Commerce specifications.
 
@@ -3465,7 +3465,7 @@ Create the file `src/subscribers/order-webhooks.ts` with the following content:
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { AGENTIC_COMMERCE_MODULE } from "../modules/agentic-commerce"
 import { AgenticCommerceWebhookEvent } from "../modules/agentic-commerce/service"
 
@@ -3544,7 +3544,7 @@ A subscriber file must export:
 1. An asynchronous function, which is the subscriber that executes when events are emitted.
 2. A configuration object that holds names of events the subscriber listens to, which are `order.placed` and `order.updated` in this case.
 
-The subscriber function receives an object as a parameter that has a `container` property, which is the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+The subscriber function receives an object as a parameter that has a `container` property, which is the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 
 In the subscriber function, you:
 
@@ -3566,20 +3566,20 @@ ChatGPT will then receive webhook events when orders are placed or updated.
 
 To test order webhook events locally and ensure they're being sent correctly:
 
-1. Start the Medusa server.
+1. Start the Switchyard server.
 2. [Create a checkout session](#test-the-create-checkout-session-api-locally).
 3. [Complete the checkout session](#test-the-complete-checkout-session-api-locally).
-4. Check the logs of your Medusa server to see that `order.placed` events were emitted and webhook events were sent to AI agents.
+4. Check the logs of your Switchyard server to see that `order.placed` events were emitted and webhook events were sent to AI agents.
 
 ---
 
 ## Next Steps
 
-You've now built Agentic Commerce integration in your Medusa store. You can use it once you apply to ChatGPT's [Instant Checkout](https://chatgpt.com/merchants) and set up the integration in Instant Checkout settings.
+You've now built Agentic Commerce integration in your Switchyard store. You can use it once you apply to ChatGPT's [Instant Checkout](https://chatgpt.com/merchants) and set up the integration in Instant Checkout settings.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get more in-depth understanding of all concepts used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get more in-depth understanding of all concepts used in this guide and more.
 
-To learn more about commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -3589,5 +3589,5 @@ If you encounter issues during development, check out the [troubleshooting guide
 
 If you encounter issues not covered in troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

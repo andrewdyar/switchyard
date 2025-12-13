@@ -19,7 +19,7 @@ export const AiAssistantSuggestions = (props: AiAssistantSuggestionsProps) => {
     {
       title: "FAQ",
       items: [
-        "What is Medusa?",
+        "What is Switchyard?",
         "How can I create a module?",
         "How can I create a data model?",
         "How do I create a workflow?",
@@ -29,10 +29,10 @@ export const AiAssistantSuggestions = (props: AiAssistantSuggestionsProps) => {
     {
       title: "Recipes",
       items: [
-        "How do I build a marketplace with Medusa?",
-        "How do I build digital products with Medusa?",
-        "How do I build subscription-based purchases with Medusa?",
-        "What other recipes are available in the Medusa documentation?",
+        "How do I build a marketplace with Switchyard?",
+        "How do I build digital products with Switchyard?",
+        "How do I build subscription-based purchases with Switchyard?",
+        "What other recipes are available in the Switchyard documentation?",
       ],
     },
   ]
@@ -40,14 +40,14 @@ export const AiAssistantSuggestions = (props: AiAssistantSuggestionsProps) => {
   return (
     <div {...props}>
       <span className="text-medusa-fg-muted text-compact-small px-docs_0.5 py-docs_0.75 block">
-        Ask any questions about Medusa. Get help with your development.
+        Ask any questions about Switchyard. Get help with your development.
         <br />
         You can also use the{" "}
         <Link
           href={`${baseUrl}/learn/introduction/build-with-llms-ai#mcp-remote-server`}
           variant="content"
         >
-          Medusa MCP server
+          Switchyard MCP server
         </Link>{" "}
         in Cursor, VSCode, etc...
       </span>

@@ -20,12 +20,12 @@ products:
 ---
 
 import { Card, Prerequisites, Details } from "docs-ui"
-import { Github } from "@medusajs/icons"
+import { Github } from "@switchyard/icons"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1739360151/Medusa%20Resources/Express_Checkout_Guide_2025_yizn34.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1739360151/Switchyard%20Resources/Express_Checkout_Guide_2025_yizn34.jpg"
 
 export const metadata = {
-  title: `Implement Express Checkout with Medusa`,
+  title: `Implement Express Checkout with Switchyard`,
   openGraph: {
     images: [
       {
@@ -50,9 +50,9 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to create an express checkout storefront with Medusa.
+In this guide, you'll learn how to create an express checkout storefront with Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce server and an admin dashboard to manage the commerce store's data. As for the storefront, you can either install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), or create a custom storefront with your preferred tech stack, design, and features. Medusa's [architecture](!docs!/learn/introduction/architecture) is flexible and customizable, allowing you to build a storefront that fits your use case.
+When you install a Switchyard application, you get a fully-fledged commerce server and an admin dashboard to manage the commerce store's data. As for the storefront, you can either install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), or create a custom storefront with your preferred tech stack, design, and features. Switchyard's [architecture](!docs!/learn/introduction/architecture) is flexible and customizable, allowing you to build a storefront that fits your use case.
 
 An express checkout storefront is a streamlined shopping experience that focuses on reducing friction during the checkout process, allowing customers to quickly and easily buy products with minimal input. When you have an express checkout storefront, you share a link to purchase one of your products, either through social media, blog posts, or other promotional campaigns, and the customer can complete the purchase with minimal effort.
 
@@ -60,23 +60,23 @@ An express checkout storefront is a streamlined shopping experience that focuses
 
 In this guide, you'll learn how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Create a custom express checkout storefront with Next.js.
 
-![Express checkout storefront interface showing a single-page checkout flow with product selection](https://res.cloudinary.com/dza7lstvk/image/upload/v1739344861/Medusa%20Resources/Screenshot_2025-02-12_at_9.20.09_AM_ufqdi3.png)
+![Express checkout storefront interface showing a single-page checkout flow with product selection](https://res.cloudinary.com/dza7lstvk/image/upload/v1739344861/Switchyard%20Resources/Screenshot_2025-02-12_at_9.20.09_AM_ufqdi3.png)
 
-You can follow this guide whether you're new to Medusa or an advanced Medusa developer.
+You can follow this guide whether you're new to Switchyard or an advanced Switchyard developer.
 
 <Card
   title="Example Repository"
   text="Find the full code of the guide in this repository."
-  href="https://github.com/medusajs/examples/tree/main/express-checkout-storefront"
+  href="https://github.com/switchyard/examples/tree/main/express-checkout-storefront"
   icon={Github}
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -93,29 +93,29 @@ You can follow this guide whether you're new to Medusa or an advanced Medusa dev
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when you're asked whether you want to install the Next.js Starter Storefront, choose `N` for no. You'll create a custom storefront instead.
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name. Once the installation finishes successfully, the Medusa Admin dashboard will open in your browser at `http://localhost:9000/app` with a form to create a new user. Enter the user's credential and submit the form.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name. Once the installation finishes successfully, the Switchyard Admin dashboard will open in your browser at `http://localhost:9000/app` with a form to create a new user. Enter the user's credential and submit the form.
 
 Afterwards, you can login with the new user and explore the dashboard.
 
 <Note title="Ran to Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
 ### Change CORS Configurations
 
-The Medusa application enforces Cross Origin Resource Sharing (CORS) security, which means you can only access the Medusa API from configured origins.
+The Switchyard application enforces Cross Origin Resource Sharing (CORS) security, which means you can only access the Switchyard API from configured origins.
 
-The Next.js development server will run on port `3000` by default, which isn't a configured origin in the Medusa application. To add it to configured origins, change the value of `STORE_CORS` and `AUTH_CORS` in the Medusa application's `.env` file to the following:
+The Next.js development server will run on port `3000` by default, which isn't a configured origin in the Switchyard application. To add it to configured origins, change the value of `STORE_CORS` and `AUTH_CORS` in the Switchyard application's `.env` file to the following:
 
 ```plain title=".env"
 STORE_CORS=http://localhost:3000
@@ -124,13 +124,13 @@ AUTH_CORS=http://localhost:5173,http://localhost:9000,http://localhost:3000
 
 You can add other origins as well if necessary.
 
-Learn more about CORS configurations in [this guide](!docs!/learn/configurations/medusa-config#httpauthcors).
+Learn more about CORS configurations in [this guide](!docs!/learn/configurations/switchyard.config#httpauthcors).
 
 ---
 
 ## Step 2: Install Next.js Project
 
-You'll create the express checkout storefront using Next.js. So, to create a Next.js project, run the following command in a directory separate from the Medusa application:
+You'll create the express checkout storefront using Next.js. So, to create a Next.js project, run the following command in a directory separate from the Switchyard application:
 
 ```bash
 npx create-next-app@latest express-checkout
@@ -152,38 +152,38 @@ After the installation finishes, your Next.js project is installed in an `expres
 
 ---
 
-## Step 3: Install Medusa Dependencies
+## Step 3: Install Switchyard Dependencies
 
 Before you start implementing the express checkout flow, you'll install the dependencies necessary for your storefront development.
 
-### Install Medusa UI
+### Install Switchyard UI
 
-Medusa provides a [UI Library](!ui!) that provides the primitives to build applications based on Medusa's design system. To install the UI library, run the following command in your Next.js project:
+Switchyard provides a [UI Library](!ui!) that provides the primitives to build applications based on Switchyard's design system. To install the UI library, run the following command in your Next.js project:
 
 ```bash npm2yarn
-npm install @medusajs/ui@latest @medusajs/ui-preset@latest @medusajs/icons@latest
+npm install @switchyard/ui@latest @switchyard/ui-preset@latest @switchyard/icons@latest
 ```
 
 You install three packages:
 
-- `@medusajs/ui`: The main [UI library](!ui!).
-- `@medusajs/ui-preset`: The design and style presets for the UI library.
-- `@medusajs/icons`: A package that has [Medusa icons](!ui!/icons/overview) you can use in your application.
+- `@switchyard/ui`: The main [UI library](!ui!).
+- `@switchyard/ui-preset`: The design and style presets for the UI library.
+- `@switchyard/icons`: A package that has [Switchyard icons](!ui!/icons/overview) you can use in your application.
 
-Next, to use Medusa's design system in your storefront, change the content of `tailwind.config.ts` to the following:
+Next, to use Switchyard's design system in your storefront, change the content of `tailwind.config.ts` to the following:
 
 ```ts title="tailwind.config.ts"
 import path from "path"
 import type { Config } from "tailwindcss"
 
-// get the path of the dependency "@medusajs/ui"
+// get the path of the dependency "@switchyard/ui"
 const medusaUI = path.join(
-  path.dirname(require.resolve("@medusajs/ui")),
+  path.dirname(require.resolve("@switchyard/ui")),
   "**/*.{js,jsx,ts,tsx}"
 )
 
 export default {
-  presets: [require("@medusajs/ui-preset")],
+  presets: [require("@switchyard/ui-preset")],
   content: [
     "./app/**/*.{js,ts,jsx,tsx}", 
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -198,21 +198,21 @@ export default {
 } satisfies Config
 ```
 
-This adds Medusa's UI presets to Tailwind CSS's presets and includes the Medusa UI components in the Tailwind CSS content, ensuring that the styles of the UI components aren't removed by tree-shaking.
+This adds Switchyard's UI presets to Tailwind CSS's presets and includes the Switchyard UI components in the Tailwind CSS content, ensuring that the styles of the UI components aren't removed by tree-shaking.
 
-### Install Medusa JS SDK
+### Install Switchyard JS SDK
 
-To interact with the [Medusa API](!api!/store) in your storefront, you'll use the [Medusa JS SDK](../../../js-sdk/page.mdx). Install the SDK by running the following command in your Next.js project:
+To interact with the [Switchyard API](!api!/store) in your storefront, you'll use the [Switchyard JS SDK](../../../js-sdk/page.mdx). Install the SDK by running the following command in your Next.js project:
 
 ```bash npm2yarn
-npm install @medusajs/js-sdk@latest @medusajs/types@latest
+npm install @switchyard/js-sdk@latest @switchyard/types@latest
 ```
 
-Aside from the SDK, you also install the `@medusajs/types` package, which provides TypeScript types useful for your development with the SDK.
+Aside from the SDK, you also install the `@switchyard/types` package, which provides TypeScript types useful for your development with the SDK.
 
 Next, to use the SDK, you'll export a configured instance and re-use it across your application. So, create the file `lib/sdk.ts` with the following content:
 
-![Project directory structure showing the newly created 'lib' folder containing the 'sdk.ts' file, which exports a configured Medusa SDK instance for connecting to the backend API](https://res.cloudinary.com/dza7lstvk/image/upload/v1735815487/Medusa%20Resources/express-checkout-1_vrudhk.jpg)
+![Project directory structure showing the newly created 'lib' folder containing the 'sdk.ts' file, which exports a configured Switchyard SDK instance for connecting to the backend API](https://res.cloudinary.com/dza7lstvk/image/upload/v1735815487/Switchyard%20Resources/express-checkout-1_vrudhk.jpg)
 
 export const sdkHighlights = [
   ["6", "NEXT_PUBLIC_MEDUSA_BACKEND_URL", "Set the backend URL from an environment variable."],
@@ -220,7 +220,7 @@ export const sdkHighlights = [
 ]
 
 ```ts title="lib/sdk.ts" highlights={sdkHighlights}
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
 export let MEDUSA_BACKEND_URL = "http://localhost:9000"
 
@@ -228,19 +228,19 @@ if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
   MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
 }
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: MEDUSA_BACKEND_URL,
   debug: process.env.NODE_ENV === "development",
   publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
 })
 ```
 
-This file exports a configured instance of the Medusa SDK that you can use to send requests to the Medusa application. To configure the SDK, you use the following environment variables:
+This file exports a configured instance of the Switchyard SDK that you can use to send requests to the Switchyard application. To configure the SDK, you use the following environment variables:
 
-- `NEXT_PUBLIC_MEDUSA_BACKEND_URL`: The URL of the Medusa application server. By default, it's set to `http://localhost:9000`.
-- `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`: The publishable API key of the Medusa application. You can find this key in the Medusa Admin dashboard under Settings -> Publishable API Keys.
+- `NEXT_PUBLIC_MEDUSA_BACKEND_URL`: The URL of the Switchyard application server. By default, it's set to `http://localhost:9000`.
+- `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY`: The publishable API key of the Switchyard application. You can find this key in the Switchyard Admin dashboard under Settings -> Publishable API Keys.
 
-![Navigation path in Medusa Admin dashboard: Settings showing "Publishable API Key" option, with the publishable API key displayed and a copy button to retrieve the token for storefront configuration](https://res.cloudinary.com/dza7lstvk/image/upload/v1735810830/Medusa%20Resources/Screenshot_2025-01-02_at_11.36.20_AM_gw7i7h.png)
+![Navigation path in Switchyard Admin dashboard: Settings showing "Publishable API Key" option, with the publishable API key displayed and a copy button to retrieve the token for storefront configuration](https://res.cloudinary.com/dza7lstvk/image/upload/v1735810830/Switchyard%20Resources/Screenshot_2025-01-02_at_11.36.20_AM_gw7i7h.png)
 
 ---
 
@@ -248,7 +248,7 @@ This file exports a configured instance of the Medusa SDK that you can use to se
 
 In your storefront, you'll need to access the following resources across components:
 
-- The selected region. In Medusa, a region represents one or more countries you serve customers in. Each region can have different settings, such as currency codes, prices, payment providers, and more. You create regions in the Medusa Admin, and you can allow the customer to choose their region in the storefront.
+- The selected region. In Switchyard, a region represents one or more countries you serve customers in. Each region can have different settings, such as currency codes, prices, payment providers, and more. You create regions in the Switchyard Admin, and you can allow the customer to choose their region in the storefront.
 - The customer's cart, which you'll use to add the product to purchase, set shipping and payment details, and create an order.
 
 To easily access and manage these resources, you'll wrap your storefront with two React context providers: `RegionProvider` and `CartProvider`. You'll implement these providers in this step.
@@ -257,11 +257,11 @@ To easily access and manage these resources, you'll wrap your storefront with tw
 
 To create the region provider, create the file `providers/region.tsx` with the following content:
 
-![Project directory tree showing the newly created 'providers' folder containing the 'region.tsx' file, which implements React context for managing regional settings and currency selection across the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1735815539/Medusa%20Resources/express-checkout-2_htf5ke.jpg)
+![Project directory tree showing the newly created 'providers' folder containing the 'region.tsx' file, which implements React context for managing regional settings and currency selection across the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1735815539/Switchyard%20Resources/express-checkout-2_htf5ke.jpg)
 
 export const regionProviderHighlights1 = [
   ["9", "region", "The region selected by the customer."],
-  ["10", "regions", "A list of regions available in the Medusa application."],
+  ["10", "regions", "A list of regions available in the Switchyard application."],
   ["11", "setRegion", "A function to set the selected region."],
 ]
 
@@ -271,7 +271,7 @@ export const regionProviderHighlights1 = [
 import { 
   createContext, 
 } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 type RegionContextType = {
   region?: HttpTypes.StoreRegion
@@ -289,13 +289,13 @@ const RegionContext = createContext<RegionContextType | null>(null)
 So far, you've created `RegionContextType` which represents the data that the provider's children can access. It holds:
 
 - `region`: The selected region.
-- `regions`: A list of regions available in the Medusa application.
+- `regions`: A list of regions available in the Switchyard application.
 - `setRegion`: A function to set the selected region.
 
 Next, you'll create the provider component that wraps the storefront with the region context. Add the following content to the file:
 
 export const regionProviderHighlights2 = [
-  ["16", "regions", "A state variable that will hold the list of regions available in the Medusa application."],
+  ["16", "regions", "A state variable that will hold the list of regions available in the Switchyard application."],
   ["19", "region", "A state variable that will hold the selected region."],
 ]
 
@@ -328,7 +328,7 @@ export const RegionProvider = (
 
 You create a `RegionProvider` component that so far only defines two state variables:
 
-- `regions`: A state variable that will hold the list of regions available in the Medusa application.
+- `regions`: A state variable that will hold the list of regions available in the Switchyard application.
 - `region`: A state variable that will hold the selected region.
 
 Next, add the following imports to the top of the file:
@@ -344,7 +344,7 @@ import { sdk } from "@/lib/sdk"
 And replace the `TODO` in the `RegionProvider` component with the following content:
 
 export const regionProviderHighlights3 = [
-  ["6", "list", "Retrieve the list of regions from the Medusa application."]
+  ["6", "list", "Retrieve the list of regions from the Switchyard application."]
 ]
 
 ```tsx title="providers/region.tsx" highlights={regionProviderHighlights3}
@@ -362,7 +362,7 @@ useEffect(() => {
 // TODO set the selected region
 ```
 
-When the component mounts, you fetch the regions from the Medusa application using the JS SDK. You then set the regions in the `regions` state variable.
+When the component mounts, you fetch the regions from the Switchyard application using the JS SDK. You then set the regions in the `regions` state variable.
 
 Next, replace the new `TODO` with the following content:
 
@@ -370,7 +370,7 @@ export const regionProviderHighlights4 = [
   ["2", "region", "If the region is set, set it in the local storage."],
   ["9", "regionId", "Retrieve the selected region ID from the local storage."],
   ["12", "setRegion", "Set the first region in the list as the selected region if no region is set."],
-  ["16", "retrieve", "Retrieve the details of the selected region from the Medusa application."],
+  ["16", "retrieve", "Retrieve the details of the selected region from the Switchyard application."],
 ]
 
 ```tsx title="providers/region.tsx" highlights={regionProviderHighlights4}
@@ -401,7 +401,7 @@ useEffect(() => {
 
 You add another `useEffect` hook that sets the selected region when the component first mounts and whenever the region changes. If the region is set, you only set its value in the local storage.
 
-If the region isn't set in the state variable, you try to retrieve the previously selected value from the local storage. If it's not found, you set the first region in the `regions` list as the selected region. Otherwise, you retrieve the previously selected region from the Medusa application using the JS SDK.
+If the region isn't set in the state variable, you try to retrieve the previously selected value from the local storage. If it's not found, you set the first region in the `regions` list as the selected region. Otherwise, you retrieve the previously selected region from the Switchyard application using the JS SDK.
 
 Finally, replace the last `TODO` with the following content:
 
@@ -447,7 +447,7 @@ You export a `useRegion` hook that returns the region context. You'll use this h
 
 Next, you'll create the cart provider that allows you to access the customer's cart across components. Create the file `providers/cart.tsx` with the following content:
 
-![Directory structure after creating cart provider file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735816212/Medusa%20Resources/express-checkout-3_ajve6d.jpg)
+![Directory structure after creating cart provider file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735816212/Switchyard%20Resources/express-checkout-3_ajve6d.jpg)
 
 export const cartProviderHighlights1 = [
   ["9", "cart", "The customer's cart."],
@@ -464,7 +464,7 @@ export const cartProviderHighlights1 = [
 import { 
   createContext, 
 } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 type CartContextType = {
   cart?: HttpTypes.StoreCart
@@ -548,7 +548,7 @@ export const cartProviderHighlights3 = [
   ["5", "cart", "If the cart is set, set its value in the local storage."],
   ["10", "cartId", "Retrieve the cart ID from the local storage."],
   ["13", "refreshCart", "Create a new cart if the cart is not set."],
-  ["16", "retrieve", "Retrieve the cart from the Medusa application if the cart ID is found in the local storage."],
+  ["16", "retrieve", "Retrieve the cart from the Switchyard application if the cart ID is found in the local storage."],
 ]
 
 ```tsx title="providers/cart.tsx" highlights={cartProviderHighlights3}
@@ -587,7 +587,7 @@ If the cart isn't set, you either try to retrieve the cart set in local storage,
 Next, you'll add the logic to update the cart when the region changes. Replace the `TODO` with the following:
 
 export const cartProviderHighlights4 = [
-  ["6", "update", "Update the cart's region in the Medusa application if it's changed."]
+  ["6", "update", "Update the cart's region in the Switchyard application if it's changed."]
 ]
 
 ```tsx title="providers/cart.tsx" highlights={cartProviderHighlights4}
@@ -612,7 +612,7 @@ This `useEffect` hook runs when the region changes. If the cart is set and the r
 You'll now implement the functions that are part of the context's value. Start by adding the `refreshCart` function in the place of the `TODO`:
 
 export const cartProviderHighlights5 = [
-  ["6", "create", "Create the cart in the Medusa application."],
+  ["6", "create", "Create the cart in the Switchyard application."],
   ["10", "setItem", "Set the cart's ID in the local storage."],
   ["11", "setCart", "Set the cart as a state variable."]
 ]
@@ -642,7 +642,7 @@ Next, add the `addToCart` function in the place of the `TODO`:
 
 export const cartProviderHighlights6 = [
   ["2", "refreshCart", "Create a new cart to add the product to."],
-  ["7", "createLineItem", "Add the product variant to the cart in the Medusa application."],
+  ["7", "createLineItem", "Add the product variant to the cart in the Switchyard application."],
   ["11", "setCart", "Update the cart's data in the context."]
 ]
 
@@ -670,8 +670,8 @@ In the `addToCart` function, you use the `refreshCart` function to create a new 
 After that, replace the `TODO` with the `updateCart` function:
 
 export const cartProviderHighlights7 = [
-  ["13", "update", "Update the cart's general details in the Medusa application."],
-  ["17", "addShippingMethod", "Set the cart's shipping method in the Medusa application."],
+  ["13", "update", "Update the cart's general details in the Switchyard application."],
+  ["17", "addShippingMethod", "Set the cart's shipping method in the Switchyard application."],
   ["20", "setCart", "Update the cart's data in the context."]
 ]
 
@@ -708,7 +708,7 @@ In the `updateCart` function, you update the cart's general details and set the 
 Then, replace the `TODO` with the `updateItemQuantity` function:
 
 export const cartProviderHighlights8 = [
-  ["2", "updateLineItem", "Update the quantity of an item in the cart in the Medusa application."],
+  ["2", "updateLineItem", "Update the quantity of an item in the cart in the Switchyard application."],
   ["9", "setCart", "Update the cart's data in the context."]
 ]
 
@@ -798,11 +798,11 @@ Before creating the layout, you'll create the second column that's consistent ac
 
 To create the component, create the file `components/SecondCol/index.tsx` with the following content:
 
-![Directory structure after creating second column file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735904919/Medusa%20Resources/express-checkout-4_ocan8h.jpg)
+![Directory structure after creating second column file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735904919/Switchyard%20Resources/express-checkout-4_ocan8h.jpg)
 
 export const secondColHighlights = [
   ["7", "region", "The selected region"],
-  ["7", "regions", "The list of regions in the Medusa application"],
+  ["7", "regions", "The list of regions in the Switchyard application"],
   ["7", "setRegion", "A function to set the selected region"],
   ["29", "select", "Dropdown to change the selected region."]
 ]
@@ -810,7 +810,7 @@ export const secondColHighlights = [
 ```tsx title="components/SecondCol/index.tsx" highlights={secondColHighlights}
 "use client"
 
-import { clx } from "@medusajs/ui"
+import { clx } from "@switchyard/ui"
 import { useRegion } from "@/providers/region"
 
 export const SecondCol = () => {
@@ -826,8 +826,8 @@ export const SecondCol = () => {
           Powered by
         </span>
         <img 
-          src="https://res.cloudinary.com/dza7lstvk/image/upload/v1735642745/Medusa%20Resources/medusa-express-logo_gqu5qy.png" 
-          alt="Medusa" 
+          src="https://res.cloudinary.com/dza7lstvk/image/upload/v1735642745/Switchyard%20Resources/medusa-express-logo_gqu5qy.png" 
+          alt="Switchyard" 
           width={67}
           height={16}
         />
@@ -861,7 +861,7 @@ export const SecondCol = () => {
 }
 ```
 
-You create a `SecondCol` component that shows the Medusa logo and a dropdown to change the selected region. You use the `useRegion` hook to access the region context and manage region data.
+You create a `SecondCol` component that shows the Switchyard logo and a dropdown to change the selected region. You use the `useRegion` hook to access the region context and manage region data.
 
 When the customer changes the selected region in the dropdown, the selected region is changed in the context, which also updates the customer cart's region.
 
@@ -896,7 +896,7 @@ export const layoutHighlights = [
 ]
 
 ```tsx title="components/Layout/index.tsx" highlights={layoutHighlights}
-import { clx } from "@medusajs/ui"
+import { clx } from "@switchyard/ui"
 import { Inter, Roboto_Mono } from "next/font/google"
 import { RegionProvider } from "@/providers/region"
 import "./globals.css"
@@ -965,7 +965,7 @@ These steps will be available within a single page whose path is the product's h
 
 <Note title="Tip">
 
-Each product in Medusa has a `handle` property, which is a slug-like value that can be used on client applications to create friendly URLs.
+Each product in Switchyard has a `handle` property, which is a slug-like value that can be used on client applications to create friendly URLs.
 
 </Note>
 
@@ -973,7 +973,7 @@ Each product in Medusa has a `handle` property, which is a slug-like value that 
 
 To manage the routing between the express-checkout-flow steps, you'll create a `Router` component that will render the correct step based on the cart's state and the `step` query parameter. So, create the file `components/Router/index.tsx` with the following content:
 
-![Directory structure after creating Router component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735819072/Medusa%20Resources/express-checkout-5_bhpx0w.jpg)
+![Directory structure after creating Router component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735819072/Switchyard%20Resources/express-checkout-5_bhpx0w.jpg)
 
 export const routerHighlights = [
   ["14", "handle", "Receive the product's handle as a prop"],
@@ -1057,7 +1057,7 @@ You'll render the components for each step as you create them next.
 
 To create the page that shows the express checkout page, create the file `app/[handle]/page.tsx` with the following content:
 
-![Directory structure after creating express checkout page file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735820075/Medusa%20Resources/express-checkout-6_w6qf7d.jpg)
+![Directory structure after creating express checkout page file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735820075/Switchyard%20Resources/express-checkout-6_w6qf7d.jpg)
 
 ```tsx title="app/[handle]/page.tsx"
 import { Router } from "../../components/Router"
@@ -1089,7 +1089,7 @@ Before creating the component that displays the product selection step, you'll c
 
 Create the file `components/Card/index.tsx` with the following content:
 
-![Directory structure after creating Card component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735820328/Medusa%20Resources/express-checkout-7_a8ys4g.jpg)
+![Directory structure after creating Card component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735820328/Switchyard%20Resources/express-checkout-7_a8ys4g.jpg)
 
 export const cardHighlights = [
   ["8", "title", "The title of the card."],
@@ -1103,8 +1103,8 @@ export const cardHighlights = [
 ```tsx title="components/Card/index.tsx" highlights={cardHighlights}
 "use client"
 
-import { CheckCircle } from "@medusajs/icons"
-import { clx, Heading } from "@medusajs/ui"
+import { CheckCircle } from "@switchyard/icons"
+import { clx, Heading } from "@switchyard/ui"
 import { useRouter } from "next/navigation"
 
 type CardProps = {
@@ -1168,11 +1168,11 @@ You'll now create the component that shows the product selection step.
 
 Create the file `components/Product/index.tsx` with the following content:
 
-![Directory structure after creating Product component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735821135/Medusa%20Resources/express-checkout-8_vloodv.jpg)
+![Directory structure after creating Product component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735821135/Switchyard%20Resources/express-checkout-8_vloodv.jpg)
 
 export const productHighlights1 = [
   ["17", "loading", "Whether an operation is loading."],
-  ["18", "product", "The product's details retrieved from the Medusa application."],
+  ["18", "product", "The product's details retrieved from the Switchyard application."],
   ["19", "selectedOptions", "The product options that the customer selected."],
   ["22", "quantity", "The quantity to add to the cart."],
   ["23", "region", "The selected region retrieved from the region context."],
@@ -1187,7 +1187,7 @@ export const productHighlights1 = [
 import { 
   useState,
 } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { useRegion } from "@/providers/region"
 import { useCart } from "@/providers/cart"
 import { useRouter } from "next/navigation"
@@ -1217,7 +1217,7 @@ You create a `Product` component that receives as a prop the product's handle an
 The component defines the following variables:
 
 - `loading`: A boolean state variable indicating whether an operation is loading, such as the product's details.
-- `product`: A state variable that holds the product's details, which you'll retrieve from the Medusa application.
+- `product`: A state variable that holds the product's details, which you'll retrieve from the Switchyard application.
 - `selectedOptions`: A state variable that holds the product options that the customer has selected, such as color or size.
 - `quantity`: A state variable that holds the product quantity to add to the cart.
 - `region`: The selected region retrieved from the region context.
@@ -1226,7 +1226,7 @@ The component defines the following variables:
 
 #### Retrieve Product Details
 
-Next, you'll retrieve the product's details from the Medusa application. Start by adding the following imports to the top of the file:
+Next, you'll retrieve the product's details from the Switchyard application. Start by adding the following imports to the top of the file:
 
 ```tsx title="components/Product/index.tsx"
 import { sdk } from "@/lib/sdk"
@@ -1239,7 +1239,7 @@ import {
 Then, replace the `TODO` in the `Product` component with the following:
 
 export const productHighlights2 = [
-  ["6", "list", "Retrieve the product from the Medusa application by filtering products with the unique handle."],
+  ["6", "list", "Retrieve the product from the Switchyard application by filtering products with the unique handle."],
   ["9", "fields", "The fields to retrieve along with the default product details."],
 ]
 
@@ -1273,7 +1273,7 @@ In the `useEffect` hook, you use the JS SDK to send a request to the [List Produ
 
 <Note title="Tip">
 
-Most of Medusa's API routes accept the `fields` query parameter, allowing you to specify the fields you need to retrieve. Learn more about its usage in [this documentation](!api!/store#select-fields-and-relations)
+Most of Switchyard's API routes accept the `fields` query parameter, allowing you to specify the fields you need to retrieve. Learn more about its usage in [this documentation](!api!/store#select-fields-and-relations)
 
 </Note>
 
@@ -1321,11 +1321,11 @@ You create a `selectedVariant` memoized variable that holds the selected variant
 
 #### Set Price to Show
 
-Next, you'll set the price to show to the customer. The Medusa application returns the price as a number. To display it with currency, you'll create a utility that you'll re-use whenever you show a price.
+Next, you'll set the price to show to the customer. The Switchyard application returns the price as a number. To display it with currency, you'll create a utility that you'll re-use whenever you show a price.
 
 Create the file `lib/price.ts` with the following content:
 
-![Directory structure after creating price utility file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735825687/Medusa%20Resources/express-checkout-9_nvhjqo.jpg)
+![Directory structure after creating price utility file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735825687/Switchyard%20Resources/express-checkout-9_nvhjqo.jpg)
 
 ```ts title="lib/price.ts"
 export const formatPrice = (amount: number, currency?: string): string => {
@@ -1390,7 +1390,7 @@ Then, you return the price formatted with the `formatPrice` utility function, pa
 
 #### Determine Whether Selected Variant is in Stock
 
-In Medusa, each product variant has different inventory quantity. So, after the customer selects a variant, you'll check whether it's in stock before allowing them to add it to the cart.
+In Switchyard, each product variant has different inventory quantity. So, after the customer selects a variant, you'll check whether it's in stock before allowing them to add it to the cart.
 
 To determine whether the variant is in stock, replace the `TODO` in the `Product` component with the following:
 
@@ -1409,7 +1409,7 @@ const isInStock = useMemo(() => {
 
 You create an `isInStock` memoized variable that holds a boolean indicating whether the selected variant is in stock. A variant is considered in stock if:
 
-- The variant's `manage_inventory` property is set to `false`, meaning Medusa doesn't manage the variant's inventory quantity, so, it's always considered in stock;
+- The variant's `manage_inventory` property is set to `false`, meaning Switchyard doesn't manage the variant's inventory quantity, so, it's always considered in stock;
 - Or the variant's `inventory_quantity` property is greater than 0.
 
 #### Implement Add to Cart Logic
@@ -1452,8 +1452,8 @@ First, add the following imports at the top of the file:
 
 ```tsx title="components/Product/index.tsx"
 import { Card } from "../Card"
-import { Spinner } from "@medusajs/icons"
-import { Button, Input, Select } from "@medusajs/ui"
+import { Spinner } from "@switchyard/icons"
+import { Button, Input, Select } from "@switchyard/ui"
 ```
 
 Then, replace the last `TODO` in the `Product` component with the following:
@@ -1565,11 +1565,11 @@ return (
 
 You wrap the product step with the `Card` component you created earlier. In the card:
 
-- If `loading` is enabled, you show a spinner icon imported from `@medusajs/icons`.
+- If `loading` is enabled, you show a spinner icon imported from `@switchyard/icons`.
 - If `loading` is disabled and the product isn't found, you show a not found message.
 - If `loading` is disabled and the product is found, you show the product's details, including the product's image, title, price, and description.
 
-You also loop over the product's options and show a select input, imported from `@medusajs/ui`, to allow the customer to select the value of each option.
+You also loop over the product's options and show a select input, imported from `@switchyard/ui`, to allow the customer to select the value of each option.
 
 Once the customer has selected a variant that's in stock, they can click the button to add the product to the cart, which will execute the `handleAddToCart` function you created earlier.
 
@@ -1597,15 +1597,15 @@ This will show the product step and expand its details if `activeTab` is `produc
 
 ### Test it Out
 
-To test out what you've implemented so far, first, start the Medusa application by running the following command in the Medusa project's directory:
+To test out what you've implemented so far, first, start the Switchyard application by running the following command in the Switchyard project's directory:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-This will run the Medusa application at `http://localhost:9000`.
+This will run the Switchyard application at `http://localhost:9000`.
 
-Then, while the Medusa application is running, run the following command in the Next.js project to start the development server:
+Then, while the Switchyard application is running, run the following command in the Next.js project to start the development server:
 
 ```bash npm2yarn
 npm run dev
@@ -1615,11 +1615,11 @@ This will run the storefront at `http://localhost:3000`. To open the express che
 
 <Note title="Tip">
 
-When you first created the Medusa application, four products, including the `sweatpants` product, were created by default. You can view and add products to your application by going to the Medusa Admin dashboard at `http://localhost:9000/app`.
+When you first created the Switchyard application, four products, including the `sweatpants` product, were created by default. You can view and add products to your application by going to the Switchyard Admin dashboard at `http://localhost:9000/app`.
 
 </Note>
 
-![Product step showing the product's details and add to cart button](https://res.cloudinary.com/dza7lstvk/image/upload/v1735828022/Medusa%20Resources/Screenshot_2025-01-02_at_4.26.40_PM_crvwsg.png)
+![Product step showing the product's details and add to cart button](https://res.cloudinary.com/dza7lstvk/image/upload/v1735828022/Switchyard%20Resources/Screenshot_2025-01-02_at_4.26.40_PM_crvwsg.png)
 
 You should see the product's details, including the image, title, price, description, and options. You can select the options and quantity, then click the "Add to Cart" button to add the product to the cart.
 
@@ -1633,7 +1633,7 @@ The second step in the express checkout flow is the address details step. In thi
 
 To create the component of this step, create the file `components/Address/index.tsx` with the following content:
 
-![Directory structure after creating Address component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735828307/Medusa%20Resources/express-checkout-10_xlfasn.jpg)
+![Directory structure after creating Address component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735828307/Switchyard%20Resources/express-checkout-10_xlfasn.jpg)
 
 export const addressHighlights1 = [
   ["19", "cart", "The customer's cart from the cart context."],
@@ -1737,7 +1737,7 @@ Next, you'll implement the function that will be called when the customer submit
 Replace the `TODO` in the `Address` component with the following:
 
 export const addressHighlights2 = [
-  ["8", "updateCart", "Update the cart's shipping address, billing address, and email in the Medusa application."],
+  ["8", "updateCart", "Update the cart's shipping address, billing address, and email in the Switchyard application."],
   ["33", "push", "Navigate to the shipping step."]
 ]
 
@@ -1799,7 +1799,7 @@ First, add the following imports at the top of the file:
 
 ```tsx title="components/Address/index.tsx"
 import { Card } from "../Card"
-import { Button, Input, Select } from "@medusajs/ui"
+import { Button, Input, Select } from "@switchyard/ui"
 ```
 
 Then, replace the last `TODO` in the `Address` component with the following:
@@ -1923,9 +1923,9 @@ This will show the address details step and expand its details if `activeTab` is
 
 ### Test it Out
 
-While both the Medusa application and the Next.js Starter Storefront are running, if you refresh the page you had opened or go to `http://localhost:3000/sweatpants?step=address`, you should see the address form where you can input your address details.
+While both the Switchyard application and the Next.js Starter Storefront are running, if you refresh the page you had opened or go to `http://localhost:3000/sweatpants?step=address`, you should see the address form where you can input your address details.
 
-![Address step showing the address form and a continue button](https://res.cloudinary.com/dza7lstvk/image/upload/v1735831238/Medusa%20Resources/Screenshot_2025-01-02_at_5.20.22_PM_leqt17.png)
+![Address step showing the address form and a continue button](https://res.cloudinary.com/dza7lstvk/image/upload/v1735831238/Switchyard%20Resources/Screenshot_2025-01-02_at_5.20.22_PM_leqt17.png)
 
 You can input your address details then click on the "Continue" button. The address will be saved in the cart and the Address card will collapse. The third step's details should be shown, which you'll add next.
 
@@ -1937,7 +1937,7 @@ The third step in the express checkout flow is the shipping method selection ste
 
 To create the component of this step, create the file `components/Shipping/index.tsx` with the following content:
 
-![Directory structure after creating Shipping component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735831410/Medusa%20Resources/express-checkout-11_myblmq.jpg)
+![Directory structure after creating Shipping component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735831410/Switchyard%20Resources/express-checkout-11_myblmq.jpg)
 
 export const shippingHighlights1 = [
   ["19", "cart", "The customer's cart from the cart context."],
@@ -1956,7 +1956,7 @@ import {
   useState,
 } from "react"
 import { useCart } from "@/providers/cart"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { useRouter } from "next/navigation"
 
 type ShippingProps = {
@@ -1996,7 +1996,7 @@ You create a `Shipping` component that receives the product's handle and whether
 
 ### Retrieve Shipping Options
 
-In the Medusa application, you can define shipping options for each [stock location](../../../commerce-modules/stock-location/page.mdx), [sales channel](../../../commerce-modules/sales-channel/page.mdx), or other conditions. So, during checkout, you retrieve the shipping options specific to a cart's context and allow the customer to choose from them.
+In the Switchyard application, you can define shipping options for each [stock location](../../../commerce-modules/stock-location/page.mdx), [sales channel](../../../commerce-modules/sales-channel/page.mdx), or other conditions. So, during checkout, you retrieve the shipping options specific to a cart's context and allow the customer to choose from them.
 
 To do that, first, add the following imports at the top of the file:
 
@@ -2011,7 +2011,7 @@ import { sdk } from "@/lib/sdk"
 Then, replace the `TODO` in the `Shipping` component with the following:
 
 export const shippingHighlights2 = [
-  ["6", "listCartOptions", "Retrieve the shipping options for the cart from the Medusa application."]
+  ["6", "listCartOptions", "Retrieve the shipping options for the cart from the Switchyard application."]
 ]
 
 ```tsx title="components/Shipping/index.tsx" highlights={shippingHighlights2}
@@ -2041,13 +2041,13 @@ Shipping options have a `price_type` property whose value is either:
 - `flat_rate`: This value means the shipping option has a fixed price.
 - `calculated`: This value means the shipping option's price is calculated based on the cart's context, such as the shipping address or items in the carts. This is useful when the [fulfillment provider](../../../commerce-modules/fulfillment/fulfillment-provider/page.mdx) that's associated with a shipping option calculates the price based on these conditions.
 
-So, to retrieve the prices of calculated shipping options, you use Medusa's [Calculate Shipping Option Price](!api!/store#shipping-options_postshippingoptionsidcalculate) API route.
+So, to retrieve the prices of calculated shipping options, you use Switchyard's [Calculate Shipping Option Price](!api!/store#shipping-options_postshippingoptionsidcalculate) API route.
 
 Replace the `TODO` in the `Shipping` component with the following:
 
 export const shippingHighlights3 = [
   ["7", "filter", "Retrieve shipping options with calculated prices only."],
-  ["9", "fetch", "Retrieve the calculated price from the Medusa application."],
+  ["9", "fetch", "Retrieve the calculated price from the Switchyard application."],
   ["24", "Promise.allSettled", "Wait for all calculated prices to be retrieved."],
   ["13", "setCalculatedPrices", "Set the calculated prices in the state variable."],
 ]
@@ -2093,7 +2093,7 @@ useEffect(() => {
 // TODO add function to format price
 ```
 
-In the `useEffect` hook, you filter the `shippingOptions` to get only the calculated shipping options. Then, you loop over these options to retrieve their calculated price from the Medusa application. You pass to the Calculate Shipping Option API route the cart's ID and any custom data that the fulfillment provider might need to calculate the price.
+In the `useEffect` hook, you filter the `shippingOptions` to get only the calculated shipping options. Then, you loop over these options to retrieve their calculated price from the Switchyard application. You pass to the Calculate Shipping Option API route the cart's ID and any custom data that the fulfillment provider might need to calculate the price.
 
 Once all shipping option prices are calculated, you set them in the `calculatedPrices` state variable, where the key is the shipping option's ID and the value is the calculated price.
 
@@ -2137,7 +2137,7 @@ Replace the `TODO` in the `Shipping` component with the following:
 export const shippingHighlights4 = [
   ["1", "isButtonDisabled", "Whether the customer can submit their selection."],
   ["5", "handleSubmit", "A function to execute when the customer submits their choice."],
-  ["12", "updateCart", "Update the cart with the selected shipping method in the Medusa application."],
+  ["12", "updateCart", "Update the cart with the selected shipping method in the Switchyard application."],
   ["15", "data", "Pass any useful custom data for the fulfillment provider."],
   ["23", "router", "Redirect the customer to the next step in the flow."]
 ]
@@ -2184,7 +2184,7 @@ First, add the following imports at the top of the file:
 
 ```tsx title="components/Shipping/index.tsx"
 import { Card } from "../Card"
-import { Button, RadioGroup } from "@medusajs/ui"
+import { Button, RadioGroup } from "@switchyard/ui"
 ```
 
 Then, replace the last `TODO` in the `Shipping` component with the following:
@@ -2265,9 +2265,9 @@ This will show the shipping method selection step and expand its details if `act
 
 ### Test it Out
 
-While both the Medusa application and the Next.js Starter Storefront are running, if you refresh the page you had opened or go to `http://localhost:3000/sweatpants?step=shipping`, you should see the Shipping step where you can choose a shipping method.
+While both the Switchyard application and the Next.js Starter Storefront are running, if you refresh the page you had opened or go to `http://localhost:3000/sweatpants?step=shipping`, you should see the Shipping step where you can choose a shipping method.
 
-![Shipping step showing the shipping options and a go to payment button](https://res.cloudinary.com/dza7lstvk/image/upload/v1735832462/Medusa%20Resources/Screenshot_2025-01-02_at_5.40.45_PM_jplcn3.png)
+![Shipping step showing the shipping options and a go to payment button](https://res.cloudinary.com/dza7lstvk/image/upload/v1735832462/Switchyard%20Resources/Screenshot_2025-01-02_at_5.40.45_PM_jplcn3.png)
 
 You can select a shipping option then click on the "Go to payment" button. The shipping method will be saved in the cart and the Shipping card will collapse to show the fourth step's details, which you'll add next.
 
@@ -2279,14 +2279,14 @@ The fourth and last step in the express checkout flow is the payment method sele
 
 To create the component of this step, create the file `components/Payment/index.tsx` with the following content:
 
-![Directory structure after creating Payment component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735832586/Medusa%20Resources/express-checkout-12_j2xldp.jpg)
+![Directory structure after creating Payment component file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735832586/Switchyard%20Resources/express-checkout-12_j2xldp.jpg)
 
 export const paymentHighlights1 = [
   ["19", "cart", "The customer's cart from the cart context."],
   ["19", "updateItemQuantity", "The function to update the quantity of an item in the cart from the cart context."],
   ["19", "unsetCart", "The function to unset the cart from the cart context."],
   ["20", "loading", "Whether an operation is loading."],
-  ["21", "paymentProviders", "The available payment providers retrieved from the Medusa application."],
+  ["21", "paymentProviders", "The available payment providers retrieved from the Switchyard application."],
   ["24", "selectedPaymentProvider", "The ID of the selected payment provider."],
   ["25", "router", "The router instance to navigate between steps."]
 ]
@@ -2298,7 +2298,7 @@ import {
   useState,
 } from "react"
 import { useCart } from "@/providers/cart"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { useRouter } from "next/navigation"
 
 type PaymentProps = {
@@ -2326,13 +2326,13 @@ You create a `Payment` component that receives the product's handle and whether 
 
 - `cart`, `unsetCart`, and `updateItemQuantity`: The customer's cart, the function to unset the cart, and the function to update the quantity of an item in the cart, retrieved from the cart context.
 - `loading`: A boolean state variable indicating whether an operation is loading.
-- `paymentProviders`: A state variable that holds the available payment providers in the Medusa application.
+- `paymentProviders`: A state variable that holds the available payment providers in the Switchyard application.
 - `selectedPaymentProvider`: A state variable that holds the ID of the selected payment provider.
 - `router`: The router instance to navigate between steps.
 
 ### Retrieve Payment Providers
 
-In Medusa, each region has a set of enabled payment providers. So, during checkout, you retrieve the payment providers specific to a cart's region and allow the customer to choose from them.
+In Switchyard, each region has a set of enabled payment providers. So, during checkout, you retrieve the payment providers specific to a cart's region and allow the customer to choose from them.
 
 To do that, first, add the following imports at the top of the file:
 
@@ -2347,7 +2347,7 @@ import { sdk } from "@/lib/sdk"
 Then, replace the `TODO` in the `Payment` component with the following:
 
 export const paymentHighlights2 = [
-  ["6", "listPaymentProviders", "Retrieve the payment providers of the cart's region from the Medusa application."]
+  ["6", "listPaymentProviders", "Retrieve the payment providers of the cart's region from the Switchyard application."]
 ]
 
 ```tsx title="components/Payment/index.tsx" highlights={paymentHighlights2}
@@ -2376,7 +2376,7 @@ The API route returns a list of payment providers, which you set in the `payment
 
 After the customer selects the payment provider, you want to save that selection in the cart, but you also may need to show UI for additional actions. For example, if the customer chooses the [Stripe payment provider](../../../commerce-modules/payment/payment-provider/stripe/page.mdx), you want to show them a credit-card form to input their details.
 
-So, you'll implement the logic to first save the payment provider selection in the Medusa application, then optionally show additional UI based on the chosen provider.
+So, you'll implement the logic to first save the payment provider selection in the Switchyard application, then optionally show additional UI based on the chosen provider.
 
 First, add the following imports at the top of the file:
 
@@ -2390,8 +2390,8 @@ import {
 Then, replace the `TODO` in the `Payment` component with the following:
 
 export const paymentHighlights3 = [
-  ["1", "handleSelectProvider", "A function to save the selected payment provider in the Medusa application."],
-  ["8", "initiatePaymentSession", "Set the chosen payment method in the Medusa application."],
+  ["1", "handleSelectProvider", "A function to save the selected payment provider in the Switchyard application."],
+  ["8", "initiatePaymentSession", "Set the chosen payment method in the Switchyard application."],
   ["16", "useEffect", "Trigger the `handleSelectProvider` function whenever the selected payment provider changes."],
   ["24", "paymentUi", "Optionally show additional UI based on the selected payment provider."],
   ["36", "canPlaceOrder", "Whether the customer can place an order."],
@@ -2466,7 +2466,7 @@ After the customer chooses a payment provider and completes any additional steps
 Replace the `TODO` in the `Payment` component with the following:
 
 export const paymentHighlights4 = [
-  ["7", "complete", "Complete the cart and place an order in the Medusa application."],
+  ["7", "complete", "Complete the cart and place an order in the Switchyard application."],
   ["13", "unsetCart", "Unset the cart from the cart context."],
   ["15", "router.push", "Redirect the customer to the confirmation page."],
 ]
@@ -2504,7 +2504,7 @@ First, add the following imports at the top of the file:
 
 ```tsx title="components/Payment/index.tsx"
 import { Card } from "../Card"
-import { Button, Input, RadioGroup } from "@medusajs/ui"
+import { Button, Input, RadioGroup } from "@switchyard/ui"
 ```
 
 Then, replace the last `TODO` in the `Payment` component with the following:
@@ -2659,9 +2659,9 @@ This will show the payment method selection step and expand its details if `acti
 
 ### Test it Out
 
-While both the Medusa application and the Next.js Starter Storefront are running, if you refresh the page you had opened or go to `http://localhost:3000/sweatpants?step=payment`, you should see the Payment step where you can choose a payment method.
+While both the Switchyard application and the Next.js Starter Storefront are running, if you refresh the page you had opened or go to `http://localhost:3000/sweatpants?step=payment`, you should see the Payment step where you can choose a payment method.
 
-![Payment step showing the payment providers and a pay button](https://res.cloudinary.com/dza7lstvk/image/upload/v1735833736/Medusa%20Resources/Screenshot_2025-01-02_at_6.01.58_PM_usjlli.png)
+![Payment step showing the payment providers and a pay button](https://res.cloudinary.com/dza7lstvk/image/upload/v1735833736/Switchyard%20Resources/Screenshot_2025-01-02_at_6.01.58_PM_usjlli.png)
 
 Select a payment provider then click on the "Pay" button. The payment method will be saved in the cart and you'll be redirected to the confirmation page, which currently doesn't exist. You'll add this page next.
 
@@ -2671,19 +2671,19 @@ Select a payment provider then click on the "Pay" button. The payment method wil
 
 After the customer places an order, you redirect them to a confirmation page that shows them their general order details. In this step, you'll create this confirmation page.
 
-The confirmation page will receive the order's ID as a path parameter. Then, it'll retrieve the order's details from the Medusa application and shows those details to the customer.
+The confirmation page will receive the order's ID as a path parameter. Then, it'll retrieve the order's details from the Switchyard application and shows those details to the customer.
 
 To create the confirmation page, create the file `app/confirmation/[id]/page.tsx` with the following content:
 
-![Directory structure after creating confirmation page file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735890379/Medusa%20Resources/express-checkout-13_shwtvh.jpg)
+![Directory structure after creating confirmation page file](https://res.cloudinary.com/dza7lstvk/image/upload/v1735890379/Switchyard%20Resources/express-checkout-13_shwtvh.jpg)
 
 export const confirmationHighlights = [
   ["11", "orderId", "Retrieve the order's ID from the path parameter."],
-  ["13", "order", "Retrieve the order's details from the Medusa application."],
+  ["13", "order", "Retrieve the order's details from the Switchyard application."],
 ]
 
 ```tsx title="app/confirmation/[id]/page.tsx" highlights={confirmationHighlights}
-import { clx, Heading } from "@medusajs/ui"
+import { clx, Heading } from "@switchyard/ui"
 import { sdk } from "@/lib/sdk"
 
 type Params = {
@@ -2722,24 +2722,24 @@ export default async function ConfirmationPage({
 }
 ```
 
-The `ConfirmationPage` component receives the order ID as a path parameter. In the component, you retrieve the order's details from the Medusa application using the JS SDK.
+The `ConfirmationPage` component receives the order ID as a path parameter. In the component, you retrieve the order's details from the Switchyard application using the JS SDK.
 
 Then, you show the order's details, including the order number, order date, and a thank you message.
 
 ### Test it Out
 
-While both the Medusa application and the Next.js Starter Storefront are running, either refresh the page you had open from the previous step, or restart the express checkout flow to place an order. You'll see the confirmation page showing the order's details.
+While both the Switchyard application and the Next.js Starter Storefront are running, either refresh the page you had open from the previous step, or restart the express checkout flow to place an order. You'll see the confirmation page showing the order's details.
 
-![Confirmation page showing the order's ID and date](https://res.cloudinary.com/dza7lstvk/image/upload/v1735834096/Medusa%20Resources/Screenshot_2025-01-02_at_6.07.38_PM_um4p0a.png)
+![Confirmation page showing the order's ID and date](https://res.cloudinary.com/dza7lstvk/image/upload/v1735834096/Switchyard%20Resources/Screenshot_2025-01-02_at_6.07.38_PM_um4p0a.png)
 
 ---
 
 ## Next Steps
 
-By following this guide, you now have an express checkout storefront built with Next.js that connects to a Medusa commerce application.
+By following this guide, you now have an express checkout storefront built with Next.js that connects to a Switchyard commerce application.
 
 You can add more features to your storefront or commerce application. For example, you can integrate a [Notification Module Provider](../../../infrastructure-modules/notification/page.mdx) to send the customer a confirmation email when they place their order.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

@@ -1,7 +1,7 @@
 // Not currently used, re-implement or delete depending on whether there is a need for it in the future.
 
-// import { TrianglesMini } from "@medusajs/icons"
-// import { clx } from "@medusajs/ui"
+// import { TrianglesMini } from "@switchyard/icons"
+// import { clx } from "@switchyard/ui"
 // import { ComponentPropsWithoutRef, forwardRef, memo } from "react"
 // import { Controller, ControllerRenderProps } from "react-hook-form"
 

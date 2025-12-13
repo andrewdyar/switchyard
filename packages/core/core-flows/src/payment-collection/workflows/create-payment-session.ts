@@ -2,8 +2,8 @@ import {
   AccountHolderDTO,
   CustomerDTO,
   PaymentSessionDTO,
-} from "@medusajs/framework/types"
-import { isPresent, Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { isPresent, Modules } from "@switchyard/framework/utils"
 import {
   createWorkflow,
   parallelize,
@@ -11,7 +11,7 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createRemoteLinkStep, useRemoteQueryStep } from "../../common"
 import {
   createPaymentAccountHolderStep,

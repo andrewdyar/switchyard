@@ -2,14 +2,14 @@ import {
   FilterableSalesChannelProps,
   SalesChannelDTO,
   UpdateSalesChannelDTO,
-} from "@medusajs/framework/types"
-import { SalesChannelWorkflowEvents } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { SalesChannelWorkflowEvents } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep } from "../../common"
 import { updateSalesChannelsStep } from "../steps/update-sales-channels"
 

@@ -1,7 +1,7 @@
-import { MedusaNextFunction, MedusaRequest } from "../types"
+import { SwitchyardNextFunction, SwitchyardRequest } from "../types"
 
 export function setContext(context: Record<string, any>) {
-  return async (req: MedusaRequest, _, next: MedusaNextFunction) => {
+  return async (req: SwitchyardRequest, _, next: SwitchyardNextFunction) => {
     const ctx: Record<string, any> = { ...(req.context || {}) }
 
     for (const [contextKey, contextValue] of Object.entries(context || {})) {

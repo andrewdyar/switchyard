@@ -19,7 +19,7 @@ In this document, you’ll learn how to deploy the Next.js Starter Storefront to
     link: "../../../nextjs-starter/page.mdx"
   },
   {
-    text: "Deployed Medusa application with at least one region.",
+    text: "Deployed Switchyard application with at least one region.",
     link: "../../page.mdx#medusa-application"
   },
 ]} />
@@ -59,7 +59,7 @@ npm install
 Then, expand the Environment Variables section and add the following variables:
 
 ```bash
-MEDUSA_BACKEND_URL= # URL of Medusa application
+MEDUSA_BACKEND_URL= # URL of Switchyard application
 NEXT_PUBLIC_DEFAULT_REGION=us # or a different region that you prefer
 NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY= # publishable API key of the storefront's sales channel
 REVALIDATE_SECRET=supersecret # TODO generate random string
@@ -67,12 +67,12 @@ REVALIDATE_SECRET=supersecret # TODO generate random string
 
 Where:
 
-1. `MEDUSA_BACKEND_URL` is the URL of your deployed Medusa application
+1. `MEDUSA_BACKEND_URL` is the URL of your deployed Switchyard application
 2. `NEXT_PUBLIC_DEFAULT_REGION` is the country code of a region to be used by default, if the customer hasn’t selected a region.
-3. `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY` is the publishable API key of the storefront. You can create one or find the default one in the Medusa Admin dashboard.
+3. `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY` is the publishable API key of the storefront. You can create one or find the default one in the Switchyard Admin dashboard.
 4. `REVALIDATE_SECRET` is a random string for [Next.js revalidation](https://nextjs.org/docs/app/building-your-application/data-fetching/fetching-caching-and-revalidating#on-demand-revalidation).
 
-Make sure to add other relevant environment variables. For example, if you’re using the Stripe Payment Module Provider in the Medusa application, add the `NEXT_PUBLIC_STRIPE_KEY` environment variable.
+Make sure to add other relevant environment variables. For example, if you’re using the Stripe Payment Module Provider in the Switchyard application, add the `NEXT_PUBLIC_STRIPE_KEY` environment variable.
 
 ### Deploy Application
 
@@ -103,9 +103,9 @@ NEXT_PUBLIC_BASE_URL=https://nextjs-storefront...
 
 Set the value to the storefront’s URL.
 
-### Set STORE_CORS and AUTH_CORS in Deployed Medusa Application
+### Set STORE_CORS and AUTH_CORS in Deployed Switchyard Application
 
-You must also set the `STORE_CORS` environment variable in your Medusa application to the storefront’s URL:
+You must also set the `STORE_CORS` environment variable in your Switchyard application to the storefront’s URL:
 
 ```bash
 STORE_CORS=https://nextjs-storefront...
@@ -127,7 +127,7 @@ Where `<OTHER_URLS>` are other storefront or admin URLs added previously to `AUT
 
 ### Redeploy Storefront
 
-Once the environment variables changes are deployed in the Medusa application, do the following to redeploy the storefront:
+Once the environment variables changes are deployed in the Switchyard application, do the following to redeploy the storefront:
 
 1. Go to Deployments in the storefront Vercel project.
 2. Find the last production deployment, and click on the three dots icon at the right.

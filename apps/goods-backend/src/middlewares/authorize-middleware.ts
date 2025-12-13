@@ -1,9 +1,9 @@
 import { NextFunction, RequestHandler } from "express"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { createClient, SupabaseClient } from "@supabase/supabase-js"
 
 // Cache for user permissions to reduce database queries
@@ -32,11 +32,11 @@ export const authorize = (
     : [requiredPermissions]
 
   const authorizeMiddleware = async (
-    req: MedusaRequest,
-    res: MedusaResponse,
+    req: SwitchyardRequest,
+    res: SwitchyardResponse,
     next: NextFunction
   ): Promise<void> => {
-    const authReq = req as AuthenticatedMedusaRequest
+    const authReq = req as AuthenticatedSwitchyardRequest
 
     // Check if user is authenticated
     if (!authReq.auth_context) {
@@ -98,11 +98,11 @@ export const requireRole = (
   const roles = Array.isArray(requiredRoles) ? requiredRoles : [requiredRoles]
 
   const requireRoleMiddleware = async (
-    req: MedusaRequest,
-    res: MedusaResponse,
+    req: SwitchyardRequest,
+    res: SwitchyardResponse,
     next: NextFunction
   ): Promise<void> => {
-    const authReq = req as AuthenticatedMedusaRequest
+    const authReq = req as AuthenticatedSwitchyardRequest
 
     if (!authReq.auth_context) {
       res.status(401).json({ message: "Authentication required" })

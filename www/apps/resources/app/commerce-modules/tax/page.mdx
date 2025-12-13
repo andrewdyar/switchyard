@@ -14,11 +14,11 @@ In this section of the documentation, you will find resources to learn more abou
 
 <Note title="Looking for no-code docs?">
 
-Refer to the [Medusa Admin User Guide](!user-guide!/settings/tax-regions) to learn how to manage tax regions using the dashboard.
+Refer to the [Switchyard Admin User Guide](!user-guide!/settings/tax-regions) to learn how to manage tax regions using the dashboard.
 
 </Note>
 
-Medusa has tax related features available out-of-the-box through the Tax Module. A [module](!docs!/learn/fundamentals/modules) is a standalone package that provides features for a single domain. Each of Medusa's commerce features are placed in Commerce Modules, such as this Tax Module.
+Switchyard has tax related features available out-of-the-box through the Tax Module. A [module](!docs!/learn/fundamentals/modules) is a standalone package that provides features for a single domain. Each of Switchyard's commerce features are placed in Commerce Modules, such as this Tax Module.
 
 <Note>
 
@@ -37,9 +37,9 @@ Learn more about why modules are isolated in [this documentation](!docs!/learn/f
 
 ## How to Use Tax Module's Service
 
-In your Medusa application, you build flows around Commerce Modules. A flow is built as a [Workflow](!docs!/learn/fundamentals/workflows), which is a special function composed of a series of steps that guarantees data consistency and reliable roll-back mechanism. 
+In your Switchyard application, you build flows around Commerce Modules. A flow is built as a [Workflow](!docs!/learn/fundamentals/workflows), which is a special function composed of a series of steps that guarantees data consistency and reliable roll-back mechanism. 
 
-You can build custom workflows and steps. You can also re-use Medusa's workflows and steps, which are provided by the `@medusajs/medusa/core-flows` package.
+You can build custom workflows and steps. You can also re-use Switchyard's workflows and steps, which are provided by the `@switchyard/medusa/core-flows` package.
 
 For example:
 
@@ -53,8 +53,8 @@ import {
   WorkflowResponse,
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
 
 const createTaxRegionStep = createStep(
   "create-tax-region",
@@ -94,14 +94,14 @@ You can then execute the workflow in your custom API routes, scheduled jobs, or 
     
 ```ts title="src/api/workflow/route.ts" highlights={[["11"], ["12"]]} collapsibleLines="1-6" expandButtonLabel="Show Imports"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { createTaxRegionWorkflow } from "../../workflows/create-tax-region"
 
 export async function GET(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await createTaxRegionWorkflow(req.scope)
     .run()
@@ -117,7 +117,7 @@ export async function GET(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { createTaxRegionWorkflow } from "../workflows/create-tax-region"
 
 export default async function handleUserCreated({
@@ -139,11 +139,11 @@ export const config: SubscriberConfig = {
   <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/run-daily.ts" highlights={[["7"], ["8"]]}
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import { createTaxRegionWorkflow } from "../workflows/create-tax-region"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await createTaxRegionWorkflow(container)
     .run()

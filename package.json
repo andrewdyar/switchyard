@@ -5,7 +5,7 @@
     "packages": [
       "apps/*",
       "packages/medusa",
-      "packages/medusa-test-utils",
+      "packages/switchyard-test-utils",
       "packages/modules/*",
       "packages/modules/providers/*",
       "packages/plugins/*",
@@ -143,8 +143,8 @@
   },
   "scripts": {
     "build": "turbo run build --concurrency=100% --no-daemon",
-    "dev": "cd apps/goods-backend && medusa develop",
-    "start": "cd apps/goods-backend && medusa start",
+    "dev": "cd apps/goods-backend && switchyard develop",
+    "start": "cd apps/goods-backend && switchyard start",
     "lint": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx .",
     "lint:path": "eslint --ignore-path .eslintignore --ext .js,.ts,.tsx",
     "prettier": "prettier",
@@ -158,7 +158,7 @@
     "test:integration:http": "turbo run test:integration:chunk --no-daemon --no-cache --force --filter=integration-tests-http",
     "test:integration:modules": "turbo run test:integration:chunk --no-daemon --no-cache --force --filter=integration-tests-modules",
     "openapi:generate": "yarn ./packages/cli/oas/oas-github-ci run ci --with-full-file",
-    "medusa-oas": "yarn ./packages/cli/oas/medusa-oas-cli run medusa-oas",
+    "medusa-oas": "yarn ./packages/cli/oas/switchyard-oas-cli run medusa-oas",
     "release:snapshot": "changeset publish --no-git-tags --snapshot --tag snapshot",
     "release:next": "chgstangeset publish --no-git-tags --snapshot --tag next",
     "version:next": "changeset version --snapshot next",

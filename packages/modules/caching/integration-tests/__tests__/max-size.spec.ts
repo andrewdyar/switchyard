@@ -1,11 +1,11 @@
-import { Modules } from "@medusajs/framework/utils"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
-import { ICachingModuleService } from "@medusajs/framework/types"
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
+import { ICachingModuleService } from "@switchyard/framework/types"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 
 jest.setTimeout(10000)
 
-jest.spyOn(MedusaModule, "getAllJoinerConfigs").mockReturnValue([
+jest.spyOn(SwitchyardModule, "getAllJoinerConfigs").mockReturnValue([
   {
     schema: `
    type Product {

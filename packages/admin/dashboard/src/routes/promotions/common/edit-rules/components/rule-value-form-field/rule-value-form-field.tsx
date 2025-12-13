@@ -2,8 +2,8 @@ import {
   ApplicationMethodTargetTypeValues,
   HttpTypes,
   RuleTypeValues,
-} from "@medusajs/types"
-import { Input } from "@medusajs/ui"
+} from "@switchyard/types"
+import { Input } from "@switchyard/ui"
 import { useWatch } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import { useEffect } from "react"

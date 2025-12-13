@@ -14228,8 +14228,8 @@ export const filesMap = [
     "pathname": "/references/medusa/interfaces/medusa.Logger"
   },
   {
-    "filePath": "/www/apps/resources/references/medusa/interfaces/medusa.MedusaRequest/page.mdx",
-    "pathname": "/references/medusa/interfaces/medusa.MedusaRequest"
+    "filePath": "/www/apps/resources/references/medusa/interfaces/medusa.SwitchyardRequest/page.mdx",
+    "pathname": "/references/medusa/interfaces/medusa.SwitchyardRequest"
   },
   {
     "filePath": "/www/apps/resources/references/medusa/interfaces/medusa.RequestQueryFields/page.mdx",
@@ -14264,28 +14264,28 @@ export const filesMap = [
     "pathname": "/references/medusa/types/medusa.Logger"
   },
   {
-    "filePath": "/www/apps/resources/references/medusa/types/medusa.MedusaContainer/page.mdx",
-    "pathname": "/references/medusa/types/medusa.MedusaContainer"
+    "filePath": "/www/apps/resources/references/medusa/types/medusa.SwitchyardContainer/page.mdx",
+    "pathname": "/references/medusa/types/medusa.SwitchyardContainer"
   },
   {
-    "filePath": "/www/apps/resources/references/medusa/types/medusa.MedusaErrorHandlerFunction/page.mdx",
-    "pathname": "/references/medusa/types/medusa.MedusaErrorHandlerFunction"
+    "filePath": "/www/apps/resources/references/medusa/types/medusa.SwitchyardErrorHandlerFunction/page.mdx",
+    "pathname": "/references/medusa/types/medusa.SwitchyardErrorHandlerFunction"
   },
   {
-    "filePath": "/www/apps/resources/references/medusa/types/medusa.MedusaNextFunction/page.mdx",
-    "pathname": "/references/medusa/types/medusa.MedusaNextFunction"
+    "filePath": "/www/apps/resources/references/medusa/types/medusa.SwitchyardNextFunction/page.mdx",
+    "pathname": "/references/medusa/types/medusa.SwitchyardNextFunction"
   },
   {
-    "filePath": "/www/apps/resources/references/medusa/types/medusa.MedusaPricingContext/page.mdx",
-    "pathname": "/references/medusa/types/medusa.MedusaPricingContext"
+    "filePath": "/www/apps/resources/references/medusa/types/medusa.SwitchyardPricingContext/page.mdx",
+    "pathname": "/references/medusa/types/medusa.SwitchyardPricingContext"
   },
   {
-    "filePath": "/www/apps/resources/references/medusa/types/medusa.MedusaRequestHandler/page.mdx",
-    "pathname": "/references/medusa/types/medusa.MedusaRequestHandler"
+    "filePath": "/www/apps/resources/references/medusa/types/medusa.SwitchyardRequestHandler/page.mdx",
+    "pathname": "/references/medusa/types/medusa.SwitchyardRequestHandler"
   },
   {
-    "filePath": "/www/apps/resources/references/medusa/types/medusa.MedusaResponse/page.mdx",
-    "pathname": "/references/medusa/types/medusa.MedusaResponse"
+    "filePath": "/www/apps/resources/references/medusa/types/medusa.SwitchyardResponse/page.mdx",
+    "pathname": "/references/medusa/types/medusa.SwitchyardResponse"
   },
   {
     "filePath": "/www/apps/resources/references/medusa/types/medusa.MiddlewareFunction/page.mdx",
@@ -14640,16 +14640,16 @@ export const filesMap = [
     "pathname": "/references/modules_sdk/types/modules_sdk.LinkModuleBootstrapOptions"
   },
   {
-    "filePath": "/www/apps/resources/references/modules_sdk/types/modules_sdk.MedusaAppOptions/page.mdx",
-    "pathname": "/references/modules_sdk/types/modules_sdk.MedusaAppOptions"
+    "filePath": "/www/apps/resources/references/modules_sdk/types/modules_sdk.SwitchyardAppOptions/page.mdx",
+    "pathname": "/references/modules_sdk/types/modules_sdk.SwitchyardAppOptions"
   },
   {
-    "filePath": "/www/apps/resources/references/modules_sdk/types/modules_sdk.MedusaAppOutput/page.mdx",
-    "pathname": "/references/modules_sdk/types/modules_sdk.MedusaAppOutput"
+    "filePath": "/www/apps/resources/references/modules_sdk/types/modules_sdk.SwitchyardAppOutput/page.mdx",
+    "pathname": "/references/modules_sdk/types/modules_sdk.SwitchyardAppOutput"
   },
   {
-    "filePath": "/www/apps/resources/references/modules_sdk/types/modules_sdk.MedusaModuleConfig/page.mdx",
-    "pathname": "/references/modules_sdk/types/modules_sdk.MedusaModuleConfig"
+    "filePath": "/www/apps/resources/references/modules_sdk/types/modules_sdk.SwitchyardModuleConfig/page.mdx",
+    "pathname": "/references/modules_sdk/types/modules_sdk.SwitchyardModuleConfig"
   },
   {
     "filePath": "/www/apps/resources/references/modules_sdk/types/modules_sdk.MigrationOptions/page.mdx",
@@ -19608,8 +19608,8 @@ export const filesMap = [
     "pathname": "/references/types/CommonTypes/types/types.CommonTypes.LinkWorkflowInput"
   },
   {
-    "filePath": "/www/apps/resources/references/types/CommonTypes/types/types.CommonTypes.MedusaContainer/page.mdx",
-    "pathname": "/references/types/CommonTypes/types/types.CommonTypes.MedusaContainer"
+    "filePath": "/www/apps/resources/references/types/CommonTypes/types/types.CommonTypes.SwitchyardContainer/page.mdx",
+    "pathname": "/references/types/CommonTypes/types/types.CommonTypes.SwitchyardContainer"
   },
   {
     "filePath": "/www/apps/resources/references/types/CommonTypes/types/types.CommonTypes.MetadataType/page.mdx",
@@ -26596,8 +26596,8 @@ export const filesMap = [
     "pathname": "/references/workflows/types/workflows.LocalStepConfig"
   },
   {
-    "filePath": "/www/apps/resources/references/workflows/types/workflows.MedusaContainer/page.mdx",
-    "pathname": "/references/workflows/types/workflows.MedusaContainer"
+    "filePath": "/www/apps/resources/references/workflows/types/workflows.SwitchyardContainer/page.mdx",
+    "pathname": "/references/workflows/types/workflows.SwitchyardContainer"
   },
   {
     "filePath": "/www/apps/resources/references/workflows/types/workflows.Message/page.mdx",

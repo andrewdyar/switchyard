@@ -22,11 +22,11 @@ In this guide, you'll learn how to implement the third step of the checkout flow
 
 To allow the customer to choose a shipping method, you:
 
-![Diagram showing the different steps of the shipping flow in storefront checkout](https://res.cloudinary.com/dza7lstvk/image/upload/v1743085465/Medusa%20Resources/shipping-checkout-flow_mfzdsh.jpg)
+![Diagram showing the different steps of the shipping flow in storefront checkout](https://res.cloudinary.com/dza7lstvk/image/upload/v1743085465/Switchyard%20Resources/shipping-checkout-flow_mfzdsh.jpg)
 
 1. Retrieve the available shipping options for the cart using the [List Shipping Options API route](!api!/store#shipping-options_getshippingoptions) and show them to the customer.
 2. For shipping options whose `price_type=calculated`, you retrieve their calculated price using the [Calculate Shipping Option Price API Route](!api!/store#shipping-options_postshippingoptionsidcalculate).
-    - The Medusa application calculates the price using the associated fulfillment provider's logic, which may require sending a request to a third-party service.
+    - The Switchyard application calculates the price using the associated fulfillment provider's logic, which may require sending a request to a third-party service.
 3. When the customer chooses a shipping option, you use the [Add Shipping Method to Cart API route](!api!/store#carts_postcartsidshippingmethods) to set the cart's shipping method.
 
 ---
@@ -59,7 +59,7 @@ export const highlights = [
 
   import { useCallback, useEffect, useState } from "react"
   import { useCart } from "@/providers/cart"
-  import { HttpTypes } from "@medusajs/types"
+  import { HttpTypes } from "@switchyard/types"
   import { sdk } from "@/lib/sdk"
 
   export default function CheckoutShippingStep() {
@@ -291,7 +291,7 @@ export const fetchHighlights = [
 In the example above, you:
 
 - Retrieve the available shipping options of the cart to allow the customer to select from them using the [List Shipping Options API route](!api!/store#shipping-options_getshippingoptions).
-- For each shipping option, you retrieve its calculated price from the Medusa application using the [Calculate Shipping Option Price API Route](!api!/store#shipping-options_postshippingoptionsidcalculate).
+- For each shipping option, you retrieve its calculated price from the Switchyard application using the [Calculate Shipping Option Price API Route](!api!/store#shipping-options_postshippingoptionsidcalculate).
 - Once the customer selects a shipping option, you send a request to the [Add Shipping Method to Cart API route](!api!/store#carts_postcartsidshippingmethods) to update the cart's shipping method using the selected shipping option.
 
 ### data Request Body Parameter

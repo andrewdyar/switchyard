@@ -33,7 +33,7 @@ To retrieve the list of customer addresses, send a request to the [List Customer
 export const highlights = [
   ["21", "offset", "Calculate the number of addresses to skip based on the current page and limit."],
   ["23", "listAddress", "Send a request to retrieve the addresses."],
-  ["27", "count", "The total number of addresses in the Medusa application."],
+  ["27", "count", "The total number of addresses in the Switchyard application."],
   ["39", "setHasMorePages", "Set whether there are more pages based on the total count."],
   ["52", "", "Using only two address fields for simplicity."],
   ["59", "button", "Show a button to load more addresses if there are more pages."]
@@ -42,7 +42,7 @@ export const highlights = [
   ```tsx highlights={highlights} collapsibleLines="50-77" expandButtonLabel="Show render"
   "use client" // include with Next.js 13+
 
-  import { HttpTypes } from "@medusajs/types"
+  import { HttpTypes } from "@switchyard/types"
   import { useEffect, useState } from "react"
   import { sdk } from "@/lib/sdk"
 
@@ -139,7 +139,7 @@ The [List Customer Addresses API route](!api!/store#customers_getcustomersmeaddr
 
 The request returns in the response the `addresses` field, which is an array of addresses. You can check its structure in the [customer schema](!api!/store#customers_customer_schema).
 
-The request also returns the `count` field, which is the total number of addresses in the Medusa application. You can use it to check if there are more addresses to retrieve.
+The request also returns the `count` field, which is the total number of addresses in the Switchyard application. You can use it to check if there are more addresses to retrieve.
 
 ---
 

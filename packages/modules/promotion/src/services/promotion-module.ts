@@ -10,7 +10,7 @@ import {
   ModulesSdkTypes,
   PromotionDTO,
   PromotionTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ApplicationMethodAllocation,
   ApplicationMethodTargetType,
@@ -26,13 +26,13 @@ import {
   isString,
   MathBN,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
   PromotionStatus,
   PromotionType,
   toMikroORMEntity,
   transformPropertiesToBigNumber,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   ApplicationMethod,
   Campaign,
@@ -76,7 +76,7 @@ type InjectedDependencies = {
 }
 
 export default class PromotionModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     Promotion: { dto: PromotionTypes.PromotionDTO }
     ApplicationMethod: { dto: PromotionTypes.ApplicationMethodDTO }
     Campaign: { dto: PromotionTypes.CampaignDTO }
@@ -232,8 +232,8 @@ export default class PromotionModuleService
       )
 
       if (limit && MathBN.gt(newUsedValue, limit)) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_ALLOWED,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_ALLOWED,
           "Promotion usage exceeds the budget limit."
         )
       }
@@ -294,7 +294,7 @@ export default class PromotionModuleService
    * @param computedActions - The computed actions to register usage for.
    * @param registrationContext - The context of the campaign budget usage.
    * @returns void
-   * @throws {MedusaError} - If the promotion usage exceeds the budget limit.
+   * @throws {SwitchyardError} - If the promotion usage exceeds the budget limit.
    */
   async registerUsage(
     computedActions: PromotionTypes.UsageComputedActions[],
@@ -340,8 +340,8 @@ export default class PromotionModuleService
         const newUsedValue = (promotion.used ?? 0) + 1
 
         if (newUsedValue > promotion.limit) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_ALLOWED,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_ALLOWED,
             "Promotion usage exceeds the limit."
           )
         }
@@ -375,8 +375,8 @@ export default class PromotionModuleService
           campaignBudget.limit &&
           MathBN.gt(newUsedValue, campaignBudget.limit)
         ) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_ALLOWED,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_ALLOWED,
             "Promotion usage exceeds the budget limit."
           )
         }
@@ -400,8 +400,8 @@ export default class PromotionModuleService
           campaignBudget.limit &&
           MathBN.gt(newUsedValue, campaignBudget.limit)
         ) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_ALLOWED,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_ALLOWED,
             "Promotion usage exceeds the budget limit."
           )
         }
@@ -820,8 +820,8 @@ export default class PromotionModuleService
         const attributeValue = budgetUsageContext[attribute]
 
         if (!attributeValue) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Attribute value for "${attribute}" is required by promotion campaing budget`
           )
         }
@@ -1036,8 +1036,8 @@ export default class PromotionModuleService
       }
 
       if (campaignData && campaignId) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Provide either the 'campaign' or 'campaign_id' parameter; both cannot be used simultaneously.`
         )
       }
@@ -1052,8 +1052,8 @@ export default class PromotionModuleService
       )
 
       if (campaignId && !existingCampaign) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_FOUND,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_FOUND,
           `Could not find campaign with id - ${campaignId}`
         )
       }
@@ -1067,8 +1067,8 @@ export default class PromotionModuleService
         campaignData?.budget?.type === CampaignBudgetType.SPEND &&
         campaignCurrency !== applicationMethodData?.currency_code
       ) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Currency between promotion and campaigns should match`
         )
       }
@@ -1118,15 +1118,15 @@ export default class PromotionModuleService
             ApplicationMethodTargetType.ORDER &&
           targetRulesData.length
         ) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Target rules for application method with target type (${ApplicationMethodTargetType.ORDER}) is not allowed`
           )
         }
 
         if (promotion.type === PromotionType.BUYGET && !buyRulesData.length) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Buy rules are required for ${PromotionType.BUYGET} promotion type`
           )
         }
@@ -1135,8 +1135,8 @@ export default class PromotionModuleService
           promotion.type === PromotionType.BUYGET &&
           !targetRulesData.length
         ) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Target rules are required for ${PromotionType.BUYGET} promotion type`
           )
         }
@@ -1302,16 +1302,16 @@ export default class PromotionModuleService
       if (isDefined(promotionData.limit) && promotionData.limit !== null) {
         const currentUsed = existingPromotion.used ?? 0
         if (promotionData.limit < currentUsed) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Promotion limit (${promotionData.limit}) cannot be less than current usage (${currentUsed})`
           )
         }
       }
 
       if (campaignId && !existingCampaign) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Could not find campaign with id ${campaignId}`
         )
       }
@@ -1321,8 +1321,8 @@ export default class PromotionModuleService
         existingCampaign?.budget?.type === CampaignBudgetType.SPEND &&
         existingCampaign.budget.currency_code !== promotionCurrencyCode
       ) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Currency code doesn't match for campaign (${campaignId}) and promotion (${existingPromotion.id})`
         )
       }
@@ -1418,8 +1418,8 @@ export default class PromotionModuleService
     )
 
     if (invalidRuleId.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Promotion rules with id - ${invalidRuleId.join(", ")} not found`
       )
     }
@@ -1495,8 +1495,8 @@ export default class PromotionModuleService
     const applicationMethod = promotion.application_method
 
     if (!applicationMethod) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `application_method for promotion not found`
       )
     }
@@ -1531,8 +1531,8 @@ export default class PromotionModuleService
     const applicationMethod = promotion.application_method
 
     if (!applicationMethod) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `application_method for promotion not found`
       )
     }
@@ -1575,8 +1575,8 @@ export default class PromotionModuleService
       relationName === "method_buy_rules" &&
       promotion.type === PromotionType.STANDARD
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Can't add buy rules to a ${PromotionType.STANDARD} promotion`
       )
     }
@@ -1691,8 +1691,8 @@ export default class PromotionModuleService
     const applicationMethod = promotion.application_method
 
     if (!applicationMethod) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `application_method for promotion not found`
       )
     }
@@ -1802,8 +1802,8 @@ export default class PromotionModuleService
     currency_code?: string | null
   }) {
     if (!data.type) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Campaign Budget type is a required field`
       )
     }
@@ -1812,8 +1812,8 @@ export default class PromotionModuleService
       data.type === CampaignBudgetType.SPEND &&
       !isPresent(data.currency_code)
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Campaign Budget type is a required field`
       )
     }
@@ -1888,8 +1888,8 @@ export default class PromotionModuleService
         delete budgetData?.type
         delete budgetData?.currency_code
 
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Campaign budget attributes (type, currency_code) are immutable`
         )
       }
@@ -1960,8 +1960,8 @@ export default class PromotionModuleService
     )
 
     if (diff.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Cannot add promotions (${diff.join(
           ","
         )}) to campaign. These promotions are either already part of a campaign or not found.`
@@ -1976,8 +1976,8 @@ export default class PromotionModuleService
     )
 
     if (promotionsWithInvalidCurrency.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot add promotions to campaign where currency_code don't match.`
       )
     }
@@ -2024,8 +2024,8 @@ export default class PromotionModuleService
     )
 
     if (diff.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Promotions with ids (${diff.join(",")}) not found.`
       )
     }

@@ -8,7 +8,7 @@ products:
 ---
 
 import { Card, Prerequisites, Details, InlineIcon } from "docs-ui"
-import { Github, EllipsisHorizontal } from "@medusajs/icons"
+import { Github, EllipsisHorizontal } from "@switchyard/icons"
 
 export const metadata = {
   title: `Create Order Returns in the Storefront`,
@@ -18,26 +18,26 @@ export const metadata = {
 
 In this tutorial, you'll learn how to let customers create order returns directly from your storefront.
 
-Medusa supports automated Return Merchandise Authorization (RMA) flows for orders. Customers can create return requests for their orders, and merchants can manage these requests through the Medusa Admin dashboard. Medusa provides the necessary API routes and workflows to handle returns efficiently.
+Switchyard supports automated Return Merchandise Authorization (RMA) flows for orders. Customers can create return requests for their orders, and merchants can manage these requests through the Switchyard Admin dashboard. Switchyard provides the necessary API routes and workflows to handle returns efficiently.
 
 ## Summary
 
 In this tutorial, you'll customize the [Next.js Starter Storefront](../../page.mdx) to let customers create return requests for their orders directly from the storefront.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Request return page in storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1758009041/Medusa%20Resources/CleanShot_2025-09-16_at_10.50.27_2x_g4rwjr.png)
+![Request return page in storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1758009041/Switchyard%20Resources/CleanShot_2025-09-16_at_10.50.27_2x_g4rwjr.png)
 
 <Card
   title="Example Repository"
   text="Find the full code of the guide in this repository."
-  href="https://github.com/medusajs/examples/tree/main/returns-storefront"
+  href="https://github.com/switchyard/examples/tree/main/returns-storefront"
   icon={Github}
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -54,27 +54,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -82,13 +82,13 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Add Return Server Functions
 
-In this step, you'll add server functions to the Next.js Starter Storefront that let you send requests to the Medusa application for order returns. You'll use these functions later in the storefront pages.
+In this step, you'll add server functions to the Next.js Starter Storefront that let you send requests to the Switchyard application for order returns. You'll use these functions later in the storefront pages.
 
 <Note title="Reminder" forceMultiline>
 
-If you installed the Next.js Starter Storefront with the Medusa backend, the storefront was installed in a separate directory. The directory's name is `{your-project}-storefront`.
+If you installed the Next.js Starter Storefront with the Switchyard backend, the storefront was installed in a separate directory. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-returns`, you can find the storefront by going back to the parent directory and changing to the `medusa-returns-storefront` directory:
+So, if your Switchyard application's directory is `medusa-returns`, you can find the storefront by going back to the parent directory and changing to the `medusa-returns-storefront` directory:
 
 ```bash
 cd ../medusa-returns-storefront # change based on your project name
@@ -108,7 +108,7 @@ Create the file `src/lib/data/returns.ts` with the following content:
 import { sdk } from "@lib/config"
 import { getAuthHeaders, getCacheOptions } from "@lib/data/cookies"
 import medusaError from "@lib/util/medusa-error"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 export const listReturnReasons = async () => {
   const headers = {
@@ -258,7 +258,7 @@ export const returnUtilsHighlights = [
 ]
 
 ```ts title="src/lib/util/returns.ts" highlights={returnUtilsHighlights}
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 export type ItemWithDeliveryStatus = HttpTypes.StoreOrderLineItem & {
   deliveredQuantity: number
@@ -322,7 +322,7 @@ You'll use these utility functions later in the storefront pages. They help dete
 
 In this step, you'll add a component that lets customers select the quantity to return of items from their order. Later, you'll use this component in the return request page.
 
-![Preview of the return item selector on the request return page](https://res.cloudinary.com/dza7lstvk/image/upload/v1758008962/Medusa%20Resources/CleanShot_2025-09-16_at_10.48.41_2x_myun8q.png)
+![Preview of the return item selector on the request return page](https://res.cloudinary.com/dza7lstvk/image/upload/v1758008962/Switchyard%20Resources/CleanShot_2025-09-16_at_10.48.41_2x_myun8q.png)
 
 The component displays each item's details. It lets customers specify the quantity to return based on the returnable quantity of the item. It also lets customers select a return reason for the item and provide an optional note.
 
@@ -341,9 +341,9 @@ export const returnItemSelectorHighlights = [
 ```tsx title="src/modules/account/components/return-item-selector/index.tsx" highlights={returnItemSelectorHighlights} collapsibleLines="1-9" expandButtonLabel="Show Imports"
 "use client"
 
-import { HttpTypes } from "@medusajs/types"
-import { Badge, IconButton, Select, Textarea } from "@medusajs/ui"
-import { Minus, Plus } from "@medusajs/icons"
+import { HttpTypes } from "@switchyard/types"
+import { Badge, IconButton, Select, Textarea } from "@switchyard/ui"
+import { Minus, Plus } from "@switchyard/icons"
 import Thumbnail from "@modules/products/components/thumbnail"
 import { convertToLocale } from "@lib/util/money"
 import { ItemWithDeliveryStatus } from "../../../../lib/util/returns"
@@ -650,9 +650,9 @@ You also display a summary of the selected items to return at the bottom of the 
 
 In this step, you'll add a component that lets customers select a shipping option for their return request. Later, you'll use this component in the return request page.
 
-![Preview of the return shipping selector on the request return page](https://res.cloudinary.com/dza7lstvk/image/upload/v1758010574/Medusa%20Resources/CleanShot_2025-09-16_at_11.13.19_2x_tvxnrq.png)
+![Preview of the return shipping selector on the request return page](https://res.cloudinary.com/dza7lstvk/image/upload/v1758010574/Switchyard%20Resources/CleanShot_2025-09-16_at_11.13.19_2x_tvxnrq.png)
 
-The component will display the available shipping options for returns, along with their name and price. For shipping options whose price type is calculated by the associated fulfillment provider, the component will retrieve its calculated price from the Medusa application.
+The component will display the available shipping options for returns, along with their name and price. For shipping options whose price type is calculated by the associated fulfillment provider, the component will retrieve its calculated price from the Switchyard application.
 
 To create the component, create the file `src/modules/account/components/return-shipping-selector/index.tsx` with the following content:
 
@@ -674,11 +674,11 @@ import React, {
   useState,
 } from "react"
 import { RadioGroup } from "@headlessui/react"
-import { HttpTypes } from "@medusajs/types"
-import { clx } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { clx } from "@switchyard/ui"
 import { convertToLocale } from "@lib/util/money"
 import { calculatePriceForShippingOption } from "@lib/data/fulfillment"
-import { Loader } from "@medusajs/icons"
+import { Loader } from "@switchyard/icons"
 import Radio from "@modules/common/components/radio"
 
 type ReturnShippingSelectorProps = {
@@ -822,7 +822,7 @@ return (
 
 You render the list of available shipping options for returns. For each option, you display its name and price.
 
-If a shipping option's price type is `calculated`, you display the calculated price retrieved from the Medusa application.
+If a shipping option's price type is `calculated`, you display the calculated price retrieved from the Switchyard application.
 
 ---
 
@@ -850,15 +850,15 @@ export const returnRequestTemplateHighlights = [
 "use client"
 
 import React, { useState, useActionState } from "react"
-import { XMark } from "@medusajs/icons"
-import { HttpTypes } from "@medusajs/types"
+import { XMark } from "@switchyard/icons"
+import { HttpTypes } from "@switchyard/types"
 import { createReturnRequest } from "@lib/data/returns"
 import LocalizedClientLink from "@modules/common/components/localized-client-link"
 import ReturnItemSelector, { ReturnItemSelection } from "@modules/account/components/return-item-selector"
 import ReturnShippingSelector from "@modules/account/components/return-shipping-selector"
 import { convertToLocale } from "@lib/util/money"
 import { enhanceItemsWithReturnStatus } from "@lib/util/returns"
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 
 type ReturnRequestTemplateProps = {
   order: HttpTypes.StoreOrder
@@ -1148,7 +1148,7 @@ Before you test the return request page, you'll add a link to the page from the 
 In `src/modules/order/templates/order-details-template.tsx`, add the following imports at the top of the file:
 
 ```tsx title="src/modules/order/templates/order-details-template.tsx"
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 import { hasReturnableItems } from "@lib/util/returns"
 ```
 
@@ -1210,9 +1210,9 @@ You add a button that links to the return request page next to the "Back to over
 
 Now that you've added the return request page and the necessary components, you can test the functionality.
 
-First, run the following command from the Medusa application's directory to start the development server:
+First, run the following command from the Switchyard application's directory to start the development server:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -1226,9 +1226,9 @@ npm run dev
 
 #### Create Return Shipping Options
 
-Before you can test the return request page, you need to create return shipping options in the Medusa Admin. To do that:
+Before you can test the return request page, you need to create return shipping options in the Switchyard Admin. To do that:
 
-1. Open the Medusa Admin in your browser at `localhost:9000/app` and log in.
+1. Open the Switchyard Admin in your browser at `localhost:9000/app` and log in.
 2. Go to Settings -> Locations & Shipping.
 3. Click on "View details" of a location to add the shipping options to.
 4. In the Shipping Options section, find the "Return options" subsection and click "Create option".
@@ -1237,20 +1237,20 @@ Before you can test the return request page, you need to create return shipping 
 
 You can learn more about creating a shipping option in the [Manage Locations](!user-guide!/settings/locations-and-shipping/locations) user guide.
 
-![Form to create a return shipping option in the Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758012545/Medusa%20Resources/CleanShot_2025-09-16_at_11.47.47_2x_fx6tan.png)
+![Form to create a return shipping option in the Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758012545/Switchyard%20Resources/CleanShot_2025-09-16_at_11.47.47_2x_fx6tan.png)
 
 #### Create Return Reasons
 
-Next, you need to create return reasons in the Medusa Admin. To do that:
+Next, you need to create return reasons in the Switchyard Admin. To do that:
 
-1. In the Medusa Admin, go to Settings -> Return Reasons.
+1. In the Switchyard Admin, go to Settings -> Return Reasons.
 2. Click "Create" to add a new return reason.
 3. In the form, enter the return reason's label and value.
 4. Click "Save" to create the return reason.
 
 You can learn more about creating return reasons in the [Manage Return Reasons](!user-guide!/settings/return-reasons) user guide.
 
-![Form to create a return reason in the Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758012657/Medusa%20Resources/CleanShot_2025-09-16_at_11.50.47_2x_qcrqj6.png)
+![Form to create a return reason in the Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758012657/Switchyard%20Resources/CleanShot_2025-09-16_at_11.50.47_2x_qcrqj6.png)
 
 #### Create Customer Account
 
@@ -1261,19 +1261,19 @@ Next, you need to create a customer account from the Next.js Starter Storefront.
 3. Enter the customer's details like email and password.
 4. Click "Join" to create the account.
 
-![Form to create a customer account in the Next.js Starter Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1758012811/Medusa%20Resources/CleanShot_2025-09-16_at_11.52.58_2x_msuuqx.png)
+![Form to create a customer account in the Next.js Starter Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1758012811/Switchyard%20Resources/CleanShot_2025-09-16_at_11.52.58_2x_msuuqx.png)
 
 #### Place an Order
 
 As a logged-in customer, place an order from the Next.js Starter Storefront. You can add an item to the cart, proceed to checkout, and complete the order. You'll see an order confirmation page afterward.
 
-![Order confirmation page in the Next.js Starter Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1758012923/Medusa%20Resources/CleanShot_2025-09-16_at_11.55.12_2x_zyat0i.png)
+![Order confirmation page in the Next.js Starter Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1758012923/Switchyard%20Resources/CleanShot_2025-09-16_at_11.55.12_2x_zyat0i.png)
 
 #### Deliver Items in the Order
 
-Finally, you need to deliver the items in the order from the Medusa Admin to make them returnable. To do that:
+Finally, you need to deliver the items in the order from the Switchyard Admin to make them returnable. To do that:
 
-1. In the Medusa Admin, go to Orders.
+1. In the Switchyard Admin, go to Orders.
 2. Click on the order you just placed from the storefront.
 3. Under the "Unfulfilled Items" section, click the <InlineIcon Icon={EllipsisHorizontal} alt="three-dots" /> icon and choose "Fulfill Items" from the dropdown.
 4. In the form, choose a location, a shipping method, and the quantity to fulfill.
@@ -1284,7 +1284,7 @@ The order's fulfillment status will change to "Delivered", and the items will be
 
 Learn more about creating fulfillments and marking them as delivered in the [Manage Order Fulfillments](!user-guide!/orders/fulfillments) user guide.
 
-![Order details page in the Medusa Admin showing the fulfillment status as "Delivered"](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013188/Medusa%20Resources/CleanShot_2025-09-16_at_11.59.29_2x_tlqaoo.png)
+![Order details page in the Switchyard Admin showing the fulfillment status as "Delivered"](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013188/Switchyard%20Resources/CleanShot_2025-09-16_at_11.59.29_2x_tlqaoo.png)
 
 ### Test the Return Request Flow
 
@@ -1300,39 +1300,39 @@ If you don't see the "Request Return" button, try hard-refreshing the page or cl
 
 </Note>
 
-![Order details page in the Next.js Starter Storefront showing the "Request Return" button](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013344/Medusa%20Resources/CleanShot_2025-09-16_at_12.02.03_2x_ehirsj.png)
+![Order details page in the Next.js Starter Storefront showing the "Request Return" button](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013344/Switchyard%20Resources/CleanShot_2025-09-16_at_12.02.03_2x_ehirsj.png)
 
 4. In the Request Return page, increment the quantity of an item to return, select a return reason, and provide an optional note.
 5. Choose a return shipping option.
 6. Click the "Request Return" button to submit the return request.
 
-![Request Return page in the Next.js Starter Storefront showing the item and shipping selectors](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013438/Medusa%20Resources/CleanShot_2025-09-16_at_12.03.41_2x_ksmlpt.png)
+![Request Return page in the Next.js Starter Storefront showing the item and shipping selectors](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013438/Switchyard%20Resources/CleanShot_2025-09-16_at_12.03.41_2x_ksmlpt.png)
 
 You should see a success message after submitting the return request.
 
-If you open the order's details page in the Medusa Admin, you'll see the requested return in the Activity section. You'll also see a note below the order's items that were requested for return.
+If you open the order's details page in the Switchyard Admin, you'll see the requested return in the Activity section. You'll also see a note below the order's items that were requested for return.
 
-![Order details page in the Medusa Admin showing the requested return in the Activity section](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013557/Medusa%20Resources/CleanShot_2025-09-16_at_12.05.31_2x_wv9z8o.png)
+![Order details page in the Switchyard Admin showing the requested return in the Activity section](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013557/Switchyard%20Resources/CleanShot_2025-09-16_at_12.05.31_2x_wv9z8o.png)
 
 ---
 
 ## Next Steps
 
-### Handle Return Requests in the Medusa Admin
+### Handle Return Requests in the Switchyard Admin
 
-As a merchant, you can now handle return requests from the Medusa Admin. You can:
+As a merchant, you can now handle return requests from the Switchyard Admin. You can:
 
 1. [Mark Return Items as Received](!user-guide!/orders/returns#mark-return-items-as-received). This is equivalent to approving the return request. This sets the return's status to "received" and restocks the returned items.
 
-![Form to mark return items as received in the Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013778/Medusa%20Resources/CleanShot_2025-09-16_at_12.09.23_2x_r07tcb.png)
+![Form to mark return items as received in the Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013778/Switchyard%20Resources/CleanShot_2025-09-16_at_12.09.23_2x_r07tcb.png)
 
 2. If you've previously captured the order's payment and there's an outstanding amount, you can [refund the outstanding amount](!user-guide!/orders/payments#refund-payment).
 
-![Button to refund the outstanding amount in the Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758014212/Medusa%20Resources/CleanShot_2025-09-16_at_12.16.35_2x_ibmkdq.png)
+![Button to refund the outstanding amount in the Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758014212/Switchyard%20Resources/CleanShot_2025-09-16_at_12.16.35_2x_ibmkdq.png)
 
 3. [Cancel a return request](!user-guide!/orders/returns#cancel-requested-return). This sets the return's status to "canceled". The customer can request a new return if needed.
 
-![Button to cancel a return request in the Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013651/Medusa%20Resources/CleanShot_2025-09-16_at_12.07.09_2x_husdak.png)
+![Button to cancel a return request in the Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1758013651/Switchyard%20Resources/CleanShot_2025-09-16_at_12.07.09_2x_husdak.png)
 
 ### Customize the Return Request Page
 
@@ -1340,11 +1340,11 @@ You can customize the return request page to fit your storefront's design and re
 
 Refer to the [Create Return API reference](!api!/api/store#returns_postreturns) to see the available parameters when creating a return request.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -1354,5 +1354,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

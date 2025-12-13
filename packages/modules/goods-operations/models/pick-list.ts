@@ -5,7 +5,7 @@
  * Generated from orders sourced from RFC inventory.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const PickList = model.define("goods_pick_list", {
   id: model.id().primaryKey(),

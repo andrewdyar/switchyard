@@ -20,7 +20,7 @@
  *       without prefix it will replace the entire default fields.
  *       The fields and relations to retrieve separated by commas.
  * 
- *       Learn more in the [API reference](https://docs.medusajs.com/api/store#select-fields-and-relations).
+ *       Learn more in the [API reference](https://docs.switchyard.com/api/store#select-fields-and-relations).
  *     required: false
  *     schema:
  *       type: string
@@ -413,7 +413,7 @@
  * x-badges:
  *   - text: Cloud
  *     description: |
- *       This API route is only available in [Medusa Cloud](https://docs.medusajs.com/cloud/loyalty-plugin).
+ *       This API route is only available in [Switchyard Cloud](https://docs.switchyard.com/cloud/loyalty-plugin).
  * 
 */
 

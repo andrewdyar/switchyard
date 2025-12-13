@@ -10,11 +10,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to add an action menu to your Medusa Admin customizations.
+In this guide, you'll learn how to add an action menu to your Switchyard Admin customizations.
 
-The Medusa Admin often provides additional actions in a dropdown shown when users click a three-dot icon.
+The Switchyard Admin often provides additional actions in a dropdown shown when users click a three-dot icon.
 
-![Example of an action menu in the Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1728291319/Medusa%20Resources/action-menu_jnus6k.png)
+![Example of an action menu in the Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1728291319/Switchyard%20Resources/action-menu_jnus6k.png)
 
 To create a component that shows this menu in your customizations, create the file `src/admin/components/action-menu.tsx` with the following content:
 
@@ -23,8 +23,8 @@ import {
   DropdownMenu,
   IconButton,
   clx,
-} from "@medusajs/ui"
-import { EllipsisHorizontal } from "@medusajs/icons"
+} from "@switchyard/ui"
+import { EllipsisHorizontal } from "@switchyard/icons"
 import { Link } from "react-router-dom"
 
 export type Action = {
@@ -121,7 +121,7 @@ export const ActionMenu = ({ groups }: ActionMenuProps) => {
 }
 ```
 
-The `ActionMenu` component shows a three-dots icon (or `EllipsisHorizontal`) from the [Medusa Icons package](!ui!/icons/overview) in a button.
+The `ActionMenu` component shows a three-dots icon (or `EllipsisHorizontal`) from the [Switchyard Icons package](!ui!/icons/overview) in a button.
 
 When the button is clicked, a dropdown menu is shown with the actions passed in the props.
 
@@ -145,7 +145,7 @@ The component accepts the following props:
               name: "icon",
               type: "`React.ReactNode`",
               optional: false,
-              description: `The icon of the action. You can use icons from the [Medusa Icons package](https://docs.medusajs.com/ui/icons/overview).`
+              description: `The icon of the action. You can use icons from the [Switchyard Icons package](https://docs.switchyard.com/ui/icons/overview).`
             },
             {
               name: "label",
@@ -188,8 +188,8 @@ Use the `ActionMenu` component in any widget or UI route.
 For example, create the widget `src/admin/widgets/product-widget.tsx` with the following content:
 
 ```tsx title="src/admin/widgets/product-widget.tsx"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Pencil } from "@medusajs/icons"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Pencil } from "@switchyard/icons"
 import { Container } from "../components/container"
 import { ActionMenu } from "../components/action-menu"
 
@@ -229,8 +229,8 @@ You can also use the action menu in the [Header](../header/page.mdx) component a
 For example:
 
 ```tsx title="src/admin/widgets/product-widget.tsx"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Pencil } from "@medusajs/icons"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Pencil } from "@switchyard/icons"
 import { Container } from "../components/container"
 import { Header } from "../components/header"
 

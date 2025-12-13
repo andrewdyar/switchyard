@@ -1,7 +1,7 @@
 /* @refresh reload */
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Button } from "@medusajs/ui"
-import { PlaySolid, Tools } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Button } from "@switchyard/ui"
+import { PlaySolid, Tools } from "@switchyard/icons"
 import ScraperCard from "../../components/scraper-card"
 import { useState, useRef } from "react"
 

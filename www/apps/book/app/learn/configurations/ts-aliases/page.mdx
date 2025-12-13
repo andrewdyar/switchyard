@@ -4,13 +4,13 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn how to use TypeScript aliases in your Medusa application.
+In this chapter, you'll learn how to use TypeScript aliases in your Switchyard application.
 
 ## Support for TypeScript Aliases
 
-By default, Medusa doesn't support TypeScript aliases in production. That means you may get build errors in production if you use them in your development.
+By default, Switchyard doesn't support TypeScript aliases in production. That means you may get build errors in production if you use them in your development.
 
-If you prefer using TypeScript aliases, this section will guide you through the steps to enable them in your Medusa application.
+If you prefer using TypeScript aliases, this section will guide you through the steps to enable them in your Switchyard application.
 
 ### Step 1: Install Required Dependencies
 
@@ -70,7 +70,7 @@ import { BrandModuleService } from "@/modules/brand/service"
 
 ## Support TypeScript Aliases for Admin Customizations
 
-Medusa also doesn't support TypeScript aliases in the admin customizations by default. However, you can also configure your Medusa application to use TypeScript aliases in your admin customizations.
+Switchyard also doesn't support TypeScript aliases in the admin customizations by default. However, you can also configure your Switchyard application to use TypeScript aliases in your admin customizations.
 
 ### Step 1: Update `src/admin/tsconfig.json`
 
@@ -91,11 +91,11 @@ Update `src/admin/tsconfig.json` to include `baseUrl` and `paths` configuration:
 
 The `baseUrl` option sets the base directory to `src/admin`, and the `paths` option defines the `@` alias to allow importing files from the `src/admin` directory using aliases.
 
-### Step 2: Update `medusa-config.ts`
+### Step 2: Update `switchyard.config.ts`
 
-Next, update the `vite` configuration in `medusa-config.ts` to include the `resolve.alias` configuration:
+Next, update the `vite` configuration in `switchyard.config.ts` to include the `resolve.alias` configuration:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 import path from "path"
 
 module.exports = defineConfig({
@@ -114,7 +114,7 @@ module.exports = defineConfig({
 
 <Note title="Tip">
 
-Learn more about the `vite` configuration in the [Medusa configuration](../medusa-config/page.mdx) chapter.
+Learn more about the `vite` configuration in the [Switchyard configuration](../switchyard.config/page.mdx) chapter.
 
 </Note>
 
@@ -147,7 +147,7 @@ For example, if you set the `@/*` alias to point to `./components/*`:
 
 Then, the `vite` alias configuration would be:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 import path from "path"
 
 module.exports = defineConfig({

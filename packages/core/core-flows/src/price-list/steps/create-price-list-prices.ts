@@ -4,9 +4,9 @@ import {
   CreatePriceListPriceWorkflowDTO,
   CreatePriceListPricesWorkflowStepDTO,
   IPricingModuleService,
-} from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 export const createPriceListPricesStepId = "create-price-list-prices"
 /**

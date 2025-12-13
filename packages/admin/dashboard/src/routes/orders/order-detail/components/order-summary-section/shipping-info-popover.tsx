@@ -1,6 +1,6 @@
-import { InformationCircleSolid } from "@medusajs/icons"
-import { AdminOrderShippingMethod } from "@medusajs/types"
-import { Badge, Tooltip } from "@medusajs/ui"
+import { InformationCircleSolid } from "@switchyard/icons"
+import { AdminOrderShippingMethod } from "@switchyard/types"
+import { Badge, Tooltip } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
 type ShippingInfoPopoverProps = {

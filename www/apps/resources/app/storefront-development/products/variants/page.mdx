@@ -55,7 +55,7 @@ export const highlights = [
 "use client" // include with Next.js 13+
 
 import { useEffect, useMemo, useState } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { sdk } from "@/lib/sdk"
 
 type Props = {
@@ -143,7 +143,7 @@ export default function Product({ id }: Props) {
 
 In this example, you:
 
-- Retrieve the product details from Medusa.
+- Retrieve the product details from Switchyard.
 - Show the product's options and allow the customer to select an option value.
 - Store the selected options in the `selectedOptions` state variable. It's an object whose keys are options' ID, and values are the selected value of that option.
 - Compute the selected variable whenever the selected option is changed. When the customer chooses a value for all options, you find a product variant that has the same chosen option-value combinations.

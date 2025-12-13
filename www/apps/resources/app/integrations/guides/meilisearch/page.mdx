@@ -4,43 +4,43 @@ products:
 ---
 
 import { Card, Prerequisites, Details, WorkflowDiagram } from "docs-ui"
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 
 export const metadata = {
-  title: `Integrate Meilisearch with Medusa`,
+  title: `Integrate Meilisearch with Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to integrate Meilisearch with Medusa to enable advanced search capabilities in your storefront.
+In this tutorial, you'll learn how to integrate Meilisearch with Switchyard to enable advanced search capabilities in your storefront.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. Medusa's architecture supports integrating third-party services, such as search engines, allowing you to build custom features around core commerce flows.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. Switchyard's architecture supports integrating third-party services, such as search engines, allowing you to build custom features around core commerce flows.
 
-[Meilisearch](https://www.meilisearch.com/) is an open-source, fast, and relevant search engine that you can integrate with Medusa to enhance your storefront's search functionality.
+[Meilisearch](https://www.meilisearch.com/) is an open-source, fast, and relevant search engine that you can integrate with Switchyard to enhance your storefront's search functionality.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
-- Integrate Meilisearch into Medusa.
+- Install and set up Switchyard.
+- Integrate Meilisearch into Switchyard.
 - Trigger Meilisearch reindexing when a product is created, updated, or deleted, or when an admin manually triggers a reindex.
 - Customize the Next.js Starter Storefront to search for products through Meilisearch.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram illustrating the integration of Meilisearch with Medusa](https://res.cloudinary.com/dza7lstvk/image/upload/v1758091098/Medusa%20Resources/meilisearch-summary_bdig6e.jpg)
+![Diagram illustrating the integration of Meilisearch with Switchyard](https://res.cloudinary.com/dza7lstvk/image/upload/v1758091098/Switchyard%20Resources/meilisearch-summary_bdig6e.jpg)
 
 <Card
   title="Example Repository"
   text="Find the full code of the guide in this repository."
-  href="https://github.com/medusajs/examples/tree/main/meilisearch-integration"
+  href="https://github.com/switchyard/examples/tree/main/meilisearch-integration"
   icon={Github}
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -57,27 +57,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -94,9 +94,9 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
   ]}
 />
 
-To integrate third-party services into Medusa, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without side effects on your setup.
+To integrate third-party services into Switchyard, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without side effects on your setup.
 
-In this step, you'll create a custom module that provides the necessary functionalities to integrate Meilisearch with Medusa.
+In this step, you'll create a custom module that provides the necessary functionalities to integrate Meilisearch with Switchyard.
 
 <Note>
 
@@ -104,7 +104,7 @@ Refer to the [Modules documentation](!docs!/learn/fundamentals/modules) to learn
 
 </Note>
 
-Before building the module, you need to install Meilisearch's JavaScript client. Run the following command in your Medusa application's root directory:
+Before building the module, you need to install Meilisearch's JavaScript client. Run the following command in your Switchyard application's root directory:
 
 ```bash npm2yarn
 npm install meilisearch
@@ -112,7 +112,7 @@ npm install meilisearch
 
 ### Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/meilisearch`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/meilisearch`.
 
 ### Create Service
 
@@ -124,7 +124,7 @@ To create the Meilisearch Module's service, create the file `src/modules/meilise
 
 ```ts title="src/modules/meilisearch/service.ts"
 const { Meilisearch } = require("meilisearch")
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type MeilisearchOptions = {
   host: string;
@@ -140,8 +140,8 @@ export default class MeilisearchModuleService {
 
   constructor({}, options: MeilisearchOptions) {
     if (!options.host || !options.apiKey || !options.productIndexName) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT, 
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT, 
         "Meilisearch options are required"
       )
     }
@@ -219,7 +219,7 @@ You define two methods:
 
 ### Retrieve and Delete Methods
 
-The next methods you'll add to the service are methods to retrieve and delete data from the Meilisearch index. You'll use these later to keep the Meilisearch index in sync with Medusa.
+The next methods you'll add to the service are methods to retrieve and delete data from the Meilisearch index. You'll use these later to keep the Meilisearch index in sync with Switchyard.
 
 Add the following methods to the `MeilisearchModuleService` class:
 
@@ -261,7 +261,7 @@ You define two methods:
 
 #### Search Method
 
-The last method you'll implement is a method to search through the Meilisearch index. This method lets you expose search functionality to clients through Medusa's API routes.
+The last method you'll implement is a method to search through the Meilisearch index. This method lets you expose search functionality to clients through Switchyard's API routes.
 
 Add the following method to the `MeilisearchModuleService` class:
 
@@ -283,12 +283,12 @@ The `search` method receives a query string and a `MeilisearchIndexType`. The me
 
 ### Export Module Definition
 
-The final piece of a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece of a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/meilisearch/index.ts` with the following content:
 
 ```ts title="src/modules/meilisearch/index.ts"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import MeilisearchModuleService from "./service"
 
 export const MEILISEARCH_MODULE = "meilisearch"
@@ -305,13 +305,13 @@ You use the `Module` function from the Modules SDK to create the module's defini
 
 You also export the module's name as `MEILISEARCH_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -352,7 +352,7 @@ Your module is now ready for use. You'll see how to use it in the next steps.
 
 ## Step 3: Sync Products to Meilisearch Workflow
 
-To keep the Meilisearch index in sync with Medusa, you need to trigger indexing when products are created, updated, or deleted in Medusa. You can also allow admins to manually trigger a reindex.
+To keep the Meilisearch index in sync with Switchyard, you need to trigger indexing when products are created, updated, or deleted in Switchyard. You can also allow admins to manually trigger a reindex.
 
 To implement the indexing functionality, you need to create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of actions, called steps, that complete a task. You construct a workflow like you construct a function, but it's a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features.
 
@@ -394,7 +394,7 @@ The workflow has the following steps:
   hideLegend
 />
 
-Medusa provides the `useQueryGraphStep` in its `@medusajs/medusa/core-flows` package. You only need to implement the other steps.
+Switchyard provides the `useQueryGraphStep` in its `@switchyard/medusa/core-flows` package. You only need to implement the other steps.
 
 ### syncProductsStep
 
@@ -404,12 +404,12 @@ To create the step, create the file `src/workflows/steps/sync-products.ts` with 
 
 <Note>
 
-If you get a type error on resolving the Meilisearch Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Meilisearch Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
 ```ts title="src/workflows/steps/sync-products.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { MEILISEARCH_MODULE } from "../../modules/meilisearch"
 import MeilisearchModuleService from "../../modules/meilisearch/service"
 
@@ -464,9 +464,9 @@ You create a step with `createStep` from the Workflows SDK. It accepts two param
 1. The step's unique name, which is `sync-products`.
 2. An async function that receives two parameters:
     - The step's input, which is an object holding an array of products to sync into Meilisearch.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
-In the step function, you resolve the Meilisearch Module's service from the Medusa container using the name you exported in the module definition's file.
+In the step function, you resolve the Meilisearch Module's service from the Switchyard container using the name you exported in the module definition's file.
 
 Then, you retrieve the products that are already indexed in Meilisearch and determine which products are new. You'll learn why this is useful in a bit.
 
@@ -515,13 +515,13 @@ export const syncProductsStep = createStep(
 The compensation function receives two parameters:
 
 1. The data you passed as a second parameter of `StepResponse` in the step function.
-2. A context object similar to the step function that holds the Medusa container.
+2. A context object similar to the step function that holds the Switchyard container.
 
 In the compensation function, you resolve the Meilisearch Module's service from the container. Then, you delete from Meilisearch the products that were newly indexed and revert the existing products to their original data.
 
 #### deleteProductsFromMeilisearchStep
 
-The `deleteProductsFromMeilisearchStep` step deletes products from Meilisearch when they are unpublished or deleted in Medusa.
+The `deleteProductsFromMeilisearchStep` step deletes products from Meilisearch when they are unpublished or deleted in Switchyard.
 
 Create the step at `src/workflows/steps/delete-products-from-meilisearch.ts` with the following content:
 
@@ -529,7 +529,7 @@ Create the step at `src/workflows/steps/delete-products-from-meilisearch.ts` wit
 import {
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { MEILISEARCH_MODULE } from "../../modules/meilisearch"
 
 export type DeleteProductsFromMeilisearchStep = {
@@ -588,8 +588,8 @@ import {
   createWorkflow, 
   transform, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { syncProductsStep, SyncProductsStepInput } from "./steps/sync-products"
 import { deleteProductsFromMeilisearchStep } from "./steps/delete-products-from-meilisearch"
 
@@ -670,7 +670,7 @@ It accepts as a second parameter a constructor function, which is the workflow's
 
 In the workflow's constructor function, you:
 
-1. Retrieve products from Medusa's database using `useQueryGraphStep`. This step uses Medusa's [Query](!docs!/learn/fundamentals/module-links/query) tool to retrieve data across modules. You pass it the pagination and filter parameters you received in the input.
+1. Retrieve products from Switchyard's database using `useQueryGraphStep`. This step uses Switchyard's [Query](!docs!/learn/fundamentals/module-links/query) tool to retrieve data across modules. You pass it the pagination and filter parameters you received in the input.
 2. Use [transform](!docs!/learn/fundamentals/workflows/variable-manipulation) to prepare two lists: one for published products to index in Meilisearch and another for unpublished products to delete from Meilisearch.
 3. Index the published products in Meilisearch using `syncProductsStep`.
 4. Delete unpublished products from Meilisearch using `deleteProductsFromMeilisearchStep`.
@@ -691,11 +691,11 @@ In workflows, you need `transform` to prepare data based on execution values. Le
 
 As mentioned earlier, you'll trigger the Meilisearch sync automatically when product events occur. You also want to allow admins to manually trigger a reindex.
 
-In this step, you'll add the functionality to trigger the `syncProductsWorkflow` manually from the Medusa Admin dashboard. This requires:
+In this step, you'll add the functionality to trigger the `syncProductsWorkflow` manually from the Switchyard Admin dashboard. This requires:
 
 1. Creating a subscriber that listens to a custom `meilisearch.sync` event to trigger syncing products to Meilisearch.
-2. Creating an API route that the Medusa Admin dashboard can call to emit the `meilisearch.sync` event, which triggers the subscriber.
-3. Adding a new page or UI route to the Medusa Admin dashboard to allow admins to trigger the reindex.
+2. Creating an API route that the Switchyard Admin dashboard can call to emit the `meilisearch.sync` event, which triggers the subscriber.
+3. Adding a new page or UI route to the Switchyard Admin dashboard to allow admins to trigger the reindex.
 
 ### Create Products Sync Subscriber
 
@@ -713,7 +713,7 @@ You create a subscriber in a TypeScript or JavaScript file under the `src/subscr
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { syncProductsWorkflow } from "../workflows/sync-products"
 
 export default async function meilisearchSyncHandler({ 
@@ -755,7 +755,7 @@ A subscriber file must export:
 1. An asynchronous function, which is the subscriber that is executed when the event is emitted.
 2. A configuration object that holds the name of the event the subscriber listens to, which is `meilisearch.sync` in this case.
 
-The subscriber function receives an object as a parameter that has a `container` property, which is the Medusa container.
+The subscriber function receives an object as a parameter that has a `container` property, which is the Switchyard container.
 
 In the subscriber function, you initialize variables to keep track of pagination and the total number of products indexed.
 
@@ -771,7 +771,7 @@ If you want to sync other data types, you can do it in this subscriber as well.
 
 ### Create API Route to Trigger Sync
 
-To allow the Medusa Admin dashboard to trigger the `meilisearch.sync` event, you need to create an API route that emits the event.
+To allow the Switchyard Admin dashboard to trigger the `meilisearch.sync` event, you need to create an API route that emits the event.
 
 An API Route is an endpoint that exposes commerce features to external applications and clients, such as storefronts.
 
@@ -786,12 +786,12 @@ An API route is created in a `route.ts` file under a subdirectory of the `src/ap
 So, to create an API route at the path `/admin/meilisearch/sync`, create the file `src/api/admin/meilisearch/sync/route.ts` with the following content:
 
 ```ts title="src/api/admin/meilisearch/sync/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const eventModuleService = req.scope.resolve(Modules.EVENT_BUS)
   await eventModuleService.emit({
@@ -810,7 +810,7 @@ Since you export a `POST` route handler function, you expose a `POST` API route 
 1. A request object with details and context on the request, such as body parameters or authenticated user details.
 2. A response object to manipulate and send the response.
 
-In the route handler, you use the Medusa container that is available in the request object. You resolve the [Event Module](../../../infrastructure-modules/event/page.mdx). This module manages events and their subscribers.
+In the route handler, you use the Switchyard container that is available in the request object. You resolve the [Event Module](../../../infrastructure-modules/event/page.mdx). This module manages events and their subscribers.
 
 Then, you emit the `meilisearch.sync` event using the Event Module's `emit` method. You pass it the event name.
 
@@ -820,7 +820,7 @@ Finally, you send a response with a message indicating that data is being synced
 
 The last step is to add a new page to the admin dashboard. This page allows admins to trigger the reindex. You add a new page using a [UI Route](!docs!/learn/fundamentals/admin/ui-routes).
 
-A UI route is a React component that specifies the content to be shown in a new page in the Medusa Admin dashboard. You'll create a UI route to display a button that triggers the reindex when clicked.
+A UI route is a React component that specifies the content to be shown in a new page in the Switchyard Admin dashboard. You'll create a UI route to display a button that triggers the reindex when clicked.
 
 <Note>
 
@@ -830,14 +830,14 @@ Learn more about UI routes in the [UI Routes documentation](!docs!/learn/fundame
 
 #### Configure JS SDK
 
-Before creating the UI route, you'll configure Medusa's [JS SDK](../../../js-sdk/page.mdx). You can use it to send requests to the Medusa server from any client application, including your Medusa Admin customizations.
+Before creating the UI route, you'll configure Switchyard's [JS SDK](../../../js-sdk/page.mdx). You can use it to send requests to the Switchyard server from any client application, including your Switchyard Admin customizations.
 
-The JS SDK is installed by default in your Medusa application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
+The JS SDK is installed by default in your Switchyard application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -846,9 +846,9 @@ export const sdk = new Medusa({
 })
 ```
 
-You create an instance of the JS SDK using the `Medusa` class from the JS SDK. You pass it an object having the following properties:
+You create an instance of the JS SDK using the `Switchyard` class from the JS SDK. You pass it an object having the following properties:
 
-- `baseUrl`: The base URL of the Medusa server.
+- `baseUrl`: The base URL of the Switchyard server.
 - `debug`: A boolean indicating whether to log debug information into the console.
 - `auth`: An object specifying the authentication type. When using the JS SDK for admin customizations, you use the `session` authentication type.
 
@@ -856,13 +856,13 @@ You create an instance of the JS SDK using the `Medusa` class from the JS SDK. Y
 
 You'll now create the UI route that displays a button to trigger the reindex. You create a UI route in a `page.tsx` file under a subdirectory of `src/admin/routes` directory. The file's path relative to `src/admin/routes` determines its path in the dashboard.
 
-So, to create a new page under the Settings section of the Medusa Admin, create the file `src/admin/routes/settings/meilisearch/page.tsx` with the following content:
+So, to create a new page under the Settings section of the Switchyard Admin, create the file `src/admin/routes/settings/meilisearch/page.tsx` with the following content:
 
 ```tsx title="src/admin/routes/settings/meilisearch/page.tsx"
-import { Container, Heading, Button, toast } from "@medusajs/ui"
+import { Container, Heading, Button, toast } from "@switchyard/ui"
 import { useMutation } from "@tanstack/react-query"
 import { sdk } from "../../../lib/sdk"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
 
 const MeilisearchPage = () => {
   const { mutate, isPending } = useMutation({
@@ -919,19 +919,19 @@ Then, in the return statement, you display a button that triggers the mutation w
 
 ### Test it Out
 
-You'll now test out the entire flow. Start by triggering the reindex manually from the Medusa Admin dashboard, then check the Meilisearch dashboard for the indexed products.
+You'll now test out the entire flow. Start by triggering the reindex manually from the Switchyard Admin dashboard, then check the Meilisearch dashboard for the indexed products.
 
-Run the following command to start the Medusa application:
+Run the following command to start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin at `http://localhost:9000/app` and log in with the credentials you set up in the first step.
+Then, open the Switchyard Admin at `http://localhost:9000/app` and log in with the credentials you set up in the first step.
 
 <Note>
 
-Can't remember the credentials? Learn how to create a user in the [Medusa CLI reference](../../../medusa-cli/commands/user/page.mdx).
+Can't remember the credentials? Learn how to create a user in the [Switchyard CLI reference](../../../switchyard-cli/commands/user/page.mdx).
 
 </Note>
 
@@ -939,9 +939,9 @@ After you log in, go to Settings from the sidebar. You'll find a new "Meilisearc
 
 If you click on the button, the products will be synced to Meilisearch.
 
-![The Meilisearch Sync page in the Medusa Admin dashboard with a button to sync products to Meilisearch](https://res.cloudinary.com/dza7lstvk/image/upload/v1758094934/Medusa%20Resources/CleanShot_2025-09-17_at_10.41.51_2x_wph4pp.png)
+![The Meilisearch Sync page in the Switchyard Admin dashboard with a button to sync products to Meilisearch](https://res.cloudinary.com/dza7lstvk/image/upload/v1758094934/Switchyard%20Resources/CleanShot_2025-09-17_at_10.41.51_2x_wph4pp.png)
 
-You can check that the sync ran and was completed by checking the Medusa logs in the terminal where you started the Medusa application. You should find the following messages:
+You can check that the sync ran and was completed by checking the Switchyard logs in the terminal where you started the Switchyard application. You should find the following messages:
 
 ```bash
 info:    Processing meilisearch.sync which has 1 subscribers
@@ -951,9 +951,9 @@ info:    Successfully indexed 4 products
 
 These messages indicate that the `meilisearch.sync` event was emitted, which triggered the subscriber you created to sync the products using the `syncProductsWorkflow`.
 
-Finally, you can check the Meilisearch dashboard to see the indexed products. Open the Meilisearch dashboard, either Cloud or local, and choose the index you specified for products in the environment variable `MEILISEARCH_PRODUCT_INDEX_NAME`. You'll find your Medusa products indexed there.
+Finally, you can check the Meilisearch dashboard to see the indexed products. Open the Meilisearch dashboard, either Cloud or local, and choose the index you specified for products in the environment variable `MEILISEARCH_PRODUCT_INDEX_NAME`. You'll find your Switchyard products indexed there.
 
-![The Meilisearch dashboard showing the indexed products](https://res.cloudinary.com/dza7lstvk/image/upload/v1758095145/Medusa%20Resources/CleanShot_2025-09-17_at_10.45.29_2x_y8ytzf.png)
+![The Meilisearch dashboard showing the indexed products](https://res.cloudinary.com/dza7lstvk/image/upload/v1758095145/Switchyard%20Resources/CleanShot_2025-09-17_at_10.45.29_2x_y8ytzf.png)
 
 ---
 
@@ -973,7 +973,7 @@ So, you only need one subscriber to handle these two events. To create the subsc
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { syncProductsWorkflow } from "../workflows/sync-products"
 
 export default async function handleProductEvents({
@@ -1003,13 +1003,13 @@ So, you pass the product's ID to the `syncProductsWorkflow` as a filter to retri
 
 #### Test it Out
 
-To test it out, start the Medusa application:
+To test it out, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, either create a product or update an existing one using the Medusa Admin dashboard. If you check the Meilisearch dashboard, you'll find that the product's index was created or updated.
+Then, either create a product or update an existing one using the Switchyard Admin dashboard. If you check the Meilisearch dashboard, you'll find that the product's index was created or updated.
 
 ### Handle Product Deletion
 
@@ -1024,7 +1024,7 @@ Since you've already implemented the `deleteProductsFromMeilisearchStep`, you ca
 Create the file `src/workflows/delete-products-from-meilisearch.ts` with the following content:
 
 ```ts title="src/workflows/delete-products-from-meilisearch.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
 import { deleteProductsFromMeilisearchStep } from "./steps/delete-products-from-meilisearch"
 
 type DeleteProductsFromMeilisearchWorkflowInput = {
@@ -1051,7 +1051,7 @@ Create the file `src/subscribers/product-delete.ts` with the following content:
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { deleteProductsFromMeilisearchWorkflow } from "../workflows/delete-products-from-meilisearch"
 
 export default async function productDeleteHandler({ 
@@ -1079,27 +1079,27 @@ The subscriber listens to the `product.deleted` event. When the event is emitted
 
 #### Test it Out
 
-To test product deletion, start the Medusa application:
+To test product deletion, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, delete a product from the Medusa Admin dashboard. If you check the Meilisearch dashboard, you'll find that the product index was deleted there as well.
+Then, delete a product from the Switchyard Admin dashboard. If you check the Meilisearch dashboard, you'll find that the product index was deleted there as well.
 
 ---
 
 ## Step 6: Search Products in Next.js Starter Storefront
 
-The last step is to provide search functionalities to customers on your storefront. In the first step, you installed the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) along with the Medusa application.
+The last step is to provide search functionalities to customers on your storefront. In the first step, you installed the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) along with the Switchyard application.
 
 In this step, you'll customize the Next.js Starter Storefront to add search functionality.
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-search`, you can find the storefront by going back to the parent directory and changing to the `medusa-search-storefront` directory:
+So, if your Switchyard application's directory is `medusa-search`, you can find the storefront by going back to the parent directory and changing to the `medusa-search-storefront` directory:
 
 ```bash
 cd ../medusa-search-storefront # change based on your project name
@@ -1179,7 +1179,7 @@ import React, { useEffect, useState } from "react"
 import { Hits, InstantSearch, SearchBox } from "react-instantsearch"
 import { searchClient } from "../../../../lib/config"
 import Modal from "../../../common/components/modal"
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -1274,7 +1274,7 @@ The search button will now appear in the navigation bar before the Account link.
 
 ### Test it Out
 
-To test out the storefront changes and the search API route, start the Medusa application:
+To test out the storefront changes and the search API route, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -1288,22 +1288,22 @@ npm run dev
 
 Next, go to `localhost:8000`. You'll find a Search button at the top right of the navigation bar. If you click on it, you can search through your products. You can also click on a product to view its page.
 
-![The Next.js Starter Storefront showing the search modal with search results](https://res.cloudinary.com/dza7lstvk/image/upload/v1758096281/Medusa%20Resources/CleanShot_2025-09-17_at_11.04.26_2x_bhb9k7.png)
+![The Next.js Starter Storefront showing the search modal with search results](https://res.cloudinary.com/dza7lstvk/image/upload/v1758096281/Switchyard%20Resources/CleanShot_2025-09-17_at_11.04.26_2x_bhb9k7.png)
 
 ---
 
 ## Next Steps
 
-You've now integrated Meilisearch with Medusa and added search functionality to your storefront. You can expand on these features to:
+You've now integrated Meilisearch with Switchyard and added search functionality to your storefront. You can expand on these features to:
 
 - Add filters to the search results. You can do that using [react-instantsearch widgets](https://www.algolia.com/doc/guides/building-search-ui/widgets/showcase/react/).
 - Support indexing other data types, such as product categories. You can create subscribers and workflows for categories similar to products.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -1313,5 +1313,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

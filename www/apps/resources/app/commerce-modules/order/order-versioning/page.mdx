@@ -25,7 +25,7 @@ Other order-related data models, such as `OrderItem`, also have a `version` prop
 
 ## How the Version Changes
 
-When the order is changed, such as when an item is exchanged, Medusa updates the order's version and its related data:
+When the order is changed, such as when an item is exchanged, Switchyard updates the order's version and its related data:
 
 1. The version of the order and its summary is incremented.
 2. Related order data that have a `version` property, such as `OrderItem`, are duplicated. The duplicated item has the new version, while the original item retains the previous version.

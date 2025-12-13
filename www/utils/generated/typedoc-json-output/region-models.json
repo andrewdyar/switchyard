@@ -28,7 +28,7 @@
 					"fileName": "country.ts",
 					"line": 4,
 					"character": 0,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L4"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L4"
 				}
 			],
 			"type": {
@@ -73,7 +73,7 @@
 													"fileName": "country.ts",
 													"line": 8,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L8"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L8"
 												}
 											],
 											"type": {
@@ -90,11 +90,11 @@
 															"qualifiedName": "TextProperty"
 														},
 														"name": "TextProperty",
-														"package": "@medusajs/utils"
+														"package": "@switchyard/utils"
 													}
 												],
 												"name": "PrimaryKeyModifier",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -117,7 +117,7 @@
 													"fileName": "country.ts",
 													"line": 9,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L9"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L9"
 												}
 											],
 											"type": {
@@ -127,7 +127,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -150,7 +150,7 @@
 													"fileName": "country.ts",
 													"line": 10,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L10"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L10"
 												}
 											],
 											"type": {
@@ -160,7 +160,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -183,7 +183,7 @@
 													"fileName": "country.ts",
 													"line": 11,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L11"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L11"
 												}
 											],
 											"type": {
@@ -193,7 +193,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -216,7 +216,7 @@
 													"fileName": "country.ts",
 													"line": 12,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L12"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L12"
 												}
 											],
 											"type": {
@@ -226,7 +226,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -254,7 +254,7 @@
 													"fileName": "country.ts",
 													"line": 13,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L13"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L13"
 												}
 											],
 											"type": {
@@ -271,7 +271,7 @@
 													}
 												],
 												"name": "BelongsTo",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -296,7 +296,7 @@
 													"fileName": "country.ts",
 													"line": 16,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L16"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L16"
 												}
 											],
 											"type": {
@@ -306,7 +306,7 @@
 													"qualifiedName": "JSONProperty"
 												},
 												"name": "JSONProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										}
@@ -330,14 +330,14 @@
 											"fileName": "country.ts",
 											"line": 7,
 											"character": 4,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L7"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L7"
 										}
 									]
 								}
 							}
 						],
 						"name": "DMLEntitySchemaBuilder",
-						"package": "@medusajs/utils"
+						"package": "@switchyard/utils"
 					},
 					{
 						"type": "reflection",
@@ -361,7 +361,7 @@
 											"fileName": "country.ts",
 											"line": 6,
 											"character": 6,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L6"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L6"
 										}
 									],
 									"type": {
@@ -383,7 +383,7 @@
 											"fileName": "country.ts",
 											"line": 6,
 											"character": 23,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L6"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L6"
 										}
 									],
 									"type": {
@@ -407,14 +407,14 @@
 									"fileName": "country.ts",
 									"line": 6,
 									"character": 4,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L6"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/country.ts#L6"
 								}
 							]
 						}
 					}
 				],
 				"name": "DmlEntity",
-				"package": "@medusajs/utils"
+				"package": "@switchyard/utils"
 			}
 		},
 		{
@@ -428,7 +428,7 @@
 					"fileName": "region.ts",
 					"line": 4,
 					"character": 0,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L4"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L4"
 				}
 			],
 			"type": {
@@ -473,7 +473,7 @@
 													"fileName": "region.ts",
 													"line": 5,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L5"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L5"
 												}
 											],
 											"type": {
@@ -490,11 +490,11 @@
 															"qualifiedName": "IdProperty"
 														},
 														"name": "IdProperty",
-														"package": "@medusajs/utils"
+														"package": "@switchyard/utils"
 													}
 												],
 												"name": "PrimaryKeyModifier",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -517,7 +517,7 @@
 													"fileName": "region.ts",
 													"line": 6,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L6"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L6"
 												}
 											],
 											"type": {
@@ -527,7 +527,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -550,7 +550,7 @@
 													"fileName": "region.ts",
 													"line": 7,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L7"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L7"
 												}
 											],
 											"type": {
@@ -560,7 +560,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -583,7 +583,7 @@
 													"fileName": "region.ts",
 													"line": 8,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L8"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L8"
 												}
 											],
 											"type": {
@@ -593,7 +593,7 @@
 													"qualifiedName": "BooleanProperty"
 												},
 												"name": "BooleanProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -619,7 +619,7 @@
 													"fileName": "region.ts",
 													"line": 9,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L9"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L9"
 												}
 											],
 											"type": {
@@ -636,7 +636,7 @@
 													}
 												],
 												"name": "HasMany",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -661,7 +661,7 @@
 													"fileName": "region.ts",
 													"line": 10,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L10"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L10"
 												}
 											],
 											"type": {
@@ -671,7 +671,7 @@
 													"qualifiedName": "JSONProperty"
 												},
 												"name": "JSONProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										}
@@ -694,14 +694,14 @@
 											"fileName": "region.ts",
 											"line": 4,
 											"character": 38,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L4"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/region/src/models/region.ts#L4"
 										}
 									]
 								}
 							}
 						],
 						"name": "DMLEntitySchemaBuilder",
-						"package": "@medusajs/utils"
+						"package": "@switchyard/utils"
 					},
 					{
 						"type": "literal",
@@ -709,7 +709,7 @@
 					}
 				],
 				"name": "DmlEntity",
-				"package": "@medusajs/utils"
+				"package": "@switchyard/utils"
 			}
 		}
 	],
@@ -722,7 +722,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/region",
+	"packageName": "@switchyard/region",
 	"symbolIdMap": {
 		"14852": {
 			"sourceFileName": "../../../../packages/modules/region/src/models/index.ts",

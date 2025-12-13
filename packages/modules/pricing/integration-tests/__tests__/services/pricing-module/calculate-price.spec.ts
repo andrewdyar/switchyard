@@ -3,13 +3,13 @@ import {
   CreatePriceSetDTO,
   IPricingModuleService,
   PricingTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   Modules,
   PriceListStatus,
   PriceListType,
-} from "@medusajs/framework/utils"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@switchyard/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { withOperator } from "../../../__fixtures__/price-rule"
 import { seedPriceData } from "../../../__fixtures__/seed-price-data"
 

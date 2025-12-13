@@ -1,7 +1,7 @@
 import ts from "typescript"
 import FunctionKindGenerator from "./function.js"
 import DefaultKindGenerator, { GeneratorOptions } from "./default.js"
-import MedusaReactHooksKindGenerator from "./medusa-react-hooks.js"
+import SwitchyardReactHooksKindGenerator from "./switchyard-react-hooks.js"
 import SourceFileKindGenerator from "./source-file.js"
 import DTOPropertyGenerator from "./dto-property.js"
 import OasKindGenerator from "./oas.js"
@@ -23,7 +23,7 @@ class KindsRegistry {
     this.kindInstances = [
       new DmlKindGenerator(options),
       new OasKindGenerator(options),
-      new MedusaReactHooksKindGenerator(options),
+      new SwitchyardReactHooksKindGenerator(options),
       new FunctionKindGenerator(options),
       new SourceFileKindGenerator(options),
       new DTOPropertyGenerator(options),

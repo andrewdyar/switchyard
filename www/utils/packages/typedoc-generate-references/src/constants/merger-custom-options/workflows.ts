@@ -12,7 +12,7 @@ const workflowsOptions: FormattingOptionsType = {
   },
   "^modules/workflows/page\\.mdx": {
     reflectionDescription:
-      "This section of the documentation provides a reference to Medusa's Workflows SDK, where you can find all accepted inputs, expected output, and example code snippets.",
+      "This section of the documentation provides a reference to Switchyard's Workflows SDK, where you can find all accepted inputs, expected output, and example code snippets.",
     reflectionGroups: {
       Namespaces: false,
       Enumerations: false,

@@ -1,6 +1,6 @@
-import { MathBN, Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import type { BigNumberInput } from "@medusajs/framework/types"
+import { MathBN, Modules } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import type { BigNumberInput } from "@switchyard/framework/types"
 
 /**
  * The details of the items and their quantity to reserve.

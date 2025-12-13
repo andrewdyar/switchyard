@@ -1,14 +1,14 @@
 import {
   createPaymentSessionsWorkflow,
   createPaymentSessionsWorkflowId,
-} from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   ICustomerModuleService,
   IPaymentModuleService,
   IRegionModuleService,
-} from "@medusajs/types"
-import { ContainerRegistrationKeys, Modules } from "@medusajs/utils"
+} from "@switchyard/types"
+import { ContainerRegistrationKeys, Modules } from "@switchyard/utils"
 
 jest.setTimeout(50000)
 

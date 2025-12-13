@@ -16,13 +16,13 @@ For example, create the file `src/api/hello-world/route.ts` with the following c
 
 ```ts title="src/api/hello-world/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: "[GET] Hello world!",
@@ -30,8 +30,8 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: "[POST] Hello world!",

@@ -55,15 +55,15 @@ cd apps/goods-backend
 yarn add @supabase/supabase-js
 ```
 
-### 4. Run Medusa Migrations
+### 4. Run Switchyard Migrations
 
 ```bash
-npx medusa migrations run
+npx switchyard migrations run
 ```
 
 ### 5. Migrate Existing Users (Optional)
 
-If you have existing Medusa users:
+If you have existing Switchyard users:
 
 ```bash
 # Dry run first
@@ -145,7 +145,7 @@ If issues arise:
 To fully rollback:
 
 ```typescript
-// In medusa-config.ts, update authMethodsPerActor:
+// In switchyard.config.ts, update authMethodsPerActor:
 authMethodsPerActor: {
   user: ["emailpass"],  // Remove "supabase"
   customer: ["emailpass"],
@@ -170,7 +170,7 @@ authMethodsPerActor: {
 - Ensure cookies are being sent with requests
 
 ### Groups page 500 error
-- Verify inventoryGroup module is registered in medusa-config.ts
+- Verify inventoryGroup module is registered in switchyard.config.ts
 - Run database migrations
 
 ## Security Notes

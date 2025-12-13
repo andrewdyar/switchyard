@@ -19,7 +19,7 @@ const jsSdkOptions: FormattingOptionsType = {
       slug: "/references/js-sdk/store",
     },
     reflectionDescription:
-      "The `sdk.store` class provides methods to send requests to Medusa's Store API routes.",
+      "The `sdk.store` class provides methods to send requests to Switchyard's Store API routes.",
     reflectionTitle: {
       fullReplacement: "JS SDK Store Reference",
     },
@@ -36,7 +36,7 @@ const jsSdkOptions: FormattingOptionsType = {
       suffix: "- JS SDK Store Reference",
     },
     reflectionDescription:
-      "This documentation provides a reference to the `sdk.store.{{alias}}` set of methods used to send requests to Medusa's Store API routes.",
+      "This documentation provides a reference to the `sdk.store.{{alias}}` set of methods used to send requests to Switchyard's Store API routes.",
     sections: {
       ...baseSectionsOptions,
       member_declaration_title: false,
@@ -48,7 +48,7 @@ const jsSdkOptions: FormattingOptionsType = {
       slug: "/references/js-sdk/admin",
     },
     reflectionDescription:
-      "The `sdk.admin` class provides methods to send requests to Medusa's Admin API routes.",
+      "The `sdk.admin` class provides methods to send requests to Switchyard's Admin API routes.",
     reflectionTitle: {
       fullReplacement: "JS SDK Admin Reference",
     },
@@ -65,7 +65,7 @@ const jsSdkOptions: FormattingOptionsType = {
       suffix: "- JS SDK Admin Reference",
     },
     reflectionDescription:
-      "This documentation provides a reference to the `sdk.admin.{{alias}}` set of methods used to send requests to Medusa's Admin API routes.",
+      "This documentation provides a reference to the `sdk.admin.{{alias}}` set of methods used to send requests to Switchyard's Admin API routes.",
     sections: {
       ...baseSectionsOptions,
       member_declaration_title: false,
@@ -96,7 +96,7 @@ const jsSdkOptions: FormattingOptionsType = {
       suffix: "- JS SDK Auth Reference",
     },
     reflectionDescription:
-      "This documentation provides a reference to the `sdk.auth.{{alias}}` method used to send requests to Medusa's Authentication API routes. It can be used for admin users, customers, or custom actor types.",
+      "This documentation provides a reference to the `sdk.auth.{{alias}}` method used to send requests to Switchyard's Authentication API routes. It can be used for admin users, customers, or custom actor types.",
   },
 }
 

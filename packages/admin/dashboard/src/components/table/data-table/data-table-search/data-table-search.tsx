@@ -1,4 +1,4 @@
-import { Input } from "@medusajs/ui"
+import { Input } from "@switchyard/ui"
 import { ChangeEvent, useCallback, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 

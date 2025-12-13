@@ -8,15 +8,15 @@ body:
         # Hello 👋
 
         Thanks for taking the time to fill out this issue.
-        Please fill out each section below. This info helps Medusa maintainers understand the issue better and fix it in a short time.
+        Please fill out each section below. This info helps Switchyard maintainers understand the issue better and fix it in a short time.
 
         Useful links:
 
-        - Contribution Guidelines: https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md
-        - Documentation: https://docs.medusajs.com/
+        - Contribution Guidelines: https://github.com/switchyardjs/switchyard/blob/master/CONTRIBUTING.md
+        - Documentation: https://docs.switchyardjs.com/
   - type: dropdown
     attributes:
-      label: "What Medusa version and documentation are you using?"
+      label: "What Switchyard version and documentation are you using?"
       options:
         - v1
         - v2
@@ -25,7 +25,7 @@ body:
       label: Preliminary Checks
       description: Please make sure that you verify each checkbox and follow the instructions for them.
       options:
-        - label: "This issue is not a duplicate. Before opening a new issue, please search existing issues: https://github.com/medusajs/medusa/issues"
+        - label: "This issue is not a duplicate. Before opening a new issue, please search existing issues: https://github.com/switchyardjs/switchyard/issues"
           required: true
   - type: textarea
     validations:

@@ -1,6 +1,6 @@
-import { PencilSquare, SquareTwoStack, Trash, XCircle } from "@medusajs/icons"
-import { AdminApiKeyResponse } from "@medusajs/types"
-import { toast, usePrompt } from "@medusajs/ui"
+import { PencilSquare, SquareTwoStack, Trash, XCircle } from "@switchyard/icons"
+import { AdminApiKeyResponse } from "@switchyard/types"
+import { toast, usePrompt } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 import { ActionMenu } from "../../../../../components/common/action-menu"
 import {

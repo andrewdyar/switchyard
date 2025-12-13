@@ -4,7 +4,7 @@ products:
   - cart
 ---
 
-import { AcademicCapSolid, PuzzleSolid } from "@medusajs/icons";
+import { AcademicCapSolid, PuzzleSolid } from "@switchyard/icons";
 
 export const metadata = {
   title: `Bundled Products Recipe`,
@@ -12,11 +12,11 @@ export const metadata = {
 
 # {metadata.title}
 
-This recipe provides the general steps to implement bundled products in your Medusa application.
+This recipe provides the general steps to implement bundled products in your Switchyard application.
 
 <Note>
 
-Follow the step-by-step [Bundled Products Example](./examples/standard/page.mdx) to learn how to implement bundled products in your Medusa application.
+Follow the step-by-step [Bundled Products Example](./examples/standard/page.mdx) to learn how to implement bundled products in your Switchyard application.
 
 </Note>
 
@@ -24,15 +24,15 @@ Follow the step-by-step [Bundled Products Example](./examples/standard/page.mdx)
 
 Bundled products allow you to group multiple products into a single bundle that customers can purchase together. By using bundled products, you can offer items at a discounted price or fulfill items within the same bundle separately, among other features.
 
-Medusa provides an [inventory kit](../../commerce-modules/inventory/inventory-kit/page.mdx) feature that allows you to create bundled products. However, it doesn't support all bundled-product features. For example, you can't set a different price for the bundle, or fulfill items within the same bundle separately.
+Switchyard provides an [inventory kit](../../commerce-modules/inventory/inventory-kit/page.mdx) feature that allows you to create bundled products. However, it doesn't support all bundled-product features. For example, you can't set a different price for the bundle, or fulfill items within the same bundle separately.
 
-To support more bundled-product features, you can customize the Medusa application by creating a Bundled Product Module and building flows around it.
+To support more bundled-product features, you can customize the Switchyard application by creating a Bundled Product Module and building flows around it.
 
 ---
 
 ## Create Bundled Product Module
 
-Your custom features and functionalities are implemented inside modules. The module is integrated into the Medusa application without any implications on existing functionalities.
+Your custom features and functionalities are implemented inside modules. The module is integrated into the Switchyard application without any implications on existing functionalities.
 
 The module will hold your custom data models and the service implementing bundled-product-related features.
 
@@ -71,9 +71,9 @@ Then, you can link your custom data model to data models from other modules. For
 
 ### Implement Data Management Features
 
-Your module’s main service holds data-management and other related features. Then, in other resources, such as an API route, you can resolve the service from the Medusa container and use its functionalities.
+Your module’s main service holds data-management and other related features. Then, in other resources, such as an API route, you can resolve the service from the Switchyard container and use its functionalities.
 
-Medusa facilitates implementing data-management features using the service factory. Your module's main service can extend this service factory, and it generates data-management methods for your data models.
+Switchyard facilitates implementing data-management features using the service factory. Your module's main service can extend this service factory, and it generates data-management methods for your data models.
 
 <Card
   href="!docs!/learn/fundamentals/modules/service-factory"
@@ -136,7 +136,7 @@ For example, you can define a link between a `Bundle` and a `Product` from the [
   {
     href: "!docs!/learn/fundamentals/module-links/query",
     title: "How to Use Query",
-    text: "Learn how to fetch data across modules with Medusa's Query.",
+    text: "Learn how to fetch data across modules with Switchyard's Query.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -145,7 +145,7 @@ For example, you can define a link between a `Bundle` and a `Product` from the [
 
 ## Customize Admin Dashboard
 
-You can extend the Medusa Admin to provide merchants with an interface to manage bundled products. You can inject widgets into existing pages or create new pages.
+You can extend the Switchyard Admin to provide merchants with an interface to manage bundled products. You can inject widgets into existing pages or create new pages.
 
 In your customizations, you send requests to the API routes you created to manage bundled products.
 
@@ -153,13 +153,13 @@ In your customizations, you send requests to the API routes you created to manag
   {
     href: "!docs!/learn/fundamentals/admin/widgets",
     title: "Create a Widget",
-    text: "Learn how to create a widget in the Medusa Admin.",
+    text: "Learn how to create a widget in the Switchyard Admin.",
     icon: AcademicCapSolid,
   },
   {
     href: "!docs!/learn/fundamentals/admin/ui-routes",
     title: "Create UI Route",
-    text: "Learn how to create a UI route in the Medusa Admin.",
+    text: "Learn how to create a UI route in the Switchyard Admin.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -170,7 +170,7 @@ In your customizations, you send requests to the API routes you created to manag
 
 Customers use your storefront to browse your bundled products and purchase them. You can also provide other helpful features, such as displaying the bundle's details and allowing customers to select options for the items in the bundle.
 
-Medusa provides a Next.js Starter Storefront with standard commerce features including listing products, placing orders, and managing accounts. You can customize the storefront and cater its functionalities to support bundled products.
+Switchyard provides a Next.js Starter Storefront with standard commerce features including listing products, placing orders, and managing accounts. You can customize the storefront and cater its functionalities to support bundled products.
 
 Alternatively, you can build the storefront with your preferred tech stack.
 
@@ -184,7 +184,7 @@ Alternatively, you can build the storefront with your preferred tech stack.
   {
     href: "/storefront-development",
     title: "Storefront Guides",
-    text: "Learn how to build a storefront for your Medusa application.",
+    text: "Learn how to build a storefront for your Switchyard application.",
     icon: AcademicCapSolid,
   },
 ]} />

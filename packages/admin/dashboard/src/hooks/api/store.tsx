@@ -6,8 +6,8 @@ import {
   useQuery,
 } from "@tanstack/react-query"
 
-import { FetchError } from "@medusajs/js-sdk"
-import { HttpTypes } from "@medusajs/types"
+import { FetchError } from "@switchyard/js-sdk"
+import { HttpTypes } from "@switchyard/types"
 import { sdk } from "../../lib/client"
 import { queryClient } from "../../lib/query-client"
 import { queryKeysFactory } from "../../lib/query-key-factory"

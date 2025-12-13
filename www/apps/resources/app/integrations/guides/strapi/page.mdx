@@ -9,23 +9,23 @@ products:
 ---
 
 import { Card, Prerequisites, Details, WorkflowDiagram, H3 } from "docs-ui"
-import { Github } from "@medusajs/icons"
+import { Github } from "@switchyard/icons"
 
 export const metadata = {
-  title: `Integrate Strapi (CMS) with Medusa`,
+  title: `Integrate Strapi (CMS) with Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to integrate [Strapi](https://strapi.io/) with Medusa.
+In this tutorial, you'll learn how to integrate [Strapi](https://strapi.io/) with Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. Medusa also facilitates integrating third-party services that enrich your application with features specific to your unique business use case.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. Switchyard also facilitates integrating third-party services that enrich your application with features specific to your unique business use case.
 
 By integrating Strapi, you can manage your products' content with powerful content management capabilities, including custom fields, media, localization, and more.
 
 <Note>
 
-This guide was built with Strapi v5.30.1. If you're using a different version and you run into issues, consider [opening an issue](https://github.com/medusajs/medusa/issues/new?template=docs.yml).
+This guide was built with Strapi v5.30.1. If you're using a different version and you run into issues, consider [opening an issue](https://github.com/switchyard/medusa/issues/new?template=docs.yml).
 
 </Note>
 
@@ -33,29 +33,29 @@ This guide was built with Strapi v5.30.1. If you're using a different version an
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Install and set up Strapi.
-- Integrate Strapi with Medusa to interact with Strapi's API.
-- Implement two-way synchronization of product data between Medusa and Strapi:
-    - Handle product events to sync data from Medusa to Strapi.
-    - Handle Strapi webhooks to sync data from Strapi to Medusa.
+- Integrate Strapi with Switchyard to interact with Strapi's API.
+- Implement two-way synchronization of product data between Switchyard and Strapi:
+    - Handle product events to sync data from Switchyard to Strapi.
+    - Handle Strapi webhooks to sync data from Strapi to Switchyard.
 - Display product data from Strapi in the Next.js Starter Storefront.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer, but you're expected to have knowledge in Strapi, as its concepts are not explained in the tutorial.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer, but you're expected to have knowledge in Strapi, as its concepts are not explained in the tutorial.
 
-![Diagram illustrating the flow of data between Medusa, Strapi, admin, and customer (storefront)](https://res.cloudinary.com/dza7lstvk/image/upload/v1763375209/Medusa%20Resources/strapi-summary_pioikw.jpg)
+![Diagram illustrating the flow of data between Switchyard, Strapi, admin, and customer (storefront)](https://res.cloudinary.com/dza7lstvk/image/upload/v1763375209/Switchyard%20Resources/strapi-summary_pioikw.jpg)
 
 <Card
   title="Full Code"
   text="Find the full code of the guide in this repository."
-  href="https://github.com/medusajs/examples/tree/main/strapi-integration"
+  href="https://github.com/switchyard/examples/tree/main/strapi-integration"
   icon={Github}
 />
 
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -72,27 +72,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 First, you'll be asked for the project's name. Then, when prompted about installing the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -104,7 +104,7 @@ In this step, you'll install and set up Strapi to manage your product content.
 
 ### a. Install Strapi
 
-In a separate directory from your Medusa application, run the following command to create a new Strapi project:
+In a separate directory from your Switchyard application, run the following command to create a new Strapi project:
 
 ```bash
 npx create-strapi@latest my-strapi-app
@@ -132,7 +132,7 @@ On this page, you can create a new admin user to log in to the Strapi admin pane
 
 ### c. Define Product Content Type
 
-In this section, you'll define a content type for products in Strapi. These products will be synced from Medusa, allowing you to manage their content using Strapi's CMS features.
+In this section, you'll define a content type for products in Strapi. These products will be synced from Switchyard, allowing you to manage their content using Strapi's CMS features.
 
 You'll use `schema.json` files to define content types.
 
@@ -148,7 +148,7 @@ To create the schema for the Product content type, create the file `src/api/prod
     "singularName": "product",
     "pluralName": "products",
     "displayName": "Product",
-    "description": "Products from Medusa"
+    "description": "Products from Switchyard"
   },
   "options": {
     "draftAndPublish": false
@@ -208,7 +208,7 @@ To create the schema for the Product content type, create the file `src/api/prod
 
 You define the following fields for the Product content type:
 
-1. `medusaId`: A unique identifier that maps to the Medusa product ID.
+1. `medusaId`: A unique identifier that maps to the Switchyard product ID.
 2. `title`: The product's title.
 3. `subtitle`: A subtitle for the product.
 4. `description`: A rich text field for the product's description.
@@ -325,7 +325,7 @@ To create the schema for the Product Variant content type, create the file `src/
     "singularName": "product-variant",
     "pluralName": "product-variants",
     "displayName": "Product Variant",
-    "description": "Product variants from Medusa"
+    "description": "Product variants from Switchyard"
   },
   "options": {
     "draftAndPublish": false
@@ -378,7 +378,7 @@ To create the schema for the Product Variant content type, create the file `src/
 
 You define the following fields for the Product Variant content type:
 
-1. `medusaId`: A unique identifier that maps to the Medusa product variant ID.
+1. `medusaId`: A unique identifier that maps to the Switchyard product variant ID.
 2. `title`: The variant's title.
 3. `sku`: The stock keeping unit for the variant.
 4. `images`: A media field to store multiple images of the variant.
@@ -445,7 +445,7 @@ To create the schema for the Product Option content type, create the file `src/a
     "singularName": "product-option",
     "pluralName": "product-options",
     "displayName": "Product Option",
-    "description": "Product options from Medusa"
+    "description": "Product options from Switchyard"
   },
   "options": {
     "draftAndPublish": false
@@ -483,7 +483,7 @@ To create the schema for the Product Option content type, create the file `src/a
 
 You define the following fields for the Product Option content type:
 
-1. `medusaId`: A unique identifier that maps to the Medusa product option ID.
+1. `medusaId`: A unique identifier that maps to the Switchyard product option ID.
 2. `title`: The option's title.
 3. `locale`: A string field to support localization.
 4. `product`: A many-to-one relation to the Product content type.
@@ -582,7 +582,7 @@ To create the schema for the Product Option Value content type, create the file 
     "singularName": "product-option-value",
     "pluralName": "product-option-values",
     "displayName": "Product Option Value",
-    "description": "Product option values from Medusa"
+    "description": "Product option values from Switchyard"
   },
   "options": {
     "draftAndPublish": false
@@ -620,7 +620,7 @@ To create the schema for the Product Option Value content type, create the file 
 
 You define the following fields for the Product Option Value content type:
 
-1. `medusaId`: A unique identifier that maps to the Medusa product option value ID.
+1. `medusaId`: A unique identifier that maps to the Switchyard product option value ID.
 2. `value`: The option value's title.
 3. `locale`: A string field to support localization.
 4. `option`: A many-to-one relation to the Product Option content type.
@@ -668,15 +668,15 @@ export default factories.createCoreRouter("api::product-option-value.product-opt
 
 This code creates a core router for the Product Option Value content type using Strapi's factory method.
 
-You now have all the customizations in Strapi ready. You'll return to Strapi later after you set up the integration with Medusa.
+You now have all the customizations in Strapi ready. You'll return to Strapi later after you set up the integration with Switchyard.
 
 ---
 
-## Step 3: Integrate Strapi with Medusa
+## Step 3: Integrate Strapi with Switchyard
 
-In this step, you'll integrate Strapi with Medusa by creating a Strapi Module.
+In this step, you'll integrate Strapi with Switchyard by creating a Strapi Module.
 
-A [module](!docs!/learn/fundamentals/modules) is a reusable package that provides functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+A [module](!docs!/learn/fundamentals/modules) is a reusable package that provides functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 <Note>
 
@@ -686,30 +686,30 @@ Refer to the [Modules](!docs!/learn/fundamentals/modules) documentation to learn
 
 ### a. Install Strapi Client
 
-First, you'll install the Strapi client in your Medusa application to interact with Strapi's API.
+First, you'll install the Strapi client in your Switchyard application to interact with Strapi's API.
 
-In your Medusa application directory, run the following command to install the Strapi client:
+In your Switchyard application directory, run the following command to install the Strapi client:
 
-```bash badgeLabel="Medusa application" badgeColor="green"
+```bash badgeLabel="Switchyard application" badgeColor="green"
 npm install @strapi/client
 ```
 
 ### b. Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/strapi`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/strapi`.
 
 ### c. Create Strapi Client Loader
 
-Next, you'll create the Strapi client when the Medusa server starts by creating a loader.
+Next, you'll create the Strapi client when the Switchyard server starts by creating a loader.
 
-A [loader](!docs!/learn/fundamentals/modules/loaders) is an asynchronous function that runs when the Medusa server starts. Loaders are useful for setting up connections to third-party services and reusing those connections throughout your module.
+A [loader](!docs!/learn/fundamentals/modules/loaders) is an asynchronous function that runs when the Switchyard server starts. Loaders are useful for setting up connections to third-party services and reusing those connections throughout your module.
 
 To create the loader that initializes the Strapi client, create the file `src/modules/strapi/loaders/init-client.ts` with the following content:
 
-```ts title="src/modules/strapi/loaders/init-client.ts" badgeLabel="Medusa application" badgeColor="green"
-import { LoaderOptions } from "@medusajs/framework/types"
-import { asValue } from "@medusajs/framework/awilix"
-import { MedusaError } from "@medusajs/framework/utils"
+```ts title="src/modules/strapi/loaders/init-client.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { LoaderOptions } from "@switchyard/framework/types"
+import { asValue } from "@switchyard/framework/awilix"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { strapi } from "@strapi/client"
 
 export type ModuleOptions = {
@@ -723,8 +723,8 @@ export default async function initStrapiClientLoader({
   options,
 }: LoaderOptions<ModuleOptions>) {
   if (!options?.apiUrl || !options?.apiToken) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Strapi API URL and token are required"
     )
   }
@@ -769,9 +769,9 @@ A module has a service that contains its logic. The Strapi Module's service will
 
 Create the file `src/modules/strapi/service.ts` with the following content:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 import type { StrapiClient } from "@strapi/client"
-import { Logger } from "@medusajs/framework/types"
+import { Logger } from "@switchyard/framework/types"
 import { ModuleOptions } from "./loaders/init-client"
 
 type InjectedDependencies = {
@@ -812,7 +812,7 @@ First, you'll add a helper method to format errors from Strapi.
 
 In `src/modules/strapi/service.ts`, add the following method to the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class StrapiModuleService {
   // ...
   formatStrapiError(error: any, context: string): string {
@@ -882,7 +882,7 @@ Next, you'll add a method to upload images to Strapi.
 
 In `src/modules/strapi/service.ts`, add the following method to the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class StrapiModuleService {
   // ...
   async uploadImages(imageUrls: string[]): Promise<number[]> {
@@ -938,21 +938,21 @@ Next, you'll add a method to delete images from Strapi. This will be useful when
 
 In `src/modules/strapi/service.ts`, add the following import at the top of the file:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
-import { MedusaError } from "@medusajs/framework/utils"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SwitchyardError } from "@switchyard/framework/utils"
 ```
 
 Then, add the following method to the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class StrapiModuleService {
   // ...
   async deleteImage(imageId: number): Promise<void> {
     try {
       await this.client_.files.delete(imageId)
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         this.formatStrapiError(error, `Failed to delete image ${imageId} from Strapi`)
       )
     }
@@ -960,7 +960,7 @@ export default class StrapiModuleService {
 }
 ```
 
-This method takes an image ID as a parameter and deletes the corresponding image from Strapi using the Strapi client's files API. If the deletion fails, it throws a `MedusaError` with a formatted error message.
+This method takes an image ID as a parameter and deletes the corresponding image from Strapi using the Strapi client's files API. If the deletion fails, it throws a `SwitchyardError` with a formatted error message.
 
 #### Create Document Type Method
 
@@ -968,7 +968,7 @@ Next, you'll add a method to create a document of a content type in Strapi, such
 
 In `src/modules/strapi/service.ts`, add the following enum type before the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export enum Collection {
   PRODUCTS = "products",
   PRODUCT_VARIANTS = "product-variants",
@@ -979,15 +979,15 @@ export enum Collection {
 
 Then, add the following method to the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class StrapiModuleService {
   // ...
   async create(collection: Collection, data: Record<string, unknown>) {
     try {
       return await this.client_.collection(collection).create(data)
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         this.formatStrapiError(error, `Failed to create ${collection} in Strapi`)
       )
     }
@@ -1004,19 +1004,19 @@ In the method, you create the document and return it.
 
 #### Update Document Method
 
-Next, you'll add a method to update a document of a content type in Strapi. This will be useful to implement two-way synching between Medusa and Strapi.
+Next, you'll add a method to update a document of a content type in Strapi. This will be useful to implement two-way synching between Switchyard and Strapi.
 
 In `src/modules/strapi/service.ts`, add the following method to the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class StrapiModuleService {
   // ...
   async update(collection: Collection, id: string, data: Record<string, unknown>) {
     try {
       return await this.client_.collection(collection).update(id, data)
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         this.formatStrapiError(error, `Failed to update ${collection} in Strapi`)
       )
     }
@@ -1034,19 +1034,19 @@ In the method, you update the document and return it.
 
 #### Delete Document Method
 
-Next, you'll add a method to delete a document of a content type from Strapi. You'll use this method when a document is deleted in Medusa, or when reverting document creation in case of failures.
+Next, you'll add a method to delete a document of a content type from Strapi. You'll use this method when a document is deleted in Switchyard, or when reverting document creation in case of failures.
 
 In `src/modules/strapi/service.ts`, add the following method to the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class StrapiModuleService {
   // ...
   async delete(collection: Collection, id: string) {
     try {
       return await this.client_.collection(collection).delete(id)
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         this.formatStrapiError(error, `Failed to delete ${collection} in Strapi`)
       )
     }
@@ -1061,16 +1061,16 @@ This method takes the following parameters:
 
 In the method, you delete the document.
 
-#### Retrieve Document by Medusa ID Method
+#### Retrieve Document by Switchyard ID Method
 
-Next, you'll add a method to retrieve a document of a content type from Strapi by its Medusa ID. This will be useful to retrieve a document in case you need to revert changes.
+Next, you'll add a method to retrieve a document of a content type from Strapi by its Switchyard ID. This will be useful to retrieve a document in case you need to revert changes.
 
 In `src/modules/strapi/service.ts`, add the following method to the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class StrapiModuleService {
   // ...
-  async findByMedusaId(
+  async findBySwitchyardId(
     collection: Collection, 
     medusaId: string, 
     populate?: string[]
@@ -1088,8 +1088,8 @@ export default class StrapiModuleService {
       return result.data[0]
     }
     catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         this.formatStrapiError(error, `Failed to find ${collection} in Strapi`)
       )
     }
@@ -1100,19 +1100,19 @@ export default class StrapiModuleService {
 This method takes the following parameters:
 
 1. `collection`: The collection (content type) in which the document exists. It uses the `Collection` enum.
-2. `medusaId`: The Medusa ID of the document to be retrieved.
+2. `medusaId`: The Switchyard ID of the document to be retrieved.
 3. `populate`: An optional array of relations to populate in the retrieved document.
 
 In the method, you retrieve the documents and return the first result.
 
 ### e. Export Module Definition
 
-The final piece of a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Medusa the name of the module, its service, and optionally its loaders.
+The final piece of a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Switchyard the name of the module, its service, and optionally its loaders.
 
 To create the module's definition, create the file `src/modules/strapi/index.ts` with the following content:
 
-```ts title="src/modules/strapi/index.ts" badgeLabel="Medusa application" badgeColor="green"
-import { Module } from "@medusajs/framework/utils"
+```ts title="src/modules/strapi/index.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { Module } from "@switchyard/framework/utils"
 import StrapiModuleService from "./service"
 import initStrapiClientLoader from "./loaders/init-client"
 
@@ -1131,13 +1131,13 @@ You use `Module` from the Modules SDK to create the module's definition. It acce
 
 Aside from the module definition, you export the module's name as `STRAPI_MODULE` for later reference.
 
-### f. Add Module to Medusa's Configurations
+### f. Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="switchyard.config.ts" badgeLabel="Switchyard application" badgeColor="green"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -1175,20 +1175,20 @@ Then:
 2. Go to Settings -> API Tokens.
 3. Click on "Create new API Token".
 
-![Strapi dashboard with the API Token settings opened](https://res.cloudinary.com/dza7lstvk/image/upload/v1763136134/Medusa%20Resources/CleanShot_2025-11-14_at_18.00.44_2x_ec8lds.png)
+![Strapi dashboard with the API Token settings opened](https://res.cloudinary.com/dza7lstvk/image/upload/v1763136134/Switchyard%20Resources/CleanShot_2025-11-14_at_18.00.44_2x_ec8lds.png)
 
 4. In the API token form:
-    - Set a name for the token, such as "Medusa".
+    - Set a name for the token, such as "Switchyard".
     - Set the type to "Custom", and:
         - For each content type you created (products, product variants, product options, and product option values), expand its permissions section and enable all the permissions (create, read, update, delete, find).
         - Also enable the permissions for "Upload" to allow image uploads.
 5. Click on "Save".
 
-![Strapi dashboard with the Create API Token form filled](https://res.cloudinary.com/dza7lstvk/image/upload/v1763136134/Medusa%20Resources/CleanShot_2025-11-14_at_18.01.25_2x_hdex6b.png)
+![Strapi dashboard with the Create API Token form filled](https://res.cloudinary.com/dza7lstvk/image/upload/v1763136134/Switchyard%20Resources/CleanShot_2025-11-14_at_18.01.25_2x_hdex6b.png)
 
 Then, copy the generated API token.
 
-Finally, set the following environment variables in your Medusa project's `.env` file:
+Finally, set the following environment variables in your Switchyard project's `.env` file:
 
 ```env
 STRAPI_API_URL=http://localhost:1337/api
@@ -1201,17 +1201,17 @@ Make sure to replace `your_generated_api_token` with the actual API token you co
 
 ## Step 4: Create Virtual Read-Only Link to Strapi Products
 
-Medusa's [Module Links](!docs!/learn/fundamentals/module-links) feature allows you to virtually link data models from external services to modules in your Medusa application. Then, when you retrieve data from Medusa, you can also retrieve the linked data from the third-party service automatically.
+Switchyard's [Module Links](!docs!/learn/fundamentals/module-links) feature allows you to virtually link data models from external services to modules in your Switchyard application. Then, when you retrieve data from Switchyard, you can also retrieve the linked data from the third-party service automatically.
 
-In this step, you'll define a virtual read-only link between the product content type in Strapi and the `Product` model in Medusa. Later, you'll be able to retrieve products from Strapi when retrieving products in Medusa.
+In this step, you'll define a virtual read-only link between the product content type in Strapi and the `Product` model in Switchyard. Later, you'll be able to retrieve products from Strapi when retrieving products in Switchyard.
 
 ### a. Define the Link
 
 To define a virtual read-only link, create the file `src/links/product-strapi.ts` with the following content:
 
-```ts title="src/links/product-strapi.ts" badgeLabel="Medusa application" badgeColor="green"
-import { defineLink } from "@medusajs/framework/utils"
-import ProductModule from "@medusajs/medusa/product"
+```ts title="src/links/product-strapi.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { defineLink } from "@switchyard/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
 import { STRAPI_MODULE } from "../modules/strapi"
 
 export default defineLink(
@@ -1234,20 +1234,20 @@ export default defineLink(
 
 The `defineLink` function accepts three parameters:
 
-- An object of the first data model that is part of the link. In this case, it's the `Product` model from Medusa's Product Module.
+- An object of the first data model that is part of the link. In this case, it's the `Product` model from Switchyard's Product Module.
 - An object of the second data model that is part of the link. In this case, it's the product content type from the Strapi Module. You set the following properties:
     - `serviceName`: the name of the Strapi Module, which is `strapi`.
     - `alias`: an alias for the linked data model, which is `strapi_product`. You'll use this alias to reference the linked data model in queries.
-    - `primaryKey`: the primary key of the linked data model, which is `product_id`. Medusa will look for this field in the retrieved `Products` from Strapi to match it with the `id` field of the `Product` model.
+    - `primaryKey`: the primary key of the linked data model, which is `product_id`. Switchyard will look for this field in the retrieved `Products` from Strapi to match it with the `id` field of the `Product` model.
 - An object with the `readOnly` property set to `true`, indicating that this link is read-only. This means you can only retrieve the linked data, but you don't manage the link in the database.
 
 ### b. Add list Method to the Strapi Module Service
 
-When you retrieve products from Medusa with their `strapi_product` link, Medusa will call the `list` method of the Strapi Module's service to retrieve the linked products from Strapi.
+When you retrieve products from Switchyard with their `strapi_product` link, Switchyard will call the `list` method of the Strapi Module's service to retrieve the linked products from Strapi.
 
 So, in `src/modules/strapi/service.ts`, add a `list` method to the `StrapiModuleService` class:
 
-```ts title="src/modules/strapi/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/strapi/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class StrapiModuleService {
   // ...
   async list(filter: { product_id: string | string[] }) {
@@ -1311,22 +1311,22 @@ export default class StrapiModuleService {
 }
 ```
 
-The `list` method receives a `filter` object with a `product_id` property, which contains the Medusa product ID(s) to retrieve their corresponding data from Strapi.
+The `list` method receives a `filter` object with a `product_id` property, which contains the Switchyard product ID(s) to retrieve their corresponding data from Strapi.
 
 In the method, you fetch each product from Strapi using the Strapi client's collection API, populating its relations (variants and options). You then format the retrieved data to match the expected structure and return an array of products.
 
-You can now retrieve product data from Strapi when retrieving products in Medusa. You'll learn how to do this in the upcoming steps.
+You can now retrieve product data from Strapi when retrieving products in Switchyard. You'll learn how to do this in the upcoming steps.
 
 ---
 
 ## Step 5: Handle Product Creation
 
-In this step, you'll implement the logic to listen to product creation events in Medusa and create the corresponding product data in Strapi.
+In this step, you'll implement the logic to listen to product creation events in Switchyard and create the corresponding product data in Strapi.
 
 To do this, you'll create:
 
 1. [Workflows](!docs!/learn/fundamentals/workflows) that implement the logic to create product data in Strapi.
-2. A [subscriber](!docs!/learn/fundamentals/events-and-subscribers) that listens to the product creation event in Medusa and triggers the workflow.
+2. A [subscriber](!docs!/learn/fundamentals/events-and-subscribers) that listens to the product creation event in Switchyard and triggers the workflow.
 
 ### a. Create Product Options Workflow
 
@@ -1376,7 +1376,7 @@ The workflow to create product options in Strapi has the following steps:
   hideLegend
 />
 
-The first step is available out-of-the-box in Medusa. You need to create the rest of the steps.
+The first step is available out-of-the-box in Switchyard. You need to create the rest of the steps.
 
 #### createOptionsInStrapiStep
 
@@ -1384,8 +1384,8 @@ The `createOptionsInStrapiStep` creates product options in Strapi.
 
 To create the step, create the file `src/workflows/steps/create-options-in-strapi.ts` with the following content:
 
-```ts title="src/workflows/steps/create-options-in-strapi.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/create-options-in-strapi.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { STRAPI_MODULE } from "../../modules/strapi"
 import StrapiModuleService, { Collection } from "../../modules/strapi/service"
 
@@ -1455,10 +1455,10 @@ You create a step with the `createStep` function. It accepts three parameters:
 1. The step's unique name.
 2. An async function that receives two parameters:
     - The step's input, which is an object holding the product options to create in Strapi.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An async compensation function that undoes the actions performed by the step function. This function is only executed if an error occurs during the workflow's execution.
 
-In the step function, you resolve the Strapi Module's service from the Medusa container. Then, you loop through the product options and create them in Strapi using the service's `create` method.
+In the step function, you resolve the Strapi Module's service from the Switchyard container. Then, you loop through the product options and create them in Strapi using the service's `create` method.
 
 If an error occurs during the creation loop, you return a permanent failure response with the results created so far. This allows the compensation function to delete any options that were successfully created before the error occurred.
 
@@ -1475,8 +1475,8 @@ The `createOptionValuesInStrapiStep` creates product option values in Strapi.
 
 To create the step, create the file `src/workflows/steps/create-option-values-in-strapi.ts` with the following content:
 
-```ts title="src/workflows/steps/create-option-values-in-strapi.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/create-option-values-in-strapi.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { STRAPI_MODULE } from "../../modules/strapi"
 import StrapiModuleService, { Collection } from "../../modules/strapi/service"
 
@@ -1550,14 +1550,14 @@ In the compensation function, you delete all the created option values in Strapi
 
 #### updateProductOptionValuesMetadataStep
 
-The `updateProductOptionValuesMetadataStep` stores the Strapi IDs of the created product option values in the `metadata` property of the corresponding product option values in Medusa. This allows you to reference the Strapi option values later, such as when updating or deleting them.
+The `updateProductOptionValuesMetadataStep` stores the Strapi IDs of the created product option values in the `metadata` property of the corresponding product option values in Switchyard. This allows you to reference the Strapi option values later, such as when updating or deleting them.
 
 To create the step, create the file `src/workflows/steps/update-product-option-values-metadata.ts` with the following content:
 
-```ts title="src/workflows/steps/update-product-option-values-metadata.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
-import { ProductOptionValueDTO } from "@medusajs/framework/types"
+```ts title="src/workflows/steps/update-product-option-values-metadata.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { ProductOptionValueDTO } from "@switchyard/framework/types"
 
 export type UpdateProductOptionValuesMetadataInput = {
   updates: {
@@ -1631,14 +1631,14 @@ Now that you have created the necessary steps, you can create the workflow.
 
 To create the workflow, create the file `src/workflows/create-options-in-strapi.ts` with the following content:
 
-```ts title="src/workflows/create-options-in-strapi.ts" badgeLabel="Medusa application" badgeColor="green" collapsibleLines="1-15" expandButtonLabel="Show Imports"
+```ts title="src/workflows/create-options-in-strapi.ts" badgeLabel="Switchyard application" badgeColor="green" collapsibleLines="1-15" expandButtonLabel="Show Imports"
 import { 
   createWorkflow, 
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createOptionsInStrapiStep } from "./steps/create-options-in-strapi"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { 
   CreateOptionValuesInStrapiInput, 
   createOptionValuesInStrapiStep,
@@ -1738,8 +1738,8 @@ It accepts a second parameter: a constructor function that holds the workflow's 
 
 In the workflow, you:
 
-1. Retrieve the product options in Medusa using the `useQueryGraphStep`.
-    - This step uses [Query](!docs!/learn/fundamentals/module-links/query) to retrieve data in Medusa across modules.
+1. Retrieve the product options in Switchyard using the `useQueryGraphStep`.
+    - This step uses [Query](!docs!/learn/fundamentals/module-links/query) to retrieve data in Switchyard across modules.
 2. Prepare the option data to create using [transform](!docs!/learn/fundamentals/workflows/variable-manipulation).
     - This function allows you to manipulate data in workflows.
 3. Create the product options in Strapi using the `createOptionsInStrapiStep`.
@@ -1754,7 +1754,7 @@ You'll use this workflow when you implement the create products in Strapi workfl
 
 <Note>
 
-In a workflow, you can't manipulate data because Medusa stores an internal representation of the workflow on application startup. Learn more in the [Data Manipulation](!docs!/learn/fundamentals/workflows/variable-manipulation) documentation.
+In a workflow, you can't manipulate data because Switchyard stores an internal representation of the workflow on application startup. Learn more in the [Data Manipulation](!docs!/learn/fundamentals/workflows/variable-manipulation) documentation.
 
 </Note>
 
@@ -1824,7 +1824,7 @@ The workflow to create product variants in Strapi has the following steps:
   hideLegend
 />
 
-The first, second, and last steps are available out-of-the-box in Medusa. You need to create the rest of the steps.
+The first, second, and last steps are available out-of-the-box in Switchyard. You need to create the rest of the steps.
 
 #### uploadImagesToStrapiStep
 
@@ -1832,11 +1832,11 @@ The `uploadImagesToStrapiStep` uploads images to Strapi. You'll use it to upload
 
 To create the step, create the file `src/workflows/steps/upload-images-to-strapi.ts` with the following content:
 
-```ts title="src/workflows/steps/upload-images-to-strapi.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/upload-images-to-strapi.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { STRAPI_MODULE } from "../../modules/strapi"
 import StrapiModuleService from "../../modules/strapi/service"
-import { promiseAll } from "@medusajs/framework/utils"
+import { promiseAll } from "@switchyard/framework/utils"
 
 export type UploadImagesToStrapiInput = {
   items: {
@@ -1908,8 +1908,8 @@ The `createVariantsInStrapiStep` creates product variants in Strapi.
 
 To create the step, create the file `src/workflows/steps/create-variants-in-strapi.ts` with the following content:
 
-```ts title="src/workflows/steps/create-variants-in-strapi.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/create-variants-in-strapi.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { STRAPI_MODULE } from "../../modules/strapi"
 import StrapiModuleService, { Collection } from "../../modules/strapi/service"
 
@@ -1989,14 +1989,14 @@ In the compensation function, you delete all the created variants in Strapi if a
 
 #### updateProductVariantsMetadataStep
 
-The `updateProductVariantsMetadataStep` stores the Strapi IDs of the created product variants in the `metadata` property of the corresponding product variants in Medusa. This allows you to reference the Strapi variants later, such as when updating or deleting them.
+The `updateProductVariantsMetadataStep` stores the Strapi IDs of the created product variants in the `metadata` property of the corresponding product variants in Switchyard. This allows you to reference the Strapi variants later, such as when updating or deleting them.
 
 To create the step, create the file `src/workflows/steps/update-product-variants-metadata.ts` with the following content:
 
-```ts title="src/workflows/steps/update-product-variants-metadata.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
-import { ProductVariantDTO } from "@medusajs/framework/types"
+```ts title="src/workflows/steps/update-product-variants-metadata.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { ProductVariantDTO } from "@switchyard/framework/types"
 
 export type UpdateProductVariantsMetadataInput = {
   updates: {
@@ -2070,14 +2070,14 @@ Now that you have created the necessary steps, you can create the workflow.
 
 To create the workflow, create the file `src/workflows/create-variants-in-strapi.ts` with the following content:
 
-```ts title="src/workflows/create-variants-in-strapi.ts" badgeLabel="Medusa application" badgeColor="green" collapsibleLines="1-12" expandButtonLabel="Show Imports"
+```ts title="src/workflows/create-variants-in-strapi.ts" badgeLabel="Switchyard application" badgeColor="green" collapsibleLines="1-12" expandButtonLabel="Show Imports"
 import { 
   createWorkflow, 
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
-import { acquireLockStep, releaseLockStep, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { acquireLockStep, releaseLockStep, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { CreateVariantsInStrapiInput } from "./steps/create-variants-in-strapi"
 import { createVariantsInStrapiStep } from "./steps/create-variants-in-strapi"
 import { uploadImagesToStrapiStep } from "./steps/upload-images-to-strapi"
@@ -2212,12 +2212,12 @@ export const createVariantsInStrapiWorkflow = createWorkflow(
 )
 ```
 
-The workflow receives the IDs of the product variants to create in Strapi and the Medusa product ID they belong to.
+The workflow receives the IDs of the product variants to create in Strapi and the Switchyard product ID they belong to.
 
 In the workflow, you:
 
 1. Acquire a [lock](../../../infrastructure-modules/locking/page.mdx) to prevent concurrent creation of variants for the same product. This is necessary to handle both the product and variant creation events without duplications.
-2. Retrieve the product variants in Medusa using the `useQueryGraphStep`.
+2. Retrieve the product variants in Switchyard using the `useQueryGraphStep`.
 3. Check if the product has been created in Strapi using [when](!docs!/learn/fundamentals/workflows/conditions). If so, you:
     - Prepare the variant images to upload using `transform`.
     - Prepare the variant thumbnail to upload using `transform`.
@@ -2231,7 +2231,7 @@ In the workflow, you:
 
 <Note>
 
-In a workflow, you can't perform steps based on conditions because Medusa stores an internal representation of the workflow on application startup. Learn more in the [Conditions in Workflows](!docs!/learn/fundamentals/workflows/conditions) documentation.
+In a workflow, you can't perform steps based on conditions because Switchyard stores an internal representation of the workflow on application startup. Learn more in the [Conditions in Workflows](!docs!/learn/fundamentals/workflows/conditions) documentation.
 
 </Note>
 
@@ -2314,7 +2314,7 @@ The workflow to create products in Strapi has the following steps:
   hideLegend
 />
 
-You only need to create the `createProductInStrapiStep` step. The rest of the steps and workflows are either available out-of-the-box in Medusa or you have already created them.
+You only need to create the `createProductInStrapiStep` step. The rest of the steps and workflows are either available out-of-the-box in Switchyard or you have already created them.
 
 #### createProductInStrapiStep
 
@@ -2322,8 +2322,8 @@ The `createProductInStrapiStep` creates a product in Strapi.
 
 To create the step, create the file `src/workflows/steps/create-product-in-strapi.ts` with the following content:
 
-```ts title="src/workflows/steps/create-product-in-strapi.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/create-product-in-strapi.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { STRAPI_MODULE } from "../../modules/strapi"
 import StrapiModuleService, { Collection } from "../../modules/strapi/service"
 
@@ -2383,13 +2383,13 @@ Now that you have created the necessary step, you can create the main workflow t
 
 To create the workflow, create the file `src/workflows/create-product-in-strapi.ts` with the following content:
 
-```ts title="src/workflows/create-product-in-strapi.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/workflows/create-product-in-strapi.ts" badgeLabel="Switchyard application" badgeColor="green"
 import { 
   createWorkflow, 
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   CreateProductInStrapiInput, 
   createProductInStrapiStep,
@@ -2400,7 +2400,7 @@ import {
   updateProductsWorkflow, 
   acquireLockStep, 
   releaseLockStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { createOptionsInStrapiWorkflow } from "./create-options-in-strapi"
 import { createVariantsInStrapiWorkflow } from "./create-variants-in-strapi"
 
@@ -2531,7 +2531,7 @@ The workflow receives the ID of the product to create in Strapi.
 In the workflow, you:
 
 1. Acquire a [lock](../../../infrastructure-modules/locking/page.mdx) to prevent concurrent creation of variants for the same product. This is necessary to handle both the product and variant creation events. Otherwise, variants might be created multiple times.
-2. Retrieve the product in Medusa using the `useQueryGraphStep`.
+2. Retrieve the product in Switchyard using the `useQueryGraphStep`.
 3. Prepare the product images to upload using `transform`.
 4. Upload the product images to Strapi using the `uploadImagesToStrapiStep`.
 5. Check if the product has a thumbnail using `when`. If so, you upload the thumbnail to Strapi using the `uploadImagesToStrapiStep`.
@@ -2548,7 +2548,7 @@ The workflow returns the created Strapi product as a response.
 
 ### d. Create Product Created Subscriber
 
-Finally, you need to create a subscriber that listens to the product creation event in Medusa and triggers the `createProductInStrapiWorkflow`.
+Finally, you need to create a subscriber that listens to the product creation event in Switchyard and triggers the `createProductInStrapiWorkflow`.
 
 A subscriber is an asynchronous function that is executed whenever its associated event is emitted.
 
@@ -2560,11 +2560,11 @@ Refer to the [Subscribers documentation](!docs!/learn/fundamentals/events-and-su
 
 To create the subscriber, create the file `src/subscribers/product-created-strapi-sync.ts` with the following content:
 
-```ts title="src/subscribers/product-created-strapi-sync.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/subscribers/product-created-strapi-sync.ts" badgeLabel="Switchyard application" badgeColor="green"
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { createProductInStrapiWorkflow } from "../workflows/create-product-in-strapi"
 
 export default async function productCreatedStrapiSyncHandler({
@@ -2600,13 +2600,13 @@ First, run the following command in the Strapi application's directory to start 
 npm run develop
 ```
 
-Then, run the following command in the Medusa application's directory to start the Medusa server:
+Then, run the following command in the Switchyard application's directory to start the Switchyard server:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Next, open the Medusa Admin dashboard and [create a new product](!user-guide!/products/create). Once you create the product, you'll see the following in the Medusa server logs:
+Next, open the Switchyard Admin dashboard and [create a new product](!user-guide!/products/create). Once you create the product, you'll see the following in the Switchyard server logs:
 
 ```bash
 info:    Processing product.created which has 1 subscribers
@@ -2620,9 +2620,9 @@ Then, open the Strapi Admin dashboard and navigate to the Products collection. Y
 
 ## Step 6: Handle Strapi Product Updates
 
-Next, you'll handle product updates in Strapi and synchronize the changes back to Medusa. You'll create a workflow to update the relevant product data in Medusa based on the data received from Strapi.
+Next, you'll handle product updates in Strapi and synchronize the changes back to Switchyard. You'll create a workflow to update the relevant product data in Switchyard based on the data received from Strapi.
 
-Then, you'll create an API route webhook that Strapi can call whenever product data is updated. With this setup, you'll have two-way synchronization between Medusa and Strapi for product data.
+Then, you'll create an API route webhook that Strapi can call whenever product data is updated. With this setup, you'll have two-way synchronization between Switchyard and Strapi for product data.
 
 ### a. Handle Strapi Webhook Workflow
 
@@ -2644,7 +2644,7 @@ The workflow to handle Strapi webhooks has the following steps:
           {
             type: "workflow",
             name: "updateProductsWorkflow",
-            description: "If the data updated in Strapi is product data, update the product in Medusa.",
+            description: "If the data updated in Strapi is product data, update the product in Switchyard.",
             link: "/references/medusa-workflows/updateProductsWorkflow",
             depth: 1
           },
@@ -2663,7 +2663,7 @@ The workflow to handle Strapi webhooks has the following steps:
           {
             type: "workflow",
             name: "updateProductVariantsWorkflow",
-            description: "If the data updated in Strapi is product variant data, update the product variant in Medusa.",
+            description: "If the data updated in Strapi is product variant data, update the product variant in Switchyard.",
             link: "/references/medusa-workflows/updateProductVariantsWorkflow",
             depth: 1
           },
@@ -2682,7 +2682,7 @@ The workflow to handle Strapi webhooks has the following steps:
           {
             type: "workflow",
             name: "updateProductOptionsWorkflow",
-            description: "If the data updated in Strapi is product option data, update the product option in Medusa.",
+            description: "If the data updated in Strapi is product option data, update the product option in Switchyard.",
             link: "/references/medusa-workflows/updateProductOptionsWorkflow",
             depth: 1
           },
@@ -2701,7 +2701,7 @@ The workflow to handle Strapi webhooks has the following steps:
           {
             type: "step",
             name: "updateProductOptionValueStep",
-            description: "If the data updated in Strapi is product option value data, update the product option value in Medusa.",
+            description: "If the data updated in Strapi is product option value data, update the product option value in Switchyard.",
             depth: 1
           },
           {
@@ -2717,7 +2717,7 @@ The workflow to handle Strapi webhooks has the following steps:
   hideLegend
 />
 
-You only need to create the `prepareStrapiUpdateDataStep`, `clearProductCacheStep`, and `updateProductOptionValueStep` steps. The rest of the steps and workflows are available out-of-the-box in Medusa.
+You only need to create the `prepareStrapiUpdateDataStep`, `clearProductCacheStep`, and `updateProductOptionValueStep` steps. The rest of the steps and workflows are available out-of-the-box in Switchyard.
 
 #### prepareStrapiUpdateDataStep
 
@@ -2725,8 +2725,8 @@ The `prepareStrapiUpdateDataStep` extracts the data to update from the Strapi we
 
 To create the step, create the file `src/workflows/steps/prepare-strapi-update-data.ts` with the following content:
 
-```ts title="src/workflows/steps/prepare-strapi-update-data.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/prepare-strapi-update-data.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 export const prepareStrapiUpdateDataStep = createStep(
   "prepare-strapi-update-data",
@@ -2780,13 +2780,13 @@ In the step, you extract the relevant data based on the model type (product, pro
 
 #### clearProductCacheStep
 
-The `clearProductCacheStep` clears the product cache in Medusa to ensure that updated data is served to clients. This is necessary as you'll enable [caching](../../../infrastructure-modules/caching/page.mdx) later, which may cause stale data to be served to the storefront.
+The `clearProductCacheStep` clears the product cache in Switchyard to ensure that updated data is served to clients. This is necessary as you'll enable [caching](../../../infrastructure-modules/caching/page.mdx) later, which may cause stale data to be served to the storefront.
 
 To create the step, create the file `src/workflows/steps/clear-product-cache.ts` with the following content:
 
-```ts title="src/workflows/steps/clear-product-cache.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
+```ts title="src/workflows/steps/clear-product-cache.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
 
 type ClearProductCacheInput = {
   productId: string | string[]
@@ -2819,14 +2819,14 @@ In the step, you clear the cache for each specified product using the Caching Mo
 
 #### updateProductOptionValueStep
 
-The `updateProductOptionValueStep` updates product option values in Medusa based on the data received from Strapi.
+The `updateProductOptionValueStep` updates product option values in Switchyard based on the data received from Strapi.
 
 To create the step, create the file `src/workflows/steps/update-product-option-value.ts` with the following content:
 
-```ts title="src/workflows/steps/update-product-option-value.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
-import { IProductModuleService } from "@medusajs/framework/types"
+```ts title="src/workflows/steps/update-product-option-value.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { IProductModuleService } from "@switchyard/framework/types"
 
 type UpdateProductOptionValueInput = {
   id: string
@@ -2877,7 +2877,7 @@ export const updateProductOptionValueStep = createStep(
 
 The step receives the ID of the option value to update and the new value.
 
-In the step, you resolve the Product Module's service and update the option value in Medusa.
+In the step, you resolve the Product Module's service and update the option value in Switchyard.
 
 In the compensation function, you revert the option value to its old value if an error occurs during the workflow's execution.
 
@@ -2887,13 +2887,13 @@ Now that you have created the necessary steps, you can create the workflow to ha
 
 To create the workflow, create the file `src/workflows/handle-strapi-webhook.ts` with the following content:
 
-```ts title="src/workflows/handle-strapi-webhook.ts" badgeLabel="Medusa application" badgeColor="green" collapsibleLines="1-19" expandButtonLabel="Show Imports"
+```ts title="src/workflows/handle-strapi-webhook.ts" badgeLabel="Switchyard application" badgeColor="green" collapsibleLines="1-19" expandButtonLabel="Show Imports"
 import { 
   createWorkflow, 
   when,
   transform,
-} from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { prepareStrapiUpdateDataStep } from "./steps/prepare-strapi-update-data"
 import { clearProductCacheStep } from "./steps/clear-product-cache"
 import { updateProductOptionValueStep } from "./steps/update-product-option-value"
@@ -2901,11 +2901,11 @@ import {
   updateProductsWorkflow, 
   updateProductVariantsWorkflow, 
   updateProductOptionsWorkflow,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   UpsertProductDTO, 
   UpsertProductVariantDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 export type WorkflowInput = {
   entry: any
@@ -3007,16 +3007,16 @@ In the workflow, you:
 
 1. Prepare the update data using the `prepareStrapiUpdateDataStep`.
 2. Check if the updated model is a product using `when`. If so, you:
-    - Update the product in Medusa using the `updateProductsWorkflow`.
+    - Update the product in Switchyard using the `updateProductsWorkflow`.
     - Clear the product cache using the `clearProductCacheStep`.
 3. Check if the updated model is a product variant using `when`. If so, you
-    - Update the product variant in Medusa using the `updateProductVariantsWorkflow`.
+    - Update the product variant in Switchyard using the `updateProductVariantsWorkflow`.
     - Clear the product cache using the `clearProductCacheStep`.
 4. Check if the updated model is a product option using `when`. If so, you:
-    - Update the product option in Medusa using the `updateProductOptionsWorkflow`.
+    - Update the product option in Switchyard using the `updateProductOptionsWorkflow`.
     - Clear the product cache using the `clearProductCacheStep`.
 5. Check if the updated model is a product option value using `when`. If so, you:
-    - Update the product option value in Medusa using the `updateProductOptionValueStep`.
+    - Update the product option value in Switchyard using the `updateProductOptionValueStep`.
     - Retrieve all product variants that use the updated option value using the `useQueryGraphStep`.
     - Clear the product cache for all affected products using the `clearProductCacheStep`.
 
@@ -3036,17 +3036,17 @@ Refer to the [API routes](!docs!/learn/fundamentals/api-routes) to learn more ab
 
 To create the API route, create the file `src/api/webhooks/strapi/route.ts` with the following content:
 
-```ts title="src/api/webhooks/strapi/route.ts" badgeLabel="Medusa application" badgeColor="green"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { simpleHash, Modules } from "@medusajs/framework/utils"
+```ts title="src/api/webhooks/strapi/route.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { simpleHash, Modules } from "@switchyard/framework/utils"
 import { 
   handleStrapiWebhookWorkflow, 
   WorkflowInput,
 } from "../../../workflows/handle-strapi-webhook"
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const body = req.body as Record<string, unknown>
   const logger = req.scope.resolve("logger")
@@ -3099,7 +3099,7 @@ In the API route, you:
 
 1. Retrieve the webhook payload from the request body.
 2. Resolve the Caching Module's service.
-3. Generate a hash of the webhook payload to detect duplicate webhook calls. This is necessary since you've implemented two-way synchronization between Medusa and Strapi, which may lead to infinite loops of updates.
+3. Generate a hash of the webhook payload to detect duplicate webhook calls. This is necessary since you've implemented two-way synchronization between Switchyard and Strapi, which may lead to infinite loops of updates.
 4. If the hash exists in the cache, the webhook has already been processed, so you skip further processing and return a `200` response.
 5. If the webhook event is `entry.update`, you:
     - Cache the entity being updated to prevent concurrent updates.
@@ -3112,14 +3112,14 @@ To ensure that webhook requests are coming from your Strapi application, you'll 
 
 To add the middleware, create the file `src/api/middlewares.ts` with the following content:
 
-```ts title="src/api/middlewares.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/api/middlewares.ts" badgeLabel="Switchyard application" badgeColor="green"
 import { 
   defineMiddlewares, 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 export default defineMiddlewares({
   routes: [
@@ -3127,9 +3127,9 @@ export default defineMiddlewares({
       matcher: "/webhooks/strapi",
       middlewares: [
         async (
-          req: MedusaRequest,
-          res: MedusaResponse,
-          next: MedusaNextFunction
+          req: SwitchyardRequest,
+          res: SwitchyardResponse,
+          next: SwitchyardNextFunction
         ) => {
           const apiKeyModuleService = req.scope.resolve(
             Modules.API_KEY
@@ -3146,7 +3146,7 @@ export default defineMiddlewares({
           }
           
           try {
-            // Validate the API key using Medusa's API Key Module
+            // Validate the API key using Switchyard's API Key Module
             const isValid = await apiKeyModuleService.authenticate(apiKey)
             
             if (!isValid) {
@@ -3180,7 +3180,7 @@ You define a middleware for the `/webhooks/strapi` route that:
 5. If the API key is invalid, returns a `401 Unauthorized` response.
 6. Otherwise, calls the `next` function to proceed to the route handler.
 
-### d. Enable Caching in Medusa
+### d. Enable Caching in Switchyard
 
 <Prerequisites
   items={[
@@ -3191,19 +3191,19 @@ You define a middleware for the `/webhooks/strapi` route that:
   ]}
 />
 
-The [Caching Module](../../../infrastructure-modules/caching/page.mdx) is currently guarded by a feature flag. To enable it, add the feature flag and module in your `medusa-config.ts` file:
+The [Caching Module](../../../infrastructure-modules/caching/page.mdx) is currently guarded by a feature flag. To enable it, add the feature flag and module in your `switchyard.config.ts` file:
 
-```ts title="medusa-config.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="switchyard.config.ts" badgeLabel="Switchyard application" badgeColor="green"
 module.exports = defineConfig({
   // ...
   modules: [
     // ...
     {
-      resolve: "@medusajs/medusa/caching",
+      resolve: "@switchyard/medusa/caching",
       options: {
         providers: [
           {
-            resolve: "@medusajs/caching-redis",
+            resolve: "@switchyard/caching-redis",
             id: "caching-redis",
             options: {
               redisUrl: process.env.REDIS_URL,
@@ -3225,30 +3225,30 @@ This configuration enables the Caching Module with Redis as the caching provider
 REDIS_URL=redis://localhost:6379
 ```
 
-You can now use the Caching Module's service in your workflows and API routes. Medusa will also cache product and cart data automatically to improve performance.
+You can now use the Caching Module's service in your workflows and API routes. Switchyard will also cache product and cart data automatically to improve performance.
 
 ### e. Webhook Handling Preparation
 
-Before you test the webhook handling, you need to create a secret API key in Medusa, then configure webhooks in Strapi.
+Before you test the webhook handling, you need to create a secret API key in Switchyard, then configure webhooks in Strapi.
 
-Make sure to start both the Medusa and Strapi servers if they are not already running.
+Make sure to start both the Switchyard and Strapi servers if they are not already running.
 
-#### Create Secret API Key in Medusa
+#### Create Secret API Key in Switchyard
 
-To create the secret API key in Medusa:
+To create the secret API key in Switchyard:
 
-1. Open the Medusa Admin dashboard.
+1. Open the Switchyard Admin dashboard.
 2. Go to Settings -> Secret API Keys.
 3. Click on the "Create" button at the top right.
 4. Enter a name for the API key. For example, "Strapi".
 5. Click on the "Save" button.
 6. Copy the generated API key. You'll need it to configure the webhook in Strapi.
 
-![Medusa Admin dashboard with the Secret API Keys page showing the Strapi API key](https://res.cloudinary.com/dza7lstvk/image/upload/v1763368257/Medusa%20Resources/CleanShot_2025-11-17_at_10.20.28_2x_b6cilm.png)
+![Switchyard Admin dashboard with the Secret API Keys page showing the Strapi API key](https://res.cloudinary.com/dza7lstvk/image/upload/v1763368257/Switchyard%20Resources/CleanShot_2025-11-17_at_10.20.28_2x_b6cilm.png)
 
 #### Configure Webhook in Strapi
 
-Next, you need to configure a webhook in Strapi to call the Medusa webhook API route whenever product data is updated.
+Next, you need to configure a webhook in Strapi to call the Switchyard webhook API route whenever product data is updated.
 
 To configure the webhook in Strapi:
 
@@ -3256,25 +3256,25 @@ To configure the webhook in Strapi:
 2. Go to Settings -> Webhooks.
 3. Click on the "Create new webhook" button at the top right.
 4. In the webhook creation form:
-   - **Name**: Enter a name for the webhook. For example, "Medusa".
-   - **URL**: Enter the URL of the Medusa webhook API route. It should be `http://localhost:9000/webhooks/strapi` if you're running Medusa locally.
-   - **Headers**: Add a new header with the key `Authorization` and the value `Bearer YOUR_SECRET_API_KEY`. Replace `YOUR_SECRET_API_KEY` with the API key you created in Medusa.
+   - **Name**: Enter a name for the webhook. For example, "Switchyard".
+   - **URL**: Enter the URL of the Switchyard webhook API route. It should be `http://localhost:9000/webhooks/strapi` if you're running Switchyard locally.
+   - **Headers**: Add a new header with the key `Authorization` and the value `Bearer YOUR_SECRET_API_KEY`. Replace `YOUR_SECRET_API_KEY` with the API key you created in Switchyard.
    - **Events**: Select the "Update" event for "Entry". This ensures that the webhook is triggered whenever an entry is updated in Strapi.
 5. Click on the "Save" button to create the webhook.
 
-![Strapi Webhook Creation form](https://res.cloudinary.com/dza7lstvk/image/upload/v1763368257/Medusa%20Resources/CleanShot_2025-11-17_at_10.30.22_2x_zohl1q.png)
+![Strapi Webhook Creation form](https://res.cloudinary.com/dza7lstvk/image/upload/v1763368257/Switchyard%20Resources/CleanShot_2025-11-17_at_10.30.22_2x_zohl1q.png)
 
 ### Test Strapi Webhook Handling
 
 To test out the webhook handling:
 
-1. Make sure both the Medusa and Strapi servers are running.
+1. Make sure both the Switchyard and Strapi servers are running.
 2. On the Strapi Admin dashboard, go to Content Manager -> Products.
 3. Select an existing product to edit.
 4. Update the product's title or description.
 5. Click on the "Save" button to save the changes.
 
-Once you save the changes, Strapi will send a webhook to Medusa. You should see the following in the Medusa server logs:
+Once you save the changes, Strapi will send a webhook to Switchyard. You should see the following in the Switchyard server logs:
 
 ```bash
 http:    POST /webhooks/strapi ← - (200) - 153.264 ms
@@ -3282,21 +3282,21 @@ http:    POST /webhooks/strapi ← - (200) - 153.264 ms
 
 This indicates that the webhook was received and processed successfully.
 
-You can also check the product in the Medusa Admin dashboard to verify that the changes made in Strapi are reflected in Medusa.
+You can also check the product in the Switchyard Admin dashboard to verify that the changes made in Strapi are reflected in Switchyard.
 
 ---
 
 ## Step 7: Show Strapi Data in Storefront
 
-Now that you've integrated Strapi with Medusa, you can customize the Next.js Starter Storefront to display product content from Strapi, allowing you to show product content and assets optimized for the storefront.
+Now that you've integrated Strapi with Switchyard, you can customize the Next.js Starter Storefront to display product content from Strapi, allowing you to show product content and assets optimized for the storefront.
 
 In this step, you'll customize the Next.js Starter Storefront to show the Strapi product data.
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-strapi`, you can find the storefront by going back to the parent directory and changing to the `medusa-strapi-storefront` directory:
+So, if your Switchyard application's directory is `medusa-strapi`, you can find the storefront by going back to the parent directory and changing to the `medusa-strapi-storefront` directory:
 
 ```bash
 cd ../medusa-strapi-storefront # change based on your project name
@@ -3306,7 +3306,7 @@ cd ../medusa-strapi-storefront # change based on your project name
 
 ### a. Retrieve Strapi Product Data
 
-Since you've created a [virtual read-only link](#step-4-create-virtual-read-only-link-to-strapi-products) to Strapi products in Medusa, you can retrieve Strapi product data when retrieving Medusa products.
+Since you've created a [virtual read-only link](#step-4-create-virtual-read-only-link-to-strapi-products) to Strapi products in Switchyard, you can retrieve Strapi product data when retrieving Switchyard products.
 
 To retrieve Strapi product data, open `src/lib/data/product.ts`, and add `*strapi_product` to the `fields` query parameter passed in the `listProducts` function:
 
@@ -3336,7 +3336,7 @@ export const listProducts = async ({
 }
 ```
 
-The Strapi product data will now be included in the `strapi_product` property of each Medusa product.
+The Strapi product data will now be included in the `strapi_product` property of each Switchyard product.
 
 ### b. Define Strapi Product Types
 
@@ -3414,14 +3414,14 @@ Next, add utilities that will allow you to easily retrieve Strapi product data f
 Create the file `src/lib/util/strapi.ts` with the following content:
 
 ```ts title="src/lib/util/strapi.ts" badgeLabel="Storefront" badgeColor="blue"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import {
   StrapiProduct,
   StrapiMedia,
 } from "../../types/strapi"
 
 /**
- * Get Strapi product data from a Medusa product
+ * Get Strapi product data from a Switchyard product
  */
 export function getStrapiProduct(
   product: HttpTypes.StoreProduct
@@ -3430,7 +3430,7 @@ export function getStrapiProduct(
 }
 
 /**
- * Get product title from Strapi, fallback to Medusa
+ * Get product title from Strapi, fallback to Switchyard
  */
 export function getProductTitle(
   product: HttpTypes.StoreProduct
@@ -3450,7 +3450,7 @@ export function getProductSubtitle(
 }
 
 /**
- * Get product description from Strapi, fallback to Medusa
+ * Get product description from Strapi, fallback to Switchyard
  */
 export function getProductDescription(
   product: HttpTypes.StoreProduct
@@ -3467,7 +3467,7 @@ export function getProductDescription(
 }
 
 /**
- * Get product thumbnail from Strapi, fallback to Medusa
+ * Get product thumbnail from Strapi, fallback to Switchyard
  */
 export function getProductThumbnail(
   product: HttpTypes.StoreProduct
@@ -3482,7 +3482,7 @@ export function getProductThumbnail(
 }
 
 /**
- * Get product images from Strapi, fallback to Medusa
+ * Get product images from Strapi, fallback to Switchyard
  */
 export function getProductImages(
   product: HttpTypes.StoreProduct
@@ -3490,7 +3490,7 @@ export function getProductImages(
   const strapiProduct = getStrapiProduct(product)
   
   if (strapiProduct?.images && strapiProduct.images.length > 0) {
-    // Convert Strapi media to Medusa product image format
+    // Convert Strapi media to Switchyard product image format
     return strapiProduct.images.map((image: StrapiMedia, index: number) => ({
       id: image.id.toString(),
       url: image.url,
@@ -3505,7 +3505,7 @@ export function getProductImages(
 }
 
 /**
- * Get variant title from Strapi, fallback to Medusa
+ * Get variant title from Strapi, fallback to Switchyard
  */
 export function getVariantTitle(
   variant: HttpTypes.StoreProductVariant,
@@ -3519,7 +3519,7 @@ export function getVariantTitle(
 }
 
 /**
- * Get option title from Strapi, fallback to Medusa
+ * Get option title from Strapi, fallback to Switchyard
  */
 export function getOptionTitle(
   option: HttpTypes.StoreProductOption,
@@ -3533,7 +3533,7 @@ export function getOptionTitle(
 }
 
 /**
- * Get option value text from Strapi, fallback to Medusa
+ * Get option value text from Strapi, fallback to Switchyard
  */
 export function getOptionValueText(
   optionValue: { id: string; option_id: string; value: string },
@@ -3600,7 +3600,7 @@ export function getVariantImages(
     })) as HttpTypes.StoreProductImage[]
   }
   
-  // Fall back to Medusa variant images
+  // Fall back to Switchyard variant images
   if ((variant as any).images && (variant as any).images.length > 0) {
     return (variant as any).images
   }
@@ -3612,17 +3612,17 @@ export function getVariantImages(
 
 You define the following utilities:
 
-- `getStrapiProduct`: Retrieves the Strapi product data from a Medusa product.
-- `getProductTitle`: Retrieves the product title from Strapi, falling back to Medusa if not available.
+- `getStrapiProduct`: Retrieves the Strapi product data from a Switchyard product.
+- `getProductTitle`: Retrieves the product title from Strapi, falling back to Switchyard if not available.
 - `getProductSubtitle`: Retrieves the product subtitle from Strapi.
-- `getProductDescription`: Retrieves the product description from Strapi, falling back to Medusa if not available.
-- `getProductThumbnail`: Retrieves the product thumbnail from Strapi, falling back to Medusa if not available.
-- `getProductImages`: Retrieves the product images from Strapi, falling back to Medusa if not available.
-- `getVariantTitle`: Retrieves the variant title from Strapi, falling back to Medusa if not available.
-- `getOptionTitle`: Retrieves the option title from Strapi, falling back to Medusa if not available.
-- `getOptionValueText`: Retrieves the option value text from Strapi, falling back to Medusa if not available.
+- `getProductDescription`: Retrieves the product description from Strapi, falling back to Switchyard if not available.
+- `getProductThumbnail`: Retrieves the product thumbnail from Strapi, falling back to Switchyard if not available.
+- `getProductImages`: Retrieves the product images from Strapi, falling back to Switchyard if not available.
+- `getVariantTitle`: Retrieves the variant title from Strapi, falling back to Switchyard if not available.
+- `getOptionTitle`: Retrieves the option title from Strapi, falling back to Switchyard if not available.
+- `getOptionValueText`: Retrieves the option value text from Strapi, falling back to Switchyard if not available.
 - `getVariantOptionValues`: Retrieves all option values for a variant with Strapi labels.
-- `getVariantImages`: Retrieves images for a specific variant from Strapi, falling back to Medusa if not available.
+- `getVariantImages`: Retrieves images for a specific variant from Strapi, falling back to Switchyard if not available.
 
 ### d. Customize Product Preview
 
@@ -3702,7 +3702,7 @@ function getImagesForVariant(
   product: HttpTypes.StoreProduct,
   selectedVariantId?: string
 ) {
-  // Get Strapi images or fallback to Medusa images
+  // Get Strapi images or fallback to Switchyard images
   const productImages = getProductImages(product)
 
   if (!selectedVariantId || !product.variants) {
@@ -3714,7 +3714,7 @@ function getImagesForVariant(
     return productImages
   }
 
-  // Get variant images from Strapi or fallback to Medusa
+  // Get variant images from Strapi or fallback to Switchyard
   const variantImages = getVariantImages(variant, product)
   
   // If variant has specific images, use those; otherwise use product images
@@ -3742,10 +3742,10 @@ const subtitle = getProductSubtitle(product)
 const thumbnail = getProductThumbnail(product) || product.thumbnail
 
 return {
-  title: `${title} | Medusa Store`,
+  title: `${title} | Switchyard Store`,
   description: subtitle || title,
   openGraph: {
-    title: `${title} | Medusa Store`,
+    title: `${title} | Switchyard Store`,
     description: subtitle || title,
     images: thumbnail ? [thumbnail] : [],
   },
@@ -3831,8 +3831,8 @@ Next, you'll show Strapi option titles and values on the product details page.
 Replace the content of `src/modules/products/components/product-actions/option-select.tsx` with the following:
 
 ```tsx title="src/modules/products/components/product-actions/option-select.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { HttpTypes } from "@medusajs/types"
-import { clx } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { clx } from "@switchyard/ui"
 import React from "react"
 import { getOptionValueText } from "@lib/util/strapi"
 
@@ -3992,8 +3992,8 @@ Finally, you'll customize the line item options to either show Strapi variant ti
 Replace the content of `src/modules/common/components/line-item-options/index.tsx` with the following:
 
 ```tsx title="src/modules/common/components/line-item-options/index.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { HttpTypes } from "@medusajs/types"
-import { Text } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Text } from "@switchyard/ui"
 import { getVariantTitle, getVariantOptionValues } from "@lib/util/strapi"
 
 type LineItemOptionsProps = {
@@ -4119,7 +4119,7 @@ This will show Strapi variant titles or option titles and values in the cart and
 
 ### Test Storefront Customizations
 
-To test the storefront customizations, make sure both the Medusa and Strapi servers are running.
+To test the storefront customizations, make sure both the Switchyard and Strapi servers are running.
 
 Then, run the following command in the Next.js Starter Storefront directory to start the storefront:
 
@@ -4140,35 +4140,35 @@ You'll see the Strapi product data in the following places:
 
 ## Step 8: Handle More Product Events
 
-Your setup now supports creating products in Strapi when they're created in Medusa. However, you should also support updating and deleting products and their related models to keep data in sync between systems.
+Your setup now supports creating products in Strapi when they're created in Switchyard. However, you should also support updating and deleting products and their related models to keep data in sync between systems.
 
 For each product event, such as `product.deleted` or `product-variant.updated`, you need to:
 
 1. Create a workflow that updates or deletes the corresponding data in Strapi using the Strapi Module's service.
 2. Create a subscriber that listens for the event and triggers the workflow.
 
-You can find all workflows and subscribers for product events in the [Strapi Integration Repository](https://github.com/medusajs/examples/tree/main/strapi-integration/medusa).
+You can find all workflows and subscribers for product events in the [Strapi Integration Repository](https://github.com/switchyard/examples/tree/main/strapi-integration/medusa).
 
 ---
 
 ## Next Steps
 
-You've successfully integrated Medusa with Strapi to manage content related to products, variants, and options. You can expand this integration by adding more features, such as:
+You've successfully integrated Switchyard with Strapi to manage content related to products, variants, and options. You can expand this integration by adding more features, such as:
 
 1. Managing the content of other entities, like categories or collections. The process is similar to what you've done for products:
     1. Create a content type in Strapi for the entity.
-    2. Create Medusa workflows and subscribers to handle the creation, update, and deletion of the entity.
+    2. Create Switchyard workflows and subscribers to handle the creation, update, and deletion of the entity.
     3. Display the Strapi data in your Next.js Starter Storefront.
 2. Enable [internationalization](https://docs.strapi.io/cms/features/internationalization) in Strapi to support multiple languages:
-    - You only need to manage the localized content in Strapi. Only the default locale will be synced with Medusa.
+    - You only need to manage the localized content in Strapi. Only the default locale will be synced with Switchyard.
     - You can display the localized content in your Next.js Starter Storefront based on the customer's locale.
 3. Add custom fields to the Strapi content types that are relevant to the storefront, such as SEO metadata or promotional banners.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -4178,5 +4178,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

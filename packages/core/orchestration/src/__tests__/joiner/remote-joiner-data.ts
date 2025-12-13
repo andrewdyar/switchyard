@@ -1,9 +1,9 @@
 import {
   IModuleService,
-  MedusaContainer,
+  SwitchyardContainer,
   RemoteExpandProperty,
-} from "@medusajs/types"
-import { lowerCaseFirst, toPascalCase } from "@medusajs/utils"
+} from "@switchyard/types"
+import { lowerCaseFirst, toPascalCase } from "@switchyard/utils"
 import { remoteJoinerData } from "../../__fixtures__/joiner/data"
 import { serviceConfigs, serviceMock } from "../../__mocks__/joiner/mock_data"
 import { RemoteJoiner } from "../../joiner"
@@ -40,7 +40,7 @@ const container = {
       },
     }
   },
-} as MedusaContainer
+} as SwitchyardContainer
 
 const callbacks = jest.fn()
 const fetchServiceDataCallback = jest.fn(

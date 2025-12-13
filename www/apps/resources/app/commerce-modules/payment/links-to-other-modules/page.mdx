@@ -131,7 +131,7 @@ The Payment Module has the following links to other modules:
 
 The Cart Module provides cart-related features, but not payment processing.
 
-Medusa defines a link between the `Cart` and `PaymentCollection` data models. A cart has a payment collection which holds all the authorized payment sessions and payments made related to the cart.
+Switchyard defines a link between the `Cart` and `PaymentCollection` data models. A cart has a payment collection which holds all the authorized payment sessions and payments made related to the cart.
 
 Learn more about this relation in [this documentation](../payment-collection/page.mdx#usage-with-the-cart-module).
 
@@ -157,7 +157,7 @@ const { data: paymentCollections } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -182,7 +182,7 @@ To manage the payment collection of a cart, use [Link](!docs!/learn/fundamentals
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -200,7 +200,7 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -221,11 +221,11 @@ createRemoteLinkStep({
 
 ## Customer Module
 
-Medusa defines a link between the `Customer` and `AccountHolder` data models, allowing payment providers to save payment methods for a customer, if the payment provider supports it.
+Switchyard defines a link between the `Customer` and `AccountHolder` data models, allowing payment providers to save payment methods for a customer, if the payment provider supports it.
 
 <Note>
 
-This link is available starting from Medusa `v2.5.0`.
+This link is available starting from Switchyard `v2.5.0`.
 
 </Note>
 
@@ -251,7 +251,7 @@ const { data: accountHolders } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -276,7 +276,7 @@ To manage the account holders of a customer, use [Link](!docs!/learn/fundamental
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -294,7 +294,7 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -317,9 +317,9 @@ createRemoteLinkStep({
 
 An order's payment details are stored in a payment collection. This also applies for claims and exchanges.
 
-So, Medusa defines links between the `PaymentCollection` data model and the `Order`, `OrderClaim`, and `OrderExchange` data models.
+So, Switchyard defines links between the `PaymentCollection` data model and the `Order`, `OrderClaim`, and `OrderExchange` data models.
 
-![A diagram showcasing an example of how data models from the Order and Payment modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1716554726/Medusa%20Resources/order-payment_ubdwok.jpg)
+![A diagram showcasing an example of how data models from the Order and Payment modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1716554726/Switchyard%20Resources/order-payment_ubdwok.jpg)
 
 ### Retrieve with Query
 
@@ -343,7 +343,7 @@ const { data: paymentCollections } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -368,7 +368,7 @@ To manage the payment collections of an order, use [Link](!docs!/learn/fundament
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -386,8 +386,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -408,9 +408,9 @@ createRemoteLinkStep({
 
 ## Region Module
 
-You can specify for each region which payment providers are available. The Medusa application defines a link between the `PaymentProvider` and the `Region` data models.
+You can specify for each region which payment providers are available. The Switchyard application defines a link between the `PaymentProvider` and the `Region` data models.
 
-![A diagram showcasing an example of how resources from the Payment and Region modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1711569520/Medusa%20Resources/payment-region_jyo2dz.jpg)
+![A diagram showcasing an example of how resources from the Payment and Region modules are linked](https://res.cloudinary.com/dza7lstvk/image/upload/v1711569520/Switchyard%20Resources/payment-region_jyo2dz.jpg)
 
 This increases the flexibility of your store. For example, you only show during checkout the payment providers associated with the cart's region.
 
@@ -436,7 +436,7 @@ const { data: paymentProviders } = await query.graph({
   <CodeTab label="useQueryGraphStep" value="step">
 
 ```ts
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -461,7 +461,7 @@ To manage the payment providers in a region, use [Link](!docs!/learn/fundamental
   <CodeTab label="link.create" value="method">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -479,8 +479,8 @@ await link.create({
   <CodeTab label="createRemoteLinkStep" value="step">
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createRemoteLinkStep } from "@medusajs/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { createRemoteLinkStep } from "@switchyard/medusa/core-flows"
 
 // ...
 

@@ -53,8 +53,8 @@ const sidebarMappings: {
       }>,
     paths: [
       "/tools",
-      "/create-medusa-app",
-      "/medusa-cli",
+      "/create-switchyard-app",
+      "/switchyard-cli",
       "/js-sdk",
       "/nextjs-starter",
       "/references/js-sdk",

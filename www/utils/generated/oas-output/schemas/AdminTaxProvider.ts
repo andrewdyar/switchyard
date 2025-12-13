@@ -15,7 +15,7 @@
  *   is_enabled:
  *     type: boolean
  *     title: is_enabled
- *     description: Whether the tax provider is enabled in the Medusa application.
+ *     description: Whether the tax provider is enabled in the Switchyard application.
  * 
 */
 

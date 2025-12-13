@@ -3,8 +3,8 @@ import {
   DistributedTransactionType,
   LocalWorkflow,
   TransactionStepError,
-} from "@medusajs/orchestration"
-import { Context, LoadedModule, MedusaContainer } from "@medusajs/types"
+} from "@switchyard/orchestration"
+import { Context, LoadedModule, SwitchyardContainer } from "@switchyard/types"
 
 type BaseFlowRunOptions = {
   context?: Context
@@ -12,7 +12,7 @@ type BaseFlowRunOptions = {
   throwOnError?: boolean
   logOnError?: boolean
   events?: DistributedTransactionEvents
-  container?: LoadedModule[] | MedusaContainer
+  container?: LoadedModule[] | SwitchyardContainer
 }
 
 export type FlowRunOptions<TData = unknown> = BaseFlowRunOptions & {
@@ -43,7 +43,7 @@ export type FlowCancelOptions = {
   throwOnError?: boolean
   logOnError?: boolean
   events?: DistributedTransactionEvents
-  container?: LoadedModule[] | MedusaContainer
+  container?: LoadedModule[] | SwitchyardContainer
 }
 
 /**
@@ -104,7 +104,7 @@ export type ExportedWorkflow<
 export type MainExportedWorkflow<TData = unknown, TResult = unknown> = {
   // Main function on the exported workflow
   <TDataOverride = undefined, TResultOverride = undefined>(
-    container?: LoadedModule[] | MedusaContainer
+    container?: LoadedModule[] | SwitchyardContainer
   ): Omit<
     LocalWorkflow,
     "run" | "registerStepSuccess" | "registerStepFailure" | "cancel"

@@ -1,13 +1,13 @@
 import type {
   ServiceZoneDTO,
   ShippingOptionDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to validate fulfillment providers.
@@ -92,8 +92,8 @@ export const validateFulfillmentProvidersStep = createStep(
         continue
       }
 
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `service_zone_id and provider_id are required to create a shipping option`
       )
     }
@@ -138,8 +138,8 @@ export const validateFulfillmentProvidersStep = createStep(
     }
 
     if (invalidProviders.length) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Providers (${invalidProviders.join(
           ","
         )}) are not enabled for the service location`

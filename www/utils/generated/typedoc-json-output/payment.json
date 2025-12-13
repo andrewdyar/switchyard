@@ -527,7 +527,7 @@
 										"type": "reference",
 										"target": 9881,
 										"name": "FindConfigOrder",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -621,7 +621,7 @@
 										"type": "reference",
 										"target": 9619,
 										"name": "Entity",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"qualifiedName": "FindConfig.Entity",
 										"refersToTypeParameter": true
 									}
@@ -716,7 +716,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead."
+								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead."
 							}
 						]
 					},
@@ -778,7 +778,7 @@
 						"type": "reference",
 						"target": 9881,
 						"name": "FindConfigOrder",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -987,19 +987,19 @@
 											"type": "reference",
 											"target": 9889,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 9889,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -1043,19 +1043,19 @@
 											"type": "reference",
 											"target": 9889,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 9889,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -1171,7 +1171,7 @@
 							"type": "reference",
 							"target": 9638,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -1250,7 +1250,7 @@
 							"type": "reference",
 							"target": 9641,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -1313,7 +1313,7 @@
 					"type": "reference",
 					"target": 9994,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1326,14 +1326,14 @@
 						"type": "reference",
 						"target": 9994,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
 						"type": "reference",
 						"target": 10019,
 						"name": "Scalar",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"trueType": {
 						"type": "intrinsic",
@@ -1347,12 +1347,12 @@
 								"type": "reference",
 								"target": 9994,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQuery",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				"falseType": {
@@ -1363,12 +1363,12 @@
 							"type": "reference",
 							"target": 9994,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
 					"name": "FilterValue",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			}
 		},
@@ -1407,7 +1407,7 @@
 							"type": "reference",
 							"target": 9996,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"extendsType": {
@@ -1438,7 +1438,7 @@
 								"type": "reference",
 								"target": 9996,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -1472,7 +1472,7 @@
 								"type": "reference",
 								"target": 9996,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -1636,7 +1636,7 @@
 					"type": "reference",
 					"target": 10073,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1657,7 +1657,7 @@
 							"type": "reference",
 							"target": 10073,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
@@ -1668,7 +1668,7 @@
 					"type": "reference",
 					"target": 10073,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				}
 			}
@@ -1701,7 +1701,7 @@
 					"type": "reference",
 					"target": 10071,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1762,12 +1762,12 @@
 								"qualifiedName": "PK"
 							},
 							"name": "PK",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
 					"name": "ReadonlyPrimary",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				},
 				"falseType": {
 					"type": "conditional",
@@ -1775,7 +1775,7 @@
 						"type": "reference",
 						"target": 10071,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
@@ -1839,12 +1839,12 @@
 											"qualifiedName": "PK"
 										},
 										"name": "PK",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ReadonlyPrimary",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "intrinsic",
@@ -1858,7 +1858,7 @@
 							"type": "reference",
 							"target": 10071,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"extendsType": {
@@ -1919,12 +1919,12 @@
 										"qualifiedName": "PK"
 									},
 									"name": "PK",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							],
 							"name": "ReadonlyPrimary",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						},
 						"falseType": {
 							"type": "conditional",
@@ -1932,7 +1932,7 @@
 								"type": "reference",
 								"target": 10071,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -1993,12 +1993,12 @@
 											"qualifiedName": "PK"
 										},
 										"name": "PK",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ReadonlyPrimary",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							"falseType": {
 								"type": "intrinsic",
@@ -2065,12 +2065,12 @@
 											"type": "reference",
 											"target": 9911,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "Query",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -2099,12 +2099,12 @@
 											"type": "reference",
 											"target": 9911,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "Query",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -2134,12 +2134,12 @@
 												"type": "reference",
 												"target": 9911,
 												"name": "T",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "ExpandScalar",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "array",
@@ -2151,12 +2151,12 @@
 													"type": "reference",
 													"target": 9911,
 													"name": "T",
-													"package": "@medusajs/types",
+													"package": "@switchyard/types",
 													"refersToTypeParameter": true
 												}
 											],
 											"name": "ExpandScalar",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								]
@@ -2185,12 +2185,12 @@
 										"type": "reference",
 										"target": 9911,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2218,12 +2218,12 @@
 											"type": "reference",
 											"target": 9911,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "ExpandScalar",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -2252,12 +2252,12 @@
 											"type": "reference",
 											"target": 9911,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "ExpandScalar",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -2284,12 +2284,12 @@
 										"type": "reference",
 										"target": 9911,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "Query",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2315,12 +2315,12 @@
 										"type": "reference",
 										"target": 9911,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2346,12 +2346,12 @@
 										"type": "reference",
 										"target": 9911,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2377,12 +2377,12 @@
 										"type": "reference",
 										"target": 9911,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2408,12 +2408,12 @@
 										"type": "reference",
 										"target": 9911,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2651,7 +2651,7 @@
 						"type": "reference",
 						"target": 10060,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					{
@@ -2662,12 +2662,12 @@
 								"type": "reference",
 								"target": 10060,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "ExpandScalar",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
@@ -2677,12 +2677,12 @@
 								"type": "reference",
 								"target": 10060,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Primary",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -2724,16 +2724,16 @@
 										"type": "reference",
 										"target": 10027,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "FilterValue2",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
@@ -2743,12 +2743,12 @@
 								"type": "reference",
 								"target": 10027,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterValue2",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "array",
@@ -2760,12 +2760,12 @@
 									"type": "reference",
 									"target": 10027,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							],
 							"name": "FilterValue2",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					},
 					{
@@ -2857,7 +2857,7 @@
 						"type": "reference",
 						"target": 10057,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -2872,14 +2872,14 @@
 								"qualifiedName": "Key"
 							},
 							"name": "Key",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"objectType": {
 							"type": "reference",
 							"target": 10057,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					},
@@ -2929,14 +2929,14 @@
 										"qualifiedName": "Key"
 									},
 									"name": "Key",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								},
 								"objectType": {
 									"type": "reference",
 									"target": 10057,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							},
@@ -2953,20 +2953,20 @@
 												"qualifiedName": "Key"
 											},
 											"name": "Key",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										},
 										"objectType": {
 											"type": "reference",
 											"target": 10057,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -2981,14 +2981,14 @@
 									"qualifiedName": "Key"
 								},
 								"name": "Key",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"objectType": {
 								"type": "reference",
 								"target": 10057,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -3005,7 +3005,7 @@
 									"qualifiedName": "U"
 								},
 								"name": "U",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -3057,7 +3057,7 @@
 													"qualifiedName": "V"
 												},
 												"name": "V",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										}
@@ -3073,7 +3073,7 @@
 										"qualifiedName": "V"
 									},
 									"name": "V",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								},
 								"extendsType": {
@@ -3098,7 +3098,7 @@
 														"qualifiedName": "V"
 													},
 													"name": "V",
-													"package": "@medusajs/types",
+													"package": "@switchyard/types",
 													"refersToTypeParameter": true
 												}
 											],
@@ -3111,19 +3111,19 @@
 												"type": "reference",
 												"target": 10058,
 												"name": "Prev",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											},
 											"objectType": {
 												"type": "reference",
 												"target": 10061,
 												"name": "PrevLimit",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										}
 									],
 									"name": "FilterQuery",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								"falseType": {
 									"type": "intrinsic",
@@ -3191,7 +3191,7 @@
 					"type": "reference",
 					"target": 10025,
 					"name": "Prev",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -3208,7 +3208,7 @@
 						"type": "reference",
 						"target": 10024,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
@@ -3221,7 +3221,7 @@
 							}
 						],
 						"name": "Constructor",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"trueType": {
 						"type": "reference",
@@ -3234,19 +3234,19 @@
 									"qualifiedName": "Prototype"
 								},
 								"name": "Prototype",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							{
 								"type": "reference",
 								"target": 10025,
 								"name": "Prev",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQueryProperties",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"falseType": {
 						"type": "reference",
@@ -3256,19 +3256,19 @@
 								"type": "reference",
 								"target": 10024,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							{
 								"type": "reference",
 								"target": 10025,
 								"name": "Prev",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQueryProperties",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			}
@@ -3473,7 +3473,7 @@
 								"type": "reference",
 								"target": 10043,
 								"name": "EventMetadata",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -3501,7 +3501,7 @@
 								"type": "reference",
 								"target": 10018,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -3571,12 +3571,12 @@
 								"type": "reference",
 								"target": 9975,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Event",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -3713,7 +3713,7 @@
 								"type": "reference",
 								"target": 9992,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -3799,7 +3799,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -4307,7 +4307,7 @@
 								"type": "reference",
 								"target": 9998,
 								"name": "JoinerServiceConfigAlias",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -4315,7 +4315,7 @@
 									"type": "reference",
 									"target": 9998,
 									"name": "JoinerServiceConfigAlias",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						]
@@ -4478,7 +4478,7 @@
 							"type": "reference",
 							"target": 10003,
 							"name": "JoinerRelationship",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -4563,7 +4563,7 @@
 											"type": "reference",
 											"target": 10003,
 											"name": "JoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -4723,7 +4723,7 @@
 										"type": "reference",
 										"target": 10052,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									},
 									{
@@ -4752,7 +4752,7 @@
 														"type": "reference",
 														"target": 10052,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												}
@@ -5038,7 +5038,7 @@
 								"type": "reference",
 								"target": 9933,
 								"name": "JoinerServiceConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "union",
@@ -5158,7 +5158,7 @@
 											"type": "reference",
 											"target": 9948,
 											"name": "ModuleJoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -5380,7 +5380,7 @@
 																	"type": "reference",
 																	"target": 9948,
 																	"name": "ModuleJoinerRelationship",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																{
 																	"type": "literal",
@@ -5686,7 +5686,7 @@
 														"type": "reference",
 														"target": 9953,
 														"name": "LinkModulesExtraFields",
-														"package": "@medusajs/types"
+														"package": "@switchyard/types"
 													}
 												}
 											],
@@ -5761,7 +5761,7 @@
 						"type": "reference",
 						"target": 10003,
 						"name": "JoinerRelationship",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -5928,7 +5928,7 @@
 								"type": "reference",
 								"target": 9838,
 								"name": "ModuleJoinerConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -6392,7 +6392,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6422,7 +6422,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6452,7 +6452,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6482,7 +6482,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6679,7 +6679,7 @@
 						"type": "reference",
 						"target": 9880,
 						"name": "PaymentCollectionStatus",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6712,7 +6712,7 @@
 							"type": "reference",
 							"target": 9733,
 							"name": "PaymentProviderDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -6748,7 +6748,7 @@
 							"type": "reference",
 							"target": 9642,
 							"name": "PaymentSessionDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -6784,7 +6784,7 @@
 							"type": "reference",
 							"target": 9657,
 							"name": "PaymentDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -6866,7 +6866,7 @@
 									"type": "reference",
 									"target": 9594,
 									"name": "PaymentCollectionDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -6876,11 +6876,11 @@
 											"type": "reference",
 											"target": 9594,
 											"name": "PaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -6924,7 +6924,7 @@
 									"type": "reference",
 									"target": 9594,
 									"name": "PaymentCollectionDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -6934,11 +6934,11 @@
 											"type": "reference",
 											"target": 9594,
 											"name": "PaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -7022,7 +7022,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7058,7 +7058,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -7090,11 +7090,11 @@
 							"type": "reference",
 							"target": 9594,
 							"name": "PaymentCollectionDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -7146,7 +7146,7 @@
 									"type": "reference",
 									"target": 9642,
 									"name": "PaymentSessionDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -7156,11 +7156,11 @@
 											"type": "reference",
 											"target": 9642,
 											"name": "PaymentSessionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -7204,7 +7204,7 @@
 									"type": "reference",
 									"target": 9642,
 									"name": "PaymentSessionDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -7214,11 +7214,11 @@
 											"type": "reference",
 											"target": 9642,
 											"name": "PaymentSessionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -7339,7 +7339,7 @@
 								"type": "reference",
 								"target": 9879,
 								"name": "BigNumberValue",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "reference",
@@ -7349,11 +7349,11 @@
 										"type": "reference",
 										"target": 9879,
 										"name": "BigNumberValue",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -7471,7 +7471,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7507,7 +7507,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7543,7 +7543,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -7580,11 +7580,11 @@
 							"type": "reference",
 							"target": 9642,
 							"name": "PaymentSessionDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -7636,7 +7636,7 @@
 									"type": "reference",
 									"target": 9778,
 									"name": "CaptureDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -7646,11 +7646,11 @@
 											"type": "reference",
 											"target": 9778,
 											"name": "CaptureDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -7694,7 +7694,7 @@
 									"type": "reference",
 									"target": 9778,
 									"name": "CaptureDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -7704,11 +7704,11 @@
 											"type": "reference",
 											"target": 9778,
 											"name": "CaptureDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -7829,7 +7829,7 @@
 								"type": "reference",
 								"target": 9879,
 								"name": "BigNumberValue",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "reference",
@@ -7839,11 +7839,11 @@
 										"type": "reference",
 										"target": 9879,
 										"name": "BigNumberValue",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -7921,7 +7921,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7957,7 +7957,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7993,7 +7993,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -8029,11 +8029,11 @@
 							"type": "reference",
 							"target": 9778,
 							"name": "CaptureDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -8085,7 +8085,7 @@
 									"type": "reference",
 									"target": 9795,
 									"name": "RefundDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -8095,11 +8095,11 @@
 											"type": "reference",
 											"target": 9795,
 											"name": "RefundDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -8143,7 +8143,7 @@
 									"type": "reference",
 									"target": 9795,
 									"name": "RefundDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -8153,11 +8153,11 @@
 											"type": "reference",
 											"target": 9795,
 											"name": "RefundDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -8278,7 +8278,7 @@
 								"type": "reference",
 								"target": 9879,
 								"name": "BigNumberValue",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "reference",
@@ -8288,11 +8288,11 @@
 										"type": "reference",
 										"target": 9879,
 										"name": "BigNumberValue",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -8370,7 +8370,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8406,7 +8406,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8442,7 +8442,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -8478,11 +8478,11 @@
 							"type": "reference",
 							"target": 9795,
 							"name": "RefundDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -8552,7 +8552,7 @@
 						"type": "reference",
 						"target": 9913,
 						"name": "PaymentProviderContext",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -8631,7 +8631,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8661,7 +8661,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8691,7 +8691,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8721,7 +8721,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9014,7 +9014,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9044,7 +9044,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9074,7 +9074,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9104,7 +9104,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9139,7 +9139,7 @@
 							"type": "reference",
 							"target": 9778,
 							"name": "CaptureDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -9175,7 +9175,7 @@
 							"type": "reference",
 							"target": 9795,
 							"name": "RefundDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -9235,7 +9235,7 @@
 						"type": "reference",
 						"target": 9594,
 						"name": "PaymentCollectionDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9268,7 +9268,7 @@
 						"type": "reference",
 						"target": 9642,
 						"name": "PaymentSessionDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -9356,7 +9356,7 @@
 									"type": "reference",
 									"target": 9705,
 									"name": "FilterablePaymentProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -9366,11 +9366,11 @@
 											"type": "reference",
 											"target": 9705,
 											"name": "FilterablePaymentProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -9414,7 +9414,7 @@
 									"type": "reference",
 									"target": 9705,
 									"name": "FilterablePaymentProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -9424,11 +9424,11 @@
 											"type": "reference",
 											"target": 9705,
 											"name": "FilterablePaymentProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -9554,7 +9554,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -9592,7 +9592,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9628,7 +9628,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9664,7 +9664,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9700,7 +9700,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -9736,11 +9736,11 @@
 							"type": "reference",
 							"target": 9705,
 							"name": "FilterablePaymentProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -9810,7 +9810,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9840,7 +9840,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9927,7 +9927,7 @@
 						"type": "reference",
 						"target": 9657,
 						"name": "PaymentDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -10018,7 +10018,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10048,7 +10048,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10122,7 +10122,7 @@
 								"type": "reference",
 								"target": 9810,
 								"name": "RefundReasonDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -10248,7 +10248,7 @@
 						"type": "reference",
 						"target": 9657,
 						"name": "PaymentDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -10342,7 +10342,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10506,7 +10506,7 @@
 						"type": "reference",
 						"target": 9912,
 						"name": "PaymentSessionStatus",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10678,7 +10678,7 @@
 						"type": "reference",
 						"target": 9594,
 						"name": "PaymentCollectionDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10711,7 +10711,7 @@
 						"type": "reference",
 						"target": 9657,
 						"name": "PaymentDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10920,7 +10920,7 @@
 									"type": "reference",
 									"target": 9733,
 									"name": "PaymentProviderDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -10930,11 +10930,11 @@
 											"type": "reference",
 											"target": 9733,
 											"name": "PaymentProviderDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -10978,7 +10978,7 @@
 									"type": "reference",
 									"target": 9733,
 									"name": "PaymentProviderDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -10988,11 +10988,11 @@
 											"type": "reference",
 											"target": 9733,
 											"name": "PaymentProviderDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -11062,7 +11062,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -11123,11 +11123,11 @@
 							"type": "reference",
 							"target": 9733,
 							"name": "PaymentProviderDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -11179,7 +11179,7 @@
 									"type": "reference",
 									"target": 9822,
 									"name": "FilterableRefundReasonProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -11189,11 +11189,11 @@
 											"type": "reference",
 											"target": 9822,
 											"name": "FilterableRefundReasonProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -11237,7 +11237,7 @@
 									"type": "reference",
 									"target": 9822,
 									"name": "FilterableRefundReasonProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -11247,11 +11247,11 @@
 											"type": "reference",
 											"target": 9822,
 											"name": "FilterableRefundReasonProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -11411,11 +11411,11 @@
 							"type": "reference",
 							"target": 9822,
 							"name": "FilterableRefundReasonProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -12181,7 +12181,7 @@
 						"type": "reference",
 						"target": 9864,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12344,7 +12344,7 @@
 						"type": "reference",
 						"target": 9864,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12480,7 +12480,7 @@
 						"type": "reference",
 						"target": 9880,
 						"name": "PaymentCollectionStatus",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12510,7 +12510,7 @@
 						"type": "reference",
 						"target": 9864,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12676,7 +12676,7 @@
 						"type": "reference",
 						"target": 9864,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12823,7 +12823,7 @@
 						"type": "reference",
 						"target": 9864,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13058,7 +13058,7 @@
 						"type": "reference",
 						"target": 9864,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13129,7 +13129,7 @@
 						"type": "reference",
 						"target": 9913,
 						"name": "PaymentProviderContext",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13330,7 +13330,7 @@
 						"type": "reference",
 						"target": 9864,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13360,7 +13360,7 @@
 						"type": "reference",
 						"target": 9912,
 						"name": "PaymentSessionStatus",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13390,7 +13390,7 @@
 						"type": "reference",
 						"target": 9913,
 						"name": "PaymentProviderContext",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13528,7 +13528,7 @@
 								"type": "reference",
 								"target": 9913,
 								"name": "PaymentProviderContext",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "reflection",
@@ -13549,7 +13549,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The customer information from Medusa."
+														"text": "The customer information from Switchyard."
 													}
 												]
 											},
@@ -13564,7 +13564,7 @@
 												"type": "reference",
 												"target": 9917,
 												"name": "PaymentCustomerDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										}
 									],
@@ -13693,7 +13693,7 @@
 								"type": "reference",
 								"target": 9913,
 								"name": "PaymentProviderContext",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "reflection",
@@ -13714,7 +13714,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "The account holder information from Medusa."
+														"text": "The account holder information from Switchyard."
 													}
 												]
 											},
@@ -13729,7 +13729,7 @@
 												"type": "reference",
 												"target": 9926,
 												"name": "PaymentAccountHolderDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										}
 									],
@@ -14494,7 +14494,7 @@
 						"type": "reference",
 						"target": 9913,
 						"name": "PaymentProviderContext",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -14548,7 +14548,7 @@
 						"type": "reference",
 						"target": 10028,
 						"name": "AddressDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				],
 				"name": "Partial",
@@ -14595,7 +14595,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "The ID of the customer in Medusa."
+										"text": "The ID of the customer in Switchyard."
 									}
 								]
 							},
@@ -14815,7 +14815,7 @@
 										"type": "reference",
 										"target": 9997,
 										"name": "PaymentAddressDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -15028,7 +15028,7 @@
 						"type": "reference",
 						"target": 9926,
 						"name": "PaymentAccountHolderDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -15043,7 +15043,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "The customer information from Medusa."
+								"text": "The customer information from Switchyard."
 							}
 						]
 					},
@@ -15058,7 +15058,7 @@
 						"type": "reference",
 						"target": 9917,
 						"name": "PaymentCustomerDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -15133,7 +15133,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "The ID of the payment session in Medusa.\nMake sure to store this ID in the third-party payment provider\nto be able to retrieve the payment session later."
+								"text": "The ID of the payment session in Switchyard.\nMake sure to store this ID in the third-party payment provider\nto be able to retrieve the payment session later."
 							}
 						]
 					},
@@ -15174,7 +15174,7 @@
 						"type": "reference",
 						"target": 9879,
 						"name": "BigNumberValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -15220,7 +15220,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "The action that was performed so that Medusa can handle it internally."
+								"text": "The action that was performed so that Switchyard can handle it internally."
 							}
 						]
 					},
@@ -15235,7 +15235,7 @@
 						"type": "reference",
 						"target": 9929,
 						"name": "PaymentActions",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -15265,7 +15265,7 @@
 						"type": "reference",
 						"target": 9930,
 						"name": "WebhookActionData",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -15312,13 +15312,13 @@
 							"fileName": "payment/service.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L68"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L68"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 87,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L87"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L87"
 						}
 					],
 					"signatures": [
@@ -15361,7 +15361,7 @@
 									"fileName": "payment/service.ts",
 									"line": 68,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L68"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L68"
 								}
 							],
 							"parameters": [
@@ -15385,7 +15385,7 @@
 											"type": "reference",
 											"target": 9573,
 											"name": "CreatePaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -15409,7 +15409,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15426,7 +15426,7 @@
 											"type": "reference",
 											"target": 9594,
 											"name": "PaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15473,7 +15473,7 @@
 									"fileName": "payment/service.ts",
 									"line": 87,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L87"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L87"
 								}
 							],
 							"parameters": [
@@ -15495,7 +15495,7 @@
 										"type": "reference",
 										"target": 9573,
 										"name": "CreatePaymentCollectionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15518,7 +15518,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15533,7 +15533,7 @@
 										"type": "reference",
 										"target": 9594,
 										"name": "PaymentCollectionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -15553,7 +15553,7 @@
 							"fileName": "payment/service.ts",
 							"line": 132,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L132"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L132"
 						}
 					],
 					"signatures": [
@@ -15593,7 +15593,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -15608,7 +15608,7 @@
 									"fileName": "payment/service.ts",
 									"line": 132,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L132"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L132"
 								}
 							],
 							"parameters": [
@@ -15671,11 +15671,11 @@
 												"type": "reference",
 												"target": 9594,
 												"name": "PaymentCollectionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15698,7 +15698,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15713,7 +15713,7 @@
 										"type": "reference",
 										"target": 9594,
 										"name": "PaymentCollectionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -15733,7 +15733,7 @@
 							"fileName": "payment/service.ts",
 							"line": 196,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L196"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L196"
 						}
 					],
 					"signatures": [
@@ -15773,7 +15773,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the payment collection:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the payment collection:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -15828,7 +15828,7 @@
 									"fileName": "payment/service.ts",
 									"line": 196,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L196"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L196"
 								}
 							],
 							"parameters": [
@@ -15852,7 +15852,7 @@
 										"type": "reference",
 										"target": 9620,
 										"name": "FilterablePaymentCollectionProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15895,11 +15895,11 @@
 												"type": "reference",
 												"target": 9594,
 												"name": "PaymentCollectionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15922,7 +15922,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15939,7 +15939,7 @@
 											"type": "reference",
 											"target": 9594,
 											"name": "PaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15960,7 +15960,7 @@
 							"fileName": "payment/service.ts",
 							"line": 260,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L260"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L260"
 						}
 					],
 					"signatures": [
@@ -16000,7 +16000,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the payment collection:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the payment collection:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -16055,7 +16055,7 @@
 									"fileName": "payment/service.ts",
 									"line": 260,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L260"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L260"
 								}
 							],
 							"parameters": [
@@ -16079,7 +16079,7 @@
 										"type": "reference",
 										"target": 9620,
 										"name": "FilterablePaymentCollectionProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16122,11 +16122,11 @@
 												"type": "reference",
 												"target": 9594,
 												"name": "PaymentCollectionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16149,7 +16149,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16169,7 +16169,7 @@
 													"type": "reference",
 													"target": 9594,
 													"name": "PaymentCollectionDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -16196,13 +16196,13 @@
 							"fileName": "payment/service.ts",
 							"line": 283,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L283"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L283"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 308,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L308"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L308"
 						}
 					],
 					"signatures": [
@@ -16245,7 +16245,7 @@
 									"fileName": "payment/service.ts",
 									"line": 283,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L283"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L283"
 								}
 							],
 							"parameters": [
@@ -16286,7 +16286,7 @@
 										"type": "reference",
 										"target": 9626,
 										"name": "PaymentCollectionUpdatableFields",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16309,7 +16309,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16324,7 +16324,7 @@
 										"type": "reference",
 										"target": 9594,
 										"name": "PaymentCollectionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -16370,7 +16370,7 @@
 									"fileName": "payment/service.ts",
 									"line": 308,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L308"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L308"
 								}
 							],
 							"parameters": [
@@ -16392,7 +16392,7 @@
 										"type": "reference",
 										"target": 9620,
 										"name": "FilterablePaymentCollectionProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16413,7 +16413,7 @@
 										"type": "reference",
 										"target": 9626,
 										"name": "PaymentCollectionUpdatableFields",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16436,7 +16436,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16453,7 +16453,7 @@
 											"type": "reference",
 											"target": 9594,
 											"name": "PaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16474,13 +16474,13 @@
 							"fileName": "payment/service.ts",
 							"line": 334,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L334"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L334"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 353,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L353"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L353"
 						}
 					],
 					"signatures": [
@@ -16523,7 +16523,7 @@
 									"fileName": "payment/service.ts",
 									"line": 334,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L334"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L334"
 								}
 							],
 							"parameters": [
@@ -16555,7 +16555,7 @@
 											"type": "reference",
 											"target": 9631,
 											"name": "UpsertPaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16579,7 +16579,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16596,7 +16596,7 @@
 											"type": "reference",
 											"target": 9594,
 											"name": "PaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16643,7 +16643,7 @@
 									"fileName": "payment/service.ts",
 									"line": 353,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L353"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L353"
 								}
 							],
 							"parameters": [
@@ -16673,7 +16673,7 @@
 										"type": "reference",
 										"target": 9631,
 										"name": "UpsertPaymentCollectionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16696,7 +16696,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16711,7 +16711,7 @@
 										"type": "reference",
 										"target": 9594,
 										"name": "PaymentCollectionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -16731,13 +16731,13 @@
 							"fileName": "payment/service.ts",
 							"line": 371,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L371"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L371"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 388,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L388"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L388"
 						}
 					],
 					"signatures": [
@@ -16780,7 +16780,7 @@
 									"fileName": "payment/service.ts",
 									"line": 371,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L371"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L371"
 								}
 							],
 							"parameters": [
@@ -16826,7 +16826,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16885,7 +16885,7 @@
 									"fileName": "payment/service.ts",
 									"line": 388,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L388"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L388"
 								}
 							],
 							"parameters": [
@@ -16928,7 +16928,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16961,7 +16961,7 @@
 							"fileName": "payment/service.ts",
 							"line": 405,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L405"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L405"
 						}
 					],
 					"signatures": [
@@ -17012,7 +17012,7 @@
 									"fileName": "payment/service.ts",
 									"line": 405,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L405"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L405"
 								}
 							],
 							"typeParameters": [
@@ -17079,12 +17079,12 @@
 												"type": "reference",
 												"target": 9374,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17107,7 +17107,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17136,7 +17136,7 @@
 														"type": "reference",
 														"target": 9374,
 														"name": "TReturnableLinkableKeys",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													},
 													{
@@ -17170,7 +17170,7 @@
 							"fileName": "payment/service.ts",
 							"line": 424,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L424"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L424"
 						}
 					],
 					"signatures": [
@@ -17221,7 +17221,7 @@
 									"fileName": "payment/service.ts",
 									"line": 424,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L424"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L424"
 								}
 							],
 							"typeParameters": [
@@ -17296,12 +17296,12 @@
 												"type": "reference",
 												"target": 9380,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17324,7 +17324,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17353,7 +17353,7 @@
 														"type": "reference",
 														"target": 9380,
 														"name": "TReturnableLinkableKeys",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													},
 													{
@@ -17387,13 +17387,13 @@
 							"fileName": "payment/service.ts",
 							"line": 443,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L443"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L443"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 462,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L462"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L462"
 						}
 					],
 					"signatures": [
@@ -17444,7 +17444,7 @@
 									"fileName": "payment/service.ts",
 									"line": 443,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L443"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L443"
 								}
 							],
 							"parameters": [
@@ -17487,7 +17487,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17502,7 +17502,7 @@
 										"type": "reference",
 										"target": 9594,
 										"name": "PaymentCollectionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -17556,7 +17556,7 @@
 									"fileName": "payment/service.ts",
 									"line": 462,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L462"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L462"
 								}
 							],
 							"parameters": [
@@ -17602,7 +17602,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17619,7 +17619,7 @@
 											"type": "reference",
 											"target": 9594,
 											"name": "PaymentCollectionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -17640,7 +17640,7 @@
 							"fileName": "payment/service.ts",
 							"line": 467,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L467"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L467"
 						}
 					],
 					"signatures": [
@@ -17655,7 +17655,7 @@
 									"fileName": "payment/service.ts",
 									"line": 467,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L467"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L467"
 								}
 							],
 							"parameters": [
@@ -17686,11 +17686,11 @@
 												"type": "reference",
 												"target": 9642,
 												"name": "PaymentSessionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17705,7 +17705,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17720,7 +17720,7 @@
 										"type": "reference",
 										"target": 9642,
 										"name": "PaymentSessionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -17740,7 +17740,7 @@
 							"fileName": "payment/service.ts",
 							"line": 473,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L473"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L473"
 						}
 					],
 					"signatures": [
@@ -17755,7 +17755,7 @@
 									"fileName": "payment/service.ts",
 									"line": 473,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L473"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L473"
 								}
 							],
 							"parameters": [
@@ -17786,11 +17786,11 @@
 												"type": "reference",
 												"target": 9657,
 												"name": "PaymentDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17805,7 +17805,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17820,7 +17820,7 @@
 										"type": "reference",
 										"target": 9657,
 										"name": "PaymentDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -17840,7 +17840,7 @@
 							"fileName": "payment/service.ts",
 							"line": 501,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L501"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L501"
 						}
 					],
 					"signatures": [
@@ -17883,7 +17883,7 @@
 									"fileName": "payment/service.ts",
 									"line": 501,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L501"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L501"
 								}
 							],
 							"parameters": [
@@ -17924,7 +17924,7 @@
 										"type": "reference",
 										"target": 9679,
 										"name": "CreatePaymentSessionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17947,7 +17947,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17962,7 +17962,7 @@
 										"type": "reference",
 										"target": 9642,
 										"name": "PaymentSessionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -17982,7 +17982,7 @@
 							"fileName": "payment/service.ts",
 							"line": 523,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L523"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L523"
 						}
 					],
 					"signatures": [
@@ -18025,7 +18025,7 @@
 									"fileName": "payment/service.ts",
 									"line": 523,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L523"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L523"
 								}
 							],
 							"parameters": [
@@ -18047,7 +18047,7 @@
 										"type": "reference",
 										"target": 9686,
 										"name": "UpdatePaymentSessionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18070,7 +18070,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18085,7 +18085,7 @@
 										"type": "reference",
 										"target": 9642,
 										"name": "PaymentSessionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -18105,7 +18105,7 @@
 							"fileName": "payment/service.ts",
 							"line": 538,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L538"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L538"
 						}
 					],
 					"signatures": [
@@ -18148,7 +18148,7 @@
 									"fileName": "payment/service.ts",
 									"line": 538,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L538"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L538"
 								}
 							],
 							"parameters": [
@@ -18191,7 +18191,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18224,7 +18224,7 @@
 							"fileName": "payment/service.ts",
 							"line": 557,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L557"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L557"
 						}
 					],
 					"signatures": [
@@ -18238,7 +18238,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method authorizes a payment session using its associated payment provider. This creates a payment that can later be captured.\n\nLearn more about the payment flow in [this guide](https://docs.medusajs.com/resources/commerce-modules/payment/payment-flow)"
+										"text": "This method authorizes a payment session using its associated payment provider. This creates a payment that can later be captured.\n\nLearn more about the payment flow in [this guide](https://docs.switchyard.com/resources/commerce-modules/payment/payment-flow)"
 									}
 								],
 								"blockTags": [
@@ -18267,7 +18267,7 @@
 									"fileName": "payment/service.ts",
 									"line": 557,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L557"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L557"
 								}
 							],
 							"parameters": [
@@ -18344,7 +18344,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18359,7 +18359,7 @@
 										"type": "reference",
 										"target": 9657,
 										"name": "PaymentDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -18379,7 +18379,7 @@
 							"fileName": "payment/service.ts",
 							"line": 619,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L619"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L619"
 						}
 					],
 					"signatures": [
@@ -18419,7 +18419,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the payment session:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the payment session:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18474,7 +18474,7 @@
 									"fileName": "payment/service.ts",
 									"line": 619,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L619"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L619"
 								}
 							],
 							"parameters": [
@@ -18498,7 +18498,7 @@
 										"type": "reference",
 										"target": 9694,
 										"name": "FilterablePaymentSessionProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18541,11 +18541,11 @@
 												"type": "reference",
 												"target": 9642,
 												"name": "PaymentSessionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18568,7 +18568,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18585,7 +18585,7 @@
 											"type": "reference",
 											"target": 9642,
 											"name": "PaymentSessionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18606,7 +18606,7 @@
 							"fileName": "payment/service.ts",
 							"line": 680,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L680"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L680"
 						}
 					],
 					"signatures": [
@@ -18646,7 +18646,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the payment:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the payment:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18701,7 +18701,7 @@
 									"fileName": "payment/service.ts",
 									"line": 680,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L680"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L680"
 								}
 							],
 							"parameters": [
@@ -18725,7 +18725,7 @@
 										"type": "reference",
 										"target": 9705,
 										"name": "FilterablePaymentProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18768,11 +18768,11 @@
 												"type": "reference",
 												"target": 9657,
 												"name": "PaymentDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18795,7 +18795,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18812,7 +18812,7 @@
 											"type": "reference",
 											"target": 9657,
 											"name": "PaymentDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18833,7 +18833,7 @@
 							"fileName": "payment/service.ts",
 							"line": 698,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L698"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L698"
 						}
 					],
 					"signatures": [
@@ -18876,7 +18876,7 @@
 									"fileName": "payment/service.ts",
 									"line": 698,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L698"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L698"
 								}
 							],
 							"parameters": [
@@ -18898,7 +18898,7 @@
 										"type": "reference",
 										"target": 9715,
 										"name": "UpdatePaymentDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18921,7 +18921,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18936,7 +18936,7 @@
 										"type": "reference",
 										"target": 9657,
 										"name": "PaymentDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -18956,7 +18956,7 @@
 							"fileName": "payment/service.ts",
 							"line": 717,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L717"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L717"
 						}
 					],
 					"signatures": [
@@ -18970,7 +18970,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method captures a payment using its associated payment provider.\n\nLearn more about the payment flow in [this guide](https://docs.medusajs.com/resources/commerce-modules/payment/payment-flow)"
+										"text": "This method captures a payment using its associated payment provider.\n\nLearn more about the payment flow in [this guide](https://docs.switchyard.com/resources/commerce-modules/payment/payment-flow)"
 									}
 								],
 								"blockTags": [
@@ -18999,7 +18999,7 @@
 									"fileName": "payment/service.ts",
 									"line": 717,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L717"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L717"
 								}
 							],
 							"parameters": [
@@ -19021,7 +19021,7 @@
 										"type": "reference",
 										"target": 9717,
 										"name": "CreateCaptureDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19044,7 +19044,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19059,7 +19059,7 @@
 										"type": "reference",
 										"target": 9657,
 										"name": "PaymentDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -19079,7 +19079,7 @@
 							"fileName": "payment/service.ts",
 							"line": 735,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L735"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L735"
 						}
 					],
 					"signatures": [
@@ -19122,7 +19122,7 @@
 									"fileName": "payment/service.ts",
 									"line": 735,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L735"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L735"
 								}
 							],
 							"parameters": [
@@ -19144,7 +19144,7 @@
 										"type": "reference",
 										"target": 9722,
 										"name": "CreateRefundDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19167,7 +19167,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19182,7 +19182,7 @@
 										"type": "reference",
 										"target": 9657,
 										"name": "PaymentDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -19202,7 +19202,7 @@
 							"fileName": "payment/service.ts",
 							"line": 751,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L751"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L751"
 						}
 					],
 					"signatures": [
@@ -19245,7 +19245,7 @@
 									"fileName": "payment/service.ts",
 									"line": 751,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L751"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L751"
 								}
 							],
 							"parameters": [
@@ -19288,7 +19288,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19303,7 +19303,7 @@
 										"type": "reference",
 										"target": 9657,
 										"name": "PaymentDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -19323,7 +19323,7 @@
 							"fileName": "payment/service.ts",
 							"line": 787,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L787"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L787"
 						}
 					],
 					"signatures": [
@@ -19410,7 +19410,7 @@
 									"fileName": "payment/service.ts",
 									"line": 787,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L787"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L787"
 								}
 							],
 							"parameters": [
@@ -19434,7 +19434,7 @@
 										"type": "reference",
 										"target": 9728,
 										"name": "FilterablePaymentProviderProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19477,11 +19477,11 @@
 												"type": "reference",
 												"target": 9733,
 												"name": "PaymentProviderDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19504,7 +19504,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19521,7 +19521,7 @@
 											"type": "reference",
 											"target": 9733,
 											"name": "PaymentProviderDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -19542,7 +19542,7 @@
 							"fileName": "payment/service.ts",
 							"line": 851,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L851"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L851"
 						}
 					],
 					"signatures": [
@@ -19582,7 +19582,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the payment providers:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the payment providers:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -19637,7 +19637,7 @@
 									"fileName": "payment/service.ts",
 									"line": 851,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L851"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L851"
 								}
 							],
 							"parameters": [
@@ -19661,7 +19661,7 @@
 										"type": "reference",
 										"target": 9728,
 										"name": "FilterablePaymentProviderProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19704,11 +19704,11 @@
 												"type": "reference",
 												"target": 9733,
 												"name": "PaymentProviderDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19731,7 +19731,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19751,7 +19751,7 @@
 													"type": "reference",
 													"target": 9733,
 													"name": "PaymentProviderDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -19778,7 +19778,7 @@
 							"fileName": "payment/service.ts",
 							"line": 886,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L886"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L886"
 						}
 					],
 					"signatures": [
@@ -19821,7 +19821,7 @@
 									"fileName": "payment/service.ts",
 									"line": 886,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L886"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L886"
 								}
 							],
 							"parameters": [
@@ -19843,7 +19843,7 @@
 										"type": "reference",
 										"target": 9736,
 										"name": "CreateAccountHolderDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19866,7 +19866,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19881,7 +19881,7 @@
 										"type": "reference",
 										"target": 9741,
 										"name": "AccountHolderDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -19901,7 +19901,7 @@
 							"fileName": "payment/service.ts",
 							"line": 917,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L917"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L917"
 						}
 					],
 					"signatures": [
@@ -19944,7 +19944,7 @@
 									"fileName": "payment/service.ts",
 									"line": 917,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L917"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L917"
 								}
 							],
 							"parameters": [
@@ -19966,7 +19966,7 @@
 										"type": "reference",
 										"target": 9750,
 										"name": "UpdateAccountHolderDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19989,7 +19989,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20004,7 +20004,7 @@
 										"type": "reference",
 										"target": 9741,
 										"name": "AccountHolderDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -20024,7 +20024,7 @@
 							"fileName": "payment/service.ts",
 							"line": 943,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L943"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L943"
 						}
 					],
 					"signatures": [
@@ -20067,7 +20067,7 @@
 									"fileName": "payment/service.ts",
 									"line": 943,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L943"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L943"
 								}
 							],
 							"parameters": [
@@ -20110,7 +20110,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20143,7 +20143,7 @@
 							"fileName": "payment/service.ts",
 							"line": 973,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L973"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L973"
 						}
 					],
 					"signatures": [
@@ -20190,7 +20190,7 @@
 									"fileName": "payment/service.ts",
 									"line": 973,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L973"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L973"
 								}
 							],
 							"parameters": [
@@ -20212,7 +20212,7 @@
 										"type": "reference",
 										"target": 9757,
 										"name": "FilterablePaymentMethodProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20255,11 +20255,11 @@
 												"type": "reference",
 												"target": 9760,
 												"name": "PaymentMethodDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20282,7 +20282,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20299,7 +20299,7 @@
 											"type": "reference",
 											"target": 9760,
 											"name": "PaymentMethodDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -20320,7 +20320,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1007,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1007"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1007"
 						}
 					],
 					"signatures": [
@@ -20367,7 +20367,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1007,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1007"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1007"
 								}
 							],
 							"parameters": [
@@ -20389,7 +20389,7 @@
 										"type": "reference",
 										"target": 9757,
 										"name": "FilterablePaymentMethodProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20432,11 +20432,11 @@
 												"type": "reference",
 												"target": 9760,
 												"name": "PaymentMethodDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20459,7 +20459,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20479,7 +20479,7 @@
 													"type": "reference",
 													"target": 9760,
 													"name": "PaymentMethodDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -20506,13 +20506,13 @@
 							"fileName": "payment/service.ts",
 							"line": 1051,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1051"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1051"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 1080,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1080"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1080"
 						}
 					],
 					"signatures": [
@@ -20555,7 +20555,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1051,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1051"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1051"
 								}
 							],
 							"parameters": [
@@ -20579,7 +20579,7 @@
 											"type": "reference",
 											"target": 9764,
 											"name": "CreatePaymentMethodDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -20603,7 +20603,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20620,7 +20620,7 @@
 											"type": "reference",
 											"target": 9760,
 											"name": "PaymentMethodDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -20667,7 +20667,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1080,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1080"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1080"
 								}
 							],
 							"parameters": [
@@ -20689,7 +20689,7 @@
 										"type": "reference",
 										"target": 9764,
 										"name": "CreatePaymentMethodDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20712,7 +20712,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20727,7 +20727,7 @@
 										"type": "reference",
 										"target": 9760,
 										"name": "PaymentMethodDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -20747,7 +20747,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1138,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1138"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1138"
 						}
 					],
 					"signatures": [
@@ -20787,7 +20787,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the capture:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the capture:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -20842,7 +20842,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1138,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1138"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1138"
 								}
 							],
 							"parameters": [
@@ -20866,7 +20866,7 @@
 										"type": "reference",
 										"target": 9768,
 										"name": "FilterableCaptureProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20909,11 +20909,11 @@
 												"type": "reference",
 												"target": 9778,
 												"name": "CaptureDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -20936,7 +20936,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20953,7 +20953,7 @@
 											"type": "reference",
 											"target": 9778,
 											"name": "CaptureDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -20974,7 +20974,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1157,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1157"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1157"
 						}
 					],
 					"signatures": [
@@ -21017,7 +21017,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1157,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1157"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1157"
 								}
 							],
 							"parameters": [
@@ -21055,7 +21055,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21088,7 +21088,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1212,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1212"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1212"
 						}
 					],
 					"signatures": [
@@ -21128,7 +21128,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the refund:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the refund:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -21183,7 +21183,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1212,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1212"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1212"
 								}
 							],
 							"parameters": [
@@ -21207,7 +21207,7 @@
 										"type": "reference",
 										"target": 9785,
 										"name": "FilterableRefundProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -21250,11 +21250,11 @@
 												"type": "reference",
 												"target": 9795,
 												"name": "RefundDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -21277,7 +21277,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21294,7 +21294,7 @@
 											"type": "reference",
 											"target": 9795,
 											"name": "RefundDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -21315,7 +21315,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1231,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1231"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1231"
 						}
 					],
 					"signatures": [
@@ -21358,7 +21358,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1231,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1231"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1231"
 								}
 							],
 							"parameters": [
@@ -21396,7 +21396,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21429,13 +21429,13 @@
 							"fileName": "payment/service.ts",
 							"line": 1253,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1253"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1253"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 1272,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1272"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1272"
 						}
 					],
 					"signatures": [
@@ -21478,7 +21478,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1253,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1253"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1253"
 								}
 							],
 							"parameters": [
@@ -21502,7 +21502,7 @@
 											"type": "reference",
 											"target": 9805,
 											"name": "CreateRefundReasonDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -21526,7 +21526,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21543,7 +21543,7 @@
 											"type": "reference",
 											"target": 9810,
 											"name": "RefundReasonDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -21590,7 +21590,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1272,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1272"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1272"
 								}
 							],
 							"parameters": [
@@ -21612,7 +21612,7 @@
 										"type": "reference",
 										"target": 9805,
 										"name": "CreateRefundReasonDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -21635,7 +21635,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21650,7 +21650,7 @@
 										"type": "reference",
 										"target": 9810,
 										"name": "RefundReasonDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -21670,13 +21670,13 @@
 							"fileName": "payment/service.ts",
 							"line": 1290,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1290"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1290"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 1307,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1307"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1307"
 						}
 					],
 					"signatures": [
@@ -21719,7 +21719,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1290,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1290"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1290"
 								}
 							],
 							"parameters": [
@@ -21765,7 +21765,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21824,7 +21824,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1307,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1307"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1307"
 								}
 							],
 							"parameters": [
@@ -21867,7 +21867,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -21900,7 +21900,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1324,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1324"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1324"
 						}
 					],
 					"signatures": [
@@ -21951,7 +21951,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1324,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1324"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1324"
 								}
 							],
 							"typeParameters": [
@@ -22018,12 +22018,12 @@
 												"type": "reference",
 												"target": 9518,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22046,7 +22046,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22075,7 +22075,7 @@
 														"type": "reference",
 														"target": 9518,
 														"name": "TReturnableLinkableKeys",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													},
 													{
@@ -22109,7 +22109,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1343,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1343"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1343"
 						}
 					],
 					"signatures": [
@@ -22160,7 +22160,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1343,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1343"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1343"
 								}
 							],
 							"typeParameters": [
@@ -22235,12 +22235,12 @@
 												"type": "reference",
 												"target": 9524,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22263,7 +22263,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22292,7 +22292,7 @@
 														"type": "reference",
 														"target": 9524,
 														"name": "TReturnableLinkableKeys",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													},
 													{
@@ -22326,13 +22326,13 @@
 							"fileName": "payment/service.ts",
 							"line": 1365,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1365"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1365"
 						},
 						{
 							"fileName": "payment/service.ts",
 							"line": 1370,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1370"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1370"
 						}
 					],
 					"signatures": [
@@ -22375,7 +22375,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1365,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1365"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1365"
 								}
 							],
 							"parameters": [
@@ -22399,7 +22399,7 @@
 											"type": "reference",
 											"target": 9817,
 											"name": "UpdateRefundReasonDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -22423,7 +22423,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22440,7 +22440,7 @@
 											"type": "reference",
 											"target": 9810,
 											"name": "RefundReasonDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -22459,7 +22459,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1370,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1370"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1370"
 								}
 							],
 							"parameters": [
@@ -22473,7 +22473,7 @@
 										"type": "reference",
 										"target": 9817,
 										"name": "UpdateRefundReasonDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22488,7 +22488,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22503,7 +22503,7 @@
 										"type": "reference",
 										"target": 9810,
 										"name": "RefundReasonDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -22523,7 +22523,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1430,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1430"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1430"
 						}
 					],
 					"signatures": [
@@ -22563,7 +22563,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the refund reasons:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the refund reasons:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -22618,7 +22618,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1430,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1430"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1430"
 								}
 							],
 							"parameters": [
@@ -22642,7 +22642,7 @@
 										"type": "reference",
 										"target": 9822,
 										"name": "FilterableRefundReasonProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22685,11 +22685,11 @@
 												"type": "reference",
 												"target": 9810,
 												"name": "RefundReasonDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -22712,7 +22712,7 @@
 										"type": "reference",
 										"target": 9577,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22729,7 +22729,7 @@
 											"type": "reference",
 											"target": 9810,
 											"name": "RefundReasonDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -22750,7 +22750,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1460,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1460"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1460"
 						}
 					],
 					"signatures": [
@@ -22764,7 +22764,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method retrieves webhook event data with the associated payment provider.\n\nLearn more about handling webhook events in [this guide](https://docs.medusajs.com/resources/commerce-modules/payment/webhook-events)"
+										"text": "This method retrieves webhook event data with the associated payment provider.\n\nLearn more about handling webhook events in [this guide](https://docs.switchyard.com/resources/commerce-modules/payment/webhook-events)"
 									}
 								],
 								"blockTags": [
@@ -22794,7 +22794,7 @@
 											},
 											{
 												"kind": "code",
-												"text": "`MedusaRequest`"
+												"text": "`SwitchyardRequest`"
 											},
 											{
 												"kind": "text",
@@ -22813,7 +22813,7 @@
 									"fileName": "payment/service.ts",
 									"line": 1460,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1460"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1460"
 								}
 							],
 							"parameters": [
@@ -22835,7 +22835,7 @@
 										"type": "reference",
 										"target": 9828,
 										"name": "ProviderWebhookPayload",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -22850,7 +22850,7 @@
 										"type": "reference",
 										"target": 9835,
 										"name": "WebhookActionResult",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -22913,7 +22913,7 @@
 					"fileName": "payment/service.ts",
 					"line": 45,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L45"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L45"
 				}
 			],
 			"extendedTypes": [
@@ -22921,7 +22921,7 @@
 					"type": "reference",
 					"target": 9559,
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -22972,7 +22972,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1474,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1474"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1474"
 						}
 					],
 					"type": {
@@ -23012,7 +23012,7 @@
 							"fileName": "payment/service.ts",
 							"line": 1481,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1481"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1481"
 						}
 					],
 					"type": {
@@ -23035,7 +23035,7 @@
 					"fileName": "payment/service.ts",
 					"line": 1468,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1468"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/payment/service.ts#L1468"
 				}
 			]
 		},
@@ -23249,7 +23249,7 @@
 												"type": "reference",
 												"target": 9972,
 												"name": "Message",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -23257,7 +23257,7 @@
 													"type": "reference",
 													"target": 9972,
 													"name": "Message",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -23311,7 +23311,7 @@
 										"type": "reference",
 										"target": 9976,
 										"name": "MessageAggregatorFormat",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -23332,7 +23332,7 @@
 											"type": "reference",
 											"target": 9972,
 											"name": "Message",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -23430,12 +23430,12 @@
 														"type": "reference",
 														"target": 9876,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												],
 												"name": "RawMessageFormat",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -23447,12 +23447,12 @@
 															"type": "reference",
 															"target": 9876,
 															"name": "T",
-															"package": "@medusajs/types",
+															"package": "@switchyard/types",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "RawMessageFormat",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -23546,7 +23546,7 @@
 					],
 					"type": {
 						"type": "literal",
-						"value": "MedusaContext"
+						"value": "SwitchyardContext"
 					}
 				},
 				{
@@ -23592,7 +23592,7 @@
 						"type": "reference",
 						"target": 9593,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -23639,7 +23639,7 @@
 						"type": "reference",
 						"target": 9593,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -23842,7 +23842,7 @@
 						"type": "reference",
 						"target": 9865,
 						"name": "IMessageAggregator",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -24101,7 +24101,7 @@
 						"type": "reference",
 						"target": 9959,
 						"name": "BigNumberRawValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -24344,7 +24344,7 @@
 						"type": "reference",
 						"target": 9959,
 						"name": "BigNumberRawValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "intrinsic",
@@ -24368,7 +24368,7 @@
 						"type": "reference",
 						"target": 9964,
 						"name": "IBigNumber",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -24411,7 +24411,7 @@
 						"type": "reference",
 						"target": 9964,
 						"name": "IBigNumber",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -24507,7 +24507,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"9325": {
 			"sourceFileName": "../../../../packages/core/types/src/payment/service.ts",

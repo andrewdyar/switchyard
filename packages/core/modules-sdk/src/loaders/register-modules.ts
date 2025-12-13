@@ -4,17 +4,17 @@ import {
   ModuleDefinition,
   ModuleExports,
   ModuleResolution,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 import {
   isObject,
   isString,
   normalizeImportPathWithSource,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { ModulesDefinition } from "../definitions"
 import { MODULE_SCOPE } from "../types"
 
-export const registerMedusaModule = ({
+export const registerSwitchyardModule = ({
   moduleKey,
   moduleDeclaration,
   moduleExports,

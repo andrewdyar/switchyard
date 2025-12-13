@@ -1,8 +1,8 @@
 # Contributing
 
-Thank you for considering contributing to Medusa! This document will outline how to submit changes to this repository and which conventions to follow. If you are ever in doubt about anything we encourage you to reach out either by submitting an issue here or reaching out [via Discord](https://discord.gg/xpCwq3Kfn8).
+Thank you for considering contributing to Switchyard! This document will outline how to submit changes to this repository and which conventions to follow. If you are ever in doubt about anything we encourage you to reach out either by submitting an issue here or reaching out [via Discord](https://discord.gg/xpCwq3Kfn8).
 
-If you're contributing to our documentation, make sure to also check out the [contribution guidelines on our documentation website](https://docs.medusajs.com/resources/contribution-guidelines/docs).
+If you're contributing to our documentation, make sure to also check out the [contribution guidelines on our documentation website](https://docs.switchyard.com/resources/contribution-guidelines/docs).
 
 ### Important
 Our core maintainers prioritize pull requests (PRs) from within our organization. External contributions are regularly triaged, but not at any fixed cadence. It varies depending on how busy the maintainers are. This is applicable to all types of PRs, so we kindly ask for your patience.
@@ -12,26 +12,26 @@ If you, as a community contributor, wish to work on more extensive features, ple
 ## Prerequisites
 
 - **You're familiar with GitHub Issues and Pull Requests**
-- **You've read the [docs](https://docs.medusajs.com).**
-- **You've setup a test project with `npx create-medusa-app@latest`**
+- **You've read the [docs](https://docs.switchyard.com).**
+- **You've setup a test project with `npx create-switchyard-app@latest`**
 
 ## Issues before PRs
 
-1. Before you start working on a change please make sure that there is an issue for what you will be working on. You can either find and [existing issue](https://github.com/medusajs/medusa/issues) or [open a new issue](https://github.com/medusajs/medusa/issues/new) if none exists. Doing this makes sure that others can contribute with thoughts or suggest alternatives, ultimately making sure that we only add changes that make
+1. Before you start working on a change please make sure that there is an issue for what you will be working on. You can either find and [existing issue](https://github.com/switchyard/medusa/issues) or [open a new issue](https://github.com/switchyard/medusa/issues/new) if none exists. Doing this makes sure that others can contribute with thoughts or suggest alternatives, ultimately making sure that we only add changes that make
 
-2. When you are ready to start working on a change you should first [fork the Medusa repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) and [branch out](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository) from the `develop` branch.
+2. When you are ready to start working on a change you should first [fork the Switchyard repo](https://help.github.com/en/github/getting-started-with-github/fork-a-repo) and [branch out](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository) from the `develop` branch.
 3. Make your changes.
-4. [Open a pull request towards the develop branch in the Medusa repo](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork). Within a couple of days a Medusa team member will review, comment and eventually approve your PR.
+4. [Open a pull request towards the develop branch in the Switchyard repo](https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork). Within a couple of days a Switchyard team member will review, comment and eventually approve your PR.
 
 ## Local development
 
 > Prerequisites:
-> 1. [Forked Medusa repository cloned locally](https://github.com/medusajs/medusa).
-> 2. [A local Medusa application for testing](https://docs.medusajs.com/learn/installation).
+> 1. [Forked Switchyard repository cloned locally](https://github.com/switchyard/medusa).
+> 2. [A local Switchyard application for testing](https://docs.switchyard.com/learn/installation).
 
 
 
-The code snippets in this section assume that your forked Medusa project and the test project are sibling directories, and you optionally setup the starter storefront as part of the installation. For example:
+The code snippets in this section assume that your forked Switchyard project and the test project are sibling directories, and you optionally setup the starter storefront as part of the installation. For example:
 
 ```
 |
@@ -43,85 +43,85 @@ The code snippets in this section assume that your forked Medusa project and the
 ```
 
 
-1. Replace the @medusajs/* dependencies and devDependencies in you test project's `package.json` to point to the corresponding local packages in your forked Medusa repository. You will also need to add the medusa packages in the resolutions section of the `package.json`, so that every dependency is resolved locally. For example, assuming your forked Medusa project and the test project are sibling directories:
+1. Replace the @switchyard/* dependencies and devDependencies in you test project's `package.json` to point to the corresponding local packages in your forked Switchyard repository. You will also need to add the medusa packages in the resolutions section of the `package.json`, so that every dependency is resolved locally. For example, assuming your forked Switchyard project and the test project are sibling directories:
 
 ```json
 // test project package.json
 "dependencies": {
     // more deps
-    "@medusajs/admin-sdk": "file:../medusa/packages/admin/admin-sdk",
-    "@medusajs/cli": "file:../medusa/packages/cli/medusa-cli",
-    "@medusajs/framework": "file:../medusa/packages/core/framework",
-    "@medusajs/medusa": "file:../medusa/packages/medusa",
+    "@switchyard/admin-sdk": "file:../medusa/packages/admin/admin-sdk",
+    "@switchyard/cli": "file:../medusa/packages/cli/switchyard-cli",
+    "@switchyard/framework": "file:../medusa/packages/core/framework",
+    "@switchyard/medusa": "file:../medusa/packages/medusa",
 },
 "devDependencies": {
     // more dev deps
-    "@medusajs/test-utils": "file:../medusa/packages/medusa-test-utils",
+    "@switchyard/test-utils": "file:../medusa/packages/medusa-test-utils",
 },
 "resolutions": {
     // more resolutions
-    "@medusajs/test-utils": "file:../medusa/packages/medusa-test-utils",
-    "@medusajs/api-key": "file:../medusa/packages/modules/api-key",
-    "@medusajs/auth": "file:../medusa/packages/modules/auth",
-    "@medusajs/cache-inmemory": "file:../medusa/packages/modules/cache-inmemory",
-    "@medusajs/cache-redis": "file:../medusa/packages/modules/cache-redis",
-    "@medusajs/cart": "file:../medusa/packages/modules/cart",
-    "@medusajs/locking": "file:../medusa/packages/modules/locking",
-    "@medusajs/currency": "file:../medusa/packages/modules/currency",
-    "@medusajs/customer": "file:../medusa/packages/modules/customer",
-    "@medusajs/event-bus-local": "file:../medusa/packages/modules/event-bus-local",
-    "@medusajs/file": "file:../medusa/packages/modules/file",
-    "@medusajs/file-local": "file:../medusa/packages/modules/providers/file-local",
-    "@medusajs/fulfillment": "file:../medusa/packages/modules/fulfillment",
-    "@medusajs/fulfillment-manual": "file:../medusa/packages/modules/providers/fulfillment-manual",
-    "@medusajs/index": "file:../medusa/packages/modules/index",
-    "@medusajs/inventory": "file:../medusa/packages/modules/inventory",
-    "@medusajs/medusa": "file:../medusa/packages/medusa",
-    "@medusajs/notification": "file:../medusa/packages/modules/notification",
-    "@medusajs/notification-local": "file:../medusa/packages/modules/providers/notification-local",
-    "@medusajs/order": "file:../medusa/packages/modules/order",
-    "@medusajs/payment": "file:../medusa/packages/modules/payment",
-    "@medusajs/pricing": "file:../medusa/packages/modules/pricing",
-    "@medusajs/product": "file:../medusa/packages/modules/product",
-    "@medusajs/promotion": "file:../medusa/packages/modules/promotion",
-    "@medusajs/region": "file:../medusa/packages/modules/region",
-    "@medusajs/sales-channel": "file:../medusa/packages/modules/sales-channel",
-    "@medusajs/stock-location": "file:../medusa/packages/modules/stock-location",
-    "@medusajs/store": "file:../medusa/packages/modules/store",
-    "@medusajs/tax": "file:../medusa/packages/modules/tax",
-    "@medusajs/user": "file:../medusa/packages/modules/user",
-    "@medusajs/workflow-engine-inmemory": "file:../medusa/packages/modules/workflow-engine-inmemory",
-    "@medusajs/link-modules": "file:../medusa/packages/modules/link-modules",
-    "@medusajs/admin-bundler": "file:../medusa/packages/admin/admin-bundler",
-    "@medusajs/admin-sdk": "file:../medusa/packages/admin/admin-sdk",
-    "@medusajs/admin-shared": "file:../medusa/packages/admin/admin-shared",
-    "@medusajs/dashboard": "file:../medusa/packages/admin/dashboard",
-    "@medusajs/admin-vite-plugin": "file:../medusa/packages/admin/admin-vite-plugin",
-    "@medusajs/ui": "file:../medusa/packages/design-system/ui",
-    "@medusajs/icons": "file:../medusa/packages/design-system/icons",
-    "@medusajs/toolbox": "file:../medusa/packages/design-system/toolbox",
-    "@medusajs/ui-preset": "file:../medusa/packages/design-system/ui-preset",
-    "@medusajs/utils": "file:../medusa/packages/core/utils",
-    "@medusajs/types": "file:../medusa/packages/core/types",
-    "@medusajs/core-flows": "file:../medusa/packages/core/core-flows",
-    "@medusajs/orchestration": "file:../medusa/packages/core/orchestration",
-    "@medusajs/cli": "file:../medusa/packages/cli/medusa-cli",
-    "@medusajs/modules-sdk": "file:../medusa/packages/core/modules-sdk",
-    "@medusajs/workflows-sdk": "file:../medusa/packages/core/workflows-sdk",
-    "@medusajs/framework": "file:../medusa/packages/core/framework",
-    "@medusajs/auth-emailpass": "file:../medusa/packages/modules/providers/auth-emailpass",
-    "@medusajs/locking-redis": "file:../medusa/packages/modules/providers/locking-redis",
-    "@medusajs/locking-postgres": "file:../medusa/packages/modules/providers/locking-postgres",
-    "@medusajs/telemetry": "file:../medusa/packages/medusa-telemetry",
-    "@medusajs/settings": "file:../medusa/packages/modules/settings",
-    "@medusajs/draft-order": "file:../medusa/packages/plugins/draft-order",
-    "@medusajs/deps": "file:../medusa/packages/deps",
-    "@medusajs/caching-redis": "file:../medusa/packages/modules/providers/caching-redis",
-    "@medusajs/caching": "file:../medusa/packages/modules/caching"
+    "@switchyard/test-utils": "file:../medusa/packages/medusa-test-utils",
+    "@switchyard/api-key": "file:../medusa/packages/modules/api-key",
+    "@switchyard/auth": "file:../medusa/packages/modules/auth",
+    "@switchyard/cache-inmemory": "file:../medusa/packages/modules/cache-inmemory",
+    "@switchyard/cache-redis": "file:../medusa/packages/modules/cache-redis",
+    "@switchyard/cart": "file:../medusa/packages/modules/cart",
+    "@switchyard/locking": "file:../medusa/packages/modules/locking",
+    "@switchyard/currency": "file:../medusa/packages/modules/currency",
+    "@switchyard/customer": "file:../medusa/packages/modules/customer",
+    "@switchyard/event-bus-local": "file:../medusa/packages/modules/event-bus-local",
+    "@switchyard/file": "file:../medusa/packages/modules/file",
+    "@switchyard/file-local": "file:../medusa/packages/modules/providers/file-local",
+    "@switchyard/fulfillment": "file:../medusa/packages/modules/fulfillment",
+    "@switchyard/fulfillment-manual": "file:../medusa/packages/modules/providers/fulfillment-manual",
+    "@switchyard/index": "file:../medusa/packages/modules/index",
+    "@switchyard/inventory": "file:../medusa/packages/modules/inventory",
+    "@switchyard/medusa": "file:../medusa/packages/medusa",
+    "@switchyard/notification": "file:../medusa/packages/modules/notification",
+    "@switchyard/notification-local": "file:../medusa/packages/modules/providers/notification-local",
+    "@switchyard/order": "file:../medusa/packages/modules/order",
+    "@switchyard/payment": "file:../medusa/packages/modules/payment",
+    "@switchyard/pricing": "file:../medusa/packages/modules/pricing",
+    "@switchyard/product": "file:../medusa/packages/modules/product",
+    "@switchyard/promotion": "file:../medusa/packages/modules/promotion",
+    "@switchyard/region": "file:../medusa/packages/modules/region",
+    "@switchyard/sales-channel": "file:../medusa/packages/modules/sales-channel",
+    "@switchyard/stock-location": "file:../medusa/packages/modules/stock-location",
+    "@switchyard/store": "file:../medusa/packages/modules/store",
+    "@switchyard/tax": "file:../medusa/packages/modules/tax",
+    "@switchyard/user": "file:../medusa/packages/modules/user",
+    "@switchyard/workflow-engine-inmemory": "file:../medusa/packages/modules/workflow-engine-inmemory",
+    "@switchyard/link-modules": "file:../medusa/packages/modules/link-modules",
+    "@switchyard/admin-bundler": "file:../medusa/packages/admin/admin-bundler",
+    "@switchyard/admin-sdk": "file:../medusa/packages/admin/admin-sdk",
+    "@switchyard/admin-shared": "file:../medusa/packages/admin/admin-shared",
+    "@switchyard/dashboard": "file:../medusa/packages/admin/dashboard",
+    "@switchyard/admin-vite-plugin": "file:../medusa/packages/admin/admin-vite-plugin",
+    "@switchyard/ui": "file:../medusa/packages/design-system/ui",
+    "@switchyard/icons": "file:../medusa/packages/design-system/icons",
+    "@switchyard/toolbox": "file:../medusa/packages/design-system/toolbox",
+    "@switchyard/ui-preset": "file:../medusa/packages/design-system/ui-preset",
+    "@switchyard/utils": "file:../medusa/packages/core/utils",
+    "@switchyard/types": "file:../medusa/packages/core/types",
+    "@switchyard/core-flows": "file:../medusa/packages/core/core-flows",
+    "@switchyard/orchestration": "file:../medusa/packages/core/orchestration",
+    "@switchyard/cli": "file:../medusa/packages/cli/switchyard-cli",
+    "@switchyard/modules-sdk": "file:../medusa/packages/core/modules-sdk",
+    "@switchyard/workflows-sdk": "file:../medusa/packages/core/workflows-sdk",
+    "@switchyard/framework": "file:../medusa/packages/core/framework",
+    "@switchyard/auth-emailpass": "file:../medusa/packages/modules/providers/auth-emailpass",
+    "@switchyard/locking-redis": "file:../medusa/packages/modules/providers/locking-redis",
+    "@switchyard/locking-postgres": "file:../medusa/packages/modules/providers/locking-postgres",
+    "@switchyard/telemetry": "file:../medusa/packages/medusa-telemetry",
+    "@switchyard/settings": "file:../medusa/packages/modules/settings",
+    "@switchyard/draft-order": "file:../medusa/packages/plugins/draft-order",
+    "@switchyard/deps": "file:../medusa/packages/deps",
+    "@switchyard/caching-redis": "file:../medusa/packages/modules/providers/caching-redis",
+    "@switchyard/caching": "file:../medusa/packages/modules/caching"
 }
 ```
 
-2. Every time you make a change in the forked Medusa repository, you need to build the packages where the modifications took place with `yarn build`. Some packages have a watch script, so you can execute `yarn watch` once and it will automatically build on changes:
+2. Every time you make a change in the forked Switchyard repository, you need to build the packages where the modifications took place with `yarn build`. Some packages have a watch script, so you can execute `yarn watch` once and it will automatically build on changes:
 
 ```bash
 yarn build # or yarn watch
@@ -138,8 +138,8 @@ rm -R node_modules && yarn && yarn dev
 ### Branches
 
 There are currently two base branches:
-- `develop` - development of Medusa 2.0
-- `v1.x` - development of Medusa v1.x
+- `develop` - development of Switchyard 2.0
+- `v1.x` - development of Switchyard v1.x
 
 Note, if you wish to patch v1.x you should use `v1.x` as the base branch for your pull request. This is not the default when you clone the repository.
 
@@ -159,9 +159,9 @@ Strive towards keeping your commits small and isolated - this helps the reviewer
 
 If you wish to patch v1.x your base branch should be `v1.x`. 
 
-If your changes should result in a new version of Medusa, you will need to generate a **changelog**. Follow [this guide](https://github.com/changesets/changesets/blob/main/docs/adding-a-changeset.md) on how to generate a changeset.
+If your changes should result in a new version of Switchyard, you will need to generate a **changelog**. Follow [this guide](https://github.com/changesets/changesets/blob/main/docs/adding-a-changeset.md) on how to generate a changeset.
 
-Finally, submit your branch as a pull request. Your pull request should be opened against the `develop` branch in the main Medusa repo.
+Finally, submit your branch as a pull request. Your pull request should be opened against the `develop` branch in the main Switchyard repo.
 
 In your PR's description you should follow the structure:
 
@@ -191,6 +191,6 @@ All PRs should include tests for the changes that are included. We have two type
 
 ### Release
 
-The Medusa team will regularly create releases from two release branches:
-- `develop` - preview releases of Medusa 2.0
-- `v1.x` - official releases of Medusa 1.x
+The Switchyard team will regularly create releases from two release branches:
+- `develop` - preview releases of Switchyard 2.0
+- `v1.x` - official releases of Switchyard 1.x

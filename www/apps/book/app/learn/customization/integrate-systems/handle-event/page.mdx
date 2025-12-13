@@ -1,7 +1,7 @@
 import { Prerequisites } from "docs-ui"
 
 export const metadata = {
-  title: `${pageNumber} Guide: Sync Brands from Medusa to Third-Party`,
+  title: `${pageNumber} Guide: Sync Brands from Switchyard to Third-Party`,
 }
 
 # {metadata.title}
@@ -10,11 +10,11 @@ In the [previous chapter](../service/page.mdx), you created a CMS Module that in
 
 In another previous chapter, you [added a workflow](../../custom-features/workflow/page.mdx) that creates a brand. After integrating the CMS, you want to sync that brand to the third-party system as well.
 
-Medusa has an event system that emits events when an operation is performed. It allows you to listen to those events and perform an asynchronous action in a function called a [subscriber](../../../fundamentals/events-and-subscribers/page.mdx). This is useful to perform actions that aren't integral to the original flow, such as syncing data to a third-party system.
+Switchyard has an event system that emits events when an operation is performed. It allows you to listen to those events and perform an asynchronous action in a function called a [subscriber](../../../fundamentals/events-and-subscribers/page.mdx). This is useful to perform actions that aren't integral to the original flow, such as syncing data to a third-party system.
 
 <Note>
 
-Learn more about Medusa's event system and subscribers in [this chapter](../../../fundamentals/events-and-subscribers/page.mdx).
+Learn more about Switchyard's event system and subscribers in [this chapter](../../../fundamentals/events-and-subscribers/page.mdx).
 
 </Note>
 
@@ -37,7 +37,7 @@ In this chapter, you'll modify the `createBrandWorkflow` you created before to e
 
 Since syncing the brand to the third-party system isn't integral to creating a brand, you'll emit a custom event indicating that a brand was created.
 
-Medusa provides an `emitEventStep` that allows you to emit an event in your workflows. So, in the `createBrandWorkflow` defined in `src/workflows/create-brand.ts`, use the `emitEventStep` helper step after the `createBrandStep`:
+Switchyard provides an `emitEventStep` that allows you to emit an event in your workflows. So, in the `createBrandWorkflow` defined in `src/workflows/create-brand.ts`, use the `emitEventStep` helper step after the `createBrandStep`:
 
 export const eventHighlights = [
   ["13", "emitEventStep", "Emit an event."],
@@ -49,7 +49,7 @@ export const eventHighlights = [
 // other imports...
 import { 
   emitEventStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -93,14 +93,14 @@ Learn more about workflows in [this chapter](../../../fundamentals/workflows/pag
 
 You'll create a `syncBrandToSystemWorkflow` that has two steps:
 
-- `useQueryGraphStep`: a step that Medusa provides to retrieve data using [Query](../../../fundamentals/module-links/query/page.mdx). You'll use this to retrieve the brand's details using its ID.
+- `useQueryGraphStep`: a step that Switchyard provides to retrieve data using [Query](../../../fundamentals/module-links/query/page.mdx). You'll use this to retrieve the brand's details using its ID.
 - `syncBrandToCmsStep`: a step that you'll create to sync the brand to the CMS.
 
 ### syncBrandToCmsStep
 
 To implement the step that syncs the brand to the CMS, create the file `src/workflows/sync-brands-to-cms.ts` with the following content:
 
-![Directory structure of the Medusa application after adding the file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733493547/Medusa%20Book/cms-dir-overview-4_u5t0ug.jpg)
+![Directory structure of the Switchyard application after adding the file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733493547/Switchyard%20Book/cms-dir-overview-4_u5t0ug.jpg)
 
 export const syncStepHighlights = [
   ["8", "InferTypeOf", "Get the `Brand` data model as a type."],
@@ -111,8 +111,8 @@ export const syncStepHighlights = [
 ]
 
 ```ts title="src/workflows/sync-brands-to-cms.ts" highlights={syncStepHighlights} collapsibleLines="1-6" expandButtonLabel="Show Imports"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { InferTypeOf } from "@medusajs/framework/types"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { Brand } from "../modules/brand/models/brand"
 import { CMS_MODULE } from "../modules/cms"
 import CmsModuleService from "../modules/cms/service"
@@ -142,7 +142,7 @@ const syncBrandToCmsStep = createStep(
 )
 ```
 
-You create the `syncBrandToCmsStep` that accepts a brand as an input. In the step, you resolve the CMS Module's service from the [Medusa container](../../../fundamentals/medusa-container/page.mdx) and use its `createBrand` method. This method will create the brand in the third-party CMS.
+You create the `syncBrandToCmsStep` that accepts a brand as an input. In the step, you resolve the CMS Module's service from the [Switchyard container](../../../fundamentals/medusa-container/page.mdx) and use its `createBrand` method. This method will create the brand in the third-party CMS.
 
 You also pass the brand's ID to the step's compensation function. In this function, you delete the brand in the third-party CMS if an error occurs during the workflow's execution.
 
@@ -169,8 +169,8 @@ import {
   // ...
   createWorkflow, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -222,12 +222,12 @@ You now have a workflow with the logic to sync a brand to the CMS. You need to e
 
 Subscribers are created in a TypeScript or JavaScript file under the `src/subscribers` directory. So, create the file `src/subscribers/brand-created.ts` with the following content:
 
-![Directory structure of the Medusa application after adding the subscriber](https://res.cloudinary.com/dza7lstvk/image/upload/v1733493774/Medusa%20Book/cms-dir-overview-5_iqqwvg.jpg)
+![Directory structure of the Switchyard application after adding the subscriber](https://res.cloudinary.com/dza7lstvk/image/upload/v1733493774/Switchyard%20Book/cms-dir-overview-5_iqqwvg.jpg)
 
 export const subscriberHighlights = [
   ["7", "brandCreatedHandler", "The function to execute when the event is emitted."],
   ["8", "data", "The event's data payload."],
-  ["9", "container", "The Medusa container used to resolve resources."],
+  ["9", "container", "The Switchyard container used to resolve resources."],
   ["10", "id: string", "The expected data payload's type."],
   ["11", "syncBrandToCmsWorkflow", "Execute the workflow to sync the brand to the CMS."],
   ["16", "config", "Export the subscriber's configurations."],
@@ -238,7 +238,7 @@ export const subscriberHighlights = [
 import type {
   SubscriberConfig,
   SubscriberArgs,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { syncBrandToCmsWorkflow } from "../workflows/sync-brands-to-cms"
 
 export default async function brandCreatedHandler({
@@ -263,9 +263,9 @@ A subscriber file must export:
 The subscriber function accepts an object parameter that has two properties:
 
 - `event`: An object of event details. Its `data` property holds the event's data payload, which is the brand's ID.
-- `container`: The Medusa container used to resolve Framework and commerce tools.
+- `container`: The Switchyard container used to resolve Framework and commerce tools.
 
-In the function, you execute the `syncBrandToCmsWorkflow`, passing it the data payload as an input. So, everytime a brand is created, Medusa will execute this function, which in turn executes the workflow to sync the brand to the CMS.
+In the function, you execute the `syncBrandToCmsWorkflow`, passing it the data payload as an input. So, everytime a brand is created, Switchyard will execute this function, which in turn executes the workflow to sync the brand to the CMS.
 
 <Note>
 
@@ -279,7 +279,7 @@ Learn more about subscribers in [this chapter](../../../fundamentals/events-and-
 
 To test the subscriber and workflow out, you'll use the [Create Brand API route](../../custom-features/api-route/page.mdx) you created in a previous chapter.
 
-First, start the Medusa application:
+First, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -333,6 +333,6 @@ info:    API Key: "123"
 
 ---
 
-## Next Chapter: Sync Brand from Third-Party CMS to Medusa
+## Next Chapter: Sync Brand from Third-Party CMS to Switchyard
 
-You can also automate syncing data from a third-party system to Medusa at a regular interval. In the next chapter, you'll learn how to sync brands from the third-party CMS to Medusa once a day.
+You can also automate syncing data from a third-party system to Switchyard at a regular interval. In the next chapter, you'll learn how to sync brands from the third-party CMS to Switchyard once a day.

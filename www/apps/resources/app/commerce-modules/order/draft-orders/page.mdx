@@ -10,21 +10,21 @@ In this guide, you'll learn about the Draft Orders Plugin and its features.
 
 <Note>
 
-The Draft Orders Plugin was initially only available to Cloud users during its early access phase. It is now available for all Medusa users.
+The Draft Orders Plugin was initially only available to Cloud users during its early access phase. It is now available for all Switchyard users.
 
 </Note>
 
 ## What is the Draft Orders Plugin?
 
-The Draft Orders Plugin is a Medusa plugin that allows admin users to create and manage draft orders on behalf of customers from the Medusa Admin.
+The Draft Orders Plugin is a Switchyard plugin that allows admin users to create and manage draft orders on behalf of customers from the Switchyard Admin.
 
-The Medusa application already has the foundation to support draft orders, including data models and API routes. This plugin adds a user interface for managing draft orders in the Medusa Admin dashboard.
+The Switchyard application already has the foundation to support draft orders, including data models and API routes. This plugin adds a user interface for managing draft orders in the Switchyard Admin dashboard.
 
 The Draft Orders Plugin is especially useful for handling customer support scenarios or when a customer places an order offline, such as over the phone or in-store.
 
 ### Features
 
-- [Create draft orders from the Medusa Admin.](!user-guide!/orders/draft-orders/create)
+- [Create draft orders from the Switchyard Admin.](!user-guide!/orders/draft-orders/create)
 - [Manage items in a draft order, allowing admin users to add, update, or remove items](!user-guide!/orders/draft-orders/manage#manage-draft-orders-items).
 - [Add shipping methods to draft orders.](!user-guide!/orders/draft-orders/manage#manage-draft-orders-shipping-methods).
 - [Associate existing customers with draft orders.](!user-guide!/orders/draft-orders/manage#manage-draft-orders-customer-details).
@@ -34,14 +34,14 @@ The Draft Orders Plugin is especially useful for handling customer support scena
 
 ## Install the Draft Orders Plugin
 
-The Draft Orders Plugin is available in all Medusa applications starting v2.10.0.
+The Draft Orders Plugin is available in all Switchyard applications starting v2.10.0.
 
 For earlier versions, you can install the plugin manually.
 
 <Prerequisites
   items={[
     {
-      text: "Medusa application >= v2.4.0",
+      text: "Switchyard application >= v2.4.0",
       link: "!docs!/learn/installation"
     }
   ]}
@@ -49,20 +49,20 @@ For earlier versions, you can install the plugin manually.
 
 To install the Draft Orders Plugin:
 
-1. Run the following command in your Medusa application's directory:
+1. Run the following command in your Switchyard application's directory:
 
 ```bash npm2yarn
-npm install @medusajs/draft-order
+npm install @switchyard/draft-order
 ```
 
-2. Add the plugin to your `medusa-config.ts` file:
+2. Add the plugin to your `switchyard.config.ts` file:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   plugins: [
     {
-      resolve: "@medusajs/draft-order",
+      resolve: "@switchyard/draft-order",
       options: {},
     },
   ],
@@ -71,19 +71,19 @@ module.exports = defineConfig({
 
 ### Test the Draft Orders Plugin
 
-To test the Draft Orders Plugin, start the Medusa application with the following command:
+To test the Draft Orders Plugin, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-If you open the Medusa Admin at `localhost:9000/app` and log in, you'll find an "Orders -> Drafts" sidebar item.
+If you open the Switchyard Admin at `localhost:9000/app` and log in, you'll find an "Orders -> Drafts" sidebar item.
 
 ---
 
 ## Draft Orders User Guides
 
-To learn how to use the draft order features in the Medusa Admin, refer to the [Draft Orders](!user-guide!/orders/draft-orders) user guides.
+To learn how to use the draft order features in the Switchyard Admin, refer to the [Draft Orders](!user-guide!/orders/draft-orders) user guides.
 
 ---
 

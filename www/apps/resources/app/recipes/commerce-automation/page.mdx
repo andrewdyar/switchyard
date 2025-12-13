@@ -5,7 +5,7 @@ products:
   - order
 ---
 
-import { AcademicCapSolid, BoltSolid } from "@medusajs/icons"
+import { AcademicCapSolid, BoltSolid } from "@switchyard/icons"
 
 export const metadata = {
   title: `Commerce Automation Recipe`,
@@ -13,13 +13,13 @@ export const metadata = {
 
 # {metadata.title}
 
-This recipe provides the general steps to implement commerce automation with Medusa.
+This recipe provides the general steps to implement commerce automation with Switchyard.
 
 ## Overview
 
 Commerce automation is essential for businesses to save costs, provide a better user experience, and avoid manual, repetitive tasks that lead to human errors. Businesses utilize automation in different domains, including marketing, customer support, and order management.
 
-Medusa provides the necessary architecture and tools to implement commerce automation for order management, customer service, and more. You can perform an asynchronous action when an event is triggered, schedule a job that runs at a specified interval, and more.
+Switchyard provides the necessary architecture and tools to implement commerce automation for order management, customer service, and more. You can perform an asynchronous action when an event is triggered, schedule a job that runs at a specified interval, and more.
 
 ---
 
@@ -29,12 +29,12 @@ Customers may be interested in a product that is currently out of stock. Instead
 
 Then, you can listen to product-related events and notify subscribed customers when a product variant is back in stock.
 
-The following guide explains how to add restock notifications in your Medusa application:
+The following guide explains how to add restock notifications in your Switchyard application:
 
 <Card
   href="/recipes/commerce-automation/restock-notification"
   title="Restock Notification Guide"
-  text="Learn how to implement restock notifications in the Medusa application."
+  text="Learn how to implement restock notifications in the Switchyard application."
   icon={AcademicCapSolid}
 />
 
@@ -48,7 +48,7 @@ Customer support is essential to build a store's brand and customer loyalty. How
 
 To provide customer support, you can Integrate with third-party services, such as ticket systems or chat bots in the storefront.
 
-Medusa allows you to easily integrate with third-party services by creating a custom module, then build workflows for your business logic that perform actions with the third-party service.
+Switchyard allows you to easily integrate with third-party services by creating a custom module, then build workflows for your business logic that perform actions with the third-party service.
 
 This approach allows you to interact with the third-party service within custom and existing flows, while maintaining data consistency across systems. You can then execute the wokflow when an event is triggered, such as when a customer places an order or requests a return.
 
@@ -71,7 +71,7 @@ This approach allows you to interact with the third-party service within custom 
 
 You can also automate sending notifications to customers when changes happen related to their orders, returns, exchanges, and more.
 
-Medusa's Notification Module allows you to send notifications when an event is triggered, such as when a customer's order is updated. You can use third-party services, like [SendGrid](../../infrastructure-modules/notification/sendgrid/page.mdx), to send emails to customers.
+Switchyard's Notification Module allows you to send notifications when an event is triggered, such as when a customer's order is updated. You can use third-party services, like [SendGrid](../../infrastructure-modules/notification/sendgrid/page.mdx), to send emails to customers.
 
 <CardList items={[
   {
@@ -124,7 +124,7 @@ To implement that, you can:
 
 ## Order Management Automation
 
-Medusa's architecture, Commerce Modules, and Framework for customizations facilitate automating a large amount of order management functionalities.
+Switchyard's architecture, Commerce Modules, and Framework for customizations facilitate automating a large amount of order management functionalities.
 
 For example, you can automatically:
 
@@ -138,7 +138,7 @@ To handle events within an order flow and automate actions, you can create a sub
   {
     href: "!docs!/learn/fundamentals/events-and-subscribers",
     title: "Create a Subscriber",
-    text: "Learn how to create a subscriber in Medusa.",
+    text: "Learn how to create a subscriber in Switchyard.",
     icon: AcademicCapSolid,
   },
   {
@@ -155,9 +155,9 @@ To handle events within an order flow and automate actions, you can create a sub
 
 Businesses must optimize their Return Merchandise Authorization (RMA) flow to ensure a good customer experience and service. By automating the flow, customers request to return their received items, and businesses quickly support them.
 
-Medusa's commerce features are geared towards automating RMA flows and ensuring a good customer experience:
+Switchyard's commerce features are geared towards automating RMA flows and ensuring a good customer experience:
 
-- Customers can create order returns from the storefront. Merchants then receive a notification and handle the return from the Medusa Admin.
+- Customers can create order returns from the storefront. Merchants then receive a notification and handle the return from the Switchyard Admin.
 - Merchants can make order changes and request the customer's approval for them. The customer can also send any additional payment if necessary.
 - Every order-related action triggers an event, which you can listen to with a subscriber. This allows you to handle order events to automate actions.
 
@@ -171,7 +171,7 @@ Medusa's commerce features are geared towards automating RMA flows and ensuring 
   {
     href: "!docs!/learn/fundamentals/events-and-subscribers",
     title: "Create a Subscriber",
-    text: "Learn how to create a subscriber in Medusa.",
+    text: "Learn how to create a subscriber in Switchyard.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -182,7 +182,7 @@ Medusa's commerce features are geared towards automating RMA flows and ensuring 
 
 Businesses use customer segmentation to organize customers into different groups and then apply different price rules to these groups.
 
-Medusa's Commerce Modules provide the necessary features to implement this use case:
+Switchyard's Commerce Modules provide the necessary features to implement this use case:
 
 - The Customer Module allows you to organize customers into customer groups.
 - The Pricing Module allows you to specify prices based on a condition, such as the group of the customer.
@@ -208,7 +208,7 @@ For example, to group customers with over twenty orders:
   {
     href: "!docs!/learn/fundamentals/events-and-subscribers",
     title: "Create a Subscriber",
-    text: "Learn how to create a subscriber in Medusa.",
+    text: "Learn how to create a subscriber in Switchyard.",
     icon: AcademicCapSolid,
   },
   {
@@ -233,13 +233,13 @@ You can also create a scheduled job that checks whether the number of new produc
   {
     href: "!docs!/learn/fundamentals/events-and-subscribers",
     title: "Create a Subscriber",
-    text: "Learn how to create a subscriber in Medusa.",
+    text: "Learn how to create a subscriber in Switchyard.",
     icon: AcademicCapSolid,
   },
   {
     href: "!docs!/learn/fundamentals/scheduled-jobs",
     title: "Scheduled Jobs",
-    text: "Learn how to create a scheduled job in Medusa.",
+    text: "Learn how to create a scheduled job in Switchyard.",
     icon: AcademicCapSolid,
   },
 ]} />

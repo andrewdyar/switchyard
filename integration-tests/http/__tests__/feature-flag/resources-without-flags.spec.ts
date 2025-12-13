@@ -1,5 +1,5 @@
-import { MedusaWorkflow } from "@medusajs/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { SwitchyardWorkflow } from "@switchyard/framework/workflows-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import path from "path"
 import { setTimeout as setTimeoutPromise } from "timers/promises"
 import { testJobHandler } from "../../__fixtures__/feature-flag/src/jobs/test-job"
@@ -29,12 +29,12 @@ medusaIntegrationTestRunner({
       })
 
       it("should not load workflow when feature flag is disabled", async () => {
-        expect(MedusaWorkflow.getWorkflow("test-workflow")).toBeUndefined()
+        expect(SwitchyardWorkflow.getWorkflow("test-workflow")).toBeUndefined()
       })
 
       it("should not load scheduled job when feature flag is disabled", async () => {
         expect(
-          MedusaWorkflow.getWorkflow("job-greeting-every-second")
+          SwitchyardWorkflow.getWorkflow("job-greeting-every-second")
         ).toBeUndefined()
       })
 

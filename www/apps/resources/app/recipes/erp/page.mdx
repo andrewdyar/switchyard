@@ -9,10 +9,10 @@ products:
 
 import { Prerequisites } from "docs-ui"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1740556002/Medusa%20Resources/erp-guide_sucmxz.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1740556002/Switchyard%20Resources/erp-guide_sucmxz.jpg"
 
 export const metadata = {
-  title: `Integrate ERP with Medusa`,
+  title: `Integrate ERP with Switchyard`,
   openGraph: {
     images: [
       {
@@ -37,25 +37,25 @@ export const metadata = {
 
 # {metadata.title}
 
-In this recipe, you'll learn about the general approach to integrating an ERP system with Medusa.
+In this recipe, you'll learn about the general approach to integrating an ERP system with Switchyard.
 
 Businesses often rely on an ERP system to centralize their data and custom business rules and operations. This includes using the ERP to store special product prices, manage custom business rules that change how their customers make purchases, and handle the fulfillment and processing of orders.
 
 When integrating the ERP system with other ecommerce platforms, you'll face complications maintaining data consistency across systems and customizing the platform's existing flows to accommodate the ERP system's data and operations. For example, the ecommerce platform may not support purchasing products with custom pricing or restricting certain products from purchase under certain conditions.
 
-The Medusa Framework solves these challenges by giving you a durable execution engine to orchestrate operations through custom flows, and the flexibility to customize the platform's existing flows. You can wrap existing flows with custom logic, inject custom features into existing flows, and create new flows that interact with the ERP system and sync data between the two systems.
+The Switchyard Framework solves these challenges by giving you a durable execution engine to orchestrate operations through custom flows, and the flexibility to customize the platform's existing flows. You can wrap existing flows with custom logic, inject custom features into existing flows, and create new flows that interact with the ERP system and sync data between the two systems.
 
-![ERP Integration Illustration](https://res.cloudinary.com/dza7lstvk/image/upload/v1740470820/Medusa%20Resources/erp-medusa-integration_pxjpcx.jpg)
+![ERP Integration Illustration](https://res.cloudinary.com/dza7lstvk/image/upload/v1740470820/Switchyard%20Resources/erp-medusa-integration_pxjpcx.jpg)
 
-In this recipe, you'll learn how to implement some common use cases when integrating an ERP system with Medusa. This includes how to purchase products with custom pricing, restrict products from purchase under conditions in the ERP, sync orders to the ERP, and more.
+In this recipe, you'll learn how to implement some common use cases when integrating an ERP system with Switchyard. This includes how to purchase products with custom pricing, restrict products from purchase under conditions in the ERP, sync orders to the ERP, and more.
 
-You can use the code snippets in the recipe as a starting point for your ERP integration, making changes as necessary for your use case. You can also implement other use cases using the same Medusa concepts.
+You can use the code snippets in the recipe as a starting point for your ERP integration, making changes as necessary for your use case. You can also implement other use cases using the same Switchyard concepts.
 
 ---
 
-## Prerequisite: Install Medusa
+## Prerequisite: Install Switchyard
 
-If you don't have a Medusa application yet, you can install it with the following command:
+If you don't have a Switchyard application yet, you can install it with the following command:
 
 <Prerequisites items={[
   {
@@ -73,24 +73,24 @@ If you don't have a Medusa application yet, you can install it with the followin
 ]} />
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. You can also optionally choose to install the [Next.js Starter Storefront](../../nextjs-starter/page.mdx).
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name. If you chose to install the Next.js starter, it'll be installed in a separate directory with the `{project-name}-storefront` name.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name. If you chose to install the Next.js starter, it'll be installed in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Medusa's architecture in [this documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Switchyard's architecture in [this documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -98,9 +98,9 @@ Check out the [troubleshooting guides](../../troubleshooting/create-medusa-app-e
 
 ## Integrate ERP in a Module
 
-Before you start integrating the ERP system into existing or new flows in Medusa, you must build the integration layer that allows you to communicate with the ERP in your customizations.
+Before you start integrating the ERP system into existing or new flows in Switchyard, you must build the integration layer that allows you to communicate with the ERP in your customizations.
 
-In Medusa, you implement integrations or features around a single commerce domain in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package that can interact with the database or external APIs. The module integrates into your Medusa application without side effects to the existing setup.
+In Switchyard, you implement integrations or features around a single commerce domain in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package that can interact with the database or external APIs. The module integrates into your Switchyard application without side effects to the existing setup.
 
 So, you can create a module that exports a class called a service, and in that service, you implement the logic to connect to your ERP system, fetch data from it, and send data to it. The service may look like this:
 
@@ -131,7 +131,7 @@ You can then use the module's service in the custom flows and customizations tha
 
 ### How to Create Module
 
-Refer to [this documentation](!docs!/learn/fundamentals/modules) on how to create a module. You can also refer to the [Odoo Integration guide](./odoo/page.mdx) as an example of how to build a module that integrates an ERP into Medusa.
+Refer to [this documentation](!docs!/learn/fundamentals/modules) on how to create a module. You can also refer to the [Odoo Integration guide](./odoo/page.mdx) as an example of how to build a module that integrates an ERP into Switchyard.
 
 The rest of this recipe assumes you have an ERP Module with some methods to retrieve products, prices, and other relevant data.
 
@@ -139,21 +139,21 @@ The rest of this recipe assumes you have an ERP Module with some methods to retr
 
 ## Sync Products from ERP
 
-If you store products in the ERP system, you want to sync them into Medusa to allow customers to purchase them. You may sync them once or periodically to keep the products in Medusa up-to-date with the ERP.
+If you store products in the ERP system, you want to sync them into Switchyard to allow customers to purchase them. You may sync them once or periodically to keep the products in Switchyard up-to-date with the ERP.
 
-Syncing data between systems is a big challenge and it's often the pitfall of most ecommerce platforms, as you need to ensure data consistency and handle errors gracefully. Medusa solves this challenge by providing a durable execution engine to complete tasks that span multiple systems, allowing you to orchestrate your operations across systems in Medusa instead of managing it yourself.
+Syncing data between systems is a big challenge and it's often the pitfall of most ecommerce platforms, as you need to ensure data consistency and handle errors gracefully. Switchyard solves this challenge by providing a durable execution engine to complete tasks that span multiple systems, allowing you to orchestrate your operations across systems in Switchyard instead of managing it yourself.
 
-Medusa's workflows are a series of queries and actions, called steps, that complete a task. You construct a workflow similar to how you create a JavaScript function, but with additional features like defining rollback logic for each step, performing long actions asynchronously, and tracking the progress of the steps. You can then use these workflows in other customizations, such as:
+Switchyard's workflows are a series of queries and actions, called steps, that complete a task. You construct a workflow similar to how you create a JavaScript function, but with additional features like defining rollback logic for each step, performing long actions asynchronously, and tracking the progress of the steps. You can then use these workflows in other customizations, such as:
 
 - [API routes](!docs!/learn/fundamentals/api-routes) to allow clients to trigger the workflow's execution.
 - [Subscribers](!docs!/learn/fundamentals/events-and-subscribers) to trigger the workflow when an event occurs.
 - [Scheduled jobs](!docs!/learn/fundamentals/scheduled-jobs) to run the workflow periodically.
 
-So, to sync products from the ERP system to Medusa, you can create a custom workflow that fetches the products from the ERP system and adds them to Medusa. Then, you can create a scheduled job that syncs the products once a day, for example.
+So, to sync products from the ERP system to Switchyard, you can create a custom workflow that fetches the products from the ERP system and adds them to Switchyard. Then, you can create a scheduled job that syncs the products once a day, for example.
 
 ### 1. Create Workflow to Sync Products
 
-The workflow that syncs products from the ERP system to Medusa will have a step that fetches the product from the ERP, and another step that adds the product to Medusa.
+The workflow that syncs products from the ERP system to Switchyard will have a step that fetches the product from the ERP, and another step that adds the product to Switchyard.
 
 For example, you can create the following workflow:
 
@@ -161,8 +161,8 @@ For example, you can create the following workflow:
 import { 
   createStep, createWorkflow, StepResponse, 
   transform, WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 const getProductsFromErpStep = createStep(
   "get-products-from-erp",
@@ -183,7 +183,7 @@ export const syncFromErpWorkflow = createWorkflow(
     const productsToCreate = transform({
       erpProducts,
     }, (data) => {
-      // TODO prepare ERP products to be created in Medusa
+      // TODO prepare ERP products to be created in Switchyard
       return data.erpProducts.map((erpProduct) => {
         return {
           title: erpProduct.title,
@@ -212,11 +212,11 @@ export const syncFromErpWorkflow = createWorkflow(
 )
 ```
 
-In the above file, you first create a `getProductsFromErpStep` that resolves the ERP Module's service from the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools, including your modules, that you can access in your customizations. You can then call the `getProducts` method in the ERP Module's service to fetch the products from the ERP and return them.
+In the above file, you first create a `getProductsFromErpStep` that resolves the ERP Module's service from the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools, including your modules, that you can access in your customizations. You can then call the `getProducts` method in the ERP Module's service to fetch the products from the ERP and return them.
 
-Then, you create a `syncFromErpWorkflow` that executes the `getProductsFromErpStep` to get the products from the ERP, then prepare the products to be created in Medusa. For example, you can set the product's title, and specify its ID in the ERP using the `external_id` field. Also, assuming the ERP products have variants, you can map the variants to Medusa's format, setting the variant's title and its ERP ID in the metadata.
+Then, you create a `syncFromErpWorkflow` that executes the `getProductsFromErpStep` to get the products from the ERP, then prepare the products to be created in Switchyard. For example, you can set the product's title, and specify its ID in the ERP using the `external_id` field. Also, assuming the ERP products have variants, you can map the variants to Switchyard's format, setting the variant's title and its ERP ID in the metadata.
 
-Finally, you pass the products to be created to the `createProductsWorkflow`, which is a built-in Medusa workflow that creates products.
+Finally, you pass the products to be created to the `createProductsWorkflow`, which is a built-in Switchyard workflow that creates products.
 
 Learn more about creating workflows and steps in [this documentation](!docs!/learn/fundamentals/workflows).
 
@@ -228,17 +228,17 @@ Find a detailed example of implementing this workflow in the [Odoo Integration g
 
 ### 2. Create Scheduled Job to Sync Products
 
-After creating a workflow, you can create a scheduled job that runs the workflow periodically to sync the products from the ERP to Medusa.
+After creating a workflow, you can create a scheduled job that runs the workflow periodically to sync the products from the ERP to Switchyard.
 
 For example, you can create the following scheduled job:
 
 ```ts title="src/scheduled-jobs/sync-products.ts"
 import {
-  MedusaContainer,
-} from "@medusajs/framework/types"
+  SwitchyardContainer,
+} from "@switchyard/framework/types"
 import { syncFromErpWorkflow } from "../workflows/sync-from-erp"
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   await syncFromErpWorkflow(container).run({})
 }
 
@@ -248,7 +248,7 @@ export const config = {
 }
 ```
 
-You create a scheduled job that runs once a day, executing the `syncFromErpWorkflow` to sync the products from the ERP to Medusa.
+You create a scheduled job that runs once a day, executing the `syncFromErpWorkflow` to sync the products from the ERP to Switchyard.
 
 Learn more about creating scheduled jobs in [this documentation](!docs!/learn/fundamentals/scheduled-jobs).
 
@@ -271,8 +271,8 @@ You can also follow [this guide](../../examples/guides/custom-item-price/page.md
 One of the steps in the custom add-to-cart workflow is to retrieve the custom price of the product variant from the ERP system. The step's implementation will differ based on the ERP system you're integrating. Here's a general implementation of how the step would look like:
 
 ```ts title="src/workflows/steps/get-erp-price.ts"
-import { MedusaError } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 export type GetVariantErpPriceStepInput = {
   variant_external_id: string
@@ -301,7 +301,7 @@ export const getVariantErpPriceStep = createStep(
 
 You create the step using the `createStep` from the Workflows SDK. The step has a function that receives the variant's ID in the ERP, the currency code, and the quantity as input.
 
-The function then resolves the ERP Module's service from the [Medusa container](!docs!/learn/fundamentals/medusa-container) and, assuming you have a `getErpPrice` method in your ERP Module's service, you call it to retrieve that price, and return it multiplied by the quantity.
+The function then resolves the ERP Module's service from the [Switchyard container](!docs!/learn/fundamentals/medusa-container) and, assuming you have a `getErpPrice` method in your ERP Module's service, you call it to retrieve that price, and return it multiplied by the quantity.
 
 ### 2. Create Custom Add-to-Cart Workflow
 
@@ -310,8 +310,8 @@ You can now create the custom workflow that uses the previous step to retrieve a
 For example, you can create the following workflow:
 
 ```ts title="src/workflows/add-custom-to-cart.ts"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { addToCartWorkflow, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { addToCartWorkflow, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { getVariantErpPriceStep } from "./steps/get-erp-price"
 
 type AddCustomToCartWorkflowInput = {
@@ -378,7 +378,7 @@ export const addCustomToCartWorkflow = createWorkflow(
 )
 ```
 
-In this workflow, you first fetch the details of the cart and the variant from the database using the [useQueryGraphStep](/references/helper-steps/useQueryGraphStep) that Medusa defines.
+In this workflow, you first fetch the details of the cart and the variant from the database using the [useQueryGraphStep](/references/helper-steps/useQueryGraphStep) that Switchyard defines.
 
 Then, you use the `getVariantErpPriceStep` you created to retrieve the price from the ERP. You pass it the variant's ERP ID, supposedly stored in the variant's metadata as shown in the [previous section](#1-create-workflow-to-sync-products), the cart's currency code, and the quantity of the item.
 
@@ -391,13 +391,13 @@ To allow clients to add products to the cart with custom prices, you can create 
 For example, you can create the following API route:
 
 ```ts title="src/api/store/cart/[id]/custom-line-items/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
-import { HttpTypes } from "@medusajs/framework/types"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
+import { HttpTypes } from "@switchyard/framework/types"
 import { addCustomToCartWorkflow } from "../../../../../workflows/add-custom-to-cart"
 
 export const POST = async (
-  req: MedusaRequest, 
-  res: MedusaResponse
+  req: SwitchyardRequest, 
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
   const item = req.body
@@ -424,13 +424,13 @@ Learn more about how to create an API route in [this documentation](!docs!/learn
 
 Your ERP may store restrictions on who can purchase what products. For example, you may allow only some companies to purchase certain products.
 
-Since Medusa implements the add-to-cart functionality within a workflow, it allows you to inject custom logic into the workflow using [workflow hooks](!docs!/learn/fundamentals/workflows/workflow-hooks). A workflow hook is a point in a workflow where you can inject a step and perform a custom functionality.
+Since Switchyard implements the add-to-cart functionality within a workflow, it allows you to inject custom logic into the workflow using [workflow hooks](!docs!/learn/fundamentals/workflows/workflow-hooks). A workflow hook is a point in a workflow where you can inject a step and perform a custom functionality.
 
 So, to implement the use case of product-purchase restriction, you can use the `validate` hook of the `addToCartWorkflow` or the [completeCartWorkflow](/references/medusa-workflows/completeCartWorkflow) to check if the customer is allowed to purchase the product. For example:
 
 ```ts title="src/workflows/hooks/validate-purchase.ts"
-import { MedusaError } from "@medusajs/framework/utils"
-import { addToCartWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { addToCartWorkflow } from "@switchyard/medusa/core-flows"
 
 addToCartWorkflow.hooks.validate(
   async ({ input, cart }, { container }) => {
@@ -458,8 +458,8 @@ addToCartWorkflow.hooks.validate(
         )
   
         if (!isAllowed) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_ALLOWED,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_ALLOWED,
             `Company ${customer?.company_name || ""} is not allowed to purchase product ${productVariant.product.id}`
           )
         }
@@ -471,9 +471,9 @@ addToCartWorkflow.hooks.validate(
 
 You consume a hook using the workflow's `hooks` property. In the above example, you consume the `validate` hook of the `addToCartWorkflow` to inject a step.
 
-In the step, you resolve the ERP Module's service, the Product Module's service, and the Customer Module's service from the [Medusa container](!docs!/learn/fundamentals/medusa-container). You then retrieve the cart's customer and the product variants to be added to the cart.
+In the step, you resolve the ERP Module's service, the Product Module's service, and the Customer Module's service from the [Switchyard container](!docs!/learn/fundamentals/medusa-container). You then retrieve the cart's customer and the product variants to be added to the cart.
 
-Then, for each product variant, you use a `canCompanyPurchaseProduct` method in the ERP Module's service that checks if the customer's company is allowed to purchase the product. If not, you throw a `MedusaError` with a message that the company is not allowed to purchase the product.
+Then, for each product variant, you use a `canCompanyPurchaseProduct` method in the ERP Module's service that checks if the customer's company is allowed to purchase the product. If not, you throw a `SwitchyardError` with a message that the company is not allowed to purchase the product.
 
 So, only customers who are allowed in the ERP system to purchase a product can add it to the cart.
 
@@ -483,21 +483,21 @@ Learn more about workflow hooks and how to consume them in [this documentation](
 
 ## Two-Way Order Syncing
 
-After a customer places an order in Medusa, you may want to sync the order to the ERP system where you handle its fulfillment and processing. However, you may also want to sync the order back to Medusa, where you handle customer-service related operations, such as returns and refunds.
+After a customer places an order in Switchyard, you may want to sync the order to the ERP system where you handle its fulfillment and processing. However, you may also want to sync the order back to Switchyard, where you handle customer-service related operations, such as returns and refunds.
 
 As explained earlier, workflows facilitate the orchestration of operations across systems while maintaining data consistency. So, you can create two workflows:
 
-1. A workflow that syncs the order from Medusa to the ERP system. You can execute this workflow in a [subscriber](!docs!/learn/fundamentals/events-and-subscribers) that is triggered when an order is created in Medusa.
-2. A workflow that syncs the order from the ERP system back to Medusa. Then, you can create a webhook listener in Medusa that executes the workflow, and use the webhook in the ERP system to send order updates to Medusa.
+1. A workflow that syncs the order from Switchyard to the ERP system. You can execute this workflow in a [subscriber](!docs!/learn/fundamentals/events-and-subscribers) that is triggered when an order is created in Switchyard.
+2. A workflow that syncs the order from the ERP system back to Switchyard. Then, you can create a webhook listener in Switchyard that executes the workflow, and use the webhook in the ERP system to send order updates to Switchyard.
 
 ### 1. Sync Order to ERP
 
-To sync the order from Medusa to the ERP system, you can create a custom workflow that sends the order's details from Medusa to the ERP system. For example:
+To sync the order from Switchyard to the ERP system, you can create a custom workflow that sends the order's details from Switchyard to the ERP system. For example:
 
 ```ts title="src/workflows/sync-order-to-erp.ts"
-import { createStep, createWorkflow, StepResponse, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { updateOrderWorkflow, useQueryGraphStep } from "@medusajs/medusa/core-flows"
-import { OrderDTO } from "@medusajs/framework/types"
+import { createStep, createWorkflow, StepResponse, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { updateOrderWorkflow, useQueryGraphStep } from "@switchyard/medusa/core-flows"
+import { OrderDTO } from "@switchyard/framework/types"
 
 type StepInput = {
   order: OrderDTO
@@ -564,7 +564,7 @@ export const syncOrderToErpWorkflow = createWorkflow(
 })
 ```
 
-You first create a `syncOrderToErpStep` that receives an order's details, resolves the ERP Module's service from the Medusa container, and calls a `createOrder` method in the ERP Module's service that creates the order in the ERP.
+You first create a `syncOrderToErpStep` that receives an order's details, resolves the ERP Module's service from the Switchyard container, and calls a `createOrder` method in the ERP Module's service that creates the order in the ERP.
 
 Notice that you pass to `createStep` a third-parameter function. This is the compensation function that defines how to rollback changes. So, when an error occurs during the workflow's execution, the step deletes the order from the ERP system. This ensures that the data remains consistent across systems.
 
@@ -574,7 +574,7 @@ Learn more about the compensation function in [this documentation](!docs!/learn/
 
 </Note>
 
-Then, you create a `syncOrderToErpWorkflow` that retrieves the order's details from the database using the `useQueryGraphStep`, then executes the `syncOrderToErpStep` to sync the order to the ERP system. Finally, you update the order in Medusa to set the ERP order's ID in the `metadata` field.
+Then, you create a `syncOrderToErpWorkflow` that retrieves the order's details from the database using the `useQueryGraphStep`, then executes the `syncOrderToErpStep` to sync the order to the ERP system. Finally, you update the order in Switchyard to set the ERP order's ID in the `metadata` field.
 
 You can now use this workflow whenever an order is placed. To do that, you can create a subscriber that listens to the `order.created` event and executes the workflow:
 
@@ -582,7 +582,7 @@ You can now use this workflow whenever an order is placed. To do that, you can c
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { syncOrderToErpWorkflow } from "../workflows/sync-order-to-erp"
 
 export default async function productCreateHandler({
@@ -608,13 +608,13 @@ You create a subscriber that listens to the `order.placed` event. When the event
 
 Learn more about events and subscribers in [this documentation](!docs!/learn/fundamentals/events-and-subscribers).
 
-### 2. Sync Order from ERP to Medusa
+### 2. Sync Order from ERP to Switchyard
 
-To sync the order from the ERP system back to Medusa, create first the workflow that receives the updated order data and reflects them in Medusa:
+To sync the order from the ERP system back to Switchyard, create first the workflow that receives the updated order data and reflects them in Switchyard:
 
 ```ts title="src/workflows/sync-order-from-erp.ts"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { updateOrderWorkflow, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { updateOrderWorkflow, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 type Input = {
   order_erp_data: any
@@ -654,17 +654,17 @@ export const syncOrderFromErpWorkflow = createWorkflow(
 )
 ```
 
-In the workflow, you retrieve the order from the database using the `useQueryGraphStep`, assuming that the ERP order's ID is stored in the order's metadata. Then, you prepare the order's data to be updated in Medusa, setting the order's status to the status you received from the ERP system. Finally, you update the order using the `updateOrderWorkflow`.
+In the workflow, you retrieve the order from the database using the `useQueryGraphStep`, assuming that the ERP order's ID is stored in the order's metadata. Then, you prepare the order's data to be updated in Switchyard, setting the order's status to the status you received from the ERP system. Finally, you update the order using the `updateOrderWorkflow`.
 
 You can now create an API route that receives webhook updates from the ERP system and executes the workflow:
 
 ```ts title="src/api/erp/order-updates/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { syncOrderFromErpWorkflow } from "../../workflows/sync-order-from-erp"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const webhookData = req.rawBody
 
@@ -681,12 +681,12 @@ export async function POST(
 
 In the API route, you receive the raw webhook data from the request body. You can then construct the order object from the webhook data based on the ERP system's format.
 
-Then, you call the `syncOrderFromErpWorkflow` to sync the order from the ERP system back to Medusa.
+Then, you call the `syncOrderFromErpWorkflow` to sync the order from the ERP system back to Switchyard.
 
 Finally, to ensure the webhook's raw data is received, you need to configure the middleware that runs before the route handler to preserve the raw body data. To do that, add the following middleware configuration in `src/api/middlewares.ts`:
 
 ```ts title="src/api/middlewares.ts"
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -701,7 +701,7 @@ export default defineMiddlewares({
 
 You configure the body parser of `POST` requests to the `/erp/order-updates` route to preserve the raw body data.
 
-You can now receive webhook requests from your ERP system and sync the order data back to Medusa.
+You can now receive webhook requests from your ERP system and sync the order data back to Switchyard.
 
 <Note>
 
@@ -713,13 +713,13 @@ Learn more about middlewares in [this documentation](!docs!/learn/fundamentals/a
 
 ## Validate Inventory Availability in ERP
 
-An ERP system often manages the inventory of products, with the ability to track the stock levels and availability of products. When a customer is purchasing a product through Medusa, you want to ensure that the product is available in the ERP system before allowing the purchase.
+An ERP system often manages the inventory of products, with the ability to track the stock levels and availability of products. When a customer is purchasing a product through Switchyard, you want to ensure that the product is available in the ERP system before allowing the purchase.
 
 Similar to the [product-purchase restriction](#restrict-purchase-with-custom-erp-rules) use case, you can use the `validate` hook of the `addToCartWorkflow` or the [completeCartWorkflow](/references/medusa-workflows/completeCartWorkflow) to check the product's availability in the ERP system. For example:
 
 ```ts title="src/workflows/hooks/validate-inventory.ts"
-import { MedusaError } from "@medusajs/framework/utils"
-import { addToCartWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { addToCartWorkflow } from "@switchyard/medusa/core-flows"
 
 addToCartWorkflow.hooks.validate(
   async ({ input }, { container }) => {
@@ -738,8 +738,8 @@ addToCartWorkflow.hooks.validate(
         const item = input.items.find((item) => item.variant_id === productVariant.id)!
 
         if (erpVariant.qty_available < item.quantity && !erpVariant.allow_out_of_stock_order) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_ALLOWED,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_ALLOWED,
             `Not enough stock for product ${productVariant.product?.id}`
           )
         }
@@ -749,7 +749,7 @@ addToCartWorkflow.hooks.validate(
 )
 ```
 
-You consume the `validate` hook of the `addToCartWorkflow` to inject a step function. In the step, you resolve the services of the ERP Module and the Product Module from the Medusa container. Then, you loop over the product variants to be added to the cart, and for each variant, you call a `getQty` method in the ERP Module's service to get the variant's quantity available.
+You consume the `validate` hook of the `addToCartWorkflow` to inject a step function. In the step, you resolve the services of the ERP Module and the Product Module from the Switchyard container. Then, you loop over the product variants to be added to the cart, and for each variant, you call a `getQty` method in the ERP Module's service to get the variant's quantity available.
 
 If the available quantity in the ERP is less than the quantity to be added to the cart, and the ERP doesn't allow out-of-stock orders for the variant, you throw an error that the product is out of stock.
 
@@ -759,6 +759,6 @@ So, only products that have sufficient quantity in the ERP system can be added t
 
 ## Implement More Use Cases
 
-The use cases covered in this guide are some common ERP integration scenarios that you can implement with Medusa. However, you can implement more use cases based on your ERP system's capabilities and your business requirements.
+The use cases covered in this guide are some common ERP integration scenarios that you can implement with Switchyard. However, you can implement more use cases based on your ERP system's capabilities and your business requirements.
 
-Refer to the [main documentation](!docs!/learn) to learn more about Medusa's concepts and how to implement customizations. You can also use the feedback form at the end of this guide to suggest more use cases you'd like to see implemented.
+Refer to the [main documentation](!docs!/learn) to learn more about Switchyard's concepts and how to implement customizations. You can also use the feedback form at the end of this guide to suggest more use cases you'd like to see implemented.

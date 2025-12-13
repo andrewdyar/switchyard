@@ -4,12 +4,12 @@ import {
   Button,
   toast,
   usePrompt,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import {
   Plus,
   CloudArrowUp,
   SquarePlusMicro,
-} from "@medusajs/icons"
+} from "@switchyard/icons"
 
 interface SaveViewDropdownProps {
   isDefaultView: boolean

@@ -8,7 +8,7 @@ In this chapter, you'll learn how to add custom columns to a link definition's t
 
 ## Link Table's Default Columns
 
-When you define a link between two data models, Medusa creates a link table in the database to store the IDs of the linked records. You can learn more about the created table in the [Module Links chapter](../page.mdx).
+When you define a link between two data models, Switchyard creates a link table in the database to store the IDs of the linked records. You can learn more about the created table in the [Module Links chapter](../page.mdx).
 
 In various cases, you might need to store additional data in the link table. For example, if you define a link between a `product` and a `post`, you might want to store the publish date of the product's post in the link table.
 
@@ -30,8 +30,8 @@ export const linkHighlights = [
 
 ```ts highlights={linkHighlights}
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   ProductModule.linkable.product,

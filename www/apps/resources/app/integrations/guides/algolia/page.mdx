@@ -4,12 +4,12 @@ products:
 ---
 
 import { Card, Prerequisites, Details, WorkflowDiagram } from "docs-ui"
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1743097088/Medusa%20Resources/integrations-algolia_qwpguu.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1743097088/Switchyard%20Resources/integrations-algolia_qwpguu.jpg"
 
 export const metadata = {
-  title: `Integrate Algolia (Search) with Medusa`,
+  title: `Integrate Algolia (Search) with Switchyard`,
   openGraph: {
     images: [
       {
@@ -34,28 +34,28 @@ export const metadata = {
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to integrate Medusa with Algolia.
+In this tutorial, you'll learn how to integrate Switchyard with Algolia.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. Medusa's architecture supports integrating third-party services, such as a search engine, allowing you to build your unique requirements around core commerce flows.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. Switchyard's architecture supports integrating third-party services, such as a search engine, allowing you to build your unique requirements around core commerce flows.
 
-[Algolia](https://www.algolia.com/doc/) is a search engine that enables you to build and manage an intuitive search experience for your customers. By integrating Algolia with Medusa, you can index e-commerce data, such as products, and allow clients to search through them.
+[Algolia](https://www.algolia.com/doc/) is a search engine that enables you to build and manage an intuitive search experience for your customers. By integrating Algolia with Switchyard, you can index e-commerce data, such as products, and allow clients to search through them.
 
-You can follow this guide whether you're new to Medusa or an advanced Medusa developer.
+You can follow this guide whether you're new to Switchyard or an advanced Switchyard developer.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
-- Integrate Algolia into Medusa.
+- Install and set up Switchyard.
+- Integrate Algolia into Switchyard.
 - Trigger Algolia reindexing when a product is created, updated, deleted, or when the admin manually triggers a reindex.
 - Customize the Next.js Starter Storefront to allow searching for products through Algolia.
 
-![Diagram illustrating the integration of Algolia with Medusa](https://res.cloudinary.com/dza7lstvk/image/upload/v1742889842/Medusa%20Resources/algolia-summary_lhegrr.jpg)
+![Diagram illustrating the integration of Algolia with Switchyard](https://res.cloudinary.com/dza7lstvk/image/upload/v1742889842/Switchyard%20Resources/algolia-summary_lhegrr.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/algolia-integration",
+    href: "https://github.com/switchyard/examples/tree/main/algolia-integration",
     title: "Algolia Integration Repository",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -70,7 +70,7 @@ By following this tutorial, you'll learn how to:
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -87,27 +87,27 @@ By following this tutorial, you'll learn how to:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -115,9 +115,9 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Algolia Module
 
-To integrate third-party services into Medusa, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+To integrate third-party services into Switchyard, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
-In this step, you'll create a custom module that provides the necessary functionalities to integrate Algolia with Medusa.
+In this step, you'll create a custom module that provides the necessary functionalities to integrate Algolia with Switchyard.
 
 <Note>
 
@@ -125,7 +125,7 @@ Refer to the [Modules documentation](!docs!/learn/fundamentals/modules) to learn
 
 </Note>
 
-Before building the module, you need to install Algolia's JavaScript client. Run the following command in your Medusa application's root directory:
+Before building the module, you need to install Algolia's JavaScript client. Run the following command in your Switchyard application's root directory:
 
 ```bash npm2yarn
 npm install algoliasearch
@@ -133,7 +133,7 @@ npm install algoliasearch
 
 ### Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/algolia`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/algolia`.
 
 ### Create Service
 
@@ -230,7 +230,7 @@ You define two methods:
 
 #### Retrieve and Delete Methods
 
-The next methods you'll add to the service are methods to retrieve and delete data from the Algolia index. You'll see their use later as you keep the Algolia index in sync with Medusa.
+The next methods you'll add to the service are methods to retrieve and delete data from the Algolia index. You'll see their use later as you keep the Algolia index in sync with Switchyard.
 
 Add the following methods to the `AlgoliaModuleService` class:
 
@@ -291,12 +291,12 @@ The `search` method receives a query string and an `AlgoliaIndexType`. The metho
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/algolia/index.ts` with the following content:
 
 ```ts title="src/modules/algolia/index.ts"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import AlgoliaModuleService from "./service"
 
 export const ALGOLIA_MODULE = "algolia"
@@ -313,13 +313,13 @@ You use the `Module` function from the Modules SDK to create the module's defini
 
 You also export the module's name as `ALGOLIA_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -355,19 +355,19 @@ Where:
 
 - `your-algolia-app-id` is your Algolia App ID. You can retrieve it from the Algolia dashboard by clicking at the application ID at the top left next to the sidebar. The pop up will show the application ID below the application's name.
 
-![Find the Algolia App ID by clicking on the application name in the Algolia dashboard, then copying the ID below the name in the pop-up](https://res.cloudinary.com/dza7lstvk/image/upload/v1742815360/Medusa%20Resources/Screenshot_2025-03-24_at_1.19.30_PM_kdp3y5.png)
+![Find the Algolia App ID by clicking on the application name in the Algolia dashboard, then copying the ID below the name in the pop-up](https://res.cloudinary.com/dza7lstvk/image/upload/v1742815360/Switchyard%20Resources/Screenshot_2025-03-24_at_1.19.30_PM_kdp3y5.png)
 
 - `your-algolia-api-key` is your Algolia API Key. To retrieve it from the Algolia dashboard:
     1. Click on Settings in the sidebar.
     2. Choose API Keys under "Team and Access".
 
-![In the settings page, find the Team and Access section at the right of the page and choose API Keys](https://res.cloudinary.com/dza7lstvk/image/upload/v1742815534/Medusa%20Resources/Screenshot_2025-03-24_at_1.25.09_PM_hwsiba.png)
+![In the settings page, find the Team and Access section at the right of the page and choose API Keys](https://res.cloudinary.com/dza7lstvk/image/upload/v1742815534/Switchyard%20Resources/Screenshot_2025-03-24_at_1.25.09_PM_hwsiba.png)
 
     3. Copy the Admin API Key.
 
 - `your-product-index-name` is the name of the index where you'll store products. You can find it by going to Search -> Index, and copying the index name at the top of the page.
 
-![In the Algolia dashboard, go to Search -> Index and copy the index name at the top of the page](https://res.cloudinary.com/dza7lstvk/image/upload/v1742815790/Medusa%20Resources/Screenshot_2025-03-24_at_1.28.58_PM_yq10sf.png)
+![In the Algolia dashboard, go to Search -> Index and copy the index name at the top of the page](https://res.cloudinary.com/dza7lstvk/image/upload/v1742815790/Switchyard%20Resources/Screenshot_2025-03-24_at_1.28.58_PM_yq10sf.png)
 
 Your module is now ready for use. You'll see how to use it in the next steps.
 
@@ -375,7 +375,7 @@ Your module is now ready for use. You'll see how to use it in the next steps.
 
 ## Step 3: Sync Products to Algolia Workflow
 
-To keep the Algolia index in sync with Medusa, you need to trigger indexing when products are created, updated, or deleted in Medusa. You can also allow the admin to manually trigger a reindex.
+To keep the Algolia index in sync with Switchyard, you need to trigger indexing when products are created, updated, or deleted in Switchyard. You can also allow the admin to manually trigger a reindex.
 
 To implement the indexing functionality, you need to create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of actions, called steps, that complete a task. You construct a workflow like you construct a function, but it's a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features.
 
@@ -417,7 +417,7 @@ The workflow has the following steps:
   hideLegend
 />
 
-Medusa provides the `useQueryGraphStep` in its `@medusajs/medusa/core-flows` package. So, you only need to implement the other steps.
+Switchyard provides the `useQueryGraphStep` in its `@switchyard/medusa/core-flows` package. So, you only need to implement the other steps.
 
 ### syncProductsStep
 
@@ -427,12 +427,12 @@ To create the step, create the file `src/workflows/steps/sync-products.ts` with 
 
 <Note>
 
-If you get a type error on resolving the Algolia Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Algolia Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
 ```ts title="src/workflows/steps/sync-products.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { ALGOLIA_MODULE } from "../../modules/algolia"
 import AlgoliaModuleService from "../../modules/algolia/service"
 
@@ -486,9 +486,9 @@ You create a step with `createStep` from the Workflows SDK. It accepts two param
 1. The step's unique name, which is `sync-products`.
 2. An async function that receives two parameters:
     - The step's input, which is in this case an object holding an array of products to sync into Algolia.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
-In the step function, you resolve the Algolia Module's service from the Medusa container using the name you exported in the module definition's file.
+In the step function, you resolve the Algolia Module's service from the Switchyard container using the name you exported in the module definition's file.
 
 Then, you retrieve the products that are already indexed in Algolia and determine which products are new. You'll learn why this is useful in a bit.
 
@@ -535,7 +535,7 @@ export const syncProductsStep = createStep(
 The compensation function receives two parameters:
 
 1. The data you passed as a second parameter of `StepResponse` in the step function.
-2. A context object similar to the step function that holds the Medusa container.
+2. A context object similar to the step function that holds the Switchyard container.
 
 In the compensation function, you resolve the Algolia Module's service from the container. Then, you delete from Algolia the products that were newly indexed, and revert the existing products to their original data.
 
@@ -549,7 +549,7 @@ Create the step at `src/workflows/steps/delete-products-from-algolia.ts` with th
 import {
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { ALGOLIA_MODULE } from "../../modules/algolia"
 
 export type DeleteProductsFromAlgoliaWorkflow = {
@@ -608,8 +608,8 @@ import {
   createWorkflow, 
   transform, 
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { syncProductsStep, SyncProductsStepInput } from "./steps/sync-products"
 import { deleteProductsFromAlgoliaStep } from "./steps/delete-products-from-algolia"
 
@@ -690,7 +690,7 @@ It accepts as a second parameter a constructor function, which is the workflow's
 
 In the workflow's constructor function, you:
 
-1. Execute `useQueryGraphStep` to retrieve products from Medusa's database. This step uses Medusa's [Query](!docs!/learn/fundamentals/module-links/query) tool to retrieve data across modules. You pass it the pagination and filter parameters you received in the input.
+1. Execute `useQueryGraphStep` to retrieve products from Switchyard's database. This step uses Switchyard's [Query](!docs!/learn/fundamentals/module-links/query) tool to retrieve data across modules. You pass it the pagination and filter parameters you received in the input.
 2. Use [transform](!docs!/learn/fundamentals/workflows/variable-manipulation) to prepare two lists: one for published products to index in Algolia and another for unpublished products to delete from Algolia.
 2. Execute `syncProductsStep` to index the published products in Algolia.
 3. Execute `deleteProductsFromAlgoliaStep` to delete unpublished products from Algolia.
@@ -705,11 +705,11 @@ In the next step, you'll learn how to execute this workflow.
 
 As mentioned earlier, you'll trigger the Algolia sync automatically when product events occur, but you also want to allow the admin to manually trigger a reindex.
 
-In this step, you'll add the functionality to trigger the `syncProductsWorkflow` manually from the Medusa Admin dashboard. This requires:
+In this step, you'll add the functionality to trigger the `syncProductsWorkflow` manually from the Switchyard Admin dashboard. This requires:
 
 1. Creating a subscriber that listens to a custom `algolia.sync` event to trigger syncing products to Algolia.
-2. Creating an API route that the Medusa Admin dashboard can call to emit the `algolia.sync` event, which triggers the subscriber.
-3. Add a new page or UI route to the Medusa Admin dashboard to allow the admin to trigger the reindex.
+2. Creating an API route that the Switchyard Admin dashboard can call to emit the `algolia.sync` event, which triggers the subscriber.
+3. Add a new page or UI route to the Switchyard Admin dashboard to allow the admin to trigger the reindex.
 
 ### Create Products Sync Subscriber
 
@@ -727,7 +727,7 @@ You create a subscriber in a TypeScript or JavaScript file under the `src/subscr
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { syncProductsWorkflow } from "../workflows/sync-products"
 
 export default async function algoliaSyncHandler({ 
@@ -769,7 +769,7 @@ A subscriber file must export:
 1. An asynchronous function, which is the subscriber that is executed when the event is emitted.
 2. A configuration object that holds the name of the event the subscriber listens to, which is `algolia.sync` in this case.
 
-The subscriber function receives an object as a parameter that has a `container` property, which is the Medusa container.
+The subscriber function receives an object as a parameter that has a `container` property, which is the Switchyard container.
 
 In the subscriber function, you initialize variables to keep track of the pagination and the total number of products indexed.
 
@@ -785,7 +785,7 @@ If you want to sync other data types, you can do it in this subscriber as well.
 
 ### Create API Route to Trigger Sync
 
-To allow the Medusa Admin dashboard to trigger the `algolia.sync` event, you need to create an API route that emits the event.
+To allow the Switchyard Admin dashboard to trigger the `algolia.sync` event, you need to create an API route that emits the event.
 
 An API Route is an endpoint that exposes commerce features to external applications and clients, such as storefronts.
 
@@ -800,12 +800,12 @@ An API route is created in a `route.ts` file under a sub-directory of the `src/a
 So, to create an API route at the path `/admin/algolia/sync`, create the file `src/api/admin/algolia/sync/route.ts` with the following content:
 
 ```ts title="src/api/admin/algolia/sync/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const eventModuleService = req.scope.resolve(Modules.EVENT_BUS)
   await eventModuleService.emit({
@@ -823,7 +823,7 @@ Since you export a `POST` route handler function, you expose a `POST` API route 
 1. A request object with details and context on the request, such as body parameters or authenticated user details.
 2. A response object to manipulate and send the response.
 
-In the route handler, you use the Medusa container that is available in the request object to resolve the [Event Module](../../../infrastructure-modules/event/page.mdx). This module manages events and their subscribers.
+In the route handler, you use the Switchyard container that is available in the request object to resolve the [Event Module](../../../infrastructure-modules/event/page.mdx). This module manages events and their subscribers.
 
 Then, you emit the `algolia.sync` event using the Event Module's `emit` method, passing it the event name.
 
@@ -833,7 +833,7 @@ Finally, you send a response with a message indicating that data is being synced
 
 The last step is to add a new page to the admin dashboard that allows the admin to trigger the reindex. You add a new page using a [UI Route](!docs!/learn/fundamentals/admin/ui-routes).
 
-A UI route is a React component that specifies the content to be shown in a new page in the Medusa Admin dashboard. You'll create a UI route to display a button that triggers the reindex when clicked.
+A UI route is a React component that specifies the content to be shown in a new page in the Switchyard Admin dashboard. You'll create a UI route to display a button that triggers the reindex when clicked.
 
 <Note>
 
@@ -843,14 +843,14 @@ Learn more about UI routes in the [UI Routes documentation](!docs!/learn/fundame
 
 #### Configure JS SDK
 
-Before creating the UI route, you'll configure Medusa's [JS SDK](../../../js-sdk/page.mdx) that you can use to send requests to the Medusa server from any client application, including your Medusa Admin customizations.
+Before creating the UI route, you'll configure Switchyard's [JS SDK](../../../js-sdk/page.mdx) that you can use to send requests to the Switchyard server from any client application, including your Switchyard Admin customizations.
 
-The JS SDK is installed by default in your Medusa application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
+The JS SDK is installed by default in your Switchyard application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: "http://localhost:9000",
   debug: process.env.NODE_ENV === "development",
   auth: {
@@ -859,9 +859,9 @@ export const sdk = new Medusa({
 })
 ```
 
-You create an instance of the JS SDK using the `Medusa` class from the JS SDK. You pass it an object having the following properties:
+You create an instance of the JS SDK using the `Switchyard` class from the JS SDK. You pass it an object having the following properties:
 
-- `baseUrl`: The base URL of the Medusa server.
+- `baseUrl`: The base URL of the Switchyard server.
 - `debug`: A boolean indicating whether to log debug information into the console.
 - `auth`: An object specifying the authentication type. When using the JS SDK for admin customizations, you use the `session` authentication type.
 
@@ -869,13 +869,13 @@ You create an instance of the JS SDK using the `Medusa` class from the JS SDK. Y
 
 You'll now create the UI route that displays a button to trigger the reindex. You create a UI route in a `page.tsx` file under a sub-directory of `src/admin/routes` directory. The file's path relative to `src/admin/routes` determines its path in the dashboard.
 
-So, to create a new page under the Settings section of the Medusa Admin, create the file `src/admin/routes/settings/algolia/page.tsx` with the following content:
+So, to create a new page under the Settings section of the Switchyard Admin, create the file `src/admin/routes/settings/algolia/page.tsx` with the following content:
 
 ```tsx title="src/admin/routes/settings/algolia/page.tsx"
-import { Container, Heading, Button, toast } from "@medusajs/ui"
+import { Container, Heading, Button, toast } from "@switchyard/ui"
 import { useMutation } from "@tanstack/react-query"
 import { sdk } from "../../../lib/sdk"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
 
 const AlgoliaPage = () => {
   const { mutate, isPending } = useMutation({
@@ -932,19 +932,19 @@ Then, in the return statement, you display a button that triggers the mutation w
 
 ### Test it Out
 
-You'll now test out the entire flow, starting from triggering the reindex manually from the Medusa Admin dashboard, to checking the Algolia dashboard for the indexed products.
+You'll now test out the entire flow, starting from triggering the reindex manually from the Switchyard Admin dashboard, to checking the Algolia dashboard for the indexed products.
 
-Run the following command to start the Medusa application:
+Run the following command to start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin at `http://localhost:9000/app` and log in with the credentials you set up in the first step.
+Then, open the Switchyard Admin at `http://localhost:9000/app` and log in with the credentials you set up in the first step.
 
 <Note>
 
-Can't remember the credentials? Learn how to create a user in the [Medusa CLI reference](../../../medusa-cli/commands/user/page.mdx).
+Can't remember the credentials? Learn how to create a user in the [Switchyard CLI reference](../../../switchyard-cli/commands/user/page.mdx).
 
 </Note>
 
@@ -952,9 +952,9 @@ After you log in, go to Settings from the sidebar. You'll find in the Settings' 
 
 If you click on the button, the products will be synced to Algolia.
 
-![The Algolia Sync page in the Medusa Admin dashboard with a button to sync products to Algolia](https://res.cloudinary.com/dza7lstvk/image/upload/v1742820813/Medusa%20Resources/Screenshot_2025-03-24_at_2.52.31_PM_eiegzb.png)
+![The Algolia Sync page in the Switchyard Admin dashboard with a button to sync products to Algolia](https://res.cloudinary.com/dza7lstvk/image/upload/v1742820813/Switchyard%20Resources/Screenshot_2025-03-24_at_2.52.31_PM_eiegzb.png)
 
-You can check that the sync ran and was completed by checking the Medusa logs in the terminal where you started the Medusa application. You should find the following messages:
+You can check that the sync ran and was completed by checking the Switchyard logs in the terminal where you started the Switchyard application. You should find the following messages:
 
 ```bash
 info:    Processing algolia.sync which has 1 subscribers
@@ -966,7 +966,7 @@ These messages indicate that the `algolia.sync` event was emitted, which trigger
 
 Finally, you can check the Algolia dashboard to see the indexed products. Go to Search -> Index, and check the records of the index you set up in the Algolia Module's options (`products`, for example).
 
-![The Algolia dashboard showing the indexed products](https://res.cloudinary.com/dza7lstvk/image/upload/v1742821034/Medusa%20Resources/Screenshot_2025-03-24_at_2.56.38_PM_mtojrv.png)
+![The Algolia dashboard showing the indexed products](https://res.cloudinary.com/dza7lstvk/image/upload/v1742821034/Switchyard%20Resources/Screenshot_2025-03-24_at_2.56.38_PM_mtojrv.png)
 
 ---
 
@@ -983,7 +983,7 @@ The action to perform when a product is created or updated is the same. You'll u
 So, you only need one subscriber to handle these two events. To create the subscriber, create the file `src/subscribers/product-sync.ts` with the following content:
 
 ```ts title="src/subscribers/product-sync.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { syncProductsWorkflow } from "../workflows/sync-products"
 
 export default async function handleProductEvents({
@@ -1013,13 +1013,13 @@ So, you pass the product's ID to the `syncProductsWorkflow` as a filter to retri
 
 #### Test it Out
 
-To test it out, start the Medusa application:
+To test it out, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, either create a product or update an existing one using the Medusa Admin dashboard. If you check the Algolia dashboard, you'll find that the product was created or updated.
+Then, either create a product or update an existing one using the Switchyard Admin dashboard. If you check the Algolia dashboard, you'll find that the product was created or updated.
 
 ### Handle Product Deletion
 
@@ -1032,7 +1032,7 @@ You've already created the `deleteProductsFromAlgoliaStep` that deletes products
 Create the file `src/workflows/delete-products-from-algolia.ts` with the following content:
 
 ```ts title="src/workflows/delete-products-from-algolia.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
 import { deleteProductsFromAlgoliaStep } from "./steps/delete-products-from-algolia"
 
 type DeleteProductsFromAlgoliaWorkflowInput = {
@@ -1056,7 +1056,7 @@ Finally, you'll create the subscriber that listens to the `product.deleted` even
 Create the file `src/subscribers/product-delete.ts` with the following content:
 
 ```ts title="src/subscribers/product-delete.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { deleteProductsFromAlgoliaWorkflow } from "../workflows/delete-products-from-algolia"
 
 export default async function handleProductDeleted({
@@ -1080,30 +1080,30 @@ The subscriber listens to the `product.deleted` event. When the event is emitted
 
 #### Test it Out
 
-To test product deletion, start the Medusa application:
+To test product deletion, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, delete a product from the Medusa Admin dashboard. If you check the Algolia dashboard, you'll find that the product was deleted there as well.
+Then, delete a product from the Switchyard Admin dashboard. If you check the Algolia dashboard, you'll find that the product was deleted there as well.
 
 ---
 
 ## Step 6: Add Search API Route
 
-Before customizing the storefront to show the search UI, you'll create an API route in your Medusa application that allows storefronts to search products in Algolia.
+Before customizing the storefront to show the search UI, you'll create an API route in your Switchyard application that allows storefronts to search products in Algolia.
 
 <Note title="Tip">
 
-While you can implement the search functionality directly in the storefront to interact with Algolia, this approach centralizes your search integration in Medusa, allowing you to change or modify the integration as necessary. You can also rely on the same behavior and results across different storefronts.
+While you can implement the search functionality directly in the storefront to interact with Algolia, this approach centralizes your search integration in Switchyard, allowing you to change or modify the integration as necessary. You can also rely on the same behavior and results across different storefronts.
 
 </Note>
 
 To implement the API Route, create the file `src/api/store/products/search/route.ts` with the following content:
 
 ```ts title="src/api/store/products/search/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { ALGOLIA_MODULE } from "../../../../modules/algolia"
 import AlgoliaModuleService from "../../../../modules/algolia/service"
 import { z } from "zod"
@@ -1115,8 +1115,8 @@ export const SearchSchema = z.object({
 type SearchRequest = z.infer<typeof SearchSchema>
 
 export async function POST(
-  req: MedusaRequest<SearchRequest>,
-  res: MedusaResponse
+  req: SwitchyardRequest<SearchRequest>,
+  res: SwitchyardResponse
 ) {
   const algoliaModuleService: AlgoliaModuleService = req.scope.resolve(ALGOLIA_MODULE)
 
@@ -1152,7 +1152,7 @@ Middlewares are created in the `src/api/middlewares.ts` file. So create the file
 import { 
   defineMiddlewares,
   validateAndTransformBody, 
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { SearchSchema } from "./store/products/search/route"
 
 export default defineMiddlewares({
@@ -1180,15 +1180,15 @@ You can use the search API route now. You'll see it in action as you customize t
 
 ## Step 7: Search Products in Next.js Starter Storefront
 
-The last step is to provide the search functionalities to customers on your storefront. In the first step, you installed the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) along with the Medusa application.
+The last step is to provide the search functionalities to customers on your storefront. In the first step, you installed the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) along with the Switchyard application.
 
 In this step, you'll customize the Next.js Starter Storefront to add the search functionality.
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-search`, you can find the storefront by going back to the parent directory and changing to the `medusa-search-storefront` directory:
+So, if your Switchyard application's directory is `medusa-search`, you can find the storefront by going back to the parent directory and changing to the `medusa-search-storefront` directory:
 
 ```bash
 cd ../medusa-search-storefront # change based on your project name
@@ -1210,7 +1210,7 @@ This installs the Algolia Search JavaScript client and the React InstantSearch l
 
 ### Add Search Client Configuration
 
-Next, you need to configure the search client. Not only do you need to initialize Algolia, but you also need to change the searching mechanism to use your custom API route in the Medusa application instead of Algolia's API directly.
+Next, you need to configure the search client. Not only do you need to initialize Algolia, but you also need to change the searching mechanism to use your custom API route in the Switchyard application instead of Algolia's API directly.
 
 In `src/lib/config.ts`, add the following imports at the top of the file:
 
@@ -1263,7 +1263,7 @@ export const searchClient: SearchClient = {
 
 In the code above, you create a `searchClient` object that initializes the Algolia client with your Algolia App ID and API Key.
 
-You also define a `search` method that sends a `POST` request to the search API route you created in the Medusa application. You use the JS SDK (which is initialized in this same file) to send the request.
+You also define a `search` method that sends a `POST` request to the search API route you created in the Switchyard application. You use the JS SDK (which is initialized in this same file) to send the request.
 
 ### Set Environment Variables
 
@@ -1283,7 +1283,7 @@ Where:
 
 <Note type="warning">
 
-Do not expose your Admin API key in the storefront. The Admin API key should only be used in the Medusa application to interact with Algolia, as it has full access to your Algolia account.
+Do not expose your Admin API key in the storefront. The Admin API key should only be used in the Switchyard application to interact with Algolia, as it has full access to your Algolia account.
 
 </Note>
 
@@ -1302,7 +1302,7 @@ import React, { useEffect, useState } from "react"
 import { Hits, InstantSearch, SearchBox } from "react-instantsearch"
 import { searchClient } from "../../../../lib/config"
 import Modal from "../../../common/components/modal"
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
@@ -1388,7 +1388,7 @@ The search button will now appear in the navigation bar before the Account link.
 
 ### Test it Out
 
-To test out the storefront changes and the search API route, start the Medusa application:
+To test out the storefront changes and the search API route, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -1402,17 +1402,17 @@ npm run dev
 
 Next, go to `localhost:8000`. You'll find a Search button at the top right of the navigation bar. If you click on it, you can search through your products. You can also click on a product to view its page.
 
-![The Next.js Starter Storefront showing the search modal with search results](https://res.cloudinary.com/dza7lstvk/image/upload/v1742827777/Medusa%20Resources/Screenshot_2025-03-24_at_4.49.23_PM_kzhldx.png)
+![The Next.js Starter Storefront showing the search modal with search results](https://res.cloudinary.com/dza7lstvk/image/upload/v1742827777/Switchyard%20Resources/Screenshot_2025-03-24_at_4.49.23_PM_kzhldx.png)
 
 ---
 
 ## Next Steps
 
-You've now integrated Algolia with Medusa and added search functionality to your storefront. You can expand on these features to:
+You've now integrated Algolia with Switchyard and added search functionality to your storefront. You can expand on these features to:
 
-- Add filters to the search results. You can do that using Algolia's [widgets](https://www.algolia.com/doc/guides/building-search-ui/widgets/showcase/react/) and customizing the search API route in Medusa to accept filter parameters.
+- Add filters to the search results. You can do that using Algolia's [widgets](https://www.algolia.com/doc/guides/building-search-ui/widgets/showcase/react/) and customizing the search API route in Switchyard to accept filter parameters.
 - Support indexing other data types, such as product categories. You can create the subscribers and workflows for categories similar to products.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

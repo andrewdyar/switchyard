@@ -12,7 +12,7 @@ An inventory item, represented by the [InventoryItem data model](/references/inv
 
 The `InventoryItem` data model holds details about the stock item. It connects to other data models like `InventoryLevel` that store stock and quantity details.
 
-![A diagram showcasing the relation between data models in the Inventory Module](https://res.cloudinary.com/dza7lstvk/image/upload/v1709658103/Medusa%20Resources/inventory-architecture_kxr2ql.png)
+![A diagram showcasing the relation between data models in the Inventory Module](https://res.cloudinary.com/dza7lstvk/image/upload/v1709658103/Switchyard%20Resources/inventory-architecture_kxr2ql.png)
 
 ### Inventory Shipping Requirement
 
@@ -20,7 +20,7 @@ An inventory item has a `requires_shipping` field that indicates whether the ite
 
 For example, if you're selling a digital license with limited stock that doesn't need shipping, you can set this field to `false`.
 
-When a customer buys a product variant in the Medusa application, this field determines whether the item needs shipping. Learn more in the [Configure Selling Products](../../product/selling-products/page.mdx) guide.
+When a customer buys a product variant in the Switchyard application, this field determines whether the item needs shipping. Learn more in the [Configure Selling Products](../../product/selling-products/page.mdx) guide.
 
 ---
 
@@ -37,7 +37,7 @@ It has three quantity properties:
 
 ### Associated Location
 
-The inventory level's location is set in the `location_id` property. Medusa links the `InventoryLevel` data model with the `StockLocation` data model from the [Stock Location Module](../../stock-location/page.mdx).
+The inventory level's location is set in the `location_id` property. Switchyard links the `InventoryLevel` data model with the `StockLocation` data model from the [Stock Location Module](../../stock-location/page.mdx).
 
 ---
 
@@ -45,7 +45,7 @@ The inventory level's location is set in the `location_id` property. Medusa link
 
 A reservation item, represented by the [ReservationItem](/references/inventory-next/models/ReservationItem) data model, represents unavailable quantity of an inventory item in a location.
 
-When an order is placed, Medusa creates a reservation item for each inventory item in the order. The reservation item stores the reserved quantity of the inventory item in the location associated with the order's sales channel.
+When an order is placed, Switchyard creates a reservation item for each inventory item in the order. The reservation item stores the reserved quantity of the inventory item in the location associated with the order's sales channel.
 
 You can also use reservation items for custom use cases. For example, if you're selling event tickets, you can create a reservation item when a customer selects a ticket. Then, you can remove the reservation item if the customer doesn't complete the purchase within a specific time.
 

@@ -24,7 +24,7 @@
 					"fileName": "provider.ts",
 					"line": 14,
 					"character": 12,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L14"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L14"
 				}
 			],
 			"type": {
@@ -55,7 +55,7 @@
 									"fileName": "provider.ts",
 									"line": 18,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L18"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L18"
 								}
 							],
 							"type": {
@@ -65,7 +65,7 @@
 									"qualifiedName": "TaxableShippingDTO"
 								},
 								"name": "TaxableShippingDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -87,7 +87,7 @@
 									"fileName": "provider.ts",
 									"line": 22,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L22"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L22"
 								}
 							],
 							"type": {
@@ -99,7 +99,7 @@
 										"qualifiedName": "TaxRateDTO"
 									},
 									"name": "TaxRateDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						}
@@ -118,7 +118,7 @@
 							"fileName": "provider.ts",
 							"line": 14,
 							"character": 41,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L14"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L14"
 						}
 					]
 				}
@@ -143,7 +143,7 @@
 					"fileName": "provider.ts",
 					"line": 29,
 					"character": 12,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L29"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L29"
 				}
 			],
 			"type": {
@@ -174,7 +174,7 @@
 									"fileName": "provider.ts",
 									"line": 33,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L33"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L33"
 								}
 							],
 							"type": {
@@ -184,7 +184,7 @@
 									"qualifiedName": "TaxableItemDTO"
 								},
 								"name": "TaxableItemDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -206,7 +206,7 @@
 									"fileName": "provider.ts",
 									"line": 37,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L37"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L37"
 								}
 							],
 							"type": {
@@ -218,7 +218,7 @@
 										"qualifiedName": "TaxRateDTO"
 									},
 									"name": "TaxRateDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						}
@@ -237,7 +237,7 @@
 							"fileName": "provider.ts",
 							"line": 29,
 							"character": 37,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L29"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L29"
 						}
 					]
 				}
@@ -281,7 +281,7 @@
 					},
 					{
 						"kind": "code",
-						"text": "`medusa-config.ts`"
+						"text": "`switchyard.config.ts`"
 					},
 					{
 						"kind": "text",
@@ -301,11 +301,11 @@
 					},
 					{
 						"kind": "text",
-						"text": " of your Tax Module Provider's service to access the resources registered in the [Module Container](https://docs.medusajs.com/resources/medusa-container-resources#module-container-resources).\n\nYou can also use the constructor to initialize your integration with the third-party provider. For example, if you use a client to connect to the third-party provider’s APIs, you can initialize it in the constructor and use it in other methods in the service.\n\nAdditionally, if you’re creating your tax provider as a plugin or a module provider to be installed in any Medusa application and you want to access its options, you can access them in the second parameter of the constructor.\n\nFor example:\n\n"
+						"text": " of your Tax Module Provider's service to access the resources registered in the [Module Container](https://docs.switchyard.com/resources/medusa-container-resources#module-container-resources).\n\nYou can also use the constructor to initialize your integration with the third-party provider. For example, if you use a client to connect to the third-party provider’s APIs, you can initialize it in the constructor and use it in other methods in the service.\n\nAdditionally, if you’re creating your tax provider as a plugin or a module provider to be installed in any Switchyard application and you want to access its options, you can access them in the second parameter of the constructor.\n\nFor example:\n\n"
 					},
 					{
 						"kind": "code",
-						"text": "```ts\nimport {\n  ITaxProvider,\n  Logger\n} from \"@medusajs/framework/types\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  apiKey: string\n}\n\nexport default class MyTaxProvider implements ITaxProvider {\n  static identifier = \"my-tax\"\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n}\n```"
+						"text": "```ts\nimport {\n  ITaxProvider,\n  Logger\n} from \"@switchyard/framework/types\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  apiKey: string\n}\n\nexport default class MyTaxProvider implements ITaxProvider {\n  static identifier = \"my-tax\"\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n}\n```"
 					},
 					{
 						"kind": "text",
@@ -325,7 +325,7 @@
 							"fileName": "provider.ts",
 							"line": 119,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L119"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L119"
 						}
 					],
 					"signatures": [
@@ -368,7 +368,7 @@
 									"fileName": "provider.ts",
 									"line": 119,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L119"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L119"
 								}
 							],
 							"type": {
@@ -389,7 +389,7 @@
 							"fileName": "provider.ts",
 							"line": 177,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L177"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L177"
 						}
 					],
 					"signatures": [
@@ -468,7 +468,7 @@
 									"fileName": "provider.ts",
 									"line": 177,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L177"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L177"
 								}
 							],
 							"parameters": [
@@ -492,7 +492,7 @@
 											"type": "reference",
 											"target": 47209,
 											"name": "ItemTaxCalculationLine",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -516,7 +516,7 @@
 											"type": "reference",
 											"target": 47205,
 											"name": "ShippingTaxCalculationLine",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -541,7 +541,7 @@
 											"qualifiedName": "TaxCalculationContext"
 										},
 										"name": "TaxCalculationContext",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -564,7 +564,7 @@
 														"qualifiedName": "ItemTaxLineDTO"
 													},
 													"name": "ItemTaxLineDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												},
 												{
 													"type": "reference",
@@ -573,7 +573,7 @@
 														"qualifiedName": "ShippingTaxLineDTO"
 													},
 													"name": "ShippingTaxLineDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											]
 										}
@@ -600,7 +600,7 @@
 					"fileName": "provider.ts",
 					"line": 104,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L104"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/provider.ts#L104"
 				}
 			]
 		}
@@ -620,7 +620,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"47204": {
 			"sourceFileName": "../../../../packages/core/types/src/tax/provider.ts",

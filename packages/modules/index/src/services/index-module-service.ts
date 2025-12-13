@@ -1,4 +1,4 @@
-import { SqlEntityManager } from "@medusajs/framework/mikro-orm/postgresql"
+import { SqlEntityManager } from "@switchyard/framework/mikro-orm/postgresql"
 import {
   Constructor,
   Context,
@@ -11,7 +11,7 @@ import {
   Logger,
   ModulesSdkTypes,
   RemoteQueryFunction,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   MikroOrmBaseRepository as BaseRepository,
   ContainerRegistrationKeys,
@@ -22,7 +22,7 @@ import {
   ModulesSdkUtils,
   promiseAll,
   toMikroORMEntity,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { IndexData, IndexMetadata, IndexRelation, IndexSync } from "@models"
 import { schemaObjectRepresentationPropertiesToOmit } from "@types"
 import {
@@ -48,7 +48,7 @@ type InjectedDependencies = {
 }
 
 export default class IndexModuleService
-  extends ModulesSdkUtils.MedusaService({})
+  extends ModulesSdkUtils.SwitchyardService({})
   implements IndexTypes.IIndexService
 {
   #isWorkerMode: boolean = false

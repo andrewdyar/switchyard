@@ -1,21 +1,21 @@
-import type { OrderDTO, OrderWorkflow } from "@medusajs/framework/types"
+import type { OrderDTO, OrderWorkflow } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   OrderWorkflowEvents,
   validateEmail,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   OrderPreviewDTO,
   RegisterOrderChangeDTO,
   UpdateOrderDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 import { emitEventStep, useQueryGraphStep } from "../../common"
 import {
@@ -72,8 +72,8 @@ export const updateOrderValidationStep = createStep(
       order.shipping_address?.country_code !==
         input.shipping_address?.country_code
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Country code cannot be changed"
       )
     }
@@ -83,8 +83,8 @@ export const updateOrderValidationStep = createStep(
       order.billing_address?.country_code !==
         input.billing_address?.country_code
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Country code cannot be changed"
       )
     }

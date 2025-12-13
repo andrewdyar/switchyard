@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/fulfillment-manual",
+  "name": "@switchyard/fulfillment-manual",
   "version": "2.12.1",
   "description": "Manual fulfillment for Medusa",
   "main": "dist/index.js",
@@ -25,10 +25,10 @@
     "watch": "yarn run -T tsc --watch"
   },
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "2.12.1"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "2.12.1"
   },
   "keywords": [
     "medusa-plugin",

@@ -6,17 +6,17 @@
  * description: Retrieve the addresses of the logged-in customer. The addresses can be filtered by fields such as `country_code`. The addresses can also be sorted or paginated.
  * x-authenticated: true
  * externalDocs:
- *   url: https://docs.medusajs.com/resources/storefront-development/customers/addresses#list-customer-addresses
+ *   url: https://docs.switchyard.com/resources/storefront-development/customers/addresses#list-customer-addresses
  *   description: "Storefront guide: How to retrieve the logged-in customer's addresses."
  * parameters:
  *   - name: x-publishable-api-key
  *     in: header
- *     description: Publishable API Key created in the Medusa Admin.
+ *     description: Publishable API Key created in the Switchyard Admin.
  *     required: true
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.medusajs.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.com/api/store#publishable-api-key
  *   - name: city
  *     in: query
  *     description: Filter by the address's city.
@@ -125,7 +125,7 @@
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
  *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
  * 
@@ -133,7 +133,7 @@
  *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
  *       }
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: MEDUSA_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
  *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,

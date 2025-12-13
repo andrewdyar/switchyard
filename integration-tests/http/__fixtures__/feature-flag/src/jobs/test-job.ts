@@ -1,9 +1,9 @@
-import { MedusaContainer } from "@medusajs/framework/types"
-import { defineFileConfig, FeatureFlag } from "@medusajs/framework/utils"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { defineFileConfig, FeatureFlag } from "@switchyard/framework/utils"
 
 export const testJobHandler = jest.fn()
 
-export default async function greetingJob(container: MedusaContainer) {
+export default async function greetingJob(container: SwitchyardContainer) {
   testJobHandler()
 }
 

@@ -42,8 +42,8 @@ async function main() {
   const response = await octokit.request(
     "GET /repos/{owner}/{repo}/releases/latest",
     {
-      owner: "medusajs",
-      repo: "medusa",
+      owner: "switchyard",
+      repo: "switchyard",
       sha: "develop",
     }
   )

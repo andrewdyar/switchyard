@@ -1,7 +1,7 @@
 import ts from "typescript"
 import DefaultKindGenerator, { GetDocBlockOptions } from "./default.js"
 import { DOCBLOCK_END_LINE, DOCBLOCK_START } from "../../constants.js"
-import { shouldHaveCustomNamespace } from "../../utils/medusa-react-utils.js"
+import { shouldHaveCustomNamespace } from "../../utils/switchyard-react-utils.js"
 
 /**
  * A generator used to retrieve doc blocks for a source file.

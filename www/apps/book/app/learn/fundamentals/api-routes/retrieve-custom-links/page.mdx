@@ -1,14 +1,14 @@
 export const metadata = {
-  title: `${pageNumber} Retrieve Custom Links from Medusa's API Route`,
+  title: `${pageNumber} Retrieve Custom Links from Switchyard's API Route`,
 }
 
 # {metadata.title}
 
-In this chapter, you'll learn how to retrieve custom data models linked to existing Medusa data models from Medusa's API routes.
+In this chapter, you'll learn how to retrieve custom data models linked to existing Switchyard data models from Switchyard's API routes.
 
 ## Why Retrieve Custom Linked Data Models?
 
-Often, you'll link custom data models to existing Medusa data models to implement custom features or expand on existing ones.
+Often, you'll link custom data models to existing Switchyard data models to implement custom features or expand on existing ones.
 
 For example, to add brands for products, you can create a `Brand` data model in a Brand Module, then [define a link](../../module-links/page.mdx) to the [Product Module](!resources!/commerce-modules/product)'s `Product` data model.
 
@@ -18,7 +18,7 @@ When you implement this customization, you might need to retrieve the brand of a
 
 ## How to Retrieve Custom Linked Data Models Using `fields`?
 
-Most of Medusa's API routes accept a `fields` query parameter that allows you to specify the fields and relations to retrieve in the resource, such as a product.
+Most of Switchyard's API routes accept a `fields` query parameter that allows you to specify the fields and relations to retrieve in the resource, such as a product.
 
 For example, to retrieve the brand of a product, you can pass the `brand` field in the `fields` query parameter of the [Get Product API Route](!api!/admin#products_getproductsid):
 
@@ -35,7 +35,7 @@ By prefixing `brand` with an asterisk (`*`), you retrieve all the default fields
 
 ## API Routes that Restrict Retrievable Fields
 
-Some of Medusa's API routes restrict the fields and relations you can retrieve, which means you can't pass your custom linked data models in the `fields` query parameter. Medusa makes this restriction to ensure the API routes are performant and secure.
+Some of Switchyard's API routes restrict the fields and relations you can retrieve, which means you can't pass your custom linked data models in the `fields` query parameter. Switchyard makes this restriction to ensure the API routes are performant and secure.
 
 The API routes that restrict the fields and relations you can retrieve are:
 
@@ -60,7 +60,7 @@ export const highlights = [
 ]
 
 ```ts title="src/api/middlewares.ts" highlights={highlights}
-import { defineMiddlewares } from "@medusajs/medusa"
+import { defineMiddlewares } from "@switchyard/medusa"
 
 export default defineMiddlewares({
   routes: [

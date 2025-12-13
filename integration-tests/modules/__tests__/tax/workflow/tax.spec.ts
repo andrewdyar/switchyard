@@ -1,11 +1,11 @@
-import { ITaxModuleService } from "@medusajs/types"
+import { ITaxModuleService } from "@switchyard/types"
 
 import {
   createTaxRateRulesStepId,
   updateTaxRatesWorkflow,
-} from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { Modules } from "@medusajs/utils"
+} from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { Modules } from "@switchyard/utils"
 import { createAdminUser } from "../../../../helpers/create-admin-user"
 
 jest.setTimeout(50000)

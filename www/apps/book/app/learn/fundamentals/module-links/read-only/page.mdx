@@ -10,13 +10,13 @@ In this chapter, you’ll learn what a read-only module link is and how to defin
 
 ## What is a Read-Only Module Link?
 
-Consider a scenario where you need to access related records from another module, but don't want the overhead of managing or storing the links between them. This can include cases where you're working with external data models not stored in your Medusa database, such as third-party systems.
+Consider a scenario where you need to access related records from another module, but don't want the overhead of managing or storing the links between them. This can include cases where you're working with external data models not stored in your Switchyard database, such as third-party systems.
 
 In those cases, instead of defining a [Module Link](../page.mdx) whose linked records must be stored in a link table in the database, you can use a read-only module link. A read-only module link builds a virtual relation from one data model to another in a different module without creating a link table in the database. Instead, the linked record's ID is stored in the first data model's field.
 
-For example, Medusa creates a read-only module link from the `Cart` data model of the [Cart Module](!resources!/commerce-modules/cart) to the `Customer` data model of the [Customer Module](!resources!/commerce-modules/customer). This link allows you to access the details of the cart's customer without managing the link. Instead, the customer's ID is stored in the `Cart` data model.
+For example, Switchyard creates a read-only module link from the `Cart` data model of the [Cart Module](!resources!/commerce-modules/cart) to the `Customer` data model of the [Customer Module](!resources!/commerce-modules/customer). This link allows you to access the details of the cart's customer without managing the link. Instead, the customer's ID is stored in the `Cart` data model.
 
-![Diagram illustrating the read-only module link from cart to customer](https://res.cloudinary.com/dza7lstvk/image/upload/v1742212508/Medusa%20Book/cart-customer_w6vk59.jpg)
+![Diagram illustrating the read-only module link from cart to customer](https://res.cloudinary.com/dza7lstvk/image/upload/v1742212508/Switchyard%20Book/cart-customer_w6vk59.jpg)
 
 ---
 
@@ -41,8 +41,8 @@ export const highlights = [
 
 ```ts highlights={highlights}
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -61,7 +61,7 @@ In this example, you define a read-only module link from the Blog Module's `post
 - Passing an object as a first parameter that accepts the linkable configuration and the field where the linked record's ID is stored.
 - Setting the `readOnly` property to `true` in the third parameter.
 
-Unlike the stored module link, Medusa will not create a table in the database for this link. Instead, Medusa uses the ID stored in the specified field of the first data model to retrieve the linked record.
+Unlike the stored module link, Switchyard will not create a table in the database for this link. Instead, Switchyard uses the ID stored in the specified field of the first data model to retrieve the linked record.
 
 ---
 
@@ -81,7 +81,7 @@ const { result } = await query.graph({
 })
 ```
 
-In the above example, you retrieve a post and its linked product. Medusa will use the ID of the product in the post's `product_id` field to determine which product should be retrieved.
+In the above example, you retrieve a post and its linked product. Switchyard will use the ID of the product in the post's `product_id` field to determine which product should be retrieved.
 
 ---
 
@@ -101,8 +101,8 @@ For example, consider you want to access a product's posts. You can define a rea
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -185,7 +185,7 @@ Consider the first read-only module link you defined in this chapter:
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
+import ProductModule from "@switchyard/medusa/product"
 
 export default defineLink(
   {
@@ -220,7 +220,7 @@ Consider the read-only module link from the `post` data model uses an array of p
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
+import ProductModule from "@switchyard/medusa/product"
 
 export default defineLink(
   {
@@ -263,8 +263,8 @@ For example, consider the `product` -> `post` link you defined in an earlier sec
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -336,8 +336,8 @@ Alternatively, you can force a one-to-many relation by setting `isList` to `true
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -380,8 +380,8 @@ For example, looking again at the forced one-to-many relation example:
 
 ```ts
 import BlogModule from "../modules/blog"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -436,22 +436,22 @@ Consequently, the result will include a `post` property, even though it's an arr
 
 ## Example: Read-Only Module Link for Virtual Data Models
 
-Read-only module links are most useful when working with data models that aren't stored in your Medusa database. For example, data that is stored in a third-party system.
+Read-only module links are most useful when working with data models that aren't stored in your Switchyard database. For example, data that is stored in a third-party system.
 
-In those cases, you can define a read-only module link between a data model in Medusa and the data model in the external system, facilitating the retrieval of the linked data.
+In those cases, you can define a read-only module link between a data model in Switchyard and the data model in the external system, facilitating the retrieval of the linked data.
 
 To define the read-only module link to a virtual data model, you must:
 
-1. Define the read-only module link from the Medusa data model to the virtual data model.
-2. Create a `list` method in the custom module's service. This method retrieves the linked records filtered by the ID(s) of the Medusa data model.
+1. Define the read-only module link from the Switchyard data model to the virtual data model.
+2. Create a `list` method in the custom module's service. This method retrieves the linked records filtered by the ID(s) of the Switchyard data model.
     - You can also create a `listAndCount` method to retrieve the related records with pagination.
-3. Use Query to retrieve the Medusa data model and its linked records from the virtual data model.
+3. Use Query to retrieve the Switchyard data model and its linked records from the virtual data model.
 
-For example, consider you have a CMS Module that integrates a third-party Content-Management System (CMS) with Medusa, and you want to retrieve the posts in the CMS associated with a product in Medusa. The next steps showcase how to implement this.
+For example, consider you have a CMS Module that integrates a third-party Content-Management System (CMS) with Switchyard, and you want to retrieve the posts in the CMS associated with a product in Switchyard. The next steps showcase how to implement this.
 
 ### a. Define Read-Only Module Link
 
-Start by defining a read-only module link from the `Product` data model in Medusa to the external `post` data model in the CMS:
+Start by defining a read-only module link from the `Product` data model in Switchyard to the external `post` data model in the CMS:
 
 export const linkHighlights = [
   ["8", "field", "The field to filter by."],
@@ -460,8 +460,8 @@ export const linkHighlights = [
 ]
 
 ```ts title="src/links/product-cms.ts" highlights={linkHighlights}
-import { defineLink } from "@medusajs/framework/utils"
-import ProductModule from "@medusajs/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
 import { CMS_MODULE } from "../modules/cms"
 
 export default defineLink(
@@ -484,10 +484,10 @@ export default defineLink(
 
 To define the read-only module link, you must pass to `defineLink`:
 
-1. An object with the linkable configuration of the data model in Medusa, and the fields that will be passed as a filter to the CMS service.
+1. An object with the linkable configuration of the data model in Switchyard, and the fields that will be passed as a filter to the CMS service.
     - For example, if you want to filter by product title instead, you can pass `title` instead of `id`.
 2. An object with the linkable configuration of the virtual data model in the CMS. This object must have the following properties:
-    - `serviceName`: The name of the service, which is the CMS Module's name. Medusa uses this name to resolve the module's service from the [Medusa container](../../medusa-container/page.mdx).
+    - `serviceName`: The name of the service, which is the CMS Module's name. Switchyard uses this name to resolve the module's service from the [Switchyard container](../../medusa-container/page.mdx).
     - `alias`: The alias to use when querying the linked records. You'll see how that works in a bit.
     - `primaryKey`: The field in the CMS data model that holds the ID of a product.
 3. The third parameter: an object with the `readOnly` property set to `true`.
@@ -503,7 +503,7 @@ export const serviceHighlights = [
 ]
 
 ```ts title="src/modules/cms/service.ts" highlights={serviceHighlights}
-import { FindConfig } from "@medusajs/framework/types"
+import { FindConfig } from "@switchyard/framework/types"
 
 export default class CmsModuleService {
   private client

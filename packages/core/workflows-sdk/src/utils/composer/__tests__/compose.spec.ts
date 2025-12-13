@@ -3,15 +3,15 @@ import {
   SchedulerOptions,
   WorkflowManager,
   WorkflowScheduler,
-} from "@medusajs/orchestration"
-import { IEventBusModuleService } from "@medusajs/types"
+} from "@switchyard/orchestration"
+import { IEventBusModuleService } from "@switchyard/types"
 import {
   composeMessage,
-  createMedusaContainer,
+  createSwitchyardContainer,
   Modules,
   promiseAll,
-} from "@medusajs/utils"
-import { asValue } from "@medusajs/deps/awilix"
+} from "@switchyard/utils"
+import { asValue } from "@switchyard/deps/awilix"
 import { setTimeout } from "timers/promises"
 import {
   createStep,
@@ -23,7 +23,7 @@ import {
   when,
   WorkflowResponse,
 } from ".."
-import { MedusaWorkflow } from "../../../medusa-workflow"
+import { SwitchyardWorkflow } from "../../../medusa-workflow"
 import { createHook } from "../create-hook"
 
 jest.setTimeout(30000)
@@ -47,7 +47,7 @@ WorkflowScheduler.setStorage(new MockSchedulerStorage())
 
 const afterEach_ = () => {
   jest.clearAllMocks()
-  MedusaWorkflow.workflows = {}
+  SwitchyardWorkflow.workflows = {}
   WorkflowManager.unregisterAll()
 }
 
@@ -2626,7 +2626,7 @@ describe("Workflow composer", function () {
   })
 
   it("should emit grouped events once the workflow is executed and finished", async () => {
-    const container = createMedusaContainer()
+    const container = createSwitchyardContainer()
     container.register({
       [Modules.EVENT_BUS]: asValue({
         releaseGroupedEvents: jest
@@ -2686,7 +2686,7 @@ describe("Workflow composer", function () {
   })
 
   it("should clear grouped events on fail state", async () => {
-    const container = createMedusaContainer()
+    const container = createSwitchyardContainer()
     container.register({
       [Modules.EVENT_BUS]: asValue({
         releaseGroupedEvents: jest

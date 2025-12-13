@@ -1,4 +1,4 @@
-import { Badge } from "@medusajs/ui"
+import { Badge } from "@switchyard/ui"
 
 export default function BadgeAllRounded() {
   return (

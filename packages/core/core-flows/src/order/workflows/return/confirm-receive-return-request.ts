@@ -6,7 +6,7 @@ import {
   OrderPreviewDTO,
   OrderReturnItemDTO,
   ReturnDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ChangeActionType,
   MathBN,
@@ -14,14 +14,14 @@ import {
   OrderWorkflowEvents,
   ReturnStatus,
   deepFlatMap,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   WorkflowResponse,
   createStep,
   createWorkflow,
   parallelize,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep, useRemoteQueryStep } from "../../../common"
 import { adjustInventoryLevelsStep } from "../../../inventory/steps"
 import {

@@ -13,7 +13,7 @@ import {
   SignatureReflection,
 } from "typedoc"
 import ts, { SyntaxKind, VariableStatement } from "typescript"
-import { WorkflowManager, WorkflowDefinition } from "@medusajs/orchestration"
+import { WorkflowManager, WorkflowDefinition } from "@switchyard/orchestration"
 import Helper, { WORKFLOW_AS_STEP_SUFFIX } from "./utils/helper.js"
 import {
   findReflectionInNamespaces,
@@ -26,7 +26,7 @@ import {
 } from "utils"
 import { StepType } from "./types.js"
 import Examples from "./utils/examples.js"
-import { MedusaEvent } from "types"
+import { SwitchyardEvent } from "types"
 import path from "path"
 import { readFileSync } from "fs"
 
@@ -51,7 +51,7 @@ class WorkflowsPlugin {
       workflowIds: string[]
     }
   }
-  protected events: MedusaEvent[] = []
+  protected events: SwitchyardEvent[] = []
 
   constructor(app: Application) {
     this.app = app
@@ -634,7 +634,7 @@ class WorkflowsPlugin {
           additionalDataChild.comment.summary = [
             {
               kind: "text",
-              text: "Additional data that can be passed through the `additional_data` property in HTTP requests.\nLearn more in [this documentation](https://docs.medusajs.com/learn/fundamentals/api-routes/additional-data).",
+              text: "Additional data that can be passed through the `additional_data` property in HTTP requests.\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).",
             },
           ]
         }

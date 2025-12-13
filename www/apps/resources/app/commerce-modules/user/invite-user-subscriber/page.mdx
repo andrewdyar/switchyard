@@ -16,27 +16,27 @@ In this guide, you'll learn how to handle the `invite.created` and `invite.resen
 
 <Note title="Looking for no-code docs?">
 
-Refer to the [Manage Invites](!user-guide!/settings/users/invites) user guide to learn how to manage invites using the Medusa Admin.
+Refer to the [Manage Invites](!user-guide!/settings/users/invites) user guide to learn how to manage invites using the Switchyard Admin.
 
 </Note>
 
 ## User Invite Flow Overview
 
-![Diagram showcasing the user invite flow detailed below](https://res.cloudinary.com/dza7lstvk/image/upload/v1754047213/Medusa%20Resources/invite-user_uqspsv.jpg)
+![Diagram showcasing the user invite flow detailed below](https://res.cloudinary.com/dza7lstvk/image/upload/v1754047213/Switchyard%20Resources/invite-user_uqspsv.jpg)
 
 Admin users can add new users to their store by sending them an invite. The flow for inviting users is as follows:
 
-1. An admin user invites a user either through the [Medusa Admin](!user-guide!/settings/users/invites) or using the [Create Invite API route](!api!/admin#invites_postinvites).
+1. An admin user invites a user either through the [Switchyard Admin](!user-guide!/settings/users/invites) or using the [Create Invite API route](!api!/admin#invites_postinvites).
 2. The invite is created and the `invite.created` event is emitted.
     - At this point, you can handle the event to send an email or notification to the user.
 3. The invited user receives the invite and can accept it, which creates a new user.
-    - The invited user can accept the invite either through the Medusa Admin or using the [Accept Invite API route](!api!/admin#invites_postinvitesaccept).
+    - The invited user can accept the invite either through the Switchyard Admin or using the [Accept Invite API route](!api!/admin#invites_postinvitesaccept).
 
 The admin user can also resend the invite if the invited user doesn't receive the invite or doesn't accept it before expiry, which emits the `invite.resent` event.
 
 In this guide, you'll implement a subscriber that handles the `invite.created` and `invite.resent` events to send an email to the user.
 
-After adding the subscriber, you will have a complete user invite flow that you can utilize either through the Medusa Admin or using the Admin APIs.
+After adding the subscriber, you will have a complete user invite flow that you can utilize either through the Switchyard Admin or using the Admin APIs.
 
 ---
 
@@ -44,25 +44,25 @@ After adding the subscriber, you will have a complete user invite flow that you 
 
 To send an email or notification to the user, you must have a Notification Module Provider set up.
 
-Medusa provides providers like [SendGrid](../../../infrastructure-modules/notification/sendgrid/page.mdx) and [Resend](../../../integrations/guides/resend/page.mdx), and you can also [create your own custom provider](/references/notification-provider-module).
+Switchyard provides providers like [SendGrid](../../../infrastructure-modules/notification/sendgrid/page.mdx) and [Resend](../../../integrations/guides/resend/page.mdx), and you can also [create your own custom provider](/references/notification-provider-module).
 
 Refer to the [Notification Module](../../../infrastructure-modules/notification/page.mdx#what-is-a-notification-module-provider) documentation for a list of available providers and how to set them up.
 
 ### Testing with the Local Notification Module Provider
 
-For testing purposes, you can use the [Local Notification Module Provider](../../../infrastructure-modules/notification/local/page.mdx) by adding this to your `medusa-config.ts`:
+For testing purposes, you can use the [Local Notification Module Provider](../../../infrastructure-modules/notification/local/page.mdx) by adding this to your `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: "@switchyard/medusa/notification",
       options: {
         providers: [
           // ...
           {
-            resolve: "@medusajs/medusa/notification-local",
+            resolve: "@switchyard/medusa/notification-local",
             id: "local",
             options: {
               channels: ["email"],
@@ -94,7 +94,7 @@ export const highlights = [
 ]
 
 ```ts title="src/subscribers/user-invited.ts" highlights={highlights}
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 
 export default async function inviteCreatedHandler({
   event: { data },
@@ -148,10 +148,10 @@ The subscriber receives the ID of the invite in the event payload. You resolve [
 
 You then use the Notification Module's service to send an email to the user with the invite link. The invite link is constructed using:
 
-1. The backend URL of the Medusa application, since the Medusa Admin is hosted on the same URL.
-2. The admin path, which is the path to the Medusa Admin (for example, `/app`).
+1. The backend URL of the Switchyard application, since the Switchyard Admin is hosted on the same URL.
+2. The admin path, which is the path to the Switchyard Admin (for example, `/app`).
 
-Note that the Medusa Admin has an invite form at `/invite?token=`, which accepts the invite token as a query parameter.
+Note that the Switchyard Admin has an invite form at `/invite?token=`, which accepts the invite token as a query parameter.
 
 ### Notification Configurations
 
@@ -166,13 +166,13 @@ For the notification, you can configure the following fields:
 
 After you set up the Notification Module Provider, create a template in the provider, and create the subscriber, you can test the full invite flow.
 
-Start the Medusa application with the following command:
+Start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin (locally at `http://localhost:9000/app`) and go to Settings → Users. Create an invite as explained in the [Manage Invites](!user-guide!/settings/users/invites) user guide.
+Then, open the Switchyard Admin (locally at `http://localhost:9000/app`) and go to Settings → Users. Create an invite as explained in the [Manage Invites](!user-guide!/settings/users/invites) user guide.
 
 Once you create the invite, you should see that the `invite.created` event is emitted in the server's logs:
 

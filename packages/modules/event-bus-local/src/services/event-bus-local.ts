@@ -3,11 +3,11 @@ import {
   EventBusTypes,
   InternalModuleDeclaration,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
   Message,
   Subscriber,
-} from "@medusajs/framework/types"
-import { AbstractEventBusModuleService } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { AbstractEventBusModuleService } from "@switchyard/framework/utils"
 import { EventEmitter } from "events"
 import { setTimeout } from "timers/promises"
 
@@ -27,7 +27,7 @@ export default class LocalEventBusService extends AbstractEventBusModuleService 
   protected groupedEventsMap_: StagingQueueType
 
   constructor(
-    { logger }: MedusaContainer & InjectedDependencies,
+    { logger }: SwitchyardContainer & InjectedDependencies,
     moduleOptions = {},
     moduleDeclaration: InternalModuleDeclaration
   ) {

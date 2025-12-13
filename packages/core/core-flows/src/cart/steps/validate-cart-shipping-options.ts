@@ -1,13 +1,13 @@
 import type {
   CartDTO,
   IFulfillmentModuleService,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   arrayDifference,
-  MedusaError,
+  SwitchyardError,
   Modules,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the cart and its shipping options context.
@@ -73,8 +73,8 @@ export const validateCartShippingOptionsStep = createStep(
     let validShippingOptionIds: string[]
     if (!prefetchedShippingOptions) {
       if (!cart || !shippingOptionsContext) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Cart and shippingOptionsContext need to be defined if prefetchedShippingOptions is not.`
         )
       }
@@ -107,8 +107,8 @@ export const validateCartShippingOptionsStep = createStep(
     const invalidOptionIds = arrayDifference(optionIds, validShippingOptionIds)
 
     if (invalidOptionIds.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Shipping Options are invalid for cart.`
       )
     }

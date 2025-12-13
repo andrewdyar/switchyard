@@ -1,13 +1,13 @@
 import type {
   AdditionalData,
   CreatePromotionDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createHook,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createPromotionsStep } from "../steps"
 
 /**

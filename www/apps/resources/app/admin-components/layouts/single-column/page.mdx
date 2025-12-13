@@ -8,9 +8,9 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to create a layout component that matches the Medusa Admin's design conventions for pages with a single column of content.
+In this guide, you'll learn how to create a layout component that matches the Switchyard Admin's design conventions for pages with a single column of content.
 
-The Medusa Admin has pages with a single column of content.
+The Switchyard Admin has pages with a single column of content.
 
 <Note>
 
@@ -18,7 +18,7 @@ This doesn't include the sidebar, only the main content.
 
 </Note>
 
-![An example of an admin page with a single column](https://res.cloudinary.com/dza7lstvk/image/upload/v1728286605/Medusa%20Resources/single-column.png)
+![An example of an admin page with a single column](https://res.cloudinary.com/dza7lstvk/image/upload/v1728286605/Switchyard%20Resources/single-column.png)
 
 To create a layout that you can use in UI routes to support one column of content, create the component `src/admin/layouts/single-column.tsx` with the following content:
 
@@ -45,8 +45,8 @@ The `SingleColumnLayout` accepts the content in the `children` props.
 Use the `SingleColumnLayout` component in your UI routes that have a single column. For example:
 
 ```tsx title="src/admin/routes/custom/page.tsx" highlights={[["9"]]}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ChatBubbleLeftRight } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ChatBubbleLeftRight } from "@switchyard/icons"
 import { Container } from "../../components/container"
 import { SingleColumnLayout } from "../../layouts/single-column"
 import { Header } from "../../components/header"

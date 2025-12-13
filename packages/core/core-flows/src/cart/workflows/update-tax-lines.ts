@@ -1,13 +1,13 @@
 import {
   CartLineItemDTO,
   CartShippingMethodDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   createWorkflow,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { acquireLockStep, releaseLockStep } from "../../locking"
 import { getItemTaxLinesStep } from "../../tax/steps/get-item-tax-lines"

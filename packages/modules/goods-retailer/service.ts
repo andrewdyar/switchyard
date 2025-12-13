@@ -2,14 +2,14 @@
  * Goods Retailer Module Service
  * 
  * Handles multi-retailer product mappings and pricing.
- * This extends MedusaService to get auto-generated CRUD methods.
+ * This extends SwitchyardService to get auto-generated CRUD methods.
  */
 
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { RetailerMapping } from "./models/retailer-mapping"
 import { RetailerPricing } from "./models/retailer-pricing"
 
-class GoodsRetailerModuleService extends MedusaService({
+class GoodsRetailerModuleService extends SwitchyardService({
   RetailerMapping,
   RetailerPricing,
 }) {

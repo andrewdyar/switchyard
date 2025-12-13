@@ -36,7 +36,7 @@ import {
   isLevelExceeded,
   maybeIncrementLevel,
 } from "../../utils/level-utils.js"
-import { MedusaEvent } from "types"
+import { SwitchyardEvent } from "types"
 
 const RES_STATUS_REGEX = /^res[\s\S]*\.status\((\d+)\)/
 
@@ -81,10 +81,10 @@ class OasKindGenerator extends FunctionKindGenerator {
     "CONNECT",
   ]
   readonly REQUEST_TYPE_NAMES = [
-    "MedusaRequest",
+    "SwitchyardRequest",
     "RequestWithContext",
-    "AuthenticatedMedusaRequest",
-    "MedusaStoreRequest",
+    "AuthenticatedSwitchyardRequest",
+    "SwitchyardStoreRequest",
   ]
   readonly REQUEST_CHECK_QUERY_ARGS = ["RequestWithContext"]
   // as it's not always possible to detect authenticated request
@@ -134,7 +134,7 @@ class OasKindGenerator extends FunctionKindGenerator {
       requiresAuthentication: true,
     },
   ]
-  readonly RESPONSE_TYPE_NAMES = ["MedusaResponse"]
+  readonly RESPONSE_TYPE_NAMES = ["SwitchyardResponse"]
 
   /**
    * This map collects tags of all the generated OAS, then, once the generation process finishes,
@@ -149,7 +149,7 @@ class OasKindGenerator extends FunctionKindGenerator {
   protected oasSchemaHelper: OasSchemaHelper
   protected schemaFactory: SchemaFactory
   protected typesHelper: TypesHelper
-  protected events: MedusaEvent[] = []
+  protected events: SwitchyardEvent[] = []
 
   constructor(options: GeneratorOptions) {
     super(options)
@@ -1334,12 +1334,12 @@ class OasKindGenerator extends FunctionKindGenerator {
       this.getParameterObject({
         type: "header",
         name: "x-publishable-api-key",
-        description: "Publishable API Key created in the Medusa Admin.",
+        description: "Publishable API Key created in the Switchyard Admin.",
         required: true,
         schema: {
           type: "string",
           externalDocs: {
-            url: "https://docs.medusajs.com/api/store#publishable-api-key",
+            url: "https://docs.switchyard.com/api/store#publishable-api-key",
           },
         },
       }),
@@ -2568,7 +2568,7 @@ class OasKindGenerator extends FunctionKindGenerator {
       return
     }
 
-    // retrieve workflows imported from `@medusajs/core-flows`
+    // retrieve workflows imported from `@switchyard/core-flows`
     // since there could be multiple import statements from the
     // same package, put them in an array
     const coreFlowsImports: ts.ImportClause[] = []
@@ -2577,7 +2577,7 @@ class OasKindGenerator extends FunctionKindGenerator {
         !importNode.parent ||
         !ts.isImportDeclaration(importNode.parent) ||
         !importNode.parent.importClause?.namedBindings ||
-        importNode.getText() !== `"@medusajs/core-flows"`
+        importNode.getText() !== `"@switchyard/core-flows"`
       ) {
         return
       }
@@ -2585,7 +2585,7 @@ class OasKindGenerator extends FunctionKindGenerator {
       coreFlowsImports.push(importNode.parent.importClause)
     })
 
-    // if no imports found from `@medusajs/core-flows`, return
+    // if no imports found from `@switchyard/core-flows`, return
     if (!coreFlowsImports.length) {
       return
     }

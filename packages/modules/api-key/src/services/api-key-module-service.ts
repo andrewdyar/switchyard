@@ -9,7 +9,7 @@ import {
   InternalModuleDeclaration,
   ModuleJoinerConfig,
   ModulesSdkTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ApiKeyType,
   EmitEvents,
@@ -19,10 +19,10 @@ import {
   isPresent,
   isString,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { ApiKey } from "@models"
 import {
   CreateApiKeyDTO,
@@ -42,7 +42,7 @@ type InjectedDependencies = {
 }
 
 export class ApiKeyModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     ApiKey: { dto: ApiKeyTypes.ApiKeyDTO }
   }>({ ApiKey })
   implements IApiKeyModuleService
@@ -98,8 +98,8 @@ export class ApiKeyModuleService
     ).map((apiKey) => apiKey.id)
 
     if (isPresent(unrevokedApiKeys)) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Cannot delete api keys that are not revoked - ${unrevokedApiKeys.join(
           ", "
         )}`
@@ -536,15 +536,15 @@ export class ApiKeyModuleService
     }
 
     if (data.some((k) => !k.id)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `You must provide an api key id field when revoking a key.`
       )
     }
 
     if (data.some((k) => !k.revoked_by)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `You must provide a revoked_by field when revoking a key.`
       )
     }
@@ -560,8 +560,8 @@ export class ApiKeyModuleService
     )
 
     if (revokedApiKeys.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `There are ${revokedApiKeys.length} secret keys that are already revoked.`
       )
     }

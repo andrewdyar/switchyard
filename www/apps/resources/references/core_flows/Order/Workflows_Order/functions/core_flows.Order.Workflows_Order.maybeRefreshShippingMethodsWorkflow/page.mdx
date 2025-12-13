@@ -10,9 +10,9 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# maybeRefreshShippingMethodsWorkflow - Medusa Core Workflows Reference
+# maybeRefreshShippingMethodsWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `maybeRefreshShippingMethodsWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `maybeRefreshShippingMethodsWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflows refreshes shipping method prices of an order and its changes. It's used in Return Merchandise Authorization (RMA) flows. It's used
 by other workflows, such as refreshExchangeShippingWorkflow.
@@ -20,7 +20,7 @@ by other workflows, such as refreshExchangeShippingWorkflow.
 You can use this workflow within your customizations or your own custom workflows, allowing you to wrap custom logic around
 refreshing shipping methods in your custom flows.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/order/workflows/maybe-refresh-shipping-methods.ts#L100" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/order/workflows/maybe-refresh-shipping-methods.ts#L100" />
 
 ## Examples
 
@@ -29,14 +29,14 @@ refreshing shipping methods in your custom flows.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { maybeRefreshShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { maybeRefreshShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await maybeRefreshShippingMethodsWorkflow(req.scope)
     .run({
@@ -65,8 +65,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { maybeRefreshShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { maybeRefreshShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -100,11 +100,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { maybeRefreshShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { maybeRefreshShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await maybeRefreshShippingMethodsWorkflow(container)
     .run({
@@ -135,8 +135,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { maybeRefreshShippingMethodsWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { maybeRefreshShippingMethodsWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -169,4 +169,4 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"MaybeRefreshShippingMethodsWorkflowInput","type":"[MaybeRefreshShippingMethodsWorkflowInput](../../../../types/core_flows.MaybeRefreshShippingMethodsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to create a shipping method for an order edit.","expandable":false,"children":[{"name":"shipping_method_id","type":"`string`","description":"The ID of the shipping method to refresh.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"order_id","type":"`string`","description":"The ID of the order.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"action_id","type":"`string`","description":"The ID of the ADD SHIPPING action to update.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"`CalculatedRMAShippingContext`","description":"Data to pass for the shipping calculation.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="maybeRefreshShippingMethodsWorkflow"/>
+<TypeList types={[{"name":"MaybeRefreshShippingMethodsWorkflowInput","type":"[MaybeRefreshShippingMethodsWorkflowInput](../../../../types/core_flows.MaybeRefreshShippingMethodsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to create a shipping method for an order edit.","expandable":false,"children":[{"name":"shipping_method_id","type":"`string`","description":"The ID of the shipping method to refresh.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"order_id","type":"`string`","description":"The ID of the order.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"action_id","type":"`string`","description":"The ID of the ADD SHIPPING action to update.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"context","type":"`CalculatedRMAShippingContext`","description":"Data to pass for the shipping calculation.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="maybeRefreshShippingMethodsWorkflow"/>

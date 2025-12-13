@@ -3,11 +3,11 @@ import {
   AuthenticationResponse,
   AuthIdentityDTO,
   AuthIdentityProviderService,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   AbstractAuthModuleProvider,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 
 export class AuthServiceFixtures extends AbstractAuthModuleProvider {
   static identifier = "plaintextpass"
@@ -42,7 +42,7 @@ export class AuthServiceFixtures extends AbstractAuthModuleProvider {
         }
       }
     } catch (error) {
-      if (error.type === MedusaError.Types.NOT_FOUND) {
+      if (error.type === SwitchyardError.Types.NOT_FOUND) {
         const createdAuthIdentity = await service.create({
           entity_id: email,
           provider_metadata: {

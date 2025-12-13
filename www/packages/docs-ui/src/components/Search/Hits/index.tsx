@@ -226,7 +226,7 @@ export const SearchHits = ({
               />
             </div>
             {!!item.integration_vendor &&
-              item.integration_vendor !== "Medusa" && (
+              item.integration_vendor !== "Switchyard" && (
                 <Badge variant="blue" badgeType="shaded">
                   Community
                 </Badge>

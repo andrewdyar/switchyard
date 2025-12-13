@@ -11,9 +11,9 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# onCarryPromotionsFlagSet - Medusa Core Workflows Reference
+# onCarryPromotionsFlagSet - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `onCarryPromotionsFlagSet`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `onCarryPromotionsFlagSet`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow toggles whether promotions are carried over to outbound items of an exchange.
 It validates that the order change is an exchange and that it's active. It also validates that the promotion allocation
@@ -27,11 +27,11 @@ set the carry over promotions flag for an order change in your custom flows.
 
 :::note
 
-This is available starting from [Medusa v2.12.0](https://github.com/medusajs/medusa/releases/tag/v2.12.0).
+This is available starting from [Switchyard v2.12.0](https://github.com/switchyard/medusa/releases/tag/v2.12.0).
 
 :::
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/order/workflows/on-carry-promotions-flag-set.ts#L168" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/order/workflows/on-carry-promotions-flag-set.ts#L168" />
 
 ## Examples
 
@@ -40,14 +40,14 @@ This is available starting from [Medusa v2.12.0](https://github.com/medusajs/med
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { onCarryPromotionsFlagSet } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { onCarryPromotionsFlagSet } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await onCarryPromotionsFlagSet(req.scope)
     .run({
@@ -68,8 +68,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { onCarryPromotionsFlagSet } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { onCarryPromotionsFlagSet } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -95,11 +95,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { onCarryPromotionsFlagSet } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { onCarryPromotionsFlagSet } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await onCarryPromotionsFlagSet(container)
     .run({
@@ -122,8 +122,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { onCarryPromotionsFlagSet } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { onCarryPromotionsFlagSet } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -144,8 +144,8 @@ const myWorkflow = createWorkflow(
 
 ## Steps
 
-<WorkflowDiagram workflow={{"name":"onCarryPromotionsFlagSet","steps":[{"type":"step","name":"validateCarryPromotionsFlagStep","description":"This step validates that the order change is an exchange and validates that\nthe promotion allocation is valid for carrying over promotions.\n\n:::note\n\nYou can retrieve details of the order and order change using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),\nor [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).\n\n:::","link":"../core_flows.Order.Workflows_Order.validateCarryPromotionsFlagStep/page.mdx","depth":1},{"type":"workflow","name":"computeAdjustmentsForPreviewWorkflow","description":"Compute adjustments for an order edit, exchange, claim, or return.","link":"../core_flows.Order.Workflows_Order.computeAdjustmentsForPreviewWorkflow/page.mdx","depth":2}]}} />
+<WorkflowDiagram workflow={{"name":"onCarryPromotionsFlagSet","steps":[{"type":"step","name":"validateCarryPromotionsFlagStep","description":"This step validates that the order change is an exchange and validates that\nthe promotion allocation is valid for carrying over promotions.\n\n:::note\n\nYou can retrieve details of the order and order change using [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query),\nor [useQueryGraphStep](https://docs.switchyard.com/resources/references/medusa-workflows/steps/useQueryGraphStep).\n\n:::","link":"../core_flows.Order.Workflows_Order.validateCarryPromotionsFlagStep/page.mdx","depth":1},{"type":"workflow","name":"computeAdjustmentsForPreviewWorkflow","description":"Compute adjustments for an order edit, exchange, claim, or return.","link":"../core_flows.Order.Workflows_Order.computeAdjustmentsForPreviewWorkflow/page.mdx","depth":2}]}} />
 
 ## Input
 
-<TypeList types={[{"name":"OnCarryPromotionsFlagSetWorkflowInput","type":"[OnCarryPromotionsFlagSetWorkflowInput](../../../../types/core_flows.OnCarryPromotionsFlagSetWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to set the carry over promotions flag for an order change.","expandable":false,"children":[{"name":"order_change_id","type":"`string`","description":"The order change's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"carry_over_promotions","type":"`boolean`","description":"Whether to carry over promotions to outbound exchange items.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="onCarryPromotionsFlagSet"/>
+<TypeList types={[{"name":"OnCarryPromotionsFlagSetWorkflowInput","type":"[OnCarryPromotionsFlagSetWorkflowInput](../../../../types/core_flows.OnCarryPromotionsFlagSetWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to set the carry over promotions flag for an order change.","expandable":false,"children":[{"name":"order_change_id","type":"`string`","description":"The order change's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"carry_over_promotions","type":"`boolean`","description":"Whether to carry over promotions to outbound exchange items.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="onCarryPromotionsFlagSet"/>

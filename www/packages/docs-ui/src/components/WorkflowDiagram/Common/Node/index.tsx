@@ -1,12 +1,12 @@
 "use client"
 
-import { Text } from "@medusajs/ui"
+import { Text } from "@switchyard/ui"
 import clsx from "clsx"
 import Link from "next/link"
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { WorkflowStepUi } from "types"
 import { CodeBlock, MarkdownContent, Tooltip } from "../../.."
-import { Bolt, InformationCircle } from "@medusajs/icons"
+import { Bolt, InformationCircle } from "@switchyard/icons"
 import { getBrowser } from "../../../../utils"
 
 export type WorkflowDiagramNodeProps = {

@@ -38,7 +38,7 @@ import {
   UpdatePaymentSessionDTO,
   UpsertPaymentCollectionDTO,
   WebhookActionResult,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   BigNumber,
   EmitEvents,
@@ -48,12 +48,12 @@ import {
   isString,
   MathBN,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
   PaymentCollectionStatus,
   PaymentSessionStatus,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   AccountHolder,
   Capture,
@@ -89,7 +89,7 @@ const generateMethodForModels = {
 }
 
 export default class PaymentModuleService
-  extends ModulesSdkUtils.MedusaService<{
+  extends ModulesSdkUtils.SwitchyardService<{
     PaymentCollection: { dto: PaymentCollectionDTO }
     PaymentSession: { dto: PaymentSessionDTO }
     Payment: { dto: PaymentDTO }
@@ -544,8 +544,8 @@ export default class PaymentModuleService
         },
         sharedContext
       )
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Session: ${session.id} was not authorized with the provider.`
       )
     }
@@ -714,8 +714,8 @@ export default class PaymentModuleService
     capture?: InferEntityType<typeof Capture>
   }> {
     if (payment.canceled_at) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `The payment: ${payment.id} has been canceled.`
       )
     }
@@ -743,8 +743,8 @@ export default class PaymentModuleService
         this.roundToCurrencyPrecision(remainingToCapture, payment.currency_code)
       )
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `You cannot capture more than the authorized amount substracted by what is already captured.`
       )
     }
@@ -879,8 +879,8 @@ export default class PaymentModuleService
     const totalRefundedAmount = MathBN.add(refundedAmount, data.amount)
 
     if (MathBN.lt(capturedAmount, totalRefundedAmount)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `You cannot refund more than what is captured on the payment.`
       )
     }
@@ -1135,8 +1135,8 @@ export default class PaymentModuleService
     @MedusaContext() sharedContext?: Context
   ): Promise<AccountHolderDTO> {
     if (!input.context?.account_holder) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Missing account holder data while updating account holder."
       )
     }

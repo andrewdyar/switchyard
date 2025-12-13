@@ -13,7 +13,7 @@ import KnowledgeBaseFactory, {
 import {
   getCustomNamespaceTag,
   shouldHaveCustomNamespace,
-} from "../../utils/medusa-react-utils.js"
+} from "../../utils/switchyard-react-utils.js"
 import GeneratorEventManager from "../helpers/generator-event-manager.js"
 import { CommonCliOptions } from "../../types/index.js"
 import AiGenerator from "../helpers/ai-generator.js"
@@ -442,8 +442,8 @@ class DefaultKindGenerator<T extends ts.Node = ts.Node> {
   }
 
   /**
-   * Check if a node is a Medusa entity.
-   * @returns {boolean} Whether the node is a Medusa entity.
+   * Check if a node is a Switchyard entity.
+   * @returns {boolean} Whether the node is a Switchyard entity.
    */
   isEntity({
     /**

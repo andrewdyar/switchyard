@@ -12,7 +12,7 @@ products:
   - auth
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
@@ -21,9 +21,9 @@ export const metadata = {
 
 # {metadata.title}
 
-In this tutorial, you will learn how to implement phone number authentication in your Medusa application.
+In this tutorial, you will learn how to implement phone number authentication in your Switchyard application.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include authentication with custom providers and for custom user or actor types.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include authentication with custom providers and for custom user or actor types.
 
 In this tutorial, you'll learn how to implement a custom authentication provider that allows customers to log in with their phone number. You'll also integrate [Twilio](https://www.twilio.com/en-us/messaging/channels/sms) to send SMS messages to those customers with the one-time password (OTP) for authentication.
 
@@ -37,14 +37,14 @@ Twilio is just one option to deliver the OTP to the customer. You can integrate 
 
 By following this tutorial, you will learn how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Implement a custom phone authentication provider.
 - Integrate Twilio to send OTPs by SMS.
 - Customize the Next.js Starter Storefront to allow customers to log in with their phone numbers.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram showcasing the phone authentication flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747744941/Medusa%20Resources/phone-auth-overview_bt5yrp.jpg)
+![Diagram showcasing the phone authentication flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747744941/Switchyard%20Resources/phone-auth-overview_bt5yrp.jpg)
 
 <Note>
 
@@ -54,7 +54,7 @@ While this tutorial focuses on supporting phone authentication for customers, yo
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/phone-auth",
+    href: "https://github.com/switchyard/examples/tree/main/phone-auth",
     title: "Phone Authentication Repository",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -69,7 +69,7 @@ While this tutorial focuses on supporting phone authentication for customers, yo
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -86,27 +86,27 @@ While this tutorial focuses on supporting phone authentication for customers, yo
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -114,7 +114,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Implement Phone Authentication Module Provider
 
-In Medusa, you integrate custom authentication providers by creating an [Authentication Module Provider](../../../commerce-modules/auth/auth-providers/page.mdx). Then, you can use that provider to authenticate users using custom logic.
+In Switchyard, you integrate custom authentication providers by creating an [Authentication Module Provider](../../../commerce-modules/auth/auth-providers/page.mdx). Then, you can use that provider to authenticate users using custom logic.
 
 In this step, you'll create a Phone Authentication Module Provider that allows users to log in with their phone numbers and an OTP. Later, you'll integrate Twilio to send the OTPs to the users, and customize the storefront to allow customers to log in with their phone numbers.
 
@@ -128,7 +128,7 @@ An Authentication Module Provider doesn't need to handle storing and managing sp
 
 In the Phone Authentication Module Provider, you'll use the `jsonwebtoken` package to sign and verify the OTPs.
 
-To install the package, run the following command in the Medusa application directory:
+To install the package, run the following command in the Switchyard application directory:
 
 ```bash npm2yarn
 npm install jsonwebtoken
@@ -157,10 +157,10 @@ export const phoneAuthServiceHighlights = [
 import { 
   AbstractAuthModuleProvider, 
   AbstractEventBusModuleService, 
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { 
   Logger, 
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 type InjectedDependencies = {
   logger: Logger
@@ -203,12 +203,12 @@ A module provider's constructor receives two parameters:
 - `container`: The [module's container](!docs!/learn/fundamentals/modules/container) that contains Framework resources available to the module. You access the following resources:
     - `logger`: A [Logger](!docs!/learn/debugging-and-testing/logging) class to log debug messages.
     - `event_bus`: The [Event Module](../../../infrastructure-modules/event/page.mdx)'s service to emit events.
-- `options`: Options that are passed to the module provider when it's registered in Medusa's configurations. You define the following option:
+- `options`: Options that are passed to the module provider when it's registered in Switchyard's configurations. You define the following option:
     - `jwtSecret`: A secret used to sign and verify the OTPs.
 
 <Note>
 
-You'll learn how to set this option when you [add the module provider to Medusa's configurations](#h-add-module-provider-to-medusas-configurations).
+You'll learn how to set this option when you [add the module provider to Switchyard's configurations](#h-add-module-provider-to-medusas-configurations).
 
 </Note>
 
@@ -224,22 +224,22 @@ Refer to the [Create Auth Module Provider](/references/auth/provider) guide for 
 
 ### c. Implement validateOptions Method
 
-The `validateOptions` method is used to validate the options passed to the module provider. If the method throws an error, the Medusa application won't start.
+The `validateOptions` method is used to validate the options passed to the module provider. If the method throws an error, the Switchyard application won't start.
 
 So, add the `validateOptions` method to the `PhoneAuthService` class:
 
 ```ts title="src/modules/phone-auth/service.ts"
 // other imports...
 import { 
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 
 class PhoneAuthService extends AbstractAuthModuleProvider {
   // ...
   static validateOptions(options: Record<any, any>): void | never {
     if (!options.jwtSecret) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "JWT secret is required"
       )
     }
@@ -257,9 +257,9 @@ When a customer (or another actor type) registers in your application, they must
 
 The `register` method of an auth provider uses custom logic to create the auth identity for the actor type (such as customer). In the method, you can perform custom validation and specify the custom authentication details to store for the user's auth identity.
 
-Medusa uses the `register` method to create an auth identity that will be associated with the customer when they register. You can learn more in the [Authentication Flows](../../../commerce-modules/auth/auth-flows/page.mdx) documentation.
+Switchyard uses the `register` method to create an auth identity that will be associated with the customer when they register. You can learn more in the [Authentication Flows](../../../commerce-modules/auth/auth-flows/page.mdx) documentation.
 
-![Diagram showcasing the relation between a customer and auth identity](https://res.cloudinary.com/dza7lstvk/image/upload/v1747747179/Medusa%20Resources/customer-auth-identity_je1bvh.jpg)
+![Diagram showcasing the relation between a customer and auth identity](https://res.cloudinary.com/dza7lstvk/image/upload/v1747747179/Switchyard%20Resources/customer-auth-identity_je1bvh.jpg)
 
 So, add the `register` method to the `PhoneAuthService` class:
 
@@ -275,7 +275,7 @@ import {
   AuthenticationInput, 
   AuthIdentityProviderService, 
   AuthenticationResponse, 
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 class PhoneAuthService extends AbstractAuthModuleProvider {
   // ...
@@ -353,7 +353,7 @@ Authentication providers may implement one of the following flows:
 
 For the Phone Authentication Module Provider, you'll implement the second flow. The user will first be authenticated using the `authenticate` method to make sure the user exists and generate an OTP. Then, they need to supply the OTP to verify their identity.
 
-![Diagram showcasing authentication with callback verification](https://res.cloudinary.com/dza7lstvk/image/upload/v1747749683/Medusa%20Resources/authentication-flow_ey59hw.jpg)
+![Diagram showcasing authentication with callback verification](https://res.cloudinary.com/dza7lstvk/image/upload/v1747749683/Switchyard%20Resources/authentication-flow_ey59hw.jpg)
 
 So, add the `authenticate` method to the `PhoneAuthService` class:
 
@@ -373,7 +373,7 @@ export const authenticateHighlights = [
 // other imports...
 import { 
   AuthIdentityDTO,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import jwt from "jsonwebtoken"
 
 class PhoneAuthService extends AbstractAuthModuleProvider {
@@ -475,11 +475,11 @@ Finally, you return an object with the following properties:
 
 ### f. Implement validateCallback Method
 
-When an authentication provider requires a callback to verify the user, the Medusa application calls the `validateCallback` method.
+When an authentication provider requires a callback to verify the user, the Switchyard application calls the `validateCallback` method.
 
-You can use this method to verify the OTP that the user entered. If valid, you return the logged in user, and the Medusa application will return a JWT token that the user can use to authenticate in the application.
+You can use this method to verify the OTP that the user entered. If valid, you return the logged in user, and the Switchyard application will return a JWT token that the user can use to authenticate in the application.
 
-![Diagram showcasing how callback verification fits in the authentication flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747749734/Medusa%20Resources/callback-flow_yney5a.jpg)
+![Diagram showcasing how callback verification fits in the authentication flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747749734/Switchyard%20Resources/callback-flow_yney5a.jpg)
 
 So, add the `validateCallback` method to the `PhoneAuthService` class:
 
@@ -596,7 +596,7 @@ Finally, you return an object with the following properties:
 
 You've now finished implementing the necessary methods for the Phone Authentication Module Provider.
 
-The final piece to a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Medusa the name of the module, its service, and optionally its loaders.
+The final piece to a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Switchyard the name of the module, its service, and optionally its loaders.
 
 To create the module's definition, create the file `src/modules/phone-auth/index.ts` with the following content:
 
@@ -605,7 +605,7 @@ import PhoneAuthService from "./service"
 import { 
   ModuleProvider, 
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export default ModuleProvider(Modules.AUTH, {
   services: [PhoneAuthService],
@@ -615,23 +615,23 @@ export default ModuleProvider(Modules.AUTH, {
 You use `ModuleProvider` from the Modules SDK to create the module provider's definition. It accepts two parameters:
 
 1. The name of the module that this provider belongs to, which is `Modules.AUTH` in this case.
-2. An object with a required property `services` indicating the module provider's services. Each of these services will be registered as authentication providers in Medusa.
+2. An object with a required property `services` indicating the module provider's services. Each of these services will be registered as authentication providers in Switchyard.
 
-### h. Add Module Provider to Medusa's Configurations
+### h. Add Module Provider to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property:
+In `switchyard.config.ts`, add a `modules` property:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 // other imports...
-import { Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils"
+import { Modules, ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/auth",
+      resolve: "@switchyard/medusa/auth",
       dependencies: [
         Modules.CACHE, 
         ContainerRegistrationKeys.LOGGER, 
@@ -641,7 +641,7 @@ module.exports = defineConfig({
         providers: [
           // default provider
           {
-            resolve: "@medusajs/medusa/auth-emailpass",
+            resolve: "@switchyard/medusa/auth-emailpass",
             id: "emailpass",
           },
           {
@@ -658,7 +658,7 @@ module.exports = defineConfig({
 })
 ```
 
-To pass an Auth Module Provider to the Auth Module, you add the `modules` property to the Medusa configuration and pass the Auth Module in its value.
+To pass an Auth Module Provider to the Auth Module, you add the `modules` property to the Switchyard configuration and pass the Auth Module in its value.
 
 The Auth Module accepts a `dependencies` option, allowing you to inject dependencies into the containers of the module and its providers. The Auth Module requires passing the [Cache Module](../../../infrastructure-modules/cache/page.mdx) and Logger, but you also inject the `event_bus` dependency to use the Event Module's service in the Phone Authentication Module Provider.
 
@@ -674,13 +674,13 @@ To register the Phone Authentication Module Provider, you add an object to the `
 
 By default, customers and admin users can be authenticated using the `emailpass` provider. When you add a new provider, you need to specify which actor types can use it.
 
-In `medusa-config.ts`, add to `projectConfig.http` a new `authMethodsPerActor` property:
+In `switchyard.config.ts`, add to `projectConfig.http` a new `authMethodsPerActor` property:
 
 export const authMethodsPerActorHighlights = [
   ["8", "customer", "Enable the emailpass and phone-auth providers for customers."],
 ]
 
-```ts title="medusa-config.ts" highlights={authMethodsPerActorHighlights}
+```ts title="switchyard.config.ts" highlights={authMethodsPerActorHighlights}
 module.exports = defineConfig({
   projectConfig: {
     // ...
@@ -702,9 +702,9 @@ In this case, you enable the `phone-auth` provider for customers. You can also e
 
 ### Test Out Phone Authentication
 
-In this section, you'll test out the Phone Authentication Module Provider using Medusa's API routes. You can, instead, test it out later using the [Next.js Starter Storefront](#step-4-use-phone-authentication-in-the-nextjs-starter-storefront).
+In this section, you'll test out the Phone Authentication Module Provider using Switchyard's API routes. You can, instead, test it out later using the [Next.js Starter Storefront](#step-4-use-phone-authentication-in-the-nextjs-starter-storefront).
 
-First, start the Medusa application with the following command:
+First, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run start
@@ -716,7 +716,7 @@ Before you start testing the authentication provider using the API routes, you n
 
 To retrieve the publishable API key:
 
-1. Open the Medusa Admin dashboard at `http://localhost:9000/admin` and log in.
+1. Open the Switchyard Admin dashboard at `http://localhost:9000/admin` and log in.
 2. Go to Settings -> Publishable API Keys.
 3. Click on the API key in the table.
 4. In its details page, click on the API key to copy it.
@@ -768,7 +768,7 @@ curl -X POST 'http://localhost:9000/store/customers' \
 
 Make sure to replace:
 
-- `{publishable_api_key}` with the publishable API key you retrieved from the Medusa Admin dashboard.
+- `{publishable_api_key}` with the publishable API key you retrieved from the Switchyard Admin dashboard.
 - `{reg_token}` with the registration token you received in the previous step.
 - The customer details in the request body with the ones you want to use. Use the same phone number you used in the previous step.
     - You pass the email because it's required by the [Register Customer](!api!/store#customers_postcustomers) API route. You set it to the phone number with a `gmail.com` domain.
@@ -830,7 +830,7 @@ You can also use this route to resend the OTP if the user didn't receive it or i
 
 #### d. Verify OTP
 
-If you check the logs of the Medusa application, you'll see that the OTP was generated and logged:
+If you check the logs of the Switchyard application, you'll see that the OTP was generated and logged:
 
 ```bash
 info:    Generated OTP: 576794
@@ -898,7 +898,7 @@ In this step, you'll create a Twilio Notification Module Provider, then use it t
 
 Before you start implementing the Twilio Notification Module Provider, install the Twilio SDK to interact with the Twilio API.
 
-Run the following command in the Medusa application directory:
+Run the following command in the Switchyard application directory:
 
 ```bash npm2yarn
 npm install twilio
@@ -927,7 +927,7 @@ export const twilioSmsServiceHighlights = [
 ```ts title="src/modules/twilio-sms/service.ts" highlights={twilioSmsServiceHighlights}
 import { 
   AbstractNotificationProviderService,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { Twilio } from "twilio"
 
 type InjectedDependencies = {}
@@ -954,19 +954,19 @@ class TwilioSmsService extends AbstractNotificationProviderService {
 
 You'll get a type error about implementing the abstract methods of the `AbstractNotificationProviderService` class, which you'll add in the next steps.
 
-A Notification Module Provider must have an `identifier` static property, which is a unique identifier for the module. This identifier is used to register the module in the Medusa application.
+A Notification Module Provider must have an `identifier` static property, which is a unique identifier for the module. This identifier is used to register the module in the Switchyard application.
 
 A module provider's constructor receives two parameters:
 
 - `container`: The [module's container](!docs!/learn/fundamentals/modules/container) that contains Framework resources available to the module. You don't need to access any resources for this provider.
-- `options`: Options that are passed to the module provider when it's registered in Medusa's configurations. You define the following option:
+- `options`: Options that are passed to the module provider when it's registered in Switchyard's configurations. You define the following option:
     - `accountSid`: The Twilio account SID.
     - `authToken`: The Twilio auth token.
     - `from`: The Twilio phone number to send the SMS from.
 
 <Note>
 
-You'll learn how to set these options when you [add the module provider to Medusa's configurations](#g-add-module-provider-to-medusas-configurations).
+You'll learn how to set these options when you [add the module provider to Switchyard's configurations](#g-add-module-provider-to-medusas-configurations).
 
 </Note>
 
@@ -982,7 +982,7 @@ Refer to the [Create Notification Module Provider](/references/notification-prov
 
 ### d. Implement validateOptions Method
 
-The `validateOptions` method is used to validate the options passed to the module provider. If the method throws an error, the Medusa application won't start.
+The `validateOptions` method is used to validate the options passed to the module provider. If the method throws an error, the Switchyard application won't start.
 
 So, add the `validateOptions` method to the `TwilioSmsService` class:
 
@@ -1009,7 +1009,7 @@ In the method, you throw an error if any of the options are not set.
 
 ### e. Implement send Method
 
-The only required method for a Notification Module Provider is the `send` method. When the Medusa application needs to send a notification using the provider's channel (such as SMS), it calls this method of the registered provider.
+The only required method for a Notification Module Provider is the `send` method. When the Switchyard application needs to send a notification using the provider's channel (such as SMS), it calls this method of the registered provider.
 
 So, add the `send` method to the `TwilioSmsService` class:
 
@@ -1029,7 +1029,7 @@ export const sendHighlights = [
 import { 
   ProviderSendNotificationDTO, 
   ProviderSendNotificationResultsDTO,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 class TwilioSmsService extends AbstractNotificationProviderService {
   // ...
@@ -1111,7 +1111,7 @@ To create the module's definition, create the file `src/modules/twilio-sms/index
 import { 
   ModuleProvider, 
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import TwilioSMSNotificationService from "./service"
 
 export default ModuleProvider(Modules.NOTIFICATION, {
@@ -1122,26 +1122,26 @@ export default ModuleProvider(Modules.NOTIFICATION, {
 You use `ModuleProvider` from the Modules SDK to create the module provider's definition passing it two parameters:
 
 1. The name of the module that this provider belongs to, which is `Modules.NOTIFICATION` in this case.
-2. An object with a required property `services` indicating the module provider's services. Each of these services will be registered as notification providers in Medusa.
+2. An object with a required property `services` indicating the module provider's services. Each of these services will be registered as notification providers in Switchyard.
 
-### g. Add Module Provider to Medusa's Configurations
+### g. Add Module Provider to Switchyard's Configurations
 
-You'll now add the Twilio Notification Module Provider to Medusa's configurations to start using it.
+You'll now add the Twilio Notification Module Provider to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add the following to the `modules` property:
+In `switchyard.config.ts`, add the following to the `modules` property:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     // ...
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: "@switchyard/medusa/notification",
       options: {
         providers: [
           // default provider
           {
-            resolve: "@medusajs/medusa/notification-local",
+            resolve: "@switchyard/medusa/notification-local",
             id: "local",
             options: {
               name: "Local Notification Provider",
@@ -1197,11 +1197,11 @@ Where:
 
 You can retrieve these information from the Twilio Console homepage.
 
-![Twilio console homepage showing the account SID, phone number, and auth token](https://res.cloudinary.com/dza7lstvk/image/upload/v1747736641/Medusa%20Resources/CleanShot_2025-05-20_at_13.22.55_2x_sztmfo.png)
+![Twilio console homepage showing the account SID, phone number, and auth token](https://res.cloudinary.com/dza7lstvk/image/upload/v1747736641/Switchyard%20Resources/CleanShot_2025-05-20_at_13.22.55_2x_sztmfo.png)
 
 ### i. Handle OTP Generated Event
 
-Now that you have integrated Twilio into Medusa, you can use it to send the OTP to the customer. To do that, you need to handle the `phone-auth.otp.generated` event that you emitted in the `authenticate` method of the Phone Authentication Module Provider.
+Now that you have integrated Twilio into Switchyard, you can use it to send the OTP to the customer. To do that, you need to handle the `phone-auth.otp.generated` event that you emitted in the `authenticate` method of the Phone Authentication Module Provider.
 
 You can listen to events in a [subscriber](!docs!/learn/fundamentals/events-and-subscribers). A subscriber is an asynchronous function that listens to events to perform actions when the event is emitted.
 
@@ -1225,8 +1225,8 @@ export const sendOtpHighlights = [
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@medusajs/medusa"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/medusa"
+import { Modules } from "@switchyard/framework/utils"
 
 export default async function sendOtpHandler({
   event: { data: {
@@ -1264,9 +1264,9 @@ The subscriber function accepts an object with the following properties:
 - `event`: An object with the event's data payload. In the `authenticate` method, you emitted the event with the following data:
     - `phone`: The phone number of the user.
     - `otp`: The OTP that was generated.
-- `container`: The [Medusa container](!docs!/learn/fundamentals/medusa-container), which you can use to resolve Framework and commerce resources.
+- `container`: The [Switchyard container](!docs!/learn/fundamentals/medusa-container), which you can use to resolve Framework and commerce resources.
 
-In the subscriber function, you resolve the Notification Module's service from the Medusa container. Then, you use its `createNotifications` method to send the OTP to the user.
+In the subscriber function, you resolve the Notification Module's service from the Switchyard container. Then, you use its `createNotifications` method to send the OTP to the user.
 
 Under the hood, the Notification Module's service delegates the sending to the Notification Module Provider of the `sms` channel, which is the Twilio Notification Module Provider in this case.
 
@@ -1301,9 +1301,9 @@ By default, the Next.js Starter Storefront supports email and password authentic
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-phone-auth`, you can find the storefront by going back to the parent directory and changing to the `medusa-phone-auth-storefront` directory:
+So, if your Switchyard application's directory is `medusa-phone-auth`, you can find the storefront by going back to the parent directory and changing to the `medusa-phone-auth-storefront` directory:
 
 ```bash
 cd ../medusa-phone-auth-storefront # change based on your project name
@@ -1323,7 +1323,7 @@ You'll use it in the login and registration forms to show a phone input.
 
 ### b. Add Authenticate Function
 
-Before adding the forms, you'll add the functions that send requests to the Medusa API to authenticate the customer.
+Before adding the forms, you'll add the functions that send requests to the Switchyard API to authenticate the customer.
 
 The first one you'll add is the `authenticateWithPhone` function, which sends a request to the `/auth/customer/phone-auth` API route to authenticate the customer using their phone number.
 
@@ -1507,7 +1507,7 @@ export const otpHighlights = [
 ```tsx title="src/modules/account/components/otp/index.tsx" badgeLabel="Storefront" badgeColor="blue" highlights={otpHighlights}
 "use client"
 
-import { Input } from "@medusajs/ui"
+import { Input } from "@switchyard/ui"
 import { useState, useRef, useEffect } from "react"
 import { authenticateWithPhone, verifyOtp } from "../../../../lib/data/customer"
 import ErrorMessage from "../../../checkout/components/error-message"
@@ -1742,7 +1742,7 @@ import "react-phone-number-input/style.css"
 import PhoneInput from "react-phone-number-input"
 import { Otp } from "../otp"
 import { useParams } from "next/navigation"
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void
@@ -1811,10 +1811,10 @@ return (
     data-testid="register-page"
   >
     <h1 className="text-large-semi uppercase mb-6">
-      Become a Medusa Store Member
+      Become a Switchyard Store Member
     </h1>
     <p className="text-center text-base-regular text-ui-fg-base mb-4">
-      Create your Medusa Store Member profile, and get access to an enhanced
+      Create your Switchyard Store Member profile, and get access to an enhanced
       shopping experience.
     </p>
     <form className="w-full flex flex-col" onSubmit={handleSubmit}>
@@ -1850,7 +1850,7 @@ return (
       </div>
       <ErrorMessage error={error} data-testid="register-error" />
       <span className="text-center text-ui-fg-base text-small-regular mt-6">
-        By creating an account, you agree to Medusa Store&apos;s{" "}
+        By creating an account, you agree to Switchyard Store&apos;s{" "}
         <LocalizedClientLink
           href="/content/privacy-policy"
           className="underline"
@@ -1954,7 +1954,7 @@ import "react-phone-number-input/style.css"
 import PhoneInput from "react-phone-number-input"
 import { Otp } from "../otp"
 import { useParams } from "next/navigation"
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 
 type Props = {
   setCurrentView: (view: LOGIN_VIEW) => void
@@ -2101,9 +2101,9 @@ You show the login form when the `currentView` is set to `sign-in-phone`.
 
 You can now test out the phone authentication feature in the Next.js Starter Storefront.
 
-First, start the Medusa application by running the following command in the Medusa project's directory:
+First, start the Switchyard application by running the following command in the Switchyard project's directory:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -2115,19 +2115,19 @@ npm run dev
 
 Open your browser, navigate to `http://localhost:8000`, and click on the "Account" link at the top right. This will show the login form with just the phone number input.
 
-![Login form with phone number input](https://res.cloudinary.com/dza7lstvk/image/upload/v1747739945/Medusa%20Resources/CleanShot_2025-05-20_at_14.18.36_2x_ubuika.png)
+![Login form with phone number input](https://res.cloudinary.com/dza7lstvk/image/upload/v1747739945/Switchyard%20Resources/CleanShot_2025-05-20_at_14.18.36_2x_ubuika.png)
 
 You can also switch to the registration form by clicking on the "Join" link below the login form.
 
-![Registration form with phone number input](https://res.cloudinary.com/dza7lstvk/image/upload/v1747739988/Medusa%20Resources/CleanShot_2025-05-20_at_14.19.35_2x_btlc2s.png)
+![Registration form with phone number input](https://res.cloudinary.com/dza7lstvk/image/upload/v1747739988/Switchyard%20Resources/CleanShot_2025-05-20_at_14.19.35_2x_btlc2s.png)
 
 You can try to login with the account you created before, or register with a new one. Once successful, you'll see the OTP form to enter the OTP you received as SMS.
 
-![OTP form](https://res.cloudinary.com/dza7lstvk/image/upload/v1747740102/Medusa%20Resources/CleanShot_2025-05-20_at_14.21.18_2x_yrkuyg.png)
+![OTP form](https://res.cloudinary.com/dza7lstvk/image/upload/v1747740102/Switchyard%20Resources/CleanShot_2025-05-20_at_14.21.18_2x_yrkuyg.png)
 
 After you enter the six digits, you'll be logged in and you'll see your profile page.
 
-![Profile page](https://res.cloudinary.com/dza7lstvk/image/upload/v1747740166/Medusa%20Resources/CleanShot_2025-05-20_at_14.22.30_2x_kshb83.png)
+![Profile page](https://res.cloudinary.com/dza7lstvk/image/upload/v1747740166/Switchyard%20Resources/CleanShot_2025-05-20_at_14.22.30_2x_kshb83.png)
 
 ---
 
@@ -2166,7 +2166,7 @@ And replace it with the following:
 
 If you check the profile page now, you'll see the phone number instead of the email address at the top right.
 
-![Phone number showing in profile page](https://res.cloudinary.com/dza7lstvk/image/upload/v1747740378/Medusa%20Resources/CleanShot_2025-05-20_at_14.25.59_2x_x0pxvt.png)
+![Phone number showing in profile page](https://res.cloudinary.com/dza7lstvk/image/upload/v1747740378/Switchyard%20Resources/CleanShot_2025-05-20_at_14.25.59_2x_x0pxvt.png)
 
 ### b. Remove Email and Phone Fields
 
@@ -2188,11 +2188,11 @@ In `src/app/[countryCode]/(main)/account/@dashboard/profile/page.tsx`, find the 
 
 If you go to your profile page and click on "Profile" in the sidebar, the email and phone number sections will be removed.
 
-![Profile page without email and phone fields](https://res.cloudinary.com/dza7lstvk/image/upload/v1747740515/Medusa%20Resources/CleanShot_2025-05-20_at_14.28.09_2x_ugab7d.png)
+![Profile page without email and phone fields](https://res.cloudinary.com/dza7lstvk/image/upload/v1747740515/Switchyard%20Resources/CleanShot_2025-05-20_at_14.28.09_2x_ugab7d.png)
 
-### c. Disable Phone Updates in Medusa
+### c. Disable Phone Updates in Switchyard
 
-While removing the email and phone fields from the profile page prevents customers using the storefront from updating their phone number, it doesn't prevent them from updating it using Medusa's API.
+While removing the email and phone fields from the profile page prevents customers using the storefront from updating their phone number, it doesn't prevent them from updating it using Switchyard's API.
 
 In this section, you'll add a [middleware](!docs!/learn/fundamentals/api-routes/middlewares) to the `/store/customers/me` API route that prevents customers from updating their phone number.
 
@@ -2204,10 +2204,10 @@ Learn more in the [Middlewares](!docs!/learn/fundamentals/api-routes/middlewares
 
 </Note>
 
-To add a middleware in your Medusa application, create the file `src/api/middlewares.ts` with the following content:
+To add a middleware in your Switchyard application, create the file `src/api/middlewares.ts` with the following content:
 
-```ts title="src/api/middlewares.ts" badgeLabel="Medusa Application" badgeColor="green"
-import { defineMiddlewares } from "@medusajs/framework/http"
+```ts title="src/api/middlewares.ts" badgeLabel="Switchyard Application" badgeColor="green"
+import { defineMiddlewares } from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -2246,15 +2246,15 @@ Any `POST` request to the `/store/customers/me` route will now be validated to e
 
 ## Next Steps
 
-You've now implemented phone authentication in Medusa with Twilio integration. You can further customize the phone authentication feature based on your business use case.
+You've now implemented phone authentication in Switchyard with Twilio integration. You can further customize the phone authentication feature based on your business use case.
 
 ### Authenticate Other Actor Types
 
 This tutorial focused on authenticating customers using their phone number. However, you can also authenticate other actor types, such as admin users and vendors.
 
-To do that, first, enable the `phone-auth` authentication strategy in `medusa-config.ts` for the actor types. For example:
+To do that, first, enable the `phone-auth` authentication strategy in `switchyard.config.ts` for the actor types. For example:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   projectConfig: {
     // ...
@@ -2280,15 +2280,15 @@ Finally, update the UI to show the phone authentication option for the actor typ
 
 <Note>
 
-The login form of Medusa Admin can't be customized, so you'll have to build a custom admin dashboard to support phone authentication for admin users.
+The login form of Switchyard Admin can't be customized, so you'll have to build a custom admin dashboard to support phone authentication for admin users.
 
 </Note>
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -2298,6 +2298,6 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
-3. Contact the [sales team](https://medusajs.com/contact/) to get help from the Medusa team.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.
+3. Contact the [sales team](https://switchyard.com/contact/) to get help from the Switchyard team.

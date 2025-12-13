@@ -1,8 +1,8 @@
-import { ContainerRegistrationKeys } from "@medusajs/utils"
+import { ContainerRegistrationKeys } from "@switchyard/utils"
 import type {
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "../types"
 
 export function maybeApplyLinkFilter({
@@ -12,9 +12,9 @@ export function maybeApplyLinkFilter({
   filterByField = "id",
 }) {
   return async function linkFilter(
-    req: MedusaRequest,
-    _: MedusaResponse,
-    next: MedusaNextFunction
+    req: SwitchyardRequest,
+    _: SwitchyardResponse,
+    next: SwitchyardNextFunction
   ) {
     const filterableFields = req.filterableFields
 

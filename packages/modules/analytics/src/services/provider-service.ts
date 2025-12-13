@@ -1,10 +1,10 @@
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   Constructor,
   IAnalyticsProvider,
   ProviderIdentifyAnalyticsEventDTO,
   ProviderTrackAnalyticsEventDTO,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 export const AnalyticsProviderIdentifierRegistrationName =
   "analytics_providers_identifier"
@@ -26,8 +26,8 @@ export default class AnalyticsProviderService {
     )
 
     if (analyticsProviderKeys.length !== 1) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Analytics module should be initialized with exactly one provider`
       )
     }

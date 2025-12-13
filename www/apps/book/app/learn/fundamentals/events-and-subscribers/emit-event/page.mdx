@@ -12,9 +12,9 @@ In this chapter, you'll learn about event types and how to emit an event in a se
 
 In your customization, you can emit an event, then listen to it in a subscriber and perform an asynchronus action, such as send a notification or data to a third-party system.
 
-There are two types of events in Medusa:
+There are two types of events in Switchyard:
 
-1. Workflow event: an event that's emitted in a workflow after a commerce feature is performed. For example, Medusa emits the `order.placed` event after a cart is completed.
+1. Workflow event: an event that's emitted in a workflow after a commerce feature is performed. For example, Switchyard emits the `order.placed` event after a cart is completed.
 2. Service event: an event that's emitted to track, trace, or debug processes under the hood. For example, you can emit an event with an audit trail.
 
 ### Which Event Type to Use?
@@ -38,7 +38,7 @@ Some examples of service events:
 
 ## Emit Event in a Workflow
 
-To emit a workflow event, use the `emitEventStep` helper step provided in the `@medusajs/medusa/core-flows` package. It allows you to emit an event from within a workflow, and it only emits the event after the workflow has finished successfully.
+To emit a workflow event, use the `emitEventStep` helper step provided in the `@switchyard/medusa/core-flows` package. It allows you to emit an event from within a workflow, and it only emits the event after the workflow has finished successfully.
 
 For example:
 
@@ -51,10 +51,10 @@ export const highlights = [
 ```ts highlights={highlights}
 import { 
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   emitEventStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 const helloWorldWorkflow = createWorkflow(
   "hello-world",
@@ -94,10 +94,10 @@ For example:
 ```ts highlights={highlights}
 import { 
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   emitEventStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 const helloWorldWorkflow = createWorkflow(
   "hello-world",
@@ -130,10 +130,10 @@ To emit a service event:
   <CodeTab label="Extending Service Factory" value="service_factory">
 
 ```ts title="src/modules/blog/service.ts" highlights={["9"]}
-import { IEventBusService } from "@medusajs/framework/types"
-import { MedusaService } from "@medusajs/framework/utils"
+import { IEventBusService } from "@switchyard/framework/types"
+import { SwitchyardService } from "@switchyard/framework/utils"
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   protected eventBusService_: AbstractEventBusModuleService
@@ -149,7 +149,7 @@ class BlogModuleService extends MedusaService({
   <CodeTab label="Without Service Factory" value="no_service_factory">
 
 ```ts title="src/modules/blog/service.ts" highlights={["6"]}
-import { IEventBusService } from "@medusajs/framework/types"
+import { IEventBusService } from "@switchyard/framework/types"
 
 class BlogModuleService {
   protected eventBusService_: AbstractEventBusModuleService
@@ -193,7 +193,7 @@ The method accepts an object having the following properties:
 - `name`: The event's name. 
 - `data`: The data payload as an object. You can pass any properties in the object, and subscribers listening to the event will receive this data in the event's payload.
 
-3. By default, the Event Module's service isn't injected into your module's container. To add it to the container, pass it in the module's registration object in `medusa-config.ts` in the `dependencies` property:
+3. By default, the Event Module's service isn't injected into your module's container. To add it to the container, pass it in the module's registration object in `switchyard.config.ts` in the `dependencies` property:
 
 <CodeTabs group="module-deps">
   <CodeTab label="Module Registration" value="module_registration">
@@ -202,8 +202,8 @@ export const depsHighlight = [
   ["8", "dependencies", "An array of module registration names to inject into the Module's container."],
 ]
 
-```ts title="medusa-config.ts" highlights={depsHighlight}
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts" highlights={depsHighlight}
+import { Modules } from "@switchyard/framework/utils"
 
 module.exports = defineConfig({
   // ...
@@ -225,14 +225,14 @@ export const providerHighlights = [
   ["8", "dependencies", "An array of module registration names to inject into the module and provider's container."],
 ]
 
-```ts title="medusa-config.ts" highlights={depsHighlight}
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts" highlights={depsHighlight}
+import { Modules } from "@switchyard/framework/utils"
 
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/payment",
+      resolve: "@switchyard/medusa/payment",
       dependencies: [
         Modules.EVENT_BUS,
       ],

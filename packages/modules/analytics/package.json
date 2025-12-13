@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/analytics",
+  "name": "@switchyard/analytics",
   "version": "2.12.1",
   "description": "Medusa Analytics module",
   "main": "dist/index.js",
@@ -32,10 +32,10 @@
     "test:integration": "../../../node_modules/.bin/jest --passWithNoTests --forceExit --testPathPattern=\"integration-tests/__tests__/.*\\.ts\""
   },
   "devDependencies": {
-    "@medusajs/framework": "2.12.1",
-    "@medusajs/test-utils": "2.12.1"
+    "@switchyard/framework": "2.12.1",
+    "@switchyard/test-utils": "2.12.1"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "2.12.1"
   }
 }

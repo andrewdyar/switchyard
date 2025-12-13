@@ -1,5 +1,5 @@
-import { DropdownMenu, IconButton } from "@medusajs/ui"
-import { Trash, BarsThree } from "@medusajs/icons"
+import { DropdownMenu, IconButton } from "@switchyard/ui"
+import { Trash, BarsThree } from "@switchyard/icons"
 
 export default function DropdownMenuDisabledAndIcons() {
   return (

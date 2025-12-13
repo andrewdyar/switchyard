@@ -11,7 +11,7 @@ import {
   InternalModuleDeclaration,
   ModuleJoinerConfig,
   ModulesSdkTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 import {
   EmitEvents,
@@ -19,8 +19,8 @@ import {
   InjectTransactionManager,
   isString,
   MedusaContext,
-  MedusaService,
-} from "@medusajs/framework/utils"
+  SwitchyardService,
+} from "@switchyard/framework/utils"
 import {
   Customer,
   CustomerAddress,
@@ -38,7 +38,7 @@ type InjectedDependencies = {
 }
 
 export default class CustomerModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     CustomerAddress: { dto: CustomerAddressDTO }
     Customer: { dto: CustomerDTO }
     CustomerGroup: { dto: CustomerGroupDTO }

@@ -1,5 +1,5 @@
-import { MedusaError, Modules } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 import { CreateCustomerAccountWorkflowInput } from "../workflows"
 
 export const validateCustomerAccountCreationStepId =
@@ -31,8 +31,8 @@ export const validateCustomerAccountCreation = createStep(
     const { email } = input.customerData
 
     if (!email) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Email is required to create a customer"
       )
     }
@@ -46,15 +46,15 @@ export const validateCustomerAccountCreation = createStep(
       )
 
       if (hasExistingAccount && input.authIdentityId) {
-        throw new MedusaError(
-          MedusaError.Types.DUPLICATE_ERROR,
+        throw new SwitchyardError(
+          SwitchyardError.Types.DUPLICATE_ERROR,
           "Customer with this email already has an account"
         )
       }
 
       if (!hasExistingAccount && !input.authIdentityId) {
-        throw new MedusaError(
-          MedusaError.Types.DUPLICATE_ERROR,
+        throw new SwitchyardError(
+          SwitchyardError.Types.DUPLICATE_ERROR,
           "Guest customer with this email already exists"
         )
       }

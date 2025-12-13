@@ -1,8 +1,8 @@
-export const SymbolMedusaWorkflowComposerContext = Symbol.for(
-  "MedusaWorkflowComposerContext"
+export const SymbolSwitchyardWorkflowComposerContext = Symbol.for(
+  "SwitchyardWorkflowComposerContext"
 ).toString()
-export const SymbolMedusaWorkflowComposerCondition = Symbol.for(
-  "MedusaWorkflowComposerCondition"
+export const SymbolSwitchyardWorkflowComposerCondition = Symbol.for(
+  "SwitchyardWorkflowComposerCondition"
 ).toString()
 export const SymbolInputReference = Symbol.for(
   "WorkflowInputReference"
@@ -19,6 +19,6 @@ export const SymbolWorkflowStepBind = Symbol.for("WorkflowStepBind").toString()
 export const SymbolWorkflowStepTransformer = Symbol.for(
   "WorkflowStepTransformer"
 ).toString()
-export const SymbolMedusaWorkflowResponse = Symbol.for(
-  "MedusaWorkflowResponse"
+export const SymbolSwitchyardWorkflowResponse = Symbol.for(
+  "SwitchyardWorkflowResponse"
 ).toString()

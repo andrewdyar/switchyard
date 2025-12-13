@@ -8,7 +8,7 @@ export const metadata = {
 
 The In-Memory Workflow Engine Module uses a plain JavaScript Map object to store the workflow executions.
 
-This module is helpful for development or when you’re testing out Medusa, but it’s not recommended to be used in production.
+This module is helpful for development or when you’re testing out Switchyard, but it’s not recommended to be used in production.
 
 For production, it’s recommended to use modules like [Redis Workflow Engine Module](../redis/page.mdx).
 
@@ -22,10 +22,10 @@ The In-Memory Workflow Engine Module is registered by default in your applicatio
 
 </Note>
 
-Add the module into the `modules` property of the exported object in `medusa-config.ts`:
+Add the module into the `modules` property of the exported object in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -33,7 +33,7 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/workflow-engine-inmemory",
+      resolve: "@switchyard/medusa/workflow-engine-inmemory",
     },
   ],
 })

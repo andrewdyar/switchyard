@@ -7,17 +7,17 @@ import {
   Logger,
   ModulesSdkTypes,
   NotificationTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   EmitEvents,
   generateEntityId,
   InjectManager,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
   NotificationStatus,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { Notification } from "@models"
 import NotificationProviderService from "./notification-provider"
 
@@ -31,7 +31,7 @@ type InjectedDependencies = {
 }
 
 export default class NotificationModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     Notification: { dto: NotificationTypes.NotificationDTO }
   }>({ Notification })
   implements INotificationModuleService
@@ -192,7 +192,7 @@ export default class NotificationModuleService
               ? `Could not find a notification provider for channel: ${entry.data.channel} for notification id ${entry.data.id}`
               : `Notification provider ${provider.id} is not enabled. To enable it, configure it as a provider in the notification module options.`
 
-            throw new MedusaError(MedusaError.Types.NOT_FOUND, errorMessage)
+            throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, errorMessage)
           }
 
           const res = await this.notificationProviderService_
@@ -200,8 +200,8 @@ export default class NotificationModuleService
             .catch((e) => {
               entry.data.status = NotificationStatus.FAILURE
               notificationToUpdate.push(entry.data)
-              throw new MedusaError(
-                MedusaError.Types.UNEXPECTED_STATE,
+              throw new SwitchyardError(
+                SwitchyardError.Types.UNEXPECTED_STATE,
                 `Failed to send notification with id ${entry.data.id}:\n${e.message}`
               )
             })

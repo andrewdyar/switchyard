@@ -1,9 +1,9 @@
-import { IModuleService, ModuleResolution } from "@medusajs/types"
+import { IModuleService, ModuleResolution } from "@switchyard/types"
 import {
-  createMedusaContainer,
+  createSwitchyardContainer,
   getProviderRegistrationKey,
   upperCaseFirst,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { join } from "path"
 import {
   ModuleWithDmlMixedWithoutJoinerConfigFixtures,
@@ -16,7 +16,7 @@ import { ModuleProviderService as ModuleServiceWithProviderProvider1 } from "../
 import { ModuleProvider2Service as ModuleServiceWithProviderProvider2 } from "../__fixtures__/module-with-providers/provider-2"
 import { loadInternalModule, loadResources } from "../load-internal"
 
-const container = createMedusaContainer()
+const container = createSwitchyardContainer()
 describe("load internal", () => {
   describe("loadResources", () => {
     describe("when loading the module resources from a path", () => {
@@ -374,7 +374,7 @@ describe("load internal", () => {
         },
       }
 
-      const container = createMedusaContainer()
+      const container = createSwitchyardContainer()
       await loadInternalModule({
         container: container,
         resolution: moduleResolution,
@@ -426,7 +426,7 @@ describe("load internal", () => {
         },
       }
 
-      const container = createMedusaContainer()
+      const container = createSwitchyardContainer()
       await loadInternalModule({
         container: container,
         resolution: moduleResolution,

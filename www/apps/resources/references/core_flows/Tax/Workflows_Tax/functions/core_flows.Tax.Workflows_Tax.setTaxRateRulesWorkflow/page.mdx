@@ -9,16 +9,16 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# setTaxRateRulesWorkflow - Medusa Core Workflows Reference
+# setTaxRateRulesWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `setTaxRateRulesWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `setTaxRateRulesWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow sets the rules of tax rates.
 
 You can use this workflow within your own customizations or custom workflows, allowing you
 to set the rules of tax rates in your custom flows.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/tax/workflows/set-tax-rate-rules.ts#L56" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/tax/workflows/set-tax-rate-rules.ts#L56" />
 
 ## Examples
 
@@ -27,14 +27,14 @@ to set the rules of tax rates in your custom flows.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { setTaxRateRulesWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { setTaxRateRulesWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await setTaxRateRulesWorkflow(req.scope)
     .run({
@@ -58,8 +58,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { setTaxRateRulesWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { setTaxRateRulesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -88,11 +88,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { setTaxRateRulesWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { setTaxRateRulesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await setTaxRateRulesWorkflow(container)
     .run({
@@ -118,8 +118,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { setTaxRateRulesWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { setTaxRateRulesWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -147,8 +147,8 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"SetTaxRatesRulesWorkflowInput","type":"[SetTaxRatesRulesWorkflowInput](../../../../types/core_flows.SetTaxRatesRulesWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to set the rules for tax rates.","expandable":false,"children":[{"name":"tax_rate_ids","type":"`string`[]","description":"The IDs of the tax rates to set their rules.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"rules","type":"Omit&#60;[CreateTaxRateRuleDTO](../../../../../tax/interfaces/tax.CreateTaxRateRuleDTO/page.mdx), \"tax_rate_id\"&#62;[]","description":"The rules to create for the tax rates.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"reference","type":"`string`","description":"The snake-case name of the data model that the tax rule references.\nFor example, `product`.\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"reference_id","type":"`string`","description":"The ID of the record of the data model that the tax rule references.\nFor example, `prod_123`.\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"[MetadataType](../../../../../tax/types/tax.MetadataType/page.mdx)","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"created_by","type":"`null` \\| `string`","description":"Who created the tax rate rule. For example, the ID of the\nuser that created it.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="setTaxRateRulesWorkflow"/>
+<TypeList types={[{"name":"SetTaxRatesRulesWorkflowInput","type":"[SetTaxRatesRulesWorkflowInput](../../../../types/core_flows.SetTaxRatesRulesWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to set the rules for tax rates.","expandable":false,"children":[{"name":"tax_rate_ids","type":"`string`[]","description":"The IDs of the tax rates to set their rules.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"rules","type":"Omit&#60;[CreateTaxRateRuleDTO](../../../../../tax/interfaces/tax.CreateTaxRateRuleDTO/page.mdx), \"tax_rate_id\"&#62;[]","description":"The rules to create for the tax rates.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"reference","type":"`string`","description":"The snake-case name of the data model that the tax rule references.\nFor example, `product`.\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"reference_id","type":"`string`","description":"The ID of the record of the data model that the tax rule references.\nFor example, `prod_123`.\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"[MetadataType](../../../../../tax/types/tax.MetadataType/page.mdx)","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"created_by","type":"`null` \\| `string`","description":"Who created the tax rate rule. For example, the ID of the\nuser that created it.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="setTaxRateRulesWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"TaxRateRuleDTO[]","type":"[TaxRateRuleDTO](../../../../../tax/interfaces/tax.TaxRateRuleDTO/page.mdx)[]","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the tax rate rule.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"reference","type":"`string`","description":"The snake-case name of the data model that the tax rule references.\nFor example, `product`.\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"reference_id","type":"`string`","description":"The ID of the record of the data model that the tax rule references.\nFor example, `prod_123`.\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"tax_rate_id","type":"`string`","description":"The associated tax rate's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"The creation date of the tax rate rule.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"The update date of the tax rate rule.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_by","type":"`null` \\| `string`","description":"Who created the tax rate rule. For example, the ID of the user\nthat created the tax rate rule.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"tax_rate","type":"[TaxRateDTO](../../../../../tax/interfaces/tax.TaxRateDTO/page.mdx)","description":"The associated tax rate.","optional":true,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"rate","type":"`null` \\| `number`","description":"The rate to charge.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"code","type":"`null` \\| `string`","description":"The code the tax rate is identified by.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"name","type":"`string`","description":"The name of the Tax Rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"`null` \\| `Record<string, unknown>`","description":"Holds custom data in key-value pairs.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"tax_region_id","type":"`string`","description":"The ID of the associated tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_combinable","type":"`boolean`","description":"Whether the tax rate should be combined with parent rates.\n\nLearn more [here](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_default","type":"`boolean`","description":"Whether the tax rate is the default rate for the region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"The creation date of the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"The update date of the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`null` \\| `Date`","description":"The deletion date of the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_by","type":"`null` \\| `string`","description":"Who created the tax rate. For example, the ID of the user that created the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]}]},{"name":"metadata","type":"`null` \\| `Record<string, unknown>`","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="setTaxRateRulesWorkflow"/>
+<TypeList types={[{"name":"TaxRateRuleDTO[]","type":"[TaxRateRuleDTO](../../../../../tax/interfaces/tax.TaxRateRuleDTO/page.mdx)[]","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the tax rate rule.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"reference","type":"`string`","description":"The snake-case name of the data model that the tax rule references.\nFor example, `product`.\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"reference_id","type":"`string`","description":"The ID of the record of the data model that the tax rule references.\nFor example, `prod_123`.\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"tax_rate_id","type":"`string`","description":"The associated tax rate's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"The creation date of the tax rate rule.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"The update date of the tax rate rule.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_by","type":"`null` \\| `string`","description":"Who created the tax rate rule. For example, the ID of the user\nthat created the tax rate rule.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"tax_rate","type":"[TaxRateDTO](../../../../../tax/interfaces/tax.TaxRateDTO/page.mdx)","description":"The associated tax rate.","optional":true,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"rate","type":"`null` \\| `number`","description":"The rate to charge.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"code","type":"`null` \\| `string`","description":"The code the tax rate is identified by.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"name","type":"`string`","description":"The name of the Tax Rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"`null` \\| `Record<string, unknown>`","description":"Holds custom data in key-value pairs.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"tax_region_id","type":"`string`","description":"The ID of the associated tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_combinable","type":"`boolean`","description":"Whether the tax rate should be combined with parent rates.\n\nLearn more [here](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates).","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_default","type":"`boolean`","description":"Whether the tax rate is the default rate for the region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"The creation date of the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"The update date of the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`null` \\| `Date`","description":"The deletion date of the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_by","type":"`null` \\| `string`","description":"Who created the tax rate. For example, the ID of the user that created the tax rate.","optional":false,"defaultValue":"","expandable":false,"children":[]}]},{"name":"metadata","type":"`null` \\| `Record<string, unknown>`","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="setTaxRateRulesWorkflow"/>

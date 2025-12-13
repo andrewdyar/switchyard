@@ -1,5 +1,5 @@
-import { IconButton } from "@medusajs/ui"
-import { PlusMini } from "@medusajs/icons"
+import { IconButton } from "@switchyard/ui"
+import { PlusMini } from "@switchyard/icons"
 
 export default function IconButtonAllSizes() {
   return (

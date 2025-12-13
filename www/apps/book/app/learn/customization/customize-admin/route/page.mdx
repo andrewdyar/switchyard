@@ -31,13 +31,13 @@ export const apiRouteHighlights = [
 ```ts title="src/api/admin/brands/route.ts" highlights={apiRouteHighlights}
 // other imports...
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve("query")
   
@@ -86,14 +86,14 @@ Learn more about pagination with Query in [this chapter](../../../fundamentals/m
 
 Next, you'll set the default query configurations of the above API route and allow passing query parameters to change the configurations.
 
-Medusa provides a `validateAndTransformQuery` middleware that validates the accepted query parameters for a request and sets the default Query configuration. So, in `src/api/middlewares.ts`, add a new middleware configuration object:
+Switchyard provides a `validateAndTransformQuery` middleware that validates the accepted query parameters for a request and sets the default Query configuration. So, in `src/api/middlewares.ts`, add a new middleware configuration object:
 
 ```ts title="src/api/middlewares.ts"
 import { 
   defineMiddlewares,
   validateAndTransformQuery,
-} from "@medusajs/framework/http"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+} from "@switchyard/framework/http"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 // other imports...
 
 export const GetBrandsSchema = createFindParams()
@@ -125,7 +125,7 @@ export default defineMiddlewares({
 
 You apply the `validateAndTransformQuery` middleware on the `GET /admin/brands` API route. The middleware accepts two parameters:
 
-- A [Zod](https://zod.dev/) schema that a request's query parameters must satisfy. Medusa provides `createFindParams` that generates a Zod schema with the following properties:
+- A [Zod](https://zod.dev/) schema that a request's query parameters must satisfy. Switchyard provides `createFindParams` that generates a Zod schema with the following properties:
     - `fields`: A comma-separated string indicating the fields to retrieve.
     - `limit`: The maximum number of items to retrieve.
     - `offset`: The number of items to skip before retrieving the returned items.
@@ -146,16 +146,16 @@ Learn more about using the `validateAndTransformQuery` middleware to configure Q
 
 ## 3. Initialize JS SDK
 
-In your custom UI route, you'll retrieve the brands by sending a request to the Medusa server. Medusa has a [JS SDK](!resources!/js-sdk) that simplifies sending requests to the core API route.
+In your custom UI route, you'll retrieve the brands by sending a request to the Switchyard server. Switchyard has a [JS SDK](!resources!/js-sdk) that simplifies sending requests to the core API route.
 
 If you didn't follow the [previous chapter](../widget/page.mdx), create the file `src/admin/lib/sdk.ts` with the following content:
 
-![The directory structure of the Medusa application after adding the file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733414606/Medusa%20Book/brands-admin-dir-overview-1_jleg0t.jpg)
+![The directory structure of the Switchyard application after adding the file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733414606/Switchyard%20Book/brands-admin-dir-overview-1_jleg0t.jpg)
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -166,13 +166,13 @@ export const sdk = new Medusa({
 
 You initialize the SDK passing it the following options:
 
-- `baseUrl`: The URL to the Medusa server.
+- `baseUrl`: The URL to the Switchyard server.
 - `debug`: Whether to enable logging debug messages. This should only be enabled in development.
-- `auth.type`: The authentication method used in the client application, which is `session` in the Medusa Admin dashboard.
+- `auth.type`: The authentication method used in the client application, which is `session` in the Switchyard Admin dashboard.
 
-Notice that you use `import.meta.env` to access environment variables in your customizations because the Medusa Admin is built on top of Vite. Learn more in [this chapter](../../../fundamentals/admin/environment-variables/page.mdx).
+Notice that you use `import.meta.env` to access environment variables in your customizations because the Switchyard Admin is built on top of Vite. Learn more in [this chapter](../../../fundamentals/admin/environment-variables/page.mdx).
 
-You can now use the SDK to send requests to the Medusa server.
+You can now use the SDK to send requests to the Switchyard server.
 
 <Note>
 
@@ -194,7 +194,7 @@ Learn more about UI routes in [this chapter](../../../fundamentals/admin/ui-rout
 
 So, to add the UI route at the `localhost:9000/app/brands` path, create the file `src/admin/routes/brands/page.tsx` with the following content:
 
-![Directory structure of the Medusa application after adding the UI route.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733472011/Medusa%20Book/brands-admin-dir-overview-3_syytld.jpg)
+![Directory structure of the Switchyard application after adding the UI route.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733472011/Switchyard%20Book/brands-admin-dir-overview-3_syytld.jpg)
 
 export const uiRouteHighlights = [
   ["8", "BrandsPage", "The UI route that displays a new page."],
@@ -204,11 +204,11 @@ export const uiRouteHighlights = [
 ]
 
 ```tsx title="src/admin/routes/brands/page.tsx" highlights={uiRouteHighlights}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { TagSolid } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { TagSolid } from "@switchyard/icons"
 import { 
   Container,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../../lib/sdk"
 import { useMemo, useState } from "react"
@@ -233,7 +233,7 @@ export default BrandsPage
 
 A route's file must export the React component that will be rendered in the new page. It must be the default export of the file. You can also export configurations that add a link in the sidebar for the UI route. You create these configurations using `defineRouteConfig` from the Admin Extension SDK.
 
-So far, you only show a container. In admin customizations, use components from the [Medusa UI package](!ui!) to maintain a consistent user interface and design in the dashboard.
+So far, you only show a container. In admin customizations, use components from the [Switchyard UI package](!ui!) to maintain a consistent user interface and design in the dashboard.
 
 ### Retrieve Brands From API Route
 
@@ -256,7 +256,7 @@ type BrandsResponse = {
 
 You define the type for a brand, and the type of expected response from the `GET /admin/brands` API route.
 
-To display the brands, you'll use Medusa UI's [DataTable](!ui!/components/data-table) component. So, add the following imports in `src/admin/routes/brands/page.tsx`:
+To display the brands, you'll use Switchyard UI's [DataTable](!ui!/components/data-table) component. So, add the following imports in `src/admin/routes/brands/page.tsx`:
 
 ```tsx title="src/admin/routes/brands/page.tsx"
 import { 
@@ -266,7 +266,7 @@ import {
   DataTable,
   DataTablePaginationState,
   useDataTable,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 ```
 
 You import the `DataTable` component and the following utilities:
@@ -336,7 +336,7 @@ To enable pagination in the `DataTable` component, you need to define a state va
 
 You also define a memoized `offset` value that indicates the number of items to skip before retrieving the current page's items.
 
-Then, you use `useQuery` from [Tanstack (React) Query](https://tanstack.com/query/latest) to query the Medusa server. Tanstack Query provides features like asynchronous state management and optimized caching.
+Then, you use `useQuery` from [Tanstack (React) Query](https://tanstack.com/query/latest) to query the Switchyard server. Tanstack Query provides features like asynchronous state management and optimized caching.
 
 <Note type="warning">
 
@@ -395,7 +395,7 @@ This renders the data table that shows the brands with pagination. The `DataTabl
 
 ## Test it Out
 
-To test out the UI route, start the Medusa application:
+To test out the UI route, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -403,7 +403,7 @@ npm run dev
 
 Then, open the admin dashboard at `http://localhost:9000/app`. After you log in, you'll find a new "Brands" sidebar item. Click on it to see the brands in your store. You can also go to `http://localhost:9000/app/brands` to see the page.
 
-![A new sidebar item is added for the new brands UI route. The UI route shows the table of brands with pagination.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733421074/Medusa%20Book/Screenshot_2024-12-05_at_7.46.52_PM_slcdqd.png)
+![A new sidebar item is added for the new brands UI route. The UI route shows the table of brands with pagination.](https://res.cloudinary.com/dza7lstvk/image/upload/v1733421074/Switchyard%20Book/Screenshot_2024-12-05_at_7.46.52_PM_slcdqd.png)
 
 ---
 
@@ -412,7 +412,7 @@ Then, open the admin dashboard at `http://localhost:9000/app`. After you log in,
 By following the previous chapters, you:
 
 - Injected a widget into the product details page to show the product's brand.
-- Created a UI route in the Medusa Admin that shows the list of brands.
+- Created a UI route in the Switchyard Admin that shows the list of brands.
 
 ---
 
@@ -420,4 +420,4 @@ By following the previous chapters, you:
 
 Your customizations often span across systems, where you need to retrieve data or perform operations in a third-party system.
 
-In the next chapters, you'll learn about the concepts that facilitate integrating third-party systems in your application. You'll integrate a dummy third-party system and sync the brands between it and the Medusa application.
+In the next chapters, you'll learn about the concepts that facilitate integrating third-party systems in your application. You'll integrate a dummy third-party system and sync the brands between it and the Switchyard application.

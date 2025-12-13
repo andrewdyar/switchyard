@@ -10,16 +10,16 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to create a section row component that matches the Medusa Admin's design conventions.
+In this guide, you'll learn how to create a section row component that matches the Switchyard Admin's design conventions.
 
-The Medusa Admin often shows information in rows of label-values, such as when showing a product's details.
+The Switchyard Admin often shows information in rows of label-values, such as when showing a product's details.
 
-![Example of a section row in the Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1728292781/Medusa%20Resources/section-row_kknbnw.png)
+![Example of a section row in the Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1728292781/Switchyard%20Resources/section-row_kknbnw.png)
 
 To create a component that shows information in the same structure, create the file `src/admin/components/section-row.tsx` with the following content:
 
 ```tsx title="src/admin/components/section-row.tsx"
-import { Text, clx } from "@medusajs/ui"
+import { Text, clx } from "@switchyard/ui"
 
 export type SectionRowProps = {
   title: string
@@ -97,7 +97,7 @@ Use the `SectionRow` component in any widget or UI route.
 For example, create the widget `src/admin/widgets/product-widget.tsx` with the following content:
 
 ```tsx title="src/admin/widgets/product-widget.tsx"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
 import { Container } from "../components/container"
 import { Header } from "../components/header"
 import { SectionRow } from "../components/section-row"

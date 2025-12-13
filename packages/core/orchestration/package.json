@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/orchestration",
+  "name": "@switchyard/orchestration",
   "version": "2.12.1",
   "description": "Medusa utilities to orchestrate modules",
   "main": "dist/index.js",
@@ -26,11 +26,11 @@
   "author": "Medusa",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/types": "2.12.1"
+    "@switchyard/types": "2.12.1"
   },
   "dependencies": {
-    "@medusajs/deps": "2.12.1",
-    "@medusajs/utils": "2.12.1",
+    "@switchyard/deps": "2.12.1",
+    "@switchyard/utils": "2.12.1",
     "ulid": "^2.3.0"
   },
   "scripts": {

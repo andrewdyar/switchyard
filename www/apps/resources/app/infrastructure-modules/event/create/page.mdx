@@ -26,11 +26,11 @@ Start by creating a new directory for your module. For example, `src/modules/my-
 
 Create the file `src/modules/my-event/service.ts` that holds the implementation of the event service.
 
-The Event Module's main service must extend the `AbstractEventBusModuleService` class from the Medusa Framework:
+The Event Module's main service must extend the `AbstractEventBusModuleService` class from the Switchyard Framework:
 
 ```ts title="src/modules/my-event/service.ts"
-import { AbstractEventBusModuleService } from "@medusajs/framework/utils"
-import { Message } from "@medusajs/types"
+import { AbstractEventBusModuleService } from "@switchyard/framework/utils"
+import { Message } from "@switchyard/types"
 
 class MyEventService extends AbstractEventBusModuleService {
   async emit<T>(data: Message<T> | Message<T>[], options: Record<string, unknown>): Promise<void> {
@@ -62,7 +62,7 @@ const eventSubscribers =
 
 ### emit Method
 
-The `emit` method is used to push an event from the Medusa application into your messaging system. The subscribers to that event would then pick up the message and execute their asynchronous tasks.
+The `emit` method is used to push an event from the Switchyard application into your messaging system. The subscribers to that event would then pick up the message and execute their asynchronous tasks.
 
 An example implementation:
 
@@ -226,7 +226,7 @@ Create the file `src/modules/my-event/index.ts` with the following content:
 
 ```ts title="src/modules/my-event/index.ts"
 import MyEventService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export default Module("my-event", {
   service: MyEventService,
@@ -239,12 +239,12 @@ This exports the module's definition, indicating that the `MyEventService` is th
 
 ## 4. Use Module
 
-To use your Event Module, add it to the `modules` object exported as part of the configurations in `medusa-config.ts`. An Event Module is added under the `eventBus` key.
+To use your Event Module, add it to the `modules` object exported as part of the configurations in `switchyard.config.ts`. An Event Module is added under the `eventBus` key.
 
 For example:
 
-```ts title="medusa-config.ts"
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 

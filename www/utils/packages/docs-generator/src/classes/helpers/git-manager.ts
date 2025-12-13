@@ -101,8 +101,8 @@ export class GitManager {
     const {
       data: { files },
     } = await this.octokit.request("GET /repos/{owner}/{repo}/commits/{ref}", {
-      owner: "medusajs",
-      repo: "medusa",
+      owner: "switchyard",
+      repo: "switchyard",
       ref: commitSha,
       headers: {
         "X-GitHub-Api-Version": "2022-11-28",

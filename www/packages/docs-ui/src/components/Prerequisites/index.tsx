@@ -3,7 +3,7 @@
 import React, { useRef } from "react"
 import { Button, useCollapsible } from "../.."
 import clsx from "clsx"
-import { TriangleRightMini } from "@medusajs/icons"
+import { TriangleRightMini } from "@switchyard/icons"
 import {
   PrerequisiteItem,
   PrerequisiteItemPosition,

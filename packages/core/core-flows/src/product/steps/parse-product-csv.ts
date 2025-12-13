@@ -3,9 +3,9 @@ import {
   IProductModuleService,
   IRegionModuleService,
   ISalesChannelModuleService,
-} from "@medusajs/framework/types"
-import { MedusaError, Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/types"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 import { normalizeForImport } from "../helpers/normalize-for-import"
 import { normalizeV1Products } from "../helpers/normalize-v1-import"
 import { convertCsvToJson } from "../utils"
@@ -60,8 +60,8 @@ export const parseProductCsvStep = createStep(
     // We use the handle to group products and variants correctly.
     v1Normalized.forEach((product: any) => {
       if (!product["Product Handle"]) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Product handle is required when importing products"
         )
       }

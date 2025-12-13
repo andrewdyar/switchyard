@@ -8,13 +8,13 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# deleteCartCreditLinesWorkflow - Medusa Core Workflows Reference
+# deleteCartCreditLinesWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `deleteCartCreditLinesWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `deleteCartCreditLinesWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow deletes one or more credit lines from a cart.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/cart/workflows/delete-cart-credit-lines.ts#L13" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/cart/workflows/delete-cart-credit-lines.ts#L13" />
 
 ## Examples
 
@@ -23,14 +23,14 @@ This workflow deletes one or more credit lines from a cart.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { deleteCartCreditLinesWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { deleteCartCreditLinesWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await deleteCartCreditLinesWorkflow(req.scope)
     .run({
@@ -52,8 +52,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { deleteCartCreditLinesWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { deleteCartCreditLinesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -80,11 +80,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { deleteCartCreditLinesWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { deleteCartCreditLinesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await deleteCartCreditLinesWorkflow(container)
     .run({
@@ -108,8 +108,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { deleteCartCreditLinesWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { deleteCartCreditLinesWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -135,4 +135,4 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"id","type":"`string`[]","description":"The IDs of the credit lines to delete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deleteCartCreditLinesWorkflow"/>
+<TypeList types={[{"name":"id","type":"`string`[]","description":"The IDs of the credit lines to delete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deleteCartCreditLinesWorkflow"/>

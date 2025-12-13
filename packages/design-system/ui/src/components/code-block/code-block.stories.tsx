@@ -25,12 +25,12 @@ const snippets = [
   {
     label: "Medusa JS Client",
     language: "jsx",
-    code: `// Install the JS Client in your storefront project: @medusajs/medusa-js\n\nimport Medusa from "@medusajs/medusa-js"\n\nconst medusa = new Medusa({ publishableApiKey: "YOUR_API_KEY"})\nconst product = await medusa.products.retrieve("PRODUCT_ID")\nconsole.log(product.id)`,
+    code: `// Install the JS Client in your storefront project: @switchyard/medusa-js\n\nimport Medusa from "@switchyard/medusa-js"\n\nconst medusa = new Medusa({ publishableApiKey: "YOUR_API_KEY"})\nconst product = await medusa.products.retrieve("PRODUCT_ID")\nconsole.log(product.id)`,
   },
   {
     label: "Medusa React",
     language: "tsx",
-    code: `// Install the React SDK and required dependencies in your storefront project:\n// medusa-react @tanstack/react-query @medusajs/medusa\n\nimport { useProduct } from "medusa-react"\n\nconst { product } = useProduct("PRODUCT_ID")\nconsole.log(product.id)`,
+    code: `// Install the React SDK and required dependencies in your storefront project:\n// switchyard-react @tanstack/react-query @switchyard/medusa\n\nimport { useProduct } from "switchyard-react"\n\nconst { product } = useProduct("PRODUCT_ID")\nconsole.log(product.id)`,
   },
 ]
 
@@ -77,7 +77,7 @@ const generateStartupLog = () => {
     `✔ ${service.name} optimized – ${service.time + 3}ms`,
   ])
 
-  return `medusa develop\n${lines.join("\n")}\n✔ Server is ready on port: 9000`
+  return `switchyard develop\n${lines.join("\n")}\n✔ Server is ready on port: 9000`
 }
 
 const code = generateStartupLog()

@@ -1,12 +1,12 @@
-import { FindConfig, QueryConfig, RequestQueryFields } from "@medusajs/types"
+import { FindConfig, QueryConfig, RequestQueryFields } from "@switchyard/types"
 import {
   isDefined,
   isPresent,
-  MedusaError,
+  SwitchyardError,
   buildOrder,
   stringToSelectRelationObject,
   pickDeep,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 
 export function pickByConfig<TModel>(
   obj: TModel | TModel[],
@@ -183,8 +183,8 @@ export function prepareListQuery<T extends RequestQueryFields, TEntity>(
   }
 
   if (notAllowedFields.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Requested fields [${Array.from(notAllowedFields).join(
         ", "
       )}] are not valid`
@@ -211,8 +211,8 @@ export function prepareListQuery<T extends RequestQueryFields, TEntity>(
     }
 
     if (allowed.length && !allowed.includes(orderField)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Order field ${orderField} is not valid`
       )
     }

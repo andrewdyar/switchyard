@@ -1,8 +1,8 @@
 import {
-  MedusaError,
+  SwitchyardError,
   TransactionStepState,
   TransactionStepStatus,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { setTimeout } from "timers/promises"
 import {
   DistributedTransaction,
@@ -796,7 +796,7 @@ describe("Transaction Orchestrator", () => {
   it("Should handle multiple types of errors", async () => {
     const errorTypes = [
       new Error("Regular error object"),
-      new MedusaError(MedusaError.Types.NOT_FOUND, "Not found error"),
+      new SwitchyardError(SwitchyardError.Types.NOT_FOUND, "Not found error"),
       { message: "Custom error object" },
       "String error",
       123,
@@ -859,7 +859,7 @@ describe("Transaction Orchestrator", () => {
           name: "Error",
           stack: expect.stringContaining("transaction-name -> a2 (invoke)"),
           type: "not_found",
-          __isMedusaError: true,
+          __isSwitchyardError: true,
           code: undefined,
           date: expect.any(Date),
         },

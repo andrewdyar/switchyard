@@ -4,17 +4,17 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you’ll learn about Medusa's event system, and how to handle events with subscribers.
+In this chapter, you’ll learn about Switchyard's event system, and how to handle events with subscribers.
 
 ## Handle Core Commerce Flows with Events
 
-When building commerce digital applications, you'll often need to perform an action after a commerce operation is performed. For example, sending an order confirmation email when the customer places an order, or syncing data that's updated in Medusa to a third-party system.
+When building commerce digital applications, you'll often need to perform an action after a commerce operation is performed. For example, sending an order confirmation email when the customer places an order, or syncing data that's updated in Switchyard to a third-party system.
 
-Medusa emits events when core commerce features are performed, and you can listen to and handle these events in asynchronous functions. You can think of Medusa's events like you'd think about webhooks in other commerce platforms, but instead of having to setup separate applications to handle webhooks, your efforts only go into writing the logic right in your Medusa codebase.
+Switchyard emits events when core commerce features are performed, and you can listen to and handle these events in asynchronous functions. You can think of Switchyard's events like you'd think about webhooks in other commerce platforms, but instead of having to setup separate applications to handle webhooks, your efforts only go into writing the logic right in your Switchyard codebase.
 
 You listen to an event in a subscriber, which is an asynchronous function that's executed when its associated event is emitted.
 
-![A diagram showcasing an example of how an event is emitted when an order is placed.](https://res.cloudinary.com/dza7lstvk/image/upload/v1732277948/Medusa%20Book/order-placed-event-example_e4e4kw.jpg)
+![A diagram showcasing an example of how an event is emitted when an order is placed.](https://res.cloudinary.com/dza7lstvk/image/upload/v1732277948/Switchyard%20Book/order-placed-event-example_e4e4kw.jpg)
 
 Subscribers are useful to perform actions that aren't integral to the original flow. For example, you can handle the `order.placed` event in a subscriber that sends a confirmation email to the customer. The subscriber has no impact on the original order-placement flow, as it's executed outside of it.
 
@@ -36,10 +36,10 @@ You create a subscriber in a TypeScript or JavaScript file under the `src/subscr
 
 For example, create the file `src/subscribers/product-created.ts` with the following content:
 
-![Example of subscriber file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732866244/Medusa%20Book/subscriber-dir-overview_pusyeu.jpg)
+![Example of subscriber file in the application's directory structure](https://res.cloudinary.com/dza7lstvk/image/upload/v1732866244/Switchyard%20Book/subscriber-dir-overview_pusyeu.jpg)
 
 ```ts title="src/subscribers/product-created.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { sendOrderConfirmationWorkflow } from "../workflows/send-order-confirmation"
 
 export default async function orderPlacedHandler({
@@ -71,7 +71,7 @@ This subscriber file exports:
 The subscriber function receives an object as a parameter that has the following properties:
 
 - `event`: An object with the event's details. The `data` property contains the data payload of the event emitted, which is the order's ID in this case.
-- `container`: The [Medusa container](../medusa-container/page.mdx) that you can use to resolve registered resources.
+- `container`: The [Switchyard container](../medusa-container/page.mdx) that you can use to resolve registered resources.
 
 In the subscriber function, you use the container to resolve the Logger utility and log a message in the console. Also, assuming you have a [workflow](../workflows/page.mdx) that sends an order confirmation email, you execute it in the subscriber.
 
@@ -79,13 +79,13 @@ In the subscriber function, you use the container to resolve the Logger utility 
 
 ## Test the Subscriber
 
-To test the subscriber, start the Medusa application:
+To test the subscriber, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, try placing an order either using Medusa's API routes or the [Next.js Starter Storefront](!resources!/nextjs-starter). You'll see the following message in the terminal:
+Then, try placing an order either using Switchyard's API routes or the [Next.js Starter Storefront](!resources!/nextjs-starter). You'll see the following message in the terminal:
 
 ```bash
 info:    Processing order.placed which has 1 subscribers
@@ -102,11 +102,11 @@ If your subscriber is not working as expected, refer to the [Subscriber Troubles
 
 ## Event Module
 
-The subscription and emitting of events is handled by an Event Module, an Infrastructure Module that implements the pub/sub functionalities of Medusa's event system.
+The subscription and emitting of events is handled by an Event Module, an Infrastructure Module that implements the pub/sub functionalities of Switchyard's event system.
 
-Medusa provides two Event Modules out of the box:
+Switchyard provides two Event Modules out of the box:
 
 - [Local Event Module](!resources!/infrastructure-modules/event/local), used by default. It's useful for development, as you don't need additional setup to use it.
-- [Redis Event Module](!resources!/infrastructure-modules/event/redis), which is useful in production. It uses [Redis](https://redis.io/) to implement Medusa's pub/sub events system.
+- [Redis Event Module](!resources!/infrastructure-modules/event/redis), which is useful in production. It uses [Redis](https://redis.io/) to implement Switchyard's pub/sub events system.
 
-Medusa's [architecture](../../introduction/architecture/page.mdx) also allows you to build a custom Event Module that uses a different service or logic to implement the pub/sub system. Learn how to build an Event Module in [this guide](!resources!/infrastructure-modules/event/create).
+Switchyard's [architecture](../../introduction/architecture/page.mdx) also allows you to build a custom Event Module that uses a different service or logic to implement the pub/sub system. Learn how to build an Event Module in [this guide](!resources!/infrastructure-modules/event/create).

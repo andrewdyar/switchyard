@@ -1,1 +1,1 @@
-# @medusajs/admin-shared
+# @switchyard/admin-shared

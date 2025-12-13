@@ -1,14 +1,14 @@
 export const metadata = {
-  title: `Inventory Module in Medusa Flows`,
+  title: `Inventory Module in Switchyard Flows`,
 }
 
 # {metadata.title}
 
-In this guide, you'll learn how Medusa uses the Inventory Module in its commerce flows, including product variant creation, adding to cart, order placement, order fulfillment, and order return.
+In this guide, you'll learn how Switchyard uses the Inventory Module in its commerce flows, including product variant creation, adding to cart, order placement, order fulfillment, and order return.
 
 ## Product Variant Creation
 
-When a product variant is created and its `manage_inventory` property's value is `true` and the variant's `inventory_items` are set, the Medusa application creates an inventory item associated with that product variant.
+When a product variant is created and its `manage_inventory` property's value is `true` and the variant's `inventory_items` are set, the Switchyard application creates an inventory item associated with that product variant.
 
 <Note title="Tip">
 
@@ -16,13 +16,13 @@ This flow is implemented within the [createProductVariantsWorkflow](/references/
 
 </Note>
 
-![A diagram showcasing how the Inventory Module is used in the product variant creation flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709661511/Medusa%20Resources/inventory-product-create_khz2hk.jpg)
+![A diagram showcasing how the Inventory Module is used in the product variant creation flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709661511/Switchyard%20Resources/inventory-product-create_khz2hk.jpg)
 
 ---
 
 ## Add to Cart
 
-When a product variant with `manage_inventory` set to `true` is added to the cart, the Medusa application checks whether there's sufficient stocked quantity. If not, an error is thrown and the product variant won't be added to the cart.
+When a product variant with `manage_inventory` set to `true` is added to the cart, the Switchyard application checks whether there's sufficient stocked quantity. If not, an error is thrown and the product variant won't be added to the cart.
 
 <Note title="Tip">
 
@@ -30,13 +30,13 @@ This flow is implemented within the [addToCartWorkflow](/references/medusa-workf
 
 </Note>
 
-![A diagram showcasing how the Inventory Module is used in the add to cart flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709711645/Medusa%20Resources/inventory-cart-flow_achwq9.jpg)
+![A diagram showcasing how the Inventory Module is used in the add to cart flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709711645/Switchyard%20Resources/inventory-cart-flow_achwq9.jpg)
 
 ---
 
 ## Order is Placed
 
-When an order is placed, the Medusa application creates a reservation item for each product variant with `manage_inventory` set to `true`.
+When an order is placed, the Switchyard application creates a reservation item for each product variant with `manage_inventory` set to `true`.
 
 <Note title="Tip">
 
@@ -44,13 +44,13 @@ This flow is implemented within the [completeCartWorkflow](/references/medusa-wo
 
 </Note>
 
-![A diagram showcasing how the Inventory Module is used in the order placement flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709712005/Medusa%20Resources/inventory-order-placed_qdxqdn.jpg)
+![A diagram showcasing how the Inventory Module is used in the order placement flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709712005/Switchyard%20Resources/inventory-order-placed_qdxqdn.jpg)
 
 ---
 
 ## Order Fulfillment
 
-When an item in an order is fulfilled and the associated variant has its `manage_inventory` property set to `true`, the Medusa application:
+When an item in an order is fulfilled and the associated variant has its `manage_inventory` property set to `true`, the Switchyard application:
 
 - Subtracts the `reserved_quantity` from the `stocked_quantity` in the inventory level associated with the variant's inventory item.
 - Resets the `reserved_quantity` to `0`.
@@ -62,13 +62,13 @@ This flow is implemented within the [createOrderFulfillmentWorkflow](/references
 
 </Note>
 
-![A diagram showcasing how the Inventory Module is used in the order fulfillment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709712390/Medusa%20Resources/inventory-order-fulfillment_o9wdxh.jpg)
+![A diagram showcasing how the Inventory Module is used in the order fulfillment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709712390/Switchyard%20Resources/inventory-order-fulfillment_o9wdxh.jpg)
 
 ---
 
 ## Order Return
 
-When an item in an order is returned and the associated variant has its `manage_inventory` property set to `true`, the Medusa application increments the `stocked_quantity` of the inventory item's level with the returned quantity.
+When an item in an order is returned and the associated variant has its `manage_inventory` property set to `true`, the Switchyard application increments the `stocked_quantity` of the inventory item's level with the returned quantity.
 
 <Note title="Tip">
 
@@ -76,7 +76,7 @@ This flow is implemented within the [confirmReturnReceiveWorkflow](/references/m
 
 </Note>
 
-![A diagram showcasing how the Inventory Module is used in the order return flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709712457/Medusa%20Resources/inventory-order-return_ihftyk.jpg)
+![A diagram showcasing how the Inventory Module is used in the order return flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1709712457/Switchyard%20Resources/inventory-order-return_ihftyk.jpg)
 
 ### Dismissed Returned Items
 

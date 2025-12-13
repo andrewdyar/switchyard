@@ -1,4 +1,4 @@
-import { Tabs, Text } from "@medusajs/ui"
+import { Tabs, Text } from "@switchyard/ui"
 
 export default function TabsDemo() {
   return (

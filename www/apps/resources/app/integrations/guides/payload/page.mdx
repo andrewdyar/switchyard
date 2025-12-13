@@ -9,23 +9,23 @@ products:
 ---
 
 import { Card, Prerequisites, Details, WorkflowDiagram, H3 } from "docs-ui"
-import { Github } from "@medusajs/icons"
+import { Github } from "@switchyard/icons"
 
 export const metadata = {
-  title: `Integrate Payload CMS with Medusa`,
+  title: `Integrate Payload CMS with Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to integrate [Payload](https://payloadcms.com/) with Medusa.
+In this tutorial, you'll learn how to integrate [Payload](https://payloadcms.com/) with Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. Medusa also facilitates integrating third-party services that enrich your application with features specific to your unique business use case.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. Switchyard also facilitates integrating third-party services that enrich your application with features specific to your unique business use case.
 
 By integrating Payload, you can manage your products' content with powerful content management capabilities, such as managing custom fields, media, localization, and more.
 
 <Note>
 
-This guide was built with Payload v3.54.0. If you're using a different version and you run into issues, consider [opening an issue](https://github.com/medusajs/medusa/issues/new?template=docs.yml).
+This guide was built with Payload v3.54.0. If you're using a different version and you run into issues, consider [opening an issue](https://github.com/switchyard/medusa/issues/new?template=docs.yml).
 
 </Note>
 
@@ -33,26 +33,26 @@ This guide was built with Payload v3.54.0. If you're using a different version a
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Set up Payload in the Next.js Starter Storefront.
-- Integrate Payload with Medusa to sync product data.
-    - You'll sync product data when triggered manually by admin users, or as a result of product events in Medusa.
+- Integrate Payload with Switchyard to sync product data.
+    - You'll sync product data when triggered manually by admin users, or as a result of product events in Switchyard.
 - Display product data from Payload in the Next.js Starter Storefront.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram showcasing a flowchart of interactions between customer, admin, Medusa, and Payload](https://res.cloudinary.com/dza7lstvk/image/upload/v1754551568/Medusa%20Resources/payload-summary_ndeiw0.jpg)
+![Diagram showcasing a flowchart of interactions between customer, admin, Switchyard, and Payload](https://res.cloudinary.com/dza7lstvk/image/upload/v1754551568/Switchyard%20Resources/payload-summary_ndeiw0.jpg)
 
 <Card
   title="Full Code"
   text="Find the full code of the guide in this repository."
-  href="https://github.com/medusajs/examples/tree/main/payload-integration"
+  href="https://github.com/switchyard/examples/tree/main/payload-integration"
   icon={Github}
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -69,27 +69,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 First, you'll be asked for the project's name. Then, when prompted about installing the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -136,13 +136,13 @@ npm install
 
 Next, you'll need to copy the Payload template files into the Next.js Starter Storefront. These files allow you to access the Payload admin from the Next.js Starter Storefront.
 
-You can find the files in the [examples GitHub repository](https://github.com/medusajs/examples/tree/main/payload-integration/storefront/src/app/(payload)). Copy these files into a new `src/app/(payload)` directory in the Next.js Starter Storefront.
+You can find the files in the [examples GitHub repository](https://github.com/switchyard/examples/tree/main/payload-integration/storefront/src/app/(payload)). Copy these files into a new `src/app/(payload)` directory in the Next.js Starter Storefront.
 
 Then, move all previous files that were under the `src/app` directory into a new `src/app/(storefront)` directory. This will ensure that the Payload admin is accessible at the `/admin` route, and the storefront is still accessible at the root route.
 
 So, the `src/app` directory should now only include the `(payload)` and `(storefront)` directories, each containing their respective files.
 
-![Overview of the Next.js Starter Storefront directory structure of the src directory](https://res.cloudinary.com/dza7lstvk/image/upload/v1754474683/Medusa%20Resources/payload-storefront-dir_lt7yyw.jpg)
+![Overview of the Next.js Starter Storefront directory structure of the src directory](https://res.cloudinary.com/dza7lstvk/image/upload/v1754474683/Switchyard%20Resources/payload-storefront-dir_lt7yyw.jpg)
 
 ### d. Modify Next.js Middleware
 
@@ -248,9 +248,9 @@ You wrap the Next.js configuration with the `withPayload` function to ensure tha
 
 Now that Payload is set up in your storefront, you'll create the following [collections](https://payloadcms.com/docs/configuration/collections):
 
-- `User`: A Payload user with API key authentication, allowing you later to sync product data from Medusa to Payload.
+- `User`: A Payload user with API key authentication, allowing you later to sync product data from Switchyard to Payload.
 - `Media`: A collection for media files, allowing you to manage product images and other media.
-- `Product`: A collection for products, which will be synced with Medusa's product data.
+- `Product`: A collection for products, which will be synced with Switchyard's product data.
 
 Once you're done, you'll add the collections to `src/payload.config.ts`.
 
@@ -348,22 +348,22 @@ export const Media: CollectionConfig = {
 
 The `Media` collection will store media files, such as product images. You can upload files to the [Storage Adapters](https://payloadcms.com/docs/upload/storage-adapters) configured in Payload, such as AWS S3 or local storage. The above configurations point to the `public` directory of the Next.js Starter Storefront as the upload directory.
 
-Note that you allow pasting URLs from specific sources, such as the Medusa public images S3 bucket. This allows you to paste Medusa's stock image URLs in the Payload admin.
+Note that you allow pasting URLs from specific sources, such as the Switchyard public images S3 bucket. This allows you to paste Switchyard's stock image URLs in the Payload admin.
 
 #### Product Collection
 
-Finally, you'll add the `Product` collection, which will be synced with Medusa's product data.
+Finally, you'll add the `Product` collection, which will be synced with Switchyard's product data.
 
 Create the file `src/collections/Products.ts` with the following content:
 
 export const productCollectionHighlights = [
-  ["21", "update", "Only allow updating from Medusa"],
-  ["144", "update", "Only allow updating from Medusa"],
-  ["173", "update", "Only allow updating from Medusa"],
-  ["190", "update", "Only allow updating from Medusa"],
-  ["203", "update", "Only allow updating from Medusa"],
-  ["224", "create", "Only allow creating from Medusa"],
-  ["225", "delete", "Only allow deleting from Medusa"]
+  ["21", "update", "Only allow updating from Switchyard"],
+  ["144", "update", "Only allow updating from Switchyard"],
+  ["173", "update", "Only allow updating from Switchyard"],
+  ["190", "update", "Only allow updating from Switchyard"],
+  ["203", "update", "Only allow updating from Switchyard"],
+  ["224", "create", "Only allow creating from Switchyard"],
+  ["225", "delete", "Only allow deleting from Switchyard"]
 ]
 
 ```ts title="src/collections/Products.ts" badgeLabel="Storefront" badgeColor="blue" highlights={productCollectionHighlights}
@@ -378,11 +378,11 @@ export const Products: CollectionConfig = {
     {
       name: "medusa_id",
       type: "text",
-      label: "Medusa Product ID",
+      label: "Switchyard Product ID",
       required: true,
       unique: true,
       admin: {
-        description: "The unique identifier from Medusa",
+        description: "The unique identifier from Switchyard",
         hidden: true, // Hide this field in the admin UI
       },
       access: {
@@ -503,10 +503,10 @@ export const Products: CollectionConfig = {
         {
           name: "medusa_id",
           type: "text",
-          label: "Medusa Option ID",
+          label: "Switchyard Option ID",
           required: true,
           admin: {
-            description: "The unique identifier for the option from Medusa",
+            description: "The unique identifier for the option from Switchyard",
             hidden: true, // Hide this field in the admin UI
           },
           access: {
@@ -531,10 +531,10 @@ export const Products: CollectionConfig = {
         {
           name: "medusa_id",
           type: "text",
-          label: "Medusa Variant ID",
+          label: "Switchyard Variant ID",
           required: true,
           admin: {
-            description: "The unique identifier for the variant from Medusa",
+            description: "The unique identifier for the variant from Switchyard",
             hidden: true, // Hide this field in the admin UI
           },
           access: {
@@ -548,10 +548,10 @@ export const Products: CollectionConfig = {
             {
               name: "medusa_id",
               type: "text",
-              label: "Medusa Option Value ID",
+              label: "Switchyard Option Value ID",
               required: true,
               admin: {
-                description: "The unique identifier for the option value from Medusa",
+                description: "The unique identifier for the option value from Switchyard",
                 hidden: true, // Hide this field in the admin UI
               },
               access: {
@@ -561,10 +561,10 @@ export const Products: CollectionConfig = {
             {
               name: "medusa_option_id",
               type: "text",
-              label: "Medusa Option ID",
+              label: "Switchyard Option ID",
               required: true,
               admin: {
-                description: "The unique identifier for the option from Medusa",
+                description: "The unique identifier for the option from Switchyard",
                 hidden: true, // Hide this field in the admin UI
               },
               access: {
@@ -597,7 +597,7 @@ export const Products: CollectionConfig = {
 
 You create a `Products` collection having the following fields:
 
-- `medusa_id`: The product's ID in Medusa, which is useful when syncing data between Payload and Medusa.
+- `medusa_id`: The product's ID in Switchyard, which is useful when syncing data between Payload and Switchyard.
 - `title`: The product's title.
 - `handle`: A URL-friendly unique identifier for the product.
 - `subtitle`: An optional subtitle for the product.
@@ -608,12 +608,12 @@ You create a `Products` collection having the following fields:
 - `options`: An array of product options, such as size or color.
 - `variants`: An array of product variants, each with its own title and option values.
 
-All of these fields will be filled from Medusa.
+All of these fields will be filled from Switchyard.
 
 In addition, you also add the following [access-control](https://payloadcms.com/docs/access-control/overview) configurations:
 
-- You disallow creating or deleting products from the Payload admin, as these actions should only be performed from Medusa.
-- You disallow updating the `medusa_id` fields from the Payload admin, as these fields are managed by Medusa.
+- You disallow creating or deleting products from the Payload admin, as these actions should only be performed from Switchyard.
+- You disallow updating the `medusa_id` fields from the Payload admin, as these fields are managed by Switchyard.
 
 #### Add Validation for Options and Variants
 
@@ -633,7 +633,7 @@ export const Products: CollectionConfig = {
       // other configurations...
       validate: (value: any, { req, previousValue }) => {
         if (req.query.is_from_medusa) {
-          return true // Skip validation if the request is from Medusa
+          return true // Skip validation if the request is from Switchyard
         }
         
         if (!Array.isArray(value)) {
@@ -654,7 +654,7 @@ export const Products: CollectionConfig = {
 }
 ```
 
-If the request is from Medusa (which is indicated by the `is_from_medusa` query parameter), the validation is skipped.
+If the request is from Switchyard (which is indicated by the `is_from_medusa` query parameter), the validation is skipped.
 
 Otherwise, you only allow updating the options if the number of options remains the same and each option has a `medusa_id` that matches an existing option in the previous value.
 
@@ -670,7 +670,7 @@ export const Products: CollectionConfig = {
       // other configurations...
       validate: (value: any, { req, previousValue }) => {
         if (req.query.is_from_medusa) {
-          return true // Skip validation if the request is from Medusa
+          return true // Skip validation if the request is from Switchyard
         }
 
         if (!Array.isArray(value)) {
@@ -712,7 +712,7 @@ export const Products: CollectionConfig = {
 }
 ```
 
-If the request is from Medusa, the validation is skipped.
+If the request is from Switchyard, the validation is skipped.
 
 Otherwise, the function validates that:
 
@@ -757,7 +757,7 @@ export const Products: CollectionConfig = {
 }
 ```
 
-This hook checks if the `description` field is a string and converts it to rich-text format. This ensures that a description coming from Medusa is properly formatted when stored in Payload.
+This hook checks if the `description` field is a string and converts it to rich-text format. This ensures that a description coming from Switchyard is properly formatted when stored in Payload.
 
 #### Add Collections to Payload's Configurations
 
@@ -813,15 +813,15 @@ Then, you'll see a form to create a new admin user. Enter the user's credentials
 
 Once you're logged in, you can see the `Products`, `Users`, and `Media` collections in the Payload admin.
 
-![Payload Admin Dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1754477731/Medusa%20Resources/CleanShot_2025-08-06_at_13.55.06_2x_bhdkkd.png)
+![Payload Admin Dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1754477731/Switchyard%20Resources/CleanShot_2025-08-06_at_13.55.06_2x_bhdkkd.png)
 
 ---
 
-## Step 3: Integrate Payload with Medusa
+## Step 3: Integrate Payload with Switchyard
 
-Now that Payload is set up in the Next.js Starter Storefront, you'll create a Payload [Module](!docs!/learn/fundamentals/modules) to integrate it with Medusa.
+Now that Payload is set up in the Next.js Starter Storefront, you'll create a Payload [Module](!docs!/learn/fundamentals/modules) to integrate it with Switchyard.
 
-A module is a reusable package that provides functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+A module is a reusable package that provides functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 <Note>
 
@@ -831,7 +831,7 @@ Refer to the [Modules](!docs!/learn/fundamentals/modules) documentation to learn
 
 ### a. Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/payload`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/payload`.
 
 ### b. Create Types for the Module
 
@@ -839,7 +839,7 @@ Next, you'll create a types file that will hold the types for the module's optio
 
 Create the file `src/modules/payload/types.ts` with the following content:
 
-```ts title="src/modules/payload/types.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/types.ts" badgeLabel="Switchyard application" badgeColor="green"
 export interface PayloadModuleOptions {
   serverUrl: string;
   apiKey: string;
@@ -859,11 +859,11 @@ A module has a service that contains its logic. So, the Payload Module's service
 
 Create the file `src/modules/payload/service.ts` with the following content:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 import {
   PayloadModuleOptions,
 } from "./types"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type InjectedDependencies = {
   // inject any dependencies you need here
@@ -893,15 +893,15 @@ export default class PayloadModuleService {
 
   validateOptions(options: Record<any, any>): void | never {
     if (!options.serverUrl) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Payload server URL is required"
       )
     }
     
     if (!options.apiKey) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Payload API key is required"
       )
     }
@@ -912,7 +912,7 @@ export default class PayloadModuleService {
 The constructor of a module's service receives the following parameters:
 
 1. The [Module container](!docs!/learn/fundamentals/modules/container) that allows you to resolve module and Framework resources. You don't need to resolve any resources in this module, so you can leave it empty.
-2. The module options, which you'll [pass to the module when you register it later](#e-add-module-to-medusas-configurations) in the Medusa application.
+2. The module options, which you'll [pass to the module when you register it later](#e-add-module-to-medusas-configurations) in the Switchyard application.
 
 In the constructor, you validate the module options and set up the Payload base URL and headers that are necessary to send requests to Payload.
 
@@ -926,7 +926,7 @@ The `makeRequest` private method is a utility function that makes HTTP requests 
 
 Add the `makeRequest` method to the `PayloadModuleService` class:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class PayloadModuleService {
   // ...
   private async makeRequest<T = any>(
@@ -946,8 +946,8 @@ export default class PayloadModuleService {
 
       if (!response.ok) {
         const errorData = await response.json().catch(() => ({}))
-        throw new MedusaError(
-          MedusaError.Types.UNEXPECTED_STATE,
+        throw new SwitchyardError(
+          SwitchyardError.Types.UNEXPECTED_STATE,
           `Payload API error: ${response.status} ${response.statusText}. ${
             errorData.message || ""
           }`
@@ -956,8 +956,8 @@ export default class PayloadModuleService {
 
       return await response.json()
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `Failed to communicate with Payload: ${JSON.stringify(error)}`
       )
     }
@@ -967,7 +967,7 @@ export default class PayloadModuleService {
 
 The `makeRequest` method receives the endpoint to call and the options for the request. It constructs the full URL, makes the request, and returns the response data as JSON.
 
-If the request fails, it throws a `MedusaError` with the error message.
+If the request fails, it throws a `SwitchyardError` with the error message.
 
 #### create Method
 
@@ -977,7 +977,7 @@ Before you create the method, you'll need to add necessary types for its paramet
 
 In `src/modules/payload/types.ts`, add the following types:
 
-```ts title="src/modules/payload/types.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/types.ts" badgeLabel="Switchyard application" badgeColor="green"
 export interface PayloadCollectionItem {
   id: string;
   createdAt: string;
@@ -1017,7 +1017,7 @@ You define the following types:
 
 Next, add the following import statements at the top of the `src/modules/payload/service.ts` file:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 import {
   PayloadCollectionItem,
   PayloadUpsertData,
@@ -1031,7 +1031,7 @@ You import the types you just defined and the `qs` library, which you'll use to 
 
 Then, add the `create` method to the `PayloadModuleService` class:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class PayloadModuleService {
   // ... other methods
   async create<T extends PayloadCollectionItem = PayloadCollectionItem>(
@@ -1074,7 +1074,7 @@ Next, you'll add the `update` method that allows you to update an existing item 
 
 Add the `update` method to the `PayloadModuleService` class:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class PayloadModuleService {
   // ... other methods
   async update<T extends PayloadCollectionItem = PayloadCollectionItem>(
@@ -1114,7 +1114,7 @@ Next, you'll add the `delete` method that allows you to delete an item from a Pa
 
 First, add the following type to `src/modules/payload/types.ts`:
 
-```ts title="src/modules/payload/types.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/types.ts" badgeLabel="Switchyard application" badgeColor="green"
 export interface PayloadApiResponse<T = any> {
   data?: T;
   errors?: Array<{
@@ -1129,7 +1129,7 @@ This represents a generic response from Payload, which can include data, errors,
 
 Then, add the following import statement at the top of the `src/modules/payload/service.ts` file:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 import {
   PayloadApiResponse,
 } from "./types"
@@ -1137,7 +1137,7 @@ import {
 
 After that, add the `delete` method to the `PayloadModuleService` class:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class PayloadModuleService {
   // ... other methods
   async delete(
@@ -1175,7 +1175,7 @@ The last method you'll add for now is the `find` method, which allows you to ret
 
 First, add the following type to `src/modules/payload/types.ts`:
 
-```ts title="src/modules/payload/types.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/types.ts" badgeLabel="Switchyard application" badgeColor="green"
 export interface PayloadBulkResult<T = PayloadCollectionItem> {
   docs: T[];
   totalDocs: number;
@@ -1194,7 +1194,7 @@ This type represents the result of a bulk query to a Payload collection, which i
 
 Then, add the following import statement at the top of the `src/modules/payload/service.ts` file:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 import {
   PayloadBulkResult,
 } from "./types"
@@ -1202,7 +1202,7 @@ import {
 
 After that, add the `find` method to the `PayloadModuleService` class:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class PayloadModuleService {
   async find(
     collection: string,
@@ -1235,12 +1235,12 @@ Finally, you return the result of the request that contains an array of document
 
 ### d. Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Medusa the name of the module, its service, and optionally its loaders.
+The final piece to a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Switchyard the name of the module, its service, and optionally its loaders.
 
 To create the module's definition, create the file `src/modules/payload/index.ts` with the following content:
 
-```ts title="src/modules/payload/index.ts" badgeLabel="Medusa application" badgeColor="green"
-import { Module } from "@medusajs/framework/utils"
+```ts title="src/modules/payload/index.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { Module } from "@switchyard/framework/utils"
 import PayloadModuleService from "./service"
 
 export const PAYLOAD_MODULE = "payload"
@@ -1257,13 +1257,13 @@ You use `Module` from the Modules SDK to create the module's definition. It acce
 
 Aside from the module definition, you export the module's name as `PAYLOAD_MODULE` so you can reference it later.
 
-### e. Add Module to Medusa's Configurations
+### e. Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="switchyard.config.ts" badgeLabel="Switchyard application" badgeColor="green"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -1285,7 +1285,7 @@ You also pass an `options` property with the module's options. You'll set the va
 
 ### f. Set Environment Variables
 
-To use the Payload Module, you need to set the module options in the environment variables of your Medusa application.
+To use the Payload Module, you need to set the module options in the environment variables of your Switchyard application.
 
 One of these options is the API key of a Payload admin user. To get the API key:
 
@@ -1301,11 +1301,11 @@ npm run dev
 5. Click on the "Enable API key" checkbox and copy the API key that appears.
 6. Click the "Save" button to save the changes.
 
-![The user form with the API key enabled](https://res.cloudinary.com/dza7lstvk/image/upload/v1754479684/Medusa%20Resources/CleanShot_2025-08-06_at_14.27.25_2x_gasihl.png)
+![The user form with the API key enabled](https://res.cloudinary.com/dza7lstvk/image/upload/v1754479684/Switchyard%20Resources/CleanShot_2025-08-06_at_14.27.25_2x_gasihl.png)
 
-Next, add the following environment variables to your Medusa application's `.env` file:
+Next, add the following environment variables to your Switchyard application's `.env` file:
 
-```shell title=".env" badgeLabel="Medusa application" badgeColor="green"
+```shell title=".env" badgeLabel="Switchyard application" badgeColor="green"
 PAYLOAD_SERVER_URL=http://localhost:8000
 PAYLOAD_API_KEY=your_api_key_here
 PAYLOAD_USER_COLLECTION=users
@@ -1313,23 +1313,23 @@ PAYLOAD_USER_COLLECTION=users
 
 Make sure to replace `your_api_key_here` with the API key you copied from the Payload admin.
 
-The Payload Module is now ready for use. You'll add customizations next to sync product data between Medusa and Payload.
+The Payload Module is now ready for use. You'll add customizations next to sync product data between Switchyard and Payload.
 
 ---
 
 ## Step 4: Create Virtual Read-Only Link to Products
 
-Medusa's [Module Links](!docs!/learn/fundamentals/module-links) feature allows you to virtually link data models from external services to modules in your Medusa application. Then, when you retrieve data from Medusa, you can also retrieve the linked data from the third-party service automatically.
+Switchyard's [Module Links](!docs!/learn/fundamentals/module-links) feature allows you to virtually link data models from external services to modules in your Switchyard application. Then, when you retrieve data from Switchyard, you can also retrieve the linked data from the third-party service automatically.
 
-In this step, you'll define a virtual read-only link between the `Products` collection in Payload and the `Product` model in Medusa. Later, you'll be able to retrieve products from Payload while retrieving products in Medusa.
+In this step, you'll define a virtual read-only link between the `Products` collection in Payload and the `Product` model in Switchyard. Later, you'll be able to retrieve products from Payload while retrieving products in Switchyard.
 
 ### a. Define the Link
 
 To define a virtual read-only link, create the file `src/links/product-payload.ts` with the following content:
 
-```ts title="src/links/product-payload.ts" badgeLabel="Medusa application" badgeColor="green"
-import { defineLink } from "@medusajs/framework/utils"
-import ProductModule from "@medusajs/medusa/product"
+```ts title="src/links/product-payload.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { defineLink } from "@switchyard/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
 import { PAYLOAD_MODULE } from "../modules/payload"
 
 export default defineLink(
@@ -1352,20 +1352,20 @@ export default defineLink(
 
 The `defineLink` function accepts three parameters:
 
-- An object of the first data model that is part of the link. In this case, it's the `Product` model from Medusa's Product Module.
+- An object of the first data model that is part of the link. In this case, it's the `Product` model from Switchyard's Product Module.
 - An object of the second data model that is part of the link. In this case, it's the `Products` collection from the Payload Module. You set the following properties:
     - `serviceName`: the name of the Payload Module, which is `payload`.
     - `alias`: an alias for the linked data model, which is `payload_product`. You'll use this alias to reference the linked data model in queries.
-    - `primaryKey`: the primary key of the linked data model, which is `product_id`. Medusa will look for this field in the retrieved `Products` from payload to match it with the `id` field of the `Product` model.
+    - `primaryKey`: the primary key of the linked data model, which is `product_id`. Switchyard will look for this field in the retrieved `Products` from payload to match it with the `id` field of the `Product` model.
 - An object with the `readOnly` property set to `true`, indicating that this link is read-only. This means you can only retrieve the linked data, but you don't manage the link in the database.
 
 ### b. Add list Method to the Payload Module Service
 
-When you retrieve products from Medusa with their `payload_product` link, Medusa will call the `list` method of the Payload Module's service to retrieve the linked products from Payload.
+When you retrieve products from Switchyard with their `payload_product` link, Switchyard will call the `list` method of the Payload Module's service to retrieve the linked products from Payload.
 
 So, in `src/modules/payload/service.ts`, add a `list` method to the `PayloadModuleService` class:
 
-```ts title="src/modules/payload/service.ts" badgeLabel="Medusa application" badgeColor="green"
+```ts title="src/modules/payload/service.ts" badgeLabel="Switchyard application" badgeColor="green"
 export default class PayloadModuleService {
   // ... other methods
   async list(
@@ -1395,13 +1395,13 @@ export default class PayloadModuleService {
 }
 ```
 
-The `list` method receives a `filter` object with an `product_id` property, which is the Medusa product ID(s) to retrieve their corresponding data from Payload.
+The `list` method receives a `filter` object with an `product_id` property, which is the Switchyard product ID(s) to retrieve their corresponding data from Payload.
 
 In the method, you call the `find` method of the Payload Module's service to retrieve products from the `products` collection in Payload. You pass a `where` query parameter to filter products by their `medusa_id` field.
 
-Finally, you return an array of the payload products. You set the `product_id` field to the value of the `medusa_id` field, which is used to match the linked data in Medusa.
+Finally, you return an array of the payload products. You set the `product_id` field to the value of the `medusa_id` field, which is used to match the linked data in Switchyard.
 
-You can now retrieve products from Payload while retrieving products in Medusa. You'll learn how to do this in the upcoming steps.
+You can now retrieve products from Payload while retrieving products in Switchyard. You'll learn how to do this in the upcoming steps.
 
 <Note title="Re-using list method">
 
@@ -1413,7 +1413,7 @@ The `list` method is implemented to be re-usable with different collections and 
 
 ## Step 5: Create Payload Product Workflow
 
-In this step, you'll create the functionality to create a Medusa product in Payload. You'll later execute that functionality either when triggered by an admin user, or automatically when a product is created in Medusa.
+In this step, you'll create the functionality to create a Switchyard product in Payload. You'll later execute that functionality either when triggered by an admin user, or automatically when a product is created in Switchyard.
 
 You create custom commerce features in [workflows](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. A workflow is similar to a function, but it allows you to track its executions' progress, define roll-back logic, and configure other advanced features.
 
@@ -1432,7 +1432,7 @@ The workflow to create a Payload product will have the following steps:
       {
         type: "step",
         name: "useQueryGraphStep",
-        description: "Retrieve the product data from Medusa",
+        description: "Retrieve the product data from Switchyard",
         link: "/references/helper-steps/useQueryGraphStep",
         depth: 1
       },
@@ -1445,7 +1445,7 @@ The workflow to create a Payload product will have the following steps:
       {
         type: "workflow",
         name: "updateProductsWorkflow",
-        description: "Store the Payload product ID in Medusa",
+        description: "Store the Payload product ID in Switchyard",
         link: "/references/medusa-workflows/updateProductsWorkflow",
         depth: 3,
       }
@@ -1454,7 +1454,7 @@ The workflow to create a Payload product will have the following steps:
   hideLegend
 />
 
-You only need to create the `createPayloadItemsStep`, as the other two steps are already available in Medusa.
+You only need to create the `createPayloadItemsStep`, as the other two steps are already available in Switchyard.
 
 ### createPayloadItemsStep
 
@@ -1464,20 +1464,20 @@ To create the step, create the file `src/workflows/steps/create-payload-items.ts
 
 <Note>
 
-If you get a type error on resolving the Payload Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Payload Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
 export const createPayloadItemsStepHighlights = [
-  ["13", "payloadModuleService", "Resolve the Payload Module's service from the Medusa container."],
+  ["13", "payloadModuleService", "Resolve the Payload Module's service from the Switchyard container."],
   ["15", "createdItems", "Create items in Payload."],
   ["23", "items", "Return the created items."],
   ["25", "ids", "Pass the IDs of the created items to the compensation function."],
   ["37", "delete", "Delete the created items from Payload if an error occurs."],
 ]
 
-```ts title="src/workflows/steps/create-payload-items.ts" badgeLabel="Medusa application" badgeColor="green" highlights={createPayloadItemsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/create-payload-items.ts" badgeLabel="Switchyard application" badgeColor="green" highlights={createPayloadItemsStepHighlights}
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PayloadUpsertData } from "../../modules/payload/types"
 import { PAYLOAD_MODULE } from "../../modules/payload"
 
@@ -1532,7 +1532,7 @@ You create a step with the `createStep` function. It accepts three parameters:
 1. The step's unique name.
 2. An async function that receives two parameters:
     - The step's input, which is an object holding the collection slug and an array of items to create in Payload.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An async compensation function that undoes the actions performed by the step function. This function is only executed if an error occurs during the workflow's execution.
 
 In the step function, you resolve the Payload Module's service from the container. Then, you use its `create` method to create the items in Payload.
@@ -1542,7 +1542,7 @@ A step function must return a `StepResponse` instance. The `StepResponse` constr
 1. The step's output, which is an object that contains the created items.
 2. Data to pass to the step's compensation function.
 
-In the compensation function, you again resolve the Payload Module's service from the Medusa container, then delete the created items from Payload.
+In the compensation function, you again resolve the Payload Module's service from the Switchyard container, then delete the created items from Payload.
 
 ### Create Payload Product Workflow
 
@@ -1551,16 +1551,16 @@ You can now create the workflow that creates products in Payload.
 To create the workflow, create the file `src/workflows/create-payload-products.ts` with the following content:
 
 export const createPayloadProductsWorkflowHighlights = [
-  ["12", "useQueryGraphStep", "Retrieve the products from Medusa using Query."],
+  ["12", "useQueryGraphStep", "Retrieve the products from Switchyard using Query."],
   ["36", "createData", "Prepare the data to create the products in Payload."],
   ["66", "createPayloadItemsStep", "Create the products in Payload."],
-  ["81", "updateProductsWorkflow", "Update the products in Medusa with the Payload product IDs."],
+  ["81", "updateProductsWorkflow", "Update the products in Switchyard with the Payload product IDs."],
 ]
 
-```ts title="src/workflows/create-payload-products.ts" badgeLabel="Medusa application" badgeColor="green" highlights={createPayloadProductsWorkflowHighlights}
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/create-payload-products.ts" badgeLabel="Switchyard application" badgeColor="green" highlights={createPayloadProductsWorkflowHighlights}
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { createPayloadItemsStep } from "./steps/create-payload-items"
-import { updateProductsWorkflow, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { updateProductsWorkflow, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 type WorkflowInput = {
   product_ids: string[]
@@ -1657,32 +1657,32 @@ It accepts a second parameter: a constructor function that holds the workflow's 
 
 In the workflow, you:
 
-1. Retrieve the products from Medusa using the `useQueryGraphStep`.
+1. Retrieve the products from Switchyard using the `useQueryGraphStep`.
     - This step uses [Query](!docs!/learn/fundamentals/module-links/query) to retrieve data across modules.
 2. Prepare the data to create the products in Payload.
     - To manipulate data in a workflow, you need to use the `transform` function. Learn more in the [Data Manipulation](!docs!/learn/fundamentals/workflows/variable-manipulation) documentation.
 3. Create the products in Payload using the `createPayloadItemsStep` you created earlier.
-4. Prepare the data to update the products in Medusa with the Payload product IDs.
-    - You store the payload ID in the `metadata` field of the Medusa product.
-5. Update the products in Medusa using the `updateProductsWorkflow`.
+4. Prepare the data to update the products in Switchyard with the Payload product IDs.
+    - You store the payload ID in the `metadata` field of the Switchyard product.
+5. Update the products in Switchyard using the `updateProductsWorkflow`.
 
 A workflow must return an instance of `WorkflowResponse` that accepts the data to return to the workflow's executor.
 
-You'll use this workflow in the next steps to create Medusa products in Payload.
+You'll use this workflow in the next steps to create Switchyard products in Payload.
 
 ---
 
 ## Step 6: Trigger Product Creation in Payload
 
-In this step, you'll allow Medusa Admin users to trigger the creation of Medusa products in Payload. To implement this, you'll create:
+In this step, you'll allow Switchyard Admin users to trigger the creation of Switchyard products in Payload. To implement this, you'll create:
 
 - An [API route](!docs!/learn/fundamentals/api-routes) that emits a `products.sync-payload` event.
 - A [subscriber](!docs!/learn/fundamentals/events-and-subscribers) that listens to the `products.sync-payload` event and executes the `createPayloadProductsWorkflow`.
-- A [setting page](!docs!/learn/fundamentals/admin/ui-routes) in the Medusa Admin that allows admin users to trigger the product creation in Payload.
+- A [setting page](!docs!/learn/fundamentals/admin/ui-routes) in the Switchyard Admin that allows admin users to trigger the product creation in Payload.
 
 ### a. Trigger Product Sync API Route
 
-An API route is a REST endpoint that exposes functionalities to clients, such as storefronts and the Medusa Admin.
+An API route is a REST endpoint that exposes functionalities to clients, such as storefronts and the Switchyard Admin.
 
 An API route is created in a `route.ts` file under a sub-directory of the `src/api` directory. The path of the API route is the file's path relative to `src/api`.
 
@@ -1694,12 +1694,12 @@ Refer to the [API routes](!docs!/learn/fundamentals/api-routes) to learn more ab
 
 Create the file `src/api/admin/payload/sync/[collection]/route.ts` with the following content:
 
-```ts title="src/api/admin/payload/sync/[collection]/route.ts" badgeLabel="Medusa application" badgeColor="green"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+```ts title="src/api/admin/payload/sync/[collection]/route.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { collection } = req.params
   const eventModuleService = req.scope.resolve("event_bus")
@@ -1736,13 +1736,13 @@ Refer to the [Subscribers documentation](!docs!/learn/fundamentals/events-and-su
 To create a subscriber, create the file `src/subscribers/products-sync-payload.ts` with the following content:
 
 export const productsSyncPayloadSubscriberHighlights = [
-  ["15", "products", "Retrieve paginated products from Medusa."],
+  ["15", "products", "Retrieve paginated products from Switchyard."],
   ["31", "filteredProducts", "Filter out the products that are already linked to Payload."],
   ["37", "createPayloadProductsWorkflow", "Execute the workflow to create products in Payload."]
 ]
 
-```ts title="src/subscribers/products-sync-payload.ts" badgeLabel="Medusa application" badgeColor="green" highlights={productsSyncPayloadSubscriberHighlights}
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/products-sync-payload.ts" badgeLabel="Switchyard application" badgeColor="green" highlights={productsSyncPayloadSubscriberHighlights}
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { createPayloadProductsWorkflow } from "../workflows/create-payload-products"
 
 export default async function productSyncPayloadHandler({
@@ -1798,26 +1798,26 @@ A subscriber file must export:
 - An asynchronous function, which is the subscriber function that is executed when the event is emitted.
 - A configuration object that defines the event the subscriber listens to.
 
-In the subscriber, you use [Query](!docs!/learn/fundamentals/module-links/query) to retrieve all products from Medusa.
+In the subscriber, you use [Query](!docs!/learn/fundamentals/module-links/query) to retrieve all products from Switchyard.
 
 Then, you filter the products to only include those that don't have a payload product ID set in `product.metadata.payload_id`, and you execute the `createPayloadProductsWorkflow` with the filtered products' IDs.
 
 Whenever the `products.sync-payload` event is emitted, the subscriber will be executed, which will create the products in Payload.
 
-### c. Create Setting Page in Medusa Admin
+### c. Create Setting Page in Switchyard Admin
 
-Next, you'll create a setting page in the Medusa Admin that allows admin users to trigger syncing products with Payload.
+Next, you'll create a setting page in the Switchyard Admin that allows admin users to trigger syncing products with Payload.
 
 #### Initialize JS SDK
 
-To send requests from your Medusa Admin customizations to the Medusa server, you need to initialize the [JS SDK](../../../js-sdk/page.mdx).
+To send requests from your Switchyard Admin customizations to the Switchyard server, you need to initialize the [JS SDK](../../../js-sdk/page.mdx).
 
 Create the file `src/admin/lib/sdk.ts` with the following content:
 
-```ts title="src/admin/lib/sdk.ts" badgeLabel="Medusa application" badgeColor="green"
-import Medusa from "@medusajs/js-sdk"
+```ts title="src/admin/lib/sdk.ts" badgeLabel="Switchyard application" badgeColor="green"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -1830,7 +1830,7 @@ Refer to the [JS SDK documentation](../../../js-sdk/page.mdx) to learn more abou
 
 #### Create the Setting Page
 
-A setting page is a [UI route](!docs!/learn/fundamentals/admin/ui-routes) that adds a custom page to the Medusa Admin under the Settings section. The UI route is a React component that renders the page's content.
+A setting page is a [UI route](!docs!/learn/fundamentals/admin/ui-routes) that adds a custom page to the Switchyard Admin under the Settings section. The UI route is a React component that renders the page's content.
 
 <Note>
 
@@ -1840,9 +1840,9 @@ Refer to the [UI Routes](!docs!/learn/fundamentals/admin/ui-routes) documentatio
 
 To create the setting page, create the file `src/admin/routes/settings/payload/page.tsx` with the following content:
 
-```tsx title="src/admin/routes/settings/payload/page.tsx" badgeLabel="Medusa application" badgeColor="green"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Button, Container, Heading, toast } from "@medusajs/ui"
+```tsx title="src/admin/routes/settings/payload/page.tsx" badgeLabel="Switchyard application" badgeColor="green"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Button, Container, Heading, toast } from "@switchyard/ui"
 import { useMutation } from "@tanstack/react-query"
 import { sdk } from "../../../lib/sdk"
 
@@ -1865,7 +1865,7 @@ const PayloadSettingsPage = () => {
       </div>
       <div className="flex flex-col gap-4 px-6 py-4">
         <p>
-          This page allows you to trigger syncing your Medusa data with Payload. It
+          This page allows you to trigger syncing your Switchyard data with Payload. It
           will only create items not in Payload.
         </p>
         <Button
@@ -1898,11 +1898,11 @@ Then, you render a button that, when clicked, calls the mutation function to tri
 
 ### d. Test Product Syncing
 
-You can now test syncing products from Medusa to Payload. To do that:
+You can now test syncing products from Switchyard to Payload. To do that:
 
-1. Start your Medusa application with the following command:
+1. Start your Switchyard application with the following command:
 
-```bash npm2yarn badgeLabel="Medusa application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard application" badgeColor="green"
 npm run dev
 ```
 
@@ -1912,21 +1912,21 @@ npm run dev
 npm run dev
 ```
 
-3. Open the Medusa Admin at `localhost:9000/app` and log in with your admin user.
+3. Open the Switchyard Admin at `localhost:9000/app` and log in with your admin user.
 4. Go to Settings -> Payload.
 5. On the setting page, click the "Sync Products to Payload" button.
 
-![The Payload Settings page with the Sync Products button](https://res.cloudinary.com/dza7lstvk/image/upload/v1754486648/Medusa%20Resources/CleanShot_2025-08-06_at_16.23.45_2x_ubug2y.png)
+![The Payload Settings page with the Sync Products button](https://res.cloudinary.com/dza7lstvk/image/upload/v1754486648/Switchyard%20Resources/CleanShot_2025-08-06_at_16.23.45_2x_ubug2y.png)
 
-You'll see a success message indicating that the products are being synced with Payload. You can also confirm that the event was triggered by checking the Medusa server logs for the following message:
+You'll see a success message indicating that the products are being synced with Payload. You can also confirm that the event was triggered by checking the Switchyard server logs for the following message:
 
 ```bash
 info:    Processing products.sync-payload which has 1 subscribers
 ```
 
-To check that the products were created in Payload, open the Payload admin at `localhost:8000/admin` and go to "Products" from the sidebar. You should see your Medusa products listed there.
+To check that the products were created in Payload, open the Payload admin at `localhost:8000/admin` and go to "Products" from the sidebar. You should see your Switchyard products listed there.
 
-![The Products collection in Payload with Medusa products](https://res.cloudinary.com/dza7lstvk/image/upload/v1754486747/Medusa%20Resources/CleanShot_2025-08-06_at_16.25.31_2x_h874oa.png)
+![The Products collection in Payload with Switchyard products](https://res.cloudinary.com/dza7lstvk/image/upload/v1754486747/Switchyard%20Resources/CleanShot_2025-08-06_at_16.25.31_2x_h874oa.png)
 
 If you click on a product, you can edit its details, such as its title or description.
 
@@ -1934,14 +1934,14 @@ If you click on a product, you can edit its details, such as its title or descri
 
 ## Step 7: Automatically Create Product in Payload
 
-In this step, you'll handle the `product.created` event to automatically create a product in Payload whenever a product is created in Medusa.
+In this step, you'll handle the `product.created` event to automatically create a product in Payload whenever a product is created in Switchyard.
 
 You already have the workflow to create a product in Payload, so you only need to create a subscriber that listens to the `product.created` event and executes the `createPayloadProductsWorkflow`.
 
 Create the file `src/subscribers/product-created.ts` with the following content:
 
-```ts title="src/subscribers/product-created.ts" badgeLabel="Medusa application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/product-created.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { createPayloadProductsWorkflow } from "../workflows/create-payload-products"
 
 export default async function productCreatedHandler({
@@ -1967,23 +1967,23 @@ This subscriber listens to the `product.created` event and executes the `createP
 
 ### Test Automatic Product Creation
 
-To test out the automatic product creation in Payload, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test out the automatic product creation in Payload, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
-Then, create a product in Medusa using the Medusa Admin. If you check the Products collection in the Payload admin, you should see the newly created product there as well.
+Then, create a product in Switchyard using the Switchyard Admin. If you check the Products collection in the Payload admin, you should see the newly created product there as well.
 
 ---
 
 ## Step 8: Customize Storefront to Display Payload Products
 
-Now that you've integrated Payload with Medusa, you can customize the Next.js Starter Storefront to display product content from Payload. By doing so, you can show product content and assets that are optimized for the storefront.
+Now that you've integrated Payload with Switchyard, you can customize the Next.js Starter Storefront to display product content from Payload. By doing so, you can show product content and assets that are optimized for the storefront.
 
 In this step, you'll customize the Next.js Starter Storefront to show the product title, description, images, and option values from Payload.
 
 ### a. Fetch Payload Data with Product Data
 
-When you fetch product data in the Next.js Starter Storefront from the Medusa server, you can also retrieve the linked product data from Payload.
+When you fetch product data in the Next.js Starter Storefront from the Switchyard server, you can also retrieve the linked product data from Payload.
 
-To do this, go to `src/lib/data/products.ts` in your Next.js Starter Storefront. You'll find a `listProducts` function that uses the JS SDK to fetch products from the Medusa server.
+To do this, go to `src/lib/data/products.ts` in your Next.js Starter Storefront. You'll find a `listProducts` function that uses the JS SDK to fetch products from the Switchyard server.
 
 Find the `sdk.client.fetch` call and add `*payload_product` to the `fields` query parameter:
 
@@ -2018,18 +2018,18 @@ export const listProducts = async ({
 }
 ```
 
-Passing this field is possible because you [defined the virtual read-only link](#step-4-create-virtual-read-only-link-to-products) between the `Product` model in Medusa and the `Products` collection in Payload.
+Passing this field is possible because you [defined the virtual read-only link](#step-4-create-virtual-read-only-link-to-products) between the `Product` model in Switchyard and the `Products` collection in Payload.
 
-Medusa will now return the payload data of a product from Payload and include it in the `payload_product` field of the product object.
+Switchyard will now return the payload data of a product from Payload and include it in the `payload_product` field of the product object.
 
 ### b. Define Payload Product Type
 
-Next, you'll define a TypeScript type that adds the `payload_product` property to Medusa's `StoreProduct` type.
+Next, you'll define a TypeScript type that adds the `payload_product` property to Switchyard's `StoreProduct` type.
 
 In `src/types/global.ts`, add the following imports at the top of the file:
 
 ```ts title="src/types/global.ts" badgeLabel="Storefront" badgeColor="blue"
-import { StoreProduct } from "@medusajs/types"
+import { StoreProduct } from "@switchyard/types"
 // @ts-ignore
 import type { SerializedEditorState } from "@payloadcms/richtext-lexical/lexical"
 ```
@@ -2071,7 +2071,7 @@ export type StoreProductWithPayload = StoreProduct & {
 }
 ```
 
-The `StoreProductWithPayload` type extends the `StoreProduct` type from Medusa and adds the `payload_product` property. This property contains the product data from Payload, including its title, description, images, options, and variants.
+The `StoreProductWithPayload` type extends the `StoreProduct` type from Switchyard and adds the `payload_product` property. This property contains the product data from Payload, including its title, description, images, options, and variants.
 
 ### c. Display Payload Product Title and Description
 
@@ -2140,7 +2140,7 @@ return (
 )
 ```
 
-If the product has a description in Payload, it will be displayed using Payload's `RichText` component, which renders the rich text content. Otherwise, it will display the product description from Medusa.
+If the product has a description in Payload, it will be displayed using Payload's `RichText` component, which renders the rich text content. Otherwise, it will display the product description from Switchyard.
 
 ### d. Display Payload Product Images
 
@@ -2169,12 +2169,12 @@ export function formatPayloadImageUrl(url: string): string {
 
 You define two functions:
 
-- `getProductImages`: This function accepts a product and returns either the images from Payload or the images from Medusa if the product doesn't have images in Payload.
+- `getProductImages`: This function accepts a product and returns either the images from Payload or the images from Switchyard if the product doesn't have images in Payload.
 - `formatPayloadImageUrl`: This function formats the image URL from Payload by removing the `/api/media/file` prefix, which is not needed for displaying the image in the storefront.
 
 #### Update ImageGallery Props
 
-Next, you'll update the type of the `ImageGallery` component's props to receive an array of objects rather than an array of Medusa images. This ensures the component can accept images from Payload.
+Next, you'll update the type of the `ImageGallery` component's props to receive an array of objects rather than an array of Switchyard images. This ensures the component can accept images from Payload.
 
 In `src/modules/products/components/image-gallery/index.tsx`, update the `ImageGalleryProps` type to the following:
 
@@ -2235,7 +2235,7 @@ return (
 )
 ```
 
-The images on the product's details page will now be the images from Payload if available, or the images from Medusa if not.
+The images on the product's details page will now be the images from Payload if available, or the images from Switchyard if not.
 
 #### Display Images in Product Preview
 
@@ -2298,7 +2298,7 @@ return (
 )
 ```
 
-The thumbnail shown in the product listing will now use the thumbnail from Payload if available, or the thumbnail from Medusa if not.
+The thumbnail shown in the product listing will now use the thumbnail from Payload if available, or the thumbnail from Switchyard if not.
 
 You'll also display the product title from Payload in the product preview. Find the following lines in the `return` statement:
 
@@ -2328,7 +2328,7 @@ return (
 )
 ```
 
-The product title in the product preview will now be the title from Payload if available, or the title from Medusa if not.
+The product title in the product preview will now be the title from Payload if available, or the title from Switchyard if not.
 
 ### e. Display Product Options and Values
 
@@ -2366,7 +2366,7 @@ const optionsAsKeymap = (
 }
 ```
 
-You update the function to receive a `payloadData` parameter, which is the product data from Payload. This allows you to retrieve the option values from Payload instead of Medusa.
+You update the function to receive a `payloadData` parameter, which is the product data from Payload. This allows you to retrieve the option values from Payload instead of Switchyard.
 
 Then, in the `ProductActions` component, update all usages of the `optionsAsKeymap` function to pass the `product.payload_product` data:
 
@@ -2382,7 +2382,7 @@ Finally, in the `return` statement, find the loop over `product.options` and rep
 
 export const productActionsComponentHighlights = [
   ["5", "payloadOption", "Retrieve the Payload option data if available."],
-  ["14", "title", "Use the Payload option title if available, otherwise use the Medusa option title."]
+  ["14", "title", "Use the Payload option title if available, otherwise use the Switchyard option title."]
 ]
 
 ```tsx title="src/modules/products/components/product-actions/index.tsx" badgeLabel="Storefront" badgeColor="blue" highlights={productActionsComponentHighlights}
@@ -2411,34 +2411,34 @@ return (
 )
 ```
 
-You change the `title` prop of the `OptionSelect` component to use the title from Payload if available, or the Medusa option title if not.
+You change the `title` prop of the `OptionSelect` component to use the title from Payload if available, or the Switchyard option title if not.
 
 Now, the product options and values will be displayed using the data from Payload, if available.
 
 ### Test Storefront Customization
 
-To test out the storefront customization, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test out the storefront customization, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, open the storefront at `localhost:8000` and click on Menu -> Store. In the products listing page, you'll see thumbnails and titles of the products from Payload.
 
-![Product listing page in the storefront showing details from Payload](https://res.cloudinary.com/dza7lstvk/image/upload/v1754491849/Medusa%20Resources/CleanShot_2025-08-06_at_17.50.34_2x_pj0hjs.png)
+![Product listing page in the storefront showing details from Payload](https://res.cloudinary.com/dza7lstvk/image/upload/v1754491849/Switchyard%20Resources/CleanShot_2025-08-06_at_17.50.34_2x_pj0hjs.png)
 
 If you click on a product, you'll see the product details page with the product title, description, images, and options from Payload.
 
-![Product details page in the storefront showing details from Payload](https://res.cloudinary.com/dza7lstvk/image/upload/v1754491898/Medusa%20Resources/CleanShot_2025-08-06_at_17.51.28_2x_eokeyg.png)
+![Product details page in the storefront showing details from Payload](https://res.cloudinary.com/dza7lstvk/image/upload/v1754491898/Switchyard%20Resources/CleanShot_2025-08-06_at_17.51.28_2x_eokeyg.png)
 
 ---
 
-## Step 9: Handle Medusa Product Events
+## Step 9: Handle Switchyard Product Events
 
-In this step, you'll create subscribers and workflows to handle the following Medusa product events:
+In this step, you'll create subscribers and workflows to handle the following Switchyard product events:
 
-- [product.deleted](#a-handle-product-deletions): Delete the product in Payload when a product is deleted in Medusa.
-- [product-variant.created](#b-handle-product-variant-creation): Add a product variant to a product in Payload when a product variant is created in Medusa.
-- [product-variant.updated](#c-handle-product-variant-updates): Update a product variant's option values in Payload when a product variant is updated in Medusa.
-- [product-variant.deleted](#d-handle-product-variant-deletions): Remove a product's variant in Payload when a product variant is deleted in Medusa.
-- [product-option.created](#e-handle-product-option-creation): Add a product option to a product in Payload when a product option is created in Medusa.
-- [product-option.deleted](#f-handle-product-option-deletions): Remove a product's option in Payload when a product option is deleted in Medusa.
+- [product.deleted](#a-handle-product-deletions): Delete the product in Payload when a product is deleted in Switchyard.
+- [product-variant.created](#b-handle-product-variant-creation): Add a product variant to a product in Payload when a product variant is created in Switchyard.
+- [product-variant.updated](#c-handle-product-variant-updates): Update a product variant's option values in Payload when a product variant is updated in Switchyard.
+- [product-variant.deleted](#d-handle-product-variant-deletions): Remove a product's variant in Payload when a product variant is deleted in Switchyard.
+- [product-option.created](#e-handle-product-option-creation): Add a product option to a product in Payload when a product option is created in Switchyard.
+- [product-option.deleted](#f-handle-product-option-deletions): Remove a product's option in Payload when a product option is deleted in Switchyard.
 
 ### a. Handle Product Deletions
 
@@ -2467,8 +2467,8 @@ First, you need to create the `deletePayloadItemsStep` that allows you to delete
 
 Create the file `src/workflows/steps/delete-payload-items.ts` with the following content:
 
-```ts title="src/workflows/steps/delete-payload-items.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/delete-payload-items.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PAYLOAD_MODULE } from "../../modules/payload"
 
 type StepInput = {
@@ -2522,8 +2522,8 @@ Then, you delete the items using the `delete` method of the Payload Module's ser
 
 Next, to create the workflow that deletes products from Payload, create the file `src/workflows/delete-payload-products.ts` with the following content:
 
-```ts title="src/workflows/delete-payload-products.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/delete-payload-products.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { deletePayloadItemsStep } from "./steps/delete-payload-items"
 
 type WorkflowInput = {
@@ -2563,8 +2563,8 @@ Finally, you'll create the subscriber that executes the workflow when the `produ
 
 Create the file `src/subscribers/product-deleted.ts` with the following content:
 
-```ts title="src/subscribers/product-deleted.ts" badgeLabel="Medusa application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/product-deleted.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { deletePayloadProductsWorkflow } from "../workflows/delete-payload-products"
 
 export default async function productDeletedHandler({
@@ -2590,9 +2590,9 @@ This subscriber listens to the `product.deleted` event and executes the `deleteP
 
 #### Test Product Deletion Handling
 
-To test the product deletion handling, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test the product deletion handling, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
-Then, open the Medusa Admin at `localhost:9000/app` and go to the products list. Delete a product that exists in Payload.
+Then, open the Switchyard Admin at `localhost:9000/app` and go to the products list. Delete a product that exists in Payload.
 
 If you check the Products collection in Payload, you should see that the product has been removed from there as well.
 
@@ -2609,7 +2609,7 @@ The workflow will have the following steps:
       {
         type: "step",
         name: "useQueryGraphStep",
-        description: "Retrieve the product variant from Medusa",
+        description: "Retrieve the product variant from Switchyard",
         link: "/references/helper-steps/useQueryGraphStep",
         depth: 1
       },
@@ -2637,8 +2637,8 @@ The `updatePayloadItemsStep` will update an item in a Payload collection, such a
 
 To create the step, create the file `src/workflows/steps/update-payload-items.ts` with the following content:
 
-```ts title="src/workflows/steps/update-payload-items.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/update-payload-items.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PayloadItemResult, PayloadUpsertData } from "../../modules/payload/types"
 import { PAYLOAD_MODULE } from "../../modules/payload"
 
@@ -2725,9 +2725,9 @@ In the compensation function, you revert the changes made in the step function i
 
 Create the file `src/workflows/create-payload-product-variant.ts` with the following content:
 
-```ts title="src/workflows/create-payload-product-variant.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+```ts title="src/workflows/create-payload-product-variant.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { PayloadCollectionItem, PayloadUpsertData } from "../modules/payload/types"
 import { updatePayloadItemsStep } from "./steps/update-payload-items"
 
@@ -2808,7 +2808,7 @@ This workflow receives the IDs of the product variants to add to Payload.
 
 In the workflow, you:
 
-1. Retrieve the product variant details from Medusa using the `useQueryGraphStep`, including the linked product data from Payload.
+1. Retrieve the product variant details from Switchyard using the `useQueryGraphStep`, including the linked product data from Payload.
 2. Prepare the data to update the product in Payload by adding the new variant to the existing variants array.
 3. Update the product in Payload using the `updatePayloadItemsStep` if there are any items to update.
 4. Return the updated items from the workflow.
@@ -2819,8 +2819,8 @@ Finally, you'll create the subscriber that executes the workflow when the `produ
 
 Create the file `src/subscribers/variant-created.ts` with the following content:
 
-```ts title="src/subscribers/variant-created.ts" badgeLabel="Medusa application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/variant-created.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { createPayloadProductVariantWorkflow } from "../workflows/create-payload-product-variant"
 
 export default async function productVariantCreatedHandler({
@@ -2846,9 +2846,9 @@ This subscriber listens to the `product-variant.created` event and executes the 
 
 #### Test Product Variant Creation Handling
 
-To test the product variant creation handling, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test the product variant creation handling, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
-Then, open the Medusa Admin at `localhost:9000/app` and open a product's details page. Add a new variant to the product and save the changes.
+Then, open the Switchyard Admin at `localhost:9000/app` and open a product's details page. Add a new variant to the product and save the changes.
 
 If you check the product in Payload, you should see that the new variant has been added to the product's variants array.
 
@@ -2865,7 +2865,7 @@ The workflow will have the following steps:
       {
         type: "step",
         name: "useQueryGraphStep",
-        description: "Retrieve the product variant from Medusa",
+        description: "Retrieve the product variant from Switchyard",
         link: "/references/helper-steps/useQueryGraphStep",
         depth: 1
       },
@@ -2889,9 +2889,9 @@ Since you already have the necessary steps, you only need to create the workflow
 
 Create the file `src/workflows/update-payload-product-variants.ts` with the following content:
 
-```ts title="src/workflows/update-payload-product-variants.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+```ts title="src/workflows/update-payload-product-variants.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { PayloadCollectionItem, PayloadUpsertData } from "../modules/payload/types"
 import { updatePayloadItemsStep } from "./steps/update-payload-items"
 
@@ -2995,7 +2995,7 @@ This workflow receives the IDs of the product variants to update in Payload.
 
 In the workflow, you:
 
-1. Retrieve the product variant details from Medusa using the `useQueryGraphStep`, including the linked product data from Payload.
+1. Retrieve the product variant details from Switchyard using the `useQueryGraphStep`, including the linked product data from Payload.
 2. Prepare the data to update the product in Payload by finding and updating the existing variant in the variants array. You only update the variant's option values, in case a new one is added.
 3. Update the product in Payload using the `updatePayloadItemsStep` if there are any items to update.
 4. Return the updated items from the workflow.
@@ -3006,8 +3006,8 @@ Finally, you'll create the subscriber that executes the workflow.
 
 Create the file `src/subscribers/variant-updated.ts` with the following content:
 
-```ts title="src/subscribers/variant-updated.ts" badgeLabel="Medusa application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/variant-updated.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { updatePayloadProductVariantsWorkflow } from "../workflows/update-payload-product-variants"
 
 export default async function productVariantUpdatedHandler({
@@ -3033,9 +3033,9 @@ This subscriber listens to the `product-variant.updated` event and executes the 
 
 #### Test Product Variant Update Handling
 
-To test the product variant update handling, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test the product variant update handling, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
-Then, open the Medusa Admin at `localhost:9000/app` and open a product's details page. Edit an existing variant's title and save the changes.
+Then, open the Switchyard Admin at `localhost:9000/app` and open a product's details page. Edit an existing variant's title and save the changes.
 
 If you check the product in Payload, you should see that the variant's option values have been updated in the product's variants array.
 
@@ -3073,14 +3073,14 @@ The workflow will have the following steps:
 
 #### retrievePayloadItemsStep
 
-Since the `deletePayloadProductVariantsWorkflow` is executed after a product variant is deleted, you can't retrieve the product variant data from Medusa.
+Since the `deletePayloadProductVariantsWorkflow` is executed after a product variant is deleted, you can't retrieve the product variant data from Switchyard.
 
 Instead, you'll create a step that retrieves the products containing the variants from Payload. You'll then use this data to update the products in Payload.
 
 To create the step, create the file `src/workflows/steps/retrieve-payload-items.ts` with the following content:
 
-```ts title="src/workflows/steps/retrieve-payload-items.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/steps/retrieve-payload-items.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PAYLOAD_MODULE } from "../../modules/payload"
 
 type StepInput = {
@@ -3110,8 +3110,8 @@ This step accepts a collection slug and a `where` condition to specify which ite
 
 To create the workflow, create the file `src/workflows/delete-payload-product-variants.ts` with the following content:
 
-```ts title="src/workflows/delete-payload-product-variants.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/delete-payload-product-variants.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { updatePayloadItemsStep } from "./steps/update-payload-items"
 import { retrievePayloadItemsStep } from "./steps/retrieve-payload-items"
 
@@ -3182,8 +3182,8 @@ Finally, you'll create the subscriber that executes the workflow when the `produ
 
 Create the file `src/subscribers/variant-deleted.ts` with the following content:
 
-```ts title="src/subscribers/variant-deleted.ts" badgeLabel="Medusa application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/variant-deleted.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { deletePayloadProductVariantsWorkflow } from "../workflows/delete-payload-product-variants"
 
 export default async function productVariantDeletedHandler({
@@ -3209,9 +3209,9 @@ This subscriber listens to the `product-variant.deleted` event and executes the 
 
 #### Test Product Variant Deletion Handling
 
-To test the product variant deletion handling, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test the product variant deletion handling, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
-Then, open the Medusa Admin at `localhost:9000/app` and open a product's details page. Delete an existing variant from the product.
+Then, open the Switchyard Admin at `localhost:9000/app` and open a product's details page. Delete an existing variant from the product.
 
 If you check the product in Payload, you should see that the variant has been removed from the product's variants array.
 
@@ -3228,7 +3228,7 @@ The workflow will have the following steps:
       {
         type: "step",
         name: "useQueryGraphStep",
-        description: "Retrieve the product option from Medusa",
+        description: "Retrieve the product option from Switchyard",
         link: "/references/helper-steps/useQueryGraphStep",
         depth: 1
       },
@@ -3254,9 +3254,9 @@ You already have the necessary steps, so you only need to create the workflow th
 
 Create the file `src/workflows/create-payload-product-options.ts` with the following content:
 
-```ts title="src/workflows/create-payload-product-options.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+```ts title="src/workflows/create-payload-product-options.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { PayloadCollectionItem, PayloadUpsertData } from "../modules/payload/types"
 import { updatePayloadItemsStep } from "./steps/update-payload-items"
 
@@ -3341,7 +3341,7 @@ This workflow receives the IDs of the product options to add to Payload.
 
 In the workflow, you:
 
-1. Retrieve the product option details from Medusa using the `useQueryGraphStep`, including the linked product data from Payload.
+1. Retrieve the product option details from Switchyard using the `useQueryGraphStep`, including the linked product data from Payload.
 2. Prepare the data to update the product in Payload by adding the new option to the existing options array, checking if it doesn't already exist.
 3. Update the product in Payload using the `updatePayloadItemsStep` if there are any items to update.
 4. Return the updated items from the workflow.
@@ -3352,8 +3352,8 @@ Finally, you'll create the subscriber that executes the workflow when the `produ
 
 Create the file `src/subscribers/option-created.ts` with the following content:
 
-```ts title="src/subscribers/option-created.ts" badgeLabel="Medusa application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/option-created.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { createPayloadProductOptionsWorkflow } from "../workflows/create-payload-product-options"
 
 export default async function productOptionCreatedHandler({
@@ -3379,9 +3379,9 @@ This subscriber listens to the `product-option.created` event and executes the `
 
 #### Test Product Option Creation Handling
 
-To test the product option creation handling, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test the product option creation handling, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
-Then, open the Medusa Admin at `localhost:9000/app` and open a product's details page. Add a new option to the product and save the changes.
+Then, open the Switchyard Admin at `localhost:9000/app` and open a product's details page. Add a new option to the product and save the changes.
 
 If you check the product in Payload, you should see that the new option has been added to the product's options array.
 
@@ -3423,8 +3423,8 @@ You already have the necessary steps, so you only need to create the workflow th
 
 Create the file `src/workflows/delete-payload-product-options.ts` with the following content:
 
-```ts title="src/workflows/delete-payload-product-options.ts" badgeLabel="Medusa application" badgeColor="green"
-import { createWorkflow, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+```ts title="src/workflows/delete-payload-product-options.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { createWorkflow, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { updatePayloadItemsStep } from "./steps/update-payload-items"
 import { retrievePayloadItemsStep } from "./steps/retrieve-payload-items"
 
@@ -3498,8 +3498,8 @@ Finally, you'll create the subscriber that executes the workflow when the `produ
 
 Create the file `src/subscribers/option-deleted.ts` with the following content:
 
-```ts title="src/subscribers/option-deleted.ts" badgeLabel="Medusa application" badgeColor="green"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+```ts title="src/subscribers/option-deleted.ts" badgeLabel="Switchyard application" badgeColor="green"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { deletePayloadProductOptionsWorkflow } from "../workflows/delete-payload-product-options"
 
 export default async function productOptionDeletedHandler({
@@ -3525,9 +3525,9 @@ This subscriber listens to the `product-option.deleted` event and executes the `
 
 #### Test Product Option Deletion Handling
 
-To test the product option deletion handling, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test the product option deletion handling, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
-Then, open the Medusa Admin at `localhost:9000/app` and open a product's details page. Delete an existing option from the product.
+Then, open the Switchyard Admin at `localhost:9000/app` and open a product's details page. Delete an existing option from the product.
 
 If you check the product in Payload, you should see that the option has been removed from the product's options array.
 
@@ -3535,22 +3535,22 @@ If you check the product in Payload, you should see that the option has been rem
 
 ## Next Steps
 
-You've successfully integrated Medusa with Payload to manage content related to products, variants, and options. You can expand on this integration by adding more features, such as:
+You've successfully integrated Switchyard with Payload to manage content related to products, variants, and options. You can expand on this integration by adding more features, such as:
 
 1. Managing the content of other entities, like categories or collections. The process is similar to what you've done for products:
     1. Create a collection in Payload for the entity.
-    2. Create Medusa workflows and subscribers to handle the creation, update, and deletion of the entity.
+    2. Create Switchyard workflows and subscribers to handle the creation, update, and deletion of the entity.
     3. Display the payload data in your Next.js Starter Storefront.
 2. Enable [localization](https://payloadcms.com/docs/configuration/localization) in Payload to support multiple languages.
-    - You only need to manage the localized content in Payload. Only the default locale will be synced with Medusa.
+    - You only need to manage the localized content in Payload. Only the default locale will be synced with Switchyard.
     - You can show the localized content in your Next.js Starter Storefront based on the customer's locale.
 3. Add custom fields to the Payload collections that are relevant for the storefront, such as SEO metadata or promotional banners.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -3560,5 +3560,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

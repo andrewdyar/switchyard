@@ -10,7 +10,7 @@ In this chapter, you'll find some tips for developing your admin.
 
 ## Send Requests to API Routes
 
-To send a request to an API route in the Medusa Application, use Medusa's [JS SDK](!resources!/js-sdk) with [Tanstack Query](https://tanstack.com/query/latest). Both of these tools are installed in your project by default.
+To send a request to an API route in the Switchyard Application, use Switchyard's [JS SDK](!resources!/js-sdk) with [Tanstack Query](https://tanstack.com/query/latest). Both of these tools are installed in your project by default.
 
 <Note type="warning">
 
@@ -21,12 +21,12 @@ Do not install Tanstack Query as that will cause unexpected errors in your devel
 First, create the file `src/admin/lib/sdk.ts` to set up the SDK for use in your customizations:
 
 <CodeTabs>
-  <CodeTab label="Medusa Project" value="medusa-project">
+  <CodeTab label="Switchyard Project" value="medusa-project">
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -36,12 +36,12 @@ export const sdk = new Medusa({
 ```
 
   </CodeTab>
-  <CodeTab label="Medusa Plugin" value="medusa-plugin">
+  <CodeTab label="Switchyard Plugin" value="medusa-plugin">
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: __BACKEND_URL__ || "/",
   auth: {
     type: "session",
@@ -53,7 +53,7 @@ export const sdk = new Medusa({
 </CodeTabs>
 
 
-Notice that in a Medusa project, you use `import.meta.env` to access environment variables in your customizations, whereas in a plugin you use the global variable `__BACKEND_URL__` to access the backend URL. You can learn more in the [Admin Environment Variables](../environment-variables/page.mdx) chapter.
+Notice that in a Switchyard project, you use `import.meta.env` to access environment variables in your customizations, whereas in a plugin you use the global variable `__BACKEND_URL__` to access the backend URL. You can learn more in the [Admin Environment Variables](../environment-variables/page.mdx) chapter.
 
 <Note>
 
@@ -76,8 +76,8 @@ export const queryHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-widget.tsx" highlights={queryHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container } from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
 
@@ -117,11 +117,11 @@ export const mutationHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/product-widget.tsx" highlights={mutationHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, Container } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Button, Container } from "@switchyard/ui"
 import { useMutation } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
-import { DetailWidgetProps, HttpTypes } from "@medusajs/framework/types"
+import { DetailWidgetProps, HttpTypes } from "@switchyard/framework/types"
 
 const ProductWidget = ({ 
   data: productData,
@@ -165,13 +165,13 @@ You may need to retrieve data before your component is rendered, or you may need
 
 #### No QueryClient set
 
-If you're using `pnpm` as a package manager in your Medusa application, you might face the following error when you try to access the admin dashboard:
+If you're using `pnpm` as a package manager in your Switchyard application, you might face the following error when you try to access the admin dashboard:
 
 ```bash
 No QueryClient set, use QueryClientProvider to set one
 ```
 
-This is a known issue when using `pnpm`. To fix it, you need to install the `@tanstack/react-query` package manually. Make sure to install the same version installed in [@medusajs/dashboard](https://github.com/medusajs/medusa/blob/d58462c9c91a3e335d03f758438e109caad1f839/packages/admin/dashboard/package.json#L54).
+This is a known issue when using `pnpm`. To fix it, you need to install the `@tanstack/react-query` package manually. Make sure to install the same version installed in [@switchyard/dashboard](https://github.com/switchyard/medusa/blob/d58462c9c91a3e335d03f758438e109caad1f839/packages/admin/dashboard/package.json#L54).
 
 Learn more in the [Errors with pnpm](!resources!/troubleshooting/pnpm) troubleshooting guide.
 
@@ -181,9 +181,9 @@ Learn more in the [Errors with pnpm](!resources!/troubleshooting/pnpm) troublesh
 
 In your admin customizations, you can use the following global variables:
 
-- `__BASE__`: The base path of the Medusa Admin, as set in the [admin.path](../../../configurations/medusa-config/page.mdx#path) configuration in `medusa-config.ts`.
-- `__BACKEND_URL__`: The URL to the Medusa backend, as set in the [admin.backendUrl](../../../configurations/medusa-config/page.mdx#backendurl) configuration in `medusa-config.ts`.
-- `__STOREFRONT_URL__`: The URL to the storefront, as set in the [admin.storefrontUrl](../../../configurations/medusa-config/page.mdx#storefrontUrl) configuration in `medusa-config.ts`.
+- `__BASE__`: The base path of the Switchyard Admin, as set in the [admin.path](../../../configurations/switchyard.config/page.mdx#path) configuration in `switchyard.config.ts`.
+- `__BACKEND_URL__`: The URL to the Switchyard backend, as set in the [admin.backendUrl](../../../configurations/switchyard.config/page.mdx#backendurl) configuration in `switchyard.config.ts`.
+- `__STOREFRONT_URL__`: The URL to the storefront, as set in the [admin.storefrontUrl](../../../configurations/switchyard.config/page.mdx#storefrontUrl) configuration in `switchyard.config.ts`.
 
 If you get type errors while using these variables, create the file `src/admin/vite-env.d.ts` with the following content:
 
@@ -199,6 +199,6 @@ declare const __STOREFRONT_URL__: string
 
 ## Admin Translations
 
-The Medusa Admin dashboard can be displayed in languages other than English, which is the default. Other languages are added through community contributions.
+The Switchyard Admin dashboard can be displayed in languages other than English, which is the default. Other languages are added through community contributions.
 
-Learn how to add a new language translation for the Medusa Admin in [this guide](../../../resources/contribution-guidelines/admin-translations/page.mdx).
+Learn how to add a new language translation for the Switchyard Admin in [this guide](../../../resources/contribution-guidelines/admin-translations/page.mdx).

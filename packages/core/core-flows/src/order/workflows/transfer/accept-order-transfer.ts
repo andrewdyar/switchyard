@@ -2,20 +2,20 @@ import {
   OrderChangeDTO,
   OrderDTO,
   OrderWorkflow,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
-import type { OrderPreviewDTO } from "@medusajs/framework/types"
+} from "@switchyard/framework/workflows-sdk"
+import type { OrderPreviewDTO } from "@switchyard/framework/types"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   OrderChangeStatus,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 
 import { useQueryGraphStep } from "../../../common"
 import { previewOrderChangeStep } from "../../steps"
@@ -78,8 +78,8 @@ export const acceptOrderTransferValidationStep = createStep(
     throwIfOrderIsCancelled({ order })
 
     if (!orderChange || orderChange.change_type !== "transfer") {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Order ${order.id} does not have an order transfer request.`
       )
     }
@@ -88,7 +88,7 @@ export const acceptOrderTransferValidationStep = createStep(
     )
 
     if (!token.length || token !== transferCustomerAction?.details!.token) {
-      throw new MedusaError(MedusaError.Types.NOT_ALLOWED, "Invalid token.")
+      throw new SwitchyardError(SwitchyardError.Types.NOT_ALLOWED, "Invalid token.")
     }
   }
 )

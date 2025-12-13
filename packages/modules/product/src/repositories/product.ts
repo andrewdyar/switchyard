@@ -1,20 +1,20 @@
 import { Product, ProductOption } from "@models"
 
-import { Context, DAL, InferEntityType } from "@medusajs/framework/types"
+import { Context, DAL, InferEntityType } from "@switchyard/framework/types"
 import {
   arrayDifference,
   buildQuery,
   DALUtils,
-  MedusaError,
+  SwitchyardError,
   isPresent,
   mergeMetadata,
   isDefined,
   deepCopy,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   SqlEntityManager,
   wrap,
-} from "@medusajs/framework/mikro-orm/postgresql"
+} from "@switchyard/framework/mikro-orm/postgresql"
 
 export class ProductRepository extends DALUtils.mikroOrmBaseRepositoryFactory(
   Product
@@ -110,8 +110,8 @@ export class ProductRepository extends DALUtils.mikroOrmBaseRepositoryFactory(
     const productsNotFound = arrayDifference(productIdsToUpdate, productIds)
 
     if (productsNotFound.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Unable to update the products with ids: ${productsNotFound.join(", ")}`
       )
     }

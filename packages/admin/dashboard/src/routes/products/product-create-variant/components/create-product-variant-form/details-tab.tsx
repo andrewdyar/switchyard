@@ -1,10 +1,10 @@
 import React from "react"
-import { Heading, Input, Switch } from "@medusajs/ui"
+import { Heading, Input, Switch } from "@switchyard/ui"
 import { UseFormReturn, useWatch } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 import { z } from "zod"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 import { Form } from "../../../../../components/common/form"
 import { Combobox } from "../../../../../components/inputs/combobox"

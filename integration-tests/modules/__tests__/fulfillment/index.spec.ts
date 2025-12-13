@@ -1,6 +1,6 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IFulfillmentModuleService, StockLocationDTO } from "@medusajs/types"
-import { Modules } from "@medusajs/utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IFulfillmentModuleService, StockLocationDTO } from "@switchyard/types"
+import { Modules } from "@switchyard/utils"
 import { createAdminUser } from "../../../helpers/create-admin-user"
 import {
   generateCreateFulfillmentData,
@@ -47,7 +47,7 @@ medusaIntegrationTestRunner({
     })
 
     /**
-     * The test runner run both the medusa migrations as well as the modules
+     * The test runner run both the switchyard migrations as well as the modules
      * migrations. In order to ensure the backward compatibility
      * of the migration works, we will create a full data structure.
      */

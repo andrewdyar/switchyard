@@ -1,9 +1,9 @@
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import {
   FileSystem,
   GraphQLUtils,
   gqlSchemaToTypes as ModulesSdkGqlSchemaToTypes,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { join } from "path"
 import * as process from "process"
 
@@ -12,14 +12,14 @@ export async function gqlSchemaToTypes(
 ) {
   const filename = "index-service-entry-points"
   const filenameWithExt = filename + ".d.ts"
-  const dir = join(process.cwd(), ".medusa/types")
+  const dir = join(process.cwd(), ".switchyard/types")
 
   await ModulesSdkGqlSchemaToTypes({
     schema: executableSchema,
     filename,
     interfaceName: "IndexServiceEntryPoints",
     outputDir: dir,
-    joinerConfigs: MedusaModule.getAllJoinerConfigs(),
+    joinerConfigs: SwitchyardModule.getAllJoinerConfigs(),
   })
 
   const fileSystem = new FileSystem(dir)
@@ -30,7 +30,7 @@ export async function gqlSchemaToTypes(
   const entryPoints = buildEntryPointsTypeMap(content)
 
   const indexEntryPoints = `
-declare module '@medusajs/framework/types' {
+declare module '@switchyard/framework/types' {
   interface IndexServiceEntryPoints  {
 ${entryPoints
   .map((entry) => `    ${entry.entryPoint}: ${entry.entityType}`)
@@ -52,7 +52,7 @@ function buildEntryPointsTypeMap(
 ): { entryPoint: string; entityType: any }[] {
   // build map entry point to there type to be merged and used by the remote query
 
-  const joinerConfigs = MedusaModule.getAllJoinerConfigs()
+  const joinerConfigs = SwitchyardModule.getAllJoinerConfigs()
   return joinerConfigs
     .flatMap((config) => {
       const aliases = Array.isArray(config.alias)

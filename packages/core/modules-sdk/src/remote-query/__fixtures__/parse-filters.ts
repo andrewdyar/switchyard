@@ -1,6 +1,6 @@
-import { ModuleJoinerConfig } from "@medusajs/types"
-import { defineJoinerConfig } from "@medusajs/utils"
-import { MedusaModule } from "../../medusa-module"
+import { ModuleJoinerConfig } from "@switchyard/types"
+import { defineJoinerConfig } from "@switchyard/utils"
+import { SwitchyardModule } from "../../medusa-module"
 
 const customModuleJoinerConfig = defineJoinerConfig("custom_user", {
   schema: `
@@ -173,10 +173,10 @@ const linkProductVariantPriceSet = {
   ],
 } as ModuleJoinerConfig
 
-MedusaModule.setJoinerConfig("product", productJoinerConfig)
-MedusaModule.setJoinerConfig("pricing", pricingJoinerConfig)
-MedusaModule.setJoinerConfig("customProduct", customModuleJoinerConfig)
-MedusaModule.setJoinerConfig(
+SwitchyardModule.setJoinerConfig("product", productJoinerConfig)
+SwitchyardModule.setJoinerConfig("pricing", pricingJoinerConfig)
+SwitchyardModule.setJoinerConfig("customProduct", customModuleJoinerConfig)
+SwitchyardModule.setJoinerConfig(
   "link-product-variant-price-set",
   linkProductVariantPriceSet
 )

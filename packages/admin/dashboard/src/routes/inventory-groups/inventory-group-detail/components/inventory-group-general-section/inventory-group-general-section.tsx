@@ -1,5 +1,5 @@
-import { PencilSquare, Trash } from "@medusajs/icons"
-import { Badge, Container, Heading, Text, clx } from "@medusajs/ui"
+import { PencilSquare, Trash } from "@switchyard/icons"
+import { Badge, Container, Heading, Text, clx } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 import { ActionMenu } from "../../../../../components/common/action-menu"
 import { InventoryGroupDTO } from "../../../../../hooks/api/inventory-groups"

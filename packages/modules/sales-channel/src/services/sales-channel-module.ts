@@ -11,16 +11,16 @@ import {
   SalesChannelDTO,
   UpdateSalesChannelDTO,
   UpsertSalesChannelDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   EmitEvents,
   InjectManager,
   InjectTransactionManager,
   isString,
   MedusaContext,
-  MedusaService,
+  SwitchyardService,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 import { SalesChannel } from "@models"
 import { UpdateSalesChanneInput } from "@types"
@@ -32,7 +32,7 @@ type InjectedDependencies = {
 }
 
 export default class SalesChannelModuleService
-  extends MedusaService<{ SalesChannel: { dto: SalesChannelDTO } }>({
+  extends SwitchyardService<{ SalesChannel: { dto: SalesChannelDTO } }>({
     SalesChannel,
   })
   implements ISalesChannelModuleService

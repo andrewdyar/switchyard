@@ -1,10 +1,10 @@
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 import {
   createWorkflow,
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createPaymentCollectionsStep } from "../../cart"
 import { createRemoteLinkStep, useQueryGraphStep } from "../../common"
 

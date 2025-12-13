@@ -3,7 +3,7 @@
 import clsx from "clsx"
 import React from "react"
 import { Link, Tooltip } from "@/components"
-import { ExclamationCircle, PlaySolid } from "@medusajs/icons"
+import { ExclamationCircle, PlaySolid } from "@switchyard/icons"
 import { GITHUB_ISSUES_LINK } from "@/constants"
 import { CodeBlockCopyAction } from "./Copy"
 import { CodeBlockAskAiAction } from "./AskAi"

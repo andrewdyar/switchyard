@@ -6,7 +6,7 @@
  * the sweep item shows 5 milk total.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const SweepItem = model.define("goods_sweep_item", {
   id: model.id().primaryKey(),

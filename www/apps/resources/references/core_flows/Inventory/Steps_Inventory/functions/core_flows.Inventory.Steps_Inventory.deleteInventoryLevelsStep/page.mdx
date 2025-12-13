@@ -5,15 +5,15 @@ sidebar_label: deleteInventoryLevelsStep
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# deleteInventoryLevelsStep - Medusa Core Workflows Reference
+# deleteInventoryLevelsStep - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `deleteInventoryLevelsStep`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `deleteInventoryLevelsStep`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This step deletes one or more inventory levels.
 
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { deleteInventoryLevelsStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { deleteInventoryLevelsStep } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -28,4 +28,4 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"DeleteInventoryLevelsStepInput","type":"[DeleteInventoryLevelsStepInput](../../../../types/core_flows.DeleteInventoryLevelsStepInput/page.mdx)","optional":false,"defaultValue":"","description":"The IDs of inventory levels to delete.","expandable":false,"children":[{"name":"DeleteInventoryLevelsStepInput","type":"`string`[]","description":"The IDs of inventory levels to delete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deleteInventoryLevelsStep"/>
+<TypeList types={[{"name":"DeleteInventoryLevelsStepInput","type":"[DeleteInventoryLevelsStepInput](../../../../types/core_flows.DeleteInventoryLevelsStepInput/page.mdx)","optional":false,"defaultValue":"","description":"The IDs of inventory levels to delete.","expandable":false,"children":[{"name":"DeleteInventoryLevelsStepInput","type":"`string`[]","description":"The IDs of inventory levels to delete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deleteInventoryLevelsStep"/>

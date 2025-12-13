@@ -9,23 +9,23 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# batchVariantImagesWorkflow - Medusa Core Workflows Reference
+# batchVariantImagesWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `batchVariantImagesWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `batchVariantImagesWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow manages the association between product variants and images in bulk.
-It's used by the [Batch Variant Images Admin API Route](https://docs.medusajs.com/api/admin#products\_postproductsidvariantsvariant\_idimagesbatch).
+It's used by the [Batch Variant Images Admin API Route](https://docs.switchyard.com/api/admin#products\_postproductsidvariantsvariant\_idimagesbatch).
 
 You can use this workflow within your own customizations or custom workflows to manage variant-image associations in bulk.
-This is also useful when writing a [seed script](https://docs.medusajs.com/learn/fundamentals/custom-cli-scripts/seed-data) or a custom import script.
+This is also useful when writing a [seed script](https://docs.switchyard.com/learn/fundamentals/custom-cli-scripts/seed-data) or a custom import script.
 
 :::note
 
-This is available starting from [Medusa v2.11.2](https://github.com/medusajs/medusa/releases/tag/v2.11.2).
+This is available starting from [Switchyard v2.11.2](https://github.com/switchyard/medusa/releases/tag/v2.11.2).
 
 :::
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/product/workflows/batch-variant-images.ts#L74" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/product/workflows/batch-variant-images.ts#L74" />
 
 ## Examples
 
@@ -34,14 +34,14 @@ This is available starting from [Medusa v2.11.2](https://github.com/medusajs/med
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { batchVariantImagesWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { batchVariantImagesWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await batchVariantImagesWorkflow(req.scope)
     .run({
@@ -63,8 +63,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { batchVariantImagesWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { batchVariantImagesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -91,11 +91,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { batchVariantImagesWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { batchVariantImagesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await batchVariantImagesWorkflow(container)
     .run({
@@ -119,8 +119,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { batchVariantImagesWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { batchVariantImagesWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -146,8 +146,8 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"BatchVariantImagesWorkflowInput","type":"[BatchVariantImagesWorkflowInput](../../../../interfaces/core_flows.BatchVariantImagesWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The input for the batch variant-images workflow.","expandable":false,"children":[{"name":"variant_id","type":"`string`","description":"The ID of the variant to manage images for.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"add","type":"`string`[]","description":"The image IDs to add to the variant.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"remove","type":"`string`[]","description":"The image IDs to remove from the variant.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="batchVariantImagesWorkflow"/>
+<TypeList types={[{"name":"BatchVariantImagesWorkflowInput","type":"[BatchVariantImagesWorkflowInput](../../../../interfaces/core_flows.BatchVariantImagesWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The input for the batch variant-images workflow.","expandable":false,"children":[{"name":"variant_id","type":"`string`","description":"The ID of the variant to manage images for.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"add","type":"`string`[]","description":"The image IDs to add to the variant.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"remove","type":"`string`[]","description":"The image IDs to remove from the variant.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="batchVariantImagesWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"BatchVariantImagesWorkflowOutput","type":"[BatchVariantImagesWorkflowOutput](../../../../interfaces/core_flows.BatchVariantImagesWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"The result of the batch variant-images workflow.","expandable":false,"children":[{"name":"added","type":"`string`[]","description":"The image IDs that were added to the variant.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"removed","type":"`string`[]","description":"The image IDs that were removed from the variant.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="batchVariantImagesWorkflow"/>
+<TypeList types={[{"name":"BatchVariantImagesWorkflowOutput","type":"[BatchVariantImagesWorkflowOutput](../../../../interfaces/core_flows.BatchVariantImagesWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"The result of the batch variant-images workflow.","expandable":false,"children":[{"name":"added","type":"`string`[]","description":"The image IDs that were added to the variant.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"removed","type":"`string`[]","description":"The image IDs that were removed from the variant.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="batchVariantImagesWorkflow"/>

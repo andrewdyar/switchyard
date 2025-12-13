@@ -5,7 +5,7 @@ import { ApiRunnerParamInput, ApiRunnerParamInputProps } from "../Default"
 import clsx from "clsx"
 import setObjValue from "@/utils/set-obj-value"
 import { Button } from "../../../.."
-import { Minus, Plus } from "@medusajs/icons"
+import { Minus, Plus } from "@switchyard/icons"
 
 export const ApiRunnerParamArrayInput = ({
   paramName,

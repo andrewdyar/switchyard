@@ -10,7 +10,7 @@ In this guide, you’ll learn about the main promotion and rule concepts in the 
 
 <Note title="Looking for no-code docs?">
 
-Refer to this [Medusa Admin User Guide](!user-guide!/promotions) to learn how to manage promotions using the dashboard.
+Refer to this [Switchyard Admin User Guide](!user-guide!/promotions) to learn how to manage promotions using the dashboard.
 
 </Note>
 
@@ -80,7 +80,7 @@ A promotion has two types:
 
 <Note>
 
-The Medusa Admin UI may not provide a way to create each of these promotion examples. However, they are supported by the Promotion Module and Medusa's workflows and API routes.
+The Switchyard Admin UI may not provide a way to create each of these promotion examples. However, they are supported by the Promotion Module and Switchyard's workflows and API routes.
 
 </Note>
 
@@ -90,7 +90,7 @@ The Medusa Admin UI may not provide a way to create each of these promotion exam
 
 <Note>
 
-The `limit` property is available since [Medusa v2.12.0](https://github.com/medusajs/medusa/releases/tag/v2.12.0).
+The `limit` property is available since [Switchyard v2.12.0](https://github.com/switchyard/medusa/releases/tag/v2.12.0).
 
 </Note>
 
@@ -114,7 +114,7 @@ A promotion can be restricted by a set of rules, each rule is represented by the
 
 For example, you can create a promotion that only customers of the `VIP` customer group can use.
 
-![A diagram showcasing the relation between Promotion and PromotionRule](https://res.cloudinary.com/dza7lstvk/image/upload/v1709833196/Medusa%20Resources/promotion-promotion-rule_msbx0w.jpg)
+![A diagram showcasing the relation between Promotion and PromotionRule](https://res.cloudinary.com/dza7lstvk/image/upload/v1709833196/Switchyard%20Resources/promotion-promotion-rule_msbx0w.jpg)
 
 A `PromotionRule`'s `attribute` property indicates the property's name to which this rule is applied. For example, `customer_group_id`.
 
@@ -133,7 +133,7 @@ For example, to restrict the promotion to only `VIP` and `B2B` customer groups:
 - Add a `PromotionRule` record with its `attribute` property set to `customer_group_id` and `operator` property to `in`.
 - Add two `PromotionRuleValue` records associated with the rule: one with the value `VIP` and the other `B2B`.
 
-![A diagram showcasing the relation between PromotionRule and PromotionRuleValue when a rule has multiple values](https://res.cloudinary.com/dza7lstvk/image/upload/v1709897383/Medusa%20Resources/promotion-promotion-rule-multiple_hctpmt.jpg)
+![A diagram showcasing the relation between PromotionRule and PromotionRuleValue when a rule has multiple values](https://res.cloudinary.com/dza7lstvk/image/upload/v1709897383/Switchyard%20Resources/promotion-promotion-rule-multiple_hctpmt.jpg)
 
 In this case, a customer’s group must be in the `VIP` and `B2B` set of values to use the promotion.
 
@@ -143,7 +143,7 @@ In this case, a customer’s group must be in the `VIP` and `B2B` set of values 
 
 ### Using Workflows
 
-If you're managing promotions using [Medusa's workflows](../../../medusa-workflows-reference/page.mdx) or the API routes that use them, you can specify rules for the promotion or its [application method](../application-method/page.mdx).
+If you're managing promotions using [Switchyard's workflows](../../../medusa-workflows-reference/page.mdx) or the API routes that use them, you can specify rules for the promotion or its [application method](../application-method/page.mdx).
 
 For example, if you're creating a promotion using the [createPromotionsWorkflow](/references/medusa-workflows/createPromotionsWorkflow):
 

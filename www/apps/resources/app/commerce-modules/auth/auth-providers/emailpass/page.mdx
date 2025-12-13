@@ -14,10 +14,10 @@ By using the Emailpass Auth Module Provider, you allow users to register and log
 
 The Emailpass Auth Module Provider is registered by default with the Auth Module.
 
-If you want to pass options to the provider, add the provider to the `providers` option of the Auth Module in your `medusa-config.ts`:
+If you want to pass options to the provider, add the provider to the `providers` option of the Auth Module in your `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
-import { Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules, ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 // ...
 
@@ -25,13 +25,13 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/auth",
+      resolve: "@switchyard/medusa/auth",
       dependencies: [Modules.CACHE, ContainerRegistrationKeys.LOGGER],
       options: {
         providers: [
           // other providers...
           {
-            resolve: "@medusajs/medusa/auth-emailpass",
+            resolve: "@switchyard/medusa/auth-emailpass",
             id: "emailpass",
             options: {
               // options...

@@ -1,7 +1,7 @@
 import React from "react"
 import Link from "next/link"
 import clsx from "clsx"
-import { ArrowUpRightOnBox } from "@medusajs/icons"
+import { ArrowUpRightOnBox } from "@switchyard/icons"
 import { EditDate } from "../EditDate"
 
 type EditButtonProps = {
@@ -15,7 +15,7 @@ export const EditButton = ({ filePath, editDate }: EditButtonProps) => {
       {editDate && <EditDate date={editDate} />}
 
       <Link
-        href={`https://github.com/medusajs/medusa/edit/develop${filePath}`}
+        href={`https://github.com/switchyard/medusa/edit/develop${filePath}`}
         className={clsx(
           "flex w-fit gap-docs_0.25 items-center",
           "text-medusa-fg-subtle hover:text-medusa-fg-base",

@@ -19,7 +19,7 @@
 					},
 					{
 						"kind": "code",
-						"text": "```ts\nimport { ILockingProvider } from \"@medusajs/framework/types\"\nimport { Logger } from \"@medusajs/framework/types\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  url: string\n}\n\nclass MyLockingProviderService implements ILockingProvider {\n  static identifier = \"my-lock\"\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n\n  // ...\n}\n\nexport default MyLockingProviderService\n```"
+						"text": "```ts\nimport { ILockingProvider } from \"@switchyard/framework/types\"\nimport { Logger } from \"@switchyard/framework/types\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  url: string\n}\n\nclass MyLockingProviderService implements ILockingProvider {\n  static identifier = \"my-lock\"\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n\n  // ...\n}\n\nexport default MyLockingProviderService\n```"
 					},
 					{
 						"kind": "text",
@@ -59,7 +59,7 @@
 							"fileName": "index.ts",
 							"line": 146,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L146"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L146"
 						}
 					],
 					"signatures": [
@@ -119,7 +119,7 @@
 											},
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport { Context } from \"@medusajs/framework/types\"\nimport { setTimeout } from \"node:timers/promises\"\n\nclass MyLockingProviderService implements ILockingProvider {\n  // ...\nasync execute<T>(\n    keys: string | string[], \n    job: () => Promise<T>, \n    args?: { timeout?: number }, \n    sharedContext?: Context\n  ): Promise<T> {\n    // TODO you can add actions using the third-party client you initialized in the constructor\n    const timeout = Math.max(args?.timeout ?? 5, 1)\n    const timeoutSeconds = Number.isNaN(timeout) ? 1 : timeout\n    const cancellationToken = { cancelled: false }\n    const promises: Promise<any>[] = []\n\n    if (timeoutSeconds > 0) {\n      promises.push(this.getTimeout(timeoutSeconds, cancellationToken))\n    }\n\n    promises.push(\n      this.acquire_(\n        keys,\n        {\n          expire: args?.timeout ? timeoutSeconds : 0,\n        },\n        cancellationToken\n      )\n    )\n\n    await Promise.race(promises)\n\n    try {\n      return await job()\n    } finally {\n      await this.release(keys)\n    }\n  }\n\n  private async getTimeout(\n    seconds: number,\n    cancellationToken: { cancelled: boolean }\n  ): Promise<void> {\n    return new Promise(async (_, reject) => {\n      await setTimeout(seconds * 1000)\n      cancellationToken.cancelled = true\n      reject(new Error(\"Timed-out acquiring lock.\"))\n    })\n  }\n}\n```"
+												"text": "```ts\n// other imports...\nimport { Context } from \"@switchyard/framework/types\"\nimport { setTimeout } from \"node:timers/promises\"\n\nclass MyLockingProviderService implements ILockingProvider {\n  // ...\nasync execute<T>(\n    keys: string | string[], \n    job: () => Promise<T>, \n    args?: { timeout?: number }, \n    sharedContext?: Context\n  ): Promise<T> {\n    // TODO you can add actions using the third-party client you initialized in the constructor\n    const timeout = Math.max(args?.timeout ?? 5, 1)\n    const timeoutSeconds = Number.isNaN(timeout) ? 1 : timeout\n    const cancellationToken = { cancelled: false }\n    const promises: Promise<any>[] = []\n\n    if (timeoutSeconds > 0) {\n      promises.push(this.getTimeout(timeoutSeconds, cancellationToken))\n    }\n\n    promises.push(\n      this.acquire_(\n        keys,\n        {\n          expire: args?.timeout ? timeoutSeconds : 0,\n        },\n        cancellationToken\n      )\n    )\n\n    await Promise.race(promises)\n\n    try {\n      return await job()\n    } finally {\n      await this.release(keys)\n    }\n  }\n\n  private async getTimeout(\n    seconds: number,\n    cancellationToken: { cancelled: boolean }\n  ): Promise<void> {\n    return new Promise(async (_, reject) => {\n      await setTimeout(seconds * 1000)\n      cancellationToken.cancelled = true\n      reject(new Error(\"Timed-out acquiring lock.\"))\n    })\n  }\n}\n```"
 											},
 											{
 												"kind": "text",
@@ -190,7 +190,7 @@
 									"fileName": "index.ts",
 									"line": 146,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L146"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L146"
 								}
 							],
 							"typeParameters": [
@@ -269,7 +269,7 @@
 													"fileName": "index.ts",
 													"line": 148,
 													"character": 9,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L148"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L148"
 												}
 											],
 											"signatures": [
@@ -284,7 +284,7 @@
 															"fileName": "index.ts",
 															"line": 148,
 															"character": 9,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L148"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L148"
 														}
 													],
 													"type": {
@@ -298,7 +298,7 @@
 																"type": "reference",
 																"target": 62500,
 																"name": "T",
-																"package": "@medusajs/types",
+																"package": "@switchyard/types",
 																"refersToTypeParameter": true
 															}
 														],
@@ -356,7 +356,7 @@
 															"fileName": "index.ts",
 															"line": 153,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L153"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L153"
 														}
 													],
 													"type": {
@@ -378,7 +378,7 @@
 													"fileName": "index.ts",
 													"line": 149,
 													"character": 11,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L149"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L149"
 												}
 											]
 										}
@@ -407,7 +407,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -422,7 +422,7 @@
 										"type": "reference",
 										"target": 62500,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
@@ -443,7 +443,7 @@
 							"fileName": "index.ts",
 							"line": 231,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L231"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L231"
 						}
 					],
 					"signatures": [
@@ -584,7 +584,7 @@
 									"fileName": "index.ts",
 									"line": 231,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L231"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L231"
 								}
 							],
 							"parameters": [
@@ -665,7 +665,7 @@
 															"fileName": "index.ts",
 															"line": 237,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L237"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L237"
 														}
 													],
 													"type": {
@@ -703,7 +703,7 @@
 															"fileName": "index.ts",
 															"line": 242,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L242"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L242"
 														}
 													],
 													"type": {
@@ -726,7 +726,7 @@
 													"fileName": "index.ts",
 													"line": 233,
 													"character": 11,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L233"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L233"
 												}
 											]
 										}
@@ -755,7 +755,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -788,7 +788,7 @@
 							"fileName": "index.ts",
 							"line": 290,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L290"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L290"
 						}
 					],
 					"signatures": [
@@ -856,7 +856,7 @@
 											},
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport { promiseAll } from \"@medusajs/framework/utils\"\n\nclass MyLockingProviderService implements ILockingProvider {\n  // ...\n  async release(\n    keys: string | string[], \n    args?: { ownerId?: string | null }, \n    sharedContext?: Context\n  ): Promise<boolean> {\n    const ownerId = args?.ownerId ?? \"*\"\n    keys = Array.isArray(keys) ? keys : [keys]\n\n    const releasePromises = keys.map(async (key) => {\n      // assuming your client has this method and it validates the owner\n      const result = await this.client.releaseLock(key, ownerId)\n      return result === 1\n    })\n\n    const results = await promiseAll(releasePromises)\n\n    return results.every((released) => released)\n  }\n}\n```"
+												"text": "```ts\n// other imports...\nimport { promiseAll } from \"@switchyard/framework/utils\"\n\nclass MyLockingProviderService implements ILockingProvider {\n  // ...\n  async release(\n    keys: string | string[], \n    args?: { ownerId?: string | null }, \n    sharedContext?: Context\n  ): Promise<boolean> {\n    const ownerId = args?.ownerId ?? \"*\"\n    keys = Array.isArray(keys) ? keys : [keys]\n\n    const releasePromises = keys.map(async (key) => {\n      // assuming your client has this method and it validates the owner\n      const result = await this.client.releaseLock(key, ownerId)\n      return result === 1\n    })\n\n    const results = await promiseAll(releasePromises)\n\n    return results.every((released) => released)\n  }\n}\n```"
 											},
 											{
 												"kind": "text",
@@ -879,7 +879,7 @@
 									"fileName": "index.ts",
 									"line": 290,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L290"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L290"
 								}
 							],
 							"parameters": [
@@ -960,7 +960,7 @@
 															"fileName": "index.ts",
 															"line": 297,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L297"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L297"
 														}
 													],
 													"type": {
@@ -991,7 +991,7 @@
 													"fileName": "index.ts",
 													"line": 292,
 													"character": 11,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L292"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L292"
 												}
 											]
 										}
@@ -1020,7 +1020,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1053,7 +1053,7 @@
 							"fileName": "index.ts",
 							"line": 330,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L330"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L330"
 						}
 					],
 					"signatures": [
@@ -1127,7 +1127,7 @@
 									"fileName": "index.ts",
 									"line": 330,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L330"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L330"
 								}
 							],
 							"parameters": [
@@ -1177,7 +1177,7 @@
 															"fileName": "index.ts",
 															"line": 335,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L335"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L335"
 														}
 													],
 													"type": {
@@ -1208,7 +1208,7 @@
 													"fileName": "index.ts",
 													"line": 331,
 													"character": 11,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L331"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L331"
 												}
 											]
 										}
@@ -1237,7 +1237,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1276,7 +1276,7 @@
 					"fileName": "index.ts",
 					"line": 63,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L63"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L63"
 				}
 			]
 		},
@@ -1298,7 +1298,7 @@
 							"fileName": "index.ts",
 							"line": 377,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L377"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L377"
 						}
 					],
 					"signatures": [
@@ -1316,7 +1316,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -1377,7 +1377,7 @@
 									"fileName": "index.ts",
 									"line": 377,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L377"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L377"
 								}
 							],
 							"typeParameters": [
@@ -1456,7 +1456,7 @@
 													"fileName": "index.ts",
 													"line": 379,
 													"character": 9,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L379"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L379"
 												}
 											],
 											"signatures": [
@@ -1471,7 +1471,7 @@
 															"fileName": "index.ts",
 															"line": 379,
 															"character": 9,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L379"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L379"
 														}
 													],
 													"type": {
@@ -1485,7 +1485,7 @@
 																"type": "reference",
 																"target": 62533,
 																"name": "T",
-																"package": "@medusajs/types",
+																"package": "@switchyard/types",
 																"refersToTypeParameter": true
 															}
 														],
@@ -1559,7 +1559,7 @@
 															"fileName": "index.ts",
 															"line": 385,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L385"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L385"
 														}
 													],
 													"type": {
@@ -1583,7 +1583,7 @@
 															},
 															{
 																"kind": "code",
-																"text": "`medusa-config.ts`"
+																"text": "`switchyard.config.ts`"
 															},
 															{
 																"kind": "text",
@@ -1596,7 +1596,7 @@
 															"fileName": "index.ts",
 															"line": 389,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L389"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L389"
 														}
 													],
 													"type": {
@@ -1619,7 +1619,7 @@
 													"fileName": "index.ts",
 													"line": 380,
 													"character": 11,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L380"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L380"
 												}
 											]
 										}
@@ -1648,7 +1648,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1663,7 +1663,7 @@
 										"type": "reference",
 										"target": 62533,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
@@ -1684,7 +1684,7 @@
 							"fileName": "index.ts",
 							"line": 429,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L429"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L429"
 						}
 					],
 					"signatures": [
@@ -1702,7 +1702,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -1803,7 +1803,7 @@
 									"fileName": "index.ts",
 									"line": 429,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L429"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L429"
 								}
 							],
 							"parameters": [
@@ -1884,7 +1884,7 @@
 															"fileName": "index.ts",
 															"line": 435,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L435"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L435"
 														}
 													],
 													"type": {
@@ -1922,7 +1922,7 @@
 															"fileName": "index.ts",
 															"line": 440,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L440"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L440"
 														}
 													],
 													"type": {
@@ -1946,7 +1946,7 @@
 															},
 															{
 																"kind": "code",
-																"text": "`medusa-config.ts`"
+																"text": "`switchyard.config.ts`"
 															},
 															{
 																"kind": "text",
@@ -1959,7 +1959,7 @@
 															"fileName": "index.ts",
 															"line": 444,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L444"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L444"
 														}
 													],
 													"type": {
@@ -1983,7 +1983,7 @@
 													"fileName": "index.ts",
 													"line": 431,
 													"character": 11,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L431"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L431"
 												}
 											]
 										}
@@ -2012,7 +2012,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -2045,7 +2045,7 @@
 							"fileName": "index.ts",
 							"line": 479,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L479"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L479"
 						}
 					],
 					"signatures": [
@@ -2063,7 +2063,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -2156,7 +2156,7 @@
 									"fileName": "index.ts",
 									"line": 479,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L479"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L479"
 								}
 							],
 							"parameters": [
@@ -2237,7 +2237,7 @@
 															"fileName": "index.ts",
 															"line": 486,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L486"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L486"
 														}
 													],
 													"type": {
@@ -2270,7 +2270,7 @@
 															},
 															{
 																"kind": "code",
-																"text": "`medusa-config.ts`"
+																"text": "`switchyard.config.ts`"
 															},
 															{
 																"kind": "text",
@@ -2283,7 +2283,7 @@
 															"fileName": "index.ts",
 															"line": 490,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L490"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L490"
 														}
 													],
 													"type": {
@@ -2306,7 +2306,7 @@
 													"fileName": "index.ts",
 													"line": 481,
 													"character": 11,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L481"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L481"
 												}
 											]
 										}
@@ -2335,7 +2335,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -2368,7 +2368,7 @@
 							"fileName": "index.ts",
 							"line": 522,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L522"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L522"
 						}
 					],
 					"signatures": [
@@ -2386,7 +2386,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -2446,7 +2446,7 @@
 									"fileName": "index.ts",
 									"line": 522,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L522"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L522"
 								}
 							],
 							"parameters": [
@@ -2496,7 +2496,7 @@
 															"fileName": "index.ts",
 															"line": 527,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L527"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L527"
 														}
 													],
 													"type": {
@@ -2529,7 +2529,7 @@
 															},
 															{
 																"kind": "code",
-																"text": "`medusa-config.ts`"
+																"text": "`switchyard.config.ts`"
 															},
 															{
 																"kind": "text",
@@ -2542,7 +2542,7 @@
 															"fileName": "index.ts",
 															"line": 531,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L531"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L531"
 														}
 													],
 													"type": {
@@ -2565,7 +2565,7 @@
 													"fileName": "index.ts",
 													"line": 523,
 													"character": 11,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L523"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L523"
 												}
 											]
 										}
@@ -2594,7 +2594,7 @@
 											"qualifiedName": "Context"
 										},
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -2633,7 +2633,7 @@
 					"fileName": "index.ts",
 					"line": 341,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L341"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/locking/index.ts#L341"
 				}
 			]
 		}
@@ -2647,7 +2647,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"62496": {
 			"sourceFileName": "../../../../packages/core/types/src/locking/index.ts",

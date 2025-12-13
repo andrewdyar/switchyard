@@ -12,18 +12,18 @@ products:
   - cart
 ---
 
-import { Github, PlaySolid, EllipsisHorizontal } from "@medusajs/icons"
+import { Github, PlaySolid, EllipsisHorizontal } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList, InlineIcon } from "docs-ui"
 
 export const metadata = {
-  title: `Implement Product Builder in Medusa`,
+  title: `Implement Product Builder in Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to implement a product builder in Medusa.
+In this tutorial, you'll learn how to implement a product builder in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) that are available out-of-the-box.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) that are available out-of-the-box.
 
 A product builder allows customers to customize the product before adding it to the cart. This may include entering custom options like engraving text, adding complementary products to the cart, or purchasing add-ons with the product, such as insurance.
 
@@ -31,20 +31,20 @@ A product builder allows customers to customize the product before adding it to 
 
 By following this tutorial, you will learn how to:
 
-- Install and set up Medusa with the Next.js Starter Storefront.
+- Install and set up Switchyard with the Next.js Starter Storefront.
 - Define and manage data models useful for the product builder.
-- Allow admin users to manage the builder configurations of a product from Medusa Admin.
+- Allow admin users to manage the builder configurations of a product from Switchyard Admin.
 - Customize the storefront to allow customers to choose a product's builder configurations.
 - Customize cart and order pages on the storefront to reflect the selected builder configurations of items.
-- Customize the order details page on the Medusa Admin to reflect the selected builder configurations of items.
+- Customize the order details page on the Switchyard Admin to reflect the selected builder configurations of items.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Screenshot of how the product builder will look like in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1755101580/Medusa%20Resources/CleanShot_2025-08-13_at_19.12.48_2x_tf4goa.png)
+![Screenshot of how the product builder will look like in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1755101580/Switchyard%20Resources/CleanShot_2025-08-13_at_19.12.48_2x_tf4goa.png)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/product-builder",
+    href: "https://github.com/switchyard/examples/tree/main/product-builder",
     title: "Full Code",
     text: "Find the full code for this tutorial in this repository.",
     icon: Github,
@@ -59,7 +59,7 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -76,27 +76,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -104,7 +104,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Product Builder Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with the data models and functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 <Note>
 
@@ -124,7 +124,7 @@ Create the directory `src/modules/product-builder` that will hold the Product Bu
 
 ### b. Create Data Models 
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -149,7 +149,7 @@ export const productBuilderHighlights = [
 ]
 
 ```ts title="src/modules/product-builder/models/product-builder.ts" highlights={productBuilderHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import ProductBuilderCustomField from "./product-builder-custom-field"
 import ProductBuilderComplementary from "./product-builder-complementary"
 import ProductBuilderAddon from "./product-builder-addon"
@@ -175,7 +175,7 @@ The `ProductBuilder` data model has the following properties:
 
 - `id`: The primary key of the table.
 - `product_id`: The ID of the product that this builder configuration applies to.
-    - Later, you'll learn how to link this data model to Medusa's `Product` data model.
+    - Later, you'll learn how to link this data model to Switchyard's `Product` data model.
 - `custom_fields`: Fields that the customer can personalize.
 - `complementary_products`: Products to suggest alongside the main product.
 - `addons`: Products that the customer can buy alongside the main product.
@@ -204,7 +204,7 @@ export const customFieldHighlights = [
 ]
 
 ```ts title="src/modules/product-builder/models/product-builder-custom-field.ts" highlights={customFieldHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import ProductBuilder from "./product-builder"
 
 const ProductBuilderCustomField = model.define("product_builder_custom_field", {
@@ -243,7 +243,7 @@ export const complementaryHighlights = [
 ]
 
 ```ts title="src/modules/product-builder/models/product-builder-complementary.ts" highlights={complementaryHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import ProductBuilder from "./product-builder"
 
 const ProductBuilderComplementary = model.define("product_builder_complementary", {
@@ -261,7 +261,7 @@ The `ProductBuilderComplementary` data model has the following properties:
 
 - `id`: The primary key of the table.
 - `product_id`: The ID of the complementary product to suggest.
-    - Later, you'll learn how to link this to Medusa's `Product` data model.
+    - Later, you'll learn how to link this to Switchyard's `Product` data model.
 - `product_builder`: A relation back to the parent `ProductBuilder` configuration.
 
 #### ProductBuilderAddon Data Model
@@ -277,7 +277,7 @@ export const addonHighlights = [
 ]
 
 ```ts title="src/modules/product-builder/models/product-builder-addon.ts" highlights={addonHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import ProductBuilder from "./product-builder"
 
 const ProductBuilderAddon = model.define("product_builder_addon", {
@@ -295,7 +295,7 @@ The `ProductBuilderAddon` data model has the following properties:
 
 - `id`: The primary key of the table.
 - `product_id`: The ID of the add-on product (for example, warranty or insurance product).
-    - Later, you'll learn how to link this to Medusa's `Product` data model.
+    - Later, you'll learn how to link this to Switchyard's `Product` data model.
 - `product_builder`: A relation back to the parent `ProductBuilder` configuration.
 
 ### c. Create Module's Service
@@ -313,13 +313,13 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Product Builder Module's service, create the file `src/modules/product-builder/service.ts` with the following content:
 
 ```ts title="src/modules/product-builder/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import ProductBuilder from "./models/product-builder"
 import ProductBuilderCustomField from "./models/product-builder-custom-field"
 import ProductBuilderComplementary from "./models/product-builder-complementary"
 import ProductBuilderAddon from "./models/product-builder-addon"
 
-class ProductBuilderModuleService extends MedusaService({
+class ProductBuilderModuleService extends SwitchyardService({
   ProductBuilder,
   ProductBuilderCustomField,
   ProductBuilderComplementary,
@@ -329,19 +329,19 @@ class ProductBuilderModuleService extends MedusaService({
 export default ProductBuilderModuleService
 ```
 
-The `ProductBuilderModuleService` extends `MedusaService`, which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
+The `ProductBuilderModuleService` extends `SwitchyardService`, which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
 
 So, the `ProductBuilderModuleService` class now has methods like `createProductBuilders` and `retrieveProductBuilder`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory](../../../service-factory-reference/page.mdx) reference.
+Find all methods generated by the `SwitchyardService` in [the Service Factory](../../../service-factory-reference/page.mdx) reference.
 
 </Note>
 
 ### d. Create the Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/product-builder/index.ts` with the following content:
 
@@ -353,7 +353,7 @@ export const moduleHighlights = [
 
 ```ts title="src/modules/product-builder/index.ts" highlights={moduleHighlights}
 import Service from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const PRODUCT_BUILDER_MODULE = "productBuilder"
 
@@ -369,13 +369,13 @@ You use the `Module` function to create the module's definition. It accepts two 
 
 You also export the module's name as `PRODUCT_BUILDER_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -398,18 +398,18 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate the migrations for you. To generate a migration for the Product Builder Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate the migrations for you. To generate a migration for the Product Builder Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate productBuilder
+npx switchyard db:generate productBuilder
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/product-builder` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/product-builder` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The tables for the data models are now created in the database.
@@ -418,9 +418,9 @@ The tables for the data models are now created in the database.
 
 ## Step 3: Define Links between Data Models
 
-Since Medusa isolates modules to integrate them into your application without side effects, you can't directly create relationships between data models of different modules.
+Since Switchyard isolates modules to integrate them into your application without side effects, you can't directly create relationships between data models of different modules.
 
-Instead, Medusa provides a mechanism to define links between data models, and retrieve and manage linked records while maintaining module isolation.
+Instead, Switchyard provides a mechanism to define links between data models, and retrieve and manage linked records while maintaining module isolation.
 
 <Note>
 
@@ -428,11 +428,11 @@ Refer to the [Module Links](!docs!/learn/fundamentals/module-links) documentatio
 
 </Note>
 
-In this step, you'll define links between the data models in the Product Builder Module and the data models in Medusa's Product Module:
+In this step, you'll define links between the data models in the Product Builder Module and the data models in Switchyard's Product Module:
 
 - `ProductBuilder` ↔ `Product`: A product builder record represents the builder configurations of a product.
-- `ProductBuilderComplementary` ↔ `Product`: A complementary product record suggests a Medusa product related to the main product.
-- `ProductBuilderAddon` ↔ `Product`: An add-on product record suggests a Medusa product that can be added to the main product in the cart.
+- `ProductBuilderComplementary` ↔ `Product`: A complementary product record suggests a Switchyard product related to the main product.
+- `ProductBuilderAddon` ↔ `Product`: An add-on product record suggests a Switchyard product that can be added to the main product in the cart.
 
 ### a. ProductBuilder ↔ Product
 
@@ -441,13 +441,13 @@ To define a link between the `ProductBuilder` and `Product` data models, create 
 export const productBuilderLinkHighlights = [
   ["7", "linkable", "Link configuration for `ProductBuilder`."],
   ["8", "deleteCascade", "Delete builder when product is deleted."],
-  ["10", "ProductModule.linkable.product", "Link to Medusa's Product data model."]
+  ["10", "ProductModule.linkable.product", "Link to Switchyard's Product data model."]
 ]
 
 ```ts title="src/links/product-builder-product.ts" highlights={productBuilderLinkHighlights}
 import ProductBuilderModule from "../modules/product-builder"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -474,8 +474,8 @@ export const complementaryLinkHighlights = [
 
 ```ts title="src/links/product-builder-complementary-product.ts" highlights={complementaryLinkHighlights}
 import ProductBuilderModule from "../modules/product-builder"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -499,8 +499,8 @@ export const addonLinkHighlights = [
 
 ```ts title="src/links/product-builder-addon-product.ts" highlights={addonLinkHighlights}
 import ProductBuilderModule from "../modules/product-builder"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -517,13 +517,13 @@ Similarly to the previous links, you define a link between the `ProductBuilderAd
 
 After defining links, you need to sync them to the database. This creates the necessary tables to store the links.
 
-To sync the links to the database, run the migrations command again in the Medusa application's directory:
+To sync the links to the database, run the migrations command again in the Switchyard application's directory:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
-This command will create the necessary tables to store the links between your Product Builder Module and Medusa's Product Module.
+This command will create the necessary tables to store the links between your Product Builder Module and Switchyard's Product Module.
 
 ---
 
@@ -628,7 +628,7 @@ The workflow you'll build will have the following steps:
           {
             type: "step",
             name: "createRemoteLinkStep",
-            description: "Link new complementary products to their Medusa product.",
+            description: "Link new complementary products to their Switchyard product.",
             link: "/references/helper-steps/createRemoteLinkStep",
             depth: 1
           }
@@ -641,7 +641,7 @@ The workflow you'll build will have the following steps:
           {
             type: "step",
             name: "dismissRemoteLinkStep",
-            description: "Dismiss links between deleted complementary products and their Medusa products.",
+            description: "Dismiss links between deleted complementary products and their Switchyard products.",
             link: "/references/helper-steps/dismissRemoteLinkStep",
             depth: 1
           }
@@ -672,7 +672,7 @@ The workflow you'll build will have the following steps:
           {
             type: "step",
             name: "createRemoteLinkStep",
-            description: "Link new addon products to their Medusa product.",
+            description: "Link new addon products to their Switchyard product.",
             link: "/references/helper-steps/createRemoteLinkStep",
             depth: 1
           }
@@ -685,7 +685,7 @@ The workflow you'll build will have the following steps:
           {
             type: "step",
             name: "dismissRemoteLinkStep",
-            description: "Dismiss links between deleted addon products and their Medusa products.",
+            description: "Dismiss links between deleted addon products and their Switchyard products.",
             link: "/references/helper-steps/dismissRemoteLinkStep",
             depth: 1
           }
@@ -703,7 +703,7 @@ The workflow you'll build will have the following steps:
   }}
 />
 
-The `useQueryGraphStep`, `createRemoteLinkStep`, and `dismissRemoteLinkStep` are available through Medusa's `@medusajs/medusa/core-flows` package. You'll implement other steps in the workflow.
+The `useQueryGraphStep`, `createRemoteLinkStep`, and `dismissRemoteLinkStep` are available through Switchyard's `@switchyard/medusa/core-flows` package. You'll implement other steps in the workflow.
 
 #### createProductBuilderStep
 
@@ -713,7 +713,7 @@ To create the step, create the file `src/workflows/steps/create-product-builder.
 
 <Note>
 
-If you get a type error on resolving the Product Builder Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Product Builder Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
@@ -724,7 +724,7 @@ export const createProductBuilderStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-product-builder.ts" highlights={createProductBuilderStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type CreateProductBuilderStepInput = {
@@ -757,10 +757,10 @@ You create a step with the `createStep` function. It accepts three parameters:
 1. The step's unique name.
 2. An async function that receives two parameters:
     - The step's input, which is an object with the product builder's properties.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An async compensation function that undoes the actions performed by the step function. This function is only executed if an error occurs during the workflow's execution.
 
-In the step function, you resolve the Product Builder Module's service from the Medusa container and create a product builder record.
+In the step function, you resolve the Product Builder Module's service from the Switchyard container and create a product builder record.
 
 A step function must return a `StepResponse` instance with the step's output, which is the created product builder record in this case.
 
@@ -779,7 +779,7 @@ export const prepareCustomFieldsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/prepare-product-builder-custom-fields.ts" highlights={prepareCustomFieldsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type PrepareProductBuilderCustomFieldsStepInput = {
@@ -883,7 +883,7 @@ export const createCustomFieldsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-product-builder-custom-fields.ts" highlights={createCustomFieldsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type CreateProductBuilderCustomFieldsStepInput = {
@@ -941,7 +941,7 @@ export const updateProductBuilderCustomFieldsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/update-product-builder-custom-fields.ts" highlights={updateProductBuilderCustomFieldsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type UpdateProductBuilderCustomFieldsStepInput = {
@@ -1009,7 +1009,7 @@ export const deleteProductBuilderCustomFieldsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/delete-product-builder-custom-fields.ts" highlights={deleteProductBuilderCustomFieldsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type DeleteProductBuilderCustomFieldsStepInput = {
@@ -1075,7 +1075,7 @@ export const prepareProductBuilderComplementaryProductsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/prepare-product-builder-complementary-products.ts" highlights={prepareProductBuilderComplementaryProductsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type PrepareProductBuilderComplementaryProductsStepInput = {
@@ -1147,7 +1147,7 @@ export const createProductBuilderComplementaryProductsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-product-builder-complementary-products.ts" highlights={createProductBuilderComplementaryProductsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type CreateProductBuilderComplementaryProductsStepInput = {
@@ -1202,7 +1202,7 @@ export const deleteProductBuilderComplementaryProductsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/delete-product-builder-complementary-products.ts" highlights={deleteProductBuilderComplementaryProductsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type DeleteProductBuilderComplementaryProductsStepInput = {
@@ -1262,7 +1262,7 @@ export const prepareProductBuilderAddonsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/prepare-product-builder-addons.ts" highlights={prepareProductBuilderAddonsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type PrepareProductBuilderAddonsStepInput = {
@@ -1333,7 +1333,7 @@ export const createProductBuilderAddonsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-product-builder-addons.ts" highlights={createProductBuilderAddonsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type CreateProductBuilderAddonsStepInput = {
@@ -1387,7 +1387,7 @@ export const deleteProductBuilderAddonsStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/delete-product-builder-addons.ts" highlights={deleteProductBuilderAddonsStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_BUILDER_MODULE } from "../../modules/product-builder"
 
 export type DeleteProductBuilderAddonsStepInput = {
@@ -1441,9 +1441,9 @@ You now have the necessary steps to build the workflow that upserts a product bu
 Start by creating the file `src/workflows/upsert-product-builder.ts` with the following content:
 
 ```ts title="src/workflows/upsert-product-builder.ts" collapsibleLines="1-17" expandButtonLabel="Show Imports"
-import { createWorkflow, parallelize, transform, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { createRemoteLinkStep, dismissRemoteLinkStep } from "@medusajs/medusa/core-flows"
-import { Modules } from "@medusajs/framework/utils"
+import { createWorkflow, parallelize, transform, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { createRemoteLinkStep, dismissRemoteLinkStep } from "@switchyard/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
 import { createProductBuilderStep } from "./steps/create-product-builder"
 import { prepareProductBuilderCustomFieldsStep } from "./steps/prepare-product-builder-custom-fields"
 import { createProductBuilderCustomFieldsStep } from "./steps/create-product-builder-custom-fields"
@@ -1455,7 +1455,7 @@ import { deleteProductBuilderComplementaryProductsStep } from "./steps/delete-pr
 import { prepareProductBuilderAddonsStep } from "./steps/prepare-product-builder-addons"
 import { createProductBuilderAddonsStep } from "./steps/create-product-builder-addons"
 import { deleteProductBuilderAddonsStep } from "./steps/delete-product-builder-addons"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { PRODUCT_BUILDER_MODULE } from "../modules/product-builder"
 
 export type UpsertProductBuilderWorkflowInput = {
@@ -1556,7 +1556,7 @@ In this snippet, you:
 
 <Note>
 
-In a workflow, you can't manipulate data or check conditions because Medusa stores an internal representation of the workflow on application startup. Learn more in the [Data Manipulation](!docs!/learn/fundamentals/workflows/variable-manipulation) and [Conditions](!docs!/learn/fundamentals/workflows/conditions) documentation.
+In a workflow, you can't manipulate data or check conditions because Switchyard stores an internal representation of the workflow on application startup. Learn more in the [Data Manipulation](!docs!/learn/fundamentals/workflows/variable-manipulation) and [Conditions](!docs!/learn/fundamentals/workflows/conditions) documentation.
 
 </Note>
 
@@ -1606,10 +1606,10 @@ export const upsertProductBuilderWorkflowHighlights3 = [
   ["5", "prepareProductBuilderComplementaryProductsStep", "Prepare complementary products for the product builder."],
   ["14", "createProductBuilderComplementaryProductsStep", "Create complementary products."],
   ["17", "deleteProductBuilderComplementaryProductsStep", "Delete complementary products."],
-  ["24", "complementaryProductLinks", "Links to create between complementary Medusa products."],
-  ["25", "deletedComplementaryProductLinks", "Links to dismiss between complementary Medusa products."],
-  ["54", "createRemoteLinkStep", "Create links between complementary and Medusa products."],
-  ["63", "dismissRemoteLinkStep", "Dismiss links between complementary and Medusa products."]
+  ["24", "complementaryProductLinks", "Links to create between complementary Switchyard products."],
+  ["25", "deletedComplementaryProductLinks", "Links to dismiss between complementary Switchyard products."],
+  ["54", "createRemoteLinkStep", "Create links between complementary and Switchyard products."],
+  ["63", "dismissRemoteLinkStep", "Dismiss links between complementary and Switchyard products."]
 ]
 
 ```ts title="src/workflows/upsert-product-builder.ts" highlights={upsertProductBuilderWorkflowHighlights3}
@@ -1685,7 +1685,7 @@ In this portion of the workflow, you:
 
 - Prepare which complementary products need to be created or deleted using the `prepareProductBuilderComplementaryProductsStep`.
 - Run the `createProductBuilderComplementaryProductsStep` and `deleteProductBuilderComplementaryProductsStep` in parallel to manage the complementary products.
-- Prepare the links to be created or deleted between the complementary products and the Medusa products.
+- Prepare the links to be created or deleted between the complementary products and the Switchyard products.
 - Create the links for the new complementary products.
 - Dismiss the links for the deleted complementary products.
 
@@ -1695,10 +1695,10 @@ export const upsertProductBuilderWorkflowHighlights4 = [
   ["5", "prepareProductBuilderAddonsStep", "Prepare addon products for the product builder."],
   ["11", "createProductBuilderAddonsStep", "Create addon products."],
   ["14", "deleteProductBuilderAddonsStep", "Delete addon products."],
-  ["21", "addonProductLinks", "Links to create between addon Medusa products."],
-  ["22", "deletedAddonProductLinks", "Links to dismiss between addon Medusa products."],
-  ["51", "createRemoteLinkStep", "Create links between addon and Medusa products."],
-  ["60", "dismissRemoteLinkStep", "Dismiss links between addon and Medusa products."]
+  ["21", "addonProductLinks", "Links to create between addon Switchyard products."],
+  ["22", "deletedAddonProductLinks", "Links to dismiss between addon Switchyard products."],
+  ["51", "createRemoteLinkStep", "Create links between addon and Switchyard products."],
+  ["60", "dismissRemoteLinkStep", "Dismiss links between addon and Switchyard products."]
 ]
 
 ```ts title="src/workflows/upsert-product-builder.ts" highlights={upsertProductBuilderWorkflowHighlights4}
@@ -1768,7 +1768,7 @@ when({
 // TODO retrieve and return the product builder configuration
 ```
 
-This part of the workflow is similar to the complementary products management, but it handles addon products instead. You create and delete addon products, then create and dismiss links between them and Medusa products.
+This part of the workflow is similar to the complementary products management, but it handles addon products instead. You create and delete addon products, then create and dismiss links between them and Switchyard products.
 
 Finally, you need to retrieve and return the product builder configuration. Replace the last `TODO` in the workflow with the following:
 
@@ -1826,9 +1826,9 @@ export const builderRouteHighlights = [
 
 ```ts title="src/api/admin/products/[id]/builder/route.ts" highlights={builderRouteHighlights}
 import { 
-  AuthenticatedMedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework"
+  AuthenticatedSwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework"
 import { z } from "zod"
 import { upsertProductBuilderWorkflow } from "../../../../../workflows/upsert-product-builder"
 
@@ -1851,8 +1851,8 @@ export const UpsertProductBuilderSchema = z.object({
 })
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<typeof UpsertProductBuilderSchema>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<typeof UpsertProductBuilderSchema>,
+  res: SwitchyardResponse
 ) => {
   const { result } = await upsertProductBuilderWorkflow(req.scope)
     .run({
@@ -1872,11 +1872,11 @@ First, you define a [Zod](https://zod.dev/) schema that represents the accepted 
 
 Then, you export a `POST` route handler function, which will expose a `POST` API route at `/admin/products/[id]/builder`.
 
-In the route handler, you execute the `upsertProductBuilderWorkflow` passing it the Medusa container, which is available in the `req.scope` property, and executing its `run` method.
+In the route handler, you execute the `upsertProductBuilderWorkflow` passing it the Switchyard container, which is available in the `req.scope` property, and executing its `run` method.
 
 You return the product builder in the response.
 
-You'll test this API route later when you customize the Medusa Admin dashboard.
+You'll test this API route later when you customize the Switchyard Admin dashboard.
 
 #### Add Validation Middleware
 
@@ -1894,7 +1894,7 @@ export const middlewareHighlights = [
 import { 
   defineMiddlewares,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { UpsertProductBuilderSchema } from "./admin/products/[id]/builder/route"
 
 export default defineMiddlewares({
@@ -1942,8 +1942,8 @@ export const getProductBuilderHighlights = [
 
 ```ts title="src/api/admin/products/[id]/builder/route.ts" highlights={getProductBuilderHighlights}
 export const GET = async (
-  req: AuthenticatedMedusaRequest<{ id: string }>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<{ id: string }>,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve("query")
   
@@ -1997,8 +1997,8 @@ export const getComplementaryProductsRouteHighlights = [
 ]
 
 ```ts title="src/api/admin/products/complementary/route.ts" highlights={getComplementaryProductsRouteHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 import { z } from "zod"
 
 export const GetComplementaryProductsSchema = z.object({
@@ -2006,8 +2006,8 @@ export const GetComplementaryProductsSchema = z.object({
 }).merge(createFindParams())
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const {
     exclude_product_id,
@@ -2077,7 +2077,7 @@ In `src/api/middlewares.ts`, add the following imports at the top of the file:
 ```ts title="src/api/middlewares.ts"
 import { 
   validateAndTransformQuery,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { GetComplementaryProductsSchema } from "./admin/products/complementary/route"
 ```
 
@@ -2117,11 +2117,11 @@ export const getAddonProductsHighlights = [
 ]
 
 ```ts title="src/api/admin/products/addons/route.ts" highlights={getAddonProductsHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve("query")
 
@@ -2161,7 +2161,7 @@ Since the API route should accept pagination query parameters, you need to apply
 In `src/api/middlewares.ts`, add the following import at the top of the file:
 
 ```ts title="src/api/middlewares.ts"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 ```
 
 Then, add a new route object in `defineMiddlewares`:
@@ -2191,9 +2191,9 @@ You'll test out all of these routes in the next step.
 
 ## Step 6: Add Admin Widget in Product Details Page
 
-In this step, you'll customize the Medusa Admin to allow admin users to manage a product's builder configurations.
+In this step, you'll customize the Switchyard Admin to allow admin users to manage a product's builder configurations.
 
-The Medusa Admin dashboard is customizable, allowing you to insert widgets into existing pages, or create new pages.
+The Switchyard Admin dashboard is customizable, allowing you to insert widgets into existing pages, or create new pages.
 
 <Note title="Tip">
 
@@ -2205,21 +2205,21 @@ In this step, you'll create the components to manage a product's builder configu
 
 ### a. Initialize JS SDK
 
-To send requests to the Medusa server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Medusa project, but you need to initialize it before using it in your customizations.
+To send requests to the Switchyard server, you'll use the [JS SDK](../../../js-sdk/page.mdx). It's already installed in your Switchyard project, but you need to initialize it before using it in your customizations.
 
 Create the file `src/admin/lib/sdk.ts` with the following content:
 
 export const sdkHighlights = [
-  ["3", "new Medusa", "Initialize the Medusa JS SDK."],
+  ["3", "new Switchyard", "Initialize the Switchyard JS SDK."],
   ["4", "baseUrl", "Backend server URL."],
   ["5", "debug", "Enable debug mode in development."],
   ["7", "type: \"session\"", "Use session-based authentication."]
 ]
 
 ```ts title="src/admin/lib/sdk.ts" highlights={sdkHighlights}
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: process.env.MEDUSA_BACKEND_URL || "http://localhost:9000",
   debug: process.env.NODE_ENV === "development",
   auth: {
@@ -2335,7 +2335,7 @@ To manage a product's builder configurations, you'll show a modal with tabs for 
 
 You'll start by creating the custom fields tab component, which allows admin users to manage custom fields for a product's builder configuration.
 
-![Screenshot of how the custom fields tab will look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755089825/Medusa%20Resources/CleanShot_2025-08-13_at_15.56.15_2x_uwej4x.png)
+![Screenshot of how the custom fields tab will look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755089825/Switchyard%20Resources/CleanShot_2025-08-13_at_15.56.15_2x_uwej4x.png)
 
 To create the component, create the file `src/admin/components/custom-fields-tab.tsx` with the following content:
 
@@ -2348,8 +2348,8 @@ import {
   Select,
   Checkbox,
   Text,
-} from "@medusajs/ui"
-import { Trash } from "@medusajs/icons"
+} from "@switchyard/ui"
+import { Trash } from "@switchyard/icons"
 import { CustomField } from "../types"
 
 type CustomFieldsTabProps = {
@@ -2476,12 +2476,12 @@ When the admin user changes values of a custom field, creates a custom field, or
 
 Next, you'll create the complementary products tab component, which allows admin users to manage the complementary products for a product's builder configuration.
 
-![Screenshot of how the complementary products tab will look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755089830/Medusa%20Resources/CleanShot_2025-08-13_at_15.56.20_2x_jxix2n.png)
+![Screenshot of how the complementary products tab will look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755089830/Switchyard%20Resources/CleanShot_2025-08-13_at_15.56.20_2x_jxix2n.png)
 
 Create the file `src/admin/components/complementary-products-tab.tsx` with the following content:
 
 ```tsx title="src/admin/components/complementary-products-tab.tsx" collapsibleLines="1-13" expandButtonLabel="Show Imports"
-import { AdminProduct } from "@medusajs/framework/types"
+import { AdminProduct } from "@switchyard/framework/types"
 import { 
   Heading, 
   Checkbox, 
@@ -2489,7 +2489,7 @@ import {
   DataTable,
   DataTablePaginationState,
   useDataTable,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
@@ -2608,7 +2608,7 @@ You use [Tanstack Query](https://tanstack.com/query/latest) to send requests wit
 
 Next, you'll create the last tab of the product builder configuration modal. It will allow the admin user to select addons of the product.
 
-![Screenshot of how the addons tab will look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755089831/Medusa%20Resources/CleanShot_2025-08-13_at_15.56.24_2x_zmryk1.png)
+![Screenshot of how the addons tab will look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755089831/Switchyard%20Resources/CleanShot_2025-08-13_at_15.56.24_2x_zmryk1.png)
 
 To create the component, create the file `src/admin/components/addons-tab.tsx` with the following content:
 
@@ -2620,7 +2620,7 @@ import {
   DataTable,
   DataTablePaginationState,
   useDataTable,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useState } from "react"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
@@ -2736,7 +2736,7 @@ import {
   Heading,
   toast,
   ProgressTabs,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useState, useEffect } from "react"
 import { useMutation, useQueryClient } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
@@ -2746,7 +2746,7 @@ import {
   ProductBuilderResponse,
   AddonProduct,
 } from "../types"
-import { AdminProduct } from "@medusajs/framework/types"
+import { AdminProduct } from "@switchyard/framework/types"
 import { ComplementaryProductsTab } from "./complementary-products-tab"
 import { AddonsTab } from "./addons-tab"
 import { CustomFieldsTab } from "./custom-fields-tab"
@@ -2995,14 +2995,14 @@ Finally, you'll create the widget that will be injected to the product details p
 Create the file `src/admin/widgets/product-builder-widget.tsx` with the following content:
 
 ```tsx title="src/admin/widgets/product-builder-widget.tsx" collapsibleLines="1-12" expandButtonLabel="Show Imports"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Text, Button } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Text, Button } from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { sdk } from "../lib/sdk"
 import { 
   DetailWidgetProps, 
   AdminProduct,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { useState } from "react"
 import { ProductBuilderModal } from "../components/product-builder-modal"
 import { ProductBuilderResponse } from "../types"
@@ -3137,7 +3137,7 @@ export default ProductBuilderWidget
 A widget file must export:
 
 - A default React component. This component renders the widget's UI.
-- A `config` object created with `defineWidgetConfig` from the Admin SDK. It accepts an object with the `zone` property that indicates where the widget will be rendered in the Medusa Admin dashboard.
+- A `config` object created with `defineWidgetConfig` from the Admin SDK. It accepts an object with the `zone` property that indicates where the widget will be rendered in the Switchyard Admin dashboard.
 
 In the widget's component, you retrieve the product builder configuration of the current product, if available. Then, you show a summary of the configurations, with a button to edit the configurations.
 
@@ -3147,13 +3147,13 @@ When the edit button is clicked, the product builder modal is shown with the tab
 
 To test out the admin widget for product builder configurations:
 
-1. Start the Medusa application with the following command:
+1. Start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-2. Open the Medusa Admin dashboard at `localhost:9000/app` and login.
+2. Open the Switchyard Admin dashboard at `localhost:9000/app` and login.
 3. Go to Settings -> Product Tags.
 4. Create a tag with the value `addon`.
 5. Go back to the Products page, and choose an existing product to mark as an addon.
@@ -3161,13 +3161,13 @@ npm run dev
 7. Go back to the Products page, and choose an existing product to manage its builder configurations.
 8. Scroll down to the end of the product's details page. You'll find a new "Builder Configuration" section. This is the widget you inserted.
 
-![Builder configuration widget in the product details page](https://res.cloudinary.com/dza7lstvk/image/upload/v1755096182/Medusa%20Resources/CleanShot_2025-08-13_at_17.30.06_2x_hnfsdl.png)
+![Builder configuration widget in the product details page](https://res.cloudinary.com/dza7lstvk/image/upload/v1755096182/Switchyard%20Resources/CleanShot_2025-08-13_at_17.30.06_2x_hnfsdl.png)
 
 9. Click on the Edit button to edit the configurations.
 10. Add custom fields such as engravings, select complementary products such as keyboard, and add add-ons like a warranty.
 11. Once you're done, click on the "Save Configuration" button. The modal will be closed and you can see the updated configurations in the widget.
 
-![Updated builder configuration data showing in the widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1755096296/Medusa%20Resources/CleanShot_2025-08-13_at_17.44.45_2x_zqonoy.png)
+![Updated builder configuration data showing in the widget](https://res.cloudinary.com/dza7lstvk/image/upload/v1755096296/Switchyard%20Resources/CleanShot_2025-08-13_at_17.44.45_2x_zqonoy.png)
 
 ---
 
@@ -3175,7 +3175,7 @@ npm run dev
 
 In this step, you'll customize the product details page on the storefront to show the product builder configurations.
 
-Alongside the variant options like color and size, which are already available in Medusa, you'll show:
+Alongside the variant options like color and size, which are already available in Switchyard, you'll show:
 
 - The custom fields, allowing the customer to enter their values.
 - The complementary products, allowing the customer to add them to the cart alongside the main product.
@@ -3183,9 +3183,9 @@ Alongside the variant options like color and size, which are already available i
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-product-builder`, you can find the storefront by going back to the parent directory and changing to the `medusa-product-builder-storefront` directory:
+So, if your Switchyard application's directory is `medusa-product-builder`, you can find the storefront by going back to the parent directory and changing to the `medusa-product-builder-storefront` directory:
 
 ```bash
 cd ../medusa-product-builder-storefront # change based on your project name
@@ -3202,7 +3202,7 @@ In `src/types/global.ts`, add the following import at the top of the file:
 ```ts title="src/types/global.ts" badgeLabel="Storefront" badgeColor="blue"
 import { 
   StoreProduct,
-} from "@medusajs/types"
+} from "@switchyard/types"
 ```
 
 Then, add the following type definitions at the end of the file:
@@ -3287,7 +3287,7 @@ You define the following types:
 - `ProductBuilderComplementaryProduct`: A complementary product in a product builder configuration.
 - `ProductBuilderAddon`: An add-on product in a product builder configuration.
 - `ProductBuilder`: The main product builder configuration object.
-- `ProductWithBuilder`: A Medusa product with an associated product builder configuration.
+- `ProductWithBuilder`: A Switchyard product with an associated product builder configuration.
 - `CustomFieldValue`: A value entered by the customer for a custom field.
 - `ComplementarySelection`: A selected complementary product in a product builder configuration.
 - `AddonSelection`: A selected add-on product in a product builder configuration.
@@ -3419,7 +3419,7 @@ You define the following utilities:
 
 In this section, you'll implement the component that will show the product builder configurations on the product details page. It will show inputs for custom fields, and variant selection for complementary and addon products.
 
-![Screenshot of how the product builder configuration component will look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755098570/Medusa%20Resources/CleanShot_2025-08-13_at_18.22.29_2x_zdtjlk.png)
+![Screenshot of how the product builder configuration component will look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755098570/Switchyard%20Resources/CleanShot_2025-08-13_at_18.22.29_2x_zdtjlk.png)
 
 You'll first create the `VariantSelectionRow` component that you'll use to show the complementary and addon product variants.
 
@@ -3436,11 +3436,11 @@ export const variantSelectorHighlights = [
 ```tsx title="src/modules/products/components/product-builder-config/variant-selector.tsx" badgeLabel="Storefront" badgeColor="blue" highlights={variantSelectorHighlights}
 "use client"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { 
   Badge, 
   Text, 
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { getProductPrice } from "../../../../lib/util/get-product-price"
 
 type VariantSelectionRowProps = {
@@ -3563,11 +3563,11 @@ export const productBuilderConfigHighlights = [
 "use client"
 
 import { useState, useEffect } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { 
   Text, 
   Input, 
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import Divider from "@modules/common/components/divider"
 import { 
   ProductWithBuilder, 
@@ -4279,9 +4279,9 @@ Similar to the `ProductActions` component, you ensure the button's disabled stat
 
 To test out the product details page in the Next.js Starter Storefront:
 
-1. Start the Medusa application with the following command:
+1. Start the Switchyard application with the following command:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -4296,7 +4296,7 @@ npm run dev
 
 You should see the custom fields, complementary products, and addons on the product's page.
 
-![Product details page with builder configurations](https://res.cloudinary.com/dza7lstvk/image/upload/v1755101580/Medusa%20Resources/CleanShot_2025-08-13_at_19.12.48_2x_tf4goa.png)
+![Product details page with builder configurations](https://res.cloudinary.com/dza7lstvk/image/upload/v1755101580/Switchyard%20Resources/CleanShot_2025-08-13_at_19.12.48_2x_tf4goa.png)
 
 While you can enter custom values and select variants, you still can't add the product variant with its builder configurations to the cart. You'll support that in the next step.
 
@@ -4380,7 +4380,7 @@ The workflow will have the following steps:
   }}
 />
 
-You only need to implement the `validateProductBuilderConfigurationStep`, as Medusa provides the rest.
+You only need to implement the `validateProductBuilderConfigurationStep`, as Switchyard provides the rest.
 
 #### validateProductBuilderConfigurationStep
 
@@ -4394,8 +4394,8 @@ export const validateProductBuilderConfigurationStepHighlights1 = [
 ]
 
 ```ts title="src/workflows/steps/validate-product-builder-configuration.ts" highlights={validateProductBuilderConfigurationStepHighlights1}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export type ValidateProductBuilderConfigurationStepInput = {
   product_id: string
@@ -4430,8 +4430,8 @@ export const validateProductBuilderConfigurationStep = createStep(
     })
 
     if (!productBuilder) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Product builder configuration not found for product ID: ${product_id}`
       )
     }
@@ -4458,8 +4458,8 @@ if (
   !productBuilder.custom_fields.length && 
   custom_field_values && Object.keys(custom_field_values).length > 0
 ) {
-  throw new MedusaError(
-    MedusaError.Types.INVALID_DATA,
+  throw new SwitchyardError(
+    SwitchyardError.Types.INVALID_DATA,
     `Product doesn't support custom fields.`
   )
 }
@@ -4472,16 +4472,16 @@ for (const field of productBuilder.custom_fields) {
   
   // Check required fields
   if (field.is_required && (!value || value === "")) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Custom field "${field.name}" is required`
     )
   }
 
   // Validate field type
   if (value !== undefined && value !== "" && field.type === "number" && isNaN(Number(value))) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Custom field "${field.name}" must be a number`
     )
   }
@@ -4512,8 +4512,8 @@ const invalidComplementary = complementary_product_variants?.filter(
 )
 
 if ((invalidComplementary?.length || 0) > 0) {
-  throw new MedusaError(
-    MedusaError.Types.INVALID_DATA,
+  throw new SwitchyardError(
+    SwitchyardError.Types.INVALID_DATA,
     `Invalid complementary product variants: ${invalidComplementary!.join(", ")}`
   )
 }
@@ -4525,8 +4525,8 @@ const invalidAddons = addon_variants?.filter(
 )
 
 if ((invalidAddons?.length || 0) > 0) {
-  throw new MedusaError(
-    MedusaError.Types.INVALID_DATA,
+  throw new SwitchyardError(
+    SwitchyardError.Types.INVALID_DATA,
     `Invalid addon product variants: ${invalidAddons!.join(", ")}`
   )
 }
@@ -4555,14 +4555,14 @@ import {
   WorkflowResponse,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   addToCartWorkflow, 
   updateLineItemInCartWorkflow, 
   useQueryGraphStep, 
   acquireLockStep, 
   releaseLockStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   validateProductBuilderConfigurationStep,
 } from "./steps/validate-product-builder-configuration"
@@ -4802,7 +4802,7 @@ export const addToCartApiHighlights = [
 ]
 
 ```ts title="src/api/store/carts/[id]/product-builder/route.ts" highlights={addToCartApiHighlights}
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { addProductBuilderToCartWorkflow } from "../../../../../workflows/add-product-builder-to-cart"
 import { z } from "zod"
 
@@ -4816,10 +4816,10 @@ export const AddBuilderProductSchema = z.object({
 })
 
 export async function POST(
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     z.infer<typeof AddBuilderProductSchema>
   >,
-  res: MedusaResponse
+  res: SwitchyardResponse
 ) {
 
   const cartId = req.params.id
@@ -5022,7 +5022,7 @@ import {
 } from "@lib/data/cart"
 import { 
   toast,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 ```
 
 Then, in the `ProductActions` component, find the `handleAddToCart` function and replace it with the following:
@@ -5063,13 +5063,13 @@ If the product has builder configurations, you call the `addBuilderProductToCart
 
 #### Test Add to Cart Functionality
 
-To test out the add-to-cart functionality with builder configurations, make sure that both the Medusa application and the Next.js Starter Storefront are running.
+To test out the add-to-cart functionality with builder configurations, make sure that both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, open the page of a product with builder configurations in the storefront. Select the configurations, and add them to the cart.
 
 The cart will be updated with the main product and selected complementary and addon product variants.
 
-![Cart dropdown showing the product with its complementary product](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160166/Medusa%20Resources/CleanShot_2025-08-14_at_11.28.53_2x_bcskgr.png)
+![Cart dropdown showing the product with its complementary product](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160166/Switchyard%20Resources/CleanShot_2025-08-14_at_11.28.53_2x_bcskgr.png)
 
 ### b. Customize Cart Page
 
@@ -5077,13 +5077,13 @@ Next, you'll customize the cart page to display the custom field values of a pro
 
 You'll start with some styling changes, then update the cart item rendering logic to include the custom fields and addon products.
 
-![Screenshot showcasing which areas of the cart page will be updated and how they'll look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160329/Medusa%20Resources/CleanShot_2025-08-14_at_11.31.50_2x_tpxlht.png)
+![Screenshot showcasing which areas of the cart page will be updated and how they'll look like](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160329/Switchyard%20Resources/CleanShot_2025-08-14_at_11.31.50_2x_tpxlht.png)
 
 #### Styling Changes
 
 You'll first update the style of the quantity changer component for a better design.
 
-![Screenshot showcasing the updated quantity changer component](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160526/Medusa%20Resources/CleanShot_2025-08-14_at_11.35.07_2x_vtmnuz.png)
+![Screenshot showcasing the updated quantity changer component](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160526/Switchyard%20Resources/CleanShot_2025-08-14_at_11.35.07_2x_vtmnuz.png)
 
 In `src/modules/cart/components/cart-item-select/index.tsx`, replace the file content with the following:
 
@@ -5100,7 +5100,7 @@ export const cartItemSelectHighlights = [
 ```tsx title="src/modules/cart/components/cart-item-select/index.tsx" badgeLabel="Storefront" badgeColor="blue" highlights={cartItemSelectHighlights}
 "use client"
 
-import { IconButton, clx } from "@medusajs/ui"
+import { IconButton, clx } from "@switchyard/ui"
 import {
   SelectHTMLAttributes,
   forwardRef,
@@ -5109,7 +5109,7 @@ import {
   useRef,
   useState,
 } from "react"
-import { Minus, Plus } from "@medusajs/icons"
+import { Minus, Plus } from "@switchyard/icons"
 
 type NativeSelectProps = {
   placeholder?: string
@@ -5190,12 +5190,12 @@ You make the following key changes:
 
 Next, you'll update the styling of the delete button that removes items from the cart.
 
-![Screenshot showcasing the updated delete button](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160603/Medusa%20Resources/CleanShot_2025-08-14_at_11.36.29_2x_myhwyf.png)
+![Screenshot showcasing the updated delete button](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160603/Switchyard%20Resources/CleanShot_2025-08-14_at_11.36.29_2x_myhwyf.png)
 
 In `src/modules/common/components/delete-button/index.tsx`, add the following import at the top of the file:
 
 ```tsx title="src/modules/common/components/delete-button/index.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { IconButton } from "@medusajs/ui"
+import { IconButton } from "@switchyard/ui"
 ```
 
 Then, in the `DeleteButton` component, replace the `button` element in the `return` statement with the following:
@@ -5219,7 +5219,7 @@ Next, you'll update the `LineItemOptions` component to receive a `className` pro
 In `src/modules/common/components/line-item-options/index.tsx`, add the following import at the top of the file:
 
 ```tsx title="src/modules/common/components/line-item-options/index.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { clx } from "@medusajs/ui"
+import { clx } from "@switchyard/ui"
 ```
 
 Next, update the `LineItemOptionsProps` to accept a `className` prop:
@@ -5255,7 +5255,7 @@ const LineItemOptions = ({
 
 Next, you'll make small adjustments to the text size of the item price components.
 
-![Screenshot showcasing the updated item price components](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160898/Medusa%20Resources/CleanShot_2025-08-14_at_11.41.23_2x_eitu29.png)
+![Screenshot showcasing the updated item price components](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160898/Switchyard%20Resources/CleanShot_2025-08-14_at_11.41.23_2x_eitu29.png)
 
 In `src/modules/common/components/line-item-price/index.tsx`, update the `className` prop of the `span` element containing the price:
 
@@ -5620,11 +5620,11 @@ const ItemsPreviewTemplate = ({ cart }: ItemsTemplateProps) => {
 
 #### Test out Changes
 
-To test out the design changes to the cart page, make sure both the Medusa application and the Next.js Starter Storefront are running.
+To test out the design changes to the cart page, make sure both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, open the cart page in the storefront. If you have a product with an addon and custom fields in the cart, you'll see them displayed within the main product's row.
 
-![Screenshot showcasing the updated cart page with custom fields and addon products](https://res.cloudinary.com/dza7lstvk/image/upload/v1755161965/Medusa%20Resources/CleanShot_2025-08-14_at_11.59.16_2x_pfo20r.png)
+![Screenshot showcasing the updated cart page with custom fields and addon products](https://res.cloudinary.com/dza7lstvk/image/upload/v1755161965/Switchyard%20Resources/CleanShot_2025-08-14_at_11.59.16_2x_pfo20r.png)
 
 ### c. Update Cart Items Count in Dropdown
 
@@ -5717,11 +5717,11 @@ return (
 
 #### Test Cart Dropdown Changes
 
-To test out the cart dropdown changes, make sure both the Medusa application and the Next.js Starter Storefront are running.
+To test out the cart dropdown changes, make sure both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, check the "Cart" navigation item at the top right. The total count next to "Cart" should not include the addon products, and the dropdown should exclude them as well.
 
-![Updated cart dropdown with updated total count and filtered items](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160166/Medusa%20Resources/CleanShot_2025-08-14_at_11.28.53_2x_bcskgr.png)
+![Updated cart dropdown with updated total count and filtered items](https://res.cloudinary.com/dza7lstvk/image/upload/v1755160166/Switchyard%20Resources/CleanShot_2025-08-14_at_11.28.53_2x_bcskgr.png)
 
 ---
 
@@ -5779,7 +5779,7 @@ The workflow to remove a product with builder configurations from the cart has t
   hideLegend
 />
 
-Medusa provides all of these steps, so you can create the workflow without needing to implement any custom steps.
+Switchyard provides all of these steps, so you can create the workflow without needing to implement any custom steps.
 
 Create the file `src/workflows/remove-product-builder-from-cart.ts` with the following content:
 
@@ -5798,13 +5798,13 @@ import {
   createWorkflow, 
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   deleteLineItemsWorkflow, 
   useQueryGraphStep, 
   acquireLockStep, 
   releaseLockStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 type RemoveProductBuilderFromCartInput = {
   cart_id: string
@@ -5908,12 +5908,12 @@ Next, you'll create an API route that uses the workflow you created to remove a 
 Create the file `src/api/store/carts/[id]/product-builder/[item_id]/route.ts` with the following content:
 
 ```ts title="src/api/store/carts/[id]/product-builder/[item_id]/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { removeProductBuilderFromCartWorkflow } from "../../../../../../workflows/remove-product-builder-from-cart"
 
 export const DELETE = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const {
     id: cartId,
@@ -6074,7 +6074,7 @@ return (
 
 ### Test Deleting Product with Builder Configurations from Cart
 
-To test out the changes, make sure both the Medusa application and the Next.js Starter Storefront are running.
+To test out the changes, make sure both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, in the storefront, delete the product with builder configurations from the cart either from the cart page or the cart dropdown. The addon item will also be removed from the cart.
 
@@ -6087,7 +6087,7 @@ In this step, you'll customize the order confirmation page in the storefront to 
 In `src/modules/order/components/item/index.tsx`, add the following import at the top of the file:
 
 ```tsx title="src/modules/order/components/item/index.tsx" badgeLabel="Storefront" badgeColor="blue"
-import { clx } from "@medusajs/ui"
+import { clx } from "@switchyard/ui"
 import { LineItemWithBuilderMetadata } from "../../../../types/global"
 import { isBuilderLineItem } from "../../../../lib/util/product-builder"
 ```
@@ -6284,11 +6284,11 @@ const Items = ({ order }: ItemsProps) => {
 
 ### Test Order Confirmation Page
 
-To test out the changes in the order confirmation page, make sure both the Medusa application and the Next.js Starter Storefront are running.
+To test out the changes in the order confirmation page, make sure both the Switchyard application and the Next.js Starter Storefront are running.
 
 Then, place an order with a product that has builder configurations. In the confirmation page, you'll see the product with its custom fields and addon items displayed similar to the cart page.
 
-![Updated order confirmation page](https://res.cloudinary.com/dza7lstvk/image/upload/v1755168706/Medusa%20Resources/CleanShot_2025-08-14_at_13.51.33_2x_bdadlh.png)
+![Updated order confirmation page](https://res.cloudinary.com/dza7lstvk/image/upload/v1755168706/Switchyard%20Resources/CleanShot_2025-08-14_at_13.51.33_2x_bdadlh.png)
 
 ---
 
@@ -6304,9 +6304,9 @@ export const orderWidgetHighlights = [
 ]
 
 ```tsx title="src/admin/widgets/order-builder-details-widget.tsx" highlights={orderWidgetHighlights}
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Text, clx } from "@medusajs/ui"
-import { DetailWidgetProps, AdminOrder } from "@medusajs/framework/types"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Text, clx } from "@switchyard/ui"
+import { DetailWidgetProps, AdminOrder } from "@switchyard/framework/types"
 
 type BuilderLineItemMetadata = {
   is_builder_main_product?: boolean
@@ -6460,30 +6460,30 @@ Notice that to find the addons of the main product, you compare the `main_produc
 
 To test out the widget on the order details page:
 
-1. Make sure the Medusa Application is running.
-2. Open the Medusa Admin dashboard and log in.
+1. Make sure the Switchyard Application is running.
+2. Open the Switchyard Admin dashboard and log in.
 3. Go to Orders.
 4. Click on an order that contains an item with builder configurations.
 
 You'll find at the end of the side section an "Items with Builder Configurations" section. The section will show the custom field values and add-ons for each item that has builder configurations.
 
-![Widget on the order details page showing the builder configurations for each item](https://res.cloudinary.com/dza7lstvk/image/upload/v1755169611/Medusa%20Resources/CleanShot_2025-08-14_at_14.06.40_2x_om7f6e.png)
+![Widget on the order details page showing the builder configurations for each item](https://res.cloudinary.com/dza7lstvk/image/upload/v1755169611/Switchyard%20Resources/CleanShot_2025-08-14_at_14.06.40_2x_om7f6e.png)
 
 ---
 
 ## Next Steps
 
-You've now implemented the product builder feature in Medusa. You can expand on this feature based on your use case. You can:
+You've now implemented the product builder feature in Switchyard. You can expand on this feature based on your use case. You can:
 
 - Allow users to edit their product configurations from the cart or checkout page.
 - Disallow purchasing addon products without a main product by filtering products with the `addon` tag.
 - Expand on the builder configurations to support more complex setups.
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -6493,5 +6493,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

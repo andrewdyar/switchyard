@@ -1,6 +1,6 @@
 import clsx from "clsx"
 import { Card, IconHeadline, Link, WindowPaintbrushIcon } from "docs-ui"
-import { Book } from "@medusajs/icons"
+import { Book } from "@switchyard/icons"
 import { basePathUrl } from "../../../utils/base-path-url"
 import HomepageCodeTabs from "../CodeTabs"
 
@@ -38,7 +38,7 @@ const HomepageTopSection = () => {
           <div className="flex flex-col gap-[10px]">
             <IconHeadline title="Documentation" icon={<Book />} />
             <h2 className="text-medusa-fg-base text-h1 text-pretty w-full md:w-2/3 lg:w-full">
-              Learn how to build Medusa projects. Explore our guides.
+              Learn how to build Switchyard projects. Explore our guides.
             </h2>
           </div>
           <Card
@@ -63,7 +63,7 @@ const HomepageTopSection = () => {
             customizations.
           </h2>
           <span className="text-small-plus text-medusa-fg-subtle">
-            Unlike other platforms, the Medusa Framework allows you to easily
+            Unlike other platforms, the Switchyard Framework allows you to easily
             customize and extend the behavior of your commerce platform to
             always fit your business needs.
           </span>

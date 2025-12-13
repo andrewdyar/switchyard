@@ -2,7 +2,7 @@
 
 import React, { useMemo } from "react"
 import clsx from "clsx"
-import { ArrowUturnLeft } from "@medusajs/icons"
+import { ArrowUturnLeft } from "@switchyard/icons"
 import { useSidebar } from "../../../providers"
 
 export const SidebarChild = () => {

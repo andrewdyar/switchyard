@@ -9,12 +9,12 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# calculateShippingOptionsPricesWorkflow - Medusa Core Workflows Reference
+# calculateShippingOptionsPricesWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `calculateShippingOptionsPricesWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `calculateShippingOptionsPricesWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow calculates the prices for one or more shipping options in a cart. It's used by the
-[Calculate Shipping Option Price Store API Route](https://docs.medusajs.com/api/store#shipping-options\_postshippingoptionsidcalculate).
+[Calculate Shipping Option Price Store API Route](https://docs.switchyard.com/api/store#shipping-options\_postshippingoptionsidcalculate).
 
 :::note
 
@@ -26,7 +26,7 @@ This depends on the implementation of the fulfillment provider associated with t
 You can use this workflow within your own customizations or custom workflows, allowing you to
 calculate the prices of shipping options within your custom flows.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/fulfillment/workflows/calculate-shipping-options-prices.ts#L49" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/fulfillment/workflows/calculate-shipping-options-prices.ts#L49" />
 
 ## Examples
 
@@ -35,14 +35,14 @@ calculate the prices of shipping options within your custom flows.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { calculateShippingOptionsPricesWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { calculateShippingOptionsPricesWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await calculateShippingOptionsPricesWorkflow(req.scope)
     .run({
@@ -69,8 +69,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { calculateShippingOptionsPricesWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { calculateShippingOptionsPricesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -102,11 +102,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { calculateShippingOptionsPricesWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { calculateShippingOptionsPricesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await calculateShippingOptionsPricesWorkflow(container)
     .run({
@@ -135,8 +135,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { calculateShippingOptionsPricesWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { calculateShippingOptionsPricesWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -167,8 +167,8 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"CalculateShippingOptionsPricesWorkflowInput","type":"[CalculateShippingOptionsPricesWorkflowInput](../../../../../types/WorkflowTypes/FulfillmentWorkflow/types/types.WorkflowTypes.FulfillmentWorkflow.CalculateShippingOptionsPricesWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"cart_id","type":"`string`","description":"The ID of the cart to calculate the shipping options for.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"shipping_options","type":"`object`[]","description":"The shipping options to calculate the prices for.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the shipping option.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Custom data that's necessary for the shipping option's fulfillment provider\nto calculate the price.\n\nLearn more about this property in [this documentation](https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property).","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="calculateShippingOptionsPricesWorkflow"/>
+<TypeList types={[{"name":"CalculateShippingOptionsPricesWorkflowInput","type":"[CalculateShippingOptionsPricesWorkflowInput](../../../../../types/WorkflowTypes/FulfillmentWorkflow/types/types.WorkflowTypes.FulfillmentWorkflow.CalculateShippingOptionsPricesWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"cart_id","type":"`string`","description":"The ID of the cart to calculate the shipping options for.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"shipping_options","type":"`object`[]","description":"The shipping options to calculate the prices for.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the shipping option.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"data","type":"`Record<string, unknown>`","description":"Custom data that's necessary for the shipping option's fulfillment provider\nto calculate the price.\n\nLearn more about this property in [this documentation](https://docs.switchyard.com/resources/commerce-modules/fulfillment/shipping-option#data-property).","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="calculateShippingOptionsPricesWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"CalculateShippingOptionsPricesWorkflowOutput","type":"[CalculateShippingOptionsPricesWorkflowOutput](../../../../../types/WorkflowTypes/FulfillmentWorkflow/types/types.WorkflowTypes.FulfillmentWorkflow.CalculateShippingOptionsPricesWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"calculated_amount","type":"`number`","description":"The calculated price.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_calculated_price_tax_inclusive","type":"`boolean`","description":"Whether the calculated price includes taxes. If enabled, Medusa will\ninfer the taxes from the calculated price. If false, Medusa will\nadd taxes to the calculated price.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="calculateShippingOptionsPricesWorkflow"/>
+<TypeList types={[{"name":"CalculateShippingOptionsPricesWorkflowOutput","type":"[CalculateShippingOptionsPricesWorkflowOutput](../../../../../types/WorkflowTypes/FulfillmentWorkflow/types/types.WorkflowTypes.FulfillmentWorkflow.CalculateShippingOptionsPricesWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"calculated_amount","type":"`number`","description":"The calculated price.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"is_calculated_price_tax_inclusive","type":"`boolean`","description":"Whether the calculated price includes taxes. If enabled, Switchyard will\ninfer the taxes from the calculated price. If false, Switchyard will\nadd taxes to the calculated price.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="calculateShippingOptionsPricesWorkflow"/>

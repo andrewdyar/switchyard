@@ -30,7 +30,7 @@
 					"fileName": "address.ts",
 					"line": 4,
 					"character": 6,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L4"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L4"
 				}
 			],
 			"type": {
@@ -75,7 +75,7 @@
 													"fileName": "address.ts",
 													"line": 6,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L6"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L6"
 												}
 											],
 											"type": {
@@ -92,11 +92,11 @@
 															"qualifiedName": "IdProperty"
 														},
 														"name": "IdProperty",
-														"package": "@medusajs/utils"
+														"package": "@switchyard/utils"
 													}
 												],
 												"name": "PrimaryKeyModifier",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -121,7 +121,7 @@
 													"fileName": "address.ts",
 													"line": 7,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L7"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L7"
 												}
 											],
 											"type": {
@@ -131,7 +131,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -154,7 +154,7 @@
 													"fileName": "address.ts",
 													"line": 8,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L8"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L8"
 												}
 											],
 											"type": {
@@ -164,7 +164,7 @@
 													"qualifiedName": "BooleanProperty"
 												},
 												"name": "BooleanProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -187,7 +187,7 @@
 													"fileName": "address.ts",
 													"line": 9,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L9"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L9"
 												}
 											],
 											"type": {
@@ -197,7 +197,7 @@
 													"qualifiedName": "BooleanProperty"
 												},
 												"name": "BooleanProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -222,7 +222,7 @@
 													"fileName": "address.ts",
 													"line": 10,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L10"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L10"
 												}
 											],
 											"type": {
@@ -232,7 +232,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -257,7 +257,7 @@
 													"fileName": "address.ts",
 													"line": 11,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L11"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L11"
 												}
 											],
 											"type": {
@@ -267,7 +267,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -292,7 +292,7 @@
 													"fileName": "address.ts",
 													"line": 12,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L12"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L12"
 												}
 											],
 											"type": {
@@ -302,7 +302,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -327,7 +327,7 @@
 													"fileName": "address.ts",
 													"line": 13,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L13"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L13"
 												}
 											],
 											"type": {
@@ -337,7 +337,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -362,7 +362,7 @@
 													"fileName": "address.ts",
 													"line": 14,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L14"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L14"
 												}
 											],
 											"type": {
@@ -372,7 +372,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -397,7 +397,7 @@
 													"fileName": "address.ts",
 													"line": 15,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L15"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L15"
 												}
 											],
 											"type": {
@@ -407,7 +407,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -432,7 +432,7 @@
 													"fileName": "address.ts",
 													"line": 16,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L16"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L16"
 												}
 											],
 											"type": {
@@ -442,7 +442,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -467,7 +467,7 @@
 													"fileName": "address.ts",
 													"line": 17,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L17"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L17"
 												}
 											],
 											"type": {
@@ -477,7 +477,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -502,7 +502,7 @@
 													"fileName": "address.ts",
 													"line": 18,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L18"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L18"
 												}
 											],
 											"type": {
@@ -512,7 +512,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -537,7 +537,7 @@
 													"fileName": "address.ts",
 													"line": 19,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L19"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L19"
 												}
 											],
 											"type": {
@@ -547,7 +547,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -572,7 +572,7 @@
 													"fileName": "address.ts",
 													"line": 20,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L20"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L20"
 												}
 											],
 											"type": {
@@ -582,7 +582,7 @@
 													"qualifiedName": "JSONProperty"
 												},
 												"name": "JSONProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -608,7 +608,7 @@
 													"fileName": "address.ts",
 													"line": 21,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L21"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L21"
 												}
 											],
 											"type": {
@@ -625,7 +625,7 @@
 													}
 												],
 												"name": "BelongsTo",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										}
@@ -658,14 +658,14 @@
 											"fileName": "address.ts",
 											"line": 5,
 											"character": 29,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L5"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/address.ts#L5"
 										}
 									]
 								}
 							}
 						],
 						"name": "DMLEntitySchemaBuilder",
-						"package": "@medusajs/utils"
+						"package": "@switchyard/utils"
 					},
 					{
 						"type": "literal",
@@ -673,7 +673,7 @@
 					}
 				],
 				"name": "DmlEntity",
-				"package": "@medusajs/utils"
+				"package": "@switchyard/utils"
 			},
 			"defaultValue": "..."
 		},
@@ -690,7 +690,7 @@
 					"fileName": "customer-group-customer.ts",
 					"line": 5,
 					"character": 6,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L5"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L5"
 				}
 			],
 			"type": {
@@ -735,7 +735,7 @@
 													"fileName": "customer-group-customer.ts",
 													"line": 6,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L6"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L6"
 												}
 											],
 											"type": {
@@ -752,11 +752,11 @@
 															"qualifiedName": "IdProperty"
 														},
 														"name": "IdProperty",
-														"package": "@medusajs/utils"
+														"package": "@switchyard/utils"
 													}
 												],
 												"name": "PrimaryKeyModifier",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -781,7 +781,7 @@
 													"fileName": "customer-group-customer.ts",
 													"line": 7,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L7"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L7"
 												}
 											],
 											"type": {
@@ -791,7 +791,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -816,7 +816,7 @@
 													"fileName": "customer-group-customer.ts",
 													"line": 8,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L8"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L8"
 												}
 											],
 											"type": {
@@ -826,7 +826,7 @@
 													"qualifiedName": "JSONProperty"
 												},
 												"name": "JSONProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -852,7 +852,7 @@
 													"fileName": "customer-group-customer.ts",
 													"line": 9,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L9"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L9"
 												}
 											],
 											"type": {
@@ -869,7 +869,7 @@
 													}
 												],
 												"name": "BelongsTo",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -895,7 +895,7 @@
 													"fileName": "customer-group-customer.ts",
 													"line": 12,
 													"character": 2,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L12"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L12"
 												}
 											],
 											"type": {
@@ -912,7 +912,7 @@
 													}
 												],
 												"name": "BelongsTo",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										}
@@ -934,14 +934,14 @@
 											"fileName": "customer-group-customer.ts",
 											"line": 5,
 											"character": 68,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L5"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group-customer.ts#L5"
 										}
 									]
 								}
 							}
 						],
 						"name": "DMLEntitySchemaBuilder",
-						"package": "@medusajs/utils"
+						"package": "@switchyard/utils"
 					},
 					{
 						"type": "literal",
@@ -949,7 +949,7 @@
 					}
 				],
 				"name": "DmlEntity",
-				"package": "@medusajs/utils"
+				"package": "@switchyard/utils"
 			},
 			"defaultValue": "..."
 		},
@@ -966,7 +966,7 @@
 					"fileName": "customer-group.ts",
 					"line": 5,
 					"character": 6,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L5"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L5"
 				}
 			],
 			"type": {
@@ -1011,7 +1011,7 @@
 													"fileName": "customer-group.ts",
 													"line": 7,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L7"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L7"
 												}
 											],
 											"type": {
@@ -1028,11 +1028,11 @@
 															"qualifiedName": "IdProperty"
 														},
 														"name": "IdProperty",
-														"package": "@medusajs/utils"
+														"package": "@switchyard/utils"
 													}
 												],
 												"name": "PrimaryKeyModifier",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1055,7 +1055,7 @@
 													"fileName": "customer-group.ts",
 													"line": 8,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L8"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L8"
 												}
 											],
 											"type": {
@@ -1065,7 +1065,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1090,7 +1090,7 @@
 													"fileName": "customer-group.ts",
 													"line": 9,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L9"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L9"
 												}
 											],
 											"type": {
@@ -1100,7 +1100,7 @@
 													"qualifiedName": "JSONProperty"
 												},
 												"name": "JSONProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1125,7 +1125,7 @@
 													"fileName": "customer-group.ts",
 													"line": 10,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L10"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L10"
 												}
 											],
 											"type": {
@@ -1135,7 +1135,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1161,7 +1161,7 @@
 													"fileName": "customer-group.ts",
 													"line": 11,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L11"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L11"
 												}
 											],
 											"type": {
@@ -1178,7 +1178,7 @@
 													}
 												],
 												"name": "ManyToMany",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										}
@@ -1200,14 +1200,14 @@
 											"fileName": "customer-group.ts",
 											"line": 6,
 											"character": 27,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L6"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer-group.ts#L6"
 										}
 									]
 								}
 							}
 						],
 						"name": "DMLEntitySchemaBuilder",
-						"package": "@medusajs/utils"
+						"package": "@switchyard/utils"
 					},
 					{
 						"type": "literal",
@@ -1215,7 +1215,7 @@
 					}
 				],
 				"name": "DmlEntity",
-				"package": "@medusajs/utils"
+				"package": "@switchyard/utils"
 			},
 			"defaultValue": "..."
 		},
@@ -1232,7 +1232,7 @@
 					"fileName": "customer.ts",
 					"line": 6,
 					"character": 6,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L6"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L6"
 				}
 			],
 			"type": {
@@ -1277,7 +1277,7 @@
 													"fileName": "customer.ts",
 													"line": 8,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L8"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L8"
 												}
 											],
 											"type": {
@@ -1294,11 +1294,11 @@
 															"qualifiedName": "IdProperty"
 														},
 														"name": "IdProperty",
-														"package": "@medusajs/utils"
+														"package": "@switchyard/utils"
 													}
 												],
 												"name": "PrimaryKeyModifier",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1323,7 +1323,7 @@
 													"fileName": "customer.ts",
 													"line": 9,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L9"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L9"
 												}
 											],
 											"type": {
@@ -1333,7 +1333,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1358,7 +1358,7 @@
 													"fileName": "customer.ts",
 													"line": 10,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L10"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L10"
 												}
 											],
 											"type": {
@@ -1368,7 +1368,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1393,7 +1393,7 @@
 													"fileName": "customer.ts",
 													"line": 11,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L11"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L11"
 												}
 											],
 											"type": {
@@ -1403,7 +1403,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1428,7 +1428,7 @@
 													"fileName": "customer.ts",
 													"line": 12,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L12"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L12"
 												}
 											],
 											"type": {
@@ -1438,7 +1438,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1463,7 +1463,7 @@
 													"fileName": "customer.ts",
 													"line": 13,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L13"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L13"
 												}
 											],
 											"type": {
@@ -1473,7 +1473,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1487,7 +1487,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "Whether the customer has account. Learn more in [this documentation](https://docs.medusajs.com/resources/commerce-modules/customer/customer-accounts)"
+														"text": "Whether the customer has account. Learn more in [this documentation](https://docs.switchyard.com/resources/commerce-modules/customer/customer-accounts)"
 													}
 												]
 											},
@@ -1496,7 +1496,7 @@
 													"fileName": "customer.ts",
 													"line": 14,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L14"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L14"
 												}
 											],
 											"type": {
@@ -1506,7 +1506,7 @@
 													"qualifiedName": "BooleanProperty"
 												},
 												"name": "BooleanProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1531,7 +1531,7 @@
 													"fileName": "customer.ts",
 													"line": 15,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L15"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L15"
 												}
 											],
 											"type": {
@@ -1541,7 +1541,7 @@
 													"qualifiedName": "JSONProperty"
 												},
 												"name": "JSONProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1566,7 +1566,7 @@
 													"fileName": "customer.ts",
 													"line": 16,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L16"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L16"
 												}
 											],
 											"type": {
@@ -1576,7 +1576,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1602,7 +1602,7 @@
 													"fileName": "customer.ts",
 													"line": 17,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L17"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L17"
 												}
 											],
 											"type": {
@@ -1619,7 +1619,7 @@
 													}
 												],
 												"name": "ManyToMany",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -1645,7 +1645,7 @@
 													"fileName": "customer.ts",
 													"line": 21,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L21"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L21"
 												}
 											],
 											"type": {
@@ -1662,7 +1662,7 @@
 													}
 												],
 												"name": "HasMany",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										}
@@ -1690,14 +1690,14 @@
 											"fileName": "customer.ts",
 											"line": 7,
 											"character": 22,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L7"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/customer/src/models/customer.ts#L7"
 										}
 									]
 								}
 							}
 						],
 						"name": "DMLEntitySchemaBuilder",
-						"package": "@medusajs/utils"
+						"package": "@switchyard/utils"
 					},
 					{
 						"type": "literal",
@@ -1705,7 +1705,7 @@
 					}
 				],
 				"name": "DmlEntity",
-				"package": "@medusajs/utils"
+				"package": "@switchyard/utils"
 			},
 			"defaultValue": "..."
 		}
@@ -1721,7 +1721,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/customer",
+	"packageName": "@switchyard/customer",
 	"symbolIdMap": {
 		"3343": {
 			"sourceFileName": "../../../../packages/modules/customer/src/models/index.ts",

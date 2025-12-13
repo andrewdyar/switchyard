@@ -1,6 +1,6 @@
 "use client"
 
-import { BarsThree, Book, SidebarLeft, TimelineVertical } from "@medusajs/icons"
+import { BarsThree, Book, SidebarLeft, TimelineVertical } from "@switchyard/icons"
 import React, { useMemo, useRef, useState } from "react"
 import {
   Button,
@@ -31,19 +31,19 @@ export const MainNavDesktopMenu = () => {
         type: "link",
         icon: <HouseIcon />,
         title: "Homepage",
-        link: "https://medusajs.com",
+        link: "https://switchyard.com",
       },
       {
         type: "link",
         icon: <Book />,
-        title: "Medusa v1",
-        link: "https://docs.medusajs.com/v1",
+        title: "Switchyard v1",
+        link: "https://docs.switchyard.com/v1",
       },
       {
         type: "link",
         icon: <TimelineVertical />,
         title: "Changelog",
-        link: "https://medusajs.com/changelog",
+        link: "https://switchyard.com/changelog",
       },
     ]
 

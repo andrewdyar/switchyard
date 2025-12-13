@@ -1,11 +1,11 @@
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   CartLineItemDTO,
   CartWorkflowDTO,
   ProductVariantDTO,
   ShippingOptionDTO,
-} from "@medusajs/framework/types"
-import { createStep, StepResponse } from "@medusajs/workflows-sdk"
+} from "@switchyard/framework/types"
+import { createStep, StepResponse } from "@switchyard/workflows-sdk"
 
 /**
  * The data to validate shipping data when cart is completed.
@@ -85,8 +85,8 @@ export const validateShippingStep = createStep(
     const cartShippingMethods = cart.shipping_methods || []
 
     if (cartItemsWithShipping.length > 0 && cartShippingMethods.length === 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "No shipping method selected but the cart contains items that require shipping."
       )
     }
@@ -104,8 +104,8 @@ export const validateShippingStep = createStep(
     )
 
     if (missingShippingPorfiles.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "The cart items require shipping profiles that are not satisfied by the current shipping methods"
       )
     }

@@ -11,13 +11,13 @@ import {
   Logger,
   ModuleJoinerConfig,
   ModulesSdkTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   InjectManager,
   MedusaContext,
-  MedusaError,
-  MedusaService,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+  SwitchyardService,
+} from "@switchyard/framework/utils"
 import { AuthIdentity, ProviderIdentity } from "@models"
 import { joinerConfig } from "../joiner-config"
 import AuthProviderService from "./auth-provider"
@@ -31,7 +31,7 @@ type InjectedDependencies = {
   cache?: ICacheService
 }
 export default class AuthModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     AuthIdentity: { dto: AuthTypes.AuthIdentityDTO }
     ProviderIdentity: { dto: AuthTypes.ProviderIdentityDTO }
   }>({ AuthIdentity, ProviderIdentity })
@@ -272,15 +272,15 @@ export default class AuthModuleService
         )
 
         if (!authIdentities.length) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `AuthIdentity with entity_id "${entity_id}" not found`
           )
         }
 
         if (authIdentities.length > 1) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Multiple authIdentities found for entity_id "${entity_id}"`
           )
         }
@@ -334,15 +334,15 @@ export default class AuthModuleService
         )
 
         if (!authIdentities.length) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `AuthIdentity with entity_id "${entity_id}" not found`
           )
         }
 
         if (authIdentities.length > 1) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Multiple authIdentities found for entity_id "${entity_id}"`
           )
         }
@@ -352,8 +352,8 @@ export default class AuthModuleService
         )
 
         if (!providerIdentityData) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `ProviderIdentity with entity_id "${entity_id}" not found`
           )
         }
@@ -384,8 +384,8 @@ export default class AuthModuleService
       },
       setState: async (key: string, value: Record<string, unknown>) => {
         if (!this.cache_) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_ARGUMENT,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_ARGUMENT,
             "Cache module dependency is required when using OAuth providers that require state"
           )
         }
@@ -395,8 +395,8 @@ export default class AuthModuleService
       },
       getState: async (key: string) => {
         if (!this.cache_) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_ARGUMENT,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_ARGUMENT,
             "Cache module dependency is required when using OAuth providers that require state"
           )
         }

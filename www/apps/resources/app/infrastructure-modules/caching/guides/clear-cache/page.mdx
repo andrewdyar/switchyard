@@ -4,21 +4,21 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn how to clear cached data in Medusa.
+In this guide, you'll learn how to clear cached data in Switchyard.
 
 ## Why Clear Cache?
 
 You should mainly cache data that isn't frequently changing, such as product details or categories. However, there are scenarios where you might need to clear the cache of that data manually.
 
-For example, if you've integrated a third-party system that updates product information outside of Medusa, or if you've cached data from the third-party system, Medusa won't be aware of changes made externally.
+For example, if you've integrated a third-party system that updates product information outside of Switchyard, or if you've cached data from the third-party system, Switchyard won't be aware of changes made externally.
 
-In such cases, you should clear the cache in Medusa to ensure it fetches the most up-to-date information from the source rather than relying on outdated cached data.
+In such cases, you should clear the cache in Switchyard to ensure it fetches the most up-to-date information from the source rather than relying on outdated cached data.
 
 ---
 
 ## How to Clear Cache
 
-This section explains how to clear data cached by the Caching Module in Medusa.
+This section explains how to clear data cached by the Caching Module in Switchyard.
 
 ### Identify Cache Tags
 
@@ -40,8 +40,8 @@ To clear cached data, use the [clear](/references/caching-service#clear) method 
 For example, to clear the cache for specific products in a workflow step:
 
 ```ts
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
 
 type ClearProductCacheInput = {
   productId: string | string[]

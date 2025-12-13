@@ -3,8 +3,8 @@ import {
   OrderExchangeDTO,
   OrderWorkflow,
   ReturnDTO,
-} from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   createStep,
@@ -12,7 +12,7 @@ import {
   parallelize,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../../common"
 import { deleteReservationsByLineItemsStep } from "../../../reservation/steps/delete-reservations-by-line-items"
 import { cancelOrderExchangeStep } from "../../steps"
@@ -74,7 +74,7 @@ export const cancelExchangeValidateOrder = createStep(
       message: string
     ) => {
       if (arr?.some(pred)) {
-        throw new MedusaError(MedusaError.Types.NOT_ALLOWED, message)
+        throw new SwitchyardError(SwitchyardError.Types.NOT_ALLOWED, message)
       }
     }
 

@@ -1,4 +1,4 @@
-import { OrchestrationUtils } from "@medusajs/utils"
+import { OrchestrationUtils } from "@switchyard/utils"
 import { WorkflowData, WorkflowDataProperties } from "../type"
 
 /**
@@ -8,8 +8,8 @@ export class WorkflowResponse<
   TResult,
   const THooks extends readonly unknown[] = []
 > {
-  __type: typeof OrchestrationUtils.SymbolMedusaWorkflowResponse =
-    OrchestrationUtils.SymbolMedusaWorkflowResponse
+  __type: typeof OrchestrationUtils.SymbolSwitchyardWorkflowResponse =
+    OrchestrationUtils.SymbolSwitchyardWorkflowResponse
 
   constructor(
     public $result:

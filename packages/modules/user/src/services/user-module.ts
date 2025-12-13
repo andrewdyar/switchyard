@@ -6,7 +6,7 @@ import {
   ModulesSdkTypes,
   ProjectConfigOptions,
   UserTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   arrayDifference,
   CommonEvents,
@@ -16,12 +16,12 @@ import {
   InjectManager,
   InjectTransactionManager,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
   moduleEventBuilderFactory,
   Modules,
   UserEvents,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import jwt, { JwtPayload, SignOptions, VerifyOptions } from "jsonwebtoken"
 import crypto from "node:crypto"
 
@@ -36,7 +36,7 @@ type InjectedDependencies = {
 
 const DEFAULT_VALID_INVITE_DURATION_SECONDS = 60 * 60 * 24
 export default class UserModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     User: {
       dto: UserTypes.UserDTO
     }
@@ -88,8 +88,8 @@ export default class UserModuleService
     }
 
     if (!this.config.jwtSecret) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "No jwt_secret was provided in the UserModule's options. Please add one."
       )
     }
@@ -123,8 +123,8 @@ export default class UserModuleService
     )
 
     if (invite.expires_at < new Date()) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "The invite has expired"
       )
     }
@@ -175,8 +175,8 @@ export default class UserModuleService
       )
 
       if (missing.length > 0) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `The following invites do not exist: ${missing.join(", ")}`
         )
       }
@@ -301,8 +301,8 @@ export default class UserModuleService
     })
 
     if (alreadyExistingUsers.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `User account for following email(s) already exist: ${alreadyExistingUsers
           .map((u) => u.email)
           .join(", ")}`

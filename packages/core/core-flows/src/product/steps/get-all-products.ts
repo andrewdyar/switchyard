@@ -1,9 +1,9 @@
 import {
   FilterableProductProps,
   RemoteQueryFunction,
-} from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/types"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The configuration to retrieve the products.

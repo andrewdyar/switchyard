@@ -1444,7 +1444,7 @@ export interface IPaymentModuleService extends IModuleService {
    * @returns {Promise<void>} Resolves when the webhook event is handled successfully.
    *
    * @example
-   * In the following example, `req` is an instance of `MedusaRequest`:
+   * In the following example, `req` is an instance of `SwitchyardRequest`:
    *
    * ```ts
    * const dataAndAction = await paymentModuleService.getWebhookActionAndData({

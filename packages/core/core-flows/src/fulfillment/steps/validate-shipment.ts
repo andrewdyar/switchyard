@@ -1,6 +1,6 @@
-import type { IFulfillmentModuleService } from "@medusajs/framework/types"
-import { MedusaError, Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import type { IFulfillmentModuleService } from "@switchyard/framework/types"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The ID of the shipment to validate.
@@ -24,22 +24,22 @@ export const validateShipmentStep = createStep(
     })
 
     if (fulfillment.shipped_at) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Shipment has already been created"
       )
     }
 
     if (fulfillment.canceled_at) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Cannot create shipment for a canceled fulfillment"
       )
     }
 
     if (!fulfillment.shipping_option_id) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Cannot create shipment without a Shipping Option"
       )
     }

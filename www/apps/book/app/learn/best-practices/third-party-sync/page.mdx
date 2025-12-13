@@ -4,11 +4,11 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn about best practices for syncing data between Medusa and third-party systems.
+In this chapter, you'll learn about best practices for syncing data between Switchyard and third-party systems.
 
 ## Common Issues with Third-Party Syncing Implementation
 
-Syncing data between Medusa and external systems is a common use case for commerce applications. For example, if your commerce ecosystem includes an external CMS or inventory management system, you may need to sync product data between Medusa and these systems.
+Syncing data between Switchyard and external systems is a common use case for commerce applications. For example, if your commerce ecosystem includes an external CMS or inventory management system, you may need to sync product data between Switchyard and these systems.
 
 However, how you implement third-party syncing can significantly impact performance and memory usage. Syncing large amounts of data without proper handling can lead to issues like:
 
@@ -16,13 +16,13 @@ However, how you implement third-party syncing can significantly impact performa
 - Slow syncs that block the event loop and degrade application performance.
 - Application crashes in production.
 
-This chapter covers best practices to avoid these issues when syncing data between Medusa and third-party systems. These best practices are general programming patterns that aren't Medusa-specific, but they're essential for building robust third-party syncs.
+This chapter covers best practices to avoid these issues when syncing data between Switchyard and third-party systems. These best practices are general programming patterns that aren't Switchyard-specific, but they're essential for building robust third-party syncs.
 
 ---
 
 ## How to Sync Data Between Systems
 
-Before diving into best practices, it's important to understand the general approach for syncing data between Medusa and third-party systems. Third-party syncing typically involves two main steps:
+Before diving into best practices, it's important to understand the general approach for syncing data between Switchyard and third-party systems. Third-party syncing typically involves two main steps:
 
 1. Define the syncing logic in a [workflow](../../fundamentals/workflows/page.mdx).
 2. Execute the workflow from either a [scheduled job](../../fundamentals/scheduled-jobs/page.mdx) or a [subscriber](../../fundamentals/events-and-subscribers/page.mdx).
@@ -31,17 +31,17 @@ Before diving into best practices, it's important to understand the general appr
 
 [Workflows](../../fundamentals/workflows/page.mdx) are special functions designed for long-running, asynchronous tasks. They provide features like [compensation](../../fundamentals/workflows/compensation-function/page.mdx), [retries](../../fundamentals/workflows/retry-failed-steps/page.mdx), and [async execution](../../fundamentals/workflows/long-running-workflow/page.mdx) that are essential for reliable data syncing.
 
-When defining your syncing logic, such as pushing product data to a third-party service or pulling inventory data into Medusa, you should define a workflow that encapsulates this logic.
+When defining your syncing logic, such as pushing product data to a third-party service or pulling inventory data into Switchyard, you should define a workflow that encapsulates this logic.
 
-Medusa also exposes [built-in workflows](!resources!/medusa-workflows-reference) for common commerce operations, like creating or updating products, that you can leverage in your syncing logic.
+Switchyard also exposes [built-in workflows](!resources!/medusa-workflows-reference) for common commerce operations, like creating or updating products, that you can leverage in your syncing logic.
 
-For example, you can use Medusa's built-in [batchProductsWorkflow](!resources!/references/medusa-workflows/batchProductsWorkflow) to create or update products in batches:
+For example, you can use Switchyard's built-in [batchProductsWorkflow](!resources!/references/medusa-workflows/batchProductsWorkflow) to create or update products in batches:
 
 ```ts title="src/jobs/sync-products.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { batchProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { batchProductsWorkflow } from "@switchyard/medusa/core-flows"
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   // ...
   await batchProductsWorkflow(container).run({
     input: {
@@ -54,10 +54,10 @@ export default async function syncProductsJob(container: MedusaContainer) {
 
 ### Execute Workflows from Scheduled Jobs or Subscribers
 
-After defining your syncing logic in a workflow, or choosing a Medusa workflow to use, you need to execute it based on your syncing requirements:
+After defining your syncing logic in a workflow, or choosing a Switchyard workflow to use, you need to execute it based on your syncing requirements:
 
 - [Scheduled Jobs](../../fundamentals/scheduled-jobs/page.mdx): Use scheduled jobs for periodic syncs, such as syncing products daily or inventory hourly. Scheduled jobs run at specified intervals and can trigger your workflow to perform the sync.
-- [Subscribers](../../fundamentals/events-and-subscribers/page.mdx): Use subscribers for event-driven syncs, such as syncing data when a product is updated in Medusa or when an order is placed. Subscribers listen for specific events and can trigger your workflow in response.
+- [Subscribers](../../fundamentals/events-and-subscribers/page.mdx): Use subscribers for event-driven syncs, such as syncing data when a product is updated in Switchyard or when an order is placed. Subscribers listen for specific events and can trigger your workflow in response.
 
 If you've set up [server and worker instances](../../production/worker-mode/page.mdx), the worker will handle the execution. So, the syncing execution won't block the main server process.
 
@@ -67,15 +67,15 @@ If you've set up [server and worker instances](../../production/worker-mode/page
 
 </Note>
 
-In the scheduled job or subscriber, you retrieve the data to be synced from the third-party service or from Medusa itself. Then, you execute the workflow, passing it the data to be synced.
+In the scheduled job or subscriber, you retrieve the data to be synced from the third-party service or from Switchyard itself. Then, you execute the workflow, passing it the data to be synced.
 
-For example, the following scheduled job fetches products from a third-party service and syncs them to Medusa using a workflow:
+For example, the following scheduled job fetches products from a third-party service and syncs them to Switchyard using a workflow:
 
 ```ts title="src/jobs/sync-products.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { batchProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { batchProductsWorkflow } from "@switchyard/medusa/core-flows"
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   const productStream = streamProductsFromApi()
   const batchedProducts = batchProducts(productStream, 50)
 
@@ -108,9 +108,9 @@ The following sections cover best practices for implementing third-party syncing
 The following sections take snippets from this complete example of a high-performance, memory-efficient product synchronization job that incorporates all the best practices discussed:
 
 ```ts title="src/jobs/sync-products.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys, MedusaError, Modules } from "@medusajs/framework/utils"
-import { batchProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { ContainerRegistrationKeys, SwitchyardError, Modules } from "@switchyard/framework/utils"
+import { batchProductsWorkflow } from "@switchyard/medusa/core-flows"
 import { Readable } from "stream"
 import { parser } from "stream-json"
 import { pick } from "stream-json/filters/Pick"
@@ -214,8 +214,8 @@ async function* streamProductsFromApi() {
     } catch (streamError: any) {
       // Handle stream errors (socket closed mid-stream)
       if (streamError.code === "UND_ERR_SOCKET" || streamError.code === "ECONNRESET") {
-        throw new MedusaError(
-          MedusaError.Types.UNEXPECTED_STATE,
+        throw new SwitchyardError(
+          SwitchyardError.Types.UNEXPECTED_STATE,
           `Stream interrupted after ${productCount} products: ${streamError.message}`
         )
       }
@@ -256,7 +256,7 @@ async function* batchProducts(
   }
 }
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   const query = container.resolve(ContainerRegistrationKeys.QUERY)
   const workflowEngine = container.resolve(Modules.WORKFLOW_ENGINE)
 
@@ -272,10 +272,10 @@ export default async function syncProductsJob(container: MedusaContainer) {
   for await (const batch of batchedProducts) {
     batchNumber++
 
-    // Extract external IDs from this batch to look up in Medusa
+    // Extract external IDs from this batch to look up in Switchyard
     const externalIds = batch.map((p) => p.id)
 
-    // Query Medusa for products matching these external IDs
+    // Query Switchyard for products matching these external IDs
     const { data: existingProducts } = await query.graph(
       {
         entity: "product",
@@ -384,9 +384,9 @@ However, this can lead to high memory usage and performance issues, especially w
 
 Instead, process data in streams or batches. This approach allows you to handle large datasets without loading everything into memory at once. You can use libraries like [stream-json](https://www.npmjs.com/package/stream-json) to parse JSON data incrementally as it's received.
 
-![Diagram showcasing object in memory when loading entire JSON response vs streaming JSON parsing](https://res.cloudinary.com/dza7lstvk/image/upload/v1764761087/Medusa%20Book/stream-vs-full_iz2fyv.jpg)
+![Diagram showcasing object in memory when loading entire JSON response vs streaming JSON parsing](https://res.cloudinary.com/dza7lstvk/image/upload/v1764761087/Switchyard%20Book/stream-vs-full_iz2fyv.jpg)
 
-First, install the `stream-json` library in your Medusa project:
+First, install the `stream-json` library in your Switchyard project:
 
 ```bash npm2yarn
 npm install stream-json @types/stream-json
@@ -455,7 +455,7 @@ async function* streamProductsFromApi() {
   }
 }
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   const productStream = streamProductsFromApi()
   // ...
 }
@@ -487,8 +487,8 @@ async function* streamProductsFromApi() {
         streamError.code === "UND_ERR_SOCKET" || 
         streamError.code === "ECONNRESET"
       ) {
-        throw new MedusaError(
-          MedusaError.Types.UNEXPECTED_STATE,
+        throw new SwitchyardError(
+          SwitchyardError.Types.UNEXPECTED_STATE,
           `Stream interrupted after ${productCount} products: ${streamError.message}`
         )
       }
@@ -498,7 +498,7 @@ async function* streamProductsFromApi() {
   }
 }
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   // Initial setup...
 
   const productStream = streamProductsFromApi()
@@ -510,9 +510,9 @@ In the above snippet, you catch stream errors and check for specific error codes
 
 ### Retrieve Only Necessary Fields
 
-A common performance pitfall when syncing data is retrieving more fields than necessary from third-party services or Medusa's [Query](../../fundamentals/module-links/query/page.mdx). This leads to increased data size, slower performance, and higher memory usage.
+A common performance pitfall when syncing data is retrieving more fields than necessary from third-party services or Switchyard's [Query](../../fundamentals/module-links/query/page.mdx). This leads to increased data size, slower performance, and higher memory usage.
 
-When retrieving data from third-party services or with Medusa's Query, only request the necessary fields. Then, to efficiently group existing data for updates, use a [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) for quick lookups.
+When retrieving data from third-party services or with Switchyard's Query, only request the necessary fields. Then, to efficiently group existing data for updates, use a [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) for quick lookups.
 
 For example, don't retrieve all product fields like this:
 
@@ -532,12 +532,12 @@ const { data: existingProducts } = await query.graph(
 Instead, only request the fields you need:
 
 export const fieldsHighlights = [
-  ["19", "fields", "Request only necessary fields from Medusa"],
+  ["19", "fields", "Request only necessary fields from Switchyard"],
   ["27", "Map", "Build a map for quick lookups by external ID"],
 ]
 
 ```ts title="src/jobs/sync-products.ts" highlights={fieldsHighlights}
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   const query = container.resolve(ContainerRegistrationKeys.QUERY)
   
   // Initial setup...
@@ -548,10 +548,10 @@ export default async function syncProductsJob(container: MedusaContainer) {
   for await (const batch of batchedProducts) {
     // Increment data...
 
-    // Extract external IDs from this batch to look up in Medusa
+    // Extract external IDs from this batch to look up in Switchyard
     const externalIds = batch.map((p) => p.id)
 
-    // Query Medusa for products matching these external IDs
+    // Query Switchyard for products matching these external IDs
     const { data: existingProducts } = await query.graph(
       {
         entity: "product",
@@ -570,12 +570,12 @@ export default async function syncProductsJob(container: MedusaContainer) {
       }])
     )
 
-    // Process batch and sync to Medusa...
+    // Process batch and sync to Switchyard...
   }
 }
 ```
 
-In the above snippet, after retrieving a batch of products from the external API, you query Medusa's products to find existing products that match the external IDs. You only request the necessary fields for this operation.
+In the above snippet, after retrieving a batch of products from the external API, you query Switchyard's products to find existing products that match the external IDs. You only request the necessary fields for this operation.
 
 Then, you build a map `existingByExternalId` that enables efficient lookups when determining whether to create or update products.
 
@@ -587,7 +587,7 @@ This approach minimizes the amount of data transferred and processed, leading to
 
 When retrieving large datasets from third-party services, use async generators to yield data items one at a time. This allows you to process data incrementally without loading everything into memory.
 
-![Diagram showcasing how batches are loaded into memories one at a time with async generators](https://res.cloudinary.com/dza7lstvk/image/upload/v1764761706/Medusa%20Book/async-gen-batches_ne09bs.jpg)
+![Diagram showcasing how batches are loaded into memories one at a time with async generators](https://res.cloudinary.com/dza7lstvk/image/upload/v1764761706/Switchyard%20Book/async-gen-batches_ne09bs.jpg)
 
 For example:
 
@@ -641,14 +641,14 @@ async function* batchProducts(
   }
 }
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   // Initial setup...
 
   const productStream = streamProductsFromApi()
   const batchedProducts = batchProducts(productStream, PROCESS_BATCH_SIZE)
 
   for await (const batch of batchedProducts) {
-    // Process batch and sync to Medusa...
+    // Process batch and sync to Switchyard...
   }
 }
 ```
@@ -698,19 +698,19 @@ Backpressure is a mechanism that manages the flow of data between producers (API
 
 Handle backpressure by controlling the pace at which data is processed. One effective way to do this in JavaScript is using `for await...of` loops, which naturally provide backpressure by waiting for each iteration to complete before fetching the next item.
 
-![Diagram showcasing timeline from start to end of scheduled job execution where batches are fetched and synced one at a time](https://res.cloudinary.com/dza7lstvk/image/upload/v1764762095/Medusa%20Book/timeline-backpressure_rtwwzt.jpg)
+![Diagram showcasing timeline from start to end of scheduled job execution where batches are fetched and synced one at a time](https://res.cloudinary.com/dza7lstvk/image/upload/v1764762095/Switchyard%20Book/timeline-backpressure_rtwwzt.jpg)
 
 For example, you can implement backpressure handling in your scheduled job:
 
 ```ts title="src/jobs/sync-products.ts" highlights={[["7"]]}
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   // Initial setup...
 
   const productStream = streamProductsFromApi()
   const batchedProducts = batchProducts(productStream, PROCESS_BATCH_SIZE)
 
   for await (const batch of batchedProducts) {
-    // Process batch and sync to Medusa...
+    // Process batch and sync to Switchyard...
     // The next batch won't be fetched until processing of the current batch is complete
   }
 }
@@ -788,7 +788,7 @@ async function* streamProductsFromApi() {
   }
 }
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   // Initial setup...
 
   const productStream = streamProductsFromApi()
@@ -861,7 +861,7 @@ async function* streamProductsFromApi() {
   }
 }
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   // Initial setup...
 
   const productStream = streamProductsFromApi()
@@ -915,7 +915,7 @@ async function* streamProductsFromApi() {
   }
 }
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   const productStream = streamProductsFromApi()
   // Process and sync products...
 }

@@ -1,0 +1,69 @@
+import type { SwitchyardAppLoader } from "@switchyard/framework"
+import { logger } from "@switchyard/framework/logger"
+import { Logger, SwitchyardContainer } from "@switchyard/framework/types"
+import {
+  ContainerRegistrationKeys,
+  getResolvedPlugins,
+} from "@switchyard/framework/utils"
+import { join } from "path"
+
+/**
+ * Initiates the database connection
+ */
+export async function initDb() {
+  const { pgConnectionLoader } = await import("@switchyard/framework")
+
+  const pgConnection = await pgConnectionLoader()
+
+  return pgConnection
+}
+
+/**
+ * Migrates the database
+ */
+export async function migrateDatabase(appLoader: SwitchyardAppLoader) {
+  try {
+    await appLoader.runModulesMigrations()
+  } catch (err) {
+    logger.error("Something went wrong while running the migrations")
+    throw err
+  }
+}
+
+/**
+ * Syncs links with the databse
+ */
+export async function syncLinks(
+  appLoader: SwitchyardAppLoader,
+  directory: string,
+  container: SwitchyardContainer,
+  logger: Logger
+) {
+  try {
+    await loadCustomLinks(directory, container)
+
+    const planner = await appLoader.getLinksExecutionPlanner()
+    const actionPlan = await planner.createPlan()
+    actionPlan.forEach((action) => {
+      logger.info(`Sync links: "${action.action}" ${action.tableName}`)
+    })
+    await planner.executePlan(actionPlan)
+  } catch (err) {
+    logger.error("Something went wrong while syncing links")
+    throw err
+  }
+}
+
+async function loadCustomLinks(directory: string, container: SwitchyardContainer) {
+  const configModule = container.resolve(
+    ContainerRegistrationKeys.CONFIG_MODULE
+  )
+  const plugins = await getResolvedPlugins(directory, configModule, true)
+  const linksSourcePaths = plugins.map((plugin) =>
+    join(plugin.resolve, "links")
+  )
+  const logger = container.resolve(ContainerRegistrationKeys.LOGGER)
+
+  const { LinkLoader } = await import("@switchyard/framework")
+  await new LinkLoader(linksSourcePaths, logger).load()
+}

@@ -1,7 +1,7 @@
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
-import { Modules } from "@medusajs/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
+import { Modules } from "@switchyard/framework/utils"
 import { resolve } from "path"
-import { IAnalyticsModuleService } from "@medusajs/types"
+import { IAnalyticsModuleService } from "@switchyard/types"
 import { AnalyticsProviderServiceFixtures } from "../__fixtures__/providers/default-provider"
 
 jest.setTimeout(100000)

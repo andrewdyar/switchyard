@@ -2,18 +2,18 @@ import {
   OrderChangeDTO,
   OrderDTO,
   OrderWorkflow,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   OrderChangeStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   WorkflowData,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../../common"
 import { deleteOrderChangesStep } from "../../steps"
 import {
@@ -87,8 +87,8 @@ export const cancelTransferOrderRequestValidationStep = createStep(
     )
 
     if (action?.reference_id !== input.logged_in_user_id) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "This customer is not allowed to cancel the transfer."
       )
     }

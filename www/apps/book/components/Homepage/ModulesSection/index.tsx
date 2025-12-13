@@ -153,7 +153,7 @@ const HomepageModulesSection = () => {
             icon={<PuzzleColoredIcon />}
           />
           <h2 className="text-medusa-fg-base text-h1">
-            All commerce features are provided as extendable modules in Medusa.
+            All commerce features are provided as extendable modules in Switchyard.
           </h2>
           <span className="text-medusa-fg-subtle text-small-plus">
             Click on any of the Commerce Modules below to learn more about their

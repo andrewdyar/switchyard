@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { UIMatch } from "react-router-dom"
 
 import { useShippingOptionType } from "../../../hooks/api"

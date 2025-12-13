@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/deps",
+  "name": "@switchyard/deps",
   "version": "2.12.1",
   "description": "Dependencies for Medusa",
   "main": "dist/index.js",

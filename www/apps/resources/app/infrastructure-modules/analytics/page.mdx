@@ -10,7 +10,7 @@ In this document, you'll learn about the Analytics Module and its providers.
 
 <Note>
 
-The Analytics Module is available starting [Medusa v2.8.3](https://github.com/medusajs/medusa/releases/tag/v2.8.3).
+The Analytics Module is available starting [Switchyard v2.8.3](https://github.com/switchyard/medusa/releases/tag/v2.8.3).
 
 </Note>
 
@@ -18,9 +18,9 @@ The Analytics Module is available starting [Medusa v2.8.3](https://github.com/me
 
 The Analytics Module exposes functionalities to track and analyze user interactions and system events with third-party services. For example, you can track cart updates or completed orders.
 
-In your Medusa application, you can use the Analytics Module to send data to third-party analytics services like PostHog or Segment, enabling you to gain insights into user behavior and system performance.
+In your Switchyard application, you can use the Analytics Module to send data to third-party analytics services like PostHog or Segment, enabling you to gain insights into user behavior and system performance.
 
-![Analytics Module workflow diagram showing the event tracking flow: when a customer places an order in the storefront, the Medusa application uses the Analytics Module to capture the event data and forwards it to configured third-party analytics services for business intelligence and user behavior analysis](https://res.cloudinary.com/dza7lstvk/image/upload/v1747832107/Medusa%20Resources/analytics-module-overview_egz7xg.jpg)
+![Analytics Module workflow diagram showing the event tracking flow: when a customer places an order in the storefront, the Switchyard application uses the Analytics Module to capture the event data and forwards it to configured third-party analytics services for business intelligence and user behavior analysis](https://res.cloudinary.com/dza7lstvk/image/upload/v1747832107/Switchyard%20Resources/analytics-module-overview_egz7xg.jpg)
 
 ---
 
@@ -32,7 +32,7 @@ To use the Analytics Module, you need to configure it along with an Analytics Mo
 
 An Analytics Module Provider implements the underlying logic of sending analytics data. It integrates with a third-party analytics service to send the data collected through the Analytics Module.
 
-Medusa provides two Analytics Module Providers: Local and PostHog module providers.
+Switchyard provides two Analytics Module Providers: Local and PostHog module providers.
 
 You can also [create a custom Analytics Module Provider](/references/analytics/provider) that integrates with a third-party service, like Segment.
 
@@ -67,18 +67,18 @@ You can also [create a custom Analytics Module Provider](/references/analytics/p
   }}
 />
 
-To configure the Analytics Module and its provider, add it to the list of modules in your `medusa-config.ts` file. For example:
+To configure the Analytics Module and its provider, add it to the list of modules in your `switchyard.config.ts` file. For example:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/analytics",
+      resolve: "@switchyard/medusa/analytics",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/analytics-local",
+            resolve: "@switchyard/medusa/analytics-local",
             id: "local",
           },
         ],
@@ -104,11 +104,11 @@ export const workflowHighlights = [
 ]
 
 ```ts title="src/workflows/track-order-placed.ts" highlights={workflowHighlights}
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
-import { Modules } from "@medusajs/framework/utils"
-import { OrderDTO } from "@medusajs/framework/types"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
+import { OrderDTO } from "@switchyard/framework/types"
 
 type StepInput = {
   order: OrderDTO
@@ -163,7 +163,7 @@ export const trackOrderPlacedWorkflow = createWorkflow(
 
 This workflow retrieves the order details using the `useQueryGraphStep` and then tracks the order placement event using the `trackOrderPlacedStep`.
 
-In the step, you resolve the service of the Analytics Module from the [Medusa container](!docs!/learn/fundamentals/medusa-container) and use its `track` method to track the event. This method will use the underlying provider configured in `medusa-config.ts` to track the event.
+In the step, you resolve the service of the Analytics Module from the [Switchyard container](!docs!/learn/fundamentals/medusa-container) and use its `track` method to track the event. This method will use the underlying provider configured in `switchyard.config.ts` to track the event.
 
 ### Execute Analytics Workflow
 
@@ -175,7 +175,7 @@ create a subscriber at `src/subscribers/order-placed.ts` with the following cont
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { trackOrderPlacedWorkflow } from "../workflows/track-order-placed"
 
 export default async function orderPlacedHandler({
@@ -196,4 +196,4 @@ export const config: SubscriberConfig = {
 
 This subscriber listens to the `order.placed` event and executes the `trackOrderPlacedWorkflow` workflow, passing the order ID as input.
 
-You'll now track the order placement event whenever an order is placed in your Medusa application. You can test this out by placing an order and checking the provider you integrated with (for example, PostHog) for the tracked event.
+You'll now track the order placement event whenever an order is placed in your Switchyard application. You can test this out by placing an order and checking the provider you integrated with (for example, PostHog) for the tracked event.

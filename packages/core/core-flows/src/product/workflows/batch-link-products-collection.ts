@@ -1,5 +1,5 @@
-import type { LinkWorkflowInput } from "@medusajs/framework/types"
-import { WorkflowData, createWorkflow } from "@medusajs/framework/workflows-sdk"
+import type { LinkWorkflowInput } from "@switchyard/framework/types"
+import { WorkflowData, createWorkflow } from "@switchyard/framework/workflows-sdk"
 import { batchLinkProductsToCollectionStep } from "../steps/batch-link-products-collection"
 
 export const batchLinkProductsToCollectionWorkflowId =

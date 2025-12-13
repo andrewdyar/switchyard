@@ -38,7 +38,7 @@
  *     type: object
  *     description: The region's metadata.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/store#manage-metadata
+ *       url: https://docs.switchyard.com/api/store#manage-metadata
  *       description: Learn how to manage metadata
  *   created_at:
  *     type: string

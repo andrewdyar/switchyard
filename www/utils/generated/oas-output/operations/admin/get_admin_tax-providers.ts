@@ -2,7 +2,7 @@
  * @oas [get] /admin/tax-providers
  * operationId: GetTaxProviders
  * summary: List Tax Providers
- * description: Retrieve a list of tax providers installed in the Medusa application through Tax Module Providers. The tax providers can be filtered by fields such as `id`. The tax providers can also be
+ * description: Retrieve a list of tax providers installed in the Switchyard application through Tax Module Providers. The tax providers can be filtered by fields such as `id`. The tax providers can also be
  *   sorted or paginated.
  * x-authenticated: true
  * parameters:
@@ -108,9 +108,9 @@
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {

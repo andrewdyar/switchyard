@@ -1,7 +1,7 @@
-import { updateProductVariantsWorkflow } from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IProductModuleService } from "@medusajs/types"
-import { MedusaError, Modules } from "@medusajs/utils"
+import { updateProductVariantsWorkflow } from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IProductModuleService } from "@switchyard/types"
+import { SwitchyardError, Modules } from "@switchyard/utils"
 
 jest.setTimeout(50000)
 
@@ -20,8 +20,8 @@ medusaIntegrationTestRunner({
       describe("updateProductVariantsWorkflow", () => {
         beforeAll(() => {
           updateProductVariantsWorkflow.hooks.productVariantsUpdated(() => {
-            throw new MedusaError(
-              MedusaError.Types.NOT_ALLOWED,
+            throw new SwitchyardError(
+              SwitchyardError.Types.NOT_ALLOWED,
               "product variants updated hook failed"
             )
           })

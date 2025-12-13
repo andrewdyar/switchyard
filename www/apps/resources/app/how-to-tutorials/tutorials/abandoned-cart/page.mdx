@@ -10,13 +10,13 @@ products:
   - cart
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, Card } from "docs-ui"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1743097105/Medusa%20Resources/abandoned-cart_eze9ng.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1743097105/Switchyard%20Resources/abandoned-cart_eze9ng.jpg"
 
 export const metadata = {
-  title: `Send Abandoned Cart Notifications in Medusa`,
+  title: `Send Abandoned Cart Notifications in Switchyard`,
   openGraph: {
     images: [
       {
@@ -43,9 +43,9 @@ export const metadata = {
 
 In this tutorial, you will learn how to send notifications to customers who have abandoned their carts.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include cart-management capabilities.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include cart-management capabilities.
 
-Medusa's [Notification Module](../../../infrastructure-modules/notification/page.mdx) allows you to send notifications to users or customers, such as password reset emails, order confirmation SMS, or other types of notifications.
+Switchyard's [Notification Module](../../../infrastructure-modules/notification/page.mdx) allows you to send notifications to users or customers, such as password reset emails, order confirmation SMS, or other types of notifications.
 
 In this tutorial, you will use the Notification Module to send an email to customers who have abandoned their carts. The email will contain a link to recover the customer's cart, encouraging them to complete their purchase. You will use SendGrid to send the emails, but you can also use other email providers.
 
@@ -53,23 +53,23 @@ In this tutorial, you will use the Notification Module to send an email to custo
 
 By following this tutorial, you will:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Create the logic to send an email to customers who have abandoned their carts.
 - Run the above logic once a day.
 - Add a route to the storefront to recover the cart.
 
-![Diagram illustrating the flow of the abandoned-cart functionalities](https://res.cloudinary.com/dza7lstvk/image/upload/v1742460588/Medusa%20Resources/abandoned-cart-summary_fcf2tn.jpg)
+![Diagram illustrating the flow of the abandoned-cart functionalities](https://res.cloudinary.com/dza7lstvk/image/upload/v1742460588/Switchyard%20Resources/abandoned-cart-summary_fcf2tn.jpg)
 
 <Card
   title="View on Github"
   icon={Github}
-  href="https://github.com/medusajs/examples/tree/main/abandoned-cart"
+  href="https://github.com/switchyard/examples/tree/main/abandoned-cart"
   text="Find the full code for this tutorial."
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -86,27 +86,27 @@ By following this tutorial, you will:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You will first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -129,24 +129,24 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
   }
 ]} />
 
-Medusa's Notification Module provides the general functionality to send notifications, but the sending logic is implemented in a module provider. This allows you to integrate the email provider of your choice.
+Switchyard's Notification Module provides the general functionality to send notifications, but the sending logic is implemented in a module provider. This allows you to integrate the email provider of your choice.
 
-To send the cart-abandonment emails, you will use SendGrid. Medusa provides a [SendGrid Notification Module Provider](../../../infrastructure-modules/notification/sendgrid/page.mdx) that you can use to send emails.
+To send the cart-abandonment emails, you will use SendGrid. Switchyard provides a [SendGrid Notification Module Provider](../../../infrastructure-modules/notification/sendgrid/page.mdx) that you can use to send emails.
 
 Alternatively, you can use [other Notification Module Providers](../../../infrastructure-modules/notification/page.mdx#what-is-a-notification-module-provider) or [create a custom provider](/references/notification-provider-module).
 
-To set up SendGrid, add the SendGrid Notification Module Provider to `medusa-config.ts`:
+To set up SendGrid, add the SendGrid Notification Module Provider to `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: "@switchyard/medusa/notification",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/notification-sendgrid",
+            resolve: "@switchyard/medusa/notification-sendgrid",
             id: "sendgrid",
             options: {
               channels: ["email"],
@@ -174,7 +174,7 @@ SENDGRID_API_KEY=your-sendgrid-api-key
 SENDGRID_FROM=test@gmail.com
 ```
 
-You can now use SendGrid to send emails in Medusa.
+You can now use SendGrid to send emails in Switchyard.
 
 ---
 
@@ -182,7 +182,7 @@ You can now use SendGrid to send emails in Medusa.
 
 You will now implement the sending logic for the abandoned cart notifications.
 
-To build custom commerce features in Medusa, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You construct a workflow like you construct a function, but it is a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features. Then, you execute the workflow from other customizations, such as in a scheduled job.
+To build custom commerce features in Switchyard, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You construct a workflow like you construct a function, but it is a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features. Then, you execute the workflow from other customizations, such as in a scheduled job.
 
 In this step, you will create the workflow that sends the abandoned cart notifications. Later, you will learn how to execute it once a day.
 
@@ -210,7 +210,7 @@ The workflow will receive the list of abandoned carts as an input. The workflow 
   hideLegend
 />
 
-Medusa provides the second step in its `@medusajs/medusa/core-flows` package. So, you only need to implement the first one.
+Switchyard provides the second step in its `@switchyard/medusa/core-flows` package. So, you only need to implement the first one.
 
 ### sendAbandonedNotificationsStep
 
@@ -222,9 +222,9 @@ To implement the step, create the file `src/workflows/steps/send-abandoned-notif
 import { 
   createStep,
   StepResponse, 
-} from "@medusajs/framework/workflows-sdk"
-import { Modules } from "@medusajs/framework/utils"
-import { CartDTO, CustomerDTO } from "@medusajs/framework/types"
+} from "@switchyard/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { CartDTO, CustomerDTO } from "@switchyard/framework/types"
 
 type SendAbandonedNotificationsStepInput = {
   carts: (CartDTO & {
@@ -274,7 +274,7 @@ You create a step with `createStep` from the Workflows SDK. It accepts two param
 1. The step's unique name, which is `create-review`.
 2. An async function that receives two parameters:
     - The step's input, which is in this case an object with the review's properties.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
 In the step function, you first resolve the Notification Module's service, which has methods to manage notifications. Then, you prepare the data of each notification, and create the notifications with the `createNotifications` method.
 
@@ -300,13 +300,13 @@ import {
   createWorkflow,
   WorkflowResponse,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   sendAbandonedNotificationsStep,
 } from "./steps/send-abandoned-notifications"
-import { updateCartsStep } from "@medusajs/medusa/core-flows"
-import { CartDTO } from "@medusajs/framework/types"
-import { CustomerDTO } from "@medusajs/framework/types"
+import { updateCartsStep } from "@switchyard/medusa/core-flows"
+import { CartDTO } from "@switchyard/framework/types"
+import { CustomerDTO } from "@switchyard/framework/types"
 
 export type SendAbandonedCartsWorkflowInput = {
   carts: (CartDTO & {
@@ -346,9 +346,9 @@ It accepts as a second parameter a constructor function, which is the workflow's
 In the workflow's constructor function, you:
 
 - Use the `sendAbandonedNotificationsStep` to send the notifications to the carts' customers.
-- Use the `updateCartsStep` from Medusa's core flows to update the carts' metadata with the last notification date.
+- Use the `updateCartsStep` from Switchyard's core flows to update the carts' metadata with the last notification date.
 
-Notice that you use the `transform` function to prepare the `updateCartsStep`'s input. Medusa does not support direct data manipulation in a workflow's constructor function. You can learn more about it in the [Data Manipulation in Workflows documentation](!docs!/learn/fundamentals/workflows/variable-manipulation).
+Notice that you use the `transform` function to prepare the `updateCartsStep`'s input. Switchyard does not support direct data manipulation in a workflow's constructor function. You can learn more about it in the [Data Manipulation in Workflows documentation](!docs!/learn/fundamentals/workflows/variable-manipulation).
 
 Your workflow is now ready for use. You will learn how to execute it in the next section.
 
@@ -361,12 +361,12 @@ To create an email template in SendGrid:
 - Go to [Dynamic Templates](https://mc.sendgrid.com/dynamic-templates) in the SendGrid dashboard.
 - Click on the "Create Dynamic Template" button.
 
-![Button is at the top right of the page](https://res.cloudinary.com/dza7lstvk/image/upload/v1742457153/Medusa%20Resources/Screenshot_2025-03-20_at_9.51.38_AM_g5nk80.png)
+![Button is at the top right of the page](https://res.cloudinary.com/dza7lstvk/image/upload/v1742457153/Switchyard%20Resources/Screenshot_2025-03-20_at_9.51.38_AM_g5nk80.png)
 
 - In the side window that opens, enter a name for the template, then click on the Create button.
 - The template will be added to the middle of the page. When you click on it, a new section will show with an "Add Version" button. Click on it.
 
-![The template is a collapsible in the middle of the page,with the "Add Version" button shown in the middle](https://res.cloudinary.com/dza7lstvk/image/upload/v1742458096/Medusa%20Resources/Screenshot_2025-03-20_at_10.07.54_AM_y2dys7.png)
+![The template is a collapsible in the middle of the page,with the "Add Version" button shown in the middle](https://res.cloudinary.com/dza7lstvk/image/upload/v1742458096/Switchyard%20Resources/Screenshot_2025-03-20_at_10.07.54_AM_y2dys7.png)
 
 In the form that opens, you can either choose to start with a blank template or from an existing design. You can then use the drag-and-drop or code editor to design the email template.
 
@@ -481,7 +481,7 @@ This template will show each item's image, title, quantity, and price in the car
 
 You can replace `https://yourstore.com` with your storefront's URL. You'll later implement the `/cart/recover/:cart_id` route in the storefront to recover the cart.
 
-Once you are done, copy the template ID from SendGrid and set it as an environment variable in your Medusa project:
+Once you are done, copy the template ID from SendGrid and set it as an environment variable in your Switchyard project:
 
 ```plain
 ABANDONED_CART_TEMPLATE_ID=your-sendgrid-template-id
@@ -493,19 +493,19 @@ ABANDONED_CART_TEMPLATE_ID=your-sendgrid-template-id
 
 The next step is to automate sending the abandoned cart notifications. You need a task that runs once a day to find the carts that have been abandoned for a certain period and send the notifications to the customers.
 
-To run a task at a scheduled interval, you can use a [scheduled job](!docs!/learn/fundamentals/scheduled-jobs). A scheduled job is an asynchronous function that the Medusa application runs at the interval you specify during the Medusa application's runtime.
+To run a task at a scheduled interval, you can use a [scheduled job](!docs!/learn/fundamentals/scheduled-jobs). A scheduled job is an asynchronous function that the Switchyard application runs at the interval you specify during the Switchyard application's runtime.
 
 You can create a scheduled job in a TypeScript or JavaScript file under the `src/jobs` directory. So, to create the scheduled job that sends the abandoned cart notifications, create the file `src/jobs/send-abandoned-cart-notification.ts` with the following content:
 
 ```ts title="src/jobs/send-abandoned-cart-notification.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import { 
   sendAbandonedCartsWorkflow, 
   SendAbandonedCartsWorkflowInput,
 } from "../workflows/send-abandoned-carts"
 
 export default async function abandonedCartJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const logger = container.resolve("logger")
   const query = container.resolve("query")
@@ -532,7 +532,7 @@ export const config = {
 
 In a scheduled job's file, you must export:
 
-1. An asynchronous function that holds the job's logic. The function receives the [Medusa container](!docs!/learn/fundamentals/medusa-container) as a parameter.
+1. An asynchronous function that holds the job's logic. The function receives the [Switchyard container](!docs!/learn/fundamentals/medusa-container) as a parameter.
 2. A `config` object that specifies the job's name and schedule. The schedule is a [cron expression](https://crontab.guru/) that defines the interval at which the job runs.
 
 In the scheduled job function, so far you resolve the [Logger](!docs!/learn/debugging-and-testing/logging) to log messages, and [Query](!docs!/learn/fundamentals/module-links/query) to retrieve data across modules.
@@ -618,7 +618,7 @@ export const config = {
 }
 ```
 
-Finally, start the Medusa application with the following command:
+Finally, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -681,13 +681,13 @@ export async function GET(req: NextRequest, { params }: { params: Params }) {
 
 You add a `GET` route handler that receives the cart ID as a path parameter. In the route handler, you:
 
-- Try to retrieve the cart from the Medusa application. The `retrieveCart` function is already available in the Next.js Starter Storefront. If the cart is not found, you return a 404 response.
+- Try to retrieve the cart from the Switchyard application. The `retrieveCart` function is already available in the Next.js Starter Storefront. If the cart is not found, you return a 404 response.
 - Set the cart ID in a cookie using the `setCartId` function. This is also a function that is already available in the storefront.
 - Redirect the customer to the cart page. You set the country code in the URL based on the cart's shipping address or region.
 
 ### Test it Out
 
-To test it out, start the Medusa application:
+To test it out, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -701,18 +701,18 @@ npm run dev
 
 Then, either open the link in an abandoned cart email or navigate to `localhost:8000/cart/recover/:cart_id` in your browser. You will be redirected to the cart page with the recovered cart.
 
-![Cart page in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1742459552/Medusa%20Resources/Screenshot_2025-03-20_at_10.32.17_AM_frmbup.png)
+![Cart page in the storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1742459552/Switchyard%20Resources/Screenshot_2025-03-20_at_10.32.17_AM_frmbup.png)
 
 ---
 
 ## Next Steps
 
-You have now implemented the logic to send abandoned cart notifications in Medusa. You can implement other customizations with Medusa, such as:
+You have now implemented the logic to send abandoned cart notifications in Switchyard. You can implement other customizations with Switchyard, such as:
 
 - [Implement Product Reviews](../product-reviews/page.mdx).
 - [Implement Wishlist](../../../plugins/guides/wishlist/page.mdx).
 - [Allow Custom-Item Pricing](../../../examples/guides/custom-item-price/page.mdx).
 
-If you are new to Medusa, check out the [main documentation](!docs!/learn), where you will get a more in-depth learning of all the concepts you have used in this guide and more.
+If you are new to Switchyard, check out the [main documentation](!docs!/learn), where you will get a more in-depth learning of all the concepts you have used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

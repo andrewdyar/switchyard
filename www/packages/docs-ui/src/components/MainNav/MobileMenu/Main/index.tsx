@@ -3,7 +3,7 @@
 import React from "react"
 import { useMainNav } from "../../../../providers"
 import Link from "next/link"
-import { TriangleRightMini } from "@medusajs/icons"
+import { TriangleRightMini } from "@switchyard/icons"
 import clsx from "clsx"
 import { SelectedMenu } from ".."
 

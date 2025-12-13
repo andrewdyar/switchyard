@@ -3,10 +3,10 @@ import type { ZodNullable, ZodObject, ZodOptional, ZodRawShape } from "zod"
 
 import {
   FindConfig,
-  MedusaPricingContext,
+  SwitchyardPricingContext,
   RequestQueryFields,
-} from "@medusajs/types"
-import { MedusaContainer } from "../container"
+} from "@switchyard/types"
+import { SwitchyardContainer } from "../container"
 import { RestrictedFields } from "./utils/restricted-fields"
 
 /**
@@ -25,24 +25,24 @@ export const HTTP_METHODS = [
 export type RouteVerb = (typeof HTTP_METHODS)[number]
 export type MiddlewareVerb = "USE" | "ALL" | RouteVerb
 
-type SyncRouteHandler = (req: MedusaRequest, res: MedusaResponse) => void
+type SyncRouteHandler = (req: SwitchyardRequest, res: SwitchyardResponse) => void
 
 export type AsyncRouteHandler = (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => Promise<void>
 
 export type RouteHandler = SyncRouteHandler | AsyncRouteHandler
 
 export type MiddlewareFunction =
-  | MedusaRequestHandler
+  | SwitchyardRequestHandler
   | ((...args: any[]) => any)
 
-export type MedusaErrorHandlerFunction = (
+export type SwitchyardErrorHandlerFunction = (
   error: any,
-  req: MedusaRequest,
-  res: MedusaResponse,
-  next: MedusaNextFunction
+  req: SwitchyardRequest,
+  res: SwitchyardResponse,
+  next: SwitchyardNextFunction
 ) => Promise<void> | void
 
 export type ParserConfigArgs = {
@@ -65,7 +65,7 @@ export type MiddlewareRoute = {
 }
 
 export type MiddlewaresConfig = {
-  errorHandler?: false | MedusaErrorHandlerFunction
+  errorHandler?: false | SwitchyardErrorHandlerFunction
   routes?: MiddlewareRoute[]
 }
 
@@ -114,7 +114,7 @@ export type GlobalMiddlewareDescriptor = {
   config?: MiddlewaresConfig
 }
 
-export interface MedusaRequest<
+export interface SwitchyardRequest<
   Body = unknown,
   QueryFields = Record<string, unknown>
 > extends Request<{ [key: string]: string }, any, Body> {
@@ -147,7 +147,7 @@ export interface MedusaRequest<
   /**
    * @deprecated Use {@link queryConfig} instead.
    */
-  remoteQueryConfig: MedusaRequest["queryConfig"]
+  remoteQueryConfig: SwitchyardRequest["queryConfig"]
 
   /**
    * An object containing the fields that are filterable e.g `{ id: Any<String> }`
@@ -162,7 +162,7 @@ export interface MedusaRequest<
    */
   allowed?: string[]
   errors: string[]
-  scope: MedusaContainer
+  scope: SwitchyardContainer
   session?: any
   rawBody?: any
   requestId?: string
@@ -172,7 +172,7 @@ export interface MedusaRequest<
   /**
    * An object that carries the context that is used to calculate prices for variants
    */
-  pricingContext?: MedusaPricingContext
+  pricingContext?: SwitchyardPricingContext
   /**
    * A generic context object that can be used across the request lifecycle
    */
@@ -197,10 +197,10 @@ export interface PublishableKeyContext {
   sales_channel_ids: string[]
 }
 
-export interface AuthenticatedMedusaRequest<
+export interface AuthenticatedSwitchyardRequest<
   Body = unknown,
   QueryFields = Record<string, unknown>
-> extends MedusaRequest<Body, QueryFields> {
+> extends SwitchyardRequest<Body, QueryFields> {
   auth_context: AuthContext
   publishable_key_context?: PublishableKeyContext
 }
@@ -208,17 +208,17 @@ export interface AuthenticatedMedusaRequest<
 export interface MedusaStoreRequest<
   Body = unknown,
   QueryFields = Record<string, unknown>
-> extends MedusaRequest<Body, QueryFields> {
+> extends SwitchyardRequest<Body, QueryFields> {
   auth_context?: AuthContext
   publishable_key_context: PublishableKeyContext
 }
 
-export type MedusaResponse<Body = unknown> = Response<Body>
+export type SwitchyardResponse<Body = unknown> = Response<Body>
 
-export type MedusaNextFunction = NextFunction
+export type SwitchyardNextFunction = NextFunction
 
-export type MedusaRequestHandler<Body = unknown, Res = unknown> = (
-  req: MedusaRequest<Body>,
-  res: MedusaResponse<Res>,
-  next: MedusaNextFunction
+export type SwitchyardRequestHandler<Body = unknown, Res = unknown> = (
+  req: SwitchyardRequest<Body>,
+  res: SwitchyardResponse<Res>,
+  next: SwitchyardNextFunction
 ) => Promise<void> | void

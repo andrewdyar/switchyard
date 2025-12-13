@@ -1,4 +1,4 @@
-import { CartWorkflowEvents, MedusaError } from "@medusajs/framework/utils"
+import { CartWorkflowEvents, SwitchyardError } from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -6,8 +6,8 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { AdditionalData } from "@medusajs/types"
+} from "@switchyard/framework/workflows-sdk"
+import { AdditionalData } from "@switchyard/types"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { useRemoteQueryStep } from "../../common/steps/use-remote-query"
 import { acquireLockStep, releaseLockStep } from "../../locking"
@@ -166,8 +166,8 @@ export const addShippingMethodToCartWorkflow = createWorkflow(
           )!
 
           if (!shippingOption?.calculated_price) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Shipping option with ID ${shippingOption.id} do not have a price`
             )
           }

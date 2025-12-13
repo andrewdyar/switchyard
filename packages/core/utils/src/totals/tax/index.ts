@@ -1,4 +1,4 @@
-import { BigNumberInput, TaxLineDTO } from "@medusajs/types"
+import { BigNumberInput, TaxLineDTO } from "@switchyard/types"
 import { BigNumber } from "../big-number"
 import { MathBN } from "../math"
 

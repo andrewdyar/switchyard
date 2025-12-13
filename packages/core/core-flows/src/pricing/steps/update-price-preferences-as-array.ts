@@ -1,13 +1,13 @@
 import {
   IPricingModuleService,
   PricingWorkflow,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   arrayDifference,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The price preferences to update.
@@ -37,8 +37,8 @@ export const updatePricePreferencesAsArrayStep = createStep(
     const prevData = await service.listPricePreferences({
       $or: input.map((entry) => {
         if (!entry.attribute || !entry.value) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             "Attribute and value must be provided when updating price preferences"
           )
         }

@@ -13,19 +13,19 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# deleteProductsWorkflow - Medusa Core Workflows Reference
+# deleteProductsWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `deleteProductsWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `deleteProductsWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow deletes one or more products. It's used by the
-[Delete Products Admin API Route](https://docs.medusajs.com/api/admin#products\_deleteproductsid).
+[Delete Products Admin API Route](https://docs.switchyard.com/api/admin#products\_deleteproductsid).
 
 This workflow has a hook that allows you to perform custom actions after the products are deleted. For example,
 you can delete custom records linked to the products.
 
 You can also use this workflow within your own custom workflows, allowing you to wrap custom logic around product deletion.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/product/workflows/delete-products.ts#L53" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/product/workflows/delete-products.ts#L53" />
 
 ## Examples
 
@@ -34,14 +34,14 @@ You can also use this workflow within your own custom workflows, allowing you to
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { deleteProductsWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { deleteProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await deleteProductsWorkflow(req.scope)
     .run({
@@ -61,8 +61,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { deleteProductsWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { deleteProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -87,11 +87,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { deleteProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { deleteProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await deleteProductsWorkflow(container)
     .run({
@@ -113,8 +113,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { deleteProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { deleteProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -134,17 +134,17 @@ const myWorkflow = createWorkflow(
 
 ## Steps
 
-<WorkflowDiagram workflow={{"name":"deleteProductsWorkflow","steps":[{"type":"step","name":"getProductsStep","description":"This step retrieves products, with ability to filter by product IDs.","link":"../../../Steps_Product/functions/core_flows.Product.Steps_Product.getProductsStep/page.mdx","depth":1},{"type":"step","name":"useQueryGraphStep","description":"This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.medusajs.com/learn/fundamentals/module-links/query).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.useQueryGraphStep/page.mdx","depth":2},{"type":"workflow","name":"deleteInventoryItemWorkflow","description":"Delete one or more inventory items.","link":"../../../../Inventory/Workflows_Inventory/functions/core_flows.Inventory.Workflows_Inventory.deleteInventoryItemWorkflow/page.mdx","depth":3},{"type":"step","name":"deleteProductsStep","description":"This step deletes one or more products.","link":"../../../Steps_Product/functions/core_flows.Product.Steps_Product.deleteProductsStep/page.mdx","depth":4},{"type":"step","name":"emitEventStep","description":"This step emits an event, which you can listen to in a [subscriber](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the `data` property.\n\nThe event is only emitted after the workflow has finished successfully. So, even if it's executed in the middle of the workflow, it won't actually emit the event until the workflow has completed successfully. \nIf the workflow fails, it won't emit the event at all.","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.emitEventStep/page.mdx","depth":5},{"type":"hook","name":"productsDeleted","description":"This hook is executed after the products are deleted. You can consume this hook to perform custom actions on the deleted products.","link":"#productsDeleted","depth":6}]}} />
+<WorkflowDiagram workflow={{"name":"deleteProductsWorkflow","steps":[{"type":"step","name":"getProductsStep","description":"This step retrieves products, with ability to filter by product IDs.","link":"../../../Steps_Product/functions/core_flows.Product.Steps_Product.getProductsStep/page.mdx","depth":1},{"type":"step","name":"useQueryGraphStep","description":"This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.switchyard.com/learn/fundamentals/module-links/query).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.useQueryGraphStep/page.mdx","depth":2},{"type":"workflow","name":"deleteInventoryItemWorkflow","description":"Delete one or more inventory items.","link":"../../../../Inventory/Workflows_Inventory/functions/core_flows.Inventory.Workflows_Inventory.deleteInventoryItemWorkflow/page.mdx","depth":3},{"type":"step","name":"deleteProductsStep","description":"This step deletes one or more products.","link":"../../../Steps_Product/functions/core_flows.Product.Steps_Product.deleteProductsStep/page.mdx","depth":4},{"type":"step","name":"emitEventStep","description":"This step emits an event, which you can listen to in a [subscriber](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the `data` property.\n\nThe event is only emitted after the workflow has finished successfully. So, even if it's executed in the middle of the workflow, it won't actually emit the event until the workflow has completed successfully. \nIf the workflow fails, it won't emit the event at all.","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.emitEventStep/page.mdx","depth":5},{"type":"hook","name":"productsDeleted","description":"This hook is executed after the products are deleted. You can consume this hook to perform custom actions on the deleted products.","link":"#productsDeleted","depth":6}]}} />
 
 ## Input
 
-<TypeList types={[{"name":"DeleteProductsWorkflowInput","type":"[DeleteProductsWorkflowInput](../../../../types/core_flows.DeleteProductsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to delete one or more products.","expandable":false,"children":[{"name":"ids","type":"`string`[]","description":"The IDs of the products to delete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deleteProductsWorkflow"/>
+<TypeList types={[{"name":"DeleteProductsWorkflowInput","type":"[DeleteProductsWorkflowInput](../../../../types/core_flows.DeleteProductsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to delete one or more products.","expandable":false,"children":[{"name":"ids","type":"`string`[]","description":"The IDs of the products to delete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="deleteProductsWorkflow"/>
 
 ## Hooks
 
 Hooks allow you to inject custom functionalities into the workflow. You'll receive data from the workflow, as well as additional data sent through an HTTP request.
 
-Learn more about [Hooks](https://docs.medusajs.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.medusajs.com/learn/fundamentals/api-routes/additional-data).
+Learn more about [Hooks](https://docs.switchyard.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).
 
 ### productsDeleted
 
@@ -153,7 +153,7 @@ This hook is executed after the products are deleted. You can consume this hook 
 #### Example
 
 ```ts
-import { deleteProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { deleteProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 deleteProductsWorkflow.hooks.productsDeleted(
   (async ({ ids }, { container }) => {
@@ -166,7 +166,7 @@ deleteProductsWorkflow.hooks.productsDeleted(
 
 Handlers consuming this hook accept the following input.
 
-<TypeList types={[{"name":"input","type":"[input](../../../core_flows.Product.Workflows_Product/page.mdx#__type-20)","description":"The input data for the hook.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"ids","type":"`string`[]","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="productsDeleted"/>
+<TypeList types={[{"name":"input","type":"[input](../../../core_flows.Product.Workflows_Product/page.mdx#__type-20)","description":"The input data for the hook.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"ids","type":"`string`[]","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="productsDeleted"/>
 
 ## Emitted Events
 
@@ -178,7 +178,7 @@ The `emitEventStep` only emits the event after the workflow has finished success
 
 :::
 
-You can listen to these events in a subscriber, as explained in the [Subscribers](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers) documentation.
+You can listen to these events in a subscriber, as explained in the [Subscribers](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers) documentation.
 
 <Table>
   <Table.Header>

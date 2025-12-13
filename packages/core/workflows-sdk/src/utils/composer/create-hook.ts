@@ -1,4 +1,4 @@
-import { OrchestrationUtils } from "@medusajs/utils"
+import { OrchestrationUtils } from "@switchyard/utils"
 import { type ZodSchema } from "zod"
 import {
   CompensateFn,
@@ -51,7 +51,7 @@ export type Hook<Name extends string, Input, Output> = {
  *   createHook,
  *   createWorkflow,
  *   WorkflowResponse,
- * } from "@medusajs/framework/workflows-sdk"
+ * } from "@switchyard/framework/workflows-sdk"
  * import { createProductStep } from "./steps/create-product"
  *
  * export const myWorkflow = createWorkflow(
@@ -77,7 +77,7 @@ export function createHook<Name extends string, TInvokeInput, TInvokeOutput>(
   } = {}
 ): Hook<Name, TInvokeInput, TInvokeOutput> {
   const context = global[
-    OrchestrationUtils.SymbolMedusaWorkflowComposerContext
+    OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext
   ] as CreateWorkflowComposerContext
 
   const getHookResultStep = createStep(

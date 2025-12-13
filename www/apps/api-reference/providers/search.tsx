@@ -34,13 +34,13 @@ const SearchProvider = ({ children }: SearchProviderProps) => {
           {
             title: "Getting started? Try one of the following terms.",
             items: [
-              "Install Medusa with create-medusa-app",
+              "Install Switchyard with create-switchyard-app",
               "What is an API route?",
               "What is a Workflow?",
             ],
           },
           {
-            title: "Developing with Medusa",
+            title: "Developing with Switchyard",
             items: [
               "How to create an API route",
               "How to create a module",

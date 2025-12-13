@@ -8,7 +8,7 @@ In this documentation, you'll learn about account holders, and how they're used 
 
 <Note>
 
-Account holders are available starting from Medusa `v2.5.0`.
+Account holders are available starting from Switchyard `v2.5.0`.
 
 </Note>
 
@@ -25,7 +25,7 @@ A payment provider that supports saving payment methods for customers would crea
 
 ### Relation between Account Holder and Customer
 
-The Medusa application creates a link between the [Customer](/references/customer/models/Customer) data model of the [Customer Module](../../customer/page.mdx) and the `AccountHolder` data model of the Payment Module.
+The Switchyard application creates a link between the [Customer](/references/customer/models/Customer) data model of the [Customer Module](../../customer/page.mdx) and the `AccountHolder` data model of the Payment Module.
 
 This link indicates that a customer can have more than one account holder, each representing saved payment methods in different payment providers.
 
@@ -37,8 +37,8 @@ Learn more about this link in the [Link to Other Modules](../links-to-other-modu
 
 If a payment provider supports saving payment methods for a customer, they must implement the following methods:
 
-- `createAccountHolder`: Creates an account holder in the payment provider. The Payment Module uses this method before creating the account holder in Medusa, and uses the returned data to set fields like `external_id` and `data` in the created `AccountHolder` record.
-- `deleteAccountHolder`: Deletes an account holder in the payment provider. The Payment Module uses this method when an account holder is deleted in Medusa.
+- `createAccountHolder`: Creates an account holder in the payment provider. The Payment Module uses this method before creating the account holder in Switchyard, and uses the returned data to set fields like `external_id` and `data` in the created `AccountHolder` record.
+- `deleteAccountHolder`: Deletes an account holder in the payment provider. The Payment Module uses this method when an account holder is deleted in Switchyard.
 - `savePaymentMethod`: Saves a payment method for an account holder in the payment provider.
 - `listPaymentMethods`: Lists saved payment methods in the third-party service for an account holder. This is useful when displaying the customer's saved payment methods in the storefront.
 
@@ -46,10 +46,10 @@ Learn more about implementing these methods in the [Create Payment Provider guid
 
 ---
 
-## Account Holder in Medusa Payment Flows
+## Account Holder in Switchyard Payment Flows
 
-In the Medusa application, when a payment session is created for a registered customer, the Medusa application uses the Payment Module to create an account holder for the customer.
+In the Switchyard application, when a payment session is created for a registered customer, the Switchyard application uses the Payment Module to create an account holder for the customer.
 
-Consequently, the Payment Module uses the payment provider to create an account holder in the third-party service, then creates the account holder in Medusa.
+Consequently, the Payment Module uses the payment provider to create an account holder in the third-party service, then creates the account holder in Switchyard.
 
 This flow is only supported if the chosen payment provider has implemented the necessary [save payment methods](#save-payment-methods).

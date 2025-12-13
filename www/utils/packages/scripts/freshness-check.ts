@@ -46,8 +46,8 @@ async function scanDirectory(startPath: string) {
     const commitResponse = await octokit.request(
       "GET /repos/{owner}/{repo}/commits",
       {
-        owner: "medusajs",
-        repo: "medusa",
+        owner: "switchyard",
+        repo: "switchyard",
         path: relativeFilePath,
         per_page: 1,
       }

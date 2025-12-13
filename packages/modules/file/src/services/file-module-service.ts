@@ -9,11 +9,11 @@ import {
   FilterableFileProps,
   FindConfig,
   ModuleJoinerConfig,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 import { joinerConfig } from "../joiner-config"
 import FileProviderService from "./file-provider-service"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type InjectedDependencies = {
   fileProviderService: FileProviderService
@@ -105,8 +105,8 @@ export default class FileModuleService implements FileTypes.IFileModuleService {
     sharedContext?: Context
   ): Promise<FileDTO[]> {
     if (!filters?.id) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Listing of files is only supported when filtering by ID."
       )
     }
@@ -131,8 +131,8 @@ export default class FileModuleService implements FileTypes.IFileModuleService {
     sharedContext?: Context
   ): Promise<[FileDTO[], number]> {
     if (!filters?.id) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Listing of files is only supported when filtering by ID."
       )
     }

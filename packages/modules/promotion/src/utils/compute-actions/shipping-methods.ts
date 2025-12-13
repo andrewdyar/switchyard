@@ -2,15 +2,15 @@ import {
   BigNumberInput,
   InferEntityType,
   PromotionTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ApplicationMethodAllocation,
   ApplicationMethodTargetType,
   ApplicationMethodType,
   ComputedActions,
   MathBN,
-  MedusaError,
-} from "@medusajs/framework/utils"
+  SwitchyardError,
+} from "@switchyard/framework/utils"
 import { Promotion } from "@models"
 import { areRulesValidForContext } from "../validations"
 import { sortShippingLineByPriceAscending } from "./sort-by-price"
@@ -25,8 +25,8 @@ export function getComputedActionsForShippingMethods(
     []
 
   if (!shippingMethodApplicationContext) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `"shipping_methods" should be present as an array in the context for computeActions`
     )
   }

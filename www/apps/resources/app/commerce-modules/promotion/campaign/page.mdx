@@ -8,7 +8,7 @@ In this guide, you'll learn what a campaign is and its related concepts.
 
 <Note title="Looking for no-code docs?">
 
-Refer to this [Medusa Admin User Guide](!user-guide!/promotions/campaigns) to learn how to manage campaigns using the dashboard.
+Refer to this [Switchyard Admin User Guide](!user-guide!/promotions/campaigns) to learn how to manage campaigns using the dashboard.
 
 </Note>
 
@@ -18,7 +18,7 @@ A [Campaign](/references/promotion/models/Campaign) groups [promotions](../conce
 
 Use campaigns to group promotions that share the same time frame or target audience, and to limit promotion usage.
 
-![A diagram showcasing the relation between the Campaign and Promotion data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1709899225/Medusa%20Resources/campagin-promotion_hh3qsi.jpg)
+![A diagram showcasing the relation between the Campaign and Promotion data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1709899225/Switchyard%20Resources/campagin-promotion_hh3qsi.jpg)
 
 ---
 
@@ -39,7 +39,7 @@ There are two types of global budgets:
 - `usage`: The number of times a promotion can be used.
     - For example, if the usage limit is `10`, customers can use the promotion only 10 times. After that, it can no longer be applied.
 
-![A diagram showcasing the relation between the Campaign and CampaignBudget data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1709899463/Medusa%20Resources/campagin-budget_rvqlmi.jpg)
+![A diagram showcasing the relation between the Campaign and CampaignBudget data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1709899463/Switchyard%20Resources/campagin-budget_rvqlmi.jpg)
 
 Global budgets track usage and limits through the following properties of the `CampaignBudget` data model:
 
@@ -50,7 +50,7 @@ Global budgets track usage and limits through the following properties of the `C
 
 <Note>
 
-Attribute-based budgets were introduced in [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0).
+Attribute-based budgets were introduced in [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0).
 
 </Note>
 
@@ -76,13 +76,13 @@ The `CampaignBudgetUsage` data model tracks the usage of attribute-based budgets
 
 For example, if the attribute is `customer_id`, a new `CampaignBudgetUsage` record is created for each customer that uses the promotion to track their individual usage. Once a customer exceeds the limit set in the `CampaignBudget`, they can no longer use the promotion.
 
-![A diagram showcasing the relation between the CampaignBudget and CampaignBudgetUsage data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1760340527/Medusa%20Resources/campaign-budget-attr_fv0v2u.jpg)
+![A diagram showcasing the relation between the CampaignBudget and CampaignBudgetUsage data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1760340527/Switchyard%20Resources/campaign-budget-attr_fv0v2u.jpg)
 
 ---
 
 ## How Campaign Budgets Limit Promotion Usage
 
-When a customer tries to use a promotion, Medusa checks whether the campaign has a budget and if the budget limit has been reached. If the limit is reached, the promotion cannot be applied.
+When a customer tries to use a promotion, Switchyard checks whether the campaign has a budget and if the budget limit has been reached. If the limit is reached, the promotion cannot be applied.
 
 For example, if a campaign has a `usage` budget with a limit of `10` and the promotion has already been used 10 times, it can no longer be applied and is considered expired.
 

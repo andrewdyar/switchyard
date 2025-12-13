@@ -1,10 +1,10 @@
-import type { ISalesChannelModuleService } from "@medusajs/framework/types"
+import type { ISalesChannelModuleService } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   arrayDifference,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to validate that the sales channels exist.
@@ -37,8 +37,8 @@ export const validateSalesChannelsExistStep = createStep(
     const notFound = arrayDifference(data.sales_channel_ids, salesChannelIds)
 
     if (notFound.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Sales channels with IDs ${notFound.join(", ")} do not exist`
       )
     }

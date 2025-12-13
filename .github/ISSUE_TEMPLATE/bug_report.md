@@ -1,6 +1,6 @@
 ---
 name: Bug report for v1.x
-about: Create a report to help us improve Medusa
+about: Create a report to help us improve Switchyard
 title: ''
 labels: 'status: needs triaging, type: bug, version: 1.x'
 
@@ -12,7 +12,7 @@ Thank you for submitting an issue!
 Please make sure your issue is understandable and reproducible.
 To make your issue readable make sure you use valid Markdown syntax: https://guides.github.com/features/mastering-markdown/
 
-Please ensure you have also read and understood our contribution guide: https://github.com/medusajs/medusa/blob/master/CONTRIBUTING.md
+Please ensure you have also read and understood our contribution guide: https://github.com/switchyard/medusa/blob/master/CONTRIBUTING.md
 -->
 
 ## Bug report
@@ -23,7 +23,7 @@ A clear and concise description of what the bug is.
 
 ### System information
 
-Medusa version (including plugins):
+Switchyard version (including plugins):
 Node.js version:
 Database:
 Operating system:

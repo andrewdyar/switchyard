@@ -1,8 +1,8 @@
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 // Disable global authentication - we handle it explicitly via middleware
 export const AUTHENTICATE = false
@@ -19,8 +19,8 @@ interface ScanInventoryBody {
  * Process an inventory scan from a mobile device
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<ScanInventoryBody>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<ScanInventoryBody>,
+  res: SwitchyardResponse
 ) => {
   const { barcode, location_id, quantity, action = "lookup" } = req.body
 

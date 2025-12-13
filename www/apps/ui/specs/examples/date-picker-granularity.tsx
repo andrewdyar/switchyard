@@ -1,6 +1,6 @@
 "use client"
 
-import { DatePicker } from "@medusajs/ui"
+import { DatePicker } from "@switchyard/ui"
 
 export default function DatePickerGranularity() {
   const defaultDate = new Date()

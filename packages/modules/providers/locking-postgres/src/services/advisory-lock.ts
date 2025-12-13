@@ -1,6 +1,6 @@
-import { ILockingProvider } from "@medusajs/framework/types"
-import { isDefined, MedusaService } from "@medusajs/framework/utils"
-import { EntityManager } from "@medusajs/framework/mikro-orm/core"
+import { ILockingProvider } from "@switchyard/framework/types"
+import { isDefined, SwitchyardService } from "@switchyard/framework/utils"
+import { EntityManager } from "@switchyard/framework/mikro-orm/core"
 import { Locking } from "@models"
 
 type InjectedDependencies = {
@@ -8,7 +8,7 @@ type InjectedDependencies = {
 }
 
 export class PostgresAdvisoryLockProvider
-  extends MedusaService({ Locking })
+  extends SwitchyardService({ Locking })
   implements ILockingProvider
 {
   static identifier = "locking-postgres"

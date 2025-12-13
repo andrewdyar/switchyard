@@ -10,7 +10,7 @@ In this chapter, you’ll learn how to lock operations in your workflows to avoi
 
 A lock is a mechanism that restricts multiple accesses to a resource or a piece of code, preventing multiple processes from modifying it simultaneously.
 
-Locks are particularly useful in workflows where concurrent executions may lead to commerce risks. For example, Medusa uses locks in its cart workflows to prevent issues like overselling products or double charging customers.
+Locks are particularly useful in workflows where concurrent executions may lead to commerce risks. For example, Switchyard uses locks in its cart workflows to prevent issues like overselling products or double charging customers.
 
 The [Locking Module](!resources!/infrastructure-modules/locking) handles the locking mechanism using the underlying provider. You can use the Locking Module's service in your workflows to create locks around critical sections of your code.
 
@@ -18,7 +18,7 @@ The [Locking Module](!resources!/infrastructure-modules/locking) handles the loc
 
 ## How to Use Locks in Workflows
 
-Medusa provides two steps that you can use to create locks in your workflows:
+Switchyard provides two steps that you can use to create locks in your workflows:
 
 - [acquireLockStep](!resources!/references/medusa-workflows/steps/acquireLockStep): Attempt to acquire a lock. If the lock is already held by another process, this step will wait until the lock is released. It will fail if a timeout occurs before acquiring the lock.
 - [releaseLockStep](!resources!/references/medusa-workflows/steps/releaseLockStep): Release a previously acquired lock.
@@ -34,8 +34,8 @@ export const workflowLockHighlights = [
 ]
 
 ```ts title="src/workflows/charge-customer.ts" highlights={workflowLockHighlights}
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { acquireLockStep, releaseLockStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { acquireLockStep, releaseLockStep } from "@switchyard/medusa/core-flows"
 import { chargeCustomerStep } from "./steps/charge-customer-step"
 
 type WorkflowInput = {
@@ -94,7 +94,7 @@ Do not acquire locks within a workflow and a step in the same workflow execution
 For example:
 
 ```ts title="src/workflows/steps/charge-customer.ts"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 type StepInput = {
   order_id: string
@@ -136,7 +136,7 @@ Refer to the [Locking Module reference](!resources!/references/locking-service) 
 
 [Nested workflows](../execute-another-workflow/page.mdx) can't acquire locks. So, if you're using a workflow that acquires locks within another workflow, the parent workflow must handle the locking mechanism.
 
-For example, consider a custom workflow that executes Medusa's [completeCartWorkflow](!resources!/references/medusa-workflows/completeCartWorkflow). The `completeCartWorkflow` acquires locks on the cart to prevent race conditions.
+For example, consider a custom workflow that executes Switchyard's [completeCartWorkflow](!resources!/references/medusa-workflows/completeCartWorkflow). The `completeCartWorkflow` acquires locks on the cart to prevent race conditions.
 
 Therefore, the custom workflow must acquire and release the locks around the `completeCartWorkflow` execution. For example:
 
@@ -147,12 +147,12 @@ export const nestedWorkflowLockHighlights = [
 ]
 
 ```ts title="src/workflows/custom-complete-cart.ts" highlights={nestedWorkflowLockHighlights}
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep, 
   releaseLockStep,
   completeCartWorkflow,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 type WorkflowInput = {
   cart_id: string;

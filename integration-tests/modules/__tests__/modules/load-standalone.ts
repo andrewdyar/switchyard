@@ -1,7 +1,7 @@
-import { MedusaApp } from "@medusajs/modules-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IProductModuleService } from "@medusajs/types"
-import { Modules } from "@medusajs/utils"
+import { SwitchyardApp } from "@switchyard/modules-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IProductModuleService } from "@switchyard/types"
+import { Modules } from "@switchyard/utils"
 
 jest.setTimeout(30000)
 
@@ -17,7 +17,7 @@ medusaIntegrationTestRunner({
       })
 
       it("Should migrate database and initialize Product module using connection string from environment variable ", async function () {
-        const { modules, runMigrations } = await MedusaApp({
+        const { modules, runMigrations } = await SwitchyardApp({
           modulesConfig: {
             [Modules.PRODUCT]: true,
           },

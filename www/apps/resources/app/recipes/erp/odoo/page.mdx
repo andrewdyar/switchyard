@@ -6,22 +6,22 @@ products:
 import { Prerequisites, WorkflowDiagram } from "docs-ui"
 
 export const metadata = {
-  title: `Integrate Odoo with Medusa`,
+  title: `Integrate Odoo with Switchyard`,
 }
 
 # {metadata.title}
 
-In this guide, you will learn how to implement the integration layer between Odoo and Medusa.
+In this guide, you will learn how to implement the integration layer between Odoo and Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform that supports customizations. However, your business might already be using other systems such as an ERP to centralize data and processes. The Medusa Framework facilitates integrating the ERP system and using its data to enrich your commerce platform.
+When you install a Switchyard application, you get a fully-fledged commerce platform that supports customizations. However, your business might already be using other systems such as an ERP to centralize data and processes. The Switchyard Framework facilitates integrating the ERP system and using its data to enrich your commerce platform.
 
 Odoo is a suite of open-source business apps that covers all your business needs, including an ERP system. You can use Odoo to store products and their prices, manage orders, and more.
 
-This guide will teach you how to implement the general integration between Medusa and Odoo. You will learn how to connect to Odoo's APIs and fetch data such as products. You can then expand on this integration to implement your business requirements. You can also refer to [this recipe](../page.mdx) to find general examples of ERP integration use cases and how to implement them.
+This guide will teach you how to implement the general integration between Switchyard and Odoo. You will learn how to connect to Odoo's APIs and fetch data such as products. You can then expand on this integration to implement your business requirements. You can also refer to [this recipe](../page.mdx) to find general examples of ERP integration use cases and how to implement them.
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -38,27 +38,27 @@ This guide will teach you how to implement the general integration between Medus
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You will first be asked for the project's name. You can also optionally choose to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx).
 
-Afterward, the installation process will start, installing the Medusa application in a directory with your project's name. If you chose to install the Next.js starter, it'll be installed in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, installing the Switchyard application in a directory with your project's name. If you chose to install the Next.js starter, it'll be installed in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Medusa's architecture in [this documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more about Switchyard's architecture in [this documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credential and submit the form. Afterwards, you can login with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credential and submit the form. Afterwards, you can login with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -68,7 +68,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 [Odoo's APIs](https://www.odoo.com/documentation/18.0/developer/reference/external_api.html) are based on the XML-RPC and JSON-RPC protocols. So, to connect to Odoo's APIs, you need a JSON-RPC client library.
 
-Run the following command in the Medusa application to install the `json-rpc-2.0` package:
+Run the following command in the Switchyard application to install the `json-rpc-2.0` package:
 
 ```bash npm2yarn
 npm install json-rpc-2.0
@@ -80,7 +80,7 @@ You will use this package in the next steps to connect to Odoo's APIs.
 
 ## Step 3: Create Odoo Module
 
-To integrate third-party systems into Medusa, you create a custom [module](!docs!/learn/fundamentals/modules). A module is a re-usable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+To integrate third-party systems into Switchyard, you create a custom [module](!docs!/learn/fundamentals/modules). A module is a re-usable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 In this step, you'll create an Odoo Module that provides the interface to connect to and interact with Odoo. You will later use this module when implementing the product syncing logic.
 
@@ -92,19 +92,19 @@ Learn more about modules in [this documentation](!docs!/learn/fundamentals/modul
 
 ### Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/odoo`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/odoo`.
 
-![Diagram showcasing directory structure after creating the module directory](https://res.cloudinary.com/dza7lstvk/image/upload/v1740474975/Medusa%20Resources/odoo-1_en3bso.jpg)
+![Diagram showcasing directory structure after creating the module directory](https://res.cloudinary.com/dza7lstvk/image/upload/v1740474975/Switchyard%20Resources/odoo-1_en3bso.jpg)
 
 ### Create Service
 
 You define a module's functionalities in a service. A service is a TypeScript or JavaScript class that the module exports. In the service's methods, you can connect to the database, which is useful if your module defines tables in the database, or connect to a third-party service.
 
-Medusa registers the module's service in the [Medusa container](!docs!/learn/fundamentals/medusa-container), allowing you to easily resolve the service from other customizations and use its methods.
+Switchyard registers the module's service in the [Switchyard container](!docs!/learn/fundamentals/medusa-container), allowing you to easily resolve the service from other customizations and use its methods.
 
-<Note title="What is the Medusa Container?">
+<Note title="What is the Switchyard Container?">
 
-The Medusa application registers resources, such as a module's service or the [logging tool](!docs!/learn/debugging-and-testing/logging), in the Medusa container so that you can resolve them from other customizations, as you'll see in later sections. Learn more about it in [this documentation](!docs!/learn/fundamentals/medusa-container).
+The Switchyard application registers resources, such as a module's service or the [logging tool](!docs!/learn/debugging-and-testing/logging), in the Switchyard container so that you can resolve them from other customizations, as you'll see in later sections. Learn more about it in [this documentation](!docs!/learn/fundamentals/medusa-container).
 
 </Note>
 
@@ -112,7 +112,7 @@ In this section, you'll create the Odoo Module's service and the methods necessa
 
 To create the service, create the file `src/modules/odoo/service.ts` with the following content:
 
-![Diagram showcasing directory structure after creating the service file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740474976/Medusa%20Resources/odoo-2_y76dfs.jpg)
+![Diagram showcasing directory structure after creating the service file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740474976/Switchyard%20Resources/odoo-2_y76dfs.jpg)
 
 ```ts title="src/modules/odoo/service.ts"
 import { JSONRPCClient } from "json-rpc-2.0"
@@ -201,7 +201,7 @@ If the authentication was successful, Odoo returns a UID, which you store in the
 
 ### Fetch Products Method
 
-You can fetch many data from Odoo based on your business requirements, or create data in Odoo. For this guide, you'll only learn how to fetch products. You will use this method later to sync products from Odoo to Medusa.
+You can fetch many data from Odoo based on your business requirements, or create data in Odoo. For this guide, you'll only learn how to fetch products. You will use this method later to sync products from Odoo to Switchyard.
 
 First, add the following types to `src/modules/odoo/service.ts`:
 
@@ -399,19 +399,19 @@ You first define the `productSpecifications` object that holds the fields you wa
 
 Then, you send a request to Odoo to fetch the products' details based on the IDs you retrieved earlier. You use the `productSpecifications` object to define the fields you want to fetch for each product and its variants. Finally, you return the fetched products.
 
-You will use the `listProducts` method to sync products from Odoo to Medusa in the next steps.
+You will use the `listProducts` method to sync products from Odoo to Switchyard in the next steps.
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/odoo/index.ts` with the following content:
 
-![Diagram showcasing directory structure after creating the module definition file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740475883/Medusa%20Resources/odoo-3_q5y803.jpg)
+![Diagram showcasing directory structure after creating the module definition file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740475883/Switchyard%20Resources/odoo-3_q5y803.jpg)
 
 ```ts title="src/modules/odoo/index.ts"
 import OdooModuleService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const ODOO_MODULE = "odoo"
 
@@ -425,13 +425,13 @@ You use the `Module` function from the Modules SDK to create the module's defini
 1. The module's name, which is `odoo`.
 2. An object with a required property `service` indicating the module's service.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -467,16 +467,16 @@ Where:
 - `ODOO_API_KEY`: The API key of an Odoo user, or the user's password. To retrieve an API Key:
     - On your Odoo dashboard, click on the user's avatar at the top right and choose "My Profile" from the dropdown.
 
-![My profile dropdown in Odoo](https://res.cloudinary.com/dza7lstvk/image/upload/v1740476295/Medusa%20Resources/Screenshot_2025-02-25_at_11.36.23_AM_h9iind.png)
+![My profile dropdown in Odoo](https://res.cloudinary.com/dza7lstvk/image/upload/v1740476295/Switchyard%20Resources/Screenshot_2025-02-25_at_11.36.23_AM_h9iind.png)
 
     - On your profile's page, click the "Account Security" tab, then the "New API Key" button.
 
-![Profile page in Odoo](https://res.cloudinary.com/dza7lstvk/image/upload/v1740476296/Medusa%20Resources/Screenshot_2025-02-25_at_11.36.55_AM_gl4wfu.png)
+![Profile page in Odoo](https://res.cloudinary.com/dza7lstvk/image/upload/v1740476296/Switchyard%20Resources/Screenshot_2025-02-25_at_11.36.55_AM_gl4wfu.png)
 
     - In the pop-up that opens, enter your password.
     - Enter the API Key's name, and set the expiration to "Persistent Key", then click the "Generate Key" button.
 
-![Generate key pop-up](https://res.cloudinary.com/dza7lstvk/image/upload/v1740476443/Medusa%20Resources/Screenshot_2025-02-25_at_11.40.19_AM_ntbx1c.png)
+![Generate key pop-up](https://res.cloudinary.com/dza7lstvk/image/upload/v1740476443/Switchyard%20Resources/Screenshot_2025-02-25_at_11.40.19_AM_ntbx1c.png)
 
     - Copy the generated API Key and use it as the `ODOO_API_KEY` environment variable's value.
 
@@ -484,15 +484,15 @@ You will test that the Odoo Module works as expected in the next steps.
 
 ---
 
-## Step 4: Sync Products from Odoo to Medusa
+## Step 4: Sync Products from Odoo to Switchyard
 
-There are different use cases you can implement when integrating an ERP like Odoo. One of them is syncing products from the ERP to Medusa. This way, you can manage products in Odoo and have them reflected in your commerce platform.
+There are different use cases you can implement when integrating an ERP like Odoo. One of them is syncing products from the ERP to Switchyard. This way, you can manage products in Odoo and have them reflected in your commerce platform.
 
 To implement the syncing functionality, you need to create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You construct a workflow similar to how you create a JavaScript function, but with additional features like defining rollback logic for each step, performing long actions asynchronously, and tracking the progress of the steps.
 
 After defining the workflow, you can execute it in other customizations, such as periodically or when an event occurs.
 
-In this section, you'll create a workflow that syncs products from Odoo to Medusa. Then, you'll execute that workflow once a day using a [scheduled job](!docs!/learn/fundamentals/scheduled-jobs). The workflow has the following steps:
+In this section, you'll create a workflow that syncs products from Odoo to Switchyard. Then, you'll execute that workflow once a day using a [scheduled job](!docs!/learn/fundamentals/scheduled-jobs). The workflow has the following steps:
 
 <WorkflowDiagram
   workflow={{
@@ -507,35 +507,35 @@ In this section, you'll create a workflow that syncs products from Odoo to Medus
       {
         type: "step",
         name: "useQueryGraphStep",
-        description: "Get Medusa store configurations to use when creating the products.",
+        description: "Get Switchyard store configurations to use when creating the products.",
         depth: 1,
         link: "/references/helper-steps/useQueryGraphStep",
       },
       {
         type: "step",
         name: "useQueryGraphStep",
-        description: "Get Medusa sales channels to use when creating the products.",
+        description: "Get Switchyard sales channels to use when creating the products.",
         depth: 1,
         link: "/references/helper-steps/useQueryGraphStep",
       },
       {
         type: "step",
         name: "useQueryGraphStep",
-        description: "Get Medusa shipping profiles to use when creating the products.",
+        description: "Get Switchyard shipping profiles to use when creating the products.",
         depth: 1,
         link: "/references/helper-steps/useQueryGraphStep",
       },
       {
         type: "step",
         name: "createProductsWorkflow",
-        description: "Create new products in Medusa.",
+        description: "Create new products in Switchyard.",
         depth: 1,
         link: "/references/medusa-workflows/createProductsWorkflow",
       },
       {
         type: "step",
         name: "updateProductsWorkflow",
-        description: "Update existing products in Medusa.",
+        description: "Update existing products in Switchyard.",
         depth: 1,
         link: "/references/medusa-workflows/updateProductsWorkflow",
       }
@@ -544,16 +544,16 @@ In this section, you'll create a workflow that syncs products from Odoo to Medus
   hideLegend
 />
 
-The only step you'll need to implement is the `getProductsFromErp` step. The other steps are available through Medusa's `@medusajs/medusa/core-flows` package.
+The only step you'll need to implement is the `getProductsFromErp` step. The other steps are available through Switchyard's `@switchyard/medusa/core-flows` package.
 
 ### getProductsFromErp
 
 The first step of the workflow is to retrieve the products from the ERP. So, create the file `src/workflows/sync-from-erp.ts` with the following content:
 
-![Diagram showcasing directory structure after creating the workflow file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740479240/Medusa%20Resources/odoo-4_jrh5mx.jpg)
+![Diagram showcasing directory structure after creating the workflow file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740479240/Switchyard%20Resources/odoo-4_jrh5mx.jpg)
 
 ```ts title="src/workflows/sync-from-erp.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 type Input = {
   offset: number
@@ -577,7 +577,7 @@ You create a step using `createStep` from the Workflows SDK. It accepts two para
 1. The step's name, which is `get-products-from-erp`.
 2. An async function that executes the step's logic. The function receives two parameters:
    - The input data for the step, which are the pagination fields `offset` and `limit`.
-   - An object holding the workflow's context, including the [Medusa Container](!docs!/learn/fundamentals/medusa-container) that allows you to resolve Framework and commerce tools.
+   - An object holding the workflow's context, including the [Switchyard Container](!docs!/learn/fundamentals/medusa-container) that allows you to resolve Framework and commerce tools.
 
 In this step, you resolve the Odoo Module's service from the container and use its `listProducts` method to fetch products from Odoo. You pass the pagination options from the input data to the method.
 
@@ -585,20 +585,20 @@ A step must return an instance of `StepResponse` which accepts as a parameter th
 
 ### Create Workflow
 
-You can now create the workflow that syncs the products from Odoo to Medusa.
+You can now create the workflow that syncs the products from Odoo to Switchyard.
 
 In the same `src/workflows/sync-from-erp.ts` file, add the following imports:
 
 ```ts title="src/workflows/sync-from-erp.ts"
 import { 
   createWorkflow, transform, WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   createProductsWorkflow, updateProductsWorkflow, useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   CreateProductWorkflowInputDTO, UpdateProductWorkflowInputDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 ```
 
 Then, add the workflow after the step:
@@ -652,7 +652,7 @@ You create a workflow using `createWorkflow` from the Workflows SDK. It accepts 
 It accepts as a second parameter a constructor function, which is the workflow's implementation. The function receives the pagination options as a parameter. In the workflow, you:
 
 - Call the `getProductsFromErp` step to fetch products from Odoo.
-- Use the [useQueryGraphStep](/references/helper-steps/useQueryGraphStep) to fetch the Medusa store configurations, sales channels, and shipping profiles. You'll use this data when creating the products in a later step.
+- Use the [useQueryGraphStep](/references/helper-steps/useQueryGraphStep) to fetch the Switchyard store configurations, sales channels, and shipping profiles. You'll use this data when creating the products in a later step.
     - The `useQueryGraphStep` uses [Query](!docs!/learn/fundamentals/module-links/query), which is a tool that retrieves data across modules.
 - To figure out which products need to be updated, you retrieve products filtered by their `external_id` field, which you'll set to the Odoo product's ID when you create the products next.
     - Notice that you use `transform` from the Workflows SDK to create the external IDs filters. That's because data manipulation is not allowed in a workflow. You can learn more about this and other restrictions in [this documentation](!docs!/learn/fundamentals/workflows/constructor-constraints).
@@ -813,20 +813,20 @@ You can now execute this workflow in other customizations, such as a scheduled j
 
 ### Create Scheduled Job
 
-In Medusa, you can run a task at a specified interval using a [scheduled job](!docs!/learn/fundamentals/scheduled-jobs). A scheduled job is an asynchronous function that runs at a regular interval during the Medusa application's runtime to perform tasks such as syncing products from Odoo to Medusa.
+In Switchyard, you can run a task at a specified interval using a [scheduled job](!docs!/learn/fundamentals/scheduled-jobs). A scheduled job is an asynchronous function that runs at a regular interval during the Switchyard application's runtime to perform tasks such as syncing products from Odoo to Switchyard.
 
 To create a scheduled job, create the file `src/jobs/sync-products-from-erp.ts` with the following content:
 
-![Diagram showcasing directory structure after creating the scheduled job file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740480934/Medusa%20Resources/odoo-5_xf0xug.jpg)
+![Diagram showcasing directory structure after creating the scheduled job file](https://res.cloudinary.com/dza7lstvk/image/upload/v1740480934/Switchyard%20Resources/odoo-5_xf0xug.jpg)
 
 ```ts title="src/jobs/sync-products-from-erp.ts"
 import {
-  MedusaContainer,
-} from "@medusajs/framework/types"
+  SwitchyardContainer,
+} from "@switchyard/framework/types"
 import { syncFromErpWorkflow } from "../workflows/sync-from-erp"
 import { OdooProduct } from "../modules/odoo/service"
 
-export default async function syncProductsJob(container: MedusaContainer) {
+export default async function syncProductsJob(container: SwitchyardContainer) {
   const limit = 10
   let offset = 0
   let total = 0
@@ -862,13 +862,13 @@ In this file, you export:
     - `name`: A unique name for the scheduled job.
     - `schedule`: A [cron expression](https://crontab.guru/) string indicating the schedule to run the job at. The specified schedule indicates that this job should run every day at midnight.
 
-The scheduled job function accepts the Medusa container as a parameter. In the function, you define the pagination options for the products to fetch from Odoo. You then run the `syncFromErpWorkflow` workflow with the pagination options. You increment the offset by the limit each time you run the workflow until you fetch all the products.
+The scheduled job function accepts the Switchyard container as a parameter. In the function, you define the pagination options for the products to fetch from Odoo. You then run the `syncFromErpWorkflow` workflow with the pagination options. You increment the offset by the limit each time you run the workflow until you fetch all the products.
 
 ---
 
 ## Test it Out
 
-To test out syncing the products from Odoo to Medusa, first, change the schedule of the job in `src/jobs/sync-products-from-erp.ts` to run every minute:
+To test out syncing the products from Odoo to Switchyard, first, change the schedule of the job in `src/jobs/sync-products-from-erp.ts` to run every minute:
 
 ```ts title="src/jobs/sync-products-from-erp.ts"
 export const config = {
@@ -877,7 +877,7 @@ export const config = {
 }
 ```
 
-Then, start the Medusa application with the following command:
+Then, start the Switchyard application with the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -885,7 +885,7 @@ npm run dev
 
 A minute later, you should find the message `Syncing products...` in the console. Once the job finishes, you should see the message `Synced <number> products`, indicating the number of products synced.
 
-You can also confirm that the products were synced by checking the products in the Medusa Admin dashboard.
+You can also confirm that the products were synced by checking the products in the Switchyard Admin dashboard.
 
 If you encounter any issues, make sure the module options are set correctly as explained in [this section](#add-module-to-medusas-configurations).
 
@@ -893,8 +893,8 @@ If you encounter any issues, make sure the module options are set correctly as e
 
 ## Next Steps
 
-You now have the foundation for integrating Odoo with Medusa. You can expand on this integration to implement more use cases, such as syncing orders, restricting purchases of products based on custom rules, and checking inventory in Odoo before adding to the cart. You can find the approach to implement these use cases in [this recipe](../page.mdx).
+You now have the foundation for integrating Odoo with Switchyard. You can expand on this integration to implement more use cases, such as syncing orders, restricting purchases of products based on custom rules, and checking inventory in Odoo before adding to the cart. You can find the approach to implement these use cases in [this recipe](../page.mdx).
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

@@ -18,7 +18,7 @@ Learn more about modules in [this chapter](../../../fundamentals/modules/page.md
 
 You'll integrate the third-party system in a new CMS Module. So, create the directory `src/modules/cms` that will hold the module's resources.
 
-![Directory structure after adding the directory for the CMS Module](https://res.cloudinary.com/dza7lstvk/image/upload/v1733492447/Medusa%20Book/cms-dir-overview-1_gasguk.jpg)
+![Directory structure after adding the directory for the CMS Module](https://res.cloudinary.com/dza7lstvk/image/upload/v1733492447/Switchyard%20Book/cms-dir-overview-1_gasguk.jpg)
 
 ---
 
@@ -28,7 +28,7 @@ Next, you'll create the module's service. It will provide methods to connect and
 
 Create the CMS Module's service at `src/modules/cms/service.ts` with the following content:
 
-![Directory structure after adding the CMS Module's service](https://res.cloudinary.com/dza7lstvk/image/upload/v1733492583/Medusa%20Book/cms-dir-overview-2_zwcwh3.jpg)
+![Directory structure after adding the CMS Module's service](https://res.cloudinary.com/dza7lstvk/image/upload/v1733492583/Switchyard%20Book/cms-dir-overview-2_zwcwh3.jpg)
 
 export const serviceHighlights = [
   ["3", "ModuleOptions", "The options that the CMS Module receives."],
@@ -38,7 +38,7 @@ export const serviceHighlights = [
 ]
 
 ```ts title="src/modules/cms/service.ts" highlights={serviceHighlights}
-import { Logger, ConfigModule } from "@medusajs/framework/types"
+import { Logger, ConfigModule } from "@switchyard/framework/types"
 
 export type ModuleOptions = {
   apiKey: string
@@ -66,8 +66,8 @@ export default CmsModuleService
 
 You create a `CmsModuleService` that will hold the methods to connect to the third-party CMS. A service's constructor accepts two parameters:
 
-1. The module's container. Since a module is [isolated](../../../fundamentals/modules/isolation/page.mdx), it has a [local container](../../../fundamentals/modules/container/page.mdx) different than the Medusa container you use in other customizations. This container holds Framework tools like the [Logger utility](../../../debugging-and-testing/logging/page.mdx) and resources within the module.
-2. Options passed to the module when it's later added in Medusa's configurations. These options are useful to pass secret keys or configurations that ensure your module is re-usable across applications. For the CMS Module, you accept the API key to connect to the dummy CMS as an option.
+1. The module's container. Since a module is [isolated](../../../fundamentals/modules/isolation/page.mdx), it has a [local container](../../../fundamentals/modules/container/page.mdx) different than the Switchyard container you use in other customizations. This container holds Framework tools like the [Logger utility](../../../debugging-and-testing/logging/page.mdx) and resources within the module.
+2. Options passed to the module when it's later added in Switchyard's configurations. These options are useful to pass secret keys or configurations that ensure your module is re-usable across applications. For the CMS Module, you accept the API key to connect to the dummy CMS as an option.
 
 When integrating a third-party system that has a Node.js SDK or client, you can initialize that client in the constructor to be used in the service's methods.
 
@@ -128,10 +128,10 @@ After creating the module's service, you'll export the module definition indicat
 
 Create the file `src/modules/cms/index.ts` with the following content:
 
-![Directory structure of the Medusa application after adding the module definition file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733492991/Medusa%20Book/cms-dir-overview-3_b0byks.jpg)
+![Directory structure of the Switchyard application after adding the module definition file](https://res.cloudinary.com/dza7lstvk/image/upload/v1733492991/Switchyard%20Book/cms-dir-overview-3_b0byks.jpg)
 
 ```ts title="src/modules/cms/index.ts"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import CmsModuleService from "./service"
 
 export const CMS_MODULE = "cms"
@@ -145,11 +145,11 @@ You use `Module` from the Modules SDK to export the module's defintion, indicati
 
 ---
 
-## 4. Add Module to Medusa's Configurations
+## 4. Add Module to Switchyard's Configurations
 
-Finally, add the module to the Medusa configurations at `medusa-config.ts`:
+Finally, add the module to the Switchyard configurations at `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -174,8 +174,8 @@ CMS_API_KEY=123
 
 ---
 
-## Next Steps: Sync Brand From Medusa to CMS
+## Next Steps: Sync Brand From Switchyard to CMS
 
 You can now use the CMS Module's service to perform actions on the third-party CMS.
 
-In the next chapter, you'll learn how to emit an event when a brand is created, then handle that event to sync the brand from Medusa to the third-party service.
+In the next chapter, you'll learn how to emit an event when a brand is created, then handle that event to sync the brand from Switchyard to the third-party service.

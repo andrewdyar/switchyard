@@ -1,5 +1,5 @@
-import { isDefined, Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { isDefined, Modules } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { setTimeout } from "timers/promises"
 
 /**
@@ -33,7 +33,7 @@ export interface AcquireLockStepInput {
   ownerId?: string
   /**
    * The provider name to use for locking. If no provider is passed, the default provider
-   * (in-memory or the provider configured in medusa-config.ts) will be used.
+   * (in-memory or the provider configured in switchyard.config.ts) will be used.
    */
   provider?: string
   executeOnSubWorkflow?: boolean

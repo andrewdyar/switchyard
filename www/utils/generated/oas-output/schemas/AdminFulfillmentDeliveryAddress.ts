@@ -51,7 +51,7 @@
  *     type: object
  *     description: The delivery address's metadata, used to store custom key-value pairs.
  *     externalDocs:
- *       url: https://docs.medusajs.com/api/admin#manage-metadata
+ *       url: https://docs.switchyard.com/api/admin#manage-metadata
  *       description: Learn how to manage metadata
  * x-schemaName: AdminFulfillmentDeliveryAddress
  * 

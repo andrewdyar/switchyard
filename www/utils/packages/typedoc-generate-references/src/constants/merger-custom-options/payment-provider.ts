@@ -30,10 +30,10 @@ const paymentProviderOptions: FormattingOptionsType = {
       
 As you implement your Payment Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [Stripe Payment Module Provider in the Medusa repository](https://github.com/medusajs/medusa/tree/develop/packages/modules/providers/payment-stripe).`,
+If you need to refer to an existing implementation as an example, check the [Stripe Payment Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/payment-stripe).`,
       `## Understanding Payment Module Provider Implementation
 
-The Payment Module Provider handles processing payment with a third-party provirder. However, it's not responsible for managing payment concepts within Medusa, such as payment sessions or collections. These concepts are handled by the Payment Module which uses your Payment Module Provider within core operations.
+The Payment Module Provider handles processing payment with a third-party provirder. However, it's not responsible for managing payment concepts within Switchyard, such as payment sessions or collections. These concepts are handled by the Payment Module which uses your Payment Module Provider within core operations.
 
 For example, when the merchant captures an order's payment, the Payment Module uses the Payment Module Provider to capture the payment, the makes updates to the \`Payment\` record associated with the order. So, you only have to implement the third-party payment processing logic in your Payment Module Provider.
 `,
@@ -41,7 +41,7 @@ For example, when the merchant captures an order's payment, the Payment Module u
 
 Start by creating a new directory for your module provider.
 
-If you're creating the module provider in a Medusa application, create it under the \`src/modules\` directory. For example, \`src/modules/my-payment\`.
+If you're creating the module provider in a Switchyard application, create it under the \`src/modules\` directory. For example, \`src/modules/my-payment\`.
 
 If you're creating the module provider in a plugin, create it under the \`src/providers\` directory. For example, \`src/providers/my-payment\`.
 
@@ -52,10 +52,10 @@ The rest of this guide always uses the \`src/modules/my-payment\` directory as a
 </Note>`,
       `## 2. Create the Payment Module Provider's Service
 
-Create the file \`src/modules/my-payment/service.ts\` that holds the module provider's main service. It must extend the \`AbstractPaymentProvider\` class imported from \`@medusajs/framework/utils\`:
+Create the file \`src/modules/my-payment/service.ts\` that holds the module provider's main service. It must extend the \`AbstractPaymentProvider\` class imported from \`@switchyard/framework/utils\`:
 
 \`\`\`ts title="src/modules/my-payment/service.ts"
-import { AbstractPaymentProvider } from "@medusajs/framework/utils"
+import { AbstractPaymentProvider } from "@switchyard/framework/utils"
 
 type Options = {
   apiKey: string
@@ -80,7 +80,7 @@ import MyPaymentProviderService from "./service"
 import { 
   ModuleProvider, 
   Modules
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export default ModuleProvider(Modules.PAYMENT, {
   services: [MyPaymentProviderService],
@@ -96,14 +96,14 @@ A payment module provider can have export multiple provider services, where each
 </Note>`,
       `## 4. Use Module Provider
 
-To use your Payment Module Provider, add it to the \`providers\` array of the Payment Module in \`medusa-config.ts\`:
+To use your Payment Module Provider, add it to the \`providers\` array of the Payment Module in \`switchyard.config.ts\`:
 
-\`\`\`ts title="medusa-config.ts"
+\`\`\`ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/payment",
+      resolve: "@switchyard/medusa/payment",
       options: {
         providers: [
           {
@@ -124,13 +124,13 @@ module.exports = defineConfig({
 `,
       `## 5. Test it Out
 
-Before you use your Payment Module Provider, enable it in a region using the Medusa Admin.
+Before you use your Payment Module Provider, enable it in a region using the Switchyard Admin.
 
 Then, go through checkout to place an order. Your Payment Module Provider is used to authorize the payment.
 `,
       `## Useful Guides
 
-- [Storefront Guide: how to implement UI for your Payment Module Provider during checkout](https://docs.medusajs.com/resources/storefront-development/checkout/payment)
+- [Storefront Guide: how to implement UI for your Payment Module Provider during checkout](https://docs.switchyard.com/resources/storefront-development/checkout/payment)
 `,
     ],
   },

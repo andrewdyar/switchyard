@@ -5,7 +5,7 @@ import {
   HttpTypes,
   PaginatedResponse,
   SelectParams,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 import { Client } from "../client"
 import { ClientHeaders } from "../types"

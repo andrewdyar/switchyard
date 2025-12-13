@@ -4,13 +4,13 @@ import {
   InferEntityType,
   ProductCategoryTransformOptions,
   ProductTypes,
-} from "@medusajs/framework/types"
-import { DALUtils, isDefined, MedusaError } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { DALUtils, isDefined, SwitchyardError } from "@switchyard/framework/utils"
 import {
   LoadStrategy,
   FindOptions as MikroOptions,
-} from "@medusajs/framework/mikro-orm/core"
-import { SqlEntityManager } from "@medusajs/framework/mikro-orm/postgresql"
+} from "@switchyard/framework/mikro-orm/core"
+import { SqlEntityManager } from "@switchyard/framework/mikro-orm/postgresql"
 import { ProductCategory } from "@models"
 import { UpdateCategoryInput } from "@types"
 
@@ -300,8 +300,8 @@ export class ProductCategoryRepository extends DALUtils.MikroOrmBaseTreeReposito
         })
 
         if (!productCategory) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `ProductCategory with id: ${id} was not found`
           )
         }
@@ -354,15 +354,15 @@ export class ProductCategoryRepository extends DALUtils.MikroOrmBaseTreeReposito
         )
 
         if (!productCategory) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `ProductCategory with id: ${id} was not found`
           )
         }
 
         if (productCategory.category_children.length > 0) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_ALLOWED,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_ALLOWED,
             `Deleting ProductCategory (${id}) with category children is not allowed`
           )
         }
@@ -409,8 +409,8 @@ export class ProductCategoryRepository extends DALUtils.MikroOrmBaseTreeReposito
           >(ProductCategory.name, parentCategoryId)
 
           if (!parentCategory) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_ARGUMENT,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_ARGUMENT,
               `Parent category with id: '${parentCategoryId}' does not exist`
             )
           }
@@ -458,8 +458,8 @@ export class ProductCategoryRepository extends DALUtils.MikroOrmBaseTreeReposito
         >(ProductCategory.name, categoryData.id!)
 
         if (!productCategory) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `ProductCategory with id: ${categoryData.id} was not found`
           )
         }
@@ -507,8 +507,8 @@ export class ProductCategoryRepository extends DALUtils.MikroOrmBaseTreeReposito
             >(ProductCategory.name, categoryData.parent_category_id)
 
             if (!newParentCategory) {
-              throw new MedusaError(
-                MedusaError.Types.INVALID_ARGUMENT,
+              throw new SwitchyardError(
+                SwitchyardError.Types.INVALID_ARGUMENT,
                 `Parent category with id: '${categoryData.parent_category_id}' does not exist`
               )
             }

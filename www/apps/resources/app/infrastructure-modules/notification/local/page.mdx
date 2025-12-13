@@ -26,17 +26,17 @@ Only one provider can be defined for a channel.
 
 </Note>
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: "@switchyard/medusa/notification",
       options: {
         providers: [
           // ...
           {
-            resolve: "@medusajs/medusa/notification-local",
+            resolve: "@switchyard/medusa/notification-local",
             id: "local",
             options: {
               channels: ["email"],
@@ -79,7 +79,7 @@ module.exports = defineConfig({
 
 ## Send Notifications to the Admin Notification Panel
 
-The Local Notification Module Provider can also be used to send notifications to the [Medusa Admin's notification panel](!user-guide!#check-notifications). 
+The Local Notification Module Provider can also be used to send notifications to the [Switchyard Admin's notification panel](!user-guide!#check-notifications). 
 You can send notifications to the admin dashboard when a certain action occurs using a subscriber, a custom workflow or a workflow hook.
 
 For example, to send an admin notification whenever an order is placed, create a [subscriber](!docs!/learn/fundamentals/events-and-subscribers) at `src/subscribers/order-placed.ts` with the following content:
@@ -100,8 +100,8 @@ export const highlights = [
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework"
+import { Modules } from "@switchyard/framework/utils"
 
 export default async function orderPlacedHandler({
   event: { data },
@@ -127,18 +127,18 @@ export const config: SubscriberConfig = {
 
 In this subscriber, you:
 
-- Resolve the Notification Module's main service from the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+- Resolve the Notification Module's main service from the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 - Use the `createNotifications` method of the Notification Module's main service to create a notification to be sent to the admin dashboard. By specifying the `feed` channel, the Local Notification Module Provider is used to send the notification.
 - The `template` property of the `createNotifications` method's parameter must be set to `admin-ui`.
 - The `data` property allows you to customize the content of the admin notification. It must contain `title` and `description` properties.
 
 ### Test Sending Notification
 
-To test this out, start the Medusa application:
+To test this out, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, place an order. The subscriber will run, sending a notification to the Medusa Admin's notification panel.
+Then, place an order. The subscriber will run, sending a notification to the Switchyard Admin's notification panel.
 

@@ -4,7 +4,7 @@ import {
   FindConfig,
   InferEntityType,
   ProductTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   createMedusaMikroOrmEventSubscriber,
   FreeTextSearchFilterKeyPrefix,
@@ -12,12 +12,12 @@ import {
   InjectTransactionManager,
   isDefined,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   MedusaInternalService,
-  MedusaService,
+  SwitchyardService,
   ModulesSdkUtils,
   registerInternalServiceEventSubscriber,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { EntityManager, EventType } from "@mikro-orm/core"
 import { ProductCategory } from "@models"
 import { ProductCategoryRepository } from "@repositories"
@@ -25,7 +25,7 @@ import { UpdateCategoryInput } from "@types"
 
 type InjectedDependencies = {
   productCategoryRepository: DAL.TreeRepositoryService
-  productModuleService: ReturnType<typeof MedusaService>
+  productModuleService: ReturnType<typeof SwitchyardService>
 }
 
 export default class ProductCategoryService extends MedusaInternalService<
@@ -51,8 +51,8 @@ export default class ProductCategoryService extends MedusaInternalService<
     @MedusaContext() sharedContext: Context = {}
   ): Promise<InferEntityType<typeof ProductCategory>> {
     if (!isDefined(productCategoryId)) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `"productCategoryId" must be defined`
       )
     }
@@ -77,8 +77,8 @@ export default class ProductCategoryService extends MedusaInternalService<
     )
 
     if (!productCategories?.length) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `ProductCategory with id: ${productCategoryId} was not found`
       )
     }

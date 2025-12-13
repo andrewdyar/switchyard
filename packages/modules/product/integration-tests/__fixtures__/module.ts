@@ -1,5 +1,5 @@
-import { Context } from "@medusajs/framework/types"
-import { DALUtils } from "@medusajs/framework/utils"
+import { Context } from "@switchyard/framework/types"
+import { DALUtils } from "@switchyard/framework/utils"
 
 class CustomRepository extends DALUtils.MikroOrmBaseRepository {
   constructor({ manager }) {

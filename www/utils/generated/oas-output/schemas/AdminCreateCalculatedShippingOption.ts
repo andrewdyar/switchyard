@@ -33,7 +33,7 @@
  *     type: object
  *     description: The calculated shipping option's data.
  *     externalDocs:
- *       url: https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property
+ *       url: https://docs.switchyard.com/resources/commerce-modules/fulfillment/shipping-option#data-property
  *   provider_id:
  *     type: string
  *     title: provider_id

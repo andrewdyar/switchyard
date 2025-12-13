@@ -13,12 +13,12 @@
  *       type: string
  *   - name: x-publishable-api-key
  *     in: header
- *     description: Publishable API Key created in the Medusa Admin.
+ *     description: Publishable API Key created in the Switchyard Admin.
  *     required: true
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.medusajs.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.com/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: |-
@@ -50,12 +50,12 @@
  *             type: object
  *             description: Custom data that's useful for the fulfillment provider to calculate the price.
  *             externalDocs:
- *               url: https://docs.medusajs.com/resources/commerce-modules/fulfillment/shipping-option#data-property
+ *               url: https://docs.switchyard.com/resources/commerce-modules/fulfillment/shipping-option#data-property
  * x-codeSamples:
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
  *       let MEDUSA_BACKEND_URL = "http://localhost:9000"
  * 
@@ -63,7 +63,7 @@
  *         MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
  *       }
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: MEDUSA_BACKEND_URL,
  *         debug: process.env.NODE_ENV === "development",
  *         publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,

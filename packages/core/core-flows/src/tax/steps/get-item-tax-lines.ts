@@ -11,9 +11,9 @@ import {
   TaxableItemDTO,
   TaxableShippingDTO,
   TaxCalculationContext,
-} from "@medusajs/framework/types"
-import { isDefined, MedusaError, Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/types"
+import { isDefined, SwitchyardError, Modules } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to retrieve tax lines for an order or cart's line items and shipping methods.
@@ -62,8 +62,8 @@ function normalizeTaxModuleContext(
   }
 
   if (forceTaxCalculation && !address?.country_code) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `country code is required to calculate taxes`
     )
   }

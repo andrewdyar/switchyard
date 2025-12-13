@@ -1,4 +1,4 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
   createAdminUser,
@@ -727,7 +727,7 @@ medusaIntegrationTestRunner({
 
 // TODO: Revisit tax inclusive pricing
 // describe("[MEDUSA_FF_TAX_INCLUSIVE_PRICING] /admin/price-lists", () => {
-//   let medusaProcess
+//   let switchyardProcess
 //   let dbConnection
 
 //   beforeAll(async () => {
@@ -737,14 +737,14 @@ medusaIntegrationTestRunner({
 //       env: { MEDUSA_FF_TAX_INCLUSIVE_PRICING: true },
 //     })
 //     dbConnection = connection
-//     medusaProcess = process
+//     switchyardProcess = process
 //   })
 
 //   afterAll(async () => {
 //     const db = useDb()
 //     await db.shutdown()
 
-//     medusaProcess.kill()
+//     switchyardProcess.kill()
 //   })
 
 //   describe("POST /admin/price-list", () => {

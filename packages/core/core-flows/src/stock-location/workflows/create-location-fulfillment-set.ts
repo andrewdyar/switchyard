@@ -1,9 +1,9 @@
-import type { CreateLocationFulfillmentSetWorkflowInputDTO } from "@medusajs/framework/types"
+import type { CreateLocationFulfillmentSetWorkflowInputDTO } from "@switchyard/framework/types"
 import {
   WorkflowData,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createFulfillmentSets } from "../../fulfillment"
 import { associateFulfillmentSetsWithLocationStep } from "../steps/associate-locations-with-fulfillment-sets"
 

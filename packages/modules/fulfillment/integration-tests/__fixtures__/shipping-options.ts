@@ -1,4 +1,4 @@
-import { CreateShippingOptionDTO } from "@medusajs/framework/types"
+import { CreateShippingOptionDTO } from "@switchyard/framework/types"
 
 export function generateCreateShippingOptionsData({
   name,

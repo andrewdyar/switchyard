@@ -19,9 +19,9 @@
  *   - lang: JavaScript
  *     label: JS SDK
  *     source: |-
- *       import Medusa from "@medusajs/js-sdk"
+ *       import Switchyard from "@switchyard/js-sdk"
  * 
- *       export const sdk = new Medusa({
+ *       export const sdk = new Switchyard({
  *         baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
  *         debug: import.meta.env.DEV,
  *         auth: {
@@ -66,7 +66,7 @@
  *       ```ts
  *       {
  *         order_id, // The ID of the order
- *         actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+ *         actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
  *       }
  *       ```
  *     description: Emitted when an order edit request is confirmed.

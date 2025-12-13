@@ -1,4 +1,4 @@
-import { Button, FocusModal, Input, Label } from "@medusajs/ui"
+import { Button, FocusModal, Input, Label } from "@switchyard/ui"
 import { useState } from "react"
 
 export default function FocusModalForm() {

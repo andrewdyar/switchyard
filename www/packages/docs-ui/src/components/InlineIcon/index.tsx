@@ -1,5 +1,5 @@
 import React from "react"
-import { IconProps } from "@medusajs/icons/dist/types"
+import { IconProps } from "@switchyard/icons/dist/types"
 import clsx from "clsx"
 
 type InlineIconProps = IconProps & {

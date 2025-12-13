@@ -1,11 +1,11 @@
-import type { FulfillmentWorkflow } from "@medusajs/framework/types"
+import type { FulfillmentWorkflow } from "@switchyard/framework/types"
 import {
   createWorkflow,
   parallelize,
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   createShippingOptionsPriceSetsStep,
   upsertShippingOptionsStep,

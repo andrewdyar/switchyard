@@ -4,7 +4,7 @@ A CLI tool that generates different types of docblocks from source code:
 
 - Adds TSDocs to any TypeScript file.
 - Generates files with OpenApi Spec comments in `generated/oas-output`.
-- Generates JSON documentation files for models built with Medusa's DML in `generated/dml-output`.
+- Generates JSON documentation files for models built with Switchyard's DML in `generated/dml-output`.
 
 ## Prerequisites
 

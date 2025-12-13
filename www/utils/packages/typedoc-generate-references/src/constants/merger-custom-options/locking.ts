@@ -30,12 +30,12 @@ const lockingOptions: FormattingOptionsType = {
       
 As you implement your Locking Module Provider, it can be useful to refer to an existing provider and how it's implemeted.
 
-If you need to refer to an existing implementation as an example, check the [Redis Locking Module Provider in the Medusa repository](https://github.com/medusajs/medusa/tree/develop/packages/modules/providers/locking-redis).`,
+If you need to refer to an existing implementation as an example, check the [Redis Locking Module Provider in the Switchyard repository](https://github.com/switchyard/medusa/tree/develop/packages/modules/providers/locking-redis).`,
       `## 1. Create Module Provider Directory
 
 Start by creating a new directory for your module provider.
 
-If you're creating the module provider in a Medusa application, create it under the \`src/modules\` directory. For example, \`src/modules/my-locking\`.
+If you're creating the module provider in a Switchyard application, create it under the \`src/modules\` directory. For example, \`src/modules/my-locking\`.
 
 If you're creating the module provider in a plugin, create it under the \`src/providers\` directory. For example, \`src/providers/my-locking\`.
 
@@ -46,10 +46,10 @@ The rest of this guide always uses the \`src/modules/my-locking\` directory as a
 </Note>`,
       `## 2. Create the Locking Module Provider Service
 
-Create the file \`src/modules/my-locking/service.ts\` that holds the module provider's main service. It must implement the \`ILockingProvider\` interface imported from \`@medusajs/framework/types\`:
+Create the file \`src/modules/my-locking/service.ts\` that holds the module provider's main service. It must implement the \`ILockingProvider\` interface imported from \`@switchyard/framework/types\`:
 
 \`\`\`ts title="src/modules/my-locking/service.ts"
-import { ILockingProvider } from "@medusajs/framework/types"
+import { ILockingProvider } from "@switchyard/framework/types"
 
 type Options = {
   url: string
@@ -68,7 +68,7 @@ export default MyLockingProviderService
 Create the file \`src/modules/my-locking/index.ts\` with the following content:
 
 \`\`\`ts title="src/modules/my-locking/index.ts"
-import { ModuleProvider, Modules } from "@medusajs/framework/utils"
+import { ModuleProvider, Modules } from "@switchyard/framework/utils"
 import MyLockingProviderService from "./service"
 
 export default ModuleProvider(Modules.LOCKING, {
@@ -79,14 +79,14 @@ export default ModuleProvider(Modules.LOCKING, {
 This exports the module provider's definition, indicating that the \`MyLockingProviderService\` is the module provider's service.`,
       `## 4. Use Module Provider
 
-To use your Locking Module Provider, add it to the \`providers\` array of the Locking Module in \`medusa-config.ts\`:
+To use your Locking Module Provider, add it to the \`providers\` array of the Locking Module in \`switchyard.config.ts\`:
 
-\`\`\`ts title="medusa-config.ts"
+\`\`\`ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/locking",
+      resolve: "@switchyard/medusa/locking",
       options: {
         providers: [
           {
@@ -110,7 +110,7 @@ module.exports = defineConfig({
 `,
       `## 5. Test it Out
 
-When you start the Medusa application, if your Locking Module Provider is the only registered provider without enabling \`is_default\`, you'll see the following message:
+When you start the Switchyard application, if your Locking Module Provider is the only registered provider without enabling \`is_default\`, you'll see the following message:
 
 \`\`\`bash
 info:    Locking module: Using "my-lock" as default.
@@ -144,11 +144,11 @@ The Locking Module will now use your provider to handle all locking operations.
     startSections: [
       `## Resolve Locking Module's Service
 
-In your workflow's step, you can resolve the Locking Module's service from the Medusa container:
+In your workflow's step, you can resolve the Locking Module's service from the Switchyard container:
 
 \`\`\`ts
-import { Modules } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",

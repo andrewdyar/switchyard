@@ -17,15 +17,15 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# completeCartWorkflow - Medusa Core Workflows Reference
+# completeCartWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `completeCartWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `completeCartWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow completes a cart and places an order for the customer. It's executed by the
-[Complete Cart Store API Route](https://docs.medusajs.com/api/store#carts\_postcartsidcomplete).
+[Complete Cart Store API Route](https://docs.switchyard.com/api/store#carts\_postcartsidcomplete).
 
 You can use this workflow within your own customizations or custom workflows, allowing you to wrap custom logic around completing a cart.
-For example, in the [Subscriptions recipe](https://docs.medusajs.com/resources/recipes/subscriptions/examples/standard#create-workflow),
+For example, in the [Subscriptions recipe](https://docs.switchyard.com/resources/recipes/subscriptions/examples/standard#create-workflow),
 this workflow is used within another workflow that creates a subscription order.
 
 ## Cart Completion Idempotency
@@ -45,7 +45,7 @@ In some cases, you might want to create custom links or linked records to the or
 digital order.
 
 In such cases, ensure that your workflow's logic checks for existing links or records before creating new ones. You can query the 
-[entry point of the link](https://docs.medusajs.com/learn/fundamentals/module-links/custom-columns#method-2-using-entry-point)
+[entry point of the link](https://docs.switchyard.com/learn/fundamentals/module-links/custom-columns#method-2-using-entry-point)
 to check for existing links before creating new ones.
 
 For example:
@@ -55,13 +55,13 @@ import {
   createWorkflow,
   when,
   WorkflowResponse
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   useQueryGraphStep,
   completeCartWorkflow,
   acquireLockStep,
   releaseLockStep
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import digitalProductOrderOrderLink from "../../links/digital-product-order"
 
 type WorkflowInput = {
@@ -128,9 +128,9 @@ To handle these cases, you can create a step that throws an error if the validat
 you can cancel the order if the validation fails. For example:
 
 ```ts
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
-import { cancelOrderWorkflow } from "@medusajs/medusa/core-flows"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { cancelOrderWorkflow } from "@switchyard/medusa/core-flows"
 
 type StepInput = {
   order_id: string
@@ -143,8 +143,8 @@ export const customCartValidationStep = createStep(
     const isValid = true // replace with actual validation logic
 
     if (!isValid) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Custom cart validation failed"
       )
     }
@@ -173,8 +173,8 @@ import {
   createWorkflow,
   when,
   WorkflowResponse
-} from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/framework/workflows-sdk"
 import ticketOrderLink from "../../links/ticket-order"
 
 type WorkflowInput = {
@@ -236,11 +236,11 @@ ticket order already exists. This ensures that the workflow remains idempotent.
 
 :::note
 
-If you use this workflow in another, you must acquire a lock before running it and release the lock after. Learn more in the [Locking Operations in Workflows](https://docs.medusajs.com/learn/fundamentals/workflows/locks#locks-in-nested-workflows) guide.
+If you use this workflow in another, you must acquire a lock before running it and release the lock after. Learn more in the [Locking Operations in Workflows](https://docs.switchyard.com/learn/fundamentals/workflows/locks#locks-in-nested-workflows) guide.
 
 :::
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/cart/workflows/complete-cart.ts#L301" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/cart/workflows/complete-cart.ts#L301" />
 
 ## Examples
 
@@ -249,14 +249,14 @@ If you use this workflow in another, you must acquire a lock before running it a
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { completeCartWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { completeCartWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await completeCartWorkflow(req.scope)
     .run({
@@ -276,8 +276,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { completeCartWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { completeCartWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -302,11 +302,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { completeCartWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { completeCartWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await completeCartWorkflow(container)
     .run({
@@ -328,8 +328,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { completeCartWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { completeCartWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -351,21 +351,21 @@ const myWorkflow = createWorkflow(
 
 ## Steps
 
-<WorkflowDiagram workflow={{"name":"completeCartWorkflow","steps":[{"type":"step","name":"acquireLockStep","description":"This step acquires a lock for a given key. Learn more about locks in the [Locking Module](https://docs.medusajs.com/resources/infrastructure-modules/locking)\nguide.","link":"../../../../Locking/Steps_Locking/functions/core_flows.Locking.Steps_Locking.acquireLockStep/page.mdx","depth":1},{"type":"step","name":"useQueryGraphStep","description":"This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.medusajs.com/learn/fundamentals/module-links/query).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.useQueryGraphStep/page.mdx","depth":2},{"type":"step","name":"useQueryGraphStep","description":"This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.medusajs.com/learn/fundamentals/module-links/query).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.useQueryGraphStep/page.mdx","depth":2},{"type":"step","name":"validateCartPaymentsStep","description":"This step validates a cart's payment sessions. Their status must\nbe `pending` or `requires_more`. If not valid, the step throws an error.\n\n:::tip\n\nYou can use the [retrieveCartStep](../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.retrieveCartStep/page.mdx) to retrieve a cart's details.\n\n:::","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.validateCartPaymentsStep/page.mdx","depth":3},{"type":"hook","name":"validate","description":"This hook is executed before all operations. You can consume this hook to perform any custom validation. If validation fails, you can throw an error to stop the workflow execution.","link":"#validate","depth":4},{"type":"when","condition":"{\n      return !orderId\n    }","depth":"5","steps":[{"type":"step","name":"useQueryGraphStep","description":"This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.medusajs.com/learn/fundamentals/module-links/query).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.useQueryGraphStep/page.mdx","depth":5},{"type":"step","name":"validateShippingStep","description":"This step validates shipping data when cart is completed.\n\nIt ensures that a shipping method is selected if there is an item in the cart that requires shipping.\nIt also ensures that product's shipping profile mathes the selected shipping options. If the\nconditions are not met, an error is thrown.\n\n:::note\n\nYou can retrieve cart or shipping option's details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),\nor [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).\n\n:::","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.validateShippingStep/page.mdx","depth":5},{"type":"step","name":"createOrdersStep","description":"This step creates one or more orders.","link":"../../../../Order/Steps_Order/functions/core_flows.Order.Steps_Order.createOrdersStep/page.mdx","depth":5},{"type":"step","name":"createRemoteLinkStep","description":"This step creates remote links between two records of linked data models.\n\nLearn more in the [Remote Link documentation.](https://docs.medusajs.com/learn/fundamentals/module-links/remote-link#create-link).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.createRemoteLinkStep/page.mdx","depth":5},{"type":"step","name":"updateCartsStep","description":"This step updates a cart.","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.updateCartsStep/page.mdx","depth":5},{"type":"step","name":"reserveInventoryStep","description":"This step reserves the quantity of line items from the associated\nvariant's inventory.","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.reserveInventoryStep/page.mdx","depth":5},{"type":"step","name":"emitEventStep","description":"This step emits an event, which you can listen to in a [subscriber](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the `data` property.\n\nThe event is only emitted after the workflow has finished successfully. So, even if it's executed in the middle of the workflow, it won't actually emit the event until the workflow has completed successfully. \nIf the workflow fails, it won't emit the event at all.","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.emitEventStep/page.mdx","depth":5},{"type":"step","name":"authorizePaymentSessionStep","description":"This step authorizes a payment session.","link":"../../../../Payment/Steps_Payment/functions/core_flows.Payment.Steps_Payment.authorizePaymentSessionStep/page.mdx","depth":5},{"type":"step","name":"addOrderTransactionStep","description":"This step creates order transactions.","link":"../../../../Order/Steps_Order/functions/core_flows.Order.Steps_Order.addOrderTransactionStep/page.mdx","depth":5}]},{"type":"step","name":"releaseLockStep","description":"This step releases a lock for a given key. Learn more about locks in the [Locking Module](https://docs.medusajs.com/resources/infrastructure-modules/locking)\nguide.","link":"../../../../Locking/Steps_Locking/functions/core_flows.Locking.Steps_Locking.releaseLockStep/page.mdx","depth":6}]}} />
+<WorkflowDiagram workflow={{"name":"completeCartWorkflow","steps":[{"type":"step","name":"acquireLockStep","description":"This step acquires a lock for a given key. Learn more about locks in the [Locking Module](https://docs.switchyard.com/resources/infrastructure-modules/locking)\nguide.","link":"../../../../Locking/Steps_Locking/functions/core_flows.Locking.Steps_Locking.acquireLockStep/page.mdx","depth":1},{"type":"step","name":"useQueryGraphStep","description":"This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.switchyard.com/learn/fundamentals/module-links/query).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.useQueryGraphStep/page.mdx","depth":2},{"type":"step","name":"useQueryGraphStep","description":"This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.switchyard.com/learn/fundamentals/module-links/query).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.useQueryGraphStep/page.mdx","depth":2},{"type":"step","name":"validateCartPaymentsStep","description":"This step validates a cart's payment sessions. Their status must\nbe `pending` or `requires_more`. If not valid, the step throws an error.\n\n:::tip\n\nYou can use the [retrieveCartStep](../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.retrieveCartStep/page.mdx) to retrieve a cart's details.\n\n:::","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.validateCartPaymentsStep/page.mdx","depth":3},{"type":"hook","name":"validate","description":"This hook is executed before all operations. You can consume this hook to perform any custom validation. If validation fails, you can throw an error to stop the workflow execution.","link":"#validate","depth":4},{"type":"when","condition":"{\n      return !orderId\n    }","depth":"5","steps":[{"type":"step","name":"useQueryGraphStep","description":"This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.switchyard.com/learn/fundamentals/module-links/query).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.useQueryGraphStep/page.mdx","depth":5},{"type":"step","name":"validateShippingStep","description":"This step validates shipping data when cart is completed.\n\nIt ensures that a shipping method is selected if there is an item in the cart that requires shipping.\nIt also ensures that product's shipping profile mathes the selected shipping options. If the\nconditions are not met, an error is thrown.\n\n:::note\n\nYou can retrieve cart or shipping option's details using [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query),\nor [useQueryGraphStep](https://docs.switchyard.com/resources/references/medusa-workflows/steps/useQueryGraphStep).\n\n:::","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.validateShippingStep/page.mdx","depth":5},{"type":"step","name":"createOrdersStep","description":"This step creates one or more orders.","link":"../../../../Order/Steps_Order/functions/core_flows.Order.Steps_Order.createOrdersStep/page.mdx","depth":5},{"type":"step","name":"createRemoteLinkStep","description":"This step creates remote links between two records of linked data models.\n\nLearn more in the [Remote Link documentation.](https://docs.switchyard.com/learn/fundamentals/module-links/remote-link#create-link).","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.createRemoteLinkStep/page.mdx","depth":5},{"type":"step","name":"updateCartsStep","description":"This step updates a cart.","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.updateCartsStep/page.mdx","depth":5},{"type":"step","name":"reserveInventoryStep","description":"This step reserves the quantity of line items from the associated\nvariant's inventory.","link":"../../../Steps_Cart/functions/core_flows.Cart.Steps_Cart.reserveInventoryStep/page.mdx","depth":5},{"type":"step","name":"emitEventStep","description":"This step emits an event, which you can listen to in a [subscriber](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the `data` property.\n\nThe event is only emitted after the workflow has finished successfully. So, even if it's executed in the middle of the workflow, it won't actually emit the event until the workflow has completed successfully. \nIf the workflow fails, it won't emit the event at all.","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.emitEventStep/page.mdx","depth":5},{"type":"step","name":"authorizePaymentSessionStep","description":"This step authorizes a payment session.","link":"../../../../Payment/Steps_Payment/functions/core_flows.Payment.Steps_Payment.authorizePaymentSessionStep/page.mdx","depth":5},{"type":"step","name":"addOrderTransactionStep","description":"This step creates order transactions.","link":"../../../../Order/Steps_Order/functions/core_flows.Order.Steps_Order.addOrderTransactionStep/page.mdx","depth":5}]},{"type":"step","name":"releaseLockStep","description":"This step releases a lock for a given key. Learn more about locks in the [Locking Module](https://docs.switchyard.com/resources/infrastructure-modules/locking)\nguide.","link":"../../../../Locking/Steps_Locking/functions/core_flows.Locking.Steps_Locking.releaseLockStep/page.mdx","depth":6}]}} />
 
 ## Input
 
-<TypeList types={[{"name":"CompleteCartWorkflowInput","type":"[CompleteCartWorkflowInput](../../../../types/core_flows.CompleteCartWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to complete a cart and place an order.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the cart to complete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="completeCartWorkflow"/>
+<TypeList types={[{"name":"CompleteCartWorkflowInput","type":"[CompleteCartWorkflowInput](../../../../types/core_flows.CompleteCartWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to complete a cart and place an order.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the cart to complete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="completeCartWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"CompleteCartWorkflowOutput","type":"[CompleteCartWorkflowOutput](../../../../types/core_flows.CompleteCartWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the order that was created.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="completeCartWorkflow"/>
+<TypeList types={[{"name":"CompleteCartWorkflowOutput","type":"[CompleteCartWorkflowOutput](../../../../types/core_flows.CompleteCartWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the order that was created.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="completeCartWorkflow"/>
 
 ## Hooks
 
 Hooks allow you to inject custom functionalities into the workflow. You'll receive data from the workflow, as well as additional data sent through an HTTP request.
 
-Learn more about [Hooks](https://docs.medusajs.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.medusajs.com/learn/fundamentals/api-routes/additional-data).
+Learn more about [Hooks](https://docs.switchyard.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).
 
 ### validate
 
@@ -374,7 +374,7 @@ This hook is executed before all operations. You can consume this hook to perfor
 #### Example
 
 ```ts
-import { completeCartWorkflow } from "@medusajs/medusa/core-flows"
+import { completeCartWorkflow } from "@switchyard/medusa/core-flows"
 
 completeCartWorkflow.hooks.validate(
   (async ({ input, cart }, { container }) => {
@@ -387,7 +387,7 @@ completeCartWorkflow.hooks.validate(
 
 Handlers consuming this hook accept the following input.
 
-<TypeList types={[{"name":"input","type":"[input](../../../core_flows.Cart.Workflows_Cart/page.mdx#__type-3)","description":"The input data for the hook.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"input","type":"[CompleteCartWorkflowInput](../../../../types/core_flows.CompleteCartWorkflowInput/page.mdx)","description":"The data to complete a cart and place an order.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the cart to complete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]},{"name":"cart","type":"`any`","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="validate"/>
+<TypeList types={[{"name":"input","type":"[input](../../../core_flows.Cart.Workflows_Cart/page.mdx#__type-3)","description":"The input data for the hook.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"input","type":"[CompleteCartWorkflowInput](../../../../types/core_flows.CompleteCartWorkflowInput/page.mdx)","description":"The data to complete a cart and place an order.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the cart to complete.","optional":false,"defaultValue":"","expandable":false,"children":[]}]},{"name":"cart","type":"`any`","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="validate"/>
 
 ## Emitted Events
 
@@ -399,7 +399,7 @@ The `emitEventStep` only emits the event after the workflow has finished success
 
 :::
 
-You can listen to these events in a subscriber, as explained in the [Subscribers](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers) documentation.
+You can listen to these events in a subscriber, as explained in the [Subscribers](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers) documentation.
 
 <Table>
   <Table.Header>

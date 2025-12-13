@@ -5,25 +5,25 @@ import {
   TransactionHandlerType,
   TransactionStep,
   WorkflowScheduler,
-} from "@medusajs/framework/orchestration"
+} from "@switchyard/framework/orchestration"
 import {
   ContainerLike,
   Context,
   Logger,
-  MedusaContainer,
-} from "@medusajs/framework/types"
+  SwitchyardContainer,
+} from "@switchyard/framework/types"
 import {
   isString,
-  MedusaError,
+  SwitchyardError,
   promiseAll,
   TransactionState,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   type FlowRunOptions,
-  MedusaWorkflow,
+  SwitchyardWorkflow,
   resolveValue,
   ReturnWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { WorkflowOrchestratorCancelOptions } from "@types"
 import { ulid } from "ulid"
 import { InMemoryDistributedTransactionStorage } from "../utils"
@@ -101,7 +101,7 @@ const AnySubscriber = "any"
 
 export class WorkflowOrchestratorService {
   private static subscribers: Subscribers = new Map()
-  private container_: MedusaContainer
+  private container_: SwitchyardContainer
   private inMemoryDistributedTransactionStorage_: InMemoryDistributedTransactionStorage
   readonly #logger: Logger
 
@@ -110,7 +110,7 @@ export class WorkflowOrchestratorService {
     sharedContainer,
   }: {
     inMemoryDistributedTransactionStorage: InMemoryDistributedTransactionStorage
-    sharedContainer: MedusaContainer
+    sharedContainer: SwitchyardContainer
   }) {
     this.container_ = sharedContainer
     this.inMemoryDistributedTransactionStorage_ =
@@ -193,8 +193,8 @@ export class WorkflowOrchestratorService {
       : workflowIdOrWorkflow.getName()
 
     if (!workflowId) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Workflow ID is required`
       )
     }
@@ -205,10 +205,10 @@ export class WorkflowOrchestratorService {
       transactionId: context.transactionId,
     })
 
-    const exportedWorkflow: any = MedusaWorkflow.getWorkflow(workflowId)
+    const exportedWorkflow: any = SwitchyardWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Workflow with id "${workflowId}" not found.`
       )
     }
@@ -299,7 +299,7 @@ export class WorkflowOrchestratorService {
       transactionId: transactionId,
     })
 
-    const exportedWorkflow = MedusaWorkflow.getWorkflow(workflowId)
+    const exportedWorkflow = SwitchyardWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
       throw new Error(`Workflow with id "${workflowId}" not found.`)
     }
@@ -393,7 +393,7 @@ export class WorkflowOrchestratorService {
     context ??= {}
     context.transactionId ??= transactionId
 
-    const exportedWorkflow: any = MedusaWorkflow.getWorkflow(workflowId)
+    const exportedWorkflow: any = SwitchyardWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
       throw new Error(`Workflow with id "${workflowId}" not found.`)
     }
@@ -425,7 +425,7 @@ export class WorkflowOrchestratorService {
     const [idempotencyKey_, { workflowId, transactionId }] =
       this.buildIdempotencyKeyAndParts(idempotencyKey)
 
-    const exportedWorkflow: any = MedusaWorkflow.getWorkflow(workflowId)
+    const exportedWorkflow: any = SwitchyardWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
       throw new Error(`Workflow with id "${workflowId}" not found.`)
     }
@@ -494,7 +494,7 @@ export class WorkflowOrchestratorService {
     const [idempotencyKey_, { workflowId, transactionId }] =
       this.buildIdempotencyKeyAndParts(idempotencyKey)
 
-    const exportedWorkflow: any = MedusaWorkflow.getWorkflow(workflowId)
+    const exportedWorkflow: any = SwitchyardWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
       throw new Error(`Workflow with id "${workflowId}" not found.`)
     }
@@ -566,7 +566,7 @@ export class WorkflowOrchestratorService {
     const [idempotencyKey_, { workflowId, transactionId }] =
       this.buildIdempotencyKeyAndParts(idempotencyKey)
 
-    const exportedWorkflow: any = MedusaWorkflow.getWorkflow(workflowId)
+    const exportedWorkflow: any = SwitchyardWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
       throw new Error(`Workflow with id "${workflowId}" not found.`)
     }

@@ -1,4 +1,4 @@
-import { EventBusTypes } from "@medusajs/types"
+import { EventBusTypes } from "@switchyard/types"
 import { AbstractEventBusModuleService } from ".."
 
 class MockEventBusModuleService extends AbstractEventBusModuleService {

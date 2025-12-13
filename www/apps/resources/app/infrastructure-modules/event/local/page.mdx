@@ -4,7 +4,7 @@ export const metadata = {
 
 # {metadata.title}
 
-The Local Event Module uses Node EventEmitter to implement Medusa's pub/sub events system. The Node EventEmitter is limited to a single process environment.
+The Local Event Module uses Node EventEmitter to implement Switchyard's pub/sub events system. The Node EventEmitter is limited to a single process environment.
 
 This module is useful for development and testing, but it’s not recommended to be used in production.
 
@@ -20,10 +20,10 @@ The Local Event Module is registered by default in your application.
 
 </Note>
 
-Add the module into the `modules` property of the exported object in `medusa-config.ts`:
+Add the module into the `modules` property of the exported object in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 
@@ -31,7 +31,7 @@ module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/event-bus-local",
+      resolve: "@switchyard/medusa/event-bus-local",
     },
   ],
 })
@@ -41,7 +41,7 @@ module.exports = defineConfig({
 
 ## Test the Module
 
-To test the module, start the Medusa application:
+To test the module, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev

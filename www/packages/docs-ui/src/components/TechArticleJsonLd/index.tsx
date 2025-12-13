@@ -35,7 +35,7 @@ export const TechArticleJsonLd = () => {
         headline: title,
         description,
         proficiencyLevel: "Expert",
-        author: "Medusa",
+        author: "Switchyard",
         genre: "Documentation",
         keywords:
           frontmatter.keywords?.join(", ") || "medusa, ecommerce, open-source",

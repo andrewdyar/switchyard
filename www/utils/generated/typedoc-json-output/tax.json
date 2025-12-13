@@ -94,7 +94,7 @@
 										"type": "reference",
 										"target": 16611,
 										"name": "FindConfigOrder",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -188,7 +188,7 @@
 										"type": "reference",
 										"target": 16377,
 										"name": "Entity",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"qualifiedName": "FindConfig.Entity",
 										"refersToTypeParameter": true
 									}
@@ -283,7 +283,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead."
+								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead."
 							}
 						]
 					},
@@ -345,7 +345,7 @@
 						"type": "reference",
 						"target": 16611,
 						"name": "FindConfigOrder",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -596,19 +596,19 @@
 											"type": "reference",
 											"target": 16633,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 16633,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -652,19 +652,19 @@
 											"type": "reference",
 											"target": 16633,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 16633,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -765,7 +765,7 @@
 							"type": "reference",
 							"target": 16576,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -844,7 +844,7 @@
 							"type": "reference",
 							"target": 16448,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -907,7 +907,7 @@
 					"type": "reference",
 					"target": 16720,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -920,14 +920,14 @@
 						"type": "reference",
 						"target": 16720,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
 						"type": "reference",
 						"target": 16757,
 						"name": "Scalar",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"trueType": {
 						"type": "intrinsic",
@@ -941,12 +941,12 @@
 								"type": "reference",
 								"target": 16720,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQuery",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				"falseType": {
@@ -957,12 +957,12 @@
 							"type": "reference",
 							"target": 16720,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
 					"name": "FilterValue",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			}
 		},
@@ -1001,7 +1001,7 @@
 							"type": "reference",
 							"target": 16722,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"extendsType": {
@@ -1032,7 +1032,7 @@
 								"type": "reference",
 								"target": 16722,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -1066,7 +1066,7 @@
 								"type": "reference",
 								"target": 16722,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -1230,7 +1230,7 @@
 					"type": "reference",
 					"target": 16796,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1251,7 +1251,7 @@
 							"type": "reference",
 							"target": 16796,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
@@ -1262,7 +1262,7 @@
 					"type": "reference",
 					"target": 16796,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				}
 			}
@@ -1295,7 +1295,7 @@
 					"type": "reference",
 					"target": 16794,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1356,12 +1356,12 @@
 								"qualifiedName": "PK"
 							},
 							"name": "PK",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
 					"name": "ReadonlyPrimary",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				},
 				"falseType": {
 					"type": "conditional",
@@ -1369,7 +1369,7 @@
 						"type": "reference",
 						"target": 16794,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
@@ -1433,12 +1433,12 @@
 											"qualifiedName": "PK"
 										},
 										"name": "PK",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ReadonlyPrimary",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "intrinsic",
@@ -1452,7 +1452,7 @@
 							"type": "reference",
 							"target": 16794,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"extendsType": {
@@ -1513,12 +1513,12 @@
 										"qualifiedName": "PK"
 									},
 									"name": "PK",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							],
 							"name": "ReadonlyPrimary",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						},
 						"falseType": {
 							"type": "conditional",
@@ -1526,7 +1526,7 @@
 								"type": "reference",
 								"target": 16794,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -1587,12 +1587,12 @@
 											"qualifiedName": "PK"
 										},
 										"name": "PK",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ReadonlyPrimary",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							"falseType": {
 								"type": "intrinsic",
@@ -1659,12 +1659,12 @@
 											"type": "reference",
 											"target": 16655,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "Query",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1693,12 +1693,12 @@
 											"type": "reference",
 											"target": 16655,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "Query",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1728,12 +1728,12 @@
 												"type": "reference",
 												"target": 16655,
 												"name": "T",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "ExpandScalar",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "array",
@@ -1745,12 +1745,12 @@
 													"type": "reference",
 													"target": 16655,
 													"name": "T",
-													"package": "@medusajs/types",
+													"package": "@switchyard/types",
 													"refersToTypeParameter": true
 												}
 											],
 											"name": "ExpandScalar",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								]
@@ -1779,12 +1779,12 @@
 										"type": "reference",
 										"target": 16655,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1812,12 +1812,12 @@
 											"type": "reference",
 											"target": 16655,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "ExpandScalar",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1846,12 +1846,12 @@
 											"type": "reference",
 											"target": 16655,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "ExpandScalar",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1878,12 +1878,12 @@
 										"type": "reference",
 										"target": 16655,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "Query",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1909,12 +1909,12 @@
 										"type": "reference",
 										"target": 16655,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1940,12 +1940,12 @@
 										"type": "reference",
 										"target": 16655,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1971,12 +1971,12 @@
 										"type": "reference",
 										"target": 16655,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2002,12 +2002,12 @@
 										"type": "reference",
 										"target": 16655,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2245,7 +2245,7 @@
 						"type": "reference",
 						"target": 16783,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					{
@@ -2256,12 +2256,12 @@
 								"type": "reference",
 								"target": 16783,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "ExpandScalar",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
@@ -2271,12 +2271,12 @@
 								"type": "reference",
 								"target": 16783,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Primary",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -2318,16 +2318,16 @@
 										"type": "reference",
 										"target": 16765,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "FilterValue2",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
@@ -2337,12 +2337,12 @@
 								"type": "reference",
 								"target": 16765,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterValue2",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "array",
@@ -2354,12 +2354,12 @@
 									"type": "reference",
 									"target": 16765,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							],
 							"name": "FilterValue2",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					},
 					{
@@ -2451,7 +2451,7 @@
 						"type": "reference",
 						"target": 16780,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -2466,14 +2466,14 @@
 								"qualifiedName": "Key"
 							},
 							"name": "Key",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"objectType": {
 							"type": "reference",
 							"target": 16780,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					},
@@ -2523,14 +2523,14 @@
 										"qualifiedName": "Key"
 									},
 									"name": "Key",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								},
 								"objectType": {
 									"type": "reference",
 									"target": 16780,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							},
@@ -2547,20 +2547,20 @@
 												"qualifiedName": "Key"
 											},
 											"name": "Key",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										},
 										"objectType": {
 											"type": "reference",
 											"target": 16780,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -2575,14 +2575,14 @@
 									"qualifiedName": "Key"
 								},
 								"name": "Key",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"objectType": {
 								"type": "reference",
 								"target": 16780,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -2599,7 +2599,7 @@
 									"qualifiedName": "U"
 								},
 								"name": "U",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -2651,7 +2651,7 @@
 													"qualifiedName": "V"
 												},
 												"name": "V",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										}
@@ -2667,7 +2667,7 @@
 										"qualifiedName": "V"
 									},
 									"name": "V",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								},
 								"extendsType": {
@@ -2692,7 +2692,7 @@
 														"qualifiedName": "V"
 													},
 													"name": "V",
-													"package": "@medusajs/types",
+													"package": "@switchyard/types",
 													"refersToTypeParameter": true
 												}
 											],
@@ -2705,19 +2705,19 @@
 												"type": "reference",
 												"target": 16781,
 												"name": "Prev",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											},
 											"objectType": {
 												"type": "reference",
 												"target": 16784,
 												"name": "PrevLimit",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										}
 									],
 									"name": "FilterQuery",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								"falseType": {
 									"type": "intrinsic",
@@ -2785,7 +2785,7 @@
 					"type": "reference",
 					"target": 16763,
 					"name": "Prev",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -2802,7 +2802,7 @@
 						"type": "reference",
 						"target": 16762,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
@@ -2815,7 +2815,7 @@
 							}
 						],
 						"name": "Constructor",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"trueType": {
 						"type": "reference",
@@ -2828,19 +2828,19 @@
 									"qualifiedName": "Prototype"
 								},
 								"name": "Prototype",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							{
 								"type": "reference",
 								"target": 16763,
 								"name": "Prev",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQueryProperties",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"falseType": {
 						"type": "reference",
@@ -2850,19 +2850,19 @@
 								"type": "reference",
 								"target": 16762,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							{
 								"type": "reference",
 								"target": 16763,
 								"name": "Prev",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQueryProperties",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			}
@@ -3067,7 +3067,7 @@
 								"type": "reference",
 								"target": 16766,
 								"name": "EventMetadata",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -3095,7 +3095,7 @@
 								"type": "reference",
 								"target": 16756,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -3165,12 +3165,12 @@
 								"type": "reference",
 								"target": 16701,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Event",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -3307,7 +3307,7 @@
 								"type": "reference",
 								"target": 16718,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -3393,7 +3393,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -3901,7 +3901,7 @@
 								"type": "reference",
 								"target": 16736,
 								"name": "JoinerServiceConfigAlias",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -3909,7 +3909,7 @@
 									"type": "reference",
 									"target": 16736,
 									"name": "JoinerServiceConfigAlias",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						]
@@ -4072,7 +4072,7 @@
 							"type": "reference",
 							"target": 16741,
 							"name": "JoinerRelationship",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -4157,7 +4157,7 @@
 											"type": "reference",
 											"target": 16741,
 											"name": "JoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -4317,7 +4317,7 @@
 										"type": "reference",
 										"target": 16775,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									},
 									{
@@ -4346,7 +4346,7 @@
 														"type": "reference",
 														"target": 16775,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												}
@@ -4632,7 +4632,7 @@
 								"type": "reference",
 								"target": 16672,
 								"name": "JoinerServiceConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "union",
@@ -4752,7 +4752,7 @@
 											"type": "reference",
 											"target": 16687,
 											"name": "ModuleJoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -4974,7 +4974,7 @@
 																	"type": "reference",
 																	"target": 16687,
 																	"name": "ModuleJoinerRelationship",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																{
 																	"type": "literal",
@@ -5280,7 +5280,7 @@
 														"type": "reference",
 														"target": 16692,
 														"name": "LinkModulesExtraFields",
-														"package": "@medusajs/types"
+														"package": "@switchyard/types"
 													}
 												}
 											],
@@ -5355,7 +5355,7 @@
 						"type": "reference",
 						"target": 16741,
 						"name": "JoinerRelationship",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -5522,7 +5522,7 @@
 								"type": "reference",
 								"target": 16585,
 								"name": "ModuleJoinerConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -6010,7 +6010,7 @@
 												"type": "reference",
 												"target": 16698,
 												"name": "Message",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -6018,7 +6018,7 @@
 													"type": "reference",
 													"target": 16698,
 													"name": "Message",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -6072,7 +6072,7 @@
 										"type": "reference",
 										"target": 16702,
 										"name": "MessageAggregatorFormat",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -6093,7 +6093,7 @@
 											"type": "reference",
 											"target": 16698,
 											"name": "Message",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -6191,12 +6191,12 @@
 														"type": "reference",
 														"target": 16627,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												],
 												"name": "RawMessageFormat",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -6208,12 +6208,12 @@
 															"type": "reference",
 															"target": 16627,
 															"name": "T",
-															"package": "@medusajs/types",
+															"package": "@switchyard/types",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "RawMessageFormat",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -6307,7 +6307,7 @@
 					],
 					"type": {
 						"type": "literal",
-						"value": "MedusaContext"
+						"value": "SwitchyardContext"
 					}
 				},
 				{
@@ -6353,7 +6353,7 @@
 						"type": "reference",
 						"target": 16407,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -6400,7 +6400,7 @@
 						"type": "reference",
 						"target": 16407,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -6603,7 +6603,7 @@
 						"type": "reference",
 						"target": 16616,
 						"name": "IMessageAggregator",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7063,7 +7063,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Whether the tax rate should be combined with parent rates.\n\nLearn more [here](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates)."
+								"text": "Whether the tax rate should be combined with parent rates.\n\nLearn more [here](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates)."
 							}
 						]
 					},
@@ -7421,7 +7421,7 @@
 									"type": "reference",
 									"target": 16408,
 									"name": "FilterableTaxRateProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -7431,11 +7431,11 @@
 											"type": "reference",
 											"target": 16408,
 											"name": "FilterableTaxRateProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -7479,7 +7479,7 @@
 									"type": "reference",
 									"target": 16408,
 									"name": "FilterableTaxRateProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -7489,11 +7489,11 @@
 											"type": "reference",
 											"target": 16408,
 											"name": "FilterableTaxRateProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -7652,7 +7652,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -7711,7 +7711,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -7763,7 +7763,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -7801,7 +7801,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7837,7 +7837,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7887,7 +7887,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -7927,11 +7927,11 @@
 							"type": "reference",
 							"target": 16408,
 							"name": "FilterableTaxRateProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -8390,7 +8390,7 @@
 									"type": "reference",
 									"target": 16478,
 									"name": "FilterableTaxRegionProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -8400,11 +8400,11 @@
 											"type": "reference",
 											"target": 16478,
 											"name": "FilterableTaxRegionProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -8448,7 +8448,7 @@
 									"type": "reference",
 									"target": 16478,
 									"name": "FilterableTaxRegionProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -8458,11 +8458,11 @@
 											"type": "reference",
 											"target": 16478,
 											"name": "FilterableTaxRegionProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -8588,7 +8588,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -8640,7 +8640,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -8692,7 +8692,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -8767,7 +8767,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -8827,7 +8827,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8863,7 +8863,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -8913,7 +8913,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -8953,11 +8953,11 @@
 							"type": "reference",
 							"target": 16478,
 							"name": "FilterableTaxRegionProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -9020,7 +9020,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
+								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
 							}
 						]
 					},
@@ -9054,7 +9054,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
+								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
 							}
 						]
 					},
@@ -9123,7 +9123,7 @@
 						"type": "reference",
 						"target": 16378,
 						"name": "TaxRateDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9366,7 +9366,7 @@
 									"type": "reference",
 									"target": 16514,
 									"name": "FilterableTaxRateRuleProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -9376,11 +9376,11 @@
 											"type": "reference",
 											"target": 16514,
 											"name": "FilterableTaxRateRuleProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -9424,7 +9424,7 @@
 									"type": "reference",
 									"target": 16514,
 									"name": "FilterableTaxRateRuleProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -9434,11 +9434,11 @@
 											"type": "reference",
 											"target": 16514,
 											"name": "FilterableTaxRateRuleProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -9496,7 +9496,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -9548,7 +9548,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -9600,7 +9600,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -9632,7 +9632,7 @@
 						"type": "reference",
 						"target": 16408,
 						"name": "FilterableTaxRateProps",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9705,7 +9705,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -9765,7 +9765,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9801,7 +9801,7 @@
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9851,7 +9851,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -9890,11 +9890,11 @@
 							"type": "reference",
 							"target": 16514,
 							"name": "FilterableTaxRateRuleProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -10020,7 +10020,7 @@
 						"type": "reference",
 						"target": 16657,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10050,7 +10050,7 @@
 						"type": "reference",
 						"target": 16657,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10197,7 +10197,7 @@
 						"type": "reference",
 						"target": 16657,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -11381,7 +11381,7 @@
 					"type": "reference",
 					"target": 16658,
 					"name": "TaxLineDTO",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -11627,7 +11627,7 @@
 					"type": "reference",
 					"target": 16658,
 					"name": "TaxLineDTO",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -11819,7 +11819,7 @@
 									"type": "reference",
 									"target": 16490,
 									"name": "CreateTaxRateRuleDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "literal",
@@ -11914,7 +11914,7 @@
 						"type": "reference",
 						"target": 16656,
 						"name": "MetadataType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -11989,7 +11989,7 @@
 									"type": "reference",
 									"target": 16511,
 									"name": "TaxProviderDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -11999,11 +11999,11 @@
 											"type": "reference",
 											"target": 16511,
 											"name": "TaxProviderDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -12047,7 +12047,7 @@
 									"type": "reference",
 									"target": 16511,
 									"name": "TaxProviderDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -12057,11 +12057,11 @@
 											"type": "reference",
 											"target": 16511,
 											"name": "TaxProviderDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -12131,7 +12131,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -12192,11 +12192,11 @@
 							"type": "reference",
 							"target": 16511,
 							"name": "TaxProviderDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -12448,7 +12448,7 @@
 						"type": "reference",
 						"target": 16656,
 						"name": "MetadataType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -12638,7 +12638,7 @@
 									"type": "reference",
 									"target": 16490,
 									"name": "CreateTaxRateRuleDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "literal",
@@ -12690,7 +12690,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Whether the tax rate is combinable.\n\nLearn more [here](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates)."
+								"text": "Whether the tax rate is combinable.\n\nLearn more [here](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates)."
 							}
 						]
 					},
@@ -12759,7 +12759,7 @@
 						"type": "reference",
 						"target": 16656,
 						"name": "MetadataType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -12965,7 +12965,7 @@
 						"type": "reference",
 						"target": 16656,
 						"name": "MetadataType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13166,7 +13166,7 @@
 										"type": "reference",
 										"target": 16656,
 										"name": "MetadataType",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -13356,7 +13356,7 @@
 						"type": "reference",
 						"target": 16656,
 						"name": "MetadataType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -13412,7 +13412,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
+								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
 							}
 						]
 					},
@@ -13446,7 +13446,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
+								"text": ".\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-rates-and-rules#override-tax-rates-with-rules)."
 							}
 						]
 					},
@@ -13515,7 +13515,7 @@
 						"type": "reference",
 						"target": 16656,
 						"name": "MetadataType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13631,7 +13631,7 @@
 								"type": "reference",
 								"target": 16532,
 								"name": "TaxableShippingDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -13661,7 +13661,7 @@
 									"type": "reference",
 									"target": 16378,
 									"name": "TaxRateDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						}
@@ -13740,7 +13740,7 @@
 								"type": "reference",
 								"target": 16525,
 								"name": "TaxableItemDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -13770,7 +13770,7 @@
 									"type": "reference",
 									"target": 16378,
 									"name": "TaxRateDTO",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						}
@@ -13832,7 +13832,7 @@
 					},
 					{
 						"kind": "code",
-						"text": "`medusa-config.ts`"
+						"text": "`switchyard.config.ts`"
 					},
 					{
 						"kind": "text",
@@ -13852,11 +13852,11 @@
 					},
 					{
 						"kind": "text",
-						"text": " of your Tax Module Provider's service to access the resources registered in the [Module Container](https://docs.medusajs.com/resources/medusa-container-resources#module-container-resources).\n\nYou can also use the constructor to initialize your integration with the third-party provider. For example, if you use a client to connect to the third-party provider’s APIs, you can initialize it in the constructor and use it in other methods in the service.\n\nAdditionally, if you’re creating your tax provider as a plugin or a module provider to be installed in any Medusa application and you want to access its options, you can access them in the second parameter of the constructor.\n\nFor example:\n\n"
+						"text": " of your Tax Module Provider's service to access the resources registered in the [Module Container](https://docs.switchyard.com/resources/medusa-container-resources#module-container-resources).\n\nYou can also use the constructor to initialize your integration with the third-party provider. For example, if you use a client to connect to the third-party provider’s APIs, you can initialize it in the constructor and use it in other methods in the service.\n\nAdditionally, if you’re creating your tax provider as a plugin or a module provider to be installed in any Switchyard application and you want to access its options, you can access them in the second parameter of the constructor.\n\nFor example:\n\n"
 					},
 					{
 						"kind": "code",
-						"text": "```ts\nimport {\n  ITaxProvider,\n  Logger\n} from \"@medusajs/framework/types\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  apiKey: string\n}\n\nexport default class MyTaxProvider implements ITaxProvider {\n  static identifier = \"my-tax\"\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n}\n```"
+						"text": "```ts\nimport {\n  ITaxProvider,\n  Logger\n} from \"@switchyard/framework/types\"\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\ntype Options = {\n  apiKey: string\n}\n\nexport default class MyTaxProvider implements ITaxProvider {\n  static identifier = \"my-tax\"\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor (\n    { logger }: InjectedDependencies,\n    options: Options\n  ) {\n    this.logger_ = logger\n    this.options_ = options\n\n    // assuming you're initializing a client\n    this.client = new Client(options)\n  }\n}\n```"
 					},
 					{
 						"kind": "text",
@@ -14039,7 +14039,7 @@
 											"type": "reference",
 											"target": 16664,
 											"name": "ItemTaxCalculationLine",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -14063,7 +14063,7 @@
 											"type": "reference",
 											"target": 16668,
 											"name": "ShippingTaxCalculationLine",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -14085,7 +14085,7 @@
 										"type": "reference",
 										"target": 16537,
 										"name": "TaxCalculationContext",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14105,13 +14105,13 @@
 													"type": "reference",
 													"target": 16560,
 													"name": "ItemTaxLineDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												},
 												{
 													"type": "reference",
 													"target": 16567,
 													"name": "ShippingTaxLineDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											]
 										}
@@ -14167,7 +14167,7 @@
 							"fileName": "tax/service.ts",
 							"line": 65,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L65"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L65"
 						}
 					],
 					"signatures": [
@@ -14207,7 +14207,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -14222,7 +14222,7 @@
 									"fileName": "tax/service.ts",
 									"line": 65,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L65"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L65"
 								}
 							],
 							"parameters": [
@@ -14285,11 +14285,11 @@
 												"type": "reference",
 												"target": 16378,
 												"name": "TaxRateDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -14312,7 +14312,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14327,7 +14327,7 @@
 										"type": "reference",
 										"target": 16378,
 										"name": "TaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -14347,7 +14347,7 @@
 							"fileName": "tax/service.ts",
 							"line": 124,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L124"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L124"
 						}
 					],
 					"signatures": [
@@ -14387,7 +14387,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax rate:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax rate:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -14442,7 +14442,7 @@
 									"fileName": "tax/service.ts",
 									"line": 124,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L124"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L124"
 								}
 							],
 							"parameters": [
@@ -14466,7 +14466,7 @@
 										"type": "reference",
 										"target": 16408,
 										"name": "FilterableTaxRateProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -14509,11 +14509,11 @@
 												"type": "reference",
 												"target": 16378,
 												"name": "TaxRateDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -14536,7 +14536,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14553,7 +14553,7 @@
 											"type": "reference",
 											"target": 16378,
 											"name": "TaxRateDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -14574,7 +14574,7 @@
 							"fileName": "tax/service.ts",
 							"line": 185,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L185"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L185"
 						}
 					],
 					"signatures": [
@@ -14614,7 +14614,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax rate:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax rate:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -14669,7 +14669,7 @@
 									"fileName": "tax/service.ts",
 									"line": 185,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L185"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L185"
 								}
 							],
 							"parameters": [
@@ -14693,7 +14693,7 @@
 										"type": "reference",
 										"target": 16408,
 										"name": "FilterableTaxRateProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -14736,11 +14736,11 @@
 												"type": "reference",
 												"target": 16378,
 												"name": "TaxRateDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -14763,7 +14763,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14783,7 +14783,7 @@
 													"type": "reference",
 													"target": 16378,
 													"name": "TaxRateDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -14810,13 +14810,13 @@
 							"fileName": "tax/service.ts",
 							"line": 222,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L222"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L222"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 241,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L241"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L241"
 						}
 					],
 					"signatures": [
@@ -14859,7 +14859,7 @@
 									"fileName": "tax/service.ts",
 									"line": 222,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L222"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L222"
 								}
 							],
 							"parameters": [
@@ -14883,7 +14883,7 @@
 											"type": "reference",
 											"target": 16420,
 											"name": "CreateTaxRateDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -14907,7 +14907,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14924,7 +14924,7 @@
 											"type": "reference",
 											"target": 16378,
 											"name": "TaxRateDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -14971,7 +14971,7 @@
 									"fileName": "tax/service.ts",
 									"line": 241,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L241"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L241"
 								}
 							],
 							"parameters": [
@@ -14993,7 +14993,7 @@
 										"type": "reference",
 										"target": 16420,
 										"name": "CreateTaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15016,7 +15016,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15031,7 +15031,7 @@
 										"type": "reference",
 										"target": 16378,
 										"name": "TaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -15051,19 +15051,19 @@
 							"fileName": "tax/service.ts",
 							"line": 259,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L259"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L259"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 281,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L281"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L281"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 305,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L305"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L305"
 						}
 					],
 					"signatures": [
@@ -15106,7 +15106,7 @@
 									"fileName": "tax/service.ts",
 									"line": 259,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L259"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L259"
 								}
 							],
 							"parameters": [
@@ -15147,7 +15147,7 @@
 										"type": "reference",
 										"target": 16429,
 										"name": "UpdateTaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15170,7 +15170,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15185,7 +15185,7 @@
 										"type": "reference",
 										"target": 16378,
 										"name": "TaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -15231,7 +15231,7 @@
 									"fileName": "tax/service.ts",
 									"line": 281,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L281"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L281"
 								}
 							],
 							"parameters": [
@@ -15275,7 +15275,7 @@
 										"type": "reference",
 										"target": 16429,
 										"name": "UpdateTaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15298,7 +15298,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15315,7 +15315,7 @@
 											"type": "reference",
 											"target": 16378,
 											"name": "TaxRateDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15362,7 +15362,7 @@
 									"fileName": "tax/service.ts",
 									"line": 305,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L305"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L305"
 								}
 							],
 							"parameters": [
@@ -15384,7 +15384,7 @@
 										"type": "reference",
 										"target": 16408,
 										"name": "FilterableTaxRateProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15405,7 +15405,7 @@
 										"type": "reference",
 										"target": 16429,
 										"name": "UpdateTaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15428,7 +15428,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15445,7 +15445,7 @@
 											"type": "reference",
 											"target": 16378,
 											"name": "TaxRateDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15466,13 +15466,13 @@
 							"fileName": "tax/service.ts",
 							"line": 324,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L324"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L324"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 344,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L344"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L344"
 						}
 					],
 					"signatures": [
@@ -15515,7 +15515,7 @@
 									"fileName": "tax/service.ts",
 									"line": 324,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L324"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L324"
 								}
 							],
 							"parameters": [
@@ -15537,7 +15537,7 @@
 										"type": "reference",
 										"target": 16438,
 										"name": "UpsertTaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15560,7 +15560,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15575,7 +15575,7 @@
 										"type": "reference",
 										"target": 16378,
 										"name": "TaxRateDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -15621,7 +15621,7 @@
 									"fileName": "tax/service.ts",
 									"line": 344,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L344"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L344"
 								}
 							],
 							"parameters": [
@@ -15645,7 +15645,7 @@
 											"type": "reference",
 											"target": 16438,
 											"name": "UpsertTaxRateDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -15669,7 +15669,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15686,7 +15686,7 @@
 											"type": "reference",
 											"target": 16378,
 											"name": "TaxRateDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15707,13 +15707,13 @@
 							"fileName": "tax/service.ts",
 							"line": 359,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L359"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L359"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 371,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L371"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L371"
 						}
 					],
 					"signatures": [
@@ -15756,7 +15756,7 @@
 									"fileName": "tax/service.ts",
 									"line": 359,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L359"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L359"
 								}
 							],
 							"parameters": [
@@ -15802,7 +15802,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15861,7 +15861,7 @@
 									"fileName": "tax/service.ts",
 									"line": 371,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L371"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L371"
 								}
 							],
 							"parameters": [
@@ -15904,7 +15904,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15937,7 +15937,7 @@
 							"fileName": "tax/service.ts",
 							"line": 390,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L390"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L390"
 						}
 					],
 					"signatures": [
@@ -15996,7 +15996,7 @@
 									"fileName": "tax/service.ts",
 									"line": 390,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L390"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L390"
 								}
 							],
 							"typeParameters": [
@@ -16079,12 +16079,12 @@
 												"type": "reference",
 												"target": 16248,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16107,7 +16107,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16167,13 +16167,13 @@
 							"fileName": "tax/service.ts",
 							"line": 408,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L408"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L408"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 430,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L430"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L430"
 						}
 					],
 					"signatures": [
@@ -16216,7 +16216,7 @@
 									"fileName": "tax/service.ts",
 									"line": 408,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L408"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L408"
 								}
 							],
 							"parameters": [
@@ -16238,7 +16238,7 @@
 										"type": "reference",
 										"target": 16449,
 										"name": "CreateTaxRegionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16261,7 +16261,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16276,7 +16276,7 @@
 										"type": "reference",
 										"target": 16462,
 										"name": "TaxRegionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -16322,7 +16322,7 @@
 									"fileName": "tax/service.ts",
 									"line": 430,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L430"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L430"
 								}
 							],
 							"parameters": [
@@ -16346,7 +16346,7 @@
 											"type": "reference",
 											"target": 16449,
 											"name": "CreateTaxRegionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16370,7 +16370,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16387,7 +16387,7 @@
 											"type": "reference",
 											"target": 16462,
 											"name": "TaxRegionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16408,13 +16408,13 @@
 							"fileName": "tax/service.ts",
 							"line": 447,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L447"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L447"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 471,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L471"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L471"
 						}
 					],
 					"signatures": [
@@ -16457,7 +16457,7 @@
 									"fileName": "tax/service.ts",
 									"line": 447,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L447"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L447"
 								}
 							],
 							"parameters": [
@@ -16479,7 +16479,7 @@
 										"type": "reference",
 										"target": 16473,
 										"name": "UpdateTaxRegionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16502,7 +16502,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16517,7 +16517,7 @@
 										"type": "reference",
 										"target": 16462,
 										"name": "TaxRegionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -16563,7 +16563,7 @@
 									"fileName": "tax/service.ts",
 									"line": 471,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L471"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L471"
 								}
 							],
 							"parameters": [
@@ -16587,7 +16587,7 @@
 											"type": "reference",
 											"target": 16473,
 											"name": "UpdateTaxRegionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16611,7 +16611,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16628,7 +16628,7 @@
 											"type": "reference",
 											"target": 16462,
 											"name": "TaxRegionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16649,13 +16649,13 @@
 							"fileName": "tax/service.ts",
 							"line": 489,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L489"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L489"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 504,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L504"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L504"
 						}
 					],
 					"signatures": [
@@ -16698,7 +16698,7 @@
 									"fileName": "tax/service.ts",
 									"line": 489,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L489"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L489"
 								}
 							],
 							"parameters": [
@@ -16744,7 +16744,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16803,7 +16803,7 @@
 									"fileName": "tax/service.ts",
 									"line": 504,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L504"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L504"
 								}
 							],
 							"parameters": [
@@ -16846,7 +16846,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16879,7 +16879,7 @@
 							"fileName": "tax/service.ts",
 							"line": 559,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L559"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L559"
 						}
 					],
 					"signatures": [
@@ -16919,7 +16919,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax region:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax region:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -16974,7 +16974,7 @@
 									"fileName": "tax/service.ts",
 									"line": 559,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L559"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L559"
 								}
 							],
 							"parameters": [
@@ -16998,7 +16998,7 @@
 										"type": "reference",
 										"target": 16478,
 										"name": "FilterableTaxRegionProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17041,11 +17041,11 @@
 												"type": "reference",
 												"target": 16462,
 												"name": "TaxRegionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17068,7 +17068,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17085,7 +17085,7 @@
 											"type": "reference",
 											"target": 16462,
 											"name": "TaxRegionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -17106,13 +17106,13 @@
 							"fileName": "tax/service.ts",
 							"line": 581,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L581"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L581"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 670,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L670"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L670"
 						}
 					],
 					"signatures": [
@@ -17155,7 +17155,7 @@
 									"fileName": "tax/service.ts",
 									"line": 581,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L581"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L581"
 								}
 							],
 							"parameters": [
@@ -17177,7 +17177,7 @@
 										"type": "reference",
 										"target": 16490,
 										"name": "CreateTaxRateRuleDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17200,7 +17200,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17215,7 +17215,7 @@
 										"type": "reference",
 										"target": 16496,
 										"name": "TaxRateRuleDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -17261,7 +17261,7 @@
 									"fileName": "tax/service.ts",
 									"line": 670,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L670"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L670"
 								}
 							],
 							"parameters": [
@@ -17285,7 +17285,7 @@
 											"type": "reference",
 											"target": 16490,
 											"name": "CreateTaxRateRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -17309,7 +17309,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17326,7 +17326,7 @@
 											"type": "reference",
 											"target": 16496,
 											"name": "TaxRateRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -17347,7 +17347,7 @@
 							"fileName": "tax/service.ts",
 							"line": 642,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L642"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L642"
 						}
 					],
 					"signatures": [
@@ -17396,7 +17396,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax provider:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax provider:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -17451,7 +17451,7 @@
 									"fileName": "tax/service.ts",
 									"line": 642,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L642"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L642"
 								}
 							],
 							"parameters": [
@@ -17475,7 +17475,7 @@
 										"type": "reference",
 										"target": 16506,
 										"name": "FilterableTaxProviderProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17518,11 +17518,11 @@
 												"type": "reference",
 												"target": 16511,
 												"name": "TaxProviderDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17545,7 +17545,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17562,7 +17562,7 @@
 											"type": "reference",
 											"target": 16511,
 											"name": "TaxProviderDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -17583,13 +17583,13 @@
 							"fileName": "tax/service.ts",
 							"line": 685,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L685"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L685"
 						},
 						{
 							"fileName": "tax/service.ts",
 							"line": 703,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L703"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L703"
 						}
 					],
 					"signatures": [
@@ -17632,7 +17632,7 @@
 									"fileName": "tax/service.ts",
 									"line": 685,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L685"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L685"
 								}
 							],
 							"parameters": [
@@ -17675,7 +17675,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17734,7 +17734,7 @@
 									"fileName": "tax/service.ts",
 									"line": 703,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L703"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L703"
 								}
 							],
 							"parameters": [
@@ -17780,7 +17780,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17813,7 +17813,7 @@
 							"fileName": "tax/service.ts",
 							"line": 761,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L761"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L761"
 						}
 					],
 					"signatures": [
@@ -17853,7 +17853,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the tax rate rule:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the tax rate rule:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -17908,7 +17908,7 @@
 									"fileName": "tax/service.ts",
 									"line": 761,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L761"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L761"
 								}
 							],
 							"parameters": [
@@ -17932,7 +17932,7 @@
 										"type": "reference",
 										"target": 16514,
 										"name": "FilterableTaxRateRuleProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17975,11 +17975,11 @@
 												"type": "reference",
 												"target": 16496,
 												"name": "TaxRateRuleDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18002,7 +18002,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18019,7 +18019,7 @@
 											"type": "reference",
 											"target": 16496,
 											"name": "TaxRateRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18040,7 +18040,7 @@
 							"fileName": "tax/service.ts",
 							"line": 800,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L800"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L800"
 						}
 					],
 					"signatures": [
@@ -18054,7 +18054,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method retrieves tax lines for taxable items and shipping methods in a cart.\n\nLearn more in [this guide](https://docs.medusajs.com/resources/commerce-modules/tax/tax-calculation-with-provider)."
+										"text": "This method retrieves tax lines for taxable items and shipping methods in a cart.\n\nLearn more in [this guide](https://docs.switchyard.com/resources/commerce-modules/tax/tax-calculation-with-provider)."
 									}
 								],
 								"blockTags": [
@@ -18083,7 +18083,7 @@
 									"fileName": "tax/service.ts",
 									"line": 800,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L800"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L800"
 								}
 							],
 							"parameters": [
@@ -18110,13 +18110,13 @@
 													"type": "reference",
 													"target": 16525,
 													"name": "TaxableItemDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												},
 												{
 													"type": "reference",
 													"target": 16532,
 													"name": "TaxableShippingDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											]
 										}
@@ -18140,7 +18140,7 @@
 										"type": "reference",
 										"target": 16537,
 										"name": "TaxCalculationContext",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18163,7 +18163,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18183,13 +18183,13 @@
 													"type": "reference",
 													"target": 16560,
 													"name": "ItemTaxLineDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												},
 												{
 													"type": "reference",
 													"target": 16567,
 													"name": "ShippingTaxLineDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											]
 										}
@@ -18212,7 +18212,7 @@
 							"fileName": "tax/service.ts",
 							"line": 821,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L821"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L821"
 						}
 					],
 					"signatures": [
@@ -18271,7 +18271,7 @@
 									"fileName": "tax/service.ts",
 									"line": 821,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L821"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L821"
 								}
 							],
 							"typeParameters": [
@@ -18338,12 +18338,12 @@
 												"type": "reference",
 												"target": 16309,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18366,7 +18366,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18426,7 +18426,7 @@
 							"fileName": "tax/service.ts",
 							"line": 845,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L845"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L845"
 						}
 					],
 					"signatures": [
@@ -18485,7 +18485,7 @@
 									"fileName": "tax/service.ts",
 									"line": 845,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L845"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L845"
 								}
 							],
 							"typeParameters": [
@@ -18552,12 +18552,12 @@
 												"type": "reference",
 												"target": 16315,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18580,7 +18580,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18640,7 +18640,7 @@
 							"fileName": "tax/service.ts",
 							"line": 871,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L871"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L871"
 						}
 					],
 					"signatures": [
@@ -18699,7 +18699,7 @@
 									"fileName": "tax/service.ts",
 									"line": 871,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L871"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L871"
 								}
 							],
 							"typeParameters": [
@@ -18782,12 +18782,12 @@
 												"type": "reference",
 												"target": 16321,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18810,7 +18810,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18870,7 +18870,7 @@
 							"fileName": "tax/service.ts",
 							"line": 892,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L892"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L892"
 						}
 					],
 					"signatures": [
@@ -18921,7 +18921,7 @@
 									"fileName": "tax/service.ts",
 									"line": 892,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L892"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L892"
 								}
 							],
 							"typeParameters": [
@@ -18988,12 +18988,12 @@
 												"type": "reference",
 												"target": 16327,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19016,7 +19016,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19076,7 +19076,7 @@
 							"fileName": "tax/service.ts",
 							"line": 914,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L914"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L914"
 						}
 					],
 					"signatures": [
@@ -19127,7 +19127,7 @@
 									"fileName": "tax/service.ts",
 									"line": 914,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L914"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L914"
 								}
 							],
 							"typeParameters": [
@@ -19202,12 +19202,12 @@
 												"type": "reference",
 												"target": 16333,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19230,7 +19230,7 @@
 										"type": "reference",
 										"target": 16391,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19290,7 +19290,7 @@
 							"fileName": "tax/service.ts",
 							"line": 931,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L931"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L931"
 						}
 					],
 					"signatures": [
@@ -19340,7 +19340,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -19373,7 +19373,7 @@
 									"fileName": "tax/service.ts",
 									"line": 931,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L931"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L931"
 								}
 							],
 							"parameters": [
@@ -19393,7 +19393,7 @@
 								"type": "reference",
 								"target": 16577,
 								"name": "ITaxProvider",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -19434,7 +19434,7 @@
 					"fileName": "tax/service.ts",
 					"line": 33,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L33"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/tax/service.ts#L33"
 				}
 			],
 			"extendedTypes": [
@@ -19442,7 +19442,7 @@
 					"type": "reference",
 					"target": 16353,
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -19490,7 +19490,7 @@
 						"type": "reference",
 						"target": 16723,
 						"name": "BigNumberRawValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -19733,7 +19733,7 @@
 						"type": "reference",
 						"target": 16723,
 						"name": "BigNumberRawValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "intrinsic",
@@ -19757,7 +19757,7 @@
 						"type": "reference",
 						"target": 16728,
 						"name": "IBigNumber",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -19834,7 +19834,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"16195": {
 			"sourceFileName": "../../../../packages/core/types/src/tax/service.ts",

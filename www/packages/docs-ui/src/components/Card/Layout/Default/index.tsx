@@ -1,7 +1,7 @@
 import React from "react"
 import clsx from "clsx"
 import { Badge, BorderedIcon, Link } from "@/components"
-import { ArrowUpRightOnBox, TriangleRightMini } from "@medusajs/icons"
+import { ArrowUpRightOnBox, TriangleRightMini } from "@switchyard/icons"
 import { CardProps } from "../../.."
 import { useIsExternalLink } from "../../../.."
 

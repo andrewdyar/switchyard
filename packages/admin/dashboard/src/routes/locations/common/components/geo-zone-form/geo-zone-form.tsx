@@ -1,4 +1,4 @@
-import { Button, Checkbox } from "@medusajs/ui"
+import { Button, Checkbox } from "@switchyard/ui"
 import {
   OnChangeFn,
   RowSelectionState,

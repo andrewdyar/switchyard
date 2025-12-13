@@ -18,21 +18,21 @@ The Index Module is experimental and still in development, so it is subject to c
 
 The Index Module is a tool to perform high-performance queries across modules, for example, to filter linked modules.
 
-While modules share the same database by default, Medusa [isolates modules](../../modules/isolation/page.mdx) to allow using external data sources or different database types.
+While modules share the same database by default, Switchyard [isolates modules](../../modules/isolation/page.mdx) to allow using external data sources or different database types.
 
-So, when you retrieve data across modules using Query, Medusa aggregates the data coming from different modules to create the end result. This approach limits your ability to filter data by linked modules. For example, you can't filter products (created in the Product Module) by their brand (created in the Brand Module).
+So, when you retrieve data across modules using Query, Switchyard aggregates the data coming from different modules to create the end result. This approach limits your ability to filter data by linked modules. For example, you can't filter products (created in the Product Module) by their brand (created in the Brand Module).
 
 The Index Module solves this problem by ingesting data into a central data store on application startup. The data store has a relational structure that enables efficient filtering of data ingested from different modules (and their data stores). So, when you retrieve data with the Index Module, you're retrieving it from the Index Module's data store, not the original data source.
 
-![Diagram showcasing how data is retrieved from the Index Module's data store](https://res.cloudinary.com/dza7lstvk/image/upload/v1747988533/Medusa%20Book/index-module_epurmt.jpg)
+![Diagram showcasing how data is retrieved from the Index Module's data store](https://res.cloudinary.com/dza7lstvk/image/upload/v1747988533/Switchyard%20Book/index-module_epurmt.jpg)
 
 ### Ingested Data Models
 
-Data models are ingested if they're linked to other data models with the `filterable` property set, as you'll learn in the [Ingest Custom Data Models](#how-to-ingest-custom-data-models) section. Medusa also ingests some core data models by default, such as `Product`, `ProductVariant`, `Price`, and `SalesChannel`.
+Data models are ingested if they're linked to other data models with the `filterable` property set, as you'll learn in the [Ingest Custom Data Models](#how-to-ingest-custom-data-models) section. Switchyard also ingests some core data models by default, such as `Product`, `ProductVariant`, `Price`, and `SalesChannel`.
 
 <Note>
 
-Prior to [Medusa v2.10.2](https://github.com/medusajs/medusa/releases/tag/v2.10.2), only the `Product`, `ProductVariant`, `Price`, and `SalesChannel` data models were ingested. Make sure to update to the latest version to ingest all core data models.
+Prior to [Switchyard v2.10.2](https://github.com/switchyard/medusa/releases/tag/v2.10.2), only the `Product`, `ProductVariant`, `Price`, and `SalesChannel` data models were ingested. Make sure to update to the latest version to ingest all core data models.
 
 </Note>
 
@@ -40,21 +40,21 @@ Prior to [Medusa v2.10.2](https://github.com/medusajs/medusa/releases/tag/v2.10.
 
 ## How to Install the Index Module
 
-To install the Index Module, run the following command in your Medusa project to install its package:
+To install the Index Module, run the following command in your Switchyard project to install its package:
 
 ```bash npm2yarn
-npm install @medusajs/index
+npm install @switchyard/index
 ```
 
-Then, add the Index Module to your Medusa configuration in `medusa-config.ts`:
+Then, add the Index Module to your Switchyard configuration in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     // ...
     {
-      resolve: "@medusajs/index",
+      resolve: "@switchyard/index",
     },
   ],
 })
@@ -63,12 +63,12 @@ module.exports = defineConfig({
 Finally, run the migrations to create the necessary tables for the Index Module in your database:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 ### Ingest Data
 
-The Index Module only ingests data when you start your Medusa server. So, to [ingest data models](#ingested-data-models), start the Medusa application:
+The Index Module only ingests data when you start your Switchyard server. So, to [ingest data models](#ingested-data-models), start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -141,13 +141,13 @@ export const basicHighlights = [
 
 ```ts title="src/api/custom/products/route.ts" highlights={basicHighlights}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve("query")
   
@@ -193,8 +193,8 @@ export const filterableHighlights = [
 
 ```ts title="src/links/product-brand.ts" highlights={filterableHighlights}
 import BrandModule from "../modules/brand"
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
 
 export default defineLink(
   {
@@ -210,10 +210,10 @@ export default defineLink(
 
 The `filterable` property is an array of property names in the data model that can be filtered using the `index` method. When the `filterable` property is set, the Index Module will ingest into its data store the custom data model.
 
-But first, you must run the migrations to sync the link, then start the Medusa application:
+But first, you must run the migrations to sync the link, then start the Switchyard application:
 
 ```bash npm2yarn
-npx medusa db:migrate
+npx switchyard db:migrate
 npm run dev
 ```
 
@@ -230,13 +230,13 @@ You can now filter products by their brand, and vice versa. For example:
 
 ```ts title="src/api/custom/products/route.ts"
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve("query")
   
@@ -277,11 +277,11 @@ This will return all products that are linked to the brand with the name `Acme`.
 
 <Note>
 
-The Index API routes are available from [Medusa v2.11.2](https://github.com/medusajs/medusa/releases/tag/v2.11.2).
+The Index API routes are available from [Switchyard v2.11.2](https://github.com/switchyard/medusa/releases/tag/v2.11.2).
 
 </Note>
 
-Medusa provides API routes to view and trigger index reingestion or syncing. This is useful if you want to reingest data manually, for example, after a large data import.
+Switchyard provides API routes to view and trigger index reingestion or syncing. This is useful if you want to reingest data manually, for example, after a large data import.
 
 Refer to the [Index API Reference](!api!/admin#index) for more information about the available API routes and how to use them.
 
@@ -300,13 +300,13 @@ export const paginationHighlights = [
 
 ```ts title="src/api/custom/products/route.ts" highlights={paginationHighlights}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve("query")
   
@@ -370,7 +370,7 @@ For example, this is the response returned by the above API route:
 
 <Note>
 
-Caching options are available from [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0).
+Caching options are available from [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0).
 
 </Note>
 
@@ -660,7 +660,7 @@ const { data: products } = await query.index({
 })
 ```
 
-In the example above, you specify the providers with ID `caching-redis` and `caching-memcached` to cache the query results. These IDs must match the IDs of the providers in `medusa-config.ts`.
+In the example above, you specify the providers with ID `caching-redis` and `caching-memcached` to cache the query results. These IDs must match the IDs of the providers in `switchyard.config.ts`.
 
 When you pass multiple providers, the cache is stored and retrieved in those providers in order.
 
@@ -760,13 +760,13 @@ The `index` method supports the same configurations. For example, if you add the
 
 ```ts title="src/api/custom/products/route.ts" highlights={[["17"]]}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve("query")
   
@@ -806,7 +806,7 @@ import {
   createWorkflow,
   StepResponse,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 const retrieveBrandsStep = createStep(
   "retrieve-brands",

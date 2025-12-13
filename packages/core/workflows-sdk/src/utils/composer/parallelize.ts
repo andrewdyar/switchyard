@@ -1,5 +1,5 @@
 import { CreateWorkflowComposerContext, WorkflowData } from "./type"
-import { OrchestrationUtils } from "@medusajs/utils"
+import { OrchestrationUtils } from "@switchyard/utils"
 
 /**
  * This function is used to run multiple steps in parallel. The result of each step will be returned as part of the result array.
@@ -13,7 +13,7 @@ import { OrchestrationUtils } from "@medusajs/utils"
  *   createWorkflow,
  *   parallelize,
  *   WorkflowResponse
- * } from "@medusajs/framework/workflows-sdk"
+ * } from "@switchyard/framework/workflows-sdk"
  * import {
  *   createProductStep,
  *   createPricesStep,
@@ -44,7 +44,7 @@ import { OrchestrationUtils } from "@medusajs/utils"
 export function parallelize<TResult extends (WorkflowData | undefined)[]>(
   ...steps: TResult
 ): TResult {
-  if (!global[OrchestrationUtils.SymbolMedusaWorkflowComposerContext]) {
+  if (!global[OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext]) {
     throw new Error(
       "parallelize must be used inside a createWorkflow definition"
     )
@@ -52,7 +52,7 @@ export function parallelize<TResult extends (WorkflowData | undefined)[]>(
 
   const parallelizeBinder = (
     global[
-      OrchestrationUtils.SymbolMedusaWorkflowComposerContext
+      OrchestrationUtils.SymbolSwitchyardWorkflowComposerContext
     ] as CreateWorkflowComposerContext
   ).parallelizeBinder
 

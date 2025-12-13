@@ -5,7 +5,7 @@
  * description: Remove a list of promotions from a cart.
  * x-authenticated: false
  * externalDocs:
- *   url: https://docs.medusajs.com/resources/storefront-development/cart/manage-promotions#remove-promotion-from-cart
+ *   url: https://docs.switchyard.com/resources/storefront-development/cart/manage-promotions#remove-promotion-from-cart
  *   description: "Storefront guide: How to remove a promotion from cart."
  * parameters:
  *   - name: id
@@ -16,12 +16,12 @@
  *       type: string
  *   - name: x-publishable-api-key
  *     in: header
- *     description: Publishable API Key created in the Medusa Admin.
+ *     description: Publishable API Key created in the Switchyard Admin.
  *     required: true
  *     schema:
  *       type: string
  *       externalDocs:
- *         url: https://docs.medusajs.com/api/store#publishable-api-key
+ *         url: https://docs.switchyard.com/api/store#publishable-api-key
  *   - name: fields
  *     in: query
  *     description: Comma-separated fields that should be included in the returned data. if a field is prefixed with `+` it will be added to the default fields, using `-` will remove it from the default

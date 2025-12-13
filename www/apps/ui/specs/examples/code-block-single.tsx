@@ -1,8 +1,8 @@
-import { CodeBlock, Label } from "@medusajs/ui"
+import { CodeBlock, Label } from "@switchyard/ui"
 
 const snippets = [
   {
-    label: "Medusa JS SDK",
+    label: "Switchyard JS SDK",
     language: "jsx",
     code: `console.log("Hello, World!")`,
   },

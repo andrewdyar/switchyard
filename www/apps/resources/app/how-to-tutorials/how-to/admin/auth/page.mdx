@@ -10,41 +10,41 @@ products:
 ---
 
 export const metadata = {
-  title: `How to Add Custom Authentication in Medusa Admin`,
+  title: `How to Add Custom Authentication in Switchyard Admin`,
 }
 
 # {metadata.title}
 
-In this guide, you'll learn how to add custom authentication provider to the Medusa Admin.
+In this guide, you'll learn how to add custom authentication provider to the Switchyard Admin.
 
 <Note>
 
-Authenticating into the Medusa Admin with third-party providers is supported from [Medusa v2.12.0](https://github.com/medusajs/medusa/releases/tag/v2.12.0).
+Authenticating into the Switchyard Admin with third-party providers is supported from [Switchyard v2.12.0](https://github.com/switchyard/medusa/releases/tag/v2.12.0).
 
 </Note>
 
 ## Overview
 
-By default, the Medusa Admin allows users to authenticate using their email and password. Medusa uses the [Emailpass Authentication Provider](../../../../commerce-modules/auth/auth-providers/emailpass/page.mdx) to handle this authentication method.
+By default, the Switchyard Admin allows users to authenticate using their email and password. Switchyard uses the [Emailpass Authentication Provider](../../../../commerce-modules/auth/auth-providers/emailpass/page.mdx) to handle this authentication method.
 
-You can also integrate a custom or third-party authentication provider to allow users registered with that provider to log in to the Medusa Admin. This delegates the authentication process to the third-party provider, which is useful if your organization uses a centralized authentication system.
+You can also integrate a custom or third-party authentication provider to allow users registered with that provider to log in to the Switchyard Admin. This delegates the authentication process to the third-party provider, which is useful if your organization uses a centralized authentication system.
 
 <Note type="warning">
 
-Ensure the third-party authentication provider allows **only** your organization's users to log in to the Medusa Admin. For example, integrating a social login provider like Google or Facebook without restrictions will allow any user with an account on those platforms to access your Medusa Admin.
+Ensure the third-party authentication provider allows **only** your organization's users to log in to the Switchyard Admin. For example, integrating a social login provider like Google or Facebook without restrictions will allow any user with an account on those platforms to access your Switchyard Admin.
 
 </Note>
 
-### Summary of Custom Medusa Admin Authentication
+### Summary of Custom Switchyard Admin Authentication
 
 To authenticate admin users through a third-party provider, you need to:
 
 1. Create a [custom Authentication Module Provider](/references/auth/provider) that integrates the third-party provider. For example, you can create a provider that integrates with Okta.
-2. Change the authentication type in the Medusa Admin dashboard to use JWT authentication.
+2. Change the authentication type in the Switchyard Admin dashboard to use JWT authentication.
 3. Add an API route with a workflow that handles creating the admin user after they authenticate through the third-party provider.
 4. Add a widget on the login page that provides the option to log in through the third-party provider.
 
-![Overview of the custom authentication process in Medusa Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1764153489/Medusa%20Resources/admin-third-party-auth_phknrs.jpg)
+![Overview of the custom authentication process in Switchyard Admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1764153489/Switchyard%20Resources/admin-third-party-auth_phknrs.jpg)
 
 ---
 
@@ -60,9 +60,9 @@ Refer to the [Create Custom Authentication Module Provider](/references/auth/pro
 
 By default, registered Authentication Module Providers can be used for all [actor types](../../../../commerce-modules/auth/auth-identity-and-actor-types/page.mdx). This means both admin users and customers can authenticate through the provider.
 
-It's recommended to restrict the custom authentication provider to admin users only. To do this, set the `http.authMethodsPerActor` configuration in `medusa-config.ts` to enable the custom authentication provider only for the `user` actor type:
+It's recommended to restrict the custom authentication provider to admin users only. To do this, set the `http.authMethodsPerActor` configuration in `switchyard.config.ts` to enable the custom authentication provider only for the `user` actor type:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   projectConfig: {
     http: {
@@ -83,22 +83,22 @@ Refer to the [Authentication Module Providers](../../../../commerce-modules/auth
 
 ---
 
-## Step 2: Change Authentication Type in Medusa Admin
+## Step 2: Change Authentication Type in Switchyard Admin
 
-Next, you need to change the authentication type in the Medusa Admin dashboard to use JWT authentication.
+Next, you need to change the authentication type in the Switchyard Admin dashboard to use JWT authentication.
 
-To do this, set the `ADMIN_AUTH_TYPE` environment variable to `jwt` in your Medusa application's environment variables:
+To do this, set the `ADMIN_AUTH_TYPE` environment variable to `jwt` in your Switchyard application's environment variables:
 
 ```bash
 ADMIN_AUTH_TYPE=jwt
 ```
 
-Make sure to also create a JS SDK instance in your Medusa Admin customizations with the `auth.type` option set to `jwt`. For example, create the file `src/lib/sdk.ts` with the following content:
+Make sure to also create a JS SDK instance in your Switchyard Admin customizations with the `auth.type` option set to `jwt`. For example, create the file `src/lib/sdk.ts` with the following content:
 
 ```ts title="src/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
   debug: import.meta.env.DEV,
   auth: {
@@ -107,7 +107,7 @@ export const sdk = new Medusa({
 })
 ```
 
-Refer to the [JS SDK Authentication guide](../../../../js-sdk/auth/overview/page.mdx) to learn more about configuring authentication in the Medusa JS SDK.
+Refer to the [JS SDK Authentication guide](../../../../js-sdk/auth/overview/page.mdx) to learn more about configuring authentication in the Switchyard JS SDK.
 
 ---
 
@@ -124,8 +124,8 @@ First, you need to create the workflow that creates a user and associates it wit
 Create the file `src/workflows/create-user.ts` with the following content:
 
 ```ts title="src/workflows/create-user.ts"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { createUsersWorkflow, setAuthAppMetadataStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { createUsersWorkflow, setAuthAppMetadataStep } from "@switchyard/medusa/core-flows"
 
 type WorkflowInput = {
   email: string
@@ -181,7 +181,7 @@ Next, you need to create the API route that calls the workflow to create the use
 Create the file `src/api/custom-auth/admin/users/route.ts` with the following content:
 
 ```ts title="src/api/custom-auth/admin/users/route.ts"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@medusajs/framework"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { z } from "zod"
 import { createUserWorkflow } from "../../../../workflows/create-user"
 
@@ -191,7 +191,7 @@ export const CreateUserSchema = z.object({
 
 type CreateUserBody = z.infer<typeof CreateUserSchema>
 
-export const POST = async (req: AuthenticatedMedusaRequest<CreateUserBody>, res: MedusaResponse) => {
+export const POST = async (req: AuthenticatedSwitchyardRequest<CreateUserBody>, res: SwitchyardResponse) => {
   const user = await createUserWorkflow(req.scope)
     .run({
       input: {
@@ -213,7 +213,7 @@ Finally, you need to apply the authentication [middleware](!docs!/learn/fundamen
 To do this, create the file `src/api/middlewares.ts` with the following content:
 
 ```ts title="src/api/middlewares.ts"
-import { authenticate, defineMiddlewares } from "@medusajs/framework/http"
+import { authenticate, defineMiddlewares } from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -230,7 +230,7 @@ export default defineMiddlewares({
 })
 ```
 
-This middleware applies the `authenticate` middleware to the `/custom-auth/admin/users` `POST` route, allowing only authenticated users to access it. By enabling the `allowUnregistered` option, users who are authenticated through the third-party provider but don't yet have an associated Medusa user can still access the route to create their user.
+This middleware applies the `authenticate` middleware to the `/custom-auth/admin/users` `POST` route, allowing only authenticated users to access it. By enabling the `allowUnregistered` option, users who are authenticated through the third-party provider but don't yet have an associated Switchyard user can still access the route to create their user.
 
 Refer to the [Protected Routes](!docs!/learn/fundamentals/api-routes/protected-routes) guide to learn more about protecting API routes with the `authentication` middleware.
 
@@ -238,15 +238,15 @@ Refer to the [Protected Routes](!docs!/learn/fundamentals/api-routes/protected-r
 
 ## Step 4: Add a Widget on the Login Page
 
-Finally, you need to add a [widget](!docs!/learn/fundamentals/admin/widgets) to the Medusa Admin login page that provides the option to log in through the third-party provider.
+Finally, you need to add a [widget](!docs!/learn/fundamentals/admin/widgets) to the Switchyard Admin login page that provides the option to log in through the third-party provider.
 
-The widget should display a button that authenticates or redirects the user to the third-party provider. The widget should also handle the redirection back to the Medusa Admin after successful authentication.
+The widget should display a button that authenticates or redirects the user to the third-party provider. The widget should also handle the redirection back to the Switchyard Admin after successful authentication.
 
 For example, the widget may look like this:
 
 ```tsx title="src/admin/widgets/custom-login.tsx"
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
-import { Button, toast } from "@medusajs/ui"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
+import { Button, toast } from "@switchyard/ui"
 import { decodeToken } from "react-jwt"
 import { useSearchParams, useNavigate } from "react-router-dom"
 import { useMutation } from "@tanstack/react-query"
@@ -367,7 +367,7 @@ You inject the widget into the `login.after` zone. This displays it below the de
 
 <Note>
 
-You can't remove the default email and password login form from the Medusa Admin. You can only add additional login options through widgets.
+You can't remove the default email and password login form from the Switchyard Admin. You can only add additional login options through widgets.
 
 </Note>
 
@@ -379,21 +379,21 @@ In the widget, you:
 2. Add a `useEffect` hook that checks for provider-specific query parameters in the URL, such as `code`, to handle the redirection back from the third-party provider after successful authentication.
 3. Upon redirection back, you:
     - Call the `sdk.auth.callback` method to validate the authentication with the third-party provider.
-    - If the user doesn't exist in Medusa, call the [custom API route you created](#step-3-create-user-api-route) to create the user, then refresh the authentication token.
+    - If the user doesn't exist in Switchyard, call the [custom API route you created](#step-3-create-user-api-route) to create the user, then refresh the authentication token.
     - Finally, if authentication is successful, navigate to the Orders page of the admin dashboard.
 
 ---
 
-## Test Custom Authentication in Medusa Admin
+## Test Custom Authentication in Switchyard Admin
 
-To test the custom authentication in the Medusa Admin, run the following command to start your Medusa application:
+To test the custom authentication in the Switchyard Admin, run the following command to start your Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin at `http://localhost:9000/app`, which will redirect you to the login page.
+Then, open the Switchyard Admin at `http://localhost:9000/app`, which will redirect you to the login page.
 
 On the login page, you should see the option to log in through the third-party provider you integrated. Click the button to log in through the provider and follow the authentication flow.
 
-If authentication is successful, you'll have access to the Medusa Admin dashboard. Otherwise, you can troubleshoot the issue by checking your Medusa application's logs or the browser's console for errors.
+If authentication is successful, you'll have access to the Switchyard Admin dashboard. Otherwise, you can troubleshoot the issue by checking your Switchyard application's logs or the browser's console for errors.

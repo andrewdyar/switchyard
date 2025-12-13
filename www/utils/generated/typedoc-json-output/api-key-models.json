@@ -18,7 +18,7 @@
 					"fileName": "api-key.ts",
 					"line": 3,
 					"character": 6,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L3"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L3"
 				}
 			],
 			"type": {
@@ -63,7 +63,7 @@
 													"fileName": "api-key.ts",
 													"line": 5,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L5"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L5"
 												}
 											],
 											"type": {
@@ -80,11 +80,11 @@
 															"qualifiedName": "IdProperty"
 														},
 														"name": "IdProperty",
-														"package": "@medusajs/utils"
+														"package": "@switchyard/utils"
 													}
 												],
 												"name": "PrimaryKeyModifier",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -107,7 +107,7 @@
 													"fileName": "api-key.ts",
 													"line": 6,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L6"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L6"
 												}
 											],
 											"type": {
@@ -117,7 +117,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -140,7 +140,7 @@
 													"fileName": "api-key.ts",
 													"line": 7,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L7"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L7"
 												}
 											],
 											"type": {
@@ -150,7 +150,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -173,7 +173,7 @@
 													"fileName": "api-key.ts",
 													"line": 8,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L8"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L8"
 												}
 											],
 											"type": {
@@ -183,7 +183,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -206,7 +206,7 @@
 													"fileName": "api-key.ts",
 													"line": 9,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L9"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L9"
 												}
 											],
 											"type": {
@@ -216,7 +216,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -239,7 +239,7 @@
 													"fileName": "api-key.ts",
 													"line": 10,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L10"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L10"
 												}
 											],
 											"type": {
@@ -264,7 +264,7 @@
 													}
 												],
 												"name": "EnumProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -289,7 +289,7 @@
 													"fileName": "api-key.ts",
 													"line": 11,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L11"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L11"
 												}
 											],
 											"type": {
@@ -299,7 +299,7 @@
 													"qualifiedName": "DateTimeProperty"
 												},
 												"name": "DateTimeProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -322,7 +322,7 @@
 													"fileName": "api-key.ts",
 													"line": 12,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L12"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L12"
 												}
 											],
 											"type": {
@@ -332,7 +332,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -357,7 +357,7 @@
 													"fileName": "api-key.ts",
 													"line": 13,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L13"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L13"
 												}
 											],
 											"type": {
@@ -367,7 +367,7 @@
 													"qualifiedName": "TextProperty"
 												},
 												"name": "TextProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										},
@@ -392,7 +392,7 @@
 													"fileName": "api-key.ts",
 													"line": 14,
 													"character": 4,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L14"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L14"
 												}
 											],
 											"type": {
@@ -402,7 +402,7 @@
 													"qualifiedName": "DateTimeProperty"
 												},
 												"name": "DateTimeProperty",
-												"package": "@medusajs/utils"
+												"package": "@switchyard/utils"
 											},
 											"defaultValue": "..."
 										}
@@ -429,14 +429,14 @@
 											"fileName": "api-key.ts",
 											"line": 4,
 											"character": 20,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L4"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/modules/api-key/src/models/api-key.ts#L4"
 										}
 									]
 								}
 							}
 						],
 						"name": "DMLEntitySchemaBuilder",
-						"package": "@medusajs/utils"
+						"package": "@switchyard/utils"
 					},
 					{
 						"type": "literal",
@@ -444,7 +444,7 @@
 					}
 				],
 				"name": "DmlEntity",
-				"package": "@medusajs/utils"
+				"package": "@switchyard/utils"
 			},
 			"defaultValue": "..."
 		}
@@ -457,7 +457,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/api-key",
+	"packageName": "@switchyard/api-key",
 	"symbolIdMap": {
 		"335": {
 			"sourceFileName": "../../../../packages/modules/api-key/src/models/index.ts",

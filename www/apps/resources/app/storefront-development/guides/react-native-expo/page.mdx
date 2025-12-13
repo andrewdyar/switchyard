@@ -18,17 +18,17 @@ products:
 ---
 
 import { Card, Prerequisites, Details, CodeTabs, CodeTab } from "docs-ui"
-import { Github } from "@medusajs/icons"
+import { Github } from "@switchyard/icons"
 
 export const metadata = {
-  title: `Implement Mobile App with React Native, Expo, and Medusa`,
+  title: `Implement Mobile App with React Native, Expo, and Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to create a mobile app that connects to your Medusa backend with React Native and Expo. You can then publish your app to the Apple App Store and Google Play Store.
+In this tutorial, you'll learn how to create a mobile app that connects to your Switchyard backend with React Native and Expo. You can then publish your app to the Apple App Store and Google Play Store.
 
-When you install a Medusa application, you get a fully-fledged commerce server and an admin dashboard to manage the commerce store's data. Medusa's [architecture](!docs!/learn/introduction/architecture) is flexible and customizable, allowing you to build your own custom storefronts using any technology you prefer.
+When you install a Switchyard application, you get a fully-fledged commerce server and an admin dashboard to manage the commerce store's data. Switchyard's [architecture](!docs!/learn/introduction/architecture) is flexible and customizable, allowing you to build your own custom storefronts using any technology you prefer.
 
 [React Native](https://reactnative.dev/) allows developers to build native apps using React. [Expo](https://expo.dev/) is a platform for universal React applications that makes it easy to build, deploy, and iterate on native iOS and Android apps.
 
@@ -36,25 +36,25 @@ When you install a Medusa application, you get a fully-fledged commerce server a
 
 By following this tutorial, you'll learn how to:
 
-1. Set up a Medusa application.
+1. Set up a Switchyard application.
 2. Create an app with React Native and Expo.
-3. Connect the Expo app to the Medusa backend.
+3. Connect the Expo app to the Switchyard backend.
 4. Implement essential ecommerce features such as product listing, cart management, and checkout.
 
-You can follow this guide whether you're new to Medusa or an advanced Medusa developer. However, this tutorial assumes you have a basic understanding of React Native and JavaScript.
+You can follow this guide whether you're new to Switchyard or an advanced Switchyard developer. However, this tutorial assumes you have a basic understanding of React Native and JavaScript.
 
-![Screenshot of home screen of the Expo app](https://res.cloudinary.com/dza7lstvk/image/upload/v1762333811/Medusa%20Resources/CleanShot_2025-11-05_at_11.09.27_lxl2tw.png)
+![Screenshot of home screen of the Expo app](https://res.cloudinary.com/dza7lstvk/image/upload/v1762333811/Switchyard%20Resources/CleanShot_2025-11-05_at_11.09.27_lxl2tw.png)
 
 <Card
   title="Full Code"
   text="Find the full code for this tutorial in this repository."
-  href="https://github.com/medusajs/examples/tree/main/react-native-expo"
+  href="https://github.com/switchyard/examples/tree/main/react-native-expo"
   icon={Github}
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -71,21 +71,21 @@ You can follow this guide whether you're new to Medusa or an advanced Medusa dev
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when you're asked whether you want to install the Next.js Starter Storefront, choose `N` for no. You'll create the Expo app instead.
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name. Once the installation finishes successfully, the Medusa Admin dashboard will open in your browser at `http://localhost:9000/app` with a form to create a new user. Enter the user's credentials and submit the form.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name. Once the installation finishes successfully, the Switchyard Admin dashboard will open in your browser at `http://localhost:9000/app` with a form to create a new user. Enter the user's credentials and submit the form.
 
 Then, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -95,7 +95,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 In this step, you'll create a new Expo app with React Native.
 
-In a directory separate from your Medusa application, run the following command to create a new Expo project:
+In a directory separate from your Switchyard application, run the following command to create a new Expo project:
 
 ```bash
 npx create-expo-app@latest
@@ -120,13 +120,13 @@ In this step, you'll install dependencies that you'll use while building the Exp
 Run the following command to install the required packages:
 
 ```bash npm2yarn
-npm install @medusajs/js-sdk @medusajs/types @react-native-async-storage/async-storage @react-native-picker/picker @react-navigation/drawer
+npm install @switchyard/js-sdk @switchyard/types @react-native-async-storage/async-storage @react-native-picker/picker @react-navigation/drawer
 ```
 
 You install the following packages:
 
-- `@medusajs/js-sdk`: Medusa's [JS SDK](../../../js-sdk/page.mdx) to interact with the Medusa backend.
-- `@medusajs/types`: TypeScript types for Medusa, which are useful when working with Medusa's JS SDK.
+- `@switchyard/js-sdk`: Switchyard's [JS SDK](../../../js-sdk/page.mdx) to interact with the Switchyard backend.
+- `@switchyard/types`: TypeScript types for Switchyard, which are useful when working with Switchyard's JS SDK.
 - `@react-native-async-storage/async-storage`: An asynchronous key-value storage system for React Native, used to store data like cart ID.
 - `@react-native-picker/picker`: A cross-platform picker component for React Native, used for selecting options like country.
 - `@react-navigation/drawer`: A navigation library for React Native that provides a drawer-based navigation experience.
@@ -216,14 +216,14 @@ export const Fonts = Platform.select({
 
 ---
 
-## Step 5: Initialize Medusa JS SDK
+## Step 5: Initialize Switchyard JS SDK
 
-In this step, you'll set up Medusa's [JS SDK](../../../js-sdk/page.mdx) in your Expo app. You'll use the SDK to interact with the Medusa backend.
+In this step, you'll set up Switchyard's [JS SDK](../../../js-sdk/page.mdx) in your Expo app. You'll use the SDK to interact with the Switchyard backend.
 
 To initialize the SDK, create the file `lib/sdk.ts` in your Expo project with the following content:
 
 ```ts title="lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import Constants from "expo-constants"
 
@@ -237,7 +237,7 @@ const MEDUSA_PUBLISHABLE_API_KEY =
   process.env.EXPO_PUBLIC_MEDUSA_PUBLISHABLE_API_KEY ||
   ""
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: MEDUSA_BACKEND_URL,
   debug: __DEV__,
   auth: {
@@ -251,7 +251,7 @@ export const sdk = new Medusa({
 
 You configure the SDK with the:
 
-- Medusa backend URL, which is read from the environment variable `EXPO_PUBLIC_MEDUSA_URL`. If the variable is not set, it defaults to `http://localhost:9000`.
+- Switchyard backend URL, which is read from the environment variable `EXPO_PUBLIC_MEDUSA_URL`. If the variable is not set, it defaults to `http://localhost:9000`.
 - [Publishable API key](../../publishable-api-keys/page.mdx), which is required to retrieve products in the associated sales channel. It is read from the environment variable `EXPO_PUBLIC_MEDUSA_PUBLISHABLE_API_KEY`.
 
 You also customize the JWT token storage method of the JS SDK to use `AsyncStorage`, which is suitable for React Native apps.
@@ -264,9 +264,9 @@ Refer to the [JS SDK documentation](../../../js-sdk/page.mdx) for more configura
 
 ### Set Environment Variables
 
-Next, you'll set the environment variables in your Expo project. Before you do that, you need to retrieve the Medusa backend URL and the Publishable API key.
+Next, you'll set the environment variables in your Expo project. Before you do that, you need to retrieve the Switchyard backend URL and the Publishable API key.
 
-The Medusa backend URL is the URL where your Medusa server is running. If you're running the Medusa server locally, it should be the IP address of your machine at the port `9000`. For example, `http://192.168.1.100:9000`.
+The Switchyard backend URL is the URL where your Switchyard server is running. If you're running the Switchyard server locally, it should be the IP address of your machine at the port `9000`. For example, `http://192.168.1.100:9000`.
 
 You can find your machine's local IP address by running the following command in your terminal:
 
@@ -294,32 +294,32 @@ ipconfig
   </CodeTab>
 </CodeTabs>
 
-Next, to get the Publishable API key, start the Medusa application by running the following command in its directory:
+Next, to get the Publishable API key, start the Switchyard application by running the following command in its directory:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
 Then:
 
-1. Open the Medusa Admin dashboard at `http://localhost:9000/app` and log in.
+1. Open the Switchyard Admin dashboard at `http://localhost:9000/app` and log in.
 2. Go to **Settings** > **Publishable API Keys**.
 3. Either copy the key of an existing Publishable API key, or create a new one by clicking on the **Create Publishable API Key** button.
 
-Once you have the Medusa backend URL and the Publishable API key, create the file `.env` in the root directory of your Expo project with the following content:
+Once you have the Switchyard backend URL and the Publishable API key, create the file `.env` in the root directory of your Expo project with the following content:
 
 ```shell title=".env"
 EXPO_PUBLIC_MEDUSA_URL=http://192.168.1.100:9000
 EXPO_PUBLIC_MEDUSA_PUBLISHABLE_API_KEY=your_publishable_api_key
 ```
 
-Make sure to replace the values with your actual Medusa backend URL and Publishable API key.
+Make sure to replace the values with your actual Switchyard backend URL and Publishable API key.
 
-### Optional: Update CORS in Medusa
+### Optional: Update CORS in Switchyard
 
-If you plan to test the Expo app in a web browser, you'll need to update the CORS settings in the Medusa backend to allow requests from the Expo development server.
+If you plan to test the Expo app in a web browser, you'll need to update the CORS settings in the Switchyard backend to allow requests from the Expo development server.
 
-In your Medusa application's directory, add the Expo development server URL to the `STORE_CORS` and `AUTH_CORS` environment variables in the `.env` file:
+In your Switchyard application's directory, add the Expo development server URL to the `STORE_CORS` and `AUTH_CORS` environment variables in the `.env` file:
 
 ```env
 STORE_CORS=previous_values...,http://localhost:8081
@@ -328,7 +328,7 @@ AUTH_CORS=previous_values...,http://localhost:8081
 
 Append `,http://localhost:8081` to the existing values of `STORE_CORS` and `AUTH_CORS`, which is the default URL for the Expo development server.
 
-Make sure to restart the Medusa server after making changes to the `.env` file.
+Make sure to restart the Switchyard server after making changes to the `.env` file.
 
 ---
 
@@ -349,7 +349,7 @@ The region context will manage the selected region state and provide it to child
 To create the region context, create the file `context/region-context.tsx` with the following content:
 
 export const regionContextHighlights = [
-  ["7", "regions", "Available regions from the Medusa backend."],
+  ["7", "regions", "Available regions from the Switchyard backend."],
   ["8", "selectedRegion", "The currently selected region."],
   ["9", "selectedCountryCode", "The selected country code within the selected region."],
   ["10", "setSelectedRegion", "Update the selected region and country code."],
@@ -359,7 +359,7 @@ export const regionContextHighlights = [
 
 ```tsx title="context/region-context.tsx" highlights={regionContextHighlights}
 import { sdk } from "@/lib/sdk"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import React, { createContext, ReactNode, useContext, useEffect, useState } from "react"
 
@@ -392,7 +392,7 @@ export function RegionProvider({ children }: { children: ReactNode }) {
 
 You define the `RegionContext` with the following properties that child components can use:
 
-1. `regions`: An array of available regions fetched from the Medusa backend.
+1. `regions`: An array of available regions fetched from the Switchyard backend.
 2. `selectedRegion`: The currently selected region.
 3. `selectedCountryCode`: The country code of the selected country within the selected region. This is useful as regions can have multiple countries, and you'll allow customers to select their country.
 4. `setSelectedRegion`: A function to update the selected region and country code.
@@ -401,12 +401,12 @@ You define the `RegionContext` with the following properties that child componen
 
 You also define the `RegionProvider` component that will wrap the app and provide the region context to its children.
 
-Next, you'll implement the logic to load the regions from the Medusa backend, and manage the selected region state.
+Next, you'll implement the logic to load the regions from the Switchyard backend, and manage the selected region state.
 
 Replace the `// TODO load and select regions` comment with the following:
 
 export const regionLoadingHighlights = [
-  ["1", "loadRegions", "Load regions from the Medusa backend."],
+  ["1", "loadRegions", "Load regions from the Switchyard backend."],
   ["41", "useEffect", "Load regions when the component mounts."],
   ["45", "setSelectedRegion", "Update the selected region and country code."]
 ]
@@ -479,7 +479,7 @@ return (
 )
 ```
 
-You define the `loadRegions` function that fetches the regions from the Medusa backend using the JS SDK. It also loads any previously selected region and country from `AsyncStorage`, or defaults to the first region and its first country.
+You define the `loadRegions` function that fetches the regions from the Switchyard backend using the JS SDK. It also loads any previously selected region and country from `AsyncStorage`, or defaults to the first region and its first country.
 
 Then, you run the `loadRegions` function when the component mounts using the `useEffect` hook.
 
@@ -511,7 +511,7 @@ To create the region selector component, create the file `components/region-sele
 import { Colors } from "@/constants/theme"
 import { useRegion } from "@/context/region-context"
 import { useColorScheme } from "@/hooks/use-color-scheme"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import React, { useMemo } from "react"
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
@@ -803,8 +803,8 @@ export const cartContextHighlights = [
 
 ```tsx title="context/cart-context.tsx" highlights={cartContextHighlights}
 import { sdk } from "@/lib/sdk"
-import { FetchError } from "@medusajs/js-sdk"
-import type { HttpTypes } from "@medusajs/types"
+import { FetchError } from "@switchyard/js-sdk"
+import type { HttpTypes } from "@switchyard/types"
 import AsyncStorage from "@react-native-async-storage/async-storage"
 import React, { createContext, ReactNode, useCallback, useContext, useEffect, useState } from "react"
 import { useRegion } from "./region-context"
@@ -849,7 +849,7 @@ You define the `CartContext` with the following properties that child components
 
 You also define the `CartProvider` component that will wrap the app and provide the cart context to its children.
 
-Next, you'll implement the logic to load the cart from the Medusa backend. Replace the `// TODO load cart` comment with the following:
+Next, you'll implement the logic to load the cart from the Switchyard backend. Replace the `// TODO load cart` comment with the following:
 
 ```tsx title="context/cart-context.tsx"
 const loadCart = useCallback(async () => {
@@ -900,7 +900,7 @@ useEffect(() => {
 // TODO handle region update
 ```
 
-The `loadCart` function creates or retrieves the saved cart from the Medusa backend using the JS SDK. This function runs when the component mounts using the `useEffect` hook.
+The `loadCart` function creates or retrieves the saved cart from the Switchyard backend using the JS SDK. This function runs when the component mounts using the `useEffect` hook.
 
 Next, you'll implement the logic to handle region updates, as the cart's region must match the selected region.
 
@@ -1122,7 +1122,7 @@ Child components can now access the cart context using the `useCart` hook.
 
 ## Step 8: Create Home Screen
 
-In this step, you'll create the home screen of the app. It will display a hero image with a list of products retrieved from the Medusa backend.
+In this step, you'll create the home screen of the app. It will display a hero image with a list of products retrieved from the Switchyard backend.
 
 To implement the home screen, you'll create:
 
@@ -1138,7 +1138,7 @@ Create the file `lib/format-price.ts` with the following content:
 ```ts title="lib/format-price.ts"
 /**
  * Format a price amount with currency code
- * Note: Medusa stores prices in major units (e.g., dollars, euros)
+ * Note: Switchyard stores prices in major units (e.g., dollars, euros)
  * so no conversion is needed
  */
 export function formatPrice(
@@ -1215,7 +1215,7 @@ import { Colors } from "@/constants/theme"
 import { useRegion } from "@/context/region-context"
 import { useColorScheme } from "@/hooks/use-color-scheme"
 import { formatPrice } from "@/lib/format-price"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import { Image } from "expo-image"
 import { useRouter } from "expo-router"
 import React from "react"
@@ -1324,7 +1324,7 @@ So, to set up the tab navigation within the drawer navigator, create the directo
 Then, to create the home screen, create the file `app/(drawer)/(tabs)/(home)/index.tsx` with the following content:
 
 export const homeScreenHighlights = [
-  ["22", "fetchProducts", "Fetch products from the Medusa backend based on the selected region."],
+  ["22", "fetchProducts", "Fetch products from the Switchyard backend based on the selected region."],
   ["42", "useEffect", "Fetch products when the selected region changes."],
   ["48", "onRefresh", "Handle pull-to-refresh to reload products."]
 ]
@@ -1336,7 +1336,7 @@ import { Colors } from "@/constants/theme"
 import { useRegion } from "@/context/region-context"
 import { useColorScheme } from "@/hooks/use-color-scheme"
 import { sdk } from "@/lib/sdk"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import { Image } from "expo-image"
 import React, { useCallback, useEffect, useState } from "react"
 import { FlatList, RefreshControl, StyleSheet, Text, View } from "react-native"
@@ -1430,7 +1430,7 @@ const styles = StyleSheet.create({
 })
 ```
 
-The home screen component fetches products from the Medusa backend based on the selected region. It manages loading, refreshing, and error states.
+The home screen component fetches products from the Switchyard backend based on the selected region. It manages loading, refreshing, and error states.
 
 Next, you'll add the return statement to render the home screen UI. Replace the `// TODO add return statement` comment with the following:
 
@@ -1527,7 +1527,7 @@ export default function HomeStackLayout() {
       <Stack.Screen 
         name="index"
         options={{
-          title: "Medusa Store",
+          title: "Switchyard Store",
           headerLeft: () => (
             <TouchableOpacity
               onPress={() => navigation.dispatch(DrawerActions.openDrawer())}
@@ -1578,7 +1578,7 @@ export default function TabLayout() {
       <Tabs.Screen
         name="(home)"
         options={{
-          title: "Medusa Store",
+          title: "Switchyard Store",
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
           headerShown: false, // Let the home stack manage its own headers
         }}
@@ -1648,9 +1648,9 @@ You can now test the home screen of your app.
 
 There are different ways to run the React Native app, which you can learn about in [Expo's documentation](https://docs.expo.dev/get-started/set-up-your-environment/?platform=ios&device=physical&mode=expo-go). The recommended way is to install the [Expo Go](https://expo.dev/go) app on your mobile device and run the app on it.
 
-Before you run your app, start the Medusa backend by running the following command in the Medusa project directory:
+Before you run your app, start the Switchyard backend by running the following command in the Switchyard project directory:
 
-```bash badgeLabel="Medusa Application" badgeColor="green"
+```bash badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -1662,7 +1662,7 @@ npm run start
 
 In the terminal, you should see a QR code. Scan it using your device to open the app in Expo Go.
 
-When the app opens, you'll see a home screen displaying a hero image and a list of products fetched from the Medusa application.
+When the app opens, you'll see a home screen displaying a hero image and a list of products fetched from the Switchyard application.
 
 <Note>
 
@@ -1670,11 +1670,11 @@ Clicking on a product won't do anything yet, as you haven't implemented the prod
 
 </Note>
 
-![Home screen showing the hero image and list of products](https://res.cloudinary.com/dza7lstvk/image/upload/v1762344360/Medusa%20Resources/CleanShot_2025-11-05_at_13.54.13_2x_efopgu.png)
+![Home screen showing the hero image and list of products](https://res.cloudinary.com/dza7lstvk/image/upload/v1762344360/Switchyard%20Resources/CleanShot_2025-11-05_at_13.54.13_2x_efopgu.png)
 
 If you click the menu icon in the top-left corner, the drawer navigator will open, allowing you to select the region using the region selector you implemented earlier.
 
-![Drawer navigator showing the region selector](https://res.cloudinary.com/dza7lstvk/image/upload/v1762344361/Medusa%20Resources/CleanShot_2025-11-05_at_13.54.38_2x_r0tb6i.png)
+![Drawer navigator showing the region selector](https://res.cloudinary.com/dza7lstvk/image/upload/v1762344361/Switchyard%20Resources/CleanShot_2025-11-05_at_13.54.38_2x_r0tb6i.png)
 
 ---
 
@@ -2294,7 +2294,7 @@ Next, you'll create a utility function to check if a product variant is in stock
 Create the file `lib/inventory.ts` with the following content:
 
 ```ts title="lib/inventory.ts"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 
 /**
  * Check if a product variant is in stock
@@ -2348,7 +2348,7 @@ import { useColorScheme } from "@/hooks/use-color-scheme"
 import { formatPrice } from "@/lib/format-price"
 import { isVariantInStock } from "@/lib/inventory"
 import { sdk } from "@/lib/sdk"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import { useLocalSearchParams, useNavigation } from "expo-router"
 import React, { useCallback, useEffect, useMemo, useState } from "react"
 import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native"
@@ -2549,7 +2549,7 @@ useEffect(() => {
 // TODO select variant based on selected options
 ```
 
-The `fetchProduct` function retrieves product details from the Medusa backend using the product ID. The region ID is passed as a query parameter to get prices specific to the selected region.
+The `fetchProduct` function retrieves product details from the Switchyard backend using the product ID. The region ID is passed as a query parameter to get prices specific to the selected region.
 
 The `selectedOptions` state is initialized with the option values of the product's first variant.
 
@@ -2811,11 +2811,11 @@ A new screen is added to the stack navigator for the product detail screen, allo
 
 ### Test Product Detail Screen
 
-To test out the product detail screen, run your Medusa application and Expo app.
+To test out the product detail screen, run your Switchyard application and Expo app.
 
 Then, in the home screen, click on a product to view its details. This will open the product detail screen where you can view its images, select options, adjust quantity, and add it to the cart.
 
-![Product Detail Screen](https://res.cloudinary.com/dza7lstvk/image/upload/v1762417976/Medusa%20Resources/CleanShot_2025-11-06_at_10.29.04_2x_girdxx.png)
+![Product Detail Screen](https://res.cloudinary.com/dza7lstvk/image/upload/v1762417976/Switchyard%20Resources/CleanShot_2025-11-06_at_10.29.04_2x_girdxx.png)
 
 You can try adding a product to the cart and see the toast notification confirming the action. You'll implement the cart screen in the next step.
 
@@ -2838,7 +2838,7 @@ import { IconSymbol } from "@/components/ui/icon-symbol"
 import { Colors } from "@/constants/theme"
 import { useColorScheme } from "@/hooks/use-color-scheme"
 import { formatPrice } from "@/lib/format-price"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import { Image } from "expo-image"
 import React from "react"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
@@ -3244,11 +3244,11 @@ You add a new tab to the tab navigator for the cart screen. The tab displays a b
 
 ### Test Cart Screen
 
-To test out the cart screen, run your Medusa application and Expo app.
+To test out the cart screen, run your Switchyard application and Expo app.
 
 Then, add some products to your cart from the product detail screen. You can open the cart by clicking its tab in the bottom navigation.
 
-![Cart screen with items in it](https://res.cloudinary.com/dza7lstvk/image/upload/v1762358342/Medusa%20Resources/CleanShot_2025-11-05_at_17.58.18_2x_w5gmly.png)
+![Cart screen with items in it](https://res.cloudinary.com/dza7lstvk/image/upload/v1762358342/Switchyard%20Resources/CleanShot_2025-11-05_at_17.58.18_2x_w5gmly.png)
 
 You can update an item's quantity or remove an item, and the cart will be updated accordingly.
 
@@ -3276,7 +3276,7 @@ Create the file `components/checkout/address-form.tsx` with the following conten
 import { IconSymbol } from "@/components/ui/icon-symbol"
 import { Colors } from "@/constants/theme"
 import { useColorScheme } from "@/hooks/use-color-scheme"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import { Picker } from "@react-native-picker/picker"
 import React, { useRef, useState } from "react"
 import {
@@ -3844,7 +3844,7 @@ import { Button } from "@/components/ui/button"
 import { Colors } from "@/constants/theme"
 import { useColorScheme } from "@/hooks/use-color-scheme"
 import { formatPrice } from "@/lib/format-price"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import React from "react"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
@@ -4055,7 +4055,7 @@ export function getPaymentProviderInfo(providerId: string): PaymentProviderInfo 
 
 The `getPaymentProviderInfo` function takes a payment provider ID and returns an object containing an icon name and a formatted title for display purposes.
 
-The function only handles Medusa's built-in manual payment provider `pp_system_default`. You can expand it later to include more providers that you integrate.
+The function only handles Switchyard's built-in manual payment provider `pp_system_default`. You can expand it later to include more providers that you integrate.
 
 ### Add Payment Step Component
 
@@ -4073,7 +4073,7 @@ import { Colors } from "@/constants/theme"
 import { useColorScheme } from "@/hooks/use-color-scheme"
 import { formatPrice } from "@/lib/format-price"
 import { getPaymentProviderInfo } from "@/lib/payment-providers"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import React from "react"
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native"
 
@@ -4333,7 +4333,7 @@ import { Colors } from "@/constants/theme"
 import { useCart } from "@/context/cart-context"
 import { useColorScheme } from "@/hooks/use-color-scheme"
 import { sdk } from "@/lib/sdk"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import React, { useCallback, useEffect, useState } from "react"
 import { Alert, StyleSheet, Text, View } from "react-native"
 
@@ -4531,7 +4531,7 @@ useEffect(() => {
 // TODO handle step transitions and order placement
 ```
 
-You add a `fetchShippingOptions` function that retrieves shipping options, and a `fetchPaymentProviders` function that retrieves payment providers from the Medusa backend.
+You add a `fetchShippingOptions` function that retrieves shipping options, and a `fetchPaymentProviders` function that retrieves payment providers from the Switchyard backend.
 
 You also add a `useEffect` hook that calls these functions when the user navigates to the shipping or payment steps.
 
@@ -4810,21 +4810,21 @@ If you get a type error regarding the `/checkout` route, the error will be resol
 
 ### Test the Checkout Flow
 
-To test the checkout flow, run your Medusa application and Expo app.
+To test the checkout flow, run your Switchyard application and Expo app.
 
 Then, in your Expo app, click on the "Proceed to Checkout" button in the cart screen. You should be taken to the checkout screen with the Delivery step as the current step.
 
 In the Delivery step, fill in the email and address fields, then click "Continue" to proceed to the Shipping step.
 
-![Delivery step with address filled](https://res.cloudinary.com/dza7lstvk/image/upload/v1762360359/Medusa%20Resources/CleanShot_2025-11-05_at_18.31.49_2x_jl3q4g.png)
+![Delivery step with address filled](https://res.cloudinary.com/dza7lstvk/image/upload/v1762360359/Switchyard%20Resources/CleanShot_2025-11-05_at_18.31.49_2x_jl3q4g.png)
 
 Then, in the Shipping step, select a shipping method and click "Continue" to proceed to the Payment step.
 
-![Shipping step with shipping method selected](https://res.cloudinary.com/dza7lstvk/image/upload/v1762360359/Medusa%20Resources/CleanShot_2025-11-05_at_18.31.49_2x_jl3q4g.png)
+![Shipping step with shipping method selected](https://res.cloudinary.com/dza7lstvk/image/upload/v1762360359/Switchyard%20Resources/CleanShot_2025-11-05_at_18.31.49_2x_jl3q4g.png)
 
 Finally, in the Payment step, select a payment provider. You currently can place an order, but there is no order confirmation screen yet. You'll add it in the next step.
 
-![Payment step with payment provider selected](https://res.cloudinary.com/dza7lstvk/image/upload/v1762360464/Medusa%20Resources/CleanShot_2025-11-05_at_18.33.59_2x_eled5o.png)
+![Payment step with payment provider selected](https://res.cloudinary.com/dza7lstvk/image/upload/v1762360464/Switchyard%20Resources/CleanShot_2025-11-05_at_18.33.59_2x_eled5o.png)
 
 ---
 
@@ -4848,7 +4848,7 @@ import { useColorScheme } from "@/hooks/use-color-scheme"
 import { formatPrice } from "@/lib/format-price"
 import { getPaymentProviderInfo } from "@/lib/payment-providers"
 import { sdk } from "@/lib/sdk"
-import type { HttpTypes } from "@medusajs/types"
+import type { HttpTypes } from "@switchyard/types"
 import { Image } from "expo-image"
 import { useLocalSearchParams, useRouter } from "expo-router"
 import React, { useCallback, useEffect, useRef, useState } from "react"
@@ -5066,7 +5066,7 @@ useEffect(() => {
 // TODO render order details
 ```
 
-The `fetchOrder` function retrieves order details from the Medusa backend using the order ID from the URL parameters.
+The `fetchOrder` function retrieves order details from the Switchyard backend using the order ID from the URL parameters.
 
 Two `useEffect` hooks are added:
 
@@ -5353,17 +5353,17 @@ If you get a type error regarding the `/order-confirmation/[id]` route, the erro
 
 ### Test the Order Confirmation Screen
 
-To test the order confirmation screen, run your Medusa application and Expo app.
+To test the order confirmation screen, run your Switchyard application and Expo app.
 
 Then, in your Expo app, go through the checkout flow as before. After selecting a payment provider and placing the order, you should be taken to the order confirmation screen displaying the order details.
 
-![Order confirmation screen](https://res.cloudinary.com/dza7lstvk/image/upload/v1762360994/Medusa%20Resources/CleanShot_2025-11-05_at_18.42.42_2x_prvkba.png)
+![Order confirmation screen](https://res.cloudinary.com/dza7lstvk/image/upload/v1762360994/Switchyard%20Resources/CleanShot_2025-11-05_at_18.42.42_2x_prvkba.png)
 
 ---
 
 ## Next Steps
 
-You now have an ecommerce app built with React Native and Medusa, complete with product listing, cart management, checkout flow, and order confirmation.
+You now have an ecommerce app built with React Native and Switchyard, complete with product listing, cart management, checkout flow, and order confirmation.
 
 You can expand this app to:
 
@@ -5371,11 +5371,11 @@ You can expand this app to:
 2. [Integrate payment providers like Stripe](../../checkout/payment/stripe/page.mdx).
 3. [Publish the app to app stores](https://docs.expo.dev/distribution/app-stores/).
 
-### Learn More about Medusa
+### Learn More about Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth understanding of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -5385,5 +5385,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

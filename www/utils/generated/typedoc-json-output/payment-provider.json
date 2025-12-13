@@ -27,7 +27,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 53,
 							"character": 9,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L53"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L53"
 						}
 					],
 					"signatures": [
@@ -45,7 +45,7 @@
 									},
 									{
 										"kind": "code",
-										"text": "`medusa-config.ts`"
+										"text": "`switchyard.config.ts`"
 									},
 									{
 										"kind": "text",
@@ -58,7 +58,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\nclass MyPaymentProviderService extends AbstractPaymentProvider<Options> {\n  static validateOptions(options: Record<any, any>) {\n    if (!options.apiKey) {\n      throw new MedusaError(\n        MedusaError.Types.INVALID_DATA,\n        \"API key is required in the provider's options.\"\n      )\n    }\n  }\n}\n```"
+												"text": "```ts\nclass MyPaymentProviderService extends AbstractPaymentProvider<Options> {\n  static validateOptions(options: Record<any, any>) {\n    if (!options.apiKey) {\n      throw new SwitchyardError(\n        SwitchyardError.Types.INVALID_DATA,\n        \"API key is required in the provider's options.\"\n      )\n    }\n  }\n}\n```"
 											}
 										]
 									}
@@ -69,7 +69,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 53,
 									"character": 9,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L53"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L53"
 								}
 							],
 							"parameters": [
@@ -87,7 +87,7 @@
 											},
 											{
 												"kind": "code",
-												"text": "`medusa-config.ts`"
+												"text": "`switchyard.config.ts`"
 											},
 											{
 												"kind": "text",
@@ -136,7 +136,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 105,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L105"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L105"
 						}
 					],
 					"signatures": [
@@ -150,7 +150,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "The constructor allows you to access resources from the [module's container](https://docs.medusajs.com/learn/fundamentals/modules/container)\nusing the first parameter, and the module's options using the second parameter.\n\nIf you're creating a client or establishing a connection with a third-party service, do it in the constructor.\n\n:::note\n\nA module's options are passed when you register it in the Medusa application.\n\n:::"
+										"text": "The constructor allows you to access resources from the [module's container](https://docs.switchyard.com/learn/fundamentals/modules/container)\nusing the first parameter, and the module's options using the second parameter.\n\nIf you're creating a client or establishing a connection with a third-party service, do it in the constructor.\n\n:::note\n\nA module's options are passed when you register it in the Switchyard application.\n\n:::"
 									}
 								],
 								"blockTags": [
@@ -159,7 +159,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\nimport { AbstractPaymentProvider } from \"@medusajs/framework/utils\"\nimport { Logger } from \"@medusajs/framework/types\"\n\ntype Options = {\n  apiKey: string\n}\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<Options> {\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor(\n    container: InjectedDependencies,\n    options: Options\n  ) {\n    super(container, options)\n\n    this.logger_ = container.logger\n    this.options_ = options\n\n    // TODO initialize your client\n  }\n  // ...\n}\n\nexport default MyPaymentProviderService\n```"
+												"text": "```ts\nimport { AbstractPaymentProvider } from \"@switchyard/framework/utils\"\nimport { Logger } from \"@switchyard/framework/types\"\n\ntype Options = {\n  apiKey: string\n}\n\ntype InjectedDependencies = {\n  logger: Logger\n}\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<Options> {\n  protected logger_: Logger\n  protected options_: Options\n  // assuming you're initializing a client\n  protected client\n\n  constructor(\n    container: InjectedDependencies,\n    options: Options\n  ) {\n    super(container, options)\n\n    this.logger_ = container.logger\n    this.options_ = options\n\n    // TODO initialize your client\n  }\n  // ...\n}\n\nexport default MyPaymentProviderService\n```"
 											}
 										]
 									}
@@ -170,7 +170,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 105,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L105"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L105"
 								}
 							],
 							"typeParameters": [
@@ -253,13 +253,13 @@
 										"type": "reference",
 										"target": 47162,
 										"name": "TConfig",
-										"package": "@medusajs/utils",
+										"package": "@switchyard/utils",
 										"qualifiedName": "AbstractPaymentProvider.TConfig",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "AbstractPaymentProvider",
-								"package": "@medusajs/utils"
+								"package": "@switchyard/utils"
 							}
 						}
 					]
@@ -305,7 +305,7 @@
 							},
 							{
 								"kind": "code",
-								"text": "`medusa-config.ts`"
+								"text": "`switchyard.config.ts`"
 							},
 							{
 								"kind": "text",
@@ -329,7 +329,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 140,
 							"character": 16,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L140"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L140"
 						}
 					],
 					"type": {
@@ -350,7 +350,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 207,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L207"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L207"
 						}
 					],
 					"signatures": [
@@ -374,7 +374,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " method. Then, the admin\nuser can capture the payment, which triggers this method.\n\n![Diagram showcasing capture payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747307414/Medusa%20Resources/Klarna_Payment_Graphic_2025_1_lii7bw.jpg)\n\nThis method can also be triggered by a webhook event if the "
+										"text": " method. Then, the admin\nuser can capture the payment, which triggers this method.\n\n![Diagram showcasing capture payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747307414/Switchyard%20Resources/Klarna_Payment_Graphic_2025_1_lii7bw.jpg)\n\nThis method can also be triggered by a webhook event if the "
 									},
 									{
 										"kind": "inline-tag",
@@ -442,7 +442,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " record. You can store data relevant to later refund or process the payment.\nFor example, you can store the ID of the payment in the third-party provider to reference it later.\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747309870/Medusa%20Resources/capture-data_acgdhf.jpg)"
+										"text": " record. You can store data relevant to later refund or process the payment.\nFor example, you can store the ID of the payment in the third-party provider to reference it later.\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747309870/Switchyard%20Resources/capture-data_acgdhf.jpg)"
 									}
 								],
 								"blockTags": [
@@ -468,7 +468,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  CapturePaymentInput,\n  CapturePaymentOutput,\n} from \"@medusajs/framework/types\"\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async capturePayment(\n    input: CapturePaymentInput\n  ): Promise<CapturePaymentOutput> {\n    const externalId = input.data?.id\n\n      // assuming you have a client that captures the payment\n    const newData = await this.client.capturePayment(externalId)\n    return {\n      data: {\n        ...newData,\n        id: externalId,\n      }\n    }\n  }\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  CapturePaymentInput,\n  CapturePaymentOutput,\n} from \"@switchyard/framework/types\"\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async capturePayment(\n    input: CapturePaymentInput\n  ): Promise<CapturePaymentOutput> {\n    const externalId = input.data?.id\n\n      // assuming you have a client that captures the payment\n    const newData = await this.client.capturePayment(externalId)\n    return {\n      data: {\n        ...newData,\n        id: externalId,\n      }\n    }\n  }\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -479,7 +479,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 207,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L207"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L207"
 								}
 							],
 							"parameters": [
@@ -512,7 +512,7 @@
 											"qualifiedName": "CapturePaymentInput"
 										},
 										"name": "CapturePaymentInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -530,7 +530,7 @@
 											"qualifiedName": "CapturePaymentOutput"
 										},
 										"name": "CapturePaymentOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -562,7 +562,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 269,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L269"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L269"
 						}
 					],
 					"signatures": [
@@ -586,7 +586,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " method.\n\n![Diagram showcasing authorize payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747307795/Medusa%20Resources/authorize-payment_qzpy6e.jpg)\n\nWhen authorized successfully, a "
+										"text": " method.\n\n![Diagram showcasing authorize payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747307795/Switchyard%20Resources/authorize-payment_qzpy6e.jpg)\n\nWhen authorized successfully, a "
 									},
 									{
 										"kind": "code",
@@ -652,7 +652,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " record. You can store data relevant to later capture or process the payment.\nFor example, you can store the ID of the payment in the third-party provider to reference it later.\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747309278/Medusa%20Resources/authorize-data_erjg7r.jpg)"
+										"text": " record. You can store data relevant to later capture or process the payment.\nFor example, you can store the ID of the payment in the third-party provider to reference it later.\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747309278/Switchyard%20Resources/authorize-data_erjg7r.jpg)"
 									}
 								],
 								"blockTags": [
@@ -678,7 +678,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  AuthorizePaymentInput,\n  AuthorizePaymentOutput,\n  PaymentSessionStatus\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async authorizePayment(\n    input: AuthorizePaymentInput\n  ): Promise<AuthorizePaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that authorizes the payment\n    const paymentData = await this.client.authorizePayment(externalId)\n\n    return {\n      data: paymentData,\n      status: \"authorized\"\n    }\n  }\n\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  AuthorizePaymentInput,\n  AuthorizePaymentOutput,\n  PaymentSessionStatus\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async authorizePayment(\n    input: AuthorizePaymentInput\n  ): Promise<AuthorizePaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that authorizes the payment\n    const paymentData = await this.client.authorizePayment(externalId)\n\n    return {\n      data: paymentData,\n      status: \"authorized\"\n    }\n  }\n\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -689,7 +689,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 269,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L269"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L269"
 								}
 							],
 							"parameters": [
@@ -722,7 +722,7 @@
 											"qualifiedName": "AuthorizePaymentInput"
 										},
 										"name": "AuthorizePaymentInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -740,7 +740,7 @@
 											"qualifiedName": "AuthorizePaymentOutput"
 										},
 										"name": "AuthorizePaymentOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -772,7 +772,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 314,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L314"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L314"
 						}
 					],
 					"signatures": [
@@ -844,7 +844,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " record. You can store data relevant for any further processing of the payment.\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310189/Medusa%20Resources/cancel-data_gzcgbc.jpg)"
+										"text": " record. You can store data relevant for any further processing of the payment.\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310189/Switchyard%20Resources/cancel-data_gzcgbc.jpg)"
 									}
 								],
 								"blockTags": [
@@ -870,7 +870,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  PaymentProviderError,\n  PaymentProviderSessionResponse,\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async cancelPayment(\n    input: CancelPaymentInput\n  ): Promise<CancelPaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that cancels the payment\n    const paymentData = await this.client.cancelPayment(externalId)\n    return { data: paymentData }\n  }\n\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  PaymentProviderError,\n  PaymentProviderSessionResponse,\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async cancelPayment(\n    input: CancelPaymentInput\n  ): Promise<CancelPaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that cancels the payment\n    const paymentData = await this.client.cancelPayment(externalId)\n    return { data: paymentData }\n  }\n\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -881,7 +881,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 314,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L314"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L314"
 								}
 							],
 							"parameters": [
@@ -914,7 +914,7 @@
 											"qualifiedName": "CancelPaymentInput"
 										},
 										"name": "CancelPaymentInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -932,7 +932,7 @@
 											"qualifiedName": "CancelPaymentOutput"
 										},
 										"name": "CancelPaymentOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -964,7 +964,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 379,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L379"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L379"
 						}
 					],
 					"signatures": [
@@ -978,7 +978,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method initializes a payment session with the third-party payment provider.\n\nWhen a customer chooses a payment method during checkout, this method is triggered to\nperform any initialization action with the third-party provider, such as creating a payment session.\n\n![Diagram showcasing initiate payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310624/Medusa%20Resources/initiate-payment_dpoa2g.jpg)\n\n#### Understanding "
+										"text": "This method initializes a payment session with the third-party payment provider.\n\nWhen a customer chooses a payment method during checkout, this method is triggered to\nperform any initialization action with the third-party provider, such as creating a payment session.\n\n![Diagram showcasing initiate payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310624/Switchyard%20Resources/initiate-payment_dpoa2g.jpg)\n\n#### Understanding "
 									},
 									{
 										"kind": "code",
@@ -1018,7 +1018,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " property, as it's publicly accessible.\n\n:::\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310699/Medusa%20Resources/initiate-data_ikc05t.jpg)"
+										"text": " property, as it's publicly accessible.\n\n:::\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747310699/Switchyard%20Resources/initiate-data_ikc05t.jpg)"
 									}
 								],
 								"blockTags": [
@@ -1044,7 +1044,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  InitiatePaymentInput,\n  InitiatePaymentOutput,\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async initiatePayment(\n    input: InitiatePaymentInput\n  ): Promise<InitiatePaymentOutput> {\n    const {\n      amount,\n      currency_code,\n      context: customerDetails\n    } = input\n\n    // assuming you have a client that initializes the payment\n    const response = await this.client.init(\n      amount, currency_code, customerDetails\n    )\n\n    return {\n      id: response.id,\n      data: response,\n    }\n  }\n\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  InitiatePaymentInput,\n  InitiatePaymentOutput,\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async initiatePayment(\n    input: InitiatePaymentInput\n  ): Promise<InitiatePaymentOutput> {\n    const {\n      amount,\n      currency_code,\n      context: customerDetails\n    } = input\n\n    // assuming you have a client that initializes the payment\n    const response = await this.client.init(\n      amount, currency_code, customerDetails\n    )\n\n    return {\n      id: response.id,\n      data: response,\n    }\n  }\n\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -1055,7 +1055,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 379,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L379"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L379"
 								}
 							],
 							"parameters": [
@@ -1080,7 +1080,7 @@
 											"qualifiedName": "InitiatePaymentInput"
 										},
 										"name": "InitiatePaymentInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1098,7 +1098,7 @@
 											"qualifiedName": "InitiatePaymentOutput"
 										},
 										"name": "InitiatePaymentOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -1130,7 +1130,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 430,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L430"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L430"
 						}
 					],
 					"signatures": [
@@ -1152,7 +1152,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " property.\n\n![Diagram showcasing delete payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311084/Medusa%20Resources/delete-payment_smxsiq.jpg)\n\n#### Understanding "
+										"text": " property.\n\n![Diagram showcasing delete payment flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311084/Switchyard%20Resources/delete-payment_smxsiq.jpg)\n\n#### Understanding "
 									},
 									{
 										"kind": "code",
@@ -1194,7 +1194,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " method.\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311084/Medusa%20Resources/delete-data_xg65ck.jpg)"
+										"text": " method.\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311084/Switchyard%20Resources/delete-data_xg65ck.jpg)"
 									}
 								],
 								"blockTags": [
@@ -1220,7 +1220,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  DeletePaymentInput,\n  DeletePaymentOutput,\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async deletePayment(\n    input: DeletePaymentInput\n  ): Promise<DeletePaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that cancels the payment\n    await this.client.cancelPayment(externalId)\n    return {\n      data: input.data\n    }\n  }\n\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  DeletePaymentInput,\n  DeletePaymentOutput,\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async deletePayment(\n    input: DeletePaymentInput\n  ): Promise<DeletePaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that cancels the payment\n    await this.client.cancelPayment(externalId)\n    return {\n      data: input.data\n    }\n  }\n\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -1231,7 +1231,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 430,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L430"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L430"
 								}
 							],
 							"parameters": [
@@ -1264,7 +1264,7 @@
 											"qualifiedName": "DeletePaymentInput"
 										},
 										"name": "DeletePaymentInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1282,7 +1282,7 @@
 											"qualifiedName": "DeletePaymentOutput"
 										},
 										"name": "DeletePaymentOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -1314,7 +1314,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 475,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L475"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L475"
 						}
 					],
 					"signatures": [
@@ -1354,7 +1354,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  GetPaymentStatusInput,\n  GetPaymentStatusOutput,\n  PaymentSessionStatus\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async getPaymentStatus(\n    input: GetPaymentStatusInput\n  ): Promise<GetPaymentStatusOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that retrieves the payment status\n    const status = await this.client.getStatus(externalId)\n\n    switch (status) {\n      case \"requires_capture\":\n          return {status: \"authorized\"}\n        case \"success\":\n          return {status: \"captured\"}\n        case \"canceled\":\n          return {status: \"canceled\"}\n        default:\n          return {status: \"pending\"}\n     }\n  }\n\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  GetPaymentStatusInput,\n  GetPaymentStatusOutput,\n  PaymentSessionStatus\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async getPaymentStatus(\n    input: GetPaymentStatusInput\n  ): Promise<GetPaymentStatusOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that retrieves the payment status\n    const status = await this.client.getStatus(externalId)\n\n    switch (status) {\n      case \"requires_capture\":\n          return {status: \"authorized\"}\n        case \"success\":\n          return {status: \"captured\"}\n        case \"canceled\":\n          return {status: \"canceled\"}\n        default:\n          return {status: \"pending\"}\n     }\n  }\n\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -1365,7 +1365,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 475,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L475"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L475"
 								}
 							],
 							"parameters": [
@@ -1398,7 +1398,7 @@
 											"qualifiedName": "GetPaymentStatusInput"
 										},
 										"name": "GetPaymentStatusInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1416,7 +1416,7 @@
 											"qualifiedName": "GetPaymentStatusOutput"
 										},
 										"name": "GetPaymentStatusOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -1448,7 +1448,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 532,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L532"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L532"
 						}
 					],
 					"signatures": [
@@ -1538,7 +1538,7 @@
 									},
 									{
 										"kind": "text",
-										"text": " property\nof the input parameter contains the data from the last refund.\n\n:::\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311296/Medusa%20Resources/refund-data_plcjl0.jpg)"
+										"text": " property\nof the input parameter contains the data from the last refund.\n\n:::\n\n![Diagram showcasing data flow between methods](https://res.cloudinary.com/dza7lstvk/image/upload/v1747311296/Switchyard%20Resources/refund-data_plcjl0.jpg)"
 									}
 								],
 								"blockTags": [
@@ -1564,7 +1564,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  RefundPaymentInput,\n  RefundPaymentOutput,\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async refundPayment(\n    input: RefundPaymentInput\n  ): Promise<RefundPaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that refunds the payment\n    const newData = await this.client.refund(\n        externalId,\n        input.amount\n      )\n\n    return {\n      data: input.data,\n    }\n  }\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  RefundPaymentInput,\n  RefundPaymentOutput,\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async refundPayment(\n    input: RefundPaymentInput\n  ): Promise<RefundPaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that refunds the payment\n    const newData = await this.client.refund(\n        externalId,\n        input.amount\n      )\n\n    return {\n      data: input.data,\n    }\n  }\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -1575,7 +1575,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 532,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L532"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L532"
 								}
 							],
 							"parameters": [
@@ -1608,7 +1608,7 @@
 											"qualifiedName": "RefundPaymentInput"
 										},
 										"name": "RefundPaymentInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1626,7 +1626,7 @@
 											"qualifiedName": "RefundPaymentOutput"
 										},
 										"name": "RefundPaymentOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -1658,7 +1658,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 564,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L564"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L564"
 						}
 					],
 					"signatures": [
@@ -1690,7 +1690,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  RetrievePaymentInput,\n  RetrievePaymentOutput,\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async retrievePayment(\n    input: RetrievePaymentInput\n  ): Promise<RetrievePaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that retrieves the payment\n    return await this.client.retrieve(externalId)\n  }\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  RetrievePaymentInput,\n  RetrievePaymentOutput,\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async retrievePayment(\n    input: RetrievePaymentInput\n  ): Promise<RetrievePaymentOutput> {\n    const externalId = input.data?.id\n\n    // assuming you have a client that retrieves the payment\n    return await this.client.retrieve(externalId)\n  }\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -1701,7 +1701,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 564,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L564"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L564"
 								}
 							],
 							"parameters": [
@@ -1734,7 +1734,7 @@
 											"qualifiedName": "RetrievePaymentInput"
 										},
 										"name": "RetrievePaymentInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1752,7 +1752,7 @@
 											"qualifiedName": "RetrievePaymentOutput"
 										},
 										"name": "RetrievePaymentOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -1784,7 +1784,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 612,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L612"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L612"
 						}
 					],
 					"signatures": [
@@ -1834,7 +1834,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  UpdatePaymentInput,\n  UpdatePaymentOutput,\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async updatePayment(\n    input: UpdatePaymentInput\n  ): Promise<UpdatePaymentOutput> {\n    const { amount, currency_code, context } = input\n    const externalId = input.data?.id\n\n    // Validate context.customer\n    if (!context || !context.customer) {\n      throw new Error(\"Context must include a valid customer.\");\n    }\n\n    // assuming you have a client that updates the payment\n    const response = await this.client.update(\n      externalId,\n        {\n          amount,\n          currency_code,\n          customer: context.customer\n        }\n      )\n\n    return response\n  }\n\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  UpdatePaymentInput,\n  UpdatePaymentOutput,\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async updatePayment(\n    input: UpdatePaymentInput\n  ): Promise<UpdatePaymentOutput> {\n    const { amount, currency_code, context } = input\n    const externalId = input.data?.id\n\n    // Validate context.customer\n    if (!context || !context.customer) {\n      throw new Error(\"Context must include a valid customer.\");\n    }\n\n    // assuming you have a client that updates the payment\n    const response = await this.client.update(\n      externalId,\n        {\n          amount,\n          currency_code,\n          customer: context.customer\n        }\n      )\n\n    return response\n  }\n\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -1845,7 +1845,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 612,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L612"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L612"
 								}
 							],
 							"parameters": [
@@ -1878,7 +1878,7 @@
 											"qualifiedName": "UpdatePaymentInput"
 										},
 										"name": "UpdatePaymentInput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -1896,7 +1896,7 @@
 											"qualifiedName": "UpdatePaymentOutput"
 										},
 										"name": "UpdatePaymentOutput",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -1928,7 +1928,7 @@
 							"fileName": "utils/src/payment/abstract-payment-provider.ts",
 							"line": 698,
 							"character": 11,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L698"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L698"
 						}
 					],
 					"signatures": [
@@ -1942,7 +1942,7 @@
 								"summary": [
 									{
 										"kind": "text",
-										"text": "This method is executed when a webhook event is received from the third-party payment provider. Medusa uses\nthe data returned by this method to perform actions in the Medusa application, such as completing the associated cart\nif the payment was authorized successfully.\n\nLearn more in the [Webhook Events](https://docs.medusajs.com/resources/commerce-modules/payment/webhook-events) documentation."
+										"text": "This method is executed when a webhook event is received from the third-party payment provider. Switchyard uses\nthe data returned by this method to perform actions in the Switchyard application, such as completing the associated cart\nif the payment was authorized successfully.\n\nLearn more in the [Webhook Events](https://docs.switchyard.com/resources/commerce-modules/payment/webhook-events) documentation."
 									}
 								],
 								"blockTags": [
@@ -1967,7 +1967,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ", the payment is captured within Medusa as well.\nIf the "
+												"text": ", the payment is captured within Switchyard as well.\nIf the "
 											},
 											{
 												"kind": "code",
@@ -1983,7 +1983,7 @@
 											},
 											{
 												"kind": "text",
-												"text": ", the associated payment session is authorized within Medusa and the associated cart\nwill be completed to create an order."
+												"text": ", the associated payment session is authorized within Switchyard and the associated cart\nwill be completed to create an order."
 											}
 										]
 									},
@@ -1992,7 +1992,7 @@
 										"content": [
 											{
 												"kind": "code",
-												"text": "```ts\n// other imports...\nimport {\n  BigNumber\n} from \"@medusajs/framework/utils\"\nimport {\n  ProviderWebhookPayload,\n  WebhookActionResult\n} from \"@medusajs/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async getWebhookActionAndData(\n    payload: ProviderWebhookPayload[\"payload\"]\n  ): Promise<WebhookActionResult> {\n    const {\n      data,\n      rawData,\n      headers\n    } = payload\n\n    try {\n      switch(data.event_type) {\n        case \"authorized_amount\":\n          return {\n            action: \"authorized\",\n            data: {\n              // assuming the session_id is stored in the metadata of the payment\n              // in the third-party provider\n              session_id: (data.metadata as Record<string, any>).session_id,\n              amount: new BigNumber(data.amount as number)\n            }\n          }\n        case \"success\":\n          return {\n            action: \"captured\",\n            data: {\n              // assuming the session_id is stored in the metadata of the payment\n              // in the third-party provider\n              session_id: (data.metadata as Record<string, any>).session_id,\n              amount: new BigNumber(data.amount as number)\n            }\n          }\n        default:\n          return {\n            action: \"not_supported\",\n            data: {\n              session_id: \"\",\n              amount: new BigNumber(0)\n            }\n          }\n      }\n    } catch (e) {\n      return {\n        action: \"failed\",\n        data: {\n          // assuming the session_id is stored in the metadata of the payment\n          // in the third-party provider\n          session_id: (data.metadata as Record<string, any>).session_id,\n          amount: new BigNumber(data.amount as number)\n        }\n      }\n    }\n  }\n\n  // ...\n}\n```"
+												"text": "```ts\n// other imports...\nimport {\n  BigNumber\n} from \"@switchyard/framework/utils\"\nimport {\n  ProviderWebhookPayload,\n  WebhookActionResult\n} from \"@switchyard/framework/types\"\n\n\nclass MyPaymentProviderService extends AbstractPaymentProvider<\n  Options\n> {\n  async getWebhookActionAndData(\n    payload: ProviderWebhookPayload[\"payload\"]\n  ): Promise<WebhookActionResult> {\n    const {\n      data,\n      rawData,\n      headers\n    } = payload\n\n    try {\n      switch(data.event_type) {\n        case \"authorized_amount\":\n          return {\n            action: \"authorized\",\n            data: {\n              // assuming the session_id is stored in the metadata of the payment\n              // in the third-party provider\n              session_id: (data.metadata as Record<string, any>).session_id,\n              amount: new BigNumber(data.amount as number)\n            }\n          }\n        case \"success\":\n          return {\n            action: \"captured\",\n            data: {\n              // assuming the session_id is stored in the metadata of the payment\n              // in the third-party provider\n              session_id: (data.metadata as Record<string, any>).session_id,\n              amount: new BigNumber(data.amount as number)\n            }\n          }\n        default:\n          return {\n            action: \"not_supported\",\n            data: {\n              session_id: \"\",\n              amount: new BigNumber(0)\n            }\n          }\n      }\n    } catch (e) {\n      return {\n        action: \"failed\",\n        data: {\n          // assuming the session_id is stored in the metadata of the payment\n          // in the third-party provider\n          session_id: (data.metadata as Record<string, any>).session_id,\n          amount: new BigNumber(data.amount as number)\n        }\n      }\n    }\n  }\n\n  // ...\n}\n```"
 											}
 										]
 									}
@@ -2003,7 +2003,7 @@
 									"fileName": "utils/src/payment/abstract-payment-provider.ts",
 									"line": 698,
 									"character": 11,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L698"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L698"
 								}
 							],
 							"parameters": [
@@ -2189,7 +2189,7 @@
 											"qualifiedName": "WebhookActionResult"
 										},
 										"name": "WebhookActionResult",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -2244,7 +2244,7 @@
 					"fileName": "utils/src/payment/abstract-payment-provider.ts",
 					"line": 25,
 					"character": 22,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L25"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/utils/src/payment/abstract-payment-provider.ts#L25"
 				}
 			],
 			"typeParameters": [
@@ -2283,7 +2283,7 @@
 						"qualifiedName": "IPaymentProvider"
 					},
 					"name": "IPaymentProvider",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		}
@@ -2296,7 +2296,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/utils",
+	"packageName": "@switchyard/utils",
 	"symbolIdMap": {
 		"47150": {
 			"sourceFileName": "../../../../packages/core/utils/src/payment/abstract-payment-provider.ts",

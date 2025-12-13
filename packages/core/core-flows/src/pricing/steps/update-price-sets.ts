@@ -1,13 +1,13 @@
 import type {
   IPricingModuleService,
   PricingTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   getSelectsAndRelationsFromObjectArray,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to update price sets. You can either update price sets with a selector
@@ -59,8 +59,8 @@ export const updatePriceSetsStep = createStep(
 
     if ("price_sets" in data) {
       if (data.price_sets.some((p) => !p.id)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Price set id is required when doing a batch update"
         )
       }

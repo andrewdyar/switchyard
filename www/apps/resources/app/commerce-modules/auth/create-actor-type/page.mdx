@@ -27,7 +27,7 @@ Learn how to create a module in [this guide](!docs!/learn/fundamentals/modules).
 The rest of this guide uses this `Manager` data model as an example:
 
 ```ts title="src/modules/manager/models/manager.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Manager = model.define("manager", {
   id: model.id().primaryKey(),
@@ -63,10 +63,10 @@ import {
   createStep,
   StepResponse,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   setAuthAppMetadataStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import ManagerModuleService from "../modules/manager/service"
 
 type CreateManagerWorkflowInput = {
@@ -120,7 +120,7 @@ This workflow accepts the manager’s data and the associated auth identity’s 
 The workflow has two steps:
 
 1. Create the manager using the `createManagerStep`.
-2. Set the `app_metadata` property of the associated auth identity using the `setAuthAppMetadataStep` from Medusa's core workflows. You specify the actor type `manager` in the `actorType` property of the step’s input.
+2. Set the `app_metadata` property of the associated auth identity using the `setAuthAppMetadataStep` from Switchyard's core workflows. You specify the actor type `manager` in the `actorType` property of the step’s input.
 
 ---
 
@@ -131,17 +131,17 @@ Next, you’ll use the workflow defined in the previous section in an API route 
 So, create the file `src/api/manager/route.ts` with the following content:
 
 export const createRouteHighlights = [
-  ["15", "AuthenticatedMedusaRequest", "The request must be authenticated to associate the manager with an auth identity."],
+  ["15", "AuthenticatedSwitchyardRequest", "The request must be authenticated to associate the manager with an auth identity."],
   ["27", "createManagerWorkflow", "Use the workflow created previously to create the manager."],
   ["31", "auth_identity_id", "Access the associated auth identity's ID in `req.auth_context.auth_identity_id`."]
 ]
 
 ```ts title="src/api/manager/route.ts" highlights={createRouteHighlights}
 import type { 
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import createManagerWorkflow from "../../workflows/create-manager"
 
 type RequestBody = {
@@ -151,14 +151,14 @@ type RequestBody = {
 }
 
 export async function POST(
-  req: AuthenticatedMedusaRequest<RequestBody>, 
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<RequestBody>, 
+  res: SwitchyardResponse
 ) {
   // If `actor_id` is present, the request carries 
   // authentication for an existing manager
   if (req.auth_context.actor_id) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Request already authenticated as a manager."
     )
   }
@@ -200,7 +200,7 @@ export const middlewareHighlights = [
 import { 
   defineMiddlewares,
   authenticate,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export default defineMiddlewares({
   routes: [
@@ -234,14 +234,14 @@ For example, create the file `src/api/manager/me/route.ts` with the following co
 
 ```ts title="src/api/manager/me/route.ts"
 import { 
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import ManagerModuleService from "../../../modules/manager/service"
 
 export async function GET(
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ): Promise<void> {
   const query = req.scope.resolve("query")
   const managerId = req.auth_context?.actor_id
@@ -328,7 +328,7 @@ For example, create the following workflow that deletes a manager and updates it
 import {
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import ManagerModuleService from "../modules/manager/service"
 
 export type DeleteManagerWorkflow = {
@@ -368,17 +368,17 @@ export const deleteHighlights = [
 
 ```ts title="src/workflows/delete-manager.ts" collapsibleLines="1-15" expandButtonLabel="Show Imports" highlights={deleteHighlights}
 // other imports
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   setAuthAppMetadataStep,
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -406,8 +406,8 @@ export const deleteManagerWorkflow = createWorkflow(
         const authIdentity = authIdentities[0]
 
         if (!authIdentity) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             "Auth identity not found"
           )
         }

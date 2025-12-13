@@ -9,7 +9,7 @@ export const useIsExternalLink = ({ href }: UseIsExternalLinkProps) => {
     return (
       href &&
       !href.startsWith("/") &&
-      !href.startsWith("https://docs.medusajs.com") &&
+      !href.startsWith("https://docs.switchyard.com") &&
       !href.startsWith("http://localhost:") &&
       !href.startsWith("#")
     )

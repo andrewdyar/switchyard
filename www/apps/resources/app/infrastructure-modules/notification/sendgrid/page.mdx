@@ -10,7 +10,7 @@ The SendGrid Notification Module Provider integrates [SendGrid](https://sendgrid
 
 <Note title="Looking for managed email service?">
 
-Cloud offers [Medusa Emails](!cloud!/emails), a managed email service that allows you to send transactional emails with zero configuration. It is built on top of the Notification Module and provides an easy way to manage email notifications in your Cloud projects with insights and deliverability features.
+Cloud offers [Switchyard Emails](!cloud!/emails), a managed email service that allows you to send transactional emails with zero configuration. It is built on top of the Notification Module and provides an easy way to manage email notifications in your Cloud projects with insights and deliverability features.
 
 </Note>
 
@@ -41,17 +41,17 @@ Only one provider can be defined for a channel.
 
 </Note>
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/notification",
+      resolve: "@switchyard/medusa/notification",
       options: {
         providers: [
           // ...
           {
-            resolve: "@medusajs/medusa/notification-sendgrid",
+            resolve: "@switchyard/medusa/notification-sendgrid",
             id: "sendgrid",
             options: {
               channels: ["email"],
@@ -134,8 +134,8 @@ export const highlights = [
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework"
+import { Modules } from "@switchyard/framework/utils"
 
 export default async function productCreateHandler({
   event: { data },
@@ -170,25 +170,25 @@ export const config: SubscriberConfig = {
 
 In this subscriber, you:
 
-- Resolve the Notification Module's main service and [Query](!docs!/learn/fundamentals/module-links/query) from the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+- Resolve the Notification Module's main service and [Query](!docs!/learn/fundamentals/module-links/query) from the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 - Retrieve the product's details using Query to pass them to the template in SendGrid.
 - Use the `createNotifications` method of the Notification Module's main service to create a notification to be sent to the specified email. By specifying the `email` channel, the SendGrid Notification Module Provider is used to send the notification.
 - The `template` property of the `createNotifications` method's parameter specifies the ID of the template defined in SendGrid.
 - The `data` property allows you to pass data to the template in SendGrid. For example, the product's title and image.
 
-Then, start the Medusa application:
+Then, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-And create a product either using the [API route](!api!/admin#products_postproducts) or the [Medusa Admin](!user-guide!/products/create). This runs the subscriber and sends an email using SendGrid.
+And create a product either using the [API route](!api!/admin#products_postproducts) or the [Switchyard Admin](!user-guide!/products/create). This runs the subscriber and sends an email using SendGrid.
 
 ### Other Events to Handle
 
-Medusa emits other events that you can handle to send notifications using the SendGrid Notification Module Provider, such as `order.placed` when an order is placed.
+Switchyard emits other events that you can handle to send notifications using the SendGrid Notification Module Provider, such as `order.placed` when an order is placed.
 
-Refer to the [Events Reference](/references/events) for a complete list of events emitted by Medusa.
+Refer to the [Events Reference](/references/events) for a complete list of events emitted by Switchyard.
 
 ### Sending Emails with SendGrid in Workflows
 
@@ -199,11 +199,11 @@ You can use the [sendNotificationsStep](/references/medusa-workflows/steps/sendN
 For example:
 
 ```ts title="src/workflows/send-email.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
 import { 
   sendNotificationsStep, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 
 type WorkflowInput = {
   id: string
@@ -244,8 +244,8 @@ You can also execute this workflow in a subscriber. For example, you can execute
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework"
+import { Modules } from "@switchyard/framework/utils"
 import { sendEmailWorkflow } from "../workflows/send-email"
 
 export default async function productCreateHandler({

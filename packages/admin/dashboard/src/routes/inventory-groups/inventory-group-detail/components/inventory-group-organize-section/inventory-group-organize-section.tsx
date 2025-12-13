@@ -1,5 +1,5 @@
-import { PencilSquare } from "@medusajs/icons"
-import { Badge, Container, Heading, Text } from "@medusajs/ui"
+import { PencilSquare } from "@switchyard/icons"
+import { Badge, Container, Heading, Text } from "@switchyard/ui"
 import { useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { Link } from "react-router-dom"

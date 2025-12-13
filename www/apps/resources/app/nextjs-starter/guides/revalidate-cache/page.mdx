@@ -4,23 +4,23 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn about the general approach to revalidating cache in the Next.js Starter Storefront when data is updated in the Medusa application.
+In this guide, you'll learn about the general approach to revalidating cache in the Next.js Starter Storefront when data is updated in the Switchyard application.
 
 ## Approach Overview
 
-By default, the data that the Next.js Starter Storefront retrieves from the Medusa application is cached in the browser. This cache is used to improve the performance and speed of the storefront.
+By default, the data that the Next.js Starter Storefront retrieves from the Switchyard application is cached in the browser. This cache is used to improve the performance and speed of the storefront.
 
-In some cases, you may need to revalidate the cache in the storefront when data is updated in the Medusa application. For example, when a product variant's price is updated in the Medusa application, you may want to revalidate the cache in the storefront to reflect the updated price.
+In some cases, you may need to revalidate the cache in the storefront when data is updated in the Switchyard application. For example, when a product variant's price is updated in the Switchyard application, you may want to revalidate the cache in the storefront to reflect the updated price.
 
-You're free to choose the approach that works for your use case, custom requirements, and tech stack. The approach that Medusa recommends is:
+You're free to choose the approach that works for your use case, custom requirements, and tech stack. The approach that Switchyard recommends is:
 
-1. Create a [subscriber](!docs!/learn/fundamentals/events-and-subscribers) in the Medusa application that listens for the event that triggers the data update. For example, you can listen to the `product.updated` event.
+1. Create a [subscriber](!docs!/learn/fundamentals/events-and-subscribers) in the Switchyard application that listens for the event that triggers the data update. For example, you can listen to the `product.updated` event.
 2. In the subscriber, send a request to a custom endpoint in the Next.js Starter Storefront to trigger the cache revalidation.
 3. Create the custom endpoint in the Next.js Starter Storefront that listens for the request from the subscriber and revalidates the cache.
 
 <Note title="Tip">
 
-Refer to the [Events Reference](/references/events) for a full list of events that the Medusa application emits.
+Refer to the [Events Reference](/references/events) for a full list of events that the Switchyard application emits.
 
 </Note>
 
@@ -30,13 +30,13 @@ Refer to the [Events Reference](/references/events) for a full list of events th
 
 Consider you want to revalidate the cache in the Next.js Starter Storefront whenever a product is updated. 
 
-Start by creating the following subscriber in the Medusa application:
+Start by creating the following subscriber in the Switchyard application:
 
 ```ts
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 
 export default async function productUpdatedHandler({
   event: { data },
@@ -55,7 +55,7 @@ In the subscriber, you send a request to the custom endpoint `/api/revalidate` i
 
 <Note>
 
-Make sure to set the `STOREFRONT_URL` environment variable in the Medusa application to the URL of the Next.js Starter Storefront.
+Make sure to set the `STOREFRONT_URL` environment variable in the Switchyard application to the URL of the Next.js Starter Storefront.
 
 </Note>
 
@@ -97,6 +97,6 @@ To revalidate the cache, you use Next.js's `revalidatePath` function. Learn more
 
 ### Test it Out
 
-To test out this mechanism, run the Medusa application and the Next.js Starter Storefront.
+To test out this mechanism, run the Switchyard application and the Next.js Starter Storefront.
 
-Then, update a product in the Medusa application. You can see in the Next.js Starter Storefront's terminal that a request was sent to the `/api/revalidate` endpoint, meaning that the cache was revalidated successfully.
+Then, update a product in the Switchyard application. You can see in the Next.js Starter Storefront's terminal that a request was sent to the `/api/revalidate` endpoint, meaning that the cache was revalidated successfully.

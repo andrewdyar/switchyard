@@ -1,16 +1,16 @@
 import { Details } from "docs-ui"
 
 export const metadata = {
-  title: `${pageNumber} Pass Additional Data to Medusa's API Route`,
+  title: `${pageNumber} Pass Additional Data to Switchyard's API Route`,
 }
 
 # {metadata.title}
 
-In this chapter, you'll learn how to pass additional data in requests to Medusa's API Route.
+In this chapter, you'll learn how to pass additional data in requests to Switchyard's API Route.
 
 ## Why Pass Additional Data?
 
-Some of Medusa's API Routes accept an `additional_data` parameter whose type is an object. The API Route passes the `additional_data` to the workflow, which in turn passes it to its hooks.
+Some of Switchyard's API Routes accept an `additional_data` parameter whose type is an object. The API Route passes the `additional_data` to the workflow, which in turn passes it to its hooks.
 
 This is useful when you have a link from your custom module to a Commerce Module, and you want to perform an additional action when a request is sent to an existing API route.
 
@@ -27,8 +27,8 @@ For example, the [Create Product API Route](!api!/admin#products_postproducts) a
     - [Create Cart](!api!/store#carts_postcarts)
     - [Update Cart](!api!/store#carts_postcartsid)
 - Collections
-    - [Create Collection](https://docs.medusajs.com/api/admin#collections_postcollections)
-    - [Update Collection](https://docs.medusajs.com/api/admin#collections_postcollectionsid)
+    - [Create Collection](https://docs.switchyard.com/api/admin#collections_postcollections)
+    - [Update Collection](https://docs.switchyard.com/api/admin#collections_postcollectionsid)
 - Customers
     - [Create Customer](!api!/admin#customers_postcustomers)
     - [Update Customer](!api!/admin#customers_postcustomersid)
@@ -49,11 +49,11 @@ For example, the [Create Product API Route](!api!/admin#products_postproducts) a
     - [Create Product Option](!api!/admin#products_postproductsidoptions)
     - [Update Product Option](!api!/admin#products_postproductsidoptionsoption_id)
 - Product Tags
-    - [Create Product Tag](https://docs.medusajs.com/api/admin#product-tags_postproducttags)
-    - [Update Product Tag](https://docs.medusajs.com/api/admin#product-tags_postproducttagsid)
+    - [Create Product Tag](https://docs.switchyard.com/api/admin#product-tags_postproducttags)
+    - [Update Product Tag](https://docs.switchyard.com/api/admin#product-tags_postproducttagsid)
 - Product Types
-    - [Create Product Type](https://docs.medusajs.com/api/admin#product-types_postproducttypes)
-    - [Update Product Type](https://docs.medusajs.com/api/admin#product-types_postproducttypesid)
+    - [Create Product Type](https://docs.switchyard.com/api/admin#product-types_postproducttypes)
+    - [Update Product Type](https://docs.switchyard.com/api/admin#product-types_postproducttypesid)
 - Promotions
     - [Create Promotion](!api!/admin#promotions_postpromotions)
     - [Update Promotion](!api!/admin#promotions_postpromotionsid)
@@ -73,7 +73,7 @@ To do that, use the middleware route object defined in `src/api/middlewares.ts`.
 For example, create the file `src/api/middlewares.ts` with the following content:
 
 ```ts title="src/api/middlewares.ts"
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 import { z } from "zod"
 
 export default defineMiddlewares({
@@ -151,9 +151,9 @@ For example, consider you want to store the data passed in `additional_data` in 
 To do that, create the file `src/workflows/hooks/product-created.ts` with the following content:
 
 ```ts title="src/workflows/hooks/product-created.ts"
-import { StepResponse } from "@medusajs/framework/workflows-sdk"
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
-import { Modules } from "@medusajs/framework/utils"
+import { StepResponse } from "@switchyard/framework/workflows-sdk"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
+import { Modules } from "@switchyard/framework/utils"
 
 createProductsWorkflow.hooks.productsCreated(
   async ({ products, additional_data }, { container }) => {

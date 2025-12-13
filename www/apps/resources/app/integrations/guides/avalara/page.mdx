@@ -8,7 +8,7 @@ tag:
 ---
 
 import { Card, Prerequisites, Details, WorkflowDiagram, InlineIcon } from "docs-ui"
-import { Github, PlaySolid, EllipsisHorizontal } from "@medusajs/icons"
+import { Github, PlaySolid, EllipsisHorizontal } from "@switchyard/icons"
 
 export const metadata = {
   title: `Integrate Avalara (AvaTax) for Tax Calculation`,
@@ -16,35 +16,35 @@ export const metadata = {
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to integrate Avalara with Medusa to handle tax calculations.
+In this tutorial, you'll learn how to integrate Avalara with Switchyard to handle tax calculations.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. Medusa's architecture supports integrating third-party services, such as tax providers, allowing you to build custom features around core commerce flows.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. Switchyard's architecture supports integrating third-party services, such as tax providers, allowing you to build custom features around core commerce flows.
 
-[Avalara](https://www.avalara.com/) is a leading provider of tax compliance solutions, including sales tax calculation, filing, and remittance. By integrating Avalara with Medusa, you can calculate taxes during checkout with accurate rates based on customer location.
+[Avalara](https://www.avalara.com/) is a leading provider of tax compliance solutions, including sales tax calculation, filing, and remittance. By integrating Avalara with Switchyard, you can calculate taxes during checkout with accurate rates based on customer location.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Create the Avalara Tax Module Provider that calculates taxes using Avalara.
 - Create transactions in Avalara when an order is placed.
 - Sync products to Avalara to manage their tax codes and classifications.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram showing Avalara integration with Medusa for tax calculation during checkout](https://res.cloudinary.com/dza7lstvk/image/upload/v1760969087/Medusa%20Resources/avalara-summary_rqrkpf.jpg)
+![Diagram showing Avalara integration with Switchyard for tax calculation during checkout](https://res.cloudinary.com/dza7lstvk/image/upload/v1760969087/Switchyard%20Resources/avalara-summary_rqrkpf.jpg)
 
 <Card
   title="Example Repository"
   text="Find the full code of the guide in this repository."
-  href="https://github.com/medusajs/examples/tree/main/avalara-integration"
+  href="https://github.com/switchyard/examples/tree/main/avalara-integration"
   icon={Github}
 />
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -61,27 +61,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application consists of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application consists of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -89,21 +89,21 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Avalara Tax Module Provider
 
-To integrate third-party services into Medusa, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain.
+To integrate third-party services into Switchyard, you create a custom module. A module is a reusable package with functionalities related to a single feature or domain.
 
-Medusa's [Tax Module](../../../commerce-modules/tax/page.mdx) implements concepts and functionalities related to taxes, but delegates tax calculations to external services through Tax Module Providers.
+Switchyard's [Tax Module](../../../commerce-modules/tax/page.mdx) implements concepts and functionalities related to taxes, but delegates tax calculations to external services through Tax Module Providers.
 
-In this step, you'll integrate Avalara as a Tax Module Provider. Later, you'll use it to calculate taxes in your Medusa application.
+In this step, you'll integrate Avalara as a Tax Module Provider. Later, you'll use it to calculate taxes in your Switchyard application.
 
 <Note>
 
-Refer to the [Modules](!docs!/learn/fundamentals/modules) documentation to learn more about modules in Medusa.
+Refer to the [Modules](!docs!/learn/fundamentals/modules) documentation to learn more about modules in Switchyard.
 
 </Note>
 
 ### a. Install AvaTax SDK
 
-First, install the AvaTax SDK package to interact with Avalara's API. Run the following command in your Medusa application's directory:
+First, install the AvaTax SDK package to interact with Avalara's API. Run the following command in your Switchyard application's directory:
 
 ```bash npm2yarn
 npm install avatax
@@ -111,11 +111,11 @@ npm install avatax
 
 ### b. Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/avalara`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/avalara`.
 
 ### c. Define Module Options
 
-Next, define a TypeScript type for the Avalara Module options. These options configure the module when it's registered in the Medusa application.
+Next, define a TypeScript type for the Avalara Module options. These options configure the module when it's registered in the Switchyard application.
 
 Create the file `src/modules/avalara/types.ts` with the following content:
 
@@ -171,9 +171,9 @@ export const serviceHighlights = [
 ]
 
 ```ts title="src/modules/avalara/service.ts" highlights={serviceHighlights}
-import { ITaxProvider } from "@medusajs/framework/types"
+import { ITaxProvider } from "@switchyard/framework/types"
 import Avatax from "avatax"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { ModuleOptions } from "./types"
 
 type InjectedDependencies = {
@@ -188,8 +188,8 @@ class AvalaraTaxModuleProvider implements ITaxProvider {
   constructor({}: InjectedDependencies, options: ModuleOptions) {
     this.options = options
     if (!options?.username || !options?.password || !options?.companyId) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Avalara module options are required: username, password and companyId"
       )
     }
@@ -225,7 +225,7 @@ You also define the `getIdentifier` method required by the `ITaxProvider` interf
 
 #### getTaxLines Method
 
-Next, you'll implement the `getTaxLines` method required by the `ITaxProvider` interface. This method calculates the tax lines for line items and shipping methods. Medusa uses this method during checkout to calculate taxes.
+Next, you'll implement the `getTaxLines` method required by the `ITaxProvider` interface. This method calculates the tax lines for line items and shipping methods. Switchyard uses this method during checkout to calculate taxes.
 
 Before creating the method, you'll create a `createTransaction` method that creates a transaction in Avalara to calculate taxes.
 
@@ -249,8 +249,8 @@ class AvalaraTaxModuleProvider implements ITaxProvider {
 
       return response
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `An error occurred while creating transaction for Avalara: ${error}`
       )
     }
@@ -279,7 +279,7 @@ import {
   ShippingTaxCalculationLine, 
   ShippingTaxLineDTO, 
   TaxCalculationContext,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 ```
 
 Then, add the method to the `AvalaraTaxModuleProvider` class:
@@ -342,8 +342,8 @@ class AvalaraTaxModuleProvider implements ITaxProvider {
 
       // TODO return tax lines
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `An error occurred while getting tax lines from Avalara: ${error}`
       )
     }
@@ -403,7 +403,7 @@ This code extracts the tax details from the Avalara response and constructs an a
 
 You've finished implementing the Avalara Tax Module Provider's service and its required method.
 
-The final piece of a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Medusa the module's details, including its service.
+The final piece of a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Switchyard the module's details, including its service.
 
 To create the module's definition, create the file `src/modules/avalara/index.ts` with the following content:
 
@@ -412,7 +412,7 @@ import AvalaraTaxModuleProvider from "./service"
 import { 
   ModuleProvider, 
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export default ModuleProvider(Modules.TAX, {
   services: [AvalaraTaxModuleProvider],
@@ -424,18 +424,18 @@ You use `ModuleProvider` from the Modules SDK to create the module provider's de
 1. The name of the module that this provider belongs to, which is `Modules.TAX` in this case.
 2. An object with a required `services` property indicating the Module Provider's services.
 
-### f. Add Module Provider to Medusa's Configuration
+### f. Add Module Provider to Switchyard's Configuration
 
-After finishing the module, add it to Medusa's configuration to start using it.
+After finishing the module, add it to Switchyard's configuration to start using it.
 
-In `medusa-config.ts`, add a `modules` property:
+In `switchyard.config.ts`, add a `modules` property:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/tax",
+      resolve: "@switchyard/medusa/tax",
       options: {
         providers: [
           {
@@ -460,7 +460,7 @@ module.exports = defineConfig({
 })
 ```
 
-To pass a Tax Module Provider to the Tax Module, add the `modules` property to the Medusa configuration and pass the Tax Module in its value.
+To pass a Tax Module Provider to the Tax Module, add the `modules` property to the Switchyard configuration and pass the Tax Module in its value.
 
 The Tax Module accepts a `providers` option, which is an array of Tax Module Providers to register.
 
@@ -481,7 +481,7 @@ You set the following variables:
 
 1. `AVALARA_USERNAME`: Your Avalara account ID. You can retrieve it from the Avalara dashboard by clicking on "Account" at the top right. It's at the top of the dropdown.
 
-![Avalara Account ID in the account dropdown at the top right of the Avalara dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1760967142/Medusa%20Resources/CleanShot_2025-10-20_at_16.30.55_2x_gpqi9i.png)
+![Avalara Account ID in the account dropdown at the top right of the Avalara dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1760967142/Switchyard%20Resources/CleanShot_2025-10-20_at_16.30.55_2x_gpqi9i.png)
 
 2. `AVALARA_PASSWORD`: Your Avalara license key. To retrieve it from the Avalara dashboard:
     1. From the sidebar, click on "Integrations."
@@ -490,7 +490,7 @@ You set the following variables:
     4. Confirm generating the key.
     5. Copy the generated key.
 
-![The Avalara license key tab with the "Generate new key" button](https://res.cloudinary.com/dza7lstvk/image/upload/v1760967334/Medusa%20Resources/CleanShot_2025-10-20_at_16.35.06_2x_fe7cym.png)
+![The Avalara license key tab with the "Generate new key" button](https://res.cloudinary.com/dza7lstvk/image/upload/v1760967334/Switchyard%20Resources/CleanShot_2025-10-20_at_16.35.06_2x_fe7cym.png)
 
 3. `AVALARA_APP_ENVIRONMENT`: The environment of your application, which can be either `production` or `sandbox`. Set it based on your Avalara account type. Note that Avalara provides separate accounts for production and sandbox environments.
 4. `AVALARA_COMPANY_ID`: The company ID in Avalara for creating products for tax code management. To retrieve it from the Avalara dashboard:
@@ -511,7 +511,7 @@ You'll test the Avalara integration using the [Next.js Starter Storefront](../..
 
 Before testing the integration, configure the regions you want to use Avalara for tax calculations.
 
-First, run the following command in your Medusa application's directory to start the server:
+First, run the following command in your Switchyard application's directory to start the server:
 
 ```bash npm2yarn
 npm run dev
@@ -519,14 +519,14 @@ npm run dev
 
 Then:
 
-1. Go to `http://localhost:9000/admin` and log in to the Medusa Admin dashboard.
+1. Go to `http://localhost:9000/admin` and log in to the Switchyard Admin dashboard.
 2. Go to "Settings" → "Tax Regions."
 3. Select the country you want to configure Avalara for. You can repeat these steps for multiple countries.
 4. In the first section, click on the <InlineIcon Icon={EllipsisHorizontal} alt="three-dots" /> icon at the top right and choose "Edit."
 5. In the "Tax Provider" dropdown, select "Avalara (AVALARA)."
 6. Click on "Save."
 
-![Setting Avalara as the tax provider for a region in the Medusa Admin dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1760968076/Medusa%20Resources/CleanShot_2025-10-20_at_16.47.45_2x_g96acs.png)
+![Setting Avalara as the tax provider for a region in the Switchyard Admin dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1760968076/Switchyard%20Resources/CleanShot_2025-10-20_at_16.47.45_2x_g96acs.png)
 
 ### Test Checkout with Avalara
 
@@ -534,9 +534,9 @@ Now you can test the checkout process in the Next.js Starter Storefront.
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory name is `{your-project}-storefront`.
 
-If your Medusa application's directory is `medusa-avalara`, find the storefront by going back to the parent directory and changing to the `medusa-avalara-storefront` directory:
+If your Switchyard application's directory is `medusa-avalara`, find the storefront by going back to the parent directory and changing to the `medusa-avalara-storefront` directory:
 
 ```bash
 cd ../medusa-avalara-storefront # change based on your project name
@@ -544,7 +544,7 @@ cd ../medusa-avalara-storefront # change based on your project name
 
 </Note>
 
-While the Medusa server is running, open another terminal window in the storefront's directory and run the following command to start the storefront:
+While the Switchyard server is running, open another terminal window in the storefront's directory and run the following command to start the storefront:
 
 ```bash npm2yarn
 npm run dev
@@ -559,11 +559,11 @@ Then:
 5. Click on "Go to checkout."
 6. Enter the shipping information and click on "Continue to delivery." The tax amount will update in the right section.
 
-![Taxes calculated during checkout in the Next.js Starter Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1760968357/Medusa%20Resources/CleanShot_2025-10-20_at_16.52.14_2x_bgozfz.png)
+![Taxes calculated during checkout in the Next.js Starter Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1760968357/Switchyard%20Resources/CleanShot_2025-10-20_at_16.52.14_2x_bgozfz.png)
 
 7. In the Delivery step, select a shipping method. This will update the tax amount based on the shipping method's price.
 
-![Taxes updated based on the selected shipping method during checkout in the Next.js Starter Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1760968412/Medusa%20Resources/CleanShot_2025-10-20_at_16.53.14_2x_wxcuyn.png)
+![Taxes updated based on the selected shipping method during checkout in the Next.js Starter Storefront](https://res.cloudinary.com/dza7lstvk/image/upload/v1760968412/Switchyard%20Resources/CleanShot_2025-10-20_at_16.53.14_2x_wxcuyn.png)
 
 You can now complete the checkout with the taxes calculated by Avalara.
 
@@ -573,7 +573,7 @@ You can now complete the checkout with the taxes calculated by Avalara.
 
 Avalara allows you to create transactions when an order is placed. This helps you keep track of sales and tax liabilities in Avalara.
 
-In this step, you'll implement the logic to create an Avalara transaction when an order is placed in Medusa. You will:
+In this step, you'll implement the logic to create an Avalara transaction when an order is placed in Switchyard. You will:
 
 1. Add a method in the Avalara Tax Module Provider's service to uncommit a transaction. This is useful for rolling back the transaction if an error occurs or the order is canceled.
 2. Create a [workflow](!docs!/learn/fundamentals/workflows) that creates a transaction in Avalara for an order.
@@ -598,8 +598,8 @@ class AvalaraTaxModuleProvider implements ITaxProvider {
       return response
     }
     catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `An error occurred while uncommitting transaction for Avalara: ${error}`
       )
     }
@@ -649,7 +649,7 @@ The workflow to create an Avalara transaction has the following steps:
   }}
 />
 
-Medusa provides the first and last step out of the box. You only need to create the `createTransactionStep`.
+Switchyard provides the first and last step out of the box. You only need to create the `createTransactionStep`.
 
 #### createTransactionStep
 
@@ -664,7 +664,7 @@ export const createTransactionStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-transaction.ts" highlights={createTransactionStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import AvalaraTaxModuleProvider from "../../modules/avalara/service"
 import { DocumentType } from "avatax/lib/enums/DocumentType"
 
@@ -723,7 +723,7 @@ You create a step with `createStep` from the Workflows SDK. It accepts three par
 1. The step's unique name, which is `create-transaction`.
 2. An async function that receives two parameters:
     - The step's input, which is an object containing the transaction's details.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An async compensation function that runs if an error occurs during the workflow's execution. It rolls back changes made in the step.
 
 In the step function, you retrieve the Avalara Tax Module Provider's service from the Tax Module. Then, you call its `createTransaction` method to create a transaction in Avalara.
@@ -740,8 +740,8 @@ In the compensation function, you uncommit the created transaction if an error o
 You'll now create the workflow. Create the file `src/workflows/create-order-transaction.ts` with the following content:
 
 ```ts title="src/workflows/create-order-transaction.ts"
-import { createWorkflow, transform, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { updateOrderWorkflow, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { updateOrderWorkflow, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { createTransactionStep } from "./steps/create-transaction"
 import AvalaraTaxModuleProvider from "../modules/avalara/service"
 import { DocumentType } from "avatax/lib/enums/DocumentType"
@@ -905,7 +905,7 @@ A subscriber is an asynchronous function that is executed when its associated ev
 To create the subscriber, create the file `src/subscribers/order-placed.ts` with the following content:
 
 ```ts title="src/subscribers/order-placed.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { createOrderTransactionWorkflow } from "../workflows/create-order-transaction"
 
 export default async function orderPlacedHandler({
@@ -935,7 +935,7 @@ In the subscriber, you call the `createOrderTransactionWorkflow` with the order 
 
 ### Test Order Placement with Avalara Transaction
 
-To test the order placement with Avalara transaction creation, make sure both the Medusa server and the Next.js Starter Storefront are running.
+To test the order placement with Avalara transaction creation, make sure both the Switchyard server and the Next.js Starter Storefront are running.
 
 Then, go to the storefront at `http://localhost:8000` and complete the checkout process you started in the [previous step](#step-3-test-tax-calculation-with-avalara).
 
@@ -947,7 +947,7 @@ You can verify that the transaction was created in Avalara by going to your Aval
 
 You can view the tax details calculated by Avalara for the order, with the line items and shipping method included in the transaction.
 
-![The transaction's details in the Avalara dashboard showing the calculated taxes for the order](https://res.cloudinary.com/dza7lstvk/image/upload/v1761122370/Medusa%20Resources/CleanShot_2025-10-22_at_11.38.09_2x_bu0jwl.png)
+![The transaction's details in the Avalara dashboard showing the calculated taxes for the order](https://res.cloudinary.com/dza7lstvk/image/upload/v1761122370/Switchyard%20Resources/CleanShot_2025-10-22_at_11.38.09_2x_bu0jwl.png)
 
 ---
 
@@ -955,7 +955,7 @@ You can view the tax details calculated by Avalara for the order, with the line 
 
 In Avalara, you can manage the items you sell to set classifications, tax codes, exemptions, and other tax-related settings.
 
-In this step, you'll sync Medusa's products with Avalara items. This way, you can manage tax codes and other settings for your products directly from Avalara.
+In this step, you'll sync Switchyard's products with Avalara items. This way, you can manage tax codes and other settings for your products directly from Avalara.
 
 To do this, you will:
 
@@ -1004,8 +1004,8 @@ class AvalaraTaxModuleProvider implements ITaxProvider {
 
       return response
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `An error occurred while creating item classifications for Avalara: ${error}`
       )
     }
@@ -1020,8 +1020,8 @@ class AvalaraTaxModuleProvider implements ITaxProvider {
 
       return response
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `An error occurred while retrieving item classification from Avalara: ${error}`
       )
     }
@@ -1048,8 +1048,8 @@ class AvalaraTaxModuleProvider implements ITaxProvider {
 
       return response
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `An error occurred while updating item classifications for Avalara: ${error}`
       )
     }
@@ -1064,8 +1064,8 @@ class AvalaraTaxModuleProvider implements ITaxProvider {
 
       return response
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `An error occurred while deleting item classifications for Avalara: ${error}`
       )
     }
@@ -1113,7 +1113,7 @@ The first workflow you'll build creates an item for a product in Avalara. It has
   }}
 />
 
-Medusa provides the first and last step out of the box. You only need to create the `createItemStep`.
+Switchyard provides the first and last step out of the box. You only need to create the `createItemStep`.
 
 #### createItemStep
 
@@ -1122,7 +1122,7 @@ The `createItemStep` creates an item in Avalara.
 To create the step, create the file `src/workflows/steps/create-item.ts` with the following content:
 
 ```ts title="src/workflows/steps/create-item.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import AvalaraTaxModuleProvider from "../../modules/avalara/service"
 
 type StepInput = {
@@ -1185,8 +1185,8 @@ export const createProductItemWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/create-product-item.ts" highlights={createProductItemWorkflowHighlights}
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { updateProductsWorkflow, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { updateProductsWorkflow, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { createItemStep } from "./steps/create-item"
 
 type WorkflowInput = {
@@ -1253,7 +1253,7 @@ Next, you'll create a subscriber that listens to the `product.created` event and
 Create the file `src/subscribers/product-created.ts` with the following content:
 
 ```ts title="src/subscribers/product-created.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { createProductItemWorkflow } from "../workflows/create-product-item"
 
 export default async function productCreatedHandler({
@@ -1276,18 +1276,18 @@ You create a subscriber similar to the one you created for the `order.placed` ev
 
 ### d. Test Product Creation with Avalara Item
 
-To test the product creation with Avalara item creation, make sure the Medusa server is running.
+To test the product creation with Avalara item creation, make sure the Switchyard server is running.
 
 Then:
 
-1. Open the Medusa Admin dashboard at `http://localhost:9000/admin`.
+1. Open the Switchyard Admin dashboard at `http://localhost:9000/admin`.
 2. Go to "Products," and create a new product.
 3. After creating the product, go to your Avalara dashboard.
 4. From the sidebar, click on "Settings" → "What you sell and buy."
 
 This will open the Items page, where you can see the product you created as items in Avalara. You can click on an item to view it, add a classification, and more.
 
-![The list of items in the Avalara dashboard showing the item created for the product](https://res.cloudinary.com/dza7lstvk/image/upload/v1761123470/Medusa%20Resources/CleanShot_2025-10-22_at_11.57.33_2x_jbb4km.png)
+![The list of items in the Avalara dashboard showing the item created for the product](https://res.cloudinary.com/dza7lstvk/image/upload/v1761123470/Switchyard%20Resources/CleanShot_2025-10-22_at_11.57.33_2x_jbb4km.png)
 
 ### e. Update Avalara Item Workflow
 
@@ -1334,7 +1334,7 @@ Next, you'll create a workflow that updates a product's item in Avalara. The wor
   }}
 />
 
-Medusa provides the first step out of the box, and you have already created the `createProductItemWorkflow`. You only need to create the `updateItemStep`.
+Switchyard provides the first step out of the box, and you have already created the `createProductItemWorkflow`. You only need to create the `updateItemStep`.
 
 #### updateItemStep
 
@@ -1349,7 +1349,7 @@ export const updateItemStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/update-item.ts" highlights={updateItemStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import AvalaraTaxModuleProvider from "../../modules/avalara/service"
 
 type StepInput = {
@@ -1425,8 +1425,8 @@ export const updateProductItemWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/update-variant-item.ts" highlights={updateProductItemWorkflowHighlights}
-import { createWorkflow, WorkflowResponse, transform, when } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, WorkflowResponse, transform, when } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { updateItemStep } from "./steps/update-item"
 import { createProductItemWorkflow } from "./create-product-item"
 
@@ -1512,7 +1512,7 @@ Next, you'll create a subscriber that listens to the `product.updated` event and
 Create the file `src/subscribers/product-updated.ts` with the following content:
 
 ```ts title="src/subscribers/product-updated.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { updateProductItemWorkflow } from "../workflows/update-product-item"
 
 export default async function productUpdatedHandler({
@@ -1537,11 +1537,11 @@ You create a subscriber similar to the one you created for the `product.created`
 
 ### g. Test Product Update with Avalara Item
 
-To test the product update with Avalara item update, make sure the Medusa server is running.
+To test the product update with Avalara item update, make sure the Switchyard server is running.
 
 Then:
 
-1. Open the Medusa Admin dashboard at `http://localhost:9000/admin`.
+1. Open the Switchyard Admin dashboard at `http://localhost:9000/admin`.
 2. Go to "Products," and edit an existing product. For example, you can edit its title.
 3. After updating the product, go to your Avalara dashboard.
 4. From the sidebar, click on "Settings" → "What you sell and buy."
@@ -1580,7 +1580,7 @@ The last workflow you'll build deletes a product's item from Avalara. The workfl
   }}
 />
 
-Medusa provides the first step out of the box. You only need to create the `deleteItemStep`.
+Switchyard provides the first step out of the box. You only need to create the `deleteItemStep`.
 
 #### deleteItemStep
 
@@ -1595,7 +1595,7 @@ export const deleteItemStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/delete-item.ts" highlights={deleteItemStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import AvalaraTaxModuleProvider from "../../modules/avalara/service"
 
 type StepInput = {
@@ -1668,9 +1668,9 @@ export const deleteProductItemWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/delete-product-item.ts" highlights={deleteProductItemWorkflowHighlights}
-import { createWorkflow, when, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, when, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
 import { deleteItemStep } from "./steps/delete-item"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 type WorkflowInput = {
   product_id: string
@@ -1721,7 +1721,7 @@ Finally, you'll create a subscriber to delete the Avalara item when a product is
 Create the file `src/subscribers/product-deleted.ts` with the following content:
 
 ```ts title="src/subscribers/product-deleted.ts"
-import { SubscriberArgs, type SubscriberConfig } from "@medusajs/framework"
+import { SubscriberArgs, type SubscriberConfig } from "@switchyard/framework"
 import { deleteProductItemWorkflow } from "../workflows/delete-product-item"
 
 export default async function productDeletedHandler({
@@ -1747,11 +1747,11 @@ You create a subscriber similar to the previous ones. This time, the subscriber 
 
 ### j. Test Product Deletion with Avalara Item
 
-To test the product deletion with Avalara item deletion, make sure the Medusa server is running.
+To test the product deletion with Avalara item deletion, make sure the Switchyard server is running.
 
 Then:
 
-1. Open the Medusa Admin dashboard at `http://localhost:9000/admin`.
+1. Open the Switchyard Admin dashboard at `http://localhost:9000/admin`.
 2. Go to "Products," and delete a product.
 3. After deleting the product, go to your Avalara dashboard.
 4. From the sidebar, click on "Settings" → "What you sell and buy." The product's item should no longer be listed.
@@ -1760,15 +1760,15 @@ Then:
 
 ## Next Steps
 
-You've successfully integrated Avalara with Medusa to handle tax calculations during checkout, create transactions when orders are placed, and sync products with Avalara items.
+You've successfully integrated Avalara with Switchyard to handle tax calculations during checkout, create transactions when orders are placed, and sync products with Avalara items.
 
 You can expand on this integration by managing tax features in Avalara, such as exemptions. You can also handle order events like `order.canceled` to void transactions in Avalara when orders are canceled.
 
-### Learn More About Medusa
+### Learn More About Switchyard
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn) for a more in-depth understanding of the concepts used in this guide.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn) for a more in-depth understanding of the concepts used in this guide.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -1778,5 +1778,5 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.

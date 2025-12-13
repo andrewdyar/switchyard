@@ -1,16 +1,16 @@
-import type { PaymentCollectionDTO } from "@medusajs/framework/types"
+import type { PaymentCollectionDTO } from "@switchyard/framework/types"
 import {
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PaymentCollectionStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createWorkflow,
   transform,
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { updatePaymentCollectionStep } from "../../payment-collection"
 import { cancelPaymentCollectionWorkflow } from "../../payment-collection/workflows/cancel-payment-collection"
@@ -114,8 +114,8 @@ export const createOrUpdateOrderPaymentCollectionWorkflow = createWorkflow(
         order.summary.raw_pending_difference ?? order.summary.pending_difference
 
       if (amountToCharge > 0 && MathBN.gt(amountToCharge, amountPending)) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_ALLOWED,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_ALLOWED,
           `Amount cannot be greater than ${amountPending}`
         )
       }

@@ -94,7 +94,7 @@
 										"type": "reference",
 										"target": 15110,
 										"name": "FindConfigOrder",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -188,7 +188,7 @@
 										"type": "reference",
 										"target": 15054,
 										"name": "Entity",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"qualifiedName": "FindConfig.Entity",
 										"refersToTypeParameter": true
 									}
@@ -283,7 +283,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead."
+								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead."
 							}
 						]
 					},
@@ -345,7 +345,7 @@
 						"type": "reference",
 						"target": 15110,
 						"name": "FindConfigOrder",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -596,19 +596,19 @@
 											"type": "reference",
 											"target": 15109,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 15109,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -652,19 +652,19 @@
 											"type": "reference",
 											"target": 15109,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 15109,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -750,7 +750,7 @@
 							"type": "reference",
 							"target": 15057,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -829,7 +829,7 @@
 							"type": "reference",
 							"target": 15060,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -1064,7 +1064,7 @@
 								"type": "reference",
 								"target": 15183,
 								"name": "EventMetadata",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1092,7 +1092,7 @@
 								"type": "reference",
 								"target": 15182,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -1162,12 +1162,12 @@
 								"type": "reference",
 								"target": 15144,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Event",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -1304,7 +1304,7 @@
 								"type": "reference",
 								"target": 15161,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -1390,7 +1390,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -1898,7 +1898,7 @@
 								"type": "reference",
 								"target": 15162,
 								"name": "JoinerServiceConfigAlias",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -1906,7 +1906,7 @@
 									"type": "reference",
 									"target": 15162,
 									"name": "JoinerServiceConfigAlias",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						]
@@ -2069,7 +2069,7 @@
 							"type": "reference",
 							"target": 15167,
 							"name": "JoinerRelationship",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -2154,7 +2154,7 @@
 											"type": "reference",
 											"target": 15167,
 											"name": "JoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -2517,7 +2517,7 @@
 								"type": "reference",
 								"target": 15115,
 								"name": "JoinerServiceConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "union",
@@ -2637,7 +2637,7 @@
 											"type": "reference",
 											"target": 15130,
 											"name": "ModuleJoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -2859,7 +2859,7 @@
 																	"type": "reference",
 																	"target": 15130,
 																	"name": "ModuleJoinerRelationship",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																{
 																	"type": "literal",
@@ -3165,7 +3165,7 @@
 														"type": "reference",
 														"target": 15135,
 														"name": "LinkModulesExtraFields",
-														"package": "@medusajs/types"
+														"package": "@switchyard/types"
 													}
 												}
 											],
@@ -3240,7 +3240,7 @@
 						"type": "reference",
 						"target": 15167,
 						"name": "JoinerRelationship",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -3407,7 +3407,7 @@
 								"type": "reference",
 								"target": 15061,
 								"name": "ModuleJoinerConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -3777,7 +3777,7 @@
 						"type": "reference",
 						"target": 15019,
 						"name": "SalesChannelDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -4006,7 +4006,7 @@
 							"type": "reference",
 							"target": 15101,
 							"name": "SalesChannelLocationDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -4080,7 +4080,7 @@
 									"type": "reference",
 									"target": 15031,
 									"name": "FilterableSalesChannelProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -4090,11 +4090,11 @@
 											"type": "reference",
 											"target": 15031,
 											"name": "FilterableSalesChannelProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -4138,7 +4138,7 @@
 									"type": "reference",
 									"target": 15031,
 									"name": "FilterableSalesChannelProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -4148,11 +4148,11 @@
 											"type": "reference",
 											"target": 15031,
 											"name": "FilterableSalesChannelProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -4329,11 +4329,11 @@
 							"type": "reference",
 							"target": 15031,
 							"name": "FilterableSalesChannelProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -4597,7 +4597,7 @@
 						"type": "reference",
 						"target": 15105,
 						"name": "MetadataType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -4783,7 +4783,7 @@
 						"type": "reference",
 						"target": 15105,
 						"name": "MetadataType",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -4833,13 +4833,13 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 30,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L30"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L30"
 						},
 						{
 							"fileName": "sales-channel/service.ts",
 							"line": 47,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L47"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L47"
 						}
 					],
 					"signatures": [
@@ -4882,7 +4882,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 30,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L30"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L30"
 								}
 							],
 							"parameters": [
@@ -4906,7 +4906,7 @@
 											"type": "reference",
 											"target": 14998,
 											"name": "CreateSalesChannelDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -4930,7 +4930,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -4947,7 +4947,7 @@
 											"type": "reference",
 											"target": 15019,
 											"name": "SalesChannelDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -4994,7 +4994,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 47,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L47"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L47"
 								}
 							],
 							"parameters": [
@@ -5016,7 +5016,7 @@
 										"type": "reference",
 										"target": 14998,
 										"name": "CreateSalesChannelDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -5039,7 +5039,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -5054,7 +5054,7 @@
 										"type": "reference",
 										"target": 15019,
 										"name": "SalesChannelDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -5074,13 +5074,13 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 68,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L68"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L68"
 						},
 						{
 							"fileName": "sales-channel/service.ts",
 							"line": 92,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L92"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L92"
 						}
 					],
 					"signatures": [
@@ -5123,7 +5123,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 68,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L68"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L68"
 								}
 							],
 							"parameters": [
@@ -5164,7 +5164,7 @@
 										"type": "reference",
 										"target": 15026,
 										"name": "UpdateSalesChannelDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -5187,7 +5187,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -5202,7 +5202,7 @@
 										"type": "reference",
 										"target": 15019,
 										"name": "SalesChannelDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -5248,7 +5248,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 92,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L92"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L92"
 								}
 							],
 							"parameters": [
@@ -5270,7 +5270,7 @@
 										"type": "reference",
 										"target": 15031,
 										"name": "FilterableSalesChannelProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -5291,7 +5291,7 @@
 										"type": "reference",
 										"target": 15026,
 										"name": "UpdateSalesChannelDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -5314,7 +5314,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -5331,7 +5331,7 @@
 											"type": "reference",
 											"target": 15019,
 											"name": "SalesChannelDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -5352,13 +5352,13 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 110,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L110"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L110"
 						},
 						{
 							"fileName": "sales-channel/service.ts",
 							"line": 133,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L133"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L133"
 						}
 					],
 					"signatures": [
@@ -5401,7 +5401,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 110,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L110"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L110"
 								}
 							],
 							"parameters": [
@@ -5423,7 +5423,7 @@
 										"type": "reference",
 										"target": 15038,
 										"name": "UpsertSalesChannelDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -5446,7 +5446,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -5461,7 +5461,7 @@
 										"type": "reference",
 										"target": 15019,
 										"name": "SalesChannelDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -5507,7 +5507,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 133,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L133"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L133"
 								}
 							],
 							"parameters": [
@@ -5531,7 +5531,7 @@
 											"type": "reference",
 											"target": 15038,
 											"name": "UpsertSalesChannelDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -5555,7 +5555,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -5572,7 +5572,7 @@
 											"type": "reference",
 											"target": 15019,
 											"name": "SalesChannelDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -5593,13 +5593,13 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 148,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L148"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L148"
 						},
 						{
 							"fileName": "sales-channel/service.ts",
 							"line": 160,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L160"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L160"
 						}
 					],
 					"signatures": [
@@ -5642,7 +5642,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 148,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L148"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L148"
 								}
 							],
 							"parameters": [
@@ -5688,7 +5688,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -5747,7 +5747,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 160,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L160"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L160"
 								}
 							],
 							"parameters": [
@@ -5790,7 +5790,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -5823,7 +5823,7 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 175,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L175"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L175"
 						}
 					],
 					"signatures": [
@@ -5866,7 +5866,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 175,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L175"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L175"
 								}
 							],
 							"parameters": [
@@ -5929,11 +5929,11 @@
 												"type": "reference",
 												"target": 15019,
 												"name": "SalesChannelDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -5956,7 +5956,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -5971,7 +5971,7 @@
 										"type": "reference",
 										"target": 15019,
 										"name": "SalesChannelDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -5991,7 +5991,7 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 213,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L213"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L213"
 						}
 					],
 					"signatures": [
@@ -6078,7 +6078,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 213,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L213"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L213"
 								}
 							],
 							"parameters": [
@@ -6102,7 +6102,7 @@
 										"type": "reference",
 										"target": 15031,
 										"name": "FilterableSalesChannelProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -6145,11 +6145,11 @@
 												"type": "reference",
 												"target": 15019,
 												"name": "SalesChannelDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -6172,7 +6172,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -6189,7 +6189,7 @@
 											"type": "reference",
 											"target": 15019,
 											"name": "SalesChannelDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -6210,7 +6210,7 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 253,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L253"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L253"
 						}
 					],
 					"signatures": [
@@ -6297,7 +6297,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 253,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L253"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L253"
 								}
 							],
 							"parameters": [
@@ -6321,7 +6321,7 @@
 										"type": "reference",
 										"target": 15031,
 										"name": "FilterableSalesChannelProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -6364,11 +6364,11 @@
 												"type": "reference",
 												"target": 15019,
 												"name": "SalesChannelDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -6391,7 +6391,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -6411,7 +6411,7 @@
 													"type": "reference",
 													"target": 15019,
 													"name": "SalesChannelDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -6438,7 +6438,7 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 271,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L271"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L271"
 						}
 					],
 					"signatures": [
@@ -6489,7 +6489,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 271,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L271"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L271"
 								}
 							],
 							"typeParameters": [
@@ -6556,12 +6556,12 @@
 												"type": "reference",
 												"target": 14961,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -6584,7 +6584,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -6644,7 +6644,7 @@
 							"fileName": "sales-channel/service.ts",
 							"line": 290,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L290"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L290"
 						}
 					],
 					"signatures": [
@@ -6695,7 +6695,7 @@
 									"fileName": "sales-channel/service.ts",
 									"line": 290,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L290"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L290"
 								}
 							],
 							"typeParameters": [
@@ -6770,12 +6770,12 @@
 												"type": "reference",
 												"target": 14967,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -6798,7 +6798,7 @@
 										"type": "reference",
 										"target": 15002,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -6869,7 +6869,7 @@
 					"fileName": "sales-channel/service.ts",
 					"line": 15,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L15"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/sales-channel/service.ts#L15"
 				}
 			],
 			"extendedTypes": [
@@ -6877,7 +6877,7 @@
 					"type": "reference",
 					"target": 14984,
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -7091,7 +7091,7 @@
 												"type": "reference",
 												"target": 15141,
 												"name": "Message",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -7099,7 +7099,7 @@
 													"type": "reference",
 													"target": 15141,
 													"name": "Message",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -7153,7 +7153,7 @@
 										"type": "reference",
 										"target": 15145,
 										"name": "MessageAggregatorFormat",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -7174,7 +7174,7 @@
 											"type": "reference",
 											"target": 15141,
 											"name": "Message",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -7272,12 +7272,12 @@
 														"type": "reference",
 														"target": 15098,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												],
 												"name": "RawMessageFormat",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -7289,12 +7289,12 @@
 															"type": "reference",
 															"target": 15098,
 															"name": "T",
-															"package": "@medusajs/types",
+															"package": "@switchyard/types",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "RawMessageFormat",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -7388,7 +7388,7 @@
 					],
 					"type": {
 						"type": "literal",
-						"value": "MedusaContext"
+						"value": "SwitchyardContext"
 					}
 				},
 				{
@@ -7434,7 +7434,7 @@
 						"type": "reference",
 						"target": 15018,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -7481,7 +7481,7 @@
 						"type": "reference",
 						"target": 15018,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -7684,7 +7684,7 @@
 						"type": "reference",
 						"target": 15087,
 						"name": "IMessageAggregator",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7939,7 +7939,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"14912": {
 			"sourceFileName": "../../../../packages/core/types/src/sales-channel/service.ts",

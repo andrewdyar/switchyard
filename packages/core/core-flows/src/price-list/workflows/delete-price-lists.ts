@@ -1,5 +1,5 @@
-import { Modules } from "@medusajs/framework/utils"
-import { createWorkflow, WorkflowData } from "@medusajs/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { createWorkflow, WorkflowData } from "@switchyard/framework/workflows-sdk"
 import { removeRemoteLinkStep } from "../../common/steps/remove-remote-links"
 import { deletePriceListsStep } from "../steps"
 

@@ -10,12 +10,12 @@ products:
 ---
 
 import { Card, Prerequisites, Details, WorkflowDiagram } from "docs-ui"
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1746006829/Medusa%20Resources/localization_dtiqtb.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1746006829/Switchyard%20Resources/localization_dtiqtb.jpg"
 
 export const metadata = {
-  title: `Implement Localization in Medusa by Integrating Contentful`,
+  title: `Implement Localization in Switchyard by Integrating Contentful`,
   openGraph: {
     images: [
       {
@@ -40,32 +40,32 @@ export const metadata = {
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to localize your Medusa store's data with Contentful.
+In this tutorial, you'll learn how to localize your Switchyard store's data with Contentful.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. While Medusa provides features essential for internationalization, such as support for multiple [regions](../../../commerce-modules/region/page.mdx) and [currencies](../../../commerce-modules/currency/page.mdx), it doesn't provide content localization.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. While Switchyard provides features essential for internationalization, such as support for multiple [regions](../../../commerce-modules/region/page.mdx) and [currencies](../../../commerce-modules/currency/page.mdx), it doesn't provide content localization.
 
-However, Medusa's architecture supports the integration of third-party services to provide additional features, such as data localization. One service you can integrate is [Contentful](https://www.contentful.com/), a headless content management system (CMS) that allows you to manage and deliver content across multiple channels.
+However, Switchyard's architecture supports the integration of third-party services to provide additional features, such as data localization. One service you can integrate is [Contentful](https://www.contentful.com/), a headless content management system (CMS) that allows you to manage and deliver content across multiple channels.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
-- Integrate Contentful with Medusa.
-- Create content types in Contentful for Medusa models.
+- Install and set up Switchyard.
+- Integrate Contentful with Switchyard.
+- Create content types in Contentful for Switchyard models.
 - Trigger syncing products and related data to Contentful when:
   - A product is created.
   - The admin user triggers syncing the products.
-- Customize the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) to fetch localized data from Contentful through Medusa.
-- Listen to webhook events in Contentful to update Medusa's data accordingly.
+- Customize the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) to fetch localized data from Contentful through Switchyard.
+- Listen to webhook events in Contentful to update Switchyard's data accordingly.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
-![Diagram illustrating the integration of Contentful with Medusa](https://res.cloudinary.com/dza7lstvk/image/upload/v1744791908/Medusa%20Resources/contentful-summary_j5cpdx.jpg)
+![Diagram illustrating the integration of Contentful with Switchyard](https://res.cloudinary.com/dza7lstvk/image/upload/v1744791908/Switchyard%20Resources/contentful-summary_j5cpdx.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/localization-contentful",
+    href: "https://github.com/switchyard/examples/tree/main/localization-contentful",
     title: "Tutorial Repository",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -80,7 +80,7 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -97,27 +97,27 @@ You can follow this tutorial whether you're new to Medusa or an advanced Medusa 
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 First, you'll be asked for the project's name. Then, when prompted about installing the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose "Yes."
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name and the Next.js Starter Storefront in a separate directory named `{project-name}-storefront`.
 
 <Note title="Why is the storefront installed separately?">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors?">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -125,9 +125,9 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Contentful Module
 
-To integrate third-party services into Medusa, you create a module. A [module](!docs!/learn/fundamentals/modules) is a reusable package that provides functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+To integrate third-party services into Switchyard, you create a module. A [module](!docs!/learn/fundamentals/modules) is a reusable package that provides functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
-In this step, you'll create a module that provides the necessary functionalities to integrate Contentful with Medusa.
+In this step, you'll create a module that provides the necessary functionalities to integrate Contentful with Switchyard.
 
 <Note>
 
@@ -137,7 +137,7 @@ Refer to the [Modules](!docs!/learn/fundamentals/modules) documentation to learn
 
 ### Install Contentful SDKs
 
-Before building the module, you need to install Contentful's management and delivery JS SDKs. So, run the following command in the Medusa application's directory:
+Before building the module, you need to install Contentful's management and delivery JS SDKs. So, run the following command in the Switchyard application's directory:
 
 ```bash npm2yarn
 npm install contentful contentful-management
@@ -147,13 +147,13 @@ Where `contentful` is the delivery SDK and `contentful-management` is the manage
 
 ### Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/contentful`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/contentful`.
 
 ### Create Loader
 
-When the Medusa application starts, you want to establish a connection to Contentful, then create the necessary content types if they don't exist in Contentful.
+When the Switchyard application starts, you want to establish a connection to Contentful, then create the necessary content types if they don't exist in Contentful.
 
-A module can specify a task to run on the Medusa application's startup using [loaders](!docs!/learn/fundamentals/modules/loaders). A loader is an asynchronous function that a module exports. Then, when the Medusa application starts, it runs the loader. The loader can be used to perform one-time tasks such as connecting to a database, creating content types, or initializing data.
+A module can specify a task to run on the Switchyard application's startup using [loaders](!docs!/learn/fundamentals/modules/loaders). A loader is an asynchronous function that a module exports. Then, when the Switchyard application starts, it runs the loader. The loader can be used to perform one-time tasks such as connecting to a database, creating content types, or initializing data.
 
 <Note>
 
@@ -174,10 +174,10 @@ export const loaderHighlights = [
 ]
 
 ```ts title="src/modules/contentful/loader/create-content-models.ts" highlights={loaderHighlights}
-import { LoaderOptions } from "@medusajs/framework/types"
-import { asValue } from "@medusajs/framework/awilix"
+import { LoaderOptions } from "@switchyard/framework/types"
+import { asValue } from "@switchyard/framework/awilix"
 import { createClient } from "contentful-management"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 const { createClient: createDeliveryClient } = require("contentful")
 
@@ -197,8 +197,8 @@ export default async function syncContentModelsLoader({
     !options?.management_access_token || !options?.delivery_token || 
     !options?.space_id || !options?.environment
   ) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Contentful access token, space ID and environment are required"
     )
   }
@@ -269,7 +269,7 @@ try {
     contentTypeId: "product",
   }, {
     name: "Product",
-    description: "Product content type synced from Medusa",
+    description: "Product content type synced from Switchyard",
     displayField: "title",
     fields: [
       {
@@ -288,7 +288,7 @@ try {
       },
       {
         id: "medusaId",
-        name: "Medusa ID",
+        name: "Switchyard ID",
         type: "Symbol",
         required: true,
         localized: false,
@@ -411,7 +411,7 @@ In the `catch` block, you create the product content type with the following fie
 
 - `title`: The product's title, which is a localized field.
 - `handle`: The product's handle, which is used to create a human-readable URL for the product in the storefront.
-- `medusaId`: The product's ID in Medusa, which is a non-localized field. You'll store in this field the ID of the product in Medusa.
+- `medusaId`: The product's ID in Switchyard, which is a non-localized field. You'll store in this field the ID of the product in Switchyard.
 - `description`: The product's description, which is a localized rich-text field.
 - `subtitle`: The product's subtitle, which is a localized field.
 - `images`: The product's images, which is a localized array of assets in Contentful.
@@ -433,7 +433,7 @@ try {
     contentTypeId: "productVariant",
   }, {
   name: "Product Variant",
-  description: "Product variant content type synced from Medusa",
+  description: "Product variant content type synced from Switchyard",
   displayField: "title",
   fields: [
     {
@@ -460,7 +460,7 @@ try {
     },
     {
       id: "medusaId",
-      name: "Medusa ID",
+      name: "Switchyard ID",
       type: "Symbol",
       required: true,
       localized: false,
@@ -498,7 +498,7 @@ In the above snippet, you create the `productVariant` content type with the foll
 
 - `title`: The product variant's title, which is a localized field.
 - `product`: References the `product` content type, which is the product that the variant belongs to.
-- `medusaId`: The product variant's ID in Medusa, which is a non-localized field. You'll store in this field the ID of the variant in Medusa.
+- `medusaId`: The product variant's ID in Switchyard, which is a non-localized field. You'll store in this field the ID of the variant in Switchyard.
 - `productOptionValues`: The product variant's option values, which is an array that references content of the `productOptionValue` content type.
 
 Then, you'll create the `productOption` content type that represents a product's option, like size or color. Replace the new `TODO` with the following:
@@ -514,7 +514,7 @@ try {
     contentTypeId: "productOption",
   }, {
     name: "Product Option",
-    description: "Product option content type synced from Medusa",
+    description: "Product option content type synced from Switchyard",
     displayField: "title",
     fields: [
     {
@@ -541,7 +541,7 @@ try {
     },
     {
       id: "medusaId",
-      name: "Medusa ID",
+      name: "Switchyard ID",
       type: "Symbol",
       required: true,
       localized: false,
@@ -579,7 +579,7 @@ In the above snippet, you create the `productOption` content type with the follo
 
 - `title`: The product option's title, which is a localized field.
 - `product`: References the `product` content type, which is the product that the option belongs to.
-- `medusaId`: The product option's ID in Medusa, which is a non-localized field. You'll store in this field the ID of the option in Medusa.
+- `medusaId`: The product option's ID in Switchyard, which is a non-localized field. You'll store in this field the ID of the option in Switchyard.
 - `values`: The product option's values, which is an array that references content of the `productOptionValue` content type.
 
 Finally, you'll create the `productOptionValue` content type that represents a product's option value, like "red" or "blue" for the color option. A variant references option values.
@@ -597,7 +597,7 @@ try {
     contentTypeId: "productOptionValue",
   }, {
     name: "Product Option Value",
-    description: "Product option value content type synced from Medusa",
+    description: "Product option value content type synced from Switchyard",
     displayField: "value",
     fields: [
     {
@@ -609,7 +609,7 @@ try {
     },
     {
       id: "medusaId",
-      name: "Medusa ID",
+      name: "Switchyard ID",
       type: "Symbol",
       required: true,
       localized: false,
@@ -628,7 +628,7 @@ await managementClient.contentType.publish({
 In the above snippet, you create the `productOptionValue` content type with the following fields:
 
 - `value`: The product option value, which is a localized field.
-- `medusaId`: The product option value's ID in Medusa, which is a non-localized field. You'll store in this field the ID of the option value in Medusa.
+- `medusaId`: The product option value's ID in Switchyard, which is a non-localized field. You'll store in this field the ID of the option value in Switchyard.
 
 You've now created all the necessary content types to localize products.
 
@@ -718,7 +718,7 @@ As you implement the syncing and content retrieval features later, you'll add th
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Medusa the name of the module, its service, and optionally its loaders.
+The final piece to a module is its definition, which you export in an `index.ts` file at the module's root directory. This definition tells Switchyard the name of the module, its service, and optionally its loaders.
 
 To create the module's definition, create the file `src/modules/contentful/index.ts` with the following content:
 
@@ -729,7 +729,7 @@ export const moduleHighlights = [
 ]
 
 ```ts title="src/modules/contentful/index.ts" highlights={moduleHighlights}
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import ContentfulModuleService from "./service"
 import createContentModelsLoader from "./loader/create-content-models"
 
@@ -750,13 +750,13 @@ You use `Module` from the Modules SDK to create the module's definition. It acce
 
 Aside from the module definition, you export the module's name as `CONTENTFUL_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -787,7 +787,7 @@ When you add a locale, make sure to:
 - Set the fallback locale to the default locale (for example, `en-US`). This ensure that values are retrieved in the default locale if values for the requested locale are not available.
 - Allow the required fields to be empty for the locale. Otherwise, you'll have to specify the values for the localized fields in each locale when you create the products later.
 
-![Example of the locale's settings in the Contentful dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1744716537/Medusa%20Resources/Screenshot_2025-04-15_at_2.28.46_PM_v50lrm.png)
+![Example of the locale's settings in the Contentful dashboard](https://res.cloudinary.com/dza7lstvk/image/upload/v1744716537/Switchyard%20Resources/Screenshot_2025-04-15_at_2.28.46_PM_v50lrm.png)
 
 ### Add Environment Variables
 
@@ -807,24 +807,24 @@ Where:
 - `CONTENTFUL_MANAGEMNT_ACCESS_TOKEN`: The Contentful management API access token. To create it on the Contentful dashboard:
     - Click on the cog icon at the top right, then choose "CMA tokens" from the dropdown.
 
-![The cog icon is at the top right next to the user avatar. If you click on it, a dropdown will show where you can click on "CMA tokens".](https://res.cloudinary.com/dza7lstvk/image/upload/v1744714244/Medusa%20Resources/Screenshot_2025-04-15_at_1.48.35_PM_ct2tfk.png)
+![The cog icon is at the top right next to the user avatar. If you click on it, a dropdown will show where you can click on "CMA tokens".](https://res.cloudinary.com/dza7lstvk/image/upload/v1744714244/Switchyard%20Resources/Screenshot_2025-04-15_at_1.48.35_PM_ct2tfk.png)
 
     - In the CMA tokens page, click on the "Create personal access token" button.
     - In the window that pops up, enter a name for the token, and choose an expiry date. Once you're done, click the Generate button.
     - The token is generated and shown in the pop-up. Make sure to copy it and use it in the `.env` file, as you can't access it again.
 
-![Click on the copy button to copy the key](https://res.cloudinary.com/dza7lstvk/image/upload/v1744714749/Medusa%20Resources/Screenshot_2025-04-15_at_1.58.12_PM_tuugam.png)
+![Click on the copy button to copy the key](https://res.cloudinary.com/dza7lstvk/image/upload/v1744714749/Switchyard%20Resources/Screenshot_2025-04-15_at_1.58.12_PM_tuugam.png)
 
 - `CONTENTFUL_DELIVERY_TOKEN`: An API token that you can use with the delivery API. To create it on the Contentful dashboard:
     - Click on the cog icon at the top right, then choose "API keys" from the dropdown.
 
-![The cog icon is at the top right next to the user avatar. If you click on it, a dropdown will show where you can click on "API keys".](https://res.cloudinary.com/dza7lstvk/image/upload/v1744714971/Medusa%20Resources/Screenshot_2025-04-15_at_2.02.31_PM_qfsn1h.png)
+![The cog icon is at the top right next to the user avatar. If you click on it, a dropdown will show where you can click on "API keys".](https://res.cloudinary.com/dza7lstvk/image/upload/v1744714971/Switchyard%20Resources/Screenshot_2025-04-15_at_2.02.31_PM_qfsn1h.png)
 
     - In the APIs page, click on the "Add API key" button.
     - In the window that pops up, enter a name for the token, then click the Add API Key button.
     - This will create an API key and opens its page. On its page, copy the token for the "Content Delivery API" and use it as the value for `CONTENTFUL_DELIVERY_TOKEN`.
 
-![Copy the API key from the "Content Delivery API - access token" field](https://res.cloudinary.com/dza7lstvk/image/upload/v1744715228/Medusa%20Resources/Screenshot_2025-04-15_at_2.06.44_PM_ifu1mx.png)
+![Copy the API key from the "Content Delivery API - access token" field](https://res.cloudinary.com/dza7lstvk/image/upload/v1744715228/Switchyard%20Resources/Screenshot_2025-04-15_at_2.06.44_PM_ifu1mx.png)
 
 - `CONTENTFUL_SPACE_ID`: The ID of your Contentful space. You can copy this from the dashboard's URL which is of the format `https://app.contentful.com/spaces/{space_id}/...`.
 - `CONTENTFUL_ENVIRONMENT`: The environment to manage and retrieve the content in. By default, you have the `master` environment which you can use. However, you can use another Contentful environment that you've created.
@@ -833,9 +833,9 @@ Your module is now ready for use.
 
 ### Test the Module
 
-To test out the module, you'll start the Medusa application, which will run the module's loader.
+To test out the module, you'll start the Switchyard application, which will run the module's loader.
 
-To start the Medusa application, run the following command:
+To start the Switchyard application, run the following command:
 
 ```bash npm2yarn
 npm run dev
@@ -849,7 +849,7 @@ info:    Connected to Contentful
 
 You can also see on the Contentful dashboard that the content types were created. To view them, go to the Content Model page.
 
-![In the Contentful dashboard, go to the Content Model page](https://res.cloudinary.com/dza7lstvk/image/upload/v1744715783/Medusa%20Resources/Screenshot_2025-04-15_at_2.16.09_PM_w7oszm.png)
+![In the Contentful dashboard, go to the Content Model page](https://res.cloudinary.com/dza7lstvk/image/upload/v1744715783/Switchyard%20Resources/Screenshot_2025-04-15_at_2.16.09_PM_w7oszm.png)
 
 ---
 
@@ -859,7 +859,7 @@ Now that you have the Contentful Module ready for use, you can start creating pr
 
 In this step, you'll implement the logic to create products in Contentful. Later, you'll execute it when:
 
-- A product is created in Medusa.
+- A product is created in Switchyard.
 - The admin user triggers a sync manually.
 
 ### Add Methods to Contentful Module Service
@@ -872,7 +872,7 @@ In the service at `src/modules/contentful/service.ts`, start by adding the metho
 
 ```ts title="src/modules/contentful/service.ts"
 // imports...
-import { ProductVariantDTO } from "@medusajs/framework/types"
+import { ProductVariantDTO } from "@switchyard/framework/types"
 import { EntryProps } from "contentful-management"
 
 export default class ContentfulModuleService {
@@ -943,7 +943,7 @@ export const createProductOptionHighlights = [
 
 ```ts title="src/modules/contentful/service.ts" highlights={createProductOptionHighlights}
 // other imports...
-import { ProductOptionDTO } from "@medusajs/framework/types"
+import { ProductOptionDTO } from "@switchyard/framework/types"
 
 export default class ContentfulModuleService {
   // ...
@@ -1038,7 +1038,7 @@ export const createProductHighlights = [
 
 ```ts title="src/modules/contentful/service.ts" highlights={createProductHighlights}
 // other imports...
-import { ProductDTO } from "@medusajs/framework/types"
+import { ProductDTO } from "@switchyard/framework/types"
 
 export default class ContentfulModuleService {
   // ...
@@ -1171,7 +1171,7 @@ export const deleteProductHighlights = [
 
 ```ts title="src/modules/contentful/service.ts" highlights={deleteProductHighlights}
 // other imports...
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export default class ContentfulModuleService {
   // ...
@@ -1236,8 +1236,8 @@ export default class ContentfulModuleService {
         })
       }
     } catch (error) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Failed to delete product from Contentful: ${error.message}`
       )
     }
@@ -1253,7 +1253,7 @@ You now have all the methods necessary to build the creation flow.
 
 ### Create Contentful Product Workflow
 
-To implement the logic that's triggered when a product is created in Medusa, or when the admin user triggers a sync manually, you need to create a workflow.
+To implement the logic that's triggered when a product is created in Switchyard, or when the admin user triggers a sync manually, you need to create a workflow.
 
 A [workflow](!docs!/learn/fundamentals/workflows) is a series of actions, called steps, that complete a task. You construct a workflow like you construct a function, but it's a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features.
 
@@ -1263,7 +1263,7 @@ Learn more about workflows in the [Workflows documentation](!docs!/learn/fundame
 
 </Note>
 
-In this section, you'll create a workflow that creates Medusa products in Contentful using the Contentful Module.
+In this section, you'll create a workflow that creates Switchyard products in Contentful using the Contentful Module.
 
 The workflow has the following steps:
 
@@ -1289,7 +1289,7 @@ The workflow has the following steps:
   hideLegend
 />
 
-Medusa provides the `useQueryGraphStep` in its `@medusajs/medusa/core-flows` package. So, you only need to implement the second step.
+Switchyard provides the `useQueryGraphStep` in its `@switchyard/medusa/core-flows` package. So, you only need to implement the second step.
 
 #### createProductsContentfulStep
 
@@ -1299,15 +1299,15 @@ To create the step, create the file `src/workflows/steps/create-products-content
 
 <Note>
 
-If you get a type error on resolving the Contentful Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Contentful Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
 export const createProductsContentfulStepHighlights = [
   ["12", `"create-products-contentful-step"`, "The step's unique name."],
   ["13", "input", "The step's input."],
-  ["15", "container", "The Medusa container, useful to resolve Framework and commerce tools."],
-  ["15", "resolve", "Resolve the Contentful Module's service from the Medusa container."],
+  ["15", "container", "The Switchyard container, useful to resolve Framework and commerce tools."],
+  ["15", "resolve", "Resolve the Contentful Module's service from the Switchyard container."],
   ["21", "createProduct", "Create a new product entry in Contentful."],
   ["24", "permanentFailure", "If an error occurs, fail the step and\npass the created products to the compensation function."],
   ["31", "products", "Return the created products."],
@@ -1316,9 +1316,9 @@ export const createProductsContentfulStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/create-products-contentful.ts" highlights={createProductsContentfulStepHighlights}
-import { ProductDTO } from "@medusajs/framework/types"
+import { ProductDTO } from "@switchyard/framework/types"
 import { CONTENTFUL_MODULE } from "../../modules/contentful"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import ContentfulModuleService from "../../modules/contentful/service"
 import { EntryProps } from "contentful-management"
 
@@ -1370,16 +1370,16 @@ You create a step with `createStep` from the Workflows SDK. It accepts three par
 1. The step's unique name, which is `create-products-contentful-step`.
 2. An async function that receives two parameters:
     - The step's input, which is in this case an object holding an array of products to create in Contentful.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 3. An optional compensation function that undoes the actions performed in the step if an error occurs in the workflow's execution. This mechanism ensures data consistency in your application, especially as you integrate external systems.
 
 <Note>
 
-The Medusa container is different from the module's container. Since modules are isolated, they each have a container with their resources. Refer to the [Module Container](!docs!/learn/fundamentals/modules/container) documentation for more information.
+The Switchyard container is different from the module's container. Since modules are isolated, they each have a container with their resources. Refer to the [Module Container](!docs!/learn/fundamentals/modules/container) documentation for more information.
 
 </Note>
 
-In the step function, you resolve the Contentful Module's service from the Medusa container using the name you exported in the module definition's file.
+In the step function, you resolve the Contentful Module's service from the Switchyard container using the name you exported in the module definition's file.
 
 Then, you iterate over the products and create a new entry in Contentful for each product using the `createProduct` method you created earlier. If the creation of any product fails, you fail the step and pass the created products to the compensation function.
 
@@ -1388,7 +1388,7 @@ A step function must return a `StepResponse` instance. The `StepResponse` constr
 1. The step's output, which is the product entries created in Contentful.
 2. Data to pass to the step's compensation function.
 
-The compensation function accepts as a parameter the data passed from the step, and an object containing the Medusa container.
+The compensation function accepts as a parameter the data passed from the step, and an object containing the Switchyard container.
 
 In the compensation function, you iterate over the created product entries and delete them from Contentful using the `deleteProduct` method you created earlier.
 
@@ -1399,10 +1399,10 @@ Now that you have all the necessary steps, you can create the workflow.
 To create the workflow, create the file `src/workflows/create-products-contentful.ts` with the following content:
 
 ```ts title="src/workflows/create-products-contentful.ts"
-import { createWorkflow, WorkflowResponse } from "@medusajs/framework/workflows-sdk"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { createProductsContentfulStep } from "./steps/create-products-contentful"
-import { ProductDTO } from "@medusajs/framework/types"
+import { ProductDTO } from "@switchyard/framework/types"
 
 type WorkflowInput = {
   product_ids: string[]
@@ -1445,18 +1445,18 @@ It accepts as a second parameter a constructor function, which is the workflow's
 
 In the workflow's constructor function, you:
 
-1. Retrieve the Medusa products using the `useQueryGraphStep` helper step. This step uses Medusa's [Query](!docs!/learn/fundamentals/module-links/query) tool to retrieve data across modules. You pass it the product IDs to retrieve.
+1. Retrieve the Switchyard products using the `useQueryGraphStep` helper step. This step uses Switchyard's [Query](!docs!/learn/fundamentals/module-links/query) tool to retrieve data across modules. You pass it the product IDs to retrieve.
 2. Create the product entries in Contentful using the `createProductsContentfulStep` step.
 
 A workflow must return an instance of `WorkflowResponse`. The `WorkflowResponse` constructor accepts the workflow's output as a parameter, which is an object of the product entries created in Contentful.
 
-You now have the workflow that you can execute when a product is created in Medusa, or when the admin user triggers a sync manually.
+You now have the workflow that you can execute when a product is created in Switchyard, or when the admin user triggers a sync manually.
 
 ---
 
 ## Step 4: Trigger Sync on Product Creation
 
-Medusa has an event system that allows you to listen for events, such as `product.created`, and perform an asynchronous action when the event is emitted.
+Switchyard has an event system that allows you to listen for events, such as `product.created`, and perform an asynchronous action when the event is emitted.
 
 You listen to events in a subscriber. A [subscriber](!docs!/learn/fundamentals/events-and-subscribers) is an asynchronous function that listens to one or more events and performs actions when these events are emitted. A subscriber is useful when syncing data across systems, as the operation can be time-consuming and should be performed in the background.
 
@@ -1481,7 +1481,7 @@ export const createProductSubscriberHighlights = [
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { 
   createProductsContentfulWorkflow,
 } from "../workflows/create-products-contentful"
@@ -1513,25 +1513,25 @@ A subscriber file must export:
 The subscriber function receives an object as a parameter that has the following properties:
 
 - `event`: An object that holds the event's data payload. The payload of the `product.created` event is an array of product IDs.
-- `container`: The Medusa container to access the Framework and commerce tools.
+- `container`: The Switchyard container to access the Framework and commerce tools.
 
-In the subscriber function, you execute the `createProductsContentfulWorkflow` by invoking it, passing the Medusa container as a parameter. Then, you chain a `run` method, passing it the product ID from the event's data payload as input.
+In the subscriber function, you execute the `createProductsContentfulWorkflow` by invoking it, passing the Switchyard container as a parameter. Then, you chain a `run` method, passing it the product ID from the event's data payload as input.
 
 Finally, you log a message to the console to indicate that the product was created in Contentful.
 
 ### Test the Subscriber
 
-To test out the subscriber, start the Medusa application:
+To test out the subscriber, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard and login.
+Then, open the Switchyard Admin dashboard and login.
 
 <Note>
 
-Can't remember the credentials? Learn how to create a user in the [Medusa CLI reference](../../../medusa-cli/commands/user/page.mdx).
+Can't remember the credentials? Learn how to create a user in the [Switchyard CLI reference](../../../switchyard-cli/commands/user/page.mdx).
 
 </Note>
 
@@ -1549,23 +1549,23 @@ You can also see the product in the Contentful dashboard by going to the Content
 
 ## Step 5: Trigger Product Sync Manually
 
-The other way to sync products is when the admin user triggers a sync manually. This is useful when you already have products in Medusa and you want to sync them to Contentful.
+The other way to sync products is when the admin user triggers a sync manually. This is useful when you already have products in Switchyard and you want to sync them to Contentful.
 
 To allow admin users to trigger a sync manually, you need:
 
 1. A subscriber that listens to a custom event.
 2. An API route that emits the custom event when a request is sent to it.
-3. A UI route in the Medusa Admin that displays a button to trigger the sync.
+3. A UI route in the Switchyard Admin that displays a button to trigger the sync.
 
 ### Create Manual Sync Subscriber
 
-You'll start by creating the subscriber that listens to a custom event to sync the Medusa products to Contentful.
+You'll start by creating the subscriber that listens to a custom event to sync the Switchyard products to Contentful.
 
 To create the subscriber, create the file `src/subscribers/sync-products.ts` with the following content:
 
 export const syncProductsSubscriberHighlights = [
-  ["13", "query", "Resolve Query from the Medusa container."],
-  ["24", "graph", "Retrieve the Medusa products with pagination."],
+  ["13", "query", "Resolve Query from the Switchyard container."],
+  ["24", "graph", "Retrieve the Switchyard products with pagination."],
   ["36", "createProductsContentfulWorkflow", "Create the product entries in Contentful."],
   ["52", `"products.sync"`, "The custom event to listen to."],
 ]
@@ -1574,8 +1574,8 @@ export const syncProductsSubscriberHighlights = [
 import type { 
   SubscriberConfig,
   SubscriberArgs,
-} from "@medusajs/framework"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+} from "@switchyard/framework"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import { 
   createProductsContentfulWorkflow,
 } from "../workflows/create-products-contentful"
@@ -1628,7 +1628,7 @@ export const config: SubscriberConfig = {
 
 You create a subscriber that listens to the `products.sync` event.
 
-In the subscriber function, you use [Query](!docs!/learn/fundamentals/module-links/query) to retrieve all the products in Medusa with pagination. Then, for each batch of products, you execute the `createProductsContentfulWorkflow` workflow, passing the product IDs to the workflow.
+In the subscriber function, you use [Query](!docs!/learn/fundamentals/module-links/query) to retrieve all the products in Switchyard with pagination. Then, for each batch of products, you execute the `createProductsContentfulWorkflow` workflow, passing the product IDs to the workflow.
 
 Finally, you log a message to the console to indicate that the products were synced to Contentful.
 
@@ -1650,19 +1650,19 @@ So, to create an API route at the path `/admin/contentful/sync`, create the file
 
 export const syncProductsRouteHighlights = [
   ["6", "POST", "The route handler function that exposes a POST API route."],
-  ["10", "eventService", "Resolve the Event Module's service from the Medusa container."],
+  ["10", "eventService", "Resolve the Event Module's service from the Switchyard container."],
   ["12", "emit", "Emit the custom event."],
 ]
 
 ```ts title="src/api/admin/contentful/sync/route.ts" highlights={syncProductsRouteHighlights}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const eventService = req.scope.resolve("event_bus")
 
@@ -1682,13 +1682,13 @@ Since you export a `POST` route handler function, you expose an `API` route at `
 1. A request object with details and context on the request, such as body parameters or authenticated user details.
 2. A response object to manipulate and send the response.
 
-In the route handler, you resolve the [Event Module](../../../infrastructure-modules/event/page.mdx)'s service from the Medusa container and emit the `products.sync` event.
+In the route handler, you resolve the [Event Module](../../../infrastructure-modules/event/page.mdx)'s service from the Switchyard container and emit the `products.sync` event.
 
 ### Create UI Route to Trigger Sync
 
-Finally, you'll add a new page to the Medusa Admin dashboard that displays a button to trigger the sync. To add a page, you need to create a UI route.
+Finally, you'll add a new page to the Switchyard Admin dashboard that displays a button to trigger the sync. To add a page, you need to create a UI route.
 
-A [UI route](!docs!/learn/fundamentals/admin/ui-routes) is a React component that specifies the content to be shown in a new page of the Medusa Admin dashboard. You'll create a UI route to display a button that triggers product syncing to Contentful when clicked.
+A [UI route](!docs!/learn/fundamentals/admin/ui-routes) is a React component that specifies the content to be shown in a new page of the Switchyard Admin dashboard. You'll create a UI route to display a button that triggers product syncing to Contentful when clicked.
 
 <Note>
 
@@ -1698,14 +1698,14 @@ Refer to the [UI Routes](!docs!/learn/fundamentals/admin/ui-routes) documentatio
 
 #### Configure JS SDK
 
-Before creating the UI route, you'll configure Medusa's [JS SDK](../../../js-sdk/page.mdx) so that you can use it to send requests to the Medusa server.
+Before creating the UI route, you'll configure Switchyard's [JS SDK](../../../js-sdk/page.mdx) so that you can use it to send requests to the Switchyard server.
 
-The JS SDK is installed by default in your Medusa application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
+The JS SDK is installed by default in your Switchyard application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: "http://localhost:9000",
   debug: process.env.NODE_ENV === "development",
   auth: {
@@ -1714,9 +1714,9 @@ export const sdk = new Medusa({
 })
 ```
 
-You create an instance of the JS SDK using the `Medusa` class from the JS SDK. You pass it an object having the following properties:
+You create an instance of the JS SDK using the `Switchyard` class from the JS SDK. You pass it an object having the following properties:
 
-- `baseUrl`: The base URL of the Medusa server.
+- `baseUrl`: The base URL of the Switchyard server.
 - `debug`: A boolean indicating whether to log debug information into the console.
 - `auth`: An object specifying the authentication type. When using the JS SDK for admin customizations, you use the `session` authentication type.
 
@@ -1734,11 +1734,11 @@ export const contentfulPageHighlights = [
 ]
 
 ```tsx title="src/admin/routes/contentful/page.tsx" highlights={contentfulPageHighlights}
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { Container, Heading, Button } from "@medusajs/ui"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { Container, Heading, Button } from "@switchyard/ui"
 import { useMutation } from "@tanstack/react-query"
 import { sdk } from "../../lib/sdk"
-import { toast } from "@medusajs/ui"
+import { toast } from "@switchyard/ui"
 
 const ContentfulSettingsPage = () => {
   const { mutate, isPending } = useMutation({
@@ -1789,15 +1789,15 @@ Then, in the return statement, you display a button that triggers the mutation w
 
 ### Test the Sync
 
-To test out the sync, start the Medusa application:
+To test out the sync, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard and login. In the sidebar, you'll find a new "Contentful" item. If you click on it, you'll see the page you created with the button to trigger the sync.
+Then, open the Switchyard Admin dashboard and login. In the sidebar, you'll find a new "Contentful" item. If you click on it, you'll see the page you created with the button to trigger the sync.
 
-![The Contentful page in the Medusa Admin dashboard with a button to trigger the sync](https://res.cloudinary.com/dza7lstvk/image/upload/v1744718825/Medusa%20Resources/Screenshot_2025-04-15_at_3.06.53_PM_va8e20.png)
+![The Contentful page in the Switchyard Admin dashboard with a button to trigger the sync](https://res.cloudinary.com/dza7lstvk/image/upload/v1744718825/Switchyard%20Resources/Screenshot_2025-04-15_at_3.06.53_PM_va8e20.png)
 
 If you click on the button, you'll see the following message in the terminal:
 
@@ -1805,11 +1805,11 @@ If you click on the button, you'll see the following message in the terminal:
 info: Synced 4 products to Contentful
 ```
 
-Assuming you have `4` products in Medusa, the message indicates that the sync was successful.
+Assuming you have `4` products in Switchyard, the message indicates that the sync was successful.
 
 You can also see the products in the Contentful dashboard.
 
-![The Contentful dashboard showing the synced products](https://res.cloudinary.com/dza7lstvk/image/upload/v1744718896/Medusa%20Resources/Screenshot_2025-04-15_at_3.08.02_PM_qexr0x.png)
+![The Contentful dashboard showing the synced products](https://res.cloudinary.com/dza7lstvk/image/upload/v1744718896/Switchyard%20Resources/Screenshot_2025-04-15_at_3.08.02_PM_qexr0x.png)
 
 ---
 
@@ -1860,7 +1860,7 @@ Next, you'll create an API route that exposes the locales to the storefront.
 To create the API route, create the file `src/api/store/locales/route.ts` with the following content:
 
 export const getLocalesRouteHighlights = [
-  ["12", "contentfulModuleService", "Resolve the Contentful Module's service from the Medusa container."],
+  ["12", "contentfulModuleService", "Resolve the Contentful Module's service from the Switchyard container."],
   ["16", "locales", "Retrieve the locales from Contentful."],
   ["17", "defaultLocaleCode", "Retrieve the default locale code from the module's options."],
   ["19", "formattedLocales", "Format the locales to include their name, code, and whether they are the default locale."],
@@ -1868,15 +1868,15 @@ export const getLocalesRouteHighlights = [
 
 ```ts title="src/api/store/locales/route.ts" highlights={getLocalesRouteHighlights}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { CONTENTFUL_MODULE } from "../../../modules/contentful"
 import ContentfulModuleService from "../../../modules/contentful/service"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const contentfulModuleService: ContentfulModuleService = req.scope.resolve(
     CONTENTFUL_MODULE
@@ -1901,7 +1901,7 @@ export const GET = async (
 
 Since you export a `GET` route handler function, you expose a `GET` route at `/store/locales`.
 
-In the route handler, you resolve the Contentful Module's service from the Medusa container to retrieve the locales and the default locale code.
+In the route handler, you resolve the Contentful Module's service from the Switchyard container to retrieve the locales and the default locale code.
 
 Then, you format the locales to include their name, code, and whether they are the default locale.
 
@@ -1909,15 +1909,15 @@ Finally, you return the formatted locales in the JSON response.
 
 ### Customize Storefront to Show Locales
 
-In the first step of this tutorial, you installed the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) along with the Medusa application. This storefront provides ecommerce features like a product catalog, a cart, and a checkout.
+In the first step of this tutorial, you installed the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) along with the Switchyard application. This storefront provides ecommerce features like a product catalog, a cart, and a checkout.
 
 In this section, you'll customize the storefront to show the locales to customers and allow them to select from them. The selected locale will be stored in the browser's cookies, allowing you to use it later when retrieving a product's localized data.
 
 <Note title="Reminder" forceMultiline>
 
-The Next.js Starter Storefront was installed in a separate directory from Medusa. The directory's name is `{your-project}-storefront`.
+The Next.js Starter Storefront was installed in a separate directory from Switchyard. The directory's name is `{your-project}-storefront`.
 
-So, if your Medusa application's directory is `medusa-contentful`, you can find the storefront by going back to the parent directory and changing to the `medusa-contentful-storefront` directory:
+So, if your Switchyard application's directory is `medusa-contentful`, you can find the storefront by going back to the parent directory and changing to the `medusa-contentful-storefront` directory:
 
 ```bash
 cd ../medusa-contentful-storefront # change based on your project name
@@ -1959,7 +1959,7 @@ Next, you'll add server actions to retrieve the locales and set the selected loc
 Create the file `src/lib/data/locale.ts` with the following content:
 
 export const getLocalesHighlights = [
-  ["13", "getLocales", "Retrieve the locales from the Medusa server."],
+  ["13", "getLocales", "Retrieve the locales from the Switchyard server."],
   ["19", "getSelectedLocale", "Retrieve the selected locale either from the browser's cookies\nor the default locale."],
   ["28", "setSelectedLocale", "Set the selected locale in the browser's cookies."],
 ]
@@ -1999,7 +1999,7 @@ export async function setSelectedLocale(locale: string) {
 
 You add the following functions:
 
-1. `getLocales`: Retrieves the locales from the Medusa server using the API route you created earlier.
+1. `getLocales`: Retrieves the locales from the Switchyard server using the API route you created earlier.
 2. `getSelectedLocale`: Retrieves the selected locale from the browser's cookies, or the default locale if no locale is selected.
 3. `setSelectedLocale`: Sets the selected locale in the browser's cookies.
 
@@ -2013,7 +2013,7 @@ Create the file `src/modules/layout/components/locale-select/index.tsx` with the
 
 export const localeSelectHighlights = [
   ["9", "LocaleSelect", "The React component that defines the locale selector."],
-  ["10", "locales", "The list of locales retrieved from the Medusa server."],
+  ["10", "locales", "The list of locales retrieved from the Switchyard server."],
   ["11", "locale", "The selected locale."],
   ["12", "open", "A boolean indicating whether the dropdown is open."],
   ["14", "useEffect", "Retrieve the locales and set them in the `locales` state variable."],
@@ -2028,8 +2028,8 @@ export const localeSelectHighlights = [
 import { useState, useEffect, Fragment } from "react"
 import { getLocales, Locale, getSelectedLocale, setSelectedLocale } from "../../../../lib/data/locale"
 import { Listbox, ListboxButton, ListboxOption, ListboxOptions, Transition } from "@headlessui/react"
-import { ArrowRightMini } from "@medusajs/icons"
-import { clx } from "@medusajs/ui"
+import { ArrowRightMini } from "@switchyard/icons"
+import { clx } from "@switchyard/ui"
 
 const LocaleSelect = () => {
   const [locales, setLocales] = useState<Locale[]>([])
@@ -2073,7 +2073,7 @@ export default LocaleSelect
 
 You create a `LocaleSelect` component with the following state variables:
 
-1. `locales`: The list of locales retrieved from the Medusa server.
+1. `locales`: The list of locales retrieved from the Switchyard server.
 2. `locale`: The selected locale.
 3. `open`: A boolean indicating whether the dropdown is open.
 
@@ -2168,7 +2168,7 @@ The locale selector will now show in the side menu after the country selector.
 
 ### Test out the Locale Selector
 
-To test out all the changes made in this step, start the Medusa application by running the following command in the Medusa application's directory:
+To test out all the changes made in this step, start the Switchyard application by running the following command in the Switchyard application's directory:
 
 ```bash npm2yarn
 npm run dev
@@ -2182,7 +2182,7 @@ npm run dev
 
 The storefront will run at `http://localhost:8000`. Open it in your browser, then click on "Menu" at the top right. You'll see at the bottom of the side menu the locale selector.
 
-![The locale selector in the side menu](https://res.cloudinary.com/dza7lstvk/image/upload/v1744720332/Medusa%20Resources/Screenshot_2025-04-15_at_3.31.51_PM_vdqou5.png)
+![The locale selector in the side menu](https://res.cloudinary.com/dza7lstvk/image/upload/v1744720332/Switchyard%20Resources/Screenshot_2025-04-15_at_3.31.51_PM_vdqou5.png)
 
 You can try selecting a different locale. The selected locale will be stored, but products will still be shown in the default locale. You'll implement the locale-based product retrieval in the next step.
 
@@ -2194,18 +2194,18 @@ The next feature you'll implement is retrieving and displaying product details f
 
 You'll implement this feature by:
 
-1. Linking Medusa's product to Contentful's product.
+1. Linking Switchyard's product to Contentful's product.
 2. Adding the method to retrieve product details for a selected locale from Contentful.
 3. Adding a new route to retrieve the product details for a selected locale.
 4. Customizing the storefront to show the product details for the selected locale.
 
-### Link Medusa's Product to Contentful's Product
+### Link Switchyard's Product to Contentful's Product
 
-Medusa facilitates retrieving data across systems using [module links](!docs!/learn/fundamentals/module-links). A module link forms an association between data models of two modules while maintaining module isolation.
+Switchyard facilitates retrieving data across systems using [module links](!docs!/learn/fundamentals/module-links). A module link forms an association between data models of two modules while maintaining module isolation.
 
-Not only do module links support Medusa data models, but they also support virtual data models that are not persisted in Medusa's database. In that case, you create a [read-only module link](!docs!/learn/fundamentals/module-links/read-only) that allows you to retrieve data across systems.
+Not only do module links support Switchyard data models, but they also support virtual data models that are not persisted in Switchyard's database. In that case, you create a [read-only module link](!docs!/learn/fundamentals/module-links/read-only) that allows you to retrieve data across systems.
 
-In this section, you'll define a read-only module link between Medusa's product and Contentful's product, allowing you to later retrieve a product's entry in Contentful within a single query.
+In this section, you'll define a read-only module link between Switchyard's product and Contentful's product, allowing you to later retrieve a product's entry in Contentful within a single query.
 
 <Note>
 
@@ -2217,8 +2217,8 @@ Module links are defined in a TypeScript or JavaScript file under the `src/links
 
 export const productContentfulLinkHighlights = [
   ["5", "defineLink", "Define the module link."],
-  ["7", "linkable", "The Medusa data model to link."],
-  ["8", "field", "The field in the Medusa data model that holds the ID of the product."],
+  ["7", "linkable", "The Switchyard data model to link."],
+  ["8", "field", "The field in the Switchyard data model that holds the ID of the product."],
   ["11", "linkable", "The Contentful virtual data model to link."],
   ["12", "serviceName", "The name of the Contentful Module."],
   ["13", "alias", "The alias to use when querying the linked records."],
@@ -2227,8 +2227,8 @@ export const productContentfulLinkHighlights = [
 ]
 
 ```ts title="src/links/product-contentful.ts" highlights={productContentfulLinkHighlights}
-import { defineLink } from "@medusajs/framework/utils"
-import ProductModule from "@medusajs/medusa/product"
+import { defineLink } from "@switchyard/framework/utils"
+import ProductModule from "@switchyard/medusa/product"
 import { CONTENTFUL_MODULE } from "../modules/contentful"
 
 export default defineLink(
@@ -2251,9 +2251,9 @@ export default defineLink(
 
 You define a module link using `defineLink` from the Modules SDK. It accepts three parameters:
 
-1. An object with the linkable configuration of the data model in Medusa, and the field that will be passed as a filter to the Contentful Module's service.
+1. An object with the linkable configuration of the data model in Switchyard, and the field that will be passed as a filter to the Contentful Module's service.
 2. An object with the linkable configuration of the virtual data model in Contentful. This object must have the following properties:
-   - `serviceName`: The name of the service, which is the Contentful Module's name. Medusa uses this name to resolve the module's service from the Medusa container.
+   - `serviceName`: The name of the service, which is the Contentful Module's name. Switchyard uses this name to resolve the module's service from the Switchyard container.
    - `alias`: The alias to use when querying the linked records. You'll see how that works in a bit.
    - `primaryKey`: The field in Contentful's virtual data model that holds the ID of a product.
 3. An object with the `readOnly` property set to `true`.
@@ -2342,20 +2342,20 @@ export default class ContentfulModuleService {
 
 You add a `list` method that accepts an object with the following properties:
 
-1. `id`: The ID of the product(s) in Medusa to retrieve their entries in Contentful.
+1. `id`: The ID of the product(s) in Switchyard to retrieve their entries in Contentful.
 2. `context`: An object with the `locale` property that holds the locale code to retrieve the product's entry in Contentful for that locale.
 
 In the method, you use the Delivery API client's `getEntries` method to retrieve the products. You pass the following parameters:
 
 - `limit`: The maximum number of products to retrieve.
 - `content_type`: The content type of the entries to retrieve, which is `product`.
-- `fields.medusaId`: Filter the products by their `medusaId` field, which holds the ID of the product in Medusa.
+- `fields.medusaId`: Filter the products by their `medusaId` field, which holds the ID of the product in Switchyard.
 - `locale`: The locale code to retrieve the fields of the product in that locale.
 - `include`: The depth of the included nested entries. This ensures that you can retrieve the product's variants and options, and their values.
 
 Then, you format the retrieved products to:
 
-- Pass the product's ID in the `product_id` property. This is essential to map a product in Medusa to its entry in Contentful.
+- Pass the product's ID in the `product_id` property. This is essential to map a product in Switchyard to its entry in Contentful.
 - Remove the circular references in the product's variants, options, and values to avoid infinite loops.
 
 <Note title="Tip">
@@ -2375,7 +2375,7 @@ So, create the file `src/api/store/products/[id]/[locale]/route.ts` with the fol
 export const getProductLocaleDetailsRouteHighlights = [
   ["11", "locale", "Retrieve the locale from the request's path parameters."],
   ["12", "id", "Retrieve the product's ID from the request's path parameters."],
-  ["13", "query", "Resolve Query from the Medusa container."],
+  ["13", "query", "Resolve Query from the Switchyard container."],
   ["15", "data", "Retrieve the product's details from Contentful."],
   ["19", `"contentful_product.*"`, "Retrieve the product's details from Contentful."],
   ["24", "context", "Pass the locale code in the query's context."]
@@ -2383,14 +2383,14 @@ export const getProductLocaleDetailsRouteHighlights = [
 
 ```ts title="src/api/store/products/[id]/[locale]/route.ts" highlights={getProductLocaleDetailsRouteHighlights}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { QueryContext } from "@medusajs/framework/utils"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { QueryContext } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { locale, id } = req.params
   
@@ -2420,7 +2420,7 @@ export const GET = async (
 
 Since you export a `GET` route handler function, you expose a `GET` route at `/store/products/[id]/[locale]`. The route accepts two path parameters: the product's ID and the locale code.
 
-In the route handler, you retrieve the `locale` and `id` path parameters from the request. Then, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Medusa container.
+In the route handler, you retrieve the `locale` and `id` path parameters from the request. Then, you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Switchyard container.
 
 Next, you use Query to retrieve the localized details of the specified product. To do that, you pass an object with the following properties:
 
@@ -2429,9 +2429,9 @@ Next, you use Query to retrieve the localized details of the specified product. 
 - `filters`: The filter to apply on the retrieved products. You apply the product's ID as a filter.
 - `context`: An additional context to be passed to the methods retrieving the data. To pass a context, you use [Query Context](!docs!/learn/fundamentals/module-links/query-context).
 
-By specifying `contentful_product.*` in the `fields` property, Medusa will retrieve the product's entry from Contentful using the `list` method you added to the Contentful Module's service.
+By specifying `contentful_product.*` in the `fields` property, Switchyard will retrieve the product's entry from Contentful using the `list` method you added to the Contentful Module's service.
 
-Medusa passes the filters and context to the `list` method, and attaches the returned data to the Medusa product if its `product_id` matches the product's ID.
+Switchyard passes the filters and context to the `list` method, and attaches the returned data to the Switchyard product if its `product_id` matches the product's ID.
 
 Finally, you return the product's details in the JSON response.
 
@@ -2667,7 +2667,7 @@ You use the `documentToHtmlString` function to render the rich-text field. The f
 
 You can now test out all the changes made in this step.
 
-To do that, start the Medusa application by running the following command in the Medusa application's directory:
+To do that, start the Switchyard application by running the following command in the Switchyard application's directory:
 
 ```bash npm2yarn
 npm run dev
@@ -2683,25 +2683,25 @@ Open the storefront at `http://localhost:8000` and select a different locale.
 
 Then, open the products listing page by clicking on Menu -> Store. You'll see the product titles in the selected locale.
 
-![The product titles are shown in the selected locale](https://res.cloudinary.com/dza7lstvk/image/upload/v1744723796/Medusa%20Resources/Screenshot_2025-04-15_at_4.29.39_PM_izxt6j.png)
+![The product titles are shown in the selected locale](https://res.cloudinary.com/dza7lstvk/image/upload/v1744723796/Switchyard%20Resources/Screenshot_2025-04-15_at_4.29.39_PM_izxt6j.png)
 
 Then, if you click on a product, you'll see the product's title and description in the selected locale.
 
-![The product's title and description are shown in the selected locale](https://res.cloudinary.com/dza7lstvk/image/upload/v1744723844/Medusa%20Resources/Screenshot_2025-04-15_at_4.30.31_PM_pt6ngz.png)
+![The product's title and description are shown in the selected locale](https://res.cloudinary.com/dza7lstvk/image/upload/v1744723844/Switchyard%20Resources/Screenshot_2025-04-15_at_4.30.31_PM_pt6ngz.png)
 
 ---
 
-## Step 8: Sync Changes from Contentful to Medusa
+## Step 8: Sync Changes from Contentful to Switchyard
 
-The last feature you'll implement is syncing changes from Contentful to Medusa.
+The last feature you'll implement is syncing changes from Contentful to Switchyard.
 
-Contentful's webhooks allow you to listen to changes in your Contentful entries. You can then set up a webhook listener API route in Medusa that updates the product's data.
+Contentful's webhooks allow you to listen to changes in your Contentful entries. You can then set up a webhook listener API route in Switchyard that updates the product's data.
 
-In this step, you'll set up a webhook listener that updates Medusa's product data when a Contentful entry is published.
+In this step, you'll set up a webhook listener that updates Switchyard's product data when a Contentful entry is published.
 
 ### Prerequisites: Public Server
 
-Webhooks can only trigger deployed listeners. So, you must either [deploy your Medusa application](../../../deployment/page.mdx), or use tools like [ngrok](https://ngrok.com/) to publicly expose your local application.
+Webhooks can only trigger deployed listeners. So, you must either [deploy your Switchyard application](../../../deployment/page.mdx), or use tools like [ngrok](https://ngrok.com/) to publicly expose your local application.
 
 ### Set Up Webhooks in Contentful
 
@@ -2709,19 +2709,19 @@ Before setting up the webhook listener, you need to set up a webhook in Contentf
 
 1. Click on the cog icon at the top right, then choose "Webhooks" from the dropdown.
 
-![The cog icon is at the top right next to the avatar icon. When you click on it, you see a dropdown with the "Webhooks" option](https://res.cloudinary.com/dza7lstvk/image/upload/v1744733023/Medusa%20Resources/Screenshot_2025-04-15_at_7.03.21_PM_ji7ohw.png)
+![The cog icon is at the top right next to the avatar icon. When you click on it, you see a dropdown with the "Webhooks" option](https://res.cloudinary.com/dza7lstvk/image/upload/v1744733023/Switchyard%20Resources/Screenshot_2025-04-15_at_7.03.21_PM_ji7ohw.png)
 
 2. On the Webhooks page, click on the "Add Webhook" button.
 3. In the webhook form:
-    - In the Name fields, enter a name, such as "Medusa".
-    - In the URL field, enter `{your_app}/hooks/contentful`, where `{your_app}` is the public URL of your Medusa application. You'll create the `/hooks/contentful` API route in a bit.
+    - In the Name fields, enter a name, such as "Switchyard".
+    - In the URL field, enter `{your_app}/hooks/contentful`, where `{your_app}` is the public URL of your Switchyard application. You'll create the `/hooks/contentful` API route in a bit.
     - In the Triggers section, select the "Published" trigger for "Entry".
 
-![The webhook form with the URL and triggers highlighted](https://res.cloudinary.com/dza7lstvk/image/upload/v1744733332/Medusa%20Resources/Screenshot_2025-04-15_at_7.08.24_PM_coq6oo.png)
+![The webhook form with the URL and triggers highlighted](https://res.cloudinary.com/dza7lstvk/image/upload/v1744733332/Switchyard%20Resources/Screenshot_2025-04-15_at_7.08.24_PM_coq6oo.png)
 
     - Scroll down to the "Headers" section, and choose "application/json" for the "Content type" field.
 
-![The webhook form](https://res.cloudinary.com/dza7lstvk/image/upload/v1744733411/Medusa%20Resources/Screenshot_2025-04-15_at_7.09.53_PM_kvlppv.png)
+![The webhook form](https://res.cloudinary.com/dza7lstvk/image/upload/v1744733411/Switchyard%20Resources/Screenshot_2025-04-15_at_7.09.53_PM_kvlppv.png)
 
 4. Once you're done, click the Save button.
 
@@ -2733,23 +2733,23 @@ You also need to add a webhook secret in Contentful. To do that, on the Contentf
 2. On the Webhooks page, click on the "Settings" tab.
 3. Click on the "Enable request verification" button.
 
-![The "Enable request verification" button in the "Settings" tab](https://res.cloudinary.com/dza7lstvk/image/upload/v1744786362/Medusa%20Resources/Screenshot_2025-04-16_at_9.51.39_AM_byv3tt.png)
+![The "Enable request verification" button in the "Settings" tab](https://res.cloudinary.com/dza7lstvk/image/upload/v1744786362/Switchyard%20Resources/Screenshot_2025-04-16_at_9.51.39_AM_byv3tt.png)
 
 4. Copy the secret that shows up. You can update it later but you can't see the same secret again.
 
-You'll use the secret to verify the webhook request in Medusa next.
+You'll use the secret to verify the webhook request in Switchyard next.
 
 ### Update Contentful Module Options
 
-First, add the webhook secret as an environment variable in the Medusa application's `.env` file:
+First, add the webhook secret as an environment variable in the Switchyard application's `.env` file:
 
 ```plain
 CONTENTFUL_WEBHOOK_SECRET=aEl7...
 ```
 
-Next, add the webhook secret to the Contentful Module options in the Medusa application's `medusa-config.ts` file:
+Next, add the webhook secret to the Contentful Module options in the Switchyard application's `switchyard.config.ts` file:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -2798,8 +2798,8 @@ export default class ContentfulModuleService {
   // ...
   async verifyWebhook(request: CanonicalRequest) {
     if (!this.options.webhook_secret) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA, 
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA, 
         "Webhook secret is not set"
       )
     }
@@ -2871,7 +2871,7 @@ The workflow will have the following steps:
   }}
 />
 
-You only need to implement the first step, as Medusa provides the other workflows (running as steps) in the `@medusajs/medusa/core-flows` package.
+You only need to implement the first step, as Switchyard provides the other workflows (running as steps) in the `@switchyard/medusa/core-flows` package.
 
 #### prepareUpdateDataStep
 
@@ -2881,14 +2881,14 @@ To create the step, create the file `src/workflows/steps/prepare-update-data.ts`
 
 export const prepareUpdateDataStepHighlights = [
   ["12", "entry", "Receive the webhook data payload as an input."],
-  ["13", "contentfulModuleService", "Resolve the Contentful Module's service from the Medusa container."],
+  ["13", "contentfulModuleService", "Resolve the Contentful Module's service from the Switchyard container."],
   ["16", "defaultLocale", "Retrieve the default locale code from the Contentful Module's service."],
   ["18", "data", "Prepare the data to return based on the entry type."],
   ["20", "switch", "Set the data based on the entry type."]
 ]
 
 ```ts title="src/workflows/steps/prepare-update-data.ts" highlights={prepareUpdateDataStepHighlights}
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { EntryProps } from "contentful-management"
 import ContentfulModuleService from "../../modules/contentful/service"
 import { CONTENTFUL_MODULE } from "../../modules/contentful"
@@ -2941,7 +2941,7 @@ export const prepareUpdateDataStep = createStep(
 
 You define a `prepareUpdateDataStep` function that receives the webhook data payload as an input.
 
-In the step, you resolve the Contentful Module's service and use it to retrieve the default locale code. You need it to find the value to update the fields in Medusa.
+In the step, you resolve the Contentful Module's service and use it to retrieve the default locale code. You need it to find the value to update the fields in Switchyard.
 
 Next, you prepare the data to return based on the entry type:
 
@@ -2969,7 +2969,7 @@ export const handleContentfulHookWorkflowHighlights = [
 ]
 
 ```ts title="src/workflows/handle-contentful-hook.ts" highlights={handleContentfulHookWorkflowHighlights} collapsibleLines="1-14" expandButtonLabel="Show Imports"
-import { createWorkflow, when } from "@medusajs/framework/workflows-sdk"
+import { createWorkflow, when } from "@switchyard/framework/workflows-sdk"
 import { EntryProps } from "contentful-management"
 import { prepareUpdateDataStep } from "./steps/prepare-update-data"
 import { 
@@ -2977,11 +2977,11 @@ import {
   updateProductsWorkflow, 
   updateProductVariantsWorkflow, 
   UpdateProductOptionsWorkflowInput,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   UpsertProductDTO, 
   UpsertProductVariantDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 export type WorkflowInput = {
   entry: EntryProps
@@ -3048,26 +3048,26 @@ You can finally add the API route that acts as a webhook listener.
 To add the API route, create the file `src/api/hooks/contentful/route.ts` with the following content:
 
 export const contentfulHookRouteHighlights = [
-  ["15", "contentfulModuleService", "Resolve the Contentful Module's service from the Medusa container."],
+  ["15", "contentfulModuleService", "Resolve the Contentful Module's service from the Switchyard container."],
   ["18", "isValid", "Verify the webhook request."],
   ["25", "if", "Throw an error if the request is invalid."],
   ["32", "handleContentfulHookWorkflow", "Run the workflow with the request's body as the input."],
 ]
 
 ```ts title="src/api/hooks/contentful/route.ts" highlights={contentfulHookRouteHighlights} collapsibleLines="1-10" expandButtonLabel="Show Imports"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { 
   handleContentfulHookWorkflow, 
   HandleContentfulHookWorkflowInput,
 } from "../../../workflows/handle-contentful-hook"
 import { CONTENTFUL_MODULE } from "../../../modules/contentful"
 import { CanonicalRequest } from "@contentful/node-apps-toolkit"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import ContentfulModuleService from "../../../modules/contentful/service"
 
 export const POST = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const contentfulModuleService: ContentfulModuleService = 
     req.scope.resolve(CONTENTFUL_MODULE)
@@ -3080,8 +3080,8 @@ export const POST = async (
   } as unknown as CanonicalRequest)
   
   if (!isValid) {
-    throw new MedusaError(
-      MedusaError.Types.UNAUTHORIZED, 
+    throw new SwitchyardError(
+      SwitchyardError.Types.UNAUTHORIZED, 
       "Invalid webhook request"
     )
   }
@@ -3106,31 +3106,31 @@ Finally, you return a `200` response to Contentful to confirm that the webhook w
 
 ### Test the Webhook Listener
 
-To test out the webhook listener, start the Medusa application:
+To test out the webhook listener, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, try updating a product's title (in the default locale) in Contentful. You should see the product's title updated in Medusa.
+Then, try updating a product's title (in the default locale) in Contentful. You should see the product's title updated in Switchyard.
 
 ---
 
 ## Next Steps
 
-You've now integrated Contentful with Medusa and supported localized product details. You can expand on the features in this tutorial to:
+You've now integrated Contentful with Switchyard and supported localized product details. You can expand on the features in this tutorial to:
 
 1. Add support for other data types, such as product categories or collections.
     - Refer to the data model references for each [Commerce Module](../../../commerce-modules/page.mdx) to figure out the content types you need to create in Contentful.
 2. Listen to other product events and update the Contentful entries accordingly.
-    - Refer to the [Events Reference](/references/events) for details on all events emitted in Medusa.
+    - Refer to the [Events Reference](/references/events) for details on all events emitted in Switchyard.
 3. Add localization for the entire Next.js Starter Storefront. You can either:
    - Create content types in Contentful for different sections in the storefront, then use them to retrieve the localized content;
    - Or use the approaches recommended in the [Next.js documentation](https://nextjs.org/docs/app/building-your-application/routing/internationalization).
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).
 
 ### Troubleshooting
 
@@ -3140,6 +3140,6 @@ If you encounter issues during your development, check out the [troubleshooting 
 
 If you encounter issues not covered in the troubleshooting guides:
 
-1. Visit the [Medusa GitHub repository](https://github.com/medusajs/medusa) to report issues or ask questions.
-2. Join the [Medusa Discord community](https://discord.gg/medusajs) for real-time support from community members.
-3. Contact the [sales team](https://medusajs.com/contact/) to get help from the Medusa team.
+1. Visit the [Switchyard GitHub repository](https://github.com/switchyard/medusa) to report issues or ask questions.
+2. Join the [Switchyard Discord community](https://discord.gg/switchyard) for real-time support from community members.
+3. Contact the [sales team](https://switchyard.com/contact/) to get help from the Switchyard team.

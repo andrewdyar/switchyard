@@ -1,1 +1,1 @@
-# `@medusajs/admin-bundler`
+# `@switchyard/admin-bundler`

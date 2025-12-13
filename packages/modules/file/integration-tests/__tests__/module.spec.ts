@@ -1,6 +1,6 @@
-import { IFileModuleService } from "@medusajs/framework/types"
-import { Module, Modules } from "@medusajs/framework/utils"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { IFileModuleService } from "@switchyard/framework/types"
+import { Module, Modules } from "@switchyard/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { FileModuleService } from "@services"
 import { resolve } from "path"
 

@@ -1,13 +1,13 @@
-import { createDefaultsWorkflow } from "@medusajs/core-flows"
+import { createDefaultsWorkflow } from "@switchyard/core-flows"
 import {
   IRegionModuleService,
   IStoreModuleService,
-  MedusaContainer,
-} from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+  SwitchyardContainer,
+} from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 
 export const seedStorefrontDefaults = async (
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   defaultCurrency: string = "usd"
 ) => {
   const regionModule: IRegionModuleService = container.resolve(Modules.REGION)

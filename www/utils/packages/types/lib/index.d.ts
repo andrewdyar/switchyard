@@ -344,7 +344,7 @@ export declare type NamespaceGenerateDetails = {
   children?: NamespaceGenerateDetails[]
 }
 
-export declare type MedusaEvent = {
+export declare type SwitchyardEvent = {
   name: string
   parentName: string
   propertyName: string

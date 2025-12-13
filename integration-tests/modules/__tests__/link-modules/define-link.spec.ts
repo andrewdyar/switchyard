@@ -1,10 +1,10 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 
-import CurrencyModule from "@medusajs/currency"
-import { MedusaModule } from "@medusajs/modules-sdk"
-import ProductModule from "@medusajs/product"
-import RegionModule from "@medusajs/region"
-import { defineLink } from "@medusajs/utils"
+import CurrencyModule from "@switchyard/currency"
+import { SwitchyardModule } from "@switchyard/modules-sdk"
+import ProductModule from "@switchyard/product"
+import RegionModule from "@switchyard/region"
+import { defineLink } from "@switchyard/utils"
 
 jest.setTimeout(50000)
 
@@ -17,10 +17,10 @@ medusaIntegrationTestRunner({
 
         const link = defineLink(currencyLinks.currency, regionLinks.region)
 
-        const linkDefinition = MedusaModule.getCustomLinks()
+        const linkDefinition = SwitchyardModule.getCustomLinks()
           .map((linkDefinition: any) => {
             const definition = linkDefinition(
-              MedusaModule.getAllJoinerConfigs()
+              SwitchyardModule.getAllJoinerConfigs()
             )
             return definition.serviceName === link.serviceName && definition
           })
@@ -118,10 +118,10 @@ medusaIntegrationTestRunner({
           regionLinks.region
         )
 
-        const linkDefinition = MedusaModule.getCustomLinks()
+        const linkDefinition = SwitchyardModule.getCustomLinks()
           .map((linkDefinition: any) => {
             const definition = linkDefinition(
-              MedusaModule.getAllJoinerConfigs()
+              SwitchyardModule.getAllJoinerConfigs()
             )
             return definition.serviceName === link.serviceName && definition
           })
@@ -224,10 +224,10 @@ medusaIntegrationTestRunner({
           regionLinks.region
         )
 
-        const linkDefinition = MedusaModule.getCustomLinks()
+        const linkDefinition = SwitchyardModule.getCustomLinks()
           .map((linkDefinition: any) => {
             const definition = linkDefinition(
-              MedusaModule.getAllJoinerConfigs()
+              SwitchyardModule.getAllJoinerConfigs()
             )
             return definition.serviceName === link.serviceName && definition
           })
@@ -325,10 +325,10 @@ medusaIntegrationTestRunner({
           isList: true,
         })
 
-        const linkDefinition = MedusaModule.getCustomLinks()
+        const linkDefinition = SwitchyardModule.getCustomLinks()
           .map((linkDefinition: any) => {
             const definition = linkDefinition(
-              MedusaModule.getAllJoinerConfigs()
+              SwitchyardModule.getAllJoinerConfigs()
             )
             return definition.serviceName === link.serviceName && definition
           })
@@ -431,10 +431,10 @@ medusaIntegrationTestRunner({
           }
         )
 
-        const linkDefinition = MedusaModule.getCustomLinks()
+        const linkDefinition = SwitchyardModule.getCustomLinks()
           .map((linkDefinition: any) => {
             const definition = linkDefinition(
-              MedusaModule.getAllJoinerConfigs()
+              SwitchyardModule.getAllJoinerConfigs()
             )
             return definition.serviceName === link.serviceName && definition
           })
@@ -537,10 +537,10 @@ medusaIntegrationTestRunner({
           }
         )
 
-        const linkDefinition = MedusaModule.getCustomLinks()
+        const linkDefinition = SwitchyardModule.getCustomLinks()
           .map((linkDefinition: any) => {
             const definition = linkDefinition(
-              MedusaModule.getAllJoinerConfigs()
+              SwitchyardModule.getAllJoinerConfigs()
             )
             return definition.serviceName === link.serviceName && definition
           })

@@ -1,5 +1,5 @@
-import { DropdownMenu, IconButton } from "@medusajs/ui"
-import { BarsArrowDown } from "@medusajs/icons"
+import { DropdownMenu, IconButton } from "@switchyard/ui"
+import { BarsArrowDown } from "@switchyard/icons"
 
 export default function DropdownMenuSubmenu() {
   return (

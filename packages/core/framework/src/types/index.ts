@@ -1,1 +1,1 @@
-export * from "@medusajs/types"
+export * from "@switchyard/types"

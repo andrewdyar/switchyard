@@ -1,5 +1,5 @@
 import { InlineIcon } from "docs-ui"
-import { EllipsisHorizontal, ChevronUpDown } from "@medusajs/icons"
+import { EllipsisHorizontal, ChevronUpDown } from "@switchyard/icons"
 
 export const metadata = {
   title: `Long-Lived Environments`,
@@ -19,10 +19,10 @@ Learn more about what environments are and their types in the [Environments](../
 
 ## Long-Lived Environments Infrastructure
 
-Production and long-lived environments are stable and scalable, making them ideal for hosting your Medusa applications. Medusa ensures that they're:
+Production and long-lived environments are stable and scalable, making them ideal for hosting your Switchyard applications. Switchyard ensures that they're:
 
-- **Always available with zero-downtime deployments**: Your application will always be available for users, even during deployments. Medusa automatically handles rolling updates without interrupting your users.
-- **Automatically scaled to meet peak traffic**: Medusa automatically scales your servers to handle traffic spikes, such as during flash sales or marketing campaigns. Your application can handle sudden increases in traffic without manual intervention.
+- **Always available with zero-downtime deployments**: Your application will always be available for users, even during deployments. Switchyard automatically handles rolling updates without interrupting your users.
+- **Automatically scaled to meet peak traffic**: Switchyard automatically scales your servers to handle traffic spikes, such as during flash sales or marketing campaigns. Your application can handle sudden increases in traffic without manual intervention.
 - **Equipped with server and worker instances**: Your application runs on multiple server instances that handle incoming HTTP requests, while worker instances handle background tasks like scheduled jobs and subscribers. This separation allows your application to handle both web traffic and background processing efficiently.
 
 ---
@@ -55,7 +55,7 @@ To create a long-lived environment:
     - Enter the name of the environment. For example, `Staging`.
     - Select the branch you want to associate with this environment. For example, `staging`.
         - If you don't see the branch you want to use, refresh the page to load the latest branches from your repository.
-    - Set the custom subdomain for the environment. All environments are subdomains of `medusajs.app`. So, if you set the subdomain to `staging-my-project`, the environment's URL will be `staging-my-project.medusajs.app`.
+    - Set the custom subdomain for the environment. All environments are subdomains of `switchyard.app`. So, if you set the subdomain to `staging-my-project`, the environment's URL will be `staging-my-project.switchyard.app`.
         - Refer to the [Subdomain Restrictions](../../projects/page.mdx#subdomain-restrictions) guide for reserved subdomains and restrictions.
 3. Once you're done, click the "Create" button.
 
@@ -65,16 +65,16 @@ The created environment will appear in the [project's dashboard](../../projects/
 
 ### Trigger Environment Deployment
 
-After creating the environment, Medusa will automatically trigger a deployment for the environment using the associated branch (for example, `staging`). This includes:
+After creating the environment, Switchyard will automatically trigger a deployment for the environment using the associated branch (for example, `staging`). This includes:
 
 - Deploying the environment from the associated branch.
 - Setting up the database and resources for the environment. These are different from the resources of other environments.
 
-After that, Medusa will automatically deploy the environment whenever you push a new commit to the associated branch.
+After that, Switchyard will automatically deploy the environment whenever you push a new commit to the associated branch.
 
-### Create Medusa Admin User in Environment
+### Create Switchyard Admin User in Environment
 
-After the environment is deployed, you need to set the email and password for the environment's Medusa Admin user.
+After the environment is deployed, you need to set the email and password for the environment's Switchyard Admin user.
 
 To set the email and password for the admin user:
 

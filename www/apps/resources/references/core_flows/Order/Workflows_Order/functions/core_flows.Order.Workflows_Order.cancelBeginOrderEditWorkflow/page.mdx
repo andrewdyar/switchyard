@@ -10,17 +10,17 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# cancelBeginOrderEditWorkflow - Medusa Core Workflows Reference
+# cancelBeginOrderEditWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `cancelBeginOrderEditWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `cancelBeginOrderEditWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow cancels a requested edit for an order. It's used by the
-[Cancel Order Edit Admin API Route](https://docs.medusajs.com/api/admin#order-edits\_deleteordereditsid).
+[Cancel Order Edit Admin API Route](https://docs.switchyard.com/api/admin#order-edits\_deleteordereditsid).
 
 You can use this workflow within your customizations or your own custom workflows, allowing you to cancel an order edit
 in your custom flow.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/order/workflows/order-edit/cancel-begin-order-edit.ts#L100" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/order/workflows/order-edit/cancel-begin-order-edit.ts#L100" />
 
 ## Examples
 
@@ -29,14 +29,14 @@ in your custom flow.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { cancelBeginOrderEditWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { cancelBeginOrderEditWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await cancelBeginOrderEditWorkflow(req.scope)
     .run({
@@ -56,8 +56,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { cancelBeginOrderEditWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { cancelBeginOrderEditWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -82,11 +82,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { cancelBeginOrderEditWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { cancelBeginOrderEditWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await cancelBeginOrderEditWorkflow(container)
     .run({
@@ -108,8 +108,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { cancelBeginOrderEditWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { cancelBeginOrderEditWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -129,11 +129,11 @@ const myWorkflow = createWorkflow(
 
 ## Steps
 
-<WorkflowDiagram workflow={{"name":"cancelBeginOrderEditWorkflow","steps":[{"type":"step","name":"cancelBeginOrderEditValidationStep","description":"This step validates that a requested order edit can be canceled.\nIf the order is canceled or the order change is not active, the step will throw an error.\n\n:::note\n\nYou can retrieve an order and order change details using [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query),\nor [useQueryGraphStep](https://docs.medusajs.com/resources/references/medusa-workflows/steps/useQueryGraphStep).\n\n:::","link":"../core_flows.Order.Workflows_Order.cancelBeginOrderEditValidationStep/page.mdx","depth":1},{"type":"step","name":"deleteOrderChangesStep","description":"This step deletes order changes.","link":"../../../Steps_Order/functions/core_flows.Order.Steps_Order.deleteOrderChangesStep/page.mdx","depth":2},{"type":"step","name":"deleteOrderShippingMethods","description":"This step deletes order shipping methods.","link":"../../../Steps_Order/functions/core_flows.Order.Steps_Order.deleteOrderShippingMethods/page.mdx","depth":2},{"type":"step","name":"emitEventStep","description":"This step emits an event, which you can listen to in a [subscriber](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the `data` property.\n\nThe event is only emitted after the workflow has finished successfully. So, even if it's executed in the middle of the workflow, it won't actually emit the event until the workflow has completed successfully. \nIf the workflow fails, it won't emit the event at all.","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.emitEventStep/page.mdx","depth":2}]}} />
+<WorkflowDiagram workflow={{"name":"cancelBeginOrderEditWorkflow","steps":[{"type":"step","name":"cancelBeginOrderEditValidationStep","description":"This step validates that a requested order edit can be canceled.\nIf the order is canceled or the order change is not active, the step will throw an error.\n\n:::note\n\nYou can retrieve an order and order change details using [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query),\nor [useQueryGraphStep](https://docs.switchyard.com/resources/references/medusa-workflows/steps/useQueryGraphStep).\n\n:::","link":"../core_flows.Order.Workflows_Order.cancelBeginOrderEditValidationStep/page.mdx","depth":1},{"type":"step","name":"deleteOrderChangesStep","description":"This step deletes order changes.","link":"../../../Steps_Order/functions/core_flows.Order.Steps_Order.deleteOrderChangesStep/page.mdx","depth":2},{"type":"step","name":"deleteOrderShippingMethods","description":"This step deletes order shipping methods.","link":"../../../Steps_Order/functions/core_flows.Order.Steps_Order.deleteOrderShippingMethods/page.mdx","depth":2},{"type":"step","name":"emitEventStep","description":"This step emits an event, which you can listen to in a [subscriber](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the `data` property.\n\nThe event is only emitted after the workflow has finished successfully. So, even if it's executed in the middle of the workflow, it won't actually emit the event until the workflow has completed successfully. \nIf the workflow fails, it won't emit the event at all.","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.emitEventStep/page.mdx","depth":2}]}} />
 
 ## Input
 
-<TypeList types={[{"name":"CancelBeginOrderEditWorkflowInput","type":"[CancelBeginOrderEditWorkflowInput](../../../../types/core_flows.CancelBeginOrderEditWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to cancel a requested order edit.","expandable":false,"children":[{"name":"order_id","type":"`string`","description":"The ID of the order to cancel the edit for.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="cancelBeginOrderEditWorkflow"/>
+<TypeList types={[{"name":"CancelBeginOrderEditWorkflowInput","type":"[CancelBeginOrderEditWorkflowInput](../../../../types/core_flows.CancelBeginOrderEditWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The data to cancel a requested order edit.","expandable":false,"children":[{"name":"order_id","type":"`string`","description":"The ID of the order to cancel the edit for.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="cancelBeginOrderEditWorkflow"/>
 
 ## Emitted Events
 
@@ -145,7 +145,7 @@ The `emitEventStep` only emits the event after the workflow has finished success
 
 :::
 
-You can listen to these events in a subscriber, as explained in the [Subscribers](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers) documentation.
+You can listen to these events in a subscriber, as explained in the [Subscribers](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers) documentation.
 
 <Table>
   <Table.Header>
@@ -179,7 +179,7 @@ Emitted when an order edit request is canceled.
 ```ts blockStyle="inline"
 {
   order_id, // The ID of the order
-  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
 }
 ```
 </Table.Cell>
@@ -189,7 +189,7 @@ Emitted when an order edit request is canceled.
         payload: `\`\`\`ts
 {
   order_id, // The ID of the order
-  actions, // (array) The [actions](https://docs.medusajs.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
+  actions, // (array) The [actions](https://docs.switchyard.com/resources/references/fulfillment/interfaces/fulfillment.OrderChangeActionDTO) to edit the order
 }
 \`\`\``
         }}/>

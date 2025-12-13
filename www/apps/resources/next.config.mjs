@@ -277,14 +277,14 @@ const nextConfig = {
     ])
   },
   outputFileTracingExcludes: {
-    "*": ["node_modules/@medusajs/icons"],
+    "*": ["node_modules/@switchyard/icons"],
   },
   outputFileTracingIncludes: {
     "/md\\-content/\\[\\[\\.\\.\\.slug\\]\\]": ["./app/**/*.mdx"],
     "/md\\-content/references/**": ["./references/**/*.mdx"],
   },
   experimental: {
-    optimizePackageImports: ["@medusajs/icons", "@medusajs/ui", "elkjs"],
+    optimizePackageImports: ["@switchyard/icons", "@switchyard/ui", "elkjs"],
   },
   rewrites: async () => {
     return {

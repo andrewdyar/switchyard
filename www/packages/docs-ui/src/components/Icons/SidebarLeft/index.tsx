@@ -1,4 +1,4 @@
-import { IconProps } from "@medusajs/icons/dist/types"
+import { IconProps } from "@switchyard/icons/dist/types"
 import React from "react"
 
 export const SidebarLeftIcon = (props: IconProps) => {

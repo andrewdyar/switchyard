@@ -7,19 +7,19 @@ export const metadata = {
 
 # {metadata.title}
 
-This troubleshooting guide helps you troubleshoot issues when a scheduled job in your Medusa application is not running, or running at unexpected times.
+This troubleshooting guide helps you troubleshoot issues when a scheduled job in your Switchyard application is not running, or running at unexpected times.
 
 ## Confirm Job is Set Up Correctly
 
-Make sure that the scheduled job is set up correctly in your Medusa application. Check the following:
+Make sure that the scheduled job is set up correctly in your Switchyard application. Check the following:
 
 1. The job is created under the `src/jobs` directory.
 2. The job exports an asynchronous function that performs the task. For example:
 
 ```ts title="src/jobs/hello-world.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 
-export default async function greetingJob(container: MedusaContainer) {
+export default async function greetingJob(container: SwitchyardContainer) {
   const logger = container.resolve("logger")
 
   logger.info("Greeting!")

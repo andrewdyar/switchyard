@@ -5,7 +5,7 @@
  * Aggregates all orders for a store into a single shopping trip.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const Sweep = model.define("goods_sweep", {
   id: model.id().primaryKey(),

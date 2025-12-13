@@ -1,7 +1,7 @@
-import { DeleteEntityInput } from "@medusajs/framework/modules-sdk"
-import type { IFulfillmentModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import { DeleteEntityInput } from "@switchyard/framework/modules-sdk"
+import type { IFulfillmentModuleService } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The IDs of the shipping options to delete.

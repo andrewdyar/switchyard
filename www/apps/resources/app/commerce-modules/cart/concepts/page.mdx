@@ -4,7 +4,7 @@ export const metadata = {
 
 # {metadata.title}
 
-In this document, you’ll learn about the main concepts related to carts in Medusa.
+In this document, you’ll learn about the main concepts related to carts in Switchyard.
 
 ## Cart
 
@@ -26,7 +26,7 @@ A line item, represented by the [LineItem](/references/cart/models/LineItem) dat
 
 <Note>
 
-In the Medusa application, a product variant is implemented in the [Product Module](../../product/page.mdx).
+In the Switchyard application, a product variant is implemented in the [Product Module](../../product/page.mdx).
 
 </Note>
 
@@ -38,7 +38,7 @@ A line item stores some of the product variant’s properties, such as the `prod
 
 A cart has a shipping and billing address. Both of these addresses are represented by the [Address data model](/references/cart/models/Address).
 
-![A diagram showcasing the relation between the Cart and Address data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1711532392/Medusa%20Resources/cart-addresses_ls6qmv.jpg)
+![A diagram showcasing the relation between the Cart and Address data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1711532392/Switchyard%20Resources/cart-addresses_ls6qmv.jpg)
 
 ---
 
@@ -46,7 +46,7 @@ A cart has a shipping and billing address. Both of these addresses are represent
 
 A shipping method, represented by the [ShippingMethod data model](/references/cart/models/ShippingMethod), is used to fulfill the items in the cart after the order is placed. A cart can have more than one shipping method.
 
-In the Medusa application, the shipping method is created from a shipping option, available through the [Fulfillment Module](../../fulfillment/page.mdx). Its ID is stored in the `shipping_option_id` property of the method.
+In the Switchyard application, the shipping method is created from a shipping option, available through the [Fulfillment Module](../../fulfillment/page.mdx). Its ID is stored in the `shipping_option_id` property of the method.
 
 ### data Property
 

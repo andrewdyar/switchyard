@@ -35,13 +35,13 @@ A workflow consists of a series of steps, each step created in a TypeScript or J
 
 The workflow you're creating in this guide has one step to create the brand. So, create the file `src/workflows/create-brand.ts` with the following content:
 
-![Directory structure in the Medusa project after adding the file for createBrandStep](https://res.cloudinary.com/dza7lstvk/image/upload/v1732869184/Medusa%20Book/brand-workflow-dir-overview-1_fjvf5j.jpg)
+![Directory structure in the Switchyard project after adding the file for createBrandStep](https://res.cloudinary.com/dza7lstvk/image/upload/v1732869184/Switchyard%20Book/brand-workflow-dir-overview-1_fjvf5j.jpg)
 
 ```ts title="src/workflows/create-brand.ts"
 import {
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { BRAND_MODULE } from "../modules/brand"
 import BrandModuleService from "../modules/brand/service"
 
@@ -65,11 +65,11 @@ export const createBrandStep = createStep(
 
 You create a `createBrandStep` using the `createStep` function. It accepts the step's unique name as a first parameter, and the step's function as a second parameter.
 
-The step function receives two parameters: input passed to the step when it's invoked, and an object of general context and configurations. This object has a `container` property, which is the Medusa container.
+The step function receives two parameters: input passed to the step when it's invoked, and an object of general context and configurations. This object has a `container` property, which is the Switchyard container.
 
-The [Medusa container](../../../fundamentals/medusa-container/page.mdx) is a registry of Framework and commerce tools accessible in your customizations, such as a workflow's step. The Medusa application registers the services of core and custom modules in the container, allowing you to resolve and use them.
+The [Switchyard container](../../../fundamentals/medusa-container/page.mdx) is a registry of Framework and commerce tools accessible in your customizations, such as a workflow's step. The Switchyard application registers the services of core and custom modules in the container, allowing you to resolve and use them.
 
-So, In the step function, you use the Medusa container to resolve the Brand Module's service and use its generated `createBrands` method, which accepts an object of brands to create.
+So, In the step function, you use the Switchyard container to resolve the Brand Module's service and use its generated `createBrands` method, which accepts an object of brands to create.
 
 <Note>
 
@@ -106,7 +106,7 @@ export const createBrandStep = createStep(
 
 The compensation function's first parameter is the brand's ID which you passed as a second parameter to the step function's returned `StepResponse`. It also accepts a context object with a `container` property as a second parameter, similar to the step function.
 
-In the compensation function, you resolve the Brand Module's service from the Medusa container, then use its generated `deleteBrands` method to delete the brand created by the step. This method accepts the ID of the brand to delete.
+In the compensation function, you resolve the Brand Module's service from the Switchyard container, then use its generated `deleteBrands` method to delete the brand created by the step. This method accepts the ID of the brand to delete.
 
 <Note>
 
@@ -130,7 +130,7 @@ import {
   // ...
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 // ...
 

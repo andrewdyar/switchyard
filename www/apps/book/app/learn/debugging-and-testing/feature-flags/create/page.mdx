@@ -6,13 +6,13 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you'll learn how to create a custom feature flag in Medusa.
+In this chapter, you'll learn how to create a custom feature flag in Switchyard.
 
 ## Why Create a Custom Feature Flag?
 
-As explained in the [Feature Flags](../page.mdx) chapter, feature flags allow the Medusa team to ship new features that are still under development and testing, but not ready for production or wide use yet.
+As explained in the [Feature Flags](../page.mdx) chapter, feature flags allow the Switchyard team to ship new features that are still under development and testing, but not ready for production or wide use yet.
 
-You can also create custom feature flags for your Medusa project or plugin to control the availability of experimental or in-development features. Feature flags allow you to test features in staging, and only enable them in production when they are ready.
+You can also create custom feature flags for your Switchyard project or plugin to control the availability of experimental or in-development features. Feature flags allow you to test features in staging, and only enable them in production when they are ready.
 
 ---
 
@@ -20,7 +20,7 @@ You can also create custom feature flags for your Medusa project or plugin to co
 
 ### 1. Define the Feature Flag
 
-To create a custom feature flag, you need to define it in a new file under the `src/feature-flags` directory of your Medusa project or plugin. The file must export a configuration object.
+To create a custom feature flag, you need to define it in a new file under the `src/feature-flags` directory of your Switchyard project or plugin. The file must export a configuration object.
 
 For example, to define a feature flag that enables a blog feature, create the file `src/feature-flags/blog.ts` with the following content:
 
@@ -32,7 +32,7 @@ export const featureFlagHighlights = [
 ]
 
 ```ts title="src/feature-flags/blog.ts" highlights={featureFlagHighlights}
-import { FlagSettings } from "@medusajs/framework/feature-flags"
+import { FlagSettings } from "@switchyard/framework/feature-flags"
 
 const BlogFeatureFlag: FlagSettings = {
   key: "blog_feature",
@@ -88,9 +88,9 @@ For client customizations, such as admin widgets, you can use the [Feature Flags
 
 ### 3. Toggle Feature Flag
 
-To enable or disable your custom feature flag, you can either add it to your `medusa-config.ts` file:
+To enable or disable your custom feature flag, you can either add it to your `switchyard.config.ts` file:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 import BlogFeatureFlag from "./src/feature-flags/blog"
 
 module.exports = defineConfig({
@@ -120,7 +120,7 @@ If you're writing integration tests for features hidden behind feature flags, yo
 For example:
 
 ```ts title="integration-tests/http/test.spec.ts"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 
 medusaIntegrationTestRunner({
   env: {
@@ -132,4 +132,4 @@ medusaIntegrationTestRunner({
 })
 ```
 
-Then, the Medusa application will load your customizations hidden behind the feature flag as part of the integration tests.
+Then, the Switchyard application will load your customizations hidden behind the feature flag as part of the integration tests.

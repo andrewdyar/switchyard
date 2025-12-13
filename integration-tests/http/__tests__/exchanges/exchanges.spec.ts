@@ -1,5 +1,5 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IOrderModuleService, IPromotionModuleService } from "@medusajs/types"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IOrderModuleService, IPromotionModuleService } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   Modules,
@@ -7,7 +7,7 @@ import {
   PromotionStatus,
   PromotionType,
   RuleOperator,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,

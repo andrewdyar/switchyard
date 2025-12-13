@@ -14,13 +14,13 @@ For example, if you allow only origins starting with `http://localhost:7001` to 
 
 ### CORS Configurations
 
-The `storeCors` and `adminCors` properties of Medusa's `http` configuration set the allowed origins for routes starting with `/store` and `/admin` respectively.
+The `storeCors` and `adminCors` properties of Switchyard's `http` configuration set the allowed origins for routes starting with `/store` and `/admin` respectively.
 
 These configurations accept a URL pattern to identify allowed origins.
 
 For example:
 
-```js title="medusa-config.ts"
+```js title="switchyard.config.ts"
 module.exports = defineConfig({
   projectConfig: {
     http: {
@@ -36,7 +36,7 @@ This allows the `http://localhost:7001` origin to access the Admin API Routes, a
 
 <Note title="Tip">
 
-Learn more about the CORS configurations in [this resource guide](../../../configurations/medusa-config/page.mdx#http).
+Learn more about the CORS configurations in [this resource guide](../../../configurations/switchyard.config/page.mdx#http).
 
 </Note>
 
@@ -50,13 +50,13 @@ For example:
 
 ```ts title="src/api/store/custom/route.ts" highlights={[["15"]]}
 import type { 
-  MedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 
 export const GET = (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   res.json({
     message: "[GET] Hello world!",
@@ -78,17 +78,17 @@ You can do that in the exported middlewares configurations in `src/api/middlewar
 
 For example:
 
-export const highlights = [["25", "parseCorsOrigins", "A utility function that parses the CORS configurations in `medusa-config.ts`"]]
+export const highlights = [["25", "parseCorsOrigins", "A utility function that parses the CORS configurations in `switchyard.config.ts`"]]
 
 ```ts title="src/api/middlewares.ts" highlights={highlights} collapsibleLines="1-10" expandButtonLabel="Show Imports"
-import { defineMiddlewares } from "@medusajs/framework/http"
+import { defineMiddlewares } from "@switchyard/framework/http"
 import type { 
-  MedusaNextFunction, 
-  MedusaRequest, 
-  MedusaResponse, 
-} from "@medusajs/framework/http"
-import { ConfigModule } from "@medusajs/framework/types"
-import { parseCorsOrigins } from "@medusajs/framework/utils"
+  SwitchyardNextFunction, 
+  SwitchyardRequest, 
+  SwitchyardResponse, 
+} from "@switchyard/framework/http"
+import { ConfigModule } from "@switchyard/framework/types"
+import { parseCorsOrigins } from "@switchyard/framework/utils"
 import cors from "cors"
 
 export default defineMiddlewares({
@@ -97,9 +97,9 @@ export default defineMiddlewares({
       matcher: "/custom*",
       middlewares: [
         (
-          req: MedusaRequest, 
-          res: MedusaResponse, 
-          next: MedusaNextFunction
+          req: SwitchyardRequest, 
+          res: SwitchyardResponse, 
+          next: SwitchyardNextFunction
         ) => {
           const configModule: ConfigModule =
             req.scope.resolve("configModule")
@@ -117,4 +117,4 @@ export default defineMiddlewares({
 })
 ```
 
-This retrieves the configurations exported from `medusa-config.ts` and applies the `storeCors` to routes starting with `/custom`.
+This retrieves the configurations exported from `switchyard.config.ts` and applies the `storeCors` to routes starting with `/custom`.

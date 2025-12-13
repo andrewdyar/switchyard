@@ -31,7 +31,7 @@
 							"fileName": "core-flows/src/common/steps/create-entities.ts",
 							"line": 7,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L7"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L7"
 						}
 					],
 					"type": {
@@ -58,7 +58,7 @@
 							"fileName": "core-flows/src/common/steps/create-entities.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L11"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L11"
 						}
 					],
 					"type": {
@@ -85,7 +85,7 @@
 							"fileName": "core-flows/src/common/steps/create-entities.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L15"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L15"
 						}
 					],
 					"type": {
@@ -114,7 +114,7 @@
 							"fileName": "core-flows/src/common/steps/create-entities.ts",
 							"line": 19,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L19"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L19"
 						}
 					],
 					"type": {
@@ -141,7 +141,7 @@
 							"fileName": "core-flows/src/common/steps/create-entities.ts",
 							"line": 24,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L24"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L24"
 						}
 					],
 					"type": {
@@ -170,7 +170,7 @@
 					"fileName": "core-flows/src/common/steps/create-entities.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L3"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L3"
 				}
 			]
 		},
@@ -187,7 +187,7 @@
 					"fileName": "core-flows/src/common/steps/create-entities.ts",
 					"line": 27,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L27"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L27"
 				}
 			],
 			"type": {
@@ -273,7 +273,7 @@
 					"fileName": "core-flows/src/common/steps/create-entities.ts",
 					"line": 47,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L47"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L47"
 				}
 			],
 			"signatures": [
@@ -288,7 +288,7 @@
 							"fileName": "core-flows/src/common/steps/create-entities.ts",
 							"line": 47,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L47"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-entities.ts#L47"
 						}
 					],
 					"parameters": [
@@ -305,7 +305,7 @@
 										"type": "reference",
 										"target": 43688,
 										"name": "CreateEntitiesStepType",
-										"package": "@medusajs/core-flows"
+										"package": "@switchyard/core-flows"
 									},
 									{
 										"type": "reference",
@@ -318,11 +318,11 @@
 												"type": "reference",
 												"target": 43688,
 												"name": "CreateEntitiesStepType",
-												"package": "@medusajs/core-flows"
+												"package": "@switchyard/core-flows"
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -361,7 +361,7 @@
 									}
 								],
 								"name": "WorkflowDataProperties",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							},
 							{
 								"type": "reflection",
@@ -470,7 +470,7 @@
 																					"qualifiedName": "TransactionStepsDefinition"
 																				},
 																				"name": "TransactionStepsDefinition",
-																				"package": "@medusajs/orchestration"
+																				"package": "@switchyard/orchestration"
 																			},
 																			{
 																				"type": "union",
@@ -513,7 +513,7 @@
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												}
 											]
@@ -552,7 +552,7 @@
 									}
 								],
 								"name": "StepFunctionReturnConfig",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							}
 						]
 					}
@@ -572,7 +572,7 @@
 					"fileName": "core-flows/src/common/steps/create-remote-links.ts",
 					"line": 6,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-remote-links.ts#L6"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-remote-links.ts#L6"
 				}
 			],
 			"type": {
@@ -591,7 +591,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "This step creates remote links between two records of linked data models.\n\nLearn more in the [Remote Link documentation.](https://docs.medusajs.com/learn/fundamentals/module-links/remote-link#create-link)."
+						"text": "This step creates remote links between two records of linked data models.\n\nLearn more in the [Remote Link documentation.](https://docs.switchyard.com/learn/fundamentals/module-links/remote-link#create-link)."
 					}
 				],
 				"blockTags": [
@@ -658,7 +658,7 @@
 					"fileName": "core-flows/src/common/steps/create-remote-links.ts",
 					"line": 22,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-remote-links.ts#L22"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-remote-links.ts#L22"
 				}
 			],
 			"signatures": [
@@ -673,7 +673,7 @@
 							"fileName": "core-flows/src/common/steps/create-remote-links.ts",
 							"line": 22,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-remote-links.ts#L22"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/create-remote-links.ts#L22"
 						}
 					],
 					"parameters": [
@@ -695,7 +695,7 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									},
 									{
@@ -714,12 +714,12 @@
 														"qualifiedName": "LinkDefinition"
 													},
 													"name": "LinkDefinition",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -740,7 +740,7 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										},
 										{
 											"type": "reference",
@@ -756,11 +756,11 @@
 														"qualifiedName": "LinkDefinition"
 													},
 													"name": "LinkDefinition",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											],
 											"name": "WorkflowData",
-											"package": "@medusajs/workflows-sdk"
+											"package": "@switchyard/workflows-sdk"
 										}
 									]
 								}
@@ -774,7 +774,7 @@
 										"qualifiedName": "LinkDefinition"
 									},
 									"name": "LinkDefinition",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							},
 							{
@@ -793,12 +793,12 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
 								"name": "WorkflowDataProperties",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							},
 							{
 								"type": "reflection",
@@ -907,7 +907,7 @@
 																					"qualifiedName": "TransactionStepsDefinition"
 																				},
 																				"name": "TransactionStepsDefinition",
-																				"package": "@medusajs/orchestration"
+																				"package": "@switchyard/orchestration"
 																			},
 																			{
 																				"type": "union",
@@ -950,12 +950,12 @@
 																		"qualifiedName": "LinkDefinition"
 																	},
 																	"name": "LinkDefinition",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																}
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												}
 											]
@@ -994,12 +994,12 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
 								"name": "StepFunctionReturnConfig",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							}
 						]
 					}
@@ -1032,7 +1032,7 @@
 							"fileName": "core-flows/src/common/steps/delete-entities.ts",
 							"line": 7,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L7"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L7"
 						}
 					],
 					"type": {
@@ -1059,7 +1059,7 @@
 							"fileName": "core-flows/src/common/steps/delete-entities.ts",
 							"line": 11,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L11"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L11"
 						}
 					],
 					"type": {
@@ -1086,7 +1086,7 @@
 							"fileName": "core-flows/src/common/steps/delete-entities.ts",
 							"line": 15,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L15"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L15"
 						}
 					],
 					"type": {
@@ -1115,7 +1115,7 @@
 							"fileName": "core-flows/src/common/steps/delete-entities.ts",
 							"line": 20,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L20"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L20"
 						}
 					],
 					"type": {
@@ -1142,7 +1142,7 @@
 							"fileName": "core-flows/src/common/steps/delete-entities.ts",
 							"line": 25,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L25"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L25"
 						}
 					],
 					"type": {
@@ -1171,7 +1171,7 @@
 					"fileName": "core-flows/src/common/steps/delete-entities.ts",
 					"line": 3,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L3"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L3"
 				}
 			]
 		},
@@ -1188,7 +1188,7 @@
 					"fileName": "core-flows/src/common/steps/delete-entities.ts",
 					"line": 28,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L28"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L28"
 				}
 			],
 			"type": {
@@ -1274,7 +1274,7 @@
 					"fileName": "core-flows/src/common/steps/delete-entities.ts",
 					"line": 40,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L40"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L40"
 				}
 			],
 			"signatures": [
@@ -1289,7 +1289,7 @@
 							"fileName": "core-flows/src/common/steps/delete-entities.ts",
 							"line": 40,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L40"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/delete-entities.ts#L40"
 						}
 					],
 					"parameters": [
@@ -1306,7 +1306,7 @@
 										"type": "reference",
 										"target": 43731,
 										"name": "DeleteEntitiesStepType",
-										"package": "@medusajs/core-flows"
+										"package": "@switchyard/core-flows"
 									},
 									{
 										"type": "reference",
@@ -1319,11 +1319,11 @@
 												"type": "reference",
 												"target": 43731,
 												"name": "DeleteEntitiesStepType",
-												"package": "@medusajs/core-flows"
+												"package": "@switchyard/core-flows"
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -1347,7 +1347,7 @@
 					"fileName": "core-flows/src/common/steps/dismiss-remote-links.ts",
 					"line": 7,
 					"character": 12,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/dismiss-remote-links.ts#L7"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/dismiss-remote-links.ts#L7"
 				}
 			],
 			"type": {
@@ -1360,7 +1360,7 @@
 							"qualifiedName": "LinkDefinition"
 						},
 						"name": "LinkDefinition",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "array",
@@ -1371,7 +1371,7 @@
 								"qualifiedName": "LinkDefinition"
 							},
 							"name": "LinkDefinition",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				]
@@ -1390,7 +1390,7 @@
 					"fileName": "core-flows/src/common/steps/dismiss-remote-links.ts",
 					"line": 10,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/dismiss-remote-links.ts#L10"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/dismiss-remote-links.ts#L10"
 				}
 			],
 			"type": {
@@ -1409,7 +1409,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "This step removes remote links between two records of linked data models.\n\nLearn more in the [Remote Link documentation.](https://docs.medusajs.com/learn/fundamentals/module-links/remote-link#dismiss-link)."
+						"text": "This step removes remote links between two records of linked data models.\n\nLearn more in the [Remote Link documentation.](https://docs.switchyard.com/learn/fundamentals/module-links/remote-link#dismiss-link)."
 					}
 				],
 				"blockTags": [
@@ -1476,7 +1476,7 @@
 					"fileName": "core-flows/src/common/steps/dismiss-remote-links.ts",
 					"line": 26,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/dismiss-remote-links.ts#L26"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/dismiss-remote-links.ts#L26"
 				}
 			],
 			"signatures": [
@@ -1491,7 +1491,7 @@
 							"fileName": "core-flows/src/common/steps/dismiss-remote-links.ts",
 							"line": 26,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/dismiss-remote-links.ts#L26"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/dismiss-remote-links.ts#L26"
 						}
 					],
 					"parameters": [
@@ -1508,7 +1508,7 @@
 										"type": "reference",
 										"target": 43718,
 										"name": "DismissRemoteLinksStepInput",
-										"package": "@medusajs/core-flows"
+										"package": "@switchyard/core-flows"
 									},
 									{
 										"type": "reference",
@@ -1521,11 +1521,11 @@
 												"type": "reference",
 												"target": 43718,
 												"name": "DismissRemoteLinksStepInput",
-												"package": "@medusajs/core-flows"
+												"package": "@switchyard/core-flows"
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -1546,7 +1546,7 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										},
 										{
 											"type": "reference",
@@ -1562,11 +1562,11 @@
 														"qualifiedName": "LinkDefinition"
 													},
 													"name": "LinkDefinition",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											],
 											"name": "WorkflowData",
-											"package": "@medusajs/workflows-sdk"
+											"package": "@switchyard/workflows-sdk"
 										}
 									]
 								}
@@ -1580,7 +1580,7 @@
 										"qualifiedName": "LinkDefinition"
 									},
 									"name": "LinkDefinition",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							},
 							{
@@ -1599,12 +1599,12 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
 								"name": "WorkflowDataProperties",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							},
 							{
 								"type": "reflection",
@@ -1713,7 +1713,7 @@
 																					"qualifiedName": "TransactionStepsDefinition"
 																				},
 																				"name": "TransactionStepsDefinition",
-																				"package": "@medusajs/orchestration"
+																				"package": "@switchyard/orchestration"
 																			},
 																			{
 																				"type": "union",
@@ -1756,12 +1756,12 @@
 																		"qualifiedName": "LinkDefinition"
 																	},
 																	"name": "LinkDefinition",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																}
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												}
 											]
@@ -1800,12 +1800,12 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
 								"name": "StepFunctionReturnConfig",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							}
 						]
 					}
@@ -1825,7 +1825,7 @@
 					"fileName": "core-flows/src/common/steps/emit-event.ts",
 					"line": 41,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L41"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L41"
 				}
 			],
 			"type": {
@@ -1844,7 +1844,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "This step emits an event, which you can listen to in a [subscriber](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the "
+						"text": "This step emits an event, which you can listen to in a [subscriber](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the "
 					},
 					{
 						"kind": "code",
@@ -1939,7 +1939,7 @@
 					"fileName": "core-flows/src/common/steps/emit-event.ts",
 					"line": 76,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L76"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L76"
 				}
 			],
 			"signatures": [
@@ -1954,7 +1954,7 @@
 							"fileName": "core-flows/src/common/steps/emit-event.ts",
 							"line": 76,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L76"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L76"
 						}
 					],
 					"parameters": [
@@ -1974,7 +1974,7 @@
 											"qualifiedName": "Input"
 										},
 										"name": "Input",
-										"package": "@medusajs/core-flows"
+										"package": "@switchyard/core-flows"
 									},
 									{
 										"type": "reference",
@@ -1990,11 +1990,11 @@
 													"qualifiedName": "Input"
 												},
 												"name": "Input",
-												"package": "@medusajs/core-flows"
+												"package": "@switchyard/core-flows"
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -2023,7 +2023,7 @@
 													"fileName": "core-flows/src/common/steps/emit-event.ts",
 													"line": 115,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
 												}
 											],
 											"type": {
@@ -2059,7 +2059,7 @@
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												]
 											},
@@ -2076,7 +2076,7 @@
 													"fileName": "core-flows/src/common/steps/emit-event.ts",
 													"line": 116,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
 												}
 											],
 											"type": {
@@ -2099,7 +2099,7 @@
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												]
 											},
@@ -2144,7 +2144,7 @@
 													"fileName": "core-flows/src/common/steps/emit-event.ts",
 													"line": 115,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
 												}
 											],
 											"type": {
@@ -2173,7 +2173,7 @@
 													"fileName": "core-flows/src/common/steps/emit-event.ts",
 													"line": 116,
 													"character": 6,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
 												}
 											],
 											"type": {
@@ -2197,7 +2197,7 @@
 											"fileName": "core-flows/src/common/steps/emit-event.ts",
 											"line": 114,
 											"character": 28,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L114"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L114"
 										}
 									]
 								}
@@ -2229,7 +2229,7 @@
 															"fileName": "core-flows/src/common/steps/emit-event.ts",
 															"line": 115,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
 														}
 													],
 													"type": {
@@ -2258,7 +2258,7 @@
 															"fileName": "core-flows/src/common/steps/emit-event.ts",
 															"line": 116,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
 														}
 													],
 													"type": {
@@ -2282,14 +2282,14 @@
 													"fileName": "core-flows/src/common/steps/emit-event.ts",
 													"line": 114,
 													"character": 28,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L114"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L114"
 												}
 											]
 										}
 									}
 								],
 								"name": "WorkflowDataProperties",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							},
 							{
 								"type": "reflection",
@@ -2398,7 +2398,7 @@
 																					"qualifiedName": "TransactionStepsDefinition"
 																				},
 																				"name": "TransactionStepsDefinition",
-																				"package": "@medusajs/orchestration"
+																				"package": "@switchyard/orchestration"
 																			},
 																			{
 																				"type": "union",
@@ -2452,7 +2452,7 @@
 																					"fileName": "core-flows/src/common/steps/emit-event.ts",
 																					"line": 115,
 																					"character": 6,
-																					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
+																					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
 																				}
 																			],
 																			"type": {
@@ -2481,7 +2481,7 @@
 																					"fileName": "core-flows/src/common/steps/emit-event.ts",
 																					"line": 116,
 																					"character": 6,
-																					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
+																					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
 																				}
 																			],
 																			"type": {
@@ -2505,14 +2505,14 @@
 																			"fileName": "core-flows/src/common/steps/emit-event.ts",
 																			"line": 114,
 																			"character": 28,
-																			"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L114"
+																			"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L114"
 																		}
 																	]
 																}
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												}
 											]
@@ -2562,7 +2562,7 @@
 															"fileName": "core-flows/src/common/steps/emit-event.ts",
 															"line": 115,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L115"
 														}
 													],
 													"type": {
@@ -2591,7 +2591,7 @@
 															"fileName": "core-flows/src/common/steps/emit-event.ts",
 															"line": 116,
 															"character": 6,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L116"
 														}
 													],
 													"type": {
@@ -2615,14 +2615,14 @@
 													"fileName": "core-flows/src/common/steps/emit-event.ts",
 													"line": 114,
 													"character": 28,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L114"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/emit-event.ts#L114"
 												}
 											]
 										}
 									}
 								],
 								"name": "StepFunctionReturnConfig",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							}
 						]
 					}
@@ -2642,7 +2642,7 @@
 					"fileName": "core-flows/src/common/steps/remove-remote-links.ts",
 					"line": 8,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/remove-remote-links.ts#L8"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/remove-remote-links.ts#L8"
 				}
 			],
 			"type": {
@@ -2661,7 +2661,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "This step deletes linked records of a record.\n\nLearn more in the [Remote Link documentation](https://docs.medusajs.com/learn/fundamentals/module-links/remote-link#cascade-delete-linked-records)"
+						"text": "This step deletes linked records of a record.\n\nLearn more in the [Remote Link documentation](https://docs.switchyard.com/learn/fundamentals/module-links/remote-link#cascade-delete-linked-records)"
 					}
 				],
 				"blockTags": [
@@ -2728,7 +2728,7 @@
 					"fileName": "core-flows/src/common/steps/remove-remote-links.ts",
 					"line": 21,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/remove-remote-links.ts#L21"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/remove-remote-links.ts#L21"
 				}
 			],
 			"signatures": [
@@ -2743,7 +2743,7 @@
 							"fileName": "core-flows/src/common/steps/remove-remote-links.ts",
 							"line": 21,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/remove-remote-links.ts#L21"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/remove-remote-links.ts#L21"
 						}
 					],
 					"parameters": [
@@ -2763,7 +2763,7 @@
 											"qualifiedName": "RemoveRemoteLinksStepInput"
 										},
 										"name": "RemoveRemoteLinksStepInput",
-										"package": "@medusajs/core-flows"
+										"package": "@switchyard/core-flows"
 									},
 									{
 										"type": "reference",
@@ -2779,11 +2779,11 @@
 													"qualifiedName": "RemoveRemoteLinksStepInput"
 												},
 												"name": "RemoveRemoteLinksStepInput",
-												"package": "@medusajs/core-flows"
+												"package": "@switchyard/core-flows"
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -2901,7 +2901,7 @@
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												]
 											}
@@ -2916,7 +2916,7 @@
 									"qualifiedName": "DeleteEntityInput"
 								},
 								"name": "DeleteEntityInput",
-								"package": "@medusajs/modules-sdk"
+								"package": "@switchyard/modules-sdk"
 							},
 							{
 								"type": "reference",
@@ -2939,13 +2939,13 @@
 													"qualifiedName": "DeleteEntityInput"
 												},
 												"name": "DeleteEntityInput",
-												"package": "@medusajs/modules-sdk"
+												"package": "@switchyard/modules-sdk"
 											}
 										]
 									}
 								],
 								"name": "WorkflowDataProperties",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							},
 							{
 								"type": "reflection",
@@ -3054,7 +3054,7 @@
 																					"qualifiedName": "TransactionStepsDefinition"
 																				},
 																				"name": "TransactionStepsDefinition",
-																				"package": "@medusajs/orchestration"
+																				"package": "@switchyard/orchestration"
 																			},
 																			{
 																				"type": "union",
@@ -3102,13 +3102,13 @@
 																			"qualifiedName": "DeleteEntityInput"
 																		},
 																		"name": "DeleteEntityInput",
-																		"package": "@medusajs/modules-sdk"
+																		"package": "@switchyard/modules-sdk"
 																	}
 																]
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												}
 											]
@@ -3152,13 +3152,13 @@
 													"qualifiedName": "DeleteEntityInput"
 												},
 												"name": "DeleteEntityInput",
-												"package": "@medusajs/modules-sdk"
+												"package": "@switchyard/modules-sdk"
 											}
 										]
 									}
 								],
 								"name": "StepFunctionReturnConfig",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							}
 						]
 					}
@@ -3178,7 +3178,7 @@
 					"fileName": "core-flows/src/common/steps/update-remote-links.ts",
 					"line": 9,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/update-remote-links.ts#L9"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/update-remote-links.ts#L9"
 				}
 			],
 			"type": {
@@ -3197,7 +3197,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "This step updates remote links between two records of linked data models.\n\nLearn more in the [Remote Link documentation.](https://docs.medusajs.com/learn/fundamentals/module-links/remote-link#create-link)."
+						"text": "This step updates remote links between two records of linked data models.\n\nLearn more in the [Remote Link documentation.](https://docs.switchyard.com/learn/fundamentals/module-links/remote-link#create-link)."
 					}
 				],
 				"blockTags": [
@@ -3264,7 +3264,7 @@
 					"fileName": "core-flows/src/common/steps/update-remote-links.ts",
 					"line": 32,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/update-remote-links.ts#L32"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/update-remote-links.ts#L32"
 				}
 			],
 			"signatures": [
@@ -3279,7 +3279,7 @@
 							"fileName": "core-flows/src/common/steps/update-remote-links.ts",
 							"line": 32,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/update-remote-links.ts#L32"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/update-remote-links.ts#L32"
 						}
 					],
 					"parameters": [
@@ -3301,7 +3301,7 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									},
 									{
@@ -3320,12 +3320,12 @@
 														"qualifiedName": "LinkDefinition"
 													},
 													"name": "LinkDefinition",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -3346,7 +3346,7 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										},
 										{
 											"type": "reference",
@@ -3362,11 +3362,11 @@
 														"qualifiedName": "LinkDefinition"
 													},
 													"name": "LinkDefinition",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											],
 											"name": "WorkflowData",
-											"package": "@medusajs/workflows-sdk"
+											"package": "@switchyard/workflows-sdk"
 										}
 									]
 								}
@@ -3380,7 +3380,7 @@
 										"qualifiedName": "LinkDefinition"
 									},
 									"name": "LinkDefinition",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							},
 							{
@@ -3399,12 +3399,12 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
 								"name": "WorkflowDataProperties",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							},
 							{
 								"type": "reflection",
@@ -3513,7 +3513,7 @@
 																					"qualifiedName": "TransactionStepsDefinition"
 																				},
 																				"name": "TransactionStepsDefinition",
-																				"package": "@medusajs/orchestration"
+																				"package": "@switchyard/orchestration"
 																			},
 																			{
 																				"type": "union",
@@ -3556,12 +3556,12 @@
 																		"qualifiedName": "LinkDefinition"
 																	},
 																	"name": "LinkDefinition",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																}
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												}
 											]
@@ -3600,12 +3600,12 @@
 												"qualifiedName": "LinkDefinition"
 											},
 											"name": "LinkDefinition",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
 								"name": "StepFunctionReturnConfig",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							}
 						]
 					}
@@ -3623,7 +3623,7 @@
 					"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 					"line": 10,
 					"character": 12,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L10"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L10"
 				}
 			],
 			"typeParameters": [
@@ -3668,12 +3668,12 @@
 								"type": "reference",
 								"target": 43802,
 								"name": "TEntry",
-								"package": "@medusajs/core-flows",
+								"package": "@switchyard/core-flows",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "RemoteQueryInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -3697,7 +3697,7 @@
 											"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 											"line": 14,
 											"character": 2,
-											"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L14"
+											"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L14"
 										}
 									],
 									"type": {
@@ -3710,7 +3710,7 @@
 													"qualifiedName": "RemoteJoinerOptions"
 												},
 												"name": "RemoteJoinerOptions",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "reflection",
@@ -3734,14 +3734,14 @@
 																	"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																	"line": 15,
 																	"character": 4,
-																	"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L15"
+																	"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L15"
 																}
 															],
 															"type": {
 																"type": "reference",
 																"target": 43803,
 																"name": "TIsList",
-																"package": "@medusajs/core-flows",
+																"package": "@switchyard/core-flows",
 																"refersToTypeParameter": true
 															}
 														}
@@ -3759,7 +3759,7 @@
 															"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 															"line": 14,
 															"character": 34,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L14"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L14"
 														}
 													]
 												}
@@ -3781,7 +3781,7 @@
 									"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 									"line": 13,
 									"character": 31,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L13"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L13"
 								}
 							]
 						}
@@ -3800,7 +3800,7 @@
 					"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 					"line": 19,
 					"character": 12,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L19"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L19"
 				}
 			],
 			"typeParameters": [
@@ -3859,7 +3859,7 @@
 									"type": "reference",
 									"target": 43808,
 									"name": "TIsList",
-									"package": "@medusajs/core-flows",
+									"package": "@switchyard/core-flows",
 									"refersToTypeParameter": true
 								},
 								"trueType": {
@@ -3873,12 +3873,12 @@
 											"type": "reference",
 											"target": 43807,
 											"name": "TEntry",
-											"package": "@medusajs/core-flows",
+											"package": "@switchyard/core-flows",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "GraphResultSet",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								"falseType": {
 									"type": "intersection",
@@ -3901,12 +3901,12 @@
 															"type": "reference",
 															"target": 43807,
 															"name": "TEntry",
-															"package": "@medusajs/core-flows",
+															"package": "@switchyard/core-flows",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "GraphResultSet",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												},
 												{
 													"type": "literal",
@@ -3936,7 +3936,7 @@
 																"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																"line": 28,
 																"character": 10,
-																"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 															}
 														],
 														"type": {
@@ -3962,12 +3962,12 @@
 																			"type": "reference",
 																			"target": 43807,
 																			"name": "TEntry",
-																			"package": "@medusajs/core-flows",
+																			"package": "@switchyard/core-flows",
 																			"refersToTypeParameter": true
 																		}
 																	],
 																	"name": "GraphResultSet",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																}
 															}
 														}
@@ -3986,7 +3986,7 @@
 														"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 														"line": 27,
 														"character": 47,
-														"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+														"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 													}
 												]
 											}
@@ -3996,7 +3996,7 @@
 							}
 						],
 						"name": "StepFunction",
-						"package": "@medusajs/workflows-sdk"
+						"package": "@switchyard/workflows-sdk"
 					}
 				],
 				"name": "ReturnType",
@@ -4013,7 +4013,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.medusajs.com/learn/fundamentals/module-links/query)."
+						"text": "This step fetches data across modules using the Query.\n\nLearn more in the [Query documentation](https://docs.switchyard.com/learn/fundamentals/module-links/query)."
 					}
 				],
 				"blockTags": [
@@ -4061,7 +4061,7 @@
 					"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 					"line": 132,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L132"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L132"
 				}
 			],
 			"signatures": [
@@ -4076,7 +4076,7 @@
 							"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 							"line": 132,
 							"character": 33,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L132"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L132"
 						}
 					],
 					"typeParameters": [
@@ -4126,19 +4126,19 @@
 										"type": "reference",
 										"target": 43811,
 										"name": "TEntry",
-										"package": "@medusajs/core-flows",
+										"package": "@switchyard/core-flows",
 										"refersToTypeParameter": true
 									},
 									{
 										"type": "reference",
 										"target": 43812,
 										"name": "TIsList",
-										"package": "@medusajs/core-flows",
+										"package": "@switchyard/core-flows",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "UseQueryGraphStepInput",
-								"package": "@medusajs/core-flows"
+								"package": "@switchyard/core-flows"
 							}
 						}
 					],
@@ -4157,7 +4157,7 @@
 										"type": "reference",
 										"target": 43812,
 										"name": "TIsList",
-										"package": "@medusajs/core-flows",
+										"package": "@switchyard/core-flows",
 										"refersToTypeParameter": true
 									},
 									"trueType": {
@@ -4171,12 +4171,12 @@
 												"type": "reference",
 												"target": 43811,
 												"name": "TEntry",
-												"package": "@medusajs/core-flows",
+												"package": "@switchyard/core-flows",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "GraphResultSet",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									"falseType": {
 										"type": "intersection",
@@ -4199,12 +4199,12 @@
 																"type": "reference",
 																"target": 43811,
 																"name": "TEntry",
-																"package": "@medusajs/core-flows",
+																"package": "@switchyard/core-flows",
 																"refersToTypeParameter": true
 															}
 														],
 														"name": "GraphResultSet",
-														"package": "@medusajs/types"
+														"package": "@switchyard/types"
 													},
 													{
 														"type": "literal",
@@ -4234,7 +4234,7 @@
 																	"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																	"line": 28,
 																	"character": 10,
-																	"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																	"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																}
 															],
 															"type": {
@@ -4249,7 +4249,7 @@
 																		"type": "reference",
 																		"target": 43811,
 																		"name": "TEntry",
-																		"package": "@medusajs/core-flows",
+																		"package": "@switchyard/core-flows",
 																		"refersToTypeParameter": true
 																	},
 																	"extendsType": {
@@ -4262,7 +4262,7 @@
 																				"qualifiedName": "RemoteQueryEntryPoints"
 																			},
 																			"name": "RemoteQueryEntryPoints",
-																			"package": "@medusajs/types"
+																			"package": "@switchyard/types"
 																		}
 																	},
 																	"trueType": {
@@ -4277,12 +4277,12 @@
 																						"type": "reference",
 																						"target": 43811,
 																						"name": "TEntry",
-																						"package": "@medusajs/core-flows",
+																						"package": "@switchyard/core-flows",
 																						"refersToTypeParameter": true
 																					}
 																				],
 																				"name": "TEntry",
-																				"package": "@medusajs/core-flows",
+																				"package": "@switchyard/core-flows",
 																				"refersToTypeParameter": true
 																			},
 																			"objectType": {
@@ -4292,7 +4292,7 @@
 																					"qualifiedName": "RemoteQueryEntryPoints"
 																				},
 																				"name": "RemoteQueryEntryPoints",
-																				"package": "@medusajs/types"
+																				"package": "@switchyard/types"
 																			}
 																		}
 																	},
@@ -4320,7 +4320,7 @@
 															"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 															"line": 27,
 															"character": 47,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 														}
 													]
 												}
@@ -4337,7 +4337,7 @@
 											"qualifiedName": "Item"
 										},
 										"name": "Item",
-										"package": "@medusajs/workflows-sdk",
+										"package": "@switchyard/workflows-sdk",
 										"refersToTypeParameter": true
 									}
 								},
@@ -4353,7 +4353,7 @@
 													"qualifiedName": "Item"
 												},
 												"name": "Item",
-												"package": "@medusajs/workflows-sdk",
+												"package": "@switchyard/workflows-sdk",
 												"refersToTypeParameter": true
 											},
 											{
@@ -4370,12 +4370,12 @@
 															"qualifiedName": "Item"
 														},
 														"name": "Item",
-														"package": "@medusajs/workflows-sdk",
+														"package": "@switchyard/workflows-sdk",
 														"refersToTypeParameter": true
 													}
 												],
 												"name": "WorkflowData",
-												"package": "@medusajs/workflows-sdk"
+												"package": "@switchyard/workflows-sdk"
 											}
 										]
 									}
@@ -4392,7 +4392,7 @@
 											"type": "reference",
 											"target": 43812,
 											"name": "TIsList",
-											"package": "@medusajs/core-flows",
+											"package": "@switchyard/core-flows",
 											"refersToTypeParameter": true
 										},
 										"trueType": {
@@ -4406,12 +4406,12 @@
 													"type": "reference",
 													"target": 43811,
 													"name": "TEntry",
-													"package": "@medusajs/core-flows",
+													"package": "@switchyard/core-flows",
 													"refersToTypeParameter": true
 												}
 											],
 											"name": "GraphResultSet",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										},
 										"falseType": {
 											"type": "intersection",
@@ -4434,12 +4434,12 @@
 																	"type": "reference",
 																	"target": 43811,
 																	"name": "TEntry",
-																	"package": "@medusajs/core-flows",
+																	"package": "@switchyard/core-flows",
 																	"refersToTypeParameter": true
 																}
 															],
 															"name": "GraphResultSet",
-															"package": "@medusajs/types"
+															"package": "@switchyard/types"
 														},
 														{
 															"type": "literal",
@@ -4469,7 +4469,7 @@
 																		"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																		"line": 28,
 																		"character": 10,
-																		"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																		"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																	}
 																],
 																"type": {
@@ -4484,7 +4484,7 @@
 																			"type": "reference",
 																			"target": 43811,
 																			"name": "TEntry",
-																			"package": "@medusajs/core-flows",
+																			"package": "@switchyard/core-flows",
 																			"refersToTypeParameter": true
 																		},
 																		"extendsType": {
@@ -4497,7 +4497,7 @@
 																					"qualifiedName": "RemoteQueryEntryPoints"
 																				},
 																				"name": "RemoteQueryEntryPoints",
-																				"package": "@medusajs/types"
+																				"package": "@switchyard/types"
 																			}
 																		},
 																		"trueType": {
@@ -4514,7 +4514,7 @@
 																						}
 																					],
 																					"name": "TEntry",
-																					"package": "@medusajs/core-flows",
+																					"package": "@switchyard/core-flows",
 																					"refersToTypeParameter": true
 																				},
 																				"objectType": {
@@ -4524,7 +4524,7 @@
 																						"qualifiedName": "RemoteQueryEntryPoints"
 																					},
 																					"name": "RemoteQueryEntryPoints",
-																					"package": "@medusajs/types"
+																					"package": "@switchyard/types"
 																				}
 																			}
 																		},
@@ -4552,7 +4552,7 @@
 																"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																"line": 27,
 																"character": 47,
-																"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+																"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 															}
 														]
 													}
@@ -4596,7 +4596,7 @@
 															"qualifiedName": "Key"
 														},
 														"name": "Key",
-														"package": "@medusajs/workflows-sdk",
+														"package": "@switchyard/workflows-sdk",
 														"refersToTypeParameter": true
 													},
 													"objectType": {
@@ -4609,7 +4609,7 @@
 															"type": "reference",
 															"target": 43812,
 															"name": "TIsList",
-															"package": "@medusajs/core-flows",
+															"package": "@switchyard/core-flows",
 															"refersToTypeParameter": true
 														},
 														"trueType": {
@@ -4623,12 +4623,12 @@
 																	"type": "reference",
 																	"target": 43811,
 																	"name": "TEntry",
-																	"package": "@medusajs/core-flows",
+																	"package": "@switchyard/core-flows",
 																	"refersToTypeParameter": true
 																}
 															],
 															"name": "GraphResultSet",
-															"package": "@medusajs/types"
+															"package": "@switchyard/types"
 														},
 														"falseType": {
 															"type": "intersection",
@@ -4651,12 +4651,12 @@
 																					"type": "reference",
 																					"target": 43811,
 																					"name": "TEntry",
-																					"package": "@medusajs/core-flows",
+																					"package": "@switchyard/core-flows",
 																					"refersToTypeParameter": true
 																				}
 																			],
 																			"name": "GraphResultSet",
-																			"package": "@medusajs/types"
+																			"package": "@switchyard/types"
 																		},
 																		{
 																			"type": "literal",
@@ -4686,7 +4686,7 @@
 																						"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																						"line": 28,
 																						"character": 10,
-																						"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																						"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																					}
 																				],
 																				"type": {
@@ -4730,7 +4730,7 @@
 																				"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																				"line": 27,
 																				"character": 47,
-																				"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+																				"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 																			}
 																		]
 																	}
@@ -4755,7 +4755,7 @@
 																	"qualifiedName": "Key"
 																},
 																"name": "Key",
-																"package": "@medusajs/workflows-sdk",
+																"package": "@switchyard/workflows-sdk",
 																"refersToTypeParameter": true
 															},
 															"objectType": {
@@ -4768,7 +4768,7 @@
 																	"type": "reference",
 																	"target": 43812,
 																	"name": "TIsList",
-																	"package": "@medusajs/core-flows",
+																	"package": "@switchyard/core-flows",
 																	"refersToTypeParameter": true
 																},
 																"trueType": {
@@ -4782,12 +4782,12 @@
 																			"type": "reference",
 																			"target": 43811,
 																			"name": "TEntry",
-																			"package": "@medusajs/core-flows",
+																			"package": "@switchyard/core-flows",
 																			"refersToTypeParameter": true
 																		}
 																	],
 																	"name": "GraphResultSet",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																"falseType": {
 																	"type": "intersection",
@@ -4812,7 +4812,7 @@
 																						}
 																					],
 																					"name": "GraphResultSet",
-																					"package": "@medusajs/types"
+																					"package": "@switchyard/types"
 																				},
 																				{
 																					"type": "literal",
@@ -4842,7 +4842,7 @@
 																								"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																								"line": 28,
 																								"character": 10,
-																								"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																								"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																							}
 																						],
 																						"type": {
@@ -4871,7 +4871,7 @@
 																						"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																						"line": 27,
 																						"character": 47,
-																						"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+																						"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 																					}
 																				]
 																			}
@@ -4882,7 +4882,7 @@
 														}
 													],
 													"name": "WorkflowData",
-													"package": "@medusajs/workflows-sdk"
+													"package": "@switchyard/workflows-sdk"
 												}
 											]
 										}
@@ -4900,7 +4900,7 @@
 													"type": "reference",
 													"target": 43812,
 													"name": "TIsList",
-													"package": "@medusajs/core-flows",
+													"package": "@switchyard/core-flows",
 													"refersToTypeParameter": true
 												},
 												"trueType": {
@@ -4914,12 +4914,12 @@
 															"type": "reference",
 															"target": 43811,
 															"name": "TEntry",
-															"package": "@medusajs/core-flows",
+															"package": "@switchyard/core-flows",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "GraphResultSet",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												},
 												"falseType": {
 													"type": "intersection",
@@ -4942,12 +4942,12 @@
 																			"type": "reference",
 																			"target": 43811,
 																			"name": "TEntry",
-																			"package": "@medusajs/core-flows",
+																			"package": "@switchyard/core-flows",
 																			"refersToTypeParameter": true
 																		}
 																	],
 																	"name": "GraphResultSet",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																{
 																	"type": "literal",
@@ -4977,7 +4977,7 @@
 																				"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																				"line": 28,
 																				"character": 10,
-																				"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																				"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																			}
 																		],
 																		"type": {
@@ -4992,7 +4992,7 @@
 																					"type": "reference",
 																					"target": 43811,
 																					"name": "TEntry",
-																					"package": "@medusajs/core-flows",
+																					"package": "@switchyard/core-flows",
 																					"refersToTypeParameter": true
 																				},
 																				"extendsType": {
@@ -5005,7 +5005,7 @@
 																							"qualifiedName": "RemoteQueryEntryPoints"
 																						},
 																						"name": "RemoteQueryEntryPoints",
-																						"package": "@medusajs/types"
+																						"package": "@switchyard/types"
 																					}
 																				},
 																				"trueType": {
@@ -5046,7 +5046,7 @@
 																		"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																		"line": 27,
 																		"character": 47,
-																		"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+																		"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 																	}
 																]
 															}
@@ -5071,7 +5071,7 @@
 															"type": "reference",
 															"target": 43812,
 															"name": "TIsList",
-															"package": "@medusajs/core-flows",
+															"package": "@switchyard/core-flows",
 															"refersToTypeParameter": true
 														},
 														"trueType": {
@@ -5085,12 +5085,12 @@
 																	"type": "reference",
 																	"target": 43811,
 																	"name": "TEntry",
-																	"package": "@medusajs/core-flows",
+																	"package": "@switchyard/core-flows",
 																	"refersToTypeParameter": true
 																}
 															],
 															"name": "GraphResultSet",
-															"package": "@medusajs/types"
+															"package": "@switchyard/types"
 														},
 														"falseType": {
 															"type": "intersection",
@@ -5113,12 +5113,12 @@
 																					"type": "reference",
 																					"target": 43811,
 																					"name": "TEntry",
-																					"package": "@medusajs/core-flows",
+																					"package": "@switchyard/core-flows",
 																					"refersToTypeParameter": true
 																				}
 																			],
 																			"name": "GraphResultSet",
-																			"package": "@medusajs/types"
+																			"package": "@switchyard/types"
 																		},
 																		{
 																			"type": "literal",
@@ -5148,7 +5148,7 @@
 																						"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																						"line": 28,
 																						"character": 10,
-																						"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																						"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																					}
 																				],
 																				"type": {
@@ -5163,7 +5163,7 @@
 																							"type": "reference",
 																							"target": 43811,
 																							"name": "TEntry",
-																							"package": "@medusajs/core-flows",
+																							"package": "@switchyard/core-flows",
 																							"refersToTypeParameter": true
 																						},
 																						"extendsType": {
@@ -5205,7 +5205,7 @@
 																				"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																				"line": 27,
 																				"character": 47,
-																				"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+																				"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 																			}
 																		]
 																	}
@@ -5215,7 +5215,7 @@
 													}
 												],
 												"name": "WorkflowDataProperties",
-												"package": "@medusajs/workflows-sdk"
+												"package": "@switchyard/workflows-sdk"
 											}
 										]
 									}
@@ -5231,7 +5231,7 @@
 									"type": "reference",
 									"target": 43812,
 									"name": "TIsList",
-									"package": "@medusajs/core-flows",
+									"package": "@switchyard/core-flows",
 									"refersToTypeParameter": true
 								},
 								"trueType": {
@@ -5245,12 +5245,12 @@
 											"type": "reference",
 											"target": 43811,
 											"name": "TEntry",
-											"package": "@medusajs/core-flows",
+											"package": "@switchyard/core-flows",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "GraphResultSet",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								"falseType": {
 									"type": "intersection",
@@ -5273,12 +5273,12 @@
 															"type": "reference",
 															"target": 43811,
 															"name": "TEntry",
-															"package": "@medusajs/core-flows",
+															"package": "@switchyard/core-flows",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "GraphResultSet",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												},
 												{
 													"type": "literal",
@@ -5308,7 +5308,7 @@
 																"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																"line": 28,
 																"character": 10,
-																"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 															}
 														],
 														"type": {
@@ -5323,7 +5323,7 @@
 																	"type": "reference",
 																	"target": 43811,
 																	"name": "TEntry",
-																	"package": "@medusajs/core-flows",
+																	"package": "@switchyard/core-flows",
 																	"refersToTypeParameter": true
 																},
 																"extendsType": {
@@ -5336,7 +5336,7 @@
 																			"qualifiedName": "RemoteQueryEntryPoints"
 																		},
 																		"name": "RemoteQueryEntryPoints",
-																		"package": "@medusajs/types"
+																		"package": "@switchyard/types"
 																	}
 																},
 																"trueType": {
@@ -5351,12 +5351,12 @@
 																					"type": "reference",
 																					"target": 43811,
 																					"name": "TEntry",
-																					"package": "@medusajs/core-flows",
+																					"package": "@switchyard/core-flows",
 																					"refersToTypeParameter": true
 																				}
 																			],
 																			"name": "TEntry",
-																			"package": "@medusajs/core-flows",
+																			"package": "@switchyard/core-flows",
 																			"refersToTypeParameter": true
 																		},
 																		"objectType": {
@@ -5366,7 +5366,7 @@
 																				"qualifiedName": "RemoteQueryEntryPoints"
 																			},
 																			"name": "RemoteQueryEntryPoints",
-																			"package": "@medusajs/types"
+																			"package": "@switchyard/types"
 																		}
 																	}
 																},
@@ -5394,7 +5394,7 @@
 														"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 														"line": 27,
 														"character": 47,
-														"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+														"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 													}
 												]
 											}
@@ -5419,7 +5419,7 @@
 											"type": "reference",
 											"target": 43812,
 											"name": "TIsList",
-											"package": "@medusajs/core-flows",
+											"package": "@switchyard/core-flows",
 											"refersToTypeParameter": true
 										},
 										"trueType": {
@@ -5433,12 +5433,12 @@
 													"type": "reference",
 													"target": 43811,
 													"name": "TEntry",
-													"package": "@medusajs/core-flows",
+													"package": "@switchyard/core-flows",
 													"refersToTypeParameter": true
 												}
 											],
 											"name": "GraphResultSet",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										},
 										"falseType": {
 											"type": "intersection",
@@ -5461,12 +5461,12 @@
 																	"type": "reference",
 																	"target": 43811,
 																	"name": "TEntry",
-																	"package": "@medusajs/core-flows",
+																	"package": "@switchyard/core-flows",
 																	"refersToTypeParameter": true
 																}
 															],
 															"name": "GraphResultSet",
-															"package": "@medusajs/types"
+															"package": "@switchyard/types"
 														},
 														{
 															"type": "literal",
@@ -5496,7 +5496,7 @@
 																		"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																		"line": 28,
 																		"character": 10,
-																		"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																		"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																	}
 																],
 																"type": {
@@ -5511,7 +5511,7 @@
 																			"type": "reference",
 																			"target": 43811,
 																			"name": "TEntry",
-																			"package": "@medusajs/core-flows",
+																			"package": "@switchyard/core-flows",
 																			"refersToTypeParameter": true
 																		},
 																		"extendsType": {
@@ -5524,7 +5524,7 @@
 																					"qualifiedName": "RemoteQueryEntryPoints"
 																				},
 																				"name": "RemoteQueryEntryPoints",
-																				"package": "@medusajs/types"
+																				"package": "@switchyard/types"
 																			}
 																		},
 																		"trueType": {
@@ -5539,12 +5539,12 @@
 																							"type": "reference",
 																							"target": 43811,
 																							"name": "TEntry",
-																							"package": "@medusajs/core-flows",
+																							"package": "@switchyard/core-flows",
 																							"refersToTypeParameter": true
 																						}
 																					],
 																					"name": "TEntry",
-																					"package": "@medusajs/core-flows",
+																					"package": "@switchyard/core-flows",
 																					"refersToTypeParameter": true
 																				},
 																				"objectType": {
@@ -5554,7 +5554,7 @@
 																						"qualifiedName": "RemoteQueryEntryPoints"
 																					},
 																					"name": "RemoteQueryEntryPoints",
-																					"package": "@medusajs/types"
+																					"package": "@switchyard/types"
 																				}
 																			}
 																		},
@@ -5582,7 +5582,7 @@
 																"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																"line": 27,
 																"character": 47,
-																"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+																"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 															}
 														]
 													}
@@ -5592,7 +5592,7 @@
 									}
 								],
 								"name": "WorkflowDataProperties",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							},
 							{
 								"type": "reflection",
@@ -5701,7 +5701,7 @@
 																					"qualifiedName": "TransactionStepsDefinition"
 																				},
 																				"name": "TransactionStepsDefinition",
-																				"package": "@medusajs/orchestration"
+																				"package": "@switchyard/orchestration"
 																			},
 																			{
 																				"type": "union",
@@ -5745,7 +5745,7 @@
 																	"type": "reference",
 																	"target": 43812,
 																	"name": "TIsList",
-																	"package": "@medusajs/core-flows",
+																	"package": "@switchyard/core-flows",
 																	"refersToTypeParameter": true
 																},
 																"trueType": {
@@ -5759,12 +5759,12 @@
 																			"type": "reference",
 																			"target": 43811,
 																			"name": "TEntry",
-																			"package": "@medusajs/core-flows",
+																			"package": "@switchyard/core-flows",
 																			"refersToTypeParameter": true
 																		}
 																	],
 																	"name": "GraphResultSet",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																"falseType": {
 																	"type": "intersection",
@@ -5787,12 +5787,12 @@
 																							"type": "reference",
 																							"target": 43811,
 																							"name": "TEntry",
-																							"package": "@medusajs/core-flows",
+																							"package": "@switchyard/core-flows",
 																							"refersToTypeParameter": true
 																						}
 																					],
 																					"name": "GraphResultSet",
-																					"package": "@medusajs/types"
+																					"package": "@switchyard/types"
 																				},
 																				{
 																					"type": "literal",
@@ -5822,7 +5822,7 @@
 																								"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																								"line": 28,
 																								"character": 10,
-																								"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																								"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																							}
 																						],
 																						"type": {
@@ -5837,7 +5837,7 @@
 																									"type": "reference",
 																									"target": 43811,
 																									"name": "TEntry",
-																									"package": "@medusajs/core-flows",
+																									"package": "@switchyard/core-flows",
 																									"refersToTypeParameter": true
 																								},
 																								"extendsType": {
@@ -5850,7 +5850,7 @@
 																											"qualifiedName": "RemoteQueryEntryPoints"
 																										},
 																										"name": "RemoteQueryEntryPoints",
-																										"package": "@medusajs/types"
+																										"package": "@switchyard/types"
 																									}
 																								},
 																								"trueType": {
@@ -5867,7 +5867,7 @@
 																												}
 																											],
 																											"name": "TEntry",
-																											"package": "@medusajs/core-flows",
+																											"package": "@switchyard/core-flows",
 																											"refersToTypeParameter": true
 																										},
 																										"objectType": {
@@ -5877,7 +5877,7 @@
 																												"qualifiedName": "RemoteQueryEntryPoints"
 																											},
 																											"name": "RemoteQueryEntryPoints",
-																											"package": "@medusajs/types"
+																											"package": "@switchyard/types"
 																										}
 																									}
 																								},
@@ -5905,7 +5905,7 @@
 																						"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																						"line": 27,
 																						"character": 47,
-																						"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+																						"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 																					}
 																				]
 																			}
@@ -5915,7 +5915,7 @@
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												}
 											]
@@ -5955,7 +5955,7 @@
 											"type": "reference",
 											"target": 43812,
 											"name": "TIsList",
-											"package": "@medusajs/core-flows",
+											"package": "@switchyard/core-flows",
 											"refersToTypeParameter": true
 										},
 										"trueType": {
@@ -5969,12 +5969,12 @@
 													"type": "reference",
 													"target": 43811,
 													"name": "TEntry",
-													"package": "@medusajs/core-flows",
+													"package": "@switchyard/core-flows",
 													"refersToTypeParameter": true
 												}
 											],
 											"name": "GraphResultSet",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										},
 										"falseType": {
 											"type": "intersection",
@@ -5997,12 +5997,12 @@
 																	"type": "reference",
 																	"target": 43811,
 																	"name": "TEntry",
-																	"package": "@medusajs/core-flows",
+																	"package": "@switchyard/core-flows",
 																	"refersToTypeParameter": true
 																}
 															],
 															"name": "GraphResultSet",
-															"package": "@medusajs/types"
+															"package": "@switchyard/types"
 														},
 														{
 															"type": "literal",
@@ -6032,7 +6032,7 @@
 																		"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																		"line": 28,
 																		"character": 10,
-																		"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
+																		"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L28"
 																	}
 																],
 																"type": {
@@ -6047,7 +6047,7 @@
 																			"type": "reference",
 																			"target": 43811,
 																			"name": "TEntry",
-																			"package": "@medusajs/core-flows",
+																			"package": "@switchyard/core-flows",
 																			"refersToTypeParameter": true
 																		},
 																		"extendsType": {
@@ -6060,7 +6060,7 @@
 																					"qualifiedName": "RemoteQueryEntryPoints"
 																				},
 																				"name": "RemoteQueryEntryPoints",
-																				"package": "@medusajs/types"
+																				"package": "@switchyard/types"
 																			}
 																		},
 																		"trueType": {
@@ -6075,12 +6075,12 @@
 																							"type": "reference",
 																							"target": 43811,
 																							"name": "TEntry",
-																							"package": "@medusajs/core-flows",
+																							"package": "@switchyard/core-flows",
 																							"refersToTypeParameter": true
 																						}
 																					],
 																					"name": "TEntry",
-																					"package": "@medusajs/core-flows",
+																					"package": "@switchyard/core-flows",
 																					"refersToTypeParameter": true
 																				},
 																				"objectType": {
@@ -6090,7 +6090,7 @@
 																						"qualifiedName": "RemoteQueryEntryPoints"
 																					},
 																					"name": "RemoteQueryEntryPoints",
-																					"package": "@medusajs/types"
+																					"package": "@switchyard/types"
 																				}
 																			}
 																		},
@@ -6118,7 +6118,7 @@
 																"fileName": "core-flows/src/common/steps/use-query-graph.ts",
 																"line": 27,
 																"character": 47,
-																"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
+																"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-query-graph.ts#L27"
 															}
 														]
 													}
@@ -6128,7 +6128,7 @@
 									}
 								],
 								"name": "StepFunctionReturnConfig",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							}
 						]
 					}
@@ -6169,7 +6169,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L14"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L14"
 						}
 					],
 					"type": {
@@ -6201,7 +6201,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L18"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L18"
 						}
 					],
 					"type": {
@@ -6245,7 +6245,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L22"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L22"
 						}
 					],
 					"type": {
@@ -6274,7 +6274,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L26"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L26"
 						}
 					],
 					"type": {
@@ -6326,7 +6326,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L32"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L32"
 						}
 					],
 					"type": {
@@ -6352,7 +6352,7 @@
 					"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 					"line": 10,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L10"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L10"
 				}
 			],
 			"extendedBy": [
@@ -6404,7 +6404,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L14"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L14"
 						}
 					],
 					"type": {
@@ -6442,7 +6442,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L18"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L18"
 						}
 					],
 					"type": {
@@ -6492,7 +6492,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L22"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L22"
 						}
 					],
 					"type": {
@@ -6527,7 +6527,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L26"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L26"
 						}
 					],
 					"type": {
@@ -6585,7 +6585,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L32"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L32"
 						}
 					],
 					"type": {
@@ -6617,7 +6617,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 39,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L39"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L39"
 						}
 					],
 					"type": {
@@ -6644,7 +6644,7 @@
 					"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 					"line": 35,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L35"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L35"
 				}
 			],
 			"extendedTypes": [
@@ -6652,7 +6652,7 @@
 					"type": "reference",
 					"target": 43840,
 					"name": "RemoteStepInput",
-					"package": "@medusajs/core-flows"
+					"package": "@switchyard/core-flows"
 				}
 			]
 		},
@@ -6692,7 +6692,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 14,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L14"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L14"
 						}
 					],
 					"type": {
@@ -6730,7 +6730,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 18,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L18"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L18"
 						}
 					],
 					"type": {
@@ -6780,7 +6780,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 22,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L22"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L22"
 						}
 					],
 					"type": {
@@ -6815,7 +6815,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 26,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L26"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L26"
 						}
 					],
 					"type": {
@@ -6873,7 +6873,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 32,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L32"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L32"
 						}
 					],
 					"type": {
@@ -6905,7 +6905,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 46,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L46"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L46"
 						}
 					],
 					"type": {
@@ -6932,7 +6932,7 @@
 					"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 					"line": 42,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L42"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L42"
 				}
 			],
 			"extendedTypes": [
@@ -6940,7 +6940,7 @@
 					"type": "reference",
 					"target": 43840,
 					"name": "RemoteStepInput",
-					"package": "@medusajs/core-flows"
+					"package": "@switchyard/core-flows"
 				}
 			]
 		},
@@ -6957,7 +6957,7 @@
 					"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 					"line": 49,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L49"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L49"
 				}
 			],
 			"type": {
@@ -6976,7 +6976,7 @@
 				"summary": [
 					{
 						"kind": "text",
-						"text": "This step fetches data across modules using the remote query.\n\nLearn more in the [Remote Query documentation](https://docs.medusajs.com/learn/fundamentals/module-links/query).\n\n:::note\n\nThis step is deprecated. Use "
+						"text": "This step fetches data across modules using the remote query.\n\nLearn more in the [Remote Query documentation](https://docs.switchyard.com/learn/fundamentals/module-links/query).\n\n:::note\n\nThis step is deprecated. Use "
 					},
 					{
 						"kind": "inline-tag",
@@ -7073,7 +7073,7 @@
 					"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 					"line": 112,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L112"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L112"
 				}
 			],
 			"signatures": [
@@ -7088,7 +7088,7 @@
 							"fileName": "core-flows/src/common/steps/use-remote-query.ts",
 							"line": 112,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L112"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/use-remote-query.ts#L112"
 						}
 					],
 					"parameters": [
@@ -7105,13 +7105,13 @@
 										"type": "reference",
 										"target": 43846,
 										"name": "EntryStepInput",
-										"package": "@medusajs/core-flows"
+										"package": "@switchyard/core-flows"
 									},
 									{
 										"type": "reference",
 										"target": 43853,
 										"name": "ServiceStepInput",
-										"package": "@medusajs/core-flows"
+										"package": "@switchyard/core-flows"
 									},
 									{
 										"type": "reference",
@@ -7127,19 +7127,19 @@
 														"type": "reference",
 														"target": 43846,
 														"name": "EntryStepInput",
-														"package": "@medusajs/core-flows"
+														"package": "@switchyard/core-flows"
 													},
 													{
 														"type": "reference",
 														"target": 43853,
 														"name": "ServiceStepInput",
-														"package": "@medusajs/core-flows"
+														"package": "@switchyard/core-flows"
 													}
 												]
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -7218,7 +7218,7 @@
 					"fileName": "core-flows/src/common/steps/validate-presence-of.ts",
 					"line": 7,
 					"character": 13,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L7"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L7"
 				}
 			],
 			"signatures": [
@@ -7233,7 +7233,7 @@
 							"fileName": "core-flows/src/common/steps/validate-presence-of.ts",
 							"line": 7,
 							"character": 13,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L7"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L7"
 						}
 					],
 					"parameters": [
@@ -7266,7 +7266,7 @@
 															"fileName": "core-flows/src/common/steps/validate-presence-of.ts",
 															"line": 13,
 															"character": 4,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L13"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L13"
 														}
 													],
 													"type": {
@@ -7300,7 +7300,7 @@
 															"fileName": "core-flows/src/common/steps/validate-presence-of.ts",
 															"line": 14,
 															"character": 4,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L14"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L14"
 														}
 													],
 													"type": {
@@ -7326,7 +7326,7 @@
 													"fileName": "core-flows/src/common/steps/validate-presence-of.ts",
 													"line": 12,
 													"character": 5,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L12"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L12"
 												}
 											]
 										}
@@ -7358,7 +7358,7 @@
 																	"fileName": "core-flows/src/common/steps/validate-presence-of.ts",
 																	"line": 13,
 																	"character": 4,
-																	"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L13"
+																	"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L13"
 																}
 															],
 															"type": {
@@ -7392,7 +7392,7 @@
 																	"fileName": "core-flows/src/common/steps/validate-presence-of.ts",
 																	"line": 14,
 																	"character": 4,
-																	"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L14"
+																	"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L14"
 																}
 															],
 															"type": {
@@ -7418,14 +7418,14 @@
 															"fileName": "core-flows/src/common/steps/validate-presence-of.ts",
 															"line": 12,
 															"character": 5,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L12"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/common/steps/validate-presence-of.ts#L12"
 														}
 													]
 												}
 											}
 										],
 										"name": "WorkflowData",
-										"package": "@medusajs/workflows-sdk"
+										"package": "@switchyard/workflows-sdk"
 									}
 								]
 							}
@@ -7447,7 +7447,7 @@
 									}
 								],
 								"name": "WorkflowDataProperties",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							},
 							{
 								"type": "reflection",
@@ -7556,7 +7556,7 @@
 																					"qualifiedName": "TransactionStepsDefinition"
 																				},
 																				"name": "TransactionStepsDefinition",
-																				"package": "@medusajs/orchestration"
+																				"package": "@switchyard/orchestration"
 																			},
 																			{
 																				"type": "union",
@@ -7596,7 +7596,7 @@
 															}
 														],
 														"name": "WorkflowData",
-														"package": "@medusajs/workflows-sdk"
+														"package": "@switchyard/workflows-sdk"
 													}
 												}
 											]
@@ -7632,7 +7632,7 @@
 									}
 								],
 								"name": "StepFunctionReturnConfig",
-								"package": "@medusajs/workflows-sdk"
+								"package": "@switchyard/workflows-sdk"
 							}
 						]
 					}
@@ -7688,7 +7688,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/core-flows",
+	"packageName": "@switchyard/core-flows",
 	"symbolIdMap": {
 		"43687": {
 			"sourceFileName": "../../../../packages/core/core-flows/src/common/index.ts",

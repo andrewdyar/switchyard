@@ -4,21 +4,21 @@ export const metadata = {
 
 # {metadata.title}
 
-In this chapter, you’ll learn how to use Medusa’s logging utility.
+In this chapter, you’ll learn how to use Switchyard’s logging utility.
 
 ## Logger Class
 
-Medusa provides a `Logger` class with advanced logging functionalities. This includes configuring logging levels or saving logs to a file.
+Switchyard provides a `Logger` class with advanced logging functionalities. This includes configuring logging levels or saving logs to a file.
 
 By default, the `Logger` class logs messages to the console. You can also override the default logger with your custom implementation, as explained in the [Override Logger](./custom-logger/page.mdx) guide.
 
-The Medusa application registers the `Logger` class in the Medusa container and each module's container as `logger`. 
+The Switchyard application registers the `Logger` class in the Switchyard container and each module's container as `logger`. 
 
 ---
 
 ## How to Log a Message
 
-Resolve the `logger` using the Medusa container to log a message in your resource.
+Resolve the `logger` using the Switchyard container to log a message in your resource.
 
 For example, create the file `src/jobs/log-message.ts` with the following content:
 
@@ -28,11 +28,11 @@ export const highlights = [
 ]
 
 ```ts title="src/jobs/log-message.ts" highlights={highlights}
-import { MedusaContainer } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const logger = container.resolve(ContainerRegistrationKeys.LOGGER)
 
@@ -46,11 +46,11 @@ export const config = {
 }
 ```
 
-This creates a scheduled job that resolves the `logger` from the Medusa container and uses it to log a message.
+This creates a scheduled job that resolves the `logger` from the Switchyard container and uses it to log a message.
 
 ### Test the Scheduled Job
 
-To test out the above scheduled job, start the Medusa application:
+To test out the above scheduled job, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
@@ -109,7 +109,7 @@ The environment variable must be set as a system environment variable and not in
 
 ### Save Logs in a File
 
-Aside from showing the logs in the terminal, you can save the logs in a file by setting the `LOG_FILE` environment variable to the path of the file relative to the Medusa server’s root directory.
+Aside from showing the logs in the terminal, you can save the logs in a file by setting the `LOG_FILE` environment variable to the path of the file relative to the Switchyard server’s root directory.
 
 For example:
 
@@ -117,7 +117,7 @@ For example:
 LOG_FILE=all.log
 ```
 
-Your logs are now saved in the `all.log` file at the root of your Medusa application.
+Your logs are now saved in the `all.log` file at the root of your Switchyard application.
 
 <Note title="Important">
 
@@ -129,16 +129,16 @@ The environment variable must be set as a system environment variable and not in
 
 ## Show Log with Progress
 
-The `Logger` class has an `activity` method used to log a message of level `info`. If the Medusa application is running in a development environment, a spinner starts to show the activity's progress.
+The `Logger` class has an `activity` method used to log a message of level `info`. If the Switchyard application is running in a development environment, a spinner starts to show the activity's progress.
 
 For example:
 
 ```ts title="src/jobs/log-message.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const logger = container.resolve(ContainerRegistrationKeys.LOGGER)
 

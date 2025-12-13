@@ -6,7 +6,7 @@ export const metadata = {
 
 # {metadata.title}
 
-In this guide, you'll learn about the default authentication setup when using the JS SDK, how to customize it, and how to send authenticated requests to Medusa's APIs.
+In this guide, you'll learn about the default authentication setup when using the JS SDK, how to customize it, and how to send authenticated requests to Switchyard's APIs.
 
 ## Default Authentication Settings in JS SDK
 
@@ -34,7 +34,7 @@ There are three types of authentication:
         JWT token (default)
       </Table.Cell>
       <Table.Cell>
-        When you log in a user, the JS SDK stores the JWT for you and automatically includes it in the headers of all requests to the Medusa API. This means you don't have to manually set the authorization header for each request. When the user logs out, the SDK clears the stored JWT.
+        When you log in a user, the JS SDK stores the JWT for you and automatically includes it in the headers of all requests to the Switchyard API. This means you don't have to manually set the authorization header for each request. When the user logs out, the SDK clears the stored JWT.
       </Table.Cell>
       <Table.Cell>
         - You need stateless authentication. For example, you're building a mobile storefront with React Native.
@@ -46,10 +46,10 @@ There are three types of authentication:
         Cookie session
       </Table.Cell>
       <Table.Cell>
-        When you log in a user, the JS SDK stores the session cookie for you and automatically includes it in the headers of all requests to the Medusa API. This means you don't have to manually set the authorization header for each request. When the user logs out, the SDK destroys the session cookie using Medusa's API.
+        When you log in a user, the JS SDK stores the session cookie for you and automatically includes it in the headers of all requests to the Switchyard API. This means you don't have to manually set the authorization header for each request. When the user logs out, the SDK destroys the session cookie using Switchyard's API.
       </Table.Cell>
       <Table.Cell>
-        - You need stateful authentication. For example, you're building a web storefront with Next.js or customizations in Medusa Admin.
+        - You need stateful authentication. For example, you're building a web storefront with Next.js or customizations in Switchyard Admin.
         - You want to ensure the session is revoked when the user logs out.
       </Table.Cell>
     </Table.Row>
@@ -58,7 +58,7 @@ There are three types of authentication:
         Secret API Key
       </Table.Cell>
       <Table.Cell>
-        Only available for admin users. You pass the API key in the JS SDK configurations, and it's always passed in the headers of all requests to the Medusa API.
+        Only available for admin users. You pass the API key in the JS SDK configurations, and it's always passed in the headers of all requests to the Switchyard API.
       </Table.Cell>
       <Table.Cell>
         - You're authenticating the admin user.
@@ -87,9 +87,9 @@ By default, the JS SDK uses JWT token (`jwt`) authentication. You can change the
 For example:
 
 ```ts
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   // ...
   auth: {
     type: "session",
@@ -100,15 +100,15 @@ export const sdk = new Medusa({
 To use a secret API key instead, pass it in the `apiKey` configuration instead:
 
 ```ts
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   // ...
   apiKey: "your-api-key",
 })
 ```
 
-The provided API key will be passed in the headers of all requests to the Medusa API.
+The provided API key will be passed in the headers of all requests to the Switchyard API.
 
 ### Change JWT Authentication Storage
 
@@ -187,7 +187,7 @@ For example, to use `AsyncStorage` in React Native:
 
 ```ts
 import AsyncStorage from "@react-native-async-storage/async-storage"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
 let MEDUSA_BACKEND_URL = "http://localhost:9000"
 
@@ -195,7 +195,7 @@ if (process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL) {
   MEDUSA_BACKEND_URL = process.env.NEXT_PUBLIC_MEDUSA_BACKEND_URL
 }
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: MEDUSA_BACKEND_URL,
   debug: process.env.NODE_ENV === "development",
   publishableKey: process.env.NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY,
@@ -234,7 +234,7 @@ You can change the `credentials` option by setting the `auth.fetchCredentials` c
         `include` (default)
       </Table.Cell>
       <Table.Cell>
-        Passes the `credentials: include` option in the fetch requests. This means the JS SDK will include cookies and authorization headers in the requests to the Medusa API.
+        Passes the `credentials: include` option in the fetch requests. This means the JS SDK will include cookies and authorization headers in the requests to the Switchyard API.
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -242,7 +242,7 @@ You can change the `credentials` option by setting the `auth.fetchCredentials` c
         `same-origin`
       </Table.Cell>
       <Table.Cell>
-        Passes the `credentials: same-origin` option in the fetch requests. This means the JS SDK will include cookies and authorization headers in the requests to the Medusa API only if the request is made to the same origin as the current page.
+        Passes the `credentials: same-origin` option in the fetch requests. This means the JS SDK will include cookies and authorization headers in the requests to the Switchyard API only if the request is made to the same origin as the current page.
       </Table.Cell>
     </Table.Row>
     <Table.Row>
@@ -250,7 +250,7 @@ You can change the `credentials` option by setting the `auth.fetchCredentials` c
         `omit`
       </Table.Cell>
       <Table.Cell>
-        Passes the `credentials: omit` option in the fetch requests. This means the JS SDK will not include cookies or authorization headers in the requests to the Medusa API.
+        Passes the `credentials: omit` option in the fetch requests. This means the JS SDK will not include cookies or authorization headers in the requests to the Switchyard API.
       </Table.Cell>
     </Table.Row>
   </Table.Body>
@@ -259,9 +259,9 @@ You can change the `credentials` option by setting the `auth.fetchCredentials` c
 For example:
 
 ```ts
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   // ...
   auth: {
     type: "session",
@@ -270,7 +270,7 @@ export const sdk = new Medusa({
 })
 ```
 
-In this example, you set the `fetchCredentials` configuration to `same-origin`, which means the JS SDK will include cookies and authorization headers in the requests to the Medusa API only if the request is made to the same origin as the current page.
+In this example, you set the `fetchCredentials` configuration to `same-origin`, which means the JS SDK will include cookies and authorization headers in the requests to the Switchyard API only if the request is made to the same origin as the current page.
 
 ---
 
@@ -284,7 +284,7 @@ If you're using an API key for authentication, you don't need to log in the user
 
 The JS SDK has an `auth.login` method that allows you to login admin users, customers, or any [actor type](../../../commerce-modules/auth/auth-identity-and-actor-types/page.mdx) with any [auth provider](../../../commerce-modules/auth/auth-providers/page.mdx).
 
-Not only does this method log in the user, but it also stores the JWT token or session cookie for you and automatically includes it in the headers of all requests to the Medusa API. This means you don't have to manually set the authorization header for each request.
+Not only does this method log in the user, but it also stores the JWT token or session cookie for you and automatically includes it in the headers of all requests to the Switchyard API. This means you don't have to manually set the authorization header for each request.
 
 For example:
 
@@ -354,7 +354,7 @@ If the authentication is successful, there are two types of returned data:
 
 - An object with a `location` property: This means the authentication requires more actions, which happens when using third-party authentication providers, such as [Google](../../../commerce-modules/auth/auth-providers/google/page.mdx). In that case, you need to redirect the customer to the location to complete their authentication.
     - Refer to the [Third-Party Login in Storefront](../../../storefront-development/customers/third-party-login/page.mdx) guide for an example implementation.
-- A string: This means the authentication was successful, and the user is logged in. The JS SDK automatically stores the JWT token or session cookie for you and includes it in the headers of all requests to the Medusa API. All requests you send afterwards will be authenticated with the stored token or session cookie.
+- A string: This means the authentication was successful, and the user is logged in. The JS SDK automatically stores the JWT token or session cookie for you and includes it in the headers of all requests to the Switchyard API. All requests you send afterwards will be authenticated with the stored token or session cookie.
 
 If the authentication fails, the `catch` block will be executed, and you can handle the error accordingly.
 
@@ -386,7 +386,7 @@ If you're using an API key for authentication, you can't log out the user. You'l
 
 The JS SDK has an `auth.logout` method that allows you to log out the currently authenticated user.
 
-If the JS SDK's authentication type is `jwt`, the method will only clear the stored JWT token from the local storage. If the authentication type is `session`, the method will destroy the session cookie using Medusa's `/auth/session` API route.
+If the JS SDK's authentication type is `jwt`, the method will only clear the stored JWT token from the local storage. If the authentication type is `session`, the method will destroy the session cookie using Switchyard's `/auth/session` API route.
 
 Any request sent after logging out will not be authenticated, and you will need to log in again to authenticate the user.
 

@@ -10,12 +10,12 @@ In this chapter, you'll learn how to infer the type of a data model.
 
 Consider you have a `Post` data model. You can't reference this data model in a type, such as a workflow input or service method output types, since it's a variable.
 
-Instead, Medusa provides `InferTypeOf` that transforms your data model to a type.
+Instead, Switchyard provides `InferTypeOf` that transforms your data model to a type.
 
 For example:
 
 ```ts
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { Post } from "../modules/blog/models/post" // relative path to the model
 
 export type Post = InferTypeOf<typeof Post>
@@ -29,12 +29,12 @@ You can now use the `Post` type to reference a data model in other types, such a
 
 ```ts title="Example Service"
 // other imports...
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 import { Post } from "../models/post"
 
 type Post = InferTypeOf<typeof Post>
 
-class BlogModuleService extends MedusaService({ Post }) {
+class BlogModuleService extends SwitchyardService({ Post }) {
   async doSomething(): Promise<Post> {
     // ...
   }

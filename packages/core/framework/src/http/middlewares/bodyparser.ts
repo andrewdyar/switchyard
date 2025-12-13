@@ -1,10 +1,10 @@
 import memoize from "lodash.memoize"
-import logger from "@medusajs/cli/dist/reporter"
+import logger from "@switchyard/cli/dist/reporter"
 import { json, NextFunction, RequestHandler, text, urlencoded } from "express"
 
 import type {
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardRequest,
+  SwitchyardResponse,
   MiddlewareVerb,
   ParserConfigArgs,
   MiddlewareFunction,
@@ -20,7 +20,7 @@ const parsers = {
     return json({
       limit: options?.sizeLimit,
       verify: options?.preserveRawBody
-        ? (req: MedusaRequest, res: MedusaResponse, buf: Buffer) => {
+        ? (req: SwitchyardRequest, res: SwitchyardResponse, buf: Buffer) => {
             req.rawBody = buf
           }
         : undefined,
@@ -57,8 +57,8 @@ export function createBodyParserMiddlewaresStack(
   return (["json", "text", "urlencoded"] as (keyof typeof parsers)[]).map(
     (parser) => {
       function bodyParser(
-        req: MedusaRequest,
-        res: MedusaResponse,
+        req: SwitchyardRequest,
+        res: SwitchyardResponse,
         next: NextFunction
       ) {
         const matchingRoute = routesFinder.find(

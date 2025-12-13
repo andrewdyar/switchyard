@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { useMemo } from "react"
 
 import { _DataTable } from "../../../../../components/table/data-table"

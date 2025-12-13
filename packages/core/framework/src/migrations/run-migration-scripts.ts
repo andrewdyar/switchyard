@@ -1,5 +1,5 @@
-import { MedusaContainer } from "@medusajs/types"
-import { dynamicImport, isFileSkipped, Modules } from "@medusajs/utils"
+import { SwitchyardContainer } from "@switchyard/types"
+import { dynamicImport, isFileSkipped, Modules } from "@switchyard/utils"
 import { basename } from "path"
 import { logger } from "../logger"
 import { Migrator } from "./migrator"
@@ -7,7 +7,7 @@ import { Migrator } from "./migrator"
 export class MigrationScriptsMigrator extends Migrator {
   protected migration_table_name = "script_migrations"
 
-  constructor({ container }: { container: MedusaContainer }) {
+  constructor({ container }: { container: SwitchyardContainer }) {
     super({ container })
   }
 

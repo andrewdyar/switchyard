@@ -93,7 +93,7 @@ When the promotion is applied to a cart item or a shipping method (in other word
 
 The `ApplicationMethod` data model has a collection of [PromotionRule](/references/promotion/models/PromotionRule) records to restrict which items or shipping methods the promotion applies to. The `target_rules` property in the `ApplicationMethod` represents this relation.
 
-![A diagram showcasing the target_rules relation between the ApplicationMethod and PromotionRule data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1709898273/Medusa%20Resources/application-method-target-rules_hqaymz.jpg)
+![A diagram showcasing the target_rules relation between the ApplicationMethod and PromotionRule data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1709898273/Switchyard%20Resources/application-method-target-rules_hqaymz.jpg)
 
 In this example, the promotion is only applied to product variants in the cart that have the SKU `SHIRT`.
 
@@ -105,7 +105,7 @@ When the promotion’s type is `buyget`, you must specify the “buy X” condit
 
 The application method has a collection of `PromotionRule` items to define the “buy X” rule. The `buy_rules` property in the `ApplicationMethod` represents this relation.
 
-![A diagram showcasing the buy_rules relation between the ApplicationMethod and PromotionRule data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1709898453/Medusa%20Resources/application-method-buy-rules_djjuhw.jpg)
+![A diagram showcasing the buy_rules relation between the ApplicationMethod and PromotionRule data models](https://res.cloudinary.com/dza7lstvk/image/upload/v1709898453/Switchyard%20Resources/application-method-buy-rules_djjuhw.jpg)
 
 In this example, the cart must have two product variants with the SKU `SHIRT` for the promotion to be applied.
 
@@ -157,7 +157,7 @@ This condition is applied on the quantity of every applicable item in the cart. 
 
 <Note>
 
-The `once` allocation type is available from [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0).
+The `once` allocation type is available from [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0).
 
 </Note>
 

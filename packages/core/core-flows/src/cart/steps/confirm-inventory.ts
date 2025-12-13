@@ -1,14 +1,14 @@
 import type {
   BigNumberInput,
   IInventoryService,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   MathBN,
-  MedusaError,
+  SwitchyardError,
   Modules,
   promiseAll,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the cart items to confirm their inventory availability.
@@ -89,10 +89,10 @@ export const confirmInventoryStep = createStep(
     const inventoryCoverage = await promiseAll(promises)
 
     if (inventoryCoverage.some((hasCoverage) => !hasCoverage)) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Some variant does not have the required inventory`,
-        MedusaError.Codes.INSUFFICIENT_INVENTORY
+        SwitchyardError.Codes.INSUFFICIENT_INVENTORY
       )
     }
 

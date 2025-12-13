@@ -2,8 +2,8 @@ import {
   Constructor,
   ILockingProvider,
   Logger,
-} from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { LockingProviderRegistrationPrefix } from "../types"
 
 type InjectedDependencies = {
@@ -26,8 +26,8 @@ export default class LockingProviderService {
     providerClass: Constructor<ILockingProvider>
   ) {
     if (!(providerClass as any).identifier) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         `Trying to register a locking provider without an identifier.`
       )
     }

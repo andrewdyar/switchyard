@@ -49,7 +49,7 @@
 			"code": "The code the tax rate is identified by.",
 			"name": "The name of the tax rate",
 			"is_default": "Whether this tax rate is the default in the tax region.",
-			"is_combinable": "Whether the tax rate should be combined with parent rates. Learn more in [this documentation](https://docs.medusajs.com/v2/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates).",
+			"is_combinable": "Whether the tax rate should be combined with parent rates. Learn more in [this documentation](https://docs.switchyard.com/v2/resources/commerce-modules/tax/tax-rates-and-rules#combinable-tax-rates).",
 			"tax_region": "The associated tax region.\n\n@expandable",
 			"rules": "The associated rules.\n\n@expandable",
 			"metadata": "Holds custom data in key-value pairs.",

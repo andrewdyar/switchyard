@@ -1,4 +1,4 @@
-import { PromotionTypeValues } from "@medusajs/framework/types"
+import { PromotionTypeValues } from "@switchyard/framework/types"
 
 export interface CreatePromotionDTO {
   code: string

@@ -19,42 +19,42 @@ const HomepageRecipesSection = () => {
       type: "large",
       title: "Marketplace",
       text: "Build a marketplace with multiple vendors.",
-      href: "https://docs.medusajs.com/resources/recipes/marketplace/examples/vendors",
+      href: "https://docs.switchyard.com/resources/recipes/marketplace/examples/vendors",
       icon: ShopIcon,
     },
     {
       type: "large",
       title: "ERP",
       text: "Integrate an ERP system to manage custom product prices, purchase rules, syncing orders, and more.",
-      href: "https://docs.medusajs.com/resources/recipes/erp",
+      href: "https://docs.switchyard.com/resources/recipes/erp",
       icon: ErpIcon,
     },
     {
       type: "large",
       title: "Bundled Products",
       text: "Sell products as bundles with Admin and storefront customizations.",
-      href: "https://docs.medusajs.com/resources/recipes/bundled-products/examples/standard",
+      href: "https://docs.switchyard.com/resources/recipes/bundled-products/examples/standard",
       icon: BundledProductIcon,
     },
     {
       type: "large",
       title: "Subscriptions",
       text: "Implement a subscription-based commerce store.",
-      href: "https://docs.medusajs.com/resources/recipes/subscriptions/examples/standard",
+      href: "https://docs.switchyard.com/resources/recipes/subscriptions/examples/standard",
       icon: CalendarRefreshIcon,
     },
     {
       type: "large",
       title: "Restaurant-Delivery",
       text: "Build a restaurant marketplace inspired by UberEats, with real-time delivery handling.",
-      href: "https://docs.medusajs.com/resources/recipes/marketplace/examples/restaurant-delivery",
+      href: "https://docs.switchyard.com/resources/recipes/marketplace/examples/restaurant-delivery",
       icon: ChefHatIcon,
     },
     {
       type: "large",
       title: "Digital Products",
       text: "Sell digital products with custom fulfillment.",
-      href: "https://docs.medusajs.com/resources/recipes/digital-products/examples/standard",
+      href: "https://docs.switchyard.com/resources/recipes/digital-products/examples/standard",
       icon: ImageBinaryIcon,
     },
   ]
@@ -71,7 +71,7 @@ const HomepageRecipesSection = () => {
           <div className="flex flex-col gap-0.5">
             <IconHeadline title="Recipes" icon={<ScrollTextIcon />} />
             <h2 className="text-h1 text-medusa-fg-base">
-              Medusa’s framework supports any business use case.
+              Switchyard’s framework supports any business use case.
             </h2>
             <span className="text-medusa-fg-subtle text-small-plus">
               These recipes show how you to build a use case by customizing and
@@ -79,7 +79,7 @@ const HomepageRecipesSection = () => {
             </span>
           </div>
           <Link
-            href={"https://docs.medusajs.com/resources/recipes"}
+            href={"https://docs.switchyard.com/resources/recipes"}
             className="flex gap-0.25 items-center text-compact-small-plus"
             withIcon
           >

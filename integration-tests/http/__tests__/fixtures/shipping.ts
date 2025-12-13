@@ -2,8 +2,8 @@ import {
   AdminShippingProfile,
   AdminStockLocation,
   AdminSalesChannel,
-  MedusaContainer,
-} from "@medusajs/types"
+  SwitchyardContainer,
+} from "@switchyard/types"
 import { adminHeaders } from "../../../helpers/create-admin-user"
 
 export async function createShippingOptionSeeder({
@@ -15,7 +15,7 @@ export async function createShippingOptionSeeder({
   countries = ["us"],
 }: {
   api: any
-  container: MedusaContainer
+  container: SwitchyardContainer
   salesChannelOverride?: AdminSalesChannel
   stockLocationOverride?: AdminStockLocation
   shippingProfileOverride?: AdminShippingProfile

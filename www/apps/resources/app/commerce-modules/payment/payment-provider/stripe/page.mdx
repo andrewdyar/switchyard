@@ -14,7 +14,7 @@ In this document, you’ll learn about the Stripe Module Provider and how to con
 
 <Note title="Looking for no-code docs?">
 
-Your technical team must install the Stripe Module Provider in your Medusa application first. Then, refer to [this user guide](!user-guide!/settings/regions#edit-region-details) to learn how to enable the Stripe payment provider in a region using the Medusa Admin dashboard.
+Your technical team must install the Stripe Module Provider in your Switchyard application first. Then, refer to [this user guide](!user-guide!/settings/regions#edit-region-details) to learn how to enable the Stripe payment provider in a region using the Switchyard Admin dashboard.
 
 </Note>
 
@@ -30,23 +30,23 @@ Your technical team must install the Stripe Module Provider in your Medusa appli
     link: "https://support.stripe.com/questions/locate-api-keys-in-the-dashboard"
   },
   {
-    text: "For deployed Medusa applications, a Stripe webhook secret. Refer to the end of this guide for details on the URL and events.",
+    text: "For deployed Switchyard applications, a Stripe webhook secret. Refer to the end of this guide for details on the URL and events.",
     link: "https://docs.stripe.com/webhooks#add-a-webhook-endpoint"
   }
 ]} />
 
-The Stripe Module Provider is installed by default in your application. To use it, add it to the array of providers passed to the Payment Module in `medusa-config.ts`:
+The Stripe Module Provider is installed by default in your application. To use it, add it to the array of providers passed to the Payment Module in `switchyard.config.ts`:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/payment",
+      resolve: "@switchyard/medusa/payment",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/payment-stripe",
+            resolve: "@switchyard/medusa/payment-stripe",
             id: "stripe",
             options: {
               apiKey: process.env.STRIPE_API_KEY,
@@ -109,7 +109,7 @@ STRIPE_API_KEY=<YOUR_STRIPE_API_KEY>
       </Table.Cell>
       <Table.Cell>
       
-      A string indicating the Stripe webhook secret. This is only useful for deployed Medusa applications.
+      A string indicating the Stripe webhook secret. This is only useful for deployed Switchyard applications.
       
       </Table.Cell>
       <Table.Cell>
@@ -231,9 +231,9 @@ When you register the Stripe Module Provider, it registers different providers, 
 Each provider is registered and referenced by a unique ID made up of the format `pp_{identifier}_{id}`, where:
 
 - `{identifier}` is the ID of the payment provider as defined in the Stripe Module Provider.
-- `{id}` is the ID of the Stripe Module Provider as set in the `medusa-config.ts` file. For example, `stripe`.
+- `{id}` is the ID of the Stripe Module Provider as set in the `switchyard.config.ts` file. For example, `stripe`.
 
-Assuming you set the ID of the Stripe Module Provider to `stripe` in `medusa-config.ts`, the Medusa application will register the following payment providers:
+Assuming you set the ID of the Stripe Module Provider to `stripe` in `switchyard.config.ts`, the Switchyard application will register the following payment providers:
 
 <Table>
   <Table.Header>
@@ -330,7 +330,7 @@ Assuming you set the ID of the Stripe Module Provider to `stripe` in `medusa-con
     <Table.Row>
       <Table.Cell>
       
-      OXXO Payments (Available since [Medusa v2.12.0](https://github.com/medusajs/medusa/releases/tag/v2.12.0))
+      OXXO Payments (Available since [Switchyard v2.12.0](https://github.com/switchyard/medusa/releases/tag/v2.12.0))
       
       </Table.Cell>
       <Table.Cell>
@@ -346,13 +346,13 @@ Assuming you set the ID of the Stripe Module Provider to `stripe` in `medusa-con
 
 ## Setup Stripe Webhooks
 
-For production applications, you must set up webhooks in Stripe that inform Medusa of changes and updates to payments. Refer to [Stripe's documentation](https://docs.stripe.com/webhooks#add-a-webhook-endpoint) on how to setup webhooks.
+For production applications, you must set up webhooks in Stripe that inform Switchyard of changes and updates to payments. Refer to [Stripe's documentation](https://docs.stripe.com/webhooks#add-a-webhook-endpoint) on how to setup webhooks.
 
 ### Webhook URL
 
-Medusa has a `{server_url}/hooks/payment/{provider_id}` API route that you can use to register webhooks in Stripe, where:
+Switchyard has a `{server_url}/hooks/payment/{provider_id}` API route that you can use to register webhooks in Stripe, where:
 
-- `{server_url}` is the URL to your deployed Medusa application in server mode.
+- `{server_url}` is the URL to your deployed Switchyard application in server mode.
 - `{provider_id}` is the ID of the provider as explained in the [Stripe Payment Provider IDs](#stripe-payment-provider-ids) section, without the `pp_` prefix.
 
 The Stripe Module Provider supports the following payment types, and the webhook endpoint URL is different for each:
@@ -452,7 +452,7 @@ The Stripe Module Provider supports the following payment types, and the webhook
     <Table.Row>
       <Table.Cell>
       
-      OXXO Payments (Available since [Medusa v2.12.0](https://github.com/medusajs/medusa/releases/tag/v2.12.0))
+      OXXO Payments (Available since [Switchyard v2.12.0](https://github.com/switchyard/medusa/releases/tag/v2.12.0))
       
       </Table.Cell>
       <Table.Cell>
@@ -471,7 +471,7 @@ When you set up the webhook in Stripe, choose the following events to listen to:
 - `payment_intent.amount_capturable_updated`
 - `payment_intent.succeeded`
 - `payment_intent.payment_failed`
-- `payment_intent.partially_funded` (Since [v2.8.5](https://github.com/medusajs/medusa/releases/tag/v2.8.5))
+- `payment_intent.partially_funded` (Since [v2.8.5](https://github.com/switchyard/medusa/releases/tag/v2.8.5))
 
 ---
 

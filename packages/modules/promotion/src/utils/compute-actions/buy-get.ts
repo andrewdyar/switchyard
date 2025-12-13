@@ -3,14 +3,14 @@ import {
   ComputeActionItemLine,
   InferEntityType,
   PromotionTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ApplicationMethodTargetType,
   ComputedActions,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PromotionType,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { areRulesValidForContext } from "../validations"
 import { computeActionForBudgetExceeded } from "./usage"
 import { Promotion } from "@models"
@@ -29,8 +29,8 @@ function isValidPromotionContext(
   itemsContext: ComputeActionItemLine[]
 ): boolean {
   if (!itemsContext) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `"items" should be present as an array in the context to compute actions`
     )
   }

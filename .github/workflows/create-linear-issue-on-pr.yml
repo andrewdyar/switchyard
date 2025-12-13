@@ -17,7 +17,7 @@ jobs:
         run: |
           response=$(curl -s -o /dev/null -w "%{http_code}" \
             -H "Authorization: Bearer $GITHUB_TOKEN" \
-            https://api.github.com/orgs/medusajs/teams/engineering/memberships/${{ github.event.pull_request.user.login }})
+            https://api.github.com/orgs/switchyardjs/teams/engineering/memberships/${{ github.event.pull_request.user.login }})
           if [[ "$response" -eq 200 ]]; then
             echo "author_is_team_member=true\n" >> $GITHUB_OUTPUT
           else

@@ -1,5 +1,5 @@
 ---
-"@medusajs/file-s3": patch
+"@switchyard/file-s3": patch
 ---
 
 URL-encode S3 object metadata and returned URL

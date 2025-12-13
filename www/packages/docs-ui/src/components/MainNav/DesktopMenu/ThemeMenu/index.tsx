@@ -3,7 +3,7 @@
 import React from "react"
 import { useColorMode } from "../../../../providers"
 import clsx from "clsx"
-import { EllipseMiniSolid } from "@medusajs/icons"
+import { EllipseMiniSolid } from "@switchyard/icons"
 
 export const MainNavThemeMenu = () => {
   const { colorMode, setColorMode } = useColorMode()

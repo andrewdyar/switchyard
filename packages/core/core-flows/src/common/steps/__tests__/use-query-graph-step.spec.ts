@@ -1,16 +1,16 @@
-import { MedusaContainer } from "@medusajs/framework"
-import { asFunction, createContainer } from "@medusajs/framework/awilix"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
-import { createWorkflow, WorkflowResponse } from "@medusajs/workflows-sdk"
+import { SwitchyardContainer } from "@switchyard/framework"
+import { asFunction, createContainer } from "@switchyard/framework/awilix"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
+import { createWorkflow, WorkflowResponse } from "@switchyard/workflows-sdk"
 import { expectTypeOf } from "expect-type"
 import { FixtureEntryPoints } from "../__fixtures__/remote-query"
 import { useQueryGraphStep } from "../use-query-graph"
 
 describe("useQueryGraphStep", () => {
-  let container!: MedusaContainer
+  let container!: SwitchyardContainer
 
   beforeAll(() => {
-    container = createContainer() as unknown as MedusaContainer
+    container = createContainer() as unknown as SwitchyardContainer
     container.register(
       ContainerRegistrationKeys.QUERY,
       asFunction(() => {

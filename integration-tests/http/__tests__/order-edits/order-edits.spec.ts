@@ -1,5 +1,5 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IOrderModuleService, IPromotionModuleService } from "@medusajs/types"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IOrderModuleService, IPromotionModuleService } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   Modules,
@@ -8,14 +8,14 @@ import {
   PromotionStatus,
   PromotionType,
   RuleOperator,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,
   generatePublishableKey,
   generateStoreHeaders,
 } from "../../../helpers/create-admin-user"
-import { medusaTshirtProduct } from "../../__fixtures__/product"
+import { switchyardTshirtProduct } from "../../__fixtures__/product"
 
 jest.setTimeout(300000)
 
@@ -1088,7 +1088,7 @@ medusaIntegrationTestRunner({
         product = (
           await api.post(
             "/admin/products",
-            { ...medusaTshirtProduct },
+            { ...switchyardTshirtProduct },
             adminHeaders
           )
         ).data.product

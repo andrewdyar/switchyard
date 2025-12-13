@@ -3,14 +3,14 @@ import {
   IApiKeyModuleService,
   IAuthModuleService,
   IUserModuleService,
-  MedusaContainer,
-} from "@medusajs/framework/types"
+  SwitchyardContainer,
+} from "@switchyard/framework/types"
 import {
   ApiKeyType,
   ContainerRegistrationKeys,
   Modules,
   PUBLISHABLE_KEY_HEADER,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import jwt from "jsonwebtoken"
 import Scrypt from "scrypt-kdf"
 import { getContainer } from "../environment-helpers/use-container"
@@ -75,7 +75,7 @@ export const createAdminUser = async (
   return { user, authIdentity }
 }
 
-export const generatePublishableKey = async (container?: MedusaContainer) => {
+export const generatePublishableKey = async (container?: SwitchyardContainer) => {
   const appContainer = container ?? getContainer()!
   const apiKeyModule = appContainer.resolve<IApiKeyModuleService>(
     Modules.API_KEY

@@ -19,11 +19,11 @@ const eventOptions: FormattingOptionsType = {
     startSections: [
       `## Resolve Event Module's Service
 
-In your workflow's step, you can resolve the Event Module's service from the Medusa container:
+In your workflow's step, you can resolve the Event Module's service from the Switchyard container:
 
 \`\`\`ts
-import { Modules } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -37,7 +37,7 @@ const step1 = createStep(
 )
 \`\`\`
 
-This will resolve the service of the configured Event Module, which is the [Local Event Module](https://docs.medusajs.com/resources/infrastructure-modules/event/local) by default.
+This will resolve the service of the configured Event Module, which is the [Local Event Module](https://docs.switchyard.com/resources/infrastructure-modules/event/local) by default.
 
 You can then use the Event Module's service's methods in the step. The rest of this guide details these methods.
 

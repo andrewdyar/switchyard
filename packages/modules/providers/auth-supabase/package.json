@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/auth-supabase",
+  "name": "@switchyard/auth-supabase",
   "version": "1.0.0",
   "description": "Supabase authentication provider for Medusa with RBAC support",
   "main": "dist/index.js",
@@ -26,13 +26,13 @@
     "watch": "yarn run -T tsc --watch"
   },
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "2.12.1"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.45.0"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "2.12.1"
   },
   "keywords": [
     "medusa-provider",

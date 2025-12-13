@@ -18,7 +18,7 @@ import {
   UpdateFulfillmentSetDTO,
   UpdateServiceZoneDTO,
   ValidateFulfillmentDataContext,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   arrayDifference,
   deepCopy,
@@ -31,10 +31,10 @@ import {
   isPresent,
   isString,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   Fulfillment,
   FulfillmentProvider,
@@ -79,7 +79,7 @@ type InjectedDependencies = {
 }
 
 export default class FulfillmentModuleService
-  extends ModulesSdkUtils.MedusaService<{
+  extends ModulesSdkUtils.SwitchyardService<{
     FulfillmentSet: { dto: FulfillmentTypes.FulfillmentSetDTO }
     ServiceZone: { dto: FulfillmentTypes.ServiceZoneDTO }
     ShippingOption: { dto: FulfillmentTypes.ShippingOptionDTO }
@@ -657,8 +657,8 @@ export default class FulfillmentModuleService
     )
 
     if (!isPresent(fulfillment.canceled_at)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Fulfillment with id ${fulfillment.id} needs to be canceled first before deleting`
       )
     }
@@ -782,8 +782,8 @@ export default class FulfillmentModuleService
     )
 
     if (missingFulfillmentSetIds.size) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `The following fulfillment sets does not exists: ${Array.from(
           missingFulfillmentSetIds
         ).join(", ")}`
@@ -855,8 +855,8 @@ export default class FulfillmentModuleService
         )
 
         if (missingServiceZoneIds.size) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `The following service zones does not exists: ${Array.from(
               missingServiceZoneIds
             ).join(", ")}`
@@ -1015,8 +1015,8 @@ export default class FulfillmentModuleService
     )
 
     if (missingServiceZoneIds.size) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `The following service zones does not exists: ${Array.from(
           missingServiceZoneIds
         ).join(", ")}`
@@ -1073,8 +1073,8 @@ export default class FulfillmentModuleService
         )
 
         if (missingGeoZoneIds.size) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `The following geo zones does not exists: ${Array.from(
               missingGeoZoneIds
             ).join(", ")}`
@@ -1985,8 +1985,8 @@ export default class FulfillmentModuleService
     )
 
     if (nonCalculatedOptions.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot calculate price for non-calculated shipping options: ${nonCalculatedOptions
           .map((o) => o.name)
           .join(", ")}`
@@ -2067,8 +2067,8 @@ export default class FulfillmentModuleService
         (profile) => profile.id
       )
 
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot delete Shipping Profiles ${undeletableShippingProfileIds} with associated Shipping Options. Delete Shipping Options first and try again.`
       )
     }
@@ -2078,15 +2078,15 @@ export default class FulfillmentModuleService
     fulfillment: InferEntityType<typeof Fulfillment>
   ) {
     if (fulfillment.shipped_at) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Fulfillment with id ${fulfillment.id} already shipped`
       )
     }
 
     if (fulfillment.delivered_at) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Fulfillment with id ${fulfillment.id} already delivered`
       )
     }
@@ -2104,8 +2104,8 @@ export default class FulfillmentModuleService
     )
 
     if (missingShippingOptionIds.length) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `The following shipping options do not exist: ${Array.from(
           missingShippingOptionIds
         ).join(", ")}`
@@ -2133,8 +2133,8 @@ export default class FulfillmentModuleService
     const nonAlreadyExistingRules = getSetDifference(expectedRuleSet, rulesSet)
 
     if (nonAlreadyExistingRules.size) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `The following rules does not exists: ${Array.from(
           nonAlreadyExistingRules
         ).join(", ")} on shipping option ${shippingOptionUpdateData.id}`
@@ -2157,16 +2157,16 @@ export default class FulfillmentModuleService
 
     for (const geoZone of geoZones) {
       if (!requirePropForType[geoZone.type]) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Invalid geo zone type: ${geoZone.type}`
         )
       }
 
       for (const prop of requirePropForType[geoZone.type]) {
         if (!geoZone[prop]) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Missing required property ${prop} for geo zone type ${geoZone.type}`
           )
         }

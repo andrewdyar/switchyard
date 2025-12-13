@@ -1,5 +1,5 @@
-import { ArrowDownTray, Spinner } from "@medusajs/icons"
-import { IconButton, Text } from "@medusajs/ui"
+import { ArrowDownTray, Spinner } from "@switchyard/icons"
+import { IconButton, Text } from "@switchyard/ui"
 import { ActionGroup, ActionMenu } from "../action-menu"
 
 export const FilePreview = ({

@@ -4,7 +4,7 @@ products:
   - order
   - fulfillment
 ---
-import { AcademicCapSolid, BoltSolid, PuzzleSolid } from "@medusajs/icons"
+import { AcademicCapSolid, BoltSolid, PuzzleSolid } from "@switchyard/icons"
 
 export const metadata = {
   title: `Digital Products Recipe`,
@@ -12,11 +12,11 @@ export const metadata = {
 
 # {metadata.title}
 
-This recipe provides the general steps to implement digital products in your Medusa application.
+This recipe provides the general steps to implement digital products in your Switchyard application.
 
 <Note>
 
-Follow the step-by-step [Digital Products Example](./examples/standard/page.mdx) to learn how to implement digital products in your Medusa application.
+Follow the step-by-step [Digital Products Example](./examples/standard/page.mdx) to learn how to implement digital products in your Switchyard application.
 
 </Note>
 
@@ -26,13 +26,13 @@ Digital products are products that are stored and delivered electronically. Exam
 
 When the customer buys a digital product, an email is sent to them where they can download the product.
 
-To implement digital products in Medusa, you create a Digital Product Module that introduces the concept of a digital product and link it to existing product concepts in the Product Module.
+To implement digital products in Switchyard, you create a Digital Product Module that introduces the concept of a digital product and link it to existing product concepts in the Product Module.
 
 ---
 
 ## Install a File Module Provider
 
-A file module provider handles storage functionalities in Medusa. This includes uploading, retrieving, and downloading files, among other features.
+A file module provider handles storage functionalities in Switchyard. This includes uploading, retrieving, and downloading files, among other features.
 
 You can use a file module provider to store and manage your digital products.
 
@@ -57,7 +57,7 @@ During development, you can use the Local File Module Provider, which is install
 
 ## Create Digital Product Module
 
-Your custom features and functionalities are implemented inside modules. The module is integrated into the Medusa application without any implications on existing functionalities.
+Your custom features and functionalities are implemented inside modules. The module is integrated into the Switchyard application without any implications on existing functionalities.
 
 You can create a custom module for digital products that holds your custom data models and the service implementing digital-product-related features.
 
@@ -91,9 +91,9 @@ Then, you can link your custom data model to data models from other modules. For
 
 ### Implement Data Management Features
 
-Your module’s main service holds data-management and other related features. Then, in other resources, such as an API route, you can resolve the service from the Medusa container and use its functionalities.
+Your module’s main service holds data-management and other related features. Then, in other resources, such as an API route, you can resolve the service from the Switchyard container and use its functionalities.
 
-Medusa facilitates implementing data-management features using the service factory. Your module's main service can extend this service factory, and it generates data-management methods for your data models.
+Switchyard facilitates implementing data-management features using the service factory. Your module's main service can extend this service factory, and it generates data-management methods for your data models.
 
 <Card
   href="!docs!/learn/fundamentals/modules/service-factory"
@@ -138,15 +138,15 @@ You can create custom admin API routes that allow merchants to list and create d
 
 ## Customize Admin Dashboard
 
-Based on your use case, you may need to customize the Medusa Admin to add new widgets or pages.
+Based on your use case, you may need to customize the Switchyard Admin to add new widgets or pages.
 
 For example, you can create a page that lists all digital products or a widget that allows merchants to view the digital data associated with a product.
 
-The Medusa Admin is an extensible application within your Medusa application. You can customize it by:
+The Switchyard Admin is an extensible application within your Switchyard application. You can customize it by:
 
 - **Widgets**: Adding widgets to existing pages, such as the product page.
-- **UI Routes**: Adding new pages to the Medusa Admin, such as a page to manage digital products.
-- **Settings Pages**: Adding new pages to the Medusa Admin settings, such as a page to manage digital product settings.
+- **UI Routes**: Adding new pages to the Switchyard Admin, such as a page to manage digital products.
+- **Settings Pages**: Adding new pages to the Switchyard Admin settings, such as a page to manage digital product settings.
 
 <CardList items={[
   {
@@ -158,7 +158,7 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
   {
     href: "!docs!/learn/fundamentals/admin/ui-routes",
     title: "Create Admin UI Routes",
-    text: "Add new pages to your Medusa Admin.",
+    text: "Add new pages to your Switchyard Admin.",
     icon: AcademicCapSolid,
   },
 ]} />
@@ -166,7 +166,7 @@ The Medusa Admin is an extensible application within your Medusa application. Yo
 <Card
   href="!docs!/learn/fundamentals/admin/ui-routes#create-settings-page"
   title="Create Admin Setting Page"
-  text="Add new page to the Medusa Admin settings."
+  text="Add new page to the Switchyard Admin settings."
   icon={AcademicCapSolid}
   className="mt-1"
 />
@@ -202,9 +202,9 @@ You can create a custom fulfillment module provider that implements the logic of
 
 Customers use your storefront to browse your digital products and purchase them. You can also provide other helpful features, such as previewing the digital product before purchase.
 
-Medusa provides a Next.js Starter Storefront with standard commerce features including listing products, placing orders, and managing accounts. You can customize the storefront and cater its functionalities to support digital products.
+Switchyard provides a Next.js Starter Storefront with standard commerce features including listing products, placing orders, and managing accounts. You can customize the storefront and cater its functionalities to support digital products.
 
-Alternatively, you can build your own storefront using the Medusa APIs. This headless approach gives you the flexibility to build a custom storefront without limitations on which tech stack you use, or the design of the storefront.
+Alternatively, you can build your own storefront using the Switchyard APIs. This headless approach gives you the flexibility to build a custom storefront without limitations on which tech stack you use, or the design of the storefront.
 
 <CardList items={[
   {

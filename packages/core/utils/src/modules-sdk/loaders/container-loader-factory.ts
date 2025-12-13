@@ -1,13 +1,13 @@
 import {
   Constructor,
   LoaderOptions,
-  MedusaContainer,
+  SwitchyardContainer,
   ModuleServiceInitializeCustomDataLayerOptions,
   ModuleServiceInitializeOptions,
   RepositoryService,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
-import { asClass } from "@medusajs/deps/awilix"
+import { asClass } from "@switchyard/deps/awilix"
 import { MedusaInternalService } from "../medusa-internal-service"
 import { lowerCaseFirst } from "../../common"
 import {
@@ -19,13 +19,13 @@ type RepositoryLoaderOptions = {
   moduleModels: Record<string, any>
   moduleRepositories?: Record<string, any>
   customRepositories: Record<string, any>
-  container: MedusaContainer
+  container: SwitchyardContainer
 }
 
 type ServiceLoaderOptions = {
   moduleModels: Record<string, any>
   moduleServices: Record<string, any>
-  container: MedusaContainer
+  container: SwitchyardContainer
 }
 
 /**

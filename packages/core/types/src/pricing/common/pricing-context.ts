@@ -1,4 +1,4 @@
-export type MedusaPricingContext = {
+export type SwitchyardPricingContext = {
   region_id?: string
   currency_code?: string
   customer_id?: string

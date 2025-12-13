@@ -10,19 +10,19 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# updateProductTypesWorkflow - Medusa Core Workflows Reference
+# updateProductTypesWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `updateProductTypesWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `updateProductTypesWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow updates one or more product types. It's used by the
-[Update Product Type Admin API Route](https://docs.medusajs.com/api/admin#product-types\_postproducttypesid).
+[Update Product Type Admin API Route](https://docs.switchyard.com/api/admin#product-types\_postproducttypesid).
 
 This workflow has a hook that allows you to perform custom actions on the updated product types. For example, you can pass under `additional_data` custom data that
 allows you to update custom data models linked to the product types.
 
 You can also use this workflow within your own custom workflows, allowing you to wrap custom logic around product-type updates.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/product/workflows/update-product-types.ts#L59" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/product/workflows/update-product-types.ts#L59" />
 
 ## Examples
 
@@ -31,14 +31,14 @@ You can also use this workflow within your own custom workflows, allowing you to
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { updateProductTypesWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { updateProductTypesWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await updateProductTypesWorkflow(req.scope)
     .run({
@@ -66,8 +66,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { updateProductTypesWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { updateProductTypesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -100,11 +100,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { updateProductTypesWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { updateProductTypesWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await updateProductTypesWorkflow(container)
     .run({
@@ -134,8 +134,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { updateProductTypesWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { updateProductTypesWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -163,21 +163,21 @@ const myWorkflow = createWorkflow(
 
 ## Steps
 
-<WorkflowDiagram workflow={{"name":"updateProductTypesWorkflow","steps":[{"type":"step","name":"updateProductTypesStep","description":"This step updates product types matching the specified filters.","link":"../../../Steps_Product/functions/core_flows.Product.Steps_Product.updateProductTypesStep/page.mdx","depth":1},{"type":"hook","name":"productTypesUpdated","description":"This hook is executed after the product types are updated. You can consume this hook to perform custom actions on the updated product types.","link":"#productTypesUpdated","depth":2},{"type":"step","name":"emitEventStep","description":"This step emits an event, which you can listen to in a [subscriber](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the `data` property.\n\nThe event is only emitted after the workflow has finished successfully. So, even if it's executed in the middle of the workflow, it won't actually emit the event until the workflow has completed successfully. \nIf the workflow fails, it won't emit the event at all.","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.emitEventStep/page.mdx","depth":3}]}} />
+<WorkflowDiagram workflow={{"name":"updateProductTypesWorkflow","steps":[{"type":"step","name":"updateProductTypesStep","description":"This step updates product types matching the specified filters.","link":"../../../Steps_Product/functions/core_flows.Product.Steps_Product.updateProductTypesStep/page.mdx","depth":1},{"type":"hook","name":"productTypesUpdated","description":"This hook is executed after the product types are updated. You can consume this hook to perform custom actions on the updated product types.","link":"#productTypesUpdated","depth":2},{"type":"step","name":"emitEventStep","description":"This step emits an event, which you can listen to in a [subscriber](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers). You can pass data to the\nsubscriber by including it in the `data` property.\n\nThe event is only emitted after the workflow has finished successfully. So, even if it's executed in the middle of the workflow, it won't actually emit the event until the workflow has completed successfully. \nIf the workflow fails, it won't emit the event at all.","link":"../../../../Common/Steps_Common/functions/core_flows.Common.Steps_Common.emitEventStep/page.mdx","depth":3}]}} />
 
 ## Input
 
-<TypeList types={[{"name":"UpdateProductTypesWorkflowInput","type":"`UpdateProductTypesWorkflowInput`","optional":false,"defaultValue":"","description":"","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateProductTypesWorkflow"/>
+<TypeList types={[{"name":"UpdateProductTypesWorkflowInput","type":"`UpdateProductTypesWorkflowInput`","optional":false,"defaultValue":"","description":"","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateProductTypesWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"ProductTypeDTO[]","type":"[ProductTypeDTO](../../../../../product/interfaces/product.ProductTypeDTO/page.mdx)[]","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the product type.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"value","type":"`string`","description":"The value of the product type.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"When the product type was created.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"When the product type was updated.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"[MetadataType](../../../../../product/types/product.MetadataType/page.mdx)","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`string` \\| `Date`","description":"When the product type was deleted.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateProductTypesWorkflow"/>
+<TypeList types={[{"name":"ProductTypeDTO[]","type":"[ProductTypeDTO](../../../../../product/interfaces/product.ProductTypeDTO/page.mdx)[]","optional":false,"defaultValue":"","description":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the product type.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"value","type":"`string`","description":"The value of the product type.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"When the product type was created.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"When the product type was updated.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"[MetadataType](../../../../../product/types/product.MetadataType/page.mdx)","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`string` \\| `Date`","description":"When the product type was deleted.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateProductTypesWorkflow"/>
 
 ## Hooks
 
 Hooks allow you to inject custom functionalities into the workflow. You'll receive data from the workflow, as well as additional data sent through an HTTP request.
 
-Learn more about [Hooks](https://docs.medusajs.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.medusajs.com/learn/fundamentals/api-routes/additional-data).
+Learn more about [Hooks](https://docs.switchyard.com/learn/fundamentals/workflows/workflow-hooks) and [Additional Data](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).
 
 ### productTypesUpdated
 
@@ -186,7 +186,7 @@ This hook is executed after the product types are updated. You can consume this 
 #### Example
 
 ```ts
-import { updateProductTypesWorkflow } from "@medusajs/medusa/core-flows"
+import { updateProductTypesWorkflow } from "@switchyard/medusa/core-flows"
 
 updateProductTypesWorkflow.hooks.productTypesUpdated(
   (async ({ product_types, additional_data }, { container }) => {
@@ -199,7 +199,7 @@ updateProductTypesWorkflow.hooks.productTypesUpdated(
 
 Handlers consuming this hook accept the following input.
 
-<TypeList types={[{"name":"input","type":"[input](../../../core_flows.Product.Workflows_Product/page.mdx#__type-23)","description":"The input data for the hook.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"product_types","type":"[ProductTypeDTO](../../../../../product/interfaces/product.ProductTypeDTO/page.mdx)[]","description":"","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the product type.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"value","type":"`string`","description":"The value of the product type.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"When the product type was created.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"When the product type was updated.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"[MetadataType](../../../../../product/types/product.MetadataType/page.mdx)","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`string` \\| `Date`","description":"When the product type was deleted.","optional":true,"defaultValue":"","expandable":false,"children":[]}]},{"name":"additional_data","type":"`Record<string, unknown> | undefined`","description":"Additional data that can be passed through the `additional_data` property in HTTP requests.\nLearn more in [this documentation](https://docs.medusajs.com/learn/fundamentals/api-routes/additional-data).","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="productTypesUpdated"/>
+<TypeList types={[{"name":"input","type":"[input](../../../core_flows.Product.Workflows_Product/page.mdx#__type-23)","description":"The input data for the hook.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"product_types","type":"[ProductTypeDTO](../../../../../product/interfaces/product.ProductTypeDTO/page.mdx)[]","description":"","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the product type.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"value","type":"`string`","description":"The value of the product type.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"When the product type was created.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"When the product type was updated.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"[MetadataType](../../../../../product/types/product.MetadataType/page.mdx)","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`string` \\| `Date`","description":"When the product type was deleted.","optional":true,"defaultValue":"","expandable":false,"children":[]}]},{"name":"additional_data","type":"`Record<string, unknown> | undefined`","description":"Additional data that can be passed through the `additional_data` property in HTTP requests.\nLearn more in [this documentation](https://docs.switchyard.com/learn/fundamentals/api-routes/additional-data).","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="productTypesUpdated"/>
 
 ## Emitted Events
 
@@ -211,7 +211,7 @@ The `emitEventStep` only emits the event after the workflow has finished success
 
 :::
 
-You can listen to these events in a subscriber, as explained in the [Subscribers](https://docs.medusajs.com/learn/fundamentals/events-and-subscribers) documentation.
+You can listen to these events in a subscriber, as explained in the [Subscribers](https://docs.switchyard.com/learn/fundamentals/events-and-subscribers) documentation.
 
 <Table>
   <Table.Header>

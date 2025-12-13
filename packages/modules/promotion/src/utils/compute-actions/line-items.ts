@@ -3,16 +3,16 @@ import {
   BigNumberInput,
   InferEntityType,
   PromotionTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ApplicationMethodAllocation,
   ApplicationMethodTargetType,
   calculateAdjustmentAmountFromPromotion,
   ComputedActions,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   ApplicationMethodTargetType as TargetType,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { Promotion } from "@models"
 import { areRulesValidForContext } from "../validations"
 import { sortLineItemByPriceAscending } from "./sort-by-price"
@@ -23,8 +23,8 @@ function validateContext(
   context: PromotionTypes.ComputeActionContext[TargetType]
 ) {
   if (!context) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `"${contextKey}" should be present as an array in the context for computeActions`
     )
   }

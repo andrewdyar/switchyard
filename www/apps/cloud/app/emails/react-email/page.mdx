@@ -16,16 +16,16 @@ React Email also allows you to preview and test your email templates during deve
 
 In this guide, you'll learn how to:
 
-- Install React Email dependencies in your Medusa project.
+- Install React Email dependencies in your Switchyard project.
 - Create an invite user email template using React Email.
 - Preview email templates during development.
-- Send emails using the React Email template with Medusa Emails.
+- Send emails using the React Email template with Switchyard Emails.
 
 You'll also find examples of common email templates built with React Email at the end of this guide.
 
 <Note>
 
-Medusa Emails is available for all Cloud organizations and projects, given you [don't have another Notification Module Provider for the `email` channel configured](../page.mdx#remove-other-email-notification-module-providers). You also optionally need to [verify your sending domain](../page.mdx#verify-email-sender-domain-on-cloud) to send emails to users outside your organization.
+Switchyard Emails is available for all Cloud organizations and projects, given you [don't have another Notification Module Provider for the `email` channel configured](../page.mdx#remove-other-email-notification-module-providers). You also optionally need to [verify your sending domain](../page.mdx#verify-email-sender-domain-on-cloud) to send emails to users outside your organization.
 
 </Note>
 
@@ -33,7 +33,7 @@ Medusa Emails is available for all Cloud organizations and projects, given you [
 
 ## Step 1: Install React Email Dependencies
 
-In the Medusa project where you want to set up email templates, install the following dependencies:
+In the Switchyard project where you want to set up email templates, install the following dependencies:
 
 ```bash npm2yarn
 npm install @react-email/components@0.3.3 @react-email/render@1.1.4
@@ -56,7 +56,7 @@ Newer versions of React Email are not supported due to Node version incompatibil
 
 ## Step 2: Create Invite User Email Template
 
-Next, create the `src/emails` directory to store your email templates in your Medusa project.
+Next, create the `src/emails` directory to store your email templates in your Switchyard project.
 
 Then, create your email templates as React components in that directory.
 
@@ -169,7 +169,7 @@ The preview server will start at `http://localhost:3000`, where you can view and
 
 ## Step 4: Send Email Using Template
 
-Once you have the email template, you can use it to send emails from your Medusa project deployed on Cloud.
+Once you have the email template, you can use it to send emails from your Switchyard project deployed on Cloud.
 
 For example, to send an invite email when a new admin user is invited, create a [subscriber](!docs!/learn/fundamentals/events-and-subscribers) with the following content:
 
@@ -177,7 +177,7 @@ For example, to send an invite email when a new admin user is invited, create a 
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { render, pretty } from "@react-email/render"
 import getInviteTemplate from "../emails/invite-user"
 
@@ -244,7 +244,7 @@ This subscriber listens for the `invite.created` and `invite.resent` events. Whe
 1. Retrieves the store name and invite details.
 2. Constructs the invite URL. Invites to the admin dashboard are at the `/admin/invite` path and include the invite token as a `token` query parameter.
 3. Renders the invite email template to an HTML string using React Email's `render` function, passing the `getInviteTemplate` function with the invite URL and store name as props.
-4. Sends the email by creating a notification using Medusa's Notification Module.
+4. Sends the email by creating a notification using Switchyard's Notification Module.
 
 ---
 
@@ -252,11 +252,11 @@ This subscriber listens for the `invite.created` and `invite.resent` events. Whe
 
 To test that your emails are sent correctly on Cloud, make sure you've pushed all changes to the project's repository, and the changes have been deployed to your Cloud project.
 
-Then, [invite a new admin user](!user-guide!/settings/users/invites) to your Cloud project through the Medusa Admin dashboard.
+Then, [invite a new admin user](!user-guide!/settings/users/invites) to your Cloud project through the Switchyard Admin dashboard.
 
 If everything is set up correctly, the new admin user should receive the invite email using your React Email template.
 
-Otherwise, refer to the [Troubleshooting Medusa Emails on Cloud](../page.mdx#troubleshooting-medusa-emails-on-cloud) guide for help resolving common issues.
+Otherwise, refer to the [Troubleshooting Switchyard Emails on Cloud](../page.mdx#troubleshooting-medusa-emails-on-cloud) guide for help resolving common issues.
 
 ---
 
@@ -273,7 +273,7 @@ The Order Placed email template notifies customers when they successfully place 
 You can use the following template for your Order Placed email:
 
 ```tsx title="src/emails/order-placed.tsx" collapsibleLines="36-257"
-import { CustomerDTO, OrderDTO } from "@medusajs/framework/types"
+import { CustomerDTO, OrderDTO } from "@switchyard/framework/types"
 import {
   Body,
   Column,
@@ -538,7 +538,7 @@ Then, to send the Order Placed email when an order is created, create a subscrib
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { render, pretty } from "@react-email/render"
 import getOrderPlacedTemplate from "../emails/order-placed"
 
@@ -632,7 +632,7 @@ This subscriber listens for the `order.placed` event. When triggered, it:
 
 1. Retrieves the store name and order details.
 2. Renders the Order Placed email template to an HTML string using React Email's `render` function, passing the `getOrderPlacedTemplate` function with the order and store name as props.
-3. Sends the email by creating a notification using Medusa's Notification Module.
+3. Sends the email by creating a notification using Switchyard's Notification Module.
 
 Whenever a new order is placed, the customer will receive an Order Placed email using your React Email template.
 
@@ -717,8 +717,8 @@ Then, to send the Reset Password email when a password reset is requested, creat
 import {
   SubscriberArgs,
   type SubscriberConfig,
-} from "@medusajs/medusa"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/medusa"
+import { Modules } from "@switchyard/framework/utils"
 import { render, pretty } from "@react-email/render"
 import getResetPasswordTemplate from "../emails/reset-password"
 
@@ -785,6 +785,6 @@ This subscriber listens for the `auth.password_reset` event. When triggered, it:
 1. Retrieves the store name.
 2. Constructs the reset password URL based on whether the request is for a customer or admin user.
 3. Renders the Reset Password email template to an HTML string using React Email's `render` function, passing the `getResetPasswordTemplate` function with the reset password URL and store name as props.
-4. Sends the email by creating a notification using Medusa's Notification Module.
+4. Sends the email by creating a notification using Switchyard's Notification Module.
 
 Whenever a user requests a password reset, they will receive a Reset Password email using your React Email template.

@@ -1,4 +1,4 @@
-import { MagnifyingGlass, XMarkMini } from "@medusajs/icons"
+import { MagnifyingGlass, XMarkMini } from "@switchyard/icons"
 import {
   Button,
   DatePicker,
@@ -11,7 +11,7 @@ import {
   Text,
   Textarea,
   clx,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useFieldArray, type UseFormReturn } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 

@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { CurrencyInput } from "@medusajs/ui"
+import { CurrencyInput } from "@switchyard/ui"
 
 export default function CurrencyInputControlled() {
   const [value, setValue] = useState<string | undefined>("")

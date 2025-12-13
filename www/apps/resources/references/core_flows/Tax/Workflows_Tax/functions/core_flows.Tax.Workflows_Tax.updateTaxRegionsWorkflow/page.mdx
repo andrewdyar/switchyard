@@ -9,17 +9,17 @@ tags:
 
 import { TypeList, WorkflowDiagram } from "docs-ui"
 
-# updateTaxRegionsWorkflow - Medusa Core Workflows Reference
+# updateTaxRegionsWorkflow - Switchyard Core Workflows Reference
 
-This documentation provides a reference to the `updateTaxRegionsWorkflow`. It belongs to the `@medusajs/medusa/core-flows` package.
+This documentation provides a reference to the `updateTaxRegionsWorkflow`. It belongs to the `@switchyard/medusa/core-flows` package.
 
 This workflow updates one or more tax regions. It's used by the
-[Update Tax Regions Admin API Route](https://docs.medusajs.com/api/admin#tax-regions\_posttaxregionsid).
+[Update Tax Regions Admin API Route](https://docs.switchyard.com/api/admin#tax-regions\_posttaxregionsid).
 
 You can use this workflow within your own customizations or custom workflows, allowing you
 to update tax regions in your custom flows.
 
-<SourceCodeLink link="https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/tax/workflows/update-tax-regions.ts#L45" />
+<SourceCodeLink link="https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/core-flows/src/tax/workflows/update-tax-regions.ts#L45" />
 
 ## Examples
 
@@ -28,14 +28,14 @@ to update tax regions in your custom flows.
     
 ```ts title="src/api/workflow/route.ts"
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { updateTaxRegionsWorkflow } from "@medusajs/medusa/core-flows"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { updateTaxRegionsWorkflow } from "@switchyard/medusa/core-flows"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { result } = await updateTaxRegionsWorkflow(req.scope)
     .run({
@@ -56,8 +56,8 @@ export async function POST(
 import {
   type SubscriberConfig,
   type SubscriberArgs,
-} from "@medusajs/framework"
-import { updateTaxRegionsWorkflow } from "@medusajs/medusa/core-flows"
+} from "@switchyard/framework"
+import { updateTaxRegionsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function handleOrderPlaced({
   event: { data },
@@ -83,11 +83,11 @@ export const config: SubscriberConfig = {
     <CodeTab label="Scheduled Job" value="scheduled-job">
     
 ```ts title="src/jobs/message-daily.ts"
-import { MedusaContainer } from "@medusajs/framework/types"
-import { updateTaxRegionsWorkflow } from "@medusajs/medusa/core-flows"
+import { SwitchyardContainer } from "@switchyard/framework/types"
+import { updateTaxRegionsWorkflow } from "@switchyard/medusa/core-flows"
 
 export default async function myCustomJob(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const { result } = await updateTaxRegionsWorkflow(container)
     .run({
@@ -110,8 +110,8 @@ export const config = {
     <CodeTab label="Another Workflow" value="another-workflow">
     
 ```ts title="src/workflows/my-workflow.ts"
-import { createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { updateTaxRegionsWorkflow } from "@medusajs/medusa/core-flows"
+import { createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { updateTaxRegionsWorkflow } from "@switchyard/medusa/core-flows"
 
 const myWorkflow = createWorkflow(
   "my-workflow",
@@ -136,8 +136,8 @@ const myWorkflow = createWorkflow(
 
 ## Input
 
-<TypeList types={[{"name":"UpdateTaxRegionsWorkflowInput","type":"[UpdateTaxRegionsWorkflowInput](../../../../types/core_flows.UpdateTaxRegionsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The tax regions to update.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The id of the tax region to update","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"province_code","type":"`null` \\| `string`","description":"The lower-case [ISO 3166-2](https://en.wikipedia.org/wiki/ISO\\_3166-2) province or state code of the tax region.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"provider_id","type":"`null` \\| `string`","description":"The ID of the tax provider for the region.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"[MetadataType](../../../../../tax/types/tax.MetadataType/page.mdx)","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateTaxRegionsWorkflow"/>
+<TypeList types={[{"name":"UpdateTaxRegionsWorkflowInput","type":"[UpdateTaxRegionsWorkflowInput](../../../../types/core_flows.UpdateTaxRegionsWorkflowInput/page.mdx)","optional":false,"defaultValue":"","description":"The tax regions to update.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The id of the tax region to update","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"province_code","type":"`null` \\| `string`","description":"The lower-case [ISO 3166-2](https://en.wikipedia.org/wiki/ISO\\_3166-2) province or state code of the tax region.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"provider_id","type":"`null` \\| `string`","description":"The ID of the tax provider for the region.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"[MetadataType](../../../../../tax/types/tax.MetadataType/page.mdx)","description":"Holds custom data in key-value pairs.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateTaxRegionsWorkflow"/>
 
 ## Output
 
-<TypeList types={[{"name":"UpdateTaxRegionsWorkflowOutput","type":"[UpdateTaxRegionsWorkflowOutput](../../../../types/core_flows.UpdateTaxRegionsWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"The updated tax regions.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"country_code","type":"`string`","description":"The ISO 2 character country code of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"province_code","type":"`null` \\| `string`","description":"The lower-case [ISO 3166-2](https://en.wikipedia.org/wiki/ISO\\_3166-2) province or state code of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"parent_id","type":"`null` \\| `string`","description":"The ID of the tax region's parent tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"provider_id","type":"`null` \\| `string`","description":"The ID of the tax provider for the region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"`null` \\| `Record<string, unknown>`","description":"Holds custom data in key-value pairs.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"The creation date of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"The update date of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_by","type":"`null` \\| `string`","description":"Who created the tax region. For example, the ID of the user\nthat created the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`null` \\| `string` \\| `Date`","description":"The deletion date of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateTaxRegionsWorkflow"/>
+<TypeList types={[{"name":"UpdateTaxRegionsWorkflowOutput","type":"[UpdateTaxRegionsWorkflowOutput](../../../../types/core_flows.UpdateTaxRegionsWorkflowOutput/page.mdx)","optional":false,"defaultValue":"","description":"The updated tax regions.","expandable":false,"children":[{"name":"id","type":"`string`","description":"The ID of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"country_code","type":"`string`","description":"The ISO 2 character country code of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"province_code","type":"`null` \\| `string`","description":"The lower-case [ISO 3166-2](https://en.wikipedia.org/wiki/ISO\\_3166-2) province or state code of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"parent_id","type":"`null` \\| `string`","description":"The ID of the tax region's parent tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"provider_id","type":"`null` \\| `string`","description":"The ID of the tax provider for the region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"metadata","type":"`null` \\| `Record<string, unknown>`","description":"Holds custom data in key-value pairs.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_at","type":"`string` \\| `Date`","description":"The creation date of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"updated_at","type":"`string` \\| `Date`","description":"The update date of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"created_by","type":"`null` \\| `string`","description":"Who created the tax region. For example, the ID of the user\nthat created the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"deleted_at","type":"`null` \\| `string` \\| `Date`","description":"The deletion date of the tax region.","optional":false,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" openedLevel={1} sectionTitle="updateTaxRegionsWorkflow"/>

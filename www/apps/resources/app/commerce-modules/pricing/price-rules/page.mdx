@@ -22,7 +22,7 @@ In this Pricing Module guide, you'll learn about tired prices, price rules for p
 
 <Note title="Looking for no-code docs?">
 
-You can manage prices and tiers using the Medusa Admin:
+You can manage prices and tiers using the Switchyard Admin:
 
 - [Edit shipping option prices with conditions](!user-guide!/settings/locations-and-shipping/locations#fixed-and-conditional-shipping-option-prices).
 - [Add price lists to set prices with conditions for product variants](!user-guide!/price-lists).
@@ -75,12 +75,12 @@ For example:
 
 <Note>
 
-For most use cases where you're building customizations in the Medusa application, it's highly recommended to use [Medusa's workflows](../../../medusa-workflows-reference/page.mdx) rather than using the Pricing Module directly. Medusa's workflows already implement extensive functionalities that you can re-use in your custom flows, with reliable roll-back mechanism.
+For most use cases where you're building customizations in the Switchyard application, it's highly recommended to use [Switchyard's workflows](../../../medusa-workflows-reference/page.mdx) rather than using the Pricing Module directly. Switchyard's workflows already implement extensive functionalities that you can re-use in your custom flows, with reliable roll-back mechanism.
 
 </Note>
 
 <CodeTabs group="price-example">
-  <CodeTab label="Using Medusa Workflows" value="workflows">
+  <CodeTab label="Using Switchyard Workflows" value="workflows">
 
 export const tieredPricingHighlights = [
   ["20", "min_quantity", "The minimum quantity that must be in the cart for the price to be applied."],
@@ -88,7 +88,7 @@ export const tieredPricingHighlights = [
 ]
 
 ```ts highlights={tieredPricingHighlights}
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -183,13 +183,13 @@ The `Price` data model has a `rules_count` property, which indicates how many ru
 
 For example, you create a price restricted to `10557` zip codes.
 
-![A diagram showcasing the relation between the PriceRule and Price](https://res.cloudinary.com/dza7lstvk/image/upload/v1709648772/Medusa%20Resources/price-rule-1_vy8bn9.jpg)
+![A diagram showcasing the relation between the PriceRule and Price](https://res.cloudinary.com/dza7lstvk/image/upload/v1709648772/Switchyard%20Resources/price-rule-1_vy8bn9.jpg)
 
 A price can have multiple price rules.
 
 For example, a price can be restricted by a region and a zip code.
 
-![A diagram showcasing the relation between the PriceRule and Price with multiple rules.](https://res.cloudinary.com/dza7lstvk/image/upload/v1709649296/Medusa%20Resources/price-rule-3_pwpocz.jpg)
+![A diagram showcasing the relation between the PriceRule and Price with multiple rules.](https://res.cloudinary.com/dza7lstvk/image/upload/v1709649296/Switchyard%20Resources/price-rule-3_pwpocz.jpg)
 
 ### Price List Rules
 
@@ -197,7 +197,7 @@ Rules applied to a price list are represented by the [PriceListRule data model](
 
 The `rules_count` property of a `PriceList` indicates how many rules are applied to it.
 
-![A diagram showcasing the relation between the PriceSet, PriceList, Price, RuleType, and PriceListRuleValue](https://res.cloudinary.com/dza7lstvk/image/upload/v1709641999/Medusa%20Resources/price-list_zd10yd.jpg)
+![A diagram showcasing the relation between the PriceSet, PriceList, Price, RuleType, and PriceListRuleValue](https://res.cloudinary.com/dza7lstvk/image/upload/v1709641999/Switchyard%20Resources/price-list_zd10yd.jpg)
 
 ### How to Create Prices with Rules?
 
@@ -207,12 +207,12 @@ For example:
 
 <Note>
 
-For most use cases where you're building customizations in the Medusa application, it's highly recommended to use [Medusa's workflows](../../../medusa-workflows-reference/page.mdx) rather than using the Pricing Module directly. Medusa's workflows already implement extensive functionalities that you can re-use in your custom flows, with reliable roll-back mechanism.
+For most use cases where you're building customizations in the Switchyard application, it's highly recommended to use [Switchyard's workflows](../../../medusa-workflows-reference/page.mdx) rather than using the Pricing Module directly. Switchyard's workflows already implement extensive functionalities that you can re-use in your custom flows, with reliable roll-back mechanism.
 
 </Note>
 
 <CodeTabs group="price-example">
-  <CodeTab label="Using Medusa Workflows" value="workflows">
+  <CodeTab label="Using Switchyard Workflows" value="workflows">
 
 export const workflowHighlights = [
   ["19", "rules", "The default price doesn't have rules."],
@@ -343,10 +343,10 @@ This section provides some examples of implementing price tiers and rules for pr
 ### Product Variant Price by Quantity
 
 <CodeTabs group="product-tier-example">
-  <CodeTab label="Using Medusa Workflows" value="workflows">
+  <CodeTab label="Using Switchyard Workflows" value="workflows">
 
 ```ts
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -419,10 +419,10 @@ const priceSet = await pricingModule.addPrices({
 ### Product Variant Price by Customer Group
 
 <CodeTabs group="product-rule-example">
-  <CodeTab label="Using Medusa Workflows" value="workflows">
+  <CodeTab label="Using Switchyard Workflows" value="workflows">
 
 ```ts
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 // ...
 
@@ -501,7 +501,7 @@ const priceSet = await pricingModule.addPrices({
 ### Free Shipping for Orders Above a Certain Amount
 
 <CodeTabs group="shipping-tier-example">
-  <CodeTab label="Using Medusa Workflows" value="workflows">
+  <CodeTab label="Using Switchyard Workflows" value="workflows">
 
 ```ts
 const { result } = await createShippingOptionsWorkflow(container)
@@ -577,7 +577,7 @@ const priceSet = await pricingModule.addPrices({
 ### Shipping Prices Based on Customer Groups
 
 <CodeTabs group="shipping-customer-example">
-  <CodeTab label="Using Medusa Workflows" value="workflows">
+  <CodeTab label="Using Switchyard Workflows" value="workflows">
 
 ```ts
 const { result } = await createShippingOptionsWorkflow(container)
@@ -678,7 +678,7 @@ const priceSet = await pricingModule.addPrices({
 ### Combined Tiered and Rule-Based Shipping Pricing
 
 <CodeTabs group="shipping-combined-example">
-  <CodeTab label="Using Medusa Workflows" value="workflows">
+  <CodeTab label="Using Switchyard Workflows" value="workflows">
 
 ```ts
 const { result } = await createShippingOptionsWorkflow(container)
@@ -795,7 +795,7 @@ const priceSet = await pricingModule.addPrices({
 ### Shipping Prices Based on Geographical Rules
 
 <CodeTabs group="shipping-geo-example">
-  <CodeTab label="Using Medusa Workflows" value="workflows">
+  <CodeTab label="Using Switchyard Workflows" value="workflows">
 
 ```ts
 const { result } = await createShippingOptionsWorkflow(container)

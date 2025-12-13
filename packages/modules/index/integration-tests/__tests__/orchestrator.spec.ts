@@ -1,6 +1,6 @@
-import { asValue } from "@medusajs/framework/awilix"
-import { container, logger } from "@medusajs/framework"
-import type { IndexTypes } from "@medusajs/types"
+import { asValue } from "@switchyard/framework/awilix"
+import { container, logger } from "@switchyard/framework"
+import type { IndexTypes } from "@switchyard/types"
 import { Orchestrator } from "@utils"
 
 function creatingFakeLockingModule() {

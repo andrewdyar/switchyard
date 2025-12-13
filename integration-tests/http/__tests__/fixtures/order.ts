@@ -1,12 +1,12 @@
-import { addShippingMethodToCartWorkflow } from "@medusajs/core-flows"
+import { addShippingMethodToCartWorkflow } from "@switchyard/core-flows"
 import {
   AdminInventoryItem,
   AdminProduct,
   AdminShippingProfile,
   AdminStockLocation,
-  MedusaContainer,
-} from "@medusajs/types"
-import { ContainerRegistrationKeys, Modules, ProductStatus } from "@medusajs/utils"
+  SwitchyardContainer,
+} from "@switchyard/types"
+import { ContainerRegistrationKeys, Modules, ProductStatus } from "@switchyard/utils"
 import {
   adminHeaders,
   generatePublishableKey,
@@ -25,7 +25,7 @@ export async function createOrderSeeder({
   withoutShipping,
 }: {
   api: any
-  container: MedusaContainer
+  container: SwitchyardContainer
   storeHeaderOverride?: any
   productOverride?: AdminProduct
   stockChannelOverride?: AdminStockLocation

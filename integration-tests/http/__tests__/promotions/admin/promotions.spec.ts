@@ -1,12 +1,12 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { Modules, ProductStatus, PromotionStatus, PromotionType } from "@medusajs/utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { Modules, ProductStatus, PromotionStatus, PromotionType } from "@switchyard/utils"
 import {
   createAdminUser,
   generatePublishableKey,
   generateStoreHeaders,
 } from "../../../../helpers/create-admin-user"
 import { setupTaxStructure } from "../../../../modules/__tests__/fixtures/tax"
-import { medusaTshirtProduct } from "../../../__fixtures__/product"
+import { switchyardTshirtProduct } from "../../../__fixtures__/product"
 
 jest.setTimeout(500000)
 
@@ -525,7 +525,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                   shipping_profile_id: shippingProfile.id,
                 },
                 adminHeaders
@@ -670,7 +670,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                   shipping_profile_id: shippingProfile.id,
                 },
                 adminHeaders
@@ -811,7 +811,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                 },
                 adminHeaders
               )
@@ -1072,7 +1072,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                 },
                 adminHeaders
               )
@@ -1236,7 +1236,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                 },
                 adminHeaders
               )
@@ -1332,7 +1332,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                   shipping_profile_id: shippingProfile.id,
                 },
                 adminHeaders
@@ -1484,7 +1484,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                   shipping_profile_id: shippingProfile.id,
                 },
                 adminHeaders
@@ -1611,7 +1611,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                   shipping_profile_id: shippingProfile.id,
                 },
                 adminHeaders
@@ -1769,7 +1769,7 @@ medusaIntegrationTestRunner({
               await api.post(
                 "/admin/products",
                 {
-                  ...medusaTshirtProduct,
+                  ...switchyardTshirtProduct,
                   shipping_profile_id: shippingProfile.id,
                 },
                 adminHeaders
@@ -1995,7 +1995,7 @@ medusaIntegrationTestRunner({
           ).data.region
 
           const product = (
-            await api.post("/admin/products", medusaTshirtProduct, adminHeaders)
+            await api.post("/admin/products", switchyardTshirtProduct, adminHeaders)
           ).data.product
 
           const response = await api.post(
@@ -2577,7 +2577,7 @@ medusaIntegrationTestRunner({
           ).data.region
 
           const product = (
-            await api.post("/admin/products", medusaTshirtProduct, adminHeaders)
+            await api.post("/admin/products", switchyardTshirtProduct, adminHeaders)
           ).data.product
 
           const response = await api.post(
@@ -2812,7 +2812,7 @@ medusaIntegrationTestRunner({
           ).data.region
 
           const product = (
-            await api.post("/admin/products", medusaTshirtProduct, adminHeaders)
+            await api.post("/admin/products", switchyardTshirtProduct, adminHeaders)
           ).data.product
 
           const response = await api.post(

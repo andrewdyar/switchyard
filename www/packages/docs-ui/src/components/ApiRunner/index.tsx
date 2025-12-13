@@ -8,7 +8,7 @@ import { Button } from "../.."
 import { ApiMethod, ApiTestingOptions } from "types"
 import { ApiRunnerParamInputs } from "./ParamInputs"
 import clsx from "clsx"
-import { ArrowDownRightMini } from "@medusajs/icons"
+import { ArrowDownRightMini } from "@switchyard/icons"
 import { ArrowRightDownIcon } from "../Icons/ArrowRightDown"
 import { ApiRunnerFooterBackground } from "./FooterBackground"
 

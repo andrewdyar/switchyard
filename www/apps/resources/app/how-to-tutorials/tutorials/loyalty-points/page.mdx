@@ -18,16 +18,16 @@ products:
   - promotion
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram, CardList } from "docs-ui"
 
 export const metadata = {
-  title: `Implement Loyalty Points System in Medusa`,
+  title: `Implement Loyalty Points System in Switchyard`,
 }
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to implement a loyalty points system in Medusa.
+In this tutorial, you'll learn how to implement a loyalty points system in Switchyard.
 
 <Note title="Looking for a straightforward implementation?">
 
@@ -35,27 +35,27 @@ Cloud provides a beta Loyalty Plugin feature that facilitates building a loyalty
 
 </Note>
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include management capabilities related to carts, orders, promotions, and more.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx), which are available out-of-the-box. These features include management capabilities related to carts, orders, promotions, and more.
 
-A loyalty point system allows customers to earn points for purchases, which can be redeemed for discounts or rewards. In this tutorial, you'll learn how to customize the Medusa application to implement a loyalty points system.
+A loyalty point system allows customers to earn points for purchases, which can be redeemed for discounts or rewards. In this tutorial, you'll learn how to customize the Switchyard application to implement a loyalty points system.
 
-You can follow this tutorial whether you're new to Medusa or an advanced Medusa developer.
+You can follow this tutorial whether you're new to Switchyard or an advanced Switchyard developer.
 
 ## Summary
 
 By following this tutorial, you will learn how to:
 
-- Install and set up Medusa.
+- Install and set up Switchyard.
 - Define models to store loyalty points and the logic to manage them.
 - Build flows that allow customers to earn and redeem points during checkout.
     - Points are redeemed through dynamic promotions specific to the customer.
 - Customize the cart completion flow to validate applied loyalty points.
 
-![Diagram illustrating redeem loyalty points flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1744126213/Medusa%20Resources/redeem-points-flow_kzgkux.jpg)
+![Diagram illustrating redeem loyalty points flow](https://res.cloudinary.com/dza7lstvk/image/upload/v1744126213/Switchyard%20Resources/redeem-points-flow_kzgkux.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/loyalty-points",
+    href: "https://github.com/switchyard/examples/tree/main/loyalty-points",
     title: "Loyalty Points Repository",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -70,7 +70,7 @@ By following this tutorial, you will learn how to:
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -87,27 +87,27 @@ By following this tutorial, you will learn how to:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterward, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterward, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterward, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -115,7 +115,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Create Loyalty Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 In the module, you define the data models necessary for a feature and the logic to manage these data models. Later, you can build commerce flows around your module.
 
@@ -129,11 +129,11 @@ Refer to the [Modules documentation](!docs!/learn/fundamentals/modules) to learn
 
 ### Create Module Directory
 
-Modules are created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/loyalty`.
+Modules are created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/loyalty`.
 
 ### Create Data Models 
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -151,7 +151,7 @@ export const dmlHighlights = [
 ]
 
 ```ts title="src/modules/loyalty/models/loyalty-point.ts" highlights={dmlHighlights}
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const LoyaltyPoint = model.define("loyalty_point", {
   id: model.id().primaryKey(),
@@ -191,13 +191,13 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Loyalty Module's service, create the file `src/modules/loyalty/service.ts` with the following content:
 
 ```ts title="src/modules/loyalty/service.ts"
-import { MedusaError, MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardError, SwitchyardService } from "@switchyard/framework/utils"
 import LoyaltyPoint from "./models/loyalty-point"
-import { InferTypeOf } from "@medusajs/framework/types"
+import { InferTypeOf } from "@switchyard/framework/types"
 
 type LoyaltyPoint = InferTypeOf<typeof LoyaltyPoint>
 
-class LoyaltyModuleService extends MedusaService({
+class LoyaltyModuleService extends SwitchyardService({
   LoyaltyPoint,
 }) {
   // TODO add methods
@@ -206,13 +206,13 @@ class LoyaltyModuleService extends MedusaService({
 export default LoyaltyModuleService
 ```
 
-The `LoyaltyModuleService` extends `MedusaService` from the Modules SDK which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
+The `LoyaltyModuleService` extends `SwitchyardService` from the Modules SDK which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
 
 So, the `LoyaltyModuleService` class now has methods like `createLoyaltyPoints` and `retrieveLoyaltyPoint`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
+Find all methods generated by the `SwitchyardService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
 
 </Note>
 
@@ -223,7 +223,7 @@ Aside from the basic CRUD methods, you need to add methods that handle custom fu
 First, you need a method that adds loyalty points for a customer. Add the following method to the `LoyaltyModuleService`:
 
 ```ts title="src/modules/loyalty/service.ts"
-class LoyaltyModuleService extends MedusaService({
+class LoyaltyModuleService extends SwitchyardService({
   LoyaltyPoint,
 }) {
   async addPoints(customerId: string, points: number): Promise<LoyaltyPoint> {
@@ -248,14 +248,14 @@ class LoyaltyModuleService extends MedusaService({
 
 You add an `addPoints` method that accepts two parameters: the ID of the customer and the points to add.
 
-In the method, you retrieve the customer's existing loyalty points using the `listLoyaltyPoints` method, which is automatically generated by the `MedusaService`. If the customer has existing points, you update them with the new points using the `updateLoyaltyPoints` method.
+In the method, you retrieve the customer's existing loyalty points using the `listLoyaltyPoints` method, which is automatically generated by the `SwitchyardService`. If the customer has existing points, you update them with the new points using the `updateLoyaltyPoints` method.
 
 Otherwise, if the customer doesn't have existing loyalty points, you create a new record with the `createLoyaltyPoints` method.
 
 The next method you'll add deducts points from the customer's loyalty points, which is useful when the customer redeems points. Add the following method to the `LoyaltyModuleService`:
 
 ```ts title="src/modules/loyalty/service.ts"
-class LoyaltyModuleService extends MedusaService({
+class LoyaltyModuleService extends SwitchyardService({
   LoyaltyPoint,
 }) {
   // ...
@@ -265,8 +265,8 @@ class LoyaltyModuleService extends MedusaService({
     })
 
     if (existingPoints.length === 0 || existingPoints[0].points < points) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Insufficient loyalty points"
       )
     }
@@ -283,12 +283,12 @@ The `deductPoints` method accepts the customer ID and the points to deduct.
 
 In the method, you retrieve the customer's existing loyalty points using the `listLoyaltyPoints` method. If the customer doesn't have existing points or if the points to deduct are greater than the existing points, you throw an error.
 
-Otherwise, you update the customer's loyalty points with the new value using the `updateLoyaltyPoints` method, which is automatically generated by `MedusaService`.
+Otherwise, you update the customer's loyalty points with the new value using the `updateLoyaltyPoints` method, which is automatically generated by `SwitchyardService`.
 
 Next, you'll add the method that retrieves the points of a customer. Add the following method to the `LoyaltyModuleService`:
 
 ```ts title="src/modules/loyalty/service.ts"
-class LoyaltyModuleService extends MedusaService({
+class LoyaltyModuleService extends SwitchyardService({
   LoyaltyPoint,
 }) {
   // ...
@@ -315,7 +315,7 @@ To simplify the logic in this tutorial, you'll use a simple calculation that map
 Add the following method to the `LoyaltyModuleService`:
 
 ```ts title="src/modules/loyalty/service.ts"
-class LoyaltyModuleService extends MedusaService({
+class LoyaltyModuleService extends SwitchyardService({
   LoyaltyPoint,
 }) {
   // ...
@@ -326,8 +326,8 @@ class LoyaltyModuleService extends MedusaService({
     const points = Math.floor(amount)
 
     if (points < 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Amount cannot be negative"
       )
     }
@@ -343,12 +343,12 @@ You'll use this method later to calculate the amount discounted when a customer 
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/loyalty/index.ts` with the following content:
 
 ```ts title="src/modules/loyalty/index.ts"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import LoyaltyModuleService from "./service"
 
 export const LOYALTY_MODULE = "loyalty"
@@ -365,13 +365,13 @@ You use the `Module` function from the Modules SDK to create the module's defini
 
 You also export the module's name as `LOYALTY_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -394,18 +394,18 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate the migrations for you. To generate a migration for the Loyalty Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate the migrations for you. To generate a migration for the Loyalty Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate loyalty
+npx switchyard db:generate loyalty
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/loyalty` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/loyalty` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The table for the `LoyaltyPoint` data model is now created in the database.
@@ -418,7 +418,7 @@ Now that you have a module that stores and manages loyalty points in the databas
 
 The first flow you'll build will either add points to a customer's loyalty points or deduct them based on a purchased order. If the customer hasn't redeemed points, the points are added to their loyalty points. Otherwise, the points are deducted from their loyalty points.
 
-To build custom commerce features in Medusa, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You construct a workflow like you construct a function, but it's a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features. Then, you execute the workflow from other customizations, such as in an endpoint.
+To build custom commerce features in Switchyard, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You construct a workflow like you construct a function, but it's a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features. Then, you execute the workflow from other customizations, such as in an endpoint.
 
 In this section, you'll build the workflow that adds or deducts loyalty points for an order's customer. Later, you'll execute this workflow when an order is placed.
 
@@ -490,7 +490,7 @@ The workflow will have the following steps:
   }}
 />
 
-Medusa provides the `useQueryGraphStep` and `updatePromotionsStep` in its `@medusajs/medusa/core-flows` package. So, you'll only implement the other steps.
+Switchyard provides the `useQueryGraphStep` and `updatePromotionsStep` in its `@switchyard/medusa/core-flows` package. So, you'll only implement the other steps.
 
 ### validateCustomerExistsStep
 
@@ -499,9 +499,9 @@ In the workflow, you first need to validate that the customer is registered. Onl
 To do this, create the file `src/workflows/steps/validate-customer-exists.ts` with the following content:
 
 ```ts title="src/workflows/steps/validate-customer-exists.ts"
-import { CustomerDTO } from "@medusajs/framework/types"
-import { createStep } from "@medusajs/framework/workflows-sdk"
-import { MedusaError } from "@medusajs/framework/utils"
+import { CustomerDTO } from "@switchyard/framework/types"
+import { createStep } from "@switchyard/framework/workflows-sdk"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export type ValidateCustomerExistsStepInput = {
   customer: CustomerDTO | null | undefined
@@ -511,15 +511,15 @@ export const validateCustomerExistsStep = createStep(
   "validate-customer-exists",
   async ({ customer }: ValidateCustomerExistsStepInput) => {
     if (!customer) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA, 
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA, 
         "Customer not found"
       )
     }
 
     if (!customer.has_account) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA, 
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA, 
         "Customer must have an account to earn or manage points"
       )
     }
@@ -532,7 +532,7 @@ You create a step with `createStep` from the Workflows SDK. It accepts two param
 1. The step's unique name, which is `validate-customer-exists`.
 2. An async function that receives two parameters:
     - The step's input, which is in this case an object with the customer's details.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
 In the step function, you validate that the customer is defined and that it's registered based on its `has_account` property. Otherwise, you throw an error.
 
@@ -545,7 +545,7 @@ Before you create a step, you'll create a utility function that the step uses to
 Create the file `src/utils/promo.ts` with the following content:
 
 ```ts title="src/utils/promo.ts"
-import { PromotionDTO, CustomerDTO, CartDTO } from "@medusajs/framework/types"
+import { PromotionDTO, CustomerDTO, CartDTO } from "@switchyard/framework/types"
 
 export type CartData = CartDTO & {
   promotions?: PromotionDTO[]
@@ -573,9 +573,9 @@ You create a `getCartLoyaltyPromotion` function that accepts the cart's details 
 You can now create the step that uses this utility to retrieve a carts loyalty points promotion. To create the step, create the file `src/workflows/steps/get-cart-loyalty-promo.ts` with the following content:
 
 ```ts title="src/workflows/steps/get-cart-loyalty-promo.ts"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import { CartData, getCartLoyaltyPromotion } from "../../utils/promo"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 type GetCartLoyaltyPromoStepInput = {
   cart: CartData,
@@ -588,13 +588,13 @@ export const getCartLoyaltyPromoStep = createStep(
     const loyaltyPromo = getCartLoyaltyPromotion(cart)
 
     if (throwErrorOn === "found" && loyaltyPromo) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Loyalty promotion already applied to cart"
       )
     } else if (throwErrorOn === "not-found" && !loyaltyPromo) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "No loyalty promotion found on cart"
       )
     }
@@ -623,7 +623,7 @@ If the order's cart has a loyalty promotion, you need to deduct points from the 
 
 <Note>
 
-If you get a type error on resolving the Loyalty Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Loyalty Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
@@ -640,7 +640,7 @@ export const deductStepHighlights = [
 import { 
   createStep,
   StepResponse, 
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { LOYALTY_MODULE } from "../../modules/loyalty"
 import LoyaltyModuleService from "../../modules/loyalty/service"
 
@@ -695,7 +695,7 @@ You create a step that accepts an object having the following properties:
 - `customer_id`: The ID of the customer to deduct points from.
 - `amount`: The promotion's amount, which will be used to calculate the points to deduct.
 
-In the step, you resolve the Loyalty Module's service from the Medusa container. Then, you use the `calculatePointsFromAmount` method to calculate the points to deduct from the promotion's amount.
+In the step, you resolve the Loyalty Module's service from the Switchyard container. Then, you use the `calculatePointsFromAmount` method to calculate the points to deduct from the promotion's amount.
 
 After that, you call the `deductPoints` method to deduct the points from the customer's loyalty points.
 
@@ -710,9 +710,9 @@ The compensation function undoes the actions performed in a step. Then, if an er
 The compensation function accepts two parameters:
 
 1. Data passed from the step function to the compensation function. The data is passed as a second parameter of the returned `StepResponse` instance.
-2. An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+2. An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 
-In the compensation function, you resolve the Loyalty Module's service from the Medusa container. Then, you call the `addPoints` method to restore the points deducted from the customer's loyalty points if an error occurs.
+In the compensation function, you resolve the Loyalty Module's service from the Switchyard container. Then, you call the `addPoints` method to restore the points deducted from the customer's loyalty points if an error occurs.
 
 ### addPurchaseAsPointsStep
 
@@ -732,7 +732,7 @@ export const addPointsHighlights = [
 import {
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { LOYALTY_MODULE } from "../../modules/loyalty"
 import LoyaltyModuleService from "../../modules/loyalty/service"
 
@@ -784,7 +784,7 @@ You create a step that accepts an object having the following properties:
 - `customer_id`: The ID of the customer to add points to.
 - `amount`: The order's amount, which will be used to calculate the points to add.
 
-In the step, you resolve the Loyalty Module's service from the Medusa container. Then, you use the `calculatePointsFromAmount` method to calculate the points to add from the order's amount.
+In the step, you resolve the Loyalty Module's service from the Switchyard container. Then, you use the `calculatePointsFromAmount` method to calculate the points to add from the order's amount.
 
 After that, you call the `addPoints` method to add the points to the customer's loyalty points.
 
@@ -799,7 +799,7 @@ Before you create the workflow, you need a utility function that checks whether 
 To add the utility function, add the following to `src/utils/promo.ts`:
 
 ```ts title="src/utils/promo.ts"
-import { OrderDTO } from "@medusajs/framework/types"
+import { OrderDTO } from "@switchyard/framework/types"
 
 export type OrderData = OrderDTO & {
   promotion?: PromotionDTO[]
@@ -852,8 +852,8 @@ export const handleOrderPointsHighlights = [
 ]
 
 ```ts title="src/workflows/handle-order-points.ts" highlights={handleOrderPointsHighlights} collapsibleLines="1-9" expandButtonLabel="Show Imports"
-import { createWorkflow, when } from "@medusajs/framework/workflows-sdk"
-import { updatePromotionsStep, useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { createWorkflow, when } from "@switchyard/framework/workflows-sdk"
+import { updatePromotionsStep, useQueryGraphStep } from "@switchyard/medusa/core-flows"
 import { validateCustomerExistsStep, ValidateCustomerExistsStepInput } from "./steps/validate-customer-exists"
 import { deductPurchasePointsStep } from "./steps/deduct-purchase-points"
 import { addPurchaseAsPointsStep } from "./steps/add-purchase-as-points"
@@ -961,7 +961,7 @@ To learn more about the constraints on a workflow's constructor function, refer 
 
 Now that you have the workflow that handles adding or deducting loyalty points for an order, you need to execute it when an order is placed.
 
-Medusa has an event system that allows you to listen to events emitted by the Medusa server using a [subscriber](!docs!//learn/fundamentals/events-and-subscribers). A subscriber is an asynchronous function that's executed when its associated event is emitted. In a subscriber, you can execute a workflow that performs actions in result of the event.
+Switchyard has an event system that allows you to listen to events emitted by the Switchyard server using a [subscriber](!docs!//learn/fundamentals/events-and-subscribers). A subscriber is an asynchronous function that's executed when its associated event is emitted. In a subscriber, you can execute a workflow that performs actions in result of the event.
 
 In this step, you'll create a subscriber that listens to the `order.placed` event and executes the `handleOrderPointsWorkflow` workflow.
 
@@ -977,7 +977,7 @@ Subscribers are created in a TypeScript or JavaScript file under the `src/subscr
 import type {
   SubscriberArgs,
   SubscriberConfig,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import { handleOrderPointsWorkflow } from "../workflows/handle-order-points"
 
 export default async function orderPlacedHandler({
@@ -1004,19 +1004,19 @@ The subscriber file must export:
 The subscriber function accepts an object with the following properties:
 
 - `event`: An object with the event's data payload. For example, the `order.placed` event has the order's ID in its data payload.
-- `container`: The Medusa container, which you can use to resolve services and tools.
+- `container`: The Switchyard container, which you can use to resolve services and tools.
 
-In the subscriber function, you execute the `handleOrderPointsWorkflow` by invoking it, passing it the Medusa container, then using its `run` method, passing it the workflow's input.
+In the subscriber function, you execute the `handleOrderPointsWorkflow` by invoking it, passing it the Switchyard container, then using its `run` method, passing it the workflow's input.
 
 Whenever an order is placed now, the subscriber will be executed, which in turn will execute the workflow that handles the loyalty points flow.
 
 ### Test it Out
 
-To test out the loyalty points flow, you'll use the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) that you installed in the first step. As mentioned in that step, the storefront will be installed in a separate directory from the Medusa application, and its name is `{project-name}-storefront`, where `{project-name}` is the name of your Medusa application's directory.
+To test out the loyalty points flow, you'll use the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx) that you installed in the first step. As mentioned in that step, the storefront will be installed in a separate directory from the Switchyard application, and its name is `{project-name}-storefront`, where `{project-name}` is the name of your Switchyard application's directory.
 
-So, run the following command in the Medusa application's directory to start the Medusa server:
+So, run the following command in the Switchyard application's directory to start the Switchyard server:
 
-```bash npm2yarn badgeLabel="Medusa Application" badgeColor="green"
+```bash npm2yarn badgeLabel="Switchyard Application" badgeColor="green"
 npm run dev
 ```
 
@@ -1026,13 +1026,13 @@ Then, run the following command in the Next.js Starter Storefront's directory to
 npm run dev
 ```
 
-The Next.js Starter Storefront will be running on `http://localhost:8000`, and the Medusa server will be running on `http://localhost:9000`.
+The Next.js Starter Storefront will be running on `http://localhost:8000`, and the Switchyard server will be running on `http://localhost:9000`.
 
 Open the Next.js Starter Storefront in your browser and create a new account by going to Account at the top right.
 
 Once you're logged in, add an item to the cart and go through the checkout flow.
 
-After you place the order, you'll see the following message in your Medusa application's terminal:
+After you place the order, you'll see the following message in your Switchyard application's terminal:
 
 ```bash
 info:    Processing order.placed which has 1 subscribers
@@ -1065,15 +1065,15 @@ So, to create an API route at the path `/store/customers/me/loyalty-points`, cre
 ```ts title="src/api/store/customers/me/loyalty-points/route.ts"
 
 import { 
-  AuthenticatedMedusaRequest, 
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest, 
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { LOYALTY_MODULE } from "../../../../../modules/loyalty"
 import LoyaltyModuleService from "../../../../../modules/loyalty/service"
 
 export async function GET(
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const loyaltyModuleService: LoyaltyModuleService = req.scope.resolve(
     LOYALTY_MODULE
@@ -1094,7 +1094,7 @@ Since you export a `GET` route handler function, you're exposing a `GET` endpoin
 1. A request object with details and context on the request, such as body parameters or authenticated customer details.
 2. A response object to manipulate and send the response.
 
-In the route handler, you resolve the Loyalty Module's service from the Medusa container (which is available at `req.scope`).
+In the route handler, you resolve the Loyalty Module's service from the Switchyard container (which is available at `req.scope`).
 
 Then, you call the service's `getPoints` method to retrieve the authenticated customer's loyalty points. Note that routes starting with `/store/customers/me` are only accessible by authenticated customers. You can access the authenticated customer ID from the request's context, which is available at `req.auth_context.actor_id`.
 
@@ -1148,10 +1148,10 @@ export const loyaltyPointsHighlights = [
 ```tsx title="src/modules/checkout/components/loyalty-points/index.tsx" badgeLabel="Storefront" badgeColor="blue" highlights={loyaltyPointsHighlights}
 "use client"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { useEffect, useMemo, useState } from "react"
 import { getLoyaltyPoints } from "../../../../lib/data/customer"
-import { Button, Heading } from "@medusajs/ui"
+import { Button, Heading } from "@switchyard/ui"
 import Link from "next/link"
 
 type LoyaltyPointsProps = {
@@ -1243,11 +1243,11 @@ This will show the loyalty points component at the end of the checkout summary.
 
 ### Test it Out
 
-To test out the customizations to the checkout flow, make sure both the Medusa application and Next.js Starter Storefront are running.
+To test out the customizations to the checkout flow, make sure both the Switchyard application and Next.js Starter Storefront are running.
 
 Then, as an authenticated customer, add an item to cart and proceed to checkout. You'll find a new "Loyalty Points" section at the end of the checkout summary.
 
-![Loyalty Points Section at the end of the summary section at the right](https://res.cloudinary.com/dza7lstvk/image/upload/v1744195223/Medusa%20Resources/Screenshot_2025-04-09_at_1.39.34_PM_l5oltc.png)
+![Loyalty Points Section at the end of the summary section at the right](https://res.cloudinary.com/dza7lstvk/image/upload/v1744195223/Switchyard%20Resources/Screenshot_2025-04-09_at_1.39.34_PM_l5oltc.png)
 
 If you made a purchase before, you can see your loyalty points. You'll also see the "Apply Loyalty Points" button, which doesn't yet do anything. You'll add the functionality next.
 
@@ -1338,7 +1338,7 @@ The workflow will have the following steps:
   }}
 />
 
-Most of the workflow's steps are either provided by Medusa in the `@medusajs/medusa/core-flows` package or steps you've already implemented. You only need to implement the `getCartLoyaltyPromoAmountStep` step.
+Most of the workflow's steps are either provided by Switchyard in the `@switchyard/medusa/core-flows` package or steps you've already implemented. You only need to implement the `getCartLoyaltyPromoAmountStep` step.
 
 ### getCartLoyaltyPromoAmountStep
 
@@ -1354,9 +1354,9 @@ export const getCartLoyaltyPromoAmountStepHighlights = [
 ]
 
 ```ts title="src/workflows/steps/get-cart-loyalty-promo-amount.ts" highlights={getCartLoyaltyPromoAmountStepHighlights}
-import { PromotionDTO, CustomerDTO } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { PromotionDTO, CustomerDTO } from "@switchyard/framework/types"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import LoyaltyModuleService from "../../modules/loyalty/service"
 import { LOYALTY_MODULE } from "../../modules/loyalty"
 
@@ -1381,8 +1381,8 @@ export const getCartLoyaltyPromoAmountStep = createStep(
     )
 
     if (loyaltyPoints <= 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Customer has no loyalty points"
       )
     }
@@ -1400,7 +1400,7 @@ export const getCartLoyaltyPromoAmountStep = createStep(
 
 You create a step that accepts an object having the cart's details.
 
-In the step, you resolve the Loyalty Module's service from the Medusa container. Then, you call the `getPoints` method to retrieve the customer's loyalty points. If the customer has no loyalty points, you throw an error.
+In the step, you resolve the Loyalty Module's service from the Switchyard container. Then, you call the `getPoints` method to retrieve the customer's loyalty points. If the customer has no loyalty points, you throw an error.
 
 Next, you call the `calculatePointsFromAmount` method to calculate the amount to be discounted based on the loyalty points. You use the `Math.min` function to ensure that the amount doesn't exceed the cart's total.
 
@@ -1425,7 +1425,7 @@ import {
   createWorkflow,
   transform,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { 
   acquireLockStep,
   createPromotionsStep, 
@@ -1433,7 +1433,7 @@ import {
   updateCartPromotionsWorkflow, 
   updateCartsStep, 
   useQueryGraphStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { 
   validateCustomerExistsStep, 
   ValidateCustomerExistsStepInput,
@@ -1443,8 +1443,8 @@ import {
   GetCartLoyaltyPromoAmountStepInput,
 } from "./steps/get-cart-loyalty-promo-amount"
 import { CartData, CUSTOMER_ID_PROMOTION_RULE_ATTRIBUTE } from "../utils/promo"
-import { CreatePromotionDTO } from "@medusajs/framework/types"
-import { PromotionActions } from "@medusajs/framework/utils"
+import { CreatePromotionDTO } from "@switchyard/framework/types"
+import { PromotionActions } from "@switchyard/framework/utils"
 import { getCartLoyaltyPromoStep } from "./steps/get-cart-loyalty-promo"
 
 type WorkflowInput = {
@@ -1659,12 +1659,12 @@ Next, you'll create the API route that executes this workflow.
 To create the API route, create the file `src/api/store/carts/[id]/loyalty-points/route.ts` with the following content:
 
 ```ts title="src/api/store/carts/[id]/loyalty-points/route.ts"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { applyLoyaltyOnCartWorkflow } from "../../../../../workflows/apply-loyalty-on-cart"
 
 export async function POST(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { id: cart_id } = req.params
 
@@ -1750,7 +1750,7 @@ You'll implement removing the loyalty points promotion in a later step.
 
 ### Test it Out
 
-To test out applying the loyalty points on the cart, start the Medusa application and Next.js Starter Storefront.
+To test out applying the loyalty points on the cart, start the Switchyard application and Next.js Starter Storefront.
 
 Then, in the checkout flow as an authenticated customer, click on the "Apply Loyalty Points" button. The checkout summary will be updated with the applied promotion and the discount amount.
 
@@ -1760,7 +1760,7 @@ If you don't want the promotion to be shown in the "Promotions(s) applied" secti
 
 </Note>
 
-![Discounted amount is shown as part of the summary and the promotion is shown as part of the applied promotions](https://res.cloudinary.com/dza7lstvk/image/upload/v1744200895/Medusa%20Resources/Screenshot_2025-04-09_at_3.14.19_PM_abmtjh.png)
+![Discounted amount is shown as part of the summary and the promotion is shown as part of the applied promotions](https://res.cloudinary.com/dza7lstvk/image/upload/v1744200895/Switchyard%20Resources/Screenshot_2025-04-09_at_3.14.19_PM_abmtjh.png)
 
 ---
 
@@ -1863,7 +1863,7 @@ import {
   createWorkflow,
   transform,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   acquireLockStep,
   releaseLockStep,
@@ -1871,9 +1871,9 @@ import {
   updateCartPromotionsWorkflow,
   updateCartsStep,
   updatePromotionsStep,
-} from "@medusajs/medusa/core-flows"
+} from "@switchyard/medusa/core-flows"
 import { getCartLoyaltyPromoStep } from "./steps/get-cart-loyalty-promo"
-import { PromotionActions } from "@medusajs/framework/utils"
+import { PromotionActions } from "@switchyard/framework/utils"
 import { CartData } from "../utils/promo"
 
 type WorkflowInput = {
@@ -1993,8 +1993,8 @@ import { removeLoyaltyFromCartWorkflow } from "../../../../../workflows/remove-l
 
 // ...
 export async function DELETE(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { id: cart_id } = req.params
 
@@ -2072,11 +2072,11 @@ In the `handleTogglePromotion` function, you call the `removeLoyaltyPointsOnCart
 
 ### Test it Out
 
-To test out removing the loyalty points from the cart, start the Medusa application and Next.js Starter Storefront.
+To test out removing the loyalty points from the cart, start the Switchyard application and Next.js Starter Storefront.
 
 Then, in the checkout flow as an authenticated customer, after applying the loyalty points, click on the "Remove Loyalty Points" button. The checkout summary will be updated with the removed promotion and the discount amount.
 
-![The "Remove Loyalty Points" button is shown in the "Loyalty Points" section](https://res.cloudinary.com/dza7lstvk/image/upload/v1744204436/Medusa%20Resources/Screenshot_2025-04-09_at_4.13.24_PM_xt5trh.png)
+![The "Remove Loyalty Points" button is shown in the "Loyalty Points" section](https://res.cloudinary.com/dza7lstvk/image/upload/v1744204436/Switchyard%20Resources/Screenshot_2025-04-09_at_4.13.24_PM_xt5trh.png)
 
 ---
 
@@ -2084,11 +2084,11 @@ Then, in the checkout flow as an authenticated customer, after applying the loya
 
 After the customer applies the loyalty points to the cart and places the order, you need to validate that the customer actually has the loyalty points. This prevents edge cases where the customer may have applied the loyalty points previously but they don't have them anymore.
 
-So, in this step, you'll hook into Medusa's cart completion flow to perform the validation.
+So, in this step, you'll hook into Switchyard's cart completion flow to perform the validation.
 
-Since Medusa uses workflows in its API routes, it allows you to hook into them and perform custom functionalities using [Workflow Hooks](!docs!/learn/fundamentals/workflows/workflow-hooks). A workflow hook is a point in a workflow where you can inject custom functionality as a step function, called a hook handler.
+Since Switchyard uses workflows in its API routes, it allows you to hook into them and perform custom functionalities using [Workflow Hooks](!docs!/learn/fundamentals/workflows/workflow-hooks). A workflow hook is a point in a workflow where you can inject custom functionality as a step function, called a hook handler.
 
-Medusa uses the [completeCartWorkflow](/references/medusa-workflows/completeCartWorkflow) hook to complete the cart and place an order. This workflow has a `validate` hook that allows you to perform custom validation before the cart is completed.
+Switchyard uses the [completeCartWorkflow](/references/medusa-workflows/completeCartWorkflow) hook to complete the cart and place an order. This workflow has a `validate` hook that allows you to perform custom validation before the cart is completed.
 
 To consume the `validate` hook, create the file `src/workflows/hooks/complete-cart.ts` with the following content:
 
@@ -2098,15 +2098,15 @@ export const completeCartWorkflowHookHighlights = [
   ["32", "getCartLoyaltyPromotion", "Get the cart's loyalty promotion."],
   ["40", "getPoints", "Get the customer's loyalty points."],
   ["43", "requiredPoints", "Calculate the amount to be discounted based on the loyalty points."],
-  ["49", "MedusaError", "Throw an error if the customer doesn't have enough loyalty points."],
+  ["49", "SwitchyardError", "Throw an error if the customer doesn't have enough loyalty points."],
 ]
 
 ```ts title="src/workflows/hooks/complete-cart.ts" highlights={completeCartWorkflowHookHighlights} collapsibleLines="1-6" expandButtonLabel="Show Imports"
-import { completeCartWorkflow } from "@medusajs/medusa/core-flows"
+import { completeCartWorkflow } from "@switchyard/medusa/core-flows"
 import LoyaltyModuleService from "../../modules/loyalty/service"
 import { LOYALTY_MODULE } from "../../modules/loyalty"
 import { CartData, getCartLoyaltyPromotion } from "../../utils/promo"
-import { MedusaError } from "@medusajs/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 completeCartWorkflow.hooks.validate(
   async ({ cart }, { container }) => {
@@ -2149,8 +2149,8 @@ completeCartWorkflow.hooks.validate(
     )
 
     if (customerLoyaltyPoints < requiredPoints) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Customer does not have enough loyalty points. Required: ${
           requiredPoints
         }, Available: ${customerLoyaltyPoints}`
@@ -2165,7 +2165,7 @@ Workflows have a special `hooks` property that includes all the hooks that you c
 Since the hook is essentially a step function, it accepts the following parameters:
 
 - The hook's input passed from the workflow, which differs for each hook. The `validate` hook receives an object having the cart's details.
-- The step context object, which contains the Medusa container. You can use it to resolve services and perform actions.
+- The step context object, which contains the Switchyard container. You can use it to resolve services and perform actions.
 
 In the hook, you resolve Query and the Loyalty Module's service. Then, you use Query to retrieve the cart's necessary details, including its promotions, customer, and metadata.
 
@@ -2191,12 +2191,12 @@ You can confirm that the loyalty points were deducted either by sending a reques
 
 ## Next Steps
 
-You've now implement a loyalty points system in Medusa. There's still more that you can implement based on your use case:
+You've now implement a loyalty points system in Switchyard. There's still more that you can implement based on your use case:
 
 - Add loyalty points on registration or other events. Refer to the [Events Reference](/references/events) for a full list of available events you can listen to.
 - Show the customer their loyalty point usage history. This will require adding another data model in the Loyalty Module that records the usage history. You can create records of that data model when an order that has a loyalty promotion is placed, then customize the storefront to show a new page for loyalty points history.
-- Customize the Medusa Admin to show a new page or [UI Route](!docs!/learn/fundamentals/admin/ui-routes) for loyalty points information and analytics.
+- Customize the Switchyard Admin to show a new page or [UI Route](!docs!/learn/fundamentals/admin/ui-routes) for loyalty points information and analytics.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

@@ -2,7 +2,7 @@
 
 import React from "react"
 import { CopyButton, useGenerateSnippet, UseGenerateSnippet } from "../.."
-import { SquareTwoStack, CheckCircle } from "@medusajs/icons"
+import { SquareTwoStack, CheckCircle } from "@switchyard/icons"
 
 export type CopyGeneratedSnippetButtonProps = UseGenerateSnippet & {
   tooltipText?: string

@@ -1,4 +1,4 @@
-import { Label, RadioGroup } from "@medusajs/ui"
+import { Label, RadioGroup } from "@switchyard/ui"
 
 export default function RadioGroupDisabled() {
   return (

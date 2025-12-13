@@ -10,13 +10,13 @@ products:
   - customer
 ---
 
-import { Github, PlaySolid } from "@medusajs/icons"
+import { Github, PlaySolid } from "@switchyard/icons"
 import { Prerequisites, WorkflowDiagram } from "docs-ui"
 
-export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1742389227/Medusa%20Resources/product-reviews_zia79g.jpg"
+export const ogImage = "https://res.cloudinary.com/dza7lstvk/image/upload/v1742389227/Switchyard%20Resources/product-reviews_zia79g.jpg"
 
 export const metadata = {
-  title: `Implement Product Reviews in Medusa`,
+  title: `Implement Product Reviews in Switchyard`,
   openGraph: {
     images: [
       {
@@ -41,28 +41,28 @@ export const metadata = {
 
 # {metadata.title}
 
-In this tutorial, you'll learn how to implement product reviews in Medusa.
+In this tutorial, you'll learn how to implement product reviews in Switchyard.
 
-When you install a Medusa application, you get a fully-fledged commerce platform with a Framework for customization. The Medusa application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) which are available out-of-the-box. The features include product-management features.
+When you install a Switchyard application, you get a fully-fledged commerce platform with a Framework for customization. The Switchyard application's commerce features are built around [Commerce Modules](../../../commerce-modules/page.mdx) which are available out-of-the-box. The features include product-management features.
 
-Medusa doesn't provide product reviews out-of-the-box, but the Medusa Framework facilitates implementing customizations like product reviews. In this tutorial, you'll learn how to customize the Medusa server, Admin dashboard, and Next.js Starter Storefront to implement product reviews.
+Switchyard doesn't provide product reviews out-of-the-box, but the Switchyard Framework facilitates implementing customizations like product reviews. In this tutorial, you'll learn how to customize the Switchyard server, Admin dashboard, and Next.js Starter Storefront to implement product reviews.
 
-You can follow this guide whether you're new to Medusa or an advanced Medusa developer.
+You can follow this guide whether you're new to Switchyard or an advanced Switchyard developer.
 
 ## Summary
 
 By following this tutorial, you'll learn how to:
 
-- Install and set up Medusa.
-- Define product reviews models and implement their management features in the Medusa server.
-- Customize the Medusa Admin to allow merchants to view and manage product reviews.
+- Install and set up Switchyard.
+- Define product reviews models and implement their management features in the Switchyard server.
+- Customize the Switchyard Admin to allow merchants to view and manage product reviews.
 - Customize the Next.js Starter Storefront to display product reviews and allow customers to submit reviews.
 
-![Diagram showcasing the product review features in the storefront and admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1741941058/Medusa%20Resources/reviews-overview_nufybf.jpg)
+![Diagram showcasing the product review features in the storefront and admin](https://res.cloudinary.com/dza7lstvk/image/upload/v1741941058/Switchyard%20Resources/reviews-overview_nufybf.jpg)
 
 <CardList items={[
   {
-    href: "https://github.com/medusajs/examples/tree/main/product-reviews",
+    href: "https://github.com/switchyard/examples/tree/main/product-reviews",
     title: "Product Reviews Repository",
     text: "Find the full code for this guide in this repository.",
     icon: Github,
@@ -77,7 +77,7 @@ By following this tutorial, you'll learn how to:
 
 ---
 
-## Step 1: Install a Medusa Application
+## Step 1: Install a Switchyard Application
 
 <Prerequisites items={[
   {
@@ -94,27 +94,27 @@ By following this tutorial, you'll learn how to:
   }
 ]} />
 
-Start by installing the Medusa application on your machine with the following command:
+Start by installing the Switchyard application on your machine with the following command:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 You'll first be asked for the project's name. Then, when asked whether you want to install the [Next.js Starter Storefront](../../../nextjs-starter/page.mdx), choose Yes.
 
-Afterwards, the installation process will start, which will install the Medusa application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
+Afterwards, the installation process will start, which will install the Switchyard application in a directory with your project's name, and the Next.js Starter Storefront in a separate directory with the `{project-name}-storefront` name.
 
 <Note title="Why is the storefront installed separately">
 
-The Medusa application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Medusa application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Medusa's Architecture documentation](!docs!/learn/introduction/architecture).
+The Switchyard application is composed of a headless Node.js server and an admin dashboard. The storefront is installed or custom-built separately and connects to the Switchyard application through its REST endpoints, called [API routes](!docs!/learn/fundamentals/api-routes). Learn more in [Switchyard's Architecture documentation](!docs!/learn/introduction/architecture).
 
 </Note>
 
-Once the installation finishes successfully, the Medusa Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
+Once the installation finishes successfully, the Switchyard Admin dashboard will open with a form to create a new user. Enter the user's credentials and submit the form. Afterwards, you can log in with the new user and explore the dashboard.
 
 <Note title="Ran into Errors">
 
-Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-app-errors/page.mdx) for help.
+Check out the [troubleshooting guides](../../../troubleshooting/create-switchyard-app-errors/page.mdx) for help.
 
 </Note>
 
@@ -122,7 +122,7 @@ Check out the [troubleshooting guides](../../../troubleshooting/create-medusa-ap
 
 ## Step 2: Add Product Review Module
 
-In Medusa, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain. Medusa integrates the module into your application without implications or side effects on your setup.
+In Switchyard, you can build custom features in a [module](!docs!/learn/fundamentals/modules). A module is a reusable package with functionalities related to a single feature or domain. Switchyard integrates the module into your application without implications or side effects on your setup.
 
 In the module, you define the data models necessary for a feature and the logic to manage these data models. Later, you can build commerce flows around your module.
 
@@ -136,11 +136,11 @@ Refer to the [Modules documentation](!docs!/learn/fundamentals/modules) to learn
 
 ### Create Module Directory
 
-A module is created under the `src/modules` directory of your Medusa application. So, create the directory `src/modules/product-review`.
+A module is created under the `src/modules` directory of your Switchyard application. So, create the directory `src/modules/product-review`.
 
 ### Create Data Models 
 
-A data model represents a table in the database. You create data models using Medusa's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
+A data model represents a table in the database. You create data models using Switchyard's Data Model Language (DML). It simplifies defining a table's columns, relations, and indexes with straightforward methods and configurations.
 
 <Note>
 
@@ -151,7 +151,7 @@ Refer to the [Data Models documentation](!docs!/learn/fundamentals/modules#1-cre
 For the Product Review Module, you need to define a `Review` data model that represents a product review. So, create the file `src/modules/product-review/models/review.ts` with the following content:
 
 ```ts title="src/modules/product-review/models/review.ts"
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Review = model.define("review", {
   id: model.id().primaryKey(),
@@ -209,10 +209,10 @@ Refer to the [Module Service documentation](!docs!/learn/fundamentals/modules#2-
 To create the Review Module's service, create the file `src/modules/product-review/service.ts` with the following content:
 
 ```ts title="src/modules/product-review/service.ts"
-import { MedusaService } from "@medusajs/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import Review from "./models/review"
 
-class ProductReviewModuleService extends MedusaService({
+class ProductReviewModuleService extends SwitchyardService({
   Review,
 }) {
 }
@@ -220,13 +220,13 @@ class ProductReviewModuleService extends MedusaService({
 export default ProductReviewModuleService
 ```
 
-The `ProductReviewModuleService` extends `MedusaService` from the Modules SDK which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
+The `ProductReviewModuleService` extends `SwitchyardService` from the Modules SDK which generates a class with data-management methods for your module's data models. This saves you time on implementing Create, Read, Update, and Delete (CRUD) methods.
 
 So, the `ProductReviewModuleService` class now has methods like `createReviews` and `retrieveReview`.
 
 <Note>
 
-Find all methods generated by the `MedusaService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
+Find all methods generated by the `SwitchyardService` in [the Service Factory reference](../../../service-factory-reference/page.mdx).
 
 </Note>
 
@@ -234,12 +234,12 @@ You'll use this service later when you implement custom flows for product review
 
 ### Export Module Definition
 
-The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Medusa the name of the module and its service.
+The final piece to a module is its definition, which you export in an `index.ts` file at its root directory. This definition tells Switchyard the name of the module and its service.
 
 So, create the file `src/modules/product-review/index.ts` with the following content:
 
 ```ts title="src/modules/product-review/index.ts"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import ProductReviewModuleService from "./service"
 
 export const PRODUCT_REVIEW_MODULE = "productReview"
@@ -256,13 +256,13 @@ You use the `Module` function from the Modules SDK to create the module's defini
 
 You also export the module's name as `PRODUCT_REVIEW_MODULE` so you can reference it later.
 
-### Add Module to Medusa's Configurations
+### Add Module to Switchyard's Configurations
 
-Once you finish building the module, add it to Medusa's configurations to start using it.
+Once you finish building the module, add it to Switchyard's configurations to start using it.
 
-In `medusa-config.ts`, add a `modules` property and pass an array with your custom module:
+In `switchyard.config.ts`, add a `modules` property and pass an array with your custom module:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
@@ -285,18 +285,18 @@ Refer to the [Migrations documentation](!docs!/learn/fundamentals/modules#5-gene
 
 </Note>
 
-Medusa's CLI tool can generate the migrations for you. To generate a migration for the Review Module, run the following command in your Medusa application's directory:
+Switchyard's CLI tool can generate the migrations for you. To generate a migration for the Review Module, run the following command in your Switchyard application's directory:
 
 ```bash
-npx medusa db:generate productReview
+npx switchyard db:generate productReview
 ```
 
-The `db:generate` command of the Medusa CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/product-review` that holds the generated migration.
+The `db:generate` command of the Switchyard CLI accepts the name of the module to generate the migration for. You'll now have a `migrations` directory under `src/modules/product-review` that holds the generated migration.
 
 Then, to reflect these migrations on the database, run the following command:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 The table for the `Review` data model is now created in the database.
@@ -307,9 +307,9 @@ The table for the `Review` data model is now created in the database.
 
 When you defined the `Review` data model, you added properties that store the ID of records managed by other modules. For example, the `product_id` property stores the ID of the product this review is for, but products are managed by the [Product Module](../../../commerce-modules/product/page.mdx).
 
-Medusa integrates modules into your application without implications or side effects by isolating modules from one another. This means you can't directly create relationships between data models in your module and data models in other modules.
+Switchyard integrates modules into your application without implications or side effects by isolating modules from one another. This means you can't directly create relationships between data models in your module and data models in other modules.
 
-Instead, Medusa provides the mechanism to define links between data models, and retrieve and manage linked records while maintaining module isolation. Links are useful to define associations between data models in different modules, or extend a model in another module to associate custom properties with it.
+Instead, Switchyard provides the mechanism to define links between data models, and retrieve and manage linked records while maintaining module isolation. Links are useful to define associations between data models in different modules, or extend a model in another module to associate custom properties with it.
 
 <Note>
 
@@ -328,9 +328,9 @@ You can also define a link between the `Review` data model and the `Customer` da
 You can define links between data models in a TypeScript or JavaScript file under the `src/links` directory. So, create the file `src/links/review-product.ts` with the following content:
 
 ```ts title="src/links/review-product.ts"
-import { defineLink } from "@medusajs/framework/utils"
+import { defineLink } from "@switchyard/framework/utils"
 import ProductReviewModule from "../modules/product-review"
-import ProductModule from "@medusajs/medusa/product"
+import ProductModule from "@switchyard/medusa/product"
 
 export default defineLink(
   {
@@ -349,7 +349,7 @@ You define a link using the `defineLink` function from the Modules SDK. It accep
 
 1. An object indicating the first data model part of the link. A module has a special `linkable` property that contains link configurations for its data models. So, you can pass the link configurations for the `Review` data model from the Product Review module, specifying that its `product_id` property holds the ID of the linked record. You also specify `isList` as `false` since a review can only have one product.
 2. An object indicating the second data model part of the link. You pass the linkable configurations of the Product Module's `Product` data model.
-3. An optional object with additional configurations for the link. By default, Medusa creates a table in the database to represent the link you define. However, when you only want to retrieve the linked records without managing and storing the links, you can set the `readOnly` option to `true`.
+3. An optional object with additional configurations for the link. By default, Switchyard creates a table in the database to represent the link you define. However, when you only want to retrieve the linked records without managing and storing the links, you can set the `readOnly` option to `true`.
 
 You can now retrieve the product of a review, as you'll see in later steps.
 
@@ -359,7 +359,7 @@ You can now retrieve the product of a review, as you'll see in later steps.
 
 You're now ready to start implementing product-review features. The first one you'll implement is the ability for customers to create a product review.
 
-To build custom commerce features in Medusa, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You construct a workflow like you construct a function, but it's a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features. Then, you execute the workflow from other customizations, such as in an endpoint.
+To build custom commerce features in Switchyard, you create a [workflow](!docs!/learn/fundamentals/workflows). A workflow is a series of queries and actions, called steps, that complete a task. You construct a workflow like you construct a function, but it's a special function that allows you to track its executions' progress, define roll-back logic, and configure other advanced features. Then, you execute the workflow from other customizations, such as in an endpoint.
 
 So, in this section, you'll learn how to create a workflow that creates a review. Later, you'll execute this workflow in an API route.
 
@@ -393,7 +393,7 @@ The workflow will have the following steps:
   hideLegend
 />
 
-The `useQueryGraphStep` step is provided by Medusa in its `@medusajs/medusa/core-flows` package. So, you only need to implement the `createReviewStep` step.
+The `useQueryGraphStep` step is provided by Switchyard in its `@switchyard/medusa/core-flows` package. So, you only need to implement the `createReviewStep` step.
 
 ### createReviewStep
 
@@ -401,7 +401,7 @@ In the second step of the workflow, you create the review. To create a step, cre
 
 <Note>
 
-If you get a type error on resolving the Product Review Module, run the Medusa application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
+If you get a type error on resolving the Product Review Module, run the Switchyard application once with the `npm run dev` or `yarn dev` command to generate the necessary type definitions, as explained in the [Automatically Generated Types guide](!docs!/learn/fundamentals/generated-types).
 
 </Note>
 
@@ -415,7 +415,7 @@ export const createReviewHighlights = [
 import {
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_REVIEW_MODULE } from "../../modules/product-review"
 import ProductReviewModuleService from "../../modules/product-review/service"
 
@@ -460,11 +460,11 @@ You create a step with `createStep` from the Workflows SDK. It accepts two param
 1. The step's unique name, which is `create-review`.
 2. An async function that receives two parameters:
     - The step's input, which is in this case an object with the review's properties.
-    - An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
+    - An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container), which is a registry of Framework and commerce tools that you can access in the step.
 
-In the step function, you resolve the Review Module's service from the Medusa container using its `resolve` method, passing it the module's name as a parameter.
+In the step function, you resolve the Review Module's service from the Switchyard container using its `resolve` method, passing it the module's name as a parameter.
 
-Then, you create the review using the `createReviews` method. As you remember, the Review Module's service extends the `MedusaService` which generates data-management methods for you.
+Then, you create the review using the `createReviews` method. As you remember, the Review Module's service extends the `SwitchyardService` which generates data-management methods for you.
 
 A step function must return a `StepResponse` instance. The `StepResponse` constructor accepts two parameters:
 
@@ -478,13 +478,13 @@ The compensation function undoes the actions performed in a step. Then, if an er
 The compensation function accepts two parameters:
 
 1. The data passed from the step in the second parameter of `StepResponse`, which in this case is the ID of the created review.
-2. An object that has properties including the [Medusa container](!docs!/learn/fundamentals/medusa-container).
+2. An object that has properties including the [Switchyard container](!docs!/learn/fundamentals/medusa-container).
 
-In the compensation function, you resolve the Review Module's service from the Medusa container and call the `deleteReviews` method to delete the review created in the step.
+In the compensation function, you resolve the Review Module's service from the Switchyard container and call the `deleteReviews` method to delete the review created in the step.
 
 ### Add createReviewWorkflow
 
-You can now create the workflow using the step provided by Medusa and your custom step.
+You can now create the workflow using the step provided by Switchyard and your custom step.
 
 To create the workflow, create the file `src/workflows/create-review.ts` with the following content:
 
@@ -492,9 +492,9 @@ To create the workflow, create the file `src/workflows/create-review.ts` with th
 import { 
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createReviewStep } from "./steps/create-review"
-import { useQueryGraphStep } from "@medusajs/medusa/core-flows"
+import { useQueryGraphStep } from "@switchyard/medusa/core-flows"
 
 type CreateReviewInput = {
   title?: string
@@ -579,9 +579,9 @@ export const PostStoreReviewHighlights = [
 
 ```ts title="src/api/store/reviews/route.ts" highlights={PostStoreReviewHighlights}
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { createReviewWorkflow } from "../../../workflows/create-review"
 
 import { z } from "zod"
@@ -606,8 +606,8 @@ export const PostStoreReviewSchema = z.object({
 type PostStoreReviewReq = z.infer<typeof PostStoreReviewSchema>
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<PostStoreReviewReq>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<PostStoreReviewReq>,
+  res: SwitchyardResponse
 ) => {
   const input = req.validatedBody
 
@@ -632,11 +632,11 @@ Then, since you export a `POST` function, you're exposing a `POST` API route at 
 
 <Note title="Tip">
 
-`AuthenticatedMedusaRequest` accepts the request body's type as a type argument.
+`AuthenticatedSwitchyardRequest` accepts the request body's type as a type argument.
 
 </Note>
 
-In the route handler, you execute the `createReviewWorkflow` workflow by invoking it, passing it the Medusa container (which is stored in the `scope` property of a request object). Then, you call its `run` method, passing to the workflow the request body as input.
+In the route handler, you execute the `createReviewWorkflow` workflow by invoking it, passing it the Switchyard container (which is stored in the `scope` property of a request object). Then, you call its `run` method, passing to the workflow the request body as input.
 
 ### Apply Validation and Authentication Middlewares
 
@@ -655,7 +655,7 @@ import {
   defineMiddlewares,
   authenticate,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { PostStoreReviewSchema } from "./store/reviews/route"
 
 
@@ -685,13 +685,13 @@ The create product review route is now ready for use.
 
 ### Test the API Route
 
-To test out the API route, start the Medusa application:
+To test out the API route, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard at `http://localhost:9000/app` and login using the credentials you set up earlier.
+Then, open the Switchyard Admin dashboard at `http://localhost:9000/app` and login using the credentials you set up earlier.
 
 #### Retrieve Publishable API Key
 
@@ -703,7 +703,7 @@ To learn more about publishable API keys, refer to the [Publishable API Key docu
 
 </Note>
 
-To retrieve the publishable API key from the Medusa Admin, refer to [this user guide](!user-guide!/settings/developer/publishable-api-keys).
+To retrieve the publishable API key from the Switchyard Admin, refer to [this user guide](!user-guide!/settings/developer/publishable-api-keys).
 
 #### Retrieve Customer Authentication Token
 
@@ -737,7 +737,7 @@ curl -X POST 'http://localhost:9000/store/customers' \
 Make sure to replace:
 
 - `{token}` with the registration token you received from the previous request.
-- `{your_publishable_api_key}` with the publishable API key you retrieved from the Medusa Admin.
+- `{your_publishable_api_key}` with the publishable API key you retrieved from the Switchyard Admin.
 
 Also, if you changed the email in the first request, make sure to change it here as well.
 
@@ -756,14 +756,14 @@ Copy the returned token to use it in the next requests.
 
 #### Retrieve Product ID
 
-Before creating a review, you need the ID of a product. You can either copy one from the Medusa Admin, or send the following request:
+Before creating a review, you need the ID of a product. You can either copy one from the Switchyard Admin, or send the following request:
 
 ```bash
 curl 'http://localhost:9000/store/products' \
 -H 'x-publishable-api-key: {your_publishable_api_key}'
 ```
 
-Make sure to replace `{your_publishable_api_key}` with the publishable API key you retrieved from the Medusa Admin.
+Make sure to replace `{your_publishable_api_key}` with the publishable API key you retrieved from the Switchyard Admin.
 
 #### Create a Review
 
@@ -786,7 +786,7 @@ curl --location 'http://localhost:9000/store/reviews' \
 
 Make sure to replace:
 
-- `{your_publishable_api_key}` with the publishable API key you retrieved from the Medusa Admin.
+- `{your_publishable_api_key}` with the publishable API key you retrieved from the Switchyard Admin.
 - `{token}` with the authentication token you retrieved from the previous request.
 - `{product_id}` with the ID of the product you chose.
 
@@ -796,7 +796,7 @@ If the request is successful, you'll receive a response with the created review.
 
 ## Step 6: List Reviews Admin API Route
 
-In this step, you'll create an API route that lists the reviews of a product. You'll use this route in the Medusa Admin customizations to allow admin users to view and manage product reviews.
+In this step, you'll create an API route that lists the reviews of a product. You'll use this route in the Switchyard Admin customizations to allow admin users to view and manage product reviews.
 
 ### Create API Route
 
@@ -810,16 +810,16 @@ export const GetAdminReviewsHighlights = [
 
 ```ts title="src/api/admin/reviews/route.ts" highlights={GetAdminReviewsHighlights}
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 
 export const GetAdminReviewsSchema = createFindParams()
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const query = req.scope.resolve("query")
   
@@ -850,7 +850,7 @@ You first define a `GetAdminReviewsSchema` schema that will allow clients to pas
 - `offset`: The number of items to skip before retrieving the reviews.
 - `order`: The fields to sort the reviews by in ascending or descending order.
 
-Then, you export a `GET` function, which exposes a `GET` API Route at the path `/admin/reviews`. In the route handler you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Medusa container, which allows you to retrieve data across modules.
+Then, you export a `GET` function, which exposes a `GET` API Route at the path `/admin/reviews`. In the route handler you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Switchyard container, which allows you to retrieve data across modules.
 
 Next, you retrieve all reviews using Query. Notice that you pass in `query.graph` the `req.queryConfig` object. This object holds the fields to retrieve and the pagination configurations.
 
@@ -872,7 +872,7 @@ In `src/api/middlewares.ts`, add a new middleware:
 // other imports...
 import { 
   validateAndTransformQuery,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { GetAdminReviewsSchema } from "./admin/reviews/route"
 
 export default defineMiddlewares({
@@ -909,7 +909,7 @@ You use the `validateAndTransformQuery` middleware to enforce validation on the 
     - `isList`: A boolean that indicates whether the query is a list query.
     - `defaults`: An array of fields to retrieve by default.
 
-You'll test the API route as you customize the Medusa Admin in the next step.
+You'll test the API route as you customize the Switchyard Admin in the next step.
 
 <Note title="Tip">
 
@@ -921,9 +921,9 @@ You pass `product.*` in the fields to retrieve, allowing you to retrieve the pro
 
 ## Step 7: Add Reviews UI Route
 
-Now that you have an API route that retrieves reviews, you'll customize the Medusa Admin to add a new "Reviews" page by creating a [UI Route](!docs!/learn/fundamentals/admin/ui-routes).
+Now that you have an API route that retrieves reviews, you'll customize the Switchyard Admin to add a new "Reviews" page by creating a [UI Route](!docs!/learn/fundamentals/admin/ui-routes).
 
-A UI route is a React component that specifies the content to be shown in a new page in the Medusa Admin dashboard. You'll create a UI route to display the list of reviews in the Medusa Admin.
+A UI route is a React component that specifies the content to be shown in a new page in the Switchyard Admin dashboard. You'll create a UI route to display the list of reviews in the Switchyard Admin.
 
 <Note>
 
@@ -933,14 +933,14 @@ Learn more about UI routes in the [UI Routes documentation](!docs!/learn/fundame
 
 ### Configure JS SDK
 
-Medusa provides a [JS SDK](../../../js-sdk/page.mdx) that you can use to send requests to the Medusa server from any client application, including your Medusa Admin customizations.
+Switchyard provides a [JS SDK](../../../js-sdk/page.mdx) that you can use to send requests to the Switchyard server from any client application, including your Switchyard Admin customizations.
 
-The JS SDK is installed by default in your Medusa application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
+The JS SDK is installed by default in your Switchyard application. To configure it, create the file `src/admin/lib/sdk.ts` with the following content:
 
 ```ts title="src/admin/lib/sdk.ts"
-import Medusa from "@medusajs/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
-export const sdk = new Medusa({
+export const sdk = new Switchyard({
   baseUrl: "http://localhost:9000",
   debug: process.env.NODE_ENV === "development",
   auth: {
@@ -949,9 +949,9 @@ export const sdk = new Medusa({
 })
 ```
 
-You create an instance of the JS SDK using the `Medusa` class from the JS SDK. You pass it an object having the following properties:
+You create an instance of the JS SDK using the `Switchyard` class from the JS SDK. You pass it an object having the following properties:
 
-- `baseUrl`: The base URL of the Medusa server.
+- `baseUrl`: The base URL of the Switchyard server.
 - `debug`: A boolean indicating whether to log debug information into the console.
 - `auth`: An object specifying the authentication type. When using the JS SDK for admin customizations, you use the `session` authentication type.
 
@@ -966,8 +966,8 @@ export const listUIRoutesHighlight1 = [
 ]
 
 ```tsx title="src/admin/routes/reviews/page.tsx" highlights={listUIRoutesHighlight1} collapsibleLines="1-18" expandButtonLabel="Show Imports"
-import { defineRouteConfig } from "@medusajs/admin-sdk"
-import { ChatBubbleLeftRight } from "@medusajs/icons"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
+import { ChatBubbleLeftRight } from "@switchyard/icons"
 import { 
   createDataTableColumnHelper, 
   Container, 
@@ -977,11 +977,11 @@ import {
   StatusBadge, 
   Toaster, 
   DataTablePaginationState,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useQuery } from "@tanstack/react-query"
 import { useMemo, useState } from "react"
 import { sdk } from "../../lib/sdk"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 import { Link } from "react-router-dom"
 
 type Review = {
@@ -1046,7 +1046,7 @@ const columns = [
 
 Before defining the component, you define a `Review` type, then define the columns of the table you'll show on the page.
 
-To display the table, you'll use the [DataTable](!ui!/components/data-table) component from Medusa UI. To define the columns of the table, you use the `createDataTableColumnHelper` function from Medusa UI, which returns a `columnHelper` object. You then use the `columnHelper` object to define the table's columns.
+To display the table, you'll use the [DataTable](!ui!/components/data-table) component from Switchyard UI. To define the columns of the table, you use the `createDataTableColumnHelper` function from Switchyard UI, which returns a `columnHelper` object. You then use the `columnHelper` object to define the table's columns.
 
 Next, you'll add the component that renders the content of the page. Replace the `TODO` with the following:
 
@@ -1129,24 +1129,24 @@ You create a `ReviewPage` component, which holds the UI route's content. In the 
 
 - Define state variables to configure pagination.
 - Use the `useQuery` hook from `@tanstack/react-query` to fetch the reviews from the API route. In the query function, you use the JS SDK to send a request to the `/admin/reviews` API route. The JS SDK has a `client.fetch` method that has a similar signature to JavaScript's [Fetch API](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API). You can use it to send requests to custom routes.
-- Use the `useDataTable` hook from Medusa UI to create a DataTable instance. You pass the columns, data, and pagination configurations to the hook.
+- Use the `useDataTable` hook from Switchyard UI to create a DataTable instance. You pass the columns, data, and pagination configurations to the hook.
 - Render the DataTable component, passing the DataTable instance to the `instance` prop. You also render the DataTable's toolbar, table, and pagination components.
 
-The file also exports a configuration object created with `defineRouteConfig`. You export this object to tell Medusa that you want to add the new route to the Medusa Admin's sidebar. You specify the sidebar's item and title.
+The file also exports a configuration object created with `defineRouteConfig`. You export this object to tell Switchyard that you want to add the new route to the Switchyard Admin's sidebar. You specify the sidebar's item and title.
 
 ### Test the UI Route
 
-To test out the UI route, start the Medusa application:
+To test out the UI route, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard at `http://localhost:9000/app` and login using the credentials you set up earlier.
+Then, open the Switchyard Admin dashboard at `http://localhost:9000/app` and login using the credentials you set up earlier.
 
 You'll find a new sidebar item `Review`. Click on it to view the list of reviews. In the upcoming steps, you'll add functionality to approve or reject reviews.
 
-![Reviews page showing list of reviews](https://res.cloudinary.com/dza7lstvk/image/upload/v1741935325/Medusa%20Resources/Screenshot_2025-03-14_at_8.54.14_AM_tfhnyu.png)
+![Reviews page showing list of reviews](https://res.cloudinary.com/dza7lstvk/image/upload/v1741935325/Switchyard%20Resources/Screenshot_2025-03-14_at_8.54.14_AM_tfhnyu.png)
 
 ---
 
@@ -1170,7 +1170,7 @@ export const updateReviewStepHighlights = [
 import {
   createStep,
   StepResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { PRODUCT_REVIEW_MODULE } from "../../modules/product-review"
 import ProductReviewModuleService from "../../modules/product-review/service"
 
@@ -1226,7 +1226,7 @@ You can now create the workflow that uses the above step to update the review. T
 import {
   createWorkflow,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { updateReviewsStep } from "./steps/update-review"
 
 export type UpdateReviewInput = {
@@ -1260,9 +1260,9 @@ export const PostAdminUpdateReviewsStatusHighlights = [
 
 ```ts title="src/api/admin/reviews/status/route.ts" highlights={PostAdminUpdateReviewsStatusHighlights}
 import type {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
 import { updateReviewWorkflow } from "../../../../workflows/update-review"
 import { z } from "zod"
 
@@ -1272,8 +1272,8 @@ export const PostAdminUpdateReviewsStatusSchema = z.object({
 })
 
 export async function POST(
-  req: MedusaRequest<z.infer<typeof PostAdminUpdateReviewsStatusSchema>>, 
-  res: MedusaResponse
+  req: SwitchyardRequest<z.infer<typeof PostAdminUpdateReviewsStatusSchema>>, 
+  res: SwitchyardResponse
 ) {
   const { ids, status } = req.validatedBody
 
@@ -1331,7 +1331,7 @@ In the next step, you'll customize the UI route you added earlier to allow the a
 
 You'll now customize the UI route you added earlier to allow the admin user to approve or reject reviews. You'll add a checkbox column to the table that allows the admin user to select multiple reviews, then choose to approve or reject them.
 
-The `DataTable` component from Medusa UI supports a command bar that is triggered by a select (or checkbox) column in the table.
+The `DataTable` component from Switchyard UI supports a command bar that is triggered by a select (or checkbox) column in the table.
 
 Start by adding the necessary imports at the top of `src/admin/routes/reviews/page.tsx`:
 
@@ -1339,7 +1339,7 @@ Start by adding the necessary imports at the top of `src/admin/routes/reviews/pa
 import { 
   createDataTableCommandHelper, 
   DataTableRowSelectionState, 
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 ```
 
 Then, in the `columns` array, add a new select column as the first item in the array:
@@ -1411,7 +1411,7 @@ const useCommands = (refetch: () => void) => {
 }
 ```
 
-You first initialize the command helper using the `createDataTableCommandHelper` function from Medusa UI. Then, you create a custom hook `useCommands` that returns an array of commands created with the command helper.
+You first initialize the command helper using the `createDataTableCommandHelper` function from Switchyard UI. Then, you create a custom hook `useCommands` that returns an array of commands created with the command helper.
 
 You add `Approve` and `Reject` commands, and both of them send a request to the `/admin/reviews/status` API route to update the reviews' status, but each with a different status in the request body.
 
@@ -1452,19 +1452,19 @@ This command bar will show the actions to perform on the selected reviews.
 
 ### Test the UI Route
 
-To test out the UI route, start the Medusa application:
+To test out the UI route, start the Switchyard application:
 
 ```bash npm2yarn
 npm run dev
 ```
 
-Then, open the Medusa Admin dashboard and go to the Reviews page. You'll see a new column with checkboxes that allow you to select multiple reviews.
+Then, open the Switchyard Admin dashboard and go to the Reviews page. You'll see a new column with checkboxes that allow you to select multiple reviews.
 
 If you try selecting multiple reviews, you'll see a command bar at the bottom center of the page that allows you to approve or reject the selected reviews.
 
 If you choose to approve or reject the reviews, the status of the selected reviews will change, and the table will update to reflect the new status.
 
-![Checkboxes are now shown next to the items in the table, and when you click on them the command bar shows at the bottom of the page with Approve and Reject commands](https://res.cloudinary.com/dza7lstvk/image/upload/v1741937101/Medusa%20Resources/Screenshot_2025-03-14_at_9.24.29_AM_y9vhac.png)
+![Checkboxes are now shown next to the items in the table, and when you click on them the command bar shows at the bottom of the page with Approve and Reject commands](https://res.cloudinary.com/dza7lstvk/image/upload/v1741937101/Switchyard%20Resources/Screenshot_2025-03-14_at_9.24.29_AM_y9vhac.png)
 
 ---
 
@@ -1481,18 +1481,18 @@ On the product's page, you want to display the average rating of a product. To d
 In `src/modules/product-review/service.ts`, add the following methods to the `ProductReviewModuleService` class:
 
 ```ts title="src/modules/product-review/service.ts"
-import { InjectManager, MedusaService, MedusaContext } from "@medusajs/framework/utils"
+import { InjectManager, SwitchyardService, SwitchyardContext } from "@switchyard/framework/utils"
 import Review from "./models/review"
-import { Context } from "@medusajs/framework/types"
-import { EntityManager } from "@medusajs/framework/mikro-orm/knex"
+import { Context } from "@switchyard/framework/types"
+import { EntityManager } from "@switchyard/framework/mikro-orm/knex"
 
-class ProductReviewModuleService extends MedusaService({
+class ProductReviewModuleService extends SwitchyardService({
   Review,
 }) {
   @InjectManager() 
   async getAverageRating(
     productId: string,
-    @MedusaContext() sharedContext?: Context<EntityManager>
+    @SwitchyardContext() sharedContext?: Context<EntityManager>
   ): Promise<number> { 
     const result = await sharedContext?.manager?.execute(
       `SELECT AVG(rating) as average 
@@ -1510,9 +1510,9 @@ export default ProductReviewModuleService
 To run queries on the database in a service's method, you need to:
 
 - Add the `InjectManager` decorator to the method.
-- Pass as the last parameter a context parameter that has the `MedusaContext` decorator.
+- Pass as the last parameter a context parameter that has the `SwitchyardContext` decorator.
 
-By doing the above, Medusa injects the method with a context parameter that has a `manger` property whose value is a [forked entity manager](https://mikro-orm.io/docs/identity-map#forking-entity-manager).
+By doing the above, Switchyard injects the method with a context parameter that has a `manger` property whose value is a [forked entity manager](https://mikro-orm.io/docs/identity-map#forking-entity-manager).
 
 Then, you run a raw SQL query to calculate the average rating of the reviews for a product with the given ID. You also filter the reviews by the status `approved`.
 
@@ -1532,19 +1532,19 @@ export const GetStoreReviewsHighlights = [
 
 ```ts title="src/api/store/products/[id]/reviews/route.ts" highlights={GetStoreReviewsHighlights} collapsibleLines="1-9" expandButtonLabel="Show Imports"
 import {
-  MedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+  SwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import { PRODUCT_REVIEW_MODULE } from "../../../../../modules/product-review"
 import ProductReviewModuleService from "../../../../../modules/product-review/service"
-import { createFindParams } from "@medusajs/medusa/api/utils/validators"
+import { createFindParams } from "@switchyard/medusa/api/utils/validators"
 
 export const GetStoreReviewsSchema = createFindParams()
 
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
 
@@ -1581,7 +1581,7 @@ You first define a `GetStoreReviewsSchema` schema that will allow clients to pas
 - `offset`: The number of items to skip before retrieving the reviews.
 - `order`: The fields to sort the reviews by in ascending or descending order.
 
-Then, you export a `GET` function, and that exposes a `GET` API Route at the path `/store/products/[id]/reviews`. In the route handler you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Medusa container, which allows you to retrieve data across modules.
+Then, you export a `GET` function, and that exposes a `GET` API Route at the path `/store/products/[id]/reviews`. In the route handler you resolve [Query](!docs!/learn/fundamentals/module-links/query) from the Switchyard container, which allows you to retrieve data across modules.
 
 Next, you retrieve the approved reviews of a product using Query. Notice that you pass in `query.graph` the `req.queryConfig` object. This object holds the fields to retrieve and the pagination configurations. You'll configure this object in a bit.
 
@@ -1597,7 +1597,7 @@ In `src/api/middlewares.ts`, add a new middleware:
 // other imports
 import { 
   validateAndTransformQuery,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { GetStoreReviewsSchema } from "./store/products/[id]/reviews/route"
 
 export default defineMiddlewares({
@@ -1666,7 +1666,7 @@ You define the type of a product review object and the properties it has.
 
 ### Add Functions to Fetch and Submit Reviews
 
-Next, you'll add two functions that fetch and submit reviews using the API routes you created earlier. To send requests to the API routes, you can use Medusa's [JS SDK](../../../js-sdk/page.mdx).
+Next, you'll add two functions that fetch and submit reviews using the API routes you created earlier. To send requests to the API routes, you can use Switchyard's [JS SDK](../../../js-sdk/page.mdx).
 
 In `src/lib/data/products.ts`, add the following functions:
 
@@ -1754,9 +1754,9 @@ import { useState } from "react"
 
 import { useEffect } from "react"
 import { retrieveCustomer } from "../../../../lib/data/customer"
-import { HttpTypes } from "@medusajs/types"
-import { Button, Input, Label, Textarea, toast, Toaster } from "@medusajs/ui"
-import { Star, StarSolid } from "@medusajs/icons"
+import { HttpTypes } from "@switchyard/types"
+import { Button, Input, Label, Textarea, toast, Toaster } from "@switchyard/ui"
+import { Star, StarSolid } from "@switchyard/icons"
 import { addProductReview } from "../../../../lib/data/products"
 
 type ProductReviewsFormProps = {
@@ -1891,9 +1891,9 @@ Create the file `src/modules/products/components/product-reviews/index.tsx` with
 "use client"
 
 import { getProductReviews } from "../../../../lib/data/products"
-import { Star, StarSolid } from "@medusajs/icons"
+import { Star, StarSolid } from "@switchyard/icons"
 import { StoreProductReview } from "../../../../types/global"
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 import { useState, useEffect } from "react"
 import ProductReviewsForm from "./form"
 type ProductReviewsProps = {
@@ -2046,7 +2046,7 @@ This will show the product reviews after the product's image and details, but be
 
 ### Test the Customizations
 
-To test out both the server and storefront customizations, first, start the Medusa application by running the following command in its directory:
+To test out both the server and storefront customizations, first, start the Switchyard application by running the following command in its directory:
 
 ```bash npm2yarn
 npm run dev
@@ -2062,30 +2062,30 @@ The storefront will run at `http://localhost:8000`. Open it, then click on Menu 
 
 If you click on one of them and scroll down below the images, you'll find a section showing the average rating and reviews of the product.
 
-![Product page showing the average rating and reviews of the product](https://res.cloudinary.com/dza7lstvk/image/upload/v1741937534/Medusa%20Resources/Screenshot_2025-03-14_at_9.31.58_AM_tw9vui.png)
+![Product page showing the average rating and reviews of the product](https://res.cloudinary.com/dza7lstvk/image/upload/v1741937534/Switchyard%20Resources/Screenshot_2025-03-14_at_9.31.58_AM_tw9vui.png)
 
 To add a review, you first need to log in as a customer. You can do so by clicking on Account at the top right of the page. In the new page, either enter the credentials of the customer you created earlier, or create a new customer.
 
 Afterwards, go back to the product's page, you'll see the "Add a review" button below the reviews.
 
-![Product page showing the Add a review button](https://res.cloudinary.com/dza7lstvk/image/upload/v1741937731/Medusa%20Resources/Screenshot_2025-03-14_at_9.35.11_AM_w1wzdp.png)
+![Product page showing the Add a review button](https://res.cloudinary.com/dza7lstvk/image/upload/v1741937731/Switchyard%20Resources/Screenshot_2025-03-14_at_9.35.11_AM_w1wzdp.png)
 
 If you click on the button, a form will appear where you can fill in the review's details and submit it.
 
-![Product page showing the Add a review form](https://res.cloudinary.com/dza7lstvk/image/upload/v1741938961/Medusa%20Resources/Screenshot_2025-03-14_at_9.55.37_AM_epnfz0.png)
+![Product page showing the Add a review form](https://res.cloudinary.com/dza7lstvk/image/upload/v1741938961/Switchyard%20Resources/Screenshot_2025-03-14_at_9.55.37_AM_epnfz0.png)
 
-After submitting the review, you can approve or reject it from the Medusa Admin dashboard.
+After submitting the review, you can approve or reject it from the Switchyard Admin dashboard.
 
 ---
 
 ## Next Steps
 
-You've now implemented product-review features in Medusa. There's still more that you can implement to enhance these features:
+You've now implemented product-review features in Switchyard. There's still more that you can implement to enhance these features:
 
 - Link a Review to a customer as you did in [Step 3](#step-3-define-review--product-link) and customize the storefront to show the customer's reviews on their profile.
 - Add a feature to allow customers to upvote or downvote reviews.
 - Allow customers to add images to their reviews.
 
-If you're new to Medusa, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
+If you're new to Switchyard, check out the [main documentation](!docs!/learn), where you'll get a more in-depth learning of all the concepts you've used in this guide and more.
 
-To learn more about the commerce features that Medusa provides, check out Medusa's [Commerce Modules](../../../commerce-modules/page.mdx).
+To learn more about the commerce features that Switchyard provides, check out Switchyard's [Commerce Modules](../../../commerce-modules/page.mdx).

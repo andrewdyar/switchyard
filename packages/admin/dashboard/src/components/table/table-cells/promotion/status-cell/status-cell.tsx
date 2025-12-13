@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { getPromotionStatus } from "../../../../../lib/promotions"
 import { StatusCell as StatusCell_ } from "../../common/status-cell"
 

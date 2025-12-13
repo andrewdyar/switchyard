@@ -1,13 +1,13 @@
-import { ConfigModule, PluginDetails } from "@medusajs/types"
+import { ConfigModule, PluginDetails } from "@switchyard/types"
 import fs from "fs/promises"
 import path from "path"
 import { isString } from "./is-string"
 import { readDir } from "./read-dir-recursive"
 
 const MEDUSA_APP_SOURCE_PATH = "src"
-const MEDUSA_PLUGIN_SOURCE_PATH = ".medusa/server/src"
+const MEDUSA_PLUGIN_SOURCE_PATH = ".switchyard/server/src"
 const MEDUSA_PLUGIN_OPTIONS_FILE_PATH =
-  ".medusa/server/medusa-plugin-options.json"
+  ".switchyard/server/medusa-plugin-options.json"
 export const MEDUSA_PROJECT_NAME = "project-plugin"
 
 function createPluginId(name: string): string {

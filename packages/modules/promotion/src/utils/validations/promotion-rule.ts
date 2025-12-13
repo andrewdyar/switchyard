@@ -3,16 +3,16 @@ import {
   InferEntityType,
   PromotionRuleDTO,
   PromotionRuleOperatorValues,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ApplicationMethodTargetType,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PromotionRuleOperator,
   isPresent,
   isString,
   pickValueFromObject,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { PromotionRule } from "@models"
 import { CreatePromotionRuleDTO } from "@types"
 
@@ -49,7 +49,7 @@ export function validatePromotionRuleAttributes(
 
   if (!errors.length) return
 
-  throw new MedusaError(MedusaError.Types.INVALID_DATA, errors.join(", "))
+  throw new SwitchyardError(SwitchyardError.Types.INVALID_DATA, errors.join(", "))
 }
 
 export function areRulesValidForContext(

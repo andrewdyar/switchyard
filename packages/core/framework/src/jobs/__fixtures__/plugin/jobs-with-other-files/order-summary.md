@@ -1,6 +1,6 @@
-import { MedusaContainer } from "@medusajs/types"
+import { SwitchyardContainer } from "@switchyard/types"
 
-export default async function handler(container: MedusaContainer) {
+export default async function handler(container: SwitchyardContainer) {
   console.log(`You have received 5 orders today`)
 }
 

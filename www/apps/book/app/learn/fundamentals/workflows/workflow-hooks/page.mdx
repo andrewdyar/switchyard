@@ -10,7 +10,7 @@ In this chapter, you'll learn what workflow hooks are and how to use them.
 
 A workflow hook is a specific point in a workflow where you can inject custom functionality. This custom functionality is called a hook handler.
 
-Medusa exposes hooks in many of its workflows that are used in its API routes. You can consume those hooks to add your custom logic.
+Switchyard exposes hooks in many of its workflows that are used in its API routes. You can consume those hooks to add your custom logic.
 
 <Note title="Tip">
 
@@ -36,14 +36,14 @@ So, in a TypeScript or JavaScript file created under the `src/workflows/hooks` d
 2. Access the hook using the `hooks` property.
 3. Pass a step function as a parameter to the hook.
 
-For example, to consume the `productsCreated` hook of Medusa's `createProductsWorkflow`, create the file `src/workflows/hooks/product-created.ts` with the following content:
+For example, to consume the `productsCreated` hook of Switchyard's `createProductsWorkflow`, create the file `src/workflows/hooks/product-created.ts` with the following content:
 
 export const handlerHighlights = [
   ["3", "productsCreated", "Invoke the hook, passing it a step function as a parameter."],
 ]
 
 ```ts title="src/workflows/hooks/product-created.ts" highlights={handlerHighlights}
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 createProductsWorkflow.hooks.productsCreated(
   async ({ products }, { container }) => {
@@ -85,7 +85,7 @@ Since the hook handler is a step function, you can set its compensation function
 For example:
 
 ```ts title="src/workflows/hooks/product-created.ts"
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 createProductsWorkflow.hooks.productsCreated(
   async ({ products }, { container }) => {
@@ -103,14 +103,14 @@ The compensation function runs if an error occurs in the workflow. It undoes the
 
 The compensation function receives the second parameter passed to the `StepResponse` returned by the step function as input.
 
-It also accepts an object with a `container` property as a second parameter. This allows you to resolve resources from the Medusa container.
+It also accepts an object with a `container` property as a second parameter. This allows you to resolve resources from the Switchyard container.
 
 ### Additional Data Property
 
-Medusa's workflows include an `additional_data` property in the hook's input:
+Switchyard's workflows include an `additional_data` property in the hook's input:
 
 ```ts title="src/workflows/hooks/product-created.ts" highlights={[["4", "additional_data"]]}
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
 createProductsWorkflow.hooks.productsCreated(
   async ({ products, additional_data }, { container }) => {
@@ -128,10 +128,10 @@ Learn how to pass `additional_data` in requests to API routes in the [Additional
 You can also pass additional data when running the workflow. Pass it as a parameter to the workflow's `.run` method:
 
 ```ts title="src/workflows/hooks/product-created.ts" highlights={[["10", "additional_data"]]}
-import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { createProductsWorkflow } from "@medusajs/medusa/core-flows"
+import type { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
+import { createProductsWorkflow } from "@switchyard/medusa/core-flows"
 
-export async function POST(req: MedusaRequest, res: MedusaResponse) {
+export async function POST(req: SwitchyardRequest, res: SwitchyardResponse) {
   await createProductsWorkflow(req.scope).run({
     input: { 
       products: [

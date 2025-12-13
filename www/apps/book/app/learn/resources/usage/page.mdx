@@ -4,44 +4,44 @@ export const metadata = {
 
 # {metadata.title}
 
-At Medusa, we strive to provide the best experience for developers using our platform. For that reason, Medusa collects anonymous and non-sensitive data that provides a global understanding of how users are using Medusa.
+At Switchyard, we strive to provide the best experience for developers using our platform. For that reason, Switchyard collects anonymous and non-sensitive data that provides a global understanding of how users are using Switchyard.
 
 ---
 
 ## Purpose
 
-As an open source solution, we work closely and constantly interact with our community to ensure that we provide the best experience for everyone using Medusa. 
+As an open source solution, we work closely and constantly interact with our community to ensure that we provide the best experience for everyone using Switchyard. 
 
-We are capable of getting a general understanding of how developers use Medusa and what general issues they run into through different means such as our Discord server, GitHub issues and discussions, and occasional one-on-one sessions.
+We are capable of getting a general understanding of how developers use Switchyard and what general issues they run into through different means such as our Discord server, GitHub issues and discussions, and occasional one-on-one sessions.
 
-However, although these methods can be insightful, they’re not enough to get a full and global understanding of how developers are using Medusa, especially in production.
+However, although these methods can be insightful, they’re not enough to get a full and global understanding of how developers are using Switchyard, especially in production.
 
 Collecting this data allows us to understand certain details such as:
 
-- What operating system do most Medusa developers use?
-- What version of Medusa is widely used?
-- What parts of the Medusa Admin are generally undiscovered by our users?
-- How much data do users manage through our Medusa Admin? Is it being used for large number of products, orders, and other types of data?
+- What operating system do most Switchyard developers use?
+- What version of Switchyard is widely used?
+- What parts of the Switchyard Admin are generally undiscovered by our users?
+- How much data do users manage through our Switchyard Admin? Is it being used for large number of products, orders, and other types of data?
 - What Node version is globally used? Should we focus our efforts on providing support for versions that we don’t currently support?
 
 ---
 
-## Medusa Application Analytics
+## Switchyard Application Analytics
 
-This section covers which data in the Medusa application are collected and how to opt out of it.
+This section covers which data in the Switchyard application are collected and how to opt out of it.
 
-### Collected Data in the Medusa Application
+### Collected Data in the Switchyard Application
 
-The following data is being collected on your Medusa application:
+The following data is being collected on your Switchyard application:
 
 - Unique project ID generated with UUID.
 - Unique machine ID generated with UUID.
 - Operating system information including Node version or operating system platform used.
-- The version of the Medusa application and Medusa CLI are used.
+- The version of the Switchyard application and Switchyard CLI are used.
 
 <Note>
 
-Data is only collected when the Medusa application is run with the command `medusa start`.
+Data is only collected when the Switchyard application is run with the command `switchyard start`.
 
 </Note>
 
@@ -53,10 +53,10 @@ If you prefer to disable data collection, you can do it either by setting the fo
 MEDUSA_DISABLE_TELEMETRY=true
 ```
 
-Or, you can run the following command in the root of your Medusa application project to disable it:
+Or, you can run the following command in the root of your Switchyard application project to disable it:
 
 ```bash
-npx medusa telemetry --disable
+npx switchyard telemetry --disable
 ```
 
 ---
@@ -84,7 +84,7 @@ The following data is being collected on your admin:
 
 ### How to Enable Anonymization
 
-To enable anonymization of your data from the Medusa Admin:
+To enable anonymization of your data from the Switchyard Admin:
 
 1. Go to Settings → Personal Information.
 2. In the Usage insights section, click on the “Edit preferences” button.
@@ -93,7 +93,7 @@ To enable anonymization of your data from the Medusa Admin:
 
 ### How to Opt-Out
 
-To opt out of analytics collection in the Medusa Admin, set the following environment variable:
+To opt out of analytics collection in the Switchyard Admin, set the following environment variable:
 
 ```bash
 MEDUSA_FF_ANALYTICS=false

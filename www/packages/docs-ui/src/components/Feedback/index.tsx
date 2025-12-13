@@ -13,10 +13,10 @@ import {
   DottedSeparator,
   RadioItem,
 } from "@/components"
-import { ChatBubbleLeftRight, ThumbDown, ThumbUp } from "@medusajs/icons"
+import { ChatBubbleLeftRight, ThumbDown, ThumbUp } from "@switchyard/icons"
 import Link from "next/link"
 import { useSiteConfig } from "../../providers"
-import { RadioGroup } from "@medusajs/ui"
+import { RadioGroup } from "@switchyard/ui"
 
 export type FeedbackProps = {
   event: string

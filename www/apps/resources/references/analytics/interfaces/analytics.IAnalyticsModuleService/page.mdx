@@ -15,7 +15,7 @@ In this document, you’ll learn about the different methods in the Analytics Mo
     
 :::note
 
-The Analytics Module is available starting [Medusa v2.8.3](https://github.com/medusajs/medusa/releases/tag/v2.8.3).
+The Analytics Module is available starting [Switchyard v2.8.3](https://github.com/switchyard/medusa/releases/tag/v2.8.3).
 
 :::
 
@@ -25,20 +25,20 @@ The Analytics Module is available starting [Medusa v2.8.3](https://github.com/me
       
 To use the Analytics Module, you need to configure it along with an Analytics Module Provider.
 
-Medusa provides two Analytics Module Providers: [Local](/infrastructure-modules/analytics/local) and [PostHog](/infrastructure-modules/analytics/posthog) module providers.
+Switchyard provides two Analytics Module Providers: [Local](/infrastructure-modules/analytics/local) and [PostHog](/infrastructure-modules/analytics/posthog) module providers.
 
-To configure the Analytics Module and its provider, add it to the list of modules in your `medusa-config.ts` file. For example:
+To configure the Analytics Module and its provider, add it to the list of modules in your `switchyard.config.ts` file. For example:
 
-```ts title="medusa-config.ts"
+```ts title="switchyard.config.ts"
 module.exports = defineConfig({
   // ...
   modules: [
     {
-      resolve: "@medusajs/medusa/analytics",
+      resolve: "@switchyard/medusa/analytics",
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/analytics-local",
+            resolve: "@switchyard/medusa/analytics-local",
             id: "local",
           },
         ],
@@ -54,11 +54,11 @@ Refer to the documentation of each provider for specific configuration options.
 
 ## Resolve Analytics Module's Service
 
-In your workflow's step, you can resolve the Analytics Module's service from the Medusa container:
+In your workflow's step, you can resolve the Analytics Module's service from the Switchyard container:
 
 ```ts
-import { Modules } from "@medusajs/framework/utils"
-import { createStep } from "@medusajs/framework/workflows-sdk"
+import { Modules } from "@switchyard/framework/utils"
+import { createStep } from "@switchyard/framework/workflows-sdk"
 
 const step1 = createStep(
   "step-1",
@@ -78,7 +78,7 @@ You can then use the Analytics Module's service's methods in the step, which wou
 
 ## getProvider
 
-This method returns the service of the configured Analytics Module Provider in `medusa-config.ts`. This is useful
+This method returns the service of the configured Analytics Module Provider in `switchyard.config.ts`. This is useful
 if you want to execute custom methods defined in the provider's service or you need direct access to it.
 
 ### Example
@@ -90,14 +90,14 @@ const postHogProviderService = analyticsModuleService.getProvider()
 
 ### Returns
 
-<TypeList types={[{"name":"track","type":"(`data`: [TrackAnalyticsEventDTO](../../../types/interfaces/types.TrackAnalyticsEventDTO/page.mdx)) => Promise&#60;void&#62;","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"identify","type":"(`data`: [IdentifyAnalyticsEventDTO](../../../types/types/types.IdentifyAnalyticsEventDTO/page.mdx)) => Promise&#60;void&#62;","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"shutdown","type":"() => Promise&#60;void&#62;","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getProvider"/>
+<TypeList types={[{"name":"track","type":"(`data`: [TrackAnalyticsEventDTO](../../../types/interfaces/types.TrackAnalyticsEventDTO/page.mdx)) => Promise&#60;void&#62;","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"identify","type":"(`data`: [IdentifyAnalyticsEventDTO](../../../types/types/types.IdentifyAnalyticsEventDTO/page.mdx)) => Promise&#60;void&#62;","description":"","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"shutdown","type":"() => Promise&#60;void&#62;","description":"","optional":true,"defaultValue":"","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="getProvider"/>
 
 ___
 
 ## identify
 
 This method identifies an actor or group in the analytics provider. The Analytics Module
-will use the `identify` method of the underlying provider configured in `medusa-config.ts` to identify the actor or group.
+will use the `identify` method of the underlying provider configured in `switchyard.config.ts` to identify the actor or group.
 
 ### Example
 
@@ -112,18 +112,18 @@ await analyticsModuleService.identify({
 
 ### Parameters
 
-<TypeList types={[{"name":"data","type":"[IdentifyAnalyticsEventDTO](../../../types/types/types.IdentifyAnalyticsEventDTO/page.mdx)","description":"The details of the actor or group.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"actor_id","type":"`string`","description":"The actor of the event, if there is any.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"group","type":"`object`","description":"The group that the event is for, such as an organization or team.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"type","type":"`string`","description":"The name of the group.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"id","type":"`string`","description":"The group's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]}]},{"name":"properties","type":"`Record<string, any>`","description":"The properties of the actor. The format and content is dynamic and depends on the integrated provider.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="identify"/>
+<TypeList types={[{"name":"data","type":"[IdentifyAnalyticsEventDTO](../../../types/types/types.IdentifyAnalyticsEventDTO/page.mdx)","description":"The details of the actor or group.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"actor_id","type":"`string`","description":"The actor of the event, if there is any.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"group","type":"`object`","description":"The group that the event is for, such as an organization or team.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"type","type":"`string`","description":"The name of the group.","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"id","type":"`string`","description":"The group's ID.","optional":false,"defaultValue":"","expandable":false,"children":[]}]},{"name":"properties","type":"`Record<string, any>`","description":"The properties of the actor. The format and content is dynamic and depends on the integrated provider.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="identify"/>
 
 ### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;void&#62;","optional":false,"defaultValue":"","description":"Resolves when the actor or group is identified successfully.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="identify"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;void&#62;","optional":false,"defaultValue":"","description":"Resolves when the actor or group is identified successfully.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="identify"/>
 
 ___
 
 ## track
 
 This method tracks an event in the analytics provider. The Analytics Module
-will use the `track` method of the underlying provider configured in `medusa-config.ts` to track the event.
+will use the `track` method of the underlying provider configured in `switchyard.config.ts` to track the event.
 
 ### Example
 
@@ -140,8 +140,8 @@ await analyticsModuleService.track({
 
 ### Parameters
 
-<TypeList types={[{"name":"data","type":"[TrackAnalyticsEventDTO](../../../types/interfaces/types.TrackAnalyticsEventDTO/page.mdx)","description":"The event's details.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"event","type":"`string`","description":"The event name","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"actor_id","type":"`string`","description":"The actor of the event, if there is any","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"group","type":"`object`","description":"The group that the event is for, such as an organization or team.","optional":true,"defaultValue":"","expandable":false,"children":[{"name":"type","type":"`string`","description":"The name of the group.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"id","type":"`string`","description":"The group's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]}]},{"name":"properties","type":"`Record<string, any>`","description":"The properties of the event. The format and content is dynamic and depends on the integrated provider.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="track"/>
+<TypeList types={[{"name":"data","type":"[TrackAnalyticsEventDTO](../../../types/interfaces/types.TrackAnalyticsEventDTO/page.mdx)","description":"The event's details.","optional":false,"defaultValue":"","expandable":false,"children":[{"name":"event","type":"`string`","description":"The event name","optional":false,"defaultValue":"","expandable":false,"children":[]},{"name":"actor_id","type":"`string`","description":"The actor of the event, if there is any","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"group","type":"`object`","description":"The group that the event is for, such as an organization or team.","optional":true,"defaultValue":"","expandable":false,"children":[{"name":"type","type":"`string`","description":"The name of the group.","optional":true,"defaultValue":"","expandable":false,"children":[]},{"name":"id","type":"`string`","description":"The group's ID.","optional":true,"defaultValue":"","expandable":false,"children":[]}]},{"name":"properties","type":"`Record<string, any>`","description":"The properties of the event. The format and content is dynamic and depends on the integrated provider.","optional":true,"defaultValue":"","expandable":false,"children":[]}]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="track"/>
 
 ### Returns
 
-<TypeList types={[{"name":"Promise","type":"Promise&#60;void&#62;","optional":false,"defaultValue":"","description":"Resolves when the event is tracked successfully.","expandable":false,"children":[]}]} expandUrl="https://docs.medusajs.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="track"/>
+<TypeList types={[{"name":"Promise","type":"Promise&#60;void&#62;","optional":false,"defaultValue":"","description":"Resolves when the event is tracked successfully.","expandable":false,"children":[]}]} expandUrl="https://docs.switchyard.com/learn/fundamentals/data-models/manage-relationships#retrieve-records-of-relation" sectionTitle="track"/>

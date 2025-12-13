@@ -1,78 +1,78 @@
 import { Note } from "docs-ui"
 
 export const metadata = {
-  title: `Install Medusa UI in Standalone Projects`,
+  title: `Install Switchyard UI in Standalone Projects`,
 }
 
 # {metadata.title}
 
-In this guide, you'll learn how to install and use Medusa UI in a standalone project.
+In this guide, you'll learn how to install and use Switchyard UI in a standalone project.
 
-Medusa UI is a React UI library that, while intended for use within Medusa projects, can also be used in any React project.
+Switchyard UI is a React UI library that, while intended for use within Switchyard projects, can also be used in any React project.
 
 <Note>
 
-The icons package is installed independently from Medusa UI. Learn how to install it in the [Icons](../../icons/overview/page.mdx) guide.
+The icons package is installed independently from Switchyard UI. Learn how to install it in the [Icons](../../icons/overview/page.mdx) guide.
 
 </Note>
 
 ---
 
-## Medusa UI Compatibility
+## Switchyard UI Compatibility
 
-To use Medusa UI in your standalone project, you must have:
+To use Switchyard UI in your standalone project, you must have:
 
 - React 18+ installed. Most React-based frameworks and libraries, such as Next.js and Vite, are compatible with this requirement.
-- [Tailwind CSS](https://v3.tailwindcss.com/) installed. The components in Medusa UI are styled using Tailwind CSS, so you'll need to install it in your project as well.
-    - Medusa UI was built with Tailwind CSS v3, but it may also support v4.
+- [Tailwind CSS](https://v3.tailwindcss.com/) installed. The components in Switchyard UI are styled using Tailwind CSS, so you'll need to install it in your project as well.
+    - Switchyard UI was built with Tailwind CSS v3, but it may also support v4.
 
 ---
 
-## Step 1: Install Medusa UI
+## Step 1: Install Switchyard UI
 
-In your standalone project, install the Medusa UI package with the following command:
+In your standalone project, install the Switchyard UI package with the following command:
 
 ```bash npm2yarn
-npm install @medusajs/ui
+npm install @switchyard/ui
 ```
 
 ---
 
 ## Step 2: Install UI Presets
 
-Medusa UI customizes Tailwind CSS classes to implement its design system, so you must also install the Medusa UI preset package.
+Switchyard UI customizes Tailwind CSS classes to implement its design system, so you must also install the Switchyard UI preset package.
 
-To install the Medusa UI preset, run the following command:
+To install the Switchyard UI preset, run the following command:
 
 ```bash npm2yarn
-npm install @medusajs/ui-preset --save-dev
+npm install @switchyard/ui-preset --save-dev
 ```
 
 ---
 
 ## Step 3: Configure Tailwind CSS
 
-Next, you'll need to configure Tailwind CSS to use the Medusa UI preset and explicitly add the paths to the Medusa UI components as content files.
+Next, you'll need to configure Tailwind CSS to use the Switchyard UI preset and explicitly add the paths to the Switchyard UI components as content files.
 
 ### Tailwind CSS v3 Configurations
 
-In Tailwind CSS v3, which is the recommended version to use with Medusa UI, you need to add the following configurations to your `tailwind.config.js` or `tailwind.config.ts` file:
+In Tailwind CSS v3, which is the recommended version to use with Switchyard UI, you need to add the following configurations to your `tailwind.config.js` or `tailwind.config.ts` file:
 
-1. Add the Medusa UI preset to the `presets` array.
-2. Ensure that the `content` field includes the path to the Medusa UI package.
+1. Add the Switchyard UI preset to the `presets` array.
+2. Ensure that the `content` field includes the path to the Switchyard UI package.
 
 ```js title="tailwind.config.js" highlights={[["5"]]}
 module.exports = {
-  presets: [require("@medusajs/ui-preset")],
+  presets: [require("@switchyard/ui-preset")],
   content: [
     // ...
-    "./node_modules/@medusajs/ui/dist/**/*.{js,jsx,ts,tsx}",
+    "./node_modules/@switchyard/ui/dist/**/*.{js,jsx,ts,tsx}",
   ],
   // ...
 }
 ```
 
-If your project is in a monorepo, you'll need to resolve the path to the `@medusajs/ui` package from the monorepo root:
+If your project is in a monorepo, you'll need to resolve the path to the `@switchyard/ui` package from the monorepo root:
 
 export const monorepoHighlights = [
   ["3", "uiPath", "Resolve the UI package path from `node_modules`."],
@@ -83,13 +83,13 @@ export const monorepoHighlights = [
 const path = require("path")
 
 const uiPath = path.resolve(
-  require.resolve("@medusajs/ui"),
+  require.resolve("@switchyard/ui"),
   "../..",
   "\*_/_.{js,jsx,ts,tsx}"
 )
 
 module.exports = {
-  presets: [require("@medusajs/ui-preset")],
+  presets: [require("@switchyard/ui-preset")],
   content: [
     // ...
     uiPath,
@@ -101,28 +101,28 @@ module.exports = {
 
 ### Tailwind CSS v4 Configurations
 
-Medusa UI isn't officially compatible with Tailwind CSS v4 yet, so use it with caution.
+Switchyard UI isn't officially compatible with Tailwind CSS v4 yet, so use it with caution.
 
 In your CSS file that imports Tailwind CSS, add the following `@import`, `@config`, and `@source` directives:
 
 ```css
 @import "tailwindcss";
-@source "../node_modules/@medusajs/ui";
-@config "@medusajs/ui-preset";
+@source "../node_modules/@switchyard/ui";
+@config "@switchyard/ui-preset";
 ```
 
-This will explicitly include the Medusa UI preset and its components in your Tailwind CSS build and apply the preset styles to your project.
+This will explicitly include the Switchyard UI preset and its components in your Tailwind CSS build and apply the preset styles to your project.
 
 ---
 
-## Step 4: Use Medusa UI in Standalone Projects
+## Step 4: Use Switchyard UI in Standalone Projects
 
-You can now start building your application with Medusa UI.
+You can now start building your application with Switchyard UI.
 
 For example, you can use the `Button` in your custom components:
 
 ```tsx
-import { Button } from "@medusajs/ui"
+import { Button } from "@switchyard/ui"
 
 export function ButtonDemo() {
   return <Button>Button</Button>
@@ -135,17 +135,17 @@ Refer to the documentation of each component to learn about its props and usage.
 
 ## Update UI Packages in Standalone Projects
 
-Medusa's design system packages, including `@medusajs/ui` and `@medusajs/ui-preset`, are versioned independently from other `@medusajs/*` packages. However, they're still released as part of Medusa's releases.
+Switchyard's design system packages, including `@switchyard/ui` and `@switchyard/ui-preset`, are versioned independently from other `@switchyard/*` packages. However, they're still released as part of Switchyard's releases.
 
-So, to find the latest updates and breaking changes to any of these packages, refer to the [release notes in the Medusa GitHub repository](https://github.com/medusajs/medusa/releases).
+So, to find the latest updates and breaking changes to any of these packages, refer to the [release notes in the Switchyard GitHub repository](https://github.com/switchyard/medusa/releases).
 
 To update these packages in your standalone project, update their version in your `package.json` file and re-install dependencies. For example:
 
 ```json title="package.json"
 {
   "dependencies": {
-    "@medusajs/ui": "4.0.0",
-    "@medusajs/ui-preset": "4.0.0"
+    "@switchyard/ui": "4.0.0",
+    "@switchyard/ui-preset": "4.0.0"
   }
 }
 ```

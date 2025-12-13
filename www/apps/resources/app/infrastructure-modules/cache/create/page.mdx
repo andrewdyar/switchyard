@@ -18,7 +18,7 @@ In this guide, you’ll learn how to create a Cache Module.
 
 <Note title="Deprecation Notice">
 
-The Cache Module is deprecated starting from [Medusa v2.11.0](https://github.com/medusajs/medusa/releases/tag/v2.11.0). [Create a Caching Module Provider](#) instead.
+The Cache Module is deprecated starting from [Switchyard v2.11.0](https://github.com/switchyard/medusa/releases/tag/v2.11.0). [Create a Caching Module Provider](#) instead.
 
 </Note>
 
@@ -32,10 +32,10 @@ Start by creating a new directory for your module. For example, `src/modules/my-
 
 Create the file `src/modules/my-cache/service.ts` that holds the implementation of the cache service.
 
-The Cache Module's main service must implement the `ICacheService` interface imported from `@medusajs/framework/types`:
+The Cache Module's main service must implement the `ICacheService` interface imported from `@switchyard/framework/types`:
 
 ```ts title="src/modules/my-cache/service.ts"
-import { ICacheService } from "@medusajs/framework/types"
+import { ICacheService } from "@switchyard/framework/types"
 
 class MyCacheService implements ICacheService {
   get<T>(key: string): Promise<T> {
@@ -151,7 +151,7 @@ Create the file `src/modules/my-cache/index.ts` with the following content:
 
 ```ts title="src/modules/my-cache/index.ts"
 import MyCacheService from "./service"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export default Module("my-cache", {
   service: MyCacheService,
@@ -164,12 +164,12 @@ This exports the module's definition, indicating that the `MyCacheService` is th
 
 ## 4. Use Module
 
-To use your Cache Module, add it to the `modules` object exported as part of the configurations in `medusa-config.ts`. A Cache Module is added under the `cacheService` key.
+To use your Cache Module, add it to the `modules` object exported as part of the configurations in `switchyard.config.ts`. A Cache Module is added under the `cacheService` key.
 
 For example:
 
-```ts title="medusa-config.ts"
-import { Modules } from "@medusajs/framework/utils"
+```ts title="switchyard.config.ts"
+import { Modules } from "@switchyard/framework/utils"
 
 // ...
 

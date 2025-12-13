@@ -125,7 +125,7 @@ const customOptions: Record<string, Partial<TypeDocOptions>> = {
   medusa: getOptions({
     entryPointPath: "packages/medusa/src/index.ts",
     tsConfigName: "medusa.json",
-    name: "medusa",
+    name: "switchyard",
     jsonFileName: "0-medusa",
     enableInternalResolve: true,
     exclude: [
@@ -144,7 +144,7 @@ const customOptions: Record<string, Partial<TypeDocOptions>> = {
       "**/services/*.ts",
       "**/strategies/**",
       "**/subscribers/*.ts",
-      `${path.join(rootPathPrefix, "packages", "medusa", "src", "utils")}/**`,
+      `${path.join(rootPathPrefix, "packages", "switchyard", "src", "utils")}/**`,
       "**/joiner-config.ts",
       "**/modules-config.ts",
     ],

@@ -1,14 +1,14 @@
-import { emitEventStep } from "@medusajs/core-flows"
-import { Modules, TransactionState } from "@medusajs/framework/utils"
+import { emitEventStep } from "@switchyard/core-flows"
+import { Modules, TransactionState } from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IEventBusModuleService } from "@medusajs/types"
+} from "@switchyard/framework/workflows-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IEventBusModuleService } from "@switchyard/types"
 import {
   adminHeaders,
   createAdminUser,

@@ -2,7 +2,7 @@ import {
   IAnalyticsProvider,
   ProviderIdentifyAnalyticsEventDTO,
   ProviderTrackAnalyticsEventDTO,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 /**
  * ### constructor
@@ -15,8 +15,8 @@ import {
  * #### Example
  *
  * ```ts
- * import { Logger } from "@medusajs/framework/types"
- * import { AbstractAnalyticsProviderService } from "@medusajs/framework/utils"
+ * import { Logger } from "@switchyard/framework/types"
+ * import { AbstractAnalyticsProviderService } from "@switchyard/framework/utils"
  *
  * type InjectedDependencies = {
  *   logger: Logger
@@ -54,7 +54,7 @@ export class AbstractAnalyticsProviderService implements IAnalyticsProvider {
   /**
    * Each analytics provider has a unique ID used to identify it. The provider's ID
    * will be stored as `aly_{identifier}_{id}`, where `{id}` is the provider's `id`
-   * property in the `medusa-config.ts`.
+   * property in the `switchyard.config.ts`.
    *
    * @example
    * class MyAnalyticsProviderService extends AbstractAnalyticsProviderService {
@@ -73,7 +73,7 @@ export class AbstractAnalyticsProviderService implements IAnalyticsProvider {
 
   /**
    * This method tracks an event with the third-party analytics provider. The Analytics Module
-   * will use this method in its `track` method if your provider is configured in `medusa-config.ts`.
+   * will use this method in its `track` method if your provider is configured in `switchyard.config.ts`.
    * 
    * You can send the event to the third-party provider based on its semantics.
    *
@@ -99,7 +99,7 @@ export class AbstractAnalyticsProviderService implements IAnalyticsProvider {
 
   /**
    * This method identifies an actor or group in the third-party analytics provider. The Analytics Module
-   * will use this method in its `identify` method if your provider is configured in `medusa-config.ts`.
+   * will use this method in its `identify` method if your provider is configured in `switchyard.config.ts`.
    *
    * @param {ProviderIdentifyAnalyticsEventDTO} data - The details of the actor or group.
    * @returns {Promise<void>} Resolves when the actor or group is identified successfully.

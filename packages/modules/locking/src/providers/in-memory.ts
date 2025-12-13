@@ -1,5 +1,5 @@
-import { ILockingProvider } from "@medusajs/framework/types"
-import { isDefined } from "@medusajs/framework/utils"
+import { ILockingProvider } from "@switchyard/framework/types"
+import { isDefined } from "@switchyard/framework/utils"
 
 type LockInfo = {
   ownerId: string | null

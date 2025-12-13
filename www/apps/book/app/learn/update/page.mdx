@@ -1,32 +1,32 @@
 import { config } from "../../../config/index"
 
 export const metadata = {
-  title: `${pageNumber} Updating Medusa`,
+  title: `${pageNumber} Updating Switchyard`,
 }
 
 # {metadata.title}
 
-In this chapter, you'll learn about updating your Medusa application and packages.
+In this chapter, you'll learn about updating your Switchyard application and packages.
 
 export const releaseNoteText = `Read the [Release Notes](${config.version.releaseUrl}).`
 
 <Note type="soon" title="Tip">
 
-Medusa's current version is v{config.version.number}. {releaseNoteText}
+Switchyard's current version is v{config.version.number}. {releaseNoteText}
 
 </Note>
 
-## Medusa Versioning
+## Switchyard Versioning
 
-When Medusa puts out a new release, all packages are updated to the same version. This ensures that all packages are compatible with each other, and makes it easier for you to switch between versions.
+When Switchyard puts out a new release, all packages are updated to the same version. This ensures that all packages are compatible with each other, and makes it easier for you to switch between versions.
 
 <Note>
 
-This doesn't apply to the design-system packages, including `@medusajs/ui`, `@medusajs/ui-presets`, and `@medusajs/ui-icons`. These packages are versioned independently. However, you don't need to install and manage them separately in your Medusa application, as they are included in the `@medusajs/admin-sdk`. If you're using them in a standalone project, such as a storefront or custom admin dashboard, refer to [this section in the Medusa UI documentation](!ui!/installation/standalone-project#updating-ui-packages) for update instructions.
+This doesn't apply to the design-system packages, including `@switchyard/ui`, `@switchyard/ui-presets`, and `@switchyard/ui-icons`. These packages are versioned independently. However, you don't need to install and manage them separately in your Switchyard application, as they are included in the `@switchyard/admin-sdk`. If you're using them in a standalone project, such as a storefront or custom admin dashboard, refer to [this section in the Switchyard UI documentation](!ui!/installation/standalone-project#updating-ui-packages) for update instructions.
 
 </Note>
 
-Medusa updates the version number `major.minor.patch` according to the following rules:
+Switchyard updates the version number `major.minor.patch` according to the following rules:
 
 - **patch**: A patch release includes bug fixes and minor improvements. It doesn't include breaking changes. For example, if the current version is `2.0.0`, the next patch release will be `2.0.1`.
 - **minor**: A minor release includes new features, fixes, improvements, and breaking changes. For example, if the current version is `2.0.0`, the next minor release will be `2.1.0`.
@@ -36,44 +36,44 @@ Medusa updates the version number `major.minor.patch` according to the following
 
 ## Check Installed Version
 
-To check the currently installed version of Medusa in your project, run the following command in your Medusa application:
+To check the currently installed version of Switchyard in your project, run the following command in your Switchyard application:
 
 ```bash
-npx medusa -v
+npx switchyard -v
 ```
 
-This will show you the installed version of Medusa and the [Medusa CLI tool](!resources!/medusa-cli), which should be the same.
+This will show you the installed version of Switchyard and the [Switchyard CLI tool](!resources!/switchyard-cli), which should be the same.
 
 ---
 
 ## Check Latest Version
 
-The documentation shows the current version at the top right of the navigation bar. When a new version is released, you'll find a blue dot on the version number. Clicking it will take you to the [release notes on GitHub](https://github.com/medusajs/medusa/releases).
+The documentation shows the current version at the top right of the navigation bar. When a new version is released, you'll find a blue dot on the version number. Clicking it will take you to the [release notes on GitHub](https://github.com/switchyard/medusa/releases).
 
-You can also star the [Medusa repository on GitHub](https://github.com/medusajs/medusa) to receive updates about new releases on your GitHub dashboard. Our team also shares updates on new releases on our social media channels.
+You can also star the [Switchyard repository on GitHub](https://github.com/switchyard/medusa) to receive updates about new releases on your GitHub dashboard. Our team also shares updates on new releases on our social media channels.
 
 ---
 
-## Update Medusa Application
+## Update Switchyard Application
 
-Before updating a Medusa application, make sure to check the [release notes](https://github.com/medusajs/medusa/releases) for any breaking changes that require actions from your side.
+Before updating a Switchyard application, make sure to check the [release notes](https://github.com/switchyard/medusa/releases) for any breaking changes that require actions from your side.
 
-Then, to update your Medusa application, bump the version of all `@medusajs/*` dependencies in your `package.json`. Then, re-install dependencies:
+Then, to update your Switchyard application, bump the version of all `@switchyard/*` dependencies in your `package.json`. Then, re-install dependencies:
 
 ```bash npm2yarn
 npm install
 ```
 
-This will update all Medusa packages to the latest version.
+This will update all Switchyard packages to the latest version.
 
 ### Running Migrations
 
 Releases may include changes to the database, such as new tables, updates to existing tables, updates after adding links, or data migration scripts.
 
-So, after updating Medusa, run the following command to migrate the latest changes to your database:
+So, after updating Switchyard, run the following command to migrate the latest changes to your database:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 This will run all pending migrations, sync links, and run data migration scripts.
@@ -85,10 +85,10 @@ Before reverting an update, if you already ran the migrations, you have to first
 For example, if the version you updated to had migrations for the Cart and Product Modules, run the following command:
 
 ```bash
-npx medusa db:rollback cart product
+npx switchyard db:rollback cart product
 ```
 
-Then, revert the update by changing the version of all `@medusajs/*` dependencies in your `package.json` to the previous version and re-installing dependencies:
+Then, revert the update by changing the version of all `@switchyard/*` dependencies in your `package.json` to the previous version and re-installing dependencies:
 
 ```bash npm2yarn
 npm  install
@@ -97,14 +97,14 @@ npm  install
 Finally, run the migrations to sync link changes:
 
 ```bash
-npx medusa db:migrate
+npx switchyard db:migrate
 ```
 
 ---
 
 ## Understanding Codebase Changes
 
-In the Medusa codebase, our team uses the following [TSDoc](https://tsdoc.org/) tags to indicate changes made in the latest version for a specific piece of code:
+In the Switchyard codebase, our team uses the following [TSDoc](https://tsdoc.org/) tags to indicate changes made in the latest version for a specific piece of code:
 
 - `@deprecated`: Indicates that a piece of code is deprecated and will be removed in a future version. The tag's message will include details on what to use instead. However, our updates are always backward-compatible, allowing you to update your codebase at your own pace.
 - `@since`: Indicates the version when a piece of code was available from. A piece of code that has this tag will only be available starting from the specified version.
@@ -113,7 +113,7 @@ In the Medusa codebase, our team uses the following [TSDoc](https://tsdoc.org/) 
 
 ## Update Plugin Project
 
-If you have a Medusa plugin project, you only need to update its `@medusajs/*` dependencies in the `package.json` file to the latest version. Then, re-install dependencies:
+If you have a Switchyard plugin project, you only need to update its `@switchyard/*` dependencies in the `package.json` file to the latest version. Then, re-install dependencies:
 
 ```bash npm2yarn
 npm  install

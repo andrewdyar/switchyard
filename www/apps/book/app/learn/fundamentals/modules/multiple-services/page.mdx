@@ -56,7 +56,7 @@ type InjectedDependencies = {
   clientService: ClientService
 }
 
-class BlogModuleService extends MedusaService({
+class BlogModuleService extends SwitchyardService({
   Post,
 }){
   protected clientService_: ClientService
@@ -79,7 +79,7 @@ Resolve dependencies from your module's container in the constructor of your int
 For example:
 
 ```ts
-import { Logger } from "@medusajs/framework/types"
+import { Logger } from "@switchyard/framework/types"
 
 type InjectedDependencies = {
   logger: Logger
@@ -100,12 +100,12 @@ export class ClientService {
 
 Your internal service can't access the module's options.
 
-To retrieve the module's options, use the `configModule` registered in the module's container, which is the configurations in `medusa-config.ts`.
+To retrieve the module's options, use the `configModule` registered in the module's container, which is the configurations in `switchyard.config.ts`.
 
 For example:
 
 ```ts
-import { ConfigModule } from "@medusajs/framework/types"
+import { ConfigModule } from "@switchyard/framework/types"
 import { BLOG_MODULE } from ".."
 
 export type InjectedDependencies = {

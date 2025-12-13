@@ -1,9 +1,9 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IFulfillmentModuleService,
   IPricingModuleService,
-} from "@medusajs/types"
-import { ContainerRegistrationKeys, Modules } from "@medusajs/utils"
+} from "@switchyard/types"
+import { ContainerRegistrationKeys, Modules } from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,

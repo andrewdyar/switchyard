@@ -1,5 +1,5 @@
-import { Modules } from "@medusajs/framework/utils"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { Modules } from "@switchyard/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import { evaluateRuleValueCondition } from "../../../../src/utils/validations/promotion-rule"
 
 moduleIntegrationTestRunner({

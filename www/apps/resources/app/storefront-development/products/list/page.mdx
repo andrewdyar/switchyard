@@ -37,7 +37,7 @@ export const highlights = [
   "use client" // include with Next.js 13+
 
   import { useEffect, useState } from "react"
-  import { HttpTypes } from "@medusajs/types"
+  import { HttpTypes } from "@switchyard/types"
 
   export default function Products() {
     const [loading, setLoading] = useState(true)
@@ -104,7 +104,7 @@ For example:
 
 export const paginateHighlights = [
   ["21", "offset", "Calculate the number of products to skip based on the current page and limit."],
-  ["27", "count", "The total number of products in the Medusa application."],
+  ["27", "count", "The total number of products in the Switchyard application."],
   ["38", "setHasMorePages", "Set whether there are more pages based on the total count."],
   ["55", "button", "Show a button to load more products if there are more pages."]
 ]
@@ -113,7 +113,7 @@ export const paginateHighlights = [
 "use client" // include with Next.js 13+
 
 import { useEffect, useState } from "react"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { sdk } from "@/lib/sdk"
 
 export default function Products() {

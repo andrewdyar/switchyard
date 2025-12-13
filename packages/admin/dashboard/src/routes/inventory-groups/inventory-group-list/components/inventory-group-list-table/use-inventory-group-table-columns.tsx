@@ -1,5 +1,5 @@
-import { TriangleRightMini } from "@medusajs/icons"
-import { IconButton, clx } from "@medusajs/ui"
+import { TriangleRightMini } from "@switchyard/icons"
+import { IconButton, clx } from "@switchyard/ui"
 import { createColumnHelper } from "@tanstack/react-table"
 import { useMemo } from "react"
 import { useTranslation } from "react-i18next"

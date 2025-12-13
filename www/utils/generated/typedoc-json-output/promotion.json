@@ -94,7 +94,7 @@
 										"type": "reference",
 										"target": 13820,
 										"name": "FindConfigOrder",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -188,7 +188,7 @@
 										"type": "reference",
 										"target": 13602,
 										"name": "Entity",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"qualifiedName": "FindConfig.Entity",
 										"refersToTypeParameter": true
 									}
@@ -283,7 +283,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead."
+								"text": "An array of strings, each being relation names of the entity to retrieve in the result.\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead."
 							}
 						]
 					},
@@ -345,7 +345,7 @@
 						"type": "reference",
 						"target": 13820,
 						"name": "FindConfigOrder",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -554,19 +554,19 @@
 											"type": "reference",
 											"target": 13797,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 13797,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -610,19 +610,19 @@
 											"type": "reference",
 											"target": 13797,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"qualifiedName": "BaseFilterable.T",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
 									"target": 13797,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"qualifiedName": "BaseFilterable.T",
 									"refersToTypeParameter": true
 								}
@@ -718,7 +718,7 @@
 							"type": "reference",
 							"target": 13605,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -797,7 +797,7 @@
 							"type": "reference",
 							"target": 13608,
 							"name": "TReturnableLinkableKeys",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					}
@@ -860,7 +860,7 @@
 					"type": "reference",
 					"target": 13918,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -873,14 +873,14 @@
 						"type": "reference",
 						"target": 13918,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
 						"type": "reference",
 						"target": 13952,
 						"name": "Scalar",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"trueType": {
 						"type": "intrinsic",
@@ -894,12 +894,12 @@
 								"type": "reference",
 								"target": 13918,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQuery",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				"falseType": {
@@ -910,12 +910,12 @@
 							"type": "reference",
 							"target": 13918,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
 					"name": "FilterValue",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			}
 		},
@@ -954,7 +954,7 @@
 							"type": "reference",
 							"target": 13920,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"extendsType": {
@@ -985,7 +985,7 @@
 								"type": "reference",
 								"target": 13920,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -1019,7 +1019,7 @@
 								"type": "reference",
 								"target": 13920,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -1183,7 +1183,7 @@
 					"type": "reference",
 					"target": 13991,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1204,7 +1204,7 @@
 							"type": "reference",
 							"target": 13991,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
@@ -1215,7 +1215,7 @@
 					"type": "reference",
 					"target": 13991,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				}
 			}
@@ -1248,7 +1248,7 @@
 					"type": "reference",
 					"target": 13989,
 					"name": "T",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -1309,12 +1309,12 @@
 								"qualifiedName": "PK"
 							},
 							"name": "PK",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					],
 					"name": "ReadonlyPrimary",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				},
 				"falseType": {
 					"type": "conditional",
@@ -1322,7 +1322,7 @@
 						"type": "reference",
 						"target": 13989,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
@@ -1386,12 +1386,12 @@
 											"qualifiedName": "PK"
 										},
 										"name": "PK",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ReadonlyPrimary",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "intrinsic",
@@ -1405,7 +1405,7 @@
 							"type": "reference",
 							"target": 13989,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"extendsType": {
@@ -1466,12 +1466,12 @@
 										"qualifiedName": "PK"
 									},
 									"name": "PK",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							],
 							"name": "ReadonlyPrimary",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						},
 						"falseType": {
 							"type": "conditional",
@@ -1479,7 +1479,7 @@
 								"type": "reference",
 								"target": 13989,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -1540,12 +1540,12 @@
 											"qualifiedName": "PK"
 										},
 										"name": "PK",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ReadonlyPrimary",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							"falseType": {
 								"type": "intrinsic",
@@ -1612,12 +1612,12 @@
 											"type": "reference",
 											"target": 13819,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "Query",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1646,12 +1646,12 @@
 											"type": "reference",
 											"target": 13819,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "Query",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1681,12 +1681,12 @@
 												"type": "reference",
 												"target": 13819,
 												"name": "T",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "ExpandScalar",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "array",
@@ -1698,12 +1698,12 @@
 													"type": "reference",
 													"target": 13819,
 													"name": "T",
-													"package": "@medusajs/types",
+													"package": "@switchyard/types",
 													"refersToTypeParameter": true
 												}
 											],
 											"name": "ExpandScalar",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								]
@@ -1732,12 +1732,12 @@
 										"type": "reference",
 										"target": 13819,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1765,12 +1765,12 @@
 											"type": "reference",
 											"target": 13819,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "ExpandScalar",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1799,12 +1799,12 @@
 											"type": "reference",
 											"target": 13819,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									],
 									"name": "ExpandScalar",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						},
@@ -1831,12 +1831,12 @@
 										"type": "reference",
 										"target": 13819,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "Query",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1862,12 +1862,12 @@
 										"type": "reference",
 										"target": 13819,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1893,12 +1893,12 @@
 										"type": "reference",
 										"target": 13819,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1924,12 +1924,12 @@
 										"type": "reference",
 										"target": 13819,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -1955,12 +1955,12 @@
 										"type": "reference",
 										"target": 13819,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "ExpandScalar",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -2198,7 +2198,7 @@
 						"type": "reference",
 						"target": 13978,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					{
@@ -2209,12 +2209,12 @@
 								"type": "reference",
 								"target": 13978,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "ExpandScalar",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
@@ -2224,12 +2224,12 @@
 								"type": "reference",
 								"target": 13978,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Primary",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -2271,16 +2271,16 @@
 										"type": "reference",
 										"target": 13960,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									}
 								],
 								"name": "FilterValue2",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						],
 						"name": "OperatorMap",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
@@ -2290,12 +2290,12 @@
 								"type": "reference",
 								"target": 13960,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterValue2",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "array",
@@ -2307,12 +2307,12 @@
 									"type": "reference",
 									"target": 13960,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							],
 							"name": "FilterValue2",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					},
 					{
@@ -2404,7 +2404,7 @@
 						"type": "reference",
 						"target": 13975,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -2419,14 +2419,14 @@
 								"qualifiedName": "Key"
 							},
 							"name": "Key",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						},
 						"objectType": {
 							"type": "reference",
 							"target": 13975,
 							"name": "T",
-							"package": "@medusajs/types",
+							"package": "@switchyard/types",
 							"refersToTypeParameter": true
 						}
 					},
@@ -2476,14 +2476,14 @@
 										"qualifiedName": "Key"
 									},
 									"name": "Key",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								},
 								"objectType": {
 									"type": "reference",
 									"target": 13975,
 									"name": "T",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								}
 							},
@@ -2500,20 +2500,20 @@
 												"qualifiedName": "Key"
 											},
 											"name": "Key",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										},
 										"objectType": {
 											"type": "reference",
 											"target": 13975,
 											"name": "T",
-											"package": "@medusajs/types",
+											"package": "@switchyard/types",
 											"refersToTypeParameter": true
 										}
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					},
@@ -2528,14 +2528,14 @@
 									"qualifiedName": "Key"
 								},
 								"name": "Key",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"objectType": {
 								"type": "reference",
 								"target": 13975,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -2552,7 +2552,7 @@
 									"qualifiedName": "U"
 								},
 								"name": "U",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							"extendsType": {
@@ -2604,7 +2604,7 @@
 													"qualifiedName": "V"
 												},
 												"name": "V",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										}
@@ -2620,7 +2620,7 @@
 										"qualifiedName": "V"
 									},
 									"name": "V",
-									"package": "@medusajs/types",
+									"package": "@switchyard/types",
 									"refersToTypeParameter": true
 								},
 								"extendsType": {
@@ -2645,7 +2645,7 @@
 														"qualifiedName": "V"
 													},
 													"name": "V",
-													"package": "@medusajs/types",
+													"package": "@switchyard/types",
 													"refersToTypeParameter": true
 												}
 											],
@@ -2658,19 +2658,19 @@
 												"type": "reference",
 												"target": 13976,
 												"name": "Prev",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											},
 											"objectType": {
 												"type": "reference",
 												"target": 13979,
 												"name": "PrevLimit",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										}
 									],
 									"name": "FilterQuery",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								"falseType": {
 									"type": "intrinsic",
@@ -2738,7 +2738,7 @@
 					"type": "reference",
 					"target": 13958,
 					"name": "Prev",
-					"package": "@medusajs/types",
+					"package": "@switchyard/types",
 					"refersToTypeParameter": true
 				},
 				"extendsType": {
@@ -2755,7 +2755,7 @@
 						"type": "reference",
 						"target": 13957,
 						"name": "T",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					},
 					"extendsType": {
@@ -2768,7 +2768,7 @@
 							}
 						],
 						"name": "Constructor",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"trueType": {
 						"type": "reference",
@@ -2781,19 +2781,19 @@
 									"qualifiedName": "Prototype"
 								},
 								"name": "Prototype",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							{
 								"type": "reference",
 								"target": 13958,
 								"name": "Prev",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQueryProperties",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					"falseType": {
 						"type": "reference",
@@ -2803,19 +2803,19 @@
 								"type": "reference",
 								"target": 13957,
 								"name": "T",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							},
 							{
 								"type": "reference",
 								"target": 13958,
 								"name": "Prev",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "FilterQueryProperties",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			}
@@ -3020,7 +3020,7 @@
 								"type": "reference",
 								"target": 13961,
 								"name": "EventMetadata",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -3048,7 +3048,7 @@
 								"type": "reference",
 								"target": 13951,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						}
@@ -3118,12 +3118,12 @@
 								"type": "reference",
 								"target": 13899,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						],
 						"name": "Event",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -3260,7 +3260,7 @@
 								"type": "reference",
 								"target": 13916,
 								"name": "TData",
-								"package": "@medusajs/types",
+								"package": "@switchyard/types",
 								"refersToTypeParameter": true
 							}
 						},
@@ -3346,7 +3346,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									},
 									{
 										"type": "literal",
@@ -3854,7 +3854,7 @@
 								"type": "reference",
 								"target": 13931,
 								"name": "JoinerServiceConfigAlias",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "array",
@@ -3862,7 +3862,7 @@
 									"type": "reference",
 									"target": 13931,
 									"name": "JoinerServiceConfigAlias",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							}
 						]
@@ -4025,7 +4025,7 @@
 							"type": "reference",
 							"target": 13936,
 							"name": "JoinerRelationship",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -4110,7 +4110,7 @@
 											"type": "reference",
 											"target": 13936,
 											"name": "JoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -4270,7 +4270,7 @@
 										"type": "reference",
 										"target": 13970,
 										"name": "T",
-										"package": "@medusajs/types",
+										"package": "@switchyard/types",
 										"refersToTypeParameter": true
 									},
 									{
@@ -4299,7 +4299,7 @@
 														"type": "reference",
 														"target": 13970,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												}
@@ -4585,7 +4585,7 @@
 								"type": "reference",
 								"target": 13849,
 								"name": "JoinerServiceConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "union",
@@ -4705,7 +4705,7 @@
 											"type": "reference",
 											"target": 13864,
 											"name": "ModuleJoinerRelationship",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -4927,7 +4927,7 @@
 																	"type": "reference",
 																	"target": 13864,
 																	"name": "ModuleJoinerRelationship",
-																	"package": "@medusajs/types"
+																	"package": "@switchyard/types"
 																},
 																{
 																	"type": "literal",
@@ -5233,7 +5233,7 @@
 														"type": "reference",
 														"target": 13869,
 														"name": "LinkModulesExtraFields",
-														"package": "@medusajs/types"
+														"package": "@switchyard/types"
 													}
 												}
 											],
@@ -5308,7 +5308,7 @@
 						"type": "reference",
 						"target": 13936,
 						"name": "JoinerRelationship",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reflection",
@@ -5475,7 +5475,7 @@
 								"type": "reference",
 								"target": 13666,
 								"name": "ModuleJoinerConfig",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						}
 					]
@@ -5930,7 +5930,7 @@
 						"type": "reference",
 						"target": 13893,
 						"name": "ApplicationMethodTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -5960,7 +5960,7 @@
 						"type": "reference",
 						"target": 13894,
 						"name": "ApplicationMethodTargetTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -5990,7 +5990,7 @@
 						"type": "reference",
 						"target": 13895,
 						"name": "ApplicationMethodAllocationValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6234,7 +6234,7 @@
 								"type": "reference",
 								"target": 13558,
 								"name": "PromotionDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -6268,7 +6268,7 @@
 							"type": "reference",
 							"target": 13614,
 							"name": "PromotionRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -6301,7 +6301,7 @@
 							"type": "reference",
 							"target": 13614,
 							"name": "PromotionRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -6373,7 +6373,7 @@
 						"type": "reference",
 						"target": 13893,
 						"name": "ApplicationMethodTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6401,7 +6401,7 @@
 						"type": "reference",
 						"target": 13894,
 						"name": "ApplicationMethodTargetTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6431,7 +6431,7 @@
 						"type": "reference",
 						"target": 13895,
 						"name": "ApplicationMethodAllocationValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6675,7 +6675,7 @@
 								"type": "reference",
 								"target": 13558,
 								"name": "PromotionDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -6709,7 +6709,7 @@
 							"type": "reference",
 							"target": 13609,
 							"name": "CreatePromotionRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -6742,7 +6742,7 @@
 							"type": "reference",
 							"target": 13609,
 							"name": "CreatePromotionRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -6843,7 +6843,7 @@
 						"type": "reference",
 						"target": 13893,
 						"name": "ApplicationMethodTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6873,7 +6873,7 @@
 						"type": "reference",
 						"target": 13894,
 						"name": "ApplicationMethodTargetTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -6903,7 +6903,7 @@
 						"type": "reference",
 						"target": 13895,
 						"name": "ApplicationMethodAllocationValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7147,7 +7147,7 @@
 								"type": "reference",
 								"target": 13558,
 								"name": "PromotionDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -7321,7 +7321,7 @@
 						"type": "reference",
 						"target": 13921,
 						"name": "CampaignBudgetTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7553,7 +7553,7 @@
 							"type": "reference",
 							"target": 13922,
 							"name": "CampaignBudgetUsageDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -7798,7 +7798,7 @@
 						"type": "reference",
 						"target": 13835,
 						"name": "CampaignBudgetDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -7830,7 +7830,7 @@
 							"type": "reference",
 							"target": 13558,
 							"name": "PromotionDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -7906,7 +7906,7 @@
 									"type": "reference",
 									"target": 13654,
 									"name": "FilterableCampaignProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -7916,11 +7916,11 @@
 											"type": "reference",
 											"target": 13654,
 											"name": "FilterableCampaignProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -7964,7 +7964,7 @@
 									"type": "reference",
 									"target": 13654,
 									"name": "FilterableCampaignProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -7974,11 +7974,11 @@
 											"type": "reference",
 											"target": 13654,
 											"name": "FilterableCampaignProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -8108,11 +8108,11 @@
 							"type": "reference",
 							"target": 13654,
 							"name": "FilterableCampaignProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -8561,37 +8561,37 @@
 						"type": "reference",
 						"target": 13712,
 						"name": "AddItemAdjustmentAction",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
 						"target": 13719,
 						"name": "RemoveItemAdjustmentAction",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
 						"target": 13725,
 						"name": "AddShippingMethodAdjustment",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
 						"target": 13731,
 						"name": "RemoveShippingMethodAdjustment",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
 						"target": 13736,
 						"name": "CampaignBudgetExceededAction",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "reference",
 						"target": 13739,
 						"name": "PromotionLimitExceededAction",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -8651,7 +8651,7 @@
 								"type": "reference",
 								"target": 13692,
 								"name": "BigNumberInput",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						},
 						{
@@ -8962,7 +8962,7 @@
 						"type": "reference",
 						"target": 13692,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9329,7 +9329,7 @@
 						"type": "reference",
 						"target": 13692,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9744,7 +9744,7 @@
 						"type": "reference",
 						"target": 13692,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9772,7 +9772,7 @@
 						"type": "reference",
 						"target": 13692,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9800,7 +9800,7 @@
 						"type": "reference",
 						"target": 13692,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -9858,7 +9858,7 @@
 							"type": "reference",
 							"target": 13888,
 							"name": "ComputeActionAdjustmentLine",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -10067,7 +10067,7 @@
 						"type": "reference",
 						"target": 13692,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10095,7 +10095,7 @@
 						"type": "reference",
 						"target": 13692,
 						"name": "BigNumberInput",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10127,7 +10127,7 @@
 							"type": "reference",
 							"target": 13888,
 							"name": "ComputeActionAdjustmentLine",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -10307,7 +10307,7 @@
 							"type": "reference",
 							"target": 13693,
 							"name": "ComputeActionItemLine",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -10340,7 +10340,7 @@
 							"type": "reference",
 							"target": 13705,
 							"name": "ComputeActionShippingLine",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -10686,7 +10686,7 @@
 						"type": "reference",
 						"target": 13825,
 						"name": "PromotionRuleOperatorValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -10716,7 +10716,7 @@
 							"type": "reference",
 							"target": 13826,
 							"name": "PromotionRuleValueDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				}
@@ -10844,7 +10844,7 @@
 						"type": "reference",
 						"target": 13825,
 						"name": "PromotionRuleOperatorValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -11046,7 +11046,7 @@
 						"type": "reference",
 						"target": 13825,
 						"name": "PromotionRuleOperatorValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -11166,7 +11166,7 @@
 									"type": "reference",
 									"target": 13644,
 									"name": "FilterablePromotionRuleProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -11176,11 +11176,11 @@
 											"type": "reference",
 											"target": 13644,
 											"name": "FilterablePromotionRuleProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -11224,7 +11224,7 @@
 									"type": "reference",
 									"target": 13644,
 									"name": "FilterablePromotionRuleProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -11234,11 +11234,11 @@
 											"type": "reference",
 											"target": 13644,
 											"name": "FilterablePromotionRuleProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -11307,11 +11307,11 @@
 							"type": "reference",
 							"target": 13644,
 							"name": "FilterablePromotionRuleProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -11501,7 +11501,7 @@
 						"type": "reference",
 						"target": 13742,
 						"name": "PromotionTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -11555,7 +11555,7 @@
 						"type": "reference",
 						"target": 13743,
 						"name": "PromotionStatusValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -11706,7 +11706,7 @@
 						"type": "reference",
 						"target": 13770,
 						"name": "ApplicationMethodDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -11738,7 +11738,7 @@
 							"type": "reference",
 							"target": 13614,
 							"name": "PromotionRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -11806,7 +11806,7 @@
 						"type": "reference",
 						"target": 13627,
 						"name": "CampaignDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -11919,7 +11919,7 @@
 						"type": "reference",
 						"target": 13742,
 						"name": "PromotionTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -11971,7 +11971,7 @@
 						"type": "reference",
 						"target": 13743,
 						"name": "PromotionStatusValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12092,7 +12092,7 @@
 						"type": "reference",
 						"target": 13744,
 						"name": "CreateApplicationMethodDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12124,7 +12124,7 @@
 							"type": "reference",
 							"target": 13609,
 							"name": "CreatePromotionRuleDTO",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -12155,7 +12155,7 @@
 						"type": "reference",
 						"target": 13620,
 						"name": "CreateCampaignDTO",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12336,7 +12336,7 @@
 						"type": "reference",
 						"target": 13742,
 						"name": "PromotionTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12455,7 +12455,7 @@
 						"type": "reference",
 						"target": 13743,
 						"name": "PromotionStatusValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -12492,7 +12492,7 @@
 								"type": "reference",
 								"target": 13783,
 								"name": "UpdateApplicationMethodDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "literal",
@@ -12613,7 +12613,7 @@
 									"type": "reference",
 									"target": 13581,
 									"name": "FilterablePromotionProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -12623,11 +12623,11 @@
 											"type": "reference",
 											"target": 13581,
 											"name": "FilterablePromotionProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -12671,7 +12671,7 @@
 									"type": "reference",
 									"target": 13581,
 									"name": "FilterablePromotionProps",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								},
 								{
 									"type": "reference",
@@ -12681,11 +12681,11 @@
 											"type": "reference",
 											"target": 13581,
 											"name": "FilterablePromotionProps",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									],
 									"name": "BaseFilterable",
-									"package": "@medusajs/types"
+									"package": "@switchyard/types"
 								}
 							]
 						}
@@ -12811,7 +12811,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -12859,7 +12859,7 @@
 									}
 								],
 								"name": "OperatorMap",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -12921,7 +12921,7 @@
 							"type": "reference",
 							"target": 13742,
 							"name": "PromotionTypeValues",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -12954,7 +12954,7 @@
 							"type": "reference",
 							"target": 13743,
 							"name": "PromotionStatusValues",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					}
 				},
@@ -12985,7 +12985,7 @@
 						"type": "reference",
 						"target": 13654,
 						"name": "FilterableCampaignProps",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				}
 			],
@@ -13022,11 +13022,11 @@
 							"type": "reference",
 							"target": 13581,
 							"name": "FilterablePromotionProps",
-							"package": "@medusajs/types"
+							"package": "@switchyard/types"
 						}
 					],
 					"name": "BaseFilterable",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -13072,7 +13072,7 @@
 						"type": "reference",
 						"target": 13921,
 						"name": "CampaignBudgetTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13339,7 +13339,7 @@
 						"type": "reference",
 						"target": 13921,
 						"name": "CampaignBudgetTypeValues",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -13687,7 +13687,7 @@
 								"type": "reference",
 								"target": 13829,
 								"name": "CreateCampaignBudgetDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							}
 						]
 					}
@@ -13966,7 +13966,7 @@
 								"type": "reference",
 								"target": 13843,
 								"name": "UpdateCampaignBudgetDTO",
-								"package": "@medusajs/types"
+								"package": "@switchyard/types"
 							},
 							{
 								"type": "literal",
@@ -14186,7 +14186,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 53,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L53"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L53"
 						}
 					],
 					"signatures": [
@@ -14245,7 +14245,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 53,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L53"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L53"
 								}
 							],
 							"parameters": [
@@ -14269,7 +14269,7 @@
 											"type": "reference",
 											"target": 13514,
 											"name": "UsageComputedActions",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -14291,7 +14291,7 @@
 										"type": "reference",
 										"target": 13518,
 										"name": "CampaignBudgetUsageContext",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14324,7 +14324,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 77,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L77"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L77"
 						}
 					],
 					"signatures": [
@@ -14367,7 +14367,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 77,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L77"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L77"
 								}
 							],
 							"parameters": [
@@ -14391,7 +14391,7 @@
 											"type": "reference",
 											"target": 13514,
 											"name": "UsageComputedActions",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -14413,7 +14413,7 @@
 										"type": "reference",
 										"target": 13518,
 										"name": "CampaignBudgetUsageContext",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14446,7 +14446,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 117,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L117"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L117"
 						}
 					],
 					"signatures": [
@@ -14489,7 +14489,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 117,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L117"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L117"
 								}
 							],
 							"parameters": [
@@ -14533,7 +14533,7 @@
 										"type": "reference",
 										"target": 13522,
 										"name": "ComputeActionContext",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -14586,7 +14586,7 @@
 											"type": "reference",
 											"target": 13529,
 											"name": "ComputeActions",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -14607,13 +14607,13 @@
 							"fileName": "promotion/service.ts",
 							"line": 172,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L172"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L172"
 						},
 						{
 							"fileName": "promotion/service.ts",
 							"line": 226,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L226"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L226"
 						}
 					],
 					"signatures": [
@@ -14656,7 +14656,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 172,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L172"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L172"
 								}
 							],
 							"parameters": [
@@ -14680,7 +14680,7 @@
 											"type": "reference",
 											"target": 13530,
 											"name": "CreatePromotionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -14704,7 +14704,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14721,7 +14721,7 @@
 											"type": "reference",
 											"target": 13558,
 											"name": "PromotionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -14768,7 +14768,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 226,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L226"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L226"
 								}
 							],
 							"parameters": [
@@ -14790,7 +14790,7 @@
 										"type": "reference",
 										"target": 13530,
 										"name": "CreatePromotionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -14813,7 +14813,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14828,7 +14828,7 @@
 										"type": "reference",
 										"target": 13558,
 										"name": "PromotionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -14848,13 +14848,13 @@
 							"fileName": "promotion/service.ts",
 							"line": 246,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L246"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L246"
 						},
 						{
 							"fileName": "promotion/service.ts",
 							"line": 264,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L264"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L264"
 						}
 					],
 					"signatures": [
@@ -14897,7 +14897,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 246,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L246"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L246"
 								}
 							],
 							"parameters": [
@@ -14921,7 +14921,7 @@
 											"type": "reference",
 											"target": 13571,
 											"name": "UpdatePromotionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -14945,7 +14945,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -14962,7 +14962,7 @@
 											"type": "reference",
 											"target": 13558,
 											"name": "PromotionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15009,7 +15009,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 264,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L264"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L264"
 								}
 							],
 							"parameters": [
@@ -15031,7 +15031,7 @@
 										"type": "reference",
 										"target": 13571,
 										"name": "UpdatePromotionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15054,7 +15054,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15069,7 +15069,7 @@
 										"type": "reference",
 										"target": 13558,
 										"name": "PromotionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -15089,7 +15089,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 322,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L322"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L322"
 						}
 					],
 					"signatures": [
@@ -15129,7 +15129,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the promotions:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the promotions:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -15184,7 +15184,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 322,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L322"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L322"
 								}
 							],
 							"parameters": [
@@ -15208,7 +15208,7 @@
 										"type": "reference",
 										"target": 13581,
 										"name": "FilterablePromotionProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15251,11 +15251,11 @@
 												"type": "reference",
 												"target": 13558,
 												"name": "PromotionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15278,7 +15278,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15295,7 +15295,7 @@
 											"type": "reference",
 											"target": 13558,
 											"name": "PromotionDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -15316,7 +15316,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 384,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L384"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L384"
 						}
 					],
 					"signatures": [
@@ -15356,7 +15356,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the promotions:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the promotions:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -15411,7 +15411,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 384,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L384"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L384"
 								}
 							],
 							"parameters": [
@@ -15435,7 +15435,7 @@
 										"type": "reference",
 										"target": 13581,
 										"name": "FilterablePromotionProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15478,11 +15478,11 @@
 												"type": "reference",
 												"target": 13558,
 												"name": "PromotionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15505,7 +15505,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15525,7 +15525,7 @@
 													"type": "reference",
 													"target": 13558,
 													"name": "PromotionDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -15552,7 +15552,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 425,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L425"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L425"
 						}
 					],
 					"signatures": [
@@ -15592,7 +15592,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -15607,7 +15607,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 425,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L425"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L425"
 								}
 							],
 							"parameters": [
@@ -15670,11 +15670,11 @@
 												"type": "reference",
 												"target": 13558,
 												"name": "PromotionDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -15697,7 +15697,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15712,7 +15712,7 @@
 										"type": "reference",
 										"target": 13558,
 										"name": "PromotionDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -15732,13 +15732,13 @@
 							"fileName": "promotion/service.ts",
 							"line": 444,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L444"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L444"
 						},
 						{
 							"fileName": "promotion/service.ts",
 							"line": 456,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L456"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L456"
 						}
 					],
 					"signatures": [
@@ -15781,7 +15781,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 444,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L444"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L444"
 								}
 							],
 							"parameters": [
@@ -15827,7 +15827,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15886,7 +15886,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 456,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L456"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L456"
 								}
 							],
 							"parameters": [
@@ -15929,7 +15929,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -15962,7 +15962,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 473,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L473"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L473"
 						}
 					],
 					"signatures": [
@@ -16021,7 +16021,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 473,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L473"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L473"
 								}
 							],
 							"typeParameters": [
@@ -16097,12 +16097,12 @@
 												"type": "reference",
 												"target": 13378,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16125,7 +16125,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16185,7 +16185,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 496,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L496"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L496"
 						}
 					],
 					"signatures": [
@@ -16244,7 +16244,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 496,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L496"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L496"
 								}
 							],
 							"typeParameters": [
@@ -16336,12 +16336,12 @@
 												"type": "reference",
 												"target": 13384,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -16364,7 +16364,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16424,7 +16424,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 523,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L523"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L523"
 						}
 					],
 					"signatures": [
@@ -16467,7 +16467,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 523,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L523"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L523"
 								}
 							],
 							"parameters": [
@@ -16510,7 +16510,7 @@
 											"type": "reference",
 											"target": 13609,
 											"name": "CreatePromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16534,7 +16534,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16551,7 +16551,7 @@
 											"type": "reference",
 											"target": 13614,
 											"name": "PromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16572,7 +16572,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 550,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L550"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L550"
 						}
 					],
 					"signatures": [
@@ -16615,7 +16615,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 550,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L550"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L550"
 								}
 							],
 							"parameters": [
@@ -16658,7 +16658,7 @@
 											"type": "reference",
 											"target": 13609,
 											"name": "CreatePromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16682,7 +16682,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16699,7 +16699,7 @@
 											"type": "reference",
 											"target": 13614,
 											"name": "PromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16720,7 +16720,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 577,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L577"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L577"
 						}
 					],
 					"signatures": [
@@ -16763,7 +16763,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 577,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L577"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L577"
 								}
 							],
 							"parameters": [
@@ -16806,7 +16806,7 @@
 											"type": "reference",
 											"target": 13609,
 											"name": "CreatePromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -16830,7 +16830,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -16847,7 +16847,7 @@
 											"type": "reference",
 											"target": 13614,
 											"name": "PromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -16868,7 +16868,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 597,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L597"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L597"
 						}
 					],
 					"signatures": [
@@ -16911,7 +16911,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 597,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L597"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L597"
 								}
 							],
 							"parameters": [
@@ -16976,7 +16976,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17009,7 +17009,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 617,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L617"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L617"
 						}
 					],
 					"signatures": [
@@ -17052,7 +17052,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 617,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L617"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L617"
 								}
 							],
 							"parameters": [
@@ -17117,7 +17117,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17150,7 +17150,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 637,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L637"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L637"
 						}
 					],
 					"signatures": [
@@ -17193,7 +17193,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 637,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L637"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L637"
 								}
 							],
 							"parameters": [
@@ -17258,7 +17258,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17291,13 +17291,13 @@
 							"fileName": "promotion/service.ts",
 							"line": 664,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L664"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L664"
 						},
 						{
 							"fileName": "promotion/service.ts",
 							"line": 691,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L691"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L691"
 						}
 					],
 					"signatures": [
@@ -17340,7 +17340,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 664,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L664"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L664"
 								}
 							],
 							"parameters": [
@@ -17362,7 +17362,7 @@
 										"type": "reference",
 										"target": 13620,
 										"name": "CreateCampaignDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17385,7 +17385,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17400,7 +17400,7 @@
 										"type": "reference",
 										"target": 13627,
 										"name": "CampaignDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -17446,7 +17446,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 691,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L691"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L691"
 								}
 							],
 							"parameters": [
@@ -17470,7 +17470,7 @@
 											"type": "reference",
 											"target": 13620,
 											"name": "CreateCampaignDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -17494,7 +17494,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17511,7 +17511,7 @@
 											"type": "reference",
 											"target": 13627,
 											"name": "CampaignDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -17532,13 +17532,13 @@
 							"fileName": "promotion/service.ts",
 							"line": 712,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L712"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L712"
 						},
 						{
 							"fileName": "promotion/service.ts",
 							"line": 731,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L731"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L731"
 						}
 					],
 					"signatures": [
@@ -17581,7 +17581,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 712,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L712"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L712"
 								}
 							],
 							"parameters": [
@@ -17605,7 +17605,7 @@
 											"type": "reference",
 											"target": 13636,
 											"name": "UpdateCampaignDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -17629,7 +17629,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17646,7 +17646,7 @@
 											"type": "reference",
 											"target": 13627,
 											"name": "CampaignDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -17693,7 +17693,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 731,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L731"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L731"
 								}
 							],
 							"parameters": [
@@ -17715,7 +17715,7 @@
 										"type": "reference",
 										"target": 13636,
 										"name": "UpdateCampaignDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17738,7 +17738,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17753,7 +17753,7 @@
 										"type": "reference",
 										"target": 13627,
 										"name": "CampaignDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -17773,7 +17773,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 792,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L792"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L792"
 						}
 					],
 					"signatures": [
@@ -17813,7 +17813,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the promotion rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the promotion rules:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -17868,7 +17868,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 792,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L792"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L792"
 								}
 							],
 							"parameters": [
@@ -17892,7 +17892,7 @@
 										"type": "reference",
 										"target": 13644,
 										"name": "FilterablePromotionRuleProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17935,11 +17935,11 @@
 												"type": "reference",
 												"target": 13614,
 												"name": "PromotionRuleDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -17962,7 +17962,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -17979,7 +17979,7 @@
 											"type": "reference",
 											"target": 13614,
 											"name": "PromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18000,7 +18000,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 814,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L814"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L814"
 						}
 					],
 					"signatures": [
@@ -18043,7 +18043,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 814,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L814"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L814"
 								}
 							],
 							"parameters": [
@@ -18067,7 +18067,7 @@
 											"type": "reference",
 											"target": 13648,
 											"name": "UpdatePromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								},
@@ -18091,7 +18091,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18108,7 +18108,7 @@
 											"type": "reference",
 											"target": 13614,
 											"name": "PromotionRuleDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18129,7 +18129,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 872,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L872"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L872"
 						}
 					],
 					"signatures": [
@@ -18169,7 +18169,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the campaigns:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the campaigns:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18224,7 +18224,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 872,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L872"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L872"
 								}
 							],
 							"parameters": [
@@ -18248,7 +18248,7 @@
 										"type": "reference",
 										"target": 13654,
 										"name": "FilterableCampaignProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18291,11 +18291,11 @@
 												"type": "reference",
 												"target": 13627,
 												"name": "CampaignDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18318,7 +18318,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18335,7 +18335,7 @@
 											"type": "reference",
 											"target": 13627,
 											"name": "CampaignDTO",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -18356,7 +18356,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 934,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L934"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L934"
 						}
 					],
 					"signatures": [
@@ -18396,7 +18396,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved within the campaigns:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved within the campaigns:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18451,7 +18451,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 934,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L934"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L934"
 								}
 							],
 							"parameters": [
@@ -18475,7 +18475,7 @@
 										"type": "reference",
 										"target": 13654,
 										"name": "FilterableCampaignProps",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18518,11 +18518,11 @@
 												"type": "reference",
 												"target": 13627,
 												"name": "CampaignDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18545,7 +18545,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18565,7 +18565,7 @@
 													"type": "reference",
 													"target": 13627,
 													"name": "CampaignDTO",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											},
 											{
@@ -18592,7 +18592,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 976,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L976"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L976"
 						}
 					],
 					"signatures": [
@@ -18632,7 +18632,7 @@
 											},
 											{
 												"kind": "text",
-												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.medusajs.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
+												"text": "\n\nTo specify relations that should be retrieved:\n\n:::note\n\nYou can only retrieve data models defined in the same module. To retrieve linked data models\nfrom other modules, use [Query](https://docs.switchyard.com/learn/fundamentals/module-links/query) instead.\n\n:::\n\n"
 											},
 											{
 												"kind": "code",
@@ -18647,7 +18647,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 976,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L976"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L976"
 								}
 							],
 							"parameters": [
@@ -18710,11 +18710,11 @@
 												"type": "reference",
 												"target": 13627,
 												"name": "CampaignDTO",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											}
 										],
 										"name": "FindConfig",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -18737,7 +18737,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18752,7 +18752,7 @@
 										"type": "reference",
 										"target": 13627,
 										"name": "CampaignDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								],
 								"name": "Promise",
@@ -18772,13 +18772,13 @@
 							"fileName": "promotion/service.ts",
 							"line": 992,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L992"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L992"
 						},
 						{
 							"fileName": "promotion/service.ts",
 							"line": 1004,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1004"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1004"
 						}
 					],
 					"signatures": [
@@ -18821,7 +18821,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 992,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L992"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L992"
 								}
 							],
 							"parameters": [
@@ -18867,7 +18867,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -18926,7 +18926,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 1004,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1004"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1004"
 								}
 							],
 							"parameters": [
@@ -18969,7 +18969,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19002,7 +19002,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 1026,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1026"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1026"
 						}
 					],
 					"signatures": [
@@ -19061,7 +19061,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 1026,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1026"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1026"
 								}
 							],
 							"typeParameters": [
@@ -19137,12 +19137,12 @@
 												"type": "reference",
 												"target": 13465,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "SoftDeleteReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19165,7 +19165,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19225,7 +19225,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 1051,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1051"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1051"
 						}
 					],
 					"signatures": [
@@ -19284,7 +19284,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 1051,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1051"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1051"
 								}
 							],
 							"typeParameters": [
@@ -19376,12 +19376,12 @@
 												"type": "reference",
 												"target": 13471,
 												"name": "TReturnableLinkableKeys",
-												"package": "@medusajs/types",
+												"package": "@switchyard/types",
 												"refersToTypeParameter": true
 											}
 										],
 										"name": "RestoreReturn",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19404,7 +19404,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19464,7 +19464,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 1057,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1057"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1057"
 						}
 					],
 					"signatures": [
@@ -19479,7 +19479,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 1057,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1057"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1057"
 								}
 							],
 							"parameters": [
@@ -19493,7 +19493,7 @@
 										"type": "reference",
 										"target": 13660,
 										"name": "AddPromotionsToCampaignDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19508,7 +19508,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19539,7 +19539,7 @@
 															"fileName": "promotion/service.ts",
 															"line": 1060,
 															"character": 15,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1060"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1060"
 														}
 													],
 													"type": {
@@ -19564,7 +19564,7 @@
 													"fileName": "promotion/service.ts",
 													"line": 1060,
 													"character": 13,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1060"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1060"
 												}
 											]
 										}
@@ -19587,7 +19587,7 @@
 							"fileName": "promotion/service.ts",
 							"line": 1062,
 							"character": 2,
-							"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1062"
+							"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1062"
 						}
 					],
 					"signatures": [
@@ -19602,7 +19602,7 @@
 									"fileName": "promotion/service.ts",
 									"line": 1062,
 									"character": 2,
-									"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1062"
+									"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1062"
 								}
 							],
 							"parameters": [
@@ -19616,7 +19616,7 @@
 										"type": "reference",
 										"target": 13663,
 										"name": "RemovePromotionsFromCampaignDTO",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								},
 								{
@@ -19631,7 +19631,7 @@
 										"type": "reference",
 										"target": 13541,
 										"name": "Context",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -19662,7 +19662,7 @@
 															"fileName": "promotion/service.ts",
 															"line": 1065,
 															"character": 15,
-															"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1065"
+															"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1065"
 														}
 													],
 													"type": {
@@ -19687,7 +19687,7 @@
 													"fileName": "promotion/service.ts",
 													"line": 1065,
 													"character": 13,
-													"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1065"
+													"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L1065"
 												}
 											]
 										}
@@ -19741,7 +19741,7 @@
 					"fileName": "promotion/service.ts",
 					"line": 31,
 					"character": 17,
-					"url": "https://github.com/medusajs/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L31"
+					"url": "https://github.com/switchyard/medusa/blob/da5d0e3a1430979ab9cda7f239ea7066ded1f7ab/packages/core/types/src/promotion/service.ts#L31"
 				}
 			],
 			"extendedTypes": [
@@ -19749,7 +19749,7 @@
 					"type": "reference",
 					"target": 13500,
 					"name": "IModuleService",
-					"package": "@medusajs/types"
+					"package": "@switchyard/types"
 				}
 			]
 		},
@@ -19963,7 +19963,7 @@
 												"type": "reference",
 												"target": 13896,
 												"name": "Message",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -19971,7 +19971,7 @@
 													"type": "reference",
 													"target": 13896,
 													"name": "Message",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -20025,7 +20025,7 @@
 										"type": "reference",
 										"target": 13900,
 										"name": "MessageAggregatorFormat",
-										"package": "@medusajs/types"
+										"package": "@switchyard/types"
 									}
 								}
 							],
@@ -20046,7 +20046,7 @@
 											"type": "reference",
 											"target": 13896,
 											"name": "Message",
-											"package": "@medusajs/types"
+											"package": "@switchyard/types"
 										}
 									}
 								],
@@ -20144,12 +20144,12 @@
 														"type": "reference",
 														"target": 13767,
 														"name": "T",
-														"package": "@medusajs/types",
+														"package": "@switchyard/types",
 														"refersToTypeParameter": true
 													}
 												],
 												"name": "RawMessageFormat",
-												"package": "@medusajs/types"
+												"package": "@switchyard/types"
 											},
 											{
 												"type": "array",
@@ -20161,12 +20161,12 @@
 															"type": "reference",
 															"target": 13767,
 															"name": "T",
-															"package": "@medusajs/types",
+															"package": "@switchyard/types",
 															"refersToTypeParameter": true
 														}
 													],
 													"name": "RawMessageFormat",
-													"package": "@medusajs/types"
+													"package": "@switchyard/types"
 												}
 											}
 										]
@@ -20260,7 +20260,7 @@
 					],
 					"type": {
 						"type": "literal",
-						"value": "MedusaContext"
+						"value": "SwitchyardContext"
 					}
 				},
 				{
@@ -20306,7 +20306,7 @@
 						"type": "reference",
 						"target": 13557,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -20353,7 +20353,7 @@
 						"type": "reference",
 						"target": 13557,
 						"name": "TManager",
-						"package": "@medusajs/types",
+						"package": "@switchyard/types",
 						"refersToTypeParameter": true
 					}
 				},
@@ -20556,7 +20556,7 @@
 						"type": "reference",
 						"target": 13756,
 						"name": "IMessageAggregator",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -20815,7 +20815,7 @@
 						"type": "reference",
 						"target": 13875,
 						"name": "BigNumberRawValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				},
 				{
@@ -21058,7 +21058,7 @@
 						"type": "reference",
 						"target": 13875,
 						"name": "BigNumberRawValue",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					},
 					{
 						"type": "intrinsic",
@@ -21082,7 +21082,7 @@
 						"type": "reference",
 						"target": 13880,
 						"name": "IBigNumber",
-						"package": "@medusajs/types"
+						"package": "@switchyard/types"
 					}
 				]
 			}
@@ -21177,7 +21177,7 @@
 			]
 		}
 	],
-	"packageName": "@medusajs/types",
+	"packageName": "@switchyard/types",
 	"symbolIdMap": {
 		"13325": {
 			"sourceFileName": "../../../../packages/core/types/src/promotion/service.ts",

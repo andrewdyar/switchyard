@@ -1,11 +1,11 @@
-import { IEventBusModuleService } from "@medusajs/types"
-import { CommonEvents, Modules } from "@medusajs/utils"
+import { IEventBusModuleService } from "@switchyard/types"
+import { CommonEvents, Modules } from "@switchyard/utils"
 import os from "os"
 import fs from "fs/promises"
 import {
   TestEventUtils,
   medusaIntegrationTestRunner,
-} from "@medusajs/test-utils"
+} from "@switchyard/test-utils"
 import path from "path"
 import {
   adminHeaders,

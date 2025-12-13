@@ -2,7 +2,7 @@ import {
   RemoteFetchDataCallback,
   RemoteJoiner,
   toRemoteJoinerQuery,
-} from "@medusajs/orchestration"
+} from "@switchyard/orchestration"
 import {
   JoinerArgument,
   JoinerRelationship,
@@ -13,9 +13,9 @@ import {
   RemoteJoinerOptions,
   RemoteJoinerQuery,
   RemoteNestedExpands,
-} from "@medusajs/types"
-import { isPresent, isString, toPascalCase } from "@medusajs/utils"
-import { MedusaModule } from "../medusa-module"
+} from "@switchyard/types"
+import { isPresent, isString, toPascalCase } from "@switchyard/utils"
+import { SwitchyardModule } from "../medusa-module"
 
 const BASE_PREFIX = ""
 const MAX_BATCH_SIZE = 4000
@@ -48,7 +48,7 @@ export class RemoteQuery {
     this.entitiesMap = entitiesMap
 
     if (!modulesLoaded?.length) {
-      modulesLoaded = MedusaModule.getLoadedModules().map(
+      modulesLoaded = SwitchyardModule.getLoadedModules().map(
         (mod) => Object.values(mod)[0]
       )
     }

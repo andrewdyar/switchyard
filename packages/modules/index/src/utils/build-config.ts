@@ -1,17 +1,17 @@
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import {
   IndexTypes,
   JoinerServiceConfigAlias,
   ModuleJoinerConfig,
   ModuleJoinerRelationship,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   buildModuleResourceEventName,
   CommonEvents,
   GraphQLUtils,
   kebabCase,
   lowerCaseFirst,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { schemaObjectRepresentationPropertiesToOmit } from "@types"
 import { baseGraphqlSchema } from "./base-graphql-schema"
 
@@ -1239,7 +1239,7 @@ export function buildSchemaObjectRepresentation(schema: string): {
   entitiesMap: Record<string, any>
   executableSchema: GraphQLUtils.GraphQLSchema
 } {
-  const moduleJoinerConfigs = MedusaModule.getAllJoinerConfigs()
+  const moduleJoinerConfigs = SwitchyardModule.getAllJoinerConfigs()
 
   const servicesEntityMap = getServicesEntityMap(moduleJoinerConfigs)
   const filterableEntities = buildSchemaFromFilterableLinks(
