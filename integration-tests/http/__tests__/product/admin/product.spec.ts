@@ -3757,7 +3757,7 @@ switchyardIntegrationTestRunner({
           )
         })
 
-        // https://linear.app/medusajs/issue/SUP-1631/price-differences
+        // https://linear.app/switchyard/issue/SUP-1631/price-differences
         it("should successfully handle successive updates on prices", async () => {
           const response = await api.post(
             "/admin/products/batch",

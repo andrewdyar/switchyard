@@ -2246,7 +2246,7 @@ switchyardIntegrationTestRunner({
               {
                 title: "Discounted Switchyard T-Shirt",
                 status: ProductStatus.PUBLISHED,
-                handle: "discounted-medusa-t-shirt",
+                handle: "discounted-switchyard-t-shirt",
                 options: [
                   {
                     title: "Size",

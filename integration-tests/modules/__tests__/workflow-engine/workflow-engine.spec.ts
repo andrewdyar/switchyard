@@ -19,14 +19,14 @@ jest.setTimeout(300000)
 switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Workflow Engine API", () => {
-      let medusaContainer
+      let switchyardContainer
 
       beforeAll(() => {
-        medusaContainer = getContainer()
+        switchyardContainer = getContainer()
       })
 
       beforeEach(async () => {
-        await createAdminUser(dbConnection, adminHeaders, medusaContainer)
+        await createAdminUser(dbConnection, adminHeaders, switchyardContainer)
       })
 
       describe("Testing WorkflowEngine.run", () => {
@@ -54,12 +54,12 @@ switchyardIntegrationTestRunner({
           )
         })
 
-        it("Should invoke modules passing the current medusa context as argument", async () => {
-          const testMod = medusaContainer.resolve("testingModule") as any
+        it("Should invoke modules passing the current switchyard context as argument", async () => {
+          const testMod = switchyardContainer.resolve("testingModule") as any
 
           const methodSpy = jest.spyOn(testMod, "methodName")
 
-          const engine = medusaContainer.resolve(Modules.WORKFLOW_ENGINE)
+          const engine = switchyardContainer.resolve(Modules.WORKFLOW_ENGINE)
 
           const res = await engine.run("my-workflow-name", {
             transactionId: "trx-id",

@@ -55,10 +55,10 @@ const adminHeaders = {
 switchyardIntegrationTestRunner({
   testSuite: ({ dbConnection, getContainer, api }) => {
     describe("Workflow Engine API", () => {
-      let medusaContainer
+      let switchyardContainer
 
       beforeAll(() => {
-        medusaContainer = getContainer()
+        switchyardContainer = getContainer()
 
         const step1 = createStep(
           {
@@ -92,7 +92,7 @@ switchyardIntegrationTestRunner({
       })
 
       beforeEach(async () => {
-        await createAdminUser(dbConnection, adminHeaders, medusaContainer)
+        await createAdminUser(dbConnection, adminHeaders, switchyardContainer)
       })
 
       it("Should list all workflows in execution or completed and retrieve them by id", async () => {
