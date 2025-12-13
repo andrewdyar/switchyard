@@ -7,10 +7,10 @@ import { queryClient } from "../../../lib/query-client"
 const inventoryGroupDetailQuery = (id: string) => ({
   queryKey: inventoryGroupsQueryKeys.detail(id, {
     include_ancestors_tree: true,
-    fields: "id,name,type,zone_code,aisle_number,group_number,shelf_number,parent_group_id,*parent_group",
+    fields: "id,name,type,zone_code,aisle_number,bay_number,shelf_number,slot_number,parent_group_id,*parent_group",
   }),
   queryFn: async () => {
-    const response = await fetch(`/admin/inventory-groups/${id}?include_ancestors_tree=true&fields=id,name,type,zone_code,aisle_number,group_number,shelf_number,parent_group_id,*parent_group`, {
+    const response = await fetch(`/admin/inventory-groups/${id}?include_ancestors_tree=true&fields=id,name,type,zone_code,aisle_number,bay_number,shelf_number,slot_number,parent_group_id,*parent_group`, {
       credentials: "include",
       headers: {
         "Content-Type": "application/json",

@@ -100,13 +100,13 @@ export const InventoryGroupGeneralSection = ({
           </Text>
         </div>
       )}
-      {inventoryGroup.group_number && (
+      {inventoryGroup.bay_number && (
         <div className="text-ui-fg-subtle grid grid-cols-2 items-center px-6 py-4">
           <Text size="small" leading="compact" weight="plus">
-            {t("fields.group")}
+            {t("fields.bay")}
           </Text>
           <Text size="small" leading="compact">
-            {String(inventoryGroup.group_number).padStart(2, "0")}
+            {String(inventoryGroup.bay_number).padStart(2, "0")}
           </Text>
         </div>
       )}
@@ -117,6 +117,16 @@ export const InventoryGroupGeneralSection = ({
           </Text>
           <Text size="small" leading="compact">
             {inventoryGroup.shelf_number}
+          </Text>
+        </div>
+      )}
+      {inventoryGroup.slot_number && (
+        <div className="text-ui-fg-subtle grid grid-cols-2 items-center px-6 py-4">
+          <Text size="small" leading="compact" weight="plus">
+            {t("fields.slot")}
+          </Text>
+          <Text size="small" leading="compact">
+            {String(inventoryGroup.slot_number).padStart(2, "0")}
           </Text>
         </div>
       )}

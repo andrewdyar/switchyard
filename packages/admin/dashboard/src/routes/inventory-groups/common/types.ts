@@ -1,4 +1,4 @@
-export type InventoryGroupLevel = "zone" | "aisle" | "group" | "shelf"
+export type InventoryGroupLevel = "zone" | "aisle" | "bay" | "shelf" | "slot"
 export type ZoneCode = "A" | "R" | "F"
 
 export type InventoryGroupTreeItem = {
@@ -8,11 +8,12 @@ export type InventoryGroupTreeItem = {
   parent_group_id: string | null
   group_children: InventoryGroupTreeItem[] | null
   rank: number | null
-  level: InventoryGroupLevel
+  type: InventoryGroupLevel
   zone_code: ZoneCode | null
   aisle_number: number | null
-  group_number: number | null
+  bay_number: number | null
   shelf_number: number | null
+  slot_number: number | null
   location_code: string | null
   is_active: boolean
 }
@@ -60,8 +61,9 @@ export const ZONE_OPTIONS: { value: ZoneCode; label: string }[] = [
 export const LEVEL_OPTIONS: { value: InventoryGroupLevel; label: string }[] = [
   { value: "zone", label: "Zone" },
   { value: "aisle", label: "Aisle" },
-  { value: "group", label: "Group" },
+  { value: "bay", label: "Bay" },
   { value: "shelf", label: "Shelf" },
+  { value: "slot", label: "Slot" },
 ]
 
 export const ZONE_AISLE_LIMITS: Record<
@@ -73,6 +75,8 @@ export const ZONE_AISLE_LIMITS: Record<
   F: { min: 1, max: 2 },
 }
 
-export const GROUP_LIMITS = { min: 1, max: 22 }
+export const BAY_LIMITS = { min: 1, max: 22 }
 export const SHELF_LIMITS = { min: 1, max: 5 }
+export const SLOT_LIMITS = { min: 1, max: 20 }
+export const SLOTS_PER_SHELF = 4
 

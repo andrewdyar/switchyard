@@ -11,7 +11,7 @@ const ZONE_NAMES: Record<string, string> = {
   F: "Frozen",
 }
 
-// Format name for display (e.g., "Aisle 02", "Group 21")
+// Format name for display (e.g., "Aisle 02", "Bay 21", "Slot 05")
 const formatGroupName = (item: any): string => {
   if (!item) return "Unknown"
   
@@ -21,13 +21,16 @@ const formatGroupName = (item: any): string => {
   if (item.type === "aisle" && item.aisle_number != null) {
     return `Aisle ${String(item.aisle_number).padStart(2, "0")}`
   }
-  if (item.type === "group" && item.group_number != null) {
-    return `Group ${String(item.group_number).padStart(2, "0")}`
+  if (item.type === "bay" && item.bay_number != null) {
+    return `Bay ${String(item.bay_number).padStart(2, "0")}`
   }
   if (item.type === "shelf" && item.shelf_number != null) {
     return `Shelf ${item.shelf_number}`
   }
-  return item.name || "Group"
+  if (item.type === "slot" && item.slot_number != null) {
+    return `Slot ${String(item.slot_number).padStart(2, "0")}`
+  }
+  return item.name || "Location"
 }
 
 // Build breadcrumb path from ancestor chain
@@ -52,8 +55,9 @@ const buildBreadcrumbPath = (group: any): any[] => {
       type: g.type,
       zone_code: g.zone_code,
       aisle_number: g.aisle_number,
-      group_number: g.group_number,
+      bay_number: g.bay_number,
       shelf_number: g.shelf_number,
+      slot_number: g.slot_number,
     })
   }
 
@@ -68,7 +72,7 @@ export const InventoryGroupDetailBreadcrumb = (
 
   // Always show something - never return null
   if (!id) {
-    return <span>Group</span>
+    return <span>Location</span>
   }
 
   // Fetch the inventory group with ancestor tree
@@ -76,7 +80,7 @@ export const InventoryGroupDetailBreadcrumb = (
     id,
     {
       include_ancestors_tree: true,
-      fields: "id,name,type,zone_code,aisle_number,group_number,shelf_number,parent_group_id,*parent_group",
+      fields: "id,name,type,zone_code,aisle_number,bay_number,shelf_number,slot_number,parent_group_id,*parent_group",
     },
     {
       enabled: true,

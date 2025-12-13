@@ -391,8 +391,9 @@ export class InventoryGroupRepository extends DALUtils.MikroOrmBaseTreeRepositor
             groupData.type,
             groupData.zone_code,
             groupData.aisle_number ?? null,
-            groupData.group_number ?? null,
-            groupData.shelf_number ?? null
+            groupData.bay_number ?? null,
+            groupData.shelf_number ?? null,
+            groupData.slot_number ?? null
           )
         }
 
@@ -401,8 +402,9 @@ export class InventoryGroupRepository extends DALUtils.MikroOrmBaseTreeRepositor
           groupData.location_code = generateLocationCode(
             groupData.zone_code,
             groupData.aisle_number ?? null,
-            groupData.group_number ?? null,
-            groupData.shelf_number ?? null
+            groupData.bay_number ?? null,
+            groupData.shelf_number ?? null,
+            groupData.slot_number ?? null
           )
         }
 

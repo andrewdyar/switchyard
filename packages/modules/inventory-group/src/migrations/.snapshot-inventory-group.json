@@ -80,8 +80,8 @@
           "nullable": true,
           "mappedType": "json"
         },
-        "level": {
-          "name": "level",
+        "type": {
+          "name": "type",
           "type": "text",
           "unsigned": false,
           "autoincrement": false,
@@ -107,8 +107,8 @@
           "nullable": true,
           "mappedType": "integer"
         },
-        "group_number": {
-          "name": "group_number",
+        "bay_number": {
+          "name": "bay_number",
           "type": "integer",
           "unsigned": false,
           "autoincrement": false,
@@ -118,6 +118,15 @@
         },
         "shelf_number": {
           "name": "shelf_number",
+          "type": "integer",
+          "unsigned": false,
+          "autoincrement": false,
+          "primary": false,
+          "nullable": true,
+          "mappedType": "integer"
+        },
+        "slot_number": {
+          "name": "slot_number",
           "type": "integer",
           "unsigned": false,
           "autoincrement": false,
@@ -240,7 +249,7 @@
           "constraint": false,
           "primary": false,
           "unique": false,
-          "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_inventory_groups_location_code_unique\" ON \"inventory_groups\" (\"location_code\") WHERE deleted_at IS NULL AND level = 'shelf'"
+          "expression": "CREATE UNIQUE INDEX IF NOT EXISTS \"IDX_inventory_groups_location_code_unique\" ON \"inventory_groups\" (\"location_code\") WHERE deleted_at IS NULL AND type = 'slot'"
         },
         {
           "keyName": "inventory_groups_pkey",

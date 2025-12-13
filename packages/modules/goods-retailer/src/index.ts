@@ -5,3 +5,6 @@ export const GOODS_RETAILER_MODULE = "goodsRetailer"
 
 export default {}
 
+
+
+

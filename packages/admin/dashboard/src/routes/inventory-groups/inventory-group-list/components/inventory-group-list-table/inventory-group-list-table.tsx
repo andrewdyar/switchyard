@@ -40,7 +40,7 @@ export const InventoryGroupListTable = () => {
       }
     : {
         include_descendants_tree: true,
-        type: "aisle", // Fetch aisles as top level, with groups/shelves nested
+        type: "aisle", // Fetch aisles as top level, with bays/shelves/slots nested
         fields:
           "id,name,group_children,handle,is_active,type,zone_code,location_code",
         ...searchParamsWithoutType,

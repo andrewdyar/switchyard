@@ -5,3 +5,6 @@ export const GOODS_ATTRIBUTES_MODULE = "goodsAttributes"
 
 export default {}
 
+
+
+

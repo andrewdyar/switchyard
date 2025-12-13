@@ -75,8 +75,9 @@ export default class InventoryGroupModuleService extends MedusaService({
               group.type,
               group.zone_code ?? null,
               group.aisle_number ?? null,
-              group.group_number ?? null,
-              group.shelf_number ?? null
+              group.bay_number ?? null,
+              group.shelf_number ?? null,
+              group.slot_number ?? null
             )
       }
 
@@ -85,8 +86,9 @@ export default class InventoryGroupModuleService extends MedusaService({
         group.location_code = generateLocationCode(
           group.zone_code,
           group.aisle_number ?? null,
-          group.group_number ?? null,
-          group.shelf_number ?? null
+          group.bay_number ?? null,
+          group.shelf_number ?? null,
+          group.slot_number ?? null
         )
       }
 

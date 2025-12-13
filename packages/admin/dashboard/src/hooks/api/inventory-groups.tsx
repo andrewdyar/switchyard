@@ -23,11 +23,12 @@ export interface InventoryGroupDTO {
   is_active: boolean
   rank: number
   metadata: Record<string, unknown> | null
-  type: "zone" | "aisle" | "group" | "shelf"
+  type: "zone" | "aisle" | "bay" | "shelf" | "slot"
   zone_code: "A" | "R" | "F" | null
   aisle_number: number | null
-  group_number: number | null
+  bay_number: number | null
   shelf_number: number | null
+  slot_number: number | null
   location_code: string | null
   parent_group_id: string | null
   parent_group?: InventoryGroupDTO | null
@@ -58,11 +59,12 @@ export interface CreateInventoryGroupDTO {
   description?: string | null
   handle?: string | null
   is_active?: boolean
-  type: "zone" | "aisle" | "group" | "shelf"
+  type: "zone" | "aisle" | "bay" | "shelf" | "slot"
   zone_code?: "A" | "R" | "F" | null
   aisle_number?: number | null
-  group_number?: number | null
+  bay_number?: number | null
   shelf_number?: number | null
+  slot_number?: number | null
   location_code?: string | null
   parent_group_id?: string | null
   metadata?: Record<string, unknown> | null
@@ -74,11 +76,12 @@ export interface UpdateInventoryGroupDTO {
   description?: string | null
   handle?: string | null
   is_active?: boolean
-  type?: "zone" | "aisle" | "group" | "shelf"
+  type?: "zone" | "aisle" | "bay" | "shelf" | "slot"
   zone_code?: "A" | "R" | "F" | null
   aisle_number?: number | null
-  group_number?: number | null
+  bay_number?: number | null
   shelf_number?: number | null
+  slot_number?: number | null
   location_code?: string | null
   parent_group_id?: string | null
   metadata?: Record<string, unknown> | null
