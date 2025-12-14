@@ -60,7 +60,7 @@ export default async function adminLoader({
 
   if (NOT_ALLOWED_PATHS.includes(adminOptions.path)) {
     logger.error(
-      `The 'admin.path' in 'medusa-config.js' is set to a value that is not allowed. This can prevent your server from working correctly. Please set 'admin.path' to a value that is not one of the following: ${NOT_ALLOWED_PATHS.join(
+      `The 'admin.path' in 'switchyard.config.js' is set to a value that is not allowed. This can prevent your server from working correctly. Please set 'admin.path' to a value that is not one of the following: ${NOT_ALLOWED_PATHS.join(
         ", "
       )}.`
     )
