@@ -16,6 +16,10 @@ describe("getResolvedPlugins | relative paths", () => {
       name: "@switchyard/draft-order",
       version: "1.0.0",
     })
+    await fs.create(
+      "node_modules/@switchyard/draft-order/.medusa/server/src/index.js",
+      ""
+    )
 
     await fs.createJson("plugins/dummy/package.json", {
       name: "my-dummy-plugin",
@@ -72,6 +76,10 @@ describe("getResolvedPlugins | relative paths", () => {
       name: "@switchyard/draft-order",
       version: "1.0.0",
     })
+    await fs.create(
+      "node_modules/@switchyard/draft-order/.medusa/server/src/index.js",
+      ""
+    )
     await fs.createJson("plugins/dummy/package.json", {
       name: "my-dummy-plugin",
       version: "1.0.0",
@@ -132,6 +140,10 @@ describe("getResolvedPlugins | relative paths", () => {
       name: "@switchyard/draft-order",
       version: "1.0.0",
     })
+    await fs.create(
+      "node_modules/@switchyard/draft-order/.medusa/server/src/index.js",
+      ""
+    )
 
     const resolvePlugins = async () =>
       getResolvedPlugins(
@@ -159,6 +171,10 @@ describe("getResolvedPlugins | relative paths", () => {
       name: "@switchyard/draft-order",
       version: "1.0.0",
     })
+    await fs.create(
+      "node_modules/@switchyard/draft-order/.medusa/server/src/index.js",
+      ""
+    )
     await fs.createJson("plugins/dummy/package.json", {
       name: "my-dummy-plugin",
       version: "1.0.0",
@@ -234,11 +250,19 @@ describe("getResolvedPlugins | package reference", () => {
       name: "@switchyard/draft-order",
       version: "1.0.0",
     })
+    await fs.create(
+      "node_modules/@switchyard/draft-order/.medusa/server/src/index.js",
+      ""
+    )
     await fs.createJson("package.json", {})
     await fs.createJson("node_modules/@plugins/dummy/package.json", {
       name: "my-dummy-plugin",
       version: "1.0.0",
     })
+    await fs.create(
+      "node_modules/@plugins/dummy/.medusa/server/src/index.js",
+      ""
+    )
 
     const plugins = await getResolvedPlugins(
       fs.basePath,
@@ -287,6 +311,10 @@ describe("getResolvedPlugins | package reference", () => {
       name: "@switchyard/draft-order",
       version: "1.0.0",
     })
+    await fs.create(
+      "node_modules/@switchyard/draft-order/.medusa/server/src/index.js",
+      ""
+    )
     await fs.createJson("package.json", {})
     await fs.createJson("node_modules/@plugins/dummy/package.json", {
       name: "my-dummy-plugin",
@@ -351,6 +379,10 @@ describe("getResolvedPlugins | package reference", () => {
       name: "@switchyard/draft-order",
       version: "1.0.0",
     })
+    await fs.create(
+      "node_modules/@switchyard/draft-order/.medusa/server/src/index.js",
+      ""
+    )
     const resolvePlugins = async () =>
       getResolvedPlugins(
         fs.basePath,
