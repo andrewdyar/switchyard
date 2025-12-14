@@ -31,7 +31,7 @@ describe("transformModules", () => {
 
     expect(modules).toEqual({
       cache: {
-        resolve: "@switchyard/medusa/cache-inmemory",
+        resolve: "@switchyard/core/cache-inmemory",
       },
     })
   })

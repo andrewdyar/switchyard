@@ -146,7 +146,7 @@ export const updateClaimShippingMethodWorkflowId =
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  * 
  * ```ts
- * import { updateClaimShippingMethodWorkflow } from "@switchyard/medusa/core-flows";
+ * import { updateClaimShippingMethodWorkflow } from "@switchyard/core/core-flows";
  * import { StepResponse } from "@switchyard/workflows-sdk";
  * 
  * updateClaimShippingMethodWorkflow.hooks.setPricingContext((

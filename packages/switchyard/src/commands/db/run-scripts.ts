@@ -50,7 +50,7 @@ export async function runMigrationScripts({
     onApplicationShutdown = resources.onApplicationShutdown
 
     const scriptsSourcePaths = [
-      join(dirname(require.resolve("@switchyard/medusa")), "migration-scripts"),
+      join(dirname(require.resolve("@switchyard/core")), "migration-scripts"),
       ...plugins.map((plugin) => join(plugin.resolve, "migration-scripts")),
     ]
 
