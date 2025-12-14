@@ -1,0 +1,126 @@
+---
+title: MCP Server Installation
+description: Connect your IDE to Switchyard documentation with AI assistance
+---
+
+# MCP Server Installation
+
+Switchyard documentation includes an MCP (Model Context Protocol) server that enables AI-powered assistance directly in your IDE. This allows Claude, Cursor, and other AI tools to access Switchyard documentation context when helping you code.
+
+## What is MCP?
+
+MCP (Model Context Protocol) is a standard for connecting AI assistants to external data sources. With the Switchyard MCP server, your AI coding assistant can:
+
+- Answer questions about Switchyard APIs
+- Provide context-aware code suggestions
+- Help debug issues with relevant documentation
+- Explain order flows, authentication, and architecture
+
+## Installation
+
+### Cursor IDE
+
+<Steps>
+  <Step title="Open Cursor Settings">
+    Go to **Cursor Settings** → **Features** → **MCP Servers**
+  </Step>
+  <Step title="Add MCP Server">
+    Click **Add MCP Server** and enter the following URL:
+    
+    ```
+    https://docs.switchyard.run/mcp
+    ```
+  </Step>
+  <Step title="Verify Connection">
+    The server should show as connected. You can now ask Claude questions about Switchyard in your Cursor chat.
+  </Step>
+</Steps>
+
+### VS Code
+
+<Steps>
+  <Step title="Install MCP Extension">
+    Install an MCP-compatible extension from the VS Code marketplace
+  </Step>
+  <Step title="Configure Server">
+    Add the Switchyard MCP server URL to your extension settings:
+    
+    ```json
+    {
+      "mcp.servers": [
+        {
+          "name": "Switchyard Docs",
+          "url": "https://docs.switchyard.run/mcp"
+        }
+      ]
+    }
+    ```
+  </Step>
+  <Step title="Restart VS Code">
+    Restart your IDE to activate the connection
+  </Step>
+</Steps>
+
+## Usage Examples
+
+Once connected, you can ask your AI assistant questions like:
+
+### API Questions
+
+> "How do I authenticate with the Switchyard Scanner API?"
+
+> "What endpoints are available for inventory management?"
+
+### Architecture Questions
+
+> "Explain the order flow in Switchyard"
+
+> "What's the difference between sweeps and picking?"
+
+### Code Generation
+
+> "Write a function to look up a product by barcode using the Scanner API"
+
+> "Create a TypeScript client for the Switchyard Admin API"
+
+## Troubleshooting
+
+### Connection Failed
+
+If the MCP server fails to connect:
+
+1. Verify you have internet access
+2. Check that `https://docs.switchyard.run` is accessible
+3. Restart your IDE
+4. Try removing and re-adding the server
+
+### Outdated Context
+
+The MCP server automatically syncs with the latest documentation. If you're getting outdated information:
+
+1. Disconnect and reconnect the MCP server
+2. Clear your IDE's MCP cache if available
+3. Check if there are recent documentation updates
+
+## Security
+
+The MCP server provides read-only access to public Switchyard documentation. No authentication credentials or sensitive data are transmitted through MCP.
+
+## Related Resources
+
+<CardGroup cols={2}>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-reference/admin/introduction"
+  >
+    Browse the complete API documentation
+  </Card>
+  <Card
+    title="Architecture"
+    icon="sitemap"
+    href="/architecture/order-flow"
+  >
+    Understand the Switchyard system design
+  </Card>
+</CardGroup>

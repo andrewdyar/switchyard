@@ -1,11 +1,11 @@
 ---
 title: Module Map
-description: Medusa modules used in Switchyard and their purposes
+description: Switchyard modules and their purposes
 ---
 
 # Module Map
 
-Switchyard is built on Medusa, a modular commerce platform. This document maps which Medusa modules we use, which we've customized, and which are not needed for our use case.
+Switchyard uses a modular architecture. This document maps which modules we use, which are custom-built, and which are not needed for our use case.
 
 ## Module Overview
 
@@ -45,7 +45,7 @@ flowchart TB
     end
 ```
 
-## Active Medusa Modules
+## Active Core Modules
 
 These modules are actively used and essential to Switchyard operations.
 
@@ -68,7 +68,7 @@ These modules are custom-built for Goods-specific functionality.
 ### Inventory Group
 **Location:** `packages/modules/inventory-group/`
 
-Extends Medusa's stock locations with a hierarchical structure for warehouse organization.
+Extends stock locations with a hierarchical structure for warehouse organization.
 
 | Entity | Description |
 |--------|-------------|
@@ -128,7 +128,7 @@ These modules are not heavily used now but will be needed as we scale.
 
 ## Modules Not Used (But Kept)
 
-These Medusa modules are not actively used in Switchyard operations, but are kept because they are tightly integrated with Medusa's core functionality. Removing them would risk breaking internal workflows.
+These modules are not actively used in Switchyard operations, but are kept because they are tightly integrated with core functionality. Removing them would risk breaking internal workflows.
 
 | Module | Reason Not Used | Why Kept |
 |--------|-----------------|----------|
@@ -173,7 +173,7 @@ flowchart LR
 
 ## Configuration
 
-Modules are configured in `apps/goods-backend/medusa-config.ts`. To disable a module, remove it from the modules array or set `enabled: false`.
+Modules are configured in `apps/goods-backend/switchyard-config.ts`. To disable a module, remove it from the modules array or set `enabled: false`.
 
 ## Adding New Modules
 
@@ -184,4 +184,4 @@ When adding a custom module:
 3. Define models in `src/models/`
 4. Create service in `src/services/`
 5. Add migrations in `src/migrations/`
-6. Register in `medusa-config.ts`
+6. Register in `switchyard-config.ts`
