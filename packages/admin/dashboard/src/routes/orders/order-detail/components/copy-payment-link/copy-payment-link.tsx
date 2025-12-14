@@ -5,7 +5,7 @@ import copy from "copy-to-clipboard"
 import React, { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { getStylizedAmount } from "../../../../../lib/money-amount-helpers"
-import { MEDUSA_STOREFRONT_URL } from "../../../../../lib/storefront"
+import { SWITCHYARD_STOREFRONT_URL } from "../../../../../lib/storefront"
 
 type CopyPaymentLinkProps = {
   paymentCollection: AdminPaymentCollection
@@ -31,7 +31,7 @@ const CopyPaymentLink = React.forwardRef<any, CopyPaymentLinkProps>(
 
       setDone(true)
       copy(
-        `${MEDUSA_STOREFRONT_URL}/payment-collection/${paymentCollection.id}`
+        `${SWITCHYARD_STOREFRONT_URL}/payment-collection/${paymentCollection.id}`
       )
 
       setTimeout(() => {
