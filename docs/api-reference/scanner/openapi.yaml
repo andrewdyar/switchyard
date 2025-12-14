@@ -1,0 +1,475 @@
+openapi: 3.0.0
+info:
+  title: Switchyard Scanner API
+  version: 1.0.0
+  description: |
+    API for Zebra scanners and mobile devices used by warehouse pickers and sweep drivers.
+    
+    This API provides endpoints for:
+    - Product lookup by barcode
+    - Inventory scanning and adjustment
+    - Order access for picking operations
+  contact:
+    name: Switchyard Support
+    url: https://github.com/andrewdyar/switchyard
+  license:
+    name: MIT
+servers:
+  - url: https://api.switchyard.run
+    description: Production
+  - url: http://localhost:9000
+    description: Local development
+tags:
+  - name: Scanner Status
+    description: Scanner configuration and status
+  - name: Inventory
+    description: Barcode lookup and inventory operations
+  - name: Orders
+    description: Order access for picking operations
+security:
+  - bearerAuth: []
+
+paths:
+  /scanner:
+    get:
+      summary: Get scanner status
+      description: Returns scanner API configuration and available features
+      operationId: getScannerStatus
+      tags:
+        - Scanner Status
+      security: []
+      responses:
+        '200':
+          description: Scanner status and configuration
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  status:
+                    type: string
+                    example: ok
+                  version:
+                    type: string
+                    example: "1.0.0"
+                  features:
+                    type: object
+                    properties:
+                      inventory_scan:
+                        type: boolean
+                      barcode_lookup:
+                        type: boolean
+                      location_tracking:
+                        type: boolean
+
+  /scanner/inventory/lookup:
+    get:
+      summary: Look up product by barcode
+      description: |
+        Look up a product and its inventory levels by scanning a barcode (UPC/EAN or SKU).
+        Optionally filter inventory by location.
+      operationId: lookupProductByBarcode
+      tags:
+        - Inventory
+      parameters:
+        - name: barcode
+          in: query
+          required: true
+          description: UPC/EAN barcode or SKU to look up
+          schema:
+            type: string
+          example: "012345678901"
+        - name: location_id
+          in: query
+          required: false
+          description: Filter inventory to a specific stock location
+          schema:
+            type: string
+          example: "sloc_01ABC123"
+      responses:
+        '200':
+          description: Product found with inventory information
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ProductLookupResponse'
+        '400':
+          description: Missing barcode parameter
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  error:
+                    type: string
+                    example: Product not found
+                  barcode:
+                    type: string
+
+  /scanner/inventory/scan:
+    post:
+      summary: Process inventory scan
+      description: |
+        Process a barcode scan from a mobile device. Can be used to:
+        - Look up product information
+        - Adjust inventory quantities
+        - Perform inventory counts
+      operationId: processInventoryScan
+      tags:
+        - Inventory
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ScanInventoryRequest'
+      responses:
+        '200':
+          description: Scan processed successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ScanInventoryResponse'
+        '400':
+          description: Invalid request
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+        '404':
+          description: Product not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+  /scanner/orders:
+    get:
+      summary: List orders for picking
+      description: |
+        Get a list of orders for the current picker/driver.
+        Orders can be filtered by status and paginated.
+      operationId: listOrdersForPicking
+      tags:
+        - Orders
+      parameters:
+        - name: status
+          in: query
+          required: false
+          description: Filter by order status
+          schema:
+            type: string
+            enum: [pending, processing, picking, staged, delivering, delivered]
+        - name: limit
+          in: query
+          required: false
+          description: Maximum number of orders to return
+          schema:
+            type: integer
+            default: 20
+            maximum: 100
+        - name: offset
+          in: query
+          required: false
+          description: Number of orders to skip for pagination
+          schema:
+            type: integer
+            default: 0
+      responses:
+        '200':
+          description: List of orders
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderListResponse'
+
+  /scanner/orders/{id}:
+    get:
+      summary: Get order details
+      description: |
+        Get detailed order information including line items for picking.
+        Includes product details, quantities, and location information.
+      operationId: getOrderForPicking
+      tags:
+        - Orders
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: Order ID
+          schema:
+            type: string
+          example: "order_01ABC123"
+      responses:
+        '200':
+          description: Order details
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/OrderDetailResponse'
+        '404':
+          description: Order not found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Error'
+
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+      description: Supabase JWT token
+
+  schemas:
+    Error:
+      type: object
+      properties:
+        error:
+          type: string
+          description: Error message
+        message:
+          type: string
+          description: Detailed error information
+
+    ProductLookupResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+          example: true
+        barcode:
+          type: string
+          example: "012345678901"
+        product:
+          type: object
+          properties:
+            id:
+              type: string
+              example: "prod_01ABC123"
+            title:
+              type: string
+              example: "Organic Bananas"
+            handle:
+              type: string
+              example: "organic-bananas"
+            thumbnail:
+              type: string
+              format: uri
+              example: "https://cdn.example.com/bananas.jpg"
+            description:
+              type: string
+        variant:
+          type: object
+          properties:
+            id:
+              type: string
+              example: "var_01XYZ789"
+            title:
+              type: string
+              example: "1 lb"
+            sku:
+              type: string
+              example: "BAN-ORG-1LB"
+            barcode:
+              type: string
+              example: "012345678901"
+        inventory:
+          type: array
+          items:
+            type: object
+            properties:
+              location_id:
+                type: string
+              stocked_quantity:
+                type: integer
+              reserved_quantity:
+                type: integer
+              available_quantity:
+                type: integer
+
+    ScanInventoryRequest:
+      type: object
+      required:
+        - barcode
+      properties:
+        barcode:
+          type: string
+          description: UPC/EAN barcode or SKU
+          example: "012345678901"
+        location_id:
+          type: string
+          description: Stock location ID for inventory operations
+          example: "sloc_01ABC123"
+        quantity:
+          type: integer
+          description: Quantity to adjust (for adjust action)
+          example: 5
+        action:
+          type: string
+          description: Type of scan operation
+          enum: [lookup, adjust, count]
+          default: lookup
+
+    ScanInventoryResponse:
+      type: object
+      properties:
+        success:
+          type: boolean
+        barcode:
+          type: string
+        product:
+          type: object
+          properties:
+            id:
+              type: string
+            title:
+              type: string
+            handle:
+              type: string
+            thumbnail:
+              type: string
+        inventory:
+          type: object
+          nullable: true
+          properties:
+            stocked_quantity:
+              type: integer
+            reserved_quantity:
+              type: integer
+            available_quantity:
+              type: integer
+            location_id:
+              type: string
+        scanned_at:
+          type: string
+          format: date-time
+        scanned_by:
+          type: string
+          description: User ID who performed the scan
+
+    OrderListResponse:
+      type: object
+      properties:
+        orders:
+          type: array
+          items:
+            $ref: '#/components/schemas/OrderSummary'
+        count:
+          type: integer
+          description: Total number of orders matching filter
+        limit:
+          type: integer
+        offset:
+          type: integer
+
+    OrderSummary:
+      type: object
+      properties:
+        id:
+          type: string
+          example: "order_01ABC123"
+        display_id:
+          type: integer
+          example: 1234
+        status:
+          type: string
+        fulfillment_status:
+          type: string
+        payment_status:
+          type: string
+        created_at:
+          type: string
+          format: date-time
+        total:
+          type: number
+          format: float
+        shipping_address:
+          type: object
+          nullable: true
+          properties:
+            first_name:
+              type: string
+            last_name:
+              type: string
+            address_1:
+              type: string
+            city:
+              type: string
+            postal_code:
+              type: string
+
+    OrderDetailResponse:
+      type: object
+      properties:
+        order:
+          type: object
+          properties:
+            id:
+              type: string
+            display_id:
+              type: integer
+            status:
+              type: string
+            fulfillment_status:
+              type: string
+              nullable: true
+            payment_status:
+              type: string
+              nullable: true
+            created_at:
+              type: string
+              format: date-time
+            items:
+              type: array
+              items:
+                $ref: '#/components/schemas/OrderItem'
+            shipping_address:
+              type: object
+            billing_address:
+              type: object
+            fulfillments:
+              type: array
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                  status:
+                    type: string
+                  shipped_at:
+                    type: string
+                    format: date-time
+                    nullable: true
+                  delivered_at:
+                    type: string
+                    format: date-time
+                    nullable: true
+
+    OrderItem:
+      type: object
+      properties:
+        id:
+          type: string
+        title:
+          type: string
+          description: Product title
+        quantity:
+          type: integer
+        unit_price:
+          type: number
+          format: float
+        thumbnail:
+          type: string
+          format: uri
+          nullable: true
+        variant_sku:
+          type: string
+          description: SKU for barcode scanning

@@ -1,0 +1,35 @@
+{
+  "name": "@medusajs/sweeps",
+  "version": "0.0.1",
+  "description": "Sweeps module for Goods - manages daily retailer shopping trips",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./models": {
+      "types": "./dist/models/index.d.ts",
+      "default": "./dist/models/index.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@medusajs/framework": "workspace:^",
+    "@medusajs/utils": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@medusajs/framework": "workspace:^"
+  }
+}

@@ -1,0 +1,166 @@
+---
+title: Placing Orders
+description: How to create and manage orders in Switchyard
+---
+
+# Placing Orders
+
+This guide covers how orders are created and managed in Switchyard, including manual order creation for testing.
+
+## Order Sources
+
+Orders can enter Switchyard from multiple sources:
+
+| Source | Description |
+|--------|-------------|
+| **Goods Mobile App** | Primary source - customers place orders via API |
+| **Test Orders** | Manual creation for testing fulfillment flow |
+| **Draft Orders** | Admin-created orders via Medusa dashboard |
+
+## Creating Test Orders
+
+For testing the fulfillment flow without using the mobile app, you can create test orders directly from the Admin API.
+
+### Via API
+
+```bash
+POST /admin/test-orders
+Authorization: Bearer YOUR_TOKEN
+Content-Type: application/json
+
+{
+  "items": [
+    {
+      "variant_id": "variant_01ABC123",
+      "quantity": 2
+    },
+    {
+      "variant_id": "variant_02XYZ456",
+      "quantity": 1
+    }
+  ],
+  "shipping_address": {
+    "first_name": "Test",
+    "last_name": "Customer",
+    "address_1": "123 Test Street",
+    "city": "Austin",
+    "postal_code": "78701"
+  },
+  "notes": "Testing sweep fulfillment"
+}
+```
+
+**Response:**
+
+```json
+{
+  "success": true,
+  "message": "Test order created successfully",
+  "order": {
+    "id": "order_01ABC123",
+    "display_id": 1234,
+    "status": "pending",
+    "items": [
+      {
+        "id": "item_01",
+        "title": "Organic Bananas",
+        "quantity": 2,
+        "variant_sku": "BAN-ORG-1LB"
+      }
+    ],
+    "created_at": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+### Request Parameters
+
+| Field | Type | Required | Description |
+|-------|------|----------|-------------|
+| `items` | array | Yes | Array of items to include |
+| `items[].variant_id` | string | Yes | Product variant ID |
+| `items[].quantity` | number | Yes | Quantity to order |
+| `customer_id` | string | No | Existing customer ID (creates test customer if omitted) |
+| `shipping_address` | object | No | Delivery address (uses default if omitted) |
+| `notes` | string | No | Internal notes about the test |
+
+### Listing Test Orders
+
+```bash
+GET /admin/test-orders?limit=20&offset=0
+Authorization: Bearer YOUR_TOKEN
+```
+
+Returns only orders marked as test orders.
+
+## Using Draft Orders
+
+Medusa's built-in draft order system provides a full-featured way to create orders:
+
+1. Go to **Orders** → **Draft Orders** in the admin dashboard
+2. Click **Create Draft Order**
+3. Add customer, items, and shipping details
+4. Complete the draft to create the order
+
+Draft orders go through the complete order flow and are useful for testing end-to-end.
+
+## Order Flow After Creation
+
+Once an order is created (from any source), it follows the standard fulfillment flow:
+
+1. **Pending** - Order received, awaiting processing
+2. **Processing** - System analyzing sourcing (RFC vs sweep)
+3. **Sweep/Picking** - Items being sourced
+4. **Staged** - Order assembled in tote
+5. **Delivering** - Robot en route
+6. **Delivered** - Complete
+
+See [Order Flow](/architecture/order-flow) for detailed documentation.
+
+## Testing Scenarios
+
+Common scenarios to test:
+
+### RFC-Only Order
+
+Create an order with items that are in RFC stock:
+
+```json
+{
+  "items": [
+    { "variant_id": "rfc_stocked_item", "quantity": 1 }
+  ],
+  "notes": "Testing RFC-only fulfillment"
+}
+```
+
+### Sweep Order
+
+Create an order with items that require retailer sourcing:
+
+```json
+{
+  "items": [
+    { "variant_id": "sweep_only_item", "quantity": 1 }
+  ],
+  "notes": "Testing sweep fulfillment"
+}
+```
+
+### Hybrid Order
+
+Create an order with both RFC and sweep items:
+
+```json
+{
+  "items": [
+    { "variant_id": "rfc_item", "quantity": 1 },
+    { "variant_id": "sweep_item", "quantity": 1 }
+  ],
+  "notes": "Testing hybrid fulfillment"
+}
+```
+
+## Cleanup
+
+Test orders are marked with `is_test_order: true` in metadata and can be filtered/deleted separately from production orders.

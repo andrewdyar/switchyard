@@ -37,6 +37,41 @@ const response = await fetch('https://api.switchyard.run/admin/products', {
 
 </CodeGroup>
 
+## Actively Used Endpoints
+
+While Switchyard inherits the full Medusa Admin API, these are the endpoints actively used in our operations:
+
+### Core Operations
+
+| Category | Endpoints | Purpose |
+|----------|-----------|---------|
+| **Products** | `/admin/products/*` | Manage product catalog from retailer scraping |
+| **Inventory** | `/admin/inventory-items/*` | Track stock levels at RFC and retailers |
+| **Stock Locations** | `/admin/stock-locations/*` | Manage RFC warehouse zones and retailer locations |
+| **Orders** | `/admin/orders/*` | View and manage customer orders |
+| **Draft Orders** | `/admin/draft-orders/*` | Create test orders manually |
+| **Customers** | `/admin/customers/*` | Manage customer accounts |
+| **Users** | `/admin/users/*` | Manage admin users and roles |
+
+### Secondary Operations
+
+| Category | Endpoints | Purpose |
+|----------|-----------|---------|
+| **Price Lists** | `/admin/price-lists/*` | Manage retailer cost prices and selling prices |
+| **Sales Channels** | `/admin/sales-channels/*` | Configure storefronts |
+| **Regions** | `/admin/regions/*` | Geographic configuration |
+| **Notifications** | `/admin/notifications/*` | View system notifications |
+
+### Not Used
+
+These Medusa endpoints are included for completeness but are not used in Switchyard operations:
+
+- Cart endpoints (cart handled in mobile app)
+- Payment endpoints (payments in mobile app via Stripe)
+- Gift Card endpoints
+- Tax endpoints
+- Promotion/Campaign endpoints
+
 ## Permissions
 
 Admin API endpoints require specific permissions based on the RBAC system. See the [RBAC documentation](/authentication/rbac) for details on roles and permissions.
@@ -72,4 +107,4 @@ All responses are JSON with consistent structure:
 
 ## Explore Endpoints
 
-Browse the Admin API endpoints in the sidebar to see all available operations.
+Browse the Admin API endpoints below to see all available operations. Focus on the **actively used** categories listed above for Switchyard-specific functionality.
