@@ -2,15 +2,16 @@ import { defineConfig, loadEnv } from "@switchyard/framework/utils"
 
 loadEnv(process.env.NODE_ENV || "development", process.cwd())
 
-// Check for Supabase env vars - required in production, optional during build/dev
-const isProduction = process.env.NODE_ENV === "production"
+// Check if Supabase env vars are configured
+// Note: These are injected as secrets at runtime on Fly.io, not available during Docker build
 const hasSupabaseConfig = process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY && process.env.SUPABASE_SERVICE_ROLE_KEY
 
-// In production, Supabase auth is mission critical - fail fast if env vars are missing
-if (isProduction && !hasSupabaseConfig) {
-  throw new Error(
-    "Missing required Supabase environment variables. " +
-    "SUPABASE_URL, SUPABASE_ANON_KEY, and SUPABASE_SERVICE_ROLE_KEY must all be set in production."
+// Log Supabase configuration status (helpful for debugging)
+if (!hasSupabaseConfig && process.env.NODE_ENV === "production") {
+  console.warn(
+    "[Switchyard Config] Supabase environment variables not detected. " +
+    "If this is during Docker build, this is expected. " +
+    "At runtime, SUPABASE_URL, SUPABASE_ANON_KEY, and SUPABASE_SERVICE_ROLE_KEY must be set via secrets."
   )
 }
 
@@ -22,7 +23,7 @@ const authProviders: any[] = [
   },
 ]
 
-// Add Supabase auth provider if configured (required in production, optional in dev/build)
+// Add Supabase auth provider if configured (available at runtime via Fly.io secrets)
 if (hasSupabaseConfig) {
   authProviders.push({
     resolve: "@switchyard/auth-supabase",
