@@ -3,17 +3,17 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "medusa develop",
-    "build": "medusa build",
-    "start": "medusa start",
-    "seed": "medusa exec ./src/scripts/seed.ts"
+    "dev": "switchyard develop",
+    "build": "switchyard build",
+    "start": "switchyard start",
+    "seed": "switchyard exec ./src/scripts/seed.ts"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.0",
     "@switchyard/admin-sdk": "workspace:*",
     "@switchyard/cli": "workspace:*",
+    "@switchyard/framework": "workspace:*",
     "@switchyard/core": "workspace:*",
-    "@switchyard/framework": "workspace:*"
+    "@supabase/supabase-js": "^2.45.0"
   },
   "devDependencies": {
     "@types/node": "^20.12.11",
