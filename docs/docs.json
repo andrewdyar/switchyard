@@ -1,5 +1,5 @@
 {
-  "$schema": "https://mintlify.com/schema.json",
+  "$schema": "https://mintlify.com/docs.json",
   "name": "Switchyard Documentation",
   "theme": "mint",
   "logo": {
@@ -10,15 +10,7 @@
   "colors": {
     "primary": "#1F7A6B",
     "light": "#4FD1B5",
-    "dark": "#145C52",
-    "background": {
-      "light": "#F6F9F8",
-      "dark": "#0E1F1D"
-    },
-    "anchors": {
-      "from": "#1F7A6B",
-      "to": "#4FD1B5"
-    }
+    "dark": "#145C52"
   },
   "mcp": {
     "enabled": true
@@ -33,20 +25,6 @@
     "name": "Dashboard",
     "url": "https://switchyard.run/app"
   },
-  "tabs": [
-    {
-      "name": "Guides",
-      "url": "/"
-    },
-    {
-      "name": "Admin API",
-      "url": "api-reference/admin"
-    },
-    {
-      "name": "Store API",
-      "url": "api-reference/store"
-    }
-  ],
   "anchors": [
     {
       "name": "GitHub",
@@ -54,42 +32,49 @@
       "url": "https://github.com/andrewdyar/switchyard"
     }
   ],
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "introduction",
-        "quickstart"
-      ]
-    },
-    {
-      "group": "Authentication",
-      "pages": [
-        "authentication/overview",
-        "authentication/rbac",
-        "authentication/service-accounts"
-      ]
-    },
-    {
-      "group": "Guides",
-      "pages": [
-        "guides/inventory-management",
-        "guides/scanner-api"
-      ]
-    },
-    {
-      "group": "Admin API",
-      "pages": [
-        "api-reference/admin/introduction"
-      ]
-    },
-    {
-      "group": "Store API",
-      "pages": [
-        "api-reference/store/introduction"
-      ]
-    }
-  ],
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Guides",
+        "groups": [
+          {
+            "group": "Getting Started",
+            "pages": [
+              "introduction",
+              "quickstart"
+            ]
+          },
+          {
+            "group": "Authentication",
+            "pages": [
+              "authentication/overview",
+              "authentication/rbac",
+              "authentication/service-accounts"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              "guides/inventory-management",
+              "guides/scanner-api"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Admin API",
+        "pages": [
+          "api-reference/admin/introduction"
+        ]
+      },
+      {
+        "tab": "Store API",
+        "pages": [
+          "api-reference/store/introduction"
+        ]
+      }
+    ]
+  },
   "footerSocials": {
     "github": "https://github.com/andrewdyar/switchyard"
   },
