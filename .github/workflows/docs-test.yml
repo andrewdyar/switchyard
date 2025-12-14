@@ -40,9 +40,9 @@ jobs:
         env:
           NEXT_PUBLIC_BASE_URL: "http://localhost:3000"
           NEXT_PUBLIC_BASE_PATH: /api
-          NEXT_PUBLIC_DOCS_URL: "https://medusa-docs.vercel.app"
+          NEXT_PUBLIC_DOCS_URL: "https://switchyard-docs.vercel.app"
           NODE_ENV: production
-          NEXT_PUBLIC_RESOURCES_URL: "http://medusa-types-nine.vercel.app"
+          NEXT_PUBLIC_RESOURCES_URL: "http://switchyard-types-nine.vercel.app"
           NEXT_PUBLIC_SANITY_PROJECT_ID: temp
           NEXT_PUBLIC_SANITY_DATASET: temp
           NEXT_PUBLIC_ENV: CI

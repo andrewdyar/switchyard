@@ -57,12 +57,12 @@ jobs:
           extension: cli-database
 
       - name: Install Medusa cli
-        run: npm i -g @medusajs/cli@preview
+        run: npm i -g @switchyardjs/cli@preview
 
       - name: Create Medusa project
         working-directory: ..
         run: |
-          medusa new cli-test --skip-db --skip-migrations --v2 --branch ci-custom
+          switchyard new cli-test --skip-db --skip-migrations --v2 --branch ci-custom
 
       - name: Enable Corepack
         run: corepack enable
@@ -74,22 +74,22 @@ jobs:
         working-directory: ../cli-test
 
       - name: Run migrations
-        run: npx medusa db:migrate
+        run: npx switchyard db:migrate
         working-directory: ../cli-test
 
       - name: Create admin user
-        run: npx medusa user -e test@test.com -p password -i admin_123
+        run: npx switchyard user -e test@test.com -p password -i admin_123
         working-directory: ../cli-test
 
       - name: Run development server
-        run: npx medusa develop &
+        run: npx switchyard develop &
         working-directory: ../cli-test
 
       - name: Testing development server
         uses: ./.github/actions/test-server
 
-      - name: Starting medusa
-        run: npx medusa start &
+      - name: Starting switchyard
+        run: npx switchyard start &
         working-directory: ../cli-test
 
       - name: Testing server

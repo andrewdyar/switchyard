@@ -54,7 +54,7 @@ RUN cd apps/goods-backend && \
 # =============================================================================
 # Layer 5: Verify admin build and fix HTML paths
 # =============================================================================
-# medusa build outputs to dist/public/admin (because tsconfig.outDir = "./dist")
+# switchyard build outputs to dist/public/admin (because tsconfig.outDir = "./dist")
 # Vite processes entry.jsx and outputs it as entry.js (transpiled)
 # Copy from dist/public/admin to public/admin for runtime
 RUN cd apps/goods-backend && \
@@ -109,7 +109,7 @@ EXPOSE 9000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD node -e "require('http').get('http://localhost:9000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
 
-# Start medusa - it will use the .medusa/server directory created by medusa build
+# Start switchyard - it will use the .medusa/server directory created by switchyard build
 # Bind to 0.0.0.0 so Fly.io proxy can reach it
 # Note: When host is undefined, Node.js http.listen() binds to all interfaces (0.0.0.0) by default
 # We explicitly set --host 0.0.0.0 to ensure it works correctly with Fly.io's proxy
