@@ -1,8 +1,8 @@
 {
   "$schema": "https://unpkg.com/@changesets/config@2.0.0/schema.json",
-  "changelog": ["@changesets/changelog-github", { "repo": "medusajs/medusa" }],
+  "changelog": ["@changesets/changelog-github", { "repo": "andrewdyar/switchyard" }],
   "commit": false,
-  "fixed": [["@medusajs/*", "create-switchyard-app", "medusa-dev-cli", "!@medusajs/ui"]],
+  "fixed": [["@switchyard/*", "create-switchyard-app", "medusa-dev-cli", "!@switchyard/ui"]],
   "linked": [],
   "access": "public",
   "baseBranch": "develop",

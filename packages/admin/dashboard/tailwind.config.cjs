@@ -1,15 +1,15 @@
 const path = require("path")
 
-// get the path of the dependency "@medusajs/ui"
-const medusaUI = path.join(
-  path.dirname(require.resolve("@medusajs/ui")),
+// get the path of the dependency "@switchyard/ui"
+const switchyardUI = path.join(
+  path.dirname(require.resolve("@switchyard/ui")),
   "**/*.{js,jsx,ts,tsx}"
 )
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  presets: [require("@medusajs/ui-preset")],
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", medusaUI],
+  presets: [require("@switchyard/ui-preset")],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}", switchyardUI],
   darkMode: "class",
   theme: {
     extend: {},
