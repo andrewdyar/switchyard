@@ -3,7 +3,7 @@ import {
   createShippingProfilesStep,
   useQueryGraphStep,
 } from "@switchyard/core-flows"
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import { ExecArgs } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys, Modules } from "@switchyard/framework/utils"
 import {
@@ -75,8 +75,8 @@ export default async function assignProductsToShippingProfile({
   container,
 }: ExecArgs) {
   if (
-    !MedusaModule.isInstalled(Modules.FULFILLMENT) ||
-    !MedusaModule.isInstalled(Modules.PRODUCT)
+    !SwitchyardModule.isInstalled(Modules.FULFILLMENT) ||
+    !SwitchyardModule.isInstalled(Modules.PRODUCT)
   ) {
     return
   }

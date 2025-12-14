@@ -3,8 +3,8 @@ import {
   updateRequestItemReturnWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
@@ -16,8 +16,8 @@ import { defaultAdminDetailsReturnFields } from "../../../../../returns/query-co
 import { AdminPostReturnsRequestItemsActionReqSchemaType } from "../../../../../returns/validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminPostReturnsRequestItemsActionReqSchemaType>,
-  res: MedusaResponse<HttpTypes.AdminClaimReturnPreviewResponse>
+  req: AuthenticatedSwitchyardRequest<AdminPostReturnsRequestItemsActionReqSchemaType>,
+  res: SwitchyardResponse<HttpTypes.AdminClaimReturnPreviewResponse>
 ) => {
   const { id, action_id } = req.params
 
@@ -62,8 +62,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminClaimReturnPreviewResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminClaimReturnPreviewResponse>
 ) => {
   const { id, action_id } = req.params
 

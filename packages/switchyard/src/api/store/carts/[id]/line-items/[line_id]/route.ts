@@ -2,17 +2,17 @@ import {
   deleteLineItemsWorkflowId,
   updateLineItemInCartWorkflowId,
 } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 import { Modules } from "@switchyard/framework/utils"
 import { refetchCart } from "../../../helpers"
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.StoreUpdateCartLineItem & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreCartResponse>
+  res: SwitchyardResponse<HttpTypes.StoreCartResponse>
 ) => {
   const we = req.scope.resolve(Modules.WORKFLOW_ENGINE)
   await we.run(updateLineItemInCartWorkflowId, {
@@ -34,8 +34,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: MedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.StoreLineItemDeleteResponse>
+  req: SwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.StoreLineItemDeleteResponse>
 ) => {
   const id = req.params.line_id
 

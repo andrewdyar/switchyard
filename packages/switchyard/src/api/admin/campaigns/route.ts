@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { createCampaignsWorkflow } from "@switchyard/core-flows"
 import {
@@ -11,8 +11,8 @@ import { refetchCampaign } from "./helpers"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetCampaignsParams>,
-  res: MedusaResponse<HttpTypes.AdminCampaignListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetCampaignsParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCampaignListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -36,11 +36,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateCampaign & AdditionalData,
     HttpTypes.AdminGetCampaignParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCampaignResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCampaignResponse>
 ) => {
   const { additional_data, ...rest } = req.validatedBody
   const createCampaigns = createCampaignsWorkflow(req.scope)

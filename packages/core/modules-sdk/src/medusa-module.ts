@@ -4,7 +4,7 @@ import {
   InternalModuleDeclaration,
   LinkModuleDefinition,
   LoadedModule,
-  MedusaContainer,
+  SwitchyardContainer,
   ModuleBootstrapDeclaration,
   ModuleDefinition,
   ModuleExports,
@@ -13,7 +13,7 @@ import {
 } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
-  createMedusaContainer,
+  createSwitchyardContainer,
   promiseAll,
   simpleHash,
   stringifyCircular,
@@ -23,7 +23,7 @@ import { EOL } from "os"
 import {
   moduleLoader,
   registerMedusaLinkModule,
-  registerMedusaModule,
+  registerSwitchyardModule,
 } from "./loaders"
 import { loadModuleMigrations } from "./loaders/utils"
 import { MODULE_SCOPE } from "./types"
@@ -36,7 +36,7 @@ const logger: any = {
 }
 
 declare global {
-  interface MedusaModule {
+  interface SwitchyardModule {
     getLoadedModules(
       aliases?: Map<string, string>
     ): { [key: string]: LoadedModule }[]
@@ -55,7 +55,7 @@ type ModuleAlias = {
 export type MigrationOptions = {
   moduleKey: string
   modulePath: string
-  container?: MedusaContainer
+  container?: SwitchyardContainer
   options?: Record<string, any>
   moduleExports?: ModuleExports
   cwd?: string
@@ -66,12 +66,12 @@ export type ModuleBootstrapOptions = {
   defaultPath: string
   declaration?: ModuleBootstrapDeclaration
   moduleExports?: ModuleExports
-  sharedContainer?: MedusaContainer
+  sharedContainer?: SwitchyardContainer
   moduleDefinition?: ModuleDefinition
   injectedDependencies?: Record<string, any>
   /**
    * In this mode, all instances are partially loaded, meaning that the module will not be fully loaded and the services will not be available.
-   * Don't forget to clear the instances (MedusaModule.clearInstances()) after the migration are done.
+   * Don't forget to clear the instances (SwitchyardModule.clearInstances()) after the migration are done.
    */
   migrationOnly?: boolean
   /**
@@ -96,7 +96,7 @@ export type RegisterModuleJoinerConfig =
   | ModuleJoinerConfig
   | ((modules: ModuleJoinerConfig[]) => ModuleJoinerConfig)
 
-class MedusaModule {
+class SwitchyardModule {
   private static instances_: Map<string, { [key: string]: IModuleService }> =
     new Map()
   private static modules_: Map<string, ModuleAlias[]> = new Map()
@@ -108,17 +108,17 @@ class MedusaModule {
   public static getLoadedModules(
     aliases?: Map<string, string>
   ): { [key: string]: LoadedModule }[] {
-    return [...MedusaModule.modules_.entries()].map(([key]) => {
+    return [...SwitchyardModule.modules_.entries()].map(([key]) => {
       if (aliases?.has(key)) {
-        return MedusaModule.getModuleInstance(key, aliases.get(key))
+        return SwitchyardModule.getModuleInstance(key, aliases.get(key))
       }
 
-      return MedusaModule.getModuleInstance(key)
+      return SwitchyardModule.getModuleInstance(key)
     })
   }
 
   public static onApplicationStart(onApplicationStartCb?: () => void): void {
-    for (const instances of MedusaModule.instances_.values()) {
+    for (const instances of SwitchyardModule.instances_.values()) {
       for (const instance of Object.values(instances) as IModuleService[]) {
         if (instance?.__hooks) {
           instance.__hooks?.onApplicationStart
@@ -136,7 +136,7 @@ class MedusaModule {
   }
   public static async onApplicationShutdown(): Promise<void> {
     await promiseAll(
-      [...MedusaModule.instances_.values()]
+      [...SwitchyardModule.instances_.values()]
         .map((instances) => {
           return Object.values(instances).map((instance: IModuleService) => {
             return instance.__hooks?.onApplicationShutdown
@@ -153,7 +153,7 @@ class MedusaModule {
 
   public static async onApplicationPrepareShutdown(): Promise<void> {
     await promiseAll(
-      [...MedusaModule.instances_.values()]
+      [...SwitchyardModule.instances_.values()]
         .map((instances) => {
           return Object.values(instances).map((instance: IModuleService) => {
             return instance.__hooks?.onApplicationPrepareShutdown
@@ -169,45 +169,45 @@ class MedusaModule {
   }
 
   public static clearInstances(): void {
-    MedusaModule.instances_.clear()
-    MedusaModule.modules_.clear()
-    MedusaModule.joinerConfig_.clear()
-    MedusaModule.moduleResolutions_.clear()
-    MedusaModule.customLinks_.length = 0
+    SwitchyardModule.instances_.clear()
+    SwitchyardModule.modules_.clear()
+    SwitchyardModule.joinerConfig_.clear()
+    SwitchyardModule.moduleResolutions_.clear()
+    SwitchyardModule.customLinks_.length = 0
   }
 
   public static isInstalled(moduleKey: string, alias?: string): boolean {
     if (alias) {
       return (
-        MedusaModule.modules_.has(moduleKey) &&
-        MedusaModule.modules_.get(moduleKey)!.some((m) => m.alias === alias)
+        SwitchyardModule.modules_.has(moduleKey) &&
+        SwitchyardModule.modules_.get(moduleKey)!.some((m) => m.alias === alias)
       )
     }
 
-    return MedusaModule.modules_.has(moduleKey)
+    return SwitchyardModule.modules_.has(moduleKey)
   }
 
   public static getJoinerConfig(moduleKey: string): ModuleJoinerConfig {
-    return MedusaModule.joinerConfig_.get(moduleKey)!
+    return SwitchyardModule.joinerConfig_.get(moduleKey)!
   }
 
   public static getAllJoinerConfigs(): ModuleJoinerConfig[] {
-    return [...MedusaModule.joinerConfig_.values()]
+    return [...SwitchyardModule.joinerConfig_.values()]
   }
 
   public static getModuleResolutions(moduleKey: string): ModuleResolution {
-    return MedusaModule.moduleResolutions_.get(moduleKey)!
+    return SwitchyardModule.moduleResolutions_.get(moduleKey)!
   }
 
   public static getAllModuleResolutions(): ModuleResolution[] {
-    return [...MedusaModule.moduleResolutions_.values()]
+    return [...SwitchyardModule.moduleResolutions_.values()]
   }
 
   public static setModuleResolution(
     moduleKey: string,
     resolution: ModuleResolution
   ): ModuleResolution {
-    MedusaModule.moduleResolutions_.set(moduleKey, resolution)
+    SwitchyardModule.moduleResolutions_.set(moduleKey, resolution)
 
     return resolution
   }
@@ -216,49 +216,49 @@ class MedusaModule {
     moduleKey: string,
     config: ModuleJoinerConfig
   ): ModuleJoinerConfig {
-    MedusaModule.joinerConfig_.set(moduleKey, config)
+    SwitchyardModule.joinerConfig_.set(moduleKey, config)
 
     return config
   }
 
   public static setCustomLink(config: RegisterModuleJoinerConfig): void {
-    MedusaModule.customLinks_.push(config)
+    SwitchyardModule.customLinks_.push(config)
   }
 
   public static getCustomLinks(): RegisterModuleJoinerConfig[] {
-    return MedusaModule.customLinks_
+    return SwitchyardModule.customLinks_
   }
 
   public static getModuleInstance(
     moduleKey: string,
     alias?: string
   ): any | undefined {
-    if (!MedusaModule.modules_.has(moduleKey)) {
+    if (!SwitchyardModule.modules_.has(moduleKey)) {
       return
     }
 
     let mod
-    const modules = MedusaModule.modules_.get(moduleKey)!
+    const modules = SwitchyardModule.modules_.get(moduleKey)!
     if (alias) {
       mod = modules.find((m) => m.alias === alias)
 
-      return MedusaModule.instances_.get(mod?.hash)
+      return SwitchyardModule.instances_.get(mod?.hash)
     }
 
     mod = modules.find((m) => m.main) ?? modules[0]
 
-    return MedusaModule.instances_.get(mod?.hash)
+    return SwitchyardModule.instances_.get(mod?.hash)
   }
 
   private static registerModule(
     moduleKey: string,
     loadedModule: ModuleAlias
   ): void {
-    if (!MedusaModule.modules_.has(moduleKey)) {
-      MedusaModule.modules_.set(moduleKey, [])
+    if (!SwitchyardModule.modules_.has(moduleKey)) {
+      SwitchyardModule.modules_.set(moduleKey, [])
     }
 
-    const modules = MedusaModule.modules_.get(moduleKey)!
+    const modules = SwitchyardModule.modules_.get(moduleKey)!
 
     if (modules.some((m) => m.alias === loadedModule.alias)) {
       throw new Error(
@@ -273,7 +273,7 @@ class MedusaModule {
     }
 
     modules.push(loadedModule)
-    MedusaModule.modules_.set(moduleKey, modules!)
+    SwitchyardModule.modules_.set(moduleKey, modules!)
   }
 
   /**
@@ -304,7 +304,7 @@ class MedusaModule {
       [key: string]: any
     }[]
   > {
-    return await MedusaModule.bootstrap_(modulesOptions, {
+    return await SwitchyardModule.bootstrap_(modulesOptions, {
       migrationOnly,
       loaderOnly,
       workerMode,
@@ -340,7 +340,7 @@ class MedusaModule {
   }: ModuleBootstrapOptions): Promise<{
     [key: string]: T
   }> {
-    const [service] = await MedusaModule.bootstrap_(
+    const [service] = await SwitchyardModule.bootstrap_(
       [
         {
           moduleKey,
@@ -399,7 +399,7 @@ class MedusaModule {
       hashKey: string
       modDeclaration: InternalModuleDeclaration | ExternalModuleDeclaration
       moduleResolutions: Record<string, ModuleResolution>
-      container: MedusaContainer
+      container: SwitchyardContainer
       finishLoading: (arg: { [Key: string]: any }) => void
     }[] = []
 
@@ -429,18 +429,18 @@ class MedusaModule {
           errorLoading = reject
         })
 
-        if (!loaderOnly && MedusaModule.instances_.has(hashKey)) {
-          services.push(MedusaModule.instances_.get(hashKey)!)
+        if (!loaderOnly && SwitchyardModule.instances_.has(hashKey)) {
+          services.push(SwitchyardModule.instances_.get(hashKey)!)
           return
         }
 
-        if (!loaderOnly && MedusaModule.loading_.has(hashKey)) {
-          services.push(await MedusaModule.loading_.get(hashKey))
+        if (!loaderOnly && SwitchyardModule.loading_.has(hashKey)) {
+          services.push(await SwitchyardModule.loading_.get(hashKey))
           return
         }
 
         if (!loaderOnly) {
-          MedusaModule.loading_.set(hashKey, loadingPromise)
+          SwitchyardModule.loading_.set(hashKey, loadingPromise)
         }
 
         let modDeclaration =
@@ -460,7 +460,7 @@ class MedusaModule {
           } as InternalModuleDeclaration
         }
 
-        const container = sharedContainer ?? createMedusaContainer()
+        const container = sharedContainer ?? createSwitchyardContainer()
 
         if (injectedDependencies) {
           for (const service in injectedDependencies) {
@@ -474,7 +474,7 @@ class MedusaModule {
           }
         }
 
-        const moduleResolutions = registerMedusaModule({
+        const moduleResolutions = registerSwitchyardModule({
           moduleKey,
           moduleDeclaration: modDeclaration!,
           moduleExports,
@@ -523,16 +523,16 @@ class MedusaModule {
         container,
         finishLoading,
       }) => {
-        const service = await MedusaModule.resolveLoadedModule({
+        const service = await SwitchyardModule.resolveLoadedModule({
           hashKey,
           modDeclaration,
           moduleResolutions,
           container,
         })
 
-        MedusaModule.instances_.set(hashKey, service)
+        SwitchyardModule.instances_.set(hashKey, service)
         finishLoading(service)
-        MedusaModule.loading_.delete(hashKey)
+        SwitchyardModule.loading_.delete(hashKey)
         return service
       })
     )
@@ -561,7 +561,7 @@ class MedusaModule {
     hashKey: string
     modDeclaration: InternalModuleDeclaration | ExternalModuleDeclaration
     moduleResolutions: Record<string, ModuleResolution>
-    container: MedusaContainer
+    container: SwitchyardContainer
   }): Promise<{
     [key: string]: any
   }> {
@@ -610,12 +610,12 @@ class MedusaModule {
         }
 
         services[keyName].__joinerConfig = joinerConfig
-        MedusaModule.setJoinerConfig(keyName, joinerConfig)
+        SwitchyardModule.setJoinerConfig(keyName, joinerConfig)
       }
 
-      MedusaModule.setModuleResolution(keyName, resolution)
+      SwitchyardModule.setModuleResolution(keyName, resolution)
 
-      MedusaModule.registerModule(keyName, {
+      SwitchyardModule.registerModule(keyName, {
         key: keyName,
         hash: hashKey,
         alias: modDeclaration.alias ?? hashKey,
@@ -639,17 +639,17 @@ class MedusaModule {
     const moduleKey = definition.key
     const hashKey = simpleHash(stringifyCircular({ moduleKey, declaration }))
 
-    if (MedusaModule.instances_.has(hashKey)) {
-      return { [moduleKey]: MedusaModule.instances_.get(hashKey) }
+    if (SwitchyardModule.instances_.has(hashKey)) {
+      return { [moduleKey]: SwitchyardModule.instances_.get(hashKey) }
     }
 
-    if (MedusaModule.loading_.has(hashKey)) {
-      return await MedusaModule.loading_.get(hashKey)
+    if (SwitchyardModule.loading_.has(hashKey)) {
+      return await SwitchyardModule.loading_.get(hashKey)
     }
 
     let finishLoading: any
     let errorLoading: any
-    MedusaModule.loading_.set(
+    SwitchyardModule.loading_.set(
       hashKey,
       new Promise((resolve, reject) => {
         finishLoading = resolve
@@ -677,7 +677,7 @@ class MedusaModule {
       main: declaration?.main,
     }
 
-    const container = createMedusaContainer()
+    const container = createSwitchyardContainer()
 
     if (injectedDependencies) {
       for (const service in injectedDependencies) {
@@ -734,17 +734,17 @@ class MedusaModule {
         }
 
         services[keyName].__joinerConfig = joinerConfig
-        MedusaModule.setJoinerConfig(keyName, joinerConfig)
+        SwitchyardModule.setJoinerConfig(keyName, joinerConfig)
 
         if (!joinerConfig.isLink) {
           throw new Error(
-            "MedusaModule.bootstrapLink must be used only for Link Modules"
+            "SwitchyardModule.bootstrapLink must be used only for Link Modules"
           )
         }
       }
 
-      MedusaModule.setModuleResolution(keyName, resolution)
-      MedusaModule.registerModule(keyName, {
+      SwitchyardModule.setModuleResolution(keyName, resolution)
+      SwitchyardModule.registerModule(keyName, {
         key: keyName,
         hash: hashKey,
         alias: modDeclaration.alias ?? hashKey,
@@ -753,9 +753,9 @@ class MedusaModule {
       })
     }
 
-    MedusaModule.instances_.set(hashKey, services)
+    SwitchyardModule.instances_.set(hashKey, services)
     finishLoading(services)
-    MedusaModule.loading_.delete(hashKey)
+    SwitchyardModule.loading_.delete(hashKey)
 
     return services
   }
@@ -768,7 +768,7 @@ class MedusaModule {
     modulePath,
     cwd,
   }: MigrationOptions): Promise<void> {
-    const moduleResolutions = registerMedusaModule({
+    const moduleResolutions = registerSwitchyardModule({
       moduleKey,
       moduleDeclaration: {
         scope: MODULE_SCOPE.INTERNAL,
@@ -783,7 +783,7 @@ class MedusaModule {
         allowUnregistered: true,
       }) ?? logger
 
-    container ??= createMedusaContainer()
+    container ??= createSwitchyardContainer()
 
     for (const mod in moduleResolutions) {
       const { generateMigration } = await loadModuleMigrations(
@@ -810,7 +810,7 @@ class MedusaModule {
     modulePath,
     cwd,
   }: MigrationOptions): Promise<void> {
-    const moduleResolutions = registerMedusaModule({
+    const moduleResolutions = registerSwitchyardModule({
       moduleKey,
       moduleDeclaration: {
         scope: MODULE_SCOPE.INTERNAL,
@@ -825,7 +825,7 @@ class MedusaModule {
         allowUnregistered: true,
       }) ?? logger
 
-    container ??= createMedusaContainer()
+    container ??= createSwitchyardContainer()
 
     for (const mod in moduleResolutions) {
       const { runMigrations } = await loadModuleMigrations(
@@ -852,7 +852,7 @@ class MedusaModule {
     modulePath,
     cwd,
   }: MigrationOptions): Promise<void> {
-    const moduleResolutions = registerMedusaModule({
+    const moduleResolutions = registerSwitchyardModule({
       moduleKey,
       moduleDeclaration: {
         scope: MODULE_SCOPE.INTERNAL,
@@ -867,7 +867,7 @@ class MedusaModule {
         allowUnregistered: true,
       }) ?? logger
 
-    container ??= createMedusaContainer()
+    container ??= createSwitchyardContainer()
 
     for (const mod in moduleResolutions) {
       const { revertMigration } = await loadModuleMigrations(
@@ -887,7 +887,7 @@ class MedusaModule {
   }
 }
 
-global.MedusaModule ??= MedusaModule
-const GlobalMedusaModule = global.MedusaModule as typeof MedusaModule
+global.SwitchyardModule ??= SwitchyardModule
+const GlobalSwitchyardModule = global.SwitchyardModule as typeof SwitchyardModule
 
-export { GlobalMedusaModule as MedusaModule }
+export { GlobalSwitchyardModule as SwitchyardModule }

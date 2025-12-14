@@ -1,7 +1,7 @@
 import type {
   CustomerDTO,
   ICustomerModuleService,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "@switchyard/framework/types"
 import {
   isDefined,
@@ -47,7 +47,7 @@ interface StepCompensateInput {
 
 async function fetchCustomerById(
   customerId: string,
-  container: MedusaContainer
+  container: SwitchyardContainer
 ): Promise<CustomerDTO> {
   const service = container.resolve<ICustomerModuleService>(Modules.CUSTOMER)
 
@@ -62,7 +62,7 @@ async function fetchCustomerById(
 
 async function fetchCustomersByEmail(
   email: string,
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   hasAccount?: boolean
 ): Promise<CustomerDTO[]> {
   const service = container.resolve<ICustomerModuleService>(Modules.CUSTOMER)

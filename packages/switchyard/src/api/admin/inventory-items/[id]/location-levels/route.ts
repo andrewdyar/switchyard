@@ -2,18 +2,18 @@ import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 import { createInventoryLevelsWorkflow } from "@switchyard/core-flows"
 import { refetchInventoryItem } from "../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.AdminBatchCreateInventoryItemLocationLevels,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminInventoryItemResponse>
+  res: SwitchyardResponse<HttpTypes.AdminInventoryItemResponse>
 ) => {
   const { id } = req.params
 
@@ -38,8 +38,8 @@ export const POST = async (
 }
 
 export const GET = async (
-  req: MedusaRequest<HttpTypes.AdminInventoryLevelFilters>,
-  res: MedusaResponse<HttpTypes.AdminInventoryLevelListResponse>
+  req: SwitchyardRequest<HttpTypes.AdminInventoryLevelFilters>,
+  res: SwitchyardResponse<HttpTypes.AdminInventoryLevelListResponse>
 ) => {
   const { id } = req.params
 

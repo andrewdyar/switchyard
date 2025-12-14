@@ -1,4 +1,4 @@
-import { container, MedusaAppLoader } from "@switchyard/framework"
+import { container, SwitchyardAppLoader } from "@switchyard/framework"
 import { configLoader } from "@switchyard/framework/config"
 import { pgConnectionLoader } from "@switchyard/framework/database"
 import { featureFlagsLoader } from "@switchyard/framework/feature-flags"
@@ -10,7 +10,7 @@ import { SubscriberLoader } from "@switchyard/framework/subscribers"
 import {
   ConfigModule,
   LoadedModule,
-  MedusaContainer,
+  SwitchyardContainer,
   PluginDetails,
 } from "@switchyard/framework/types"
 import {
@@ -49,7 +49,7 @@ const shouldLoadBackgroundProcessors = (configModule) => {
 
 async function subscribersLoader(
   plugins: PluginDetails[],
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const pluginSubscribersSourcePaths = [
     /**
@@ -68,7 +68,7 @@ async function subscribersLoader(
 
 async function jobsLoader(
   plugins: PluginDetails[],
-  container: MedusaContainer
+  container: SwitchyardContainer
 ) {
   const pluginJobSourcePaths = [
     /**
@@ -83,7 +83,7 @@ async function jobsLoader(
 
 async function loadEntrypoints(
   plugins: PluginDetails[],
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   expressApp: Express,
   rootDirectory: string
 ) {
@@ -108,7 +108,7 @@ async function loadEntrypoints(
    * middleware
    */
   expressApp.use((req: Request, res: Response, next: NextFunction) => {
-    req.scope = container.createScope() as MedusaContainer
+    req.scope = container.createScope() as SwitchyardContainer
     req.requestId = (req.headers["x-request-id"] as string) ?? v4()
     next()
   })
@@ -143,7 +143,7 @@ export async function initializeContainer(
   options?: {
     skipDbConnection?: boolean
   }
-): Promise<MedusaContainer> {
+): Promise<SwitchyardContainer> {
   await featureFlagsLoader(rootDirectory)
   const configDir = await configLoader(rootDirectory, "switchyard.config")
   await featureFlagsLoader(join(__dirname, ".."))
@@ -166,7 +166,7 @@ export default async ({
   expressApp,
   skipLoadingEntryPoints = false,
 }: Options): Promise<{
-  container: MedusaContainer
+  container: SwitchyardContainer
   app: Express
   modules: Record<string, LoadedModule | LoadedModule[]>
   shutdown: () => Promise<void>
@@ -196,7 +196,7 @@ export default async ({
     onApplicationPrepareShutdown,
     modules,
     gqlSchema,
-  } = await new MedusaAppLoader().load()
+  } = await new SwitchyardAppLoader().load()
 
   const workflowsSourcePaths = plugins.map((p) => join(p.resolve, "workflows"))
   const workflowLoader = new WorkflowLoader(workflowsSourcePaths, container)

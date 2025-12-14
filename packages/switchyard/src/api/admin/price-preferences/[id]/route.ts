@@ -5,14 +5,14 @@ import {
 
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminPricePreferenceParams>,
-  res: MedusaResponse<HttpTypes.AdminPricePreferenceResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminPricePreferenceParams>,
+  res: SwitchyardResponse<HttpTypes.AdminPricePreferenceResponse>
 ) => {
   const price_preference = await refetchEntity({
     entity: "price_preference",
@@ -25,11 +25,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdatePricePreference,
     HttpTypes.AdminPricePreferenceParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPricePreferenceResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPricePreferenceResponse>
 ) => {
   const id = req.params.id
   const workflow = updatePricePreferencesWorkflow(req.scope)
@@ -49,8 +49,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminPricePreferenceDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminPricePreferenceDeleteResponse>
 ) => {
   const id = req.params.id
   const workflow = deletePricePreferencesWorkflow(req.scope)

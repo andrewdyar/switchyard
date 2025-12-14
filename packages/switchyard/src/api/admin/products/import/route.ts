@@ -1,23 +1,23 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { importProductsWorkflow } from "@switchyard/core-flows"
 
 /**
  * @deprecated use `POST /admin/products/imports` instead.
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminImportProductRequest>,
-  res: MedusaResponse<HttpTypes.AdminImportProductResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminImportProductRequest>,
+  res: SwitchyardResponse<HttpTypes.AdminImportProductResponse>
 ) => {
   const input = req.file as Express.Multer.File
 
   if (!input) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "No file was uploaded for importing"
     )
   }

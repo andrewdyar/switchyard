@@ -3,8 +3,8 @@ import {
   updateReturnShippingMethodWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminOrderPreview, HttpTypes } from "@switchyard/framework/types"
 import {
@@ -14,11 +14,11 @@ import {
 import { defaultAdminDetailsReturnFields } from "../../../../../returns/query-config"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminExchangeUpdateInboundShipping,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminExchangePreviewResponse>
+  res: SwitchyardResponse<HttpTypes.AdminExchangePreviewResponse>
 ) => {
   const { id, action_id } = req.params
 
@@ -65,8 +65,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminExchangeReturnResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminExchangeReturnResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 

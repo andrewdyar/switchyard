@@ -8,7 +8,7 @@ import {
   ApplicationMethodTargetType,
   ComputedActions,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PromotionType,
 } from "@switchyard/framework/utils"
 import { areRulesValidForContext } from "../validations"
@@ -29,8 +29,8 @@ function isValidPromotionContext(
   itemsContext: ComputeActionItemLine[]
 ): boolean {
   if (!itemsContext) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `"items" should be present as an array in the context to compute actions`
     )
   }

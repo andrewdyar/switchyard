@@ -1,6 +1,6 @@
 import type { PaymentCollectionDTO } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   PaymentCollectionStatus,
 } from "@switchyard/framework/utils"
@@ -18,8 +18,8 @@ export const throwUnlessStatusIsNotPaid = createStep(
   "validate-payment-collection",
   ({ paymentCollection }: { paymentCollection: PaymentCollectionDTO }) => {
     if (paymentCollection.status !== PaymentCollectionStatus.NOT_PAID) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Can only delete payment collections where status is not_paid`
       )
     }

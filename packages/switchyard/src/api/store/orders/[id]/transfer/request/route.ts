@@ -3,17 +3,17 @@ import {
   requestOrderTransferWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreRequestOrderTransfer,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreOrderResponse>
+  res: SwitchyardResponse<HttpTypes.StoreOrderResponse>
 ) => {
   const orderId = req.params.id
   const customerId = req.auth_context.actor_id

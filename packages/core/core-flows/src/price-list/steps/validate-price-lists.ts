@@ -4,7 +4,7 @@ import {
   UpdatePriceListDTO,
 } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   arrayDifference,
 } from "@switchyard/framework/utils"
@@ -40,8 +40,8 @@ export const validatePriceListsStep = createStep(
     )
 
     if (diff.length) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Price lists with id: ${diff.join(", ")} was not found`
       )
     }

@@ -7,13 +7,13 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminExchangeListParams>,
-  res: MedusaResponse<HttpTypes.AdminExchangeListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminExchangeListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminExchangeListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -39,11 +39,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateExchange,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminExchangeOrderResponse>
+  res: SwitchyardResponse<HttpTypes.AdminExchangeOrderResponse>
 ) => {
   const input = {
     ...req.validatedBody,

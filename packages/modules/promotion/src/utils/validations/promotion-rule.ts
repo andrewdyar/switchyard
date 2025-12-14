@@ -7,7 +7,7 @@ import {
 import {
   ApplicationMethodTargetType,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PromotionRuleOperator,
   isPresent,
   isString,
@@ -49,7 +49,7 @@ export function validatePromotionRuleAttributes(
 
   if (!errors.length) return
 
-  throw new MedusaError(MedusaError.Types.INVALID_DATA, errors.join(", "))
+  throw new SwitchyardError(SwitchyardError.Types.INVALID_DATA, errors.join(", "))
 }
 
 export function areRulesValidForContext(

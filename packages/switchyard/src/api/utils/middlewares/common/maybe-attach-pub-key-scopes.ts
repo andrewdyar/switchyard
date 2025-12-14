@@ -4,7 +4,7 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import { NextFunction } from "express"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 /**
  * If a publishable key (PK) is passed in the header of the request, we attach
@@ -18,8 +18,8 @@ import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
  *         but that id is not in the scope defined by the PK from the header
  */
 export async function maybeAttachPublishableKeyScopes(
-  req: MedusaRequest & { publishableApiKeyScopes: any },
-  res: MedusaResponse,
+  req: SwitchyardRequest & { publishableApiKeyScopes: any },
+  res: SwitchyardResponse,
   next: NextFunction
 ) {
   const pubKey = req.get("x-publishable-api-key")

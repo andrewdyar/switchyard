@@ -2,19 +2,19 @@ import {
   deleteRegionsWorkflow,
   updateRegionsWorkflow,
 } from "@switchyard/core-flows"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchRegion } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminRegionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminRegionResponse>
 ) => {
   const region = await refetchRegion(
     req.params.id,
@@ -23,8 +23,8 @@ export const GET = async (
   )
 
   if (!region) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Region with id: ${req.params.id} not found`
     )
   }
@@ -33,16 +33,16 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateRegion,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminRegionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminRegionResponse>
 ) => {
   const existingRegion = await refetchRegion(req.params.id, req.scope, ["id"])
   if (!existingRegion) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Region with id "${req.params.id}" not found`
     )
   }
@@ -64,8 +64,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminRegionDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminRegionDeleteResponse>
 ) => {
   const id = req.params.id
 

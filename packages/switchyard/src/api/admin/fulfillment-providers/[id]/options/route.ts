@@ -4,13 +4,13 @@ import {
 } from "@switchyard/framework/types"
 import { Modules } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminFulfillmentProviderOptionsListResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminFulfillmentProviderOptionsListResponse>
 ) => {
   const fulfillmentProviderService = req.scope.resolve(Modules.FULFILLMENT)
 

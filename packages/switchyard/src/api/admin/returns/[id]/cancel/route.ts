@@ -1,14 +1,14 @@
 import { cancelReturnWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminPostCancelReturnReqSchemaType } from "../../validators"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminPostCancelReturnReqSchemaType>,
-  res: MedusaResponse<HttpTypes.AdminReturnResponse>
+  req: AuthenticatedSwitchyardRequest<AdminPostCancelReturnReqSchemaType>,
+  res: SwitchyardResponse<HttpTypes.AdminReturnResponse>
 ) => {
   const { id } = req.params
 

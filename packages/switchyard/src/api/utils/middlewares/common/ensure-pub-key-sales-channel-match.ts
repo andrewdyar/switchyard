@@ -1,5 +1,5 @@
 import { NextFunction } from "express"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { StoreCreateCartType } from "../../../store/carts/validators"
 
 /**
@@ -16,8 +16,8 @@ import { StoreCreateCartType } from "../../../store/carts/validators"
  *         sales channel id is passed in the request.
  */
 export async function ensurePublishableKeyAndSalesChannelMatch(
-  req: MedusaRequest<StoreCreateCartType> & { publishableApiKeyScopes },
-  res: MedusaResponse,
+  req: SwitchyardRequest<StoreCreateCartType> & { publishableApiKeyScopes },
+  res: SwitchyardResponse,
   next: NextFunction
 ) {
   const pubKey = req.get("x-publishable-api-key")

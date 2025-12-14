@@ -5,18 +5,18 @@ import {
 import { AdminReturnReasonResponse, HttpTypes } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminReturnReasonParams>,
-  res: MedusaResponse<AdminReturnReasonResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminReturnReasonParams>,
+  res: SwitchyardResponse<AdminReturnReasonResponse>
 ) => {
   const return_reason = await refetchEntity({
     entity: "return_reason",
@@ -26,8 +26,8 @@ export const GET = async (
   })
 
   if (!return_reason) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Return reason with id: ${req.params.id} was not found`
     )
   }
@@ -36,11 +36,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateReturnReason,
     HttpTypes.AdminReturnReasonParams
   >,
-  res: MedusaResponse<AdminReturnReasonResponse>
+  res: SwitchyardResponse<AdminReturnReasonResponse>
 ) => {
   const workflow = updateReturnReasonsWorkflow(req.scope)
 
@@ -67,8 +67,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminReturnReasonDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminReturnReasonDeleteResponse>
 ) => {
   const { id } = req.params
 

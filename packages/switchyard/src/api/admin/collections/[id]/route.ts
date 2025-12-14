@@ -3,18 +3,18 @@ import {
   updateCollectionsWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { refetchCollection } from "../helpers"
 import { AdminUpdateCollectionType } from "../validators"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminCollectionParams>,
-  res: MedusaResponse<HttpTypes.AdminCollectionResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminCollectionParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCollectionResponse>
 ) => {
   const collection = await refetchCollection(
     req.params.id,
@@ -26,18 +26,18 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     AdminUpdateCollectionType & AdditionalData,
     HttpTypes.AdminCollectionParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCollectionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCollectionResponse>
 ) => {
   const existingCollection = await refetchCollection(req.params.id, req.scope, [
     "id",
   ])
   if (!existingCollection) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Collection with id "${req.params.id}" not found`
     )
   }
@@ -62,8 +62,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminCollectionDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminCollectionDeleteResponse>
 ) => {
   const id = req.params.id
 

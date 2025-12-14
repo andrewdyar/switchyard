@@ -1,4 +1,4 @@
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   Constructor,
   IAnalyticsProvider,
@@ -26,8 +26,8 @@ export default class AnalyticsProviderService {
     )
 
     if (analyticsProviderKeys.length !== 1) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Analytics module should be initialized with exactly one provider`
       )
     }

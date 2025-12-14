@@ -6,15 +6,15 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchCustomer } from "./helpers"
 import { AdminCreateCustomerType } from "./validators"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminCustomerFilters>,
-  res: MedusaResponse<HttpTypes.AdminCustomerListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminCustomerFilters>,
+  res: SwitchyardResponse<HttpTypes.AdminCustomerListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -38,11 +38,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     AdminCreateCustomerType & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCustomerResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCustomerResponse>
 ) => {
   const { additional_data, ...rest } = req.validatedBody
   const createCustomers = createCustomersWorkflow(req.scope)

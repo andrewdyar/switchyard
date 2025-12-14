@@ -1,11 +1,11 @@
 import { getOrderDetailWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 
 // TODO: Do we want to apply some sort of authentication here? My suggestion is that we do
 export const GET = async (
-  req: MedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.StoreOrderResponse>
+  req: SwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.StoreOrderResponse>
 ) => {
   const workflow = getOrderDetailWorkflow(req.scope)
   const { result } = await workflow.run({

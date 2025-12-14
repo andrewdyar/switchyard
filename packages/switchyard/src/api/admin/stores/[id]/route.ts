@@ -1,20 +1,20 @@
 import { updateStoresWorkflow } from "@switchyard/core-flows"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminGetStoreParamsType } from "../validators"
 import { refetchStore } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<AdminGetStoreParamsType>,
-  res: MedusaResponse<HttpTypes.AdminStoreResponse>
+  req: AuthenticatedSwitchyardRequest<AdminGetStoreParamsType>,
+  res: SwitchyardResponse<HttpTypes.AdminStoreResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
   const variables = { id: req.params.id }
@@ -30,16 +30,16 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateStore,
     HttpTypes.AdminStoreParams
   >,
-  res: MedusaResponse<HttpTypes.AdminStoreResponse>
+  res: SwitchyardResponse<HttpTypes.AdminStoreResponse>
 ) => {
   const existingStore = await refetchStore(req.params.id, req.scope, ["id"])
   if (!existingStore) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Store with id "${req.params.id}" not found`
     )
   }

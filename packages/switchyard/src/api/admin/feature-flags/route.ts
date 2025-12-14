@@ -1,4 +1,4 @@
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const AUTHENTICATE = false
@@ -7,8 +7,8 @@ export const AUTHENTICATE = false
  * @since 2.10.0
  */
 export const GET = async (
-  req: MedusaRequest,
-  res: MedusaResponse<{ feature_flags: Record<string, boolean> }>
+  req: SwitchyardRequest,
+  res: SwitchyardResponse<{ feature_flags: Record<string, boolean> }>
 ) => {
   const featureFlagRouter = req.scope.resolve(
     ContainerRegistrationKeys.FEATURE_FLAG_ROUTER

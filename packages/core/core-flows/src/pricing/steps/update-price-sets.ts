@@ -3,7 +3,7 @@ import type {
   PricingTypes,
 } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   getSelectsAndRelationsFromObjectArray,
 } from "@switchyard/framework/utils"
@@ -59,8 +59,8 @@ export const updatePriceSetsStep = createStep(
 
     if ("price_sets" in data) {
       if (data.price_sets.some((p) => !p.id)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Price set id is required when doing a batch update"
         )
       }

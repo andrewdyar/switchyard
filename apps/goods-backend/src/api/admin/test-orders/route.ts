@@ -1,6 +1,6 @@
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { Modules } from "@switchyard/framework/utils"
 
@@ -30,8 +30,8 @@ interface CreateTestOrderBody {
  * the mobile app, useful for testing the fulfillment flow.
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<CreateTestOrderBody>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<CreateTestOrderBody>,
+  res: SwitchyardResponse
 ) => {
   const { customer_id, items, shipping_address, notes } = req.body
 
@@ -149,8 +149,8 @@ export const POST = async (
  * List test orders
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const limit = parseInt(req.query.limit as string) || 20
   const offset = parseInt(req.query.offset as string) || 0

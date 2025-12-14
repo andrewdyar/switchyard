@@ -42,8 +42,8 @@ export abstract class AbstractPaymentProvider<TConfig = Record<string, unknown>>
    * class MyPaymentProviderService extends AbstractPaymentProvider<Options> {
    *   static validateOptions(options: Record<any, any>) {
    *     if (!options.apiKey) {
-   *       throw new MedusaError(
-   *         MedusaError.Types.INVALID_DATA,
+   *       throw new SwitchyardError(
+   *         SwitchyardError.Types.INVALID_DATA,
    *         "API key is required in the provider's options."
    *       )
    *     }

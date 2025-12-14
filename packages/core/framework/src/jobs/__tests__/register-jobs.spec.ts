@@ -1,7 +1,7 @@
 import { WorkflowManager, WorkflowScheduler } from "@switchyard/orchestration"
 import {
   ContainerRegistrationKeys,
-  createMedusaContainer,
+  createSwitchyardContainer,
 } from "@switchyard/utils"
 import { asValue } from "../../deps/awilix"
 import { join } from "path"
@@ -17,7 +17,7 @@ describe("register jobs", () => {
   })
 
   it("should registers jobs from plugins", async () => {
-    const container = createMedusaContainer()
+    const container = createSwitchyardContainer()
     container.register(ContainerRegistrationKeys.LOGGER, asValue(logger))
 
     const jobLoader: JobLoader = new JobLoader(
@@ -34,7 +34,7 @@ describe("register jobs", () => {
   })
 
   it("should not load non js/ts files", async () => {
-    const container = createMedusaContainer()
+    const container = createSwitchyardContainer()
     container.register(ContainerRegistrationKeys.LOGGER, asValue(logger))
 
     const jobLoader: JobLoader = new JobLoader(

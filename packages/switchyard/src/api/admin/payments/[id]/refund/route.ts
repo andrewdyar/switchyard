@@ -1,17 +1,17 @@
 import { refundPaymentWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchPayment } from "../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminRefundPayment,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPaymentResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPaymentResponse>
 ) => {
   const { id } = req.params
   await refundPaymentWorkflow(req.scope).run({

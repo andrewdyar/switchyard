@@ -7,7 +7,7 @@ import {
 import { IEventBusModuleService } from "@switchyard/types"
 import {
   composeMessage,
-  createMedusaContainer,
+  createSwitchyardContainer,
   Modules,
   promiseAll,
 } from "@switchyard/utils"
@@ -2626,7 +2626,7 @@ describe("Workflow composer", function () {
   })
 
   it("should emit grouped events once the workflow is executed and finished", async () => {
-    const container = createMedusaContainer()
+    const container = createSwitchyardContainer()
     container.register({
       [Modules.EVENT_BUS]: asValue({
         releaseGroupedEvents: jest
@@ -2686,7 +2686,7 @@ describe("Workflow composer", function () {
   })
 
   it("should clear grouped events on fail state", async () => {
-    const container = createMedusaContainer()
+    const container = createSwitchyardContainer()
     container.register({
       [Modules.EVENT_BUS]: asValue({
         releaseGroupedEvents: jest

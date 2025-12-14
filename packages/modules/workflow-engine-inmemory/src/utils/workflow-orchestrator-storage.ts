@@ -21,7 +21,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   isPresent,
-  MedusaError,
+  SwitchyardError,
   TransactionState,
   TransactionStepState,
 } from "@switchyard/framework/utils"
@@ -656,8 +656,8 @@ export class InMemoryDistributedTransactionStorage
     } else if ("interval" in schedulerOptions) {
       expression = schedulerOptions.interval
     } else {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Schedule cron or interval definition is required for scheduled jobs."
       )
     }
@@ -729,7 +729,7 @@ export class InMemoryDistributedTransactionStorage
         config: job.config,
       })
     } catch (e) {
-      if (e instanceof MedusaError && e.type === MedusaError.Types.NOT_FOUND) {
+      if (e instanceof SwitchyardError && e.type === SwitchyardError.Types.NOT_FOUND) {
         this.logger_?.warn(
           `Tried to execute a scheduled workflow with ID ${jobId} that does not exist, removing it from the scheduler.`
         )

@@ -1,10 +1,10 @@
 import { listShippingOptionsForCartWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: MedusaRequest<{}, HttpTypes.StoreGetShippingOptionList>,
-  res: MedusaResponse<HttpTypes.StoreShippingOptionListResponse>
+  req: SwitchyardRequest<{}, HttpTypes.StoreGetShippingOptionList>,
+  res: SwitchyardResponse<HttpTypes.StoreShippingOptionListResponse>
 ) => {
   const { cart_id, is_return } = req.filterableFields
 

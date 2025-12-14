@@ -3,8 +3,8 @@ import { HttpTypes } from "@switchyard/framework/types"
 import { Modules } from "@switchyard/framework/utils"
 
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchStockLocation } from "../../helpers"
 
@@ -18,11 +18,11 @@ const buildLinks = (id, fulfillmentProviderIds: string[]) => {
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminBatchLink,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminStockLocationResponse>
+  res: SwitchyardResponse<HttpTypes.AdminStockLocationResponse>
 ) => {
   const { id } = req.params
   const { add = [], remove = [] } = req.validatedBody

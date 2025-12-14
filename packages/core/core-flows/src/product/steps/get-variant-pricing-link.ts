@@ -1,7 +1,7 @@
 import {
   arrayDifference,
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
 } from "@switchyard/framework/utils"
 import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
@@ -50,8 +50,8 @@ export const getVariantPricingLinkStep = createStep(
         existingItems.map((i) => i.variant_id)
       )
 
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Variants with IDs ${missing.join(", ")} do not have prices associated.`
       )
     }

@@ -3,7 +3,7 @@ import type {
   ProductTypes,
 } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   getSelectsAndRelationsFromObjectArray,
 } from "@switchyard/framework/utils"
@@ -68,8 +68,8 @@ export const updateProductVariantsStep = createStep(
 
     if ("product_variants" in data) {
       if (data.product_variants.some((p) => !p.id)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Product variant ID is required when doing a batch update of product variants"
         )
       }

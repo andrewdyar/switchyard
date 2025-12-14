@@ -2,7 +2,7 @@ import type { CartWorkflowDTO } from "@switchyard/framework/types"
 import {
   isPresent,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PaymentSessionStatus,
 } from "@switchyard/framework/utils"
 import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
@@ -50,8 +50,8 @@ export const validateCartPaymentsStep = createStep(
     }
 
     if (!isPresent(paymentCollection)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Payment collection has not been initiated for cart`
       )
     }
@@ -69,8 +69,8 @@ export const validateCartPaymentsStep = createStep(
     )
 
     if (!paymentsToProcess?.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Payment sessions are required to complete cart`
       )
     }

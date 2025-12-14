@@ -5,14 +5,14 @@ import {
 } from "@switchyard/framework/types"
 import { Modules } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminCreateWorkflowsRunType } from "../../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminCreateWorkflowsRunType>,
-  res: MedusaResponse<HttpTypes.AdminWorkflowRunResponse>
+  req: AuthenticatedSwitchyardRequest<AdminCreateWorkflowsRunType>,
+  res: SwitchyardResponse<HttpTypes.AdminWorkflowRunResponse>
 ) => {
   const workflowEngineService: IWorkflowEngineService = req.scope.resolve(
     Modules.WORKFLOW_ENGINE

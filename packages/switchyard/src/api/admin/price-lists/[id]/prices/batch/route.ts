@@ -1,7 +1,7 @@
 import { promiseAll } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { listPrices } from "../../../queries"
 import { adminPriceListPriceRemoteQueryFields } from "../../../query-config"
@@ -13,13 +13,13 @@ import {
 import { batchPriceListPricesWorkflow } from "@switchyard/core-flows"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     BatchMethodRequest<
       AdminCreatePriceListPriceType,
       AdminUpdatePriceListPriceType
     >
   >,
-  res: MedusaResponse<HttpTypes.AdminPriceListBatchResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPriceListBatchResponse>
 ) => {
   const id = req.params.id
   const {

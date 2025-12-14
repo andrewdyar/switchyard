@@ -3,17 +3,17 @@ import {
   updateApiKeysWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { refetchApiKey } from "../helpers"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminApiKeyResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminApiKeyResponse>
 ) => {
   const apiKey = await refetchApiKey(
     req.params.id,
@@ -22,8 +22,8 @@ export const GET = async (
   )
 
   if (!apiKey) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `API Key with id: ${req.params.id} was not found`
     )
   }
@@ -32,11 +32,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateApiKey,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminApiKeyResponse>
+  res: SwitchyardResponse<HttpTypes.AdminApiKeyResponse>
 ) => {
   await updateApiKeysWorkflow(req.scope).run({
     input: {
@@ -55,8 +55,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminApiKeyDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminApiKeyDeleteResponse>
 ) => {
   const id = req.params.id
 

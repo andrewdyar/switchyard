@@ -1,25 +1,25 @@
 import { linkSalesChannelsToApiKeyWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
-import { ApiKeyType, MedusaError } from "@switchyard/framework/utils"
+import { ApiKeyType, SwitchyardError } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchApiKey } from "../../helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminBatchLink,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminApiKeyResponse>
+  res: SwitchyardResponse<HttpTypes.AdminApiKeyResponse>
 ) => {
   const { add, remove } = req.validatedBody
   const apiKey = await refetchApiKey(req.params.id, req.scope, ["id", "type"])
 
   if (apiKey.type !== ApiKeyType.PUBLISHABLE) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Sales channels can only be associated with publishable API keys"
     )
   }

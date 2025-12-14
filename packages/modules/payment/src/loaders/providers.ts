@@ -6,7 +6,7 @@ import {
   ModuleProvider,
   ModulesSdkTypes,
 } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 import { PaymentProviderService } from "@services"
 import * as providers from "../providers"
@@ -15,8 +15,8 @@ const PROVIDER_REGISTRATION_KEY = "payment_providers"
 
 const registrationFn = async (klass, container, pluginOptions) => {
   if (!klass?.identifier) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_ARGUMENT,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_ARGUMENT,
       `Trying to register a payment provider without a provider identifier.`
     )
   }

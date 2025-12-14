@@ -1,14 +1,14 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminGetPaymentParamsType } from "../validators"
 import { refetchPayment } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<AdminGetPaymentParamsType>,
-  res: MedusaResponse<HttpTypes.AdminPaymentResponse>
+  req: AuthenticatedSwitchyardRequest<AdminGetPaymentParamsType>,
+  res: SwitchyardResponse<HttpTypes.AdminPaymentResponse>
 ) => {
   const payment = await refetchPayment(
     req.params.id,

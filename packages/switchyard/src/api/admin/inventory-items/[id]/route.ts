@@ -1,5 +1,5 @@
-import { MedusaError } from "@switchyard/framework/utils"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardError } from "@switchyard/framework/utils"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import {
   deleteInventoryItemWorkflow,
   updateInventoryItemsWorkflow,
@@ -8,8 +8,8 @@ import { refetchInventoryItem } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: MedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminInventoryItemResponse>
+  req: SwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminInventoryItemResponse>
 ) => {
   const { id } = req.params
   const inventoryItem = await refetchInventoryItem(
@@ -18,8 +18,8 @@ export const GET = async (
     req.queryConfig.fields
   )
   if (!inventoryItem) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Inventory item with id: ${id} was not found`
     )
   }
@@ -31,11 +31,11 @@ export const GET = async (
 
 // Update inventory item
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.AdminUpdateInventoryItem,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminInventoryItemResponse>
+  res: SwitchyardResponse<HttpTypes.AdminInventoryItemResponse>
 ) => {
   const { id } = req.params
 
@@ -57,8 +57,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: MedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminInventoryItemDeleteResponse>
+  req: SwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminInventoryItemDeleteResponse>
 ) => {
   const id = req.params.id
   const deleteInventoryItems = deleteInventoryItemWorkflow(req.scope)

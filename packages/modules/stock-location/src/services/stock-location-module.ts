@@ -22,7 +22,7 @@ import {
   InjectTransactionManager,
   isString,
   MedusaContext,
-  MedusaService,
+  SwitchyardService,
   Modules,
   promiseAll,
 } from "@switchyard/framework/utils"
@@ -40,7 +40,7 @@ type InjectedDependencies = {
  * Service for managing stock locations.
  */
 export default class StockLocationModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     StockLocation: { dto: StockLocationTypes.StockLocationDTO }
     StockLocationAddress: { dto: StockLocationTypes.StockLocationAddressDTO }
   }>({ StockLocation, StockLocationAddress })

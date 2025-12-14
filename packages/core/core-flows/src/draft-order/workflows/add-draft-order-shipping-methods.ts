@@ -1,7 +1,7 @@
 import {
   ChangeActionType,
   isDefined,
-  MedusaError,
+  SwitchyardError,
   OrderChangeStatus,
   ShippingOptionPriceType,
 } from "@switchyard/framework/utils"
@@ -45,8 +45,8 @@ const validateShippingOptionStep = createStep(
       shippingOption.price_type === ShippingOptionPriceType.CALCULATED &&
       !isDefined(customAmount)
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Calculated shipping options are not currently supported on draft orders without a custom amount."
       )
     }

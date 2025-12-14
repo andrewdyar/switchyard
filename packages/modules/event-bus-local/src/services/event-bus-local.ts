@@ -3,7 +3,7 @@ import {
   EventBusTypes,
   InternalModuleDeclaration,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
   Message,
   Subscriber,
 } from "@switchyard/framework/types"
@@ -27,7 +27,7 @@ export default class LocalEventBusService extends AbstractEventBusModuleService 
   protected groupedEventsMap_: StagingQueueType
 
   constructor(
-    { logger }: MedusaContainer & InjectedDependencies,
+    { logger }: SwitchyardContainer & InjectedDependencies,
     moduleOptions = {},
     moduleDeclaration: InternalModuleDeclaration
   ) {

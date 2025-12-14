@@ -4,15 +4,15 @@ import {
 } from "@switchyard/core-flows"
 import { FulfillmentWorkflow, HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchShippingOption } from "../helpers"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminShippingOptionResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminShippingOptionResponse>
 ) => {
   const shippingOption = await refetchShippingOption(
     req.params.id,
@@ -21,8 +21,8 @@ export const GET = async (
   )
 
   if (!shippingOption) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Shipping Option with id: ${req.params.id} not found`
     )
   }
@@ -31,11 +31,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateShippingOption,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminShippingOptionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminShippingOptionResponse>
 ) => {
   const shippingOptionPayload = req.validatedBody
 
@@ -61,8 +61,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminShippingOptionDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminShippingOptionDeleteResponse>
 ) => {
   const shippingOptionId = req.params.id
 

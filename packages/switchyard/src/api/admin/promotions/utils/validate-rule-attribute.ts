@@ -1,4 +1,4 @@
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { getRuleAttributesMap } from "./rule-attributes-map"
 import {
   ApplicationMethodTargetTypeValues,
@@ -32,8 +32,8 @@ export function validateRuleAttribute(attributes: {
   const ruleAttribute = ruleAttributes.find((obj) => obj.id === ruleAttributeId)
 
   if (!ruleAttribute) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Invalid rule attribute - ${ruleAttributeId}`
     )
   }

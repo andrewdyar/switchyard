@@ -1,13 +1,13 @@
 import { listShippingOptionsForOrderWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { AdminShippingOption, HttpTypes } from "@switchyard/framework/types"
 
 /**
  * @since 2.10.0
  */
 export const GET = async (
-  req: MedusaRequest<{}, HttpTypes.AdminGetOrderShippingOptionList>,
-  res: MedusaResponse<{ shipping_options: AdminShippingOption[] }>
+  req: SwitchyardRequest<{}, HttpTypes.AdminGetOrderShippingOptionList>,
+  res: SwitchyardResponse<{ shipping_options: AdminShippingOption[] }>
 ) => {
   const { id } = req.params
 

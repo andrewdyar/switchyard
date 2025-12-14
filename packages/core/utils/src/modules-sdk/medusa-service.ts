@@ -30,7 +30,7 @@ import { isMedusaInternalService } from "./medusa-internal-service"
 import {
   BaseMethods,
   ExtractKeysFromConfig,
-  MedusaServiceReturnType,
+  SwitchyardServiceReturnType,
   ModelConfigurationsToConfigTemplate,
   ModelEntries,
   ModelsConfigTemplate,
@@ -76,33 +76,33 @@ function buildMethodNamesFromModel(
 }
 
 /**
- * Accessible from the MedusaService, holds the model objects when provided
+ * Accessible from the SwitchyardService, holds the model objects when provided
  */
-export const MedusaServiceModelObjectsSymbol = Symbol.for(
-  "MedusaServiceModelObjectsSymbol"
+export const SwitchyardServiceModelObjectsSymbol = Symbol.for(
+  "SwitchyardServiceModelObjectsSymbol"
 )
 
 /**
  * Symbol to mark a class as a Medusa service
  */
-export const MedusaServiceSymbol = Symbol.for("MedusaServiceSymbol")
+export const SwitchyardServiceSymbol = Symbol.for("SwitchyardServiceSymbol")
 
 /**
- * Accessible from the MedusaService, holds the model name to linkable keys map
+ * Accessible from the SwitchyardService, holds the model name to linkable keys map
  * to be used for softDelete and restore methods
  */
-export const MedusaServiceModelNameToLinkableKeysMapSymbol = Symbol.for(
-  "MedusaServiceModelNameToLinkableKeysMapSymbol"
+export const SwitchyardServiceModelNameToLinkableKeysMapSymbol = Symbol.for(
+  "SwitchyardServiceModelNameToLinkableKeysMapSymbol"
 )
 
 /**
  * Check if a value is a Medusa service
  * @param value
  */
-export function isMedusaService(
+export function isSwitchyardService(
   value: any
-): value is MedusaServiceReturnType<any> {
-  return value && value?.prototype[MedusaServiceSymbol]
+): value is SwitchyardServiceReturnType<any> {
+  return value && value?.prototype[SwitchyardServiceSymbol]
 }
 
 /**
@@ -123,18 +123,18 @@ export function isMedusaService(
  *   RuleType,
  * }
  *
- * class MyService extends ModulesSdkUtils.MedusaService(models) {}
+ * class MyService extends ModulesSdkUtils.SwitchyardService(models) {}
  *
  * @param models
  */
-export function MedusaService<
+export function SwitchyardService<
   const ModelsConfig extends ModelsConfigTemplate = { __empty: any },
   const TModels extends ModelEntries<
     ExtractKeysFromConfig<ModelsConfig>
   > = ModelEntries<ExtractKeysFromConfig<ModelsConfig>>
 >(
   models: TModels
-): MedusaServiceReturnType<
+): SwitchyardServiceReturnType<
   ModelsConfig extends { __empty: any }
     ? ModelConfigurationsToConfigTemplate<TModels>
     : ModelsConfig
@@ -285,7 +285,7 @@ export function MedusaService<
           // eg: product.id = product_id, variant.id = variant_id
           const mappedCascadedModelsMap = mapObjectTo(
             cascadedModelsMap,
-            this[MedusaServiceModelNameToLinkableKeysMapSymbol],
+            this[SwitchyardServiceModelNameToLinkableKeysMapSymbol],
             {
               pick: config.returnLinkableKeys,
             }
@@ -317,7 +317,7 @@ export function MedusaService<
           // eg: product.id = product_id, variant.id = variant_id
           mappedCascadedModelsMap = mapObjectTo(
             cascadedModelsMap,
-            this[MedusaServiceModelNameToLinkableKeysMapSymbol],
+            this[SwitchyardServiceModelNameToLinkableKeysMapSymbol],
             {
               pick: config.returnLinkableKeys,
             }
@@ -333,16 +333,16 @@ export function MedusaService<
   }
 
   class AbstractModuleService_ {
-    [MedusaServiceSymbol] = true
+    [SwitchyardServiceSymbol] = true
 
-    static [MedusaServiceModelObjectsSymbol] =
-      models as unknown as MedusaServiceReturnType<
+    static [SwitchyardServiceModelObjectsSymbol] =
+      models as unknown as SwitchyardServiceReturnType<
         ModelsConfig extends { __empty: any }
           ? ModelConfigurationsToConfigTemplate<TModels>
           : ModelsConfig
       >["$modelObjects"];
 
-    [MedusaServiceModelNameToLinkableKeysMapSymbol]: MapToConfig
+    [SwitchyardServiceModelNameToLinkableKeysMapSymbol]: MapToConfig
 
     readonly __container__: Record<any, any>
     readonly baseRepository_: RepositoryService
@@ -397,7 +397,7 @@ export function MedusaService<
         ? this.__container__[Modules.EVENT_BUS]
         : undefined
 
-      this[MedusaServiceModelNameToLinkableKeysMapSymbol] =
+      this[SwitchyardServiceModelNameToLinkableKeysMapSymbol] =
         buildModelsNameToLinkableKeysMap(joinerConfig?.linkableKeys ?? {})
     }
 
@@ -411,7 +411,7 @@ export function MedusaService<
      *
      * @example
      *
-     * class MyService extends ModulesSdkUtils.MedusaService(models) {
+     * class MyService extends ModulesSdkUtils.SwitchyardService(models) {
      *   interceptEntityMutationEvents(event: "afterCreate" | "afterUpdate" | "afterUpsert" | "afterDelete", args: EventArgs<any>, context: Context) {
      *     console.log("interceptEntityMutationEvents", event, args.entity)
      *   }

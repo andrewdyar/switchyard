@@ -9,7 +9,7 @@ import {
 import {
   InjectManager,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
 } from "@switchyard/framework/utils"
 import { Order } from "@models"
@@ -49,8 +49,8 @@ export default class OrderService extends ModulesSdkUtils.MedusaInternalService<
     )
 
     if (!result) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Order with id: "${id}" and version: "${version}" not found`
       )
     }

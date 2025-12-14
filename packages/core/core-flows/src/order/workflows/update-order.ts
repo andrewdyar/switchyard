@@ -1,6 +1,6 @@
 import type { OrderDTO, OrderWorkflow } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   OrderWorkflowEvents,
   validateEmail,
 } from "@switchyard/framework/utils"
@@ -72,8 +72,8 @@ export const updateOrderValidationStep = createStep(
       order.shipping_address?.country_code !==
         input.shipping_address?.country_code
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Country code cannot be changed"
       )
     }
@@ -83,8 +83,8 @@ export const updateOrderValidationStep = createStep(
       order.billing_address?.country_code !==
         input.billing_address?.country_code
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Country code cannot be changed"
       )
     }

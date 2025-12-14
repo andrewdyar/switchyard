@@ -1,4 +1,4 @@
-import { MedusaAppLoader } from "@switchyard/framework"
+import { SwitchyardAppLoader } from "@switchyard/framework"
 import { LinkLoader } from "@switchyard/framework/links"
 import { MigrationScriptsMigrator } from "@switchyard/framework/migrations"
 import {
@@ -8,8 +8,8 @@ import {
 } from "@switchyard/framework/utils"
 import { dirname, join } from "path"
 
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
-import { Logger, MedusaContainer, PluginDetails } from "@switchyard/types"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
+import { Logger, SwitchyardContainer, PluginDetails } from "@switchyard/types"
 import { initializeContainer } from "../../loaders"
 import { ensureDbExists } from "../utils"
 
@@ -25,7 +25,7 @@ export async function runMigrationScripts({
   logger,
 }: {
   directory: string
-  container: MedusaContainer
+  container: SwitchyardContainer
   logger: Logger
 }): Promise<boolean> {
   let onApplicationPrepareShutdown: () => Promise<void> = async () =>
@@ -93,7 +93,7 @@ async function loadResources(
   /**
    * Clear all module instances to prevent cache from kicking in
    */
-  MedusaModule.clearInstances()
+  SwitchyardModule.clearInstances()
 
   /**
    * Setup
@@ -104,11 +104,11 @@ async function loadResources(
   )
   await new LinkLoader(linksSourcePaths, logger).load()
 
-  const medusaAppResources = await new MedusaAppLoader().load()
+  const switchyardAppResources = await new SwitchyardAppLoader().load()
   const onApplicationPrepareShutdown =
-    medusaAppResources.onApplicationPrepareShutdown
-  const onApplicationShutdown = medusaAppResources.onApplicationShutdown
-  await medusaAppResources.onApplicationStart()
+    switchyardAppResources.onApplicationPrepareShutdown
+  const onApplicationShutdown = switchyardAppResources.onApplicationShutdown
+  await switchyardAppResources.onApplicationStart()
 
   return {
     onApplicationPrepareShutdown,
@@ -120,7 +120,7 @@ const main = async function ({
   directory,
 }: {
   directory: string
-  container?: MedusaContainer
+  container?: SwitchyardContainer
 }) {
   const container = await initializeContainer(directory)
   const logger = container.resolve(ContainerRegistrationKeys.LOGGER)

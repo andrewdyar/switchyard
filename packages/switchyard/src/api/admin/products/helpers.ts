@@ -3,7 +3,7 @@ import {
   BatchResponse,
   HttpTypes,
   LinkDefinition,
-  MedusaContainer,
+  SwitchyardContainer,
   PriceDTO,
   ProductDTO,
   ProductVariantDTO,
@@ -158,7 +158,7 @@ export const buildRules = (price: PriceDTO) => {
 
 export const refetchVariant = async (
   variantId: string,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
@@ -177,7 +177,7 @@ export const refetchVariant = async (
 
 export const refetchBatchProducts = async (
   batchResult: BatchMethodResponse<ProductDTO>,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ): Promise<BatchResponse<ProductDTO>> => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
@@ -222,7 +222,7 @@ export const refetchBatchProducts = async (
 
 export const refetchBatchVariants = async (
   batchResult: BatchMethodResponse<ProductVariantDTO>,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ): Promise<BatchResponse<ProductVariantDTO>> => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)

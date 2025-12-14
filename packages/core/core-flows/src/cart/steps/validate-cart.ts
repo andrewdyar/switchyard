@@ -1,5 +1,5 @@
 import type { CartDTO, CartWorkflowDTO } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
@@ -36,8 +36,8 @@ export const validateCartStep = createStep(
     const { cart } = data
 
     if (cart.completed_at) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cart ${cart.id} is already completed.`
       )
     }

@@ -10,19 +10,19 @@ import {
 } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<AdminServiceZoneResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<AdminServiceZoneResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -37,8 +37,8 @@ export const GET = async (
   )
 
   if (!service_zone) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Service zone with id: ${req.params.zone_id} not found`
     )
   }
@@ -47,11 +47,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.AdminUpdateFulfillmentSetServiceZone,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<AdminFulfillmentSetResponse>
+  res: SwitchyardResponse<AdminFulfillmentSetResponse>
 ) => {
   const fulfillmentModuleService = req.scope.resolve<IFulfillmentModuleService>(
     Modules.FULFILLMENT
@@ -64,8 +64,8 @@ export const POST = async (
   )
 
   if (!fulfillmentSet.service_zones.find((s) => s.id === req.params.zone_id)) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Service zone with id: ${req.params.zone_id} not found on fulfillment set`
     )
   }
@@ -95,8 +95,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminServiceZoneDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminServiceZoneDeleteResponse>
 ) => {
   const { id, zone_id } = req.params
 
@@ -113,8 +113,8 @@ export const DELETE = async (
   )
 
   if (!fulfillmentSet.service_zones.find((s) => s.id === zone_id)) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Service zone with id: ${zone_id} not found on fulfillment set`
     )
   }

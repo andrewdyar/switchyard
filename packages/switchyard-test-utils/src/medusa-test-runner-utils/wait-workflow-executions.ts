@@ -1,5 +1,5 @@
 import { Modules } from "@switchyard/framework/utils"
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 
 /**
  * Waits for all workflow executions to finish. When relying on workflows but not necessarily
@@ -7,7 +7,7 @@ import { MedusaContainer } from "@switchyard/framework/types"
  * @param container - The container instance.
  * @returns A promise that resolves when all workflow executions have finished.
  */
-export async function waitWorkflowExecutions(container: MedusaContainer) {
+export async function waitWorkflowExecutions(container: SwitchyardContainer) {
   const wfe = container.resolve(Modules.WORKFLOW_ENGINE, {
     allowUnregistered: true,
   })

@@ -3,13 +3,13 @@ import {
   updateCustomerAddressesWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
-import { HttpTypes, MedusaContainer } from "@switchyard/framework/types"
+import { HttpTypes, SwitchyardContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import { refetchCustomer } from "../../../helpers"
@@ -18,8 +18,8 @@ import {
 } from "../../../validators"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<StoreGetCustomerAddressParamsType>,
-  res: MedusaResponse<HttpTypes.StoreCustomerAddressResponse>
+  req: AuthenticatedSwitchyardRequest<StoreGetCustomerAddressParamsType>,
+  res: SwitchyardResponse<HttpTypes.StoreCustomerAddressResponse>
 ) => {
   const customerId = req.auth_context.actor_id
 
@@ -34,8 +34,8 @@ export const GET = async (
 
   const [address] = await remoteQuery(queryObject)
   if (!address) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Address with id: ${req.params.address_id} was not found`
     )
   }
@@ -44,11 +44,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreUpdateCustomerAddress,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreCustomerResponse>
+  res: SwitchyardResponse<HttpTypes.StoreCustomerResponse>
 ) => {
   const id = req.auth_context.actor_id!
   await validateCustomerAddress(req.scope, id, req.params.address_id)
@@ -67,8 +67,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.StoreCustomerAddressDeleteResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.StoreCustomerAddressDeleteResponse>
 ) => {
   const id = req.auth_context.actor_id
   await validateCustomerAddress(req.scope, id, req.params.address_id)
@@ -89,7 +89,7 @@ export const DELETE = async (
 }
 
 const validateCustomerAddress = async (
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   customerId: string,
   addressId: string
 ) => {
@@ -104,8 +104,8 @@ const validateCustomerAddress = async (
 
   const [address] = await remoteQuery(queryObject)
   if (!address) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Address with id: ${addressId} was not found`
     )
   }

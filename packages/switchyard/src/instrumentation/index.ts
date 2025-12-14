@@ -1,7 +1,7 @@
 import {
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
   Query,
 } from "@switchyard/framework"
 import { ApiLoader } from "@switchyard/framework/http"
@@ -99,9 +99,9 @@ export function instrumentHttpLayer() {
    */
   ApiLoader.traceMiddleware = (handler) => {
     return async (
-      req: MedusaRequest<any>,
-      res: MedusaResponse,
-      next: MedusaNextFunction
+      req: SwitchyardRequest<any>,
+      res: SwitchyardResponse,
+      next: SwitchyardNextFunction
     ) => {
       if (shouldExcludeResource(req.originalUrl)) {
         return handler(req, res, next)

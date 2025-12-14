@@ -1,7 +1,7 @@
 import {
   ChangeActionType,
   MathBN,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import { OrderChangeProcessing } from "../calculate-order-change"
 import { setActionReference } from "../set-action-reference"
@@ -26,8 +26,8 @@ OrderChangeProcessing.registerActionType(
     validate({ action, currentOrder }) {
       const refId = action.details?.reference_id
       if (refId == null) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Reference ID is required."
         )
       }
@@ -35,22 +35,22 @@ OrderChangeProcessing.registerActionType(
       const existing = currentOrder.items.find((item) => item.id === refId)
 
       if (!existing) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Item ID "${refId}" not found.`
         )
       }
 
       if (!action.details?.quantity) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Quantity to cancel item fulfillment ${refId} is required.`
         )
       }
 
       if (action.details?.quantity < 1) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Quantity to cancel item ${refId} must be greater than 0.`
         )
       }
@@ -60,8 +60,8 @@ OrderChangeProcessing.registerActionType(
         existing.detail?.fulfilled_quantity
       )
       if (greater) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Cannot cancel more items than what was fulfilled for item ${refId}.`
         )
       }

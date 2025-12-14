@@ -3,17 +3,17 @@ import {
   updateOrderWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminOrder, HttpTypes } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminGetOrderDetailsParams
   >,
-  res: MedusaResponse<HttpTypes.AdminOrderResponse>
+  res: SwitchyardResponse<HttpTypes.AdminOrderResponse>
 ) => {
   const workflow = getOrderDetailWorkflow(req.scope)
   const { result } = await workflow.run({
@@ -28,11 +28,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateOrder,
     HttpTypes.AdminGetOrderDetailsParams
   >,
-  res: MedusaResponse<HttpTypes.AdminOrderResponse>
+  res: SwitchyardResponse<HttpTypes.AdminOrderResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 

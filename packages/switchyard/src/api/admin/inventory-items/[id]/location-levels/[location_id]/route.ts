@@ -1,8 +1,8 @@
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 import {
   deleteInventoryLevelsWorkflow,
@@ -12,8 +12,8 @@ import { HttpTypes } from "@switchyard/framework/types"
 import { refetchInventoryItem } from "../../../helpers"
 
 export const DELETE = async (
-  req: MedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminInventoryLevelDeleteResponse>
+  req: SwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminInventoryLevelDeleteResponse>
 ) => {
   const { id, location_id } = req.params
 
@@ -26,8 +26,8 @@ export const DELETE = async (
   })
 
   if (!result.data.length) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Inventory Level for Item ${id} at Location ${location_id} not found`
     )
   }
@@ -35,8 +35,8 @@ export const DELETE = async (
   const { id: levelId, reserved_quantity: reservedQuantity } = result.data[0]
 
   if (reservedQuantity > 0) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_ALLOWED,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_ALLOWED,
       `Cannot remove Inventory Level ${id} at Location ${location_id} because there are reservations at location`
     )
   }
@@ -64,11 +64,11 @@ export const DELETE = async (
 }
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.AdminUpdateInventoryLevel,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminInventoryItemResponse>
+  res: SwitchyardResponse<HttpTypes.AdminInventoryItemResponse>
 ) => {
   const { id, location_id } = req.params
   await updateInventoryLevelsWorkflow(req.scope).run({

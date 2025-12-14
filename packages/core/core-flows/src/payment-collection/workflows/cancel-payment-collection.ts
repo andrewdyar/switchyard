@@ -1,5 +1,5 @@
 import type { PaymentCollectionDTO } from "@switchyard/framework/types"
-import { MedusaError, PaymentCollectionStatus } from "@switchyard/framework/utils"
+import { SwitchyardError, PaymentCollectionStatus } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
@@ -17,15 +17,15 @@ const validatePaymentCollectionCancellationStep = createStep(
     const { paymentCollection } = input
 
     if (paymentCollection.status === PaymentCollectionStatus.COMPLETED) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Cannot cancel a completed payment collection"
       )
     }
 
     if (paymentCollection.status == PaymentCollectionStatus.CANCELED) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Payment collection is already canceled"
       )
     }

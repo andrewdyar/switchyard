@@ -1,6 +1,6 @@
 // @ts-nocheck
 import { Context, DAL, InferEntityType } from "@switchyard/framework/types"
-import { DALUtils, MedusaError, isDefined } from "@switchyard/framework/utils"
+import { DALUtils, SwitchyardError, isDefined } from "@switchyard/framework/utils"
 import { LoadStrategy } from "@switchyard/framework/mikro-orm/core"
 import { SqlEntityManager } from "@switchyard/framework/mikro-orm/postgresql"
 import { InventoryGroup } from "../models"
@@ -306,8 +306,8 @@ export class InventoryGroupRepository extends DALUtils.MikroOrmBaseTreeRepositor
         })
 
         if (!inventoryGroup) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `InventoryGroup with id: ${id} was not found`
           )
         }
@@ -355,15 +355,15 @@ export class InventoryGroupRepository extends DALUtils.MikroOrmBaseTreeRepositor
         )
 
         if (!inventoryGroup) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `InventoryGroup with id: ${id} was not found`
           )
         }
 
         if ((inventoryGroup as any).group_children.length > 0) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_ALLOWED,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_ALLOWED,
             `Deleting InventoryGroup (${id}) with children is not allowed`
           )
         }
@@ -430,8 +430,8 @@ export class InventoryGroupRepository extends DALUtils.MikroOrmBaseTreeRepositor
           parentGroup = await manager.findOne(InventoryGroup.name, parentGroupId)
 
           if (!parentGroup) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_ARGUMENT,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_ARGUMENT,
               `Parent group with id: '${parentGroupId}' does not exist`
             )
           }
@@ -472,8 +472,8 @@ export class InventoryGroupRepository extends DALUtils.MikroOrmBaseTreeRepositor
         )
 
         if (!inventoryGroup) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `InventoryGroup with id: ${groupData.id} was not found`
           )
         }
@@ -516,8 +516,8 @@ export class InventoryGroupRepository extends DALUtils.MikroOrmBaseTreeRepositor
             )
 
             if (!newParentGroup) {
-              throw new MedusaError(
-                MedusaError.Types.INVALID_ARGUMENT,
+              throw new SwitchyardError(
+                SwitchyardError.Types.INVALID_ARGUMENT,
                 `Parent group with id: '${groupData.parent_group_id}' does not exist`
               )
             }

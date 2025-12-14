@@ -1,4 +1,4 @@
-import { createMedusaContainer } from "@switchyard/utils"
+import { createSwitchyardContainer } from "@switchyard/utils"
 import { asFunction, Lifetime } from "@switchyard/deps/awilix"
 import { moduleProviderLoader } from "../module-provider-loader"
 
@@ -10,7 +10,7 @@ describe("modules loader", () => {
   })
 
   beforeEach(() => {
-    container = createMedusaContainer()
+    container = createSwitchyardContainer()
   })
 
   it("should register the provider service", async () => {

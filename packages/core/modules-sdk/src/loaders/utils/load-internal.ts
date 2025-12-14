@@ -5,7 +5,7 @@ import {
   InternalModuleDeclaration,
   LoaderOptions,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
   ModuleExports,
   ModuleLoaderFunction,
   ModuleProvider,
@@ -15,7 +15,7 @@ import {
 } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
-  createMedusaContainer,
+  createSwitchyardContainer,
   defineJoinerConfig,
   discoverAndRegisterFeatureFlags,
   DmlEntity,
@@ -24,8 +24,8 @@ import {
   getProviderRegistrationKey,
   isFileSkipped,
   isString,
-  MedusaModuleProviderType,
-  MedusaModuleType,
+  SwitchyardModuleProviderType,
+  SwitchyardModuleType,
   Modules,
   ModulesSdkUtils,
   stringifyCircular,
@@ -108,7 +108,7 @@ export async function resolveModuleExports({
 
 async function loadInternalProvider(
   args: {
-    container: MedusaContainer
+    container: SwitchyardContainer
     resolution: ModuleResolution
     logger: Logger
     migrationOnly?: boolean
@@ -167,7 +167,7 @@ async function loadInternalProvider(
 }
 
 export async function loadInternalModule(args: {
-  container: MedusaContainer
+  container: SwitchyardContainer
   resolution: ModuleResolution
   logger: Logger
   migrationOnly?: boolean
@@ -222,7 +222,7 @@ export async function loadInternalModule(args: {
     }
   }
 
-  const localContainer = createMedusaContainer()
+  const localContainer = createSwitchyardContainer()
 
   const dependencies = resolution?.dependencies ?? []
 
@@ -344,7 +344,7 @@ export async function loadInternalModule(args: {
         )
       }
 
-      modProvider_.__type = MedusaModuleProviderType
+      modProvider_.__type = SwitchyardModuleProviderType
 
       const registrationKey = getProviderRegistrationKey({
         providerId,
@@ -353,7 +353,7 @@ export async function loadInternalModule(args: {
 
       container.register({
         [registrationKey]: asFunction(() => {
-          ;(moduleProviderService as any).__type = MedusaModuleType
+          ;(moduleProviderService as any).__type = SwitchyardModuleType
           return new moduleProviderService(
             localContainer.cradle,
             resolution.options,
@@ -366,7 +366,7 @@ export async function loadInternalModule(args: {
     const moduleService = moduleResources.moduleService ?? loadedModule_.service
     container.register({
       [keyName]: asFunction((cradle) => {
-        ;(moduleService as any).__type = MedusaModuleType
+        ;(moduleService as any).__type = SwitchyardModuleType
         return new moduleService(
           localContainer.cradle,
           resolution.options,
@@ -385,7 +385,7 @@ export async function loadInternalModule(args: {
 }
 
 export async function loadModuleMigrations(
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   resolution: ModuleResolution,
   moduleExports?: ModuleExports
 ): Promise<{
@@ -558,7 +558,7 @@ export async function loadResources({
   logger,
   loadedModuleLoaders,
 }: {
-  container: MedusaContainer
+  container: SwitchyardContainer
   moduleResolution: ModuleResolution
   discoveryPath: string
   logger?: Logger

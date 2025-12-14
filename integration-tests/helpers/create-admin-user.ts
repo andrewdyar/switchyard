@@ -3,7 +3,7 @@ import {
   IApiKeyModuleService,
   IAuthModuleService,
   IUserModuleService,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "@switchyard/framework/types"
 import {
   ApiKeyType,
@@ -75,7 +75,7 @@ export const createAdminUser = async (
   return { user, authIdentity }
 }
 
-export const generatePublishableKey = async (container?: MedusaContainer) => {
+export const generatePublishableKey = async (container?: SwitchyardContainer) => {
   const appContainer = container ?? getContainer()!
   const apiKeyModule = appContainer.resolve<IApiKeyModuleService>(
     Modules.API_KEY

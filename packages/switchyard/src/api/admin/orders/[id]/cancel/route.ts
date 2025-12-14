@@ -1,7 +1,7 @@
 import { cancelOrderWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
@@ -10,8 +10,8 @@ import {
 } from "@switchyard/framework/utils"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.AdminGetOrderParams>,
-  res: MedusaResponse<HttpTypes.AdminOrderResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.AdminGetOrderParams>,
+  res: SwitchyardResponse<HttpTypes.AdminOrderResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 

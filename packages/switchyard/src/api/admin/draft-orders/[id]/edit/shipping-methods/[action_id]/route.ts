@@ -2,13 +2,13 @@ import {
   removeDraftOrderActionShippingMethodWorkflow,
   updateDraftOrderActionShippingMethodWorkflow,
 } from "@switchyard/core-flows"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@switchyard/framework"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { HttpTypes } from "@switchyard/types"
 import { AdminUpdateDraftOrderActionShippingMethodType } from "../../../../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminUpdateDraftOrderActionShippingMethodType>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<AdminUpdateDraftOrderActionShippingMethodType>,
+  res: SwitchyardResponse
 ) => {
   const { id, action_id } = req.params
 
@@ -28,8 +28,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { id, action_id } = req.params
 

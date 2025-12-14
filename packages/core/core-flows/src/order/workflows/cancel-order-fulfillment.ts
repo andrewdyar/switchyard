@@ -11,7 +11,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   MathBN,
-  MedusaError,
+  SwitchyardError,
   Modules,
   OrderWorkflowEvents,
 } from "@switchyard/framework/utils"
@@ -109,22 +109,22 @@ export const cancelOrderFulfillmentValidateOrder = createStep(
       (f) => f.id === input.fulfillment_id
     )
     if (!fulfillment) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Fulfillment with id ${input.fulfillment_id} not found in the order`
       )
     }
 
     if (fulfillment.canceled_at) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "The fulfillment is already canceled"
       )
     }
 
     if (fulfillment.shipped_at) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `The fulfillment has already been shipped. Shipped fulfillments cannot be canceled`
       )
     }

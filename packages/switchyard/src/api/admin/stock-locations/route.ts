@@ -3,8 +3,8 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { createStockLocationsWorkflow } from "@switchyard/core-flows"
@@ -13,11 +13,11 @@ import { HttpTypes } from "@switchyard/framework/types"
 
 // Create stock location
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateStockLocation,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminStockLocationResponse>
+  res: SwitchyardResponse<HttpTypes.AdminStockLocationResponse>
 ) => {
   const { result } = await createStockLocationsWorkflow(req.scope).run({
     input: { locations: [req.validatedBody] },
@@ -33,8 +33,8 @@ export const POST = async (
 }
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminStockLocationListParams>,
-  res: MedusaResponse<HttpTypes.AdminStockLocationListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminStockLocationListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminStockLocationListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 

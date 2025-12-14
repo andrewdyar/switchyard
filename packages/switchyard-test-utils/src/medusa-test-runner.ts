@@ -1,11 +1,11 @@
 import { asValue } from "@switchyard/framework/awilix"
 import { logger } from "@switchyard/framework/logger"
 import { Migrator } from "@switchyard/framework/migrations"
-import { MedusaAppOutput } from "@switchyard/framework/modules-sdk"
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardAppOutput } from "@switchyard/framework/modules-sdk"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  createMedusaContainer,
+  createSwitchyardContainer,
   getResolvedPlugins,
   mergePluginModules,
 } from "@switchyard/framework/utils"
@@ -24,7 +24,7 @@ import { ulid } from "ulid"
 
 export interface MedusaSuiteOptions {
   dbConnection: any // knex instance
-  getContainer: () => MedusaContainer
+  getContainer: () => SwitchyardContainer
   api: any
   dbUtils: {
     create: (dbName: string) => Promise<void>
@@ -36,7 +36,7 @@ export interface MedusaSuiteOptions {
     schema: string
     clientUrl: string
   }
-  getMedusaApp: () => MedusaAppOutput
+  getSwitchyardApp: () => SwitchyardAppOutput
   utils: {
     waitWorkflowExecutions: () => Promise<void>
   }
@@ -52,7 +52,7 @@ interface TestRunnerConfig {
   debug?: boolean
   inApp?: boolean
   hooks?: {
-    beforeServerStart?: (container: MedusaContainer) => Promise<void>
+    beforeServerStart?: (container: SwitchyardContainer) => Promise<void>
   }
   cwd?: string
 }
@@ -76,7 +76,7 @@ class MedusaTestRunner {
     debug: boolean
   }
 
-  private globalContainer: MedusaContainer | null = null
+  private globalContainer: SwitchyardContainer | null = null
   private apiUtils: any = null
   private loadedApplication: any = null
   private shutdown: () => Promise<void> = async () => void 0
@@ -156,8 +156,8 @@ class MedusaTestRunner {
   }
 
   private async setupApplication(): Promise<void> {
-    const { container, MedusaAppLoader } = await import("@switchyard/framework")
-    const appLoader = new MedusaAppLoader({
+    const { container, SwitchyardAppLoader } = await import("@switchyard/framework")
+    const appLoader = new SwitchyardAppLoader({
       medusaConfigPath: this.modulesConfigPath,
       cwd: this.cwd,
     })
@@ -276,17 +276,17 @@ class MedusaTestRunner {
 
     await this.afterEach()
 
-    const container = this.globalContainer as MedusaContainer
-    const copiedContainer = createMedusaContainer({}, container)
+    const container = this.globalContainer as SwitchyardContainer
+    const copiedContainer = createSwitchyardContainer({}, container)
 
     try {
-      const { MedusaAppLoader } = await import("@switchyard/framework")
-      const medusaAppLoader = new MedusaAppLoader({
+      const { SwitchyardAppLoader } = await import("@switchyard/framework")
+      const switchyardAppLoader = new SwitchyardAppLoader({
         container: copiedContainer,
         medusaConfigPath: this.modulesConfigPath,
         cwd: this.cwd,
       })
-      await medusaAppLoader.runModulesLoader()
+      await switchyardAppLoader.runModulesLoader()
     } catch (error) {
       await copiedContainer.dispose?.()
       logger.error("Error running modules loaders:", error?.message)
@@ -296,7 +296,7 @@ class MedusaTestRunner {
 
   public async afterEach(): Promise<void> {
     try {
-      await waitWorkflowExecutions(this.globalContainer as MedusaContainer)
+      await waitWorkflowExecutions(this.globalContainer as SwitchyardContainer)
 
       if (!this.disableAutoTeardown) {
         // Perform automatic teardown
@@ -312,8 +312,8 @@ class MedusaTestRunner {
     return {
       api: this.createApiProxy(),
       dbConnection: this.createDbConnectionProxy(),
-      getMedusaApp: () => this.loadedApplication,
-      getContainer: () => this.globalContainer as MedusaContainer,
+      getSwitchyardApp: () => this.loadedApplication,
+      getContainer: () => this.globalContainer as SwitchyardContainer,
       dbConfig: {
         dbName: this.dbName,
         schema: this.schema,
@@ -322,7 +322,7 @@ class MedusaTestRunner {
       dbUtils: this.dbUtils,
       utils: {
         waitWorkflowExecutions: () =>
-          waitWorkflowExecutions(this.globalContainer as MedusaContainer),
+          waitWorkflowExecutions(this.globalContainer as SwitchyardContainer),
       },
     }
   }

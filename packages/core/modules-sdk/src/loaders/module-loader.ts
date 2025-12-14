@@ -1,4 +1,4 @@
-import { Logger, MedusaContainer, ModuleResolution } from "@switchyard/types"
+import { Logger, SwitchyardContainer, ModuleResolution } from "@switchyard/types"
 import { promiseAll } from "@switchyard/utils"
 import { asValue } from "@switchyard/deps/awilix"
 import { EOL } from "os"
@@ -12,7 +12,7 @@ export const moduleLoader = async ({
   migrationOnly,
   loaderOnly,
 }: {
-  container: MedusaContainer
+  container: SwitchyardContainer
   moduleResolutions: Record<string, ModuleResolution>
   logger: Logger
   migrationOnly?: boolean
@@ -37,7 +37,7 @@ export const moduleLoader = async ({
 }
 
 async function loadModule(
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   resolution: ModuleResolution,
   logger: Logger,
   migrationOnly?: boolean,

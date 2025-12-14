@@ -11,8 +11,8 @@ import {
   InjectManager,
   InjectTransactionManager,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
 } from "@switchyard/framework/utils"
 import { ViewConfiguration, UserPreference } from "@/models"
 
@@ -23,7 +23,7 @@ type InjectedDependencies = {
 }
 
 export default class SettingsModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     ViewConfiguration: { dto: SettingsTypes.ViewConfigurationDTO }
     UserPreference: { dto: SettingsTypes.UserPreferenceDTO }
   }>({ ViewConfiguration, UserPreference })
@@ -69,8 +69,8 @@ export default class SettingsModuleService
     // Validate system defaults
     for (const config of dataArray) {
       if (config.is_system_default && config.user_id) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "System default view configurations cannot have a user_id"
         )
       }
@@ -87,8 +87,8 @@ export default class SettingsModuleService
         )
 
         if (existingDefault.length > 0) {
-          throw new MedusaError(
-            MedusaError.Types.DUPLICATE_ERROR,
+          throw new SwitchyardError(
+            SwitchyardError.Types.DUPLICATE_ERROR,
             `A system default view configuration already exists for entity: ${config.entity}`
           )
         }
@@ -329,15 +329,15 @@ export default class SettingsModuleService
     )
 
     if (viewConfig.entity !== entity) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `View configuration ${viewConfigurationId} is not for entity ${entity}`
       )
     }
 
     if (viewConfig.user_id && viewConfig.user_id !== userId) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `User ${userId} does not have access to view configuration ${viewConfigurationId}`
       )
     }

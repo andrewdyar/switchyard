@@ -1,7 +1,7 @@
 import {
   GraphResultSet,
   IIndexService,
-  MedusaContainer,
+  SwitchyardContainer,
   RemoteJoinerOptions,
   RemoteJoinerQuery,
   RemoteQueryFilters,
@@ -13,7 +13,7 @@ import {
 } from "@switchyard/types"
 import {
   Cached,
-  MedusaError,
+  SwitchyardError,
   isObject,
   remoteQueryObjectFromString,
   unflattenObjectKeys,
@@ -76,7 +76,7 @@ const cacheDecoratorOptions = {
 export class Query {
   #remoteQuery: RemoteQuery
   #indexModule: IIndexService
-  protected container: MedusaContainer
+  protected container: SwitchyardContainer
 
   /**
    * Method to wrap execution of the graph query for instrumentation
@@ -117,7 +117,7 @@ export class Query {
   }: {
     remoteQuery: RemoteQuery
     indexModule: IIndexService
-    container: MedusaContainer
+    container: SwitchyardContainer
   }) {
     this.#remoteQuery = remoteQuery
     this.#indexModule = indexModule
@@ -175,8 +175,8 @@ export class Query {
     options?: RemoteJoinerOptions
   ) {
     if (!isObject(queryOptions)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Invalid query, expected object and received something else."
       )
     }
@@ -253,8 +253,8 @@ export class Query {
     options?: RemoteJoinerOptions
   ): Promise<GraphResultSet<TEntry>> {
     if (!this.#indexModule) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Index module is not loaded."
       )
     }
@@ -327,7 +327,7 @@ export function createQuery({
 }: {
   remoteQuery: RemoteQuery
   indexModule: IIndexService
-  container: MedusaContainer
+  container: SwitchyardContainer
 }) {
   const query = new Query({
     remoteQuery,

@@ -4,18 +4,18 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchTaxRegion } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateTaxRegion,
     HttpTypes.AdminTaxRegionParams
   >,
-  res: MedusaResponse<HttpTypes.AdminTaxRegionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminTaxRegionResponse>
 ) => {
   const { result } = await createTaxRegionsWorkflow(req.scope).run({
     input: [
@@ -35,8 +35,8 @@ export const POST = async (
 }
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminTaxRegionListParams>,
-  res: MedusaResponse<HttpTypes.AdminTaxRegionListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminTaxRegionListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminTaxRegionListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 

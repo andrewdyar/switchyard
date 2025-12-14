@@ -10,7 +10,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   Modules,
   OrderChangeStatus,
   OrderWorkflowEvents,
@@ -116,8 +116,8 @@ const confirmIfExchangeItemsArePresent = createStep(
       return
     }
 
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Order exchange request should have at least 1 item inbound and 1 item outbound`
     )
   }

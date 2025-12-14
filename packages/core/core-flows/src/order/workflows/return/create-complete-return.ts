@@ -11,7 +11,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   MathBN,
-  MedusaError,
+  SwitchyardError,
   Modules,
   OrderWorkflowEvents,
   isDefined,
@@ -94,8 +94,8 @@ function validateCustomRefundAmount({
   // validate that the refund prop input is less than order.item_total (item total)
   // TODO: Probably this amount should be retrieved from the payments linked to the order
   if (refundAmount && MathBN.gt(refundAmount, order.item_total)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Refund amount cannot be greater than order total.`
     )
   }
@@ -167,8 +167,8 @@ function prepareFulfillmentData({
   }
 
   if (!locationId) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Cannot create return without stock location, either provide a location or you should link the shipping option ${returnShippingOption.id} to a stock location.`
     )
   }
@@ -268,8 +268,8 @@ export const createCompleteReturnValidationStep = createStep(
     context
   ) {
     if (!input.items) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Items are required to create a return.`
       )
     }

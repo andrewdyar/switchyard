@@ -41,8 +41,8 @@ export const importProductsWorkflowId = "import-products"
  *
  * ```ts workflow={false}
  * import {
- *   AuthenticatedMedusaRequest,
- *   MedusaResponse,
+ *   AuthenticatedSwitchyardRequest,
+ *   SwitchyardResponse,
  * } from "@switchyard/framework/http"
  * import {
  *   importProductsWorkflowId,
@@ -53,8 +53,8 @@ export const importProductsWorkflowId = "import-products"
  * import { StepResponse } from "@switchyard/framework/workflows-sdk"
  *
  * export const POST = async (
- *   req: AuthenticatedMedusaRequest,
- *   res: MedusaResponse
+ *   req: AuthenticatedSwitchyardRequest,
+ *   res: SwitchyardResponse
  * ) => {
  *   const workflowEngineService: IWorkflowEngineService = req.scope.resolve(
  *     Modules.WORKFLOW_ENGINE

@@ -5,6 +5,6 @@
  * automatically just like we usually do for the classic migrations actions
  */
 export async function clearInstances() {
-  const { MedusaModule } = require("@switchyard/framework/modules-sdk")
-  MedusaModule.clearInstances()
+  const { SwitchyardModule } = require("@switchyard/framework/modules-sdk")
+  SwitchyardModule.clearInstances()
 }

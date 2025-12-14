@@ -1,6 +1,6 @@
 import {
   IModuleService,
-  MedusaContainer,
+  SwitchyardContainer,
   RemoteExpandProperty,
 } from "@switchyard/types"
 import { lowerCaseFirst, toPascalCase } from "@switchyard/utils"
@@ -18,7 +18,7 @@ const container = {
       },
     }
   },
-} as MedusaContainer
+} as SwitchyardContainer
 
 const fetchServiceDataCallback = async (
   expand: RemoteExpandProperty,

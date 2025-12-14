@@ -3,18 +3,18 @@ import {
   updateProductTagsWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminProductTagParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductTagResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductTagResponse>
 ) => {
   const productTag = await refetchEntity({
     entity: "product_tag",
@@ -27,11 +27,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateProductTag,
     HttpTypes.AdminProductTagParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductTagResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductTagResponse>
 ) => {
   const existingProductTag = await refetchEntity({
     entity: "product_tag",
@@ -41,8 +41,8 @@ export const POST = async (
   })
 
   if (!existingProductTag) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Product tag with id "${req.params.id}" not found`
     )
   }
@@ -65,8 +65,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminProductTagDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminProductTagDeleteResponse>
 ) => {
   const id = req.params.id
 

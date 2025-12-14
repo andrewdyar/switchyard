@@ -12,7 +12,7 @@ import {
   isDefined,
   isPresent,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PriceListType,
 } from "@switchyard/framework/utils"
 
@@ -93,15 +93,15 @@ export function prepareLineItemData(data: PrepareLineItemDataInput) {
   } = data
 
   if (variant && !variant.product) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Variant does not have a product"
     )
   }
 
   if (item && MathBN.lte(item.quantity, 0)) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Item quantity must be greater than 0"
     )
   }

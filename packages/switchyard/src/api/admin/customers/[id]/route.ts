@@ -3,17 +3,17 @@ import {
   updateCustomersWorkflow,
 } from "@switchyard/core-flows"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchCustomer } from "../helpers"
 import { AdminUpdateCustomerType } from "../validators"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminCustomerResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCustomerResponse>
 ) => {
   const customer = await refetchCustomer(
     req.params.id,
@@ -22,8 +22,8 @@ export const GET = async (
   )
 
   if (!customer) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Customer with id: ${req.params.id} not found`
     )
   }
@@ -32,18 +32,18 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     AdminUpdateCustomerType & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCustomerResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCustomerResponse>
 ) => {
   const existingCustomer = await refetchCustomer(req.params.id, req.scope, [
     "id",
   ])
   if (!existingCustomer) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Customer with id "${req.params.id}" not found`
     )
   }
@@ -67,8 +67,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminCustomerDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminCustomerDeleteResponse>
 ) => {
   const id = req.params.id
 

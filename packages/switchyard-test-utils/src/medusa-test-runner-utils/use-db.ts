@@ -1,6 +1,6 @@
-import type { MedusaAppLoader } from "@switchyard/framework"
+import type { SwitchyardAppLoader } from "@switchyard/framework"
 import { logger } from "@switchyard/framework/logger"
-import { Logger, MedusaContainer } from "@switchyard/framework/types"
+import { Logger, SwitchyardContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   getResolvedPlugins,
@@ -21,7 +21,7 @@ export async function initDb() {
 /**
  * Migrates the database
  */
-export async function migrateDatabase(appLoader: MedusaAppLoader) {
+export async function migrateDatabase(appLoader: SwitchyardAppLoader) {
   try {
     await appLoader.runModulesMigrations()
   } catch (err) {
@@ -34,9 +34,9 @@ export async function migrateDatabase(appLoader: MedusaAppLoader) {
  * Syncs links with the databse
  */
 export async function syncLinks(
-  appLoader: MedusaAppLoader,
+  appLoader: SwitchyardAppLoader,
   directory: string,
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   logger: Logger
 ) {
   try {
@@ -54,7 +54,7 @@ export async function syncLinks(
   }
 }
 
-async function loadCustomLinks(directory: string, container: MedusaContainer) {
+async function loadCustomLinks(directory: string, container: SwitchyardContainer) {
   const configModule = container.resolve(
     ContainerRegistrationKeys.CONFIG_MODULE
   )

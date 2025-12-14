@@ -22,8 +22,8 @@ import {
   isString,
   MathBN,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
   partitionArray,
 } from "@switchyard/framework/utils"
 import { InventoryItem, InventoryLevel, ReservationItem } from "@models"
@@ -49,7 +49,7 @@ type InventoryItemCheckLevel = {
 applyEntityHooks()
 
 export default class InventoryModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     InventoryItem: {
       dto: InventoryTypes.InventoryItemDTO
     }
@@ -167,7 +167,7 @@ export default class InventoryModuleService
         })
         .join(", ")
 
-      throw new MedusaError(MedusaError.Types.NOT_FOUND, error)
+      throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, error)
     }
 
     if (validateQuantityAtLocation) {
@@ -183,8 +183,8 @@ export default class InventoryModuleService
         const level = locations?.get(item.location_id)!
 
         if (MathBN.lt(level.available_quantity, item.quantity!)) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_ALLOWED,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_ALLOWED,
             `Not enough stock available for item ${item.inventory_item_id} at location ${item.location_id}`
           )
         }
@@ -600,8 +600,8 @@ export default class InventoryModuleService
     )
 
     if (diff.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Reservation item with id ${diff.join(", ")} not found`
       )
     }
@@ -979,8 +979,8 @@ export default class InventoryModuleService
     )
 
     if (!inventoryLevel) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Inventory level for item ${inventoryItemId} and location ${locationId} not found`
       )
     }
@@ -1012,8 +1012,8 @@ export default class InventoryModuleService
     )
 
     if (!inventoryLevel) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Inventory level for item ${inventoryItemId} and location ${locationId} not found`
       )
     }

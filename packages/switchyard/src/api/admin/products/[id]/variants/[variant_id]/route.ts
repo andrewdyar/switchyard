@@ -3,8 +3,8 @@ import {
   updateProductVariantsWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
@@ -17,8 +17,8 @@ import {
 } from "../../../helpers"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminProductVariantResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductVariantResponse>
 ) => {
   const productId = req.params.id
   const variantId = req.params.variant_id
@@ -35,11 +35,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateProductVariant & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductResponse>
 ) => {
   const productId = req.params.id
   const variantId = req.params.variant_id
@@ -64,8 +64,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminProductVariantDeleteResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductVariantDeleteResponse>
 ) => {
   const productId = req.params.id
   const variantId = req.params.variant_id

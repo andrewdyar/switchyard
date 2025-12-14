@@ -1,14 +1,14 @@
 import { generateResetPasswordTokenWorkflow } from "@switchyard/core-flows"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { ResetPasswordRequestType } from "../../../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<ResetPasswordRequestType>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<ResetPasswordRequestType>,
+  res: SwitchyardResponse
 ) => {
   const { auth_provider, actor_type } = req.params
   const { identifier } = req.validatedBody

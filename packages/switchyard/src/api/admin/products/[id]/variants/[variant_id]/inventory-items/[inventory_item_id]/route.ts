@@ -1,19 +1,19 @@
 import { dismissLinksWorkflow, updateLinksWorkflow } from "@switchyard/core-flows"
 import { Modules } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchVariant } from "../../../../../helpers"
 import { AdminUpdateVariantInventoryItemType } from "../../../../../validators"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     AdminUpdateVariantInventoryItemType,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductVariantResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductVariantResponse>
 ) => {
   const variantId = req.params.variant_id
   const inventoryItemId = req.params.inventory_item_id
@@ -38,8 +38,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminProductVariantInventoryLinkDeleteResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductVariantInventoryLinkDeleteResponse>
 ) => {
   const variantId = req.params.variant_id
   const inventoryItemId = req.params.inventory_item_id

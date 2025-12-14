@@ -4,7 +4,7 @@ import type {
 } from "@switchyard/framework/types"
 import {
   MathBN,
-  MedusaError,
+  SwitchyardError,
   Modules,
   promiseAll,
 } from "@switchyard/framework/utils"
@@ -89,10 +89,10 @@ export const confirmInventoryStep = createStep(
     const inventoryCoverage = await promiseAll(promises)
 
     if (inventoryCoverage.some((hasCoverage) => !hasCoverage)) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Some variant does not have the required inventory`,
-        MedusaError.Codes.INSUFFICIENT_INVENTORY
+        SwitchyardError.Codes.INSUFFICIENT_INVENTORY
       )
     }
 

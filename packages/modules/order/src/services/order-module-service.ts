@@ -35,7 +35,7 @@ import {
   isString,
   MathBN,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
   OrderChangeStatus,
   OrderStatus,
@@ -186,7 +186,7 @@ const generateMethodForModels = {
 
 // TODO: rm template args here, keep it for later to not collide with carlos work at least as little as possible
 export default class OrderModuleService
-  extends ModulesSdkUtils.MedusaService<{
+  extends ModulesSdkUtils.SwitchyardService<{
     Order: { dto: OrderTypes.OrderDTO }
     OrderAddress: { dto: OrderTypes.OrderAddressDTO }
     OrderLineItem: { dto: OrderTypes.OrderLineItemDTO }
@@ -1610,8 +1610,8 @@ export default class OrderModuleService
 
       for (const adj of adjustments || []) {
         if (!lineIds?.includes(adj.item_id)) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Line item with id ${adj.item_id} does not exist on order with id ${orderIdOrData}`
           )
         }
@@ -1909,8 +1909,8 @@ export default class OrderModuleService
 
       for (const adj of adjustments || []) {
         if (!methodIds?.includes(adj.shipping_method_id)) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Shipping method with id ${adj.shipping_method_id} does not exist on order with id ${orderIdOrData}`
           )
         }
@@ -2418,8 +2418,8 @@ export default class OrderModuleService
     if (orders.length !== orderIds.length) {
       const foundOrders = orders.map((o) => o.id)
       const missing = orderIds.filter((id) => !foundOrders.includes(id))
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Order could not be found: ${missing.join(", ")}`
       )
     }
@@ -2491,8 +2491,8 @@ export default class OrderModuleService
     if (orders.length !== orderIds.length) {
       const foundOrders = orders.map((o) => o.id)
       const missing = orderIds.filter((id) => !foundOrders.includes(id))
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Order could not be found: ${missing.join(", ")}`
       )
     }
@@ -2501,8 +2501,8 @@ export default class OrderModuleService
       const existingOrderChange = orderChangesMap.get(order.id)
 
       if (existingOrderChange) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Order (${order.id}) already has an existing active order change`
         )
       }
@@ -3021,8 +3021,8 @@ export default class OrderModuleService
     )
 
     if (order.version < 2) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Order with id ${orderId} has no previous versions`
       )
     }
@@ -3046,8 +3046,8 @@ export default class OrderModuleService
     )
 
     if (order.version < 2) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Order with id ${orderId} has no previous versions`
       )
     }
@@ -3405,8 +3405,8 @@ export default class OrderModuleService
     if (orderChanges.length !== orderChangeIds.length) {
       const foundOrders = orderChanges.map((o) => o.id)
       const missing = orderChangeIds.filter((id) => !foundOrders.includes(id))
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Order Change could not be found: ${missing.join(", ")}`
       )
     }
@@ -3423,8 +3423,8 @@ export default class OrderModuleService
       }
 
       if (notAllowed.length) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Order Change cannot be modified: ${notAllowed.join(", ")}.`
         )
       }
@@ -3939,8 +3939,8 @@ export default class OrderModuleService
     }
 
     if (notAllowed.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Orders ${notAllowed.join(
           ", "
         )} are completed, canceled, or in draft and cannot be archived`
@@ -4006,8 +4006,8 @@ export default class OrderModuleService
     }
 
     if (notAllowed.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Orders ${notAllowed.join(", ")} are canceled and cannot be completed`
       )
     }

@@ -4,9 +4,9 @@ import type { ErrorRequestHandler, Express, RequestHandler } from "express"
 import type {
   AdditionalDataValidatorRoute,
   BodyParserConfigRoute,
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
   MiddlewareDescriptor,
   MiddlewareFunction,
   MiddlewareVerb,
@@ -14,7 +14,7 @@ import type {
   RouteHandler,
 } from "./types"
 
-import { Logger, MedusaContainer } from "@switchyard/types"
+import { Logger, SwitchyardContainer } from "@switchyard/types"
 import { configManager } from "../config"
 import { MiddlewareFileLoader } from "./middleware-file-loader"
 import { authenticate, AuthType } from "./middlewares"
@@ -69,7 +69,7 @@ export class ApiLoader {
     app: Express
     sourceDir: string | string[]
     baseRestrictedFields?: string[]
-    container: MedusaContainer
+    container: SwitchyardContainer
   }) {
     this.#app = app
     this.#sourceDirs = Array.isArray(sourceDir) ? sourceDir : [sourceDir]
@@ -157,9 +157,9 @@ export class ApiLoader {
    */
   #assignRestrictedFields(baseRestrictedFields: string[]) {
     this.#app.use("/store", ((
-      req: MedusaRequest,
-      _: MedusaResponse,
-      next: MedusaNextFunction
+      req: SwitchyardRequest,
+      _: SwitchyardResponse,
+      next: SwitchyardNextFunction
     ) => {
       req.restrictedFields = new RestrictedFields()
       req.restrictedFields.add(baseRestrictedFields)
@@ -167,9 +167,9 @@ export class ApiLoader {
     }) as unknown as RequestHandler)
 
     this.#app.use("/admin", ((
-      req: MedusaRequest,
-      _: MedusaResponse,
-      next: MedusaNextFunction
+      req: SwitchyardRequest,
+      _: SwitchyardResponse,
+      next: SwitchyardNextFunction
     ) => {
       req.restrictedFields = new RestrictedFields()
       next()
@@ -309,9 +309,9 @@ export class ApiLoader {
     )
 
     const additionalDataValidator = function additionalDataValidator(
-      req: MedusaRequest,
-      _: MedusaResponse,
-      next: MedusaNextFunction
+      req: SwitchyardRequest,
+      _: SwitchyardResponse,
+      next: SwitchyardNextFunction
     ) {
       const matchingRoute = routesFinder.find(
         req.path,

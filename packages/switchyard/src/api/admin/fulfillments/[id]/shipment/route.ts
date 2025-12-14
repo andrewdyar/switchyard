@@ -1,17 +1,17 @@
 import { createShipmentWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchFulfillment } from "../../helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateFulfillmentShipment,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminFulfillmentResponse>
+  res: SwitchyardResponse<HttpTypes.AdminFulfillmentResponse>
 ) => {
   const { id } = req.params
 

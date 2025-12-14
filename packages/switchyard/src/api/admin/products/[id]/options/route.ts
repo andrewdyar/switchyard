@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
   refetchEntity,
 } from "@switchyard/framework/http"
@@ -10,8 +10,8 @@ import { remapKeysForProduct, remapProductResponse } from "../../helpers"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductOptionParams>,
-  res: MedusaResponse<HttpTypes.AdminProductOptionListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductOptionParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductOptionListResponse>
 ) => {
   const productId = req.params.id
   const { data: product_options, metadata } = await refetchEntities({
@@ -31,11 +31,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateProductOption & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductResponse>
 ) => {
   const productId = req.params.id
   const { additional_data, ...rest } = req.validatedBody

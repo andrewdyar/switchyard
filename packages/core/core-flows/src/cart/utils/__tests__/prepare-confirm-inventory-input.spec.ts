@@ -1,5 +1,5 @@
 import type { ConfirmVariantInventoryWorkflowInputDTO } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { prepareConfirmInventoryInput } from "../prepare-confirm-inventory-input"
 
 describe("prepareConfirmInventoryInput", () => {
@@ -268,7 +268,7 @@ describe("prepareConfirmInventoryInput", () => {
       ],
     }
 
-    expect(() => prepareConfirmInventoryInput({ input })).toThrow(MedusaError)
+    expect(() => prepareConfirmInventoryInput({ input })).toThrow(SwitchyardError)
   })
 
   it("if allow_backorder is true, it should return normally even if there's no stock location for the sales channel", () => {
@@ -510,6 +510,6 @@ describe("prepareConfirmInventoryInput", () => {
       ],
     }
 
-    expect(() => prepareConfirmInventoryInput({ input })).toThrow(MedusaError)
+    expect(() => prepareConfirmInventoryInput({ input })).toThrow(SwitchyardError)
   })
 })

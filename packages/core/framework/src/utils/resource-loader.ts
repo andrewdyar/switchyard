@@ -1,4 +1,4 @@
-import { Logger, MedusaContainer } from "@switchyard/types"
+import { Logger, SwitchyardContainer } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   dynamicImport,
@@ -29,7 +29,7 @@ export abstract class ResourceLoader {
 
   protected logger: Logger
 
-  constructor(sourceDir: string | string[], container: MedusaContainer) {
+  constructor(sourceDir: string | string[], container: SwitchyardContainer) {
     this.#sourceDir = sourceDir
     this.logger = container.resolve(ContainerRegistrationKeys.LOGGER)
   }

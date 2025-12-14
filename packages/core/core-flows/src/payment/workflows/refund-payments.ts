@@ -1,5 +1,5 @@
 import type { BigNumberInput, PaymentDTO } from "@switchyard/framework/types"
-import { isDefined, MathBN, MedusaError } from "@switchyard/framework/utils"
+import { isDefined, MathBN, SwitchyardError } from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
@@ -73,8 +73,8 @@ export const validatePaymentsRefundStep = createStep(
       const amountToRefund = paymentIdAmountMap.get(payment.id)!
 
       if (MathBN.gt(amountToRefund, refundableAmount)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Payment with id ${payment.id} is trying to refund amount greater than the refundable amount`
         )
       }

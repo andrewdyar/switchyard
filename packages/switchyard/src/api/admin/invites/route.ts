@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
@@ -12,8 +12,8 @@ import { refetchInvite } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetInvitesParams>,
-  res: MedusaResponse<HttpTypes.AdminInviteListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetInvitesParams>,
+  res: SwitchyardResponse<HttpTypes.AdminInviteListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
   const queryObject = remoteQueryObjectFromString({
@@ -36,11 +36,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateInvite,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminInviteResponse>
+  res: SwitchyardResponse<HttpTypes.AdminInviteResponse>
 ) => {
   const workflow = createInvitesWorkflow(req.scope)
 

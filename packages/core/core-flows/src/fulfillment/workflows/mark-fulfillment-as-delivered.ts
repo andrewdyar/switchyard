@@ -1,5 +1,5 @@
 import type { FulfillmentDTO } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   StepResponse,
   WorkflowData,
@@ -35,15 +35,15 @@ export const validateFulfillmentDeliverabilityStep = createStep(
   validateFulfillmentDeliverabilityStepId,
   async (fulfillment: FulfillmentDTO) => {
     if (fulfillment.canceled_at) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Cannot deliver an already canceled fulfillment"
       )
     }
 
     if (fulfillment.delivered_at) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "Fulfillment has already been marked delivered"
       )
     }

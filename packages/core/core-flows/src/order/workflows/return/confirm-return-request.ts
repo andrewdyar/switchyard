@@ -8,7 +8,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   Modules,
   OrderChangeStatus,
   OrderWorkflowEvents,
@@ -105,8 +105,8 @@ const confirmIfReturnItemsArePresent = createStep(
       return
     }
 
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Order return request should have at least 1 item`
     )
   }

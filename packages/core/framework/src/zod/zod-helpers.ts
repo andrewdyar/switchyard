@@ -1,4 +1,4 @@
-import { MedusaError } from "../utils"
+import { SwitchyardError } from "../utils"
 import {
   z,
   ZodError,
@@ -123,8 +123,8 @@ export async function zodValidator<T>(
     return await strictSchema.parseAsync(body)
   } catch (err) {
     if (err instanceof ZodError) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Invalid request: ${formatError(err)}`
       )
     }

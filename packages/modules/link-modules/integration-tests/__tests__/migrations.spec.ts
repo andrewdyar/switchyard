@@ -1,4 +1,4 @@
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import { ILinkModule, ModuleJoinerConfig } from "@switchyard/framework/types"
 import { defineLink, isObject, Modules } from "@switchyard/framework/utils"
 import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
@@ -16,9 +16,9 @@ import {
 
 jest.setTimeout(30000)
 
-MedusaModule.setJoinerConfig(userJoinerConfig.serviceName, userJoinerConfig)
-MedusaModule.setJoinerConfig(carJoinerConfig.serviceName, carJoinerConfig)
-MedusaModule.setJoinerConfig(
+SwitchyardModule.setJoinerConfig(userJoinerConfig.serviceName, userJoinerConfig)
+SwitchyardModule.setJoinerConfig(carJoinerConfig.serviceName, carJoinerConfig)
+SwitchyardModule.setJoinerConfig(
   longNameJoinerConfig.serviceName,
   longNameJoinerConfig
 )
@@ -36,9 +36,9 @@ moduleIntegrationTestRunner<ILinkModule>({
             .linkable.veryLongTableNameOfCustomModule
         )
 
-        MedusaModule.getCustomLinks().forEach((linkDefinition: any) => {
-          MedusaModule.setCustomLink(
-            linkDefinition(MedusaModule.getAllJoinerConfigs())
+        SwitchyardModule.getCustomLinks().forEach((linkDefinition: any) => {
+          SwitchyardModule.setCustomLink(
+            linkDefinition(SwitchyardModule.getAllJoinerConfigs())
           )
         })
 
@@ -46,7 +46,7 @@ moduleIntegrationTestRunner<ILinkModule>({
          * Expect a create plan
          */
 
-        let joinerConfigs = MedusaModule.getCustomLinks().filter(
+        let joinerConfigs = SwitchyardModule.getCustomLinks().filter(
           (link): link is ModuleJoinerConfig => isObject(link)
         )
 
@@ -105,7 +105,7 @@ moduleIntegrationTestRunner<ILinkModule>({
          * Expect an update plan
          */
         // @ts-ignore
-        MedusaModule.customLinks_.length = 0
+        SwitchyardModule.customLinks_.length = 0
 
         defineLink(UserModule.linkable.user, CarModule.linkable.car, {
           database: {
@@ -117,13 +117,13 @@ moduleIntegrationTestRunner<ILinkModule>({
           },
         })
 
-        MedusaModule.getCustomLinks().forEach((linkDefinition: any) => {
-          MedusaModule.setCustomLink(
-            linkDefinition(MedusaModule.getAllJoinerConfigs())
+        SwitchyardModule.getCustomLinks().forEach((linkDefinition: any) => {
+          SwitchyardModule.setCustomLink(
+            linkDefinition(SwitchyardModule.getAllJoinerConfigs())
           )
         })
 
-        joinerConfigs = MedusaModule.getCustomLinks().filter(
+        joinerConfigs = SwitchyardModule.getCustomLinks().filter(
           (link): link is ModuleJoinerConfig => isObject(link)
         )
 

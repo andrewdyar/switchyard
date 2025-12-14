@@ -4,15 +4,15 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { fetchPriceList, transformPriceList } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminPriceListListParams>,
-  res: MedusaResponse<HttpTypes.AdminPriceListListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminPriceListListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminPriceListListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -36,11 +36,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreatePriceList,
     HttpTypes.AdminPriceListListParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPriceListResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPriceListResponse>
 ) => {
   const workflow = createPriceListsWorkflow(req.scope)
   const { result } = await workflow.run({

@@ -1,10 +1,10 @@
 import { BaseEntity, QueryConfig, RequestQueryFields } from "@switchyard/types"
-import { MedusaError, removeUndefinedProperties } from "@switchyard/utils"
+import { SwitchyardError, removeUndefinedProperties } from "@switchyard/utils"
 import { NextFunction } from "express"
 import { z } from "zod"
 
 import { zodValidator } from "../../zod/zod-helpers"
-import { MedusaRequest, MedusaResponse } from "../types"
+import { SwitchyardRequest, SwitchyardResponse } from "../types"
 import { prepareListQuery, prepareRetrieveQuery } from "./get-query-config"
 
 /**
@@ -13,7 +13,7 @@ import { prepareListQuery, prepareRetrieveQuery } from "./get-query-config"
  *
  * We only support up to 2 levels of depth for query params in order to have a somewhat readable query param, and limit possible performance issues
  */
-const normalizeQuery = (req: MedusaRequest) => {
+const normalizeQuery = (req: SwitchyardRequest) => {
   return Object.entries(req.query).reduce((acc, [key, val]) => {
     let normalizedValue = val
     if (Array.isArray(val) && val.length === 1 && typeof val[0] === "string") {
@@ -23,8 +23,8 @@ const normalizeQuery = (req: MedusaRequest) => {
     if (key.includes(".")) {
       const [parent, child, ...others] = key.split(".")
       if (others.length > 0) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_ARGUMENT,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_ARGUMENT,
           `Key accessor more than 2 levels deep: ${key}`
         )
       }
@@ -57,13 +57,13 @@ export function validateAndTransformQuery<TEntity extends BaseEntity>(
   zodSchema: z.ZodObject<any, any> | z.ZodEffects<any, any>,
   queryConfig: QueryConfig<TEntity>
 ): (
-  req: MedusaRequest,
-  res: MedusaResponse,
+  req: SwitchyardRequest,
+  res: SwitchyardResponse,
   next: NextFunction
 ) => Promise<void> {
   return async function validateQuery(
-    req: MedusaRequest,
-    _: MedusaResponse,
+    req: SwitchyardRequest,
+    _: SwitchyardResponse,
     next: NextFunction
   ) {
     try {

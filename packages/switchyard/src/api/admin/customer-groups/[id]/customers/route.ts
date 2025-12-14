@@ -1,18 +1,18 @@
 import { linkCustomersToCustomerGroupWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { HttpTypes } from "@switchyard/framework/types"
 import { refetchCustomerGroup } from "../../helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminBatchLink,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCustomerGroupResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCustomerGroupResponse>
 ) => {
   const { id } = req.params
   const { add, remove } = req.validatedBody

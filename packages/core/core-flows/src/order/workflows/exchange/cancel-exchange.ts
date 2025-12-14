@@ -4,7 +4,7 @@ import {
   OrderWorkflow,
   ReturnDTO,
 } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   createStep,
@@ -74,7 +74,7 @@ export const cancelExchangeValidateOrder = createStep(
       message: string
     ) => {
       if (arr?.some(pred)) {
-        throw new MedusaError(MedusaError.Types.NOT_ALLOWED, message)
+        throw new SwitchyardError(SwitchyardError.Types.NOT_ALLOWED, message)
       }
     }
 

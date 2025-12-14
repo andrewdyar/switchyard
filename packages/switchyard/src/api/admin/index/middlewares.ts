@@ -1,8 +1,8 @@
 import { validateAndTransformBody } from "@switchyard/framework"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaNextFunction,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardNextFunction,
+  SwitchyardResponse,
   MiddlewareRoute,
 } from "@switchyard/framework/http"
 import { Logger } from "@switchyard/framework/types"
@@ -16,9 +16,9 @@ import { authenticate } from "../../../utils/middlewares/authenticate-middleware
 import { AdminIndexSyncPayload } from "./validator"
 
 const isIndexEnabledMiddleware = (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse,
-  next: MedusaNextFunction
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse,
+  next: SwitchyardNextFunction
 ) => {
   const indexService = req.scope.resolve(Modules.INDEX, {
     allowUnregistered: true,

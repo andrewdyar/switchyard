@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
@@ -6,7 +6,7 @@ import {
 
 export const refetchCustomerGroup = async (
   customerGroupId: string,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)

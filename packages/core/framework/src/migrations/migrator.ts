@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/types"
+import { SwitchyardContainer } from "@switchyard/types"
 import { glob } from "glob"
 import { join } from "path"
 import { Knex } from "../deps/mikro-orm-knex"
@@ -8,12 +8,12 @@ import { ContainerRegistrationKeys } from "../utils"
 export class Migrator {
   protected migration_table_name: string
 
-  protected container: MedusaContainer
+  protected container: SwitchyardContainer
   protected pgConnection: Knex<any>
 
   #alreadyLoadedPaths: Map<string, any> = new Map()
 
-  constructor({ container }: { container: MedusaContainer }) {
+  constructor({ container }: { container: SwitchyardContainer }) {
     this.container = container
     this.pgConnection = this.container.resolve(
       ContainerRegistrationKeys.PG_CONNECTION

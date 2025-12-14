@@ -1,14 +1,14 @@
 import type {
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "../types"
 
 export function clearFiltersByKey(keys: string[]) {
   return async function clearFiltersByKeyMiddleware(
-    req: MedusaRequest,
-    _: MedusaResponse,
-    next: MedusaNextFunction
+    req: SwitchyardRequest,
+    _: SwitchyardResponse,
+    next: SwitchyardNextFunction
   ) {
     keys.forEach((key) => {
       delete req.filterableFields[key]

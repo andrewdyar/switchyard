@@ -1,6 +1,6 @@
-import { MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
-import { isPresent, MedusaError, QueryContext } from "@switchyard/framework/utils"
+import { isPresent, SwitchyardError, QueryContext } from "@switchyard/framework/utils"
 import { wrapVariantsWithInventoryQuantityForSalesChannel } from "../../../utils/middlewares"
 import {
   filterOutInternalProductCategories,
@@ -11,7 +11,7 @@ import {
 
 export const GET = async (
   req: RequestWithContext<HttpTypes.StoreProductParams>,
-  res: MedusaResponse<HttpTypes.StoreProductResponse>
+  res: SwitchyardResponse<HttpTypes.StoreProductResponse>
 ) => {
   const withInventoryQuantity = req.queryConfig.fields.some((field) =>
     field.includes("variants.inventory_quantity")
@@ -51,8 +51,8 @@ export const GET = async (
   )
 
   if (!product) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Product with id: ${req.params.id} was not found`
     )
   }

@@ -1,15 +1,15 @@
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
   refetchEntity,
 } from "@switchyard/framework/http"
 import { createPricePreferencesWorkflow } from "@switchyard/core-flows"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminPricePreferenceListParams>,
-  res: MedusaResponse<HttpTypes.AdminPricePreferenceListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminPricePreferenceListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminPricePreferenceListResponse>
 ) => {
   const { data: price_preferences, metadata } = await refetchEntities({
     entity: "price_preference",
@@ -28,11 +28,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreatePricePreference,
     HttpTypes.AdminPricePreferenceParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPricePreferenceResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPricePreferenceResponse>
 ) => {
   const workflow = createPricePreferencesWorkflow(req.scope)
   const { result } = await workflow.run({

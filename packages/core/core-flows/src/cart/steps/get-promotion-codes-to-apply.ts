@@ -1,6 +1,6 @@
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   PromotionActions,
 } from "@switchyard/framework/utils"
 import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
@@ -117,8 +117,8 @@ export const getPromotionCodesToApply = createStep(
 
       promo_codes.forEach((code) => {
         if (!validPromoCodes.has(code)) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `The promotion code ${code} is invalid`
           )
         }

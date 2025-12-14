@@ -6,8 +6,8 @@ import {
   RuleType,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   getRuleAttributesMap,
@@ -17,8 +17,8 @@ import {
 } from "../../utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetPromotionRuleTypeParams>,
-  res: MedusaResponse<HttpTypes.AdminPromotionRuleListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetPromotionRuleTypeParams>,
+  res: SwitchyardResponse<HttpTypes.AdminPromotionRuleListResponse>
 ) => {
   const { id, rule_type: ruleType } = req.params
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)

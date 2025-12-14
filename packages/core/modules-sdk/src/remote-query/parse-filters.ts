@@ -1,6 +1,6 @@
 import { JoinerServiceConfig, ModuleJoinerConfig } from "@switchyard/types"
 import { isObject, isString } from "@switchyard/utils"
-import { MedusaModule } from "../medusa-module"
+import { SwitchyardModule } from "../medusa-module"
 
 const joinerConfigMapCache = new Map()
 
@@ -26,7 +26,7 @@ export function parseAndAssignFilters(
   },
   entitiesMap: Map<string, any>
 ) {
-  const joinerConfigs = MedusaModule.getAllJoinerConfigs()
+  const joinerConfigs = SwitchyardModule.getAllJoinerConfigs()
 
   for (const [filterKey, filterValue] of Object.entries(filters)) {
     /*let entryAlias!: JoinerServiceConfigAlias*/

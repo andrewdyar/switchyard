@@ -5,14 +5,14 @@ import {
 import { HttpTypes, IFulfillmentModuleService } from "@switchyard/framework/types"
 import { Modules } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchShippingProfile } from "../helpers"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminShippingProfileResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminShippingProfileResponse>
 ) => {
   const shippingProfile = await refetchShippingProfile(
     req.params.id,
@@ -24,8 +24,8 @@ export const GET = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminShippingProfileDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminShippingProfileDeleteResponse>
 ) => {
   const { id } = req.params
 
@@ -48,11 +48,11 @@ export const DELETE = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateShippingProfile,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminShippingProfileResponse>
+  res: SwitchyardResponse<HttpTypes.AdminShippingProfileResponse>
 ) => {
   const { id } = req.params
 

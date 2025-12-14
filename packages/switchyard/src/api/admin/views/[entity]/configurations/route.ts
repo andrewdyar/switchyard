@@ -1,10 +1,10 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminCreateViewConfigurationType } from "./validators"
 import { HttpTypes } from "@switchyard/framework/types"
-import { MedusaError, Modules } from "@switchyard/framework/utils"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
 import { createViewConfigurationWorkflow } from "@switchyard/core-flows"
 
 /**
@@ -12,8 +12,8 @@ import { createViewConfigurationWorkflow } from "@switchyard/core-flows"
  * @featureFlag view_configurations
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetViewConfigurationsParams>,
-  res: MedusaResponse<HttpTypes.AdminViewConfigurationListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetViewConfigurationsParams>,
+  res: SwitchyardResponse<HttpTypes.AdminViewConfigurationListResponse>
 ) => {
   const settingsService = req.scope.resolve(Modules.SETTINGS)
 
@@ -42,13 +42,13 @@ export const GET = async (
  * @featureFlag view_configurations
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminCreateViewConfigurationType>,
-  res: MedusaResponse<HttpTypes.AdminViewConfigurationResponse>
+  req: AuthenticatedSwitchyardRequest<AdminCreateViewConfigurationType>,
+  res: SwitchyardResponse<HttpTypes.AdminViewConfigurationResponse>
 ) => {
   // Validate: name is required unless creating a system default
   if (!req.body.is_system_default && !req.body.name) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Name is required unless creating a system default view"
     )
   }

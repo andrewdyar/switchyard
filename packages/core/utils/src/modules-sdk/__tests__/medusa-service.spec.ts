@@ -1,4 +1,4 @@
-import { MedusaService } from "../medusa-service"
+import { SwitchyardService } from "../medusa-service"
 import { model } from "../../dml"
 import { MessageAggregator } from "../../event-bus"
 import { ModuleJoinerConfig } from "@switchyard/types"
@@ -54,7 +54,7 @@ describe("Abstract Module Service Factory", () => {
   class OtherModelMock1 {}
   class OtherModelMock2 {}
 
-  const medusaService = MedusaService({
+  const medusaService = SwitchyardService({
     MainModelMock,
     OtherModelMock1,
     OtherModelMock2,
@@ -227,7 +227,7 @@ describe("Abstract Module Service Factory", () => {
       id: model.id().primaryKey(),
     })
 
-    const medusaService = MedusaService({
+    const medusaService = SwitchyardService({
       MockModel,
       MockModel2,
       MockModel3,

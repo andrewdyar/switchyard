@@ -1,4 +1,4 @@
-import { CartWorkflowEvents, MedusaError } from "@switchyard/framework/utils"
+import { CartWorkflowEvents, SwitchyardError } from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -166,8 +166,8 @@ export const addShippingMethodToCartWorkflow = createWorkflow(
           )!
 
           if (!shippingOption?.calculated_price) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Shipping option with ID ${shippingOption.id} do not have a price`
             )
           }

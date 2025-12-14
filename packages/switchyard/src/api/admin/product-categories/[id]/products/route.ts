@@ -4,17 +4,17 @@ import {
   HttpTypes,
 } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminBatchLink,
     HttpTypes.AdminProductCategoryParams
   >,
-  res: MedusaResponse<AdminProductCategoryResponse>
+  res: SwitchyardResponse<AdminProductCategoryResponse>
 ) => {
   const { id } = req.params
 

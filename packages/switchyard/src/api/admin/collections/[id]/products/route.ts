@@ -1,17 +1,17 @@
 import { batchLinkProductsToCollectionWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchCollection } from "../../helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminBatchLink,
     HttpTypes.AdminCollectionParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCollectionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCollectionResponse>
 ) => {
   const id = req.params.id
   const { add = [], remove = [] } = req.validatedBody

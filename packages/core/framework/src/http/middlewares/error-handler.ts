@@ -1,8 +1,8 @@
 import { ErrorRequestHandler, NextFunction, Response } from "express"
 import { fromZodIssue } from "zod-validation-error"
 
-import { ContainerRegistrationKeys, MedusaError } from "@switchyard/utils"
-import { MedusaRequest } from "../types"
+import { ContainerRegistrationKeys, SwitchyardError } from "@switchyard/utils"
+import { SwitchyardRequest } from "../types"
 import { formatException } from "./exception-formatter"
 
 const QUERY_RUNNER_RELEASED = "QueryRunnerAlreadyReleasedError"
@@ -15,8 +15,8 @@ const INVALID_STATE_ERROR = "invalid_state_error"
 
 export function errorHandler() {
   return function coreErrorHandler(
-    err: MedusaError,
-    req: MedusaRequest,
+    err: SwitchyardError,
+    req: SwitchyardRequest,
     res: Response,
     _: NextFunction
   ) {
@@ -44,35 +44,35 @@ export function errorHandler() {
       case QUERY_RUNNER_RELEASED:
       case TRANSACTION_STARTED:
       case TRANSACTION_NOT_STARTED:
-      case MedusaError.Types.CONFLICT:
+      case SwitchyardError.Types.CONFLICT:
         statusCode = 409
         errObj.code = INVALID_STATE_ERROR
         errObj.message =
           "The request conflicted with another request. You may retry the request with the provided Idempotency-Key."
         break
-      case MedusaError.Types.UNAUTHORIZED:
+      case SwitchyardError.Types.UNAUTHORIZED:
         statusCode = 401
         break
-      case MedusaError.Types.PAYMENT_AUTHORIZATION_ERROR:
+      case SwitchyardError.Types.PAYMENT_AUTHORIZATION_ERROR:
         statusCode = 422
         break
-      case MedusaError.Types.DUPLICATE_ERROR:
+      case SwitchyardError.Types.DUPLICATE_ERROR:
         statusCode = 422
         errObj.code = INVALID_REQUEST_ERROR
         break
-      case MedusaError.Types.NOT_ALLOWED:
-      case MedusaError.Types.INVALID_DATA:
+      case SwitchyardError.Types.NOT_ALLOWED:
+      case SwitchyardError.Types.INVALID_DATA:
         statusCode = 400
         break
-      case MedusaError.Types.NOT_FOUND:
+      case SwitchyardError.Types.NOT_FOUND:
         statusCode = 404
         break
-      case MedusaError.Types.DB_ERROR:
+      case SwitchyardError.Types.DB_ERROR:
         statusCode = 500
         errObj.code = API_ERROR
         break
-      case MedusaError.Types.UNEXPECTED_STATE:
-      case MedusaError.Types.INVALID_ARGUMENT:
+      case SwitchyardError.Types.UNEXPECTED_STATE:
+      case SwitchyardError.Types.INVALID_ARGUMENT:
         break
       default:
         errObj.code = "unknown_error"
@@ -90,7 +90,7 @@ export function errorHandler() {
     if ("issues" in err && Array.isArray(err.issues)) {
       const messages = err.issues.map((issue) => fromZodIssue(issue).toString())
       res.status(statusCode).json({
-        type: MedusaError.Types.INVALID_DATA,
+        type: SwitchyardError.Types.INVALID_DATA,
         message: messages.join("\n"),
       })
       return

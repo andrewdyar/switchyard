@@ -1,15 +1,15 @@
 import { batchLinksWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { buildBatchVariantInventoryData } from "../../../../helpers"
 import { AdminBatchVariantInventoryItemsType } from "../../../../validators"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminBatchVariantInventoryItemsType>,
-  res: MedusaResponse<HttpTypes.AdminProductVariantInventoryBatchResponse>
+  req: AuthenticatedSwitchyardRequest<AdminBatchVariantInventoryItemsType>,
+  res: SwitchyardResponse<HttpTypes.AdminProductVariantInventoryBatchResponse>
 ) => {
   const { create = [], update = [], delete: toDelete = [] } = req.validatedBody
 

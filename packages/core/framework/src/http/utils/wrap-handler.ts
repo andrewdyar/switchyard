@@ -1,7 +1,7 @@
 import type {
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
   MiddlewareFunction,
   RouteHandler,
 } from "../types"
@@ -10,11 +10,11 @@ export const wrapHandler = <T extends RouteHandler | MiddlewareFunction>(
   fn: T
 ) => {
   async function wrappedHandler(
-    req: MedusaRequest,
-    res: MedusaResponse,
-    next: MedusaNextFunction
+    req: SwitchyardRequest,
+    res: SwitchyardResponse,
+    next: SwitchyardNextFunction
   ) {
-    const req_ = req as MedusaRequest & { errors?: Error[] }
+    const req_ = req as SwitchyardRequest & { errors?: Error[] }
     if (req_?.errors?.length) {
       return res.status(400).json({
         errors: req_.errors,

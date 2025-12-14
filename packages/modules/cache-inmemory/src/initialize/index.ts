@@ -1,4 +1,4 @@
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import {
   ExternalModuleDeclaration,
   ICacheService,
@@ -11,7 +11,7 @@ export const initialize = async (
   options?: InMemoryCacheModuleOptions | ExternalModuleDeclaration
 ): Promise<ICacheService> => {
   const serviceKey = Modules.CACHE
-  const loaded = await MedusaModule.bootstrap<ICacheService>({
+  const loaded = await SwitchyardModule.bootstrap<ICacheService>({
     moduleKey: serviceKey,
     defaultPath: "@switchyard//cache-inmemory",
     declaration: options as

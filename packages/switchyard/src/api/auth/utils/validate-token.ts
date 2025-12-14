@@ -1,14 +1,14 @@
 import {
-  AuthenticatedMedusaRequest,
+  AuthenticatedSwitchyardRequest,
   getAuthContextFromJwtToken,
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { ConfigModule, IAuthModuleService } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
 } from "@switchyard/framework/utils"
 import { HttpTypes } from "@switchyard/types"
@@ -22,13 +22,13 @@ export interface UpdateProviderJwtPayload {
 // Middleware to validate that a token is valid
 export const validateToken = () => {
   return async (
-    req: MedusaRequest<HttpTypes.AdminUpdateProvider>,
-    res: MedusaResponse,
-    next: MedusaNextFunction
+    req: SwitchyardRequest<HttpTypes.AdminUpdateProvider>,
+    res: SwitchyardResponse,
+    next: SwitchyardNextFunction
   ) => {
     const { actor_type, auth_provider } = req.params
 
-    const req_ = req as AuthenticatedMedusaRequest
+    const req_ = req as AuthenticatedSwitchyardRequest
 
     const { http } = req_.scope.resolve<ConfigModule>(
       ContainerRegistrationKeys.CONFIG_MODULE
@@ -43,8 +43,8 @@ export const validateToken = () => {
       http.jwtVerifyOptions ?? http.jwtOptions
     ) as UpdateProviderJwtPayload | null
 
-    const errorObject = new MedusaError(
-      MedusaError.Types.UNAUTHORIZED,
+    const errorObject = new SwitchyardError(
+      SwitchyardError.Types.UNAUTHORIZED,
       `Invalid token`
     )
 

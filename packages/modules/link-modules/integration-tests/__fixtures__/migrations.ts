@@ -1,6 +1,6 @@
 import {
   defineJoinerConfig,
-  MedusaService,
+  SwitchyardService,
   model,
   Module,
 } from "@switchyard/framework/utils"
@@ -14,7 +14,7 @@ export const userJoinerConfig = defineJoinerConfig("user", {
   models: [User],
 })
 
-export class UserService extends MedusaService({ User }) {
+export class UserService extends SwitchyardService({ User }) {
   constructor() {
     super(...arguments)
   }
@@ -33,7 +33,7 @@ export const carJoinerConfig = defineJoinerConfig("car", {
   models: [Car],
 })
 
-export class CarService extends MedusaService({ Car }) {
+export class CarService extends SwitchyardService({ Car }) {
   constructor() {
     super(...arguments)
   }
@@ -58,7 +58,7 @@ export const longNameJoinerConfig = defineJoinerConfig(
   }
 )
 
-export class CustomModuleImplementationContainingAReallyBigNameThatExceedsPosgresLimitToNameATableService extends MedusaService(
+export class CustomModuleImplementationContainingAReallyBigNameThatExceedsPosgresLimitToNameATableService extends SwitchyardService(
   {
     CustomModuleImplementationContainingAReallyBigNameThatExceedsPosgresLimitToNameATable,
   }

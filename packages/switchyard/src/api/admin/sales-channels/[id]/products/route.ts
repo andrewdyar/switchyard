@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { linkProductsToSalesChannelWorkflow } from "@switchyard/core-flows"
@@ -8,11 +8,11 @@ import { HttpTypes } from "@switchyard/framework/types"
 import { refetchSalesChannel } from "../../helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminBatchLink,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminSalesChannelResponse>
+  res: SwitchyardResponse<HttpTypes.AdminSalesChannelResponse>
 ) => {
   const { id } = req.params
   const { add, remove } = req.validatedBody

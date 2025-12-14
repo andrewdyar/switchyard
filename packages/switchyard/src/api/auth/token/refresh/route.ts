@@ -1,8 +1,8 @@
 import { IAuthModuleService } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys, Modules } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { generateJwtTokenForAuthIdentity } from "../../utils/generate-jwt-token"
 
@@ -10,8 +10,8 @@ import { generateJwtTokenForAuthIdentity } from "../../utils/generate-jwt-token"
 // The token will include the actor ID, even if the token used to refresh didn't have one.
 // Note: We probably want to disallow refreshes if the password changes, and require reauth.
 export const POST = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const service: IAuthModuleService = req.scope.resolve(Modules.AUTH)
 

@@ -4,7 +4,7 @@ import {
   AdminProduct,
   AdminShippingProfile,
   AdminStockLocation,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "@switchyard/types"
 import { ContainerRegistrationKeys, Modules, ProductStatus } from "@switchyard/utils"
 import {
@@ -25,7 +25,7 @@ export async function createOrderSeeder({
   withoutShipping,
 }: {
   api: any
-  container: MedusaContainer
+  container: SwitchyardContainer
   storeHeaderOverride?: any
   productOverride?: AdminProduct
   stockChannelOverride?: AdminStockLocation

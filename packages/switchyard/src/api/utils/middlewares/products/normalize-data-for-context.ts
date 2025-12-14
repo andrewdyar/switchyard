@@ -1,7 +1,7 @@
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { NextFunction } from "express"
 import {
-  AuthenticatedMedusaRequest,
+  AuthenticatedSwitchyardRequest,
   refetchEntities,
   refetchEntity,
 } from "@switchyard/framework/http"
@@ -14,7 +14,7 @@ type PricingContextOptions = {
 export function normalizeDataForContext(options: PricingContextOptions = {}) {
   const { priceFieldPaths = DEFAULT_PRICE_FIELD_PATHS } = options
 
-  return async (req: AuthenticatedMedusaRequest, _, next: NextFunction) => {
+  return async (req: AuthenticatedSwitchyardRequest, _, next: NextFunction) => {
     // If the product pricing is not requested, we don't need region information
     let withCalculatedPrice = false
 
@@ -92,8 +92,8 @@ export function normalizeDataForContext(options: PricingContextOptions = {}) {
 
     if (!regionId) {
       try {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Missing required pricing context to calculate prices - region_id`
         )
       } catch (e) {

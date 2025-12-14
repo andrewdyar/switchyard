@@ -12,7 +12,7 @@ import {
 import {
   filterObjectByKeys,
   isDefined,
-  MedusaError,
+  SwitchyardError,
   ProductStatus,
   simpleHash,
 } from "@switchyard/framework/utils"
@@ -223,14 +223,14 @@ export const getVariantsAndItemsWithPrices = createWorkflow(
         })
 
         if (variantNotFoundOrPublished.length > 0) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Variants ${variantNotFoundOrPublished.join(", ")} do not exist or belong to a product that is not published`
           )
         }
         if (priceNotFound.length > 0) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Variants with IDs ${priceNotFound.join(", ")} do not have a price`
           )
         }

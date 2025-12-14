@@ -1,19 +1,19 @@
 import { acceptInviteWorkflow } from "@switchyard/core-flows"
 import { HttpTypes, InviteWorkflow } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminInviteAcceptType } from "../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminInviteAcceptType>,
-  res: MedusaResponse<HttpTypes.AdminAcceptInviteResponse>
+  req: AuthenticatedSwitchyardRequest<AdminInviteAcceptType>,
+  res: SwitchyardResponse<HttpTypes.AdminAcceptInviteResponse>
 ) => {
   if (req.auth_context.actor_id) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "The user is already authenticated and cannot accept an invite."
     )
   }

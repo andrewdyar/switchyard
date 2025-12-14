@@ -4,11 +4,11 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import { NextFunction } from "express"
-import { MedusaRequest } from "@switchyard/framework/http"
+import { SwitchyardRequest } from "@switchyard/framework/http"
 
 export function maybeApplyPriceListsFilter() {
   return async function applyPriceListsFilter(
-    req: MedusaRequest,
+    req: SwitchyardRequest,
     _,
     next: NextFunction
   ) {

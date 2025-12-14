@@ -1,13 +1,13 @@
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 
 export const refetchCart = async (
   id: string,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
@@ -20,8 +20,8 @@ export const refetchCart = async (
   const [cart] = await remoteQuery(queryObject)
 
   if (!cart) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Cart with id '${id}' not found`
     )
   }

@@ -14,8 +14,8 @@ import {
   InjectTransactionManager,
   isString,
   MedusaContext,
-  MedusaError,
-  MedusaService,
+  SwitchyardError,
+  SwitchyardService,
   promiseAll,
   removeUndefined,
 } from "@switchyard/framework/utils"
@@ -29,7 +29,7 @@ type InjectedDependencies = {
 }
 
 export default class StoreModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     Store: { dto: StoreTypes.StoreDTO }
     StoreCurrency: { dto: StoreTypes.StoreCurrencyDTO }
   }>({ Store, StoreCurrency })
@@ -231,8 +231,8 @@ export default class StoreModuleService
         )
 
         if (duplicates.length) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Duplicate currency codes: ${duplicates.join(", ")}`
           )
         }
@@ -241,8 +241,8 @@ export default class StoreModuleService
         store.supported_currencies?.forEach((c) => {
           if (c.is_default) {
             if (seenDefault) {
-              throw new MedusaError(
-                MedusaError.Types.INVALID_DATA,
+              throw new SwitchyardError(
+                SwitchyardError.Types.INVALID_DATA,
                 `Only one default currency is allowed`
               )
             }
@@ -251,8 +251,8 @@ export default class StoreModuleService
         })
 
         if (!seenDefault) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `There should be a default currency set for the store`
           )
         }

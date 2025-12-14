@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes, QueryContextType } from "@switchyard/framework/types"
 import {
@@ -13,14 +13,14 @@ import { wrapVariantsWithTaxPrices } from "./helpers"
 
 type StoreVariantListRequest =
   StoreRequestWithContext<HttpTypes.StoreProductVariantParams> &
-    AuthenticatedMedusaRequest<HttpTypes.StoreProductVariantParams>
+    AuthenticatedSwitchyardRequest<HttpTypes.StoreProductVariantParams>
 
 /**
  * @since 2.11.2
  */
 export const GET = async (
   req: StoreVariantListRequest,
-  res: MedusaResponse<HttpTypes.StoreProductVariantListResponse>
+  res: SwitchyardResponse<HttpTypes.StoreProductVariantListResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 

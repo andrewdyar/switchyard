@@ -9,7 +9,7 @@ import {
   InternalModuleDeclaration,
   LoadedModule,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
   ModuleBootstrapDeclaration,
   ModuleDefinition,
   ModuleExports,
@@ -19,7 +19,7 @@ import {
 } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
-  createMedusaContainer,
+  createSwitchyardContainer,
   discoverFeatureFlagsFromDir,
   dynamicImport,
   executeWithConcurrency,
@@ -28,7 +28,7 @@ import {
   isObject,
   isSharedConnectionSymbol,
   isString,
-  MedusaError,
+  SwitchyardError,
   MODULE_PACKAGE_NAMES,
   Modules,
   ModulesSdkUtils,
@@ -37,7 +37,7 @@ import {
 } from "@switchyard/utils"
 import { Link } from "./link"
 import {
-  MedusaModule,
+  SwitchyardModule,
   MigrationOptions,
   ModuleBootstrapOptions,
   RegisterModuleJoinerConfig,
@@ -52,7 +52,7 @@ export type RevertMigrationFn = (moduleNames: string[]) => Promise<void>
 export type GenerateMigrations = (moduleNames: string[]) => Promise<void>
 export type GetLinkExecutionPlanner = () => ILinkMigrationsPlanner
 
-export type MedusaModuleConfig = {
+export type SwitchyardModuleConfig = {
   [key: string | Modules]:
     | string
     | boolean
@@ -80,8 +80,8 @@ export type SharedResources = {
 }
 
 export async function loadModules(args: {
-  modulesConfig: MedusaModuleConfig
-  sharedContainer: MedusaContainer
+  modulesConfig: SwitchyardModuleConfig
+  sharedContainer: SwitchyardContainer
   sharedResourcesConfig?: SharedResources
   migrationOnly?: boolean
   loaderOnly?: boolean
@@ -104,7 +104,7 @@ export async function loadModules(args: {
     moduleKey: string
     defaultPath: string
     declaration: InternalModuleDeclaration | ExternalModuleDeclaration
-    sharedContainer: MedusaContainer
+    sharedContainer: SwitchyardContainer
     moduleDefinition: ModuleDefinition
     moduleExports?: ModuleExports
   }[] = []
@@ -160,7 +160,7 @@ export async function loadModules(args: {
     })
   }
 
-  const loaded = (await MedusaModule.bootstrapAll(modulesToLoad, {
+  const loaded = (await SwitchyardModule.bootstrapAll(modulesToLoad, {
     migrationOnly,
     loaderOnly,
     workerMode,
@@ -236,7 +236,7 @@ async function initializeLinks({
   }
 }
 
-function isMedusaModule(mod) {
+function isSwitchyardModule(mod) {
   return typeof mod?.initialize === "function"
 }
 
@@ -257,7 +257,7 @@ function cleanAndMergeSchema(loadedSchema) {
 }
 
 function getLoadedSchema(): string {
-  return MedusaModule.getAllJoinerConfigs()
+  return SwitchyardModule.getAllJoinerConfigs()
     .map((joinerConfig) => joinerConfig?.schema ?? "")
     .join("\n")
 }
@@ -268,11 +268,11 @@ function registerCustomJoinerConfigs(servicesConfig: ModuleJoinerConfig[]) {
       continue
     }
 
-    MedusaModule.setJoinerConfig(config.serviceName, config)
+    SwitchyardModule.setJoinerConfig(config.serviceName, config)
   }
 }
 
-export type MedusaAppOutput = {
+export type SwitchyardAppOutput = {
   modules: Record<string, LoadedModule | LoadedModule[]>
   link: Link | undefined
   query: RemoteQueryFunction
@@ -286,18 +286,18 @@ export type MedusaAppOutput = {
   onApplicationShutdown: () => Promise<void>
   onApplicationPrepareShutdown: () => Promise<void>
   onApplicationStart: () => Promise<void>
-  sharedContainer?: MedusaContainer
+  sharedContainer?: SwitchyardContainer
 }
 
-export type MedusaAppOptions = {
+export type SwitchyardAppOptions = {
   workerMode?: "shared" | "worker" | "server"
-  sharedContainer?: MedusaContainer
+  sharedContainer?: SwitchyardContainer
   sharedResourcesConfig?: SharedResources
   loadedModules?: LoadedModule[]
   servicesConfig?: ModuleJoinerConfig[]
   medusaConfigPath?: string
   modulesConfigFileName?: string
-  modulesConfig?: MedusaModuleConfig
+  modulesConfig?: SwitchyardModuleConfig
   linkModules?: RegisterModuleJoinerConfig | RegisterModuleJoinerConfig[]
   remoteFetchData?: RemoteFetchDataCallback
   injectedDependencies?: any
@@ -309,7 +309,7 @@ export type MedusaAppOptions = {
   cwd?: string
 }
 
-async function MedusaApp_({
+async function SwitchyardApp_({
   sharedContainer,
   sharedResourcesConfig,
   servicesConfig,
@@ -323,10 +323,10 @@ async function MedusaApp_({
   loaderOnly = false,
   workerMode = "shared",
   cwd = process.cwd(),
-}: MedusaAppOptions & {
+}: SwitchyardAppOptions & {
   migrationOnly?: boolean
-} = {}): Promise<MedusaAppOutput> {
-  const sharedContainer_ = createMedusaContainer({}, sharedContainer)
+} = {}): Promise<SwitchyardAppOutput> {
+  const sharedContainer_ = createSwitchyardContainer({}, sharedContainer)
 
   const config = sharedContainer_.resolve(
     ContainerRegistrationKeys.CONFIG_MODULE,
@@ -350,20 +350,20 @@ async function MedusaApp_({
 
   const onApplicationShutdown = async () => {
     await promiseAll([
-      MedusaModule.onApplicationShutdown(),
+      SwitchyardModule.onApplicationShutdown(),
       sharedContainer_.dispose(),
     ])
   }
 
   const onApplicationPrepareShutdown = async () => {
-    await promiseAll([MedusaModule.onApplicationPrepareShutdown()])
+    await promiseAll([SwitchyardModule.onApplicationPrepareShutdown()])
   }
 
   const onApplicationStart = async () => {
-    await MedusaModule.onApplicationStart()
+    await SwitchyardModule.onApplicationStart()
   }
 
-  const modules: MedusaModuleConfig =
+  const modules: SwitchyardModuleConfig =
     modulesConfig ??
     (
       await dynamicImport(
@@ -468,9 +468,9 @@ async function MedusaApp_({
   if (!Array.isArray(linkModules)) {
     linkModules = [linkModules]
   }
-  linkModules.push(...MedusaModule.getCustomLinks())
+  linkModules.push(...SwitchyardModule.getCustomLinks())
 
-  const allLoadedJoinerConfigs = MedusaModule.getAllJoinerConfigs()
+  const allLoadedJoinerConfigs = SwitchyardModule.getAllJoinerConfigs()
   for (let linkIdx = 0; linkIdx < linkModules.length; linkIdx++) {
     const customLink: any = linkModules[linkIdx]
     if (typeof customLink === "function") {
@@ -482,7 +482,7 @@ async function MedusaApp_({
     config: linkModuleOrOptions,
     linkModules,
     injectedDependencies,
-    moduleExports: isMedusaModule(linkModule) ? linkModule : undefined,
+    moduleExports: isSwitchyardModule(linkModule) ? linkModule : undefined,
   })
 
   const loadedSchema = getLoadedSchema()
@@ -506,7 +506,7 @@ async function MedusaApp_({
       (moduleName) => {
         return {
           moduleName,
-          resolution: MedusaModule.getModuleResolutions(moduleName),
+          resolution: SwitchyardModule.getModuleResolutions(moduleName),
         }
       }
     )
@@ -516,12 +516,12 @@ async function MedusaApp_({
       .map(({ moduleName }) => moduleName)
 
     if (missingModules.length) {
-      const error = new MedusaError(
-        MedusaError.Types.UNKNOWN_MODULES,
+      const error = new SwitchyardError(
+        SwitchyardError.Types.UNKNOWN_MODULES,
         `Cannot ${action} migrations for unknown module(s) ${missingModules.join(
           ","
         )}`,
-        MedusaError.Codes.UNKNOWN_MODULES
+        SwitchyardError.Codes.UNKNOWN_MODULES
       )
       error["allModules"] = Object.keys(allModules)
       throw error
@@ -550,11 +550,11 @@ async function MedusaApp_({
       }
 
       if (action === "revert") {
-        await MedusaModule.migrateDown(migrationOptions)
+        await SwitchyardModule.migrateDown(migrationOptions)
       } else if (action === "run") {
-        await MedusaModule.migrateUp(migrationOptions)
+        await SwitchyardModule.migrateUp(migrationOptions)
       } else {
-        await MedusaModule.migrateGenerate(migrationOptions)
+        await SwitchyardModule.migrateGenerate(migrationOptions)
       }
     }
 
@@ -631,59 +631,59 @@ async function MedusaApp_({
   }
 }
 
-export async function MedusaApp(
-  options: MedusaAppOptions = {}
-): Promise<MedusaAppOutput> {
-  return await MedusaApp_(options)
+export async function SwitchyardApp(
+  options: SwitchyardAppOptions = {}
+): Promise<SwitchyardAppOutput> {
+  return await SwitchyardApp_(options)
 }
 
-export async function MedusaAppMigrateUp(
-  options: MedusaAppOptions = {}
+export async function SwitchyardAppMigrateUp(
+  options: SwitchyardAppOptions = {}
 ): Promise<void> {
   const migrationOnly = true
 
-  const { runMigrations } = await MedusaApp_({
+  const { runMigrations } = await SwitchyardApp_({
     ...options,
     migrationOnly,
   })
 
-  await runMigrations().finally(MedusaModule.clearInstances)
+  await runMigrations().finally(SwitchyardModule.clearInstances)
 }
 
-export async function MedusaAppMigrateDown(
+export async function SwitchyardAppMigrateDown(
   moduleNames: string[],
-  options: MedusaAppOptions = {}
+  options: SwitchyardAppOptions = {}
 ): Promise<void> {
   const migrationOnly = true
 
-  const { revertMigrations } = await MedusaApp_({
+  const { revertMigrations } = await SwitchyardApp_({
     ...options,
     migrationOnly,
   })
 
-  await revertMigrations(moduleNames).finally(MedusaModule.clearInstances)
+  await revertMigrations(moduleNames).finally(SwitchyardModule.clearInstances)
 }
 
-export async function MedusaAppMigrateGenerate(
+export async function SwitchyardAppMigrateGenerate(
   moduleNames: string[],
-  options: MedusaAppOptions = {}
+  options: SwitchyardAppOptions = {}
 ): Promise<void> {
   const migrationOnly = true
 
-  const { generateMigrations } = await MedusaApp_({
+  const { generateMigrations } = await SwitchyardApp_({
     ...options,
     migrationOnly,
   })
 
-  await generateMigrations(moduleNames).finally(MedusaModule.clearInstances)
+  await generateMigrations(moduleNames).finally(SwitchyardModule.clearInstances)
 }
 
-export async function MedusaAppGetLinksExecutionPlanner(
-  options: MedusaAppOptions = {}
+export async function SwitchyardAppGetLinksExecutionPlanner(
+  options: SwitchyardAppOptions = {}
 ): Promise<ILinkMigrationsPlanner> {
   const migrationOnly = true
 
-  const { linkMigrationExecutionPlanner } = await MedusaApp_({
+  const { linkMigrationExecutionPlanner } = await SwitchyardApp_({
     ...options,
     migrationOnly,
   })

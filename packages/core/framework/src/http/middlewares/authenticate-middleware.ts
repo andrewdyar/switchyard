@@ -11,9 +11,9 @@ import { verify } from "jsonwebtoken"
 import { ConfigModule } from "../../config"
 import {
   AuthContext,
-  AuthenticatedMedusaRequest,
-  MedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "../types"
 
 const SESSION_AUTH = "session"
@@ -38,13 +38,13 @@ export const authenticate = (
   options: { allowUnauthenticated?: boolean; allowUnregistered?: boolean } = {}
 ): RequestHandler => {
   const authenticateMiddleware = async (
-    req: MedusaRequest,
-    res: MedusaResponse,
+    req: SwitchyardRequest,
+    res: SwitchyardResponse,
     next: NextFunction
   ): Promise<void> => {
     const authTypes = Array.isArray(authType) ? authType : [authType]
     const actorTypes = Array.isArray(actorType) ? actorType : [actorType]
-    const req_ = req as AuthenticatedMedusaRequest
+    const req_ = req as AuthenticatedSwitchyardRequest
 
     // We only allow authenticating using a secret API key on the admin
     const isExclusivelyUser =
@@ -116,7 +116,7 @@ export const authenticate = (
   return authenticateMiddleware as unknown as RequestHandler
 }
 
-const getApiKeyInfo = async (req: MedusaRequest): Promise<ApiKeyDTO | null> => {
+const getApiKeyInfo = async (req: SwitchyardRequest): Promise<ApiKeyDTO | null> => {
   const authHeader = req.headers.authorization
   if (!authHeader) {
     return null

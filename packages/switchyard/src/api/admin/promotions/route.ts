@@ -4,15 +4,15 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchPromotion } from "./helpers"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetPromotionsParams>,
-  res: MedusaResponse<HttpTypes.AdminPromotionListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetPromotionsParams>,
+  res: SwitchyardResponse<HttpTypes.AdminPromotionListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -36,11 +36,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreatePromotion & AdditionalData,
     HttpTypes.AdminGetPromotionParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPromotionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPromotionResponse>
 ) => {
   const { additional_data, ...rest } = req.validatedBody
   const createPromotions = createPromotionsWorkflow(req.scope)

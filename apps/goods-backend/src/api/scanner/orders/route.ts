@@ -1,6 +1,6 @@
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { Modules } from "@switchyard/framework/utils"
 
@@ -12,8 +12,8 @@ export const AUTHENTICATE = false
  * List orders for the current driver/picker
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const status = req.query.status as string | undefined
   const limit = parseInt(req.query.limit as string) || 20

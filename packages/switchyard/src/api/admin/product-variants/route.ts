@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
@@ -8,8 +8,8 @@ import { wrapVariantsWithTotalInventoryQuantity } from "../../utils/middlewares"
 import { remapKeysForVariant, remapVariantResponse } from "../products/helpers"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductVariantParams>,
-  res: MedusaResponse<HttpTypes.AdminProductVariantListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductVariantParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductVariantListResponse>
 ) => {
   const withInventoryQuantity = req.queryConfig.fields.some((field) =>
     field.includes("inventory_quantity")

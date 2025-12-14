@@ -1,4 +1,4 @@
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
@@ -33,8 +33,8 @@ export const validateDeletedPaymentSessionsStep = createStep(
     const { idsToDelete = [], idsDeleted = [] } = input
 
     if (idsToDelete.length !== idsDeleted.length) {
-      throw new MedusaError(
-        MedusaError.Types.UNEXPECTED_STATE,
+      throw new SwitchyardError(
+        SwitchyardError.Types.UNEXPECTED_STATE,
         `Could not delete all payment sessions`
       )
     }

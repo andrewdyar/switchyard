@@ -1,7 +1,7 @@
 import { createCollectionsWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 import {
@@ -12,8 +12,8 @@ import { refetchCollection } from "./helpers"
 import { AdminCreateCollectionType } from "./validators"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminCollectionListParams>,
-  res: MedusaResponse<HttpTypes.AdminCollectionListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminCollectionListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCollectionListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -37,11 +37,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     AdminCreateCollectionType & AdditionalData,
     HttpTypes.AdminCollectionParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCollectionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCollectionResponse>
 ) => {
   const { additional_data, ...rest } = req.validatedBody
 

@@ -4,7 +4,7 @@ import {
   PricingTypes,
   RegionTypes,
 } from "@switchyard/framework/types"
-import { MedusaError, upperCaseFirst } from "@switchyard/framework/utils"
+import { SwitchyardError, upperCaseFirst } from "@switchyard/framework/utils"
 
 // We want to have one row per variant, so we need to normalize the data
 export const normalizeForExport = (
@@ -114,8 +114,8 @@ const normalizeVariantForExport = (
       if (regionRule) {
         const region = regionsMap.get(regionRule?.value!)
         if (!region) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `Region with id ${regionRule?.value} not found`
           )
         }

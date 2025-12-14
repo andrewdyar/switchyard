@@ -5,13 +5,13 @@ import {
 } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
 } from "@switchyard/framework/utils"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { generateJwtTokenForAuthIdentity } from "../../../utils/generate-jwt-token"
 
-export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
+export const GET = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   const { actor_type, auth_provider } = req.params
 
   const config: ConfigModule = req.scope.resolve(
@@ -47,12 +47,12 @@ export const GET = async (req: MedusaRequest, res: MedusaResponse) => {
     return res.json({ token })
   }
 
-  throw new MedusaError(
-    MedusaError.Types.UNAUTHORIZED,
+  throw new SwitchyardError(
+    SwitchyardError.Types.UNAUTHORIZED,
     error || "Authentication failed"
   )
 }
 
-export const POST = async (req: MedusaRequest, res: MedusaResponse) => {
+export const POST = async (req: SwitchyardRequest, res: SwitchyardResponse) => {
   await GET(req, res)
 }

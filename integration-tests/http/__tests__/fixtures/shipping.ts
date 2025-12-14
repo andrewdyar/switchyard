@@ -2,7 +2,7 @@ import {
   AdminShippingProfile,
   AdminStockLocation,
   AdminSalesChannel,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "@switchyard/types"
 import { adminHeaders } from "../../../helpers/create-admin-user"
 
@@ -15,7 +15,7 @@ export async function createShippingOptionSeeder({
   countries = ["us"],
 }: {
   api: any
-  container: MedusaContainer
+  container: SwitchyardContainer
   salesChannelOverride?: AdminSalesChannel
   stockLocationOverride?: AdminStockLocation
   shippingProfileOverride?: AdminShippingProfile

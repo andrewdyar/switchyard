@@ -2,12 +2,12 @@ import {
   configLoader,
   container,
   logger,
-  MedusaAppLoader,
+  SwitchyardAppLoader,
   Migrator,
 } from "@switchyard/framework"
 import { asValue } from "@switchyard/framework/awilix"
 import { EntityManager } from "@switchyard/framework/mikro-orm/postgresql"
-import { MedusaAppOutput, MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardAppOutput, SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import { IndexTypes } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
@@ -39,7 +39,7 @@ const dbUtils = TestDatabaseUtils.dbTestUtilFactory()
 
 jest.setTimeout(300000)
 
-let medusaAppLoader!: MedusaAppLoader
+let switchyardAppLoader!: SwitchyardAppLoader
 let index!: IndexTypes.IIndexService
 
 const beforeAll_ = async ({
@@ -61,22 +61,22 @@ const beforeAll_ = async ({
       [ContainerRegistrationKeys.PG_CONNECTION]: asValue(dbUtils.pgConnection_),
     })
 
-    medusaAppLoader = new MedusaAppLoader(container as any)
+    switchyardAppLoader = new SwitchyardAppLoader(container as any)
 
     // Migrations
     const migrator = new Migrator({ container })
     await migrator.ensureMigrationsTable()
 
-    await medusaAppLoader.runModulesMigrations()
-    const linkPlanner = await medusaAppLoader.getLinksExecutionPlanner()
+    await switchyardAppLoader.runModulesMigrations()
+    const linkPlanner = await switchyardAppLoader.getLinksExecutionPlanner()
     const plan = await linkPlanner.createPlan()
     await linkPlanner.executePlan(plan)
 
     // Clear partially loaded instances
-    MedusaModule.clearInstances()
+    SwitchyardModule.clearInstances()
 
     // Bootstrap modules
-    const globalApp = await medusaAppLoader.load()
+    const globalApp = await switchyardAppLoader.load()
 
     index = container.resolve(Modules.INDEX)
 
@@ -101,7 +101,7 @@ const beforeEach_ = async () => {
   jest.clearAllMocks()
 
   try {
-    await medusaAppLoader.runModulesLoader()
+    await switchyardAppLoader.runModulesLoader()
   } catch (error) {
     console.error("Error runner modules loaders", error?.message)
     throw error
@@ -119,15 +119,15 @@ const afterEach_ = async () => {
 
 describe("sync management API", function () {
   describe("server mode", function () {
-    let medusaApp: MedusaAppOutput
+    let switchyardApp: SwitchyardAppOutput
     let onApplicationPrepareShutdown!: () => Promise<void>
     let onApplicationShutdown!: () => Promise<void>
 
     beforeAll(async () => {
       process.env.MEDUSA_WORKER_MODE = "server"
-      medusaApp = await beforeAll_()
-      onApplicationPrepareShutdown = medusaApp.onApplicationPrepareShutdown
-      onApplicationShutdown = medusaApp.onApplicationShutdown
+      switchyardApp = await beforeAll_()
+      onApplicationPrepareShutdown = switchyardApp.onApplicationPrepareShutdown
+      onApplicationShutdown = switchyardApp.onApplicationShutdown
     })
 
     afterAll(async () => {
@@ -147,7 +147,7 @@ describe("sync management API", function () {
     beforeEach(async () => {
       await beforeEach_()
 
-      manager = (medusaApp.sharedContainer!.resolve(Modules.INDEX) as any)
+      manager = (switchyardApp.sharedContainer!.resolve(Modules.INDEX) as any)
         .container_.manager as EntityManager
     })
 

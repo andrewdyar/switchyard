@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { Modules, ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
@@ -12,8 +12,8 @@ const INVENTORY_GROUP_MODULE = "inventoryGroup"
  * Add or remove products from an inventory group
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
   const { add, remove } = req.validatedBody as {

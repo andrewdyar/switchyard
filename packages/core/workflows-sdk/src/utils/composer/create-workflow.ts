@@ -6,7 +6,7 @@ import {
 import {
   IWorkflowEngineService,
   LoadedModule,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "@switchyard/types"
 import {
   getCallerFilePath,
@@ -60,7 +60,7 @@ const buildTransactionId = (
  *   createWorkflow,
  *   WorkflowResponse
  * } from "@switchyard/framework/workflows-sdk"
- * import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+ * import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
  * import {
  *   createProductStep,
  *   getProductStep,
@@ -82,8 +82,8 @@ const buildTransactionId = (
  * )
  *
  * export async function GET(
- *   req: MedusaRequest,
- *   res: MedusaResponse
+ *   req: SwitchyardRequest,
+ *   res: SwitchyardResponse
  * ) {
  *   const { result: product } = await myWorkflow(req.scope)
  *     .run({
@@ -176,7 +176,7 @@ export function createWorkflow<TData, TResult, THooks extends any[]>(
   })
 
   const mainFlow = <TDataOverride = undefined, TResultOverride = undefined>(
-    container?: LoadedModule[] | MedusaContainer
+    container?: LoadedModule[] | SwitchyardContainer
   ) => {
     const workflow_ = workflow<TDataOverride, TResultOverride>(container)
     const expandedFlow: any = workflow_

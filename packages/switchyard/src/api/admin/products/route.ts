@@ -1,7 +1,7 @@
 import { createProductsWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
   refetchEntity,
 } from "@switchyard/framework/http"
@@ -15,8 +15,8 @@ import IndexEngineFeatureFlag from "../../../feature-flags/index-engine"
 import { remapKeysForProduct, remapProductResponse } from "./helpers"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductListParams>,
-  res: MedusaResponse<HttpTypes.AdminProductListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductListResponse>
 ) => {
   if (FeatureFlag.isFeatureEnabled(IndexEngineFeatureFlag.key)) {
     // Use regular list when no filters are provided
@@ -36,8 +36,8 @@ export const GET = async (
 }
 
 async function getProducts(
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductListParams>,
-  res: MedusaResponse<HttpTypes.AdminProductListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductListResponse>
 ) {
   const selectFields = remapKeysForProduct(req.queryConfig.fields ?? [])
 
@@ -59,8 +59,8 @@ async function getProducts(
 }
 
 async function getProductsWithIndexEngine(
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductListParams>,
-  res: MedusaResponse<HttpTypes.AdminProductListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductListResponse>
 ) {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -92,11 +92,11 @@ async function getProductsWithIndexEngine(
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateProduct & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductResponse>
 ) => {
   const { additional_data, ...products } = req.validatedBody
 

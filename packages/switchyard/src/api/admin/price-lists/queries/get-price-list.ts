@@ -1,8 +1,8 @@
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   isPresent,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import { AdminPriceListRemoteQueryDTO } from "../types"
@@ -15,7 +15,7 @@ export async function getPriceList({
   apiFields,
 }: {
   id: string
-  container: MedusaContainer
+  container: SwitchyardContainer
   remoteQueryFields: string[]
   apiFields: string[]
 }): Promise<AdminPriceListRemoteQueryDTO> {
@@ -30,8 +30,8 @@ export async function getPriceList({
   const [sanitizedPriceList] = buildPriceListResponse(priceLists, apiFields)
 
   if (!isPresent(sanitizedPriceList)) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Price list with id: ${id} was not found`
     )
   }

@@ -1,10 +1,10 @@
 import {
-  MedusaApp,
-  MedusaAppGetLinksExecutionPlanner,
-  MedusaAppMigrateDown,
-  MedusaAppMigrateGenerate,
-  MedusaAppMigrateUp,
-  MedusaAppOutput,
+  SwitchyardApp,
+  SwitchyardAppGetLinksExecutionPlanner,
+  SwitchyardAppMigrateDown,
+  SwitchyardAppMigrateGenerate,
+  SwitchyardAppMigrateUp,
+  SwitchyardAppOutput,
   ModulesDefinition,
   RegisterModuleJoinerConfig,
 } from "@switchyard/modules-sdk"
@@ -31,15 +31,15 @@ import { configManager } from "./config"
 import {
   container,
   container as mainContainer,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "./container"
 
-export class MedusaAppLoader {
+export class SwitchyardAppLoader {
   /**
    * Container from where to resolve resources
    * @private
    */
-  readonly #container: MedusaContainer
+  readonly #container: SwitchyardContainer
 
   /**
    * Extra links modules config which should be added manually to the links to be loaded
@@ -61,7 +61,7 @@ export class MedusaAppLoader {
     medusaConfigPath,
     cwd,
   }: {
-    container?: MedusaContainer
+    container?: SwitchyardContainer
     customLinksModules?:
       | RegisterModuleJoinerConfig
       | RegisterModuleJoinerConfig[]
@@ -186,11 +186,11 @@ export class MedusaAppLoader {
     }
 
     if (action === "revert") {
-      await MedusaAppMigrateDown(moduleNames!, migrationOptions)
+      await SwitchyardAppMigrateDown(moduleNames!, migrationOptions)
     } else if (action === "run") {
-      await MedusaAppMigrateUp(migrationOptions)
+      await SwitchyardAppMigrateUp(migrationOptions)
     } else {
-      await MedusaAppMigrateGenerate(moduleNames!, migrationOptions)
+      await SwitchyardAppMigrateGenerate(moduleNames!, migrationOptions)
     }
   }
 
@@ -212,7 +212,7 @@ export class MedusaAppLoader {
       cwd: this.#cwd,
     }
 
-    return await MedusaAppGetLinksExecutionPlanner(migrationOptions)
+    return await SwitchyardAppGetLinksExecutionPlanner(migrationOptions)
   }
 
   /**
@@ -223,7 +223,7 @@ export class MedusaAppLoader {
       this.prepareSharedResourcesAndDeps()
     const configModules = this.mergeDefaultModules(configManager.config.modules)
 
-    await MedusaApp({
+    await SwitchyardApp({
       modulesConfig: configModules,
       sharedContainer: this.#container,
       linkModules: this.#customLinksModules,
@@ -239,7 +239,7 @@ export class MedusaAppLoader {
    * Load all modules and bootstrap all the modules and links to be ready to be consumed
    * @param config
    */
-  async load(config = { registerInContainer: true }): Promise<MedusaAppOutput> {
+  async load(config = { registerInContainer: true }): Promise<SwitchyardAppOutput> {
     const configModule: ConfigModule = this.#container.resolve(
       ContainerRegistrationKeys.CONFIG_MODULE
     )
@@ -263,7 +263,7 @@ export class MedusaAppLoader {
 
     const configModules = this.mergeDefaultModules(configModule.modules)
 
-    const medusaApp = await MedusaApp({
+    const switchyardApp = await SwitchyardApp({
       workerMode: configModule.projectConfig.workerMode,
       modulesConfig: configModules,
       sharedContainer: this.#container,
@@ -275,12 +275,12 @@ export class MedusaAppLoader {
     })
 
     if (!config.registerInContainer) {
-      return medusaApp
+      return switchyardApp
     }
 
     this.#container.register(
       ContainerRegistrationKeys.LINK,
-      asValue(medusaApp.link)
+      asValue(switchyardApp.link)
     )
     this.#container.register(
       ContainerRegistrationKeys.REMOTE_LINK,
@@ -288,14 +288,14 @@ export class MedusaAppLoader {
     )
     this.#container.register(
       ContainerRegistrationKeys.REMOTE_QUERY,
-      asValue(medusaApp.query)
+      asValue(switchyardApp.query)
     )
     this.#container.register(
       ContainerRegistrationKeys.QUERY,
-      asValue(medusaApp.query)
+      asValue(switchyardApp.query)
     )
 
-    for (const moduleService of Object.values(medusaApp.modules)) {
+    for (const moduleService of Object.values(switchyardApp.modules)) {
       const loadedModule = moduleService as LoadedModule
       container.register(loadedModule.__definition.key, asValue(moduleService))
     }
@@ -308,6 +308,6 @@ export class MedusaAppLoader {
       }
     }
 
-    return medusaApp
+    return switchyardApp
   }
 }

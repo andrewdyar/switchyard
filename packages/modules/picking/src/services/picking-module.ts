@@ -4,11 +4,11 @@
  * Handles RFC warehouse picking operations.
  */
 
-import { MedusaService } from "@switchyard/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { PickList } from "../models/pick-list"
 import { PickListItem } from "../models/pick-list-item"
 
-class PickingModuleService extends MedusaService({
+class PickingModuleService extends SwitchyardService({
   PickList,
   PickListItem,
 }) {

@@ -1,6 +1,6 @@
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
@@ -65,8 +65,8 @@ export const validateVariantPriceLinksStep = createStep(
     const withoutLinks = variantIds.filter((id) => !variantPriceSetMap[id])
 
     if (withoutLinks.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `No price set exist for variants: ${withoutLinks.join(", ")}`
       )
     }

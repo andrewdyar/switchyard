@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 import {
@@ -12,8 +12,8 @@ import { remapKeysForProduct, remapProductResponse } from "../../../helpers"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminProductOptionResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductOptionResponse>
 ) => {
   const productId = req.params.id
   const optionId = req.params.option_id
@@ -28,11 +28,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateProductOption & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductResponse>
 ) => {
   const productId = req.params.id
   const optionId = req.params.option_id
@@ -57,8 +57,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminProductOptionDeleteResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductOptionDeleteResponse>
 ) => {
   const productId = req.params.id
   const optionId = req.params.option_id

@@ -3,8 +3,8 @@ import {
   updateShippingOptionTypesWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { refetchShippingOptionType } from "../helpers"
@@ -12,14 +12,14 @@ import {
   AdminGetShippingOptionTypeParamsType,
 } from "../validators"
 import { HttpTypes } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 /**
  * @since 2.10.0
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest<AdminGetShippingOptionTypeParamsType>,
-  res: MedusaResponse<HttpTypes.AdminShippingOptionTypeResponse>
+  req: AuthenticatedSwitchyardRequest<AdminGetShippingOptionTypeParamsType>,
+  res: SwitchyardResponse<HttpTypes.AdminShippingOptionTypeResponse>
 ) => {
   const shippingOptionType = await refetchShippingOptionType(
     req.params.id,
@@ -34,11 +34,11 @@ export const GET = async (
  * @since 2.10.0
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateShippingOptionType,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminShippingOptionTypeResponse>
+  res: SwitchyardResponse<HttpTypes.AdminShippingOptionTypeResponse>
 ) => {
   const existingShippingOptionType = await refetchShippingOptionType(
     req.params.id,
@@ -47,8 +47,8 @@ export const POST = async (
   )
 
   if (!existingShippingOptionType) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Shipping option type with id "${req.params.id}" not found`
     )
   }
@@ -73,8 +73,8 @@ export const POST = async (
  * @since 2.10.0
  */
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminShippingOptionTypeDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminShippingOptionTypeDeleteResponse>
 ) => {
   const id = req.params.id
 

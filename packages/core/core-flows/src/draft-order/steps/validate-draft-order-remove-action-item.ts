@@ -1,6 +1,6 @@
 import type { OrderChangeActionDTO } from "@switchyard/framework/types"
 
-import { ChangeActionType, MedusaError } from "@switchyard/framework/utils"
+import { ChangeActionType, SwitchyardError } from "@switchyard/framework/utils"
 import { createStep } from "@switchyard/framework/workflows-sdk"
 import type { OrderChangeDTO, OrderWorkflow } from "@switchyard/framework/types"
 
@@ -52,8 +52,8 @@ export const validateDraftOrderRemoveActionItemStep = createStep(
     ) as OrderChangeActionDTO
 
     if (!associatedAction) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `No item found for order ${input.order_id} in order change ${orderChange.id}`
       )
     }
@@ -63,8 +63,8 @@ export const validateDraftOrderRemoveActionItemStep = createStep(
         associatedAction.action as ChangeActionType
       )
     ) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Action ${associatedAction.id} is not adding or updating an item`
       )
     }

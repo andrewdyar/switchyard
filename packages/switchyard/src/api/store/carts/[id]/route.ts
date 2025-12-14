@@ -1,13 +1,13 @@
 import { updateCartWorkflowId } from "@switchyard/core-flows"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { Modules } from "@switchyard/framework/utils"
 import { refetchCart } from "../helpers"
 
 export const GET = async (
-  req: MedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.StoreCartResponse>
+  req: SwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.StoreCartResponse>
 ) => {
   const cart = await refetchCart(
     req.params.id,
@@ -19,11 +19,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.StoreUpdateCart & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<{
+  res: SwitchyardResponse<{
     cart: HttpTypes.StoreCart
   }>
 ) => {

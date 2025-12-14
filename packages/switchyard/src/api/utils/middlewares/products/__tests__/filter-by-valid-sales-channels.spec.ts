@@ -1,5 +1,5 @@
 import { MedusaStoreRequest } from "@switchyard/framework/http"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { NextFunction } from "express"
 import {
   transformAndValidateSalesChannelIds,
@@ -45,7 +45,7 @@ describe("filter-by-valid-sales-channels", () => {
 
       expect(() => {
         transformAndValidateSalesChannelIds(req as MedusaStoreRequest)
-      }).toThrow(MedusaError)
+      }).toThrow(SwitchyardError)
     })
 
     it("should return sales channel ids from publishable key when no ids in request", () => {

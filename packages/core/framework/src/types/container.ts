@@ -83,7 +83,7 @@ declare module "@switchyard/types" {
   }
 }
 
-export type MedusaContainer<Cradle extends object = ModuleImplementations> =
+export type SwitchyardContainer<Cradle extends object = ModuleImplementations> =
   Omit<AwilixContainer, "resolve"> & {
     resolve<K extends keyof Cradle>(
       key: K,
@@ -94,11 +94,11 @@ export type MedusaContainer<Cradle extends object = ModuleImplementations> =
     /**
      * @ignore
      */
-    registerAdd: <T>(name: string, registration: T) => MedusaContainer
+    registerAdd: <T>(name: string, registration: T) => SwitchyardContainer
     /**
      * @ignore
      */
-    createScope: () => MedusaContainer
+    createScope: () => SwitchyardContainer
   }
 
 export type ContainerLike = {

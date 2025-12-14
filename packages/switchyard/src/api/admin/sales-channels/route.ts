@@ -4,15 +4,15 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchSalesChannel } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminSalesChannelListParams>,
-  res: MedusaResponse<HttpTypes.AdminSalesChannelListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminSalesChannelListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminSalesChannelListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -36,11 +36,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateSalesChannel,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminSalesChannelResponse>
+  res: SwitchyardResponse<HttpTypes.AdminSalesChannelResponse>
 ) => {
   const salesChannelsData = [req.validatedBody]
 

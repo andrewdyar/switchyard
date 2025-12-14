@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/types"
+import { SwitchyardContainer } from "@switchyard/types"
 import {
   asFunction,
   asValue,
@@ -18,7 +18,7 @@ function asArray(
 }
 
 function registerAdd(
-  this: MedusaContainer,
+  this: SwitchyardContainer,
   name: string,
   registration: typeof asFunction | typeof asValue
 ) {
@@ -40,14 +40,14 @@ function registerAdd(
   return this
 }
 
-export function createMedusaContainer(...args): MedusaContainer {
-  const container = createContainer.apply(null, args) as MedusaContainer
+export function createSwitchyardContainer(...args): SwitchyardContainer {
+  const container = createContainer.apply(null, args) as SwitchyardContainer
 
   container.registerAdd = registerAdd.bind(container)
 
   const originalScope = container.createScope
   container.createScope = () => {
-    const scoped = originalScope() as MedusaContainer
+    const scoped = originalScope() as SwitchyardContainer
     scoped.registerAdd = registerAdd.bind(scoped)
 
     return scoped

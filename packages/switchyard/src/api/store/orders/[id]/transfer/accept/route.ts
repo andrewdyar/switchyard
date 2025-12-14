@@ -1,4 +1,4 @@
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@switchyard/framework"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
   acceptOrderTransferWorkflow,
@@ -6,11 +6,11 @@ import {
 } from "@switchyard/core-flows"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreAcceptOrderTransfer,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreOrderResponse>
+  res: SwitchyardResponse<HttpTypes.StoreOrderResponse>
 ) => {
   await acceptOrderTransferWorkflow(req.scope).run({
     input: {

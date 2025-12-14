@@ -3,8 +3,8 @@ import {
   updateTaxRegionsWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes, RemoteQueryFunction } from "@switchyard/framework/types"
 import {
@@ -13,8 +13,8 @@ import {
 } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminTaxRegionParams>,
-  res: MedusaResponse<HttpTypes.AdminTaxRegionResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminTaxRegionParams>,
+  res: SwitchyardResponse<HttpTypes.AdminTaxRegionResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -31,11 +31,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateTaxRegion,
     HttpTypes.AdminTaxRegionParams
   >,
-  res: MedusaResponse<HttpTypes.AdminTaxRegionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminTaxRegionResponse>
 ) => {
   const { id } = req.params
   const query = req.scope.resolve<RemoteQueryFunction>(
@@ -66,8 +66,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminTaxRegionDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminTaxRegionDeleteResponse>
 ) => {
   const id = req.params.id
 

@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   AdminSetActiveViewConfigurationType,
@@ -14,8 +14,8 @@ import { Modules } from "@switchyard/framework/utils"
  * @featureFlag view_configurations
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest<AdminGetActiveViewConfigurationParamsType>,
-  res: MedusaResponse<
+  req: AuthenticatedSwitchyardRequest<AdminGetActiveViewConfigurationParamsType>,
+  res: SwitchyardResponse<
     HttpTypes.AdminViewConfigurationResponse & {
       is_default_active?: boolean
       default_type?: "system" | "code"
@@ -50,8 +50,8 @@ export const GET = async (
  * @featureFlag view_configurations
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminSetActiveViewConfigurationType>,
-  res: MedusaResponse<{ success: boolean }>
+  req: AuthenticatedSwitchyardRequest<AdminSetActiveViewConfigurationType>,
+  res: SwitchyardResponse<{ success: boolean }>
 ) => {
   const settingsService = req.scope.resolve(Modules.SETTINGS)
 

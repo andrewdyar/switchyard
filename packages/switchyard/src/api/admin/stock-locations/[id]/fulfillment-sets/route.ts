@@ -1,17 +1,17 @@
 import { createLocationFulfillmentSetWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchStockLocation } from "../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateStockLocationFulfillmentSet,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminStockLocationResponse>
+  res: SwitchyardResponse<HttpTypes.AdminStockLocationResponse>
 ) => {
   await createLocationFulfillmentSetWorkflow(req.scope).run({
     input: {

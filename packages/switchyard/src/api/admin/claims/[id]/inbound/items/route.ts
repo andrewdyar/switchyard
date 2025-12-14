@@ -5,16 +5,16 @@ import {
 } from "@switchyard/framework/utils"
 
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import { defaultAdminDetailsReturnFields } from "../../../../returns/query-config"
 import { AdminPostReturnsRequestItemsReqSchemaType } from "../../../../returns/validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminPostReturnsRequestItemsReqSchemaType>,
-  res: MedusaResponse<HttpTypes.AdminClaimReturnPreviewResponse>
+  req: AuthenticatedSwitchyardRequest<AdminPostReturnsRequestItemsReqSchemaType>,
+  res: SwitchyardResponse<HttpTypes.AdminClaimReturnPreviewResponse>
 ) => {
   const { id } = req.params
 

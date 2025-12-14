@@ -1,5 +1,5 @@
 import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
-import { MedusaError, Modules } from "@switchyard/framework/utils"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
 
 /**
  * The data to validate if sales channels can be deleted.
@@ -43,8 +43,8 @@ export const canDeleteSalesChannelsOrThrowStep = createStep(
     const defaultSalesChannelIds = stores.map((s) => s.default_sales_channel_id)
 
     if (defaultSalesChannelIds.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot delete default sales channels: ${defaultSalesChannelIds.join(
           ", "
         )}`

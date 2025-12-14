@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
   refetchEntity,
 } from "@switchyard/framework/http"
@@ -9,8 +9,8 @@ import { createProductTagsWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductTagListParams>,
-  res: MedusaResponse<HttpTypes.AdminProductTagListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductTagListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductTagListResponse>
 ) => {
   const { data: product_tags, metadata } = await refetchEntities({
     entity: "product_tag",
@@ -29,11 +29,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateProductTag,
     HttpTypes.AdminProductTagParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductTagResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductTagResponse>
 ) => {
   const input = [req.validatedBody]
 

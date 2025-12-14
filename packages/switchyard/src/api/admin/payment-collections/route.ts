@@ -1,17 +1,17 @@
 import { createOrderPaymentCollectionWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreatePaymentCollection,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPaymentCollectionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPaymentCollectionResponse>
 ) => {
   const { result } = await createOrderPaymentCollectionWorkflow(req.scope).run({
     input: req.validatedBody,

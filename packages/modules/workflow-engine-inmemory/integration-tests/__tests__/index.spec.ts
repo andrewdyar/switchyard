@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/framework"
+import { SwitchyardContainer } from "@switchyard/framework"
 import { asFunction } from "@switchyard/framework/awilix"
 import {
   DistributedTransactionType,
@@ -93,14 +93,14 @@ function times(num) {
 moduleIntegrationTestRunner<IWorkflowEngineService>({
   moduleName: Modules.WORKFLOW_ENGINE,
   resolve: __dirname + "/../..",
-  testSuite: ({ service: workflowOrcModule, medusaApp }) => {
+  testSuite: ({ service: workflowOrcModule, switchyardApp }) => {
     describe("Workflow Orchestrator module", function () {
       let query: RemoteQueryFunction
-      let sharedContainer_: MedusaContainer
+      let sharedContainer_: SwitchyardContainer
 
       beforeEach(() => {
-        query = medusaApp.query
-        sharedContainer_ = medusaApp.sharedContainer
+        query = switchyardApp.query
+        sharedContainer_ = switchyardApp.sharedContainer
       })
 
       it(`should export the appropriate linkable configuration`, () => {

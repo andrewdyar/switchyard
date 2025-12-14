@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
@@ -12,11 +12,11 @@ import { refetchInventoryItem } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateInventoryItem,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminInventoryItemResponse>
+  res: SwitchyardResponse<HttpTypes.AdminInventoryItemResponse>
 ) => {
   const { result } = await createInventoryItemsWorkflow(req.scope).run({
     input: { items: [req.validatedBody] },
@@ -32,8 +32,8 @@ export const POST = async (
 }
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminInventoryItemsParams>,
-  res: MedusaResponse<HttpTypes.AdminInventoryItemListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminInventoryItemsParams>,
+  res: SwitchyardResponse<HttpTypes.AdminInventoryItemListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 

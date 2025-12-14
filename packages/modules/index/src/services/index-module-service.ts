@@ -48,7 +48,7 @@ type InjectedDependencies = {
 }
 
 export default class IndexModuleService
-  extends ModulesSdkUtils.MedusaService({})
+  extends ModulesSdkUtils.SwitchyardService({})
   implements IndexTypes.IIndexService
 {
   #isWorkerMode: boolean = false

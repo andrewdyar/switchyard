@@ -1,13 +1,13 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import {
   deleteStockLocationsWorkflow,
   updateStockLocationsWorkflow,
 } from "@switchyard/core-flows"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { refetchStockLocation } from "../helpers"
 import {
   AdminGetStockLocationParamsType,
@@ -15,11 +15,11 @@ import {
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateStockLocation,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminStockLocationResponse>
+  res: SwitchyardResponse<HttpTypes.AdminStockLocationResponse>
 ) => {
   const { id } = req.params
   await updateStockLocationsWorkflow(req.scope).run({
@@ -41,8 +41,8 @@ export const POST = async (
 }
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<AdminGetStockLocationParamsType>,
-  res: MedusaResponse<HttpTypes.AdminStockLocationResponse>
+  req: AuthenticatedSwitchyardRequest<AdminGetStockLocationParamsType>,
+  res: SwitchyardResponse<HttpTypes.AdminStockLocationResponse>
 ) => {
   const { id } = req.params
 
@@ -53,8 +53,8 @@ export const GET = async (
   )
 
   if (!stockLocation) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Stock location with id: ${id} was not found`
     )
   }
@@ -63,8 +63,8 @@ export const GET = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminStockLocationDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminStockLocationDeleteResponse>
 ) => {
   const { id } = req.params
 

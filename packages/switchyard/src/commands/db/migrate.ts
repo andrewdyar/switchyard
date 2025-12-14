@@ -1,4 +1,4 @@
-import { MEDUSA_CLI_PATH, MedusaAppLoader, Migrator } from "@switchyard/framework"
+import { MEDUSA_CLI_PATH, SwitchyardAppLoader, Migrator } from "@switchyard/framework"
 import { LinkLoader } from "@switchyard/framework/links"
 import {
   ContainerRegistrationKeys,
@@ -6,7 +6,7 @@ import {
   isDefined,
   mergePluginModules,
 } from "@switchyard/framework/utils"
-import { Logger, MedusaContainer } from "@switchyard/types"
+import { Logger, SwitchyardContainer } from "@switchyard/types"
 import { fork } from "child_process"
 import path, { join } from "path"
 import { initializeContainer } from "../../loaders"
@@ -38,7 +38,7 @@ export async function migrate({
   executeSafeLinks: boolean
   concurrency?: number
   logger: Logger
-  container: MedusaContainer
+  container: SwitchyardContainer
 }): Promise<boolean> {
   /**
    * Setup
@@ -56,7 +56,7 @@ export async function migrate({
     process.env.DB_MIGRATION_CONCURRENCY = String(concurrency)
   }
 
-  const medusaAppLoader = new MedusaAppLoader()
+  const switchyardAppLoader = new SwitchyardAppLoader()
   const configModule = container.resolve(
     ContainerRegistrationKeys.CONFIG_MODULE
   )
@@ -77,7 +77,7 @@ export async function migrate({
   const migrator = new Migrator({ container })
   await migrator.ensureMigrationsTable()
 
-  await medusaAppLoader.runModulesMigrations({
+  await switchyardAppLoader.runModulesMigrations({
     action: "run",
   })
   logger.log(new Array(TERMINAL_SIZE).join("-"))
@@ -88,7 +88,7 @@ export async function migrate({
    */
   if (!skipLinks) {
     logger.log(new Array(TERMINAL_SIZE).join("-"))
-    await syncLinks(medusaAppLoader, {
+    await syncLinks(switchyardAppLoader, {
       executeAll: executeAllLinks,
       executeSafe: executeSafeLinks,
       directory,

@@ -1,7 +1,7 @@
 import { WorkflowManager } from "@switchyard/orchestration"
 import {
   ContainerRegistrationKeys,
-  createMedusaContainer,
+  createSwitchyardContainer,
 } from "@switchyard/utils"
 import { asValue } from "../../deps/awilix"
 import { join } from "path"
@@ -14,7 +14,7 @@ describe("WorkflowLoader", () => {
   const rootDir = join(__dirname, "../__fixtures__", "workflows")
 
   beforeAll(async () => {
-    const container = createMedusaContainer()
+    const container = createSwitchyardContainer()
     container.register(ContainerRegistrationKeys.LOGGER, asValue(logger))
 
     await new WorkflowLoader(rootDir, container).load()

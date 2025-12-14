@@ -1,5 +1,5 @@
 import { updateTaxRegionsStep, useQueryGraphStep } from "@switchyard/core-flows"
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import { ExecArgs } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys, Modules } from "@switchyard/framework/utils"
 import { createWorkflow, transform, WorkflowResponse } from "@switchyard/framework/workflows-sdk"
@@ -35,7 +35,7 @@ const assignSystemProviderToTaxRegionsWorkflow = createWorkflow(
 export default async function assignTaxSystemProviderToTaxRegions({
   container,
 }: ExecArgs) {
-  if (!MedusaModule.isInstalled(Modules.TAX)) {
+  if (!SwitchyardModule.isInstalled(Modules.TAX)) {
     return
   }
 

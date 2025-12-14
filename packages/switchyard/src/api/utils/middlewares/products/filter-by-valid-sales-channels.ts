@@ -1,5 +1,5 @@
 import { MedusaStoreRequest } from "@switchyard/framework/http"
-import { arrayDifference, MedusaError } from "@switchyard/framework/utils"
+import { arrayDifference, SwitchyardError } from "@switchyard/framework/utils"
 import { NextFunction } from "express"
 
 /**
@@ -29,8 +29,8 @@ export function transformAndValidateSalesChannelIds(
     )
 
     if (uniqueInParams.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Requested sales channel is not part of the publishable key`
       )
     }
@@ -54,8 +54,8 @@ export function filterByValidSalesChannels() {
     const salesChannelIds = transformAndValidateSalesChannelIds(req)
 
     if (!salesChannelIds.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Publishable key needs to have a sales channel configured`
       )
     }

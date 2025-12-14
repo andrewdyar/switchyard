@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
@@ -12,8 +12,8 @@ import { refetchReservation } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetReservationsParams>,
-  res: MedusaResponse<HttpTypes.AdminReservationListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetReservationsParams>,
+  res: SwitchyardResponse<HttpTypes.AdminReservationListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -37,11 +37,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateReservation,
     HttpTypes.AdminReservationParams
   >,
-  res: MedusaResponse<HttpTypes.AdminReservationResponse>
+  res: SwitchyardResponse<HttpTypes.AdminReservationResponse>
 ) => {
   const input = [req.validatedBody]
 

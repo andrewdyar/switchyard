@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { addOrRemoveCampaignPromotionsWorkflow } from "@switchyard/core-flows"
@@ -8,11 +8,11 @@ import { HttpTypes } from "@switchyard/framework/types"
 import { refetchCampaign } from "../../helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminBatchLink,
     HttpTypes.AdminGetCampaignParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCampaignResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCampaignResponse>
 ) => {
   const { id } = req.params
   const { add, remove } = req.validatedBody

@@ -1,17 +1,17 @@
 import { createOrderCreditLinesWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateOrderCreditLine,
     HttpTypes.AdminGetOrderParams
   >,
-  res: MedusaResponse<HttpTypes.AdminOrderResponse>
+  res: SwitchyardResponse<HttpTypes.AdminOrderResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
   const { id } = req.params

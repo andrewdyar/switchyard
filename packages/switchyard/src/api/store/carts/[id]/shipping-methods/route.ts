@@ -1,14 +1,14 @@
 import { addShippingMethodToCartWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 import { refetchCart } from "../../helpers"
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.StoreAddCartShippingMethods & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreCartResponse>
+  res: SwitchyardResponse<HttpTypes.StoreCartResponse>
 ) => {
   const payload = req.validatedBody
 

@@ -1,5 +1,5 @@
 import { ModuleResolution } from "@switchyard/types"
-import { createMedusaContainer } from "@switchyard/utils"
+import { createSwitchyardContainer } from "@switchyard/utils"
 import { MODULE_SCOPE } from "../../types"
 import { moduleLoader } from "../module-loader"
 
@@ -16,7 +16,7 @@ describe("modules loader", () => {
   })
 
   beforeEach(() => {
-    container = createMedusaContainer()
+    container = createSwitchyardContainer()
   })
 
   it("should register the service as undefined in the container when no resolution path is given", async () => {

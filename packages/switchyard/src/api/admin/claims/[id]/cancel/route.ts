@@ -1,14 +1,14 @@
 import { cancelOrderClaimWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminPostCancelClaimReqSchemaType } from "../../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminPostCancelClaimReqSchemaType>,
-  res: MedusaResponse<HttpTypes.AdminClaimResponse>
+  req: AuthenticatedSwitchyardRequest<AdminPostCancelClaimReqSchemaType>,
+  res: SwitchyardResponse<HttpTypes.AdminClaimResponse>
 ) => {
   const { id } = req.params
 

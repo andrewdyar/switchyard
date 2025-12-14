@@ -1,13 +1,13 @@
 import { getOrdersListWorkflow } from "@switchyard/core-flows"
 import { HttpTypes, OrderDTO } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminOrderFilters>,
-  res: MedusaResponse<HttpTypes.AdminOrderListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminOrderFilters>,
+  res: SwitchyardResponse<HttpTypes.AdminOrderListResponse>
 ) => {
   const variables = {
     filters: {

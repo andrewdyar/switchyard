@@ -9,7 +9,7 @@ import {
 import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IFulfillmentModuleService,
-  MedusaContainer,
+  SwitchyardContainer,
   StockLocationDTO,
 } from "@switchyard/types"
 import { ContainerRegistrationKeys, Modules } from "@switchyard/utils"
@@ -27,7 +27,7 @@ medusaIntegrationTestRunner({
   testSuite: ({ getContainer }) => {
     describe("Workflows: Fulfillment", () => {
       let location: StockLocationDTO
-      let appContainer: MedusaContainer
+      let appContainer: SwitchyardContainer
       let service: IFulfillmentModuleService
 
       beforeAll(async () => {

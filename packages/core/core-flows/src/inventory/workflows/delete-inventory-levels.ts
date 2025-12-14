@@ -10,7 +10,7 @@ import {
   FilterableInventoryLevelProps,
   InventoryLevelDTO,
 } from "@switchyard/framework/types"
-import { deduplicate, MedusaError, Modules } from "@switchyard/framework/utils"
+import { deduplicate, SwitchyardError, Modules } from "@switchyard/framework/utils"
 import { useRemoteQueryStep } from "../../common"
 import { deleteEntitiesStep } from "../../common/steps/delete-entities"
 
@@ -65,8 +65,8 @@ export const validateInventoryLevelsDelete = createStep(
       const locationIds = deduplicate(
         undeleteableDueToReservation.map((item) => item.location_id)
       )
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Cannot remove Inventory Levels for ${locationIds.join(
           ", "
         )} because there are reserved or incoming items at the locations`
@@ -81,8 +81,8 @@ export const validateInventoryLevelsDelete = createStep(
       const locationIds = deduplicate(
         undeleteableDueToStock.map((item) => item.location_id)
       )
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `Cannot remove Inventory Levels for ${locationIds.join(
           ", "
         )} because there are stocked items at the locations. Use force flag to delete anyway.`

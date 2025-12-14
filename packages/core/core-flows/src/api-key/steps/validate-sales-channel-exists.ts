@@ -1,6 +1,6 @@
 import type { ISalesChannelModuleService } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   arrayDifference,
 } from "@switchyard/framework/utils"
@@ -37,8 +37,8 @@ export const validateSalesChannelsExistStep = createStep(
     const notFound = arrayDifference(data.sales_channel_ids, salesChannelIds)
 
     if (notFound.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Sales channels with IDs ${notFound.join(", ")} do not exist`
       )
     }

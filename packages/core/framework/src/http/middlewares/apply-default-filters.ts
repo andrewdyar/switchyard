@@ -1,17 +1,17 @@
 import { isObject, isPresent } from "@switchyard/utils"
 import type {
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "../types"
 
 export function applyDefaultFilters<TFilter extends object>(
   filtersToApply: TFilter
 ) {
   return async function defaultFiltersMiddleware(
-    req: MedusaRequest,
-    _: MedusaResponse,
-    next: MedusaNextFunction
+    req: SwitchyardRequest,
+    _: SwitchyardResponse,
+    next: SwitchyardNextFunction
   ) {
     for (const [filter, filterValue] of Object.entries(filtersToApply)) {
       let valueToApply = filterValue

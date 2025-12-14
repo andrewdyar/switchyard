@@ -1,7 +1,7 @@
 import { batchVariantImagesWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 
@@ -9,8 +9,8 @@ import { HttpTypes } from "@switchyard/framework/types"
  * @since 2.11.2
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminBatchVariantImagesRequest>,
-  res: MedusaResponse<HttpTypes.AdminBatchVariantImagesResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminBatchVariantImagesRequest>,
+  res: SwitchyardResponse<HttpTypes.AdminBatchVariantImagesResponse>
 ) => {
   const variantId = req.params.variant_id
 

@@ -4,7 +4,7 @@ import {
   PaymentCollectionDTO,
   ReturnDTO,
 } from "@switchyard/framework/types"
-import { MathBN, MedusaError } from "@switchyard/framework/utils"
+import { MathBN, SwitchyardError } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   createStep,
@@ -67,7 +67,7 @@ export const cancelReturnValidateOrder = createStep(
       message: string
     ) => {
       if (arr?.some(pred)) {
-        throw new MedusaError(MedusaError.Types.NOT_ALLOWED, message)
+        throw new SwitchyardError(SwitchyardError.Types.NOT_ALLOWED, message)
       }
     }
 

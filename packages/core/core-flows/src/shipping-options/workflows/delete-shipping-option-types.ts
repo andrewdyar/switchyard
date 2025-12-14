@@ -1,5 +1,5 @@
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   ShippingOptionTypeWorkflowEvents,
 } from "@switchyard/framework/utils"
@@ -23,8 +23,8 @@ const validateDeleteShippingOptionTypesStep = createStep(
     const shippingOptions = input.shippingOptions
 
     if (shippingOptions.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Cannot delete shipping option type because some shipping options are using it."
       )
     }

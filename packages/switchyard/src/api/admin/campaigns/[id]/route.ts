@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   deleteCampaignsWorkflow,
@@ -8,12 +8,12 @@ import {
 } from "@switchyard/core-flows"
 
 import { refetchCampaign } from "../helpers"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetCampaignParams>,
-  res: MedusaResponse<HttpTypes.AdminCampaignResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetCampaignParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCampaignResponse>
 ) => {
   const campaign = await refetchCampaign(
     req.params.id,
@@ -22,8 +22,8 @@ export const GET = async (
   )
 
   if (!campaign) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Campaign with id: ${req.params.id} was not found`
     )
   }
@@ -32,18 +32,18 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateCampaign & AdditionalData,
     HttpTypes.AdminGetCampaignParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCampaignResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCampaignResponse>
 ) => {
   const existingCampaign = await refetchCampaign(req.params.id, req.scope, [
     "id",
   ])
   if (!existingCampaign) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Campaign with id "${req.params.id}" not found`
     )
   }
@@ -70,8 +70,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminCampaignDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminCampaignDeleteResponse>
 ) => {
   const id = req.params.id
   const deleteCampaigns = deleteCampaignsWorkflow(req.scope)

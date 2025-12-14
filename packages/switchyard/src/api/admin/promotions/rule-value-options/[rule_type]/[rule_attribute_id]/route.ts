@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
@@ -25,8 +25,8 @@ import {
   from the currency module.
 */
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetPromotionsRuleValueParams>,
-  res: MedusaResponse<HttpTypes.AdminRuleValueOptionsListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetPromotionsRuleValueParams>,
+  res: SwitchyardResponse<HttpTypes.AdminRuleValueOptionsListResponse>
 ) => {
   const { rule_type: ruleType, rule_attribute_id: ruleAttributeId } = req.params
   const queryConfig = ruleQueryConfigurations[ruleAttributeId]

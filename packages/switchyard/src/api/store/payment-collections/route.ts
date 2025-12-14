@@ -1,7 +1,7 @@
 import { createPaymentCollectionForCartWorkflowId } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
@@ -11,11 +11,11 @@ import {
 import { Modules } from "@switchyard/utils"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreCreatePaymentCollection,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StorePaymentCollectionResponse>
+  res: SwitchyardResponse<HttpTypes.StorePaymentCollectionResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
   const { cart_id } = req.body

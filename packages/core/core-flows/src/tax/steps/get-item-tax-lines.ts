@@ -12,7 +12,7 @@ import {
   TaxableShippingDTO,
   TaxCalculationContext,
 } from "@switchyard/framework/types"
-import { isDefined, MedusaError, Modules } from "@switchyard/framework/utils"
+import { isDefined, SwitchyardError, Modules } from "@switchyard/framework/utils"
 import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
@@ -62,8 +62,8 @@ function normalizeTaxModuleContext(
   }
 
   if (forceTaxCalculation && !address?.country_code) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `country code is required to calculate taxes`
     )
   }

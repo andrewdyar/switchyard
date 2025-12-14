@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { createCustomerAddressesWorkflow } from "@switchyard/core-flows"
@@ -12,10 +12,10 @@ import { refetchCustomer } from "../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreCustomerAddressFilters
   >,
-  res: MedusaResponse<HttpTypes.StoreCustomerAddressListResponse>
+  res: SwitchyardResponse<HttpTypes.StoreCustomerAddressListResponse>
 ) => {
   const customerId = req.auth_context.actor_id
 
@@ -40,11 +40,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreCreateCustomerAddress,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreCustomerResponse>
+  res: SwitchyardResponse<HttpTypes.StoreCustomerResponse>
 ) => {
   const customerId = req.auth_context.actor_id
 

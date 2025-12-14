@@ -6,7 +6,7 @@ import {
 import {
   ContainerRegistrationKeys,
   LINKS,
-  MedusaError,
+  SwitchyardError,
   Modules,
   arrayDifference,
   promiseAll,
@@ -59,8 +59,8 @@ async function validatePaymentProvidersExists(
   )
 
   if (missingProviders.length) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Payment providers with ids ${missingProviders.join(
         ", "
       )} not found or not enabled`

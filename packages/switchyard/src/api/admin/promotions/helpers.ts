@@ -1,7 +1,7 @@
 import {
   BatchMethodResponse,
   BatchResponse,
-  MedusaContainer,
+  SwitchyardContainer,
   PromotionRuleDTO,
 } from "@switchyard/framework/types"
 import {
@@ -12,7 +12,7 @@ import {
 
 export const refetchPromotion = async (
   promotionId: string,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
@@ -30,7 +30,7 @@ export const refetchPromotion = async (
 
 export const refetchBatchRules = async (
   batchResult: BatchMethodResponse<PromotionRuleDTO>,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ): Promise<BatchResponse<PromotionRuleDTO>> => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)

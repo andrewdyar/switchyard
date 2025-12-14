@@ -1,11 +1,11 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes, QueryContextType } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   QueryContext,
 } from "@switchyard/framework/utils"
 import { wrapVariantsWithInventoryQuantityForSalesChannel } from "../../../utils/middlewares"
@@ -15,14 +15,14 @@ import { StoreProductVariantParamsType } from "../validators"
 
 type StoreVariantRetrieveRequest =
   StoreRequestWithContext<HttpTypes.StoreProductVariantParams> &
-    AuthenticatedMedusaRequest<StoreProductVariantParamsType>
+    AuthenticatedSwitchyardRequest<StoreProductVariantParamsType>
 
 /**
  * @since 2.11.2
  */
 export const GET = async (
   req: StoreVariantRetrieveRequest,
-  res: MedusaResponse<HttpTypes.StoreProductVariantResponse>
+  res: SwitchyardResponse<HttpTypes.StoreProductVariantResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -54,8 +54,8 @@ export const GET = async (
   const variant = variants[0]
 
   if (!variant) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Product variant with id: ${req.params.id} was not found`
     )
   }

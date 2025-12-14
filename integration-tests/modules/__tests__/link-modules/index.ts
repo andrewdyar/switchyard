@@ -1,5 +1,5 @@
 import { getMigrationPlanner, initialize } from "@switchyard/link-modules"
-import { MedusaModule } from "@switchyard/modules-sdk"
+import { SwitchyardModule } from "@switchyard/modules-sdk"
 import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import { ModuleJoinerConfig } from "@switchyard/types"
 
@@ -53,7 +53,7 @@ medusaIntegrationTestRunner({
         },
       }
 
-      jest.spyOn(MedusaModule, "getLoadedModules").mockImplementation((() => {
+      jest.spyOn(SwitchyardModule, "getLoadedModules").mockImplementation((() => {
         return [
           {
             moduleA: {

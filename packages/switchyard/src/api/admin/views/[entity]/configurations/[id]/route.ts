@@ -1,10 +1,10 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminUpdateViewConfigurationType } from "../validators"
 import { HttpTypes } from "@switchyard/framework/types"
-import { MedusaError, Modules } from "@switchyard/framework/utils"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
 import { updateViewConfigurationWorkflow } from "@switchyard/core-flows"
 
 /**
@@ -12,8 +12,8 @@ import { updateViewConfigurationWorkflow } from "@switchyard/core-flows"
  * @featureFlag view_configurations
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetViewConfigurationParams>,
-  res: MedusaResponse<HttpTypes.AdminViewConfigurationResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetViewConfigurationParams>,
+  res: SwitchyardResponse<HttpTypes.AdminViewConfigurationResponse>
 ) => {
   const settingsService = req.scope.resolve(Modules.SETTINGS)
 
@@ -27,8 +27,8 @@ export const GET = async (
     viewConfiguration.user_id !== req.auth_context.actor_id &&
     !req.auth_context.app_metadata?.admin
   ) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_ALLOWED,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_ALLOWED,
       "You don't have access to this view configuration"
     )
   }
@@ -41,8 +41,8 @@ export const GET = async (
  * @featureFlag view_configurations
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminUpdateViewConfigurationType>,
-  res: MedusaResponse<HttpTypes.AdminViewConfigurationResponse>
+  req: AuthenticatedSwitchyardRequest<AdminUpdateViewConfigurationType>,
+  res: SwitchyardResponse<HttpTypes.AdminViewConfigurationResponse>
 ) => {
   const settingsService = req.scope.resolve(Modules.SETTINGS)
 
@@ -53,8 +53,8 @@ export const POST = async (
   )
 
   if (existing.user_id && existing.user_id !== req.auth_context.actor_id) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_ALLOWED,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_ALLOWED,
       "You can only update your own view configurations"
     )
   }
@@ -76,8 +76,8 @@ export const POST = async (
  * @featureFlag view_configurations
  */
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminViewConfigurationDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminViewConfigurationDeleteResponse>
 ) => {
   const settingsService = req.scope.resolve(Modules.SETTINGS)
 
@@ -88,8 +88,8 @@ export const DELETE = async (
   )
 
   if (existing.user_id && existing.user_id !== req.auth_context.actor_id) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_ALLOWED,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_ALLOWED,
       "You can only delete your own view configurations"
     )
   }

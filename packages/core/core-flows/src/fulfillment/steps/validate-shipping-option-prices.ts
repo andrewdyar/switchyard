@@ -1,6 +1,6 @@
 import type { FulfillmentWorkflow } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   ShippingOptionPriceType,
 } from "@switchyard/framework/utils"
@@ -101,8 +101,8 @@ export const validateShippingOptionPricesStep = createStep(
       )
 
     if (validation.some((v) => !v)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot calcuate pricing for: [${calculatedOptions
           .filter((o, i) => !validation[i])
           .map((o) => o.name)
@@ -131,8 +131,8 @@ export const validateShippingOptionPricesStep = createStep(
       const missingRegions = Array.from(regionIdSet).filter(
         (id) => !regionList.some((region) => region.id === id)
       )
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot create prices for non-existent regions. Region with ids [${missingRegions.join(
           ", "
         )}] were not found.`

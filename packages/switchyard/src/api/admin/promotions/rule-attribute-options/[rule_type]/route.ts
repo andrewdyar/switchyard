@@ -1,7 +1,7 @@
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { getRuleAttributesMap, validateRuleType } from "../../utils"
 import {
@@ -11,8 +11,8 @@ import {
 } from "@switchyard/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetPromotionRuleParams>,
-  res: MedusaResponse<HttpTypes.AdminRuleAttributeOptionsListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetPromotionRuleParams>,
+  res: SwitchyardResponse<HttpTypes.AdminRuleAttributeOptionsListResponse>
 ) => {
   const { rule_type: ruleType } = req.params
 

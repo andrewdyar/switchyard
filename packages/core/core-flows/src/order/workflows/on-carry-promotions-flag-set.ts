@@ -5,7 +5,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   ApplicationMethodAllocation,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import {
   WorkflowData,
@@ -99,8 +99,8 @@ export const validateCarryPromotionsFlagStep = createStep(
           allocation !== ApplicationMethodAllocation.ACROSS &&
           allocation !== ApplicationMethodAllocation.EACH
         ) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Promotion ${
               promotion.code || promotion.id
             } has invalid allocation. Only promotions with EACH or ACROSS allocation can be carried over to outbound exchange items.`
@@ -126,8 +126,8 @@ export const validateCarryPromotionsFlagStep = createStep(
       }
 
       if (invalidPromotions.length > 0) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Promotions with codes ${invalidPromotions.join(
             ", "
           )} have invalid allocation. Fixed promotions must have EACH allocation, and percentage promotions must have EACH or ACROSS allocation.`

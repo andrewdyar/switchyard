@@ -1,17 +1,17 @@
 import { batchProductVariantsWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchBatchVariants, remapVariantResponse } from "../../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminBatchProductVariantRequest,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminBatchProductVariantResponse>
+  res: SwitchyardResponse<HttpTypes.AdminBatchProductVariantResponse>
 ) => {
   const productId = req.params.id
 

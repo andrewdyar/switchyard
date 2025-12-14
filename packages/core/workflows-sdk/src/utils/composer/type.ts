@@ -7,7 +7,7 @@ import {
   TransactionStepsDefinition,
   WorkflowHandler,
 } from "@switchyard/orchestration"
-import { Context, LoadedModule, MedusaContainer } from "@switchyard/types"
+import { Context, LoadedModule, SwitchyardContainer } from "@switchyard/types"
 import { ExportedWorkflow } from "../../helper"
 import { Hook } from "./create-hook"
 import { CompensateFn, InvokeFn } from "./create-step"
@@ -174,7 +174,7 @@ export interface StepExecutionContext {
   /**
    * The container used to access resources, such as services, in the step.
    */
-  container: MedusaContainer
+  container: SwitchyardContainer
   /**
    * Metadata passed in the input.
    */
@@ -243,14 +243,14 @@ export type WorkflowTransactionContext = StepExecutionContext &
  *
  * ```ts
  * import type {
- *   MedusaRequest,
- *   MedusaResponse
+ *   SwitchyardRequest,
+ *   SwitchyardResponse
  * } from "@switchyard/core";
  * import myWorkflow from "../../../workflows/hello-world";
  *
  * export async function GET(
- *   req: MedusaRequest,
- *   res: MedusaResponse
+ *   req: SwitchyardRequest,
+ *   res: SwitchyardResponse
  * ) {
  *   const { result } = await myWorkflow(req.scope)
  *     .run({
@@ -265,7 +265,7 @@ export type WorkflowTransactionContext = StepExecutionContext &
  */
 export type ReturnWorkflow<TData, TResult, THooks extends any[]> = {
   <TDataOverride = undefined, TResultOverride = undefined>(
-    container?: LoadedModule[] | MedusaContainer
+    container?: LoadedModule[] | SwitchyardContainer
   ): Omit<
     LocalWorkflow,
     | "run"

@@ -15,7 +15,7 @@ import { throwIfOrderIsCancelled } from "../../utils/order-validation"
 import { createOrderChangeActionsWorkflow } from "../create-order-change-actions"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   OrderChangeStatus,
   OrderWorkflowEvents,
 } from "@switchyard/utils"
@@ -68,15 +68,15 @@ export const requestOrderTransferValidationStep = createStep(
     throwIfOrderIsCancelled({ order })
 
     if (!customer.has_account) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot transfer order: ${order.id} to a guest customer account: ${customer.email}`
       )
     }
 
     if (order.customer_id === customer.id) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Order: ${order.id} already belongs to customer: ${customer.id}`
       )
     }

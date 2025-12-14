@@ -3,11 +3,11 @@ import type { ConfigModule } from "@switchyard/types"
 import { ContainerRegistrationKeys } from "@switchyard/utils"
 
 import { HttpCompressionOptions, ProjectConfigOptions } from "../../config"
-import type { MedusaRequest, MedusaResponse } from "../types"
+import type { SwitchyardRequest, SwitchyardResponse } from "../types"
 
 export function shouldCompressResponse(
-  req: MedusaRequest,
-  res: MedusaResponse
+  req: SwitchyardRequest,
+  res: SwitchyardResponse
 ) {
   const { projectConfig } = req.scope.resolve<ConfigModule>(
     ContainerRegistrationKeys.CONFIG_MODULE

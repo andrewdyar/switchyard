@@ -8,7 +8,7 @@ import {
 import {
   ProductWorkflowEvents,
   isPresent,
-  MedusaError,
+  SwitchyardError,
   Modules,
 } from "@switchyard/framework/utils"
 import {
@@ -80,8 +80,8 @@ export const validateProductInputStep = createStep(
       .map((product) => product.title)
 
     if (missingOptionsProductTitles.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Product options are not provided for: [${missingOptionsProductTitles.join(
           ", "
         )}].`

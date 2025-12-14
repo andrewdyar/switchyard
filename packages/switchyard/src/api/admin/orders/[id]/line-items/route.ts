@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
@@ -9,8 +9,8 @@ import {
 } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminOrderItemsFilters>,
-  res: MedusaResponse<HttpTypes.AdminOrderLineItemsListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminOrderItemsFilters>,
+  res: SwitchyardResponse<HttpTypes.AdminOrderLineItemsListResponse>
 ) => {
   const { id } = req.params
 

@@ -1,4 +1,4 @@
-import { MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes, QueryContextType } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
@@ -12,7 +12,7 @@ import { RequestWithContext, wrapProductsWithTaxPrices } from "./helpers"
 
 export const GET = async (
   req: RequestWithContext<HttpTypes.StoreProductListParams>,
-  res: MedusaResponse<HttpTypes.StoreProductListResponse>
+  res: SwitchyardResponse<HttpTypes.StoreProductListResponse>
 ) => {
   if (FeatureFlag.isFeatureEnabled(IndexEngineFeatureFlag.key)) {
     // TODO: These filters are not supported by the index engine yet
@@ -31,7 +31,7 @@ export const GET = async (
 
 async function getProductsWithIndexEngine(
   req: RequestWithContext<HttpTypes.StoreProductListParams>,
-  res: MedusaResponse<HttpTypes.StoreProductListResponse>
+  res: SwitchyardResponse<HttpTypes.StoreProductListResponse>
 ) {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -97,7 +97,7 @@ async function getProductsWithIndexEngine(
 
 async function getProducts(
   req: RequestWithContext<HttpTypes.StoreProductListParams>,
-  res: MedusaResponse<HttpTypes.StoreProductListResponse>
+  res: SwitchyardResponse<HttpTypes.StoreProductListResponse>
 ) {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
   const context: object = {}

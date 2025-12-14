@@ -17,8 +17,8 @@ import {
   isPresent,
 } from "@switchyard/framework/utils"
 
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import { parse } from "url"
 import loaders, { initializeContainer } from "../loaders"
 
@@ -103,7 +103,7 @@ function displayAdminUrl({
 }: {
   host?: string
   port: string | number
-  container: MedusaContainer
+  container: SwitchyardContainer
 }) {
   const isProduction = ["production", "prod"].includes(
     process.env.NODE_ENV || ""
@@ -255,7 +255,7 @@ async function start(args: {
             filename: "query-entry-points",
             interfaceName: "RemoteQueryEntryPoints",
             schema: gqlSchema,
-            joinerConfigs: MedusaModule.getAllJoinerConfigs(),
+            joinerConfigs: SwitchyardModule.getAllJoinerConfigs(),
           })
           logger.debug("Generated modules types")
         }

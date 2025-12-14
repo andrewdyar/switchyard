@@ -1,12 +1,12 @@
 import { LocalWorkflow } from "@switchyard/orchestration"
-import { LoadedModule, MedusaContainer } from "@switchyard/types"
+import { LoadedModule, SwitchyardContainer } from "@switchyard/types"
 import { ExportedWorkflow } from "./helper"
 
 class MedusaWorkflow {
   static workflows: Record<
     string,
     (
-      container?: LoadedModule[] | MedusaContainer
+      container?: LoadedModule[] | SwitchyardContainer
     ) => Omit<
       LocalWorkflow,
       "run" | "registerStepSuccess" | "registerStepFailure" | "cancel"

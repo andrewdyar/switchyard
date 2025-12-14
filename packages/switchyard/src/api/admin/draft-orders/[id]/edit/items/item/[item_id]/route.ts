@@ -1,11 +1,11 @@
 import { updateDraftOrderItemWorkflow } from "@switchyard/core-flows"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@switchyard/framework"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { HttpTypes } from "@switchyard/types"
 import { AdminUpdateDraftOrderItemType } from "../../../../../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminUpdateDraftOrderItemType>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<AdminUpdateDraftOrderItemType>,
+  res: SwitchyardResponse
 ) => {
   const { id, item_id } = req.params
 

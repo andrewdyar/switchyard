@@ -40,7 +40,7 @@ export class WorkflowsModuleService<
   TWorkflowExecution extends InferEntityType<
     typeof WorkflowExecution
   > = InferEntityType<typeof WorkflowExecution>
-> extends ModulesSdkUtils.MedusaService<{
+> extends ModulesSdkUtils.SwitchyardService<{
   WorkflowExecution: { dto: InferEntityType<typeof WorkflowExecution> }
 }>({ WorkflowExecution }) {
   protected baseRepository_: DAL.RepositoryService

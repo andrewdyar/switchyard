@@ -1,12 +1,12 @@
 import {
-  MedusaContainer,
+  SwitchyardContainer,
   PaymentCollectionDTO,
 } from "@switchyard/framework/types"
 import { refetchEntity } from "@switchyard/framework/http"
 
 export const refetchPaymentCollection = async (
   id: string,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ): Promise<PaymentCollectionDTO> => {
   return refetchEntity({

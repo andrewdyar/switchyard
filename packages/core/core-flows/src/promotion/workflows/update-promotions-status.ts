@@ -2,7 +2,7 @@ import {
   AdditionalData,
   PromotionStatusValues,
 } from "@switchyard/framework/types"
-import { MedusaError, PromotionStatus } from "@switchyard/framework/utils"
+import { SwitchyardError, PromotionStatus } from "@switchyard/framework/utils"
 import {
   WorkflowResponse,
   createHook,
@@ -38,8 +38,8 @@ export const updatePromotionsValidationStep = createStep(
         Object.values(PromotionStatus)
 
       if (!allowedStatuses.includes(promotionData.status)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `promotion's status should be one of - ${allowedStatuses.join(", ")}`
         )
       }

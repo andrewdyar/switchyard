@@ -4,14 +4,14 @@ import {
 } from "@switchyard/core-flows"
 import { HttpTypes, RefundReasonResponse } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminRefundReasonParams>,
-  res: MedusaResponse<RefundReasonResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminRefundReasonParams>,
+  res: SwitchyardResponse<RefundReasonResponse>
 ) => {
   const refund_reason = await refetchEntity({
     entity: "refund_reason",
@@ -24,11 +24,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateRefundReason,
     HttpTypes.AdminRefundReasonParams
   >,
-  res: MedusaResponse<RefundReasonResponse>
+  res: SwitchyardResponse<RefundReasonResponse>
 ) => {
   const { id } = req.params
 
@@ -52,8 +52,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminRefundReasonDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminRefundReasonDeleteResponse>
 ) => {
   const { id } = req.params
   const input = { ids: [id] }

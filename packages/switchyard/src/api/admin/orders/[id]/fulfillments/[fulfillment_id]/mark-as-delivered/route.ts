@@ -1,14 +1,14 @@
 import { markOrderFulfillmentAsDeliveredWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.AdminGetOrderParams>,
-  res: MedusaResponse<HttpTypes.AdminOrderResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.AdminGetOrderParams>,
+  res: SwitchyardResponse<HttpTypes.AdminOrderResponse>
 ) => {
   const { id: orderId, fulfillment_id: fulfillmentId } = req.params
 

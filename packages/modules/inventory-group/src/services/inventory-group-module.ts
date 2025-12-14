@@ -4,7 +4,7 @@ import {
   InjectManager,
   kebabCase,
   MedusaContext,
-  MedusaService,
+  SwitchyardService,
   Modules,
   isString,
 } from "@switchyard/framework/utils"
@@ -28,7 +28,7 @@ type InjectedDependencies = {
   [Modules.EVENT_BUS]?: any
 }
 
-export default class InventoryGroupModuleService extends MedusaService({
+export default class InventoryGroupModuleService extends SwitchyardService({
   InventoryGroup,
 }) {
   protected readonly moduleDeclaration: any

@@ -1,12 +1,12 @@
 import { QueryContext } from "@switchyard/utils"
-import { MedusaModule } from "../../medusa-module"
+import { SwitchyardModule } from "../../medusa-module"
 import { getEntitiesMap } from "../__fixtures__/get-entities-map"
 import "../__fixtures__/parse-filters"
 import "../__fixtures__/remote-query-type"
 import { toRemoteQuery } from "../to-remote-query"
 
 const entitiesMap = getEntitiesMap(
-  MedusaModule.getAllJoinerConfigs()
+  SwitchyardModule.getAllJoinerConfigs()
     .map((m) => m.schema)
     .join("\n")
 )

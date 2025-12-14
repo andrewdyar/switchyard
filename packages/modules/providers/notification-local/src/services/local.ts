@@ -5,7 +5,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   AbstractNotificationProviderService,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 
 type InjectedDependencies = {
@@ -32,8 +32,8 @@ export class LocalNotificationService extends AbstractNotificationProviderServic
     notification: NotificationTypes.ProviderSendNotificationDTO
   ): Promise<NotificationTypes.ProviderSendNotificationResultsDTO> {
     if (!notification) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `No notification information provided`
       )
     }

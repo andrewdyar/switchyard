@@ -1,4 +1,4 @@
-import { isPresent, MedusaError } from "@switchyard/framework/utils"
+import { isPresent, SwitchyardError } from "@switchyard/framework/utils"
 import { createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
@@ -24,8 +24,8 @@ export const validatePresenceOfStep = createStep(
     if (invalid.length) {
       const invalidFields = invalid.join(", ")
 
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Field(s) are required to have value to continue - ${invalidFields}`
       )
     }

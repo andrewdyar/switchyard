@@ -3,9 +3,9 @@ import {
   getOrdersListWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   AdditionalData,
@@ -21,8 +21,8 @@ import {
 import { refetchOrder } from "./helpers"
 
 export const GET = async (
-  req: MedusaRequest<HttpTypes.AdminOrderFilters>,
-  res: MedusaResponse<HttpTypes.AdminDraftOrderListResponse>
+  req: SwitchyardRequest<HttpTypes.AdminOrderFilters>,
+  res: SwitchyardResponse<HttpTypes.AdminDraftOrderListResponse>
 ) => {
   const variables = {
     filters: {
@@ -53,11 +53,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateDraftOrder & AdditionalData,
     HttpTypes.AdminDraftOrderParams
   >,
-  res: MedusaResponse<HttpTypes.AdminDraftOrderResponse>
+  res: SwitchyardResponse<HttpTypes.AdminDraftOrderResponse>
 ) => {
   const input = req.validatedBody
   const workflowInput = {

@@ -2,7 +2,7 @@ import { BigNumberInput, PaymentDTO } from "@switchyard/framework/types"
 import {
   BigNumber,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PaymentEvents,
 } from "@switchyard/framework/utils"
 import {
@@ -79,8 +79,8 @@ export const validateRefundPaymentExceedsCapturedAmountStep = createStep(
     const totalRefundedAmount = MathBN.add(refundedAmount, refundAmount)
 
     if (MathBN.lt(capturedAmount, totalRefundedAmount)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `You are not allowed to refund more than the captured amount`
       )
     }

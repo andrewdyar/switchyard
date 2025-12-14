@@ -3,17 +3,17 @@ import {
   updateCustomerGroupsWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { refetchCustomerGroup } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminCustomerGroupResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCustomerGroupResponse>
 ) => {
   const customerGroup = await refetchCustomerGroup(
     req.params.id,
@@ -22,8 +22,8 @@ export const GET = async (
   )
 
   if (!customerGroup) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Customer group with id: ${req.params.id} not found`
     )
   }
@@ -32,11 +32,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateCustomerGroup,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCustomerGroupResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCustomerGroupResponse>
 ) => {
   const existingCustomerGroup = await refetchCustomerGroup(
     req.params.id,
@@ -44,8 +44,8 @@ export const POST = async (
     ["id"]
   )
   if (!existingCustomerGroup) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Customer group with id "${req.params.id}" not found`
     )
   }
@@ -66,8 +66,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminCustomerGroupDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminCustomerGroupDeleteResponse>
 ) => {
   const id = req.params.id
   const deleteCustomerGroups = deleteCustomerGroupsWorkflow(req.scope)

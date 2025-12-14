@@ -1,8 +1,8 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { retrieveInventoryGroupConfig } from "../query-config"
 
 // Module key matches the one defined in @switchyard/inventory-group joiner-config
@@ -13,8 +13,8 @@ const INVENTORY_GROUP_MODULE = "inventoryGroup"
  * Retrieve a single inventory group by ID
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
   const inventoryGroupService = req.scope.resolve(INVENTORY_GROUP_MODULE) as any
@@ -58,8 +58,8 @@ export const GET = async (
     })
 
     if (!groups || groups.length === 0) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Inventory group with id: ${id} was not found`
       )
     }
@@ -73,11 +73,11 @@ export const GET = async (
       },
     })
   } catch (error: any) {
-    if (error.type === MedusaError.Types.NOT_FOUND) {
+    if (error.type === SwitchyardError.Types.NOT_FOUND) {
       throw error
     }
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Inventory group with id: ${id} was not found`
     )
   }
@@ -88,8 +88,8 @@ export const GET = async (
  * Update an inventory group
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
   const inventoryGroupService = req.scope.resolve(INVENTORY_GROUP_MODULE) as any
@@ -107,8 +107,8 @@ export const POST = async (
  * Delete an inventory group
  */
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
   const inventoryGroupService = req.scope.resolve(INVENTORY_GROUP_MODULE) as any

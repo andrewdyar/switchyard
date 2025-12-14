@@ -9,7 +9,7 @@ import {
   ApplicationMethodType,
   ComputedActions,
   MathBN,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import { Promotion } from "@models"
 import { areRulesValidForContext } from "../validations"
@@ -25,8 +25,8 @@ export function getComputedActionsForShippingMethods(
     []
 
   if (!shippingMethodApplicationContext) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `"shipping_methods" should be present as an array in the context for computeActions`
     )
   }

@@ -1,6 +1,6 @@
-import { MedusaContainer } from "./medusa-container"
+import { SwitchyardContainer } from "./medusa-container"
 
 export type ExecArgs = {
-  container: MedusaContainer
+  container: SwitchyardContainer
   args: string[]
 }

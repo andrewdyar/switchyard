@@ -1,25 +1,25 @@
 import { batchPriceListPricesWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { fetchPriceList, fetchPriceListPriceIdsForProduct } from "../../helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminLinkPriceListProducts,
     HttpTypes.AdminPriceListParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPriceListResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPriceListResponse>
 ) => {
   const id = req.params.id
   const { remove = [] } = req.validatedBody
 
   if (!remove.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "No product ids passed to remove from price list"
     )
   }

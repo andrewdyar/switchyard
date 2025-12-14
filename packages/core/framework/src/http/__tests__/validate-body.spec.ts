@@ -1,6 +1,6 @@
-import { MedusaError } from "@switchyard/utils"
+import { SwitchyardError } from "@switchyard/utils"
 import zod, { ZodNullable, ZodObject, ZodOptional } from "zod"
-import { MedusaRequest, MedusaResponse } from "../types"
+import { SwitchyardRequest, SwitchyardResponse } from "../types"
 import { validateAndTransformBody } from "../utils/validate-body"
 
 const createLinkBody = () => {
@@ -21,9 +21,9 @@ describe("validateAndTransformBody", () => {
       body: {
         additional_data: {},
       },
-    } as MedusaRequest
+    } as SwitchyardRequest
 
-    const mockResponse = {} as MedusaResponse
+    const mockResponse = {} as SwitchyardResponse
     const nextFunction = jest.fn()
 
     mockRequest.additionalDataValidator = zod
@@ -46,7 +46,7 @@ describe("validateAndTransformBody", () => {
 
     await middleware(mockRequest, mockResponse, nextFunction)
     expect(nextFunction.mock.calls[0]).toEqual([
-      new MedusaError(
+      new SwitchyardError(
         "invalid_data",
         `Invalid request: Field 'additional_data, brand_id' is required`
       ),
@@ -57,9 +57,9 @@ describe("validateAndTransformBody", () => {
     let mockRequest = {
       query: {},
       body: {},
-    } as MedusaRequest
+    } as SwitchyardRequest
 
-    const mockResponse = {} as MedusaResponse
+    const mockResponse = {} as SwitchyardResponse
     const nextFunction = jest.fn()
 
     mockRequest.additionalDataValidator = zod
@@ -90,9 +90,9 @@ describe("validateAndTransformBody", () => {
       body: {
         additional_data: {},
       },
-    } as MedusaRequest
+    } as SwitchyardRequest
 
-    const mockResponse = {} as MedusaResponse
+    const mockResponse = {} as SwitchyardResponse
     const nextFunction = jest.fn()
 
     mockRequest.additionalDataValidator = zod

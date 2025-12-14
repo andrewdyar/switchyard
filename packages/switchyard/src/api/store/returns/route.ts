@@ -1,13 +1,13 @@
 import { createAndCompleteReturnOrderWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 
 /**
  * @since 2.8.0
  */
 export const POST = async (
-  req: MedusaRequest<HttpTypes.StoreCreateReturn>,
-  res: MedusaResponse<HttpTypes.StoreReturnResponse>
+  req: SwitchyardRequest<HttpTypes.StoreCreateReturn>,
+  res: SwitchyardResponse<HttpTypes.StoreReturnResponse>
 ) => {
   const input = req.validatedBody as HttpTypes.StoreCreateReturn
 

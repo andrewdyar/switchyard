@@ -6,7 +6,7 @@ import {
 import {
   CartWorkflowEvents,
   isDefined,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import {
   createHook,
@@ -197,8 +197,8 @@ export const updateCartWorkflow = createWorkflow(
           )
 
           if (!country) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Country with code ${shippingAddress.country_code} is not within region ${data.region.name}`
             )
           }

@@ -1,7 +1,7 @@
 import { ModuleDefinition } from "@switchyard/types"
 import { ModulesDefinition } from "../../definitions"
 import { MODULE_SCOPE } from "../../types"
-import { registerMedusaModule } from "../register-modules"
+import { registerSwitchyardModule } from "../register-modules"
 
 const testServiceResolved = require.resolve(
   "../__fixtures__/test-service-resolved"
@@ -35,7 +35,7 @@ describe("module definitions loader", () => {
       [defaultDefinition.key]: defaultDefinition,
     })
 
-    const res = registerMedusaModule({
+    const res = registerSwitchyardModule({
       moduleKey: defaultDefinition.key,
     })
 
@@ -52,7 +52,7 @@ describe("module definitions loader", () => {
   })
 
   it("Resolves a custom module without pre-defined definition", () => {
-    const res = registerMedusaModule({
+    const res = registerSwitchyardModule({
       moduleKey: "customModulesABC",
       moduleDeclaration: {
         resolve: testServiceResolved,
@@ -85,7 +85,7 @@ describe("module definitions loader", () => {
         [defaultDefinition.key]: defaultDefinition,
       })
 
-      const res = registerMedusaModule({
+      const res = registerSwitchyardModule({
         moduleKey: defaultDefinition.key,
         moduleDeclaration: false,
       })
@@ -106,7 +106,7 @@ describe("module definitions loader", () => {
       })
 
       try {
-        registerMedusaModule({
+        registerSwitchyardModule({
           moduleKey: defaultDefinition.key,
           moduleDeclaration: false,
         })
@@ -129,7 +129,7 @@ describe("module definitions loader", () => {
       [defaultDefinition.key]: definition,
     })
 
-    const res = registerMedusaModule({
+    const res = registerSwitchyardModule({
       moduleKey: defaultDefinition.key,
     })
 
@@ -151,7 +151,7 @@ describe("module definitions loader", () => {
         [defaultDefinition.key]: defaultDefinition,
       })
 
-      const res = registerMedusaModule({
+      const res = registerSwitchyardModule({
         moduleKey: defaultDefinition.key,
         moduleDeclaration: defaultDefinition.defaultPackage,
       })
@@ -175,7 +175,7 @@ describe("module definitions loader", () => {
         [defaultDefinition.key]: defaultDefinition,
       })
 
-      const res = registerMedusaModule({
+      const res = registerSwitchyardModule({
         moduleKey: defaultDefinition.key,
         moduleDeclaration: {
           scope: MODULE_SCOPE.INTERNAL,
@@ -202,7 +202,7 @@ describe("module definitions loader", () => {
         [defaultDefinition.key]: defaultDefinition,
       })
 
-      const res = registerMedusaModule({
+      const res = registerSwitchyardModule({
         moduleKey: defaultDefinition.key,
         moduleDeclaration: {
           options: { test: 123 },
@@ -228,7 +228,7 @@ describe("module definitions loader", () => {
         [defaultDefinition.key]: defaultDefinition,
       })
 
-      const res = registerMedusaModule({
+      const res = registerSwitchyardModule({
         moduleKey: defaultDefinition.key,
         moduleDeclaration: {
           scope: MODULE_SCOPE.INTERNAL,

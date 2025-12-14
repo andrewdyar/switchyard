@@ -1,7 +1,7 @@
 import {
   AuthWorkflowEvents,
   generateJwtToken,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import {
   createWorkflow,
@@ -66,8 +66,8 @@ export const generateResetPasswordTokenWorkflow = createWorkflow(
         const providerIdentity = providerIdentities?.[0]
 
         if (!providerIdentity) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Provider identity with entity_id ${input.entityId} and provider ${input.provider} not found`
           )
         }

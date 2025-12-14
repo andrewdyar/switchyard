@@ -5,18 +5,18 @@ import {
 } from "@switchyard/framework/utils"
 
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import { defaultAdminDetailsReturnFields } from "../../../../returns/query-config"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminAddExchangeInboundItems,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminExchangeReturnResponse>
+  res: SwitchyardResponse<HttpTypes.AdminExchangeReturnResponse>
 ) => {
   const { id } = req.params
 

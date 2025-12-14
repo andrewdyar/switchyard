@@ -1,7 +1,7 @@
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
@@ -9,8 +9,8 @@ import {
 } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetWorkflowExecutionsParams>,
-  res: MedusaResponse<HttpTypes.AdminWorkflowExecutionListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetWorkflowExecutionsParams>,
+  res: SwitchyardResponse<HttpTypes.AdminWorkflowExecutionListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 

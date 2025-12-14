@@ -5,17 +5,17 @@ import {
   HttpTypes,
 } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchCart } from "./helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreCreateCart & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreCartResponse>
+  res: SwitchyardResponse<HttpTypes.StoreCartResponse>
 ) => {
   const workflowInput = {
     ...req.validatedBody,

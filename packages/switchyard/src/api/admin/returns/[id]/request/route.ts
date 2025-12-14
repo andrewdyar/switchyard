@@ -8,16 +8,16 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminConfirmReturnRequest,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminReturnPreviewResponse>
+  res: SwitchyardResponse<HttpTypes.AdminReturnPreviewResponse>
 ) => {
   const { id } = req.params
 
@@ -50,8 +50,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminReturnDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminReturnDeleteResponse>
 ) => {
   const { id } = req.params
 

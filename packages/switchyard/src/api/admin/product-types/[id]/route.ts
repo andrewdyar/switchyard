@@ -3,19 +3,19 @@ import {
   updateProductTypesWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { refetchProductType } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminProductTypeParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductTypeResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductTypeResponse>
 ) => {
   const productType = await refetchProductType(
     req.params.id,
@@ -27,11 +27,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateProductType,
     HttpTypes.AdminProductTypeParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductTypeResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductTypeResponse>
 ) => {
   const existingProductType = await refetchProductType(
     req.params.id,
@@ -40,8 +40,8 @@ export const POST = async (
   )
 
   if (!existingProductType) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Product type with id "${req.params.id}" not found`
     )
   }
@@ -63,8 +63,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminProductTypeDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminProductTypeDeleteResponse>
 ) => {
   const id = req.params.id
 

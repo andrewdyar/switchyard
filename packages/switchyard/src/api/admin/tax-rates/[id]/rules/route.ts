@@ -1,17 +1,17 @@
 import { createTaxRateRulesWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchTaxRate } from "../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateTaxRateRule,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminTaxRateResponse>
+  res: SwitchyardResponse<HttpTypes.AdminTaxRateResponse>
 ) => {
   await createTaxRateRulesWorkflow(req.scope).run({
     input: {

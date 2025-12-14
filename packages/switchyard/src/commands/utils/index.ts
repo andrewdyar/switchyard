@@ -1,7 +1,7 @@
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
-export async function ensureDbExists(container: MedusaContainer) {
+export async function ensureDbExists(container: SwitchyardContainer) {
   const logger = container.resolve(ContainerRegistrationKeys.LOGGER)
   const pgConnection = container.resolve(
     ContainerRegistrationKeys.PG_CONNECTION
@@ -21,7 +21,7 @@ export async function ensureDbExists(container: MedusaContainer) {
 }
 
 export async function isPgstreamEnabled(
-  container: MedusaContainer
+  container: SwitchyardContainer
 ): Promise<boolean> {
   const pgConnection = container.resolve(
     ContainerRegistrationKeys.PG_CONNECTION

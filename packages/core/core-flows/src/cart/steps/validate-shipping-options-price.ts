@@ -1,4 +1,4 @@
-import { isDefined, MedusaError } from "@switchyard/framework/utils"
+import { isDefined, SwitchyardError } from "@switchyard/framework/utils"
 import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
@@ -53,8 +53,8 @@ export const validateCartShippingOptionsPriceStep = createStep(
     if (optionsMissingPrices.length) {
       const ids = optionsMissingPrices.join(", ")
 
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Shipping options with IDs ${ids} do not have a price`
       )
     }

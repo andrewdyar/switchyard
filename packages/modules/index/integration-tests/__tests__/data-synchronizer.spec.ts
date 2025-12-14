@@ -2,12 +2,12 @@ import {
   configLoader,
   container,
   logger,
-  MedusaAppLoader,
+  SwitchyardAppLoader,
   Migrator,
 } from "@switchyard/framework"
 import { asValue } from "@switchyard/framework/awilix"
 import { EntityManager } from "@switchyard/framework/mikro-orm/postgresql"
-import { MedusaAppOutput, MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardAppOutput, SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import { IndexTypes, InferEntityType } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
@@ -65,7 +65,7 @@ const mockData = [
   },
 ]
 
-let medusaAppLoader!: MedusaAppLoader
+let switchyardAppLoader!: SwitchyardAppLoader
 let index!: IndexTypes.IIndexService
 
 const beforeAll_ = async () => {
@@ -84,22 +84,22 @@ const beforeAll_ = async () => {
       [ContainerRegistrationKeys.PG_CONNECTION]: asValue(dbUtils.pgConnection_),
     })
 
-    medusaAppLoader = new MedusaAppLoader()
+    switchyardAppLoader = new SwitchyardAppLoader()
 
     // Migrations
     const migrator = new Migrator({ container })
     await migrator.ensureMigrationsTable()
 
-    await medusaAppLoader.runModulesMigrations()
-    const linkPlanner = await medusaAppLoader.getLinksExecutionPlanner()
+    await switchyardAppLoader.runModulesMigrations()
+    const linkPlanner = await switchyardAppLoader.getLinksExecutionPlanner()
     const plan = await linkPlanner.createPlan()
     await linkPlanner.executePlan(plan)
 
     // Clear partially loaded instances
-    MedusaModule.clearInstances()
+    SwitchyardModule.clearInstances()
 
     // Bootstrap modules
-    const globalApp = await medusaAppLoader.load()
+    const globalApp = await switchyardAppLoader.load()
     container.register({
       [ContainerRegistrationKeys.QUERY]: asValue(queryMock),
       [ContainerRegistrationKeys.REMOTE_QUERY]: asValue(queryMock),
@@ -121,15 +121,15 @@ const beforeAll_ = async () => {
 describe("DataSynchronizer", () => {
   let index: IndexTypes.IIndexService
   let dataSynchronizer: DataSynchronizer
-  let medusaApp: MedusaAppOutput
+  let switchyardApp: SwitchyardAppOutput
   let onApplicationPrepareShutdown!: () => Promise<void>
   let onApplicationShutdown!: () => Promise<void>
   let manager: EntityManager
 
   beforeAll(async () => {
-    medusaApp = await beforeAll_()
-    onApplicationPrepareShutdown = medusaApp.onApplicationPrepareShutdown
-    onApplicationShutdown = medusaApp.onApplicationShutdown
+    switchyardApp = await beforeAll_()
+    onApplicationPrepareShutdown = switchyardApp.onApplicationPrepareShutdown
+    onApplicationShutdown = switchyardApp.onApplicationShutdown
   })
 
   afterAll(async () => {

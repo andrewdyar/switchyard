@@ -1,6 +1,6 @@
 import { createRegionsWorkflow } from "@switchyard/core-flows"
 import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
-import { MedusaContainer, RegionDTO } from "@switchyard/types"
+import { SwitchyardContainer, RegionDTO } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
@@ -17,7 +17,7 @@ const adminHeaders = {
 medusaIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
-    let container: MedusaContainer
+    let container: SwitchyardContainer
     let region: RegionDTO
 
     beforeAll(() => {

@@ -4,16 +4,16 @@ import {
   deleteDraftOrdersWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: MedusaRequest<HttpTypes.AdminDraftOrderParams>,
-  res: MedusaResponse<HttpTypes.AdminDraftOrderResponse>
+  req: SwitchyardRequest<HttpTypes.AdminDraftOrderParams>,
+  res: SwitchyardResponse<HttpTypes.AdminDraftOrderResponse>
 ) => {
   const workflow = getOrderDetailWorkflow(req.scope)
   const { result } = await workflow.run({
@@ -31,11 +31,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateDraftOrder,
     HttpTypes.AdminDraftOrderParams
   >,
-  res: MedusaResponse<HttpTypes.AdminDraftOrderResponse>
+  res: SwitchyardResponse<HttpTypes.AdminDraftOrderResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -62,8 +62,8 @@ export const POST = async (
  * @since 2.8.4
  */
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
 

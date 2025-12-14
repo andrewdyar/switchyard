@@ -1,20 +1,20 @@
 import { ulid } from "ulid"
 import { MIMEType } from "util"
 import type {
-  MedusaResponse,
-  AuthenticatedMedusaRequest,
+  SwitchyardResponse,
+  AuthenticatedSwitchyardRequest,
 } from "@switchyard/framework/http"
 import {
   Modules,
-  MedusaError,
-  MedusaErrorTypes,
+  SwitchyardError,
+  SwitchyardErrorTypes,
 } from "@switchyard/framework/utils"
 import type { HttpTypes } from "@switchyard/framework/types"
 import type { AdminUploadPreSignedUrlType } from "../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminUploadPreSignedUrlType>,
-  res: MedusaResponse<HttpTypes.AdminUploadPreSignedUrlResponse>
+  req: AuthenticatedSwitchyardRequest<AdminUploadPreSignedUrlType>,
+  res: SwitchyardResponse<HttpTypes.AdminUploadPreSignedUrlResponse>
 ) => {
   const fileProvider = req.scope.resolve(Modules.FILE)
   let type: MIMEType
@@ -22,10 +22,10 @@ export const POST = async (
   try {
     type = new MIMEType(req.validatedBody.mime_type)
   } catch {
-    throw new MedusaError(
-      MedusaErrorTypes.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardErrorTypes.INVALID_DATA,
       `Invalid file type "${req.validatedBody.mime_type}"`,
-      MedusaErrorTypes.INVALID_DATA
+      SwitchyardErrorTypes.INVALID_DATA
     )
   }
 

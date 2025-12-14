@@ -10,7 +10,7 @@ import {
   ModulesSdkTypes,
 } from "@switchyard/framework/types"
 
-import { MedusaService } from "@switchyard/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Currency } from "@models"
 
 type InjectedDependencies = {
@@ -19,7 +19,7 @@ type InjectedDependencies = {
 }
 
 export default class CurrencyModuleService
-  extends MedusaService<{
+  extends SwitchyardService<{
     Currency: { dto: CurrencyTypes.CurrencyDTO; model: typeof Currency }
   }>({ Currency })
   implements ICurrencyModuleService

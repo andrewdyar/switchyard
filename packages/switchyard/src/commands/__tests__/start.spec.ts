@@ -27,7 +27,7 @@ describe("start", () => {
     jest.clearAllMocks()
     jest.doMock("@switchyard/framework/utils", () => ({
       ...jest.requireActual("@switchyard/framework/utils"),
-      createMedusaContainer: jest.fn(() => ({
+      createSwitchyardContainer: jest.fn(() => ({
         resolve: jest.fn(() => logger),
       })),
     }))

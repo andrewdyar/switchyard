@@ -8,14 +8,14 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { defaultAdminDetailsReturnFields } from "../../../returns/query-config"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.AdminClaimParams>,
-  res: MedusaResponse<HttpTypes.AdminClaimRequestResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.AdminClaimParams>,
+  res: SwitchyardResponse<HttpTypes.AdminClaimRequestResponse>
 ) => {
   const { id } = req.params
 
@@ -65,8 +65,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminClaimDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminClaimDeleteResponse>
 ) => {
   const { id } = req.params
 

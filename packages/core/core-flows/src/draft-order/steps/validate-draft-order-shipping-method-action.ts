@@ -1,4 +1,4 @@
-import { ChangeActionType, MedusaError } from "@switchyard/framework/utils"
+import { ChangeActionType, SwitchyardError } from "@switchyard/framework/utils"
 import { createStep } from "@switchyard/framework/workflows-sdk"
 import {
   OrderChangeActionDTO,
@@ -54,15 +54,15 @@ export const validateDraftOrderShippingMethodActionStep = createStep(
     ) as OrderChangeActionDTO
 
     if (!associatedAction) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `No shipping method found for order ${input.order_id} in order change ${orderChange.id}`
       )
     }
 
     if (associatedAction.action !== ChangeActionType.SHIPPING_ADD) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Action ${associatedAction.id} is not adding a shipping method`
       )
     }

@@ -1,14 +1,14 @@
 import { createProductCategoriesWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductCategoryListParams>,
-  res: MedusaResponse<HttpTypes.AdminProductCategoryListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductCategoryListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductCategoryListResponse>
 ) => {
   const { data: product_categories, metadata } = await refetchEntities({
     entity: "product_category",
@@ -27,11 +27,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateProductCategory,
     HttpTypes.AdminProductCategoryParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductCategoryResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductCategoryResponse>
 ) => {
   const { result } = await createProductCategoriesWorkflow(req.scope).run({
     input: { product_categories: [req.validatedBody] },

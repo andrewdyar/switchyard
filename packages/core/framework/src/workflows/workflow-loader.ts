@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/types"
+import { SwitchyardContainer } from "@switchyard/types"
 import { isFileSkipped } from "@switchyard/utils"
 import { MedusaWorkflow } from "@switchyard/workflows-sdk"
 import { logger } from "../logger"
@@ -7,7 +7,7 @@ import { ResourceLoader } from "../utils/resource-loader"
 export class WorkflowLoader extends ResourceLoader {
   protected resourceName = "workflow"
 
-  constructor(sourceDir: string | string[], container: MedusaContainer) {
+  constructor(sourceDir: string | string[], container: SwitchyardContainer) {
     super(sourceDir, container)
   }
 

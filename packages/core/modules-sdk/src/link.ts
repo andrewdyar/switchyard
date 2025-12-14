@@ -9,13 +9,13 @@ import {
 import {
   isObject,
   MedusaContext,
-  MedusaError,
-  MedusaModuleType,
+  SwitchyardError,
+  SwitchyardModuleType,
   Modules,
   promiseAll,
   toPascalCase,
 } from "@switchyard/utils"
-import { MedusaModule } from "./medusa-module"
+import { SwitchyardModule } from "./medusa-module"
 import { convertRecordsToLinkDefinition } from "./utils/convert-data-to-link-definition"
 import { linkingErrorMessage } from "./utils/linking-error"
 
@@ -58,8 +58,8 @@ type LinkDataConfig = {
 }
 
 export class Link {
-  // To not lose the context chain, we need to set the type to MedusaModuleType
-  static __type = MedusaModuleType
+  // To not lose the context chain, we need to set the type to SwitchyardModuleType
+  static __type = SwitchyardModuleType
 
   private modulesMap: Map<string, LoadedLinkModule> = new Map()
   private relationsPairs: Map<string, LoadedLinkModule> = new Map()
@@ -67,7 +67,7 @@ export class Link {
 
   constructor(modulesLoaded?: LoadedModule[]) {
     if (!modulesLoaded?.length) {
-      modulesLoaded = MedusaModule.getLoadedModules().map(
+      modulesLoaded = SwitchyardModule.getLoadedModules().map(
         (mod) => Object.values(mod)[0]
       )
     }
@@ -511,8 +511,8 @@ export class Link {
           const serviceA = data.linksToValidateForUniqueness.services[0]
           const serviceB = data.linksToValidateForUniqueness.services[1]
 
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Cannot create multiple links between '${serviceA}' and '${serviceB}'`
           )
         }

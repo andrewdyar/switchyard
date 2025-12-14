@@ -20,7 +20,7 @@ import {
   isObject,
   isString,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
   promiseAll,
 } from "@switchyard/framework/utils"
@@ -67,7 +67,7 @@ const generateMethodForModels = {
 }
 
 export default class CartModuleService
-  extends ModulesSdkUtils.MedusaService<{
+  extends ModulesSdkUtils.SwitchyardService<{
     Cart: { dto: CartTypes.CartDTO }
     CreditLine: { dto: CartTypes.CartCreditLineDTO }
     Address: { dto: CartTypes.CartAddressDTO }
@@ -827,8 +827,8 @@ export default class CartModuleService
 
       for (const adj of adjustments || []) {
         if (!lineIds?.includes(adj.item_id)) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Line item with id ${adj.item_id} does not exist on cart with id ${cartIdOrData}`
           )
         }
@@ -1201,8 +1201,8 @@ export default class CartModuleService
 
       for (const adj of adjustments || []) {
         if (!methodIds?.includes(adj.shipping_method_id)) {
-          throw new MedusaError(
-            MedusaError.Types.INVALID_DATA,
+          throw new SwitchyardError(
+            SwitchyardError.Types.INVALID_DATA,
             `Shipping method with id ${adj.shipping_method_id} does not exist on cart with id ${cartIdOrData}`
           )
         }
@@ -1289,8 +1289,8 @@ export default class CartModuleService
       )
 
       if (!cart) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Cart with id ${cartIdOrData} does not exist`
         )
       }
@@ -1449,8 +1449,8 @@ export default class CartModuleService
       )
 
       if (!cart) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Cart with id ${cartIdOrData} does not exist`
         )
       }

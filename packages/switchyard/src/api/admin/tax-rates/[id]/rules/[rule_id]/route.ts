@@ -1,14 +1,14 @@
 import { deleteTaxRateRulesWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchTaxRate } from "../../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminTaxRateRuleDeleteResponse>
+  req: AuthenticatedSwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminTaxRateRuleDeleteResponse>
 ) => {
   await deleteTaxRateRulesWorkflow(req.scope).run({
     input: { ids: [req.params.rule_id] },

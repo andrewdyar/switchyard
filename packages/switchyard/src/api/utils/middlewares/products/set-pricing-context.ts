@@ -1,10 +1,10 @@
 import {
-  AuthenticatedMedusaRequest,
+  AuthenticatedSwitchyardRequest,
   refetchEntities,
   refetchEntity,
 } from "@switchyard/framework/http"
 import { MedusaPricingContext } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { NextFunction } from "express"
 import { DEFAULT_PRICE_FIELD_PATHS } from "./constants"
 
@@ -15,7 +15,7 @@ type PricingContextOptions = {
 export function setPricingContext(options: PricingContextOptions = {}) {
   const { priceFieldPaths = DEFAULT_PRICE_FIELD_PATHS } = options
 
-  return async (req: AuthenticatedMedusaRequest, _, next: NextFunction) => {
+  return async (req: AuthenticatedSwitchyardRequest, _, next: NextFunction) => {
     const withCalculatedPrice = req.queryConfig.fields.some((field) =>
       priceFieldPaths.some(
         (pricePath) => field === pricePath || field.startsWith(`${pricePath}.`)
@@ -40,8 +40,8 @@ export function setPricingContext(options: PricingContextOptions = {}) {
 
     if (!region) {
       try {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Region with id ${req.filterableFields.region_id} not found when populating the pricing context`
         )
       } catch (e) {

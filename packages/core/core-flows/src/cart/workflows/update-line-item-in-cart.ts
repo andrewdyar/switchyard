@@ -11,7 +11,7 @@ import {
   filterObjectByKeys,
   isDefined,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   QueryContext,
 } from "@switchyard/framework/utils"
 import {
@@ -137,8 +137,8 @@ export const updateLineItemInCartWorkflow = createWorkflow(
       }) => {
         const item = data.cart.items.find((i) => i.id === data.input.item_id)!
         if (!item) {
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `Line item with id: ${data.input.item_id} was not found`
           )
         }
@@ -285,8 +285,8 @@ export const updateLineItemInCartWorkflow = createWorkflow(
           }
 
           if (!isDefined(updateData.unit_price)) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Line item ${item.title} has no unit price`
             )
           }

@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import { dynamicImport } from "@switchyard/utils"
 import createStore from "connect-redis"
@@ -9,18 +9,18 @@ import Redis from "ioredis"
 import morgan from "morgan"
 import path from "path"
 import { configManager } from "../config"
-import { MedusaRequest, MedusaResponse } from "./types"
+import { SwitchyardRequest, SwitchyardResponse } from "./types"
 
 const NOISY_ENDPOINTS_CHUNKS = ["@fs", "@id", "@vite", "@react", "node_modules"]
 
-const isHealthCheck = (req: MedusaRequest) => req.path === "/health"
+const isHealthCheck = (req: SwitchyardRequest) => req.path === "/health"
 
 export async function expressLoader({
   app,
   container,
 }: {
   app: Express
-  container: MedusaContainer
+  container: SwitchyardContainer
 }): Promise<{
   app: Express
   shutdown: () => Promise<void>
@@ -88,7 +88,7 @@ export async function expressLoader({
    * Method to skip logging HTTP requests. We skip in test environment
    * and also exclude files served by vite during development
    */
-  function shouldSkipHttpLog(req: MedusaRequest, res: MedusaResponse) {
+  function shouldSkipHttpLog(req: SwitchyardRequest, res: SwitchyardResponse) {
     return (
       isTest ||
       isHealthCheck(req) ||

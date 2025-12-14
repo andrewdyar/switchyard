@@ -1,18 +1,18 @@
 import { completeCartWorkflowId } from "@switchyard/core-flows"
 import { prepareRetrieveQuery } from "@switchyard/framework"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
 } from "@switchyard/framework/utils"
 import { refetchCart } from "../../helpers"
 import { defaultStoreCartFields } from "../../query-config"
 
 export const POST = async (
-  req: MedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.StoreCompleteCartResponse>
+  req: SwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.StoreCompleteCartResponse>
 ) => {
   const cart_id = req.params.id
   const we = req.scope.resolve(Modules.WORKFLOW_ENGINE)
@@ -23,8 +23,8 @@ export const POST = async (
   })
 
   if (!transaction.hasFinished()) {
-    throw new MedusaError(
-      MedusaError.Types.CONFLICT,
+    throw new SwitchyardError(
+      SwitchyardError.Types.CONFLICT,
       "Cart is already being completed by another request"
     )
   }
@@ -38,8 +38,8 @@ export const POST = async (
     const error = errors[0].error
     const statusOKErrors: string[] = [
       // TODO: add inventory specific errors
-      MedusaError.Types.PAYMENT_AUTHORIZATION_ERROR,
-      MedusaError.Types.PAYMENT_REQUIRES_MORE_ERROR,
+      SwitchyardError.Types.PAYMENT_AUTHORIZATION_ERROR,
+      SwitchyardError.Types.PAYMENT_REQUIRES_MORE_ERROR,
     ]
 
     // If we end up with errors outside of statusOKErrors, it means that the cart is not in a state to be

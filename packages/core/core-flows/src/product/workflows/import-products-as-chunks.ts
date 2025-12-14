@@ -44,8 +44,8 @@ export const importProductsAsChunksWorkflowId = "import-products-as-chunks"
  *
  * ```ts workflow={false}
  * import {
- *   AuthenticatedMedusaRequest,
- *   MedusaResponse,
+ *   AuthenticatedSwitchyardRequest,
+ *   SwitchyardResponse,
  * } from "@switchyard/framework/http"
  * import {
  *   importProductsAsChunksWorkflowId,
@@ -56,8 +56,8 @@ export const importProductsAsChunksWorkflowId = "import-products-as-chunks"
  * import { StepResponse } from "@switchyard/framework/workflows-sdk"
  *
  * export const POST = async (
- *   req: AuthenticatedMedusaRequest,
- *   res: MedusaResponse
+ *   req: AuthenticatedSwitchyardRequest,
+ *   res: SwitchyardResponse
  * ) => {
  *   const workflowEngineService: IWorkflowEngineService = req.scope.resolve(
  *     Modules.WORKFLOW_ENGINE

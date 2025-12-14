@@ -1,11 +1,11 @@
 import { updateTaxLinesWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import { refetchCart } from "../../helpers"
 
 export const POST = async (
-  req: MedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.StoreCartResponse>
+  req: SwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.StoreCartResponse>
 ) => {
   await updateTaxLinesWorkflow(req.scope).run({
     input: {

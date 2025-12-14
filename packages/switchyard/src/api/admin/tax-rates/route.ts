@@ -4,18 +4,18 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchTaxRate } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateTaxRate,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminTaxRateResponse>
+  res: SwitchyardResponse<HttpTypes.AdminTaxRateResponse>
 ) => {
   const { result } = await createTaxRatesWorkflow(req.scope).run({
     input: [
@@ -35,8 +35,8 @@ export const POST = async (
 }
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminTaxRateListParams>,
-  res: MedusaResponse<HttpTypes.AdminTaxRateListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminTaxRateListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminTaxRateListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
   const { rows: tax_rates, metadata } = await remoteQuery(

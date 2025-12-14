@@ -1,16 +1,16 @@
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import {
   buildPriceListRules,
   buildPriceSetPricesForCore,
   ContainerRegistrationKeys,
   isPresent,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 
 export const fetchPriceList = async (
   id: string,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
@@ -26,8 +26,8 @@ export const fetchPriceList = async (
   const [priceList] = await remoteQuery(queryObject)
 
   if (!isPresent(priceList)) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Price list with id: ${id} was not found`
     )
   }
@@ -47,7 +47,7 @@ export const transformPriceList = (priceList) => {
 export const fetchPriceListPriceIdsForProduct = async (
   priceListId: string,
   productIds: string[],
-  scope: MedusaContainer
+  scope: SwitchyardContainer
 ): Promise<string[]> => {
   const remoteQuery = scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
   const priceSetIds: string[] = []

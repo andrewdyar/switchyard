@@ -1,4 +1,4 @@
-import { ChangeActionType, MedusaError } from "@switchyard/framework/utils"
+import { ChangeActionType, SwitchyardError } from "@switchyard/framework/utils"
 import { OrderChangeProcessing } from "../calculate-order-change"
 
 OrderChangeProcessing.registerActionType(ChangeActionType.SHIPPING_UPDATE, {
@@ -7,8 +7,8 @@ OrderChangeProcessing.registerActionType(ChangeActionType.SHIPPING_UPDATE, {
   },
   validate({ action }) {
     if (!action.reference_id) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Reference ID is required."
       )
     }

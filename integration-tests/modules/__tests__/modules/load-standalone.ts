@@ -1,4 +1,4 @@
-import { MedusaApp } from "@switchyard/modules-sdk"
+import { SwitchyardApp } from "@switchyard/modules-sdk"
 import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import { IProductModuleService } from "@switchyard/types"
 import { Modules } from "@switchyard/utils"
@@ -17,7 +17,7 @@ medusaIntegrationTestRunner({
       })
 
       it("Should migrate database and initialize Product module using connection string from environment variable ", async function () {
-        const { modules, runMigrations } = await MedusaApp({
+        const { modules, runMigrations } = await SwitchyardApp({
           modulesConfig: {
             [Modules.PRODUCT]: true,
           },

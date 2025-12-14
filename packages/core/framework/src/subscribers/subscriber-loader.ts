@@ -1,7 +1,7 @@
 import {
   Event,
   IEventBusModuleService,
-  MedusaContainer,
+  SwitchyardContainer,
   Subscriber,
 } from "@switchyard/types"
 import { isFileSkipped, kebabCase, Modules } from "@switchyard/utils"
@@ -36,7 +36,7 @@ export class SubscriberLoader extends ResourceLoader {
   constructor(
     sourceDir: string | string[],
     options: Record<string, unknown> = {},
-    container: MedusaContainer
+    container: SwitchyardContainer
   ) {
     super(sourceDir, container)
     this.#pluginOptions = options

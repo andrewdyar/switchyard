@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/types"
+import { SwitchyardContainer } from "@switchyard/types"
 import { Modules, composeMessage } from "@switchyard/utils"
 import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import testEventPayloadHandlerMock from "../../src/subscribers/test-event-payload"
@@ -7,7 +7,7 @@ jest.setTimeout(30000)
 
 medusaIntegrationTestRunner({
   testSuite: ({ getContainer }) => {
-    let container!: MedusaContainer
+    let container!: SwitchyardContainer
 
     describe("EventBusModule", () => {
       beforeAll(() => {

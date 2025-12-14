@@ -2,7 +2,7 @@ import {
   FindConfig,
   RequestQueryFields,
   Logger as coreLogger,
-  MedusaContainer as coreMedusaContainer,
+  SwitchyardContainer as coreSwitchyardContainer,
 } from "@switchyard/framework/types"
 
 declare global {
@@ -10,7 +10,7 @@ declare global {
   namespace Express {
     interface Request {
       user?: { customer_id?: string; userId?: string }
-      scope: MedusaContainer
+      scope: SwitchyardContainer
       validatedQuery: RequestQueryFields & Record<string, unknown>
       validatedBody: unknown
       /**
@@ -63,7 +63,7 @@ export type ClassConstructor<T> = {
   new (...args: unknown[]): T
 }
 
-export type MedusaContainer = coreMedusaContainer
+export type SwitchyardContainer = coreSwitchyardContainer
 
 export type Logger = coreLogger
 

@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { createCustomerGroupsWorkflow } from "@switchyard/core-flows"
 import {
@@ -11,8 +11,8 @@ import { refetchCustomerGroup } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetCustomerGroupsParams>,
-  res: MedusaResponse<HttpTypes.AdminCustomerGroupListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetCustomerGroupsParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCustomerGroupListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -36,11 +36,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateCustomerGroup,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCustomerGroupResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCustomerGroupResponse>
 ) => {
   const createGroups = createCustomerGroupsWorkflow(req.scope)
   const customersData = [

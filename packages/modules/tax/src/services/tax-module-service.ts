@@ -16,7 +16,7 @@ import {
   isDefined,
   isString,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
 } from "@switchyard/framework/utils"
 import { TaxProvider, TaxRate, TaxRateRule, TaxRegion } from "@models"
@@ -39,7 +39,7 @@ type ItemWithRates = {
 }
 
 export default class TaxModuleService
-  extends ModulesSdkUtils.MedusaService<{
+  extends ModulesSdkUtils.SwitchyardService<{
     TaxRate: { dto: TaxTypes.TaxRateDTO }
     TaxRegion: { dto: TaxTypes.TaxRegionDTO }
     TaxRateRule: { dto: TaxTypes.TaxRateRuleDTO }
@@ -617,15 +617,15 @@ export default class TaxModuleService
             (r) => r.id === region.parent_id
           )
           if (!isDefined(parentRegion)) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Province region must belong to a parent region. You are trying to create a province region with (country: ${region.country_code}, province: ${region.province_code}) but parent does not exist`
             )
           }
 
           if (parentRegion.country_code !== region.country_code) {
-            throw new MedusaError(
-              MedusaError.Types.INVALID_DATA,
+            throw new SwitchyardError(
+              SwitchyardError.Types.INVALID_DATA,
               `Province region must belong to a parent region with the same country code. You are trying to create a province region with (country: ${region.country_code}, province: ${region.province_code}) but parent expects (country: ${parentRegion.country_code})`
             )
           }

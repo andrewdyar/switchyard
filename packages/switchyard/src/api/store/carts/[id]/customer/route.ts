@@ -2,16 +2,16 @@ import { transferCartCustomerWorkflowId } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { Modules } from "@switchyard/framework/utils"
 import { AdditionalData } from "@switchyard/types"
 import { refetchCart } from "../../helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdditionalData, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.StoreCartResponse>
+  req: AuthenticatedSwitchyardRequest<AdditionalData, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.StoreCartResponse>
 ) => {
   const we = req.scope.resolve(Modules.WORKFLOW_ENGINE)
 

@@ -1,6 +1,6 @@
 import { ConfigModule } from "@switchyard/framework/config"
 import { ApiLoader } from "@switchyard/framework/http"
-import { MedusaContainer, PluginDetails } from "@switchyard/framework/types"
+import { SwitchyardContainer, PluginDetails } from "@switchyard/framework/types"
 import { Express } from "express"
 import { join } from "path"
 import qs from "qs"
@@ -8,7 +8,7 @@ import qs from "qs"
 type Options = {
   app: Express
   plugins: PluginDetails[]
-  container: MedusaContainer
+  container: SwitchyardContainer
 }
 
 export default async ({ app, container, plugins }: Options) => {

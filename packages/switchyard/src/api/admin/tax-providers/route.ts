@@ -1,7 +1,7 @@
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { HttpTypes } from "@switchyard/framework/types"
@@ -10,8 +10,8 @@ import { HttpTypes } from "@switchyard/framework/types"
  * @since 2.8.0
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetTaxProvidersParams>,
-  res: MedusaResponse<HttpTypes.AdminTaxProviderListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetTaxProvidersParams>,
+  res: SwitchyardResponse<HttpTypes.AdminTaxProviderListResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 

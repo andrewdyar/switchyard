@@ -1,4 +1,4 @@
-import { MedusaContainer, ModuleProvider } from "@switchyard/types"
+import { SwitchyardContainer, ModuleProvider } from "@switchyard/types"
 import {
   dynamicImport,
   isFileSkipped,
@@ -14,11 +14,11 @@ export async function moduleProviderLoader({
   providers,
   registerServiceFn,
 }: {
-  container: MedusaContainer
+  container: SwitchyardContainer
   providers: ModuleProvider[]
   registerServiceFn?: (
     klass,
-    container: MedusaContainer,
+    container: SwitchyardContainer,
     moduleDetails: any
   ) => Promise<void>
 }) {
@@ -34,7 +34,7 @@ export async function moduleProviderLoader({
 }
 
 export async function loadModuleProvider(
-  container: MedusaContainer,
+  container: SwitchyardContainer,
   provider: ModuleProvider,
   registerServiceFn?: (klass, container, moduleDetails) => Promise<void>
 ) {

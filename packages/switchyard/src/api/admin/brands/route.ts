@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
@@ -11,8 +11,8 @@ type BrandsQueryParams = {
 }
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<BrandsQueryParams>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<BrandsQueryParams>,
+  res: SwitchyardResponse
 ) => {
   const { q, limit = 50, offset = 0 } = req.query as BrandsQueryParams
 

@@ -3,15 +3,15 @@ import {
   updatePriceListsWorkflow,
 } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { fetchPriceList } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminPriceListParams>,
-  res: MedusaResponse<HttpTypes.AdminPriceListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminPriceListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminPriceListResponse>
 ) => {
   const price_list = await fetchPriceList(
     req.params.id,
@@ -23,11 +23,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdatePriceList,
     HttpTypes.AdminPriceListParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPriceListResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPriceListResponse>
 ) => {
   const id = req.params.id
   const workflow = updatePriceListsWorkflow(req.scope)
@@ -42,8 +42,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminPriceListDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminPriceListDeleteResponse>
 ) => {
   const id = req.params.id
   const workflow = deletePriceListsWorkflow(req.scope)

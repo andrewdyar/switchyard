@@ -7,7 +7,7 @@ import {
 import {
   CartWorkflowEvents,
   deduplicate,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import {
   createHook,
@@ -179,7 +179,7 @@ export const createCartWorkflow = createWorkflow(
       { input, region, customerData, salesChannel },
       (data) => {
         if (!data.region) {
-          throw new MedusaError(MedusaError.Types.NOT_FOUND, "No regions found")
+          throw new SwitchyardError(SwitchyardError.Types.NOT_FOUND, "No regions found")
         }
 
         const data_ = {

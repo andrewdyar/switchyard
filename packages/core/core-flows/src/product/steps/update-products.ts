@@ -3,7 +3,7 @@ import type {
   ProductTypes,
 } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   getSelectsAndRelationsFromObjectArray,
 } from "@switchyard/framework/utils"
@@ -68,8 +68,8 @@ export const updateProductsStep = createStep(
 
     if ("products" in data) {
       if (data.products.some((p) => !p.id)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           "Product ID is required when doing a batch update of products"
         )
       }

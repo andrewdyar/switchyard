@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/types"
+import { SwitchyardContainer } from "@switchyard/types"
 import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   adminHeaders,
@@ -12,7 +12,7 @@ jest.setTimeout(50000)
 
 medusaIntegrationTestRunner({
   testSuite: ({ dbConnection, api, getContainer }) => {
-    let appContainer: MedusaContainer
+    let appContainer: SwitchyardContainer
     let storeHeaders
 
     beforeEach(async () => {

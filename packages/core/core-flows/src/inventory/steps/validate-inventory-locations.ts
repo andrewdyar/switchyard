@@ -1,7 +1,7 @@
 import {
   arrayDifference,
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 
 import type { InventoryTypes } from "@switchyard/framework/types"
@@ -39,8 +39,8 @@ export const validateInventoryLocationsStep = createStep(
       stockLocations.map((l) => l.id)
     )
     if (diff.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Stock locations with ids: ${diff.join(", ")} was not found`
       )
     }

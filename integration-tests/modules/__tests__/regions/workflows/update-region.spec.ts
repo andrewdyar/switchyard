@@ -1,6 +1,6 @@
 import { updateRegionsWorkflow } from "@switchyard/core-flows"
 import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
-import { MedusaContainer, RegionDTO } from "@switchyard/types"
+import { SwitchyardContainer, RegionDTO } from "@switchyard/types"
 import { createAdminUser } from "../../../../helpers/create-admin-user"
 
 jest.setTimeout(200000)
@@ -13,7 +13,7 @@ const adminHeaders = {
 medusaIntegrationTestRunner({
   env,
   testSuite: ({ dbConnection, getContainer, api }) => {
-    let container: MedusaContainer
+    let container: SwitchyardContainer
     let region: RegionDTO
 
     beforeAll(() => {

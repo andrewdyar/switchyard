@@ -1,10 +1,10 @@
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import type {
   ICachingModuleService,
   ICachingStrategy,
   Logger,
 } from "@switchyard/framework/types"
-import { GraphQLUtils, MedusaError } from "@switchyard/framework/utils"
+import { GraphQLUtils, SwitchyardError } from "@switchyard/framework/utils"
 import { CachingDefaultProvider, InjectedDependencies } from "@types"
 import CacheProviderService from "./cache-provider"
 
@@ -79,7 +79,7 @@ export default class CachingModuleService implements ICachingModuleService {
   }
 
   protected onApplicationStart() {
-    const loadedSchema = MedusaModule.getAllJoinerConfigs()
+    const loadedSchema = SwitchyardModule.getAllJoinerConfigs()
       .map((joinerConfig) => joinerConfig?.schema ?? "")
       .join("\n")
 
@@ -99,7 +99,7 @@ export default class CachingModuleService implements ICachingModuleService {
 
     this.strategy.onApplicationStart?.(
       schema,
-      MedusaModule.getAllJoinerConfigs()
+      SwitchyardModule.getAllJoinerConfigs()
     )
   }
 
@@ -164,8 +164,8 @@ export default class CachingModuleService implements ICachingModuleService {
     providers?: string[]
   }) {
     if (!key && !tags) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Either key or tags must be provided"
       )
     }
@@ -253,8 +253,8 @@ export default class CachingModuleService implements ICachingModuleService {
     }
   }) {
     if (!key) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "[CachingModuleService] Key must be provided"
       )
     }
@@ -350,8 +350,8 @@ export default class CachingModuleService implements ICachingModuleService {
     providers?: string[]
   }) {
     if (!key && !tags) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         "Either key or tags must be provided"
       )
     }

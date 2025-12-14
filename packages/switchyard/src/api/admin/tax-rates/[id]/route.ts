@@ -4,28 +4,28 @@ import {
 } from "@switchyard/core-flows"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchTaxRate } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateTaxRate,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminTaxRateResponse>
+  res: SwitchyardResponse<HttpTypes.AdminTaxRateResponse>
 ) => {
   const existingTaxRate = await refetchTaxRate(req.params.id, req.scope, ["id"])
 
   if (!existingTaxRate) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Tax rate with id "${req.params.id}" not found`
     )
   }
@@ -46,10 +46,10 @@ export const POST = async (
 }
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminTaxRateResponse>
+  res: SwitchyardResponse<HttpTypes.AdminTaxRateResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
   const variables = { id: req.params.id }
@@ -65,8 +65,8 @@ export const GET = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminTaxRateDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminTaxRateDeleteResponse>
 ) => {
   const id = req.params.id
   await deleteTaxRatesWorkflow(req.scope).run({

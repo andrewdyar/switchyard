@@ -2,13 +2,13 @@ import {
   ContainerRegistrationKeys,
   getTotalVariantAvailability,
   getVariantAvailability,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
-import { MedusaRequest, MedusaStoreRequest } from "@switchyard/framework/http"
+import { SwitchyardRequest, MedusaStoreRequest } from "@switchyard/framework/http"
 import { transformAndValidateSalesChannelIds } from "./filter-by-valid-sales-channels"
 
 export const wrapVariantsWithTotalInventoryQuantity = async (
-  req: MedusaRequest,
+  req: SwitchyardRequest,
   variants: VariantInput[]
 ) => {
   const variantIds = (variants ?? []).map((variant) => variant.id).flat(1)
@@ -41,8 +41,8 @@ export const wrapVariantsWithInventoryQuantityForSalesChannel = async (
   } else if (salesChannelIds.length === 1) {
     channelsToUse = salesChannelIds[0]
   } else {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Inventory availability cannot be calculated in the given context. Either provide a single sales channel id or configure a single sales channel in the publishable key`
     )
   }

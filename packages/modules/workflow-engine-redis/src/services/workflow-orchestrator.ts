@@ -10,11 +10,11 @@ import {
   ContainerLike,
   Context,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "@switchyard/framework/types"
 import {
   isString,
-  MedusaError,
+  SwitchyardError,
   promiseAll,
   TransactionState,
 } from "@switchyard/framework/utils"
@@ -114,7 +114,7 @@ export class WorkflowOrchestratorService {
   private instanceId = ulid()
   protected redisPublisher: Redis
   protected redisSubscriber: Redis
-  protected container_: MedusaContainer
+  protected container_: SwitchyardContainer
   private static subscribers: Subscribers = new Map()
 
   readonly #logger: Logger
@@ -133,7 +133,7 @@ export class WorkflowOrchestratorService {
     workflowOrchestratorService: WorkflowOrchestratorService
     redisPublisher: Redis
     redisSubscriber: Redis
-    sharedContainer: MedusaContainer
+    sharedContainer: SwitchyardContainer
   }) {
     this.container_ = sharedContainer
     this.redisPublisher = redisPublisher
@@ -239,8 +239,8 @@ export class WorkflowOrchestratorService {
       : workflowIdOrWorkflow.getName()
 
     if (!workflowId) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Workflow ID is required`
       )
     }
@@ -253,8 +253,8 @@ export class WorkflowOrchestratorService {
 
     const exportedWorkflow = MedusaWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Workflow with id "${workflowId}" not found.`
       )
     }
@@ -342,8 +342,8 @@ export class WorkflowOrchestratorService {
 
     const exportedWorkflow = MedusaWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Workflow with id "${workflowId}" not found.`
       )
     }

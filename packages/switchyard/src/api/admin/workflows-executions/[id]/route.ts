@@ -1,7 +1,7 @@
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { AdminGetWorkflowExecutionDetailsParamsType } from "../validators"
@@ -11,8 +11,8 @@ import {
 } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<AdminGetWorkflowExecutionDetailsParamsType>,
-  res: MedusaResponse<HttpTypes.AdminWorkflowExecutionResponse>
+  req: AuthenticatedSwitchyardRequest<AdminGetWorkflowExecutionDetailsParamsType>,
+  res: SwitchyardResponse<HttpTypes.AdminWorkflowExecutionResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
   const variables = { id: req.params.id }

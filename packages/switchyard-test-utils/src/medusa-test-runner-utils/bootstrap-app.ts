@@ -1,5 +1,5 @@
 import { logger } from "@switchyard/framework/logger"
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import { GracefulShutdownServer, promiseAll } from "@switchyard/framework/utils"
 import express from "express"
 import getPort from "get-port"
@@ -45,12 +45,12 @@ export async function startApp({
   env = {},
 }: { cwd?: string; env?: Record<any, any> } = {}): Promise<{
   shutdown: () => Promise<void>
-  container: MedusaContainer
+  container: SwitchyardContainer
   port: number
 }> {
   let expressServer: any
   let medusaShutdown: () => Promise<void> = async () => void 0
-  let container: MedusaContainer
+  let container: SwitchyardContainer
 
   try {
     const {

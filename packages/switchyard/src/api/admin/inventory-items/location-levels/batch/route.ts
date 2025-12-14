@@ -1,10 +1,10 @@
 import { batchInventoryItemLevelsWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { HttpTypes } from "@switchyard/types"
 
 export const POST = async (
-  req: MedusaRequest<HttpTypes.AdminBatchInventoryItemsLocationLevels>,
-  res: MedusaResponse<HttpTypes.AdminBatchInventoryItemsLocationLevelsResponse>
+  req: SwitchyardRequest<HttpTypes.AdminBatchInventoryItemsLocationLevels>,
+  res: SwitchyardResponse<HttpTypes.AdminBatchInventoryItemsLocationLevelsResponse>
 ) => {
   const body = req.validatedBody
 

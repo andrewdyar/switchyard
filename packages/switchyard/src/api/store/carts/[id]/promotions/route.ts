@@ -1,12 +1,12 @@
 import { updateCartPromotionsWorkflowId } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 import { Modules, PromotionActions } from "@switchyard/framework/utils"
 import { refetchCart } from "../../helpers"
 
 export const POST = async (
-  req: MedusaRequest<HttpTypes.StoreCartAddPromotion, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.StoreCartResponse>
+  req: SwitchyardRequest<HttpTypes.StoreCartAddPromotion, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.StoreCartResponse>
 ) => {
   const we = req.scope.resolve(Modules.WORKFLOW_ENGINE)
   const payload = req.validatedBody
@@ -32,11 +32,11 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.StoreCartRemovePromotion,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<{
+  res: SwitchyardResponse<{
     cart: HttpTypes.StoreCart
   }>
 ) => {

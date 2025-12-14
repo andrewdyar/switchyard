@@ -1,22 +1,22 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import { HttpTypes } from "@switchyard/framework/types"
 
 // TODO: Add more fields to provider, such as default name and maybe logo.
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.StorePaymentProviderFilters>,
-  res: MedusaResponse<HttpTypes.StorePaymentProviderListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.StorePaymentProviderFilters>,
+  res: SwitchyardResponse<HttpTypes.StorePaymentProviderListResponse>
 ) => {
   if (!req.filterableFields.region_id) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_ALLOWED,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_ALLOWED,
       "You must provide the region_id to list payment providers"
     )
   }

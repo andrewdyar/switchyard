@@ -10,7 +10,7 @@ import {
 import {
   FulfillmentWorkflowEvents,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   Modules,
 } from "@switchyard/framework/utils"
 import {
@@ -107,8 +107,8 @@ export const orderFulfillmentDeliverablilityValidationStep = createStep(
     )
 
     if (!orderFulfillment) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Fulfillment with id ${fulfillment.id} not found in the order`
       )
     }

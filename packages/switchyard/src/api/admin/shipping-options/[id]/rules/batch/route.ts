@@ -1,20 +1,20 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { BatchMethodRequest, HttpTypes } from "@switchyard/framework/types"
 import { refetchBatchRules } from "../../../helpers"
 import { batchShippingOptionRulesWorkflow } from "@switchyard/core-flows"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     BatchMethodRequest<
       HttpTypes.AdminCreateShippingOptionRule,
       HttpTypes.AdminUpdateShippingOptionRule
     >,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminUpdateShippingOptionRulesResponse>
+  res: SwitchyardResponse<HttpTypes.AdminUpdateShippingOptionRulesResponse>
 ) => {
   const id = req.params.id
   const { result } = await batchShippingOptionRulesWorkflow(req.scope).run({

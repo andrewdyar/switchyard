@@ -1,8 +1,8 @@
 import { updateOrderChangeWorkflow } from "@switchyard/core-flows"
 import { HttpTypes, RemoteQueryFunction } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
@@ -10,11 +10,11 @@ import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
  * @since 2.12.0
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateOrderChange,
     HttpTypes.AdminOrderChangesFilters
   >,
-  res: MedusaResponse<HttpTypes.AdminOrderChangeResponse>
+  res: SwitchyardResponse<HttpTypes.AdminOrderChangeResponse>
 ) => {
   const { id } = req.params
   const { carry_over_promotions } = req.validatedBody

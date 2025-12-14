@@ -1,8 +1,8 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
   deleteReservationsWorkflow,
   updateReservationsWorkflow,
@@ -11,10 +11,10 @@ import { refetchReservation } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminReservationParams
   >,
-  res: MedusaResponse<HttpTypes.AdminReservationResponse>
+  res: SwitchyardResponse<HttpTypes.AdminReservationResponse>
 ) => {
   const { id } = req.params
 
@@ -25,8 +25,8 @@ export const GET = async (
   )
 
   if (!reservation) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Reservation with id: ${id} was not found`
     )
   }
@@ -35,11 +35,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateReservation,
     HttpTypes.AdminReservationParams
   >,
-  res: MedusaResponse<HttpTypes.AdminReservationResponse>
+  res: SwitchyardResponse<HttpTypes.AdminReservationResponse>
 ) => {
   const { id } = req.params
   await updateReservationsWorkflow(req.scope).run({
@@ -57,8 +57,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminReservationDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminReservationDeleteResponse>
 ) => {
   const id = req.params.id
 

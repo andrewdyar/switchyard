@@ -5,7 +5,7 @@ import type {
 import {
   ChangeActionType,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   OrderChangeStatus,
   OrderChangeType,
 } from "@switchyard/framework/utils"
@@ -37,22 +37,22 @@ export const validateOrderCreditLinesStep = createStep(
     }, MathBN.convert(0))
 
     if (MathBN.eq(pendingDifference, 0)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Can only create credit lines if the order has a positive or negative pending difference`
       )
     }
 
     if (MathBN.gt(pendingDifference, 0) && MathBN.lt(creditLinesAmount, 0)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Can only create positive credit lines if the order has a positive pending difference`
       )
     }
 
     if (MathBN.lt(pendingDifference, 0) && MathBN.gt(creditLinesAmount, 0)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Can only create negative credit lines if the order has a negative pending difference`
       )
     }
@@ -64,8 +64,8 @@ export const validateOrderCreditLinesStep = createStep(
           pendingDifference.multipliedBy(-1)
         )
       ) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Cannot create more negative credit lines with amount more than the pending difference`
         )
       }
@@ -73,8 +73,8 @@ export const validateOrderCreditLinesStep = createStep(
 
     if (MathBN.gt(pendingDifference, 0)) {
       if (MathBN.gt(creditLinesAmount, pendingDifference)) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Cannot create more positive credit lines with amount more than the pending difference`
         )
       }

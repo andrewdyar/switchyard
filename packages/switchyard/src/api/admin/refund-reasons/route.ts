@@ -1,7 +1,7 @@
 import { createRefundReasonsWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
   refetchEntity,
 } from "@switchyard/framework/http"
@@ -13,8 +13,8 @@ import {
 } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.RefundReasonFilters>,
-  res: MedusaResponse<PaginatedResponse<RefundReasonsResponse>>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.RefundReasonFilters>,
+  res: SwitchyardResponse<PaginatedResponse<RefundReasonsResponse>>
 ) => {
   const { data: refund_reasons, metadata } = await refetchEntities({
     entity: "refund_reasons",
@@ -33,11 +33,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateRefundReason,
     HttpTypes.AdminRefundReasonParams
   >,
-  res: MedusaResponse<RefundReasonResponse>
+  res: SwitchyardResponse<RefundReasonResponse>
 ) => {
   const {
     result: [refundReason],

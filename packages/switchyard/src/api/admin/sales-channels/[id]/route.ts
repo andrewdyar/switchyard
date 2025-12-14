@@ -2,17 +2,17 @@ import {
   deleteSalesChannelsWorkflow,
   updateSalesChannelsWorkflow,
 } from "@switchyard/core-flows"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchSalesChannel } from "../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminSalesChannelResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminSalesChannelResponse>
 ) => {
   const salesChannel = await refetchSalesChannel(
     req.params.id,
@@ -21,8 +21,8 @@ export const GET = async (
   )
 
   if (!salesChannel) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Sales channel with id: ${req.params.id} not found`
     )
   }
@@ -31,11 +31,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateSalesChannel,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminSalesChannelResponse>
+  res: SwitchyardResponse<HttpTypes.AdminSalesChannelResponse>
 ) => {
   const existingSalesChannel = await refetchSalesChannel(
     req.params.id,
@@ -44,8 +44,8 @@ export const POST = async (
   )
 
   if (!existingSalesChannel) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Sales channel with id "${req.params.id}" not found`
     )
   }
@@ -66,8 +66,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminSalesChannelDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminSalesChannelDeleteResponse>
 ) => {
   const id = req.params.id
 

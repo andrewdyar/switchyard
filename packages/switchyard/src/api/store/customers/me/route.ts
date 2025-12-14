@@ -1,26 +1,26 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import {
   StoreGetCustomerParamsType,
 } from "../validators"
 import { refetchCustomer } from "../helpers"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { updateCustomersWorkflow } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<StoreGetCustomerParamsType>,
-  res: MedusaResponse<HttpTypes.StoreCustomerResponse>
+  req: AuthenticatedSwitchyardRequest<StoreGetCustomerParamsType>,
+  res: SwitchyardResponse<HttpTypes.StoreCustomerResponse>
 ) => {
   const id = req.auth_context.actor_id
   const customer = await refetchCustomer(id, req.scope, req.queryConfig.fields)
 
   if (!customer) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Customer with id: ${id} was not found`
     )
   }
@@ -29,11 +29,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreUpdateCustomer,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreCustomerResponse>
+  res: SwitchyardResponse<HttpTypes.StoreCustomerResponse>
 ) => {
   const customerId = req.auth_context.actor_id
   await updateCustomersWorkflow(req.scope).run({

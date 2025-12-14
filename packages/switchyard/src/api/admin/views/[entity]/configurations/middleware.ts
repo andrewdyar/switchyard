@@ -1,15 +1,15 @@
 import {
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import ViewConfigurationsFeatureFlag from "../../../../../feature-flags/view-configurations"
 
 export const ensureViewConfigurationsEnabled = async (
-  req: MedusaRequest,
-  res: MedusaResponse,
-  next: MedusaNextFunction
+  req: SwitchyardRequest,
+  res: SwitchyardResponse,
+  next: SwitchyardNextFunction
 ) => {
   const flagRouter = req.scope.resolve(
     ContainerRegistrationKeys.FEATURE_FLAG_ROUTER

@@ -1,18 +1,18 @@
 import { StoreProductTypeResponse } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { StoreProductTypeParamsType } from "../validators"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<StoreProductTypeParamsType>,
-  res: MedusaResponse<StoreProductTypeResponse>
+  req: AuthenticatedSwitchyardRequest<StoreProductTypeParamsType>,
+  res: SwitchyardResponse<StoreProductTypeResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -25,8 +25,8 @@ export const GET = async (
   })
 
   if (!data.length) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Product type with id: ${req.params.id} was not found`
     )
   }

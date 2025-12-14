@@ -1,4 +1,4 @@
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import {
   IndexTypes,
   JoinerServiceConfigAlias,
@@ -1239,7 +1239,7 @@ export function buildSchemaObjectRepresentation(schema: string): {
   entitiesMap: Record<string, any>
   executableSchema: GraphQLUtils.GraphQLSchema
 } {
-  const moduleJoinerConfigs = MedusaModule.getAllJoinerConfigs()
+  const moduleJoinerConfigs = SwitchyardModule.getAllJoinerConfigs()
 
   const servicesEntityMap = getServicesEntityMap(moduleJoinerConfigs)
   const filterableEntities = buildSchemaFromFilterableLinks(

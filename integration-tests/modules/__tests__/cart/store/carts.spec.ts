@@ -16,7 +16,7 @@ import {
 } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   Modules,
   ProductStatus,
   PromotionStatus,
@@ -2167,8 +2167,8 @@ medusaIntegrationTestRunner({
           // Mock the authorizePaymentSession to throw error
           authorizePaymentSessionSpy.mockImplementation(
             (id, context, sharedContext) => {
-              throw new MedusaError(
-                MedusaError.Types.PAYMENT_AUTHORIZATION_ERROR,
+              throw new SwitchyardError(
+                SwitchyardError.Types.PAYMENT_AUTHORIZATION_ERROR,
                 `Payment authorization failed`
               )
             }

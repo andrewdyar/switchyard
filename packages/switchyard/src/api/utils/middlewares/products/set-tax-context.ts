@@ -1,11 +1,11 @@
 import { TaxCalculationContext } from "@switchyard/framework/types"
 import { NextFunction } from "express"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaRequest,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardRequest,
   refetchEntity,
 } from "@switchyard/framework/http"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { StoreRequestWithContext } from "../../../store/types"
 import { DEFAULT_PRICE_FIELD_PATHS } from "./constants"
 
@@ -16,7 +16,7 @@ type TaxContextOptions = {
 export function setTaxContext(options: TaxContextOptions = {}) {
   const { priceFieldPaths = DEFAULT_PRICE_FIELD_PATHS } = options
 
-  return async (req: AuthenticatedMedusaRequest, _, next: NextFunction) => {
+  return async (req: AuthenticatedSwitchyardRequest, _, next: NextFunction) => {
     const withCalculatedPrice = req.queryConfig.fields.some((field) =>
       priceFieldPaths.some(
         (pricePath) => field === pricePath || field.startsWith(`${pricePath}.`)
@@ -34,7 +34,7 @@ export function setTaxContext(options: TaxContextOptions = {}) {
 
       const taxLinesContext = await getTaxLinesContext(req)
 
-      // TODO: Allow passing a context typings param to AuthenticatedMedusaRequest
+      // TODO: Allow passing a context typings param to AuthenticatedSwitchyardRequest
       ;(req as unknown as StoreRequestWithContext<any>).taxContext = {
         taxLineContext: taxLinesContext,
         taxInclusivityContext: inclusivity,
@@ -46,7 +46,7 @@ export function setTaxContext(options: TaxContextOptions = {}) {
   }
 }
 
-const getTaxInclusivityInfo = async (req: MedusaRequest) => {
+const getTaxInclusivityInfo = async (req: SwitchyardRequest) => {
   const region = await refetchEntity({
     entity: "region",
     idOrFilter: req.filterableFields.region_id as string,
@@ -55,8 +55,8 @@ const getTaxInclusivityInfo = async (req: MedusaRequest) => {
   })
 
   if (!region) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Region with id ${req.filterableFields.region_id} not found when populating the tax context`
     )
   }
@@ -66,7 +66,7 @@ const getTaxInclusivityInfo = async (req: MedusaRequest) => {
   }
 }
 
-const getTaxLinesContext = async (req: MedusaRequest) => {
+const getTaxLinesContext = async (req: SwitchyardRequest) => {
   if (!req.filterableFields.country_code) {
     return
   }

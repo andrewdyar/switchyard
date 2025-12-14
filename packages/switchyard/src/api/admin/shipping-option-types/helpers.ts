@@ -1,9 +1,9 @@
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const refetchShippingOptionType = async (
   shippingOptionTypeId: string,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   const query = scope.resolve(ContainerRegistrationKeys.QUERY)

@@ -1,10 +1,10 @@
-import { Logger, MedusaContainer, ModulesSdkTypes } from "@switchyard/types"
+import { Logger, SwitchyardContainer, ModulesSdkTypes } from "@switchyard/types"
 import {
   PostgreSqlDriver,
   SqlEntityManager,
 } from "@switchyard/deps/mikro-orm/postgresql"
 import { asValue } from "@switchyard/deps/awilix"
-import { ContainerRegistrationKeys, MedusaError } from "../../common"
+import { ContainerRegistrationKeys, SwitchyardError } from "../../common"
 import { mikroOrmCreateConnection } from "../../dal"
 import { isSharedConnectionSymbol } from "../create-pg-connection"
 import { loadDatabaseConfig } from "../load-module-database-config"
@@ -30,7 +30,7 @@ export async function mikroOrmConnectionLoader({
 }: {
   moduleName: string
   entities: any[]
-  container: MedusaContainer
+  container: SwitchyardContainer
   options?:
     | ModulesSdkTypes.ModuleServiceInitializeOptions
     | ModulesSdkTypes.ModuleServiceInitializeCustomDataLayerOptions
@@ -107,8 +107,8 @@ async function loadDefault({
   pathToMigrations,
 }): Promise<SqlEntityManager<PostgreSqlDriver>> {
   if (!database) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_ARGUMENT,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_ARGUMENT,
       `Database config is not present at module config "options.database"`
     )
   }

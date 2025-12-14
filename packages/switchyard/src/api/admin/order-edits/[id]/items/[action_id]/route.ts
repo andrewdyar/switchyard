@@ -4,14 +4,14 @@ import {
 } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminPostOrderEditsItemsActionReqSchemaType } from "../../../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminPostOrderEditsItemsActionReqSchemaType>,
-  res: MedusaResponse<HttpTypes.AdminOrderEditPreviewResponse>
+  req: AuthenticatedSwitchyardRequest<AdminPostOrderEditsItemsActionReqSchemaType>,
+  res: SwitchyardResponse<HttpTypes.AdminOrderEditPreviewResponse>
 ) => {
   const { id, action_id } = req.params
 
@@ -29,8 +29,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminOrderEditPreviewResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminOrderEditPreviewResponse>
 ) => {
   const { id, action_id } = req.params
 

@@ -2,7 +2,7 @@ import {
   addDraftOrderPromotionWorkflow,
   removeDraftOrderPromotionsWorkflow,
 } from "@switchyard/core-flows"
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@switchyard/framework"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { HttpTypes } from "@switchyard/types"
 import {
   AdminAddDraftOrderPromotionsType,
@@ -10,8 +10,8 @@ import {
 } from "../../../validators"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminAddDraftOrderPromotionsType>,
-  res: MedusaResponse<HttpTypes.AdminDraftOrderPreviewResponse>
+  req: AuthenticatedSwitchyardRequest<AdminAddDraftOrderPromotionsType>,
+  res: SwitchyardResponse<HttpTypes.AdminDraftOrderPreviewResponse>
 ) => {
   const { id } = req.params
 
@@ -28,8 +28,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest<AdminRemoveDraftOrderPromotionsType>,
-  res: MedusaResponse<HttpTypes.AdminDraftOrderPreviewResponse>
+  req: AuthenticatedSwitchyardRequest<AdminRemoveDraftOrderPromotionsType>,
+  res: SwitchyardResponse<HttpTypes.AdminDraftOrderPreviewResponse>
 ) => {
   const { id } = req.params
 

@@ -1,17 +1,17 @@
 import { createPaymentSessionsWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchPaymentCollection } from "../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreInitializePaymentSession,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StorePaymentCollectionResponse>
+  res: SwitchyardResponse<HttpTypes.StorePaymentCollectionResponse>
 ) => {
   const collectionId = req.params.id
   const { provider_id, data } = req.body

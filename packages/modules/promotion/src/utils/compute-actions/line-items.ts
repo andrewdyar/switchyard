@@ -10,7 +10,7 @@ import {
   calculateAdjustmentAmountFromPromotion,
   ComputedActions,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   ApplicationMethodTargetType as TargetType,
 } from "@switchyard/framework/utils"
 import { Promotion } from "@models"
@@ -23,8 +23,8 @@ function validateContext(
   context: PromotionTypes.ComputeActionContext[TargetType]
 ) {
   if (!context) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `"${contextKey}" should be present as an array in the context for computeActions`
     )
   }

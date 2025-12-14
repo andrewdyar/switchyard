@@ -1,4 +1,4 @@
-import { MedusaModule, MODULE_SCOPE } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule, MODULE_SCOPE } from "@switchyard/framework/modules-sdk"
 import {
   ExternalModuleDeclaration,
   ILinkModule,
@@ -36,7 +36,7 @@ export const initialize = async (
   cwd?: string
 ): Promise<{ [link: string]: ILinkModule }> => {
   const allLinks = {}
-  const modulesLoadedKeys = MedusaModule.getLoadedModules().map(
+  const modulesLoadedKeys = SwitchyardModule.getLoadedModules().map(
     (mod) => Object.keys(mod)[0]
   )
 
@@ -163,7 +163,7 @@ export const initialize = async (
         },
       }
 
-      const loaded = await MedusaModule.bootstrapLink({
+      const loaded = await SwitchyardModule.bootstrapLink({
         definition: linkModuleDefinition,
         declaration: options as InternalModuleDeclaration,
         moduleExports: moduleDefinition,
@@ -190,7 +190,7 @@ export function getMigrationPlanner(
   options: ModuleServiceInitializeOptions,
   pluginLinksDefinition?: ModuleJoinerConfig[]
 ) {
-  const modulesLoadedKeys = MedusaModule.getLoadedModules().map(
+  const modulesLoadedKeys = SwitchyardModule.getLoadedModules().map(
     (mod) => Object.keys(mod)[0]
   )
 

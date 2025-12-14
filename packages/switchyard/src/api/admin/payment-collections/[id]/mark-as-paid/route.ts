@@ -1,17 +1,17 @@
 import { markPaymentCollectionAsPaid } from "@switchyard/core-flows"
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminMarkPaymentCollectionAsPaid,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPaymentCollectionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPaymentCollectionResponse>
 ) => {
   const { id } = req.params
 

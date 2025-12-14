@@ -1,11 +1,11 @@
 import { convertDraftOrderWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import { HttpTypes } from "@switchyard/types"
 
 export const POST = async (
-  req: MedusaRequest<HttpTypes.AdminDraftOrderParams>, 
-  res: MedusaResponse<HttpTypes.AdminOrderResponse>
+  req: SwitchyardRequest<HttpTypes.AdminDraftOrderParams>, 
+  res: SwitchyardResponse<HttpTypes.AdminOrderResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 

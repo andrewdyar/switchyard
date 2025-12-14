@@ -9,7 +9,7 @@ import {
   FindConfig,
   InferEntityType,
   InternalModuleDeclaration,
-  MedusaContainer,
+  SwitchyardContainer,
   ModuleJoinerConfig,
   ModulesSdkTypes,
   PricePreferenceDTO,
@@ -35,7 +35,7 @@ import {
   isString,
   MathBN,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
   PriceListType,
   PricingRuleOperator,
@@ -77,7 +77,7 @@ const generateMethodForModels = {
   PricePreference,
 }
 
-const BaseClass = ModulesSdkUtils.MedusaService<{
+const BaseClass = ModulesSdkUtils.SwitchyardService<{
   PriceSet: { dto: PricingTypes.PriceSetDTO }
   Price: { dto: PricingTypes.PriceDTO }
   PriceRule: {
@@ -95,7 +95,7 @@ export default class PricingModuleService
   extends BaseClass
   implements PricingTypes.IPricingModuleService
 {
-  protected readonly container_: MedusaContainer
+  protected readonly container_: SwitchyardContainer
   protected baseRepository_: DAL.RepositoryService
   protected readonly pricingRepository_: PricingRepositoryService & {
     clearAvailableAttributes?: () => Promise<void>
@@ -921,15 +921,15 @@ export default class PricingModuleService
         if (Array.isArray(value)) {
           return value.map((customRule) => {
             if (!ruleOperatorsSet.has(customRule.operator)) {
-              throw new MedusaError(
-                MedusaError.Types.INVALID_DATA,
+              throw new SwitchyardError(
+                SwitchyardError.Types.INVALID_DATA,
                 invalidOperatorError
               )
             }
 
             if (typeof customRule.value !== "number") {
-              throw new MedusaError(
-                MedusaError.Types.INVALID_DATA,
+              throw new SwitchyardError(
+                SwitchyardError.Types.INVALID_DATA,
                 `value should be a number`
               )
             }
@@ -1363,8 +1363,8 @@ export default class PricingModuleService
       const priceSet = priceSetMap.get(price.price_set_id)
 
       if (!priceSet) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Price set with id: ${price.price_set_id} not found`
         )
       }
@@ -1447,8 +1447,8 @@ export default class PricingModuleService
         data.map((d) => d.id),
         existingPriceLists.map((p) => p.id)
       )
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Price lists with ids: '${diff.join(", ")}' not found`
       )
     }
@@ -1535,8 +1535,8 @@ export default class PricingModuleService
       const priceList = priceListMap.get(priceListId)
 
       if (!priceList) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Price list with id: ${priceListId} not found`
         )
       }
@@ -1597,8 +1597,8 @@ export default class PricingModuleService
       const priceList = priceListMap.get(price.price_list_id!)
 
       if (!priceList) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Price list with id: ${price.price_list_id} not found`
         )
       }

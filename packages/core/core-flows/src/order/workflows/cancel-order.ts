@@ -7,7 +7,7 @@ import {
 import {
   deepFlatMap,
   MathBN,
-  MedusaError,
+  SwitchyardError,
   OrderWorkflowEvents,
   PaymentCollectionStatus,
 } from "@switchyard/framework/utils"
@@ -82,8 +82,8 @@ export const cancelValidateOrder = createStep(
       type: string
     ) => {
       if (arr?.some(pred)) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_ALLOWED,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_ALLOWED,
           `All ${type} must be canceled before canceling an order`
         )
       }

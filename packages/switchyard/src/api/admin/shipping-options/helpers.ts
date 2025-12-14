@@ -1,6 +1,6 @@
 import {
   BatchMethodResponse,
-  MedusaContainer,
+  SwitchyardContainer,
   ShippingOptionRuleDTO,
 } from "@switchyard/framework/types"
 import {
@@ -10,7 +10,7 @@ import {
 
 export const refetchShippingOption = async (
   shippingOptionId: string,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   const query = scope.resolve(ContainerRegistrationKeys.QUERY)
@@ -25,7 +25,7 @@ export const refetchShippingOption = async (
 
 export const refetchBatchRules = async (
   batchResult: BatchMethodResponse<ShippingOptionRuleDTO>,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   const query = scope.resolve(ContainerRegistrationKeys.QUERY)

@@ -1,7 +1,7 @@
 import type { PaymentCollectionDTO } from "@switchyard/framework/types"
 import {
   MathBN,
-  MedusaError,
+  SwitchyardError,
   PaymentCollectionStatus,
 } from "@switchyard/framework/utils"
 import {
@@ -114,8 +114,8 @@ export const createOrUpdateOrderPaymentCollectionWorkflow = createWorkflow(
         order.summary.raw_pending_difference ?? order.summary.pending_difference
 
       if (amountToCharge > 0 && MathBN.gt(amountToCharge, amountPending)) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_ALLOWED,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_ALLOWED,
           `Amount cannot be greater than ${amountPending}`
         )
       }

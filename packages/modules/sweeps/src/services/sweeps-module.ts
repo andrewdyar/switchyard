@@ -4,11 +4,11 @@
  * Handles sweep operations - daily retailer shopping trips.
  */
 
-import { MedusaService } from "@switchyard/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Sweep } from "../models/sweep"
 import { SweepItem } from "../models/sweep-item"
 
-class SweepsModuleService extends MedusaService({
+class SweepsModuleService extends SwitchyardService({
   Sweep,
   SweepItem,
 }) {

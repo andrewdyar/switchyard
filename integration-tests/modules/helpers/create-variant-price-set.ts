@@ -1,7 +1,7 @@
 import {
   CreatePriceSetDTO,
   IPricingModuleService,
-  MedusaContainer,
+  SwitchyardContainer,
   PriceSetDTO,
 } from "@switchyard/types"
 import { Modules } from "@switchyard/utils"
@@ -18,7 +18,7 @@ export const createVariantPriceSet = async ({
   variantId,
   prices = defaultPrices,
 }: {
-  container: MedusaContainer
+  container: SwitchyardContainer
   variantId: string
   prices?: CreatePriceSetDTO["prices"]
 }): Promise<PriceSetDTO> => {

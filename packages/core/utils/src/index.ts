@@ -31,5 +31,5 @@ export * from "./totals/big-number"
 export * from "./user"
 export * from "./caching"
 
-export const MedusaModuleType = Symbol.for("MedusaModule")
-export const MedusaModuleProviderType = Symbol.for("MedusaModuleProvider")
+export const SwitchyardModuleType = Symbol.for("SwitchyardModule")
+export const SwitchyardModuleProviderType = Symbol.for("SwitchyardModuleProvider")

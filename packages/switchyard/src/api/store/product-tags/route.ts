@@ -1,13 +1,13 @@
 import { HttpTypes } from "@switchyard/framework/types"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.StoreProductTagListParams>,
-  res: MedusaResponse<HttpTypes.StoreProductTagListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.StoreProductTagListParams>,
+  res: SwitchyardResponse<HttpTypes.StoreProductTagListResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 

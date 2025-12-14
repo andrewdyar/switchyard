@@ -1,7 +1,7 @@
 import {
   Constructor,
   LoaderOptions,
-  MedusaContainer,
+  SwitchyardContainer,
   ModuleServiceInitializeCustomDataLayerOptions,
   ModuleServiceInitializeOptions,
   RepositoryService,
@@ -19,13 +19,13 @@ type RepositoryLoaderOptions = {
   moduleModels: Record<string, any>
   moduleRepositories?: Record<string, any>
   customRepositories: Record<string, any>
-  container: MedusaContainer
+  container: SwitchyardContainer
 }
 
 type ServiceLoaderOptions = {
   moduleModels: Record<string, any>
   moduleServices: Record<string, any>
-  container: MedusaContainer
+  container: SwitchyardContainer
 }
 
 /**

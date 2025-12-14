@@ -18,7 +18,7 @@ import {
   InjectTransactionManager,
   isString,
   MedusaContext,
-  MedusaService,
+  SwitchyardService,
   promiseAll,
 } from "@switchyard/framework/utils"
 
@@ -32,7 +32,7 @@ type InjectedDependencies = {
 }
 
 export default class SalesChannelModuleService
-  extends MedusaService<{ SalesChannel: { dto: SalesChannelDTO } }>({
+  extends SwitchyardService<{ SalesChannel: { dto: SalesChannelDTO } }>({
     SalesChannel,
   })
   implements ISalesChannelModuleService

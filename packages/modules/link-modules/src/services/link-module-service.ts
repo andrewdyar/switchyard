@@ -18,7 +18,7 @@ import {
   mapObjectTo,
   MapToConfig,
   MedusaContext,
-  MedusaError,
+  SwitchyardError,
   moduleEventBuilderFactory,
   Modules,
   ModulesSdkUtils,
@@ -83,8 +83,8 @@ export default class LinkModuleService implements ILinkModule {
         !Array.isArray(primaryKeyData) ||
         primaryKeyData.length !== this.primaryKey_.length
       ) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Primary key data must be an array ${this.primaryKey_.length} values`
         )
       }
@@ -107,8 +107,8 @@ export default class LinkModuleService implements ILinkModule {
     dataToValidate.forEach((d) => {
       const keys = Object.keys(d)
       if (keys.some((k) => !this.isValidKeyName(k))) {
-        throw new MedusaError(
-          MedusaError.Types.INVALID_DATA,
+        throw new SwitchyardError(
+          SwitchyardError.Types.INVALID_DATA,
           `Invalid field name provided. Valid field names are ${this.primaryKey_.concat(
             this.foreignKey_
           )}`
@@ -131,8 +131,8 @@ export default class LinkModuleService implements ILinkModule {
       const pk = this.primaryKey_.join(",")
       const errMessage = `${pk}[${primaryKeyData}] and ${this.foreignKey_}[${foreignKeyData}]`
 
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Entry ${errMessage} was not found`
       )
     }

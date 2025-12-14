@@ -1,7 +1,7 @@
 import { createCustomerAddressesWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
@@ -12,8 +12,8 @@ import { refetchCustomer } from "../../helpers"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminCustomerAddressFilters>,
-  res: MedusaResponse<HttpTypes.AdminCustomerAddressListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminCustomerAddressFilters>,
+  res: SwitchyardResponse<HttpTypes.AdminCustomerAddressListResponse>
 ) => {
   const customerId = req.params.id
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
@@ -38,11 +38,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     AdminCreateCustomerAddressType & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminCustomerResponse>
+  res: SwitchyardResponse<HttpTypes.AdminCustomerResponse>
 ) => {
   const { additional_data, ...rest } = req.validatedBody
   const customerId = req.params.id

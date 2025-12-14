@@ -2,25 +2,25 @@ import {
   ApiKeyType,
   ContainerRegistrationKeys,
   isPresent,
-  MedusaError,
+  SwitchyardError,
   PUBLISHABLE_KEY_HEADER,
 } from "@switchyard/utils"
 import type {
-  MedusaNextFunction,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardResponse,
   MedusaStoreRequest,
 } from "../../http"
 
 export async function ensurePublishableApiKeyMiddleware(
   req: MedusaStoreRequest,
-  _: MedusaResponse,
-  next: MedusaNextFunction
+  _: SwitchyardResponse,
+  next: SwitchyardNextFunction
 ) {
   const publishableApiKey = req.get(PUBLISHABLE_KEY_HEADER)
 
   if (!isPresent(publishableApiKey)) {
-    const error = new MedusaError(
-      MedusaError.Types.NOT_ALLOWED,
+    const error = new SwitchyardError(
+      SwitchyardError.Types.NOT_ALLOWED,
       `Publishable API key required in the request header: ${PUBLISHABLE_KEY_HEADER}. You can manage your keys in settings in the dashboard.`
     )
     return next(error)
@@ -68,8 +68,8 @@ export async function ensurePublishableApiKeyMiddleware(
 
   if (!apiKey) {
     try {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         `A valid publishable key is required to proceed with the request`
       )
     } catch (e) {

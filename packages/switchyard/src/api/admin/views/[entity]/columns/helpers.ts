@@ -12,7 +12,7 @@ import {
   print,
 } from "@switchyard/framework/utils"
 import { HttpTypes } from "@switchyard/types"
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import { ENTITY_MAPPINGS } from "./entity-mappings"
 
 // Determine column category based on field characteristics
@@ -302,7 +302,7 @@ export const generateEntityColumns = (
   entity: string,
   entityMapping: (typeof ENTITY_MAPPINGS)[keyof typeof ENTITY_MAPPINGS]
 ): HttpTypes.AdminColumn[] | null => {
-  const joinerConfigs = MedusaModule.getAllJoinerConfigs()
+  const joinerConfigs = SwitchyardModule.getAllJoinerConfigs()
 
   const schemaFragments: string[] = []
   let hasEntityType = false

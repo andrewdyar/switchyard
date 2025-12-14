@@ -1,12 +1,12 @@
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 
 import { refreshInviteTokensWorkflow } from "@switchyard/core-flows"
 import { refetchInvite } from "../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: MedusaRequest<{}, HttpTypes.SelectParams>,
-  res: MedusaResponse<HttpTypes.AdminInviteResponse>
+  req: SwitchyardRequest<{}, HttpTypes.SelectParams>,
+  res: SwitchyardResponse<HttpTypes.AdminInviteResponse>
 ) => {
   const workflow = refreshInviteTokensWorkflow(req.scope)
 

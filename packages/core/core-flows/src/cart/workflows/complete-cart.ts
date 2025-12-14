@@ -178,7 +178,7 @@ export const completeCartWorkflowId = "complete-cart"
  * 
  * ```ts
  * import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
- * import { MedusaError } from "@switchyard/framework/utils"
+ * import { SwitchyardError } from "@switchyard/framework/utils"
  * import { cancelOrderWorkflow } from "@switchyard/core/core-flows"
  * 
  * type StepInput = {
@@ -192,8 +192,8 @@ export const completeCartWorkflowId = "complete-cart"
  *     const isValid = true // replace with actual validation logic
  * 
  *     if (!isValid) {
- *       throw new MedusaError(
- *         MedusaError.Types.INVALID_DATA,
+ *       throw new SwitchyardError(
+ *         SwitchyardError.Types.INVALID_DATA,
  *         "Custom cart validation failed"
  *       )
  *     }

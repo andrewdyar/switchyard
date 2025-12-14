@@ -10,11 +10,11 @@ import {
   ContainerLike,
   Context,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "@switchyard/framework/types"
 import {
   isString,
-  MedusaError,
+  SwitchyardError,
   promiseAll,
   TransactionState,
 } from "@switchyard/framework/utils"
@@ -101,7 +101,7 @@ const AnySubscriber = "any"
 
 export class WorkflowOrchestratorService {
   private static subscribers: Subscribers = new Map()
-  private container_: MedusaContainer
+  private container_: SwitchyardContainer
   private inMemoryDistributedTransactionStorage_: InMemoryDistributedTransactionStorage
   readonly #logger: Logger
 
@@ -110,7 +110,7 @@ export class WorkflowOrchestratorService {
     sharedContainer,
   }: {
     inMemoryDistributedTransactionStorage: InMemoryDistributedTransactionStorage
-    sharedContainer: MedusaContainer
+    sharedContainer: SwitchyardContainer
   }) {
     this.container_ = sharedContainer
     this.inMemoryDistributedTransactionStorage_ =
@@ -193,8 +193,8 @@ export class WorkflowOrchestratorService {
       : workflowIdOrWorkflow.getName()
 
     if (!workflowId) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Workflow ID is required`
       )
     }
@@ -207,8 +207,8 @@ export class WorkflowOrchestratorService {
 
     const exportedWorkflow: any = MedusaWorkflow.getWorkflow(workflowId)
     if (!exportedWorkflow) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Workflow with id "${workflowId}" not found.`
       )
     }

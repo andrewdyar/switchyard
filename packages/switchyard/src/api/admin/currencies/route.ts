@@ -2,12 +2,12 @@ import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: MedusaRequest<HttpTypes.AdminCurrencyListParams>,
-  res: MedusaResponse<HttpTypes.AdminCurrencyListResponse>
+  req: SwitchyardRequest<HttpTypes.AdminCurrencyListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCurrencyListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 

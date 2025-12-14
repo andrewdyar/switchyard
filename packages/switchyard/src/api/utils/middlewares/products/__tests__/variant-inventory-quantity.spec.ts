@@ -3,9 +3,9 @@ import {
   deepCopy,
   getTotalVariantAvailability,
   getVariantAvailability,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
-import { MedusaRequest, MedusaStoreRequest } from "@switchyard/framework/http"
+import { SwitchyardRequest, MedusaStoreRequest } from "@switchyard/framework/http"
 import {
   wrapVariantsWithInventoryQuantityForSalesChannel,
   wrapVariantsWithTotalInventoryQuantity,
@@ -46,7 +46,7 @@ describe("variant-inventory-quantity", () => {
 
   describe("wrapVariantsWithTotalInventoryQuantity", () => {
     it("should not call getTotalVariantAvailability when variants array is empty", async () => {
-      await wrapVariantsWithTotalInventoryQuantity(req as MedusaRequest, [])
+      await wrapVariantsWithTotalInventoryQuantity(req as SwitchyardRequest, [])
 
       expect(getTotalVariantAvailability).not.toHaveBeenCalled()
     })
@@ -62,7 +62,7 @@ describe("variant-inventory-quantity", () => {
       )
 
       await wrapVariantsWithTotalInventoryQuantity(
-        req as MedusaRequest,
+        req as SwitchyardRequest,
         variants
       )
 
@@ -91,7 +91,7 @@ describe("variant-inventory-quantity", () => {
       )
 
       await wrapVariantsWithTotalInventoryQuantity(
-        req as MedusaRequest,
+        req as SwitchyardRequest,
         _variants
       )
 
@@ -124,7 +124,7 @@ describe("variant-inventory-quantity", () => {
           req as MedusaStoreRequest<unknown>,
           variants
         )
-      ).rejects.toThrow(MedusaError)
+      ).rejects.toThrow(SwitchyardError)
     })
 
     it("should use sales channel from query when single channel is specified", async () => {

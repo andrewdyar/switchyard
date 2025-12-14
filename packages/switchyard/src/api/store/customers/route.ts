@@ -1,7 +1,7 @@
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { createCustomerAccountWorkflow } from "@switchyard/core-flows"
@@ -9,16 +9,16 @@ import { HttpTypes } from "@switchyard/framework/types"
 import { refetchCustomer } from "./helpers"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.StoreCreateCustomer,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreCustomerResponse>
+  res: SwitchyardResponse<HttpTypes.StoreCustomerResponse>
 ) => {
   // If `actor_id` is present, the request carries authentication for an existing customer
   if (req.auth_context.actor_id) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "Request already authenticated as a customer."
     )
   }

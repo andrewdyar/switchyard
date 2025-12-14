@@ -7,17 +7,17 @@ import {
   HttpTypes,
 } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
 } from "@switchyard/framework/http"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminProductCategoryListParams
   >,
-  res: MedusaResponse<AdminProductCategoryResponse>
+  res: SwitchyardResponse<AdminProductCategoryResponse>
 ) => {
   const {
     data: [category],
@@ -30,8 +30,8 @@ export const GET = async (
   })
 
   if (!category) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Product category with id: ${req.params.id} was not found`
     )
   }
@@ -40,11 +40,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdateProductCategory,
     HttpTypes.AdminProductCategoryParams
   >,
-  res: MedusaResponse<AdminProductCategoryResponse>
+  res: SwitchyardResponse<AdminProductCategoryResponse>
 ) => {
   const { id } = req.params
 
@@ -66,8 +66,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminProductCategoryDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminProductCategoryDeleteResponse>
 ) => {
   const id = req.params.id
 

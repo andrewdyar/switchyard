@@ -1,10 +1,10 @@
 import { HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import {
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import { generateEntityColumns } from "./helpers"
 import { ENTITY_MAPPINGS } from "./entity-mappings"
@@ -14,8 +14,8 @@ import { ENTITY_MAPPINGS } from "./entity-mappings"
  * @featureFlag view_configurations
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminViewsEntityColumnsResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminViewsEntityColumnsResponse>
 ) => {
   const entity = req.params.entity
 
@@ -36,8 +36,8 @@ export const GET = async (
       })
     }
   } catch (schemaError) {
-    throw new MedusaError(
-      MedusaError.Types.UNEXPECTED_STATE,
+    throw new SwitchyardError(
+      SwitchyardError.Types.UNEXPECTED_STATE,
       `Schema introspection failed for entity: ${entity}. Please check if the entity exists in the schema.`
     )
   }

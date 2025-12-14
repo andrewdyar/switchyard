@@ -2,7 +2,7 @@ import { refetchEntity } from "@switchyard/framework/http"
 import {
   HttpTypes,
   ItemTaxLineDTO,
-  MedusaContainer,
+  SwitchyardContainer,
   TaxableItemDTO,
 } from "@switchyard/framework/types"
 import { calculateAmountsWithTax, Modules } from "@switchyard/framework/utils"
@@ -15,7 +15,7 @@ export type RequestWithContext<
 
 export const refetchProduct = async (
   idOrFilter: string | object,
-  scope: MedusaContainer,
+  scope: SwitchyardContainer,
   fields: string[]
 ) => {
   return await refetchEntity({ entity: "product", idOrFilter, scope, fields })

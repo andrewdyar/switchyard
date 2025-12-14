@@ -10,7 +10,7 @@ import {
 import {
   IWorkflowEngineService,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
   RemoteQueryFunction,
 } from "@switchyard/framework/types"
 import {
@@ -96,14 +96,14 @@ moduleIntegrationTestRunner<IWorkflowEngineService>({
       url: "localhost:6379",
     },
   },
-  testSuite: ({ service: workflowOrcModule, medusaApp }) => {
+  testSuite: ({ service: workflowOrcModule, switchyardApp }) => {
     describe("Workflow Orchestrator module", function () {
       beforeEach(async () => {
         await TestDatabase.clearTables()
         jest.clearAllMocks()
 
-        query = medusaApp.query
-        sharedContainer_ = medusaApp.sharedContainer
+        query = switchyardApp.query
+        sharedContainer_ = switchyardApp.sharedContainer
       })
 
       afterEach(async () => {
@@ -111,7 +111,7 @@ moduleIntegrationTestRunner<IWorkflowEngineService>({
       })
 
       let query: RemoteQueryFunction
-      let sharedContainer_: MedusaContainer
+      let sharedContainer_: SwitchyardContainer
 
       it(`should export the appropriate linkable configuration`, () => {
         const linkable = Module(Modules.WORKFLOW_ENGINE, {

@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 // Module key matches the one defined in @switchyard/inventory-group joiner-config
@@ -11,8 +11,8 @@ const INVENTORY_GROUP_MODULE = "inventoryGroup"
  * List all inventory groups with optional filtering
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const inventoryGroupService = req.scope.resolve(INVENTORY_GROUP_MODULE) as any
 
@@ -117,8 +117,8 @@ export const GET = async (
  * Create a new inventory group
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const inventoryGroupService = req.scope.resolve(INVENTORY_GROUP_MODULE) as any
 

@@ -14,7 +14,7 @@ import {
   ValidateFulfillmentDataContext,
 } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   ModulesSdkUtils,
   promiseAll,
 } from "@switchyard/framework/utils"
@@ -48,8 +48,8 @@ export default class FulfillmentProviderService extends ModulesSdkUtils.MedusaIn
     optionName?: string
   ) {
     if (!(providerClass as any).identifier) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_ARGUMENT,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_ARGUMENT,
         `Trying to register a fulfillment provider without an identifier.`
       )
     }

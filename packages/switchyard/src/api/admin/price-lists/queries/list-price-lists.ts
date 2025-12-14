@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@switchyard/framework/types"
+import { SwitchyardContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
@@ -10,7 +10,7 @@ export async function listPriceLists({
   remoteQueryFields,
   variables,
 }: {
-  container: MedusaContainer
+  container: SwitchyardContainer
   remoteQueryFields: string[]
   variables: Record<string, any>
 }): Promise<[AdminPriceListRemoteQueryDTO[], number]> {

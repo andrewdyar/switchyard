@@ -1,6 +1,6 @@
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { Modules } from "@switchyard/framework/utils"
 
@@ -12,8 +12,8 @@ export const AUTHENTICATE = false
  * Get order details for picking/delivery
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { id } = req.params
 

@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
@@ -12,8 +12,8 @@ import { HttpTypes } from "@switchyard/framework/types"
  * @since 2.10.0
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminShippingOptionTypeListParams>,
-  res: MedusaResponse<HttpTypes.AdminShippingOptionTypeListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminShippingOptionTypeListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminShippingOptionTypeListResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 
@@ -36,11 +36,11 @@ export const GET = async (
  * @since 2.10.0
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateShippingOptionType,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminShippingOptionTypeResponse>
+  res: SwitchyardResponse<HttpTypes.AdminShippingOptionTypeResponse>
 ) => {
   const input = [req.validatedBody]
 

@@ -1,6 +1,6 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 import {
@@ -12,8 +12,8 @@ import { refetchProductType } from "./helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductTypeListParams>,
-  res: MedusaResponse<HttpTypes.AdminProductTypeListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductTypeListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductTypeListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
   const queryObject = remoteQueryObjectFromString({
@@ -36,11 +36,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateProductType,
     HttpTypes.AdminProductTypeParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductTypeResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductTypeResponse>
 ) => {
   const input = [req.validatedBody]
 

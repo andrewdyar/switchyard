@@ -1,7 +1,7 @@
 import {
   flattenObjectToKeyValuePairs,
   isPresent,
-  MedusaError,
+  SwitchyardError,
   MikroOrmBase,
   PriceListStatus,
 } from "@switchyard/framework/utils"
@@ -80,8 +80,8 @@ export class PricingRepository
     delete context.currency_code
 
     if (!currencyCode) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Method calculatePrices requires currency_code in the pricing context`
       )
     }

@@ -5,7 +5,7 @@ import {
   arrayDifference,
   buildQuery,
   DALUtils,
-  MedusaError,
+  SwitchyardError,
   isPresent,
   mergeMetadata,
   isDefined,
@@ -110,8 +110,8 @@ export class ProductRepository extends DALUtils.mikroOrmBaseRepositoryFactory(
     const productsNotFound = arrayDifference(productIdsToUpdate, productIds)
 
     if (productsNotFound.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Unable to update the products with ids: ${productsNotFound.join(", ")}`
       )
     }

@@ -4,19 +4,19 @@ import {
 } from "@switchyard/core-flows"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchPromotion } from "../helpers"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetPromotionParams>,
-  res: MedusaResponse<HttpTypes.AdminPromotionResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetPromotionParams>,
+  res: SwitchyardResponse<HttpTypes.AdminPromotionResponse>
 ) => {
   const idOrCode = req.params.id
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
@@ -30,8 +30,8 @@ export const GET = async (
 
   const [promotion] = await remoteQuery(queryObject)
   if (!promotion) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Promotion with id or code: ${idOrCode} was not found`
     )
   }
@@ -40,11 +40,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminUpdatePromotion & AdditionalData,
     HttpTypes.AdminGetPromotionParams
   >,
-  res: MedusaResponse<HttpTypes.AdminPromotionResponse>
+  res: SwitchyardResponse<HttpTypes.AdminPromotionResponse>
 ) => {
   const { additional_data, ...rest } = req.validatedBody
   const updatePromotions = updatePromotionsWorkflow(req.scope)
@@ -69,8 +69,8 @@ export const POST = async (
 }
 
 export const DELETE = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse<HttpTypes.AdminPromotionDeleteResponse>
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse<HttpTypes.AdminPromotionDeleteResponse>
 ) => {
   const id = req.params.id
   const deletePromotions = deletePromotionsWorkflow(req.scope)

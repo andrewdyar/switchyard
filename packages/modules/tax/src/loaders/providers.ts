@@ -8,7 +8,7 @@ import {
 } from "@switchyard/framework/types"
 import { asFunction, asValue, Lifetime } from "@switchyard/framework/awilix"
 
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import * as providers from "../providers"
 import TaxProviderService from "../services/tax-provider"
 
@@ -16,8 +16,8 @@ const PROVIDER_REGISTRATION_KEY = "tax_providers" as const
 
 const registrationFn = async (klass, container, pluginOptions) => {
   if (!klass?.identifier) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_ARGUMENT,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_ARGUMENT,
       `Trying to register a tax provider without a provider identifier.`
     )
   }

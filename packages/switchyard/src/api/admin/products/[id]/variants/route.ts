@@ -1,8 +1,8 @@
 import { createProductVariantsWorkflow } from "@switchyard/core-flows"
 import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { wrapVariantsWithTotalInventoryQuantity } from "../../../../utils/middlewares"
 import { refetchEntities, refetchEntity } from "@switchyard/framework/http"
@@ -14,8 +14,8 @@ import {
 } from "../../helpers"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminProductVariantParams>,
-  res: MedusaResponse<HttpTypes.AdminProductVariantListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductVariantParams>,
+  res: SwitchyardResponse<HttpTypes.AdminProductVariantListResponse>
 ) => {
   const productId = req.params.id
 
@@ -50,11 +50,11 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     HttpTypes.AdminCreateProductVariant & AdditionalData,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductResponse>
 ) => {
   const productId = req.params.id
   const { additional_data, ...rest } = req.validatedBody

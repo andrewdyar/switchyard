@@ -1,7 +1,7 @@
 import { RemoteJoiner } from "@switchyard/framework/orchestration"
 import CustomerModule from "@switchyard/core/customer"
 import RegionModule from "@switchyard/core/region"
-import { MedusaModule } from "@switchyard/modules-sdk"
+import { SwitchyardModule } from "@switchyard/modules-sdk"
 import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   IRegionModuleService,
@@ -450,7 +450,7 @@ medusaIntegrationTestRunner({
         defineLink(customer, country)
         defineLink(customerGroup, country)
 
-        const modulesLoaded = MedusaModule.getLoadedModules().map(
+        const modulesLoaded = SwitchyardModule.getLoadedModules().map(
           (mod) => Object.values(mod)[0]
         )
 
@@ -463,10 +463,10 @@ medusaIntegrationTestRunner({
 
           servicesConfig_!.push(mod.__joinerConfig)
         }
-        const linkDefinition = MedusaModule.getCustomLinks().map(
+        const linkDefinition = SwitchyardModule.getCustomLinks().map(
           (linkDefinition: any) => {
             const definition = linkDefinition(
-              MedusaModule.getAllJoinerConfigs()
+              SwitchyardModule.getAllJoinerConfigs()
             )
             return definition
           }

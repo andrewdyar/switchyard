@@ -1,14 +1,14 @@
 import { createServiceZonesWorkflow } from "@switchyard/core-flows"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { refetchFulfillmentSet } from "../../helpers"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.AdminCreateFulfillmentSetServiceZone,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminFulfillmentSetResponse>
+  res: SwitchyardResponse<HttpTypes.AdminFulfillmentSetResponse>
 ) => {
   const workflowInput = {
     data: [

@@ -53,14 +53,14 @@ export async function initModules({
       sharedPgConnection
   }
 
-  const medusaApp = await moduleSdkImports.MedusaApp({
+  const switchyardApp = await moduleSdkImports.SwitchyardApp({
     modulesConfig,
     servicesConfig: joinerConfig,
     injectedDependencies,
     cwd,
   })
 
-  await medusaApp.onApplicationStart()
+  await switchyardApp.onApplicationStart()
 
   async function shutdown() {
     const promises: Promise<void>[] = []
@@ -68,8 +68,8 @@ export async function initModules({
     if (shouldDestroyConnectionAutomatically) {
       promises.push((sharedPgConnection as any).context?.destroy())
       promises.push((sharedPgConnection as any).destroy())
-      promises.push(medusaApp.onApplicationPrepareShutdown())
-      promises.push(medusaApp.onApplicationShutdown())
+      promises.push(switchyardApp.onApplicationPrepareShutdown())
+      promises.push(switchyardApp.onApplicationShutdown())
     } else {
       if (!preventConnectionDestroyWarning) {
         logger.info(
@@ -79,11 +79,11 @@ export async function initModules({
     }
 
     await promiseAll(promises)
-    moduleSdkImports.MedusaModule.clearInstances()
+    moduleSdkImports.SwitchyardModule.clearInstances()
   }
 
   return {
-    medusaApp,
+    switchyardApp,
     shutdown,
   }
 }

@@ -6,7 +6,7 @@ import {
   ProductTypes,
 } from "@switchyard/framework/types"
 import {
-  MedusaError,
+  SwitchyardError,
   Modules,
   ProductVariantWorkflowEvents,
 } from "@switchyard/framework/utils"
@@ -100,8 +100,8 @@ const validateVariantsDuplicateInventoryItemIds = (
   }
 
   if (erroredVariantIds.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       `Cannot associate duplicate inventory items to variant(s) ${erroredVariantIds.join(
         "\n"
       )}`

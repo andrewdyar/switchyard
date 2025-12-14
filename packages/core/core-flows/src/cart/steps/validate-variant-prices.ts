@@ -1,5 +1,5 @@
 import type { BigNumberInput } from "@switchyard/framework/types"
-import { MedusaError, isPresent } from "@switchyard/framework/utils"
+import { SwitchyardError, isPresent } from "@switchyard/framework/utils"
 import { createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
@@ -61,8 +61,8 @@ export const validateVariantPricesStep = createStep(
     }
 
     if (priceNotFound.length > 0) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Variants with IDs ${priceNotFound.join(", ")} do not have a price`
       )
     }

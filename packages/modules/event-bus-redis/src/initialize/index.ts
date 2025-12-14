@@ -1,4 +1,4 @@
-import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { SwitchyardModule } from "@switchyard/framework/modules-sdk"
 import {
   ExternalModuleDeclaration,
   IEventBusService,
@@ -11,7 +11,7 @@ export const initialize = async (
   options?: EventBusRedisModuleOptions | ExternalModuleDeclaration
 ): Promise<IEventBusService> => {
   const serviceKey = Modules.EVENT_BUS
-  const loaded = await MedusaModule.bootstrap<IEventBusService>({
+  const loaded = await SwitchyardModule.bootstrap<IEventBusService>({
     moduleKey: serviceKey,
     defaultPath: "@switchyard/event-bus-redis",
     declaration: options as

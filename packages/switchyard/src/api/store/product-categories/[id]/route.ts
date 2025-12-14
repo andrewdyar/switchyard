@@ -1,15 +1,15 @@
 import { StoreProductCategoryResponse } from "@switchyard/framework/types"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntity,
 } from "@switchyard/framework/http"
 import { StoreProductCategoryParamsType } from "../validators"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<StoreProductCategoryParamsType>,
-  res: MedusaResponse<StoreProductCategoryResponse>
+  req: AuthenticatedSwitchyardRequest<StoreProductCategoryParamsType>,
+  res: SwitchyardResponse<StoreProductCategoryResponse>
 ) => {
   const category = await refetchEntity({
     entity: "product_category",
@@ -19,8 +19,8 @@ export const GET = async (
   })
 
   if (!category) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Product category with id: ${req.params.id} was not found`
     )
   }

@@ -1,14 +1,14 @@
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: MedusaRequest<HttpTypes.AdminCurrencyParams>,
-  res: MedusaResponse<HttpTypes.AdminCurrencyResponse>
+  req: SwitchyardRequest<HttpTypes.AdminCurrencyParams>,
+  res: SwitchyardResponse<HttpTypes.AdminCurrencyResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -22,8 +22,8 @@ export const GET = async (
 
   const [currency] = await remoteQuery(queryObject)
   if (!currency) {
-    throw new MedusaError(
-      MedusaError.Types.NOT_FOUND,
+    throw new SwitchyardError(
+      SwitchyardError.Types.NOT_FOUND,
       `Currency with code: ${req.params.code} was not found`
     )
   }

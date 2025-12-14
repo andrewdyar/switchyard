@@ -1,7 +1,7 @@
-import { MedusaService } from "@switchyard/framework/utils"
+import { SwitchyardService } from "@switchyard/framework/utils"
 import { Translation } from "./models"
 
-export class TranslationModule extends MedusaService({
+export class TranslationModule extends SwitchyardService({
   Translation,
 }) {
   private manager_
@@ -13,7 +13,7 @@ export class TranslationModule extends MedusaService({
   }
 
   // @ts-expect-error
-  async listTranslations(find, config, medusaContext) {
+  async listTranslations(find, config, switchyardContext) {
     const { filters, context, id } = find ?? {}
     let lang = null
 

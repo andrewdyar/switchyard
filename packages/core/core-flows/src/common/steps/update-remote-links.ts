@@ -2,7 +2,7 @@ import { Link } from "@switchyard/framework/modules-sdk"
 import type { LinkDefinition } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
@@ -46,8 +46,8 @@ export const updateRemoteLinksStep = createStep(
     const unequal = dataBeforeUpdate.length !== data.length
 
     if (unequal) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_FOUND,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_FOUND,
         `Could not find all existing links from data`
       )
     }

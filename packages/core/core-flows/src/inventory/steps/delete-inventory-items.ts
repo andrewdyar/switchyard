@@ -1,6 +1,6 @@
 import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
-import { MathBN, MedusaError, Modules } from "@switchyard/framework/utils"
+import { MathBN, SwitchyardError, Modules } from "@switchyard/framework/utils"
 import type { BigNumberInput } from "@switchyard/framework/types"
 
 export interface ValidateInventoryDeleteStepInput {
@@ -16,8 +16,8 @@ export const validateInventoryDeleteStep = createStep(
       return MathBN.gt(inventoryItem.reserved_quantity, 0)
     })
     if (nonDeletable.length) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot remove following inventory item(s) since they have reservations: [${nonDeletable
           .map((inventoryItem) => inventoryItem.id)
           .join(", ")}].`

@@ -1,4 +1,4 @@
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@switchyard/framework"
+import { AuthenticatedSwitchyardRequest, SwitchyardResponse } from "@switchyard/framework"
 import { HttpTypes } from "@switchyard/framework/types"
 import { Modules } from "@switchyard/framework/utils"
 
@@ -7,8 +7,8 @@ import { Modules } from "@switchyard/framework/utils"
  * @featureFlag index
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminIndexSyncPayload>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminIndexSyncPayload>,
+  res: SwitchyardResponse
 ) => {
   const indexService = req.scope.resolve(Modules.INDEX)
   const strategy = req.validatedBody.strategy

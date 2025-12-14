@@ -21,7 +21,7 @@ import {
   isPresent,
   isString,
   lowerCaseFirst,
-  MedusaError,
+  SwitchyardError,
   mergeMetadata,
 } from "../common"
 import { FreeTextSearchFilterKeyPrefix } from "../dal"
@@ -170,8 +170,8 @@ export function MedusaInternalService<
           (isObject(idOrObject) && !idOrObject[primaryKeys[0]])) &&
           primaryKeys.length === 1)
       ) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_FOUND,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_FOUND,
           `${
             primaryKeys.length === 1
               ? `${lowerCaseFirst(model.name) + " - " + primaryKeys[0]}`
@@ -202,8 +202,8 @@ export function MedusaInternalService<
       )
 
       if (!entities?.length) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_FOUND,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_FOUND,
           `${model.name} with ${primaryKeys.join(", ")}: ${
             Array.isArray(idOrObject)
               ? idOrObject.map((v) =>
@@ -409,8 +409,8 @@ export function MedusaInternalService<
             }
           })
 
-          throw new MedusaError(
-            MedusaError.Types.NOT_FOUND,
+          throw new SwitchyardError(
+            SwitchyardError.Types.NOT_FOUND,
             `${entityName} with ${primaryKeys.join(
               ", "
             )} "${missingEntityValues.join(", ")}" not found`
@@ -492,8 +492,8 @@ export function MedusaInternalService<
           (Array.isArray(idOrSelector) && isString(idOrSelector[0]))) &&
           primaryKeys.length > 1)
       ) {
-        throw new MedusaError(
-          MedusaError.Types.NOT_FOUND,
+        throw new SwitchyardError(
+          SwitchyardError.Types.NOT_FOUND,
           `${
             primaryKeys.length === 1
               ? `"${lowerCaseFirst(model.name) + " - " + primaryKeys[0]}"`

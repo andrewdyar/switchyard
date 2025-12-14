@@ -4,13 +4,13 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminOrderChangesFilters>,
-  res: MedusaResponse<HttpTypes.AdminOrderChangesResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminOrderChangesFilters>,
+  res: SwitchyardResponse<HttpTypes.AdminOrderChangesResponse>
 ) => {
   const { id } = req.params
 

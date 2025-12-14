@@ -14,7 +14,7 @@ import {
 import { ModulesDefinition } from "../definitions"
 import { MODULE_SCOPE } from "../types"
 
-export const registerMedusaModule = ({
+export const registerSwitchyardModule = ({
   moduleKey,
   moduleDeclaration,
   moduleExports,

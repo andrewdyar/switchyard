@@ -1,6 +1,6 @@
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { Request, Response } from "express"
 
 export function GET(req: Request, res: Response) {
-  throw new MedusaError(MedusaError.Types.INVALID_DATA, "Failed")
+  throw new SwitchyardError(SwitchyardError.Types.INVALID_DATA, "Failed")
 }

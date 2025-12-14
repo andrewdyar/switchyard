@@ -1,10 +1,10 @@
 import checkbox from "@inquirer/checkbox"
-import { MedusaAppLoader } from "@switchyard/framework"
+import { SwitchyardAppLoader } from "@switchyard/framework"
 import { LinkLoader } from "@switchyard/framework/links"
 import {
   LinkMigrationsPlannerAction,
   Logger,
-  MedusaContainer,
+  SwitchyardContainer,
 } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
@@ -97,7 +97,7 @@ async function askForLinkActionsToPerform(
  * by the migrate command as-well.
  */
 export async function syncLinks(
-  medusaAppLoader: MedusaAppLoader,
+  switchyardAppLoader: SwitchyardAppLoader,
   {
     executeAll,
     executeSafe,
@@ -108,7 +108,7 @@ export async function syncLinks(
     executeSafe: boolean
     executeAll: boolean
     directory: string
-    container: MedusaContainer
+    container: SwitchyardContainer
     concurrency?: number
   }
 ) {
@@ -124,7 +124,7 @@ export async function syncLinks(
     process.env.DB_MIGRATION_CONCURRENCY = String(concurrency)
   }
 
-  const planner = await medusaAppLoader.getLinksExecutionPlanner()
+  const planner = await switchyardAppLoader.getLinksExecutionPlanner()
 
   logger.info("Syncing links...")
 
@@ -221,7 +221,7 @@ const main = async function ({
       ContainerRegistrationKeys.CONFIG_MODULE
     )
 
-    const medusaAppLoader = new MedusaAppLoader()
+    const switchyardAppLoader = new SwitchyardAppLoader()
 
     const plugins = await getResolvedPlugins(directory, configModule, true)
     mergePluginModules(configModule, plugins)
@@ -231,7 +231,7 @@ const main = async function ({
     )
     await new LinkLoader(linksSourcePaths, logger).load()
 
-    await syncLinks(medusaAppLoader, {
+    await syncLinks(switchyardAppLoader, {
       executeAll,
       executeSafe,
       directory,

@@ -1,13 +1,13 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
   refetchEntities,
 } from "@switchyard/framework/http"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminNotificationListParams>,
-  res: MedusaResponse<HttpTypes.AdminNotificationListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminNotificationListParams>,
+  res: SwitchyardResponse<HttpTypes.AdminNotificationListResponse>
 ) => {
   const { data: notifications, metadata } = await refetchEntities({
     entity: "notification",

@@ -1,13 +1,13 @@
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { IAuthModuleService } from "@switchyard/framework/types"
-import { MedusaError, Modules } from "@switchyard/framework/utils"
+import { SwitchyardError, Modules } from "@switchyard/framework/utils"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const { auth_provider } = req.params
 
@@ -27,5 +27,5 @@ export const POST = async (
     return res.status(200).json({ success: true })
   }
 
-  throw new MedusaError(MedusaError.Types.UNAUTHORIZED, error || "Unauthorized")
+  throw new SwitchyardError(SwitchyardError.Types.UNAUTHORIZED, error || "Unauthorized")
 }

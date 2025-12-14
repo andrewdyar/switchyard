@@ -1,20 +1,20 @@
 import { uploadFilesWorkflow } from "@switchyard/core-flows"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
-import { MedusaError } from "@switchyard/framework/utils"
+import { SwitchyardError } from "@switchyard/framework/utils"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminUploadFile>,
-  res: MedusaResponse<HttpTypes.AdminFileListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminUploadFile>,
+  res: SwitchyardResponse<HttpTypes.AdminFileListResponse>
 ) => {
   const input = req.files as Express.Multer.File[]
 
   if (!input?.length) {
-    throw new MedusaError(
-      MedusaError.Types.INVALID_DATA,
+    throw new SwitchyardError(
+      SwitchyardError.Types.INVALID_DATA,
       "No files were uploaded"
     )
   }

@@ -5,7 +5,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   OrderChangeStatus,
 } from "@switchyard/framework/utils"
 import {
@@ -83,7 +83,7 @@ export const declineTransferOrderRequestValidationStep = createStep(
     )?.details!.token
 
     if (!input.token?.length || token !== input.token) {
-      throw new MedusaError(MedusaError.Types.NOT_ALLOWED, "Invalid token.")
+      throw new SwitchyardError(SwitchyardError.Types.NOT_ALLOWED, "Invalid token.")
     }
   }
 )

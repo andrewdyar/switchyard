@@ -1,6 +1,6 @@
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { createClient } from "@supabase/supabase-js"
 import crypto from "crypto"
@@ -26,8 +26,8 @@ const getSupabaseAdmin = () => {
  * List all service accounts
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   try {
     const supabase = getSupabaseAdmin()
@@ -70,8 +70,8 @@ interface CreateServiceAccountBody {
  * Create a new service account
  */
 export const POST = async (
-  req: AuthenticatedMedusaRequest<CreateServiceAccountBody>,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest<CreateServiceAccountBody>,
+  res: SwitchyardResponse
 ) => {
   const { name, role_id } = req.body
 

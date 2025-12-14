@@ -5,9 +5,9 @@ import {
   authenticate,
   clearFiltersByKey,
   maybeApplyLinkFilter,
-  MedusaNextFunction,
-  MedusaRequest,
-  MedusaResponse,
+  SwitchyardNextFunction,
+  SwitchyardRequest,
+  SwitchyardResponse,
   MiddlewareRoute,
 } from "@switchyard/framework/http"
 import {
@@ -27,9 +27,9 @@ import * as QueryConfig from "./query-config"
 import { StoreGetProductsParams } from "./validators"
 
 async function applyMaybeLinkFilterIfNecessary(
-  req: MedusaRequest,
-  res: MedusaResponse,
-  next: MedusaNextFunction
+  req: SwitchyardRequest,
+  res: SwitchyardResponse,
+  next: SwitchyardNextFunction
 ) {
   const canUseIndex = !(
     isPresent(req.filterableFields.tags) ||

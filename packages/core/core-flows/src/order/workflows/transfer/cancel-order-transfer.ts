@@ -5,7 +5,7 @@ import {
 } from "@switchyard/framework/types"
 import {
   ChangeActionType,
-  MedusaError,
+  SwitchyardError,
   OrderChangeStatus,
 } from "@switchyard/framework/utils"
 import {
@@ -87,8 +87,8 @@ export const cancelTransferOrderRequestValidationStep = createStep(
     )
 
     if (action?.reference_id !== input.logged_in_user_id) {
-      throw new MedusaError(
-        MedusaError.Types.NOT_ALLOWED,
+      throw new SwitchyardError(
+        SwitchyardError.Types.NOT_ALLOWED,
         "This customer is not allowed to cancel the transfer."
       )
     }

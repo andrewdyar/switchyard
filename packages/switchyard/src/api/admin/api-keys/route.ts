@@ -4,15 +4,15 @@ import {
   remoteQueryObjectFromString,
 } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { AdminCreateApiKeyType } from "./validators"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
-  req: AuthenticatedMedusaRequest<HttpTypes.AdminGetApiKeysParams>,
-  res: MedusaResponse<HttpTypes.AdminApiKeyListResponse>
+  req: AuthenticatedSwitchyardRequest<HttpTypes.AdminGetApiKeysParams>,
+  res: SwitchyardResponse<HttpTypes.AdminApiKeyListResponse>
 ) => {
   const remoteQuery = req.scope.resolve(ContainerRegistrationKeys.REMOTE_QUERY)
 
@@ -36,8 +36,8 @@ export const GET = async (
 }
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<AdminCreateApiKeyType>,
-  res: MedusaResponse<HttpTypes.AdminApiKeyResponse>
+  req: AuthenticatedSwitchyardRequest<AdminCreateApiKeyType>,
+  res: SwitchyardResponse<HttpTypes.AdminApiKeyResponse>
 ) => {
   const input = [
     {

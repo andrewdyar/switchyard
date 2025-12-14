@@ -1,7 +1,7 @@
 import {
   ChangeActionType,
   MathBN,
-  MedusaError,
+  SwitchyardError,
 } from "@switchyard/framework/utils"
 import { OrderChangeProcessing } from "../calculate-order-change"
 import { setActionReference } from "../set-action-reference"
@@ -25,8 +25,8 @@ OrderChangeProcessing.registerActionType(ChangeActionType.DELIVER_ITEM, {
     const refId = action.details?.reference_id
 
     if (refId == null) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         "Reference ID is required."
       )
     }
@@ -34,8 +34,8 @@ OrderChangeProcessing.registerActionType(ChangeActionType.DELIVER_ITEM, {
     const item = currentOrder.items.find((item) => item.id === refId)
 
     if (!item) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Item ID "${refId}" not found.`
       )
     }
@@ -48,22 +48,22 @@ OrderChangeProcessing.registerActionType(ChangeActionType.DELIVER_ITEM, {
     const totalFulfilled = MathBN.convert(item.detail?.fulfilled_quantity)
 
     if (MathBN.lte(newDelivered, 0)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Quantity of item ${refId} must be greater than 0.`
       )
     }
 
     if (MathBN.gt(newTotalDelivered, totalFulfilled)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot deliver more items than what was fulfilled for item ${refId}.`
       )
     }
 
     if (MathBN.gt(newTotalDelivered, totalDeliverable)) {
-      throw new MedusaError(
-        MedusaError.Types.INVALID_DATA,
+      throw new SwitchyardError(
+        SwitchyardError.Types.INVALID_DATA,
         `Cannot deliver more items than what was ordered for item ${refId}.`
       )
     }

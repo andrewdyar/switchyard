@@ -1,9 +1,9 @@
 import {
   moduleLoader,
   ModulesDefinition,
-  registerMedusaModule,
+  registerSwitchyardModule,
 } from "@switchyard/modules-sdk"
-import { MedusaContainer } from "@switchyard/types"
+import { SwitchyardContainer } from "@switchyard/types"
 import { ContainerRegistrationKeys, generateJwtToken } from "@switchyard/utils"
 import { asValue } from "../../../deps/awilix"
 import express from "express"
@@ -14,7 +14,7 @@ import { container } from "../../../container"
 import { featureFlagsLoader } from "../../../feature-flags"
 import { logger as defaultLogger } from "../../../logger"
 import { ApiLoader } from "../../router"
-import { MedusaRequest } from "../../types"
+import { SwitchyardRequest } from "../../types"
 import { config } from "../mocks"
 
 function asArray(resolvers) {
@@ -34,7 +34,7 @@ export const createServer = async (rootDir) => {
 
   const moduleResolutions = {}
   Object.entries(ModulesDefinition).forEach(([moduleKey, module]) => {
-    moduleResolutions[moduleKey] = registerMedusaModule({
+    moduleResolutions[moduleKey] = registerSwitchyardModule({
       moduleKey,
       moduleDeclaration: module.defaultModuleDeclaration,
       moduleExports: undefined,
@@ -47,7 +47,7 @@ export const createServer = async (rootDir) => {
     baseDir: rootDir,
   })
 
-  container.registerAdd = function (this: MedusaContainer, name, registration) {
+  container.registerAdd = function (this: SwitchyardContainer, name, registration) {
     const storeKey = name + "_STORE"
 
     if (this.registrations[storeKey] === undefined) {
@@ -87,7 +87,7 @@ export const createServer = async (rootDir) => {
   await moduleLoader({ container, moduleResolutions, logger: defaultLogger })
 
   app.use((req, res, next) => {
-    ;(req as MedusaRequest).scope = container.createScope() as MedusaContainer
+    ;(req as SwitchyardRequest).scope = container.createScope() as SwitchyardContainer
     next()
   })
 

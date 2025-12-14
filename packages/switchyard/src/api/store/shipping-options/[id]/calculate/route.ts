@@ -1,14 +1,14 @@
 import { HttpTypes } from "@switchyard/framework/types"
-import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { SwitchyardRequest, SwitchyardResponse } from "@switchyard/framework/http"
 import { calculateShippingOptionsPricesWorkflow } from "@switchyard/core-flows"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const POST = async (
-  req: MedusaRequest<
+  req: SwitchyardRequest<
     HttpTypes.StoreCalculateShippingOptionPrice,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.StoreShippingOptionResponse>
+  res: SwitchyardResponse<HttpTypes.StoreShippingOptionResponse>
 ) => {
   const query = req.scope.resolve(ContainerRegistrationKeys.QUERY)
 

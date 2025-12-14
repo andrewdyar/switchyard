@@ -1,19 +1,19 @@
 import { createLinksWorkflow } from "@switchyard/core-flows"
 import { Modules } from "@switchyard/framework/utils"
 import {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
 } from "@switchyard/framework/http"
 import { refetchVariant } from "../../../../helpers"
 import { AdminCreateVariantInventoryItemType } from "../../../../validators"
 import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
-  req: AuthenticatedMedusaRequest<
+  req: AuthenticatedSwitchyardRequest<
     AdminCreateVariantInventoryItemType,
     HttpTypes.SelectParams
   >,
-  res: MedusaResponse<HttpTypes.AdminProductVariantResponse>
+  res: SwitchyardResponse<HttpTypes.AdminProductVariantResponse>
 ) => {
   const variantId = req.params.variant_id
 
