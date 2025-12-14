@@ -1,27 +1,14 @@
 {
+  "extends": "../../../_tsconfig.base.json",
   "compilerOptions": {
     "target": "ES2021",
-    "module": "commonjs",
-    "lib": ["ES2021"],
-    "declaration": true,
-    "strict": true,
-    "noImplicitAny": true,
-    "strictNullChecks": true,
-    "noImplicitThis": true,
-    "alwaysStrict": true,
-    "noUnusedLocals": false,
-    "noUnusedParameters": false,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": false,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
     "skipLibCheck": true,
-    "outDir": "./dist",
-    "rootDir": "./src",
-    "baseUrl": "./src"
-  },
-  "include": ["src/**/*"],
-  "exclude": ["node_modules", "dist"]
+    "noImplicitAny": false,
+    "strict": false,
+    "paths": {
+      "@models": ["./src/models"],
+      "@services": ["./src/services"],
+      "@types": ["./src/types"]
+    }
+  }
 }

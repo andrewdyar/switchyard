@@ -10,39 +10,17 @@ import { Driver } from "../models/driver"
 class DriversModuleService extends SwitchyardService({
   Driver,
 }) {
-  /**
-   * Get all active drivers
-   */
-  async getActiveDrivers() {
-    return this.listDrivers({
-      is_active: true,
-    })
-  }
-
-  /**
-   * Get driver by ID
-   */
-  async getDriverById(driverId: string) {
-    return this.retrieveDriver(driverId)
-  }
-
-  /**
-   * Deactivate a driver
-   */
-  async deactivateDriver(driverId: string) {
-    return this.updateDrivers(driverId, {
-      is_active: false,
-    })
-  }
-
-  /**
-   * Activate a driver
-   */
-  async activateDriver(driverId: string) {
-    return this.updateDrivers(driverId, {
-      is_active: true,
-    })
-  }
+  // The base SwitchyardService automatically provides CRUD operations:
+  // - createDrivers
+  // - retrieveDriver
+  // - listDrivers
+  // - listAndCountDrivers
+  // - updateDrivers
+  // - deleteDrivers
+  // - softDeleteDrivers
+  // - restoreDrivers
+  
+  // Custom methods can be added here as needed
 }
 
 export default DriversModuleService
