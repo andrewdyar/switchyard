@@ -1,5 +1,5 @@
 {
-  "name": "@switchyard/medusa-oas-cli",
+  "name": "@switchyard/oas-cli",
   "version": "2.12.1",
   "description": "OAS CLI",
   "main": "dist/index.js",
