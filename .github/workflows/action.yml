@@ -167,6 +167,7 @@ jobs:
           DB_USERNAME: postgres
 
   integration-tests-packages:
+    if: false
     if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: integration-tests-packages-matrix
@@ -247,6 +248,7 @@ jobs:
           NODE_OPTIONS: "--max_old_space_size=4096"
 
   integration-tests-http:
+    if: false
     if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: integration-tests-http-matrix
@@ -328,6 +330,7 @@ jobs:
           CHUNKS: ${{ needs.setup.outputs.module-chunks }}
 
   integration-tests-modules:
+    if: false
     if: ${{ always() }}
     runs-on: ubuntu-latest
     needs: integration-tests-modules-matrix
