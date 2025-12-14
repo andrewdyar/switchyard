@@ -26,7 +26,8 @@ const Product = model
       id: model.id().primaryKey(),
       
       // Use 'name' to match source_products.name column (will be mapped to 'title' in API responses)
-      name: model.text().searchable(),
+      // Made nullable to support standard Medusa test fixtures that use 'title' instead
+      name: model.text().searchable().nullable(),
       
       // Handle for URL slugs (new column added via migration)
       handle: model.text().nullable(),
