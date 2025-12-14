@@ -132,12 +132,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -305,12 +300,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -486,12 +476,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -668,12 +653,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -838,12 +818,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -1011,12 +986,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -1233,12 +1203,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-redis",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -1457,12 +1422,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-redis",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -1697,12 +1657,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-redis",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -1741,10 +1696,9 @@ describe("defineConfig", function () {
   })
 
   it("should include default plugins", function () {
+    // Note: Default plugins are empty for Goods customization
     const config = defineConfig()
-    expect(config.plugins).toEqual([
-      { resolve: "@switchyard/draft-order", options: {} },
-    ])
+    expect(config.plugins).toEqual([])
   })
 
   it("should append custom plugins to defaults", function () {
@@ -1754,7 +1708,6 @@ describe("defineConfig", function () {
       ],
     })
     expect(config.plugins).toEqual([
-      { resolve: "@switchyard/draft-order", options: {} },
       { resolve: "@switchyard/custom-plugin", options: { key: "value" } },
     ])
   })
@@ -1768,7 +1721,6 @@ describe("defineConfig", function () {
       ],
     })
     expect(config.plugins).toEqual([
-      { resolve: "@switchyard/draft-order", options: {} },
       { resolve: "@switchyard/plugin-one", options: { setting: "a" } },
       { resolve: "@switchyard/plugin-two", options: { setting: "b" } },
       { resolve: "./local-plugin", options: {} },
@@ -1799,7 +1751,6 @@ describe("defineConfig", function () {
     process.env = { ...originalEnv }
 
     expect(config.plugins).toEqual([
-      { resolve: "@switchyard/draft-order", options: {} },
       { resolve: "@switchyard/cloud-plugin", options: { cloud: true } },
     ])
   })
@@ -1808,18 +1759,14 @@ describe("defineConfig", function () {
     const config = defineConfig({
       plugins: [],
     })
-    expect(config.plugins).toEqual([
-      { resolve: "@switchyard/draft-order", options: {} },
-    ])
+    expect(config.plugins).toEqual([])
   })
 
   it("should handle undefined plugins", function () {
     const config = defineConfig({
       modules: {},
     })
-    expect(config.plugins).toEqual([
-      { resolve: "@switchyard/draft-order", options: {} },
-    ])
+    expect(config.plugins).toEqual([])
   })
 
   it("should allow custom dynamodb config", function () {
@@ -1970,12 +1917,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "databaseUrl": "postgres://localhost/medusa-starter-default",
           "http": {
@@ -2165,12 +2107,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "cloud": {
             "apiKey": "test-api-key",
@@ -2359,12 +2296,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "cloud": {
             "apiKey": "test-api-key",
@@ -2564,12 +2496,7 @@ describe("defineConfig", function () {
             "resolve": "@switchyard/core/workflow-engine-inmemory",
           },
         },
-        "plugins": [
-          {
-            "options": {},
-            "resolve": "@switchyard/draft-order",
-          },
-        ],
+        "plugins": [],
         "projectConfig": {
           "cloud": {
             "apiKey": "overriden-api-key",
