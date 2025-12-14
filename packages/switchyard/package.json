@@ -119,8 +119,8 @@
     "zod": "3.25.76"
   },
   "peerDependencies": {
-    "@switchyard/framework": "workspace:*",
     "@swc/core": "^1.7.28",
+    "@switchyard/framework": "workspace:*",
     "posthog-node": "^5.11.0",
     "react-dom": "^18.3.1",
     "yalc": "^1.0.0-pre.53"

@@ -35,11 +35,11 @@
     "ulid": "^2.3.0"
   },
   "peerDependencies": {
-    "@switchyard/framework": "workspace:*",
-    "@switchyard/medusa": "workspace:*"
+    "@switchyard/core": "workspace:*",
+    "@switchyard/framework": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@switchyard/medusa": {
+    "@switchyard/core": {
       "optional": true
     }
   },

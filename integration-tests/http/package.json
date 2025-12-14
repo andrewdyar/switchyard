@@ -13,6 +13,7 @@
     "@switchyard/api-key": "workspace:^",
     "@switchyard/auth": "workspace:*",
     "@switchyard/cache-inmemory": "workspace:*",
+    "@switchyard/core": "workspace:*",
     "@switchyard/core-flows": "workspace:*",
     "@switchyard/customer": "workspace:^",
     "@switchyard/event-bus-local": "workspace:*",
@@ -21,7 +22,6 @@
     "@switchyard/fulfillment": "workspace:^",
     "@switchyard/fulfillment-manual": "workspace:^",
     "@switchyard/inventory": "workspace:^",
-    "@switchyard/medusa": "workspace:*",
     "@switchyard/modules-sdk": "workspace:^",
     "@switchyard/pricing": "workspace:^",
     "@switchyard/product": "workspace:^",
@@ -39,9 +39,9 @@
     "pg": "^8.11.3"
   },
   "devDependencies": {
-    "@switchyard/types": "workspace:^",
     "@swc/core": "^1.7.28",
     "@swc/jest": "^0.2.36",
+    "@switchyard/types": "workspace:^",
     "jest": "^29.7.0",
     "json-2-csv": "^5.5.9",
     "typescript": "^5.6.2"

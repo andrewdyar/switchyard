@@ -21,7 +21,7 @@
     "test": "../../../../node_modules/.bin/jest --passWithNoTests"
   },
   "dependencies": {
-    "@switchyard/medusa-oas-cli": "workspace:*",
+    "@switchyard/oas-cli": "workspace:*",
     "execa": "^5.1.1"
   }
 }

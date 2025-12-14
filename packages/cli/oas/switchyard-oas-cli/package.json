@@ -28,11 +28,11 @@
     "switchyard-oas": "ts-node src/index.ts"
   },
   "dependencies": {
-    "@switchyard/medusa": "workspace:*",
-    "@switchyard/utils": "workspace:*",
     "@readme/json-schema-ref-parser": "^1.2.0",
     "@readme/openapi-parser": "^2.4.0",
     "@redocly/cli": "1.25.3",
+    "@switchyard/core": "workspace:*",
+    "@switchyard/utils": "workspace:*",
     "commander": "^11.0.0",
     "execa": "^5.1.1",
     "lodash.mergewith": "^4.6.2",

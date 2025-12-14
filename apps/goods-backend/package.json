@@ -9,11 +9,11 @@
     "seed": "medusa exec ./src/scripts/seed.ts"
   },
   "dependencies": {
+    "@supabase/supabase-js": "^2.45.0",
     "@switchyard/admin-sdk": "workspace:*",
     "@switchyard/cli": "workspace:*",
-    "@switchyard/framework": "workspace:*",
-    "@switchyard/medusa": "workspace:*",
-    "@supabase/supabase-js": "^2.45.0"
+    "@switchyard/core": "workspace:*",
+    "@switchyard/framework": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.12.11",
