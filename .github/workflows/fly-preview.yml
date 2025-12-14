@@ -37,7 +37,7 @@ jobs:
       - name: Build all packages
         run: yarn build
 
-      - name: Build goods-backend (Medusa app)
+      - name: Build goods-backend (Switchyard app)
         working-directory: apps/goods-backend
         run: npx switchyard build
 

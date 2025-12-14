@@ -292,7 +292,7 @@ jobs:
         run: yarn generate:ui
         working-directory: www/utils/packages/react-docs-generator
 
-      - name: Update Medusa Dependencies
+      - name: Update Switchyard Dependencies
         run: yarn up:switchyard
         working-directory: www
 

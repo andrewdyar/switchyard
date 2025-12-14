@@ -56,10 +56,10 @@ jobs:
         with:
           extension: cli-database
 
-      - name: Install Medusa cli
+      - name: Install Switchyard cli
         run: npm i -g @switchyardjs/cli@preview
 
-      - name: Create Medusa project
+      - name: Create Switchyard project
         working-directory: ..
         run: |
           switchyard new cli-test --skip-db --skip-migrations --v2 --branch ci-custom

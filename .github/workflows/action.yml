@@ -1,4 +1,4 @@
-name: Medusa Pipeline
+name: Switchyard Pipeline
 on:
   push:
     branches:

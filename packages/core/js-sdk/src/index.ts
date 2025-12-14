@@ -4,7 +4,7 @@ import { Client } from "./client"
 import { Store } from "./store"
 import { Config } from "./types"
 
-class Medusa {
+class Switchyard {
   public client: Client
 
   public admin: Admin
@@ -20,7 +20,10 @@ class Medusa {
   }
 }
 
-export default Medusa
+export default Switchyard
+
+// Backwards compatibility alias
+export { Switchyard as Medusa }
 
 export { FetchError, Client } from "./client"
 export { Admin } from "./admin"
