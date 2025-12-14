@@ -1,14 +1,14 @@
 import {
   deleteProductTagsWorkflow,
   updateProductTagsWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
   refetchEntity,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
+import { MedusaError } from "@switchyard/framework/utils"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<

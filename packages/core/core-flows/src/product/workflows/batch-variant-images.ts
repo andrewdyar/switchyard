@@ -5,8 +5,8 @@ import {
   parallelize,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
-import { ProductVariantDTO } from "@medusajs/types"
+} from "@switchyard/framework/workflows-sdk"
+import { ProductVariantDTO } from "@switchyard/types"
 import {
   addImagesToVariantStep,
   removeImagesFromVariantStep,

@@ -12,14 +12,14 @@ export function updatePackageVersions(
 
   if (packageJson.dependencies) {
     for (const dependency of Object.keys(packageJson.dependencies)) {
-      if (dependency.startsWith("@medusajs/")) {
+      if (dependency.startsWith("@switchyard/")) {
         packageJson.dependencies[dependency] = version
       }
     }
   }
   if (packageJson.devDependencies) {
     for (const dependency of Object.keys(packageJson.devDependencies)) {
-      if (dependency.startsWith("@medusajs/")) {
+      if (dependency.startsWith("@switchyard/")) {
         packageJson.devDependencies[dependency] = version
       }
     }

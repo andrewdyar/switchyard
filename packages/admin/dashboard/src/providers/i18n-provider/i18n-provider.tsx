@@ -1,4 +1,4 @@
-import { I18nProvider as Provider } from "@medusajs/ui"
+import { I18nProvider as Provider } from "@switchyard/ui"
 import { PropsWithChildren, useEffect } from "react"
 import { useTranslation } from "react-i18next"
 import { languages } from "../../i18n/languages"

@@ -1,11 +1,11 @@
-import type { FulfillmentWorkflow } from "@medusajs/framework/types"
+import type { FulfillmentWorkflow } from "@switchyard/framework/types"
 import {
   MedusaError,
   Modules,
   ShippingOptionPriceType,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
-import type { CreateShippingOptionDTO } from "@medusajs/framework/types"
+} from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
+import type { CreateShippingOptionDTO } from "@switchyard/framework/types"
 
 /**
  * The data to validate shipping option prices.

@@ -1,4 +1,4 @@
-import { ICachingModuleService, Logger, MedusaContainer } from "@medusajs/types"
+import { ICachingModuleService, Logger, MedusaContainer } from "@switchyard/types"
 import { MedusaContextType, Modules } from "../modules-sdk"
 import { FeatureFlag } from "../feature-flags"
 import { ContainerRegistrationKeys, isObject } from "../common"

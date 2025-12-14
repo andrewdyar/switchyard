@@ -1,10 +1,10 @@
-import { cancelOrderTransferRequestWorkflow } from "@medusajs/core-flows"
+import { cancelOrderTransferRequestWorkflow } from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { AdminOrder, HttpTypes } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { AdminOrder, HttpTypes } from "@switchyard/framework/types"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<{}, HttpTypes.AdminGetOrderParams>,

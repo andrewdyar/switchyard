@@ -3,7 +3,7 @@ import {
   RequestQueryFields,
   Logger as coreLogger,
   MedusaContainer as coreMedusaContainer,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 declare global {
   // eslint-disable-next-line @typescript-eslint/no-namespace

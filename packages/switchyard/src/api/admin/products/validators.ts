@@ -1,5 +1,5 @@
-import { BatchMethodRequest, HttpTypes } from "@medusajs/framework/types"
-import { ProductStatus } from "@medusajs/framework/utils"
+import { BatchMethodRequest, HttpTypes } from "@switchyard/framework/types"
+import { ProductStatus } from "@switchyard/framework/utils"
 import { z, ZodType } from "zod"
 import {
   applyAndAndOrOperators,

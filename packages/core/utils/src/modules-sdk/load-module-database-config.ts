@@ -1,4 +1,4 @@
-import { ModulesSdkTypes } from "@medusajs/types"
+import { ModulesSdkTypes } from "@switchyard/types"
 import { MedusaError } from "../common"
 
 function getEnv(key: string, moduleName: string): string {

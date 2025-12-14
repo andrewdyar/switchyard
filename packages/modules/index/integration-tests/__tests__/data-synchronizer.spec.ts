@@ -4,23 +4,23 @@ import {
   logger,
   MedusaAppLoader,
   Migrator,
-} from "@medusajs/framework"
-import { asValue } from "@medusajs/framework/awilix"
-import { EntityManager } from "@medusajs/framework/mikro-orm/postgresql"
-import { MedusaAppOutput, MedusaModule } from "@medusajs/framework/modules-sdk"
-import { IndexTypes, InferEntityType } from "@medusajs/framework/types"
+} from "@switchyard/framework"
+import { asValue } from "@switchyard/framework/awilix"
+import { EntityManager } from "@switchyard/framework/mikro-orm/postgresql"
+import { MedusaAppOutput, MedusaModule } from "@switchyard/framework/modules-sdk"
+import { IndexTypes, InferEntityType } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   toMikroORMEntity,
-} from "@medusajs/framework/utils"
-import { initDb, TestDatabaseUtils } from "@medusajs/test-utils"
+} from "@switchyard/framework/utils"
+import { initDb, TestDatabaseUtils } from "@switchyard/test-utils"
 import { IndexData, IndexRelation } from "@models"
 import { DataSynchronizer } from "@services"
 import * as path from "path"
 import { setTimeout } from "timers/promises"
 import { EventBusServiceMock } from "../__fixtures__"
-import { dbName } from "../__fixtures__/medusa-config"
+import { dbName } from "../__fixtures__/switchyard.config"
 
 const eventBusMock = new EventBusServiceMock()
 const queryMock = {
@@ -72,7 +72,7 @@ const beforeAll_ = async () => {
   try {
     await configLoader(
       path.join(__dirname, "./../__fixtures__"),
-      "medusa-config"
+      "switchyard.config"
     )
 
     console.log(`Creating database ${dbName}`)

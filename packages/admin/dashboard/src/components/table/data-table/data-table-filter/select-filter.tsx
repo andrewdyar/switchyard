@@ -1,5 +1,5 @@
-import { CheckMini, EllipseMiniSolid, XMarkMini } from "@medusajs/icons"
-import { clx } from "@medusajs/ui"
+import { CheckMini, EllipseMiniSolid, XMarkMini } from "@switchyard/icons"
+import { clx } from "@switchyard/ui"
 import { Command } from "cmdk"
 import { Popover as RadixPopover } from "radix-ui"
 import { useState } from "react"

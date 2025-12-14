@@ -1,8 +1,8 @@
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { refetchCollection } from "../helpers"
 
 export const GET = async (

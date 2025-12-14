@@ -1,8 +1,8 @@
 import type {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 interface CreateTestOrderBody {
   customer_id?: string

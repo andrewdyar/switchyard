@@ -1,5 +1,5 @@
-import { Compiler } from "@medusajs/framework/build-tools"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+import { Compiler } from "@switchyard/framework/build-tools"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import { initializeContainer } from "../loaders"
 
 export default async function build({
@@ -28,7 +28,7 @@ export default async function build({
     promises.push(compiler.buildAppBackend(tsConfig))
   }
 
-  const bundler = await import("@medusajs/admin-bundler")
+  const bundler = await import("@switchyard/admin-bundler")
   promises.push(compiler.buildAppFrontend(adminOnly, tsConfig, bundler))
   const responses = await Promise.all(promises)
 

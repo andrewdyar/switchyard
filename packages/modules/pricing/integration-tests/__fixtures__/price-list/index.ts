@@ -1,6 +1,6 @@
-import { SqlEntityManager } from "@medusajs/framework/mikro-orm/postgresql"
+import { SqlEntityManager } from "@switchyard/framework/mikro-orm/postgresql"
 import { PriceList } from "@models"
-import { toMikroORMEntity } from "@medusajs/framework/utils"
+import { toMikroORMEntity } from "@switchyard/framework/utils"
 import { defaultPriceListData } from "./data"
 
 export * from "./data"

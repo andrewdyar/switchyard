@@ -1,4 +1,4 @@
-import { Module, Modules } from "@medusajs/framework/utils"
+import { Module, Modules } from "@switchyard/framework/utils"
 import AnalyticsService from "./services/analytics-service"
 import loadProviders from "./loaders/providers"
 

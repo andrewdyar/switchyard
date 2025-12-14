@@ -1,6 +1,6 @@
-import { updateTaxLinesWorkflow } from "@medusajs/core-flows"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+import { updateTaxLinesWorkflow } from "@switchyard/core-flows"
+import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
 import { refetchCart } from "../../helpers"
 
 export const POST = async (

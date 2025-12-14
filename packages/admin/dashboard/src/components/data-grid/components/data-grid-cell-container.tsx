@@ -1,6 +1,6 @@
 import { ErrorMessage } from "@hookform/error-message"
-import { ExclamationCircle } from "@medusajs/icons"
-import { Tooltip, clx } from "@medusajs/ui"
+import { ExclamationCircle } from "@switchyard/icons"
+import { Tooltip, clx } from "@switchyard/ui"
 import { PropsWithChildren } from "react"
 import { get } from "react-hook-form"
 

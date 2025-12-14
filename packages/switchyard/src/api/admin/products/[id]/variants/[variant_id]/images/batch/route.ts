@@ -1,9 +1,9 @@
-import { batchVariantImagesWorkflow } from "@medusajs/core-flows"
+import { batchVariantImagesWorkflow } from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
 
 /**
  * @since 2.11.2

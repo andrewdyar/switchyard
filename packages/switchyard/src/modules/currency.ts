@@ -1,6 +1,6 @@
-import CurrencyModule from "@medusajs/currency"
+import CurrencyModule from "@switchyard/currency"
 
-export * from "@medusajs/currency"
+export * from "@switchyard/currency"
 
 export default CurrencyModule
-export const discoveryPath = require.resolve("@medusajs/currency")
+export const discoveryPath = require.resolve("@switchyard/currency")

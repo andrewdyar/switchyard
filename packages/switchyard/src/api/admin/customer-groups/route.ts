@@ -1,14 +1,14 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { createCustomerGroupsWorkflow } from "@medusajs/core-flows"
+} from "@switchyard/framework/http"
+import { createCustomerGroupsWorkflow } from "@switchyard/core-flows"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { refetchCustomerGroup } from "./helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<HttpTypes.AdminGetCustomerGroupsParams>,

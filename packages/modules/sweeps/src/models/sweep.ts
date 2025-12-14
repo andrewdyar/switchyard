@@ -7,7 +7,7 @@
  * Retailers: HEB, Target, Walmart, Central Market, Whole Foods, Costco, Trader Joes
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const Sweep = model.define("goods_sweep", {
   id: model.id().primaryKey(),

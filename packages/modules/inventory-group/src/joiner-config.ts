@@ -1,4 +1,4 @@
-import { defineJoinerConfig } from "@medusajs/framework/utils"
+import { defineJoinerConfig } from "@switchyard/framework/utils"
 import { InventoryGroup } from "./models"
 
 export const INVENTORY_GROUP_MODULE = "inventoryGroup"

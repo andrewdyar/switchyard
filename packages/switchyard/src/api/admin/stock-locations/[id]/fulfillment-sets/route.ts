@@ -1,10 +1,10 @@
-import { createLocationFulfillmentSetWorkflow } from "@medusajs/core-flows"
+import { createLocationFulfillmentSetWorkflow } from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { refetchStockLocation } from "../../helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<

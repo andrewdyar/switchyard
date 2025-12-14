@@ -5,8 +5,8 @@
  * Displays retailer name, store selection, run/stop button, and progress tracking.
  */
 
-import { Container, Heading, Text, Select, Button, Badge } from "@medusajs/ui"
-import { TriangleRightMini, SquareSolid } from "@medusajs/icons"
+import { Container, Heading, Text, Select, Button, Badge } from "@switchyard/ui"
+import { TriangleRightMini, SquareSolid } from "@switchyard/icons"
 import { useState, useEffect, useRef, useImperativeHandle, forwardRef } from "react"
 
 type ScraperStatus = "idle" | "running" | "completed" | "error"

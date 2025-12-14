@@ -2,20 +2,20 @@ import {
   OrderChangeDTO,
   OrderDTO,
   OrderWorkflow,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
-import type { OrderPreviewDTO } from "@medusajs/framework/types"
+} from "@switchyard/framework/workflows-sdk"
+import type { OrderPreviewDTO } from "@switchyard/framework/types"
 import {
   ChangeActionType,
   MedusaError,
   OrderChangeStatus,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 
 import { useQueryGraphStep } from "../../../common"
 import { previewOrderChangeStep } from "../../steps"

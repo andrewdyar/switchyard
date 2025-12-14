@@ -1,12 +1,12 @@
-import { Link } from "@medusajs/framework/modules-sdk"
-import type { RemoteQueryFunction } from "@medusajs/framework/types"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { Link } from "@switchyard/framework/modules-sdk"
+import type { RemoteQueryFunction } from "@switchyard/framework/types"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import {
   ContainerRegistrationKeys,
   LINKS,
   Modules,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 /**
  * The data to set the price sets of a shipping option.

@@ -4,13 +4,13 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 
 import {
   FilterableInventoryLevelProps,
   InventoryLevelDTO,
-} from "@medusajs/framework/types"
-import { deduplicate, MedusaError, Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { deduplicate, MedusaError, Modules } from "@switchyard/framework/utils"
 import { useRemoteQueryStep } from "../../common"
 import { deleteEntitiesStep } from "../../common/steps/delete-entities"
 

@@ -6,12 +6,12 @@ import {
   ComputeActionContext,
   InferEntityType,
   PromotionDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   CampaignBudgetType,
   ComputedActions,
   MathBN,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { Promotion } from "@models"
 
 /**

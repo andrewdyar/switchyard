@@ -1,6 +1,6 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IStoreModuleService } from "@medusajs/types"
-import { Modules } from "@medusajs/utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IStoreModuleService } from "@switchyard/types"
+import { Modules } from "@switchyard/utils"
 import {
   adminHeaders,
   createAdminUser,

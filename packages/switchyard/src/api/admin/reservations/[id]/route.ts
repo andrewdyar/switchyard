@@ -1,14 +1,14 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { MedusaError } from "@switchyard/framework/utils"
 import {
   deleteReservationsWorkflow,
   updateReservationsWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import { refetchReservation } from "../helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<

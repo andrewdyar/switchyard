@@ -1,5 +1,5 @@
-import ProductModule from "@medusajs/medusa/product"
-import { defineLink } from "@medusajs/utils"
+import ProductModule from "@switchyard/core/product"
+import { defineLink } from "@switchyard/utils"
 import BrandModule from "../modules/brand"
 
 const link =

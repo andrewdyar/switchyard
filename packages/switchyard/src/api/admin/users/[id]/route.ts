@@ -1,18 +1,18 @@
 import {
   removeUserAccountWorkflow,
   updateUsersWorkflow,
-} from "@medusajs/core-flows"
-import { HttpTypes, UpdateUserDTO } from "@medusajs/framework/types"
+} from "@switchyard/core-flows"
+import { HttpTypes, UpdateUserDTO } from "@switchyard/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 import {
   ContainerRegistrationKeys,
   MedusaError,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { refetchUser } from "../helpers"
 
 // Get user

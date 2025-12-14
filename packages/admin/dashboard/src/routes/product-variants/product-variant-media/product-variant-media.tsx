@@ -1,5 +1,5 @@
 import { useParams } from "react-router-dom"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 import { RouteFocusModal } from "../../../components/modals"
 import { useProductVariant } from "../../../hooks/api/products"

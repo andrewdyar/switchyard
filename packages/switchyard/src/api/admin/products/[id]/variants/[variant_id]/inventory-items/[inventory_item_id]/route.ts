@@ -1,12 +1,12 @@
-import { dismissLinksWorkflow, updateLinksWorkflow } from "@medusajs/core-flows"
-import { Modules } from "@medusajs/framework/utils"
+import { dismissLinksWorkflow, updateLinksWorkflow } from "@switchyard/core-flows"
+import { Modules } from "@switchyard/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { refetchVariant } from "../../../../../helpers"
 import { AdminUpdateVariantInventoryItemType } from "../../../../../validators"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<

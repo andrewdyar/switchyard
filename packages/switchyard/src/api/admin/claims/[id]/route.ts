@@ -2,9 +2,9 @@ import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
   refetchEntity,
-} from "@medusajs/framework/http"
-import { MedusaError } from "@medusajs/framework/utils"
-import { AdminClaimResponse, HttpTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { MedusaError } from "@switchyard/framework/utils"
+import { AdminClaimResponse, HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<{}, HttpTypes.SelectParams>,

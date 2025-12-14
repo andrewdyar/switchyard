@@ -1,3 +1,3 @@
 import "../types/container"
 
-export * from "@medusajs/workflows-sdk"
+export * from "@switchyard/workflows-sdk"

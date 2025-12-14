@@ -1,9 +1,9 @@
-import { confirmOrderEditRequestWorkflow } from "@medusajs/core-flows"
-import { HttpTypes } from "@medusajs/framework/types"
+import { confirmOrderEditRequestWorkflow } from "@switchyard/core-flows"
+import { HttpTypes } from "@switchyard/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest,

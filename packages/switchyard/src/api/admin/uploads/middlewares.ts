@@ -2,8 +2,8 @@ import multer from "multer"
 import {
   MiddlewareRoute,
   validateAndTransformBody,
-} from "@medusajs/framework/http"
-import { validateAndTransformQuery } from "@medusajs/framework"
+} from "@switchyard/framework/http"
+import { validateAndTransformQuery } from "@switchyard/framework"
 import { retrieveUploadConfig } from "./query-config"
 import { AdminGetUploadParams, AdminUploadPreSignedUrl } from "./validators"
 

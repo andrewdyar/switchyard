@@ -1,7 +1,7 @@
-import { getMigrationPlanner, initialize } from "@medusajs/link-modules"
-import { MedusaModule } from "@medusajs/modules-sdk"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { ModuleJoinerConfig } from "@medusajs/types"
+import { getMigrationPlanner, initialize } from "@switchyard/link-modules"
+import { MedusaModule } from "@switchyard/modules-sdk"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { ModuleJoinerConfig } from "@switchyard/types"
 
 jest.setTimeout(5000000)
 

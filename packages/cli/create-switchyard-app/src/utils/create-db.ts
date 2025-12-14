@@ -1,5 +1,5 @@
 import { EOL } from "os"
-import type pg from "@medusajs/deps/pg"
+import type pg from "@switchyard/deps/pg"
 import postgresClient, {
   DEFAULT_HOST,
   DEFAULT_PORT,

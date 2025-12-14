@@ -4,7 +4,7 @@
  * Handles driver management operations.
  */
 
-import { MedusaService } from "@medusajs/framework/utils"
+import { MedusaService } from "@switchyard/framework/utils"
 import { Driver } from "../models/driver"
 
 class DriversModuleService extends MedusaService({

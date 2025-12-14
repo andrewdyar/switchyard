@@ -5,7 +5,7 @@
  */
 
 import DriversModuleService from "./services/drivers-module"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const DRIVERS_MODULE = "driversModuleService"
 

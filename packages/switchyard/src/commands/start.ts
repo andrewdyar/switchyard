@@ -1,4 +1,4 @@
-import { track } from "@medusajs/telemetry"
+import { track } from "@switchyard/telemetry"
 import cluster from "cluster"
 import express from "express"
 import http from "http"
@@ -15,10 +15,10 @@ import {
   GracefulShutdownServer,
   isFileSkipped,
   isPresent,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
-import { MedusaModule } from "@medusajs/framework/modules-sdk"
-import { MedusaContainer } from "@medusajs/framework/types"
+import { MedusaModule } from "@switchyard/framework/modules-sdk"
+import { MedusaContainer } from "@switchyard/framework/types"
 import { parse } from "url"
 import loaders, { initializeContainer } from "../loaders"
 

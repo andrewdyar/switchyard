@@ -7,14 +7,14 @@ import {
   LineItemTaxLineDTO,
   ProductDTO,
   ProductVariantDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   isDefined,
   isPresent,
   MathBN,
   MedusaError,
   PriceListType,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 interface PrepareItemLineItemInput {
   title?: string

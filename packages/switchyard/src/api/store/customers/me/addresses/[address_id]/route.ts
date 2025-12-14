@@ -1,17 +1,17 @@
 import {
   deleteCustomerAddressesWorkflow,
   updateCustomerAddressesWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes, MedusaContainer } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { HttpTypes, MedusaContainer } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   MedusaError,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { refetchCustomer } from "../../../helpers"
 import {
   StoreGetCustomerAddressParamsType,

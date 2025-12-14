@@ -2,12 +2,12 @@ import {
   FilterableProductCategoryProps,
   IProductModuleService,
   UpdateProductCategoryDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   Modules,
   getSelectsAndRelationsFromObjectArray,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The data to update the product categories.

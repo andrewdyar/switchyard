@@ -1,5 +1,5 @@
-import { isDefined, Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { isDefined, Modules } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The locked keys to be released
@@ -16,7 +16,7 @@ export interface ReleaseLockStepInput {
   ownerId?: string
   /**
    * The provider name to use for locking. If no provider is passed,
-   * the default provider (in-memory or the provider configured in medusa-config.ts) will be used.
+   * the default provider (in-memory or the provider configured in switchyard.config.ts) will be used.
    */
   provider?: string
   executeOnSubWorkflow?: boolean

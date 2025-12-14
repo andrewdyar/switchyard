@@ -1,5 +1,5 @@
-import { Logger, NotificationTypes } from "@medusajs/framework/types"
-import { AbstractNotificationProviderService } from "@medusajs/framework/utils"
+import { Logger, NotificationTypes } from "@switchyard/framework/types"
+import { AbstractNotificationProviderService } from "@switchyard/framework/utils"
 import { MedusaCloudEmailOptions } from "@types"
 
 export class MedusaCloudEmailNotificationProvider extends AbstractNotificationProviderService {

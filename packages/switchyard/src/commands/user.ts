@@ -1,5 +1,5 @@
-import { ContainerRegistrationKeys, Modules } from "@medusajs/framework/utils"
-import { track } from "@medusajs/telemetry"
+import { ContainerRegistrationKeys, Modules } from "@switchyard/framework/utils"
+import { track } from "@switchyard/telemetry"
 import express from "express"
 import loaders from "../loaders"
 

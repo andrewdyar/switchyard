@@ -1,8 +1,8 @@
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
 
-import { refreshInviteTokensWorkflow } from "@medusajs/core-flows"
+import { refreshInviteTokensWorkflow } from "@switchyard/core-flows"
 import { refetchInvite } from "../../helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
   req: MedusaRequest<{}, HttpTypes.SelectParams>,

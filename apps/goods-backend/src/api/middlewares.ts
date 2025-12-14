@@ -1,4 +1,4 @@
-import { defineMiddlewares, authenticate } from "@medusajs/framework/http"
+import { defineMiddlewares, authenticate } from "@switchyard/framework/http"
 import { authorize } from "../middlewares/authorize-middleware"
 
 /**

@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { OrderShippingMethodAdjustment } from "./shipping-method-adjustment"
 import { OrderShippingMethodTaxLine } from "./shipping-method-tax-line"
 

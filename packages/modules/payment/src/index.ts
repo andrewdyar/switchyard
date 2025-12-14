@@ -1,6 +1,6 @@
 import { PaymentModuleService } from "@services"
 import loadProviders from "./loaders/providers"
-import { Module, Modules } from "@medusajs/framework/utils"
+import { Module, Modules } from "@switchyard/framework/utils"
 
 export default Module(Modules.PAYMENT, {
   service: PaymentModuleService,

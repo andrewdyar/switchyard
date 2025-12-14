@@ -1,4 +1,4 @@
-import { ITaxModuleService } from "@medusajs/framework/types"
+import { ITaxModuleService } from "@switchyard/framework/types"
 
 /**
  * Setup for this specific test

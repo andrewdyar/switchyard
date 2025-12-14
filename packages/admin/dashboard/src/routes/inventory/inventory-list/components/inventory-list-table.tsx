@@ -1,5 +1,5 @@
-import { InventoryTypes } from "@medusajs/types"
-import { Button, Container, Heading, Text } from "@medusajs/ui"
+import { InventoryTypes } from "@switchyard/types"
+import { Button, Container, Heading, Text } from "@switchyard/ui"
 
 import { RowSelectionState } from "@tanstack/react-table"
 import { useState } from "react"

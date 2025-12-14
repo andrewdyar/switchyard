@@ -1,6 +1,6 @@
-import { MedusaResponse } from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
-import { isPresent, MedusaError, QueryContext } from "@medusajs/framework/utils"
+import { MedusaResponse } from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
+import { isPresent, MedusaError, QueryContext } from "@switchyard/framework/utils"
 import { wrapVariantsWithInventoryQuantityForSalesChannel } from "../../../utils/middlewares"
 import {
   filterOutInternalProductCategories,

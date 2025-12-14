@@ -2,14 +2,14 @@ import {
   AuthWorkflowEvents,
   generateJwtToken,
   MedusaError,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createWorkflow,
   transform,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep, useRemoteQueryStep } from "../../common"
-import type { ProjectConfigOptions } from "@medusajs/framework/types"
+import type { ProjectConfigOptions } from "@switchyard/framework/types"
 
 /**
  * This workflow generates a reset password token for a user. It's used by the

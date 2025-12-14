@@ -1,10 +1,10 @@
-import type { WorkflowTypes } from "@medusajs/framework/types"
+import type { WorkflowTypes } from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { notifyOnFailureStep, sendNotificationsStep } from "../../notification"
 import {
   normalizeCsvToChunksStep,
@@ -46,14 +46,14 @@ export const importProductsAsChunksWorkflowId = "import-products-as-chunks"
  * import {
  *   AuthenticatedMedusaRequest,
  *   MedusaResponse,
- * } from "@medusajs/framework/http"
+ * } from "@switchyard/framework/http"
  * import {
  *   importProductsAsChunksWorkflowId,
  *   waitConfirmationProductImportStepId,
- * } from "@medusajs/core-flows"
- * import type { IWorkflowEngineService } from "@medusajs/framework/types"
- * import { Modules, TransactionHandlerType } from "@medusajs/framework/utils"
- * import { StepResponse } from "@medusajs/framework/workflows-sdk"
+ * } from "@switchyard/core-flows"
+ * import type { IWorkflowEngineService } from "@switchyard/framework/types"
+ * import { Modules, TransactionHandlerType } from "@switchyard/framework/utils"
+ * import { StepResponse } from "@switchyard/framework/workflows-sdk"
  *
  * export const POST = async (
  *   req: AuthenticatedMedusaRequest,

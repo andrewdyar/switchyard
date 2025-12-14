@@ -4,7 +4,7 @@
  * Handles RFC warehouse picking operations.
  */
 
-import { MedusaService } from "@medusajs/framework/utils"
+import { MedusaService } from "@switchyard/framework/utils"
 import { PickList } from "../models/pick-list"
 import { PickListItem } from "../models/pick-list-item"
 

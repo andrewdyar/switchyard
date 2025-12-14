@@ -3,9 +3,9 @@ import {
   Logger,
   ProviderIdentifyAnalyticsEventDTO,
   ProviderTrackAnalyticsEventDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { PostHog } from "posthog-node"
-import { AbstractAnalyticsProviderService } from "@medusajs/framework/utils"
+import { AbstractAnalyticsProviderService } from "@switchyard/framework/utils"
 
 type InjectedDependencies = {
   logger: Logger

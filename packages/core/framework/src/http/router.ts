@@ -1,4 +1,4 @@
-import { ContainerRegistrationKeys, parseCorsOrigins } from "@medusajs/utils"
+import { ContainerRegistrationKeys, parseCorsOrigins } from "@switchyard/utils"
 import cors, { CorsOptions } from "cors"
 import type { ErrorRequestHandler, Express, RequestHandler } from "express"
 import type {
@@ -14,7 +14,7 @@ import type {
   RouteHandler,
 } from "./types"
 
-import { Logger, MedusaContainer } from "@medusajs/types"
+import { Logger, MedusaContainer } from "@switchyard/types"
 import { configManager } from "../config"
 import { MiddlewareFileLoader } from "./middleware-file-loader"
 import { authenticate, AuthType } from "./middlewares"

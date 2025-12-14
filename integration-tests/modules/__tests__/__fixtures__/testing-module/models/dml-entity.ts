@@ -1,4 +1,4 @@
-import { model } from "@medusajs/utils"
+import { model } from "@switchyard/utils"
 
 export const dmlEntity = model.define("dmlEntity", {
   id: model.id().primaryKey(),

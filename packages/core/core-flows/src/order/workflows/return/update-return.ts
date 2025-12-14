@@ -3,15 +3,15 @@ import {
   OrderPreviewDTO,
   OrderWorkflow,
   ReturnDTO,
-} from "@medusajs/framework/types"
-import { OrderChangeStatus } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { OrderChangeStatus } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createStep,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../../common"
 import { updateReturnsStep } from "../../steps"
 import { previewOrderChangeStep } from "../../steps/preview-order-change"

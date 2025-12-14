@@ -1,5 +1,5 @@
-import { ModuleJoinerConfig } from "@medusajs/framework/types"
-import { LINKS, Modules } from "@medusajs/framework/utils"
+import { ModuleJoinerConfig } from "@switchyard/framework/types"
+import { LINKS, Modules } from "@switchyard/framework/utils"
 
 export const OrderPromotion: ModuleJoinerConfig = {
   serviceName: LINKS.OrderPromotion,

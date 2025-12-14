@@ -1,4 +1,4 @@
-import { defineJoinerConfig, Modules } from "@medusajs/framework/utils"
+import { defineJoinerConfig, Modules } from "@switchyard/framework/utils"
 import { Price, PriceList, PricePreference, PriceSet } from "@models"
 
 export const joinerConfig = defineJoinerConfig(Modules.PRICING, {

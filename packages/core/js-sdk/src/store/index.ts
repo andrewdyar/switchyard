@@ -1,4 +1,4 @@
-import { FindParams, HttpTypes, SelectParams } from "@medusajs/types"
+import { FindParams, HttpTypes, SelectParams } from "@switchyard/types"
 import { Client } from "../client"
 import { ClientHeaders } from "../types"
 

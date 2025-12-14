@@ -2,15 +2,15 @@ import type {
   OrderChangeDTO,
   OrderDTO,
   ReturnDTO,
-} from "@medusajs/framework/types"
-import { ChangeActionType, OrderChangeStatus } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { ChangeActionType, OrderChangeStatus } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   createStep,
   createWorkflow,
   parallelize,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../../common"
 import {
   deleteOrderChangesStep,

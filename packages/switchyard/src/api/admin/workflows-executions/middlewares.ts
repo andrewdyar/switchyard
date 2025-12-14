@@ -7,9 +7,9 @@ import {
   AdminGetWorkflowExecutionsParams,
 } from "./validators"
 
-import { MiddlewareRoute } from "@medusajs/framework/http"
-import { validateAndTransformQuery } from "@medusajs/framework"
-import { validateAndTransformBody } from "@medusajs/framework"
+import { MiddlewareRoute } from "@switchyard/framework/http"
+import { validateAndTransformQuery } from "@switchyard/framework"
+import { validateAndTransformBody } from "@switchyard/framework"
 
 export const adminWorkflowsExecutionsMiddlewares: MiddlewareRoute[] = [
   {

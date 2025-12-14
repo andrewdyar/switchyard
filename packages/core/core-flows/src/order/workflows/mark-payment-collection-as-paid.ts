@@ -1,11 +1,11 @@
-import type { PaymentCollectionDTO } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+import type { PaymentCollectionDTO } from "@switchyard/framework/types"
+import { MedusaError } from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import {
   authorizePaymentSessionStep,

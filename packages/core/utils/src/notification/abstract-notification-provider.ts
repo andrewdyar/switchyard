@@ -1,4 +1,4 @@
-import { INotificationProvider, NotificationTypes } from "@medusajs/types"
+import { INotificationProvider, NotificationTypes } from "@switchyard/types"
 
 /**
  * ### constructor
@@ -11,8 +11,8 @@ import { INotificationProvider, NotificationTypes } from "@medusajs/types"
  * #### Example
  *
  * ```ts
- * import { AbstractNotificationProviderService } from "@medusajs/framework/utils"
- * import { Logger } from "@medusajs/framework/types"
+ * import { AbstractNotificationProviderService } from "@switchyard/framework/utils"
+ * import { Logger } from "@switchyard/framework/types"
  *
  * type InjectedDependencies = {
  *   logger: Logger
@@ -59,7 +59,7 @@ export class AbstractNotificationProviderService
    */
   static identifier: string
   /**
-   * This method validates the options of the provider set in `medusa-config.ts`.
+   * This method validates the options of the provider set in `switchyard.config.ts`.
    * Implementing this method is optional. It's useful if your provider requires custom validation.
    * 
    * If the options aren't valid, throw an error.
@@ -93,7 +93,7 @@ export class AbstractNotificationProviderService
    * import {
    *   ProviderSendNotificationDTO,
    *   ProviderSendNotificationResultsDTO
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    *
    * class MyNotificationProviderService extends AbstractNotificationProviderService {
    *   // ...

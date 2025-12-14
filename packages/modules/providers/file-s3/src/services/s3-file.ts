@@ -12,11 +12,11 @@ import {
   FileTypes,
   Logger,
   S3FileServiceOptions,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   AbstractFileProviderService,
   MedusaError,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import path from "path"
 import { Readable } from "stream"
 import { ulid } from "ulid"

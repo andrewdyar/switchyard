@@ -1,6 +1,6 @@
-import { Constructor, Context, DAL } from "@medusajs/framework/types"
-import { toMikroORMEntity } from "@medusajs/framework/utils"
-import { LoadStrategy } from "@medusajs/framework/mikro-orm/core"
+import { Constructor, Context, DAL } from "@switchyard/framework/types"
+import { toMikroORMEntity } from "@switchyard/framework/utils"
+import { LoadStrategy } from "@switchyard/framework/mikro-orm/core"
 import { Order, OrderClaim, OrderLineItemAdjustment } from "@models"
 
 import { mapRepositoryToOrderModel } from "."

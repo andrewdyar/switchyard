@@ -1,4 +1,4 @@
-import pg from "@medusajs/deps/pg"
+import pg from "@switchyard/deps/pg"
 
 const { Client } = pg as any
 

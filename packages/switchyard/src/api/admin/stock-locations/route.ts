@@ -1,15 +1,15 @@
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
-import { createStockLocationsWorkflow } from "@medusajs/core-flows"
+import { createStockLocationsWorkflow } from "@switchyard/core-flows"
 import { refetchStockLocation } from "./helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 // Create stock location
 export const POST = async (

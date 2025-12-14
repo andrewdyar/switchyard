@@ -1,6 +1,6 @@
-import { MiddlewareRoute } from "@medusajs/framework/http"
-import { validateAndTransformBody } from "@medusajs/framework/http"
-import { validateAndTransformQuery } from "@medusajs/framework/http"
+import { MiddlewareRoute } from "@switchyard/framework/http"
+import { validateAndTransformBody } from "@switchyard/framework/http"
+import { validateAndTransformQuery } from "@switchyard/framework/http"
 import {
   AdminCreateInventoryGroup,
   AdminGetInventoryGroupsParams,

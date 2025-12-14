@@ -1,10 +1,10 @@
-import { EntityConstructor } from "@medusajs/types"
+import { EntityConstructor } from "@switchyard/types"
 import {
   CheckConstraintViolationException,
   MetadataStorage,
   MikroORM,
-} from "@medusajs/deps/mikro-orm/core"
-import { defineConfig } from "@medusajs/deps/mikro-orm/postgresql"
+} from "@switchyard/deps/mikro-orm/core"
+import { defineConfig } from "@switchyard/deps/mikro-orm/postgresql"
 import { join } from "path"
 import { createDatabase, dropDatabase } from "pg-god"
 import { FileSystem } from "../../../common"

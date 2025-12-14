@@ -1,1 +1,1 @@
-export * from "@medusajs/modules-sdk"
+export * from "@switchyard/modules-sdk"

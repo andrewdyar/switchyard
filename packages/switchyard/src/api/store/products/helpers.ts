@@ -1,11 +1,11 @@
-import { refetchEntity } from "@medusajs/framework/http"
+import { refetchEntity } from "@switchyard/framework/http"
 import {
   HttpTypes,
   ItemTaxLineDTO,
   MedusaContainer,
   TaxableItemDTO,
-} from "@medusajs/framework/types"
-import { calculateAmountsWithTax, Modules } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { calculateAmountsWithTax, Modules } from "@switchyard/framework/utils"
 import { StoreRequestWithContext } from "../types"
 
 export type RequestWithContext<

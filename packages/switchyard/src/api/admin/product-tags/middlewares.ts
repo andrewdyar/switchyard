@@ -1,9 +1,9 @@
 import * as QueryConfig from "./query-config"
-import { MiddlewareRoute } from "@medusajs/framework/http"
+import { MiddlewareRoute } from "@switchyard/framework/http"
 import {
   validateAndTransformBody,
   validateAndTransformQuery,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import {
   AdminCreateProductTag,
   AdminGetProductTagParams,

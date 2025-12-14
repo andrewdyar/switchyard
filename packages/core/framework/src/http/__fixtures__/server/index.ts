@@ -2,9 +2,9 @@ import {
   moduleLoader,
   ModulesDefinition,
   registerMedusaModule,
-} from "@medusajs/modules-sdk"
-import { MedusaContainer } from "@medusajs/types"
-import { ContainerRegistrationKeys, generateJwtToken } from "@medusajs/utils"
+} from "@switchyard/modules-sdk"
+import { MedusaContainer } from "@switchyard/types"
+import { ContainerRegistrationKeys, generateJwtToken } from "@switchyard/utils"
 import { asValue } from "../../../deps/awilix"
 import express from "express"
 import querystring from "querystring"

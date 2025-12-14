@@ -1,4 +1,4 @@
-import { Input } from "@medusajs/ui"
+import { Input } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 import { useState, useEffect } from "react"
 

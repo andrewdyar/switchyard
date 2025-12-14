@@ -1,7 +1,7 @@
-import { updateProductVariantsWorkflow } from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IProductModuleService } from "@medusajs/types"
-import { MedusaError, Modules } from "@medusajs/utils"
+import { updateProductVariantsWorkflow } from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IProductModuleService } from "@switchyard/types"
+import { MedusaError, Modules } from "@switchyard/utils"
 
 jest.setTimeout(50000)
 

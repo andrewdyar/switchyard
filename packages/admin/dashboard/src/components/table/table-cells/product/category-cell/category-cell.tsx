@@ -1,5 +1,5 @@
 import { PlaceholderCell } from "../../common/placeholder-cell"
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 type CategoryCellProps = {
   categories?: HttpTypes.AdminProductCategory[] | null

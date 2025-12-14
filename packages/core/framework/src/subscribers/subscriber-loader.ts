@@ -3,8 +3,8 @@ import {
   IEventBusModuleService,
   MedusaContainer,
   Subscriber,
-} from "@medusajs/types"
-import { isFileSkipped, kebabCase, Modules } from "@medusajs/utils"
+} from "@switchyard/types"
+import { isFileSkipped, kebabCase, Modules } from "@switchyard/utils"
 import { parse } from "path"
 import { configManager } from "../config"
 import { container } from "../container"

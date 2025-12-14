@@ -1,4 +1,4 @@
-import { Context, LoadedModule, MedusaContainer } from "@medusajs/types"
+import { Context, LoadedModule, MedusaContainer } from "@switchyard/types"
 import {
   createMedusaContainer,
   isDefined,
@@ -7,8 +7,8 @@ import {
   MedusaContextType,
   MedusaError,
   MedusaModuleType,
-} from "@medusajs/utils"
-import { asValue } from "@medusajs/deps/awilix"
+} from "@switchyard/utils"
+import { asValue } from "@switchyard/deps/awilix"
 import {
   DistributedTransactionEvent,
   DistributedTransactionEvents,

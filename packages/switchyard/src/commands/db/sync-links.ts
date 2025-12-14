@@ -1,17 +1,17 @@
 import checkbox from "@inquirer/checkbox"
-import { MedusaAppLoader } from "@medusajs/framework"
-import { LinkLoader } from "@medusajs/framework/links"
+import { MedusaAppLoader } from "@switchyard/framework"
+import { LinkLoader } from "@switchyard/framework/links"
 import {
   LinkMigrationsPlannerAction,
   Logger,
   MedusaContainer,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   getResolvedPlugins,
   isDefined,
   mergePluginModules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import boxen from "boxen"
 import chalk from "chalk"
 import { join } from "path"

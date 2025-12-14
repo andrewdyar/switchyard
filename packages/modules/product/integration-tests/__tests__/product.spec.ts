@@ -11,16 +11,16 @@ import {
   InferEntityType,
   IProductModuleService,
   ProductDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   kebabCase,
   Module,
   Modules,
   ProductStatus,
   toMikroORMEntity,
-} from "@medusajs/framework/utils"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
-import { SqlEntityManager } from "@medusajs/framework/mikro-orm/postgresql"
+} from "@switchyard/framework/utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
+import { SqlEntityManager } from "@switchyard/framework/mikro-orm/postgresql"
 import {
   ProductCategoryService,
   ProductModuleService,

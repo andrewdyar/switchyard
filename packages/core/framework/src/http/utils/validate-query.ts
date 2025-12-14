@@ -1,5 +1,5 @@
-import { BaseEntity, QueryConfig, RequestQueryFields } from "@medusajs/types"
-import { MedusaError, removeUndefinedProperties } from "@medusajs/utils"
+import { BaseEntity, QueryConfig, RequestQueryFields } from "@switchyard/types"
+import { MedusaError, removeUndefinedProperties } from "@switchyard/utils"
 import { NextFunction } from "express"
 import { z } from "zod"
 

@@ -1,15 +1,15 @@
 import {
   deleteApiKeysWorkflow,
   updateApiKeysWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 import { refetchApiKey } from "../helpers"
-import { MedusaError } from "@medusajs/framework/utils"
-import { HttpTypes } from "@medusajs/framework/types"
+import { MedusaError } from "@switchyard/framework/utils"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,

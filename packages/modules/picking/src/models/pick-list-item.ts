@@ -5,7 +5,7 @@
  * Includes location information for efficient pick path routing.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const PickListItem = model.define("goods_pick_list_item", {
   id: model.id().primaryKey(),

@@ -4,7 +4,7 @@
  * Handles sweep operations - daily retailer shopping trips.
  */
 
-import { MedusaService } from "@medusajs/framework/utils"
+import { MedusaService } from "@switchyard/framework/utils"
 import { Sweep } from "../models/sweep"
 import { SweepItem } from "../models/sweep-item"
 

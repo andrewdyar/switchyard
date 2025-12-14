@@ -1,8 +1,8 @@
 // @ts-nocheck
-import { Context, DAL, InferEntityType } from "@medusajs/framework/types"
-import { DALUtils, MedusaError, isDefined } from "@medusajs/framework/utils"
-import { LoadStrategy } from "@medusajs/framework/mikro-orm/core"
-import { SqlEntityManager } from "@medusajs/framework/mikro-orm/postgresql"
+import { Context, DAL, InferEntityType } from "@switchyard/framework/types"
+import { DALUtils, MedusaError, isDefined } from "@switchyard/framework/utils"
+import { LoadStrategy } from "@switchyard/framework/mikro-orm/core"
+import { SqlEntityManager } from "@switchyard/framework/mikro-orm/postgresql"
 import { InventoryGroup } from "../models"
 import {
   CreateInventoryGroupDTO,

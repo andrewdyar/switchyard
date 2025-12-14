@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 
 import { useQueryParams } from "../../../../hooks/use-query-params"
 

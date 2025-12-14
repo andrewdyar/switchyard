@@ -1,4 +1,4 @@
-import { ChangeActionType, MedusaError } from "@medusajs/framework/utils"
+import { ChangeActionType, MedusaError } from "@switchyard/framework/utils"
 import { OrderChangeProcessing } from "../calculate-order-change"
 
 OrderChangeProcessing.registerActionType(ChangeActionType.PROMOTION_ADD, {

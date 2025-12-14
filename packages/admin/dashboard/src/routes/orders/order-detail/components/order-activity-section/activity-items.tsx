@@ -3,8 +3,8 @@ import {
   AdminExchange,
   AdminOrderLineItem,
   AdminReturn,
-} from "@medusajs/types"
-import { Popover, Text } from "@medusajs/ui"
+} from "@switchyard/types"
+import { Popover, Text } from "@switchyard/ui"
 import { useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Thumbnail } from "../../../../../components/common/thumbnail"

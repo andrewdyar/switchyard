@@ -44,7 +44,7 @@ export type ItemTaxCalculationLine = {
  *
  * Each tax provider has a unique identifier defined in its class. The provider's ID
  * will be stored as `tp_{identifier}_{id}`, where `{id}` is the provider's `id`
- * property in the `medusa-config.ts`.
+ * property in the `switchyard.config.ts`.
  *
  * For example:
  *
@@ -69,7 +69,7 @@ export type ItemTaxCalculationLine = {
  * import {
  *   ITaxProvider,
  *   Logger
- * } from "@medusajs/framework/types"
+ * } from "@switchyard/framework/types"
  * 
  * type InjectedDependencies = {
  *   logger: Logger

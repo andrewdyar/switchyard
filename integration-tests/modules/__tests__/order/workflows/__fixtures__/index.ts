@@ -1,17 +1,17 @@
-import { createShippingOptionsWorkflow } from "@medusajs/core-flows"
+import { createShippingOptionsWorkflow } from "@switchyard/core-flows"
 import {
   FulfillmentWorkflow,
   IOrderModuleService,
   IRegionModuleService,
   IStockLocationService,
   StockLocationDTO,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   ProductStatus,
   remoteQueryObjectFromString,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 
 const providerId = "manual_test-provider"
 const providerIdCalculated = "manual-calculated_test-provider-calculated"

@@ -1,7 +1,7 @@
 import type {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { createClient } from "@supabase/supabase-js"
 import crypto from "crypto"
 

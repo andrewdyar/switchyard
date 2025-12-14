@@ -1,4 +1,4 @@
-import { ContainerRegistrationKeys, getConfigFile } from "@medusajs/utils"
+import { ContainerRegistrationKeys, getConfigFile } from "@switchyard/utils"
 import { asFunction } from "../deps/awilix"
 import { container } from "../container"
 import { logger as defaultLogger } from "../logger"
@@ -28,7 +28,7 @@ container.register(
  */
 export async function configLoader(
   entryDirectory: string,
-  configFileName: string = "medusa-config"
+  configFileName: string = "switchyard.config"
 ): Promise<ConfigModule> {
   const config = await getConfigFile<ConfigModule>(
     entryDirectory,

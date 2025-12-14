@@ -1,4 +1,4 @@
-import { validateAndTransformQuery } from "@medusajs/framework"
+import { validateAndTransformQuery } from "@switchyard/framework"
 import {
   applyDefaultFilters,
   applyParamsAsFilters,
@@ -9,13 +9,13 @@ import {
   MedusaRequest,
   MedusaResponse,
   MiddlewareRoute,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import {
   ContainerRegistrationKeys,
   FeatureFlag,
   isPresent,
   ProductStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import IndexEngineFeatureFlag from "../../../feature-flags/index-engine"
 import {
   filterByValidSalesChannels,

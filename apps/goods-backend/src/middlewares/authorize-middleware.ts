@@ -3,7 +3,7 @@ import {
   AuthenticatedMedusaRequest,
   MedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { createClient, SupabaseClient } from "@supabase/supabase-js"
 
 // Cache for user permissions to reduce database queries

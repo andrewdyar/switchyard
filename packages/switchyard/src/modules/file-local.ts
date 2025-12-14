@@ -1,6 +1,6 @@
-import LocalFileProvider from "@medusajs/file-local"
+import LocalFileProvider from "@switchyard/file-local"
 
-export * from "@medusajs/file-local"
+export * from "@switchyard/file-local"
 
 export default LocalFileProvider
-export const discoveryPath = require.resolve("@medusajs/file-local")
+export const discoveryPath = require.resolve("@switchyard/file-local")

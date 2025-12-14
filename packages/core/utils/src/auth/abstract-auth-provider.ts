@@ -3,7 +3,7 @@ import {
   AuthenticationResponse,
   AuthIdentityProviderService,
   IAuthProvider,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 /**
  * ### constructor
@@ -16,8 +16,8 @@ import {
  * #### Example
  *
  * ```ts
- * import { AbstractAuthModuleProvider } from "@medusajs/framework/utils"
- * import { Logger } from "@medusajs/framework/types"
+ * import { AbstractAuthModuleProvider } from "@switchyard/framework/utils"
+ * import { Logger } from "@switchyard/framework/types"
  *
  * type InjectedDependencies = {
  *   logger: Logger
@@ -57,7 +57,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
   /**
    * Every auth provider must have an `identifier` static property. The provider's ID
    * will be stored as `au_{identifier}_{id}`, where `{id}` is the provider's `id` 
-   * property in the `medusa-config.ts`.
+   * property in the `switchyard.config.ts`.
    * 
    * @example
    * class MyAuthProviderService extends AbstractAuthModuleProvider {
@@ -106,7 +106,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
   }
 
   /**
-   * This method validates the options of the provider set in `medusa-config.ts`.
+   * This method validates the options of the provider set in `switchyard.config.ts`.
    * Implementing this method is optional. It's useful if your provider requires custom validation.
    * 
    * If the options aren't valid, throw an error.
@@ -151,7 +151,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    *   AuthIdentityProviderService,
    *   AuthenticationInput,
    *   AuthenticationResponse
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    * // ...
    *
    * class MyAuthProviderService extends AbstractAuthModuleProvider {
@@ -193,7 +193,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    *   AuthIdentityProviderService,
    *   AuthenticationInput,
    *   AuthenticationResponse
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    * // ...
    *
    * class MyAuthProviderService extends AbstractAuthModuleProvider {
@@ -262,8 +262,8 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    *   AuthIdentityProviderService,
    *   AuthenticationInput,
    *   AuthenticationResponse
-   * } from "@medusajs/framework/types"
-   * import { MedusaError } from "@medusajs/framework/utils"
+   * } from "@switchyard/framework/types"
+   * import { MedusaError } from "@switchyard/framework/utils"
    * // ...
    *
    * class MyAuthProviderService extends AbstractAuthModuleProvider {
@@ -329,8 +329,8 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    *   AuthIdentityProviderService,
    *   AuthenticationInput,
    *   AuthenticationResponse
-   * } from "@medusajs/framework/types"
-   * import { MedusaError } from "@medusajs/framework/utils"
+   * } from "@switchyard/framework/types"
+   * import { MedusaError } from "@switchyard/framework/utils"
    * // ...
    *
    * class MyAuthProviderService extends AbstractAuthModuleProvider {
@@ -395,7 +395,7 @@ export abstract class AbstractAuthModuleProvider implements IAuthProvider {
    *   AuthIdentityProviderService,
    *   AuthenticationInput,
    *   AuthenticationResponse
-   * } from "@medusajs/framework/types"
+   * } from "@switchyard/framework/types"
    * // ...
    *
    * class MyAuthProviderService extends AbstractAuthModuleProvider {

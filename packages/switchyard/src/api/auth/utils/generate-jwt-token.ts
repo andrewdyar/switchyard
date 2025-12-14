@@ -1,8 +1,8 @@
 import {
   AuthIdentityDTO,
   ProjectConfigOptions,
-} from "@medusajs/framework/types"
-import { generateJwtToken } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { generateJwtToken } from "@switchyard/framework/utils"
 import { type Secret } from "jsonwebtoken"
 
 export function generateJwtTokenForAuthIdentity(

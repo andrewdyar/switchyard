@@ -1,10 +1,10 @@
-import { INotificationModuleService } from "@medusajs/framework/types"
+import { INotificationModuleService } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   pickValueFromObject,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { SubscriberArgs, SubscriberConfig } from "../types/subscribers"
 
 type HandlerConfig = {
@@ -16,7 +16,7 @@ type HandlerConfig = {
   data: Record<string, string>
 }
 
-// TODO: The config should be loaded dynamically from medusa-config.js
+// TODO: The config should be loaded dynamically from switchyard.config.js
 // TODO: We can use a more powerful templating syntax to allow for eg. combining fields.
 const handlerConfig: HandlerConfig[] = [
   {

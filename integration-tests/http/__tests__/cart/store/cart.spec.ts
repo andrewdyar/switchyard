@@ -1,5 +1,5 @@
-import { createCartCreditLinesWorkflow } from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { createCartCreditLinesWorkflow } from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   Modules,
   PriceListStatus,
@@ -8,7 +8,7 @@ import {
   PromotionRuleOperator,
   PromotionStatus,
   PromotionType,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { setTimeout } from "timers/promises"
 import {
   createAdminUser,

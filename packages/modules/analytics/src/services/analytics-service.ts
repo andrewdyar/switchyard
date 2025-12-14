@@ -1,9 +1,9 @@
 import {
   TrackAnalyticsEventDTO,
   IdentifyAnalyticsEventDTO,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import AnalyticsProviderService from "./provider-service"
-import { MedusaError } from "@medusajs/framework/utils"
+import { MedusaError } from "@switchyard/framework/utils"
 
 type InjectedDependencies = {
   analyticsProviderService: AnalyticsProviderService

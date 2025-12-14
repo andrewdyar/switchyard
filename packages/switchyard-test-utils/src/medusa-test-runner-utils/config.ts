@@ -2,14 +2,14 @@ import {
   FeatureFlag,
   getConfigFile,
   discoverAndRegisterFeatureFlags,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export async function configLoaderOverride(
   entryDirectory: string,
   override: { clientUrl: string; debug?: boolean }
 ) {
-  const { configManager } = await import("@medusajs/framework/config")
-  const { logger } = await import("@medusajs/framework")
+  const { configManager } = await import("@switchyard/framework/config")
+  const { logger } = await import("@switchyard/framework")
 
   await discoverAndRegisterFeatureFlags({
     flagDir: entryDirectory,
@@ -20,7 +20,7 @@ export async function configLoaderOverride(
 
   const { configModule, error } = await getConfigFile<
     ReturnType<typeof configManager.loadConfig>
-  >(entryDirectory, "medusa-config")
+  >(entryDirectory, "switchyard.config")
 
   if (error) {
     throw new Error(error.message || "Error during config loading")

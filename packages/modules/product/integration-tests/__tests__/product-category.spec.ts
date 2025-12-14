@@ -1,13 +1,13 @@
 import { ProductCategoryService } from "@services"
 
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   eletronicsCategoriesData,
   productCategoriesData,
   productCategoriesRankData,
 } from "../__fixtures__/product-category/data"
-import { IProductModuleService } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { IProductModuleService } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 
 jest.setTimeout(30000)
 

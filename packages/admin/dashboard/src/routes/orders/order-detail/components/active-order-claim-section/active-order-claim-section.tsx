@@ -1,8 +1,8 @@
-import { ExclamationCircle } from "@medusajs/icons"
-import { Button, Container, Heading, Text, toast } from "@medusajs/ui"
+import { ExclamationCircle } from "@switchyard/icons"
+import { Button, Container, Heading, Text, toast } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { useNavigate } from "react-router-dom"
 import { useCancelClaimRequest } from "../../../../../hooks/api/claims"
 

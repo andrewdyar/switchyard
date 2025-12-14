@@ -1,5 +1,5 @@
-import { EntityName } from "@medusajs/framework/mikro-orm/core"
-import { SqlEntityManager } from "@medusajs/framework/mikro-orm/postgresql"
+import { EntityName } from "@switchyard/framework/mikro-orm/core"
+import { SqlEntityManager } from "@switchyard/framework/mikro-orm/postgresql"
 
 import { Payment, PaymentSession, PaymentCollection } from "@models"
 

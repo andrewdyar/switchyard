@@ -1,12 +1,12 @@
-import { transferCartCustomerWorkflowId } from "@medusajs/core-flows"
-import { HttpTypes } from "@medusajs/framework/types"
+import { transferCartCustomerWorkflowId } from "@switchyard/core-flows"
+import { HttpTypes } from "@switchyard/framework/types"
 
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
-import { AdditionalData } from "@medusajs/types"
+} from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
+import { AdditionalData } from "@switchyard/types"
 import { refetchCart } from "../../helpers"
 
 export const POST = async (

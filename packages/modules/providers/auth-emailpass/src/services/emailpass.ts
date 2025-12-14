@@ -5,10 +5,10 @@ import {
   AuthIdentityProviderService,
   EmailPassAuthProviderOptions,
   Logger,
-} from "@medusajs/framework/types"
-import { AbstractAuthModuleProvider, isString, MedusaError, } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { AbstractAuthModuleProvider, isString, MedusaError, } from "@switchyard/framework/utils"
 import Scrypt from "scrypt-kdf"
-import { isPresent } from "@medusajs/utils"
+import { isPresent } from "@switchyard/utils"
 
 type InjectedDependencies = {
   logger: Logger

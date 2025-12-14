@@ -4,7 +4,7 @@ import {
   LineItemAdjustmentDTO,
   LineItemTaxLineDTO,
   OrderCreditLineDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 export type VirtualOrder = {
   id: string

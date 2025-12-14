@@ -1,4 +1,4 @@
-import { BigNumberInput, CartLikeWithTotals } from "@medusajs/types"
+import { BigNumberInput, CartLikeWithTotals } from "@switchyard/types"
 import { BigNumber } from "../big-number"
 import { calculateCreditLinesTotal } from "../credit-lines"
 import { GetItemTotalInput, getLineItemsTotals } from "../line-item"

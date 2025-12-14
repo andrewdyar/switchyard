@@ -1,4 +1,4 @@
-import { AdminOptions } from "@medusajs/types"
+import { AdminOptions } from "@switchyard/types"
 
 export type BundlerOptions = Required<Pick<AdminOptions, "path">> &
   Pick<AdminOptions, "vite" | "backendUrl" | "storefrontUrl"> & {

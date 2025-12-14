@@ -2,8 +2,8 @@ import {
   beginClaimOrderWorkflow,
   createShippingOptionsWorkflow,
   orderClaimRequestItemReturnWorkflow,
-} from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+} from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   FulfillmentWorkflow,
   IOrderModuleService,
@@ -12,14 +12,14 @@ import {
   OrderWorkflow,
   ProductDTO,
   StockLocationDTO,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   ClaimType,
   ContainerRegistrationKeys,
   Modules,
   RuleOperator,
   remoteQueryObjectFromString,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 
 jest.setTimeout(500000)
 

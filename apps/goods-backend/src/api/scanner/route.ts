@@ -1,4 +1,4 @@
-import type { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+import type { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
 
 // Disable global authentication - we handle it explicitly via middleware
 export const AUTHENTICATE = false

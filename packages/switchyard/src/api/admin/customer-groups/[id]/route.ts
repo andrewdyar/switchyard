@@ -1,15 +1,15 @@
 import {
   deleteCustomerGroupsWorkflow,
   updateCustomerGroupsWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
-import { MedusaError } from "@medusajs/framework/utils"
+import { MedusaError } from "@switchyard/framework/utils"
 import { refetchCustomerGroup } from "../helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<HttpTypes.SelectParams>,

@@ -1,10 +1,10 @@
-import { createPaymentSessionsWorkflow } from "@medusajs/core-flows"
+import { createPaymentSessionsWorkflow } from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { refetchPaymentCollection } from "../../helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<

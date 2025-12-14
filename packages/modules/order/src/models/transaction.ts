@@ -2,7 +2,7 @@ import {
   DmlEntity,
   DMLEntitySchemaBuilder,
   model,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { OrderClaim } from "./claim"
 import { OrderExchange } from "./exchange"
 import { Order } from "./order"

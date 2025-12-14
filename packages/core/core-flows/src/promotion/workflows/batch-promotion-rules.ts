@@ -4,15 +4,15 @@ import {
   CreatePromotionRuleDTO,
   PromotionRuleDTO,
   UpdatePromotionRuleDTO,
-} from "@medusajs/framework/types"
-import { RuleType } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { RuleType } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   parallelize,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { deletePromotionRulesWorkflowStep } from "../steps/delete-promotion-rules-workflow"
 import { createPromotionRulesWorkflow } from "./create-promotion-rules"
 import { updatePromotionRulesWorkflow } from "./update-promotion-rules"
@@ -58,7 +58,7 @@ export const batchPromotionRulesWorkflowId = "batch-promotion-rules"
  * .run({
  *   input: {
  *     id: "promo_123",
- *     // import { RuleType } from "@medusajs/framework/utils"
+ *     // import { RuleType } from "@switchyard/framework/utils"
  *     rule_type: RuleType.RULES,
  *     create: [
  *       {

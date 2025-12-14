@@ -1,2 +1,2 @@
-export { MikroOrmBaseRepository as BaseRepository } from "@medusajs/framework/utils"
+export { MikroOrmBaseRepository as BaseRepository } from "@switchyard/framework/utils"
 export * from "./inventory-level"

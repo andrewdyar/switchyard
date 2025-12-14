@@ -1,6 +1,6 @@
-import { defineConfig } from "@medusajs/utils"
+import { defineConfig } from "@switchyard/utils"
 
-const { Modules } = require("@medusajs/utils")
+const { Modules } = require("@switchyard/utils")
 
 const DB_HOST = process.env.DB_HOST
 const DB_USERNAME = process.env.DB_USERNAME
@@ -12,20 +12,20 @@ process.env.LOG_LEVEL = "error"
 
 const customTaxProviderRegistration = {
   resolve: {
-    services: [require("@medusajs/tax/dist/providers/system").default],
+    services: [require("@switchyard/tax/dist/providers/system").default],
   },
   id: "system_2",
 }
 
 const customPaymentProvider = {
   resolve: {
-    services: [require("@medusajs/payment/dist/providers/system").default],
+    services: [require("@switchyard/payment/dist/providers/system").default],
   },
   id: "default_2",
 }
 
 const customFulfillmentProvider = {
-  resolve: "@medusajs/fulfillment-manual",
+  resolve: "@switchyard/fulfillment-manual",
   id: "test-provider",
 }
 
@@ -56,12 +56,12 @@ module.exports = defineConfig({
     },
     {
       key: "auth",
-      resolve: "@medusajs/auth",
+      resolve: "@switchyard/auth",
       options: {
         providers: [
           {
             id: "emailpass",
-            resolve: "@medusajs/auth-emailpass",
+            resolve: "@switchyard/auth-emailpass",
           },
         ],
       },
@@ -69,95 +69,95 @@ module.exports = defineConfig({
     {
       key: Modules.USER,
       scope: "internal",
-      resolve: "@medusajs/user",
+      resolve: "@switchyard/user",
       options: {
         jwt_secret: "test",
       },
     },
     {
       key: Modules.CACHE,
-      resolve: "@medusajs/cache-inmemory",
+      resolve: "@switchyard/cache-inmemory",
       options: { ttl: 0 }, // Cache disabled
     },
     {
       key: Modules.LOCKING,
-      resolve: "@medusajs/locking",
+      resolve: "@switchyard/locking",
     },
     {
       key: Modules.STOCK_LOCATION,
-      resolve: "@medusajs/stock-location",
+      resolve: "@switchyard/stock-location",
       options: {},
     },
     {
       key: Modules.INVENTORY,
-      resolve: "@medusajs/inventory",
+      resolve: "@switchyard/inventory",
       options: {},
     },
     {
       key: Modules.PRODUCT,
-      resolve: "@medusajs/product",
+      resolve: "@switchyard/product",
     },
     {
       key: Modules.PRICING,
-      resolve: "@medusajs/pricing",
+      resolve: "@switchyard/pricing",
     },
     {
       key: Modules.PROMOTION,
-      resolve: "@medusajs/promotion",
+      resolve: "@switchyard/promotion",
     },
     {
       key: Modules.REGION,
-      resolve: "@medusajs/region",
+      resolve: "@switchyard/region",
     },
     {
       key: Modules.CUSTOMER,
-      resolve: "@medusajs/customer",
+      resolve: "@switchyard/customer",
     },
     {
       key: Modules.SALES_CHANNEL,
-      resolve: "@medusajs/sales-channel",
+      resolve: "@switchyard/sales-channel",
     },
     {
       key: Modules.CART,
-      resolve: "@medusajs/cart",
+      resolve: "@switchyard/cart",
     },
     {
       key: Modules.WORKFLOW_ENGINE,
-      resolve: "@medusajs/workflow-engine-inmemory",
+      resolve: "@switchyard/workflow-engine-inmemory",
     },
     {
       key: Modules.API_KEY,
-      resolve: "@medusajs/api-key",
+      resolve: "@switchyard/api-key",
     },
     {
       key: Modules.STORE,
-      resolve: "@medusajs/store",
+      resolve: "@switchyard/store",
     },
     {
       key: Modules.TAX,
-      resolve: "@medusajs/tax",
+      resolve: "@switchyard/tax",
       options: {
         providers: [customTaxProviderRegistration],
       },
     },
     {
       key: Modules.CURRENCY,
-      resolve: "@medusajs/currency",
+      resolve: "@switchyard/currency",
     },
     {
       key: Modules.ORDER,
-      resolve: "@medusajs/order",
+      resolve: "@switchyard/order",
     },
     {
       key: Modules.PAYMENT,
-      resolve: "@medusajs/payment",
+      resolve: "@switchyard/payment",
       options: {
         providers: [customPaymentProvider],
       },
     },
     {
       key: Modules.FULFILLMENT,
-      resolve: "@medusajs/fulfillment",
+      resolve: "@switchyard/fulfillment",
       options: {
         providers: [
           customFulfillmentProvider,
@@ -170,7 +170,7 @@ module.exports = defineConfig({
       options: {
         providers: [
           {
-            resolve: "@medusajs/notification-local",
+            resolve: "@switchyard/notification-local",
             id: "local-notification-provider",
             options: {
               name: "Local Notification Provider",
@@ -182,7 +182,7 @@ module.exports = defineConfig({
     },
     {
       key: Modules.INDEX,
-      resolve: "@medusajs/index",
+      resolve: "@switchyard/index",
       disable: process.env.ENABLE_INDEX_MODULE !== "true",
     },
     {

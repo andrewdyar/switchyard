@@ -1,7 +1,7 @@
-import { convertDraftOrderWorkflow } from "@medusajs/core-flows"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
-import { HttpTypes } from "@medusajs/types"
+import { convertDraftOrderWorkflow } from "@switchyard/core-flows"
+import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
+import { HttpTypes } from "@switchyard/types"
 
 export const POST = async (
   req: MedusaRequest<HttpTypes.AdminDraftOrderParams>, 

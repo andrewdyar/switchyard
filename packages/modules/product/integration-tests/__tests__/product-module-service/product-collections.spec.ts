@@ -1,12 +1,12 @@
-import { IProductModuleService } from "@medusajs/framework/types"
+import { IProductModuleService } from "@switchyard/framework/types"
 import {
   Modules,
   ProductStatus,
   toMikroORMEntity,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   moduleIntegrationTestRunner,
-} from "@medusajs/test-utils"
+} from "@switchyard/test-utils"
 import { Product, ProductCollection } from "@models"
 import { createCollections } from "../../__fixtures__/product"
 

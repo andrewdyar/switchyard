@@ -1,11 +1,11 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { AdminUpdateViewConfigurationType } from "../validators"
-import { HttpTypes } from "@medusajs/framework/types"
-import { MedusaError, Modules } from "@medusajs/framework/utils"
-import { updateViewConfigurationWorkflow } from "@medusajs/core-flows"
+import { HttpTypes } from "@switchyard/framework/types"
+import { MedusaError, Modules } from "@switchyard/framework/utils"
+import { updateViewConfigurationWorkflow } from "@switchyard/core-flows"
 
 /**
  * @since 2.10.3

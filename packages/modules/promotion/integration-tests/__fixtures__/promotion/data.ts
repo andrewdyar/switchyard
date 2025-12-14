@@ -1,5 +1,5 @@
-import { CreatePromotionDTO } from "@medusajs/framework/types"
-import { PromotionType } from "@medusajs/framework/utils"
+import { CreatePromotionDTO } from "@switchyard/framework/types"
+import { PromotionType } from "@switchyard/framework/utils"
 
 export const defaultPromotionsData: CreatePromotionDTO[] = [
   {

@@ -14,8 +14,8 @@ import {
   PlusMini,
   TrianglesMini,
   XMarkMini,
-} from "@medusajs/icons"
-import { clx, Text } from "@medusajs/ui"
+} from "@switchyard/icons"
+import { clx, Text } from "@switchyard/ui"
 import { matchSorter } from "match-sorter"
 import {
   ComponentPropsWithoutRef,

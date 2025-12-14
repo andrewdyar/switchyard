@@ -1,6 +1,6 @@
 import { join } from "path"
 import { Modules } from "./definition"
-import type { LoadedModule } from "@medusajs/types"
+import type { LoadedModule } from "@switchyard/types"
 import { FileSystem } from "../common/file-system"
 import { toUnixSlash } from "../common/to-unix-slash"
 import { toCamelCase } from "../common/to-camel-case"
@@ -94,7 +94,7 @@ export async function generateContainerTypes(
 
         if (SERVICES_INTERFACES[key]) {
           result.imports.push(
-            `import type { ${SERVICES_INTERFACES[key]} } from '@medusajs/framework/types'`
+            `import type { ${SERVICES_INTERFACES[key]} } from '@switchyard/framework/types'`
           )
           result.mappings.push(`${interfaceKey}: ${SERVICES_INTERFACES[key]}`)
           return
@@ -133,7 +133,7 @@ export async function generateContainerTypes(
   const fileName = "modules-bindings.d.ts"
   const fileContents = `${imports.join(
     "\n"
-  )}\n\ndeclare module '@medusajs/framework/types' {
+  )}\n\ndeclare module '@switchyard/framework/types' {
   interface ${interfaceName} {
     ${mappings.join(",\n    ")}
   }

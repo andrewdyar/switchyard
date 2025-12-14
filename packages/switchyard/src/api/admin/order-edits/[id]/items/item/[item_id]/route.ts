@@ -1,9 +1,9 @@
-import { orderEditUpdateItemQuantityWorkflow } from "@medusajs/core-flows"
+import { orderEditUpdateItemQuantityWorkflow } from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
 import { AdminPostOrderEditsUpdateItemQuantityReqSchemaType } from "../../../../validators"
 
 export const POST = async (

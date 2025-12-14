@@ -1,10 +1,10 @@
 import {
   deleteLineItemsWorkflowId,
   updateLineItemInCartWorkflowId,
-} from "@medusajs/core-flows"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { AdditionalData, HttpTypes } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+} from "@switchyard/core-flows"
+import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 import { refetchCart } from "../../../helpers"
 
 export const POST = async (

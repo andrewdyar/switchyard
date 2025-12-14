@@ -1,8 +1,8 @@
-import { MiddlewareRoute } from "@medusajs/framework/http"
+import { MiddlewareRoute } from "@switchyard/framework/http"
 import {
   validateAndTransformBody,
   validateAndTransformQuery,
-} from "@medusajs/framework"
+} from "@switchyard/framework"
 import * as queryConfig from "./query-config"
 import {
   AdminCreatePaymentCapture,

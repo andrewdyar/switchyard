@@ -1,6 +1,6 @@
-import { listShippingOptionsForOrderWorkflow } from "@medusajs/core-flows"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { AdminShippingOption, HttpTypes } from "@medusajs/framework/types"
+import { listShippingOptionsForOrderWorkflow } from "@switchyard/core-flows"
+import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { AdminShippingOption, HttpTypes } from "@switchyard/framework/types"
 
 /**
  * @since 2.10.0

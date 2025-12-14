@@ -1,7 +1,7 @@
 import { useTranslation } from "react-i18next"
 
-import { Buildings } from "@medusajs/icons"
-import { InventoryItemDTO } from "@medusajs/types"
+import { Buildings } from "@switchyard/icons"
+import { InventoryItemDTO } from "@switchyard/types"
 
 import { ActionMenu } from "../../../../../components/common/action-menu"
 

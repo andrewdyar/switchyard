@@ -1,4 +1,4 @@
-import { MedusaContainer } from "@medusajs/types"
+import { MedusaContainer } from "@switchyard/types"
 import {
   asFunction,
   asValue,
@@ -6,7 +6,7 @@ import {
   ClassOrFunctionReturning,
   createContainer,
   Resolver,
-} from "@medusajs/deps/awilix"
+} from "@switchyard/deps/awilix"
 
 function asArray(
   resolvers: (ClassOrFunctionReturning<unknown> | Resolver<unknown>)[]

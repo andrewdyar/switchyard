@@ -3,11 +3,11 @@ import {
   AuthenticationResponse,
   AuthIdentityProviderService,
   Logger,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   AbstractAuthModuleProvider,
   MedusaError,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { createClient, SupabaseClient } from "@supabase/supabase-js"
 import crypto from "crypto"
 

@@ -4,8 +4,8 @@ import {
   CreateOrderLineItemDTO,
   OrderLineItemDTO,
   OrderWorkflow,
-} from "@medusajs/framework/types"
-import { deduplicate } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { deduplicate } from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -13,7 +13,7 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { findOneOrAnyRegionStep } from "../../cart/steps/find-one-or-any-region"
 import { findOrCreateCustomerStep } from "../../cart/steps/find-or-create-customer"
 import { findSalesChannelStep } from "../../cart/steps/find-sales-channel"
@@ -71,8 +71,8 @@ export const addOrderLineItemsWorkflowId = "order-add-line-items"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { addOrderLineItemsWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { addOrderLineItemsWorkflow } from "@switchyard/core/core-flows";
+ * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * addOrderLineItemsWorkflow.hooks.setPricingContext((
  *   { order, variantIds, region, customerData, additional_data }, { container }

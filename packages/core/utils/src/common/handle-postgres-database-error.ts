@@ -19,7 +19,7 @@ export function handlePostgresDatabaseError(err: any): never {
     throw new Error(
       `Failed to establish a connection to PostgreSQL. Please ensure the following is true and try again:
       - You have a PostgreSQL database running
-      - You have passed the correct credentials in medusa-config.js
+      - You have passed the correct credentials in switchyard.config.js
       - You have formatted the database connection string correctly. See below:
       "postgres://[username]:[password]@[host]:[port]/[db_name]" - If there is no password, you can omit it from the connection string
       ${EOL}

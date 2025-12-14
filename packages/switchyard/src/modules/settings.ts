@@ -1,6 +1,6 @@
-import SettingsModule from "@medusajs/settings"
+import SettingsModule from "@switchyard/settings"
 
-export * from "@medusajs/settings"
+export * from "@switchyard/settings"
 
 export default SettingsModule
-export const discoveryPath = require.resolve("@medusajs/settings")
+export const discoveryPath = require.resolve("@switchyard/settings")

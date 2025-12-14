@@ -1,6 +1,6 @@
-import PricingModule from "@medusajs/pricing"
+import PricingModule from "@switchyard/pricing"
 
-export * from "@medusajs/pricing"
+export * from "@switchyard/pricing"
 
 export default PricingModule
-export const discoveryPath = require.resolve("@medusajs/pricing")
+export const discoveryPath = require.resolve("@switchyard/pricing")

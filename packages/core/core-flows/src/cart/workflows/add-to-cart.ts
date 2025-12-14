@@ -3,12 +3,12 @@ import {
   AddToCartWorkflowInputDTO,
   ConfirmVariantInventoryWorkflowInputDTO,
   CreateLineItemForCartDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   CartWorkflowEvents,
   deduplicate,
   isDefined,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -16,7 +16,7 @@ import {
   transform,
   when,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { acquireLockStep, releaseLockStep } from "../../locking"
@@ -91,8 +91,8 @@ export const addToCartWorkflowId = "add-to-cart"
  * You can consume the `setPricingContext` hook to add the `location_id` context to the prices calculation:
  *
  * ```ts
- * import { addToCartWorkflow } from "@medusajs/medusa/core-flows";
- * import { StepResponse } from "@medusajs/workflows-sdk";
+ * import { addToCartWorkflow } from "@switchyard/core/core-flows";
+ * import { StepResponse } from "@switchyard/workflows-sdk";
  *
  * addToCartWorkflow.hooks.setPricingContext((
  *   { cart, variantIds, items, additional_data }, { container }

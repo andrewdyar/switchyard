@@ -9,7 +9,7 @@ import {
   FulfillmentOrderDTO,
   IFulfillmentProvider,
   ValidateFulfillmentDataContext,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 /**
  * ### constructor
@@ -28,8 +28,8 @@ import {
  * #### Example
  *
  * ```ts title="src/modules/my-fulfillment/service.ts"
- * import { AbstractFulfillmentProviderService } from "@medusajs/framework/utils"
- * import { Logger } from "@medusajs/framework/types"
+ * import { AbstractFulfillmentProviderService } from "@switchyard/framework/utils"
+ * import { Logger } from "@switchyard/framework/types"
  *
  * type InjectedDependencies = {
  *   logger: Logger
@@ -68,7 +68,7 @@ export class AbstractFulfillmentProviderService
   /**
    * Each fulfillment provider has a unique identifier defined in its class. The provider's ID
    * will be stored as `fp_{identifier}_{id}`, where `{id}` is the provider's `id`
-   * property in the `medusa-config.ts`.
+   * property in the `switchyard.config.ts`.
    *
    * @example
    * class MyFulfillmentProviderService extends AbstractFulfillmentProviderService {
@@ -111,7 +111,7 @@ export class AbstractFulfillmentProviderService
    *
    * @example
    * // other imports...
-   * import { FulfillmentOption } from "@medusajs/framework/types"
+   * import { FulfillmentOption } from "@switchyard/framework/types"
    *
    * class MyFulfillmentProviderService extends AbstractFulfillmentProviderService {
    *   // ...
@@ -235,7 +235,7 @@ export class AbstractFulfillmentProviderService
    * @returns The calculated price's details.
    *
    * @example
-   * import { CalculateShippingOptionPriceDTO } from "@medusajs/framework/types"
+   * import { CalculateShippingOptionPriceDTO } from "@switchyard/framework/types"
    * class MyFulfillmentProviderService extends AbstractFulfillmentProviderService {
    *   // ...
    *   async calculatePrice(

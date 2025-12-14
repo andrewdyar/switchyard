@@ -1,12 +1,12 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
-import { createShippingOptionTypesWorkflow } from "@medusajs/core-flows"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
+import { createShippingOptionTypesWorkflow } from "@switchyard/core-flows"
 import { refetchShippingOptionType } from "./helpers"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 /**
  * @since 2.10.0

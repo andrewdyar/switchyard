@@ -1,4 +1,4 @@
-import { dynamicImport, FileSystem, isFileSkipped } from "@medusajs/utils"
+import { dynamicImport, FileSystem, isFileSkipped } from "@switchyard/utils"
 import { join } from "path"
 import zod from "zod"
 

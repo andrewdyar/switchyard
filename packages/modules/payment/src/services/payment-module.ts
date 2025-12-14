@@ -38,7 +38,7 @@ import {
   UpdatePaymentSessionDTO,
   UpsertPaymentCollectionDTO,
   WebhookActionResult,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   BigNumber,
   EmitEvents,
@@ -53,7 +53,7 @@ import {
   PaymentCollectionStatus,
   PaymentSessionStatus,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   AccountHolder,
   Capture,

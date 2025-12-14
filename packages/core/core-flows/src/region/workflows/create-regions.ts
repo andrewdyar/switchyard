@@ -1,12 +1,12 @@
-import type { WorkflowTypes } from "@medusajs/framework/types"
-import { RegionWorkflowEvents } from "@medusajs/framework/utils"
+import type { WorkflowTypes } from "@switchyard/framework/types"
+import { RegionWorkflowEvents } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   parallelize,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { createPricePreferencesWorkflow } from "../../pricing"
 import { createRegionsStep } from "../steps"

@@ -1,6 +1,6 @@
-import { AuthenticatedMedusaRequest, MedusaResponse } from "@medusajs/framework"
-import { HttpTypes } from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
+import { AuthenticatedMedusaRequest, MedusaResponse } from "@switchyard/framework"
+import { HttpTypes } from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
 
 /**
  * @since 2.11.2

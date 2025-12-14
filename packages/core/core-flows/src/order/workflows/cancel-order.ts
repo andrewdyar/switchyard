@@ -3,14 +3,14 @@ import {
   OrderDTO,
   OrderWorkflow,
   PaymentCollectionDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   deepFlatMap,
   MathBN,
   MedusaError,
   OrderWorkflowEvents,
   PaymentCollectionStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createHook,
   createStep,
@@ -20,7 +20,7 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep, useQueryGraphStep } from "../../common"
 import { updatePaymentCollectionStep } from "../../payment-collection"
 import { cancelPaymentStep } from "../../payment/steps"

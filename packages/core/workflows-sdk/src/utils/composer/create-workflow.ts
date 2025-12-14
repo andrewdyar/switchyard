@@ -2,18 +2,18 @@ import {
   TransactionModelOptions,
   WorkflowHandler,
   WorkflowManager,
-} from "@medusajs/orchestration"
+} from "@switchyard/orchestration"
 import {
   IWorkflowEngineService,
   LoadedModule,
   MedusaContainer,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   getCallerFilePath,
   isString,
   Modules,
   OrchestrationUtils,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { ulid } from "ulid"
 import { exportWorkflow, WorkflowResult } from "../../helper"
 import { createStep } from "./create-step"
@@ -59,8 +59,8 @@ const buildTransactionId = (
  * import {
  *   createWorkflow,
  *   WorkflowResponse
- * } from "@medusajs/framework/workflows-sdk"
- * import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+ * } from "@switchyard/framework/workflows-sdk"
+ * import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
  * import {
  *   createProductStep,
  *   getProductStep,

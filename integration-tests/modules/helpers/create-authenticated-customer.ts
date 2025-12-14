@@ -1,4 +1,4 @@
-import { CreateCustomerDTO } from "@medusajs/types"
+import { CreateCustomerDTO } from "@switchyard/types"
 
 export const createAuthenticatedCustomer = async (
   api: any,

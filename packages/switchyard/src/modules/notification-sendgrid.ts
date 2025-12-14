@@ -1,6 +1,6 @@
-import SendGridNotificationProvider from "@medusajs/notification-sendgrid"
+import SendGridNotificationProvider from "@switchyard/notification-sendgrid"
 
-export * from "@medusajs/notification-sendgrid"
+export * from "@switchyard/notification-sendgrid"
 
 export default SendGridNotificationProvider
-export const discoveryPath = require.resolve("@medusajs/notification-sendgrid")
+export const discoveryPath = require.resolve("@switchyard/notification-sendgrid")

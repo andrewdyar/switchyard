@@ -1,4 +1,4 @@
-import { BeforeCreate, OnInit } from "@medusajs/framework/mikro-orm/core"
+import { BeforeCreate, OnInit } from "@switchyard/framework/mikro-orm/core"
 import {
   BigNumberInput,
   Context,
@@ -19,7 +19,7 @@ import {
   SoftDeleteReturn,
   UpdateOrderItemWithSelectorDTO,
   UpdateOrderReturnReasonDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   BigNumber,
   ChangeActionType,
@@ -42,7 +42,7 @@ import {
   promiseAll,
   toMikroORMEntity,
   transformPropertiesToBigNumber,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   Order,
   OrderAddress,

@@ -1,8 +1,8 @@
-import { IApiKeyModuleService } from "@medusajs/framework/types"
-import { ApiKeyType, Module, Modules } from "@medusajs/framework/utils"
+import { IApiKeyModuleService } from "@switchyard/framework/types"
+import { ApiKeyType, Module, Modules } from "@switchyard/framework/utils"
 import { ApiKeyModuleService } from "@services"
 import crypto from "crypto"
-import { moduleIntegrationTestRunner } from "@medusajs/test-utils"
+import { moduleIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   createPublishableKeyFixture,
   createSecretKeyFixture,

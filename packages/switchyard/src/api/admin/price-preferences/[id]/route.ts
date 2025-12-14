@@ -1,14 +1,14 @@
 import {
   deletePricePreferencesWorkflow,
   updatePricePreferencesWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
   refetchEntity,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<HttpTypes.AdminPricePreferenceParams>,

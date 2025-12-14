@@ -1,4 +1,4 @@
-import { ClaimReason, ClaimType } from "@medusajs/framework/utils"
+import { ClaimReason, ClaimType } from "@switchyard/framework/utils"
 import { z } from "zod"
 import {
   createFindParams,

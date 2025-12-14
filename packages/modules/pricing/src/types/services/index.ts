@@ -1,4 +1,4 @@
-import { PriceListStatus, PricingTypes } from "@medusajs/framework/types"
+import { PriceListStatus, PricingTypes } from "@switchyard/framework/types"
 
 export interface CreatePriceListDTO extends PricingTypes.CreatePriceListDTO {
   rules_count?: number

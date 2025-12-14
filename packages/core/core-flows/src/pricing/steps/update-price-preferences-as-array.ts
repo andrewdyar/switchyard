@@ -1,13 +1,13 @@
 import {
   IPricingModuleService,
   PricingWorkflow,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   MedusaError,
   Modules,
   arrayDifference,
-} from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The price preferences to update.

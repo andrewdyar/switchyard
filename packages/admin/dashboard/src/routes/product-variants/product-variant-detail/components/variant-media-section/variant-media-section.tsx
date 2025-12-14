@@ -1,7 +1,7 @@
-import { Container, Heading, Text, Tooltip } from "@medusajs/ui"
+import { Container, Heading, Text, Tooltip } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
-import { HttpTypes } from "@medusajs/types"
-import { PencilSquare, ThumbnailBadge } from "@medusajs/icons"
+import { HttpTypes } from "@switchyard/types"
+import { PencilSquare, ThumbnailBadge } from "@switchyard/icons"
 
 import { ActionMenu } from "../../../../../components/common/action-menu"
 

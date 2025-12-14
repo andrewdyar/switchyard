@@ -1,15 +1,15 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 import {
   importProductsWorkflowId,
   waitConfirmationProductImportStepId,
-} from "@medusajs/core-flows"
-import { IWorkflowEngineService } from "@medusajs/framework/types"
-import { Modules, TransactionHandlerType } from "@medusajs/framework/utils"
-import { StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/core-flows"
+import { IWorkflowEngineService } from "@switchyard/framework/types"
+import { Modules, TransactionHandlerType } from "@switchyard/framework/utils"
+import { StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * @deprecated use `POST /admin/products/imports/:transaction_id/confirm` instead.

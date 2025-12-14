@@ -1,10 +1,10 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
-import { linkProductsToSalesChannelWorkflow } from "@medusajs/core-flows"
-import { HttpTypes } from "@medusajs/framework/types"
+import { linkProductsToSalesChannelWorkflow } from "@switchyard/core-flows"
+import { HttpTypes } from "@switchyard/framework/types"
 import { refetchSalesChannel } from "../../helpers"
 
 export const POST = async (

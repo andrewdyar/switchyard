@@ -1,5 +1,5 @@
 /* @refresh reload */
-import { defineRouteConfig } from "@medusajs/admin-sdk"
+import { defineRouteConfig } from "@switchyard/admin-sdk"
 import {
   Container,
   Heading,
@@ -9,7 +9,7 @@ import {
   Label,
   Toaster,
   toast,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useState } from "react"
 
 const SUPABASE_URL = process.env.MEDUSA_ADMIN_SUPABASE_URL || ""

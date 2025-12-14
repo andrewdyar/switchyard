@@ -1,4 +1,4 @@
-import { ILockingModule, Logger } from "@medusajs/types"
+import { ILockingModule, Logger } from "@switchyard/types"
 
 export class Orchestrator {
   /**

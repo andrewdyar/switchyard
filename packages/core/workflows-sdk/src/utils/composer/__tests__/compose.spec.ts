@@ -3,15 +3,15 @@ import {
   SchedulerOptions,
   WorkflowManager,
   WorkflowScheduler,
-} from "@medusajs/orchestration"
-import { IEventBusModuleService } from "@medusajs/types"
+} from "@switchyard/orchestration"
+import { IEventBusModuleService } from "@switchyard/types"
 import {
   composeMessage,
   createMedusaContainer,
   Modules,
   promiseAll,
-} from "@medusajs/utils"
-import { asValue } from "@medusajs/deps/awilix"
+} from "@switchyard/utils"
+import { asValue } from "@switchyard/deps/awilix"
 import { setTimeout } from "timers/promises"
 import {
   createStep,

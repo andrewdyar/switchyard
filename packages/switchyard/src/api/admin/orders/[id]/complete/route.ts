@@ -1,13 +1,13 @@
-import { AdditionalData, HttpTypes } from "@medusajs/framework/types"
-import { completeOrderWorkflow } from "@medusajs/core-flows"
+import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
+import { completeOrderWorkflow } from "@switchyard/core-flows"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<AdditionalData, HttpTypes.AdminGetOrderParams>,

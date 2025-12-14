@@ -1,11 +1,11 @@
-import type { SchedulerOptions } from "@medusajs/orchestration"
-import { MedusaContainer } from "@medusajs/types"
-import { isFileSkipped, isObject, MedusaError } from "@medusajs/utils"
+import type { SchedulerOptions } from "@switchyard/orchestration"
+import { MedusaContainer } from "@switchyard/types"
+import { isFileSkipped, isObject, MedusaError } from "@switchyard/utils"
 import {
   createStep,
   createWorkflow,
   StepResponse,
-} from "@medusajs/workflows-sdk"
+} from "@switchyard/workflows-sdk"
 import { ResourceLoader } from "../utils/resource-loader"
 
 type CronJobConfig = {

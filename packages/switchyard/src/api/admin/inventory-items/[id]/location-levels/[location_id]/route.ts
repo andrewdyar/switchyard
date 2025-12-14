@@ -1,14 +1,14 @@
 import {
   ContainerRegistrationKeys,
   MedusaError,
-} from "@medusajs/framework/utils"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
+} from "@switchyard/framework/utils"
+import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
 
 import {
   deleteInventoryLevelsWorkflow,
   updateInventoryLevelsWorkflow,
-} from "@medusajs/core-flows"
-import { HttpTypes } from "@medusajs/framework/types"
+} from "@switchyard/core-flows"
+import { HttpTypes } from "@switchyard/framework/types"
 import { refetchInventoryItem } from "../../../helpers"
 
 export const DELETE = async (

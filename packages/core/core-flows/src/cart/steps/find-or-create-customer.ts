@@ -2,14 +2,14 @@ import type {
   CustomerDTO,
   ICustomerModuleService,
   MedusaContainer,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   isDefined,
   Modules,
   useCache,
   validateEmail,
-} from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the customer to find or create.

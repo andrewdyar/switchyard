@@ -1,9 +1,9 @@
-import { Modules, RegionWorkflowEvents } from "@medusajs/framework/utils"
+import { Modules, RegionWorkflowEvents } from "@switchyard/framework/utils"
 import {
   WorkflowData,
   createWorkflow,
   transform,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep } from "../../common/steps/emit-event"
 import { removeRemoteLinkStep } from "../../common/steps/remove-remote-links"
 import { deleteRegionsStep } from "../steps"

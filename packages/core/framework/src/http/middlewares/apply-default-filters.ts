@@ -1,4 +1,4 @@
-import { isObject, isPresent } from "@medusajs/utils"
+import { isObject, isPresent } from "@switchyard/utils"
 import type {
   MedusaNextFunction,
   MedusaRequest,

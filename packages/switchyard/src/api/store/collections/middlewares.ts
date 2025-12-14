@@ -1,6 +1,6 @@
 import * as QueryConfig from "./query-config"
-import { MiddlewareRoute } from "@medusajs/framework/http"
-import { validateAndTransformQuery } from "@medusajs/framework"
+import { MiddlewareRoute } from "@switchyard/framework/http"
+import { validateAndTransformQuery } from "@switchyard/framework"
 import {
   StoreGetCollectionParams,
   StoreGetCollectionsParams,

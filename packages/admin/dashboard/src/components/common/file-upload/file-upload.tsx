@@ -1,5 +1,5 @@
-import { ArrowDownTray } from "@medusajs/icons"
-import { Text, clx } from "@medusajs/ui"
+import { ArrowDownTray } from "@switchyard/icons"
+import { Text, clx } from "@switchyard/ui"
 import { ChangeEvent, DragEvent, useRef, useState } from "react"
 
 export interface FileType {

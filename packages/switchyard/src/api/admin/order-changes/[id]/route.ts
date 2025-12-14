@@ -1,10 +1,10 @@
-import { updateOrderChangeWorkflow } from "@medusajs/core-flows"
-import { HttpTypes, RemoteQueryFunction } from "@medusajs/framework/types"
+import { updateOrderChangeWorkflow } from "@switchyard/core-flows"
+import { HttpTypes, RemoteQueryFunction } from "@switchyard/framework/types"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 /**
  * @since 2.12.0

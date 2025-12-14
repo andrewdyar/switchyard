@@ -156,7 +156,7 @@ const writeFeatureFlag = (settings, featureFlagPath) => {
 const logFeatureFlagUsage = (flagPath, flagSettings) => {
   console.log(`Feature flag created: ${flagPath}`)
   console.log(`
-To use this feature flag, add the following to your medusa-config.js:
+To use this feature flag, add the following to your switchyard.config.js:
   
   {
     ...,

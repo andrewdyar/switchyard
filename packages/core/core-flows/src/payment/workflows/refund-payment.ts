@@ -1,10 +1,10 @@
-import { BigNumberInput, PaymentDTO } from "@medusajs/framework/types"
+import { BigNumberInput, PaymentDTO } from "@switchyard/framework/types"
 import {
   BigNumber,
   MathBN,
   MedusaError,
   PaymentEvents,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
@@ -12,7 +12,7 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep, useRemoteQueryStep } from "../../common"
 import { addOrderTransactionStep } from "../../order/steps/add-order-transaction"
 import { createOrderRefundCreditLinesWorkflow } from "../../order/workflows/payments/create-order-refund-credit-lines"

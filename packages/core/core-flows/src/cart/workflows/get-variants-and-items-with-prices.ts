@@ -8,20 +8,20 @@ import {
   RegionDTO,
   UpdateLineItemDTO,
   UpdateLineItemWithSelectorDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   filterObjectByKeys,
   isDefined,
   MedusaError,
   ProductStatus,
   simpleHash,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createWorkflow,
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { getVariantPriceSetsStep } from "../steps"
 import {

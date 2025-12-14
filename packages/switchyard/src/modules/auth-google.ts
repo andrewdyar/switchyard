@@ -1,6 +1,6 @@
-import GoogleAuthProvider from "@medusajs/auth-google"
+import GoogleAuthProvider from "@switchyard/auth-google"
 
-export * from "@medusajs/auth-google"
+export * from "@switchyard/auth-google"
 
 export default GoogleAuthProvider
-export const discoveryPath = require.resolve("@medusajs/auth-google")
+export const discoveryPath = require.resolve("@switchyard/auth-google")

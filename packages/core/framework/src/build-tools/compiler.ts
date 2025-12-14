@@ -1,5 +1,5 @@
-import type { AdminOptions, ConfigModule, Logger } from "@medusajs/types"
-import { FileSystem, getConfigFile, getResolvedPlugins } from "@medusajs/utils"
+import type { AdminOptions, ConfigModule, Logger } from "@switchyard/types"
+import { FileSystem, getConfigFile, getResolvedPlugins } from "@switchyard/utils"
 import chokidar from "chokidar"
 import { access, constants, copyFile, mkdir, rm } from "fs/promises"
 import path from "path"
@@ -152,9 +152,9 @@ export class Compiler {
    */
   async #loadMedusaConfig() {
     const { configModule, configFilePath, error } =
-      await getConfigFile<ConfigModule>(this.#projectRoot, "medusa-config")
+      await getConfigFile<ConfigModule>(this.#projectRoot, "switchyard.config")
     if (error) {
-      this.#logger.error(`Failed to load medusa-config.(js|ts) file`)
+      this.#logger.error(`Failed to load switchyard.config.(js|ts) file`)
       this.#logger.error(error)
       return
     }
@@ -329,7 +329,7 @@ export class Compiler {
 
   /**
    * Builds the frontend source code of a Medusa application
-   * using the "@medusajs/admin-bundler" package.
+   * using the "@switchyard/admin-bundler" package.
    */
   async buildAppFrontend(
     adminOnly: boolean,
@@ -361,7 +361,7 @@ export class Compiler {
      */
     if (configFile.configModule.admin.disable && !adminOnly) {
       this.#logger.info(
-        "Skipping admin build, since its disabled inside the medusa-config file"
+        "Skipping admin build, since its disabled inside the switchyard.config file"
       )
       return true
     }
@@ -372,7 +372,7 @@ export class Compiler {
      */
     if (!configFile.configModule.admin.disable && adminOnly) {
       this.#logger.warn(
-        `You are building using the flag --admin-only but the admin is enabled in your medusa-config, If you intend to host the dashboard separately you should disable the admin in your medusa config`
+        `You are building using the flag --admin-only but the admin is enabled in your switchyard.config, If you intend to host the dashboard separately you should disable the admin in your medusa config`
       )
     }
 

@@ -1,12 +1,12 @@
 import {
   CustomerGroupDTO,
   CreateCustomerGroupDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { createCustomerGroupsStep } from "../steps"
 
 /**

@@ -1,4 +1,4 @@
-import { validateAndTransformQuery } from "@medusajs/framework"
+import { validateAndTransformQuery } from "@switchyard/framework"
 import {
   applyDefaultFilters,
   applyParamsAsFilters,
@@ -6,8 +6,8 @@ import {
   clearFiltersByKey,
   maybeApplyLinkFilter,
   MiddlewareRoute,
-} from "@medusajs/framework/http"
-import { ProductStatus } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { ProductStatus } from "@switchyard/framework/utils"
 import {
   filterByValidSalesChannels,
   normalizeDataForContext,

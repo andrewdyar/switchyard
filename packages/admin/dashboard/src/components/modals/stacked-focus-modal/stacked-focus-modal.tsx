@@ -1,4 +1,4 @@
-import { FocusModal, clx } from "@medusajs/ui"
+import { FocusModal, clx } from "@switchyard/ui"
 import {
   ComponentPropsWithoutRef,
   PropsWithChildren,

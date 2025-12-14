@@ -1,4 +1,4 @@
-import { isDefined, isPresent } from "@medusajs/framework/utils"
+import { isDefined, isPresent } from "@switchyard/framework/utils"
 import {
   createHook,
   createWorkflow,
@@ -7,8 +7,8 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
-import { AdditionalData } from "@medusajs/types"
+} from "@switchyard/framework/workflows-sdk"
+import { AdditionalData } from "@switchyard/types"
 import { useQueryGraphStep } from "../../common"
 import { acquireLockStep, releaseLockStep } from "../../locking"
 import { removeShippingMethodFromCartStep, validateCartStep } from "../steps"

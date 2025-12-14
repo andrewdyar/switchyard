@@ -3,13 +3,13 @@ import { MIMEType } from "util"
 import type {
   MedusaResponse,
   AuthenticatedMedusaRequest,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import {
   Modules,
   MedusaError,
   MedusaErrorTypes,
-} from "@medusajs/framework/utils"
-import type { HttpTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework/utils"
+import type { HttpTypes } from "@switchyard/framework/types"
 import type { AdminUploadPreSignedUrlType } from "../validators"
 
 export const POST = async (

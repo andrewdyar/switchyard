@@ -1,11 +1,11 @@
-import type { OrderWorkflowDTO } from "@medusajs/framework/types"
+import type { OrderWorkflowDTO } from "@switchyard/framework/types"
 import {
   createWorkflow,
   transform,
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useQueryGraphStep } from "../../common"
 import { getItemTaxLinesStep } from "../../tax/steps/get-item-tax-lines"
 import { setOrderTaxLinesForItemsStep } from "../steps"

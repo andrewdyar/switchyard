@@ -1,4 +1,4 @@
-import { Context, FindConfig, ModuleJoinerConfig } from "@medusajs/framework/types"
+import { Context, FindConfig, ModuleJoinerConfig } from "@switchyard/framework/types"
 import {
   EmitEvents,
   InjectManager,
@@ -7,7 +7,7 @@ import {
   MedusaService,
   Modules,
   isString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { InventoryGroup } from "../models"
 import { InventoryGroupRepository } from "../repositories"
 import InventoryGroupService from "./inventory-group"

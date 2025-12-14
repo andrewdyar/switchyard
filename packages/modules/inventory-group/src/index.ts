@@ -1,4 +1,4 @@
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 import InventoryGroupModuleService from "./services/inventory-group-module"
 
 export const INVENTORY_GROUP_MODULE = "inventoryGroup"

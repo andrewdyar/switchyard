@@ -1,4 +1,4 @@
-import { model, ShippingOptionPriceType } from "@medusajs/framework/utils"
+import { model, ShippingOptionPriceType } from "@switchyard/framework/utils"
 
 import { Fulfillment } from "./fulfillment"
 import { FulfillmentProvider } from "./fulfillment-provider"

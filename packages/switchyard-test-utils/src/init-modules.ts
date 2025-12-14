@@ -1,14 +1,14 @@
-import { logger } from "@medusajs/framework/logger"
+import { logger } from "@switchyard/framework/logger"
 import {
   ExternalModuleDeclaration,
   InternalModuleDeclaration,
   ModuleJoinerConfig,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   createPgConnection,
   promiseAll,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export interface InitModulesOptions {
   injectedDependencies?: Record<string, unknown>
@@ -35,7 +35,7 @@ export async function initModules({
   preventConnectionDestroyWarning = false,
   cwd,
 }: InitModulesOptions) {
-  const moduleSdkImports = require("@medusajs/framework/modules-sdk")
+  const moduleSdkImports = require("@switchyard/framework/modules-sdk")
 
   injectedDependencies ??= {}
 

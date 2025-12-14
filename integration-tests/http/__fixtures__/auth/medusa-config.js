@@ -1,4 +1,4 @@
-const { defineConfig, Modules } = require("@medusajs/utils")
+const { defineConfig, Modules } = require("@switchyard/utils")
 const { generateKeyPairSync } = require("crypto")
 const os = require("os")
 

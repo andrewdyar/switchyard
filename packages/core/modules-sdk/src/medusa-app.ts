@@ -1,5 +1,5 @@
-import { asValue } from "@medusajs/deps/awilix"
-import { RemoteFetchDataCallback } from "@medusajs/orchestration"
+import { asValue } from "@switchyard/deps/awilix"
+import { RemoteFetchDataCallback } from "@switchyard/orchestration"
 import {
   ConfigModule,
   ExternalModuleDeclaration,
@@ -16,7 +16,7 @@ import {
   ModuleJoinerConfig,
   ModuleServiceInitializeOptions,
   RemoteQueryFunction,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   createMedusaContainer,
@@ -34,7 +34,7 @@ import {
   ModulesSdkUtils,
   promiseAll,
   registerFeatureFlag,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { Link } from "./link"
 import {
   MedusaModule,

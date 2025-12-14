@@ -1,5 +1,5 @@
-import { PencilSquare, Trash, XCircle } from "@medusajs/icons"
-import { ApiKeyDTO } from "@medusajs/types"
+import { PencilSquare, Trash, XCircle } from "@switchyard/icons"
+import { ApiKeyDTO } from "@switchyard/types"
 import {
   Badge,
   Container,
@@ -9,7 +9,7 @@ import {
   Text,
   toast,
   usePrompt,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 import { useNavigate } from "react-router-dom"
 import {

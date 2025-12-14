@@ -11,7 +11,7 @@ import {
   ReservationItemDTO,
   RestoreReturn,
   SoftDeleteReturn,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   arrayDifference,
   BigNumber,
@@ -25,7 +25,7 @@ import {
   MedusaError,
   MedusaService,
   partitionArray,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { InventoryItem, InventoryLevel, ReservationItem } from "@models"
 import { joinerConfig } from "../joiner-config"
 import { applyEntityHooks } from "../utils/apply-decorators"

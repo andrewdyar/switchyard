@@ -1,4 +1,4 @@
-import { Text, clx } from "@medusajs/ui"
+import { Text, clx } from "@switchyard/ui"
 import { ReactNode } from "react"
 
 export type SectionRowProps = {

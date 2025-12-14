@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 const Address = model.define(
   { tableName: "cart_address", name: "Address" },

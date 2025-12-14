@@ -1,14 +1,14 @@
-import { createPaymentCollectionForCartWorkflowId } from "@medusajs/core-flows"
+import { createPaymentCollectionForCartWorkflowId } from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
-import { Modules } from "@medusajs/utils"
+} from "@switchyard/framework/utils"
+import { Modules } from "@switchyard/utils"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<

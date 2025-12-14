@@ -1,5 +1,5 @@
-import { FilterableProductProps, OperatorMap } from "@medusajs/framework/types"
-import { isPresent, ProductStatus } from "@medusajs/framework/utils"
+import { FilterableProductProps, OperatorMap } from "@switchyard/framework/types"
+import { isPresent, ProductStatus } from "@switchyard/framework/utils"
 import { z } from "zod"
 import { createOperatorMap } from "../../validators"
 import { booleanString } from "../common"

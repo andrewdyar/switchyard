@@ -1,5 +1,5 @@
-import { HttpTypes } from "@medusajs/types"
-import { Checkbox } from "@medusajs/ui"
+import { HttpTypes } from "@switchyard/types"
+import { Checkbox } from "@switchyard/ui"
 import { keepPreviousData } from "@tanstack/react-query"
 import {
   OnChangeFn,

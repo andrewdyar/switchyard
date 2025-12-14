@@ -1,5 +1,5 @@
-import { simpleHash } from "@medusajs/framework/utils"
-import { IndexTypes, InferEntityType, Logger } from "@medusajs/types"
+import { simpleHash } from "@switchyard/framework/utils"
+import { IndexTypes, InferEntityType, Logger } from "@switchyard/types"
 import { IndexMetadata } from "@models"
 import { schemaObjectRepresentationPropertiesToOmit } from "@types"
 import { DataSynchronizer } from "../../services/data-synchronizer"

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom"
-import { toast, usePrompt } from "@medusajs/ui"
+import { toast, usePrompt } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 
 import { useDeleteProductType } from "../../../../hooks/api/product-types"

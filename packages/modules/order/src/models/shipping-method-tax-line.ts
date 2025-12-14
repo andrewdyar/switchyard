@@ -1,4 +1,4 @@
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 import { OrderShippingMethod } from "./shipping-method"
 
 const _OrderShippingMethodTaxLine = model

@@ -1,4 +1,4 @@
-import { Text, clx } from "@medusajs/ui"
+import { Text, clx } from "@switchyard/ui"
 import { useTranslation } from "react-i18next"
 import { useDate } from "../../../hooks/use-date"
 

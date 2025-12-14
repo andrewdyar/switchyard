@@ -3,8 +3,8 @@ import { useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import * as zod from "zod"
 
-import { AdminOrder, InventoryItemDTO, OrderLineItemDTO } from "@medusajs/types"
-import { Alert, Button, Heading, Input, Select, toast } from "@medusajs/ui"
+import { AdminOrder, InventoryItemDTO, OrderLineItemDTO } from "@switchyard/types"
+import { Alert, Button, Heading, Input, Select, toast } from "@switchyard/ui"
 import { useForm, useWatch } from "react-hook-form"
 
 import { Form } from "../../../../../components/common/form"

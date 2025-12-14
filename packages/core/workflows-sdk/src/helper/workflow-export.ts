@@ -1,24 +1,24 @@
-import { MedusaModule } from "@medusajs/modules-sdk"
+import { MedusaModule } from "@switchyard/modules-sdk"
 import {
   DistributedTransactionEvents,
   DistributedTransactionType,
   LocalWorkflow,
   TransactionState,
-} from "@medusajs/orchestration"
+} from "@switchyard/orchestration"
 import {
   Context,
   IEventBusModuleService,
   LoadedModule,
   Logger,
   MedusaContainer,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   isPresent,
   MedusaContextType,
   Modules,
   TransactionHandlerType,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { EOL } from "os"
 import { ulid } from "ulid"
 import { MedusaWorkflow } from "../medusa-workflow"

@@ -1,4 +1,4 @@
-import { BigNumberInput, BigNumberRawValue, IBigNumber } from "@medusajs/types"
+import { BigNumberInput, BigNumberRawValue, IBigNumber } from "@switchyard/types"
 import { BigNumber as BigNumberConstructor } from "bignumber.js"
 import { isBigNumber } from "../common/is-big-number"
 import { isString } from "../common/is-string"

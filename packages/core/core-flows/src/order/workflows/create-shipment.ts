@@ -7,12 +7,12 @@ import {
   OrderLineItemDTO,
   OrderWorkflow,
   ProductVariantDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   FulfillmentWorkflowEvents,
   MathBN,
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createHook,
   createStep,
@@ -21,7 +21,7 @@ import {
   transform,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { emitEventStep, useQueryGraphStep } from "../../common"
 import { createShipmentWorkflow } from "../../fulfillment"
 import { registerOrderShipmentStep } from "../steps"

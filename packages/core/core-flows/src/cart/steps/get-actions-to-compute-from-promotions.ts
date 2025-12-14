@@ -2,9 +2,9 @@ import {
   ComputeActionContext,
   ComputeActionOptions,
   IPromotionModuleService
-} from "@medusajs/framework/types"
-import { Modules } from "@medusajs/framework/utils"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/types"
+import { Modules } from "@switchyard/framework/utils"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
 /**
  * The details of the items and shipping methods and its applied promotions.

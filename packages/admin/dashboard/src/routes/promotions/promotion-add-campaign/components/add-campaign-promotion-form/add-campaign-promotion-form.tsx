@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod"
-import { AdminCampaign, AdminPromotion } from "@medusajs/types"
-import { Button, RadioGroup, toast } from "@medusajs/ui"
+import { AdminCampaign, AdminPromotion } from "@switchyard/types"
+import { Button, RadioGroup, toast } from "@switchyard/ui"
 import { useEffect } from "react"
 import { useForm, useWatch } from "react-hook-form"
 import { useTranslation } from "react-i18next"

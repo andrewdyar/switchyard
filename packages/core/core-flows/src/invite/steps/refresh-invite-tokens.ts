@@ -1,7 +1,7 @@
-import type { IUserModuleService } from "@medusajs/framework/types"
-import { StepResponse, createStep } from "@medusajs/framework/workflows-sdk"
+import type { IUserModuleService } from "@switchyard/framework/types"
+import { StepResponse, createStep } from "@switchyard/framework/workflows-sdk"
 
-import { Modules } from "@medusajs/framework/utils"
+import { Modules } from "@switchyard/framework/utils"
 
 /**
  * The IDs of the invites to refresh.

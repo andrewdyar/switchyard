@@ -3,7 +3,7 @@ import {
   InferEntityType,
   PromotionRuleDTO,
   PromotionRuleOperatorValues,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ApplicationMethodTargetType,
   MathBN,
@@ -12,7 +12,7 @@ import {
   isPresent,
   isString,
   pickValueFromObject,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { PromotionRule } from "@models"
 import { CreatePromotionRuleDTO } from "@types"
 

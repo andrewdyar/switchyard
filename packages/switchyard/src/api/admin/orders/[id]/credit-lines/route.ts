@@ -1,10 +1,10 @@
-import { createOrderCreditLinesWorkflow } from "@medusajs/core-flows"
+import { createOrderCreditLinesWorkflow } from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<

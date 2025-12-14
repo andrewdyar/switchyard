@@ -1,16 +1,16 @@
 import {
   deleteTaxRegionsWorkflow,
   updateTaxRegionsWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes, RemoteQueryFunction } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { HttpTypes, RemoteQueryFunction } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 export const GET = async (
   req: AuthenticatedMedusaRequest<HttpTypes.AdminTaxRegionParams>,

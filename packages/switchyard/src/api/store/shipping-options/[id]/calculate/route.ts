@@ -1,7 +1,7 @@
-import { HttpTypes } from "@medusajs/framework/types"
-import { MedusaRequest, MedusaResponse } from "@medusajs/framework/http"
-import { calculateShippingOptionsPricesWorkflow } from "@medusajs/core-flows"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+import { HttpTypes } from "@switchyard/framework/types"
+import { MedusaRequest, MedusaResponse } from "@switchyard/framework/http"
+import { calculateShippingOptionsPricesWorkflow } from "@switchyard/core-flows"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const POST = async (
   req: MedusaRequest<

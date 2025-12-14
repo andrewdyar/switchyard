@@ -6,7 +6,7 @@
  */
 
 import SweepsModuleService from "./services/sweeps-module"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const SWEEPS_MODULE = "sweepsModuleService"
 

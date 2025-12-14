@@ -1,6 +1,6 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IndexTypes } from "@medusajs/types"
-import { defaultCurrencies, Modules } from "@medusajs/utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IndexTypes } from "@switchyard/types"
+import { defaultCurrencies, Modules } from "@switchyard/utils"
 import { setTimeout } from "timers/promises"
 import {
   adminHeaders,

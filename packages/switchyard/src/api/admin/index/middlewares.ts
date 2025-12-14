@@ -1,16 +1,16 @@
-import { validateAndTransformBody } from "@medusajs/framework"
+import { validateAndTransformBody } from "@switchyard/framework"
 import {
   AuthenticatedMedusaRequest,
   MedusaNextFunction,
   MedusaResponse,
   MiddlewareRoute,
-} from "@medusajs/framework/http"
-import { Logger } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { Logger } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   FeatureFlag,
   Modules,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import IndexEngineFeatureFlag from "../../../feature-flags/index-engine"
 import { authenticate } from "../../../utils/middlewares/authenticate-middleware"
 import { AdminIndexSyncPayload } from "./validator"

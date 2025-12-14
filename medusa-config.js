@@ -35,7 +35,7 @@ module.exports = defineConfig({
   },
   modules: [
     {
-      resolve: "@medusajs/inventory-group",
+      resolve: "@switchyard/inventory-group",
       options: {},
     },
   ],

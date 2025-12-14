@@ -1,6 +1,6 @@
-import FileModule from "@medusajs/file"
+import FileModule from "@switchyard/file"
 
-export * from "@medusajs/file"
+export * from "@switchyard/file"
 
 export default FileModule
-export const discoveryPath = require.resolve("@medusajs/file")
+export const discoveryPath = require.resolve("@switchyard/file")

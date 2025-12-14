@@ -1,12 +1,12 @@
 import {
   removeDraftOrderShippingMethodWorkflow,
   updateDraftOrderShippingMethodWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/types"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/types"
 import { AdminUpdateDraftOrderShippingMethodType } from "../../../../../validators"
 
 export const POST = async (

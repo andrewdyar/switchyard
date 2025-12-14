@@ -1,12 +1,12 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   ruleQueryConfigurations,
   validateRuleAttribute,
@@ -15,7 +15,7 @@ import {
 import {
   ApplicationMethodTargetTypeValues,
   RuleTypeValues,
-} from "@medusajs/types"
+} from "@switchyard/types"
 
 /*
   This endpoint returns all the potential values for rules (promotion rules, target rules and buy rules)

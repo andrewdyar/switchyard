@@ -1,14 +1,14 @@
 import {
   deleteCollectionsWorkflow,
   updateCollectionsWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
-import { AdditionalData, HttpTypes } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
+import { MedusaError } from "@switchyard/framework/utils"
 import { refetchCollection } from "../helpers"
 import { AdminUpdateCollectionType } from "../validators"
 

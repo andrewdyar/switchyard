@@ -1,11 +1,11 @@
-import { defineConfig, loadEnv } from "@medusajs/framework/utils"
+import { defineConfig, loadEnv } from "@switchyard/framework/utils"
 
 loadEnv(process.env.NODE_ENV || "development", process.cwd())
 
 // Build auth providers list - only include Supabase if env vars are configured
 const authProviders: any[] = [
   {
-    resolve: "@medusajs/medusa/auth-emailpass",
+    resolve: "@switchyard/core/auth-emailpass",
     id: "emailpass",
   },
 ]
@@ -13,7 +13,7 @@ const authProviders: any[] = [
 // Only add Supabase provider if all required env vars are present
 if (process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY && process.env.SUPABASE_SERVICE_ROLE_KEY) {
   authProviders.push({
-    resolve: "@medusajs/auth-supabase",
+    resolve: "@switchyard/auth-supabase",
     id: "supabase",
     options: {
       supabaseUrl: process.env.SUPABASE_URL,
@@ -29,10 +29,10 @@ const userAuthMethods = authProviders.map(p => p.id)
 // Build modules list - add Redis modules for production if REDIS_URL is configured
 const modules: any[] = [
   {
-    resolve: "@medusajs/inventory-group",
+    resolve: "@switchyard/inventory-group",
   },
   {
-    resolve: "@medusajs/medusa/auth",
+    resolve: "@switchyard/core/auth",
     options: {
       providers: authProviders,
     },
@@ -43,11 +43,11 @@ const modules: any[] = [
 if (process.env.REDIS_URL) {
   // Redis Caching Module
   modules.push({
-    resolve: "@medusajs/medusa/caching",
+    resolve: "@switchyard/core/caching",
     options: {
       providers: [
         {
-          resolve: "@medusajs/caching-redis",
+          resolve: "@switchyard/caching-redis",
           id: "caching-redis",
           is_default: true,
           options: {
@@ -60,7 +60,7 @@ if (process.env.REDIS_URL) {
 
   // Redis Event Bus Module
   modules.push({
-    resolve: "@medusajs/medusa/event-bus-redis",
+    resolve: "@switchyard/core/event-bus-redis",
     options: {
       redisUrl: process.env.REDIS_URL,
       jobOptions: {
@@ -72,7 +72,7 @@ if (process.env.REDIS_URL) {
 
   // Redis Workflow Engine Module
   modules.push({
-    resolve: "@medusajs/medusa/workflow-engine-redis",
+    resolve: "@switchyard/core/workflow-engine-redis",
     options: {
       redis: {
         url: process.env.REDIS_URL,
@@ -82,11 +82,11 @@ if (process.env.REDIS_URL) {
 
   // Redis Locking Module
   modules.push({
-    resolve: "@medusajs/medusa/locking",
+    resolve: "@switchyard/core/locking",
     options: {
       providers: [
         {
-          resolve: "@medusajs/medusa/locking-redis",
+          resolve: "@switchyard/core/locking-redis",
           id: "locking-redis",
           is_default: true,
           options: {

@@ -4,7 +4,7 @@ import {
   InputConfigModules,
   InternalModuleDeclaration,
   MedusaCloudOptions,
-} from "@medusajs/types"
+} from "@switchyard/types"
 import {
   MODULE_PACKAGE_NAMES,
   Modules,
@@ -132,7 +132,7 @@ function resolvePlugins(
   configPlugins: InputConfig["plugins"],
   { isCloud }: { isCloud: boolean }
 ): ConfigModule["plugins"] {
-  // Removed @medusajs/draft-order from default plugins for Goods customization
+  // Removed @switchyard/draft-order from default plugins for Goods customization
   const defaultPlugins: Map<string, ConfigModule["plugins"][number]> = new Map([])
 
   if (configPlugins?.length) {
@@ -186,7 +186,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/auth-emailpass",
+            resolve: "@switchyard/core/auth-emailpass",
             id: "emailpass",
           },
         ],
@@ -206,7 +206,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/fulfillment-manual",
+            resolve: "@switchyard/core/fulfillment-manual",
             id: "manual",
           },
         ],
@@ -217,7 +217,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/notification-local",
+            resolve: "@switchyard/core/notification-local",
             id: "local",
             options: {
               name: "Local Notification Provider",
@@ -241,7 +241,7 @@ function resolveModules(
       options: {
         providers: [
           {
-            resolve: "@medusajs/medusa/file-local",
+            resolve: "@switchyard/core/file-local",
             id: "local",
           },
         ],
@@ -286,7 +286,7 @@ function resolveModules(
         providers: [
           {
             id: "s3",
-            resolve: "@medusajs/medusa/file-s3",
+            resolve: "@switchyard/core/file-s3",
             options: {
               authentication_method: "s3-iam-role",
               file_url: process.env.S3_FILE_URL,
@@ -308,7 +308,7 @@ function resolveModules(
         providers: [
           {
             id: "caching-redis",
-            resolve: "@medusajs/medusa/caching-redis",
+            resolve: "@switchyard/core/caching-redis",
             is_default: true,
             options: {
               redisUrl: process.env.CACHE_REDIS_URL,

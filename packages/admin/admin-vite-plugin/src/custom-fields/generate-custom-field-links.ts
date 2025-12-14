@@ -1,4 +1,4 @@
-import { CustomFieldModel } from "@medusajs/admin-shared"
+import { CustomFieldModel } from "@switchyard/admin-shared"
 import fs from "fs/promises"
 import {
   ExportDefaultDeclaration,

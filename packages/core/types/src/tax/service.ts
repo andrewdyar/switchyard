@@ -920,7 +920,7 @@ export interface ITaxModuleService extends IModuleService {
   /**
    * This method returns the service of a Tax Module Provider by its ID. A Tax Module Provider's ID is of the format
    * `tp_{identifier}_{id}`, where `identifier` is the static `identifier` property defined in the provider's service,
-   * and `id` is the ID set in `medusa-config.ts` when registering the provider.
+   * and `id` is the ID set in `switchyard.config.ts` when registering the provider.
    *
    * @returns {ITaxProvider} An instance of the Tax Module Provider's service.
    *

@@ -1,4 +1,4 @@
-import { CampaignBudgetTypeValues } from "@medusajs/types"
+import { CampaignBudgetTypeValues } from "@switchyard/types"
 
 export const DEFAULT_CAMPAIGN_VALUES = {
   name: "",

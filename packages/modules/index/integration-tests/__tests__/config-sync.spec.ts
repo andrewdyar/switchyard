@@ -4,17 +4,17 @@ import {
   logger,
   MedusaAppLoader,
   Migrator,
-} from "@medusajs/framework"
-import { asValue } from "@medusajs/framework/awilix"
-import { MedusaAppOutput, MedusaModule } from "@medusajs/framework/modules-sdk"
-import { ContainerRegistrationKeys, Modules } from "@medusajs/framework/utils"
-import { initDb, TestDatabaseUtils } from "@medusajs/test-utils"
-import { IndexTypes, ModulesSdkTypes } from "@medusajs/types"
+} from "@switchyard/framework"
+import { asValue } from "@switchyard/framework/awilix"
+import { MedusaAppOutput, MedusaModule } from "@switchyard/framework/modules-sdk"
+import { ContainerRegistrationKeys, Modules } from "@switchyard/framework/utils"
+import { initDb, TestDatabaseUtils } from "@switchyard/test-utils"
+import { IndexTypes, ModulesSdkTypes } from "@switchyard/types"
 import { Configuration } from "@utils"
 import path from "path"
 import { setTimeout } from "timers/promises"
 import { EventBusServiceMock } from "../__fixtures__"
-import { dbName } from "../__fixtures__/medusa-config"
+import { dbName } from "../__fixtures__/switchyard.config"
 import { updateRemovedSchema } from "../__fixtures__/update-removed-schema"
 import { updatedSchema } from "../__fixtures__/updated-schema"
 
@@ -35,7 +35,7 @@ const beforeAll_ = async () => {
   try {
     await configLoader(
       path.join(__dirname, "./../__fixtures__"),
-      "medusa-config"
+      "switchyard.config"
     )
 
     console.log(`Creating database ${dbName}`)

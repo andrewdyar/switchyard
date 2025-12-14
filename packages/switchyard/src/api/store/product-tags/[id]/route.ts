@@ -1,12 +1,12 @@
-import { StoreProductTagResponse } from "@medusajs/framework/types"
+import { StoreProductTagResponse } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   MedusaError,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 import { StoreProductTagParamsType } from "../validators"
 

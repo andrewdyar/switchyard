@@ -1,18 +1,18 @@
-import { container, MedusaAppLoader } from "@medusajs/framework"
-import { configLoader } from "@medusajs/framework/config"
-import { pgConnectionLoader } from "@medusajs/framework/database"
-import { featureFlagsLoader } from "@medusajs/framework/feature-flags"
-import { expressLoader } from "@medusajs/framework/http"
-import { JobLoader } from "@medusajs/framework/jobs"
-import { LinkLoader } from "@medusajs/framework/links"
-import { logger as defaultLogger } from "@medusajs/framework/logger"
-import { SubscriberLoader } from "@medusajs/framework/subscribers"
+import { container, MedusaAppLoader } from "@switchyard/framework"
+import { configLoader } from "@switchyard/framework/config"
+import { pgConnectionLoader } from "@switchyard/framework/database"
+import { featureFlagsLoader } from "@switchyard/framework/feature-flags"
+import { expressLoader } from "@switchyard/framework/http"
+import { JobLoader } from "@switchyard/framework/jobs"
+import { LinkLoader } from "@switchyard/framework/links"
+import { logger as defaultLogger } from "@switchyard/framework/logger"
+import { SubscriberLoader } from "@switchyard/framework/subscribers"
 import {
   ConfigModule,
   LoadedModule,
   MedusaContainer,
   PluginDetails,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   getResolvedPlugins,
@@ -20,9 +20,9 @@ import {
   mergePluginModules,
   promiseAll,
   validateModuleName,
-} from "@medusajs/framework/utils"
-import { WorkflowLoader } from "@medusajs/framework/workflows"
-import { asValue } from "@medusajs/framework/awilix"
+} from "@switchyard/framework/utils"
+import { WorkflowLoader } from "@switchyard/framework/workflows"
+import { asValue } from "@switchyard/framework/awilix"
 import { Express, NextFunction, Request, Response } from "express"
 import { join } from "path"
 import requestIp from "request-ip"
@@ -145,7 +145,7 @@ export async function initializeContainer(
   }
 ): Promise<MedusaContainer> {
   await featureFlagsLoader(rootDirectory)
-  const configDir = await configLoader(rootDirectory, "medusa-config")
+  const configDir = await configLoader(rootDirectory, "switchyard.config")
   await featureFlagsLoader(join(__dirname, ".."))
 
   const customLogger = configDir.logger ?? defaultLogger
@@ -206,7 +206,7 @@ export default async ({
     ? () => {}
     : await loadEntrypoints(plugins, container, expressApp, rootDirectory)
 
-  const { createDefaultsWorkflow } = await import("@medusajs/core-flows")
+  const { createDefaultsWorkflow } = await import("@switchyard/core-flows")
   await createDefaultsWorkflow(container).run()
   await onApplicationStart()
 

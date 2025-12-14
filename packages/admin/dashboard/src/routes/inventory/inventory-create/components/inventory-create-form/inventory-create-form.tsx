@@ -9,12 +9,12 @@ import {
   ProgressTabs,
   Textarea,
   toast,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useCallback, useEffect, useState } from "react"
 import { useForm } from "react-hook-form"
 import { useTranslation } from "react-i18next"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { Form } from "../../../../../components/common/form"
 import { SwitchBox } from "../../../../../components/common/switch-box"
 import { CountrySelect } from "../../../../../components/inputs/country-select"

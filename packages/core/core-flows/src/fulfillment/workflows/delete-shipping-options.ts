@@ -1,5 +1,5 @@
-import type { FulfillmentWorkflow } from "@medusajs/framework/types"
-import { createWorkflow, WorkflowData } from "@medusajs/framework/workflows-sdk"
+import type { FulfillmentWorkflow } from "@switchyard/framework/types"
+import { createWorkflow, WorkflowData } from "@switchyard/framework/workflows-sdk"
 import { deleteShippingOptionsStep } from "../steps"
 import { removeRemoteLinkStep } from "../../common"
 

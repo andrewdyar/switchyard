@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const getProductFixture = (
   overrides: Partial<HttpTypes.AdminCreateProduct>

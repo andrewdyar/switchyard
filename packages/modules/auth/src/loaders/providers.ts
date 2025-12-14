@@ -2,9 +2,9 @@ import {
   LoaderOptions,
   ModuleProvider,
   ModulesSdkTypes,
-} from "@medusajs/framework/types"
-import { asFunction, asValue, Lifetime } from "@medusajs/framework/awilix"
-import { moduleProviderLoader } from "@medusajs/framework/modules-sdk"
+} from "@switchyard/framework/types"
+import { asFunction, asValue, Lifetime } from "@switchyard/framework/awilix"
+import { moduleProviderLoader } from "@switchyard/framework/modules-sdk"
 import {
   AuthIdentifiersRegistrationName,
   AuthProviderRegistrationPrefix,

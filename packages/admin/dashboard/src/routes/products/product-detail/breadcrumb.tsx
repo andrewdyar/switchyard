@@ -1,4 +1,4 @@
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { UIMatch } from "react-router-dom"
 import { useProduct } from "../../../hooks/api"
 import { PRODUCT_DETAIL_FIELDS } from "./constants"

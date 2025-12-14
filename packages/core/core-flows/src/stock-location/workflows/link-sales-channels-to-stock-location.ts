@@ -1,6 +1,6 @@
-import type { LinkWorkflowInput } from "@medusajs/framework/types"
-import { WorkflowData, createWorkflow } from "@medusajs/framework/workflows-sdk"
-import { transform } from "@medusajs/framework/workflows-sdk"
+import type { LinkWorkflowInput } from "@switchyard/framework/types"
+import { WorkflowData, createWorkflow } from "@switchyard/framework/workflows-sdk"
+import { transform } from "@switchyard/framework/workflows-sdk"
 import {
   associateLocationsWithSalesChannelsStep,
   detachLocationsFromSalesChannelsStep,

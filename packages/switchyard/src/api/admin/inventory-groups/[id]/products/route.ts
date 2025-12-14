@@ -1,10 +1,10 @@
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { Modules, ContainerRegistrationKeys } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { Modules, ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
-// Module key matches the one defined in @medusajs/inventory-group joiner-config
+// Module key matches the one defined in @switchyard/inventory-group joiner-config
 const INVENTORY_GROUP_MODULE = "inventoryGroup"
 
 /**

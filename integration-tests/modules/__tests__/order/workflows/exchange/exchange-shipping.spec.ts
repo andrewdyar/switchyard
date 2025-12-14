@@ -5,14 +5,14 @@ import {
   orderExchangeAddNewItemWorkflow,
   orderExchangeRequestItemReturnWorkflow,
   updateExchangeAddItemWorkflow,
-} from "@medusajs/core-flows"
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
-import { IFulfillmentModuleService, OrderDTO } from "@medusajs/types"
+} from "@switchyard/core-flows"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
+import { IFulfillmentModuleService, OrderDTO } from "@switchyard/types"
 import {
   ContainerRegistrationKeys,
   Modules,
   remoteQueryObjectFromString,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 import { createOrderFixture, prepareDataFixtures } from "../__fixtures__"
 jest.setTimeout(50000)
 

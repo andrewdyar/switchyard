@@ -1,17 +1,17 @@
 import {
   InferEntityType,
   IProductModuleService,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   CommonEvents,
   composeMessage,
   Modules,
   ProductEvents,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   MockEventBusService,
   moduleIntegrationTestRunner,
-} from "@medusajs/test-utils"
+} from "@switchyard/test-utils"
 import { ProductOption } from "../../../src/models"
 import { buildProductAndRelationsData } from "../../__fixtures__/product"
 

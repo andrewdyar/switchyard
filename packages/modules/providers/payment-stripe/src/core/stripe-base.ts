@@ -31,14 +31,14 @@ import {
   UpdatePaymentInput,
   UpdatePaymentOutput,
   WebhookActionResult,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   AbstractPaymentProvider,
   isDefined,
   isPresent,
   PaymentActions,
   PaymentSessionStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   ErrorCodes,
   ErrorIntentStatus,

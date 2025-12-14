@@ -1,5 +1,5 @@
 /* @refresh reload */
-import { defineWidgetConfig } from "@medusajs/admin-sdk"
+import { defineWidgetConfig } from "@switchyard/admin-sdk"
 import {
   Container,
   Heading,
@@ -13,8 +13,8 @@ import {
   Select,
   Toaster,
   toast,
-} from "@medusajs/ui"
-import { PencilSquare, Plus, Trash } from "@medusajs/icons"
+} from "@switchyard/ui"
+import { PencilSquare, Plus, Trash } from "@switchyard/icons"
 import { useState, useEffect } from "react"
 
 type Role = {

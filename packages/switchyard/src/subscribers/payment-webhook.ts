@@ -1,13 +1,13 @@
-import { processPaymentWorkflowId } from "@medusajs/core-flows"
+import { processPaymentWorkflowId } from "@switchyard/core-flows"
 import {
   IPaymentModuleService,
   ProviderWebhookPayload,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   Modules,
   PaymentActions,
   PaymentWebhookEvents,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import { SubscriberArgs, SubscriberConfig } from "../types/subscribers"
 
 type SerializedBuffer = {

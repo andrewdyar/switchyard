@@ -1,12 +1,12 @@
-import { asFunction, asValue, Lifetime } from "@medusajs/framework/awilix"
-import { moduleProviderLoader } from "@medusajs/framework/modules-sdk"
+import { asFunction, asValue, Lifetime } from "@switchyard/framework/awilix"
+import { moduleProviderLoader } from "@switchyard/framework/modules-sdk"
 import {
   CreatePaymentProviderDTO,
   LoaderOptions,
   ModuleProvider,
   ModulesSdkTypes,
-} from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+} from "@switchyard/framework/types"
+import { MedusaError } from "@switchyard/framework/utils"
 
 import { PaymentProviderService } from "@services"
 import * as providers from "../providers"

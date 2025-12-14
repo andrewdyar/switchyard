@@ -1,14 +1,14 @@
 import {
   deleteProductVariantsWorkflow,
   updateProductVariantsWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
-import { AdditionalData, HttpTypes } from "@medusajs/framework/types"
-import { refetchEntity } from "@medusajs/framework/http"
+import { AdditionalData, HttpTypes } from "@switchyard/framework/types"
+import { refetchEntity } from "@switchyard/framework/http"
 import {
   remapKeysForProduct,
   remapKeysForVariant,

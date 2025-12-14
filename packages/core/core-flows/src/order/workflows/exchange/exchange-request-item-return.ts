@@ -6,13 +6,13 @@ import {
   OrderWorkflow,
   PromotionDTO,
   ReturnDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ChangeActionType,
   deepFlatMap,
   isDefined,
   OrderChangeStatus,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
@@ -20,7 +20,7 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { useRemoteQueryStep } from "../../../common"
 import { updateOrderExchangesStep } from "../../steps/exchange/update-order-exchanges"
 import { previewOrderChangeStep } from "../../steps/preview-order-change"

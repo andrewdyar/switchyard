@@ -4,7 +4,7 @@ import {
   MedusaError,
   OrderChangeStatus,
   ShippingOptionPriceType,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   createStep,
   createWorkflow,
@@ -12,13 +12,13 @@ import {
   when,
   WorkflowData,
   WorkflowResponse,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import {
   BigNumberInput,
   OrderChangeDTO,
   OrderDTO,
   ShippingOptionDTO,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import { useRemoteQueryStep } from "../../common"
 import {
   createOrderChangeActionsWorkflow,

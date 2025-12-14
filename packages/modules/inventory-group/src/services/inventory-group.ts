@@ -1,5 +1,5 @@
-import { Context, FindConfig, InferEntityType } from "@medusajs/framework/types"
-import { ModulesSdkUtils } from "@medusajs/framework/utils"
+import { Context, FindConfig, InferEntityType } from "@switchyard/framework/types"
+import { ModulesSdkUtils } from "@switchyard/framework/utils"
 import { InventoryGroup } from "../models"
 import { InventoryGroupRepository } from "../repositories"
 import {

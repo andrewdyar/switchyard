@@ -7,7 +7,7 @@ import {
   Select,
   Text,
   Textarea,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { useEffect } from "react"
 import { useWatch } from "react-hook-form"
 import { useTranslation } from "react-i18next"

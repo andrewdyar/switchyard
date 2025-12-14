@@ -1,4 +1,4 @@
-import { ApiKeyType } from "@medusajs/framework/utils"
+import { ApiKeyType } from "@switchyard/framework/utils"
 import { z } from "zod"
 import {
   createFindParams,

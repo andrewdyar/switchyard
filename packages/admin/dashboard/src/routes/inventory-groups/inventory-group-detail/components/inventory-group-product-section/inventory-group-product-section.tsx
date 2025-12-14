@@ -1,4 +1,4 @@
-import { PlusMini, Trash } from "@medusajs/icons"
+import { PlusMini, Trash } from "@switchyard/icons"
 import {
   Checkbox,
   CommandBar,
@@ -7,12 +7,12 @@ import {
   toast,
   usePrompt,
   Text,
-} from "@medusajs/ui"
+} from "@switchyard/ui"
 import { keepPreviousData } from "@tanstack/react-query"
 import { RowSelectionState, createColumnHelper } from "@tanstack/react-table"
 import { useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 import { ActionMenu } from "../../../../../components/common/action-menu"
 import { _DataTable } from "../../../../../components/table/data-table"

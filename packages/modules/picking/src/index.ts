@@ -6,7 +6,7 @@
  */
 
 import PickingModuleService from "./services/picking-module"
-import { Module } from "@medusajs/framework/utils"
+import { Module } from "@switchyard/framework/utils"
 
 export const PICKING_MODULE = "pickingModuleService"
 

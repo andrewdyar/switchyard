@@ -8,7 +8,7 @@
  * Items are sorted/assigned to specific orders during intake at RFC.
  */
 
-import { model } from "@medusajs/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 export const SweepItem = model.define("goods_sweep_item", {
   id: model.id().primaryKey(),

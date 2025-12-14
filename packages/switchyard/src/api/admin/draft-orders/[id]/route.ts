@@ -2,14 +2,14 @@ import {
   getOrderDetailWorkflow,
   updateDraftOrderWorkflow,
   deleteDraftOrdersWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
-import { ContainerRegistrationKeys } from "@medusajs/framework/utils"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
+import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 
 export const GET = async (
   req: MedusaRequest<HttpTypes.AdminDraftOrderParams>,

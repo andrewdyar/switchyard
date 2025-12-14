@@ -1,9 +1,9 @@
-import { MedusaError, Modules } from "@medusajs/framework/utils"
-import { createStep, StepResponse } from "@medusajs/framework/workflows-sdk"
+import { MedusaError, Modules } from "@switchyard/framework/utils"
+import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
 import type {
   BigNumberInput,
   IOrderModuleService,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 
 export const updateDraftOrderShippingMethodStepId =
   "update-draft-order-shipping-method"

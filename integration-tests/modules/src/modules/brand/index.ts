@@ -1,4 +1,4 @@
-import { Module } from "@medusajs/utils"
+import { Module } from "@switchyard/utils"
 import { BrandModuleService } from "./service"
 
 export const BRAND_MODULE = "brand"

@@ -1,5 +1,5 @@
-import { MedusaContainer } from "@medusajs/framework/types"
-import { defineFileConfig, FeatureFlag } from "@medusajs/framework/utils"
+import { MedusaContainer } from "@switchyard/framework/types"
+import { defineFileConfig, FeatureFlag } from "@switchyard/framework/utils"
 
 export const testJobHandler = jest.fn()
 

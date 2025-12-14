@@ -4,13 +4,13 @@ import {
   IAuthModuleService,
   IUserModuleService,
   MedusaContainer,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   ApiKeyType,
   ContainerRegistrationKeys,
   Modules,
   PUBLISHABLE_KEY_HEADER,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import jwt from "jsonwebtoken"
 import Scrypt from "scrypt-kdf"
 import { getContainer } from "../environment-helpers/use-container"

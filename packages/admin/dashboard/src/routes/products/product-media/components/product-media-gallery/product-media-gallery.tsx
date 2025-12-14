@@ -4,13 +4,13 @@ import {
   Trash,
   TriangleLeftMini,
   TriangleRightMini,
-} from "@medusajs/icons"
-import { Button, IconButton, Text, Tooltip, clx, usePrompt } from "@medusajs/ui"
+} from "@switchyard/icons"
+import { Button, IconButton, Text, Tooltip, clx, usePrompt } from "@switchyard/ui"
 import { useCallback, useEffect, useState } from "react"
 import { useTranslation } from "react-i18next"
 import { Link, useLocation } from "react-router-dom"
 
-import { HttpTypes } from "@medusajs/types"
+import { HttpTypes } from "@switchyard/types"
 import { RouteFocusModal } from "../../../../../components/modals"
 import { useUpdateProduct } from "../../../../../hooks/api/products"
 

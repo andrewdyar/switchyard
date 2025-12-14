@@ -1,12 +1,12 @@
-import { medusaIntegrationTestRunner } from "@medusajs/test-utils"
+import { medusaIntegrationTestRunner } from "@switchyard/test-utils"
 import {
   ICartModuleService,
   ICustomerModuleService,
   IPaymentModuleService,
   IRegionModuleService,
   ISalesChannelModuleService,
-} from "@medusajs/types"
-import { Modules } from "@medusajs/utils"
+} from "@switchyard/types"
+import { Modules } from "@switchyard/utils"
 
 jest.setTimeout(50000)
 

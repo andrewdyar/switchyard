@@ -5,7 +5,7 @@ import {
   Spinner,
   XCircleSolid,
   XMark,
-} from "@medusajs/icons"
+} from "@switchyard/icons"
 import * as React from "react"
 import { toast } from "sonner"
 

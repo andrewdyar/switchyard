@@ -5,7 +5,7 @@
  * This allows Medusa to work directly with Goods' existing product catalog.
  */
 
-import { model, ProductUtils } from "@medusajs/framework/utils"
+import { model, ProductUtils } from "@switchyard/framework/utils"
 
 import ProductCategory from "./product-category"
 import ProductCollection from "./product-collection"

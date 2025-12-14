@@ -1,4 +1,4 @@
-import { FindConfig, QueryConfig, RequestQueryFields } from "@medusajs/types"
+import { FindConfig, QueryConfig, RequestQueryFields } from "@switchyard/types"
 import {
   isDefined,
   isPresent,
@@ -6,7 +6,7 @@ import {
   buildOrder,
   stringToSelectRelationObject,
   pickDeep,
-} from "@medusajs/utils"
+} from "@switchyard/utils"
 
 export function pickByConfig<TModel>(
   obj: TModel | TModel[],

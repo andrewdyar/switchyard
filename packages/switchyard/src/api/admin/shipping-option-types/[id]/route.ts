@@ -1,18 +1,18 @@
 import {
   deleteShippingOptionTypesWorkflow,
   updateShippingOptionTypesWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 
 import { refetchShippingOptionType } from "../helpers"
 import {
   AdminGetShippingOptionTypeParamsType,
 } from "../validators"
-import { HttpTypes } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+import { HttpTypes } from "@switchyard/framework/types"
+import { MedusaError } from "@switchyard/framework/utils"
 
 /**
  * @since 2.10.0

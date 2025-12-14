@@ -1,4 +1,4 @@
-import { RemoteJoinerQuery } from "@medusajs/types"
+import { RemoteJoinerQuery } from "@switchyard/types"
 import {
   ArgumentNode,
   DirectiveNode,

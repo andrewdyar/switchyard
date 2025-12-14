@@ -1,14 +1,14 @@
-import { orderExchangeRequestItemReturnWorkflow } from "@medusajs/core-flows"
+import { orderExchangeRequestItemReturnWorkflow } from "@switchyard/core-flows"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
-import { HttpTypes } from "@medusajs/framework/types"
+} from "@switchyard/framework/http"
+import { HttpTypes } from "@switchyard/framework/types"
 import { defaultAdminDetailsReturnFields } from "../../../../returns/query-config"
 
 export const POST = async (

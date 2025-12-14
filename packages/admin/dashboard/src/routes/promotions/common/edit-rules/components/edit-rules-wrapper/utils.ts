@@ -1,4 +1,4 @@
-import { PromotionRuleResponse } from "@medusajs/types"
+import { PromotionRuleResponse } from "@switchyard/types"
 
 export const getRuleValue = (rule: PromotionRuleResponse) => {
   if (rule.field_type === "number") {

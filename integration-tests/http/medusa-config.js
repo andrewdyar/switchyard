@@ -1,4 +1,4 @@
-const { defineConfig, Modules } = require("@medusajs/utils")
+const { defineConfig, Modules } = require("@switchyard/utils")
 const os = require("os")
 const path = require("path")
 
@@ -11,7 +11,7 @@ process.env.DATABASE_URL = DB_URL
 process.env.LOG_LEVEL = "error"
 
 const customFulfillmentProvider = {
-  resolve: "@medusajs/fulfillment-manual",
+  resolve: "@switchyard/fulfillment-manual",
   id: "test-provider",
 }
 
@@ -35,7 +35,7 @@ module.exports = defineConfig({
   },
   modules: {
     [Modules.FULFILLMENT]: {
-      /** @type {import('@medusajs/fulfillment').FulfillmentModuleOptions} */
+      /** @type {import('@switchyard/fulfillment').FulfillmentModuleOptions} */
       options: {
         providers: [
           customFulfillmentProvider,
@@ -44,11 +44,11 @@ module.exports = defineConfig({
       },
     },
     [Modules.NOTIFICATION]: {
-      resolve: "@medusajs/notification",
+      resolve: "@switchyard/notification",
       options: {
         providers: [
           {
-            resolve: "@medusajs/notification-local",
+            resolve: "@switchyard/notification-local",
             id: "local",
             options: {
               name: "Local Notification Provider",
@@ -59,11 +59,11 @@ module.exports = defineConfig({
       },
     },
     [Modules.FILE]: {
-      resolve: "@medusajs/file",
+      resolve: "@switchyard/file",
       options: {
         providers: [
           {
-            resolve: "@medusajs/file-local",
+            resolve: "@switchyard/file-local",
             id: "local",
             options: {
               // This is the directory where we can reliably write in CI environments
@@ -75,7 +75,7 @@ module.exports = defineConfig({
       },
     },
     [Modules.INDEX]: {
-      resolve: "@medusajs/index",
+      resolve: "@switchyard/index",
       disable: process.env.ENABLE_INDEX_MODULE !== "true",
     },
   },

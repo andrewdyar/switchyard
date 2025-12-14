@@ -1,9 +1,9 @@
-import { ExecArgs } from "@medusajs/framework/types"
+import { ExecArgs } from "@switchyard/framework/types"
 import {
   ContainerRegistrationKeys,
   dynamicImport,
   isFileSkipped,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import express from "express"
 import { existsSync } from "fs"
 import path from "path"

@@ -1,11 +1,11 @@
-import type { StoreDTO, StoreWorkflow } from "@medusajs/framework/types"
+import type { StoreDTO, StoreWorkflow } from "@switchyard/framework/types"
 import {
   WorkflowData,
   WorkflowResponse,
   createWorkflow,
   transform,
   when,
-} from "@medusajs/framework/workflows-sdk"
+} from "@switchyard/framework/workflows-sdk"
 import { updateStoresStep } from "../steps"
 import { updatePricePreferencesAsArrayStep } from "../../pricing"
 

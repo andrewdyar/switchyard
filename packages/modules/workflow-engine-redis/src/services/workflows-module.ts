@@ -9,19 +9,19 @@ import {
   ModulesSdkTypes,
   WorkflowExecutionDTO,
   WorkflowsSdkTypes,
-} from "@medusajs/framework/types"
+} from "@switchyard/framework/types"
 import {
   InjectManager,
   InjectSharedContext,
   isDefined,
   MedusaContext,
   ModulesSdkUtils,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import type {
   ReturnWorkflow,
   UnwrapWorkflowInputDataType,
-} from "@medusajs/framework/workflows-sdk"
-import { SqlEntityManager } from "@medusajs/framework/mikro-orm/postgresql"
+} from "@switchyard/framework/workflows-sdk"
+import { SqlEntityManager } from "@switchyard/framework/mikro-orm/postgresql"
 import { WorkflowExecution } from "@models"
 import {
   WorkflowOrchestratorCancelOptions,

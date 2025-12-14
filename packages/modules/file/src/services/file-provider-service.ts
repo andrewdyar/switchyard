@@ -1,6 +1,6 @@
 import type { Readable } from "stream"
-import { Constructor, FileTypes } from "@medusajs/framework/types"
-import { MedusaError } from "@medusajs/framework/utils"
+import { Constructor, FileTypes } from "@switchyard/framework/types"
+import { MedusaError } from "@switchyard/framework/utils"
 import { FileProviderRegistrationPrefix } from "@types"
 
 type InjectedDependencies = {

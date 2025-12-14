@@ -2,7 +2,7 @@ import { IModuleService, ModuleJoinerConfig } from "../modules-sdk"
 
 type Providers = (string | { 
   /**
-   * The ID of the provider to use, as set in `medusa-config.ts`.
+   * The ID of the provider to use, as set in `switchyard.config.ts`.
    */
   id: string;
   /**
@@ -355,8 +355,8 @@ export interface ICachingModuleService extends IModuleService {
  * #### Example
  *
  * ```ts
- * import { ICachingProviderService } from "@medusajs/framework/types"
- * import { Logger } from "@medusajs/framework/types"
+ * import { ICachingProviderService } from "@switchyard/framework/types"
+ * import { Logger } from "@switchyard/framework/types"
  *
  * type InjectedDependencies = {
  *   logger: Logger
@@ -395,7 +395,7 @@ export interface ICachingModuleService extends IModuleService {
  * ### Identifier
  *
  * Every caching module provider must have an `identifier` static property. The provider's ID
- * will be stored as `lp_{identifier}_{id}`, where `id` is the ID you set in your `medusa-config.ts` file.
+ * will be stored as `lp_{identifier}_{id}`, where `id` is the ID you set in your `switchyard.config.ts` file.
  * 
  * For example:
  * 

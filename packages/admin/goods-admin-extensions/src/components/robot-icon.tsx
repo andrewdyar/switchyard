@@ -5,7 +5,7 @@
  * Represents automation/scraping tools.
  */
 
-import { Tools } from "@medusajs/icons"
+import { Tools } from "@switchyard/icons"
 
 export const RobotIcon = Tools
 

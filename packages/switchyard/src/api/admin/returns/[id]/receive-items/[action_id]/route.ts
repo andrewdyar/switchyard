@@ -1,17 +1,17 @@
 import {
   removeItemReceiveReturnActionWorkflow,
   updateReceiveItemReturnRequestWorkflow,
-} from "@medusajs/core-flows"
+} from "@switchyard/core-flows"
 import {
   ContainerRegistrationKeys,
   remoteQueryObjectFromString,
-} from "@medusajs/framework/utils"
+} from "@switchyard/framework/utils"
 import {
   AuthenticatedMedusaRequest,
   MedusaResponse,
-} from "@medusajs/framework/http"
+} from "@switchyard/framework/http"
 import { AdminPostReturnsReceiveItemsActionReqSchemaType } from "../../../validators"
-import { HttpTypes } from "@medusajs/framework/types"
+import { HttpTypes } from "@switchyard/framework/types"
 
 export const POST = async (
   req: AuthenticatedMedusaRequest<
