@@ -2013,11 +2013,11 @@ describe("defineConfig", function () {
 
   it("should add cloud options to the project config and relevant modules if the environment variables are set", function () {
     const originalEnv = { ...process.env }
-    process.env.MEDUSA_CLOUD_ENVIRONMENT_HANDLE = "test-environment"
-    process.env.MEDUSA_CLOUD_API_KEY = "test-api-key"
-    process.env.MEDUSA_CLOUD_EMAILS_ENDPOINT = "test-emails-endpoint"
-    process.env.MEDUSA_CLOUD_PAYMENTS_ENDPOINT = "test-payments-endpoint"
-    process.env.MEDUSA_CLOUD_WEBHOOK_SECRET = "test-webhook-secret"
+    process.env.SWITCHYARD_CLOUD_ENVIRONMENT_HANDLE = "test-environment"
+    process.env.SWITCHYARD_CLOUD_API_KEY = "test-api-key"
+    process.env.SWITCHYARD_CLOUD_EMAILS_ENDPOINT = "test-emails-endpoint"
+    process.env.SWITCHYARD_CLOUD_PAYMENTS_ENDPOINT = "test-payments-endpoint"
+    process.env.SWITCHYARD_CLOUD_WEBHOOK_SECRET = "test-webhook-secret"
     const config = defineConfig()
     process.env = { ...originalEnv }
 
@@ -2207,11 +2207,11 @@ describe("defineConfig", function () {
 
   it("should add cloud options to the project config and relevant modules if the environment varianbles is set for a sandbox", function () {
     const originalEnv = { ...process.env }
-    process.env.MEDUSA_CLOUD_SANDBOX_HANDLE = "test-sandbox"
-    process.env.MEDUSA_CLOUD_API_KEY = "test-api-key"
-    process.env.MEDUSA_CLOUD_EMAILS_ENDPOINT = "test-emails-endpoint"
-    process.env.MEDUSA_CLOUD_PAYMENTS_ENDPOINT = "test-payments-endpoint"
-    process.env.MEDUSA_CLOUD_WEBHOOK_SECRET = "test-webhook-secret"
+    process.env.SWITCHYARD_CLOUD_SANDBOX_HANDLE = "test-sandbox"
+    process.env.SWITCHYARD_CLOUD_API_KEY = "test-api-key"
+    process.env.SWITCHYARD_CLOUD_EMAILS_ENDPOINT = "test-emails-endpoint"
+    process.env.SWITCHYARD_CLOUD_PAYMENTS_ENDPOINT = "test-payments-endpoint"
+    process.env.SWITCHYARD_CLOUD_WEBHOOK_SECRET = "test-webhook-secret"
     const config = defineConfig()
     process.env = { ...originalEnv }
 
@@ -2401,11 +2401,11 @@ describe("defineConfig", function () {
 
   it("should merge custom projectConfig.cloud", function () {
     const originalEnv = { ...process.env }
-    process.env.MEDUSA_CLOUD_ENVIRONMENT_HANDLE = "test-environment"
-    process.env.MEDUSA_CLOUD_API_KEY = "test-api-key"
-    process.env.MEDUSA_CLOUD_EMAILS_ENDPOINT = "test-emails-endpoint"
-    process.env.MEDUSA_CLOUD_PAYMENTS_ENDPOINT = "test-payments-endpoint"
-    process.env.MEDUSA_CLOUD_WEBHOOK_SECRET = "test-webhook-secret"
+    process.env.SWITCHYARD_CLOUD_ENVIRONMENT_HANDLE = "test-environment"
+    process.env.SWITCHYARD_CLOUD_API_KEY = "test-api-key"
+    process.env.SWITCHYARD_CLOUD_EMAILS_ENDPOINT = "test-emails-endpoint"
+    process.env.SWITCHYARD_CLOUD_PAYMENTS_ENDPOINT = "test-payments-endpoint"
+    process.env.SWITCHYARD_CLOUD_WEBHOOK_SECRET = "test-webhook-secret"
     const config = defineConfig({
       projectConfig: {
         http: {} as any,

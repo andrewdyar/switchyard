@@ -11,7 +11,7 @@ import { getCIName, isCI } from "./util/is-ci"
 import isTruthy from "./util/is-truthy"
 import showAnalyticsNotification from "./util/show-notification"
 
-const MEDUSA_TELEMETRY_VERBOSE = process.env.MEDUSA_TELEMETRY_VERBOSE || false
+const SWITCHYARD_TELEMETRY_VERBOSE = process.env.SWITCHYARD_TELEMETRY_VERBOSE || false
 
 class Telemeter {
   constructor(options = {}) {
@@ -86,7 +86,7 @@ class Telemeter {
       const { version } = JSON.parse(fs.readFileSync(packageJson, `utf-8`))
       return version
     } catch (e) {
-      if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+      if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
         console.error("failed to get medusa version", e)
       }
     }
@@ -102,7 +102,7 @@ class Telemeter {
       const { version } = require(jsonfile)
       return version
     } catch (e) {
-      if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+      if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
         console.error("failed to get medusa version", e)
       }
     }

@@ -18,7 +18,7 @@ export default async function ({
      * Enabling worker mode to prevent discovering/loading
      * of API routes from the starter kit
      */
-    process.env.MEDUSA_WORKER_MODE = "worker"
+    process.env.SWITCHYARD_WORKER_MODE = "worker"
 
     const { container } = await loaders({
       directory,

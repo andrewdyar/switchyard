@@ -103,7 +103,7 @@ ALTER TABLE product_skus
 1. Copy `env.example.goods` to `.env` and fill in your Supabase credentials
 2. Install dependencies: `yarn install`
 3. Build modules: `yarn build`
-4. Run migrations: `npx medusa db:migrate`
+4. Run migrations: `npx switchyard db:migrate`
 5. Start development: `yarn dev`
 
 ## Development

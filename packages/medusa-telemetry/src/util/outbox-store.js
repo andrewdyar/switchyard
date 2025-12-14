@@ -11,7 +11,7 @@ import {
 
 import isTruthy from "./is-truthy"
 
-const MEDUSA_TELEMETRY_VERBOSE = process.env.MEDUSA_TELEMETRY_VERBOSE || false
+const SWITCHYARD_TELEMETRY_VERBOSE = process.env.SWITCHYARD_TELEMETRY_VERBOSE || false
 
 class Outbox {
   constructor(baseDir) {
@@ -24,7 +24,7 @@ class Outbox {
     try {
       appendFileSync(this.bufferFilePath, event, `utf8`)
     } catch (e) {
-      if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+      if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
         console.error("Failed to append to buffer", e)
       }
     }
@@ -39,7 +39,7 @@ class Outbox {
       const stats = statSync(this.bufferFilePath)
       return stats.size
     } catch (e) {
-      if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+      if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
         console.error("Failed to get outbox size", e)
       }
     }
@@ -57,7 +57,7 @@ class Outbox {
       const lines = str.split("\n")
       return lines.length - 1
     } catch (e) {
-      if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+      if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
         console.error("Failed to get outbox count", e)
       }
     }
@@ -82,13 +82,13 @@ class Outbox {
       // This will be ok for now, however
       success = await flushOperation(contents)
     } catch (e) {
-      if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+      if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
         console.error("Failed to perform file flush", e)
       }
     } finally {
       // if sending fails, we write the data back to the log
       if (!success) {
-        if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+        if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
           console.error(
             "File flush did not succeed - writing back to file",
             success
@@ -110,7 +110,7 @@ class Outbox {
       }
       return true
     } catch (e) {
-      if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+      if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
         console.error("Failed to perform flush", e)
       }
     }

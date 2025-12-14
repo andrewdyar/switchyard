@@ -1,4 +1,4 @@
-import { MathBN, MEDUSA_EPSILON } from "@switchyard/framework/utils"
+import { MathBN, SWITCHYARD_EPSILON } from "@switchyard/framework/utils"
 import {
   getLastFulfillmentStatus,
   getLastPaymentStatus,
@@ -113,7 +113,7 @@ describe("Aggregate Order Status", () => {
           {
             status: "authorized",
             captured_amount: 10,
-            refunded_amount: MathBN.sub(10, MEDUSA_EPSILON),
+            refunded_amount: MathBN.sub(10, SWITCHYARD_EPSILON),
             amount: 10,
           },
           { status: "canceled" },

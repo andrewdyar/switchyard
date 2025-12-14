@@ -173,7 +173,7 @@ async function prepareProject({
   let inviteToken: string | undefined = undefined
 
   // add environment variables
-  let env = `MEDUSA_ADMIN_ONBOARDING_TYPE=${onboardingType}${EOL}STORE_CORS=${STORE_CORS}${EOL}ADMIN_CORS=${ADMIN_CORS}${EOL}AUTH_CORS=${AUTH_CORS}${EOL}REDIS_URL=${DEFAULT_REDIS_URL}${EOL}JWT_SECRET=supersecret${EOL}COOKIE_SECRET=supersecret`
+  let env = `SWITCHYARD_ADMIN_ONBOARDING_TYPE=${onboardingType}${EOL}STORE_CORS=${STORE_CORS}${EOL}ADMIN_CORS=${ADMIN_CORS}${EOL}AUTH_CORS=${AUTH_CORS}${EOL}REDIS_URL=${DEFAULT_REDIS_URL}${EOL}JWT_SECRET=supersecret${EOL}COOKIE_SECRET=supersecret`
 
   if (!skipDb) {
     if (dbName) {
@@ -184,7 +184,7 @@ async function prepareProject({
   }
 
   if (nextjsDirectory) {
-    env += `${EOL}MEDUSA_ADMIN_ONBOARDING_NEXTJS_DIRECTORY=${nextjsDirectory}`
+    env += `${EOL}SWITCHYARD_ADMIN_ONBOARDING_NEXTJS_DIRECTORY=${nextjsDirectory}`
   }
 
   fs.appendFileSync(path.join(directory, `.env`), env)
@@ -212,7 +212,7 @@ async function prepareProject({
     // run migrations
     await processManager.runProcess({
       process: async () => {
-        const proc = await execute(["npx medusa db:migrate", npxOptions], {
+        const proc = await execute(["npx switchyard db:migrate", npxOptions], {
           verbose,
           needOutput: true,
         })
@@ -252,7 +252,7 @@ async function prepareProject({
     await processManager.runProcess({
       process: async () => {
         const proc = await execute(
-          [`npx medusa user -e ${ADMIN_EMAIL} --invite`, npxOptions],
+          [`npx switchyard user -e ${ADMIN_EMAIL} --invite`, npxOptions],
           { verbose, needOutput: true }
         )
 
@@ -300,8 +300,8 @@ async function prepareProject({
       fs.writeFileSync(
         nextjsEnvPath,
         originalContent.replace(
-          "NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=pk_test",
-          `NEXT_PUBLIC_MEDUSA_PUBLISHABLE_KEY=${apiKeys.rows[0].token}`
+          "NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY=pk_test",
+          `NEXT_PUBLIC_SWITCHYARD_PUBLISHABLE_KEY=${apiKeys.rows[0].token}`
         )
       )
     }

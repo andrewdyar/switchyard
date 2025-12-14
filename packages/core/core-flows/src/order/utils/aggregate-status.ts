@@ -1,5 +1,5 @@
 import type { OrderDetailDTO } from "@switchyard/framework/types"
-import { isDefined, MathBN, MEDUSA_EPSILON } from "@switchyard/framework/utils"
+import { isDefined, MathBN, SWITCHYARD_EPSILON } from "@switchyard/framework/utils"
 
 export const getLastPaymentStatus = (order: OrderDetailDTO) => {
   const PaymentStatus = {
@@ -31,7 +31,7 @@ export const getLastPaymentStatus = (order: OrderDetailDTO) => {
           paymentCollection.amount,
           paymentCollection.captured_amount as number
         ),
-        MEDUSA_EPSILON
+        SWITCHYARD_EPSILON
       )
       paymentStatus[PaymentStatus.CAPTURED] += isGte ? 1 : 0.5
     }
@@ -42,7 +42,7 @@ export const getLastPaymentStatus = (order: OrderDetailDTO) => {
           paymentCollection.amount,
           paymentCollection.refunded_amount as number
         ),
-        MEDUSA_EPSILON
+        SWITCHYARD_EPSILON
       )
       paymentStatus[PaymentStatus.REFUNDED] += isGte ? 1 : 0.5
     }

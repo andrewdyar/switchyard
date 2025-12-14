@@ -28,7 +28,7 @@ describe("configLoader", () => {
     expect(configModule.projectConfig.databaseName).toBe("foo")
     expect(configModule.projectConfig.workerMode).toBe("shared")
 
-    process.env.MEDUSA_WORKER_MODE = "worker"
+    process.env.SWITCHYARD_WORKER_MODE = "worker"
 
     await configLoader(entryDirectory, "switchyard.config-2")
 

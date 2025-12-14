@@ -4,7 +4,7 @@ import {
   ApplicationMethodType,
 } from "../../promotion"
 import { MathBN } from "../math"
-import { MEDUSA_EPSILON } from "../big-number"
+import { SWITCHYARD_EPSILON } from "../big-number"
 
 function getPromotionValueForPercentage(promotion, lineItemAmount) {
   return MathBN.mult(MathBN.div(promotion.value, 100), lineItemAmount)
@@ -126,7 +126,7 @@ export function calculateAdjustmentAmountFromPromotion(
     )
     const applicableAmount = MathBN.sub(lineItemAmount, promotion.applied_value)
 
-    if (MathBN.lte(applicableAmount, MEDUSA_EPSILON)) {
+    if (MathBN.lte(applicableAmount, SWITCHYARD_EPSILON)) {
       return MathBN.convert(0)
     }
 
@@ -138,7 +138,7 @@ export function calculateAdjustmentAmountFromPromotion(
     )
 
     const returnValue = MathBN.min(promotionValue, applicableAmount)
-    if (MathBN.lte(returnValue, MEDUSA_EPSILON)) {
+    if (MathBN.lte(returnValue, SWITCHYARD_EPSILON)) {
       return MathBN.convert(0)
     }
 
@@ -184,7 +184,7 @@ export function calculateAdjustmentAmountFromPromotion(
     maximumPromotionAmount
   )
 
-  if (MathBN.lte(applicableAmount, MEDUSA_EPSILON)) {
+  if (MathBN.lte(applicableAmount, SWITCHYARD_EPSILON)) {
     return MathBN.convert(0)
   }
 
@@ -196,7 +196,7 @@ export function calculateAdjustmentAmountFromPromotion(
   )
 
   const returnValue = MathBN.min(promotionValue, applicableAmount)
-  if (MathBN.lte(returnValue, MEDUSA_EPSILON)) {
+  if (MathBN.lte(returnValue, SWITCHYARD_EPSILON)) {
     return MathBN.convert(0)
   }
 

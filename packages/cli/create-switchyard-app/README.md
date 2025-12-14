@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  create-medusa-app
+  create-switchyard-app
 </h1>
 
 <h4 align="center">
@@ -45,7 +45,7 @@ Using this NPX command, you can setup a Medusa backend and admin along with a Po
 Run the following command in your terminal:
 
 ```bash
-npx create-medusa-app@latest
+npx create-switchyard-app@latest
 ```
 
 Then, answer the prompted questions to setup your PostgreSQL database and Medusa project. Once the setup is done, the Medusa admin dashboard will open in your default browser.

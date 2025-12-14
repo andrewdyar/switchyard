@@ -41,7 +41,7 @@ export default async function exec({ file, args }: Options) {
       throw new Error(`File doesn't default export a function to execute.`)
     }
 
-    process.env.MEDUSA_WORKER_MODE = "server"
+    process.env.SWITCHYARD_WORKER_MODE = "server"
 
     const { container } = await loaders({
       directory,

@@ -50,7 +50,7 @@ export function getMikroOrmConfig({
   return defineConfig({
     clientUrl: DB_URL,
     entities: Object.values(mikroOrmEntities),
-    schema: schema ?? process.env.MEDUSA_DB_SCHEMA,
+    schema: schema ?? process.env.SWITCHYARD_DB_SCHEMA,
     debug: false,
     pool: {
       min: 2,
@@ -94,7 +94,7 @@ export function getMikroOrmWrapper({
     mikroOrmEntities,
     pathToMigrations,
     clientUrl: clientUrl ?? getDatabaseURL(),
-    schema: schema ?? process.env.MEDUSA_DB_SCHEMA,
+    schema: schema ?? process.env.SWITCHYARD_DB_SCHEMA,
 
     orm: null,
     manager: null,

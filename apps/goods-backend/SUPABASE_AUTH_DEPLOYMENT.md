@@ -20,8 +20,8 @@ SUPABASE_SERVICE_ROLE_KEY=eyJ...your-service-role-key
 SUPABASE_JWT_SECRET=your-jwt-secret  # From Supabase dashboard > Settings > API
 
 # For admin UI (if using environment-specific builds)
-MEDUSA_ADMIN_SUPABASE_URL=https://your-project.supabase.co
-MEDUSA_ADMIN_SUPABASE_ANON_KEY=eyJ...your-anon-key
+SWITCHYARD_ADMIN_SUPABASE_URL=https://your-project.supabase.co
+SWITCHYARD_ADMIN_SUPABASE_ANON_KEY=eyJ...your-anon-key
 ```
 
 ## Deployment Steps
@@ -58,7 +58,7 @@ yarn add @supabase/supabase-js
 ### 4. Run Medusa Migrations
 
 ```bash
-npx medusa migrations run
+npx switchyard migrations run
 ```
 
 ### 5. Migrate Existing Users (Optional)

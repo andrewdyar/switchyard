@@ -91,7 +91,7 @@ export class BigNumber implements IBigNumber {
       value = this.numeric_
     }
 
-    if (Math.abs(value) <= MEDUSA_EPSILON.numeric_) {
+    if (Math.abs(value) <= SWITCHYARD_EPSILON.numeric_) {
       return 0
     }
 
@@ -127,7 +127,7 @@ export class BigNumber implements IBigNumber {
       ? new BigNumberJS(this.raw_.value).toNumber()
       : this.numeric_
 
-    if (Math.abs(value) <= MEDUSA_EPSILON.numeric_) {
+    if (Math.abs(value) <= SWITCHYARD_EPSILON.numeric_) {
       return 0
     }
 
@@ -147,6 +147,6 @@ export class BigNumber implements IBigNumber {
   }
 }
 
-export const MEDUSA_EPSILON = new BigNumber(
-  process.env.MEDUSA_EPSILON || "0.0001"
+export const SWITCHYARD_EPSILON = new BigNumber(
+  process.env.SWITCHYARD_EPSILON || "0.0001"
 )

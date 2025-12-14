@@ -13,7 +13,7 @@ If you, as a community contributor, wish to work on more extensive features, ple
 
 - **You're familiar with GitHub Issues and Pull Requests**
 - **You've read the [docs](https://docs.medusajs.com).**
-- **You've setup a test project with `npx create-medusa-app@latest`**
+- **You've setup a test project with `npx create-switchyard-app@latest`**
 
 ## Issues before PRs
 

@@ -124,7 +124,7 @@ describe("sync management API", function () {
     let onApplicationShutdown!: () => Promise<void>
 
     beforeAll(async () => {
-      process.env.MEDUSA_WORKER_MODE = "server"
+      process.env.SWITCHYARD_WORKER_MODE = "server"
       switchyardApp = await beforeAll_()
       onApplicationPrepareShutdown = switchyardApp.onApplicationPrepareShutdown
       onApplicationShutdown = switchyardApp.onApplicationShutdown

@@ -1,4 +1,4 @@
-import { MEDUSA_CLI_PATH } from "@switchyard/framework"
+import { SWITCHYARD_CLI_PATH } from "@switchyard/framework"
 import { ContainerRegistrationKeys } from "@switchyard/framework/utils"
 import { Store } from "@switchyard/telemetry"
 import boxen from "boxen"
@@ -38,7 +38,7 @@ export default async function ({ types, directory }) {
    * start command.
    */
 
-  const cliPath = path.resolve(MEDUSA_CLI_PATH, "..", "..", "cli.js")
+  const cliPath = path.resolve(SWITCHYARD_CLI_PATH, "..", "..", "cli.js")
 
   const devServer = {
     childProcess: null as ChildProcess | null,

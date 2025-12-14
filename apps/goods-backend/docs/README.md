@@ -119,7 +119,7 @@ apps/goods-backend/
 3. **Run migrations**
    ```bash
    # Medusa migrations
-   npx medusa migrations run
+   npx switchyard migrations run
    
    # Supabase RBAC schema
    # Apply migrations/supabase_rbac_schema.sql to your Supabase database

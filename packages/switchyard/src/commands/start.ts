@@ -350,7 +350,7 @@ async function start(args: {
     } else {
       process.on("message", async (msg: any) => {
         if (msg.workerMode) {
-          process.env.MEDUSA_WORKER_MODE = msg.workerMode
+          process.env.SWITCHYARD_WORKER_MODE = msg.workerMode
         }
 
         if (msg.index > 0) {

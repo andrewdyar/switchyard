@@ -3,12 +3,12 @@ import { loadDatabaseConfig } from "../load-module-database-config"
 describe("loadDatabaseConfig", function () {
   afterEach(() => {
     delete process.env.DATABASE_URL
-    delete process.env.MEDUSA_DATABASE_URL
+    delete process.env.SWITCHYARD_DATABASE_URL
     delete process.env.PRODUCT_DATABASE_URL
   })
 
   it("should return the local configuration using the environment variable respecting their precedence", function () {
-    process.env.MEDUSA_DATABASE_URL = "postgres://localhost:5432/medusa"
+    process.env.SWITCHYARD_DATABASE_URL = "postgres://localhost:5432/medusa"
     process.env.PRODUCT_DATABASE_URL = "postgres://localhost:5432/product"
     process.env.DATABASE_URL = "postgres://localhost:5432/share_db"
 
@@ -29,7 +29,7 @@ describe("loadDatabaseConfig", function () {
     config = loadDatabaseConfig("product")
 
     expect(config).toEqual({
-      clientUrl: process.env.MEDUSA_DATABASE_URL,
+      clientUrl: process.env.SWITCHYARD_DATABASE_URL,
       driverOptions: {
         connection: {
           ssl: false,
@@ -39,7 +39,7 @@ describe("loadDatabaseConfig", function () {
       schema: "",
     })
 
-    delete process.env.MEDUSA_DATABASE_URL
+    delete process.env.SWITCHYARD_DATABASE_URL
     config = loadDatabaseConfig("product")
 
     expect(config).toEqual({
@@ -235,7 +235,7 @@ describe("loadDatabaseConfig", function () {
     }
 
     expect(error.message).toEqual(
-      "No database clientUrl provided. Please provide the clientUrl through the [MODULE]_DATABASE_URL, MEDUSA_DATABASE_URL or DATABASE_URL environment variable or the options object in the initialize function."
+      "No database clientUrl provided. Please provide the clientUrl through the [MODULE]_DATABASE_URL, SWITCHYARD_DATABASE_URL or DATABASE_URL environment variable or the options object in the initialize function."
     )
   })
 })

@@ -38,7 +38,7 @@
   },
   "homepage": "https://github.com/andrewdyar/switchyard/tree/master/packages/medusa-dev-cli#readme",
   "keywords": [
-    "medusa"
+    "switchyard"
   ],
   "license": "MIT",
   "main": "index.js",

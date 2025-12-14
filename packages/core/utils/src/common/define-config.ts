@@ -17,7 +17,7 @@ import { normalizeImportPathWithSource } from "./normalize-import-path-with-sour
 import { resolveExports } from "./resolve-exports"
 import { tryConvertToNumber } from "./try-convert-to-number"
 
-const MEDUSA_CLOUD_EXECUTION_CONTEXT = "medusa-cloud"
+const SWITCHYARD_CLOUD_EXECUTION_CONTEXT = "medusa-cloud"
 const DEFAULT_SECRET = "supersecret"
 const DEFAULT_ADMIN_URL = "/"
 const DEFAULT_STORE_CORS = "http://localhost:8000"
@@ -44,7 +44,7 @@ export const DEFAULT_STORE_RESTRICTED_FIELDS = [
  */
 export function defineConfig(config: InputConfig = {}): ConfigModule {
   const options = {
-    isCloud: process.env.EXECUTION_CONTEXT === MEDUSA_CLOUD_EXECUTION_CONTEXT,
+    isCloud: process.env.EXECUTION_CONTEXT === SWITCHYARD_CLOUD_EXECUTION_CONTEXT,
   }
 
   const projectConfig = normalizeProjectConfig(config.projectConfig, options)
@@ -365,12 +365,12 @@ function normalizeProjectConfig(
     projectConfig || {}
 
   const mergedCloudOptions: MedusaCloudOptions = {
-    environmentHandle: process.env.MEDUSA_CLOUD_ENVIRONMENT_HANDLE,
-    sandboxHandle: process.env.MEDUSA_CLOUD_SANDBOX_HANDLE,
-    apiKey: process.env.MEDUSA_CLOUD_API_KEY,
-    webhookSecret: process.env.MEDUSA_CLOUD_WEBHOOK_SECRET,
-    emailsEndpoint: process.env.MEDUSA_CLOUD_EMAILS_ENDPOINT,
-    paymentsEndpoint: process.env.MEDUSA_CLOUD_PAYMENTS_ENDPOINT,
+    environmentHandle: process.env.SWITCHYARD_CLOUD_ENVIRONMENT_HANDLE,
+    sandboxHandle: process.env.SWITCHYARD_CLOUD_SANDBOX_HANDLE,
+    apiKey: process.env.SWITCHYARD_CLOUD_API_KEY,
+    webhookSecret: process.env.SWITCHYARD_CLOUD_WEBHOOK_SECRET,
+    emailsEndpoint: process.env.SWITCHYARD_CLOUD_EMAILS_ENDPOINT,
+    paymentsEndpoint: process.env.SWITCHYARD_CLOUD_PAYMENTS_ENDPOINT,
     ...cloud,
   }
   const hasCloudOptions = Object.values(mergedCloudOptions).some(
@@ -453,7 +453,7 @@ function normalizeAdminConfig(
    * with the user defined config
    */
   return {
-    backendUrl: process.env.MEDUSA_BACKEND_URL || DEFAULT_ADMIN_URL,
+    backendUrl: process.env.SWITCHYARD_BACKEND_URL || DEFAULT_ADMIN_URL,
     path: "/app",
     ...adminConfig,
   }

@@ -61,12 +61,12 @@ export async function pgConnectionLoader(): Promise<
     },
   })
 
-  const maxRetries = process.env.__MEDUSA_DB_CONNECTION_MAX_RETRIES
-    ? parseInt(process.env.__MEDUSA_DB_CONNECTION_MAX_RETRIES)
+  const maxRetries = process.env.__SWITCHYARD_DB_CONNECTION_MAX_RETRIES
+    ? parseInt(process.env.__SWITCHYARD_DB_CONNECTION_MAX_RETRIES)
     : 5
 
-  const retryDelay = process.env.__MEDUSA_DB_CONNECTION_RETRY_DELAY
-    ? parseInt(process.env.__MEDUSA_DB_CONNECTION_RETRY_DELAY)
+  const retryDelay = process.env.__SWITCHYARD_DB_CONNECTION_RETRY_DELAY
+    ? parseInt(process.env.__SWITCHYARD_DB_CONNECTION_RETRY_DELAY)
     : 1000
 
   await retryExecution(

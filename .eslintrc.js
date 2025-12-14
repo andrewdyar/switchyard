@@ -92,7 +92,7 @@ module.exports = {
           "./packages/design-system/ui-preset/tsconfig.json",
           "./packages/design-system/toolbox/tsconfig.json",
 
-          "./packages/cli/create-medusa-app/tsconfig.json",
+          "./packages/cli/create-switchyard-app/tsconfig.json",
           "./packages/cli/medusa-cli/tsconfig.spec.json",
           "./packages/cli/oas/medusa-oas-cli/tsconfig.spec.json",
 

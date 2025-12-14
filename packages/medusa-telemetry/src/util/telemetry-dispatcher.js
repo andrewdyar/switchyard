@@ -6,7 +6,7 @@ import showAnalyticsNotification from "./show-notification"
 import Store from "../store"
 import isTruthy from "./is-truthy"
 
-const MEDUSA_TELEMETRY_VERBOSE = process.env.MEDUSA_TELEMETRY_VERBOSE || false
+const SWITCHYARD_TELEMETRY_VERBOSE = process.env.SWITCHYARD_TELEMETRY_VERBOSE || false
 
 class TelemetryDispatcher {
   constructor(options) {
@@ -55,7 +55,7 @@ class TelemetryDispatcher {
 
     await this.store_.flushEvents(async events => {
       if (!events.length) {
-        if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+        if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
           console.log("No events to POST - skipping")
         }
         return true
@@ -73,13 +73,13 @@ class TelemetryDispatcher {
       return await this.axiosInstance
         .post(`${this.host}${this.path}`, data, req)
         .then(() => {
-          if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+          if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
             console.log("POSTing batch succeeded")
           }
           return true
         })
         .catch(e => {
-          if (isTruthy(MEDUSA_TELEMETRY_VERBOSE)) {
+          if (isTruthy(SWITCHYARD_TELEMETRY_VERBOSE)) {
             console.error("Failed to POST event batch", e)
           }
           return false

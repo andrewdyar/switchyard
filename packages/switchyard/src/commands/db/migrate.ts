@@ -1,4 +1,4 @@
-import { MEDUSA_CLI_PATH, SwitchyardAppLoader, Migrator } from "@switchyard/framework"
+import { SWITCHYARD_CLI_PATH, SwitchyardAppLoader, Migrator } from "@switchyard/framework"
 import { LinkLoader } from "@switchyard/framework/links"
 import {
   ContainerRegistrationKeys,
@@ -15,7 +15,7 @@ import { syncLinks } from "./sync-links"
 
 const TERMINAL_SIZE = process.stdout.columns
 
-const cliPath = path.resolve(MEDUSA_CLI_PATH, "..", "..", "cli.js")
+const cliPath = path.resolve(SWITCHYARD_CLI_PATH, "..", "..", "cli.js")
 
 /**
  * A low-level utility to migrate the database. This util should

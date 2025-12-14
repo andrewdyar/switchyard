@@ -4,11 +4,11 @@ import path from "path"
 import { isString } from "./is-string"
 import { readDir } from "./read-dir-recursive"
 
-const MEDUSA_APP_SOURCE_PATH = "src"
-const MEDUSA_PLUGIN_SOURCE_PATH = ".medusa/server/src"
-const MEDUSA_PLUGIN_OPTIONS_FILE_PATH =
+const SWITCHYARD_APP_SOURCE_PATH = "src"
+const SWITCHYARD_PLUGIN_SOURCE_PATH = ".medusa/server/src"
+const SWITCHYARD_PLUGIN_OPTIONS_FILE_PATH =
   ".medusa/server/medusa-plugin-options.json"
-export const MEDUSA_PROJECT_NAME = "project-plugin"
+export const SWITCHYARD_PROJECT_NAME = "project-plugin"
 
 function createPluginId(name: string): string {
   return name
@@ -53,7 +53,7 @@ async function resolvePluginOptions(
 ): Promise<Record<string, any>> {
   try {
     const contents = await fs.readFile(
-      path.join(pluginRootDir, MEDUSA_PLUGIN_OPTIONS_FILE_PATH),
+      path.join(pluginRootDir, SWITCHYARD_PLUGIN_OPTIONS_FILE_PATH),
       "utf-8"
     )
     return JSON.parse(contents)
@@ -83,7 +83,7 @@ async function resolvePlugin(
 
   const name = pkgJSON.contents.name || pluginPath
 
-  const resolve = path.join(resolvedPath, MEDUSA_PLUGIN_SOURCE_PATH)
+  const resolve = path.join(resolvedPath, SWITCHYARD_PLUGIN_SOURCE_PATH)
   const pluginStaticOptions = await resolvePluginOptions(resolvedPath)
   const modules = await readDir(path.join(resolve, "modules"), {
     ignoreMissing: true,
@@ -113,7 +113,7 @@ async function resolvePlugin(
     admin: adminConfig,
     modules: modules.map((mod) => {
       return {
-        resolve: `${pluginPath}/${MEDUSA_PLUGIN_SOURCE_PATH}/modules/${mod.name}`,
+        resolve: `${pluginPath}/${SWITCHYARD_PLUGIN_SOURCE_PATH}/modules/${mod.name}`,
         options: pluginOptions,
       }
     }),
@@ -135,11 +135,11 @@ export async function getResolvedPlugins(
   )
 
   if (isMedusaProject) {
-    const extensionDirectory = path.join(rootDirectory, MEDUSA_APP_SOURCE_PATH)
+    const extensionDirectory = path.join(rootDirectory, SWITCHYARD_APP_SOURCE_PATH)
     resolved.push({
       resolve: extensionDirectory,
-      name: MEDUSA_PROJECT_NAME,
-      id: createPluginId(MEDUSA_PROJECT_NAME),
+      name: SWITCHYARD_PROJECT_NAME,
+      id: createPluginId(SWITCHYARD_PROJECT_NAME),
       admin: {
         type: "local",
         resolve: path.join(extensionDirectory, "admin"),

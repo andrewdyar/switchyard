@@ -879,7 +879,7 @@
 
 - [#4626](https://github.com/medusajs/medusa/pull/4626) [`3f3a84262`](https://github.com/medusajs/medusa/commit/3f3a84262ce9cbd911923278a54e301fbe9a4634) Thanks [@adrien2p](https://github.com/adrien2p)! - [WIP] feat(types, product, utils, medusa): Include shared connection for modules
 
-- [#4733](https://github.com/medusajs/medusa/pull/4733) [`30ce35b16`](https://github.com/medusajs/medusa/commit/30ce35b163afa25f4e1d8d1bd392f401a3b413df) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app, utils, medusa-cli): add database options + remove util from `@medusajs/utils`
+- [#4733](https://github.com/medusajs/medusa/pull/4733) [`30ce35b16`](https://github.com/medusajs/medusa/commit/30ce35b163afa25f4e1d8d1bd392f401a3b413df) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-switchyard-app, utils, medusa-cli): add database options + remove util from `@medusajs/utils`
 
 ## 1.9.5
 
@@ -915,7 +915,7 @@
 
 ### Patch Changes
 
-- [#4273](https://github.com/medusajs/medusa/pull/4273) [`f98ba5bde`](https://github.com/medusajs/medusa/commit/f98ba5bde83ba785eead31b0c9eb9f135d664178) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app,medusa-cli): Allow clearing project
+- [#4273](https://github.com/medusajs/medusa/pull/4273) [`f98ba5bde`](https://github.com/medusajs/medusa/commit/f98ba5bde83ba785eead31b0c9eb9f135d664178) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-switchyard-app,medusa-cli): Allow clearing project
 
 - [#4161](https://github.com/medusajs/medusa/pull/4161) [`14c0f62f8`](https://github.com/medusajs/medusa/commit/14c0f62f84704a4c87beff3daaff60a52f5c88b8) Thanks [@adrien2p](https://github.com/adrien2p)! - feat(product): Experimental product module
 

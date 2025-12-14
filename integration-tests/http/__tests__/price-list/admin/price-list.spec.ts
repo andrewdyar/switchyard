@@ -726,7 +726,7 @@ medusaIntegrationTestRunner({
 })
 
 // TODO: Revisit tax inclusive pricing
-// describe("[MEDUSA_FF_TAX_INCLUSIVE_PRICING] /admin/price-lists", () => {
+// describe("[SWITCHYARD_FF_TAX_INCLUSIVE_PRICING] /admin/price-lists", () => {
 //   let medusaProcess
 //   let dbConnection
 
@@ -734,7 +734,7 @@ medusaIntegrationTestRunner({
 //     const cwd = path.resolve(path.join(__dirname, "..", ".."))
 //     const [process, connection] = await startServerWithEnvironment({
 //       cwd,
-//       env: { MEDUSA_FF_TAX_INCLUSIVE_PRICING: true },
+//       env: { SWITCHYARD_FF_TAX_INCLUSIVE_PRICING: true },
 //     })
 //     dbConnection = connection
 //     medusaProcess = process

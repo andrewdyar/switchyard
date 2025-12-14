@@ -9,7 +9,7 @@ import { createOrderSeeder } from "../../fixtures/order"
 
 jest.setTimeout(300000)
 
-const env = { MEDUSA_FF_VIEW_CONFIGURATIONS: true }
+const env = { SWITCHYARD_FF_VIEW_CONFIGURATIONS: true }
 
 medusaIntegrationTestRunner({
   env,

@@ -1,6 +1,6 @@
 import { BigNumberInput } from "@switchyard/types"
 import { isDefined } from "../../common"
-import { BigNumber, MEDUSA_EPSILON } from "../big-number"
+import { BigNumber, SWITCHYARD_EPSILON } from "../big-number"
 import { MathBN } from "../math"
 
 export function calculateCreditLinesTotal({
@@ -46,7 +46,7 @@ export function calculateCreditLinesTotal({
     }
   }
 
-  const isZero = MathBN.lte(creditLinesTotal, MEDUSA_EPSILON)
+  const isZero = MathBN.lte(creditLinesTotal, SWITCHYARD_EPSILON)
   return {
     creditLinesTotal: isZero ? MathBN.convert(0) : creditLinesTotal,
     creditLinesSubtotal: isZero ? MathBN.convert(0) : creditLinesSubtotal,

@@ -143,7 +143,7 @@ const collectSettings = (name, description) => {
     key: snakeCaseName,
     description: description,
     defaultValue: false,
-    envKey: `MEDUSA_FF_${snakeCaseName.toUpperCase()}`,
+    envKey: `SWITCHYARD_FF_${snakeCaseName.toUpperCase()}`,
   }
 }
 

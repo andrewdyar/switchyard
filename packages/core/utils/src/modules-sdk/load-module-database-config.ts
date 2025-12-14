@@ -4,7 +4,7 @@ import { SwitchyardError } from "../common"
 function getEnv(key: string, moduleName: string): string {
   const value =
     process.env[`${moduleName.toUpperCase()}_${key}`] ??
-    process.env[`MEDUSA_${key}`] ??
+    process.env[`SWITCHYARD_${key}`] ??
     process.env[`${key}`]
   return value ?? ""
 }
@@ -103,7 +103,7 @@ export function loadDatabaseConfig(
   if (!database.clientUrl && !silent && !database.connection) {
     throw new SwitchyardError(
       SwitchyardError.Types.INVALID_ARGUMENT,
-      "No database clientUrl provided. Please provide the clientUrl through the [MODULE]_DATABASE_URL, MEDUSA_DATABASE_URL or DATABASE_URL environment variable or the options object in the initialize function."
+      "No database clientUrl provided. Please provide the clientUrl through the [MODULE]_DATABASE_URL, SWITCHYARD_DATABASE_URL or DATABASE_URL environment variable or the options object in the initialize function."
     )
   }
 

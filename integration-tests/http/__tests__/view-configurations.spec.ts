@@ -3,7 +3,7 @@ import { adminHeaders, createAdminUser } from "../../helpers/create-admin-user"
 
 jest.setTimeout(50000)
 
-const env = { MEDUSA_FF_VIEW_CONFIGURATIONS: true }
+const env = { SWITCHYARD_FF_VIEW_CONFIGURATIONS: true }
 
 medusaIntegrationTestRunner({
   env,

@@ -125,7 +125,7 @@ export async function getViteConfig(
 }
 
 function getAllowedHosts(): string[] | undefined {
-  const hosts = process.env.__MEDUSA_ADMIN_ADDITIONAL_ALLOWED_HOSTS
+  const hosts = process.env.__SWITCHYARD_ADMIN_ADDITIONAL_ALLOWED_HOSTS
   if (!hosts) {
     return undefined
   }

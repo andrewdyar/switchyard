@@ -415,7 +415,7 @@
 
 ### Patch Changes
 
-- [#4733](https://github.com/medusajs/medusa/pull/4733) [`30ce35b16`](https://github.com/medusajs/medusa/commit/30ce35b163afa25f4e1d8d1bd392f401a3b413df) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app, utils, medusa-cli): add database options + remove util from `@medusajs/utils`
+- [#4733](https://github.com/medusajs/medusa/pull/4733) [`30ce35b16`](https://github.com/medusajs/medusa/commit/30ce35b163afa25f4e1d8d1bd392f401a3b413df) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-switchyard-app, utils, medusa-cli): add database options + remove util from `@medusajs/utils`
 
 - Updated dependencies [[`3f3a84262`](https://github.com/medusajs/medusa/commit/3f3a84262ce9cbd911923278a54e301fbe9a4634), [`30ce35b16`](https://github.com/medusajs/medusa/commit/30ce35b163afa25f4e1d8d1bd392f401a3b413df)]:
   - @medusajs/utils@1.9.6
@@ -442,7 +442,7 @@
 
 ### Patch Changes
 
-- [#4273](https://github.com/medusajs/medusa/pull/4273) [`f98ba5bde`](https://github.com/medusajs/medusa/commit/f98ba5bde83ba785eead31b0c9eb9f135d664178) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-medusa-app,medusa-cli): Allow clearing project
+- [#4273](https://github.com/medusajs/medusa/pull/4273) [`f98ba5bde`](https://github.com/medusajs/medusa/commit/f98ba5bde83ba785eead31b0c9eb9f135d664178) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(create-switchyard-app,medusa-cli): Allow clearing project
 
 - [#4192](https://github.com/medusajs/medusa/pull/4192) [`8676ee7a2`](https://github.com/medusajs/medusa/commit/8676ee7a2e3da9fecc2e81db3ab12693d02f63f4) Thanks [@shahednasser](https://github.com/shahednasser)! - feat(medusa,medusa-cli): Added an invite option to the create user command, and allow seeding publishable api keys
 

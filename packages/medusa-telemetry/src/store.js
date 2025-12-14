@@ -16,7 +16,7 @@ class Store {
     const baseDir = path.dirname(this.config_.path)
     this.outbox_ = new OutboxStore(baseDir)
 
-    this.disabled_ = isTruthy(process.env.MEDUSA_DISABLE_TELEMETRY)
+    this.disabled_ = isTruthy(process.env.SWITCHYARD_DISABLE_TELEMETRY)
   }
 
   getQueueSize() {

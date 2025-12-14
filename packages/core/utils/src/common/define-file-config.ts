@@ -1,7 +1,7 @@
 import { InputFileConfig } from "@switchyard/types"
 import { getCallerFilePath } from "./get-caller-file-path"
 
-export const MEDUSA_SKIP_FILE = Symbol.for("__MEDUSA_SKIP_FILE__")
+export const SWITCHYARD_SKIP_FILE = Symbol.for("__SWITCHYARD_SKIP_FILE__")
 /**
  * The "defineFileConfig" helper can be used to define the configuration
  * of any file auto-loaded by Medusa.
@@ -24,5 +24,5 @@ export function isFileDisabled(path?: string) {
 }
 
 export function isFileSkipped(exported: unknown) {
-  return !!exported?.[MEDUSA_SKIP_FILE]
+  return !!exported?.[SWITCHYARD_SKIP_FILE]
 }

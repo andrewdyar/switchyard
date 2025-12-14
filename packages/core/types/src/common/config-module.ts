@@ -61,7 +61,7 @@ export interface AdminOptions {
    * ```js title="switchyard.config.ts"
    * module.exports = defineConfig({
    *   admin: {
-   *     backendUrl: process.env.MEDUSA_BACKEND_URL ||
+   *     backendUrl: process.env.SWITCHYARD_BACKEND_URL ||
    *       "http://localhost:9000"
    *   },
    *   // ...
@@ -78,7 +78,7 @@ export interface AdminOptions {
    * ```js title="switchyard.config.ts"
    * module.exports = defineConfig({
    *   admin: {
-   *     storefrontUrl: process.env.MEDUSA_STOREFRONT_URL ||
+   *     storefrontUrl: process.env.SWITCHYARD_STOREFRONT_URL ||
    *       "http://localhost:9000"
    *   },
    *   // ...
@@ -969,7 +969,7 @@ export type ConfigModule = {
    * ```ts title="switchyard.config.ts"
    * module.exports = defineConfig({
    *   admin: {
-   *     backendUrl: process.env.MEDUSA_BACKEND_URL ||
+   *     backendUrl: process.env.SWITCHYARD_BACKEND_URL ||
    *       "http://localhost:9000"
    *   },
    *   // ...

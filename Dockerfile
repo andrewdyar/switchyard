@@ -49,7 +49,7 @@ RUN yarn build
 # =============================================================================
 # Build Medusa app - this creates public/admin with Vite's transpiled output
 RUN cd apps/goods-backend && \
-    npx medusa build
+    npx switchyard build
 
 # =============================================================================
 # Layer 5: Verify admin build and fix HTML paths

@@ -13,6 +13,6 @@ export * from "./telemetry"
 export * from "./zod"
 export * from "./migrations"
 
-export const MEDUSA_CLI_PATH = require.resolve("@switchyard/cli")
+export const SWITCHYARD_CLI_PATH = require.resolve("@switchyard/cli")
 
 export { Query } from "@switchyard/modules-sdk"
