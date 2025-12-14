@@ -2,17 +2,21 @@ import { defineConfig, loadEnv } from "@switchyard/framework/utils"
 
 loadEnv(process.env.NODE_ENV || "development", process.cwd())
 
-// Build auth providers list - only include Supabase if env vars are configured
+// Supabase auth is mission critical - fail fast if env vars are missing
+if (!process.env.SUPABASE_URL || !process.env.SUPABASE_ANON_KEY || !process.env.SUPABASE_SERVICE_ROLE_KEY) {
+  throw new Error(
+    "Missing required Supabase environment variables. " +
+    "SUPABASE_URL, SUPABASE_ANON_KEY, and SUPABASE_SERVICE_ROLE_KEY must all be set."
+  )
+}
+
+// Auth providers - Supabase is the primary auth provider
 const authProviders: any[] = [
   {
     resolve: "@switchyard/core/auth-emailpass",
     id: "emailpass",
   },
-]
-
-// Only add Supabase provider if all required env vars are present
-if (process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY && process.env.SUPABASE_SERVICE_ROLE_KEY) {
-  authProviders.push({
+  {
     resolve: "@switchyard/auth-supabase",
     id: "supabase",
     options: {
@@ -20,8 +24,8 @@ if (process.env.SUPABASE_URL && process.env.SUPABASE_ANON_KEY && process.env.SUP
       supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
       supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
     },
-  })
-}
+  },
+]
 
 // Configure auth methods based on available providers
 const userAuthMethods = authProviders.map(p => p.id)
