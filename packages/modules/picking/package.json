@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/picking",
+  "name": "@switchyard/picking",
   "version": "0.0.1",
   "description": "Picking module for Goods - manages RFC warehouse picking operations",
   "main": "./dist/index.js",
@@ -23,13 +23,13 @@
     "watch": "tsc --watch"
   },
   "dependencies": {
-    "@medusajs/framework": "workspace:^",
-    "@medusajs/utils": "workspace:^"
+    "@switchyard/framework": "workspace:^",
+    "@switchyard/utils": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "@medusajs/framework": "workspace:^"
+    "@switchyard/framework": "workspace:^"
   }
 }

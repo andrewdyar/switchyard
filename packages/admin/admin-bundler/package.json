@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/admin-bundler",
+  "name": "@switchyard/admin-bundler",
   "version": "2.12.1",
   "description": "Bundler for the Medusa admin dashboard.",
   "author": "Kasper Kristensen <kasper@medusajs.com>",
@@ -10,7 +10,7 @@
   "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/admin/admin-bundler"
   },
   "files": [
@@ -18,12 +18,12 @@
     "package.json"
   ],
   "devDependencies": {
-    "@medusajs/types": "2.12.1"
+    "@switchyard/types": "workspace:*"
   },
   "dependencies": {
-    "@medusajs/admin-shared": "2.12.1",
-    "@medusajs/admin-vite-plugin": "2.12.1",
-    "@medusajs/dashboard": "2.12.1",
+    "@switchyard/admin-shared": "workspace:*",
+    "@switchyard/admin-vite-plugin": "workspace:*",
+    "@switchyard/dashboard": "workspace:*",
     "@vitejs/plugin-react": "^4.2.1",
     "autoprefixer": "^10.4.19",
     "compression": "^1.8.0",

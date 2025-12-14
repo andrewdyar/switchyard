@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/drivers",
+  "name": "@switchyard/drivers",
   "version": "0.0.1",
   "description": "Drivers module for Goods - manages drivers who perform sweeps and deliveries",
   "main": "./dist/index.js",
@@ -23,13 +23,13 @@
     "watch": "tsc --watch"
   },
   "dependencies": {
-    "@medusajs/framework": "workspace:^",
-    "@medusajs/utils": "workspace:^"
+    "@switchyard/framework": "workspace:^",
+    "@switchyard/utils": "workspace:^"
   },
   "devDependencies": {
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "@medusajs/framework": "workspace:^"
+    "@switchyard/framework": "workspace:^"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/utils",
+  "name": "@switchyard/utils",
   "version": "2.12.1",
   "description": "Medusa utilities functions shared by Medusa core and Modules",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/core/utils"
   },
   "engines": {
@@ -23,10 +23,10 @@
     "!dist/**/__mocks__",
     "!dist/**/__fixtures__"
   ],
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/types": "2.12.1",
+    "@switchyard/types": "workspace:*",
     "express": "^4.21.0"
   },
   "dependencies": {
@@ -34,7 +34,7 @@
     "@graphql-codegen/typescript": "^4.0.9",
     "@graphql-tools/merge": "^9.0.7",
     "@graphql-tools/schema": "^10.0.6",
-    "@medusajs/deps": "2.12.1",
+    "@switchyard/deps": "workspace:*",
     "@types/pluralize": "^0.0.33",
     "bignumber.js": "^9.1.2",
     "dotenv": "^16.4.5",

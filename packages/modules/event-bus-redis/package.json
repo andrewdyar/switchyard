@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/event-bus-redis",
+  "name": "@switchyard/event-bus-redis",
   "version": "2.12.1",
   "description": "Redis Event Bus Module for Medusa",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/event-bus-redis"
   },
   "publishConfig": {
@@ -20,10 +20,10 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "scripts": {
     "watch": "yarn run -T tsc --build --watch",
@@ -36,6 +36,6 @@
     "ioredis": "^5.4.1"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   }
 }

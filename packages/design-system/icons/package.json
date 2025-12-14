@@ -1,12 +1,12 @@
 {
-  "name": "@medusajs/icons",
+  "name": "@switchyard/icons",
   "version": "2.12.1",
   "description": "Medusa UI React icon library",
   "author": "Kasper Kristensen <kasper@medusajs.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa.git",
+    "url": "https://github.com/andrewdyar/switchyard.git",
     "directory": "packages/design-system/icons"
   },
   "main": "dist/cjs/medusa-icons.js",
@@ -28,7 +28,7 @@
     "generate": "yarn run -T rimraf ./src/components && toolbox icons -o './src/components'"
   },
   "devDependencies": {
-    "@medusajs/toolbox": "2.12.1",
+    "@switchyard/toolbox": "workspace:*",
     "react": "^18.3.1"
   },
   "peerDependencies": {

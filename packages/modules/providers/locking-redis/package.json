@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/locking-redis",
+  "name": "@switchyard/locking-redis",
   "version": "2.12.1",
   "description": "Redis Lock for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/providers/locking-redis"
   },
   "files": [
@@ -17,13 +17,13 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "dependencies": {
     "ioredis": "^5.4.1"

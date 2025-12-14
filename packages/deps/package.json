@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/deps",
+  "name": "@switchyard/deps",
   "version": "2.12.1",
   "description": "Dependencies for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/deps"
   },
   "engines": {
@@ -32,7 +32,7 @@
     "./awilix": "./dist/awilix.js",
     "./pg": "./dist/pg.js"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "scripts": {
     "build": "yarn run -T rimraf dist && yarn run -T tsc --build"

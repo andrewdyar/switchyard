@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/admin-sdk",
+  "name": "@switchyard/admin-sdk",
   "description": "SDK for building extension for the Medusa admin dashboard.",
   "version": "2.12.1",
   "author": "Kasper Kristensen <kasper@medusajs.com>",
@@ -8,7 +8,7 @@
   "module": "dist/index.mjs",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/admin/admin-sdk"
   },
   "files": [
@@ -19,7 +19,7 @@
     "build": "yarn run -T tsup"
   },
   "dependencies": {
-    "@medusajs/admin-shared": "2.12.1",
+    "@switchyard/admin-shared": "workspace:*",
     "zod": "3.25.76"
   },
   "packageManager": "yarn@3.2.1"

@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/link-modules",
+  "name": "@switchyard/link-modules",
   "version": "2.12.1",
   "description": "Medusa Default Link Modules Package and Definitions",
   "main": "dist/index.js",
@@ -12,7 +12,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/link-modules"
   },
   "publishConfig": {
@@ -21,7 +21,7 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "scripts": {
     "watch": "yarn run -T tsc --build --watch",
@@ -33,10 +33,10 @@
     "test:integration": "../../../node_modules/.bin/jest --passWithNoTests --forceExit --testPathPattern=\"integration-tests/__tests__/.*\\.ts\""
   },
   "devDependencies": {
-    "@medusajs/framework": "2.12.1",
-    "@medusajs/test-utils": "2.12.1"
+    "@switchyard/framework": "workspace:*",
+    "@switchyard/test-utils": "workspace:*"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   }
 }

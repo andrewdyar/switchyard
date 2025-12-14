@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/telemetry",
+  "name": "@switchyard/telemetry",
   "version": "2.12.1",
   "description": "Telemetry for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/medusa-telemetry"
   },
   "engines": {

@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/auth-google",
+  "name": "@switchyard/auth-google",
   "version": "2.12.1",
   "description": "Google OAuth authentication provider for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/providers/auth-google"
   },
   "files": [
@@ -17,7 +17,7 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "scripts": {
     "test": "../../../../node_modules/.bin/jest --passWithNoTests src",
@@ -26,13 +26,13 @@
     "watch": "yarn run -T tsc --watch"
   },
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "dependencies": {
     "jsonwebtoken": "^9.0.2"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "keywords": [
     "medusa-provider",

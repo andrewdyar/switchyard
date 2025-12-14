@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/cache-redis",
+  "name": "@switchyard/cache-redis",
   "version": "2.12.1",
   "description": "Redis Cache Module for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/cache-redis"
   },
   "publishConfig": {
@@ -20,10 +20,10 @@
     "!dist/**/__mocks__",
     "!dist/**/__fixtures__"
   ],
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "scripts": {
     "watch": "yarn run -T tsc --build --watch",
@@ -34,6 +34,6 @@
     "ioredis": "^5.4.1"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   }
 }

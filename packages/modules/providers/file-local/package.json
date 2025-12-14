@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/file-local",
+  "name": "@switchyard/file-local",
   "version": "2.12.1",
   "description": "Local filesystem file storage for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/providers/file-local"
   },
   "files": [
@@ -17,7 +17,7 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "scripts": {
     "test": "../../../../node_modules/.bin/jest --passWithNoTests src",
@@ -25,10 +25,10 @@
     "watch": "yarn run -T tsc --watch"
   },
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "keywords": [
     "medusa-plugin",

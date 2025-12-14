@@ -36,7 +36,7 @@
       "optional": true
     }
   },
-  "homepage": "https://github.com/medusajs/medusa/tree/master/packages/medusa-dev-cli#readme",
+  "homepage": "https://github.com/andrewdyar/switchyard/tree/master/packages/medusa-dev-cli#readme",
   "keywords": [
     "medusa"
   ],
@@ -44,7 +44,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa.git",
+    "url": "https://github.com/andrewdyar/switchyard.git",
     "directory": "packages/cli/medusa-dev-cli"
   },
   "scripts": {

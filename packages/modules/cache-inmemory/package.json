@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/cache-inmemory",
+  "name": "@switchyard/cache-inmemory",
   "version": "2.12.1",
   "description": "In-memory Cache Module for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/cache-inmemory"
   },
   "engines": {
@@ -20,10 +20,10 @@
     "!dist/**/__mocks__",
     "!dist/**/__fixtures__"
   ],
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "scripts": {
     "watch": "yarn run -T tsc --build --watch",
@@ -31,6 +31,6 @@
     "test": "../../../node_modules/.bin/jest --passWithNoTests"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   }
 }

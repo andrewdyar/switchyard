@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/core-flows",
+  "name": "@switchyard/core-flows",
   "version": "2.12.1",
   "description": "Set of workflow definitions for Medusa",
   "main": "dist/index.js",
@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/core-flows"
   },
   "publishConfig": {
@@ -23,10 +23,10 @@
     "!dist/**/__mocks__",
     "!dist/**/__fixtures__"
   ],
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "dependencies": {
     "csv-parse": "^5.6.0",
@@ -34,7 +34,7 @@
     "zod": "3.25.76"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "scripts": {
     "build": "yarn run -T rimraf dist && yarn run -T tsc --build",

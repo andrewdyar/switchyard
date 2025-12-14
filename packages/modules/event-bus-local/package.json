@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/event-bus-local",
+  "name": "@switchyard/event-bus-local",
   "version": "2.12.1",
   "description": "Local Event Bus Module for Medusa",
   "main": "dist/index.js",
@@ -11,7 +11,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/event-bus-local"
   },
   "publishConfig": {
@@ -20,10 +20,10 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "scripts": {
     "watch": "yarn run -T tsc --build --watch",
@@ -32,6 +32,6 @@
     "test:integration": "../../../node_modules/.bin/jest --passWithNoTests --no-cache --bail --detectOpenHandles --forceExit --logHeapUsage --testPathPattern=\"integration-tests/__tests__/.*\\.spec\\.ts\""
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   }
 }

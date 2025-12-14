@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/inventory",
+  "name": "@switchyard/inventory",
   "version": "2.12.1",
   "description": "Inventory Module for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/modules/inventory"
   },
   "publishConfig": {
@@ -20,14 +20,14 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/framework": "2.12.1",
-    "@medusajs/test-utils": "2.12.1"
+    "@switchyard/framework": "workspace:*",
+    "@switchyard/test-utils": "workspace:*"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "scripts": {
     "watch": "yarn run -T tsc --build --watch",

@@ -1,11 +1,11 @@
 {
-  "name": "@medusajs/test-utils",
+  "name": "@switchyard/test-utils",
   "version": "2.12.1",
   "description": "Test utils for Medusa",
   "main": "dist/index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/medusa-test-utils"
   },
   "engines": {
@@ -22,10 +22,10 @@
     "!dist/**/__mocks__",
     "!dist/**/__fixtures__"
   ],
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "devDependencies": {
-    "@medusajs/framework": "2.12.1"
+    "@switchyard/framework": "workspace:*"
   },
   "dependencies": {
     "@types/express": "^4.17.21",
@@ -35,11 +35,11 @@
     "ulid": "^2.3.0"
   },
   "peerDependencies": {
-    "@medusajs/framework": "2.12.1",
-    "@medusajs/medusa": "2.12.1"
+    "@switchyard/framework": "workspace:*",
+    "@switchyard/medusa": "workspace:*"
   },
   "peerDependenciesMeta": {
-    "@medusajs/medusa": {
+    "@switchyard/medusa": {
       "optional": true
     }
   },

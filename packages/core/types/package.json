@@ -1,5 +1,5 @@
 {
-  "name": "@medusajs/types",
+  "name": "@switchyard/types",
   "version": "2.12.1",
   "description": "Medusa Types definition",
   "main": "dist/index.js",
@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa",
+    "url": "https://github.com/andrewdyar/switchyard",
     "directory": "packages/core/types"
   },
   "engines": {
@@ -24,7 +24,7 @@
     "!dist/**/__fixtures__",
     "!dist/**/__mocks__"
   ],
-  "author": "Medusa",
+  "author": "Switchyard",
   "license": "MIT",
   "scripts": {
     "build": "yarn run -T rimraf dist && yarn run -T tsc --build",
@@ -35,7 +35,7 @@
     "bignumber.js": "^9.1.2"
   },
   "devDependencies": {
-    "@medusajs/deps": "2.12.1"
+    "@switchyard/deps": "workspace:*"
   },
   "peerDependencies": {
     "ioredis": "^5.4.1",

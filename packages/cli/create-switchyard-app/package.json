@@ -13,8 +13,8 @@
     "watch": "yarn run -T tsc --watch"
   },
   "dependencies": {
-    "@medusajs/deps": "2.12.1",
-    "@medusajs/telemetry": "2.12.1",
+    "@switchyard/deps": "workspace:*",
+    "@switchyard/telemetry": "workspace:*",
     "boxen": "^5.0.1",
     "chalk": "^4.1.2",
     "commander": "^11.0.0",
@@ -35,10 +35,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/medusajs/medusa.git",
+    "url": "https://github.com/andrewdyar/switchyard.git",
     "directory": "packages/cli/create-medusa-app"
   },
-  "author": "Medusa",
+  "author": "Switchyard",
   "publishConfig": {
     "access": "public"
   },
