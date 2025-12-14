@@ -113,4 +113,4 @@ HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
 # Bind to 0.0.0.0 so Fly.io proxy can reach it
 # Note: When host is undefined, Node.js http.listen() binds to all interfaces (0.0.0.0) by default
 # We explicitly set --host 0.0.0.0 to ensure it works correctly with Fly.io's proxy
-CMD ["npx", "medusa", "start", "--host", "0.0.0.0"]
+CMD ["npx", "switchyard", "start", "--host", "0.0.0.0"]
