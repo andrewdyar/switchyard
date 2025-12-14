@@ -3421,6 +3421,130 @@
       ],
       "additionalProperties": false
     },
+    "inventoryGroups": {
+      "type": "object",
+      "properties": {
+        "domain": {
+          "type": "string"
+        },
+        "pageTitle": {
+          "type": "string"
+        },
+        "subtitle": {
+          "type": "string"
+        },
+        "create": {
+          "type": "object",
+          "properties": {
+            "header": {
+              "type": "string"
+            },
+            "successToast": {
+              "type": "string"
+            }
+          },
+          "required": ["header", "successToast"],
+          "additionalProperties": false
+        },
+        "edit": {
+          "type": "object",
+          "properties": {
+            "header": {
+              "type": "string"
+            },
+            "successToast": {
+              "type": "string"
+            }
+          },
+          "required": ["header", "successToast"],
+          "additionalProperties": false
+        },
+        "delete": {
+          "type": "object",
+          "properties": {
+            "confirmation": {
+              "type": "string"
+            },
+            "successToast": {
+              "type": "string"
+            }
+          },
+          "required": ["confirmation", "successToast"],
+          "additionalProperties": false
+        },
+        "organize": {
+          "type": "object",
+          "properties": {
+            "header": {
+              "type": "string"
+            },
+            "action": {
+              "type": "string"
+            }
+          },
+          "required": ["header", "action"],
+          "additionalProperties": false
+        },
+        "products": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string"
+            },
+            "removeConfirmation": {
+              "type": "string"
+            },
+            "removeSuccess": {
+              "type": "string"
+            }
+          },
+          "required": ["description", "removeConfirmation", "removeSuccess"],
+          "additionalProperties": false
+        },
+        "fields": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                },
+                "tooltip": {
+                  "type": "string"
+                }
+              },
+              "required": ["label", "tooltip"],
+              "additionalProperties": false
+            },
+            "parent": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": ["label"],
+              "additionalProperties": false
+            },
+            "children": {
+              "type": "object",
+              "properties": {
+                "label": {
+                  "type": "string"
+                }
+              },
+              "required": ["label"],
+              "additionalProperties": false
+            }
+          },
+          "required": ["path", "parent", "children"],
+          "additionalProperties": false
+        }
+      },
+      "required": ["domain", "pageTitle", "subtitle", "create", "edit", "delete", "organize", "products", "fields"],
+      "additionalProperties": false
+    },
     "giftCards": {
       "type": "object",
       "properties": {
@@ -11382,6 +11506,27 @@
         "type": {
           "type": "string"
         },
+        "zone": {
+          "type": "string"
+        },
+        "level": {
+          "type": "string"
+        },
+        "locationCode": {
+          "type": "string"
+        },
+        "aisle": {
+          "type": "string"
+        },
+        "bay": {
+          "type": "string"
+        },
+        "shelf": {
+          "type": "string"
+        },
+        "slot": {
+          "type": "string"
+        },
         "reason": {
           "type": "string"
         },
@@ -12074,6 +12219,7 @@
     "collections",
     "categories",
     "inventory",
+    "inventoryGroups",
     "giftCards",
     "customers",
     "customerGroups",
