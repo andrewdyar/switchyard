@@ -1,0 +1,218 @@
+---
+title: Scanner API
+description: Mobile scanning and inventory operations
+---
+
+# Scanner API
+
+The Scanner API is designed for mobile devices used by warehouse pickers and delivery drivers.
+
+## Overview
+
+The Scanner API provides:
+- **Barcode Lookup**: Find products by UPC/EAN barcode
+- **Inventory Scanning**: Update quantities via mobile scan
+- **Order Picking**: Access orders assigned for fulfillment
+- **Location Tracking**: Validate item locations
+
+## Authentication
+
+Scanner devices authenticate using Supabase JWT tokens:
+
+```javascript
+// Login with Supabase
+const { data } = await supabase.auth.signInWithPassword({
+  email: 'picker@example.com',
+  password: 'password123'
+})
+
+// Use access token for API calls
+const response = await fetch('/scanner/inventory/lookup?barcode=012345678901', {
+  headers: {
+    'Authorization': `Bearer ${data.session.access_token}`
+  }
+})
+```
+
+## Endpoints
+
+### Scanner Status
+
+Check scanner API availability and user permissions.
+
+```bash
+GET /scanner
+Authorization: Bearer <token>
+```
+
+Response:
+```json
+{
+  "status": "ok",
+  "user": {
+    "email": "picker@example.com",
+    "roles": ["picker"]
+  },
+  "permissions": ["inventory.scan", "orders.read"]
+}
+```
+
+### Product Lookup
+
+Look up a product by barcode.
+
+```bash
+GET /scanner/inventory/lookup?barcode=012345678901
+Authorization: Bearer <token>
+```
+
+Response:
+```json
+{
+  "found": true,
+  "product": {
+    "id": "prod_123",
+    "title": "Organic Bananas",
+    "thumbnail": "https://...",
+    "variants": [{
+      "id": "var_456",
+      "sku": "BAN-ORG-001",
+      "barcode": "012345678901",
+      "inventory_quantity": 24
+    }]
+  },
+  "location": {
+    "code": "A1-2-3-1",
+    "zone": "A",
+    "aisle": 1,
+    "bay": 2,
+    "shelf": 3,
+    "slot": 1
+  }
+}
+```
+
+### Inventory Scan
+
+Process an inventory scan operation.
+
+```bash
+POST /scanner/inventory/scan
+Authorization: Bearer <token>
+Content-Type: application/json
+
+{
+  "barcode": "012345678901",
+  "location_id": "loc_789",
+  "quantity": 24,
+  "action": "set",
+  "notes": "Restocked from delivery"
+}
+```
+
+Response:
+```json
+{
+  "success": true,
+  "inventory": {
+    "previous_quantity": 12,
+    "new_quantity": 24,
+    "location_code": "A1-2-3-1"
+  }
+}
+```
+
+### List Orders
+
+Get orders assigned for picking.
+
+```bash
+GET /scanner/orders?status=pending
+Authorization: Bearer <token>
+```
+
+### Order Details
+
+Get full order details for picking.
+
+```bash
+GET /scanner/orders/:id
+Authorization: Bearer <token>
+```
+
+## Permissions
+
+| Endpoint | Permission |
+|----------|------------|
+| `GET /scanner` | `scanner.use` |
+| `GET /scanner/inventory/lookup` | `inventory.read` |
+| `POST /scanner/inventory/scan` | `inventory.scan` |
+| `GET /scanner/orders` | `orders.read` |
+| `GET /scanner/orders/:id` | `orders.read` |
+
+## Error Responses
+
+### 401 Unauthorized
+
+No valid authentication token.
+
+```json
+{
+  "message": "Unauthorized"
+}
+```
+
+### 403 Forbidden
+
+Authenticated but missing required permission.
+
+```json
+{
+  "message": "Forbidden: Missing required permission. Required: inventory.scan"
+}
+```
+
+### 404 Not Found
+
+Barcode not found in system.
+
+```json
+{
+  "found": false,
+  "message": "Product not found for barcode: 012345678901"
+}
+```
+
+## Mobile SDK Example
+
+```typescript
+class ScannerClient {
+  private token: string;
+  private baseUrl = 'https://api.switchyard.run';
+
+  async login(email: string, password: string) {
+    const { data } = await supabase.auth.signInWithPassword({ email, password });
+    this.token = data.session.access_token;
+  }
+
+  async lookupBarcode(barcode: string) {
+    const response = await fetch(
+      `${this.baseUrl}/scanner/inventory/lookup?barcode=${barcode}`,
+      { headers: { Authorization: `Bearer ${this.token}` } }
+    );
+    return response.json();
+  }
+
+  async scanInventory(barcode: string, locationId: string, quantity: number) {
+    const response = await fetch(`${this.baseUrl}/scanner/inventory/scan`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${this.token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ barcode, location_id: locationId, quantity, action: 'set' })
+    });
+    return response.json();
+  }
+}
+```

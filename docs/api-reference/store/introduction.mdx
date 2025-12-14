@@ -1,0 +1,77 @@
+---
+title: Store API Introduction
+description: Build storefronts and customer-facing applications with the Store API
+---
+
+# Store API
+
+The Store API provides public endpoints for building storefronts and customer-facing applications.
+
+## Base URL
+
+```
+https://api.switchyard.run
+```
+
+## Authentication
+
+Most Store API endpoints are public and don't require authentication. For customer-specific operations (like cart management), you can use:
+
+- **Publishable API Key**: For scoping requests to specific sales channels
+- **Customer Session**: For authenticated customer operations
+
+<CodeGroup>
+
+```bash cURL (Public)
+curl 'https://api.switchyard.run/store/products'
+```
+
+```bash cURL (With Publishable Key)
+curl 'https://api.switchyard.run/store/products' \
+  -H 'x-publishable-api-key: YOUR_PUBLISHABLE_KEY'
+```
+
+```javascript JavaScript
+const response = await fetch('https://api.switchyard.run/store/products', {
+  headers: {
+    'x-publishable-api-key': publishableKey
+  }
+});
+```
+
+</CodeGroup>
+
+## Common Endpoints
+
+| Endpoint | Description |
+|----------|-------------|
+| `GET /store/products` | List products |
+| `GET /store/products/:id` | Get product details |
+| `GET /store/collections` | List collections |
+| `POST /store/carts` | Create a cart |
+| `POST /store/carts/:id/line-items` | Add items to cart |
+| `GET /store/regions` | List available regions |
+
+## Response Format
+
+All responses are JSON:
+
+```json Success Response
+{
+  "products": [
+    {
+      "id": "prod_123",
+      "title": "Product Name",
+      "handle": "product-name",
+      "variants": [...]
+    }
+  ],
+  "count": 50,
+  "offset": 0,
+  "limit": 20
+}
+```
+
+## Explore Endpoints
+
+Browse the Store API endpoints in the sidebar to see all available operations.

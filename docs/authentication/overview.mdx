@@ -1,0 +1,129 @@
+---
+title: Authentication Overview
+description: Understanding authentication and authorization in Switchyard
+---
+
+# Authentication & Authorization
+
+Switchyard uses a hybrid authentication approach combining the Switchyard framework with Supabase Auth, providing enterprise-grade security with Role-Based Access Control (RBAC).
+
+## Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        Client Applications                       │
+│  (Admin UI, Mobile Apps, Scanner Devices, Automated Systems)    │
+└─────────────────────────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                       Switchyard Backend                         │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐ │
+│  │  Auth Provider  │  │   Middleware    │  │  Route Handlers │ │
+│  │   (Supabase)    │  │ (authenticate,  │  │                 │ │
+│  │                 │  │   authorize)    │  │                 │ │
+│  └────────┬────────┘  └────────┬────────┘  └─────────────────┘ │
+│           │                    │                                 │
+│           ▼                    ▼                                 │
+│  ┌─────────────────────────────────────────────────────────────┐│
+│  │                    Auth Identity Store                       ││
+│  │              (Switchyard auth_identity table)                ││
+│  └─────────────────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                         Supabase                                 │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐ │
+│  │   Auth Service  │  │  RBAC Tables    │  │  RLS Policies   │ │
+│  │  (auth.users)   │  │ (roles, perms)  │  │                 │ │
+│  └─────────────────┘  └─────────────────┘  └─────────────────┘ │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+## Key Components
+
+| Component | Purpose |
+|-----------|---------|
+| Supabase Auth | User authentication, session management, password reset |
+| Supabase RBAC Tables | Roles, permissions, and their assignments |
+| Switchyard Auth Provider | Bridge between Supabase and Switchyard's auth system |
+| Auth Middleware | Validates authentication on protected routes |
+| Authorization Middleware | Checks permissions before allowing access |
+
+## Authentication Flows
+
+### Standard Login (Admin UI)
+
+<Steps>
+  <Step title="Enter Credentials">
+    User enters email and password in the login form
+  </Step>
+  <Step title="Supabase Validates">
+    Frontend calls Supabase Auth API which validates credentials and returns a JWT
+  </Step>
+  <Step title="Switchyard Session">
+    Frontend calls Switchyard auth endpoint with the Supabase token, which creates a session
+  </Step>
+  <Step title="Authenticated Requests">
+    Subsequent requests include the session cookie automatically
+  </Step>
+</Steps>
+
+### Bearer Token (API/Mobile)
+
+For programmatic access:
+
+```bash
+# Include JWT in Authorization header
+curl 'https://api.switchyard.run/admin/products' \
+  -H "Authorization: Bearer YOUR_SUPABASE_JWT"
+```
+
+### Service Account (Robots/Scripts)
+
+For automated systems:
+
+```bash
+curl -X POST 'https://api.switchyard.run/auth/user/supabase' \
+  -H "Content-Type: application/json" \
+  -d '{"api_key": "sk_robot_..."}'
+```
+
+## Environment Variables
+
+| Variable | Description | Required |
+|----------|-------------|----------|
+| `SUPABASE_URL` | Your Supabase project URL | Yes |
+| `SUPABASE_ANON_KEY` | Public anon key for client-side auth | Yes |
+| `SUPABASE_SERVICE_ROLE_KEY` | Service role key for admin operations | Yes |
+| `SUPABASE_JWT_SECRET` | JWT secret for token verification | Optional |
+
+## Actor Types
+
+The system supports multiple actor types:
+
+| Actor Type | Description | Auth Methods | Typical Use |
+|------------|-------------|--------------|-------------|
+| `user` | Admin users | supabase, emailpass | Admin dashboard |
+| `customer` | Store customers | emailpass | Storefront (future) |
+| `api-key` | API key auth | api-key | External integrations |
+
+## Next Steps
+
+<CardGroup cols={2}>
+  <Card
+    title="RBAC System"
+    icon="shield"
+    href="/authentication/rbac"
+  >
+    Learn about roles and permissions
+  </Card>
+  <Card
+    title="Service Accounts"
+    icon="robot"
+    href="/authentication/service-accounts"
+  >
+    Set up automated system access
+  </Card>
+</CardGroup>

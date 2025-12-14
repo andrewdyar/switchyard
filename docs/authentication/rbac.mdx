@@ -1,0 +1,174 @@
+---
+title: Role-Based Access Control
+description: Managing roles and permissions in Switchyard
+---
+
+# Role-Based Access Control (RBAC)
+
+Switchyard uses a comprehensive RBAC system built on Supabase, providing granular control over user permissions.
+
+## Database Schema
+
+The RBAC system consists of five core tables:
+
+### roles
+
+Stores role definitions.
+
+```sql
+CREATE TABLE public.roles (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name VARCHAR(50) NOT NULL UNIQUE,
+  description TEXT,
+  is_system BOOLEAN DEFAULT FALSE,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+### permissions
+
+Stores permission definitions following the `resource.action` pattern.
+
+```sql
+CREATE TABLE public.permissions (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name VARCHAR(100) NOT NULL UNIQUE,
+  description TEXT,
+  resource VARCHAR(50) NOT NULL,
+  action VARCHAR(20) NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+```
+
+### role_permissions
+
+Junction table linking roles to permissions.
+
+### user_roles
+
+Junction table linking Supabase users to roles.
+
+## Default Roles
+
+| Role | Description | System? |
+|------|-------------|---------|
+| `superadmin` | Full system access, bypasses all permission checks | Yes |
+| `manager` | Store operations, inventory, orders, products | Yes |
+| `picker` | Warehouse picking operations, inventory scanning | Yes |
+| `driver` | Delivery operations, order viewing | Yes |
+| `robot` | Automated system operations | Yes |
+
+## Permissions
+
+Permissions follow the `resource.action` naming convention:
+
+| Permission | Resource | Action | Description |
+|------------|----------|--------|-------------|
+| `orders.read` | orders | read | View orders |
+| `orders.write` | orders | write | Create and update orders |
+| `orders.delete` | orders | delete | Cancel orders |
+| `inventory.read` | inventory | read | View inventory |
+| `inventory.write` | inventory | write | Update inventory levels |
+| `inventory.scan` | inventory | scan | Scan and process inventory |
+| `products.read` | products | read | View products |
+| `products.write` | products | write | Create and update products |
+| `scanner.use` | scanner | use | Use scanner functionality |
+| `roles.admin` | roles | admin | Manage roles and permissions |
+
+## Default Permission Assignments
+
+| Role | Permissions |
+|------|-------------|
+| `superadmin` | All permissions |
+| `manager` | orders.*, inventory.*, products.*, customers.*, settings.read |
+| `picker` | inventory.*, orders.read, products.read, scanner.use |
+| `driver` | orders.read, customers.read, scanner.use |
+| `robot` | inventory.*, products.read, scanner.use |
+
+## Helper Functions
+
+The RBAC schema includes SQL helper functions:
+
+### Check Permission
+
+```sql
+SELECT public.user_has_permission('user-uuid', 'orders.read');
+-- Returns: true/false
+```
+
+### Get User Roles
+
+```sql
+SELECT * FROM public.get_user_roles('user-uuid');
+-- Returns: table of role_name
+```
+
+### Get User Permissions
+
+```sql
+SELECT * FROM public.get_user_permissions('user-uuid');
+-- Returns: table of permission_name
+```
+
+### Check Any Permission
+
+```sql
+SELECT public.user_has_any_permission(
+  'user-uuid',
+  ARRAY['orders.read', 'orders.write']
+);
+-- Returns: true/false
+```
+
+## Using Authorization in Routes
+
+### Middleware Configuration
+
+```typescript
+import { defineMiddlewares, authenticate } from "@switchyard/framework/http"
+import { authorize } from "../middlewares/authorize-middleware"
+
+export default defineMiddlewares({
+  routes: [
+    {
+      method: ["GET", "POST"],
+      matcher: "/admin/orders",
+      middlewares: [
+        authenticate("user", ["session", "bearer", "api-key"]),
+      ],
+    },
+    {
+      method: ["DELETE"],
+      matcher: "/admin/orders/:id",
+      middlewares: [
+        authenticate("user", ["session", "bearer", "api-key"]),
+        authorize("orders.delete"),
+      ],
+    },
+  ],
+})
+```
+
+### Checking Permissions in Code
+
+```typescript
+const authContext = req.auth_context
+const permissions = authContext?.auth_identity?.user_metadata?.permissions || []
+
+if (!permissions.includes("inventory.write")) {
+  return res.status(403).json({ message: "Permission denied" })
+}
+```
+
+## Assigning Roles to Users
+
+```sql
+-- Assign role to user
+INSERT INTO public.user_roles (user_id, role_id)
+SELECT 
+  'supabase-user-uuid',
+  id 
+FROM public.roles 
+WHERE name = 'manager';
+```

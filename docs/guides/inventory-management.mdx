@@ -1,0 +1,121 @@
+---
+title: Inventory Management
+description: Managing inventory locations and items in Switchyard
+---
+
+# Inventory Management
+
+Switchyard provides a hierarchical inventory location system designed for warehouse and retail operations.
+
+## Location Hierarchy
+
+Inventory locations follow a 5-level hierarchy:
+
+```
+Zone > Aisle > Bay > Shelf > Slot
+```
+
+| Level | Description | Example |
+|-------|-------------|---------|
+| **Zone** | Major area of the warehouse | `A` (Ambient), `F` (Frozen) |
+| **Aisle** | Numbered pathway | `1`, `2`, `3` |
+| **Bay** | Section within an aisle | `1`, `2`, `3` |
+| **Shelf** | Vertical position in bay | `1` (bottom) to `5` (top) |
+| **Slot** | Horizontal position on shelf | `1` to `4` |
+
+## Location Code Format
+
+Location codes follow the pattern: `{Zone}{Aisle}-{Bay}-{Shelf}-{Slot}`
+
+Examples:
+- `A1-1-1-1` - Zone A, Aisle 1, Bay 1, Shelf 1, Slot 1
+- `F2-3-4-2` - Zone F (Frozen), Aisle 2, Bay 3, Shelf 4, Slot 2
+
+## API Endpoints
+
+### List Inventory Groups
+
+```bash
+GET /admin/inventory-groups
+```
+
+Query parameters:
+- `type` - Filter by level type (zone, aisle, bay, shelf, slot)
+- `parent_group_id` - Filter by parent location
+
+### Get Location Details
+
+```bash
+GET /admin/inventory-groups/:id?include_ancestors_tree=true
+```
+
+### Create Location
+
+```bash
+POST /admin/inventory-groups
+Content-Type: application/json
+
+{
+  "name": "Bay 1",
+  "type": "bay",
+  "bay_number": 1,
+  "parent_group_id": "aisle-uuid"
+}
+```
+
+## Inventory Items
+
+Inventory items are tracked at the variant level with quantities per location.
+
+### Lookup by Barcode
+
+```bash
+GET /scanner/inventory/lookup?barcode=012345678901
+```
+
+Response:
+```json
+{
+  "product": {
+    "id": "prod_123",
+    "title": "Organic Bananas",
+    "variants": [{
+      "id": "var_456",
+      "sku": "BAN-ORG-001",
+      "barcode": "012345678901"
+    }]
+  },
+  "inventory": {
+    "location_id": "loc_789",
+    "available_quantity": 24,
+    "location_code": "A1-2-3-1"
+  }
+}
+```
+
+### Update Inventory
+
+```bash
+POST /scanner/inventory/scan
+Content-Type: application/json
+
+{
+  "barcode": "012345678901",
+  "location_id": "loc_789",
+  "quantity": 24,
+  "action": "set"
+}
+```
+
+Actions:
+- `set` - Set absolute quantity
+- `increment` - Add to current quantity
+- `decrement` - Subtract from current quantity
+
+## Permissions Required
+
+| Action | Permission |
+|--------|------------|
+| View inventory | `inventory.read` |
+| Update quantities | `inventory.write` |
+| Scan operations | `inventory.scan` |

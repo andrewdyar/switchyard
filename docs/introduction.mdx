@@ -1,0 +1,82 @@
+---
+title: Introduction
+description: Welcome to the Switchyard platform documentation
+---
+
+# Welcome to Switchyard
+
+Switchyard is a modern commerce platform built for grocery and inventory management operations. This documentation covers the backend API, authentication system, and integration guides.
+
+## What is Switchyard?
+
+Switchyard is a customized commerce backend that provides:
+
+- **Inventory Management**: Real-time inventory tracking with barcode scanning support
+- **Order Processing**: End-to-end order management from placement to fulfillment
+- **Role-Based Access Control**: Granular permissions for different user types
+- **Scanner API**: Mobile-first API for warehouse operations
+- **Multi-location Support**: Manage inventory across zones, aisles, bays, shelves, and slots
+
+## Quick Links
+
+<CardGroup cols={2}>
+  <Card
+    title="Authentication"
+    icon="lock"
+    href="/authentication/overview"
+  >
+    Learn about Supabase Auth integration and RBAC
+  </Card>
+  <Card
+    title="API Reference"
+    icon="code"
+    href="/api-reference/introduction"
+  >
+    Explore the REST API endpoints
+  </Card>
+  <Card
+    title="Scanner API"
+    icon="barcode"
+    href="/guides/scanner-api"
+  >
+    Mobile scanning and inventory operations
+  </Card>
+  <Card
+    title="Inventory Guide"
+    icon="warehouse"
+    href="/guides/inventory-management"
+  >
+    Managing inventory locations and items
+  </Card>
+</CardGroup>
+
+## Architecture Overview
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                        Client Applications                       │
+│  (Admin UI, Mobile Apps, Scanner Devices, Automated Systems)    │
+└─────────────────────────────────────────────────────────────────┘
+                                │
+                                ▼
+┌─────────────────────────────────────────────────────────────────┐
+│                       Switchyard Backend                         │
+│  ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐ │
+│  │  Auth Provider  │  │   Middleware    │  │  Route Handlers │ │
+│  │   (Supabase)    │  │ (authenticate,  │  │                 │ │
+│  │                 │  │   authorize)    │  │                 │ │
+│  └────────┬────────┘  └────────┬────────┘  └─────────────────┘ │
+│           │                    │                                 │
+│           ▼                    ▼                                 │
+│  ┌─────────────────────────────────────────────────────────────┐│
+│  │                    Supabase Database                         ││
+│  │              (PostgreSQL + Auth + RBAC)                      ││
+│  └─────────────────────────────────────────────────────────────┘│
+└─────────────────────────────────────────────────────────────────┘
+```
+
+## Getting Help
+
+- **AI Assistant**: Use the AI chat (powered by Mintlify) to ask questions about this documentation
+- **MCP Server**: Connect your IDE to `https://docs.switchyard.run/mcp` for AI-powered code assistance
+- **GitHub**: [Open an issue](https://github.com/andrewdyar/switchyard/issues) for bugs or feature requests

@@ -1,0 +1,75 @@
+---
+title: Admin API Introduction
+description: Manage your Switchyard store programmatically with the Admin API
+---
+
+# Admin API
+
+The Admin API provides full access to manage your Switchyard store, including products, orders, inventory, customers, and more.
+
+## Base URL
+
+```
+https://api.switchyard.run
+```
+
+## Authentication
+
+All Admin API endpoints require authentication. You can authenticate using:
+
+- **Session Cookie**: Automatically included when logged into the admin dashboard
+- **Bearer Token**: Supabase JWT in the Authorization header
+
+<CodeGroup>
+
+```bash cURL
+curl 'https://api.switchyard.run/admin/products' \
+  -H 'Authorization: Bearer YOUR_SUPABASE_JWT'
+```
+
+```javascript JavaScript
+const response = await fetch('https://api.switchyard.run/admin/products', {
+  headers: {
+    'Authorization': `Bearer ${accessToken}`
+  }
+});
+```
+
+</CodeGroup>
+
+## Permissions
+
+Admin API endpoints require specific permissions based on the RBAC system. See the [RBAC documentation](/authentication/rbac) for details on roles and permissions.
+
+Common permission requirements:
+
+| Resource | Read | Write | Delete |
+|----------|------|-------|--------|
+| Products | `products.read` | `products.write` | `products.delete` |
+| Orders | `orders.read` | `orders.write` | `orders.delete` |
+| Inventory | `inventory.read` | `inventory.write` | `inventory.scan` |
+| Customers | `customers.read` | `customers.write` | `customers.delete` |
+
+## Response Format
+
+All responses are JSON with consistent structure:
+
+```json Success Response
+{
+  "products": [...],
+  "count": 100,
+  "offset": 0,
+  "limit": 20
+}
+```
+
+```json Error Response
+{
+  "type": "invalid_data",
+  "message": "Invalid request body"
+}
+```
+
+## Explore Endpoints
+
+Browse the Admin API endpoints in the sidebar to see all available operations.
