@@ -180,3 +180,4 @@ authMethodsPerActor: {
 3. **Rotate API keys** periodically
 4. **Review RLS policies** before production
 5. **Monitor service account usage** via last_used_at
+

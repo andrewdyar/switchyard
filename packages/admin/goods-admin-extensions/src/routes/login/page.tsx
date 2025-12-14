@@ -206,3 +206,4 @@ export const config = defineRouteConfig({
 })
 
 export default SupabaseLoginPage
+

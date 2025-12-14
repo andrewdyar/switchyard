@@ -443,3 +443,4 @@ export const config = defineWidgetConfig({
 })
 
 export default RoleManagementWidget
+

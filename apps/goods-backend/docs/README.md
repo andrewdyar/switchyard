@@ -145,3 +145,4 @@ For issues or questions:
 - Check the [Troubleshooting](./authentication.md#troubleshooting) section
 - Review Medusa documentation: https://docs.medusajs.com
 - Review Supabase documentation: https://supabase.com/docs
+

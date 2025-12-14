@@ -312,3 +312,4 @@ if (isDryRun) {
     process.exit(1)
   })
 }
+

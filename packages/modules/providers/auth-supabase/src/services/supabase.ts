@@ -264,3 +264,4 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
     }
   }
 }
+

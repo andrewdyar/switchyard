@@ -6,3 +6,4 @@ const services = [SupabaseAuthService]
 export default ModuleProvider(Modules.AUTH, {
   services,
 })
+

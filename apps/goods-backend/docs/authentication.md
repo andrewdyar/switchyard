@@ -958,3 +958,4 @@ Check Supabase logs:
 1. Check the deployment guide: `SUPABASE_AUTH_DEPLOYMENT.md`
 2. Review Supabase documentation: https://supabase.com/docs/guides/auth
 3. Review Medusa auth documentation: https://docs.medusajs.com/resources/commerce-modules/auth
+
