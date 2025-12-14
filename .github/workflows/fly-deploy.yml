@@ -3,7 +3,7 @@ name: Deploy to Fly.io
 on:
   push:
     branches:
-      - goods-customization
+      - main
 
 jobs:
   build-and-deploy:
