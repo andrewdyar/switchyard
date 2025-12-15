@@ -172,6 +172,7 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
 
       let authIdentity
       try {
+        // Try to retrieve existing auth identity by entity_id (Supabase user ID)
         authIdentity = await authIdentityService.retrieve({ entity_id })
         // Update metadata if changed
         authIdentity = await authIdentityService.update(authIdentity.id, {
@@ -179,10 +180,58 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
         })
       } catch (error: any) {
         if (error.type === SwitchyardError.Types.NOT_FOUND) {
-          authIdentity = await authIdentityService.create({
-            entity_id,
-            user_metadata: userMetadata,
-          })
+          try {
+            // Create new auth identity
+            authIdentity = await authIdentityService.create({
+              entity_id,
+              user_metadata: userMetadata,
+            })
+            
+            // Try to auto-link to existing user by email
+            if (user.email) {
+              const { data: existingUser } = await this.supabaseAdmin_
+                .from('user')
+                .select('id')
+                .eq('email', user.email)
+                .single()
+              
+              if (existingUser) {
+                // Link auth identity to existing user
+                authIdentity = await authIdentityService.update(authIdentity.id, {
+                  app_metadata: { user_id: existingUser.id },
+                })
+                this.logger_.info(`Auto-linked auth identity to existing user: ${existingUser.id}`)
+              }
+            }
+          } catch (createError: any) {
+            // If creation fails due to unique constraint, the identity already exists
+            // This means retrieve didn't find it but it exists - try to retrieve by provider
+            if (createError.message?.includes('already exists')) {
+              this.logger_.info(`Provider identity already exists for entity_id: ${entity_id}, attempting retrieval...`)
+              // The identity exists, we just need to find and return it
+              // Query provider_identity directly to get auth_identity_id
+              const { data: providerIdentity } = await this.supabaseAdmin_
+                .from('provider_identity')
+                .select('auth_identity_id')
+                .eq('entity_id', entity_id)
+                .eq('provider', 'supabase')
+                .single()
+              
+              if (providerIdentity?.auth_identity_id) {
+                authIdentity = await authIdentityService.retrieve({ 
+                  id: providerIdentity.auth_identity_id 
+                })
+                // Update metadata
+                authIdentity = await authIdentityService.update(authIdentity.id, {
+                  user_metadata: userMetadata,
+                })
+              } else {
+                return { success: false, error: "Failed to retrieve existing auth identity" }
+              }
+            } else {
+              return { success: false, error: createError.message }
+            }
+          }
         } else {
           return { success: false, error: error.message }
         }
