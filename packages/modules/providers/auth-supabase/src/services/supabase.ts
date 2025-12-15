@@ -196,10 +196,18 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
                 .single()
               
               if (existingUser) {
-                // Link auth identity to existing user
-                authIdentity = await authIdentityService.update(authIdentity.id, {
-                  app_metadata: { user_id: existingUser.id },
-                })
+                // Link auth identity to existing user via direct database update
+                // (the authIdentityService.update doesn't support app_metadata)
+                await this.supabaseAdmin_
+                  .from('auth_identity')
+                  .update({ 
+                    app_metadata: { user_id: existingUser.id },
+                    updated_at: new Date().toISOString()
+                  })
+                  .eq('id', authIdentity.id)
+                
+                // Update authIdentity object to reflect the change
+                authIdentity.app_metadata = { user_id: existingUser.id }
                 this.logger_.info(`Auto-linked auth identity to existing user: ${existingUser.id}`)
               }
             }
@@ -218,13 +226,18 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
                 .single()
               
               if (providerIdentity?.auth_identity_id) {
-                authIdentity = await authIdentityService.retrieve({ 
-                  id: providerIdentity.auth_identity_id 
-                })
-                // Update metadata
-                authIdentity = await authIdentityService.update(authIdentity.id, {
-                  user_metadata: userMetadata,
-                })
+                // Retrieve the auth_identity directly from the database
+                const { data: existingAuthIdentity } = await this.supabaseAdmin_
+                  .from('auth_identity')
+                  .select('*')
+                  .eq('id', providerIdentity.auth_identity_id)
+                  .single()
+                
+                if (existingAuthIdentity) {
+                  authIdentity = existingAuthIdentity
+                } else {
+                  return { success: false, error: "Failed to retrieve existing auth identity" }
+                }
               } else {
                 return { success: false, error: "Failed to retrieve existing auth identity" }
               }
