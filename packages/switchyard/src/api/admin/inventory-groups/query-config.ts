@@ -10,8 +10,9 @@ export const defaults = [
   "level", // alias for type
   "zone_code",
   "aisle_number",
-  "group_number",
+  "bay_number",
   "shelf_number",
+  "slot_number",
   "location_code",
   "parent_group_id",
   "created_at",
@@ -33,8 +34,9 @@ export const allowed = [
   "level", // alias for type
   "zone_code",
   "aisle_number",
-  "group_number",
+  "bay_number",
   "shelf_number",
+  "slot_number",
   "location_code",
   "parent_group_id",
   "created_at",

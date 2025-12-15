@@ -204,14 +204,25 @@ export class ProductCategoryRepository extends DALUtils.MikroOrmBaseTreeReposito
     })
 
     const populateChildren = (category, level = 0) => {
+      // Guard against undefined category
+      if (!category) {
+        return category
+      }
+
       const categories = categoriesInTree.filter(
         (child) => child.parent_category_id === category.id
       )
 
       if (include.descendants) {
-        category.category_children = categories.map((child) => {
-          return populateChildren(categoriesById.get(child.id), level + 1)
-        })
+        category.category_children = categories
+          .map((child) => {
+            const childCategory = categoriesById.get(child.id)
+            if (!childCategory) {
+              return null
+            }
+            return populateChildren(childCategory, level + 1)
+          })
+          .filter(Boolean) // Remove any null entries
       }
 
       if (level === 0) {
