@@ -109,10 +109,12 @@ export class ProductCategoryRepository extends DALUtils.MikroOrmBaseTreeReposito
   sortCategoriesByRank(
     categories: InferEntityType<typeof ProductCategory>[]
   ): InferEntityType<typeof ProductCategory>[] {
-    const sortedCategories = categories.sort((a, b) => a.rank - b.rank)
+    // Filter out any undefined/null entries before sorting
+    const validCategories = categories.filter(Boolean)
+    const sortedCategories = validCategories.sort((a, b) => (a.rank ?? 0) - (b.rank ?? 0))
 
     for (const category of sortedCategories) {
-      if (category.category_children) {
+      if (category && category.category_children) {
         // All data up to this point is manipulated as an array, but it is a Collection<ProductCategory> type under the hood, so we are casting to any here.
         category.category_children = this.sortCategoriesByRank(
           category.category_children as any
@@ -244,10 +246,16 @@ export class ProductCategoryRepository extends DALUtils.MikroOrmBaseTreeReposito
       return category
     }
 
-    const populatedProductCategories = productCategories.map((cat) => {
-      const fullCategory = categoriesById.get(cat.id)
-      return populateChildren(fullCategory)
-    })
+    const populatedProductCategories = productCategories
+      .map((cat) => {
+        const fullCategory = categoriesById.get(cat.id)
+        if (!fullCategory) {
+          // If the category is not found in the tree, return the original
+          return cat
+        }
+        return populateChildren(fullCategory)
+      })
+      .filter(Boolean) as InferEntityType<typeof ProductCategory>[]
 
     return populatedProductCategories
   }
