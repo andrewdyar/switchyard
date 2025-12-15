@@ -12,8 +12,9 @@ import {
 } from "@switchyard/ui"
 import { useState } from "react"
 
-const SUPABASE_URL = process.env.MEDUSA_ADMIN_SUPABASE_URL || ""
-const SUPABASE_ANON_KEY = process.env.MEDUSA_ADMIN_SUPABASE_ANON_KEY || ""
+// Supabase config - use import.meta.env for Vite
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || ""
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || ""
 
 /**
  * Custom login page that authenticates via Supabase
@@ -206,4 +207,5 @@ export const config = defineRouteConfig({
 })
 
 export default SupabaseLoginPage
+
 

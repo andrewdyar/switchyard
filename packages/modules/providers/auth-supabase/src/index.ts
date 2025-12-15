@@ -7,3 +7,4 @@ export default ModuleProvider(Modules.AUTH, {
   services,
 })
 
+

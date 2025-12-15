@@ -16,3 +16,4 @@ export default Module(PICKING_MODULE, {
 
 export * from "./models"
 export * from "./types"
+

@@ -27,3 +27,4 @@ export const Driver = model.define("goods_driver", {
 })
 
 export default Driver
+

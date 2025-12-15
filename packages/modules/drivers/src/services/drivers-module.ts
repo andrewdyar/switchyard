@@ -24,3 +24,4 @@ class DriversModuleService extends SwitchyardService({
 }
 
 export default DriversModuleService
+

@@ -473,3 +473,4 @@ components:
         variant_sku:
           type: string
           description: SKU for barcode scanning
+

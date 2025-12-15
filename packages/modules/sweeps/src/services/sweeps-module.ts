@@ -26,3 +26,4 @@ class SweepsModuleService extends SwitchyardService({
 }
 
 export default SweepsModuleService
+

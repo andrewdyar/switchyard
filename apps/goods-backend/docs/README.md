@@ -146,3 +146,4 @@ For issues or questions:
 - Review Medusa documentation: https://docs.medusajs.com
 - Review Supabase documentation: https://supabase.com/docs
 
+

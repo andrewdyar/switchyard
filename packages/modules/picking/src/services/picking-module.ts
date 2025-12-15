@@ -26,3 +26,4 @@ class PickingModuleService extends SwitchyardService({
 }
 
 export default PickingModuleService
+

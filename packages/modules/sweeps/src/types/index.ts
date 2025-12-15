@@ -67,3 +67,4 @@ export interface UpdateSweepItemDTO {
   substitute_product_id?: string | null
   notes?: string | null
 }
+

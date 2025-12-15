@@ -33,3 +33,4 @@ export interface UpdateDriverDTO {
   vehicle_info?: string | null
   is_active?: boolean
 }
+

@@ -34,3 +34,4 @@ export const Sweep = model.define("goods_sweep", {
 })
 
 export default Sweep
+

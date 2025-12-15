@@ -61,3 +61,4 @@ export interface UpdatePickListItemDTO {
   sequence?: number | null
   notes?: string | null
 }
+

@@ -42,8 +42,9 @@ type UserRole = {
   roles?: Role
 }
 
-const SUPABASE_URL = process.env.MEDUSA_ADMIN_SUPABASE_URL || ""
-const SUPABASE_ANON_KEY = process.env.MEDUSA_ADMIN_SUPABASE_ANON_KEY || ""
+// Supabase config - use import.meta.env for Vite
+const SUPABASE_URL = import.meta.env.VITE_SUPABASE_URL || ""
+const SUPABASE_ANON_KEY = import.meta.env.VITE_SUPABASE_ANON_KEY || ""
 
 const UserRoleAssignmentWidget = () => {
   const [users, setUsers] = useState<SupabaseUser[]>([])
@@ -370,4 +371,5 @@ export const config = defineWidgetConfig({
 })
 
 export default UserRoleAssignmentWidget
+
 

@@ -15,16 +15,11 @@ if (!hasSupabaseConfig && process.env.NODE_ENV === "production") {
   )
 }
 
-// Auth providers - always include emailpass, add Supabase if configured
-const authProviders: any[] = [
-  {
-    resolve: "@switchyard/core/auth-emailpass",
-    id: "emailpass",
-  },
-]
+// Auth providers - Supabase only (no emailpass fallback)
+const authProviders: any[] = []
 
-// Add Supabase auth provider if configured (available at runtime via Fly.io secrets)
 if (hasSupabaseConfig) {
+  // Supabase is the primary and only auth provider
   authProviders.push({
     resolve: "@switchyard/auth-supabase",
     id: "supabase",
@@ -33,6 +28,13 @@ if (hasSupabaseConfig) {
       supabaseAnonKey: process.env.SUPABASE_ANON_KEY,
       supabaseServiceRoleKey: process.env.SUPABASE_SERVICE_ROLE_KEY,
     },
+  })
+} else {
+  // Fallback to emailpass only in development when Supabase is not configured
+  console.warn("[Switchyard Config] Supabase not configured, falling back to emailpass for development")
+  authProviders.push({
+    resolve: "@switchyard/core/auth-emailpass",
+    id: "emailpass",
   })
 }
 

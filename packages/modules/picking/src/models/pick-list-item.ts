@@ -35,3 +35,4 @@ export const PickListItem = model.define("goods_pick_list_item", {
 })
 
 export default PickListItem
+
