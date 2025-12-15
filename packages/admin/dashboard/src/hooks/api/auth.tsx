@@ -14,7 +14,7 @@ export const useSignInWithEmailPass = (
   >
 ) => {
   return useMutation({
-    mutationFn: (payload) => sdk.auth.login("user", "emailpass", payload),
+    mutationFn: (payload) => sdk.auth.login("user", "supabase", payload),
     onSuccess: async (data, variables, context) => {
       options?.onSuccess?.(data, variables, context)
     },
@@ -30,7 +30,7 @@ export const useSignUpWithEmailPass = (
   >
 ) => {
   return useMutation({
-    mutationFn: (payload) => sdk.auth.register("user", "emailpass", payload),
+    mutationFn: (payload) => sdk.auth.register("user", "supabase", payload),
     onSuccess: async (data, variables, context) => {
       options?.onSuccess?.(data, variables, context)
     },
@@ -43,7 +43,7 @@ export const useResetPasswordForEmailPass = (
 ) => {
   return useMutation({
     mutationFn: (payload) =>
-      sdk.auth.resetPassword("user", "emailpass", {
+      sdk.auth.resetPassword("user", "supabase", {
         identifier: payload.email,
       }),
     onSuccess: async (data, variables, context) => {
@@ -66,7 +66,7 @@ export const useUpdateProviderForEmailPass = (
 ) => {
   return useMutation({
     mutationFn: (payload) =>
-      sdk.auth.updateProvider("user", "emailpass", payload, token),
+      sdk.auth.updateProvider("user", "supabase", payload, token),
     onSuccess: async (data, variables, context) => {
       options?.onSuccess?.(data, variables, context)
     },
