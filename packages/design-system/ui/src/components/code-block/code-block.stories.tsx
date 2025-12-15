@@ -25,7 +25,7 @@ const snippets = [
   {
     label: "Medusa JS Client",
     language: "jsx",
-    code: `// Install the JS Client in your storefront project: @switchyard/core-js\n\nimport Medusa from "@switchyard/core-js"\n\nconst medusa = new Switchyard({ publishableApiKey: "YOUR_API_KEY"})\nconst product = await medusa.products.retrieve("PRODUCT_ID")\nconsole.log(product.id)`,
+    code: `// Install the JS Client in your storefront project: @switchyard/core-js\n\nimport Switchyard from "@switchyard/core-js"\n\nconst client = new Switchyard({ publishableApiKey: "YOUR_API_KEY"})\nconst product = await client.products.retrieve("PRODUCT_ID")\nconsole.log(product.id)`,
   },
   {
     label: "Medusa React",

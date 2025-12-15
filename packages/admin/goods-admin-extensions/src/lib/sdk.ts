@@ -1,8 +1,8 @@
 /**
- * Medusa JS SDK initialization for admin widgets
+ * Switchyard JS SDK initialization for admin widgets
  */
 
-import Medusa from "@switchyard/js-sdk"
+import Switchyard from "@switchyard/js-sdk"
 
 export const sdk = new Switchyard({
   baseUrl: import.meta.env.VITE_BACKEND_URL || "/",
