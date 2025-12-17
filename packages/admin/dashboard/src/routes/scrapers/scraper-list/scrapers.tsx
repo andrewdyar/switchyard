@@ -1,5 +1,5 @@
 import { Container, Heading, Button, Text } from "@switchyard/ui"
-import { PlaySolid, Tools, Squares2X2Solid } from "@switchyard/icons"
+import { PlaySolid, Tools, SquaresPlusSolid } from "@switchyard/icons"
 import { Link, useLocation } from "react-router-dom"
 import { ScraperCard } from "../../../components/scraper-card"
 import { useState, useRef } from "react"
@@ -47,7 +47,7 @@ export const ScrapersPage = () => {
   // Navigation tabs for Scrapers section
   const tabs = [
     { label: "Run Scrapers", path: "/scrapers", icon: Tools },
-    { label: "Scraped Products", path: "/scrapers/scraped-products", icon: Squares2X2Solid },
+    { label: "Scraped Products", path: "/scrapers/scraped-products", icon: SquaresPlusSolid },
   ]
 
   return (

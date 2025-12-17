@@ -6,7 +6,7 @@
  */
 
 import { Container, Heading, Text, Select, Button, Badge } from "@switchyard/ui"
-import { TriangleRightMini, SquareSolid } from "@switchyard/icons"
+import { TriangleRightMini, XCircleSolid } from "@switchyard/icons"
 import { useState, useEffect, useRef, useImperativeHandle, forwardRef } from "react"
 
 type ScraperStatus = "idle" | "running" | "completed" | "error"
@@ -146,7 +146,7 @@ const ScraperCard = forwardRef<{ run: () => void; stop: () => void }, ScraperCar
                 onClick={handleStop}
                 variant="danger"
               >
-                <SquareSolid className="mr-2" />
+                <XCircleSolid className="mr-2" />
                 Stop
               </Button>
             ) : (

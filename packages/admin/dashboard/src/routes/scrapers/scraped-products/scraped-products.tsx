@@ -8,7 +8,7 @@ import {
   Select,
   Button,
 } from "@switchyard/ui"
-import { ArrowPath, MagnifyingGlass, Squares2X2Solid, Tools } from "@switchyard/icons"
+import { ArrowPath, MagnifyingGlass, SquaresPlusSolid, Tools } from "@switchyard/icons"
 import { useState, useMemo } from "react"
 import { Link, useLocation } from "react-router-dom"
 import { useScrapedProducts, useCategories } from "../../../hooks/use-scraped-products"
@@ -22,7 +22,7 @@ const ScraperTabs = () => {
   
   const tabs = [
     { label: "Run Scrapers", path: "/scrapers", icon: Tools },
-    { label: "Scraped Products", path: "/scrapers/scraped-products", icon: Squares2X2Solid },
+    { label: "Scraped Products", path: "/scrapers/scraped-products", icon: SquaresPlusSolid },
   ]
 
   return (
@@ -185,7 +185,7 @@ export const ScrapedProductsPage = () => {
           </div>
         ) : products.length === 0 ? (
           <div className="flex flex-col items-center justify-center py-12">
-            <Squares2X2Solid className="text-ui-fg-subtle mb-4 h-12 w-12" />
+            <SquaresPlusSolid className="text-ui-fg-subtle mb-4 h-12 w-12" />
             <Text className="text-ui-fg-subtle">No products found</Text>
             {debouncedSearch && (
               <Text size="small" className="text-ui-fg-muted mt-1">
@@ -222,7 +222,7 @@ export const ScrapedProductsPage = () => {
                         />
                       ) : (
                         <div className="h-10 w-10 rounded bg-ui-bg-subtle flex items-center justify-center">
-                          <Squares2X2Solid className="text-ui-fg-subtle h-5 w-5" />
+                          <SquaresPlusSolid className="text-ui-fg-subtle h-5 w-5" />
                         </div>
                       )}
                       <div>
