@@ -10345,6 +10345,7 @@ __metadata:
     "@hookform/resolvers": 3.4.2
     "@radix-ui/react-dialog": 1.1.4
     "@radix-ui/react-dismissable-layer": 1.1.4
+    "@supabase/supabase-js": ^2.45.0
     "@switchyard/admin-shared": "workspace:*"
     "@switchyard/admin-vite-plugin": "workspace:*"
     "@switchyard/icons": "workspace:*"

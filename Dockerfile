@@ -1,44 +1,85 @@
 # =============================================================================
-# Production Dockerfile for Medusa Application
+# Production Dockerfile for Switchyard Application
 # =============================================================================
-# Builds from source on Fly.io's remote builder
-# Optimized for Docker layer caching
+# Optimized for Docker layer caching - dependencies cached separately from source
 # =============================================================================
 
-FROM node:20-bullseye-slim
+FROM node:20-bullseye-slim AS base
 
 # Create app directory
 WORKDIR /app
 
 # =============================================================================
-# Layer 1: Dependencies (CACHED unless package files change)
+# Stage 1: Install dependencies (CACHED unless package.json files change)
 # =============================================================================
-# Copy root package files needed for dependency installation
+FROM base AS deps
+
+# Copy only package manifests for dependency resolution
 COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn/releases .yarn/releases
 COPY .yarn/plugins .yarn/plugins
 COPY .yarn/patches .yarn/patches
 
-# Copy workspace configuration files
+# Copy workspace configuration
 COPY turbo.json tsconfig.json _tsconfig.base.json ./
 
-# Copy workspace directories structure with package.json files
-# Yarn needs to see all workspace package.json files to resolve dependencies
-# We copy the full directories but this layer will be cached if package.json files don't change
-COPY packages ./packages
-COPY apps ./apps
+# Copy only package.json files from workspaces (not source code)
+# This creates a sparse copy for dependency resolution
+COPY packages/admin/admin-bundler/package.json packages/admin/admin-bundler/
+COPY packages/admin/admin-sdk/package.json packages/admin/admin-sdk/
+COPY packages/admin/admin-shared/package.json packages/admin/admin-shared/
+COPY packages/admin/admin-vite-plugin/package.json packages/admin/admin-vite-plugin/
+COPY packages/admin/dashboard/package.json packages/admin/dashboard/
+COPY packages/admin/goods-admin-extensions/package.json packages/admin/goods-admin-extensions/
+COPY packages/core/core/package.json packages/core/core/
+COPY packages/core/framework/package.json packages/core/framework/
+COPY packages/core/js-sdk/package.json packages/core/js-sdk/
+COPY packages/core/link-modules/package.json packages/core/link-modules/
+COPY packages/core/orchestration/package.json packages/core/orchestration/
+COPY packages/core/telemetry/package.json packages/core/telemetry/
+COPY packages/core/types/package.json packages/core/types/
+COPY packages/core/utils/package.json packages/core/utils/
+COPY packages/core/workflows-sdk/package.json packages/core/workflows-sdk/
+COPY packages/design-system/icons/package.json packages/design-system/icons/
+COPY packages/design-system/ui/package.json packages/design-system/ui/
+COPY packages/design-system/ui-preset/package.json packages/design-system/ui-preset/
+COPY packages/modules/api-keys/package.json packages/modules/api-keys/
+COPY packages/modules/caching/package.json packages/modules/caching/
+COPY packages/modules/drivers/package.json packages/modules/drivers/
+COPY packages/modules/event-bus-local/package.json packages/modules/event-bus-local/
+COPY packages/modules/event-bus-redis/package.json packages/modules/event-bus-redis/
+COPY packages/modules/file-local/package.json packages/modules/file-local/
+COPY packages/modules/file-s3/package.json packages/modules/file-s3/
+COPY packages/modules/inventory-group/package.json packages/modules/inventory-group/
+COPY packages/modules/locking/package.json packages/modules/locking/
+COPY packages/modules/notification/package.json packages/modules/notification/
+COPY packages/modules/notification-local/package.json packages/modules/notification-local/
+COPY packages/modules/notification-sendgrid/package.json packages/modules/notification-sendgrid/
+COPY packages/modules/payment-stripe/package.json packages/modules/payment-stripe/
+COPY packages/modules/picking/package.json packages/modules/picking/
+COPY packages/modules/providers/package.json packages/modules/providers/
+COPY packages/modules/sweeps/package.json packages/modules/sweeps/
+COPY packages/modules/workflow-engine-inmemory/package.json packages/modules/workflow-engine-inmemory/
+COPY packages/modules/workflow-engine-redis/package.json packages/modules/workflow-engine-redis/
+COPY packages/medusa-cli/package.json packages/medusa-cli/
+COPY packages/medusa-oas-cli/package.json packages/medusa-oas-cli/
+COPY packages/medusa-telemetry/package.json packages/medusa-telemetry/
+COPY apps/goods-backend/package.json apps/goods-backend/
 
-# Install dependencies (this layer will be cached if package.json files don't change)
-# Note: We copy packages/apps before install because Yarn workspaces need to see all package.json files
+# Enable corepack and install dependencies
 RUN corepack enable && \
     yarn install --inline-builds
 
 # =============================================================================
-# Layer 2: Build (uses cached node_modules from Layer 1)
+# Stage 2: Build (copies source and builds)
 # =============================================================================
-# Note: packages and apps are already copied in Layer 1 (needed for yarn install)
-# Source code changes will invalidate Layer 1, but dependency-only changes will cache
-# Set NODE_ENV early to ensure production builds
+FROM deps AS builder
+
+# Copy all source code (this layer rebuilds when source changes)
+COPY packages ./packages
+COPY apps ./apps
+
+# Set build environment
 ENV NODE_ENV=production
 
 # Supabase environment variables for Vite build (frontend)
@@ -47,62 +88,33 @@ ARG VITE_SUPABASE_ANON_KEY
 ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
 ENV VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY
 
-# Build all packages
+# Build all packages with turbo (uses caching)
 RUN yarn build
 
-# =============================================================================
-# Layer 4: Medusa build (creates public/admin with transpiled files)
-# =============================================================================
-# Build Medusa app - this creates public/admin with Vite's transpiled output
-RUN cd apps/goods-backend && \
-    npx switchyard build
+# Build Switchyard backend and admin
+RUN cd apps/goods-backend && npx switchyard build
 
-# =============================================================================
-# Layer 5: Verify admin build and fix HTML paths
-# =============================================================================
-# switchyard build outputs to dist/public/admin (because tsconfig.outDir = "./dist")
-# Vite processes entry.jsx and outputs it as entry.js (transpiled)
-# Copy from dist/public/admin to public/admin for runtime
+# Verify and prepare admin build
 RUN cd apps/goods-backend && \
-    echo "=== Verifying admin build ===" && \
-    echo "=== Checking dist/public/admin ===" && \
-    ls -la dist/public/admin/ 2>/dev/null || echo "dist/public/admin not found" && \
-    echo "=== Checking public/admin ===" && \
-    ls -la public/admin/ 2>/dev/null || echo "public/admin not found yet" && \
-    echo "=== Finding admin build location ===" && \
     if [ -d "dist/public/admin" ]; then \
-      echo "Found admin build in dist/public/admin, copying to public/admin" && \
       mkdir -p public/admin && \
-      cp -r dist/public/admin/* public/admin/ && \
-      echo "Copied dist/public/admin to public/admin"; \
-    elif [ -d "public/admin" ]; then \
-      echo "public/admin already exists"; \
-    else \
-      echo "ERROR: Admin build not found in dist/public/admin or public/admin" && \
-      find . -name "index.html" -path "*/admin/*" 2>/dev/null | head -5 && \
-      exit 1; \
+      cp -r dist/public/admin/* public/admin/; \
     fi && \
-    echo "=== Verifying copied admin build ===" && \
-    ls -la public/admin/ 2>/dev/null || (echo "ERROR: public/admin not found after copy" && exit 1) && \
-    find public/admin -name "index.html" 2>/dev/null || (echo "ERROR: index.html not found in public/admin" && exit 1) && \
-    echo "=== Checking for entry files ===" && \
-    ls -la public/admin/entry.* 2>/dev/null || echo "No entry files found" && \
-    echo "=== Fixing HTML paths ===" && \
-    if [ -f "public/admin/index.html" ]; then \
-      if [ -f "public/admin/entry.js" ]; then \
-        sed -i 's|src="./entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
-        sed -i 's|src="/app/entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
-        echo "Updated HTML to reference entry.js (Vite output)"; \
-      elif [ -f "public/admin/entry.jsx" ]; then \
-        sed -i 's|src="./entry.jsx"|src="/app/entry.jsx"|g' public/admin/index.html && \
-        echo "Updated HTML to reference entry.jsx (kept original extension)"; \
-      else \
-        echo "WARNING: Neither entry.js nor entry.jsx found in public/admin"; \
-      fi; \
-    fi && \
-    echo "=== Build verification complete ==="
+    if [ -f "public/admin/index.html" ] && [ -f "public/admin/entry.js" ]; then \
+      sed -i 's|src="./entry.jsx"|src="/app/entry.js"|g' public/admin/index.html && \
+      sed -i 's|src="/app/entry.jsx"|src="/app/entry.js"|g' public/admin/index.html; \
+    fi
 
-# Change to the backend directory for runtime
+# =============================================================================
+# Stage 3: Production runtime (minimal image)
+# =============================================================================
+FROM base AS runner
+
+# Copy built artifacts from builder
+COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/packages ./packages
+COPY --from=builder /app/apps/goods-backend ./apps/goods-backend
+
 WORKDIR /app/apps/goods-backend
 
 # Production environment
@@ -115,8 +127,4 @@ EXPOSE 9000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD node -e "require('http').get('http://localhost:9000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
 
-# Start switchyard - it will use the .medusa/server directory created by switchyard build
-# Bind to 0.0.0.0 so Fly.io proxy can reach it
-# Note: When host is undefined, Node.js http.listen() binds to all interfaces (0.0.0.0) by default
-# We explicitly set --host 0.0.0.0 to ensure it works correctly with Fly.io's proxy
 CMD ["npx", "switchyard", "start", "--host", "0.0.0.0"]

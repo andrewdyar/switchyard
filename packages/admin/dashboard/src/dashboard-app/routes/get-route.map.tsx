@@ -260,6 +260,27 @@ export function getRouteMap({
               ],
             },
             {
+              path: "/scrapers",
+              errorElement: <ErrorBoundary />,
+              handle: {
+                breadcrumb: () => "Scrapers",
+              },
+              children: [
+                {
+                  path: "",
+                  lazy: () => import("../../routes/scrapers/scraper-list"),
+                },
+                {
+                  path: "scraped-products",
+                  lazy: () => import("../../routes/scrapers/scraped-products"),
+                },
+                {
+                  path: "scraped-products/:id",
+                  lazy: () => import("../../routes/scrapers/scraped-product-detail"),
+                },
+              ],
+            },
+            {
               path: "/categories",
               errorElement: <ErrorBoundary />,
               handle: {

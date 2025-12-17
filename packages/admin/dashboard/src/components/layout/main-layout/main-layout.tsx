@@ -12,6 +12,7 @@ import {
   ShoppingCart,
   SquaresPlus,
   Tag,
+  Tools,
   Users,
 } from "@switchyard/icons"
 import { Avatar, Divider, DropdownMenu, Text, clx } from "@switchyard/ui"
@@ -254,6 +255,17 @@ const useCoreRoutes = (): Omit<INavItem, "pathname">[] => {
       icon: <CurrencyDollar />,
       label: t("priceLists.domain"),
       to: "/price-lists",
+    },
+    {
+      icon: <Tools />,
+      label: "Scrapers",
+      to: "/scrapers",
+      items: [
+        {
+          label: "Scraped Products",
+          to: "/scrapers/scraped-products",
+        },
+      ],
     },
   ]
 }
