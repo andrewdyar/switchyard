@@ -10,9 +10,15 @@ export const GET = async (
   req: AuthenticatedSwitchyardRequest<HttpTypes.AdminProductCategoryListParams>,
   res: SwitchyardResponse<HttpTypes.AdminProductCategoryListResponse>
 ) => {
+  // Handle parent_category_id=null filter (convert string "null" to actual null)
+  const filters = { ...req.filterableFields } as Record<string, any>
+  if (filters.parent_category_id === "null") {
+    filters.parent_category_id = null
+  }
+
   const { data: product_categories, metadata } = await refetchEntities({
     entity: "product_category",
-    idOrFilter: req.filterableFields,
+    idOrFilter: filters,
     scope: req.scope,
     fields: req.queryConfig.fields,
     pagination: req.queryConfig.pagination,
