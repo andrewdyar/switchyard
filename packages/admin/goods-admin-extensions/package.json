@@ -13,10 +13,15 @@
     "./routes/*": "./src/routes/*",
     "./components/*": "./src/components/*"
   },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  },
   "peerDependencies": {
     "@switchyard/admin-sdk": "*",
     "@switchyard/icons": "*",
     "@switchyard/ui": "*",
-    "react": "^18"
+    "@tanstack/react-query": "*",
+    "react": "^18",
+    "react-router-dom": "*"
   }
 }

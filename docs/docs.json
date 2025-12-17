@@ -77,7 +77,8 @@
             "pages": [
               "guides/placing-orders",
               "guides/inventory-management",
-              "guides/scanner-api"
+              "guides/scanner-api",
+              "guides/scraping"
             ]
           }
         ]

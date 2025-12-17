@@ -10541,11 +10541,15 @@ __metadata:
 "@switchyard/goods-admin-extensions@workspace:packages/admin/goods-admin-extensions":
   version: 0.0.0-use.local
   resolution: "@switchyard/goods-admin-extensions@workspace:packages/admin/goods-admin-extensions"
+  dependencies:
+    "@supabase/supabase-js": ^2.45.0
   peerDependencies:
     "@switchyard/admin-sdk": "*"
     "@switchyard/icons": "*"
     "@switchyard/ui": "*"
+    "@tanstack/react-query": "*"
     react: ^18
+    react-router-dom: "*"
   languageName: unknown
   linkType: soft
 

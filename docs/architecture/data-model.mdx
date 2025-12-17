@@ -7,17 +7,53 @@ description: Key entities and their relationships in Switchyard
 
 This document describes the key entities in Switchyard and how they relate to each other.
 
+## Single Product Entity Architecture
+
+Switchyard uses a **single product entity** that serves all purposes throughout its lifecycle. The same product record is used whether it's scraped, curated for sale, or stocked in the RFC warehouse.
+
+```mermaid
+flowchart TB
+    subgraph ProductLifecycle [Single Product Entity]
+        SP[source_products]
+    end
+    
+    subgraph Contexts [Different Contexts - Same Product]
+        Scraped[Scraped Products<br/>All 114K+ products]
+        Sellable[Sellable Products<br/>is_sellable = true]
+        Stocked[RFC Inventory<br/>Has inventory record]
+    end
+    
+    SP --> Scraped
+    SP --> Sellable
+    SP --> Stocked
+```
+
+### Write Separation
+
+To protect product data integrity, scrapers and admin have different write permissions:
+
+| Table | Scrapers | Admin |
+|-------|----------|-------|
+| `source_products` | Create new only | Full control |
+| `goods_retailer_mapping` | Full control | Read only |
+| `goods_retailer_pricing` | Full control | Read only |
+| `goods_product_attributes` | Never | Full control |
+| `inventory` | Never | Full control |
+
+**Key principle:** Once a product exists, scrapers only update retailer-specific tables (pricing, availability), never core product attributes.
+
 ## Entity Relationship Diagram
 
 ```mermaid
 erDiagram
     Customer ||--o{ Order : places
     Order ||--|{ LineItem : contains
-    LineItem }|--|| ProductVariant : references
-    Product ||--|{ ProductVariant : has
-    ProductVariant ||--o{ InventoryItem : tracked_by
-    InventoryItem }|--|| StockLocation : stored_at
-    StockLocation ||--o| InventoryGroup : organized_by
+    LineItem }|--|| SourceProduct : references
+    SourceProduct ||--o{ RetailerMapping : "available at"
+    SourceProduct ||--o{ RetailerPricing : "priced at"
+    SourceProduct ||--o| ProductAttributes : "curated by"
+    SourceProduct ||--o| Inventory : "stocked in"
+    Inventory }|--|| InventoryLocation : stored_at
     
     Order ||--o{ PickListItem : fulfilled_by
     PickList ||--|{ PickListItem : contains
@@ -25,12 +61,94 @@ erDiagram
     
     Sweep ||--|{ SweepItem : contains
     Driver ||--o{ Sweep : performs
-    SweepItem }|--|| ProductVariant : references
+    SweepItem }|--|| SourceProduct : references
     
     Order }o--o{ Sweep : sourced_from
 ```
 
-## Core Entities
+## Product Domain
+
+### SourceProduct
+
+The master product record, scraped from retailers. This is the single source of truth for product identity.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | uuid | Unique identifier |
+| name | string | Product name |
+| barcode | string | UPC/EAN barcode (primary key for matching) |
+| brand | string | Brand name |
+| image_url | string | Primary product image |
+| size | string | Package size (e.g., "16 oz") |
+| size_uom | string | Unit of measure (oz, lb, ct) |
+| category_id | uuid | Reference to Category |
+| subcategory_id | uuid | Reference to subcategory |
+| description | text | Product description |
+| created_at | datetime | First scraped |
+| updated_at | datetime | Last updated |
+
+**Key behavior:**
+- Barcode is the canonical identifier for matching across retailers
+- Core attributes are set on first scrape and rarely change
+- Updates to name/brand only happen if product doesn't exist
+
+### RetailerMapping (goods_retailer_mapping)
+
+Links a product to a specific retailer and store location. Updated by scrapers on each run.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | uuid | Unique identifier |
+| product_id | uuid | Reference to SourceProduct |
+| store_name | string | Retailer (heb, walmart, target, etc.) |
+| retailer_location_id | string | Specific store ID |
+| store_item_id | string | Retailer's internal SKU |
+| store_item_name | string | Retailer's product name |
+| store_location | string | Aisle location (e.g., "A12") |
+| is_active | boolean | Currently available |
+| last_seen_at | datetime | Last successful scrape |
+| out_of_stock_count | integer | Consecutive days unavailable |
+
+**Unique constraint:** `(product_id, store_name, retailer_location_id, store_item_id)`
+
+### RetailerPricing (goods_retailer_pricing)
+
+Price history for products at each retailer. New records are inserted (not updated) to maintain history.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | uuid | Unique identifier |
+| product_id | uuid | Reference to SourceProduct |
+| store_name | string | Retailer |
+| retailer_location_id | string | Specific store ID |
+| price | decimal | Current effective price |
+| list_price | decimal | Regular price |
+| sale_price | decimal | Sale price (if on sale) |
+| is_on_sale | boolean | Currently on sale |
+| price_per_unit | decimal | Unit price |
+| price_per_unit_uom | string | Unit (oz, lb, each) |
+| effective_from | datetime | When this price started |
+| effective_to | datetime | When this price ended (null = current) |
+
+### ProductAttributes (goods_product_attributes)
+
+Admin-controlled curation decisions. Determines if a product is sellable and its Goods-specific settings.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | uuid | Unique identifier |
+| product_id | uuid | Reference to SourceProduct |
+| is_sellable | boolean | Admin decision: do we sell this? |
+| curation_status | enum | pending, approved, rejected |
+| selling_price | decimal | Our price to customers |
+| margin_target | decimal | Target margin percentage |
+| warehouse_zone | string | RFC zone (A=Ambient, C=Chilled, F=Frozen) |
+| warehouse_aisle | integer | RFC aisle number |
+| preferred_retailer | string | Preferred sourcing retailer |
+| curated_at | datetime | When admin made decision |
+| curated_by | uuid | Reference to User |
+
+## Customer Domain
 
 ### Customer
 
@@ -48,6 +166,8 @@ Represents a user of the Goods mobile app.
 **Relationships:**
 - Has many Orders
 - Managed via Supabase Auth
+
+## Order Domain
 
 ### Order
 
@@ -67,97 +187,51 @@ A customer's purchase request.
 
 ### LineItem
 
-Individual product in an order.
+Individual product in an order. Can be sourced from RFC inventory or via sweep.
 
 | Field | Type | Description |
 |-------|------|-------------|
 | id | string | Unique identifier |
 | order_id | string | Reference to Order |
-| variant_id | string | Reference to ProductVariant |
+| product_id | string | Reference to SourceProduct |
 | quantity | number | Quantity ordered |
 | unit_price | number | Price per unit |
-| source | enum | rfc, retailer |
-| retailer | string | Which retailer (if sourced externally) |
+| source | enum | rfc, sweep |
+| retailer | string | Which retailer (if sweep sourced) |
+| retailer_location | string | Aisle info for sweep driver |
 
-### Product
+**Sourcing logic:**
+1. Check RFC inventory first
+2. If insufficient quantity, split between RFC and sweep
+3. Sweep items include retailer aisle location for driver
 
-A purchasable item in the catalog.
+## Inventory Domain
 
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| title | string | Product name |
-| description | string | Product description |
-| handle | string | URL-friendly slug |
-| categories | Category[] | Product categories |
-| variants | ProductVariant[] | Size/flavor variations |
-| images | Image[] | Product images |
-| metadata | object | Extended attributes |
+### Inventory
 
-**Metadata includes:**
-- Retailer-specific IDs
-- Scraping source information
-- Nutritional data
-
-### ProductVariant
-
-A specific variation of a product (size, flavor, etc.).
+Tracks RFC warehouse stock levels.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| id | string | Unique identifier |
-| product_id | string | Reference to Product |
-| sku | string | Stock keeping unit |
-| barcode | string | UPC/EAN barcode |
-| title | string | Variant name |
-| prices | Price[] | Prices at different retailers |
+| id | uuid | Unique identifier |
+| product_id | uuid | Reference to SourceProduct |
+| location_id | uuid | Reference to InventoryLocation |
+| quantity | integer | Total quantity |
+| reserved_quantity | integer | Reserved for orders |
+| available_quantity | integer | Generated: quantity - reserved |
+| last_counted_at | datetime | Last physical count |
 
-### Price
+### InventoryLocation
 
-Price information for a variant.
-
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| variant_id | string | Reference to ProductVariant |
-| amount | number | Price in cents |
-| price_list_id | string | Which price list (retailer) |
-
-**Price Lists:**
-- `selling` - Our price to customers
-- `heb` - Cost at HEB
-- `target` - Cost at Target
-- `walmart` - Cost at Walmart
-- etc.
-
-## Inventory Entities
-
-### StockLocation
-
-A place where inventory is stored.
+Physical location within the RFC warehouse.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| id | string | Unique identifier |
-| name | string | Location name |
-| address | object | Physical address |
-| metadata | object | Extended attributes |
-
-**Types:**
-- RFC (our warehouse)
-- Retailer locations (for availability tracking)
-
-### InventoryItem
-
-Tracks stock of a variant at a location.
-
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| sku | string | SKU reference |
-| location_id | string | Reference to StockLocation |
-| stocked_quantity | number | Total quantity |
-| reserved_quantity | number | Reserved for orders |
+| id | uuid | Unique identifier |
+| zone | string | Zone letter (A, B, C) |
+| shelf | string | Shelf code (A1, A2) |
+| bin | string | Bin code (A1-B3) |
+| is_active | boolean | Currently in use |
 
 ### InventoryGroup
 
@@ -177,7 +251,7 @@ Zone → Aisle → Bay → Shelf → Slot
 
 **Example:** `A1-2-3-1` = Zone A, Aisle 1, Bay 2, Shelf 3, Slot 1
 
-## Operations Entities
+## Operations Domain
 
 ### Driver
 
@@ -193,7 +267,6 @@ Person who performs sweeps and deliveries.
 | license_number | string | Driver's license |
 | vehicle_info | string | Vehicle description |
 | is_active | boolean | Currently active |
-| customer_id | string | Optional link to Customer |
 
 ### Sweep
 
@@ -217,17 +290,18 @@ Daily shopping trip to a retailer.
 
 ### SweepItem
 
-Item on a sweep manifest.
+Item on a sweep manifest. Includes retailer aisle location for efficient shopping.
 
 | Field | Type | Description |
 |-------|------|-------------|
 | id | string | Unique identifier |
 | sweep_id | string | Reference to Sweep |
-| variant_id | string | Reference to ProductVariant |
+| product_id | string | Reference to SourceProduct |
 | quantity | number | Quantity to pick |
 | picked_quantity | number | Quantity actually picked |
 | status | enum | pending, picked, substituted, unavailable |
-| substitute_variant_id | string | If substituted, the replacement |
+| retailer_location | string | Aisle location from RetailerMapping |
+| substitute_product_id | string | If substituted, the replacement |
 
 ### PickList
 
@@ -251,14 +325,14 @@ Individual item to pick from warehouse.
 | id | string | Unique identifier |
 | pick_list_id | string | Reference to PickList |
 | order_item_id | string | Reference to LineItem |
-| product_id | string | Reference to Product |
+| product_id | string | Reference to SourceProduct |
 | location_id | string | Reference to InventoryGroup (slot) |
 | quantity | number | Quantity to pick |
 | picked_quantity | number | Quantity picked |
 | status | enum | pending, picked, unavailable |
 | sequence | number | Order in pick path |
 
-## User Entities
+## User Domain
 
 ### User
 
@@ -278,16 +352,14 @@ Admin/staff user of Switchyard.
 - `picker` - Warehouse picking
 - `driver` - Sweep operations
 
-## Tote (Future)
+## Dashboard Views
 
-Container for staged orders.
+The admin dashboard has three main product-related pages, all querying the same underlying data:
 
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| qr_code | string | QR code on tote |
-| order_id | string | Reference to Order |
-| status | enum | empty, staged, delivering, returned |
+| Page | Filter | Primary Use |
+|------|--------|-------------|
+| **Scraped Products** | All `source_products` | Monitor prices, availability, discover products |
+| **Products** | `goods_product_attributes.is_sellable = true` | Manage sellable catalog |
+| **Inventory** | Has `inventory` record | Manage RFC stock levels, trigger reorders |
 
-**Note:** Robot-tote interface is out of Switchyard scope.
-
+All three pages query directly from Supabase with React Query caching for performance.
