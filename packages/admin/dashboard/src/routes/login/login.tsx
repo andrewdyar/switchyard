@@ -98,15 +98,27 @@ export const Login = () => {
           throw new Error(errorData.message || `Authentication failed (${response.status})`)
         }
 
-        // Create backend session
+        // Get the token from the auth response
+        const authData = await response.json()
+        const token = authData.token
+        
+        if (!token) {
+          throw new Error("No authentication token received")
+        }
+
+        // Create backend session using the token
         const sessionResponse = await fetch("/auth/session", {
           method: "POST",
-          headers: { "Content-Type": "application/json" },
+          headers: { 
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${token}`,
+          },
           credentials: "include",
         })
 
         if (!sessionResponse.ok) {
-          throw new Error(`Session creation failed (${sessionResponse.status})`)
+          const sessionError = await sessionResponse.json().catch(() => ({}))
+          throw new Error(sessionError.message || `Session creation failed (${sessionResponse.status})`)
         }
 
         // Clear URL hash and navigate
