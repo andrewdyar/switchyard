@@ -29,6 +29,9 @@ const LoginSchema = z.object({
   password: z.string(),
 })
 
+// Track if we're already processing OAuth callback to prevent loops
+let isProcessingOAuth = false
+
 export const Login = () => {
   const { t } = useTranslation()
   const location = useLocation()
@@ -36,6 +39,7 @@ export const Login = () => {
   const { getWidgets } = useExtension()
   const [googleLoading, setGoogleLoading] = useState(false)
   const [googleError, setGoogleError] = useState<string | null>(null)
+  const [oauthProcessed, setOauthProcessed] = useState(false)
 
   const from = location.state?.from?.pathname || "/orders"
 
@@ -51,60 +55,85 @@ export const Login = () => {
 
   // Handle OAuth callback if user is returning from Google
   useEffect(() => {
-    const handleOAuthCallback = async (session: any) => {
-      if (session?.access_token) {
-        try {
-          // Authenticate with backend using Supabase token
-          const response = await fetch("/auth/user/supabase", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ access_token: session.access_token }),
-            credentials: "include",
-          })
+    // Check if we're returning from OAuth (hash contains access_token or we have a fresh session)
+    const hash = window.location.hash
+    const isOAuthCallback = hash.includes("access_token") || hash.includes("token_type")
+    
+    // Skip if not an OAuth callback or already processed
+    if (!isOAuthCallback || oauthProcessed || isProcessingOAuth) {
+      return
+    }
 
-          if (!response.ok) {
-            const errorData = await response.json()
-            throw new Error(errorData.message || "Authentication failed")
-          }
+    const handleOAuthCallback = async () => {
+      // Prevent concurrent/repeated processing
+      if (isProcessingOAuth) return
+      isProcessingOAuth = true
+      setGoogleLoading(true)
 
-          // Create session
-          await fetch("/auth/session", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            credentials: "include",
-          })
+      const supabase = getSupabaseClient()
+      if (!supabase) {
+        isProcessingOAuth = false
+        setGoogleLoading(false)
+        return
+      }
 
-          window.history.replaceState({}, document.title, window.location.pathname)
-          navigate(from, { replace: true })
-        } catch (err) {
-          console.error("OAuth callback error:", err)
-          setGoogleError(err instanceof Error ? err.message : "OAuth login failed")
-          window.history.replaceState({}, document.title, window.location.pathname)
+      try {
+        // Get the session from Supabase (this parses the hash)
+        const { data: { session }, error: sessionError } = await supabase.auth.getSession()
+        
+        if (sessionError || !session?.access_token) {
+          throw new Error(sessionError?.message || "No session found")
         }
+
+        // Authenticate with backend using Supabase token
+        const response = await fetch("/auth/user/supabase", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ access_token: session.access_token }),
+          credentials: "include",
+        })
+
+        if (!response.ok) {
+          const errorData = await response.json().catch(() => ({}))
+          throw new Error(errorData.message || `Authentication failed (${response.status})`)
+        }
+
+        // Create backend session
+        const sessionResponse = await fetch("/auth/session", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+        })
+
+        if (!sessionResponse.ok) {
+          throw new Error(`Session creation failed (${sessionResponse.status})`)
+        }
+
+        // Clear URL hash and navigate
+        window.history.replaceState({}, document.title, window.location.pathname)
+        setOauthProcessed(true)
+        navigate(from, { replace: true })
+      } catch (err) {
+        console.error("OAuth callback error:", err)
+        setGoogleError(err instanceof Error ? err.message : "OAuth login failed")
+        
+        // Sign out from Supabase to prevent infinite loop
+        const supabase = getSupabaseClient()
+        if (supabase) {
+          await supabase.auth.signOut()
+        }
+        
+        // Clear URL hash
+        window.history.replaceState({}, document.title, window.location.pathname)
+        setOauthProcessed(true)
+      } finally {
+        isProcessingOAuth = false
+        setGoogleLoading(false)
       }
     }
 
-    const supabase = getSupabaseClient()
-    if (!supabase) return
-
-    // Listen for auth state changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange(async (event, session) => {
-      if (event === "SIGNED_IN" && session) {
-        await handleOAuthCallback(session)
-      }
-    })
-
-    // Check for existing session
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      if (session) {
-        handleOAuthCallback(session)
-      }
-    })
-
-    return () => {
-      subscription.unsubscribe()
-    }
-  }, [from, navigate])
+    handleOAuthCallback()
+  }, [from, navigate, oauthProcessed])
 
   const handleGoogleSignIn = async () => {
     const supabase = getSupabaseClient()
