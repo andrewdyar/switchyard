@@ -260,12 +260,6 @@ const useCoreRoutes = (): Omit<INavItem, "pathname">[] => {
       icon: <Tools />,
       label: "Scrapers",
       to: "/scrapers",
-      items: [
-        {
-          label: "Scraped Products",
-          to: "/scrapers/scraped-products",
-        },
-      ],
     },
   ]
 }
