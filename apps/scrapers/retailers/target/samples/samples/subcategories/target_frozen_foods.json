@@ -1,0 +1,919 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5xszd",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_71ea007d-698b-4fcb-9e46-f243e5967c71",
+      "seo_keywords": "Frozen Foods, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Get Frozen Foods from Target to save money and time. Select Same Day Delivery or Drive Up for easy contactless purchases.",
+      "seo_title": "Frozen Foods : Target",
+      "seo_h1": "Frozen Foods",
+      "canonical_url": "/c/frozen-foods-grocery/-/N-5xszd"
+    },
+    "node_id": "5xszd",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "wdysv",
+        "name": "Frozen Single Serve Meals",
+        "type": "Category",
+        "linking_id": "wdysv",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-single-serve-meals-foods-grocery/-/N-wdysv",
+        "seo_h1": "Frozen Single Serve Meals",
+        "page_id": "/c/wdysv",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_10a8a418-9738-4651-8a66-92132f7f6ed1"
+      },
+      {
+        "node_id": "a3dpa",
+        "name": "Frozen Family Meals",
+        "type": "Category",
+        "linking_id": "a3dpa",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-family-meals-foods-grocery/-/N-a3dpa",
+        "seo_h1": "Frozen Family Meals",
+        "page_id": "/c/a3dpa",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_96765185-541b-4998-a0e0-5e00fcfc5e1e"
+      },
+      {
+        "node_id": "5xsz2",
+        "name": "Ice Cream & Novelties",
+        "type": "Category",
+        "linking_id": "5xsz2",
+        "number_of_children": "0",
+        "canonical_url": "/c/ice-cream-frozen-foods-grocery/-/N-5xsz2",
+        "seo_h1": "Ice Cream & Novelties",
+        "page_id": "/c/5xsz2",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_6b136c40-298b-45b4-8e5f-559bc8038a7f"
+      },
+      {
+        "node_id": "rb4pu",
+        "name": "Frozen Foods: Kids",
+        "type": "Tag",
+        "linking_id": "rb4pu",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-foods-kids/-/N-rb4pu",
+        "seo_h1": "Frozen Foods: Kids",
+        "page_id": "/c/rb4pu",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_33a9d9e8-c0e6-47e6-92f3-144d9f487eb8"
+      },
+      {
+        "node_id": "5xsz4",
+        "name": "Frozen Pizza",
+        "type": "Category",
+        "linking_id": "5xsz4",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-pizza-foods-grocery/-/N-5xsz4",
+        "seo_h1": "Frozen Pizza",
+        "page_id": "/c/5xsz4",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_9a83e28e-b88c-484d-81e2-9b562ee799c3"
+      },
+      {
+        "node_id": "5xsza",
+        "name": "Frozen Breakfast Food",
+        "type": "Category",
+        "linking_id": "5xsza",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-breakfast-food-foods-grocery/-/N-5xsza",
+        "seo_h1": "Frozen Breakfast Food",
+        "page_id": "/c/5xsza",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_04b1d1a8-0402-4114-bb00-7edbe56927e3"
+      },
+      {
+        "node_id": "5xsz5",
+        "name": "Frozen Meat, Poultry & Seafood",
+        "type": "Category",
+        "linking_id": "5xsz5",
+        "number_of_children": "5",
+        "canonical_url": "/c/frozen-meat-poultry-seafood-foods-grocery/-/N-5xsz5",
+        "seo_h1": "Frozen Meat, Poultry & Seafood",
+        "page_id": "/c/5xsz5",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_BUBCAT_May26BubCat_FrozenMeats-200526-1590505894656"
+      },
+      {
+        "node_id": "5xszb",
+        "name": "Frozen Appetizers & Snacks",
+        "type": "Category",
+        "linking_id": "5xszb",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-appetizers-snacks-foods-grocery/-/N-5xszb",
+        "seo_h1": "Frozen Appetizers & Snacks",
+        "page_id": "/c/5xszb",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_e145d623-d32d-47ee-a82e-35c4a3c569d4"
+      },
+      {
+        "node_id": "5xsz9",
+        "name": "Frozen Desserts",
+        "type": "Category",
+        "linking_id": "5xsz9",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-desserts-foods-grocery/-/N-5xsz9",
+        "seo_h1": "Frozen Desserts",
+        "page_id": "/c/5xsz9",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_9f01f8c2-0719-4cc8-8364-29d890e2cb49"
+      },
+      {
+        "node_id": "5xsz7",
+        "name": "Frozen Fruit",
+        "type": "Category",
+        "linking_id": "5xsz7",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-fruit-foods-grocery/-/N-5xsz7",
+        "seo_h1": "Frozen Fruit",
+        "page_id": "/c/5xsz7",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c59cde93-66f2-427c-81b6-8010b0a00172"
+      },
+      {
+        "node_id": "a479c",
+        "name": "Frozen Potatoes",
+        "type": "Category",
+        "linking_id": "a479c",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-potatoes-foods-grocery/-/N-a479c",
+        "seo_h1": "Frozen Potatoes",
+        "page_id": "/c/a479c",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_65dbffb0-6a62-48d4-b335-0eb57118733c"
+      },
+      {
+        "node_id": "5xsz3",
+        "name": "Frozen Vegetables",
+        "type": "Category",
+        "linking_id": "5xsz3",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-vegetables-foods-grocery/-/N-5xsz3",
+        "seo_h1": "Frozen Vegetables",
+        "page_id": "/c/5xsz3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/10wk1_Grocery_BubcatBubcat_FrozenVeggies-201005-1601921509372"
+      },
+      {
+        "node_id": "4tglw",
+        "name": "Frozen Bread & Dough",
+        "type": "Category",
+        "linking_id": "4tglw",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-bread-dough-foods-grocery/-/N-4tglw",
+        "seo_h1": "Frozen Bread & Dough",
+        "page_id": "/c/4tglw",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_34d3a958-9233-4cc3-abd8-29114ea60dd6"
+      }
+    ],
+    "og": {
+      "title": "Frozen Foods : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_71ea007d-698b-4fcb-9e46-f243e5967c71",
+      "url": "/c/frozen-foods-grocery/-/N-5xszd",
+      "description": "Get Frozen Foods from Target to save money and time. Select Same Day Delivery or Drive Up for easy contactless purchases."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5xszd",
+    "title": "Frozen Foods",
+    "activation_date": "2025-10-26T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "800": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_NovWK4_F&B_Sale $4.99 on Good & Gather Frozen Appetizers with same day services",
+            "id": "STORY-41495",
+            "placement_id": "68da9f6dbf99777e75a3f699",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xszd",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_0f13243f-4804-435d-be6c-657454e0e9bc",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                "Sale"
+              ],
+              "line_two": [
+                "4.99"
+              ],
+              "lockup": "price-emphasis-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Get the deal"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "Sale "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "4.99"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_06dd51e1-5240-4104-867f-91309696021e",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_986a54db-31e2-456f-9a46-c04cf0620a3c",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_6a62be59-b91c-4270-ac5f-136d32e5fc3a",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_3f08b473-775d-4e92-a0c3-d4e3f8a5d4e5",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_550408948_STORY-41495",
+              "detail": {
+                "id": "550408948"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "Good & Gather™ frozen appetizers with same-day delivery or pickup*\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 33
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-carousel",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 800
+    },
+    "1100": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Oct Wk 4_Frozen Foods BIA_Standard CSL",
+            "id": "WEB-432640",
+            "placement_id": "68f1d86be4f10f5920f3b71e",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-432640",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-432640",
+        "custom_headline": "Buy it again with Drive Up",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_bia_frequent_sameday_driveup;categoryId,5xszd"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1100
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Oct Wk 1_Magnolia Table Frozen Treats_Standard CP",
+            "id": "STORY-40293",
+            "placement_id": "68f1d86be4f10f5920f3b720",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xszd",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "accessibility_text": "New",
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_8862efb4-59e1-4e9f-bb1f-fb76b8c8469b",
+            "background_color": "#f6f5f1",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop the collection"
+            },
+            "headline": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "Magnolia Table frozen treats have arrived\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "hero_background_color": "#F3EEE3",
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_561ae605-3d5a-4509-820a-c3e263c333a9",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_048ea6bf-c24c-4e28-91a5-e6a504fe7064",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_b84cc89c-e39f-431d-abb5-c8adcfb2a0d8",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_0e6b7a2f-de72-41cc-b083-c999d14c42c4",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_f7f61af9-e48f-48d8-8ef2-d1169add8200",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_MagnoliaTable_STORY-40293",
+              "destination_content": "CONTENT",
+              "detail": {
+                "id": "q643lext42d",
+                "name": "Magnolia Table",
+                "seo_url": "/b/magnolia-table/-/N-q643lext42d",
+                "type": "BRAND",
+                "page_type_prefix": "b"
+              },
+              "facets": [],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "Only at "
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                },
+                {
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "bullseye-normal"
+                    }
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middle",
+            "type_stack": "medium",
+            "width": 38
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1500
+    },
+    "1700": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Sep WK 5_Frozen Foods Newness CSL_Standard",
+            "id": "WEB-431047",
+            "placement_id": "68f1d86be4f10f5920f3b722",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-431047",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-431047",
+        "custom_headline": "Latest in Frozen Foods",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_new_top_sellers;categoryId,5xszd"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1700
+    },
+    "2100": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Sep Wk 5_Frozen Foods Trend CSL_Standard",
+            "id": "WEB-431048",
+            "placement_id": "68f1d86be4f10f5920f3b725",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-431048",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-431048",
+        "custom_headline": "Trending frozen faves",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_trending_for_you;categoryId,5xszd"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 2100
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2252": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Sept wk 2_Pizza Meal NEW_Standard CP",
+            "id": "STORY-39486",
+            "placement_id": "68da9f6dbf99777e75a3f6a0",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xszd",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          },
+          {
+            "title": "Nov wk 3_SNAP Affordable Movie Night_StandardCP",
+            "id": "STORY-42066",
+            "placement_id": "68da9f6dbf99777e75a3f6a1",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xszd",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "amplified_headline": {
+              "color": "#333333",
+              "line_four": [
+                "20"
+              ],
+              "line_one": [
+                "Pizza night"
+              ],
+              "line_three": [
+                "under"
+              ],
+              "line_two": [
+                "for 4"
+              ],
+              "lockup": "value-price-emphasis-versioned",
+              "lockup_disposition": "double-line",
+              "version": "v2"
+            },
+            "background_color": "#f6f5f1",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop the meal"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "Pizza night for 4 under "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "20\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_cdc45bb2-67bb-4a35-8659-20d529352b12",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_1653a03d-3e03-4ea6-b270-640afb0ac452",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_e82deda9-846f-4901-94ac-65c52c8c8b82",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_889c4d6e-d069-4581-b75b-3a910b33703f",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_468e86a5-bcc5-4a64-8145-5db26d78cd2e",
+            "link": {
+              "target": "MULTI_TCIN",
+              "link_tag": "C_MultiTcin_shoppable_drawer_STORY-39486",
+              "detail": {
+                "id": "shoppable_drawer",
+                "multi_tcins": [
+                  "79226808",
+                  "54557981",
+                  "13010410",
+                  "12994700",
+                  "81491127"
+                ]
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "topleft",
+            "type_stack": "medium",
+            "width": 100
+          },
+          {
+            "amplified_headline": {
+              "color": "#333333",
+              "line_four": [
+                "9"
+              ],
+              "line_one": [
+                "Movie night"
+              ],
+              "line_three": [
+                "under"
+              ],
+              "line_two": [
+                "snack bundle"
+              ],
+              "lockup": "value-price-emphasis-versioned",
+              "lockup_disposition": "double-line",
+              "version": "v2"
+            },
+            "background_color": "#F6F5F1",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop the bundle"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "Movie night snack bundle under "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "9\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_f18c7944-a8be-4b34-aad7-5284ef4bad32",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_17dcb675-2940-4575-9efe-b16612279690",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_1d2862e9-4127-443a-9de8-21a19aa6ce7f",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_3c4f087a-fb18-41b5-9daa-02a2e1e5372b",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_04db2cae-7ff0-4d47-bb43-a89131562c37",
+            "link": {
+              "target": "MULTI_TCIN",
+              "link_tag": "C_MultiTcin_shoppable_drawer_STORY-42066",
+              "detail": {
+                "id": "shoppable_drawer",
+                "multi_tcins": [
+                  "81611909",
+                  "79226807",
+                  "14741832"
+                ]
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 100
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 2252
+    },
+    "2254": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Sep Wk 5_Frozen Foods Value CSL_Standard",
+            "id": "WEB-431049",
+            "placement_id": "68f1d86be4f10f5920f3b726",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-431049",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-431049",
+        "custom_headline": "Frozen foods under $5",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_top_sellers_vap;categoryId,5xszd;facetId,tb9f0"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 2254
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-434044",
+            "placement_id": "68ef31a59e936d9486735e86",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/frozen-foods-grocery/magnolia-table/-/N-5xszdZq643lext42d>magnolia table frozen foods</a>,<a href=https://www.target.com/c/frozen-foods-grocery/amy-s/-/N-5xszdZg3pz2>amy's frozen meals</a>,<a href=https://www.target.com/c/frozen-foods-grocery/michelina-s/-/N-5xszdZgb30k>michelina</a>,<a href=https://www.target.com/c/frozen-foods-grocery/marie-callender-s/-/N-5xszdZ56f6z>marie callender's frozen meals</a>,<a href=https://www.target.com/c/frozen-foods-grocery/no-preservatives/-/N-5xszdZimirm>unprocessed frozen meals</a>,<a href=https://www.target.com/b/dr-praeger-s/-/N-jo1wa>dr praeger's</a>,<a href=https://www.target.com/b/don-lee-farms/-/N-q643lesmn40>don lee farms</a>,<a href=https://www.target.com/c/frozen-foods-grocery/plant-based/-/N-5xszdZ7vn3n>what are the most popular frozen snack options for plant-based diets?</a>,<a href=https://www.target.com/b/ellios/-/N-54xhw>ellios</a>,<a href=https://www.target.com/c/frozen-foods-grocery/udi-s/-/N-5xszdZz58r3>udi's frozen meals</a>,<a href=https://www.target.com/c/frozen-foods-grocery/-/N-5xszd>frozen food brands</a>,<a href=https://www.target.com/c/frozen-foods-grocery/banquet/-/N-5xszdZ56dq7>banquet food</a>,<a href=https://www.target.com/c/frozen-foods-grocery/bogo/-/N-5xszdZ55e69>bogo food</a>,<a href=https://www.target.com/c/frozen-foods-grocery/hungry-man/-/N-5xszdZ560jr>hungry man frozen dinners</a>,<a href=https://www.target.com/c/frozen-foods-grocery/innovasian-cuisine/-/N-5xszdZut122>innovasion chinese food</a>,<a href=https://www.target.com/c/frozen-foods-grocery/wholly-veggie-/-/N-5xszdZlvaga>wholly foods</a>,<a href=https://www.target.com/c/frozen-single-serve-meals-foods-grocery/tapatio/-/N-wdysvZp4m7g>tapatio frozen meals</a>,<a href=https://www.target.com/c/frozen-foods-grocery/disney/-/N-5xszdZbgmat>disney frozen food</a>,<a href=https://www.target.com/c/frozen-foods-grocery/beecher-s/-/N-5xszdZq643letiqp2>beecher's frozen food</a>,<a href=https://www.target.com/c/frozen-foods-grocery/organic/-/N-5xszdZs2ozl>organic frozen dinners</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/5xszd/WEB",
+  "activation_date": "2025-10-26T07:00Z"
+}

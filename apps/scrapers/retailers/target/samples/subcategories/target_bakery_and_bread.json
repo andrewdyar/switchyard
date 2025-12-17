@@ -1,0 +1,493 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5xt19",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_a13df72b-3d96-45f3-821f-064b424be798",
+      "seo_keywords": "Bakery & Bread, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Shop Target for Bakery & Bread you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "seo_title": "Bakery & Bread : Target",
+      "seo_h1": "Bakery & Bread",
+      "canonical_url": "/c/bakery-bread-grocery/-/N-5xt19"
+    },
+    "node_id": "5xt19",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "3w9pq",
+        "name": "Holiday Bakery",
+        "type": "Tag",
+        "linking_id": "3w9pq",
+        "number_of_children": "0",
+        "canonical_url": "/c/holiday-bakery/-/N-3w9pq",
+        "seo_h1": "Holiday Bakery",
+        "page_id": "/c/3w9pq",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_a618a594-c92d-4377-8ca7-8c5841c526bc"
+      },
+      {
+        "node_id": "5xt18",
+        "name": "Breads",
+        "type": "Category",
+        "linking_id": "5xt18",
+        "number_of_children": "0",
+        "canonical_url": "/c/breads-bakery-bread-grocery/-/N-5xt18",
+        "seo_h1": "Breads",
+        "page_id": "/c/5xt18",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_f800c9dd-347f-43ad-892e-b912716d0ee6"
+      },
+      {
+        "node_id": "5xt17",
+        "name": "Cookies & Bars",
+        "type": "Category",
+        "linking_id": "5xt17",
+        "number_of_children": "0",
+        "canonical_url": "/c/cookies-bars-bakery-bread-grocery/-/N-5xt17",
+        "seo_h1": "Cookies & Bars",
+        "page_id": "/c/5xt17",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_1e374c55-3fbd-403d-ae6e-252949e7cb29"
+      },
+      {
+        "node_id": "5xt15",
+        "name": "Donuts & Pastries",
+        "type": "Category",
+        "linking_id": "5xt15",
+        "number_of_children": "0",
+        "canonical_url": "/c/donuts-pastries-bakery-bread-grocery/-/N-5xt15",
+        "seo_h1": "Donuts & Pastries",
+        "page_id": "/c/5xt15",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_1a647716-3e2b-43ba-be17-7db9a97dbf97"
+      },
+      {
+        "node_id": "4smkx",
+        "name": "Bagels",
+        "type": "Category",
+        "linking_id": "4smkx",
+        "number_of_children": "0",
+        "canonical_url": "/c/bagels-bakery-bread-grocery/-/N-4smkx",
+        "seo_h1": "Bagels",
+        "page_id": "/c/4smkx",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_bcb26b77-6ee6-4076-8300-4253231e4319"
+      },
+      {
+        "node_id": "lyu1t",
+        "name": "Bakery Minis",
+        "type": "Tag",
+        "linking_id": "lyu1t",
+        "number_of_children": "0",
+        "canonical_url": "/c/bakery-minis/-/N-lyu1t",
+        "seo_h1": "Bakery Minis",
+        "page_id": "/c/lyu1t",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_a766994f-c483-457e-b8db-2dec020a787c"
+      },
+      {
+        "node_id": "yknno",
+        "name": "Muffins",
+        "type": "Category",
+        "linking_id": "yknno",
+        "number_of_children": "0",
+        "canonical_url": "/c/muffins-bakery-bread-grocery/-/N-yknno",
+        "seo_h1": "Muffins",
+        "page_id": "/c/yknno",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_d5794ee8-fa99-46fa-939c-0eef451e5475"
+      },
+      {
+        "node_id": "3tyea",
+        "name": "Cakes & Pies",
+        "type": "Category",
+        "linking_id": "3tyea",
+        "number_of_children": "0",
+        "canonical_url": "/c/cakes-pies-bakery-bread-grocery/-/N-3tyea",
+        "seo_h1": "Cakes & Pies",
+        "page_id": "/c/3tyea",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_3a6f8360-b72c-4812-ad7d-59d9072ddaeb"
+      },
+      {
+        "node_id": "4ss7f",
+        "name": "Tortillas, Pitas & Wraps",
+        "type": "Category",
+        "linking_id": "4ss7f",
+        "number_of_children": "0",
+        "canonical_url": "/c/tortillas-pitas-wraps-bakery-bread-grocery/-/N-4ss7f",
+        "seo_h1": "Tortillas, Pitas & Wraps",
+        "page_id": "/c/4ss7f",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c9f10662-0bc2-470c-ae8a-7f4bb3f78c49"
+      },
+      {
+        "node_id": "4tgo6",
+        "name": "Refrigerated Doughs",
+        "type": "Category",
+        "linking_id": "4tgo6",
+        "number_of_children": "0",
+        "canonical_url": "/c/refrigerated-doughs-dairy-grocery/-/N-4tgo6",
+        "seo_h1": "Refrigerated Doughs",
+        "page_id": "/c/4tgo6",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_87bd7abc-648c-46a0-983e-d469439e8089"
+      },
+      {
+        "node_id": "c51ff",
+        "name": "Rolls & Buns",
+        "type": "Category",
+        "linking_id": "c51ff",
+        "number_of_children": "0",
+        "canonical_url": "/c/rolls-buns-bakery-bread-grocery/-/N-c51ff",
+        "seo_h1": "Rolls & Buns",
+        "page_id": "/c/c51ff",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_85319c86-9b21-42f9-8b35-d0baa2cb149a"
+      },
+      {
+        "node_id": "5xt14",
+        "name": "Pizza Crusts",
+        "type": "Category",
+        "linking_id": "5xt14",
+        "number_of_children": "0",
+        "canonical_url": "/c/pizza-crusts-bakery-bread-grocery/-/N-5xt14",
+        "seo_h1": "Pizza Crusts",
+        "page_id": "/c/5xt14",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_Bakery_BreadL2_BubCat_PizzaCrust-QUIVER-190913-1568394576367"
+      },
+      {
+        "node_id": "5xsxz",
+        "name": "Snack Cakes",
+        "type": "Category",
+        "linking_id": "5xsxz",
+        "number_of_children": "0",
+        "canonical_url": "/c/snack-cakes-snacks-grocery/-/N-5xsxz",
+        "seo_h1": "Snack Cakes",
+        "page_id": "/c/5xsxz",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_Bakery_BreadL2_BubCat_SnackCakes-QUIVER-190913-1568394613006"
+      }
+    ],
+    "og": {
+      "title": "Bakery & Bread : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_a13df72b-3d96-45f3-821f-064b424be798",
+      "url": "/c/bakery-bread-grocery/-/N-5xt19",
+      "description": "Shop Target for Bakery & Bread you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5xt19",
+    "title": "Bakery & Bread",
+    "activation_date": "2025-09-21T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov Wk 1_ Favorite Day Holiday Bakery from $4.99_Standard CP",
+            "id": "STORY-40981",
+            "placement_id": "68cd71a88538db79447726aa",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xt19",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_5fae6ada-b786-4003-aa4a-0fc58a1d7eed",
+        "amplified_headline": {
+          "color": "#ffffff",
+          "line_four": [
+            "4.99"
+          ],
+          "line_one": [
+            "Favorite Day™"
+          ],
+          "line_three": [
+            "from"
+          ],
+          "line_two": [
+            "holiday bakery"
+          ],
+          "lockup": "value-price-emphasis-versioned",
+          "lockup_disposition": "double-line",
+          "version": "v2"
+        },
+        "background_color": "#870508",
+        "background_color_behavior": "simplified",
+        "call_to_action_button_style": {
+          "background_color": "#ffffff",
+          "text_color": "#333333",
+          "outline_color": "#333333",
+          "button_type": "outlined",
+          "button_copy": "Shop holiday bakery"
+        },
+        "headline": {
+          "content": [
+            {
+              "attributes": {
+                "color": "#ffffff"
+              },
+              "insert": {
+                "text": "Favorite Day™ holiday bakery from "
+              }
+            },
+            {
+              "attributes": {
+                "color": "#ffffff",
+                "pricestyleprice": true
+              },
+              "insert": {
+                "text": "$"
+              }
+            },
+            {
+              "attributes": {
+                "color": "#ffffff"
+              },
+              "insert": {
+                "text": "4.99\n"
+              }
+            }
+          ]
+        },
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_87c62a5e-0247-4942-99ce-9eb364014e76",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_9e4d319f-f25c-47da-9437-c76cf5dbfe26",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_1922df8d-d655-475e-81f4-63d1c01f57c9",
+        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_60b1040b-d8aa-4311-9e96-cc30f76dd606",
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_05720799-9645-4e73-8e81-a03397a3a7aa",
+        "link": {
+          "target": "TAXONOMY",
+          "link_tag": "C_HolidayBakery_STORY-40981",
+          "destination_content": "GRID",
+          "detail": {
+            "id": "3w9pq",
+            "name": "Holiday Bakery",
+            "seo_url": "/c/holiday-bakery/-/N-3w9pq",
+            "type": "TAG",
+            "page_type_prefix": "c"
+          },
+          "facets": [],
+          "marketing_groups": []
+        },
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "text_position": "topleft",
+        "type_stack": "medium",
+        "width": 100
+      },
+      "presentation": "standard",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1300
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2024_07wk1 _NewBakeryPRZ",
+            "id": "WEB-402715",
+            "placement_id": "68cd71a88538db79447726ab",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-402715",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-402715",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_new_in_category;categoryId,5xt19;brandId,q643lewlzpu"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#f5f0e9"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1500
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426845",
+            "placement_id": "685577cfe0579254f0f524bc",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/bakery-bread-grocery/canyon-bakehouse/-/N-5xt19Zoq8y1>canyon bakehouse</a>,<a href=https://www.target.com/c/bakery-bread-grocery/rotella-s-italian-bakery/-/N-5xt19Zfocn0>rotella's italian bakery</a>,<a href=https://www.target.com/c/bakery-bread-grocery/dunford/-/N-5xt19Zq643leyj2j4>dunford bakery</a>,<a href=https://www.target.com/p/sunbeam-whole-grain-white-sandwich-bread-22oz/-/A-47093998?gQT=1>sunbeam bread</a>,<a href=https://www.target.com/c/bakery-bread-grocery/stroehmann/-/N-5xt19Zky9ha>stroehmann bakery</a>,<a href=https://www.target.com/p/carbonaut-seeded-bread-19oz/-/A-81837812?gQT=1>low carb bread</a>,<a href=https://www.target.com/c/bakery-bread-grocery/s-rosen-s/-/N-5xt19Zzcy1s>s.rosen's</a>,<a href=https://www.target.com/c/bakery-bread-grocery/low-fat/-/N-5xt19Znghi2>low fat bakery items</a>,<a href=https://www.target.com/c/bakery-bread-grocery/wonder/-/N-5xt19Z56djk>wonder bakery</a>,<a href=https://www.target.com/c/breads-bakery-bread-grocery/brownberry/-/N-5xt18Z56dgr>brownberry bread</a>,<a href=https://www.target.com/c/bakery-bread-grocery/natures-own/-/N-5xt19Z56d4u>natures own bakery</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/5xt19/WEB",
+  "activation_date": "2025-09-21T07:00Z"
+}

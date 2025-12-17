@@ -1,0 +1,468 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/wo2mp",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_8b164411-c84f-4c2e-b1b8-4bae8e84a5fa",
+      "seo_keywords": "Breakfast & Cereal, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Get Breakfast & Cereal from Target to save money and time. Select Same Day Delivery or Drive Up for easy contactless purchases.",
+      "seo_title": "Breakfast Foods : Target",
+      "seo_h1": "Breakfast & Cereal",
+      "canonical_url": "/c/breakfast-cereal-grocery/-/N-wo2mp"
+    },
+    "node_id": "wo2mp",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "5xt0g",
+        "name": "Cereal",
+        "type": "Category",
+        "linking_id": "5xt0g",
+        "number_of_children": "0",
+        "canonical_url": "/c/cereal-breakfast-grocery/-/N-5xt0g",
+        "seo_h1": "Cereal",
+        "page_id": "/c/5xt0g",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c3b462d5-bda2-46dd-a295-fcf3d352bad6"
+      },
+      {
+        "node_id": "in6al",
+        "name": "Granola",
+        "type": "Category",
+        "linking_id": "in6al",
+        "number_of_children": "0",
+        "canonical_url": "/c/granola-breakfast-cereal-grocery/-/N-in6al",
+        "seo_h1": "Granola",
+        "page_id": "/c/in6al",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_b1bb7d40-bdb7-4425-ac50-208866e5dd3e"
+      },
+      {
+        "node_id": "8tu6y",
+        "name": "Oatmeal",
+        "type": "Category",
+        "linking_id": "8tu6y",
+        "number_of_children": "0",
+        "canonical_url": "/c/oatmeal-breakfast-cereal-grocery/-/N-8tu6y",
+        "seo_h1": "Oatmeal",
+        "page_id": "/c/8tu6y",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c73a1c93-f0d9-412f-91de-c961e3150a45"
+      },
+      {
+        "node_id": "5xt0f",
+        "name": "Pancake Mixes, Waffle Mixes & Syrup",
+        "type": "Category",
+        "linking_id": "5xt0f",
+        "number_of_children": "0",
+        "canonical_url": "/c/pancake-mixes-waffle-syrup-breakfast-cereal-grocery/-/N-5xt0f",
+        "seo_h1": "Pancake Mixes, Waffle Mixes & Syrup",
+        "page_id": "/c/5xt0f",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_7cfe904e-8282-417f-a404-404e0d0d4f71"
+      },
+      {
+        "node_id": "qrydr",
+        "name": "Organic Breakfast & Cereal",
+        "type": "Tag",
+        "linking_id": "qrydr",
+        "number_of_children": "0",
+        "canonical_url": "/c/organic-breakfast-cereal/-/N-qrydr",
+        "seo_h1": "Organic Breakfast & Cereal",
+        "page_id": "/c/qrydr",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0e39bce8-c0e3-43fb-8089-e817fbc6438c"
+      },
+      {
+        "node_id": "5xt0i",
+        "name": "Toaster Pastries & Breakfast Bars",
+        "type": "Category",
+        "linking_id": "5xt0i",
+        "number_of_children": "0",
+        "canonical_url": "/c/toaster-pastries-breakfast-cereal-grocery/-/N-5xt0i",
+        "seo_h1": "Toaster Pastries & Breakfast Bars",
+        "page_id": "/c/5xt0i",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_803be71c-8746-4263-8e1f-0026a9c44a4a"
+      }
+    ],
+    "og": {
+      "title": "Breakfast Foods : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_8b164411-c84f-4c2e-b1b8-4bae8e84a5fa",
+      "url": "/c/breakfast-cereal-grocery/-/N-wo2mp",
+      "description": "Get Breakfast & Cereal from Target to save money and time. Select Same Day Delivery or Drive Up for easy contactless purchases."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "wo2mp",
+    "title": "Breakfast & Cereal",
+    "activation_date": "2025-10-29T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Breakfast & Cereal",
+            "id": "WEB-366682",
+            "placement_id": "68ec8655e4f10f5920f3b2b7",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-366682",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-366682",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_bia_sameday_drive_up;categoryId,wo2mp"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1300
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_F&B_Wicked_Standard CP",
+            "id": "STORY-41056",
+            "placement_id": "68ec8655e4f10f5920f3b2ba",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:wo2mp",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "accessibility_text": "Wicked For Good",
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_33803307-8926-46b0-93d3-74c0f3bcf9f3",
+            "background_color": "#fffbe9",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop Wicked treats"
+            },
+            "enhancement": {
+              "alt_text": "New",
+              "background_color": "#000000",
+              "text": "New",
+              "text_color": "#FFFFFF",
+              "type": "ribbon"
+            },
+            "headline": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "Taste the magic of "
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                },
+                {
+                  "attributes": {
+                    "italic": true,
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "Wicked"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "hero_background_color": "#074016",
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_70a4b38e-7fce-416c-b221-d4b68f27da3e",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_12b01b5f-980c-4db3-b4b0-f76c6cb0b446",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_ae2f7195-8508-4c77-afe9-42971ae2fc30",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_c4c18999-7497-415f-a8db-8b4335b914ca",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_Wicked_breakfast-bars_cake-mixes_cold-cereals_cookies-and-bars_sugar-cookie_STORY-41056",
+              "destination_content": "GRID",
+              "detail": {
+                "id": "akcgm",
+                "name": "Wicked",
+                "seo_url": "/c/wicked/-/N-akcgm",
+                "type": "TAG",
+                "page_type_prefix": "c"
+              },
+              "facets": [
+                {
+                  "id": "wpm",
+                  "name": "d_item_type_all",
+                  "value": "breakfast bars",
+                  "seo_value": "breakfast-bars"
+                },
+                {
+                  "id": "4i3ej",
+                  "name": "d_item_type_all",
+                  "value": "cake mixes",
+                  "seo_value": "cake-mixes"
+                },
+                {
+                  "id": "ncp0",
+                  "name": "d_item_type_all",
+                  "value": "cold cereals",
+                  "seo_value": "cold-cereals"
+                },
+                {
+                  "id": "6jv2h",
+                  "name": "d_item_type_all",
+                  "value": "cookies and bars",
+                  "seo_value": "cookies-and-bars"
+                },
+                {
+                  "id": "al25lfd339y",
+                  "name": "d_item_type_all",
+                  "value": "sugar cookie",
+                  "seo_value": "sugar-cookie"
+                }
+              ],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "bottomcenter",
+            "type_stack": "medium",
+            "width": 35
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1500
+    },
+    "1700": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_01Wk4_F&B_CerealTrending_MTC",
+            "id": "WEB-416254",
+            "placement_id": "68ec8655e4f10f5920f3b2bb",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-416254",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-416254",
+        "custom_headline": "Trending breakfast & cereal",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_trending_for_you;categoryId,wo2mp"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#F7F5F2"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1700
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-434983",
+            "placement_id": "6901a6aae4f10f5920f3c1b0",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/breakfast-cereal-grocery/-/N-wo2mp>breakfast foods</a>,<a href=https://www.target.com/c/breakfast-cereal-grocery/-/N-wo2mp>breakfast foods</a>,<a href=https://www.target.com/c/breakfast-cereal-grocery/cream-of-wheat/-/N-wo2mpZ55ecz>cream of wheat flavors</a>,<a href=https://www.target.com/p/kashi-organic-honey-toasted-oat-breakfast-cereal-13-6oz/-/A-94280803?TCID=OGS&AFID=google&CPNG=Dry%2BGrocery&adgroup=231-13&region_id=708708>kashi cereal</a>,<a href=https://www.target.com/c/breakfast-cereal-grocery/mush/-/N-wo2mpZd5oyy>mush foods</a>,<a href=https://www.target.com/c/breakfast-cereal-grocery/wheaties/-/N-wo2mpZ54xc0>wheaties cereal</a>,<a href=https://www.target.com/b/envirokidz/-/N-q643le4ewwd>envirokidz</a>,<a href=https://www.target.com/c/breakfast-cereal-grocery/cheerios/-/N-wo2mpZ56fcm>cheerios walmart</a>,<a href=https://www.target.com/c/breakfast-cereal-grocery/chichi/-/N-wo2mpZq643lesxwh3>chichi foods</a>,<a href=https://www.target.com/c/breakfast-cereal-grocery/gluten-free/-/N-wo2mpZb8gba>cereals gluten free</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/wo2mp/WEB",
+  "activation_date": "2025-10-29T07:00Z"
+}

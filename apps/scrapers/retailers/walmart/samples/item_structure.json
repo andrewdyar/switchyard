@@ -1,0 +1,423 @@
+{
+  "__typename": "Product",
+  "buyBoxSuppression": false,
+  "similarItems": false,
+  "id": "6903T7MTF5B4",
+  "usItemId": "10452905",
+  "isBadSplit": false,
+  "fitmentLabel": null,
+  "name": "Kraft Singles American Slices, 24 ct Pack",
+  "checkStoreAvailabilityATC": false,
+  "seeShippingEligibility": false,
+  "brand": null,
+  "type": "REGULAR",
+  "shortDescription": null,
+  "averageWeight": null,
+  "weightIncrement": 1,
+  "topResult": null,
+  "additionalOfferCount": null,
+  "availabilityInNearbyStore": null,
+  "itemBeacon": null,
+  "catalogProductType": "Cheeses",
+  "collectibles": null,
+  "gradingTypeCode": null,
+  "conditionPriceRange": null,
+  "imageInfo": {
+    "id": "1EA9C330ED5846458EA906F6A2B114CF",
+    "name": "Kraft-Singles-American-Cheese-Slices-24-Ct-Pk_5aa07c37-6f09-4af9-97b8-a5b8b5c536d6.6a384c8b2f499f34caca4d045811b1a4.jpeg",
+    "thumbnailUrl": "https://i5.walmartimages.com/seo/Kraft-Singles-American-Cheese-Slices-24-Ct-Pk_5aa07c37-6f09-4af9-97b8-a5b8b5c536d6.6a384c8b2f499f34caca4d045811b1a4.jpeg?odnHeight=180&odnWidth=180&odnBg=FFFFFF",
+    "size": "104-104",
+    "allImages": []
+  },
+  "aspectInfo": {
+    "name": null,
+    "header": null,
+    "id": null,
+    "snippet": null
+  },
+  "plItem": {
+    "isPLItemToBoost": false,
+    "plItemTagString": ""
+  },
+  "canonicalUrl": "/ip/Kraft-Singles-American-Cheese-Slices-24-Ct-Pk/10452905?classType=REGULAR",
+  "conditionV2": {
+    "code": 1,
+    "groupCode": 1
+  },
+  "externalInfo": null,
+  "itemType": null,
+  "category": {
+    "categoryPathId": "0:976759:9569500:5667623:3185427",
+    "path": null
+  },
+  "returnPolicy": {
+    "returnable": null,
+    "freeReturns": null,
+    "returnWindow": {
+      "value": null,
+      "unitType": "Day"
+    },
+    "returnPolicyText": null
+  },
+  "badges": {
+    "flags": null,
+    "tags": [
+      {
+        "__typename": "BaseBadge",
+        "key": "SAVE_WITH_W_PLUS",
+        "text": "Save with",
+        "type": "ICON"
+      }
+    ],
+    "groups": [
+      {
+        "__typename": "UnifiedBadgeGroup",
+        "name": "fulfillment",
+        "members": [
+          {
+            "__typename": "BadgeGroupMember",
+            "id": "L1052",
+            "key": "FF_DELIVERY",
+            "memberType": "badge",
+            "otherInfo": null,
+            "rank": 1,
+            "textTemplate": null,
+            "textValues": null,
+            "slaText": "1 hour",
+            "slaDate": null,
+            "slaDateISO": null,
+            "sla": null,
+            "styleId": "FF_STYLE_THUNDERBOLT",
+            "text": "Delivery as soon as ",
+            "type": null,
+            "iconId": null,
+            "templates": null,
+            "badgeContent": null
+          },
+          {
+            "__typename": "BadgeGroupMember",
+            "id": "L1051",
+            "key": "FF_PICKUP",
+            "memberType": "badge",
+            "otherInfo": null,
+            "rank": 2,
+            "textTemplate": null,
+            "textValues": null,
+            "slaText": "1pm",
+            "slaDate": null,
+            "slaDateISO": null,
+            "sla": null,
+            "styleId": "FF_STYLE",
+            "text": "Pickup as soon as ",
+            "type": null,
+            "iconId": null,
+            "templates": null,
+            "badgeContent": null
+          }
+        ]
+      },
+      {
+        "__typename": "UnifiedBadgeGroup",
+        "name": "benefits",
+        "members": [
+          {
+            "__typename": "BadgeGroupMember",
+            "id": "L1033",
+            "key": "SNAP_ELIGIBLE",
+            "memberType": "badge",
+            "otherInfo": null,
+            "rank": 1,
+            "textTemplate": null,
+            "textValues": null,
+            "slaText": null,
+            "slaDate": null,
+            "slaDateISO": null,
+            "sla": null,
+            "styleId": "EBT_STYLE",
+            "text": "SNAP eligible",
+            "type": "ICON",
+            "iconId": null,
+            "templates": null,
+            "badgeContent": null
+          }
+        ]
+      },
+      {
+        "__typename": "UnifiedBadgeGroup",
+        "name": "subscription",
+        "members": [
+          {
+            "__typename": "BadgeGroupMember",
+            "id": "L1092",
+            "key": "SUBSCRIPTION_ELIGIBLE",
+            "memberType": "badge",
+            "otherInfo": null,
+            "rank": 1,
+            "textTemplate": null,
+            "textValues": null,
+            "slaText": null,
+            "slaDate": null,
+            "slaDateISO": null,
+            "sla": null,
+            "styleId": "VECTOR_WITH_NO_BG",
+            "text": "Subscribe",
+            "type": "ICON",
+            "iconId": null,
+            "templates": null,
+            "badgeContent": null
+          }
+        ]
+      }
+    ],
+    "groupsV2": []
+  },
+  "buyNowEligible": false,
+  "classType": "REGULAR",
+  "averageRating": 4.7,
+  "numberOfReviews": 13003,
+  "esrb": null,
+  "mediaRating": null,
+  "salesUnitType": "EACH",
+  "sellerId": "F55CDC31AB754BB68FE0B39041159D63",
+  "sellerName": "Walmart.com",
+  "sellerType": null,
+  "hasSellerBadge": null,
+  "isEarlyAccessItem": false,
+  "preEarlyAccessEvent": false,
+  "earlyAccessEvent": false,
+  "blitzItem": false,
+  "annualEvent": false,
+  "annualEventV2": false,
+  "availabilityStatusV2": {
+    "display": "In stock",
+    "value": "IN_STOCK"
+  },
+  "groupMetaData": {
+    "groupType": null,
+    "groupSubType": null,
+    "numberOfComponents": 0,
+    "groupComponents": null
+  },
+  "addOnServices": null,
+  "productLocation": [
+    {
+      "displayValue": "B3",
+      "aisle": {
+        "zone": "B",
+        "aisle": 3
+      }
+    }
+  ],
+  "fulfillmentSpeed": null,
+  "offerId": "F6BB599C0A9E48888C0C10E8DAE2D8C0",
+  "preOrder": {
+    "isPreOrder": false,
+    "preOrderMessage": null,
+    "preOrderStreetDateMessage": null,
+    "streetDate": null,
+    "streetDateDisplayable": null,
+    "streetDateType": null,
+    "releaseDate": null
+  },
+  "pac": null,
+  "fulfillmentSummary": [
+    {
+      "fulfillment": "DELIVERY",
+      "storeId": "5103",
+      "deliveryDate": null,
+      "fulfillmentMethods": [
+        "SCHEDULED"
+      ],
+      "fulfillmentBadge": null,
+      "outOfCountryEligible": null
+    },
+    {
+      "fulfillment": "PICKUP",
+      "storeId": "5103",
+      "deliveryDate": "2025-11-29T18:00:00.000Z",
+      "fulfillmentMethods": [
+        "SCHEDULED"
+      ],
+      "fulfillmentBadge": null,
+      "outOfCountryEligible": null
+    }
+  ],
+  "priceInfo": {
+    "itemPrice": "$4.86",
+    "linePrice": "$2.97",
+    "linePriceDisplay": "Now $2.97",
+    "savings": "SAVE $1.89",
+    "savingsAmt": 1.89,
+    "wasPrice": "$4.86",
+    "wasPriceSupportText": "",
+    "unitPrice": "18.6 \u00a2/oz",
+    "shipPrice": "",
+    "minPrice": 0,
+    "minPriceForVariant": "",
+    "priceRangeString": "",
+    "subscriptionPrice": "",
+    "subscriptionString": "",
+    "subscriptionDiscountPrice": "",
+    "priceDisplayCondition": "",
+    "finalCostByWeight": false,
+    "submapType": "",
+    "eaPricingText": "",
+    "eaPricingPreText": "",
+    "memberPriceString": "",
+    "subscriptionDualPrice": null,
+    "subscriptionPercentage": null,
+    "isB2BPrice": false,
+    "dutyFee": null,
+    "priceDisplayType": "UNKNOWN"
+  },
+  "variantCriteria": [],
+  "snapEligible": true,
+  "fulfillmentTitle": "title_store_not_available",
+  "fulfillmentType": "STORE",
+  "manufacturerName": null,
+  "showAtc": true,
+  "sponsoredProduct": {
+    "spQs": "Iz0BBLSxxU7LgGpFH5PN7WKKxqKBk1SJ2olCe04dBu3uq7eMy3qwUJdtd3zXyNtKHgobGyZ2ueZPkt0sfTbzlQ42j0JkykN8AY8jRjNrbUDXhFMbThPDmxRdoK-skMVodXvXW8clTpo4vjmstfu10M3mJ-IkPq3QuvzFA4-ouPNSgHhFWiuMaRjoeTW1XwiHgGroYMHn7YyfTVu-34PCiMhnFAkoTM4V8kMcmtUbW_YVhNYW8YRRxPJuy0yrijQxXYYCjM656y_inA2jBouMCjpYWCu3O7wF62cHVmX9zos",
+    "clickBeacon": "https://www.walmart.com/sp/track?adUid=21b42370-ce87-4855-bd23-f427dad8a478-0-0&pgId=cheese&spQs=Iz0BBLSxxU7LgGpFH5PN7WKKxqKBk1SJ2olCe04dBu3uq7eMy3qwUJdtd3zXyNtKHgobGyZ2ueZPkt0sfTbzlQ42j0JkykN8AY8jRjNrbUDXhFMbThPDmxRdoK-skMVodXvXW8clTpo4vjmstfu10M3mJ-IkPq3QuvzFA4-ouPNSgHhFWiuMaRjoeTW1XwiHgGroYMHn7YyfTVu-34PCiMhnFAkoTM4V8kMcmtUbW_YVhNYW8YRRxPJuy0yrijQxXYYCjM656y_inA2jBouMCjpYWCu3O7wF62cHVmX9zos&storeId=5103&pt=search&mloc=sp-search-middle&bkt=ace1_default%7Cace2_default%7Cace3_default%7Ccoldstart_on%7Csearch_default&pltfm=desktop&rdf=0&plmt=__plmt__&eventST=__eventST__&pos=__pos__&bt=__bt__&tn=WMT&wtn=elh9ie&tax=976759_9176907_1001468_4800400&spqc=qenv&et=head_torso&st=head",
+    "spTags": null,
+    "viewBeacon": null
+  },
+  "showOptions": false,
+  "showBuyNow": false,
+  "quickShop": null,
+  "quickShopCTALabel": null,
+  "rewards": null,
+  "promoData": [],
+  "promoDiscount": null,
+  "arExperiences": {
+    "isARHome": false,
+    "isZeekit": false,
+    "isAROptical": false
+  },
+  "eventAttributes": {
+    "priceFlip": false,
+    "specialBuy": false
+  },
+  "subscription": {
+    "__typename": "SubscriptionData",
+    "subscriptionEligible": true,
+    "showSubscriptionCTA": true,
+    "subscriptionTransactable": true
+  },
+  "hasCarePlans": false,
+  "petRx": {
+    "eligible": false,
+    "singleDispense": null
+  },
+  "vision": {
+    "ageGroup": null,
+    "visionCenterApproved": false
+  },
+  "showExploreOtherConditionsCTA": false,
+  "isPreowned": false,
+  "pglsCondition": null,
+  "newConditionProductId": null,
+  "preownedCondition": null,
+  "keyAttributes": [],
+  "mhmdFlag": false,
+  "seeSimilar": false,
+  "availabilityStatusDisplayValue": "In stock",
+  "carrierDownpaymentPrice": "",
+  "productLocationDisplayValue": "B3",
+  "externalInfoUrl": "",
+  "canAddToCart": true,
+  "description": "",
+  "flag": "",
+  "badge": {
+    "text": "",
+    "id": "",
+    "type": "",
+    "key": "",
+    "bundleId": ""
+  },
+  "badgeGroups": [
+    {
+      "__typename": "BadgeGroupMember",
+      "id": "L1033",
+      "key": "SNAP_ELIGIBLE",
+      "memberType": "badge",
+      "otherInfo": null,
+      "rank": 1,
+      "textTemplate": null,
+      "textValues": null,
+      "slaText": null,
+      "slaDate": null,
+      "slaDateISO": null,
+      "sla": null,
+      "styleId": "EBT_STYLE",
+      "text": "SNAP eligible",
+      "type": "ICON",
+      "iconId": null,
+      "templates": null,
+      "badgeContent": null
+    }
+  ],
+  "groupsV2": [],
+  "swipeableImages": [],
+  "socialProofBadges": null,
+  "fulfillmentBadges": [],
+  "preOrderBadge": null,
+  "fulfillmentBadgeGroups": [
+    {
+      "text": "Delivery as soon as ",
+      "slaText": "1 hour",
+      "isSlaTextBold": true,
+      "key": "FF_DELIVERY",
+      "templates": null,
+      "textTemplate": null,
+      "textValues": null,
+      "sla": null,
+      "className": "w-fit items-center br1 ph1 bg-blue-130 white ff-thunderbolt",
+      "imageProps": {
+        "alt": "",
+        "src": "//i5.walmartimages.com/dfw/63fd9f59-a53c/14c2b8c6-d48a-4302-924f-7817f0c0737c/v1/thunderbolt.svg",
+        "preload": false,
+        "height": 10,
+        "width": 8
+      }
+    },
+    {
+      "text": "Pickup as soon as ",
+      "slaText": "1pm",
+      "isSlaTextBold": true,
+      "key": "FF_PICKUP",
+      "templates": null,
+      "textTemplate": null,
+      "textValues": null,
+      "sla": null,
+      "className": "dark-gray"
+    }
+  ],
+  "fulfillmentIcon": {
+    "key": "SAVE_WITH_W_PLUS",
+    "label": "Save with"
+  },
+  "specialBuy": false,
+  "priceFlip": false,
+  "image": "https://i5.walmartimages.com/seo/Kraft-Singles-American-Cheese-Slices-24-Ct-Pk_5aa07c37-6f09-4af9-97b8-a5b8b5c536d6.6a384c8b2f499f34caca4d045811b1a4.jpeg?odnHeight=180&odnWidth=180&odnBg=FFFFFF",
+  "imageSize": "",
+  "imageID": "1EA9C330ED5846458EA906F6A2B114CF",
+  "imageName": "Kraft-Singles-American-Cheese-Slices-24-Ct-Pk_5aa07c37-6f09-4af9-97b8-a5b8b5c536d6.6a384c8b2f499f34caca4d045811b1a4.jpeg",
+  "isOutOfStock": false,
+  "price": 2.97,
+  "rating": {
+    "averageRating": 4.7,
+    "numberOfReviews": 13003
+  },
+  "salesUnit": "EACH",
+  "variantList": [],
+  "isVariantTypeSwatch": false,
+  "shouldLazyLoad": false,
+  "isSponsoredFlag": true,
+  "moqText": null,
+  "isLeftSideGridItem": true,
+  "productAttributes": {},
+  "productIndex": 0,
+  "itemStackPosition": 1,
+  "modularStackKey": "21b42370-ce87-4855-bd23-f427dad8a478-0-0"
+}

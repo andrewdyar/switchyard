@@ -1,0 +1,405 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Beer",
+    "type": "Category",
+    "node_id": "5xsxx",
+    "linking_id": "5xsxx",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/beer-wine-liquor-grocery/-/N-5xsxx",
+      "seo_h1": "Beer",
+      "seo_title": "Beer : Target",
+      "seo_description": "Contactless options including Same Day Delivery and Drive Up are available with Target. Shop today to find Beer at incredible prices.",
+      "page_id": "/c/5xsxx",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Beer, Wine, Beer & Liquor, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/9Wk5_Grocery_Liquor_BubcatBeer-QUIVER-190913-1568406290563"
+    },
+    "og": {
+      "title": "Beer : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/9Wk5_Grocery_Liquor_BubcatBeer-QUIVER-190913-1568406290563",
+      "url": "/c/beer-wine-liquor-grocery/-/N-5xsxx",
+      "description": "Contactless options including Same Day Delivery and Drive Up are available with Target. Shop today to find Beer at incredible prices."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5n5q6",
+        "name": "Wine, Beer & Liquor",
+        "type": "Category",
+        "linking_id": "5n5q6",
+        "number_of_children": "11",
+        "canonical_url": "/c/wine-beer-liquor-beverages/-/N-5n5q6",
+        "seo_h1": "Wine, Beer & Liquor",
+        "page_id": "/c/5n5q6",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "d7mti",
+        "name": "All Beer",
+        "type": "Tag",
+        "linking_id": "d7mti",
+        "number_of_children": "0",
+        "canonical_url": "/c/all-beer/-/N-d7mti",
+        "seo_h1": "All Beer",
+        "page_id": "/c/d7mti",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_2Bubcat_AllBeer-211217-1639760835409"
+      },
+      {
+        "node_id": "jsxeu",
+        "name": "Domestic Beer",
+        "type": "Category",
+        "linking_id": "jsxeu",
+        "number_of_children": "0",
+        "canonical_url": "/c/domestic-beer-wine-liquor-grocery/-/N-jsxeu",
+        "seo_h1": "Domestic Beer",
+        "page_id": "/c/jsxeu",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_90c1cb35-6fe2-4f14-80e2-d5d3ad9255d1"
+      },
+      {
+        "node_id": "o3thc",
+        "name": "Craft Beer",
+        "type": "Category",
+        "linking_id": "o3thc",
+        "number_of_children": "0",
+        "canonical_url": "/c/craft-beer-wine-liquor-grocery/-/N-o3thc",
+        "seo_h1": "Craft Beer",
+        "page_id": "/c/o3thc",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_fbb59266-2be1-4e0d-950c-7b401a03ffee"
+      },
+      {
+        "node_id": "00g2y",
+        "name": "Import Beer",
+        "type": "Category",
+        "linking_id": "00g2y",
+        "number_of_children": "0",
+        "canonical_url": "/c/import-beer-wine-liquor-grocery/-/N-00g2y",
+        "seo_h1": "Import Beer",
+        "page_id": "/c/00g2y",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0b1b7063-963a-48f8-9ecf-e8837ed09699"
+      },
+      {
+        "node_id": "wk3n7",
+        "name": "Hard Cider",
+        "type": "Category",
+        "linking_id": "wk3n7",
+        "number_of_children": "0",
+        "canonical_url": "/c/hard-cider-beer-wine-liquor-grocery/-/N-wk3n7",
+        "seo_h1": "Hard Cider",
+        "page_id": "/c/wk3n7",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_9f55dfbf-cb18-469e-a11b-e57f3f4a8818"
+      },
+      {
+        "node_id": "kdiu2",
+        "name": "Non-Alcoholic Beer",
+        "type": "Category",
+        "linking_id": "kdiu2",
+        "number_of_children": "0",
+        "canonical_url": "/c/non-alcoholic-beer-wine-liquor-grocery/-/N-kdiu2",
+        "seo_h1": "Non-Alcoholic Beer",
+        "page_id": "/c/kdiu2",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_3901616f-2a77-42cd-8cd1-7b2473eae9e2"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "600": {
+      "order": 600,
+      "content": {
+        "headline": "Shop by type",
+        "metadata": {
+          "component_type": "Browse - Manual",
+          "component_version": "04"
+        },
+        "scene7_params": "wid=315&hei=315&qlt=60&fmt=pjpeg",
+        "shape": "circle",
+        "taxonomy_nodes": [
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/beer-wine-liquor-grocery/light-beer/-/N-5xsxxZcqxd8uu0dei",
+            "link_tag": "C_Beer_light-beer_WEB-352757_0",
+            "link_name": "Light Beer",
+            "image_path": "https://target.scene7.com/is/image/Target/6wk1_Beer_Carousel_Budlight-200514-1589469466295"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/beer-wine-liquor-grocery/lagers/-/N-5xsxxZcqxd8u9y0zw",
+            "link_tag": "C_Beer_lagers_WEB-352757_1",
+            "link_name": "Lager Beer",
+            "image_path": "https://target.scene7.com/is/image/Target/6wk1_Beer_Carousel_Stella-200512-1589314999150"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/beer-wine-liquor-grocery/-/N-5xsxxZcqxd8uq289pZcqxd8ub5pr8?type=products",
+            "link_tag": "C_Beer_india-pale-ales-(ipa)_double-ipas_WEB-352757_2",
+            "link_name": "IPA Beer",
+            "image_path": "https://target.scene7.com/is/image/Target/CATNAV_Hazy-210225-1614269624109"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/beer-wine-liquor-grocery/-/N-5xsxxZcqxd8ufla4oZcqxd8uek1bmZcqxd8u1vdsgZcqxd8ugpwg6?type=products",
+            "link_tag": "C_Beer_stout_oatmeal-stouts_milk-stouts_imperial-stouts_WEB-352757_3",
+            "link_name": "Stout Beer",
+            "image_path": "https://target.scene7.com/is/image/Target/6wk1_Beer_Carousel_Stout-200514-1589469475326"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/all-beer/-/N-d7mti",
+            "link_tag": "C_AllBeer_WEB-352757_4",
+            "link_name": "Shop All",
+            "image_path": "https://target.scene7.com/is/image/Target/2wk1_Beer_AllBeer-220114-1642178852540"
+          }
+        ],
+        "text_only": false
+      },
+      "presentation": "/adaptive/c_web_a_0003/v04/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "2wk1_Beer_Type_CatNav",
+            "id": "WEB-352757",
+            "type": "c_web_a_0003_v04",
+            "type_name": "Browse Manual",
+            "content_type": "static",
+            "placement_id": "6616bcb51b0140138bbc1fe1"
+          }
+        ]
+      }
+    },
+    "800": {
+      "order": 800,
+      "content": {
+        "background_color": "#eeeeee",
+        "container": {
+          "keyValuePairs": {
+            "context": "placementId,web_primary_basket_pbo_offers_foryou;categoryId,5n5q6,4uez3"
+          },
+          "type": "personalizedPromotions"
+        },
+        "id": "WEB-366679",
+        "margin_bottom": "standard",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "text_color": "dark",
+        "trackingId": "WEB-366679"
+      },
+      "presentation": "universal_prz_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "OFFER PRZ",
+            "id": "WEB-366679",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static",
+            "placement_id": "6616bca48febb862577355f4"
+          }
+        ]
+      }
+    },
+    "1100": {
+      "order": 1100,
+      "content": {
+        "background_color": "#f7f7f7",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_bia_sameday_drive_up_trending;categoryId,5xsxx"
+          },
+          "type": "personalizedProducts"
+        },
+        "id": "WEB-398562",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "text_color": "dark",
+        "trackingId": "WEB-398562"
+      },
+      "presentation": "universal_prz_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "2024_April WK 1_F&B_Beer",
+            "id": "WEB-398562",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static",
+            "placement_id": "6616bcdaff87b209ae20ae4d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/c/beer-wine-liquor-grocery/pacifico/-/N-5xsxxZ5603q>pacifico beer</a>,<a href=https://www.target.com/p/michelob-ultra-superior-light-beer-12pk-12-fl-oz-cans/-/A-13392441?sid=79S&amp;afid=google&amp;TCID=OGS&amp;CPNG=AdultBev&amp;adgroup=213-3&amp;gStoreCode=79S&amp;gQT=1>low calorie beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/coppertail-brewing-co-/-/N-5xsxxZw136k>coppertail brewing</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/pryes-brewing-co-/-/N-5xsxxZq643leli5xa>pryes brewing</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/light/-/N-5xsxxZ33z8sj2r6bz>light beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/karbach-brewing-co-/-/N-5xsxxZ6foq9>karbach</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/firestone-walker-brewing-company/-/N-5xsxxZ120jq>firestone walker</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/cigar-city-brewing/-/N-5xsxxZ572zn>cigar city</a>,<a href=https://www.target.com/b/budweiser/-/N-569t2>budweiser</a>,<a href=https://www.target.com/b/roughtail-brewing-co/-/N-q643leifq4u>roughtail brewing</a>,<a href=https://www.target.com/p/old-milwaukee-beer-30pk-12-fl-oz-cans/-/A-47136183?gQT=1>old milwaukee beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/fiddlehead-brewing-company/-/N-5xsxxZq643le3540b>fiddlehead brewery</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/triple-c-brewing-co-/-/N-5xsxxZkc0sd>triple c brewing</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/offshoot-beer-co-/-/N-5xsxxZq643lelh93h>offshoot beer</a>,<a href=https://www.target.com/p/labatt-blue-canadian-pilsener-beer-12pk-12-fl-oz-bottles/-/A-14983856?TCID=SMO>blue beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/steeplejack-brewing-co-/-/N-5xsxxZq643le5474j>steeplejack brewing</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/maui-brewing-co-/-/N-5xsxxZrqfca>maui brewing company</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/braxton-brewing-co/-/N-5xsxxZq643le6wdb3>braxton brewery</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/boulevard-brewing-co-/-/N-5xsxxZ91kfu>boulevard brewing</a>,<a href=https://www.target.com/p/blue-point-toasted-lager-beer-6pk-12-fl-oz-cans/-/A-47136803>blue point beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/fat-head-s-brewery/-/N-5xsxxZ1v3fu>fat heads brewery</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/scofflaw-brewing-co-/-/N-5xsxxZq643le5ew3i>scofflaw brewery</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/wicked-weed-brewing/-/N-5xsxxZrye3j>snake venom beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/10-barrel-brewing-co-/-/N-5xsxxZ8c8ce>10 barrel brewing co</a>,<a href=https://www.target.com/b/natural-light/-/N-55g0r>natural light beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/heineken/-/N-5xsxxZ56d9t>buy heineken beer</a>,<a href=https://www.target.com/c/craft-beer-wine-liquor-grocery/catawba-brewing-co-/-/N-o3thcZqo24x>catawba brewing</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/miller-lite/-/N-5xsxxZ3ehcw>miller lite sale</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/trumer-pils/-/N-5xsxxZado56>trumers</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/hop-valley-brewing-co-/-/N-5xsxxZrvdw2>hop valley brewing</a>,<a href=https://www.target.com/b/denali-brewing-co/-/N-qoufx>denali brewing</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/blake-s-hard-cider-co/-/N-5xsxxZ7h55a>blakes beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/ace/-/N-5xsxxZn3ft9>ace beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/lost-forty-brewing/-/N-5xsxxZq643leosmaz>lost forty</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/castle-danger-brewery/-/N-5xsxxZg82lr>castle danger brewing</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/sierra-nevada/-/N-5xsxxZ56d4g>sierra nevada beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/landshark-lager/-/N-5xsxxZ6qj0l>landshark</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/uinta/-/N-5xsxxZmp2ij>uinta beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/platform-beer-co-/-/N-5xsxxZe4sqh>platform beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/non-gmo/-/N-5xsxxZsjhan>non gmo beer list</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/3-floyds-brewing-co-/-/N-5xsxxZx1bvc>3 floyds</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426053",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "68557768cec2905432ccc823"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/5xsxx/WEB"
+}

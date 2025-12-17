@@ -1,0 +1,1063 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5xt0r",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_5dcc0f7a-4e45-43ef-baef-cea1571b9e65",
+      "seo_keywords": "Beverages, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Target has the Beverages you're looking for at incredible prices. Choose from contactless Same Day Delivery, Drive Up and more.",
+      "seo_title": "Beverages : Target",
+      "seo_h1": "Beverages",
+      "canonical_url": "/c/beverages-grocery/-/N-5xt0r"
+    },
+    "node_id": "5xt0r",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "4uez2",
+        "name": "Energy Drinks",
+        "type": "Category",
+        "linking_id": "4uez2",
+        "number_of_children": "0",
+        "canonical_url": "/c/energy-drinks-beverages-grocery/-/N-4uez2",
+        "seo_h1": "Energy Drinks",
+        "page_id": "/c/4uez2",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_1745e473-6c24-42f1-b664-87cae53945cd"
+      },
+      {
+        "node_id": "5xt0o",
+        "name": "Juice & Cider",
+        "type": "Category",
+        "linking_id": "5xt0o",
+        "number_of_children": "0",
+        "canonical_url": "/c/juice-cider-beverages-grocery/-/N-5xt0o",
+        "seo_h1": "Juice & Cider",
+        "page_id": "/c/5xt0o",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_BUBCAT_May26BubCat_OrangeJuice-200526-1590504960290"
+      },
+      {
+        "node_id": "5xt0m",
+        "name": "Soda & Pop",
+        "type": "Category",
+        "linking_id": "5xt0m",
+        "number_of_children": "0",
+        "canonical_url": "/c/soda-pop-beverages-food-beverage/-/N-5xt0m",
+        "seo_h1": "Soda & Pop",
+        "page_id": "/c/5xt0m",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_a2f1c208-9fb0-47fc-ba65-6fb7cb77a2ab"
+      },
+      {
+        "node_id": "o9yq2",
+        "name": "Soda Alternatives",
+        "type": "Tag",
+        "linking_id": "o9yq2",
+        "number_of_children": "0",
+        "canonical_url": "/c/soda-alternatives/-/N-o9yq2",
+        "seo_h1": "Soda Alternatives",
+        "page_id": "/c/o9yq2",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_ab2c3d01-5986-4ee8-b542-946ccf856a0e"
+      },
+      {
+        "node_id": "75dvf",
+        "name": "Sports Drinks",
+        "type": "Category",
+        "linking_id": "75dvf",
+        "number_of_children": "0",
+        "canonical_url": "/c/sports-drinks-beverages-grocery/-/N-75dvf",
+        "seo_h1": "Sports Drinks",
+        "page_id": "/c/75dvf",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_aa3cc31a-01f1-4eb2-aa3f-982dbd316ee0"
+      },
+      {
+        "node_id": "5xt0k",
+        "name": "Water",
+        "type": "Category",
+        "linking_id": "5xt0k",
+        "number_of_children": "0",
+        "canonical_url": "/c/water-beverages-grocery/-/N-5xt0k",
+        "seo_h1": "Water",
+        "page_id": "/c/5xt0k",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_ab860b98-fe43-49d3-9e0d-cec262bfdaf6"
+      },
+      {
+        "node_id": "5j6q6",
+        "name": "Kids’ Multi-Pack Drinks",
+        "type": "Tag",
+        "linking_id": "5j6q6",
+        "number_of_children": "0",
+        "canonical_url": "/c/kids-multi-pack-drinks/-/N-5j6q6",
+        "seo_h1": "Kids’ Multi-Pack Drinks",
+        "page_id": "/c/5j6q6",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_48a3f89a-928a-4719-9f54-0081ab3d6b77"
+      },
+      {
+        "node_id": "5xszh",
+        "name": "Milk",
+        "type": "Category",
+        "linking_id": "5xszh",
+        "number_of_children": "0",
+        "canonical_url": "/c/milk-dairy-grocery/-/N-5xszh",
+        "seo_h1": "Milk",
+        "page_id": "/c/5xszh",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_DairyL2_BubCat_Milk-QUIVER-190913-1568390987147"
+      },
+      {
+        "node_id": "zkvwk",
+        "name": "Milk Substitutes",
+        "type": "Category",
+        "linking_id": "zkvwk",
+        "number_of_children": "0",
+        "canonical_url": "/c/milk-substitutes-dairy-grocery/-/N-zkvwk",
+        "seo_h1": "Milk Substitutes",
+        "page_id": "/c/zkvwk",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c8f29c8c-aa90-4c2c-b747-1e676c7ce2d1"
+      },
+      {
+        "node_id": "4uez3",
+        "name": "Cocktail Mixers",
+        "type": "Category",
+        "linking_id": "4uez3",
+        "number_of_children": "0",
+        "canonical_url": "/c/cocktail-mixers-beverages-grocery/-/N-4uez3",
+        "seo_h1": "Cocktail Mixers",
+        "page_id": "/c/4uez3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_8931475f-947b-40f6-a284-e857d19963ba"
+      },
+      {
+        "node_id": "4rsq3",
+        "name": "Protein Powders",
+        "type": "Category",
+        "linking_id": "4rsq3",
+        "number_of_children": "0",
+        "canonical_url": "/c/protein-powders-nutrition-health/-/N-4rsq3",
+        "seo_h1": "Protein Powders",
+        "page_id": "/c/4rsq3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_7d1a0c77-f5d3-438d-9514-e01fee89f1da"
+      },
+      {
+        "node_id": "4yi5o",
+        "name": "Tea",
+        "type": "Category",
+        "linking_id": "4yi5o",
+        "number_of_children": "0",
+        "canonical_url": "/c/tea-beverages-grocery/-/N-4yi5o",
+        "seo_h1": "Tea",
+        "page_id": "/c/4yi5o",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_Beverages_BubCat_Tea-QUIVER-190913-1568392639525"
+      },
+      {
+        "node_id": "5n5q6",
+        "name": "Wine, Beer & Liquor",
+        "type": "Category",
+        "linking_id": "5n5q6",
+        "number_of_children": "11",
+        "canonical_url": "/c/wine-beer-liquor-beverages/-/N-5n5q6",
+        "seo_h1": "Wine, Beer & Liquor",
+        "page_id": "/c/5n5q6",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c5622526-ef05-4696-9d33-1a871405fc59"
+      },
+      {
+        "node_id": "4yi5p",
+        "name": "Coffee",
+        "type": "Category",
+        "linking_id": "4yi5p",
+        "number_of_children": "11",
+        "canonical_url": "/c/coffee-beverages-grocery/-/N-4yi5p",
+        "seo_h1": "Coffee",
+        "page_id": "/c/4yi5p",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_3fabb154-5b51-4b47-b854-c186bca66797"
+      },
+      {
+        "node_id": "4yi5n",
+        "name": "Cocoa",
+        "type": "Category",
+        "linking_id": "4yi5n",
+        "number_of_children": "0",
+        "canonical_url": "/c/cocoa-beverages-grocery/-/N-4yi5n",
+        "seo_h1": "Cocoa",
+        "page_id": "/c/4yi5n",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_Beverages_BubCat_cocoa-QUIVER-190913-1568392320360"
+      },
+      {
+        "node_id": "5xt0n",
+        "name": "Drink Mixes",
+        "type": "Category",
+        "linking_id": "5xt0n",
+        "number_of_children": "0",
+        "canonical_url": "/c/drink-mixes-beverages-grocery/-/N-5xt0n",
+        "seo_h1": "Drink Mixes",
+        "page_id": "/c/5xt0n",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_74ba933e-4f89-4db0-bed0-7a2ebd6c5eee"
+      },
+      {
+        "node_id": "4uez0",
+        "name": "Meal Replacement Drinks",
+        "type": "Category",
+        "linking_id": "4uez0",
+        "number_of_children": "0",
+        "canonical_url": "/c/protein-shakes-meal-replacement-drinks/-/N-4uez0",
+        "seo_h1": "Meal Replacement Drinks",
+        "page_id": "/c/4uez0",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_cc2aada4-cc9d-49ef-9a5d-c2f5fb7c93e8"
+      },
+      {
+        "node_id": "m1flv",
+        "name": "Protein Drinks",
+        "type": "Tag",
+        "linking_id": "m1flv",
+        "number_of_children": "0",
+        "canonical_url": "/c/protein-drinks/-/N-m1flv",
+        "seo_h1": "Protein Drinks",
+        "page_id": "/c/m1flv",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0467be9c-b39a-4105-bbd1-df32a2b94788"
+      }
+    ],
+    "og": {
+      "title": "Beverages : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_5dcc0f7a-4e45-43ef-baef-cea1571b9e65",
+      "url": "/c/beverages-grocery/-/N-5xt0r",
+      "description": "Target has the Beverages you're looking for at incredible prices. Choose from contactless Same Day Delivery, Drive Up and more."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5xt0r",
+    "title": "Beverages",
+    "activation_date": "2025-10-07T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "800": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_NovWK4_F&B_BOGO 50% Favorite Day Whips & Cold Foams with Target Circle",
+            "id": "STORY-41500",
+            "placement_id": "68e515c030cc977cddbdc9a3",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xt0r",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          },
+          {
+            "title": "2025_NovWK4_F&B_30% off Coffee & Tea Advent Calendars",
+            "id": "STORY-42197",
+            "placement_id": "68e515c030cc977cddbdc9a4",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xt0r",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          },
+          {
+            "title": "2025_NovWK4_F&B_Buy 3 Save 25% off Soda 12pk with Target Circle",
+            "id": "STORY-41491",
+            "placement_id": "68e515c030cc977cddbdc9a5",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xt0r",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_170700ce-7895-4385-8991-4027308f083c",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                "BOGO"
+              ],
+              "line_two": [
+                "50"
+              ],
+              "lockup": "percent-off-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop whipped toppings & cold foams"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "BOGO 50"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "percent-off"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_5c061676-6358-4a40-ae71-ae834b73ea4b",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_971a38a4-24d1-492b-98ff-6fb909573c80",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_374c37ec-951f-4797-9dcc-9e97ad07d5e5",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_a98c2d0a-8929-4101-9d15-2cf9f809f171",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_727700595_STORY-41500",
+              "detail": {
+                "id": "727700595"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "Favorite Day™ whipped toppings & cold foams with "
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                },
+                {
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "bullseye-circle"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 42
+          },
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_39d6048d-2228-4516-8277-2d3394e11603",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                ""
+              ],
+              "line_two": [
+                "30"
+              ],
+              "lockup": "percent-off-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Get the deal"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "30"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "percent-off"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_128aa8d7-6aa1-4847-8760-25f3d9af9e4a",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_cc4114a3-f31b-49f1-b5d7-473c64b4490a",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_e0ad5ecc-c635-45d4-ad15-db5ea7548ce9",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_53995c83-6bb9-42fe-96d2-07354956a682",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_205062752_STORY-42197",
+              "detail": {
+                "id": "205062752"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "coffee & tea Advent calendars*\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 100
+          },
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_43ed7c62-792b-4236-97b1-b4ec6a4c44dd",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                ""
+              ],
+              "line_two": [
+                "25"
+              ],
+              "lockup": "percent-off-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop soda"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "25"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "percent-off"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_2c141bc1-bfcc-492c-bd64-eec36899c5d5",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_02a3ad72-52aa-425a-b1d3-62c19261a863",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_783dc16d-b098-458c-9e4e-20acd448f250",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_b22e4562-1d25-4d5b-8088-45ff131a0c50",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_211349398_STORY-41491",
+              "detail": {
+                "id": "211349398"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "when you buy 3 12-pk. sodas with "
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                },
+                {
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "bullseye-circle"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 28
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-carousel",
+      "component_type": "story_v01",
+      "styles": {
+        "position": "standalone"
+      },
+      "order": 800
+    },
+    "1100": {
+      "metadata": {
+        "components": [
+          {
+            "title": "July wk 1_Beverages New & Featured_Standard Nav",
+            "id": "WEB-423561",
+            "placement_id": "68e538de30cc977cddbdca35",
+            "type": "c_web_a_0003_v04",
+            "type_name": "Browse Manual",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "text_only": false,
+        "taxonomy_nodes": [
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/new-in-beverages/-/N-vuos?type=products",
+            "link_tag": "C_NewinBeverages_WEB-423561_0",
+            "link_name": "New Arrivals",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_654c63e2-c8fc-49a8-ac0d-45fb6a02993a"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "https://www.target.com/c/beverages-grocery/-/N-5xt0r?marketing_group_id=vq2xi&type=products",
+            "link_name": "Winter Flavors",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_244a12c2-404e-414b-9cc8-9ca9dbeb26ef"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/beverage-mini-s/-/N-v6qw7ZocjfuZwz97vZk4mycZfr5glZwhsicZl1o58",
+            "link_tag": "C_BeverageMini’s_energy-drinks_juice-drinks_sodas_sparkling-juices_sparkling-waters_spring-waters_WEB-423561_2",
+            "link_name": "Beverage Minis",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_5cb0ba7d-28a6-41d2-85b8-5de31790df13"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "https://www.target.com/c/beverages-grocery/-/N-5xt0r?marketing_group_id=s0c8u&type=products",
+            "link_name": "Clear Protein Drinks",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_0467be9c-b39a-4105-bbd1-df32a2b94788"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/gourmet-beverage-gifts/-/N-y5m29?type=products",
+            "link_tag": "C_GourmetBeverageGifts_WEB-423561_4",
+            "link_name": "Beverage Gifts",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_bf487f72-d151-462d-9aa9-86ca8197038d"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "https://www.target.com/c/grocery/-/N-5xt1a?marketing_group_id=chwov&type=products",
+            "link_name": "Hot Chocolate",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_679d9580-22e1-478a-b6b9-091c18dfeaf7"
+          }
+        ],
+        "shape": "circle",
+        "scene7_params": "wid=315&hei=315&qlt=60&fmt=pjpeg",
+        "metadata": {
+          "component_type": "Browse - Manual",
+          "component_version": "04"
+        },
+        "headline": "New & featured"
+      },
+      "presentation": "/adaptive/c_web_a_0003/v04/mobile",
+      "order": 1100
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_10Wk1_Health_Newness_UltimaReplenisher_CP",
+            "id": "STORY-40286",
+            "placement_id": "68e5165d30cc977cddbdc9a6",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xt0r",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "accessibility_text": "New",
+        "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_8ae7086c-42d5-46cb-bdea-a852c848c2ee",
+        "background_color": "#F7F5F2",
+        "background_color_behavior": "simplified",
+        "call_to_action_button_style": {
+          "background_color": "#cc0000",
+          "text_color": "#ffffff",
+          "button_type": "filled",
+          "button_copy": "Shop the collection"
+        },
+        "headline": {
+          "content": [
+            {
+              "insert": {
+                "text": "Just in: Ultima Replenisher\n"
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            }
+          ]
+        },
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_41bf0b67-35c2-4d62-b07a-0f0f21073366",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_8ca84a35-ae12-42a9-9bc5-3b4c4dd4b637",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_56bfa9fe-93b3-4154-aecd-438acbb4aaf4",
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_e7551d07-a414-4d25-b9b6-0f962636b30d",
+        "link": {
+          "target": "MULTI_TCIN",
+          "link_tag": "C_MultiTcin_shoppable_drawer_STORY-40286",
+          "detail": {
+            "id": "shoppable_drawer",
+            "multi_tcins": [
+              "94726340",
+              "94726342",
+              "94726341",
+              "94726338",
+              "94726339"
+            ]
+          }
+        },
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "subhead": {
+          "content": [
+            {
+              "insert": {
+                "text": "Recharge with sugar-free electrolytes in fun flavors "
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            },
+            {
+              "attributes": {
+                "bold": true,
+                "color": "#333333"
+              },
+              "insert": {
+                "text": "at $14.99."
+              }
+            },
+            {
+              "insert": {
+                "text": "\n"
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            }
+          ]
+        },
+        "text_position": "middleleft",
+        "type_stack": "medium",
+        "width": 23
+      },
+      "presentation": "standard",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1300
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_F&B_Hot Cocoa_Standard CP",
+            "id": "STORY-41006",
+            "placement_id": "68e5166fbf99777e75a400ff",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xt0r",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "amplified_headline": {
+              "color": "#333333",
+              "line_four": [
+                "2"
+              ],
+              "line_one": [
+                "All things"
+              ],
+              "line_three": [
+                "from"
+              ],
+              "line_two": [
+                "hot cocoa"
+              ],
+              "lockup": "value-price-emphasis-versioned",
+              "lockup_disposition": "double-line",
+              "version": "v2"
+            },
+            "background_color": "#F6F5F1",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop hot cocoa supplies"
+            },
+            "extensions": {
+              "shoppable_carousel": {
+                "context": {
+                  "call_to_action": "add_to_cart",
+                  "prz": {
+                    "config": "placementId,slingshot_manual_tcins"
+                  },
+                  "type": "personalizedProducts"
+                },
+                "tcins": [
+                  "94582696",
+                  "94355200",
+                  "88277312",
+                  "94355201",
+                  "94355198",
+                  "94340471",
+                  "284-05-0283",
+                  "284-05-0094",
+                  "284-05-0282",
+                  "055-03-1024",
+                  "055-03-1261",
+                  "055-03-1254",
+                  "055-03-1253",
+                  "055-03-1250",
+                  "055-03-1423",
+                  "055-03-1259",
+                  "055-03-1252",
+                  "055-03-1425",
+                  "055-03-1422",
+                  "055-03-1251",
+                  "055-03-1331",
+                  "055-03-1319",
+                  "055-03-0188",
+                  "055-03-1367",
+                  "055-03-1373",
+                  "055-03-1381",
+                  "055-03-1375",
+                  "055-03-1376",
+                  "055-03-0168",
+                  "055-03-1372",
+                  "055-03-0013",
+                  "055-03-0017",
+                  "055-03-0145",
+                  "055-03-0149",
+                  "055-03-0125"
+                ]
+              }
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "All things hot cocoa from "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "2\n"
+                  }
+                }
+              ]
+            },
+            "hero_background_color": "#F0E9DE",
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_4770deec-62cc-4a84-b89d-6338057cd528",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_cd6ff284-7ac9-4af6-ae14-c38f27baf50a",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_2182b899-6133-4c7d-95ca-79b64397bfe0",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_Grocery_hot-chocolate-bar_STORY-41006",
+              "destination_content": "GRID",
+              "detail": {
+                "id": "5xt1a",
+                "name": "Grocery",
+                "seo_url": "/c/grocery/-/N-5xt1a",
+                "type": "CATEGORY",
+                "page_type_prefix": "c"
+              },
+              "facets": [],
+              "marketing_groups": [
+                {
+                  "id": "chwov",
+                  "name": "Hot Chocolate Bar",
+                  "display_name": "Hot Chocolate Bar"
+                }
+              ]
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "topleft",
+            "type_stack": "medium",
+            "width": 100
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1500
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-425912",
+            "placement_id": "68557755cec2905432ccc803",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/beverages-grocery/reign/-/N-5xt0rZv9g1r>reign energy drink</a>,<a href=https://www.target.com/c/beverages-grocery/sanpellegrino/-/N-5xt0rZmk4b9>pellegrino</a>,<a href=https://www.target.com/c/beverages-grocery/bai/-/N-5xt0rZ4ull9>bai drink</a>,<a href=https://www.target.com/c/beverages-grocery/owyn/-/N-5xt0rZts0i0>owyn</a>,<a href=https://www.target.com/c/beverages-grocery/snapple/-/N-5xt0rZ7y364>snapple</a>,<a href=https://www.target.com/c/beverages-grocery/trip/-/N-5xt0rZq643lesd1lw>trip drink</a>,<a href=https://www.target.com/c/beverages-grocery/perrier/-/N-5xt0rZ560ns>perrier</a>,<a href=https://www.target.com/b/mio/-/N-56epd>mio</a>,<a href=https://www.target.com/c/beverages-grocery/arizona/-/N-5xt0rZ4ueyn>arizona juice</a>,<a href=https://www.target.com/c/beverages-grocery/swoon/-/N-5xt0rZq643lew3i50>swoon drink</a>,<a href=https://www.target.com/c/beverages-grocery/canada-dry/-/N-5xt0rZ560t9>canada dry</a>,<a href=https://www.target.com/c/beverages-grocery/starbucks/-/N-5xt0rZ7w24v>starbucks drinks</a>,<a href=https://www.target.com/c/beverages-grocery/-/N-5xt0r>beverages</a>,<a href=https://www.target.com/p/liquid-death-pina-killada-sparkling-water-6pk-12-fl-oz-cans/-/A-94585199>liquid death pina killada</a>,<a href=https://www.target.com/b/topo-chico/-/N-55i40>topo chico</a>,<a href=https://www.target.com/c/beverages-grocery/prime-hydration/-/N-5xt0rZq643lem0p79>prime beverage</a>,<a href=https://www.target.com/p/jarritos-strawberry-soda-12-5-fl-oz-glass-bottle/-/A-50745922?gQT=3>jarritos</a>,<a href=https://www.target.com/c/beverages-grocery/bodyarmor/-/N-5xt0rZpyfzn>body armor flavors</a>,<a href=https://www.target.com/b/seattle-s-best-coffee/-/N-ulal4>seattle's best coffee</a>,<a href=https://www.target.com/c/beverages-grocery/sparkling-ice/-/N-5xt0rZjbmre>sparkling ice mini cans</a>,<a href=https://www.target.com/b/mtn-dew/-/N-jv6yw>mtn dew</a>,<a href=https://www.target.com/p/smartwater-cucumber-lime-enhance-water-23-7-fl-oz-bottle/-/A-82057618?gQT=3>smartwater</a>,<a href=https://www.target.com/b/capri-sun/-/N-560x7>capri suns</a>,<a href=https://www.target.com/c/beverages-grocery/happy/-/N-5xt0rZq643lefs0b6>happy drink</a>,<a href=https://www.target.com/b/fentimans/-/N-n75i>fentimans</a>,<a href=https://www.target.com/c/beverages-grocery/pickle-juice/-/N-5xt0rZq643leigzbr>where to find pickle juice in grocery store</a>,<a href=https://www.target.com/c/beverages-grocery/biotta/-/N-5xt0rZq643leyb3p6>biotta drink</a>,<a href=https://www.target.com/c/beverages-grocery/ensure/-/N-5xt0rZ559yy>ensure juice drink</a>,<a href=https://www.target.com/b/ovaltine/-/N-56cjy>ovaltine</a>,<a href=https://www.target.com/p/slice-orange-soda-12-fl-oz/-/A-93145924>slice drinks</a>,<a href=https://www.target.com/p/ocean-spray-white-cranberry-strawberry-juice-64-fl-oz-bottle/-/A-47108073>ocean spray</a>,<a href=https://www.target.com/p/poppi-fruit-variety-prebiotic-beverage-8pk-12-fl-oz-cans/-/A-94269167?sid=1161S&amp;afid=google&amp;TCID=OGS&amp;CPNG=beverages&amp;adgroup=271-60&amp;gStoreCode=1161S&amp;gQT=1>probiotic soda</a>,<a href=https://www.target.com/c/beverages-grocery/-/N-5xt0r>beverages</a>,<a href=https://www.target.com/c/beverages-grocery/organic/-/N-5xt0rZs2ozl>organic drink</a>,<a href=https://www.target.com/s/gorgie+energy+drink>gorgie</a>,<a href=https://www.target.com/c/beverages-grocery/n-joy/-/N-5xt0rZq643lee8mxf>njoy drink</a>,<a href=https://www.target.com/b/health-ade/-/N-lenif>health ade</a>,<a href=https://www.target.com/p/sunkist-orange-soda-12pk-12-fl-oz-cans/-/A-12965033?sid=2150S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Beverages&amp;adgroup=271-30&amp;gStoreCode=2150S&amp;gQT=3>sunkist</a>,<a href=https://www.target.com/c/beverages-grocery/arrowhead/-/N-5xt0rZ560no>arrowhead drink</a>,<a href=https://www.target.com/c/beverages-grocery/larissa-veronica/-/N-5xt0rZq643lemo2k1>larissa veronica coffee</a>,<a href=https://www.target.com/c/beverages-grocery/bubbl-r/-/N-5xt0rZq643le1lv48>bubbl'r flavors list</a>,<a href=https://www.target.com/c/beverages-grocery/nestle/-/N-5xt0rZ56e9z>nestle beverage</a>,<a href=https://www.target.com/p/evian-french-mineral-water-500ml-16-91-fl-oz-pack-of-24/-/A-93735663?TCID=OGS&AFID=google&CPNG=Beverages+-+Target+Plus&adgroup=203-22&gQT=3>evian</a>,<a href=https://www.target.com/s/element+electrolytes>element drink</a>,<a href=https://www.target.com/c/beverages-grocery/gt-s/-/N-5xt0rZ4y569>gt drink</a>,<a href=https://www.target.com/c/beverages-grocery/powerade/-/N-5xt0rZ560w9>power raid drink</a>,<a href=https://www.target.com/p/sodastream-pepsi-wild-cherry-drink-mix/-/A-94163889?sid=898S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Appliances&amp;adgroup=72-8&amp;gPromoCode=558699008&amp;gStoreCode=898S&amp;gQT=3>soda stream flavors</a>,<a href=https://www.target.com/c/beverages-grocery/pediasure/-/N-5xt0rZ55wn7>pediasure juice</a>,<a href=https://www.target.com/c/beverages-grocery/dole/-/N-5xt0rZ56e02>dole drink</a>,<a href=https://www.target.com/c/beverages-grocery/yogi/-/N-5xt0rZ56djq>yogi drink</a>,<a href=https://www.target.com/p/zyn-mixed-berry-turmeric-wellness-drink-pack-of-6-12-fl-oz/-/A-92114018>zyn drink</a>,<a href=https://www.target.com/c/water-beverages-grocery/sodium-free/-/N-5xt0kZp9ubl>sodium free drinks</a>,<a href=https://www.target.com/c/beverages-grocery/mccafe/-/N-5xt0rZkccjd>mccafe beverages</a>,<a href=https://www.target.com/c/energy-drinks-beverages-grocery/bang/-/N-4uez2Zky5qt>bang drink</a>,<a href=https://www.target.com/c/beverages-grocery/green-mountain/-/N-5xt0rZ4yz0w>green mountain beverage</a>,<a href=https://www.target.com/s/coca+cola+products>coca cola products</a>,<a href=https://www.target.com/c/beverages-grocery/dunkin-donuts/-/N-5xt0rZ1neq2>dunkin donuts drinks</a>,<a href=https://www.target.com/c/beverages-grocery/welch-s/-/N-5xt0rZ560zn>welch drink</a>,<a href=https://www.target.com/c/beverages-grocery/recover-180/-/N-5xt0rZyw86c>recover 180</a>,<a href=https://www.target.com/b/fever-tree/-/N-2x5ss>fever tree</a>,<a href=https://www.target.com/c/grocery/san-francisco-bay-coffee/-/N-5xt1aZq643le3ilhx>san francisco bay coffee</a>,<a href=https://www.target.com/c/beverages-grocery/tazo/-/N-5xt0rZj8o4p>tazo drinks</a>,<a href=https://www.target.com/p/bloom-peach-mango-energy-drink-12-fl-oz-can/-/A-91946020>bloom soda</a>,<a href=https://www.target.com/c/soda-pop-beverages-food-beverage/barq-s/-/N-5xt0mZiu2qa>barq's</a>,<a href=https://www.target.com/b/fanta/-/N-560wz>fantas</a>,<a href=https://www.target.com/c/beverages-grocery/white-rock/-/N-5xt0rZq643le21m2n>white rock ginger ale</a>,<a href=https://www.target.com/c/beverages-grocery/zevia/-/N-5xt0rZrdhcn>zevia</a>,<a href=https://www.target.com/c/beverages-grocery/tost/-/N-5xt0rZq643lejksgf>tost drink</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/5xt0r/WEB",
+  "activation_date": "2025-10-07T07:00Z"
+}

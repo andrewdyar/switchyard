@@ -1,0 +1,942 @@
+{
+  "metadata": {
+    "activation_date": "2025-11-24T08:00Z",
+    "deactivation_date": "2025-11-30T08:00Z",
+    "title": "Food Gifts",
+    "type": "Category",
+    "node_id": "54wac",
+    "linking_id": "54wac",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/food-gifts-grocery/-/N-54wac",
+      "seo_h1": "Food Gifts",
+      "seo_title": "Food Gifts : Target",
+      "seo_description": "Shop Target for Food Gifts you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/54wac",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Food Gifts, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_dc7d6d31-6a99-4475-a56c-9f72a99914e1"
+    },
+    "og": {
+      "title": "Food Gifts : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_dc7d6d31-6a99-4475-a56c-9f72a99914e1",
+      "url": "/c/food-gifts-grocery/-/N-54wac",
+      "description": "Shop Target for Food Gifts you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "vvk59",
+        "name": "New & Trending Food Gifts",
+        "type": "Tag",
+        "linking_id": "vvk59",
+        "number_of_children": "0",
+        "canonical_url": "/c/new-trending-food-gifts/-/N-vvk59",
+        "seo_h1": "New & Trending Food Gifts",
+        "page_id": "/c/vvk59",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c7e616ae-aecd-4007-8149-8010735d554b"
+      },
+      {
+        "node_id": "5xsxv",
+        "name": "Wine",
+        "type": "Category",
+        "linking_id": "5xsxv",
+        "number_of_children": "7",
+        "canonical_url": "/c/wine-beer-liquor-grocery/-/N-5xsxv",
+        "seo_h1": "Wine",
+        "page_id": "/c/5xsxv",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_f4142441-32c8-497e-ae93-59a6cc9bcf4e"
+      },
+      {
+        "node_id": "y5m29",
+        "name": "Gourmet Beverage Gifts",
+        "type": "Tag",
+        "linking_id": "y5m29",
+        "number_of_children": "0",
+        "canonical_url": "/c/gourmet-beverage-gifts/-/N-y5m29",
+        "seo_h1": "Gourmet Beverage Gifts",
+        "page_id": "/c/y5m29",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_b7f5276c-670b-41ff-963e-51e7f25615e5"
+      },
+      {
+        "node_id": "alayx",
+        "name": "Gourmet Food Gifts",
+        "type": "Tag",
+        "linking_id": "alayx",
+        "number_of_children": "0",
+        "canonical_url": "/c/gourmet-food-gifts/-/N-alayx",
+        "seo_h1": "Gourmet Food Gifts",
+        "page_id": "/c/alayx",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_2fc6d97e-73fd-40fa-99b1-b734a07465bb"
+      },
+      {
+        "node_id": "e89ew",
+        "name": "Occasion Gift Baskets",
+        "type": "Tag",
+        "linking_id": "e89ew",
+        "number_of_children": "0",
+        "canonical_url": "/c/occasion-gift-baskets/-/N-e89ew",
+        "seo_h1": "Occasion Gift Baskets",
+        "page_id": "/c/e89ew",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_7f98035d-92c0-47dd-a0c3-502f36a61670"
+      },
+      {
+        "node_id": "evryn",
+        "name": "Holiday Alcohol Gift Sets",
+        "type": "Tag",
+        "linking_id": "evryn",
+        "number_of_children": "0",
+        "canonical_url": "/c/holiday-alcohol-gift-sets/-/N-evryn",
+        "seo_h1": "Holiday Alcohol Gift Sets",
+        "page_id": "/c/evryn",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0efe33fa-89ee-4a68-875b-1d7ec477ae5b"
+      },
+      {
+        "node_id": "2dei4",
+        "name": "Fresh Flowers & Plants",
+        "type": "Category",
+        "linking_id": "2dei4",
+        "number_of_children": "0",
+        "canonical_url": "/c/fresh-flowers-plants-produce-grocery/-/N-2dei4",
+        "seo_h1": "Fresh Flowers & Plants",
+        "page_id": "/c/2dei4",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_fab9b3cc-1208-4fa6-b85e-e099db574a98"
+      },
+      {
+        "node_id": "m4inq",
+        "name": "Premium Candy",
+        "type": "Tag",
+        "linking_id": "m4inq",
+        "number_of_children": "0",
+        "canonical_url": "/c/premium-candy/-/N-m4inq",
+        "seo_h1": "Premium Candy",
+        "page_id": "/c/m4inq",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c9ceccca-fcb2-4df4-ba56-2d79badcbe2e"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1100": {
+      "order": 1100,
+      "content": {
+        "background_color": "#d7eae4",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_trending;categoryId,54wac;facetId,h2x2k,pg5tm,5xkn9"
+          },
+          "type": "personalizedProducts"
+        },
+        "custom_headline": "New & Featured Food Gifting",
+        "endcap": {
+          "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_8989e791-3d41-4ca7-aad3-3bfa2bc8bb4a",
+          "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_af87090d-590e-4029-a934-c9c8e5f45494"
+        },
+        "id": "WEB-433318",
+        "margin_bottom": "standard",
+        "metadata": {
+          "component_type": "Manual TCIN Carousel",
+          "component_version": "01"
+        },
+        "prz_filters": [
+          {
+            "id": "salesRankSort"
+          }
+        ],
+        "tcins": [
+          "94730594",
+          "94582705",
+          "94687385",
+          "94760481",
+          "94682818",
+          "91665527",
+          "94462072",
+          "94582701",
+          "94725546",
+          "91636320",
+          "94748179",
+          "94730520",
+          "80396103",
+          "94451181",
+          "86107302",
+          "94579744",
+          "94725543",
+          "94725545",
+          "94579704",
+          "94681899",
+          "94725547",
+          "94730479",
+          "89623360",
+          "91835398",
+          "88952205",
+          "94725550",
+          "94749682",
+          "88317985",
+          "1006948441",
+          "94748176",
+          "88317980",
+          "88311970",
+          "88298654",
+          "94577571",
+          "94308298",
+          "91653384",
+          "94651711"
+        ],
+        "text_color": "light",
+        "trackingId": "WEB-433318"
+      },
+      "presentation": "manual_prz_tcin_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_New&FeaturedFoodGifts_Standard CSL",
+            "id": "WEB-433318",
+            "type": "c_web_manual_tcin_carousel_v01",
+            "type_name": "Manual TCIN Carousel",
+            "content_type": "static",
+            "placement_id": "68fb07209e936d9486736831"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "1300": {
+      "order": 1300,
+      "content": {
+        "background_color": "#f6f5f1",
+        "background_color_behavior": "simplified",
+        "call_to_action_button_style": {
+          "background_color": "#cc0000",
+          "text_color": "#ffffff",
+          "button_type": "filled",
+          "button_copy": "Shop the collection"
+        },
+        "extensions": {
+          "shoppable_carousel": {
+            "context": {
+              "call_to_action": "add_to_cart",
+              "prz": {
+                "config": "placementId,primary_best_sellers;categoryId,ybnpr"
+              },
+              "type": "personalizedProducts"
+            },
+            "tcins": [
+              "87882069",
+              "87939060",
+              "94308298",
+              "86455892",
+              "94660162",
+              "91153055",
+              "94645059",
+              "85939122"
+            ]
+          }
+        },
+        "headline": {
+          "content": [
+            {
+              "insert": {
+                "text": "Advent calendars for the whole fam\n"
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            }
+          ]
+        },
+        "hero_background_color": "#F3EEE3",
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_706ebe82-f973-495b-b142-17dde7f39d0c",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_8c84189d-40d6-4a91-8a45-66c4ff5ade17",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_bb372456-b5ce-4284-967e-334cd22140b7",
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_61dcb8bd-48d1-4890-adde-48516390180d",
+        "link": {
+          "target": "TAXONOMY",
+          "link_tag": "C_Food&BeverageAdventCalendars_STORY-40287",
+          "destination_content": "GRID",
+          "detail": {
+            "id": "ybnpr",
+            "name": "Food & Beverage Advent Calendars",
+            "seo_url": "/c/food-beverage-advent-calendars-christmas-holiday-shop/-/N-ybnpr",
+            "type": "CATEGORY",
+            "sub_type": "seasonal",
+            "page_type_prefix": "c"
+          },
+          "facets": [],
+          "marketing_groups": []
+        },
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "text_position": "middleleft",
+        "type_stack": "medium",
+        "width": 30
+      },
+      "presentation": "standard",
+      "extensions": [
+        "shoppable_carousel"
+      ],
+      "metadata": {
+        "components": [
+          {
+            "title": "Oct wk 1_F&B_ Holiday Advent Calendars_Standard CP",
+            "id": "STORY-40287",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "manual",
+            "placement_id": "68fb07209e936d9486736832"
+          }
+        ]
+      },
+      "styles": {
+        "background_color": null,
+        "bottom_margin": "16px",
+        "position": "standalone"
+      }
+    },
+    "1400": {
+      "order": 1400,
+      "content": {
+        "background_color": "white",
+        "corners_rounded": false,
+        "headline": "Brands they love",
+        "link_type": "none",
+        "margin_bottom": "standard",
+        "metadata": {
+          "component_type": "Banner",
+          "component_version": "02"
+        },
+        "text_color": "dark"
+      },
+      "presentation": "/adaptive/c_web_a_0019/v02/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_Food Gifts_Brand Headline",
+            "id": "WEB-434395",
+            "type": "c_web_a_0019_v02",
+            "type_name": "Banner",
+            "content_type": "static",
+            "placement_id": "68fb07209e936d9486736833"
+          }
+        ]
+      }
+    },
+    "1500": {
+      "order": 1500,
+      "content": {
+        "amplified_headline": {
+          "color": "#ffffff",
+          "line_four": [
+            "10"
+          ],
+          "line_one": [
+            "Marks & Spencer"
+          ],
+          "line_three": [
+            "from"
+          ],
+          "line_two": [
+            "treats"
+          ],
+          "lockup": "value-price-emphasis-versioned",
+          "lockup_disposition": "double-line",
+          "version": "v2"
+        },
+        "background_color": "#02664E",
+        "background_color_behavior": "simplified",
+        "call_to_action_button_style": {
+          "background_color": "#cc0000",
+          "text_color": "#ffffff",
+          "button_type": "filled",
+          "button_copy": "Shop the collection"
+        },
+        "extensions": {
+          "shoppable_carousel": {
+            "context": {
+              "call_to_action": "add_to_cart",
+              "prz": {
+                "config": "placementId,app_primary_seasonal;categoryId,s80gx"
+              },
+              "type": "personalizedProducts"
+            },
+            "tcins": [
+              "94748175",
+              "91835665"
+            ]
+          }
+        },
+        "headline": {
+          "content": [
+            {
+              "attributes": {
+                "color": "#ffffff"
+              },
+              "insert": {
+                "text": "Marks & Spencer treats from "
+              }
+            },
+            {
+              "attributes": {
+                "color": "#ffffff",
+                "pricestyleprice": true
+              },
+              "insert": {
+                "text": "$"
+              }
+            },
+            {
+              "attributes": {
+                "color": "#ffffff"
+              },
+              "insert": {
+                "text": "10\n"
+              }
+            }
+          ]
+        },
+        "hero_background_color": "#F6F5F1",
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_bd0a5570-51e3-4db2-b631-28f17319e0d6",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_5f01e44e-6575-4c77-ab69-454721272920",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_d813bbdd-76e7-4901-8a83-90d6b8529621",
+        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_a1eff81d-fc99-4471-ac66-874ddadbbc39",
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_07493a66-2aa7-477f-8503-a7087b091c3e",
+        "link": {
+          "target": "TAXONOMY",
+          "link_tag": "C_Marks&Spencer_STORY-42244",
+          "destination_content": "CONTENT",
+          "detail": {
+            "id": "s80gx",
+            "name": "Marks & Spencer ",
+            "seo_url": "/c/marks-spencer/-/N-s80gx",
+            "type": "TAG",
+            "page_type_prefix": "c"
+          },
+          "facets": [],
+          "marketing_groups": []
+        },
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "text_position": "topleft",
+        "type_stack": "small",
+        "width": 100
+      },
+      "presentation": "standard",
+      "extensions": [
+        "shoppable_carousel"
+      ],
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov Wk 1_Marks & Spencer_Price_Complex CP",
+            "id": "STORY-42244",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "manual",
+            "placement_id": "692495dceac36b703f52604c"
+          }
+        ]
+      },
+      "styles": {
+        "background_color": null,
+        "bottom_margin": "16px",
+        "position": "standalone"
+      }
+    },
+    "1700": {
+      "order": 1700,
+      "content": {
+        "metadata": {
+          "component_type": "Browse - Manual",
+          "component_version": "04"
+        },
+        "scene7_params": "wid=315&hei=315&qlt=60&fmt=pjpeg",
+        "shape": "circle",
+        "taxonomy_nodes": [
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/b/sugarfina/-/N-q643le6e2mz?type=products",
+            "link_tag": "C_Sugarfina_WEB-433320_0",
+            "link_name": "Sugarfina",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_b939a17a-5db3-4127-abdb-53ef4689c404"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/hearth-hand-with-magnolia-food/-/N-v69cc?type=products",
+            "link_tag": "C_Hearth&Hand™withMagnoliaFood_WEB-433320_1",
+            "link_name": "Hearth & Hand ",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_07b53de0-25ea-4c53-b6d9-d9af1ca6c5ad"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/john-derian-for-target/-/N-hh9qaZal25lfszykfZ6jv2hZal25lfwitml?type=products",
+            "link_tag": "C_JohnDerianforTarget_barks_cookies-and-bars_shortbread-cookie_WEB-433320_2",
+            "link_name": "John Derian",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_8212e65d-913f-42d9-a945-bcfe8567c61c"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/b/stonewall-kitchen/-/N-q643lepxfpj",
+            "link_tag": "C_StonewallKitchen_WEB-433320_3",
+            "link_name": "Stonewall Kitchen",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_02ee366c-367b-40aa-b298-2caffe695207"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/food-gifts-grocery/-/N-54wac",
+            "link_tag": "C_FoodGifts_WEB-433320_4",
+            "link_name": "Starbucks",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_f134a3e3-f0a0-44f8-91d3-40ce2c59b613"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/food-gifts-grocery/-/N-54wacZ56dd6Zy3ip0?type=products",
+            "link_tag": "C_FoodGifts_lindt_lindor_WEB-433320_5",
+            "link_name": "Lindt",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_b3162a90-40ed-4020-b5aa-87278ee5d43b"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/food-gifts-grocery/ghirardelli/-/N-54wacZ5b52v",
+            "link_tag": "C_FoodGifts_ghirardelli_WEB-433320_6",
+            "link_name": "Ghirardelli",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_9710a02c-49a7-4be1-8ee6-3b54669a7e12"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/b/harry-david/-/N-q643leuu70x",
+            "link_tag": "C_Harry&David_WEB-433320_7",
+            "link_name": "Harry & David",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_4f093b01-be58-489e-98d7-64fdf91c8cd9"
+          }
+        ],
+        "text_only": false
+      },
+      "presentation": "/adaptive/c_web_a_0003/v04/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_Food Gifts Brands_Standard Nav",
+            "id": "WEB-433320",
+            "type": "c_web_a_0003_v04",
+            "type_name": "Browse Manual",
+            "content_type": "static",
+            "placement_id": "68fb07209e936d9486736838"
+          }
+        ]
+      }
+    },
+    "1900": {
+      "order": 1900,
+      "content": {
+        "amplified_headline": {
+          "color": "#ffffff",
+          "line_four": [
+            "5"
+          ],
+          "line_one": [
+            "Candy stocking"
+          ],
+          "line_three": [
+            "under"
+          ],
+          "line_two": [
+            "stuffers"
+          ],
+          "lockup": "value-price-emphasis-versioned",
+          "lockup_disposition": "double-line",
+          "version": "v2"
+        },
+        "background_color": "#9F0609",
+        "background_color_behavior": "simplified",
+        "call_to_action_button_style": {
+          "background_color": "#ffffff",
+          "text_color": "#333333",
+          "outline_color": "#333333",
+          "button_type": "outlined",
+          "button_copy": "Shop stocking stuffers"
+        },
+        "extensions": {
+          "shoppable_carousel": {
+            "context": {
+              "call_to_action": "add_to_cart",
+              "prz": {
+                "config": "placementId,primary_best_sellers;categoryId,av00p;facetId,tb9f0,k5gnx,h20t5,al25lf3rqdm,al25lfb4rl5,al25lfi30fd,al25lfgqaft,al25lf50xci,al25lf8bj1d,al25lf533qs,al25lffla6y",
+                "filters": [
+                  {
+                    "id": "salesRankSort"
+                  }
+                ]
+              },
+              "type": "personalizedProducts"
+            },
+            "tcins": [
+              "94732475",
+              "80189980",
+              "83111315",
+              "80113794",
+              "94586624",
+              "94586690",
+              "94586693",
+              "94652276",
+              "80117558",
+              "91791453",
+              "91776981",
+              "80118318",
+              "94582709",
+              "86057490",
+              "91519109",
+              "94502968",
+              "94586647",
+              "94586646",
+              "94760324",
+              "83433881",
+              "83111326",
+              "91791260",
+              "88877105",
+              "83441382",
+              "94761422",
+              "1003866825",
+              "88888881",
+              "94761534",
+              "80117561",
+              "82865309",
+              "80195427",
+              "94759112",
+              "83031192",
+              "80109320",
+              "91792277",
+              "80109177",
+              "94680190",
+              "94954702",
+              "86267109",
+              "94760405"
+            ]
+          }
+        },
+        "headline": {
+          "content": [
+            {
+              "attributes": {
+                "color": "#ffffff"
+              },
+              "insert": {
+                "text": "Candy stocking stuffers under "
+              }
+            },
+            {
+              "attributes": {
+                "color": "#ffffff",
+                "pricestyleprice": true
+              },
+              "insert": {
+                "text": "$"
+              }
+            },
+            {
+              "attributes": {
+                "color": "#ffffff"
+              },
+              "insert": {
+                "text": "5\n"
+              }
+            }
+          ]
+        },
+        "hero_background_color": "#F5F0E7",
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_1927a33b-0967-4f27-97a4-a6938db9700c",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_133421f4-f614-4586-87e1-3aeb28ba1d72",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_e5c68f5a-dee7-4619-8b67-60ba90b84cfa",
+        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_2f0d1668-bbc6-43bc-9c77-d875a0a3b1bb",
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_cb2afe88-b2e1-4a40-9242-dc20c640b011",
+        "link": {
+          "target": "TAXONOMY",
+          "link_tag": "C_StockingStuffers_candy-bars_chewy-candies_filled-chocolates_gummy-candies_$0---$4.99_candy-coated-chocolates_candy-and-chocolate-variety-packs_individually-wrapped-chocolates_STORY-41000",
+          "destination_content": "GRID",
+          "detail": {
+            "id": "av00p",
+            "name": "Stocking Stuffers",
+            "seo_url": "/c/stocking-stuffers/-/N-av00p",
+            "type": "TAG",
+            "sub_type": "seasonal",
+            "page_type_prefix": "c"
+          },
+          "facets": [
+            {
+              "id": "h20t5",
+              "name": "d_item_type_all",
+              "value": "candy bars",
+              "seo_value": "candy-bars"
+            },
+            {
+              "id": "al25lfb4rl5",
+              "name": "d_item_type_all",
+              "value": "chewy candies",
+              "seo_value": "chewy-candies"
+            },
+            {
+              "id": "al25lfgqaft",
+              "name": "d_item_type_all",
+              "value": "filled chocolates",
+              "seo_value": "filled-chocolates"
+            },
+            {
+              "id": "al25lf50xci",
+              "name": "d_item_type_all",
+              "value": "gummy candies",
+              "seo_value": "gummy-candies"
+            },
+            {
+              "id": "tb9f0",
+              "name": "d_price_5_dollar_ranges",
+              "value": "$0 - $4.99",
+              "seo_value": "0-4-99"
+            },
+            {
+              "id": "al25lf3rqdm",
+              "name": "d_item_type_all",
+              "value": "candy coated chocolates",
+              "seo_value": "candy-coated-chocolates"
+            },
+            {
+              "id": "k5gnx",
+              "name": "d_item_type_all",
+              "value": "candy and chocolate variety packs",
+              "seo_value": "candy-and-chocolate-variety-packs"
+            },
+            {
+              "id": "al25lf533qs",
+              "name": "d_item_type_all",
+              "value": "individually wrapped chocolates",
+              "seo_value": "individually-wrapped-chocolates"
+            }
+          ],
+          "marketing_groups": []
+        },
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "text_position": "middleleft",
+        "type_stack": "medium",
+        "width": 100
+      },
+      "presentation": "standard",
+      "extensions": [
+        "shoppable_carousel"
+      ],
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_F&B_Candy Stocking Stuffers_Standard CP",
+            "id": "STORY-41000",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "manual",
+            "placement_id": "690904ccbc489b33f3fba059"
+          }
+        ]
+      },
+      "styles": {
+        "background_color": null,
+        "bottom_margin": "16px",
+        "position": "standalone"
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/b/swiss-colony/-/N-mqovs>the swiss colony</a>,<a href=https://www.target.com/c/food-gifts-grocery/starbucks/-/N-54wacZ7w24v>starbucks gift sets</a>,<a href=https://www.target.com/p/ghirardelli-peppermint-hot-cocoa-mix-1oz/-/A-94721033>ghirardelli peppermint hot chocolate</a>,<a href=https://www.target.com/p/unwell-frosted-cranberry-energy-drink-12-fl-oz/-/A-94857217>unwell frosted cranberry</a>,<a href=https://www.target.com/c/food-gifts-grocery/low-fat/-/N-54wacZnghi2>who offers mixed boxes of reduced-fat snacks for gifting or sharing?</a>,<a href=https://www.target.com/c/food-gifts-grocery/m-s/-/N-54wacZq643le71q3z>m&s food</a>,<a href=https://www.target.com/c/food-gifts-grocery/designpac/-/N-54wacZ64vg>designpac gifts</a>,<a href=https://www.target.com/c/food-gifts-grocery/hickory-farms/-/N-54wacZu4jgc>hickory farms gifts</a>,<a href=https://www.target.com/c/food-gifts-grocery/harney-sons/-/N-54wacZ4yjxk>harney & sons fine teas stocking stuffer gift product info and reviews</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-436216",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "69181e49bc489b33f3fbaea2"
+          }
+        ]
+      }
+    },
+    "2600": {
+      "order": 2600,
+      "content": {
+        "message": "<p><b>Delightful Food Gift Ideas for Every Occasion</b></p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p>Searching for the perfect holiday gift? Explore our gourmet food gift ideas, designed to tantalize taste buds and create lasting memories. From delectable gift baskets to unique samplers, you&#8217;ll find a range of options available in-store that cater to all preferences.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p><b>Gourmet Gift Baskets: A Feast for the Senses</b></p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p>Gourmet gift baskets brimming with assorted treats like toffee, chocolate chip cookies, pecans, and more are sure to please. These thoughtfully curated gift baskets are ideal for any occasion, offering a sumptuous blend of flavors that your recipient will cherish.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p><b>Sweet Treats for the Sugar Enthusiast</b></p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p>For those who adore sweets, consider a gift box filled with cherries, dried fruit, and chocolates. These delightful confections will satisfy even the most discerning palates. Look for options at your local confectionery or chocolate shop to create the perfect gift.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p><b>Wine and Cheese Pairings: A Taste of Elegance</b></p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p>Select a bottle of fine wine to complement a carefully chosen assortment of cheeses, crackers, and toffee. This sophisticated combination is perfect for intimate gatherings or a cozy night in. Elevate your gift with the rich flavors of a classic pairing.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p><b>Artisanal Condiments: Elevate the Culinary Experience</b></p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p>Enhance their culinary adventures with artisanal condiments like small-batch olive oils, gourmet vinegars, or unique spice blends. These items can be found in specialty food stores and make for thoughtful additions to any gift basket.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p><b>Exotic Flavors from Around the World</b></p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p>Take your loved ones on a culinary journey with international delicacies like unique spice blends, dried fruit, and gourmet chocolates. Explore the global flavors available in stores, offering a world of possibilities for your gift.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p><b>FAQs</b></p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"><ol><li>Are these food gifts suitable for people with dietary restrictions?</li></ol></p><p>Many food gift stores offer a wide range of options, including gluten-free, vegan, and other dietary-specific products. Be sure to check the labels and inquire with store staff to find suitable gifts for your recipient.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"><ol><li>How can I ensure the food gifts stay fresh during shipping or storage?</li></ol></p><p>When shopping in-store, ask for recommendations on the shelf life of the products. Some foods have longer shelf lives than others, ensuring your gift stays fresh. Proper storage, like keeping chocolates in a cool, dry place, is essential.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"><ol><li>Can I customize these gifts to suit the recipient&#8217;s preferences?</li></ol></p><p>While these gifts are not personalized, you can tailor your choices by selecting specific items that cater to your loved one&#8217;s tastes. Mix and match products in-store to create a unique gift that reflects their preferences.</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p><p><b>In Conclusion</b></p><p>Food gifts featuring cherries, dried fruit, crackers, toffee, and a variety of gourmet delights are perfect for any special occasion. With our range of options available in-store, you can effortlessly find the perfect gift to please the palates of your loved ones. Whether you opt for a gourmet gift basket, sweet treats, wine and cheese pairings, or international delicacies, you&#8217;ll be sharing the joy of delicious moments with your family and friends. Happy gifting!</p><p><span class=\"h-sr-only\"> </span><br aria-hidden=\"true\"></p>",
+        "metadata": {
+          "component_type": "SEO",
+          "component_version": "01"
+        }
+      },
+      "presentation": "/adaptive/c_web_a_0029/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Food gifts 11/17/23",
+            "id": "WEB-389430",
+            "type": "c_web_a_0029_v01",
+            "type_name": "SEO Component",
+            "content_type": "static",
+            "placement_id": "6552a9bee7265e2c3d1602b8"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-11-24T08:00Z",
+  "deactivation_date": "2025-11-30T08:00Z",
+  "uri": "/54wac/WEB"
+}

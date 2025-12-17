@@ -1,0 +1,240 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Spices & Seasonings",
+    "type": "Category",
+    "node_id": "5xszu",
+    "linking_id": "5xszu",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/spices-seasonings-pantry-grocery/-/N-5xszu",
+      "seo_h1": "Spices & Seasonings",
+      "seo_title": "Spices & Seasonings : Target",
+      "seo_description": "Contactless options including Same Day Delivery and Drive Up are available with Target. Shop today to find Spices & Seasonings at incredible prices.",
+      "page_id": "/c/5xszu",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Spices & Seasonings, Pantry, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_71069f67-09ea-4b2f-a504-e7f5959c4d1a"
+    },
+    "og": {
+      "title": "Spices & Seasonings : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_71069f67-09ea-4b2f-a504-e7f5959c4d1a",
+      "url": "/c/spices-seasonings-pantry-grocery/-/N-5xszu",
+      "description": "Contactless options including Same Day Delivery and Drive Up are available with Target. Shop today to find Spices & Seasonings at incredible prices."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt13",
+        "name": "Pantry",
+        "type": "Category",
+        "linking_id": "5xt13",
+        "number_of_children": "20",
+        "canonical_url": "/c/pantry-grocery/-/N-5xt13",
+        "seo_h1": "Pantry",
+        "page_id": "/c/5xt13",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "4u9lh",
+        "name": "Breadcrumbs & Seasoned Coatings",
+        "type": "Category",
+        "linking_id": "4u9lh",
+        "number_of_children": "0",
+        "canonical_url": "/c/breadcrumbs-seasoned-coatings-spices-seasonings-pantry-grocery/-/N-4u9lh",
+        "seo_h1": "Breadcrumbs & Seasoned Coatings",
+        "page_id": "/c/4u9lh",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_83fdf663-4b8c-4c24-9855-5f77406b7f9f"
+      },
+      {
+        "node_id": "4u9lf",
+        "name": "Herbs, Rubs & Spices",
+        "type": "Category",
+        "linking_id": "4u9lf",
+        "number_of_children": "0",
+        "canonical_url": "/c/herbs-rubs-spices-seasonings-pantry-grocery/-/N-4u9lf",
+        "seo_h1": "Herbs, Rubs & Spices",
+        "page_id": "/c/4u9lf",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_1f5351e9-f054-47d3-af4b-9910d9f15c34"
+      },
+      {
+        "node_id": "4u9lg",
+        "name": "Salt & Pepper",
+        "type": "Category",
+        "linking_id": "4u9lg",
+        "number_of_children": "0",
+        "canonical_url": "/c/salt-pepper-spices-seasonings-pantry-grocery/-/N-4u9lg",
+        "seo_h1": "Salt & Pepper",
+        "page_id": "/c/4u9lg",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_ad28e688-3047-4afc-8828-1060efabd06c"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/caraway-seed/-/N-5xszuZqt58je5dns5>caraway seeds</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/tony-chachere-s/-/N-5xszuZbalw6>tony chachere's creole seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/badia/-/N-5xszuZ646m8>badia</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/weber/-/N-5xszuZ5xwuq>weber seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/clove/-/N-5xszuZqt58je5qdzi>cloves</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/thyme/-/N-5xszuZqt58je6u45d>thyme</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/slap-ya-mama/-/N-5xszuZcg3sx>slap ya mama seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/parsley/-/N-5xszuZqt58jear7dd>parsley seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/mccormick/-/N-5xszuZ56dcf>mccormick spices</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/johnny-s/-/N-5xszuZyutkl>johnny seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/annatto/-/N-5xszuZqt58jec5t3x>annatto seeds</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/tajin/-/N-5xszuZjskso>tajin spice</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/dill/-/N-5xszuZqt58jetgtc3>dill seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/spice-world/-/N-5xszuZ56dj7>spice world spices</a>,<a href=https://www.target.com/c/herbs-rubs-spices-seasonings-pantry-grocery/el-guapo/-/N-4u9lfZowpzz>el guapo</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/basil/-/N-5xszuZqt58je2xhvx>basil seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/oregano/-/N-5xszuZqt58jeze9da>oregano seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/grace/-/N-5xszuZtfdo1>grace seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/spiceology/-/N-5xszuZq643lebwyv8>spiceology</a>,<a href=https://www.target.com/b/maldon/-/N-q643le27xhe>maldon</a>,<a href=https://www.target.com/p/eastanbul-tarragon-spice-dried-terragon-leaves-tarrago-estragon-1-41oz/-/A-1003296735>terragon</a>,<a href=https://www.target.com/p/goya-sazon-culantro-y-achiote-1-41oz/-/A-14771559?sid=2236S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Dry+Grocery&amp;adgroup=212-26&amp;gStoreCode=2236S&amp;gQT=1>goya seasoning</a>,<a href=https://www.target.com/p/kinder-39-s-spice-buttery-steakhouse-5-5oz/-/A-87763238?sid=2161S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Bakery+Deli&amp;adgroup=261-2&amp;gStoreCode=2161S&amp;gQT=1>kinder spices</a>,<a href=https://www.target.com/c/herbs-rubs-spices-seasonings-pantry-grocery/swanson-health-products/-/N-4u9lfZq643le8xoj2>seasonings swanson</a>,<a href=https://www.target.com/c/herbs-rubs-spices-seasonings-pantry-grocery/olde-thompson/-/N-4u9lfZ5xqhz>olde thompson</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/iberia/-/N-5xszuZvvnp5>iberia seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/cuso-cuts/-/N-5xszuZq643le1wlue>cuso seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/target-brands/-/N-5xszuZxmf9o>spice brands</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/peppermint/-/N-5xszuZqt58jei4oa1>mint seasoning</a>,<a href=https://www.target.com/c/spices-seasonings-pantry-grocery/riega/-/N-5xszuZq643leu0sph>riega seasoning</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426404",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "68557796e0579254f0f52443"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/5xszu/WEB"
+}

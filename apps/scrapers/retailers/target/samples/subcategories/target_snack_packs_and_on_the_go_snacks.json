@@ -1,0 +1,202 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Snack Packs & On the Go Snacks",
+    "type": "Category",
+    "node_id": "dhjbd",
+    "linking_id": "dhjbd",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/snack-packs-on-the-go-snacks-deli-grocery/-/N-dhjbd",
+      "seo_h1": "Snack Packs & On the Go Snacks",
+      "seo_title": "Snack Packs & On the Go Snacks : Target",
+      "seo_description": "Shop Target for Snack Packs & On the Go Snacks you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/dhjbd",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Snack Packs & On the Go Snacks, Deli, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_dd07434c-b7a1-4d6c-a44d-fe2e2aeb45d0"
+    },
+    "og": {
+      "title": "Snack Packs & On the Go Snacks : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_dd07434c-b7a1-4d6c-a44d-fe2e2aeb45d0",
+      "url": "/c/snack-packs-on-the-go-snacks-deli-grocery/-/N-dhjbd",
+      "description": "Shop Target for Snack Packs & On the Go Snacks you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5hp74",
+        "name": "Deli",
+        "type": "Category",
+        "linking_id": "5hp74",
+        "number_of_children": "11",
+        "canonical_url": "/c/deli-grocery/-/N-5hp74",
+        "seo_h1": "Deli",
+        "page_id": "/c/5hp74",
+        "page_type": "category"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/c/snack-packs-on-the-go-snacks-deli-grocery/hillshire-farm/-/N-dhjbdZ5640a>hillshire snacking</a>,<a href=https://www.target.com/c/snacks-grocery/-/N-5xsy9>snack</a>,<a href=https://www.target.com/c/snack-packs-on-the-go-snacks-deli-grocery/sunnie/-/N-dhjbdZq643lej8473>sunnie snacks</a>,<a href=https://www.target.com/c/snack-packs-on-the-go-snacks-deli-grocery/p3-portable-protein-pack/-/N-dhjbdZciz6d>p3 snack</a>,<a href=https://www.target.com/c/snacks-grocery/-/N-5xsy9>snack</a>,<a href=https://www.target.com/p/senor-rico-rice-pudding-15oz-4ct/-/A-88142407>senor rico rice pudding</a>,<a href=https://www.target.com/p/lunchables-spicy-nachos-4-4oz/-/A-92987468>nacho lunchable</a>,<a href=https://www.target.com/c/snack-packs-on-the-go-snacks-deli-grocery/p3-portable-protein-pack/-/N-dhjbdZciz6d>p3 protein pack</a>,<a href=https://www.target.com/p/jell-o-strawberry-sugar-free-jello-cups-gelatin-snack-12-5oz-4ct/-/A-47104281>single-serve sugar free jello</a>,<a href=https://www.target.com/b/p3-portable-protein-pack/-/N-ciz6d>p3 snack packs</a>,<a href=https://www.target.com/p/lunchly-turkey-stack-8216-ems-meal-kit-14-5oz/-/A-93739004>lunchly turkey stack ems</a>,<a href=https://www.target.com/c/snack-packs-on-the-go-snacks-deli-grocery/-/N-dhjbd>go to snacks</a>,<a href=https://www.target.com/p/armour-lunchmakers-ham-cracker-crunchers-2-44oz/-/A-52061440>lunchmakers</a>,<a href=https://www.target.com/p/lunchables-dunkables-cheese-sticks-with-pizza-sauce-and-bread-crumbs-2-1oz/-/A-90312703>dunkables</a>,<a href=https://www.target.com/p/lunchables-ham-38-american-cheese-3-2oz/-/A-87430615>ham and cheese lunchable</a>,<a href=https://www.target.com/p/snack-pack-vanilla-pudding-13oz-4ct/-/A-12935638>vanilla pudding cups</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426454",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "6855779de5573e7c5e82e524"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/dhjbd/WEB"
+}

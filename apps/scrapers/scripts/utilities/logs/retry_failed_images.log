@@ -1,0 +1,124 @@
+2025-11-23 20:50:02,975 - ERROR - Migration failed: Supabase is not configured. Please set environment variables:
+  - SUPABASE_URL
+  - SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY
+Traceback (most recent call last):
+  File "/Users/andrewdyar/goods-grocery/retry_failed_images.py", line 193, in retry_failed_images
+    client = get_client()
+             ^^^^^^^^^^^^
+  File "/Users/andrewdyar/goods-grocery/supabase_client.py", line 34, in get_client
+    raise ValueError(
+ValueError: Supabase is not configured. Please set environment variables:
+  - SUPABASE_URL
+  - SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY
+2025-11-23 20:50:17,219 - ERROR - Migration failed: Supabase is not configured. Please set environment variables:
+  - SUPABASE_URL
+  - SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY
+Traceback (most recent call last):
+  File "/Users/andrewdyar/goods-grocery/retry_failed_images.py", line 193, in retry_failed_images
+    client = get_client()
+             ^^^^^^^^^^^^
+  File "/Users/andrewdyar/goods-grocery/supabase_client.py", line 34, in get_client
+    raise ValueError(
+ValueError: Supabase is not configured. Please set environment variables:
+  - SUPABASE_URL
+  - SUPABASE_ANON_KEY or SUPABASE_SERVICE_ROLE_KEY
+2025-11-23 20:50:23,556 - INFO - Supabase client initialized successfully
+2025-11-23 20:50:23,556 - INFO - ================================================================================
+2025-11-23 20:50:23,556 - INFO - Retry Failed Image Migrations
+2025-11-23 20:50:23,557 - INFO - ================================================================================
+2025-11-23 20:50:23,557 - INFO - Extracting failed items from log...
+2025-11-23 20:50:23,616 - INFO - Found 8 failed items to retry:
+2025-11-23 20:50:23,616 - INFO -   - 907275 (heb): https://images.heb.com/is/image/HEBGrocery/prd-large/000907275.jpg
+2025-11-23 20:50:23,616 - INFO -   - 1954842 (heb): https://images.heb.com/is/image/HEBGrocery/prd-large/011283020.jpg
+2025-11-23 20:50:23,616 - INFO -   - 11283020 (heb): https://images.heb.com/is/image/HEBGrocery/prd-large/011283020.jpg
+2025-11-23 20:50:23,616 - INFO -   - 2159972 (heb): https://images.heb.com/is/image/HEBGrocery/prd-large/000907275.jpg
+2025-11-23 20:50:23,616 - INFO -   - 15533013 (heb): https://images.heb.com/is/image/HEBGrocery/prd-medium/015533013.jpg
+2025-11-23 20:50:23,617 - INFO -   - 4379163 (heb): https://images.heb.com/is/image/HEBGrocery/prd-large/004379163.jpg
+2025-11-23 20:50:23,617 - INFO -   - 15663012 (heb): https://images.heb.com/is/image/HEBGrocery/prd-medium/015533013.jpg
+2025-11-23 20:50:23,617 - INFO -   - 396102 (heb): https://images.heb.com/is/image/HEBGrocery/prd-large/004379163.jpg
+2025-11-23 20:50:23,617 - INFO - 
+2025-11-23 20:50:23,617 - INFO - [1/8] Retrying: 907275 (heb)
+2025-11-23 20:50:23,617 - INFO -   Source URL: https://images.heb.com/is/image/HEBGrocery/prd-large/000907275.jpg
+2025-11-23 20:50:24,623 - INFO -   Attempt 1/3: Downloading from https://images.heb.com/is/image/HEBGrocery/prd-large/000907275.jpg
+2025-11-23 20:50:24,929 - INFO -   ✅ Successfully downloaded (191048 bytes)
+2025-11-23 20:50:26,181 - INFO - HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/heb/907275.jpg "HTTP/2 200 OK"
+2025-11-23 20:50:26,187 - INFO -   ✅ Uploaded to heb/907275.jpg
+2025-11-23 20:50:26,357 - INFO - HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=id&store_item_id=eq.907275&store_name=eq.heb "HTTP/2 200 OK"
+2025-11-23 20:50:26,442 - INFO - HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?id=eq.8eedd130-bd13-4a2b-9a95-bf79dee814cb "HTTP/2 200 OK"
+2025-11-23 20:50:26,445 - INFO -   ✅ Updated database: https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/heb/907275.jpg
+2025-11-23 20:50:26,445 - INFO - 
+2025-11-23 20:50:26,445 - INFO - [2/8] Retrying: 1954842 (heb)
+2025-11-23 20:50:26,445 - INFO -   Source URL: https://images.heb.com/is/image/HEBGrocery/prd-large/011283020.jpg
+2025-11-23 20:50:27,448 - INFO -   Attempt 1/3: Downloading from https://images.heb.com/is/image/HEBGrocery/prd-large/011283020.jpg
+2025-11-23 20:50:28,326 - INFO -   ✅ Successfully downloaded (80617 bytes)
+2025-11-23 20:50:29,255 - INFO - HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/heb/1954842.jpg "HTTP/2 200 OK"
+2025-11-23 20:50:29,256 - INFO -   ✅ Uploaded to heb/1954842.jpg
+2025-11-23 20:50:29,333 - INFO - HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=id&store_item_id=eq.1954842&store_name=eq.heb "HTTP/2 200 OK"
+2025-11-23 20:50:29,423 - INFO - HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?id=eq.8e8a18e5-c810-49ee-8f1b-49d653014062 "HTTP/2 200 OK"
+2025-11-23 20:50:29,425 - INFO -   ✅ Updated database: https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/heb/1954842.jpg
+2025-11-23 20:50:29,425 - INFO - 
+2025-11-23 20:50:29,425 - INFO - [3/8] Retrying: 11283020 (heb)
+2025-11-23 20:50:29,425 - INFO -   Source URL: https://images.heb.com/is/image/HEBGrocery/prd-large/011283020.jpg
+2025-11-23 20:50:30,430 - INFO -   Attempt 1/3: Downloading from https://images.heb.com/is/image/HEBGrocery/prd-large/011283020.jpg
+2025-11-23 20:50:30,646 - INFO -   ✅ Successfully downloaded (80617 bytes)
+2025-11-23 20:50:31,387 - INFO - HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/heb/11283020.jpg "HTTP/2 200 OK"
+2025-11-23 20:50:31,388 - INFO -   ✅ Uploaded to heb/11283020.jpg
+2025-11-23 20:50:31,486 - INFO - HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=id&store_item_id=eq.11283020&store_name=eq.heb "HTTP/2 200 OK"
+2025-11-23 20:50:31,570 - INFO - HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?id=eq.5b4a3838-6676-4308-a684-9d322c5ac091 "HTTP/2 200 OK"
+2025-11-23 20:50:31,571 - INFO -   ✅ Updated database: https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/heb/11283020.jpg
+2025-11-23 20:50:31,571 - INFO - 
+2025-11-23 20:50:31,571 - INFO - [4/8] Retrying: 2159972 (heb)
+2025-11-23 20:50:31,571 - INFO -   Source URL: https://images.heb.com/is/image/HEBGrocery/prd-large/000907275.jpg
+2025-11-23 20:50:32,576 - INFO -   Attempt 1/3: Downloading from https://images.heb.com/is/image/HEBGrocery/prd-large/000907275.jpg
+2025-11-23 20:50:32,859 - INFO -   ✅ Successfully downloaded (191048 bytes)
+2025-11-23 20:50:33,710 - INFO - HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/heb/2159972.jpg "HTTP/2 200 OK"
+2025-11-23 20:50:33,710 - INFO -   ✅ Uploaded to heb/2159972.jpg
+2025-11-23 20:50:33,784 - INFO - HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=id&store_item_id=eq.2159972&store_name=eq.heb "HTTP/2 200 OK"
+2025-11-23 20:50:33,862 - INFO - HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?id=eq.74274fcb-b48f-4ad4-942b-b0ed1829224b "HTTP/2 200 OK"
+2025-11-23 20:50:33,863 - INFO -   ✅ Updated database: https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/heb/2159972.jpg
+2025-11-23 20:50:33,863 - INFO - 
+2025-11-23 20:50:33,863 - INFO - [5/8] Retrying: 15533013 (heb)
+2025-11-23 20:50:33,863 - INFO -   Source URL: https://images.heb.com/is/image/HEBGrocery/prd-medium/015533013.jpg
+2025-11-23 20:50:34,866 - INFO -   Attempt 1/3: Downloading from https://images.heb.com/is/image/HEBGrocery/prd-medium/015533013.jpg
+2025-11-23 20:50:35,372 - INFO -   ✅ Successfully downloaded (46792 bytes)
+2025-11-23 20:50:36,089 - INFO - HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/heb/15533013.jpg "HTTP/2 200 OK"
+2025-11-23 20:50:36,090 - INFO -   ✅ Uploaded to heb/15533013.jpg
+2025-11-23 20:50:36,163 - INFO - HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=id&store_item_id=eq.15533013&store_name=eq.heb "HTTP/2 200 OK"
+2025-11-23 20:50:36,241 - INFO - HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?id=eq.74dd90fb-a21c-4501-b445-5e3a302cd24c "HTTP/2 200 OK"
+2025-11-23 20:50:36,242 - INFO -   ✅ Updated database: https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/heb/15533013.jpg
+2025-11-23 20:50:36,242 - INFO - 
+2025-11-23 20:50:36,242 - INFO - [6/8] Retrying: 4379163 (heb)
+2025-11-23 20:50:36,242 - INFO -   Source URL: https://images.heb.com/is/image/HEBGrocery/prd-large/004379163.jpg
+2025-11-23 20:50:37,246 - INFO -   Attempt 1/3: Downloading from https://images.heb.com/is/image/HEBGrocery/prd-large/004379163.jpg
+2025-11-23 20:50:37,580 - INFO -   ✅ Successfully downloaded (117052 bytes)
+2025-11-23 20:50:38,593 - INFO - HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/heb/4379163.jpg "HTTP/2 200 OK"
+2025-11-23 20:50:38,595 - INFO -   ✅ Uploaded to heb/4379163.jpg
+2025-11-23 20:50:38,676 - INFO - HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=id&store_item_id=eq.4379163&store_name=eq.heb "HTTP/2 200 OK"
+2025-11-23 20:50:38,763 - INFO - HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?id=eq.3423ac35-f490-42d6-966f-0073cd85f50d "HTTP/2 200 OK"
+2025-11-23 20:50:38,763 - INFO -   ✅ Updated database: https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/heb/4379163.jpg
+2025-11-23 20:50:38,763 - INFO - 
+2025-11-23 20:50:38,763 - INFO - [7/8] Retrying: 15663012 (heb)
+2025-11-23 20:50:38,763 - INFO -   Source URL: https://images.heb.com/is/image/HEBGrocery/prd-medium/015533013.jpg
+2025-11-23 20:50:39,764 - INFO -   Attempt 1/3: Downloading from https://images.heb.com/is/image/HEBGrocery/prd-medium/015533013.jpg
+2025-11-23 20:50:39,962 - INFO -   ✅ Successfully downloaded (46792 bytes)
+2025-11-23 20:50:40,699 - INFO - HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/heb/15663012.jpg "HTTP/2 200 OK"
+2025-11-23 20:50:40,699 - INFO -   ✅ Uploaded to heb/15663012.jpg
+2025-11-23 20:50:40,779 - INFO - HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=id&store_item_id=eq.15663012&store_name=eq.heb "HTTP/2 200 OK"
+2025-11-23 20:50:40,858 - INFO - HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?id=eq.3b4adc44-a026-4071-9ea0-113c36183587 "HTTP/2 200 OK"
+2025-11-23 20:50:40,859 - INFO -   ✅ Updated database: https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/heb/15663012.jpg
+2025-11-23 20:50:40,859 - INFO - 
+2025-11-23 20:50:40,859 - INFO - [8/8] Retrying: 396102 (heb)
+2025-11-23 20:50:40,859 - INFO -   Source URL: https://images.heb.com/is/image/HEBGrocery/prd-large/004379163.jpg
+2025-11-23 20:50:41,864 - INFO -   Attempt 1/3: Downloading from https://images.heb.com/is/image/HEBGrocery/prd-large/004379163.jpg
+2025-11-23 20:50:41,976 - INFO -   ✅ Successfully downloaded (117052 bytes)
+2025-11-23 20:50:42,757 - INFO - HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/heb/396102.jpg "HTTP/2 200 OK"
+2025-11-23 20:50:42,759 - INFO -   ✅ Uploaded to heb/396102.jpg
+2025-11-23 20:50:42,834 - INFO - HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=id&store_item_id=eq.396102&store_name=eq.heb "HTTP/2 200 OK"
+2025-11-23 20:50:42,923 - INFO - HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?id=eq.caaae608-2f4c-4400-aee1-681fa5d1b617 "HTTP/2 200 OK"
+2025-11-23 20:50:42,923 - INFO -   ✅ Updated database: https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/heb/396102.jpg
+2025-11-23 20:50:42,924 - INFO - 
+2025-11-23 20:50:42,924 - INFO - ================================================================================
+2025-11-23 20:50:42,924 - INFO - Retry Complete!
+2025-11-23 20:50:42,924 - INFO -   ✅ Successfully migrated: 8 images
+2025-11-23 20:50:42,924 - INFO -   ❌ Failed: 0 images
+2025-11-23 20:50:42,924 - INFO - ================================================================================

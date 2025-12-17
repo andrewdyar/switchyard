@@ -1,0 +1,241 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Frozen Meat, Poultry & Seafood",
+    "type": "Category",
+    "node_id": "5xsz5",
+    "linking_id": "5xsz5",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/frozen-meat-poultry-seafood-foods-grocery/-/N-5xsz5",
+      "seo_h1": "Frozen Meat, Poultry & Seafood",
+      "seo_title": "Frozen Meat, Poultry & Seafood : Target",
+      "seo_description": "Shop Target for Frozen Meat, Poultry & Seafood you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/5xsz5",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Frozen Meat, Poultry & Seafood, Frozen Foods, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/Grocery_BUBCAT_May26BubCat_FrozenMeats-200526-1590505894656"
+    },
+    "og": {
+      "title": "Frozen Meat, Poultry & Seafood : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/Grocery_BUBCAT_May26BubCat_FrozenMeats-200526-1590505894656",
+      "url": "/c/frozen-meat-poultry-seafood-foods-grocery/-/N-5xsz5",
+      "description": "Shop Target for Frozen Meat, Poultry & Seafood you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xszd",
+        "name": "Frozen Foods",
+        "type": "Category",
+        "linking_id": "5xszd",
+        "number_of_children": "13",
+        "canonical_url": "/c/frozen-foods-grocery/-/N-5xszd",
+        "seo_h1": "Frozen Foods",
+        "page_id": "/c/5xszd",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "zmsrg",
+        "name": "Frozen Chicken",
+        "type": "Category",
+        "linking_id": "zmsrg",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-chicken-meat-poultry-seafood-foods-grocery/-/N-zmsrg",
+        "seo_h1": "Frozen Chicken",
+        "page_id": "/c/zmsrg",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_4369e066-3a52-4fcc-b94b-3871a8d55ba7"
+      },
+      {
+        "node_id": "1fu00",
+        "name": "Frozen Beef",
+        "type": "Category",
+        "linking_id": "1fu00",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-beef-meat-poultry-seafood-foods-grocery/-/N-1fu00",
+        "seo_h1": "Frozen Beef",
+        "page_id": "/c/1fu00",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_6447cab2-7dd5-49cb-b6e8-13d7d6b4a2da"
+      },
+      {
+        "node_id": "cs8z5",
+        "name": "Frozen Fish & Seafood",
+        "type": "Category",
+        "linking_id": "cs8z5",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-fish-seafood-meat-poultry-foods-grocery/-/N-cs8z5",
+        "seo_h1": "Frozen Fish & Seafood",
+        "page_id": "/c/cs8z5",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_a92cb468-8768-4e3b-8878-304697ac7369"
+      },
+      {
+        "node_id": "bmm3h",
+        "name": "Frozen Turkey",
+        "type": "Category",
+        "linking_id": "bmm3h",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-turkey-meat-poultry-seafood-foods-grocery/-/N-bmm3h",
+        "seo_h1": "Frozen Turkey",
+        "page_id": "/c/bmm3h",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_df0fd97c-48e5-49a1-97a3-e7875497483d"
+      },
+      {
+        "node_id": "7taqq",
+        "name": "Frozen Meatless Alternatives",
+        "type": "Category",
+        "linking_id": "7taqq",
+        "number_of_children": "0",
+        "canonical_url": "/c/frozen-meatless-alternatives-meat-poultry-seafood-foods-grocery/-/N-7taqq",
+        "seo_h1": "Frozen Meatless Alternatives",
+        "page_id": "/c/7taqq",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_8bda4bd4-4426-4ec9-b52f-52b768c8421e"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/category/WEB"
+}

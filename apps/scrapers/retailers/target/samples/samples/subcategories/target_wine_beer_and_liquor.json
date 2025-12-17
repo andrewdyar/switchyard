@@ -1,0 +1,685 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5n5q6",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_c5622526-ef05-4696-9d33-1a871405fc59",
+      "seo_keywords": "Wine, Beer & Liquor, Beverages",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Shop Target for Wine Beer  Liquor you will love at great low prices Choose from contactless Same Day Delivery Drive Up and more",
+      "seo_title": "Wine, Beer & Liquor : Target",
+      "seo_h1": "Wine, Beer & Liquor",
+      "canonical_url": "/c/wine-beer-liquor-beverages/-/N-5n5q6"
+    },
+    "node_id": "5n5q6",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "5xsxv",
+        "name": "Wine",
+        "type": "Category",
+        "linking_id": "5xsxv",
+        "number_of_children": "7",
+        "canonical_url": "/c/wine-beer-liquor-grocery/-/N-5xsxv",
+        "seo_h1": "Wine",
+        "page_id": "/c/5xsxv",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_f4142441-32c8-497e-ae93-59a6cc9bcf4e"
+      },
+      {
+        "node_id": "mar4j",
+        "name": "Hard Seltzers & Canned Cocktails",
+        "type": "Category",
+        "linking_id": "mar4j",
+        "number_of_children": "0",
+        "canonical_url": "/c/hard-seltzers/-/N-mar4j",
+        "seo_h1": "Hard Seltzers & Canned Cocktails",
+        "page_id": "/c/mar4j",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/9Wk5_Grocery_Liquor_BubcatMaltdrinks-QUIVER-190913-1568406621310"
+      },
+      {
+        "node_id": "5xsxx",
+        "name": "Beer",
+        "type": "Category",
+        "linking_id": "5xsxx",
+        "number_of_children": "6",
+        "canonical_url": "/c/beer-wine-liquor-grocery/-/N-5xsxx",
+        "seo_h1": "Beer",
+        "page_id": "/c/5xsxx",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/9Wk5_Grocery_Liquor_BubcatBeer-QUIVER-190913-1568406290563"
+      },
+      {
+        "node_id": "5xsxw",
+        "name": "Liquor",
+        "type": "Category",
+        "linking_id": "5xsxw",
+        "number_of_children": "12",
+        "canonical_url": "/c/liquor-wine-beer-grocery/-/N-5xsxw",
+        "seo_h1": "Liquor",
+        "page_id": "/c/5xsxw",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/9Wk5_Grocery_Liquor_BubcatLiquor-QUIVER-190913-1568406465231"
+      },
+      {
+        "node_id": "4uez3",
+        "name": "Cocktail Mixers",
+        "type": "Category",
+        "linking_id": "4uez3",
+        "number_of_children": "0",
+        "canonical_url": "/c/cocktail-mixers-beverages-grocery/-/N-4uez3",
+        "seo_h1": "Cocktail Mixers",
+        "page_id": "/c/4uez3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_8931475f-947b-40f6-a284-e857d19963ba"
+      },
+      {
+        "node_id": "gjl0q",
+        "name": "Non-Alcoholic Drinks",
+        "type": "Category",
+        "linking_id": "gjl0q",
+        "number_of_children": "0",
+        "canonical_url": "/c/non-alcoholic-drinks-wine-beer-liquor-grocery/-/N-gjl0q",
+        "seo_h1": "Non-Alcoholic Drinks",
+        "page_id": "/c/gjl0q",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_afb4516a-9940-429c-a6b8-925cd4661a64"
+      },
+      {
+        "node_id": "iscgt",
+        "name": "Target Selects",
+        "type": "Category",
+        "linking_id": "iscgt",
+        "number_of_children": "0",
+        "canonical_url": "/c/brands-we-love/-/N-iscgt",
+        "seo_h1": "Target Selects",
+        "page_id": "/c/iscgt",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_3Bubcat_Wine-220208-1644345332441"
+      },
+      {
+        "node_id": "evryn",
+        "name": "Holiday Alcohol Gift Sets",
+        "type": "Tag",
+        "linking_id": "evryn",
+        "number_of_children": "0",
+        "canonical_url": "/c/holiday-alcohol-gift-sets/-/N-evryn",
+        "seo_h1": "Holiday Alcohol Gift Sets",
+        "page_id": "/c/evryn",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0efe33fa-89ee-4a68-875b-1d7ec477ae5b"
+      },
+      {
+        "node_id": "ypj4e",
+        "name": "Top Rated Wines Under $15",
+        "type": "Tag",
+        "linking_id": "ypj4e",
+        "number_of_children": "0",
+        "canonical_url": "/c/game-day/-/N-ypj4e",
+        "seo_h1": "Top Rated Wines Under $15",
+        "page_id": "/c/ypj4e",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_2Bubcat_wine-210504-1620140104874"
+      },
+      {
+        "node_id": "46b4e",
+        "name": "100 Calorie Or Less Drinks",
+        "type": "Tag",
+        "linking_id": "46b4e",
+        "number_of_children": "0",
+        "canonical_url": "/c/100-calorie-or-less-drinks/-/N-46b4e",
+        "seo_h1": "100 Calorie Or Less Drinks",
+        "page_id": "/c/46b4e",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_19e83a60-98b8-4359-af10-26cd17acf2a6"
+      },
+      {
+        "node_id": "5xts9",
+        "name": "Bar & Wine Tools",
+        "type": "Category",
+        "linking_id": "5xts9",
+        "number_of_children": "0",
+        "canonical_url": "/c/bar-wine-tools-kitchen-dining/-/N-5xts9",
+        "seo_h1": "Bar & Wine Tools",
+        "page_id": "/c/5xts9",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/5xts9-bar-and-wine-accessories-QUIVER-190408-1554762948370"
+      }
+    ],
+    "og": {
+      "title": "Wine, Beer & Liquor : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_c5622526-ef05-4696-9d33-1a871405fc59",
+      "url": "/c/wine-beer-liquor-beverages/-/N-5n5q6",
+      "description": "Shop Target for Wine Beer  Liquor you will love at great low prices Choose from contactless Same Day Delivery Drive Up and more"
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5n5q6",
+    "title": "Wine, Beer & Liquor",
+    "deactivation_date": "2025-12-26T08:00Z",
+    "activation_date": "2025-11-15T08:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "800": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_NovWK4_F&B_Buy 4 Save 20% Off Wine with same day delivery **Disclaimer: 21+ products and services not available in all stores, void where prohibited",
+            "id": "STORY-41492",
+            "placement_id": "6866a0c017b9cb441e388c0c",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5n5q6",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_f8c6847b-380b-4f97-8a74-caffb7ca14ae",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                ""
+              ],
+              "line_two": [
+                "20"
+              ],
+              "lockup": "percent-off-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Get the deal"
+            },
+            "fine_print": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "21+ products & services not available in all stores, void where prohibited.\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "20"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "percent-off"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_d0fab8e0-fa15-46f9-824a-9fce2408d50a",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_0ce6fa67-bc5d-4bee-bc35-a05b8aaa515e",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_21718221-3bd0-49d0-9694-b094dcb21869",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_ac8088eb-7a49-413c-9db5-4eb6fd8ff928",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_820638327_STORY-41492",
+              "detail": {
+                "id": "820638327"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "when you buy 4 bottles of wine with same-day delivery or pickup*\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 40
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-carousel-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 800
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_F&B_AB Gift Sets_Standard CP",
+            "id": "STORY-40974",
+            "placement_id": "68ff19f4e4f10f5920f3bfe4",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_manual"
+          },
+          {
+            "title": "Nov wk 1_F&B_Holiday Adult Beverage_Standard CP",
+            "id": "STORY-40969",
+            "placement_id": "68ff19f4e4f10f5920f3bfe3",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_manual"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_89129d29-a120-4494-aae7-fa5fc65910a2",
+            "background_color": "#870508",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#ffffff",
+              "text_color": "#333333",
+              "outline_color": "#333333",
+              "button_type": "outlined",
+              "button_copy": "Shop adult beverages"
+            },
+            "extensions": {
+              "shoppable_carousel": {
+                "context": {
+                  "call_to_action": "add_to_cart",
+                  "prz": {
+                    "config": "placementId,primary_best_sellers;categoryId,evryn",
+                    "filters": [
+                      {
+                        "id": "salesRankSort"
+                      }
+                    ]
+                  },
+                  "type": "personalizedProducts"
+                },
+                "tcins": [
+                  "89034298",
+                  "92235357",
+                  "94826726",
+                  "94826725",
+                  "94748158",
+                  "94748156"
+                ]
+              }
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Make their holiday with adult bev gift sets"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_1def9e96-d399-4a82-be87-6ef09652012b",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_f0c671b1-afd8-4cca-a2b3-4aea136c90ae",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_740a5cc3-869b-48ef-b2e2-511888d63c3e",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_87892825-a3e7-4456-88bc-beab45176e34",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_75481b5b-c3d5-47a7-8866-ca2eb9254ccd",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_HolidayAlcoholicGiftSets_STORY-40974",
+              "destination_content": "CONTENT",
+              "detail": {
+                "id": "evryn",
+                "name": "Holiday Alcoholic Gift Sets",
+                "seo_url": "/c/holiday-alcoholic-gift-sets/-/N-evryn",
+                "type": "TAG",
+                "page_type_prefix": "c"
+              },
+              "facets": [],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "topleft",
+            "type_stack": "medium",
+            "width": 34
+          },
+          {
+            "background_color": "#870508",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#ffffff",
+              "text_color": "#333333",
+              "outline_color": "#333333",
+              "button_type": "outlined",
+              "button_copy": "Shop adult bevs"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Cheers the season with party-ready pours"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_a56af874-01f7-46cf-a75c-70e2be7b76c0",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_5dfe0f2d-d901-48b5-b307-d96427afbb91",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_3109e3ce-af96-467f-9d3b-412d46d6a6a5",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_Wine,Beer&Liquor_holiday-alcoholic-beverages_STORY-40969",
+              "destination_content": "GRID",
+              "detail": {
+                "id": "5n5q6",
+                "name": "Wine, Beer & Liquor",
+                "seo_url": "/c/wine-beer-liquor-beverages/-/N-5n5q6",
+                "type": "CATEGORY",
+                "page_type_prefix": "c"
+              },
+              "facets": [],
+              "marketing_groups": [
+                {
+                  "id": "153ct",
+                  "name": "Holiday Alcoholic Beverages",
+                  "display_name": "Holiday Alcoholic Beverages"
+                }
+              ]
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "topleft",
+            "type_stack": "medium",
+            "width": 100
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1300
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2261": {
+      "metadata": {
+        "components": [
+          {
+            "title": "1WK1_1.01_WineBeerLiquor_BIA PRZ Carousel",
+            "id": "WEB-391075",
+            "placement_id": "6605c79a20bc012ae990a781",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-391075",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-391075",
+        "custom_headline": "Buy it again with free Drive Up",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_bia_sameday_drive_up_trending;categoryId,5n5q6;fulfillmentId,scheduled_delivery_and_available,store_pickup_and_available,curbside_and_available"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 2261
+    },
+    "2263": {
+      "metadata": {
+        "components": [
+          {
+            "title": "WBL_disclaimer",
+            "id": "WEB-344667",
+            "placement_id": "6605c79a20bc012ae990a782",
+            "type": "c_web_a_0011_v02",
+            "type_name": "Informative Text",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "Informative Text",
+          "component_version": "02"
+        },
+        "info_text": [
+          {
+            "message": "<p><div style=\"text-align: center\">Alcohol availability varies by store and may not be eligible for same-day delivery or pickup services in some locations.</div></p>",
+            "subhead": ""
+          }
+        ]
+      },
+      "presentation": "/adaptive/c_web_a_0011/v02/mobile",
+      "order": 2263
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-436092",
+            "placement_id": "69181e391527587cd8639c0d",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/wine-beer-liquor-beverages/angry-orchard/-/N-5n5q6Z85e4i>angry orchard beer</a>,<a href=https://www.target.com/b/kiitos-brewing/-/N-d7hul>kiitos brewing</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/georgetown-brewing-co-/-/N-5n5q6Zw3dq4>georgetown brewing</a>,<a href=https://www.target.com/b/beatbox-beverages/-/N-q643leh28a5>beatbox drink</a>,<a href=https://www.target.com/b/josh-cellars/-/N-eaedy>josh wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/baileys/-/N-5n5q6Z54w1k>bailey liquor</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/benziger/-/N-5n5q6Zmx0n5>benziger</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/bulldog-london-dry-gin/-/N-5n5q6Zsw6tj>bulldog liquor</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/a-to-z/-/N-5n5q6Z84rxx>a to z liquor</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/collective-good/-/N-5n5q6Zq643lezqn47>collective good</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/-/N-5n5q6>liquor stores</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/deschutes-brewery/-/N-5n5q6Zfqu1x>deschutes brewery</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/moab-brewery/-/N-5n5q6Zrxl63>moab liquor</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/bartenura/-/N-5xsxvZ9bzvq>bartenura wine</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/legal-remedy-brewing-co-/-/N-5xsxxZ9y0qq>legal remedy brewing</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/casamigos/-/N-5n5q6Zwv5ds>finding casamigos packs locally</a>,<a href=https://www.target.com/b/bero-brewing/-/N-q643le7uo71>bero beer</a>,<a href=https://www.target.com/c/beer-wine-liquor-grocery/ace-cider/-/N-5xsxxZbl4h5>ace beer</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/baxter-brewing-co-/-/N-5n5q6Zyhrif>baxter liquor store</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/leroux/-/N-5n5q6Z1ibgb>leroux liquors</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/5n5q6/WEB",
+  "deactivation_date": "2025-12-26T08:00Z",
+  "activation_date": "2025-11-15T08:00Z"
+}

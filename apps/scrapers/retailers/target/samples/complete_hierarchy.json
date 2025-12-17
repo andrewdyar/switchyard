@@ -1,0 +1,2321 @@
+{
+  "summary": {
+    "total_subcategories": 347,
+    "by_level": {
+      "1": 149,
+      "2": 116,
+      "3": 82
+    },
+    "main_categories": 14
+  },
+  "hierarchy": {
+    "Bakery & Bread": [
+      {
+        "name": "Breads",
+        "node_id": "5xt18",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Cookies & Bars",
+        "node_id": "5xt17",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Donuts & Pastries",
+        "node_id": "5xt15",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Bagels",
+        "node_id": "4smkx",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Muffins",
+        "node_id": "yknno",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Cakes & Pies",
+        "node_id": "3tyea",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Tortillas, Pitas & Wraps",
+        "node_id": "4ss7f",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Refrigerated Doughs",
+        "node_id": "4tgo6",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Rolls & Buns",
+        "node_id": "c51ff",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Pizza Crusts",
+        "node_id": "5xt14",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Snack Cakes",
+        "node_id": "5xsxz",
+        "num_children": 0,
+        "level": 1
+      }
+    ],
+    "Beverages": [
+      {
+        "name": "Energy Drinks",
+        "node_id": "4uez2",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Juice & Cider",
+        "node_id": "5xt0o",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Soda & Pop",
+        "node_id": "5xt0m",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sports Drinks",
+        "node_id": "75dvf",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Water",
+        "node_id": "5xt0k",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Milk",
+        "node_id": "5xszh",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Milk Substitutes",
+        "node_id": "zkvwk",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Cocktail Mixers",
+        "node_id": "4uez3",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Protein Powders",
+        "node_id": "4rsq3",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Tea",
+        "node_id": "4yi5o",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Wine, Beer & Liquor",
+        "node_id": "5n5q6",
+        "num_children": 11,
+        "level": 1
+      },
+      {
+        "name": "Coffee",
+        "node_id": "4yi5p",
+        "num_children": 11,
+        "level": 1
+      },
+      {
+        "name": "Cocoa",
+        "node_id": "4yi5n",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Drink Mixes",
+        "node_id": "5xt0n",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Meal Replacement Drinks",
+        "node_id": "4uez0",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Ground Coffee",
+        "node_id": "x2hqv",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Coffee"
+      },
+      {
+        "name": "K-Cups & Coffee Pods",
+        "node_id": "6kpkn",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Coffee"
+      },
+      {
+        "name": "Whole Bean Coffee",
+        "node_id": "n8upo",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Coffee"
+      },
+      {
+        "name": "Espresso",
+        "node_id": "2dpp9",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Coffee"
+      },
+      {
+        "name": "Cold Brew & Bottled Coffee",
+        "node_id": "260b3",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Coffee"
+      },
+      {
+        "name": "Instant Coffee",
+        "node_id": "05hso",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Coffee"
+      },
+      {
+        "name": "Coffee Creamers",
+        "node_id": "5xszv",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Coffee"
+      },
+      {
+        "name": "Wine",
+        "node_id": "5xsxv",
+        "num_children": 7,
+        "level": 2,
+        "parent": "Wine, Beer & Liquor"
+      },
+      {
+        "name": "Hard Seltzers & Canned Cocktails",
+        "node_id": "mar4j",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine, Beer & Liquor"
+      },
+      {
+        "name": "Beer",
+        "node_id": "5xsxx",
+        "num_children": 6,
+        "level": 2,
+        "parent": "Wine, Beer & Liquor"
+      },
+      {
+        "name": "Liquor",
+        "node_id": "5xsxw",
+        "num_children": 12,
+        "level": 2,
+        "parent": "Wine, Beer & Liquor"
+      },
+      {
+        "name": "Cocktail Mixers",
+        "node_id": "4uez3",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine, Beer & Liquor"
+      },
+      {
+        "name": "Non-Alcoholic Drinks",
+        "node_id": "gjl0q",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine, Beer & Liquor"
+      },
+      {
+        "name": "Target Selects",
+        "node_id": "iscgt",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine, Beer & Liquor"
+      },
+      {
+        "name": "Bar & Wine Tools",
+        "node_id": "5xts9",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine, Beer & Liquor"
+      },
+      {
+        "name": "Domestic Beer",
+        "node_id": "jsxeu",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Craft Beer",
+        "node_id": "o3thc",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Import Beer",
+        "node_id": "00g2y",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Hard Cider",
+        "node_id": "wk3n7",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Non-Alcoholic Beer",
+        "node_id": "kdiu2",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Vodka",
+        "node_id": "ln0x9",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Bourbon",
+        "node_id": "xxj34",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Whiskey",
+        "node_id": "5xm96",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Tequila",
+        "node_id": "0091p",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Rum",
+        "node_id": "vazqx",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Cocktail Mixers",
+        "node_id": "4uez3",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Gin",
+        "node_id": "9vaw3",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Scotch",
+        "node_id": "ar4qr",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Brandy & Cognac",
+        "node_id": "hpmj8",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Liqueurs, Cordials & Schnapps",
+        "node_id": "fij4m",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Bar & Wine Tools",
+        "node_id": "5xts9",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "White Wine",
+        "node_id": "yskry",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Red Wine",
+        "node_id": "fups0",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Rose Wine",
+        "node_id": "qqz02",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Champagne & Sparkling Wine",
+        "node_id": "dd9ke",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Sweet Wine",
+        "node_id": "5a9bt",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Target Selects",
+        "node_id": "iscgt",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      }
+    ],
+    "Breakfast & Cereal": [
+      {
+        "name": "Cereal",
+        "node_id": "5xt0g",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Granola",
+        "node_id": "in6al",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Oatmeal",
+        "node_id": "8tu6y",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Pancake Mixes, Waffle Mixes & Syrup",
+        "node_id": "5xt0f",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Toaster Pastries & Breakfast Bars",
+        "node_id": "5xt0i",
+        "num_children": 0,
+        "level": 1
+      }
+    ],
+    "Candy": [
+      {
+        "name": "Christmas Candy & Treats",
+        "node_id": "iywcd",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Chocolate Candy",
+        "node_id": "5xt0b",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Gum & Mints",
+        "node_id": "5xt0a",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Gummy & Chewy Candy",
+        "node_id": "5xt09",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Hard Candy",
+        "node_id": "5xt08",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Freeze Dried Candy",
+        "node_id": "ojrvg",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sour Candy",
+        "node_id": "r498f",
+        "num_children": 0,
+        "level": 1
+      }
+    ],
+    "Coffee": [
+      {
+        "name": "Ground Coffee",
+        "node_id": "x2hqv",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "K-Cups & Coffee Pods",
+        "node_id": "6kpkn",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Whole Bean Coffee",
+        "node_id": "n8upo",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Espresso",
+        "node_id": "2dpp9",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Cold Brew & Bottled Coffee",
+        "node_id": "260b3",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Instant Coffee",
+        "node_id": "05hso",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Coffee Creamers",
+        "node_id": "5xszv",
+        "num_children": 0,
+        "level": 1
+      }
+    ],
+    "Dairy": [
+      {
+        "name": "Cheese",
+        "node_id": "5xszk",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Milk",
+        "node_id": "5xszh",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Eggs",
+        "node_id": "5xszi",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Yogurt",
+        "node_id": "5xszf",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Butter & Margarine",
+        "node_id": "5xszl",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Cottage Cheese",
+        "node_id": "4tgo9",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Cream & Whipped Toppings",
+        "node_id": "5xszj",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Milk Substitutes",
+        "node_id": "zkvwk",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Coffee Creamers",
+        "node_id": "5xszv",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Cream Cheese",
+        "node_id": "4tgo8",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Refrigerated Doughs",
+        "node_id": "4tgo6",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sour Cream & Dips",
+        "node_id": "5xszg",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Desserts & Puddings",
+        "node_id": "ab90f",
+        "num_children": 0,
+        "level": 1
+      }
+    ],
+    "Deli": [
+      {
+        "name": "Prepared Salads & Sandwiches",
+        "node_id": "mdt7r",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Fresh Dips, Salsas & Hummus",
+        "node_id": "cjg5k",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Prepared Meals & Sides",
+        "node_id": "7dopp",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Artisan Cheese & Cured Meats",
+        "node_id": "czzeu",
+        "num_children": 2,
+        "level": 1
+      },
+      {
+        "name": "Packaged Lunch Meat",
+        "node_id": "4tgi6",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Fresh Soups",
+        "node_id": "p2osw",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Snack Packs & On the Go Snacks",
+        "node_id": "dhjbd",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sliced Deli Meat & Deli Cheese",
+        "node_id": "zomk2",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Meal Kits",
+        "node_id": "fql6w",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Party Trays",
+        "node_id": "tgba0",
+        "num_children": 0,
+        "level": 1
+      }
+    ],
+    "Food Gifts": [
+      {
+        "name": "Wine",
+        "node_id": "5xsxv",
+        "num_children": 7,
+        "level": 1
+      },
+      {
+        "name": "Fresh Flowers & Plants",
+        "node_id": "2dei4",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "White Wine",
+        "node_id": "yskry",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine"
+      },
+      {
+        "name": "Red Wine",
+        "node_id": "fups0",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine"
+      },
+      {
+        "name": "Rose Wine",
+        "node_id": "qqz02",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine"
+      },
+      {
+        "name": "Champagne & Sparkling Wine",
+        "node_id": "dd9ke",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine"
+      },
+      {
+        "name": "Sweet Wine",
+        "node_id": "5a9bt",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine"
+      },
+      {
+        "name": "Target Selects",
+        "node_id": "iscgt",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Wine"
+      },
+      {
+        "name": "White Wine",
+        "node_id": "yskry",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Red Wine",
+        "node_id": "fups0",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Rose Wine",
+        "node_id": "qqz02",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Champagne & Sparkling Wine",
+        "node_id": "dd9ke",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Sweet Wine",
+        "node_id": "5a9bt",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Target Selects",
+        "node_id": "iscgt",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      }
+    ],
+    "Frozen Foods": [
+      {
+        "name": "Frozen Single Serve Meals",
+        "node_id": "wdysv",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Family Meals",
+        "node_id": "a3dpa",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Ice Cream & Novelties",
+        "node_id": "5xsz2",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Pizza",
+        "node_id": "5xsz4",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Breakfast Food",
+        "node_id": "5xsza",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Meat, Poultry & Seafood",
+        "node_id": "5xsz5",
+        "num_children": 5,
+        "level": 1
+      },
+      {
+        "name": "Frozen Appetizers & Snacks",
+        "node_id": "5xszb",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Desserts",
+        "node_id": "5xsz9",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Fruit",
+        "node_id": "5xsz7",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Potatoes",
+        "node_id": "a479c",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Vegetables",
+        "node_id": "5xsz3",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Bread & Dough",
+        "node_id": "4tglw",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Frozen Chicken",
+        "node_id": "zmsrg",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Frozen Meat, Poultry & Seafood"
+      },
+      {
+        "name": "Frozen Beef",
+        "node_id": "1fu00",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Frozen Meat, Poultry & Seafood"
+      },
+      {
+        "name": "Frozen Fish & Seafood",
+        "node_id": "cs8z5",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Frozen Meat, Poultry & Seafood"
+      },
+      {
+        "name": "Frozen Turkey",
+        "node_id": "bmm3h",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Frozen Meat, Poultry & Seafood"
+      },
+      {
+        "name": "Frozen Meatless Alternatives",
+        "node_id": "7taqq",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Frozen Meat, Poultry & Seafood"
+      }
+    ],
+    "Meat & Seafood": [
+      {
+        "name": "Beef",
+        "node_id": "4tgi8",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Chicken",
+        "node_id": "4tgi7",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Ham",
+        "node_id": "f2cgx",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Turkey",
+        "node_id": "4tghz",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Fish & Seafood",
+        "node_id": "4tgi0",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Packaged Lunch Meat",
+        "node_id": "4tgi6",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Pork",
+        "node_id": "4tgi2",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Bacon",
+        "node_id": "4tgi9",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sausages",
+        "node_id": "p9cdq",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Hot Dogs",
+        "node_id": "4tgi5",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sliced Deli Meat & Deli Cheese",
+        "node_id": "zomk2",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Meatless Alternatives",
+        "node_id": "4tgi3",
+        "num_children": 0,
+        "level": 1
+      }
+    ],
+    "Pantry": [
+      {
+        "name": "Pasta, Rice & Grains",
+        "node_id": "5xsyc",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sauces & Marinades",
+        "node_id": "4tg6h",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Boxed Meals & Side Dishes",
+        "node_id": "5xsyf",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Canned & Packaged Foods",
+        "node_id": "5xt05",
+        "num_children": 5,
+        "level": 1
+      },
+      {
+        "name": "Soups, Broth & Chili",
+        "node_id": "5xszx",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Baking Staples",
+        "node_id": "4u9lv",
+        "num_children": 16,
+        "level": 1
+      },
+      {
+        "name": "Condiments",
+        "node_id": "5xszw",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Peanut Butter & Spreads",
+        "node_id": "5xszr",
+        "num_children": 2,
+        "level": 1
+      },
+      {
+        "name": "Spices & Seasonings",
+        "node_id": "5xszu",
+        "num_children": 3,
+        "level": 1
+      },
+      {
+        "name": "Salad Dressings",
+        "node_id": "zqc4",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Applesauce & Fruit Cups",
+        "node_id": "5xsy8",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Cooking Oil & Vinegar",
+        "node_id": "4u9ly",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Salsa & Dips",
+        "node_id": "5xsy5",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sugar & Sweeteners",
+        "node_id": "5xt0u",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Emergency Food",
+        "node_id": "4ykz6",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Sugar & Sweeteners",
+        "node_id": "5xt0u",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Dried Fruit & Raisins",
+        "node_id": "5xt0y",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Nuts",
+        "node_id": "tc851",
+        "num_children": 16,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Baking Chips & Cocoa",
+        "node_id": "5xt12",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Baking Kits & Mixes",
+        "node_id": "5xt11",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Baking Powder, Baking Soda & Yeast",
+        "node_id": "5xt0s",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Condensed & Powdered Milk",
+        "node_id": "5xt03",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Extracts & Food Coloring",
+        "node_id": "4u9lt",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Flours & Meals",
+        "node_id": "4u9lu",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Frosting & Icing",
+        "node_id": "4u9ls",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Gelatin & Pudding",
+        "node_id": "5xsy3",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Marshmallows",
+        "node_id": "5xt0v",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Pie Crusts & Filling",
+        "node_id": "4u9lr",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Sprinkles, Candles & Decorations",
+        "node_id": "5xt0z",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Syrups & Sauces",
+        "node_id": "5xt0w",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Baking Staples"
+      },
+      {
+        "name": "Canned Fruit",
+        "node_id": "6peje",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Canned & Packaged Foods"
+      },
+      {
+        "name": "Canned Vegetables",
+        "node_id": "sl97t",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Canned & Packaged Foods"
+      },
+      {
+        "name": "Canned Meat",
+        "node_id": "2m8ve",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Canned & Packaged Foods"
+      },
+      {
+        "name": "Canned Tuna & Seafood",
+        "node_id": "7yq1l",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Canned & Packaged Foods"
+      },
+      {
+        "name": "Olives, Pickles & Peppers",
+        "node_id": "40p8x",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Canned & Packaged Foods"
+      },
+      {
+        "name": "Mixed Nuts",
+        "node_id": "wm5wa",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Almonds",
+        "node_id": "jj7li",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Cashews",
+        "node_id": "35foc",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Peanuts",
+        "node_id": "cm46a",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Chickpeas",
+        "node_id": "cvw85",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Corn Nuts",
+        "node_id": "hdmsb",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pistachios",
+        "node_id": "4ueyh",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Hazelnuts",
+        "node_id": "8jk59",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Macadamia Nuts",
+        "node_id": "iq3w0",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pecans",
+        "node_id": "h2ijq",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Walnuts",
+        "node_id": "94swx",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Apricot Kernels",
+        "node_id": "89egw",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Brazil Nuts",
+        "node_id": "aff1y",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Chestnuts",
+        "node_id": "ritg4",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pine Nuts",
+        "node_id": "xsvrf",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Soy Nut",
+        "node_id": "5oplp",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Nut Butters",
+        "node_id": "mnyf1",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Peanut Butter & Spreads"
+      },
+      {
+        "name": "Fruit Spreads, Jams & Jellies",
+        "node_id": "58bef",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Peanut Butter & Spreads"
+      },
+      {
+        "name": "Breadcrumbs & Seasoned Coatings",
+        "node_id": "4u9lh",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Spices & Seasonings"
+      },
+      {
+        "name": "Herbs, Rubs & Spices",
+        "node_id": "4u9lf",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Spices & Seasonings"
+      },
+      {
+        "name": "Salt & Pepper",
+        "node_id": "4u9lg",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Spices & Seasonings"
+      },
+      {
+        "name": "Mixed Nuts",
+        "node_id": "wm5wa",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Almonds",
+        "node_id": "jj7li",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Cashews",
+        "node_id": "35foc",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Peanuts",
+        "node_id": "cm46a",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Chickpeas",
+        "node_id": "cvw85",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Corn Nuts",
+        "node_id": "hdmsb",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pistachios",
+        "node_id": "4ueyh",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Hazelnuts",
+        "node_id": "8jk59",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Macadamia Nuts",
+        "node_id": "iq3w0",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pecans",
+        "node_id": "h2ijq",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Walnuts",
+        "node_id": "94swx",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Apricot Kernels",
+        "node_id": "89egw",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Brazil Nuts",
+        "node_id": "aff1y",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Chestnuts",
+        "node_id": "ritg4",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pine Nuts",
+        "node_id": "xsvrf",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Soy Nut",
+        "node_id": "5oplp",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      }
+    ],
+    "Produce": [
+      {
+        "name": "Fresh Fruit",
+        "node_id": "4tglt",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Fresh Vegetables",
+        "node_id": "4tglh",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Salad Mixes",
+        "node_id": "by5pi",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Fresh Juices",
+        "node_id": "c5lky",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Fresh Dressings & Dips",
+        "node_id": "flfjt",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Fresh Flowers & Plants",
+        "node_id": "2dei4",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Meatless Alternatives",
+        "node_id": "4tgi3",
+        "num_children": 0,
+        "level": 1
+      }
+    ],
+    "Snacks": [
+      {
+        "name": "Snack Variety Packs",
+        "node_id": "sjs32",
+        "num_children": 7,
+        "level": 1
+      },
+      {
+        "name": "Chips",
+        "node_id": "5xsy7",
+        "num_children": 11,
+        "level": 1
+      },
+      {
+        "name": "Cookies",
+        "node_id": "54v3e",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Crackers",
+        "node_id": "5xsy6",
+        "num_children": 8,
+        "level": 1
+      },
+      {
+        "name": "Rice Cakes",
+        "node_id": "rdb7b",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Protein Bars",
+        "node_id": "4rsq0",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Snack & Granola Bars",
+        "node_id": "4ydo1",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Trail Mix",
+        "node_id": "5xsy1",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Meat Sticks",
+        "node_id": "5xsy2",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Popcorn",
+        "node_id": "5xsy0",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Snack Mix",
+        "node_id": "ps6um",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Jerky",
+        "node_id": "yh744",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Pretzels",
+        "node_id": "f7azc",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Seeds",
+        "node_id": "qzfx",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Applesauce & Fruit Cups",
+        "node_id": "5xsy8",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Candy",
+        "node_id": "5xt0d",
+        "num_children": 11,
+        "level": 1
+      },
+      {
+        "name": "Frozen Appetizers & Snacks",
+        "node_id": "5xszb",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Fruit Snacks",
+        "node_id": "5xsy4",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Salsa & Dips",
+        "node_id": "5xsy5",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Snack Packs & On the Go Snacks",
+        "node_id": "dhjbd",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Toaster Pastries & Breakfast Bars",
+        "node_id": "5xt0i",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Dried Fruit & Raisins",
+        "node_id": "5xt0y",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Nuts",
+        "node_id": "tc851",
+        "num_children": 16,
+        "level": 1
+      },
+      {
+        "name": "Snack Cakes",
+        "node_id": "5xsxz",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Gelatin & Pudding",
+        "node_id": "5xsy3",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Christmas Candy & Treats",
+        "node_id": "iywcd",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Candy"
+      },
+      {
+        "name": "Chocolate Candy",
+        "node_id": "5xt0b",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Candy"
+      },
+      {
+        "name": "Gum & Mints",
+        "node_id": "5xt0a",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Candy"
+      },
+      {
+        "name": "Gummy & Chewy Candy",
+        "node_id": "5xt09",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Candy"
+      },
+      {
+        "name": "Hard Candy",
+        "node_id": "5xt08",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Candy"
+      },
+      {
+        "name": "Freeze Dried Candy",
+        "node_id": "ojrvg",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Candy"
+      },
+      {
+        "name": "Sour Candy",
+        "node_id": "r498f",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Candy"
+      },
+      {
+        "name": "Chip Multipacks",
+        "node_id": "7ker",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Tortilla Chips",
+        "node_id": "5o1js",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Potato Chips",
+        "node_id": "stdt9",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Corn Chips",
+        "node_id": "pa7uy",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Puffed Snacks",
+        "node_id": "t2oe7",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Grain Chips",
+        "node_id": "hdnoy",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Protein Chips",
+        "node_id": "svnpn",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Pita Chips",
+        "node_id": "vg697",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Pork Rinds",
+        "node_id": "4gl5j",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Vegetable Chips",
+        "node_id": "fpt3r",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Salsa & Dips",
+        "node_id": "5xsy5",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Chips"
+      },
+      {
+        "name": "Multigrain, Rice & Seed Crackers",
+        "node_id": "y33cc",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Crackers"
+      },
+      {
+        "name": "Butter Crackers",
+        "node_id": "hq89u",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Crackers"
+      },
+      {
+        "name": "Cheese Crackers",
+        "node_id": "2gjhn",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Crackers"
+      },
+      {
+        "name": "Cracker Multipacks",
+        "node_id": "95u1d",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Crackers"
+      },
+      {
+        "name": "Gluten Free Crackers",
+        "node_id": "a4u74",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Crackers"
+      },
+      {
+        "name": "Graham Crackers",
+        "node_id": "e1h0n",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Crackers"
+      },
+      {
+        "name": "Saltine Crackers",
+        "node_id": "urn30",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Crackers"
+      },
+      {
+        "name": "Sandwich Crackers",
+        "node_id": "v35so",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Crackers"
+      },
+      {
+        "name": "Chip Multipacks",
+        "node_id": "7ker",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Snack Variety Packs"
+      },
+      {
+        "name": "Cookie Multipacks",
+        "node_id": "v247q",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Snack Variety Packs"
+      },
+      {
+        "name": "Cracker Multipacks",
+        "node_id": "95u1d",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Snack Variety Packs"
+      },
+      {
+        "name": "Popcorn & Pretzel Multipacks",
+        "node_id": "55oea",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Snack Variety Packs"
+      },
+      {
+        "name": "Snack & Granola Bars",
+        "node_id": "4ydo1",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Snack Variety Packs"
+      },
+      {
+        "name": "Applesauce & Fruit Cups",
+        "node_id": "5xsy8",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Snack Variety Packs"
+      },
+      {
+        "name": "Fruit Snacks",
+        "node_id": "5xsy4",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Snack Variety Packs"
+      },
+      {
+        "name": "Mixed Nuts",
+        "node_id": "wm5wa",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Almonds",
+        "node_id": "jj7li",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Cashews",
+        "node_id": "35foc",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Peanuts",
+        "node_id": "cm46a",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Chickpeas",
+        "node_id": "cvw85",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Corn Nuts",
+        "node_id": "hdmsb",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pistachios",
+        "node_id": "4ueyh",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Hazelnuts",
+        "node_id": "8jk59",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Macadamia Nuts",
+        "node_id": "iq3w0",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pecans",
+        "node_id": "h2ijq",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Walnuts",
+        "node_id": "94swx",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Apricot Kernels",
+        "node_id": "89egw",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Brazil Nuts",
+        "node_id": "aff1y",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Chestnuts",
+        "node_id": "ritg4",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Pine Nuts",
+        "node_id": "xsvrf",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      },
+      {
+        "name": "Soy Nut",
+        "node_id": "5oplp",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Nuts"
+      }
+    ],
+    "Wine, Beer & Liquor": [
+      {
+        "name": "Wine",
+        "node_id": "5xsxv",
+        "num_children": 7,
+        "level": 1
+      },
+      {
+        "name": "Hard Seltzers & Canned Cocktails",
+        "node_id": "mar4j",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Beer",
+        "node_id": "5xsxx",
+        "num_children": 6,
+        "level": 1
+      },
+      {
+        "name": "Liquor",
+        "node_id": "5xsxw",
+        "num_children": 12,
+        "level": 1
+      },
+      {
+        "name": "Cocktail Mixers",
+        "node_id": "4uez3",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Non-Alcoholic Drinks",
+        "node_id": "gjl0q",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Target Selects",
+        "node_id": "iscgt",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Bar & Wine Tools",
+        "node_id": "5xts9",
+        "num_children": 0,
+        "level": 1
+      },
+      {
+        "name": "Domestic Beer",
+        "node_id": "jsxeu",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Beer"
+      },
+      {
+        "name": "Craft Beer",
+        "node_id": "o3thc",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Beer"
+      },
+      {
+        "name": "Import Beer",
+        "node_id": "00g2y",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Beer"
+      },
+      {
+        "name": "Hard Cider",
+        "node_id": "wk3n7",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Beer"
+      },
+      {
+        "name": "Non-Alcoholic Beer",
+        "node_id": "kdiu2",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Beer"
+      },
+      {
+        "name": "Vodka",
+        "node_id": "ln0x9",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Bourbon",
+        "node_id": "xxj34",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Whiskey",
+        "node_id": "5xm96",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Tequila",
+        "node_id": "0091p",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Rum",
+        "node_id": "vazqx",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Cocktail Mixers",
+        "node_id": "4uez3",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Gin",
+        "node_id": "9vaw3",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Scotch",
+        "node_id": "ar4qr",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Brandy & Cognac",
+        "node_id": "hpmj8",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Liqueurs, Cordials & Schnapps",
+        "node_id": "fij4m",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Bar & Wine Tools",
+        "node_id": "5xts9",
+        "num_children": 0,
+        "level": 2,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Domestic Beer",
+        "node_id": "jsxeu",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Craft Beer",
+        "node_id": "o3thc",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Import Beer",
+        "node_id": "00g2y",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Hard Cider",
+        "node_id": "wk3n7",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Non-Alcoholic Beer",
+        "node_id": "kdiu2",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Beer"
+      },
+      {
+        "name": "Vodka",
+        "node_id": "ln0x9",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Bourbon",
+        "node_id": "xxj34",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Whiskey",
+        "node_id": "5xm96",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Tequila",
+        "node_id": "0091p",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Rum",
+        "node_id": "vazqx",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Cocktail Mixers",
+        "node_id": "4uez3",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Gin",
+        "node_id": "9vaw3",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Scotch",
+        "node_id": "ar4qr",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Brandy & Cognac",
+        "node_id": "hpmj8",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Liqueurs, Cordials & Schnapps",
+        "node_id": "fij4m",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "Bar & Wine Tools",
+        "node_id": "5xts9",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Liquor"
+      },
+      {
+        "name": "White Wine",
+        "node_id": "yskry",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Red Wine",
+        "node_id": "fups0",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Rose Wine",
+        "node_id": "qqz02",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Champagne & Sparkling Wine",
+        "node_id": "dd9ke",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Sweet Wine",
+        "node_id": "5a9bt",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      },
+      {
+        "name": "Target Selects",
+        "node_id": "iscgt",
+        "num_children": 0,
+        "level": 3,
+        "parent": "Wine"
+      }
+    ]
+  }
+}

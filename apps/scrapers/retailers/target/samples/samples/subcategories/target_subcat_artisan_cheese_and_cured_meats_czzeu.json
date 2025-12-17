@@ -1,0 +1,205 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Artisan Cheese & Cured Meats",
+    "type": "Category",
+    "node_id": "czzeu",
+    "linking_id": "czzeu",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/artisan-cheese-cured-meats-deli-grocery/-/N-czzeu",
+      "seo_h1": "Artisan Cheese & Cured Meats",
+      "seo_title": "Artisan Cheese & Cured Meats : Target",
+      "seo_description": "Shop Target for Artisan Cheese & Cured Meats you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/czzeu",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Artisan Cheese & Cured Meats, Deli, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_cc036803-94b1-4a2e-b451-52c3d1d42489"
+    },
+    "og": {
+      "title": "Artisan Cheese & Cured Meats : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_cc036803-94b1-4a2e-b451-52c3d1d42489",
+      "url": "/c/artisan-cheese-cured-meats-deli-grocery/-/N-czzeu",
+      "description": "Shop Target for Artisan Cheese & Cured Meats you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5hp74",
+        "name": "Deli",
+        "type": "Category",
+        "linking_id": "5hp74",
+        "number_of_children": "11",
+        "canonical_url": "/c/deli-grocery/-/N-5hp74",
+        "seo_h1": "Deli",
+        "page_id": "/c/5hp74",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "jfn2p",
+        "name": "Specialty Cheese",
+        "type": "Tag",
+        "linking_id": "jfn2p",
+        "number_of_children": "0",
+        "canonical_url": "/c/specialty-cheese/-/N-jfn2p",
+        "seo_h1": "Specialty Cheese",
+        "page_id": "/c/jfn2p",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_177afb69-0596-4a64-98bb-7795f4bb5256"
+      },
+      {
+        "node_id": "r4ma6",
+        "name": "Specialty Meats",
+        "type": "Tag",
+        "linking_id": "r4ma6",
+        "number_of_children": "0",
+        "canonical_url": "/c/specialty-meats/-/N-r4ma6",
+        "seo_h1": "Specialty Meats",
+        "page_id": "/c/r4ma6",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_12d0a447-6ed0-4971-a02a-90276b8974d4"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/category/WEB"
+}

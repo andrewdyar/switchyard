@@ -1,0 +1,354 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Wine",
+    "type": "Category",
+    "node_id": "5xsxv",
+    "linking_id": "5xsxv",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/wine-beer-liquor-grocery/-/N-5xsxv",
+      "seo_h1": "Wine",
+      "seo_title": "Wine : Target",
+      "seo_description": "Shop Target for Wine you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/5xsxv",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Wine, Wine, Beer & Liquor, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_f4142441-32c8-497e-ae93-59a6cc9bcf4e"
+    },
+    "og": {
+      "title": "Wine : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_f4142441-32c8-497e-ae93-59a6cc9bcf4e",
+      "url": "/c/wine-beer-liquor-grocery/-/N-5xsxv",
+      "description": "Shop Target for Wine you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5n5q6",
+        "name": "Wine, Beer & Liquor",
+        "type": "Category",
+        "linking_id": "5n5q6",
+        "number_of_children": "11",
+        "canonical_url": "/c/wine-beer-liquor-beverages/-/N-5n5q6",
+        "seo_h1": "Wine, Beer & Liquor",
+        "page_id": "/c/5n5q6",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "yskry",
+        "name": "White Wine",
+        "type": "Category",
+        "linking_id": "yskry",
+        "number_of_children": "0",
+        "canonical_url": "/c/white-wine-beer-liquor-grocery/-/N-yskry",
+        "seo_h1": "White Wine",
+        "page_id": "/c/yskry",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_WhiteWine-210419-1618870482756"
+      },
+      {
+        "node_id": "fups0",
+        "name": "Red Wine",
+        "type": "Category",
+        "linking_id": "fups0",
+        "number_of_children": "0",
+        "canonical_url": "/c/red-wine-beer-liquor-grocery/-/N-fups0",
+        "seo_h1": "Red Wine",
+        "page_id": "/c/fups0",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_RedWine-210419-1618870488202"
+      },
+      {
+        "node_id": "qqz02",
+        "name": "Rose Wine",
+        "type": "Category",
+        "linking_id": "qqz02",
+        "number_of_children": "0",
+        "canonical_url": "/c/rose-wine-beer-liquor-grocery/-/N-qqz02",
+        "seo_h1": "Rose Wine",
+        "page_id": "/c/qqz02",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_RoseWine-210419-1618870500090"
+      },
+      {
+        "node_id": "dd9ke",
+        "name": "Champagne & Sparkling Wine",
+        "type": "Category",
+        "linking_id": "dd9ke",
+        "number_of_children": "0",
+        "canonical_url": "/c/champagne-sparkling-wine-beer-liquor-grocery/-/N-dd9ke",
+        "seo_h1": "Champagne & Sparkling Wine",
+        "page_id": "/c/dd9ke",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_Champagne-210419-1618870494425"
+      },
+      {
+        "node_id": "5a9bt",
+        "name": "Sweet Wine",
+        "type": "Category",
+        "linking_id": "5a9bt",
+        "number_of_children": "0",
+        "canonical_url": "/c/sweet-wine-beer-liquor-grocery/-/N-5a9bt",
+        "seo_h1": "Sweet Wine",
+        "page_id": "/c/5a9bt",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_a294bef7-233e-43fb-8425-2e549bb2d33b"
+      },
+      {
+        "node_id": "iscgt",
+        "name": "Target Selects",
+        "type": "Category",
+        "linking_id": "iscgt",
+        "number_of_children": "0",
+        "canonical_url": "/c/brands-we-love/-/N-iscgt",
+        "seo_h1": "Target Selects",
+        "page_id": "/c/iscgt",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_3Bubcat_Wine-220208-1644345332441"
+      },
+      {
+        "node_id": "ypj4e",
+        "name": "Top Rated Wines Under $15",
+        "type": "Tag",
+        "linking_id": "ypj4e",
+        "number_of_children": "0",
+        "canonical_url": "/c/game-day/-/N-ypj4e",
+        "seo_h1": "Top Rated Wines Under $15",
+        "page_id": "/c/ypj4e",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_2Bubcat_wine-210504-1620140104874"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "800": {
+      "order": 800,
+      "content": {
+        "background_color": "#eeeeee",
+        "container": {
+          "keyValuePairs": {
+            "context": "placementId,web_primary_basket_pbo_offers_foryou;categoryId,5n5q6,4uez3"
+          },
+          "type": "personalizedPromotions"
+        },
+        "id": "WEB-366679",
+        "margin_bottom": "standard",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "text_color": "dark",
+        "trackingId": "WEB-366679"
+      },
+      "presentation": "universal_prz_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "OFFER PRZ",
+            "id": "WEB-366679",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static",
+            "placement_id": "6616bd1dff87b209ae20ae4e"
+          }
+        ]
+      }
+    },
+    "1100": {
+      "order": 1100,
+      "content": {
+        "background_color": "#f7f7f7",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_bia_sameday_drive_up_trending;categoryId,5xsxv"
+          },
+          "type": "personalizedProducts"
+        },
+        "id": "WEB-398560",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "text_color": "dark",
+        "trackingId": "WEB-398560"
+      },
+      "presentation": "universal_prz_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "2024_April Wk 1_F&B_Wine BIA",
+            "id": "WEB-398560",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static",
+            "placement_id": "6616bd4a1b0140138bbc1fe2"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/p/starla-non-alcoholic-red-2pk-187ml-btls/-/A-90472107>starla</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/pink-moscato/-/N-5xsxvZ27e2vrbty87>pink moscato</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/chehalem-winery/-/N-5xsxvZq643leldhf1>chehalem winery</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/riunite/-/N-5xsxvZ55cu3>riunite wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/white-moscato/-/N-5xsxvZ27e2vriyg5o>moscato white wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/predator-wines/-/N-5xsxvZwyshu>predator liquor bottle</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/bogle-vineyards/-/N-5xsxvZ567a3>bogle</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/papi/-/N-5xsxvZq643le5hfnr>papi wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/white-zinfandel/-/N-5xsxvZ27e2vrqh7rf>white zinfandel</a>,<a href=https://www.target.com/b/mcbride-sisters/-/N-cbcf3>mcbride sisters wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/jacob-s-creek/-/N-5xsxvZpzpel>jacob's creek wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/estancia/-/N-5xsxvZ55hu4>estancia wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/daou/-/N-5xsxvZu068z>daou</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/wolffer-estate/-/N-5xsxvZ9r30i>wolffer estate</a>,<a href=https://www.target.com/p/stella-rosa-watermelon-white-wine-750ml-bottle/-/A-79628840?sid=347S&amp;afid=google&amp;TCID=OGS&amp;CPNG=AdultBev&amp;adgroup=213-0&amp;gStoreCode=347S&amp;gQT=3>stella rosa</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/bonterra/-/N-5xsxvZy0vj5>bonterra wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/kendall-jackson/-/N-5xsxvZs9mvz>kendall jackson</a>,<a href=https://www.target.com/s/promotions>vmc clinic</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/lolli/-/N-5xsxvZq643lej38m4>lolli</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/firestone-walker-brewing-company/-/N-5xsxvZ120jq>firestone walker brewing</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/landmark-vineyards/-/N-5xsxvZlzrse>landmark vineyards</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/beringer/-/N-5xsxvZ56daj>beringer wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/apothic/-/N-5xsxvZ89s92>apothic</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/sale/-/N-5xsxvZ5tdv0>wine on sale</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/aviana/-/N-5xsxvZq643le84p0x>aviana wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/diseno/-/N-5xsxvZ54w69>diseno rose</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/toasted-head/-/N-5xsxvZvzy79>toasted head wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/chateau-ste-michelle/-/N-5xsxvZ5679z>michelle wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/hobnob/-/N-5xsxvZq643le1wjde>hob nob wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/austin-hope/-/N-5xsxvZxn7lz>austin red wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/elouan/-/N-5xsxvZuiljz>elouan wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/black-star-farms/-/N-5xsxvZxg5mw>black star alexandria</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/14-hands-winery/-/N-5xsxvZpm7iw>12 hands wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/sea-sun/-/N-5xsxvZq643lea1d49>sea sun</a>,<a href=https://www.target.com/p/three-thieves-cabernet-sauvignon-red-wine-750ml-bottle/-/A-51774288?gQT=1>three thieves wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/sugar-free/-/N-5n5q6Zidmd0>buy wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/sechey/-/N-5xsxvZq643leu39ql>sechey wine</a>,<a href=https://www.target.com/b/justin-wines/-/N-66ukd>justin wine</a>,<a href=https://www.target.com/p/bartenura-moscato-wine-750ml-bottle/-/A-14765649?gQT=1>bartenura wine</a>,<a href=https://www.target.com/p/scout-wild-red-blend-750ml-bottle/-/A-86540925?gQT=1>scout wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/luc-belaire/-/N-5xsxvZg32xo>belair wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/roderer-estate/-/N-5xsxvZq643le98bw0>roderer</a>,<a href=https://www.target.com/p/stoneleigh-sauvignon-blanc-750ml-bottle/-/A-86517225>stoneleigh wine</a>,<a href=https://www.target.com/p/spritz-society-variety-pack-8pk-250ml-cans/-/A-89952730>spritz society</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/element-al-/-/N-5xsxvZq643le7o8ae>elemental wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/joel-gott/-/N-5xsxvZ4yd7g>joel wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/weekly-ad/-/N-5xsxvZ55dgn>wine ad</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/charles-charles/-/N-5xsxvZm0buw>charles and charles wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/pomelo/-/N-5xsxvZ1k9ih>pomelo wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/noble-vines/-/N-5xsxvZpc8lf>nobles wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/mollydooker/-/N-5xsxvZq643lekzxwx>mollydooker wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/conundrum/-/N-5xsxvZ3g9fm>conundrum wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/spade-and-sparrow/-/N-5xsxvZq643lewa82z>sparrow wine</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/love-cork-screw/-/N-5xsxvZ8skv0>love cork screw</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/target-circle-deals/-/N-5xsxvZuj3xg>wine deals</a>,<a href=https://www.target.com/c/wine-beer-liquor-grocery/hinnant-family-vineyards/-/N-5xsxvZk43uo>hinnant vineyards</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426377",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "685577938a58a5663de1f337"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/5xsxv/WEB"
+}

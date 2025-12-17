@@ -1,0 +1,147 @@
+{
+  "parent_category": {
+    "name": "Snacks",
+    "node_id": "5xsy9"
+  },
+  "subcategories": [
+    {
+      "name": "Snack Variety Packs",
+      "node_id": "sjs32",
+      "num_children": 7
+    },
+    {
+      "name": "Chips",
+      "node_id": "5xsy7",
+      "num_children": 11
+    },
+    {
+      "name": "Cookies",
+      "node_id": "54v3e",
+      "num_children": 0
+    },
+    {
+      "name": "Crackers",
+      "node_id": "5xsy6",
+      "num_children": 8
+    },
+    {
+      "name": "Rice Cakes",
+      "node_id": "rdb7b",
+      "num_children": 0
+    },
+    {
+      "name": "Protein Bars",
+      "node_id": "4rsq0",
+      "num_children": 0
+    },
+    {
+      "name": "Snack & Granola Bars",
+      "node_id": "4ydo1",
+      "num_children": 0
+    },
+    {
+      "name": "Trail Mix",
+      "node_id": "5xsy1",
+      "num_children": 0
+    },
+    {
+      "name": "Meat Sticks",
+      "node_id": "5xsy2",
+      "num_children": 0
+    },
+    {
+      "name": "Popcorn",
+      "node_id": "5xsy0",
+      "num_children": 0
+    },
+    {
+      "name": "Snack Mix",
+      "node_id": "ps6um",
+      "num_children": 0
+    },
+    {
+      "name": "Jerky",
+      "node_id": "yh744",
+      "num_children": 0
+    },
+    {
+      "name": "Pretzels",
+      "node_id": "f7azc",
+      "num_children": 0
+    },
+    {
+      "name": "Seeds",
+      "node_id": "qzfx",
+      "num_children": 0
+    },
+    {
+      "name": "Applesauce & Fruit Cups",
+      "node_id": "5xsy8",
+      "num_children": 0
+    },
+    {
+      "name": "Candy",
+      "node_id": "5xt0d",
+      "num_children": 11
+    },
+    {
+      "name": "Frozen Appetizers & Snacks",
+      "node_id": "5xszb",
+      "num_children": 0
+    },
+    {
+      "name": "Fruit Snacks",
+      "node_id": "5xsy4",
+      "num_children": 0
+    },
+    {
+      "name": "Salsa & Dips",
+      "node_id": "5xsy5",
+      "num_children": 0
+    },
+    {
+      "name": "Snack Packs & On the Go Snacks",
+      "node_id": "dhjbd",
+      "num_children": 0
+    },
+    {
+      "name": "Toaster Pastries & Breakfast Bars",
+      "node_id": "5xt0i",
+      "num_children": 0
+    },
+    {
+      "name": "Dried Fruit & Raisins",
+      "node_id": "5xt0y",
+      "num_children": 0
+    },
+    {
+      "name": "Nuts",
+      "node_id": "tc851",
+      "num_children": 16
+    },
+    {
+      "name": "Snack Cakes",
+      "node_id": "5xsxz",
+      "num_children": 0
+    },
+    {
+      "name": "Gelatin & Pudding",
+      "node_id": "5xsy3",
+      "num_children": 0
+    }
+  ],
+  "tags": [
+    {
+      "name": "Christmas Snacks",
+      "node_id": "7oj7s"
+    },
+    {
+      "name": "New in Snacks",
+      "node_id": "udc6e"
+    },
+    {
+      "name": "Protein Snacks",
+      "node_id": "cmc2c"
+    }
+  ]
+}

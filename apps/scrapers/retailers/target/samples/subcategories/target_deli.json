@@ -1,0 +1,556 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5hp74",
+      "image_path": "https://target.scene7.com/is/image/Target/Grocery_L1_BubCat_Deli-QUIVER-190913-1568387695468",
+      "seo_keywords": "Deli, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Contactless options including Same Day Delivery and Drive Up are available with Target. Shop today to find Deli at incredible prices.",
+      "seo_title": "Deli : Target",
+      "seo_h1": "Deli",
+      "canonical_url": "/c/deli-grocery/-/N-5hp74"
+    },
+    "node_id": "5hp74",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "mdt7r",
+        "name": "Prepared Salads & Sandwiches",
+        "type": "Category",
+        "linking_id": "mdt7r",
+        "number_of_children": "0",
+        "canonical_url": "/c/prepared-salads-sandwiches-deli-grocery/-/N-mdt7r",
+        "seo_h1": "Prepared Salads & Sandwiches",
+        "page_id": "/c/mdt7r",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_fa4651cc-f4cd-4224-87dd-00fc394eeec1"
+      },
+      {
+        "node_id": "cjg5k",
+        "name": "Fresh Dips, Salsas & Hummus",
+        "type": "Category",
+        "linking_id": "cjg5k",
+        "number_of_children": "0",
+        "canonical_url": "/c/fresh-dips-salsas-hummus-deli-grocery/-/N-cjg5k",
+        "seo_h1": "Fresh Dips, Salsas & Hummus",
+        "page_id": "/c/cjg5k",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_89d99fd2-e7e9-42a6-96cd-954e71567d19"
+      },
+      {
+        "node_id": "7dopp",
+        "name": "Prepared Meals & Sides",
+        "type": "Category",
+        "linking_id": "7dopp",
+        "number_of_children": "0",
+        "canonical_url": "/c/prepared-meals-sides-deli-grocery/-/N-7dopp",
+        "seo_h1": "Prepared Meals & Sides",
+        "page_id": "/c/7dopp",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_704d6eaa-4a56-430d-a51f-2acbe949885c"
+      },
+      {
+        "node_id": "czzeu",
+        "name": "Artisan Cheese & Cured Meats",
+        "type": "Category",
+        "linking_id": "czzeu",
+        "number_of_children": "2",
+        "canonical_url": "/c/artisan-cheese-cured-meats-deli-grocery/-/N-czzeu",
+        "seo_h1": "Artisan Cheese & Cured Meats",
+        "page_id": "/c/czzeu",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_cc036803-94b1-4a2e-b451-52c3d1d42489"
+      },
+      {
+        "node_id": "4tgi6",
+        "name": "Packaged Lunch Meat",
+        "type": "Category",
+        "linking_id": "4tgi6",
+        "number_of_children": "0",
+        "canonical_url": "/c/packaged-lunch-meat-deli-grocery/-/N-4tgi6",
+        "seo_h1": "Packaged Lunch Meat",
+        "page_id": "/c/4tgi6",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_cb527427-a260-424c-9f70-d0ec35dc6c79"
+      },
+      {
+        "node_id": "p2osw",
+        "name": "Fresh Soups",
+        "type": "Category",
+        "linking_id": "p2osw",
+        "number_of_children": "0",
+        "canonical_url": "/c/fresh-soups-deli-grocery/-/N-p2osw",
+        "seo_h1": "Fresh Soups",
+        "page_id": "/c/p2osw",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_2ebd51ba-40fe-4a5e-a737-ebd69a914623"
+      },
+      {
+        "node_id": "dhjbd",
+        "name": "Snack Packs & On the Go Snacks",
+        "type": "Category",
+        "linking_id": "dhjbd",
+        "number_of_children": "0",
+        "canonical_url": "/c/snack-packs-on-the-go-snacks-deli-grocery/-/N-dhjbd",
+        "seo_h1": "Snack Packs & On the Go Snacks",
+        "page_id": "/c/dhjbd",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_dd07434c-b7a1-4d6c-a44d-fe2e2aeb45d0"
+      },
+      {
+        "node_id": "zomk2",
+        "name": "Sliced Deli Meat & Deli Cheese",
+        "type": "Category",
+        "linking_id": "zomk2",
+        "number_of_children": "0",
+        "canonical_url": "/c/sliced-deli-meat-cheese-grocery/-/N-zomk2",
+        "seo_h1": "Sliced Deli Meat & Deli Cheese",
+        "page_id": "/c/zomk2",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_ae3daf1a-d8a5-4c42-996d-b6a9c4336484"
+      },
+      {
+        "node_id": "sv5if",
+        "name": "Charcuterie Board Ideas",
+        "type": "Tag",
+        "linking_id": "sv5if",
+        "number_of_children": "0",
+        "canonical_url": "/c/charcuterie-board-ideas/-/N-sv5if",
+        "seo_h1": "Charcuterie Board Ideas",
+        "page_id": "/c/sv5if",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_477a03c7-08d1-4e84-af71-f9c2412ef0c7"
+      },
+      {
+        "node_id": "fql6w",
+        "name": "Meal Kits",
+        "type": "Category",
+        "linking_id": "fql6w",
+        "number_of_children": "0",
+        "canonical_url": "/c/meal-kits-deli-grocery/-/N-fql6w",
+        "seo_h1": "Meal Kits",
+        "page_id": "/c/fql6w",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_68c81e02-f11b-4231-a5b4-2d98a3d0c843"
+      },
+      {
+        "node_id": "tgba0",
+        "name": "Party Trays",
+        "type": "Category",
+        "linking_id": "tgba0",
+        "number_of_children": "0",
+        "canonical_url": "/c/party-trays-deli-grocery/-/N-tgba0",
+        "seo_h1": "Party Trays",
+        "page_id": "/c/tgba0",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_7b90ddf0-8bd0-4f15-aa2d-798bd9f2039c"
+      }
+    ],
+    "og": {
+      "title": "Deli : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/Grocery_L1_BubCat_Deli-QUIVER-190913-1568387695468",
+      "url": "/c/deli-grocery/-/N-5hp74",
+      "description": "Contactless options including Same Day Delivery and Drive Up are available with Target. Shop today to find Deli at incredible prices."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5hp74",
+    "title": "Deli",
+    "activation_date": "2025-09-21T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "800": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_NovWK4_F&B_Sale from $1.89 on Thanksgiving Sides & Meal essentials with same day services",
+            "id": "STORY-41501",
+            "placement_id": "68669d57b62e620b0c696221",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5hp74",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_1047bba2-25c1-4f37-9490-6e374ecd9423",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                "Sale from"
+              ],
+              "line_two": [
+                "1.89"
+              ],
+              "lockup": "price-emphasis-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Get the deal"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "Sale from "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "1.89"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_1aacdb64-01a5-4335-9b72-1ced2fa62d74",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_0576d03b-a208-4561-82fc-2854eb7bb35b",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_9ed3abbe-66a6-47b6-80b6-3d18c16f7df6",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_a10c9be8-d342-4b97-b9ce-f660f21687f7",
+            "link": {
+              "target": "GROUPED_OFFER",
+              "link_tag": "C_GroupedOffer_8675-2022353715895_STORY-41501",
+              "detail": {
+                "id": "8675-2022353715895",
+                "promo_ids": [
+                  "210971174",
+                  "276969467",
+                  "781086538",
+                  "926082072",
+                  "821874538",
+                  "668570004",
+                  "597829954",
+                  "931214385",
+                  "781770561",
+                  "256152752"
+                ],
+                "boosted_tcins": [
+                  "54560287",
+                  "94566542",
+                  "13204307",
+                  "14770109",
+                  "12953828",
+                  "13601362",
+                  "13156213",
+                  "12958524",
+                  "12958523",
+                  "14992709",
+                  "54550537",
+                  "14746100",
+                  "78853664",
+                  "78829251"
+                ]
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "side dishes & meal essentials for Thanksgiving*\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 27
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-carousel-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 800
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Sept wk 2_Meatball Sub Meal NEW_Standard CP",
+            "id": "STORY-39487",
+            "placement_id": "68cd71ea00b59a657140ba57",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5hp74",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "amplified_headline": {
+          "color": "#333333",
+          "line_four": [
+            "20"
+          ],
+          "line_one": [
+            "Meatball"
+          ],
+          "line_three": [
+            "under "
+          ],
+          "line_two": [
+            "subs for 4"
+          ],
+          "lockup": "value-price-emphasis-versioned",
+          "lockup_disposition": "double-line",
+          "version": "v2"
+        },
+        "background_color": "#f6f5f1",
+        "background_color_behavior": "simplified",
+        "call_to_action_button_style": {
+          "background_color": "#cc0000",
+          "text_color": "#ffffff",
+          "button_type": "filled",
+          "button_copy": "Shop the meal"
+        },
+        "headline": {
+          "content": [
+            {
+              "attributes": {
+                "color": "#333333"
+              },
+              "insert": {
+                "text": "Meatball subs for 4 under  "
+              }
+            },
+            {
+              "attributes": {
+                "color": "#333333",
+                "pricestyleprice": true
+              },
+              "insert": {
+                "text": "$"
+              }
+            },
+            {
+              "attributes": {
+                "color": "#333333"
+              },
+              "insert": {
+                "text": "20\n"
+              }
+            }
+          ]
+        },
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_53c96b07-c752-424d-b67e-c9c3ecdd5552",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_692c6d8b-7ee2-4213-a5e1-93b6285a98b4",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_8e8bba62-93ec-4f50-8d99-3116453449f3",
+        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_1b517d9e-e37d-4aa3-8072-a09eda0c3530",
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_2c642e77-bd7b-4d09-bf8e-d7710f74d822",
+        "link": {
+          "target": "MULTI_TCIN",
+          "link_tag": "C_MultiTcin_shoppable_drawer_STORY-39487",
+          "detail": {
+            "id": "shoppable_drawer",
+            "multi_tcins": [
+              "82021218",
+              "13331340",
+              "79507430",
+              "54337119",
+              "54560287"
+            ]
+          }
+        },
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "text_position": "topleft",
+        "type_stack": "medium",
+        "width": 100
+      },
+      "presentation": "standard",
+      "component_type": "story_v01",
+      "extensions": [
+        "shoppable_carousel"
+      ],
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1300
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    }
+  },
+  "uri": "/5hp74/WEB",
+  "activation_date": "2025-09-21T07:00Z"
+}

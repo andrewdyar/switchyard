@@ -1,0 +1,543 @@
+{
+    "data": {
+        "product": {
+            "__typename": "Product",
+            "tcin": "94911701",
+            "category": {
+                "parent_category_id": "5xsy9",
+                "name": "Rice Cakes",
+                "breadcrumbs": [
+                    {
+                        "canonical_url": "/",
+                        "category_id": "root",
+                        "name": "target"
+                    },
+                    {
+                        "canonical_url": "/c/grocery/-/N-5xt1a",
+                        "category_id": "5xt1a",
+                        "name": "Grocery"
+                    },
+                    {
+                        "canonical_url": "/c/snacks-grocery/-/N-5xsy9",
+                        "category_id": "5xsy9",
+                        "name": "Snacks"
+                    },
+                    {
+                        "canonical_url": "/c/rice-cakes-snacks-grocery/-/N-rdb7b",
+                        "category_id": "rdb7b",
+                        "name": "Rice Cakes"
+                    }
+                ]
+            },
+            "sales_classification_nodes": {
+                "node_ids": [
+                    "rdb7b",
+                    "7oj7s",
+                    "udc6e",
+                    "n14zs",
+                    "8omml",
+                    "a3x8v",
+                    "qtcwa",
+                    "9irig",
+                    "5ol",
+                    "cec0k"
+                ]
+            },
+            "ratings_and_reviews": {
+                "has_verified": true,
+                "statistics": {
+                    "not_recommended_count": 1,
+                    "question_count": 0,
+                    "rating": {
+                        "average": 4.63,
+                        "count": 27,
+                        "distribution": {
+                            "rating1": 1,
+                            "rating2": 0,
+                            "rating3": 2,
+                            "rating4": 2,
+                            "rating5": 22
+                        },
+                        "secondary_averages": [
+                            {
+                                "id": "quality",
+                                "label": "quality",
+                                "range": 5,
+                                "type": "RATING",
+                                "value": 4.83
+                            },
+                            {
+                                "id": "taste",
+                                "label": "taste",
+                                "range": 5,
+                                "type": "RATING",
+                                "value": 4.83
+                            },
+                            {
+                                "id": "value",
+                                "label": "value",
+                                "range": 5,
+                                "type": "RATING",
+                                "value": 4.75
+                            }
+                        ]
+                    },
+                    "recommended_count": 11,
+                    "recommended_percentage": 91,
+                    "review_count": 15
+                },
+                "most_recent": [
+                    {
+                        "id": "96d6925f-a774-42c6-9c00-9c7a418c1c70",
+                        "text": "first time trying drizzilicious starting with this peppermint flavor & i finished the whole bag in a day get these away from me.",
+                        "author": {
+                            "external_id": "10008971238"
+                        },
+                        "title": "addictive stuff",
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2025-11-27T13:27:12.355Z"
+                        }
+                    },
+                    {
+                        "id": "6045fc86-2fbc-419a-a9e6-bbe26e21f04f",
+                        "text": "Love Drizzilicious! These have such a good crunch and a perfect amount of sweetness. This is a great option to cure your sweet tooth while watching your calories.",
+                        "author": {
+                            "nickname": "Mikayla",
+                            "external_id": "8021330342"
+                        },
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2025-11-25T22:10:07.322Z"
+                        }
+                    },
+                    {
+                        "id": "c84cb559-a02a-4a80-9688-c7d7af75aa38",
+                        "text": "Yummy, delicious right amount of flavor.",
+                        "author": {
+                            "nickname": "Lue",
+                            "external_id": "2071934776"
+                        },
+                        "title": "Will buy again",
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2025-11-24T20:39:38.375Z"
+                        }
+                    },
+                    {
+                        "id": "1596e75e-fa16-454e-b64b-e0acef4de1e1",
+                        "text": "Such a delicious snack for the holiday season!",
+                        "author": {
+                            "nickname": "Ashley",
+                            "external_id": "20035848047"
+                        },
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2025-11-24T01:25:26.703Z"
+                        }
+                    },
+                    {
+                        "id": "2dc69e3b-ad63-46fb-8107-f29ee80e052f",
+                        "text": "Love this",
+                        "author": {
+                            "nickname": "Jonalyn",
+                            "external_id": "20011485562"
+                        },
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2025-11-23T03:44:28.939Z"
+                        }
+                    },
+                    {
+                        "id": "cf47c439-6efa-4ad5-be49-5cd7aa8bbe79",
+                        "text": "These taste sooooo good. So glad they are low in calories too. Cannot wait to try more flavors. If you like the peppermint white chocolate frappes settle for these instead!",
+                        "author": {
+                            "nickname": "luvmymedic",
+                            "external_id": "8023965470"
+                        },
+                        "title": "Delicious & Addicting!",
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2025-11-23T03:35:12.502Z"
+                        }
+                    },
+                    {
+                        "id": "056a5ec4-8e15-4696-b785-b1be49dfaa87",
+                        "text": "I’m addicted these things are so good oh my gosh I wish these were year round. I ate a family size bag in one sitting.",
+                        "author": {
+                            "nickname": "Jakayla",
+                            "external_id": "10106940138"
+                        },
+                        "title": "Addicting",
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2025-11-22T03:35:53.380Z"
+                        }
+                    },
+                    {
+                        "id": "eedb2950-2f6a-411e-8399-daaf17163ba3",
+                        "text": "I LITERALLY ATE THE WHOLE BAG IN ONE SITTING…………",
+                        "author": {
+                            "nickname": "MC",
+                            "external_id": "10011999437"
+                        },
+                        "title": "SO ADDICTING",
+                        "rating": {
+                            "value": 5.0,
+                            "submitted_at": "2025-11-22T00:57:11.818Z"
+                        }
+                    }
+                ],
+                "photos": [
+                    "https://target.scene7.com/is/image/Target/GUEST_9e8c6a2b-7cb1-41fe-8a4b-4cbf1d9215f9",
+                    "https://target.scene7.com/is/image/Target/GUEST_9f191d85-600e-4f05-b561-a1ced716b7c8",
+                    "https://target.scene7.com/is/image/Target/GUEST_ef85b8e7-d3fd-4466-aa8a-a1d8dec767e7",
+                    "https://target.scene7.com/is/image/Target/GUEST_e658fe6a-52e4-4708-b353-0575035cad01"
+                ]
+            },
+            "financing_options": {
+                "channel": "DIGITAL",
+                "providers": [
+                    {
+                        "finance_minimum_loan_amount": 30.0,
+                        "finance_provider": "PayPal",
+                        "financing_terms_url": "https://www.paypal.com/credit-presentment/lander/modal?client_id=AZ_XI7q1Eg3_B6ho8bkB1B06juS0UYjNs0hXDrDbxu4GzhtTUOj0xhb8VB0KigC5pV0Qljr95-Kp8JKE&amount=0&currency=USD&buyer_country=US&offer=PAY_LATER_SHORT_TERM&integrationType=API",
+                        "financing_cell_header": "Pay in 4",
+                        "financing_cell_body": "Pay in 4 interest-free payments on purchases of $30-$1,500",
+                        "is_finance_eligible": true,
+                        "is_finance_message_eligible": true
+                    }
+                ]
+            },
+            "free_shipping": {
+                "enabled": false
+            },
+            "ornaments": [
+                {
+                    "ornament": "new_at_target",
+                    "display": "New at",
+                    "ornament_type": "enterprise",
+                    "template_type": "text_with_red_bullseye",
+                    "metadata": "{\"experiments\":[{\"factor\":\"new_at_target\",\"value\":\"new_at_target_variation_1\",\"default\":false}]}"
+                },
+                {
+                    "ornament": "new_at_target_red_bullseye",
+                    "display": "New",
+                    "ornament_type": "enterprise",
+                    "template_type": "red_bullseye_with_text",
+                    "metadata": "{\"experiments\":[{\"factor\":\"new_at_target\",\"value\":\"new_at_target_variation_2\",\"default\":false}]}"
+                }
+            ],
+            "item": {
+                "product_classification": {
+                    "item_type": {
+                        "name": "Chips, Puffs and Pretzels",
+                        "type": "425724"
+                    },
+                    "product_type": 109420,
+                    "product_type_name": "GROCERY",
+                    "purchase_behavior": "Frequency"
+                },
+                "compliance": {},
+                "disclaimer": {
+                    "description": "Content on this site is for reference purposes only.  Target does not represent or warrant that the nutrition, ingredient, allergen and other product information on our Web or Mobile sites are accurate or complete, since this information comes from the product manufacturers.  On occasion, manufacturers may improve or change their product formulas and update their labels.  We recommend that you do not rely solely on the information presented on our Web or Mobile sites and that you review the product's label or contact the manufacturer directly if you have specific product concerns or questions.  If you have specific healthcare concerns or questions about the products displayed, please contact your licensed healthcare professional for advice or answers.  Any additional pictures are suggested servings only.",
+                    "type": "Grocery Disclaimer"
+                },
+                "enrichment": {
+                    "buy_url": "https://www.target.com/p/drizzilicious-holiday-peppermint-bites-mini-rice-cakes-4oz/-/A-94911701",
+                    "image_info": {
+                        "base_url": "//target.scene7.com/is/image/Target/",
+                        "primary_image": {
+                            "image_name": "GUEST_3b0fc2ea-9d0e-424b-abf2-c892120fb9b2",
+                            "url": "https://target.scene7.com/is/image/Target/GUEST_3b0fc2ea-9d0e-424b-abf2-c892120fb9b2"
+                        },
+                        "content_labels": [
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_3b0fc2ea-9d0e-424b-abf2-c892120fb9b2"
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_31a39179-1a7b-4267-80f6-6eb54f0244b3"
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_23e407c7-884e-4c43-a985-dfea732b6ce9"
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_277a491b-7c46-4970-9e7f-4de1f99f3236"
+                            }
+                        ],
+                        "alternate_images": [
+                            {
+                                "url": "https://target.scene7.com/is/image/Target/GUEST_31a39179-1a7b-4267-80f6-6eb54f0244b3",
+                                "image_name": "GUEST_31a39179-1a7b-4267-80f6-6eb54f0244b3"
+                            },
+                            {
+                                "url": "https://target.scene7.com/is/image/Target/GUEST_23e407c7-884e-4c43-a985-dfea732b6ce9",
+                                "image_name": "GUEST_23e407c7-884e-4c43-a985-dfea732b6ce9"
+                            },
+                            {
+                                "url": "https://target.scene7.com/is/image/Target/GUEST_277a491b-7c46-4970-9e7f-4de1f99f3236",
+                                "image_name": "GUEST_277a491b-7c46-4970-9e7f-4de1f99f3236"
+                            }
+                        ],
+                        "swatch_image": {}
+                    },
+                    "nutrition_facts": {
+                        "ingredients": "White Rice Flour, Cane Sugar, Corn Flour, Tapioca Starch, Corn Starch, Palm Kernel Oil, Sunflower Oil, Quinoa, Chia, Flax, Salt, Natural Flavor, Organic Rice Syrup, Peppermint Oil, Red Cabbage, Purple Carrots (Color)' '",
+                        "nutrition_label_type_code": "LEGACY_FORMAT",
+                        "value_prepared_list": [
+                            {
+                                "nutrients": [
+                                    {
+                                        "name": "Calories",
+                                        "quantity": 90.0,
+                                        "unit_of_measurement": "Cal"
+                                    },
+                                    {
+                                        "name": "Total Fat",
+                                        "percentage": 4.0,
+                                        "quantity": 3.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Saturated Fat",
+                                        "percentage": 8.0,
+                                        "quantity": 1.5,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Trans Fat",
+                                        "quantity": 0.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Cholesterol",
+                                        "percentage": 0.0,
+                                        "quantity": 0.0,
+                                        "unit_of_measurement": "mg"
+                                    },
+                                    {
+                                        "name": "Sodium",
+                                        "percentage": 3.0,
+                                        "quantity": 60.0,
+                                        "unit_of_measurement": "mg"
+                                    },
+                                    {
+                                        "name": "Total Carbohydrate",
+                                        "percentage": 6.0,
+                                        "quantity": 16.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Dietary Fiber",
+                                        "quantity": 0.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Sugars",
+                                        "quantity": 6.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Added Sugars",
+                                        "percentage": 12.0,
+                                        "quantity": 6.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Protein",
+                                        "quantity": 0.0,
+                                        "unit_of_measurement": "g"
+                                    },
+                                    {
+                                        "name": "Vitamin D",
+                                        "percentage": 0.0,
+                                        "quantity": 0.0,
+                                        "unit_of_measurement": "mcg"
+                                    },
+                                    {
+                                        "name": "Calcium",
+                                        "percentage": 0.0,
+                                        "quantity": 0.0,
+                                        "unit_of_measurement": "mg"
+                                    },
+                                    {
+                                        "name": "Iron",
+                                        "percentage": 0.0,
+                                        "quantity": 0.1,
+                                        "unit_of_measurement": "mg"
+                                    },
+                                    {
+                                        "name": "Potassium",
+                                        "percentage": 0.0,
+                                        "quantity": 10.0,
+                                        "unit_of_measurement": "mg"
+                                    }
+                                ],
+                                "serving_size": "21.0",
+                                "serving_size_unit_of_measurement": "g",
+                                "servings_per_container": "5"
+                            }
+                        ],
+                        "warning": "Manufactured in a tree nut and peanut free facility that also processes milk, soy, sesame and wheat products."
+                    },
+                    "images": {
+                        "base_url": "//target.scene7.com/is/image/Target/",
+                        "primary_image_url": "https://target.scene7.com/is/image/Target/GUEST_3b0fc2ea-9d0e-424b-abf2-c892120fb9b2",
+                        "primary_image": "GUEST_3b0fc2ea-9d0e-424b-abf2-c892120fb9b2",
+                        "alternate_images": [
+                            "GUEST_31a39179-1a7b-4267-80f6-6eb54f0244b3",
+                            "GUEST_23e407c7-884e-4c43-a985-dfea732b6ce9",
+                            "GUEST_277a491b-7c46-4970-9e7f-4de1f99f3236"
+                        ],
+                        "alternate_image_urls": [
+                            "https://target.scene7.com/is/image/Target/GUEST_31a39179-1a7b-4267-80f6-6eb54f0244b3",
+                            "https://target.scene7.com/is/image/Target/GUEST_23e407c7-884e-4c43-a985-dfea732b6ce9",
+                            "https://target.scene7.com/is/image/Target/GUEST_277a491b-7c46-4970-9e7f-4de1f99f3236"
+                        ],
+                        "content_labels": [
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_3b0fc2ea-9d0e-424b-abf2-c892120fb9b2"
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_31a39179-1a7b-4267-80f6-6eb54f0244b3"
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_23e407c7-884e-4c43-a985-dfea732b6ce9"
+                            },
+                            {
+                                "image_url": "https://target.scene7.com/is/image/Target/GUEST_277a491b-7c46-4970-9e7f-4de1f99f3236"
+                            }
+                        ]
+                    },
+                    "return_policies": [
+                        {
+                            "user_type": "regular_guest",
+                            "day_count": 90
+                        },
+                        {
+                            "user_type": "best_guest",
+                            "day_count": 120
+                        }
+                    ]
+                },
+                "environmental_segmentation": {
+                    "is_hazardous_material": false
+                },
+                "formatted_return_method": "This item can be returned to any Target store or Target.com.",
+                "fulfillment": {
+                    "is_gift_wrap_eligible": true,
+                    "purchase_limit": 10
+                },
+                "package_dimensions": {
+                    "depth": 2.75,
+                    "dimension_unit_of_measure": "INCH",
+                    "weight": 0.333,
+                    "weight_unit_of_measure": "POUND",
+                    "height": 10.25,
+                    "width": 7.25
+                },
+                "product_description": {
+                    "bullet_descriptions": [
+                        "<B>Dietary Needs:</B> Low Calorie, Gluten-Free, Keto Certified, Non-GMO Project Verified, Kosher, Organic Certified",
+                        "<B>Features:</B> Non-GMO, Lactose-Free, Dairy-Free, Vegan",
+                        "<B>Form:</B> Chip",
+                        "<B>State of Readiness:</B> Ready to Eat",
+                        "<B>Package Quantity:</B> 1",
+                        "<B>Net weight:</B> 4 Ounces"
+                    ],
+                    "downstream_description": "Drizzilicious is a light and crunchy, better-for-you snack made with whole grains, quinoa, chia, and flax. The ideal combination of great taste, nature's super foods, and drizzled decadence.<br />At just 90 calories per 21 pieces, Drizzilicious is a smart little snack you can feel great about. ",
+                    "soft_bullets": {
+                        "bullets": [
+                            "Plant-Based made with Quinoa, Flax, and Chia.",
+                            "90 Calories per 21 pieces.",
+                            "Gluten-Free, Non-GMO, Vegan, Allergen-Free, Non-Dairy, Kosher.",
+                            "Resealable, eco-friendly, 4oz stand-up bags."
+                        ],
+                        "title": "highlights"
+                    },
+                    "title": "Drizzilicious Holiday Peppermint Bites Mini Rice Cakes - 4oz",
+                    "soft_bullet_description": "&bull;Plant-Based made with Quinoa, Flax, and Chia.<br>&bull;90 Calories per 21 pieces.<br>&bull;Gluten-Free, Non-GMO, Vegan, Allergen-Free, Non-Dairy, Kosher.<br>&bull;Resealable, eco-friendly, 4oz stand-up bags."
+                },
+                "relationship_type_code": "SA",
+                "return_policies_guest_message": "This item must be returned within 90 days of the date it was purchased in store, shipped, delivered by a Shipt shopper, or made ready for pickup. If purchased online with SNAP EBT, this item must be returned within 90 days of the date it was shipped, delivered by a Shipt shopper, or made ready for pickup. This 90-day return window is required by SNAP.",
+                "return_policy_url": "https://www.target.com/help/articles/returns-exchanges/returns",
+                "ribbons": [
+                    "New At Target"
+                ],
+                "wellness_merchandise_attributes": [
+                    {
+                        "badge_url": "https://target.scene7.com/is/image/Target/wellness_a7bd79af77364556",
+                        "parent_id": "304049",
+                        "value_id": "825391",
+                        "value_name": "Plant Based",
+                        "wellness_description": "A product that carries an unqualified on-pack plant-based statement referring to the product (not plant-based packaging)."
+                    },
+                    {
+                        "badge_url": "https://target.scene7.com/is/image/Target/wellness_25c25b609d1c43b7",
+                        "parent_id": "304049",
+                        "value_id": "825392",
+                        "value_name": "Gluten Free",
+                        "wellness_description": "A product that has an unqualified independent third-party certification, or carries an on-pack statement relating to the finished product being gluten-free."
+                    },
+                    {
+                        "badge_url": "https://target.scene7.com/is/image/Target/wellness_3fce9b8de04a4a35",
+                        "parent_id": "304049",
+                        "value_id": "825393",
+                        "value_name": "Non-GMO",
+                        "wellness_description": "A product that has an on-pack third-party certification or an unqualified statement that the  product is non-GMO."
+                    },
+                    {
+                        "badge_url": "https://target.scene7.com/is/image/Target/wellness_5c3eaa6146a14008",
+                        "parent_id": "304049",
+                        "value_id": "826251",
+                        "value_name": "Vegan",
+                        "wellness_description": "A product that has an on-pack unqualified independent third-party certification or a statement that the entire product (not individual product components) is vegan.  "
+                    }
+                ],
+                "cart_add_on_threshold": 35.0,
+                "dpci": "071-08-0833",
+                "eligibility_rules": {
+                    "add_on": {
+                        "is_active": true
+                    },
+                    "hold": {
+                        "is_active": true
+                    },
+                    "scheduled_delivery": {
+                        "is_active": true
+                    },
+                    "ship_to_guest": {
+                        "is_active": true
+                    }
+                },
+                "handling": {
+                    "import_designation_description": "Made in the USA or Imported"
+                },
+                "is_limited_time_offer": false,
+                "merchandise_classification": {
+                    "class_id": 8,
+                    "department_id": 71,
+                    "department_name": "SNACKS"
+                },
+                "primary_barcode": "853762002870",
+                "primary_brand": {
+                    "canonical_url": "/b/drizzilicious/-/N-cgzui",
+                    "linking_id": "cgzui",
+                    "name": "Drizzilicious"
+                },
+                "return_method": "Mail In or Store"
+            },
+            "price": {
+                "current_retail": 3.79,
+                "display_was_now": false,
+                "formatted_current_price": "$3.79",
+                "formatted_current_price_type": "reg",
+                "formatted_unit_price": "$0.95",
+                "formatted_unit_price_suffix": "/ounce",
+                "reg_retail": 3.79,
+                "location_id": 95,
+                "external_system_id": "94911701-95-3.79-2025082012"
+            }
+        }
+    }
+}

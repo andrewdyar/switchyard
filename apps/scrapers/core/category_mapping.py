@@ -1,0 +1,1083 @@
+"""
+Shared category mapping module for all retailer scrapers.
+
+This module provides the normalize_category function and all retailer-specific
+category mappings to convert retailer categories to Goods taxonomy.
+"""
+
+# Grocery-only top-level categories (exclude alcohol, non-food items)
+GROCERY_CATEGORIES = {
+    'fruit_vegetables',
+    'meat_seafood',
+    'bakery_bread',
+    'dairy_eggs',
+    'deli_prepared_food',
+    'pantry',
+    'frozen_food',
+    'beverages',  # Note: excludes alcohol subcategories
+    'everyday_essentials',  # Limited to grocery-relevant items
+    'health_beauty',  # Limited to vitamins/supplements
+    'baby_kids',  # Limited to food/formula
+    'pets',  # Pet food only
+}
+
+# Excluded subcategories that should not be scraped
+EXCLUDED_SUBCATEGORIES = {
+    # Alcohol
+    'beer_wine',
+    'wine',
+    'beer',
+    'liquor',
+    'cocktail_mixes',
+    'hard_cider',  # If it's alcoholic
+    
+    # Non-food items
+    'flowers',
+    'gift_baskets',
+    'home_decor',
+    'aromatherapy',
+    'electronics',
+    'clothing',
+    'toys',  # Unless it's baby food related
+    
+    # Promotional/duplicate categories
+    'emergency_food',
+    'food_gifts',
+}
+
+# HEB category mapping (nested structure)
+HEB_CATEGORY_MAP = {
+    'Fruit & vegetables': {
+        'Fruit': ('fruit_vegetables', 'fruit'),
+        'Vegetables': ('fruit_vegetables', 'vegetables'),
+    },
+    'Meat & seafood': {
+        'Meat': ('meat_seafood', 'meat'),
+        'Seafood': ('meat_seafood', 'seafood'),
+        'Tofu & meat alternatives': ('meat_seafood', 'tofu_meat_alternatives'),
+    },
+    'Bakery & bread': {
+        'Bread': ('bakery_bread', 'bread'),
+        'Breading & crumbs': ('bakery_bread', 'breading_crumbs'),
+        'Cookies': ('pantry', 'snacks_candy'),
+        'Desserts & pastries': ('bakery_bread', 'desserts_pastries'),
+        'Tortillas': ('bakery_bread', 'tortillas'),
+        'Cakes': ('bakery_bread', 'cakes'),
+    },
+    'Dairy & eggs': {
+        'Biscuit & cookie dough': ('dairy_eggs', 'biscuit_cookie_dough'),
+        'Butter & margarine': ('dairy_eggs', 'butter_margarine'),
+        'Cheese': ('dairy_eggs', 'cheese'),
+        'Cottage cheese': ('dairy_eggs', 'cottage_cheese'),
+        'Cream': ('dairy_eggs', 'cream'),
+        'Eggs & egg substitutes': ('dairy_eggs', 'eggs_egg_substitutes'),
+        'Milk': ('dairy_eggs', 'milk'),
+        'Pudding & gelatin': ('dairy_eggs', 'pudding_gelatin'),
+        'Sour cream': ('dairy_eggs', 'sour_cream'),
+        'Yogurt': ('dairy_eggs', 'yogurt'),
+    },
+    'Deli & prepared food': {
+        'Cheese': ('deli_prepared_food', 'cheese'),
+        'Dip': ('deli_prepared_food', 'dip'),
+        'Meat': ('deli_prepared_food', 'meat'),
+        'Party trays': ('deli_prepared_food', 'party_trays'),
+        'Ready meals & snacks': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Prepared meals': ('deli_prepared_food', 'prepared_meals'),
+        'Meal kits': ('deli_prepared_food', 'meal_kits'),
+    },
+    'Pantry': {
+        'Baking ingredients': ('pantry', 'baking_ingredients'),
+        'Broth & bouillon': ('pantry', 'broth_bouillon'),
+        'Canned & dried food': ('pantry', 'canned_dried_food'),
+        'Cereal & breakfast': ('pantry', 'cereal_breakfast'),
+        'Condiments': ('pantry', 'condiments'),
+        'Dressing, oil & vinegar': ('pantry', 'dressing_oil_vinegar'),
+        'Jelly & jam': ('pantry', 'jelly_jam'),
+        'Pasta & rice': ('pantry', 'pasta_rice'),
+        'Peanut butter': ('pantry', 'peanut_butter'),
+        'Salsa & dip': ('pantry', 'salsa_dip'),
+        'Sauces & marinades': ('pantry', 'sauces_marinades'),
+        'Snacks & candy': ('pantry', 'snacks_candy'),
+        'Soups & chili': ('pantry', 'soups_chili'),
+        'Spices & seasonings': ('pantry', 'spices_seasonings'),
+        'Sugar & sweeteners': ('pantry', 'sugar_sweeteners'),
+        'Baby food': ('pantry', 'baby_food'),
+        'International': ('pantry', 'international'),
+    },
+    'Frozen food': {
+        'Bread & baked goods': ('frozen_food', 'bread_baked_goods'),
+        'Fruit': ('frozen_food', 'fruit'),
+        'Ice cream & treats': ('frozen_food', 'ice_cream_treats'),
+        'Juice & smoothies': ('frozen_food', 'juice_smoothies'),
+        'Meals & sides': ('frozen_food', 'meals_sides'),
+        'Meat': ('frozen_food', 'meat'),
+        'Meat alternatives': ('frozen_food', 'meat_alternatives'),
+        'Seafood': ('frozen_food', 'seafood'),
+        'Vegetables': ('frozen_food', 'vegetables'),
+    },
+    'Beverages': {
+        'Cocoa': ('beverages', 'cocoa'),
+        'Coconut water': ('beverages', 'coconut_water'),
+        'Coffee': ('beverages', 'coffee'),
+        'Coffee creamer': ('beverages', 'coffee_creamer'),
+        'Ice': ('beverages', 'ice'),
+        'Juice': ('beverages', 'juice'),
+        'Mixes & flavor enhancers': ('beverages', 'mixes_flavor_enhancers'),
+        'Shakes & smoothies': ('beverages', 'shakes_smoothies'),
+        'Soda': ('beverages', 'soda'),
+        'Sports & energy drinks': ('beverages', 'sports_energy_drinks'),
+        'Tea': ('beverages', 'tea'),
+        'Water': ('beverages', 'water'),
+        # Exclude: 'Beer & wine' - alcohol
+    },
+}
+
+# Walmart category mapping (flat structure)
+WALMART_CATEGORY_MAP = {
+    'Fresh Fruits': ('fruit_vegetables', 'fruit'),
+    'Fresh Vegetables': ('fruit_vegetables', 'vegetables'),
+    'Fresh Herbs': ('fruit_vegetables', None),
+    'Organic Produce': ('fruit_vegetables', 'specialty'),
+    'Cut Fruits & Vegetables': ('fruit_vegetables', 'specialty'),
+    'Salad Kits & Bowls': ('fruit_vegetables', 'vegetables'),
+    'Fresh Dressings': ('pantry', 'condiments'),
+    'Salsa & Dips': ('pantry', 'salsa_dip'),
+    'Plant-based Protein & Tofu': ('meat_seafood', 'tofu_meat_alternatives'),
+    'Beef & Lamb': ('meat_seafood', 'beef'),
+    'Pork': ('meat_seafood', 'pork'),
+    'Chicken': ('meat_seafood', 'poultry'),
+    'Bacon, Hot Dogs, & Sausage': ('meat_seafood', 'pork'),
+    'Organic and Plant-Based': ('meat_seafood', 'tofu_meat_alternatives'),
+    'The Seafood Shop': ('meat_seafood', 'seafood'),
+    'The Beef Shop': ('meat_seafood', 'beef'),
+    'The Pork Shop': ('meat_seafood', 'pork'),
+    'Deli Meat & Cheese': ('deli_prepared_food', 'cheese'),
+    'Specialty Cheese and Charcuterie': ('deli_prepared_food', 'cheese'),
+    'Rotisserie Chicken': ('meat_seafood', 'poultry'),
+    'Hummus, Dips & Salsa': ('pantry', 'salsa_dip'),
+    'Chips': ('pantry', 'snacks_candy'),
+    'Crackers': ('pantry', 'snacks_candy'),
+    'Cookies': ('pantry', 'snacks_candy'),
+    'Fruit Snacks': ('pantry', 'snacks_candy'),
+    'Popcorn': ('pantry', 'snacks_candy'),
+    'Pretzels': ('pantry', 'snacks_candy'),
+    'Salsas & Dips': ('pantry', 'salsa_dip'),
+    'Canned Goods': ('pantry', 'canned_dried_food'),
+    'Condiments': ('pantry', 'condiments'),
+    'Pasta & Pizza': ('pantry', 'pasta_rice'),
+    'Herbs, spices, seasonings': ('pantry', 'spices_seasonings'),
+    'Soup': ('pantry', 'soups_chili'),
+    'Rice, grains, dried beans': ('pantry', 'pasta_rice'),
+    'Soda': ('beverages', 'soda'),
+    'Water': ('beverages', 'water'),
+    'Juices': ('beverages', 'juice'),
+    'Sports Drinks': ('beverages', 'sports_energy_drinks'),
+    'Kids Drinks & Juice Boxes': ('beverages', 'juice'),
+    'Coffee': ('beverages', 'coffee'),
+    'Tea': ('beverages', 'tea'),
+    'Energy Drinks': ('beverages', 'sports_energy_drinks'),
+    'Drink Mixes': ('beverages', 'mixes_flavor_enhancers'),
+    'Bottled Tea': ('beverages', 'tea'),
+    'Tea Bags': ('beverages', 'tea'),
+    'Sweet Tea': ('beverages', 'tea'),
+    'Iced Tea & Mixes': ('beverages', 'tea'),
+    'Green Tea': ('beverages', 'tea'),
+    'Herbal Tea': ('beverages', 'tea'),
+    'Tea Lattes': ('beverages', 'tea'),
+    'Decaf Tea': ('beverages', 'tea'),
+    'Cold Brew Tea': ('beverages', 'tea'),
+    'Loose Leaf Tea': ('beverages', 'tea'),
+    'Black Tea': ('beverages', 'tea'),
+    'Matcha Tea': ('beverages', 'tea'),
+    'Tea K-Cups': ('beverages', 'tea'),
+    'Boba Tea': ('beverages', 'tea'),
+    'Digestion Tea': ('beverages', 'tea'),
+    'Immunity Tea': ('beverages', 'tea'),
+    'Energy Tea': ('beverages', 'tea'),
+    'Detox Tea': ('beverages', 'tea'),
+    'Relaxation': ('beverages', 'tea'),
+    'Great Value Tea': ('beverages', 'tea'),
+    'Ship to Home Coffee': ('beverages', 'coffee'),
+    'K-Cups & Coffee Pods': ('beverages', 'coffee'),
+    'Ground Coffee': ('beverages', 'coffee'),
+    'Whole Bean Coffee': ('beverages', 'coffee'),
+    'Instant Coffee': ('beverages', 'coffee'),
+    'Bottled Coffee': ('beverages', 'coffee'),
+    'Cold Brew Coffee': ('beverages', 'coffee'),
+    'Espresso Pods': ('beverages', 'coffee'),
+    'Great Value Coffee': ('beverages', 'coffee'),
+    'Coffee Creamers': ('dairy_eggs', 'milk'),
+    'Sugars & Sweetners': ('pantry', 'sugar_sweeteners'),
+    'Flavored Syrups': ('pantry', 'condiments'),
+    'Non Alcoholic Drinks': ('beverages', None),
+    'Cereal & Granola': ('pantry', 'cereal_breakfast'),
+    'Oatmeal & Grits': ('pantry', 'pasta_rice'),
+    'Breakfast Breads': ('bakery_bread', 'bread'),
+    'Toaster Pastries & Bars': ('pantry', 'cereal_breakfast'),
+    'Pancakes & Waffles & Syrup': ('pantry', 'baking_ingredients'),
+    'Muffins & Pastries': ('bakery_bread', 'desserts_pastries'),
+    'Artisan Bread': ('bakery_bread', 'bread'),
+    'Bread': ('bakery_bread', 'bread'),
+    'Pastries': ('bakery_bread', 'desserts_pastries'),
+    'Rolls': ('bakery_bread', 'bread'),
+    'Buns': ('bakery_bread', 'bread'),
+    'Bakery Cookies': ('pantry', 'snacks_candy'),
+    'Brownies': ('bakery_bread', 'desserts_pastries'),
+    'Bakery Sweets': ('bakery_bread', 'desserts_pastries'),
+    'Pies': ('bakery_bread', 'desserts_pastries'),
+    'Cakes': ('bakery_bread', 'cakes'),
+    'Cupcakes': ('bakery_bread', 'desserts_pastries'),
+    'Tortillas': ('bakery_bread', 'tortillas'),
+    'Snack Cakes': ('bakery_bread', 'desserts_pastries'),
+    'Cheese': ('dairy_eggs', 'cheese'),
+    'Milk': ('dairy_eggs', 'milk'),
+    'Cream & Creamers': ('dairy_eggs', 'cream'),
+    'Yogurt': ('dairy_eggs', 'yogurt'),
+    'Eggs': ('dairy_eggs', 'eggs_egg_substitutes'),
+    'Butter & Margarine': ('dairy_eggs', 'butter_margarine'),
+    'Sour Cream & Chilled Dips': ('dairy_eggs', 'sour_cream'),
+    'Biscuits, Cookies, Doughs & Crusts': ('dairy_eggs', 'biscuit_cookie_dough'),
+    'Pudding & Gelatin': ('dairy_eggs', 'pudding_gelatin'),
+    'Ice Cream & Novelties': ('frozen_food', 'ice_cream_treats'),
+    'The Ice Cream Shop': ('frozen_food', 'ice_cream_treats'),
+    'Frozen Meals': ('frozen_food', 'meals_sides'),
+    'Frozen Appetizers & Snacks': ('frozen_food', 'meals_sides'),
+    'Frozen Produce': ('frozen_food', 'vegetables'),
+    'Frozen Breakfast': ('frozen_food', 'meals_sides'),
+    'Frozen Pizza': ('frozen_food', 'meals_sides'),
+    'Frozen Desserts': ('frozen_food', 'ice_cream_treats'),
+    'Frozen Meat, Seafood, & Vegetarian': ('frozen_food', 'meals_sides'),
+    'Frozen Potatoes': ('frozen_food', 'vegetables'),
+    'Chocolate': ('pantry', 'snacks_candy'),
+    'Gummy & chewy candy': ('pantry', 'snacks_candy'),
+    'Hard candy & lollipops': ('pantry', 'snacks_candy'),
+    'Multipacks & bags': ('pantry', 'snacks_candy'),
+    'Gum': ('pantry', 'snacks_candy'),
+    'Mints': ('pantry', 'snacks_candy'),
+    'Better for you': ('pantry', 'snacks_candy'),
+    'Baking Mixes': ('pantry', 'baking_ingredients'),
+    'Sugars & Sweeteners': ('pantry', 'sugar_sweeteners'),
+    'Flours & Meals': ('pantry', 'baking_ingredients'),
+    'Baking Soda & Starch': ('pantry', 'baking_ingredients'),
+    'Oil & Shortening': ('pantry', 'baking_ingredients'),
+    'Yeasts': ('pantry', 'baking_ingredients'),
+    'Baking Nuts': ('pantry', 'baking_ingredients'),
+    'Canned & Powdered Milks': ('pantry', 'baking_ingredients'),
+    'Baking Chocolate Chips & Cocoa': ('pantry', 'baking_ingredients'),
+    'Frosting & Decor': ('pantry', 'baking_ingredients'),
+    'Extracts & Spices': ('pantry', 'spices_seasonings'),
+    'Marshmallow': ('pantry', 'baking_ingredients'),
+    'Top Baking Brands': ('pantry', 'baking_ingredients'),
+}
+
+# Central Market category mapping (nested structure)
+CENTRALMARKET_CATEGORY_MAP = {
+    'Fruits & Vegetables': {
+        'Fruit': ('fruit_vegetables', 'fruit'),
+        'Vegetables': ('fruit_vegetables', 'vegetables'),
+    },
+    'Meat & Poultry': {
+        'In-House Sausage': ('meat_seafood', 'pork'),
+        'Meat': ('meat_seafood', 'meat'),
+        'Poultry': ('meat_seafood', 'poultry'),
+        'Smoked Meats': ('meat_seafood', 'meat'),
+    },
+    'Seafood': {
+        'Shellfish': ('meat_seafood', 'seafood'),
+        'Fish': ('meat_seafood', 'seafood'),
+    },
+    'Grocery & Staples': {
+        'Baking': ('pantry', 'baking_ingredients'),
+        'Coffee, Tea, & Hot Cocoa': ('beverages', 'coffee'),
+        'Nut Butters': ('pantry', 'peanut_butter'),
+        'Sauces, Marinades, & Condiments': ('pantry', 'sauces_marinades'),
+        'Asian': ('pantry', 'international'),
+        'Chips & Salty Snacks': ('pantry', 'snacks_candy'),
+        'Cookies & Sweet Snacks': ('pantry', 'snacks_candy'),
+        'Crackers & Crisps': ('pantry', 'snacks_candy'),
+        'Nuts, Seeds, & Dried Fruit': ('pantry', 'snacks_candy'),
+        'Chocolate & Candy': ('pantry', 'snacks_candy'),
+        'Herbs & Spices': ('pantry', 'spices_seasonings'),
+        'Salsa & Dips': ('pantry', 'salsa_dip'),
+        'Bread': ('bakery_bread', 'bread'),
+        'Breakfast & Cereal': ('pantry', 'cereal_breakfast'),
+        'Canned Goods': ('pantry', 'canned_dried_food'),
+        'Fruit Spreads & Honey': ('pantry', 'jelly_jam'),
+        'Oil & Vinegar': ('pantry', 'dressing_oil_vinegar'),
+        'Pasta & Sauce': ('pantry', 'pasta_rice'),
+        'Packaged Meals & Sides': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Rice, Beans, & Grains': ('pantry', 'pasta_rice'),
+        'Salad Dressing & Toppings': ('pantry', 'dressing_oil_vinegar'),
+        'Soups & Chili': ('pantry', 'soups_chili'),
+        'Stocks & Broth': ('pantry', 'broth_bouillon'),
+    },
+    'Bulk Foods': {
+        'Baking & Spices': ('pantry', 'baking_ingredients'),
+        'Chocolate & Candy': ('pantry', 'snacks_candy'),
+        'Coffee Beans & Loose-Leaf Tea': ('beverages', 'coffee'),
+        'Granola & Oats': ('pantry', 'cereal_breakfast'),
+        'Nuts, Seeds, & Dried Fruit': ('pantry', 'snacks_candy'),
+        'Rice, Beans, & Grains': ('pantry', 'pasta_rice'),
+    },
+    'Dairy & Eggs': {
+        'Eggs': ('dairy_eggs', 'eggs_egg_substitutes'),
+        'Milk & Cream': ('dairy_eggs', 'milk'),
+        'Yogurt': ('dairy_eggs', 'yogurt'),
+        'Packaged Cheese': ('dairy_eggs', 'cheese'),
+        'Butter': ('dairy_eggs', 'butter_margarine'),
+        'Tofu & Meat Alternatives': ('meat_seafood', 'tofu_meat_alternatives'),
+    },
+    'Chef Prepared': {
+        'Dips, Salsas, & Spreads': ('deli_prepared_food', 'dip'),
+        'Breakfast & Quiche': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Casseroles & Pot Pies': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Dinner For One': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Mains & Sides': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Rotisserie': ('meat_seafood', 'poultry'),
+        'Salads & Dressings': ('fruit_vegetables', 'vegetables'),
+        'Sandwiches & Wraps': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Snack Packs & Lunch Kits': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Soups & Chili': ('pantry', 'soups_chili'),
+        'Sushi': ('meat_seafood', 'seafood'),
+    },
+    'Deli': {
+        'Deli Meats': ('deli_prepared_food', 'meat'),
+        'Fresh Pasta & Sauce': ('pantry', 'pasta_rice'),
+    },
+    'Cheese': {
+        'Cheese Shop': ('dairy_eggs', 'cheese'),
+        'Packaged Cheese': ('dairy_eggs', 'cheese'),
+    },
+    'Bakery': {
+        'Breakfast': ('bakery_bread', 'desserts_pastries'),
+        'Bread & Rolls': ('bakery_bread', 'bread'),
+        'Sweets & Desserts': ('bakery_bread', 'desserts_pastries'),
+        'Tortillas': ('bakery_bread', 'tortillas'),
+    },
+    'Frozen': {
+        'Bread': ('frozen_food', 'bread_baked_goods'),
+        'Breakfast': ('frozen_food', 'meals_sides'),
+        'Fruit & Vegetables': ('frozen_food', 'vegetables'),
+        'Ice Cream & Novelties': ('frozen_food', 'ice_cream_treats'),
+        'Pizza': ('frozen_food', 'meals_sides'),
+        'Appetizers & Snacks': ('frozen_food', 'meals_sides'),
+        'Entrées & Sides': ('frozen_food', 'meals_sides'),
+        'Soup & Broth': ('pantry', 'broth_bouillon'),
+        'Sweets & Baking': ('frozen_food', 'bread_baked_goods'),
+    },
+    'Beverages': {
+        'Cold Brew & Iced Coffee': ('beverages', 'coffee'),
+        'Juice & Fruit Drinks': ('beverages', 'juice'),
+        'Soda': ('beverages', 'soda'),
+        'Sparkling Water & Seltzer': ('beverages', 'water'),
+        'Water': ('beverages', 'water'),
+        # Exclude: 'Wine & Beer' - alcohol
+    },
+    'Kids & Baby': {
+        'Pouches & Snacks': ('pantry', 'snacks_candy'),
+        'Diapers & Wipes': ('baby_kids', 'diapers_potty'),
+        'Bottles & Formula': ('baby_kids', 'food_formula'),
+    },
+    'Household': {
+        'Cleaning': ('everyday_essentials', 'cleaners'),
+        'Laundry': ('everyday_essentials', 'laundry'),
+        'Paper Products': ('everyday_essentials', 'paper_towels'),
+        'Foil & Plastic Wrap': ('everyday_essentials', 'food_storage_wraps'),
+        'Pet': ('pets', 'dogs'),
+        'Dish Soap': ('everyday_essentials', 'cleaners'),
+        'Trash Bags': ('everyday_essentials', 'trash_bags'),
+        'Air Fresheners': ('everyday_essentials', 'air_fresheners_candles'),
+        'Cleaning Supplies': ('everyday_essentials', 'cleaning_tools'),
+    },
+}
+
+# Costco category mapping (nested structure)
+COSTCO_CATEGORY_MAP = {
+    'Produce': {
+        'Fresh Fruits': ('fruit_vegetables', 'fruit'),
+        'Fresh Vegetables': ('fruit_vegetables', 'vegetables'),
+    },
+    'Meat & Seafood': {
+        'Beef': ('meat_seafood', 'beef'),
+        'Pork': ('meat_seafood', 'pork'),
+        'Lamb': ('meat_seafood', 'other_meat'),
+        'Seafood': ('meat_seafood', 'seafood'),
+    },
+    'Poultry': {
+        'Chicken': ('meat_seafood', 'poultry'),
+        'Turkey': ('meat_seafood', 'poultry'),
+        'Duck': ('meat_seafood', 'poultry'),
+    },
+    'Deli': {
+        'Deli Meat': ('deli_prepared_food', 'meat'),
+        'Hot Dogs, Bacon & Sausage': ('meat_seafood', 'pork'),
+        'Prosciutto, Smoked & Cured Meats': ('deli_prepared_food', 'meat'),
+        'Caviar': ('meat_seafood', 'seafood'),
+        'Dips & Spreads': ('deli_prepared_food', 'dip'),
+    },
+    'Cheese & Dairy': {
+        'Cheese': ('dairy_eggs', 'cheese'),
+        'Butter': ('dairy_eggs', 'butter_margarine'),
+        'Yogurt': ('dairy_eggs', 'yogurt'),
+    },
+    'Beverages & Water': {
+        'Milk & Milk Substitutes': ('dairy_eggs', 'milk'),
+        'Water': ('beverages', 'water'),
+        'Juice': ('beverages', 'juice'),
+        'Fresh Juice & Cold Drinks': ('beverages', 'juice'),
+        'Soda, Pop & Soft Drinks': ('beverages', 'soda'),
+        'Sports & Energy Drinks': ('beverages', 'sports_energy_drinks'),
+        'Tea': ('beverages', 'tea'),
+        'Powdered Drink Mix': ('beverages', 'mixes_flavor_enhancers'),
+        # Exclude: 'Wine, Champagne & Sparkling' - alcohol
+    },
+    'Bakery & Desserts': {
+        'Tortillas & Flatbreads': ('bakery_bread', 'tortillas'),
+    },
+    'Frozen Foods': {
+        'Frozen Meals': ('frozen_food', 'meals_sides'),
+        'Appetizers & Side Dishes': ('frozen_food', 'meals_sides'),
+        'Frozen Meat & Seafood': ('frozen_food', 'meat'),
+        'Ice Cream & Frozen Desserts': ('frozen_food', 'ice_cream_treats'),
+    },
+    'Pantry & Dry Goods': {
+        'Pasta, Rice & Grains': ('pantry', 'pasta_rice'),
+        'Soup, Bouillon & Broth': ('pantry', 'broth_bouillon'),
+        'Sauces, Condiments & Marinades': ('pantry', 'sauces_marinades'),
+        'Nut Butters, Jelly & Jam': ('pantry', 'peanut_butter'),
+        'Honey': ('pantry', 'jelly_jam'),
+        'Vinegar & Cooking Oil': ('pantry', 'dressing_oil_vinegar'),
+        'Spices, Seasonings & Dried Herbs': ('pantry', 'spices_seasonings'),
+        'Flour & Baking Supplies': ('pantry', 'baking_ingredients'),
+        'Sugar, Syrup & Sweeteners': ('pantry', 'sugar_sweeteners'),
+        # Exclude: 'Emergency Food Supplies & Kits' - promotional
+    },
+    'Canned Goods': {
+        'Canned Meats': ('pantry', 'canned_dried_food'),
+    },
+    'Coffee': {
+        'Ground Coffee': ('beverages', 'coffee'),
+        'Whole Bean Coffee': ('beverages', 'coffee'),
+        'Instant Coffee': ('beverages', 'coffee'),
+        'K-Cups, Coffee Pods & Capsules': ('beverages', 'coffee'),
+        'Coffee Creamers': ('beverages', 'coffee_creamer'),
+    },
+    'Snacks': {
+        'Chips & Pretzels': ('pantry', 'snacks_candy'),
+        'Crackers': ('pantry', 'snacks_candy'),
+        'Cookies': ('pantry', 'snacks_candy'),
+        'Popcorn': ('pantry', 'snacks_candy'),
+        'Pastries & Muffins': ('bakery_bread', 'desserts_pastries'),
+    },
+    'Candy': {
+        'Chocolates': ('pantry', 'snacks_candy'),
+        'Hard & Gummy Candy': ('pantry', 'snacks_candy'),
+        'Gum & Mints': ('pantry', 'snacks_candy'),
+    },
+    'Cleaning Supplies': {
+        'Cleaning Tools': ('everyday_essentials', 'cleaning_tools'),
+        'Dish Soap & Dishwasher Detergent': ('everyday_essentials', 'cleaners'),
+        'Laundry Detergent & Supplies': ('everyday_essentials', 'laundry'),
+        'Trash Bags': ('everyday_essentials', 'trash_bags'),
+    },
+    'Paper & Plastic Products': {
+        'Paper Towels & Napkins': ('everyday_essentials', 'paper_towels'),
+        'Toilet Paper': ('everyday_essentials', 'toilet_paper'),
+        'Facial Tissue': ('everyday_essentials', 'facial_tissue'),
+        'Food Storage Bags': ('everyday_essentials', 'food_storage_wraps'),
+        'Parchment Paper, Plastic Wrap & Aluminum Foil': ('everyday_essentials', 'food_storage_wraps'),
+    },
+    'Pet Supplies': {
+        'Dog Food': ('pets', 'dogs'),
+        'Cat Food': ('pets', 'cats'),
+    },
+}
+
+# Trader Joe's category mapping (nested structure)
+TRADERJOES_CATEGORY_MAP = {
+    'Fresh Fruits & Veggies': {
+        'Fruits': ('fruit_vegetables', 'fruit'),
+        'Veggies': ('fruit_vegetables', 'vegetables'),
+    },
+    'Meat, Seafood & Plant-based': {
+        'Beef, Pork & Lamb': ('meat_seafood', 'meat'),
+        'Chicken & Turkey': ('meat_seafood', 'poultry'),
+        'Fish & Seafood': ('meat_seafood', 'seafood'),
+        'Plant-based Protein': ('meat_seafood', 'tofu_meat_alternatives'),
+    },
+    'Dairy & Eggs': {
+        'Milk & Cream': ('dairy_eggs', 'milk'),
+        'Butter': ('dairy_eggs', 'butter_margarine'),
+        'Yogurt, etc.': ('dairy_eggs', 'yogurt'),
+        'Eggs': ('dairy_eggs', 'eggs_egg_substitutes'),
+    },
+    'Cheese': {
+        'Slices, Shreds, Crumbles': ('dairy_eggs', 'cheese'),
+        'Wedges, Wheels, Loaves, Logs': ('dairy_eggs', 'cheese'),
+        'Cream and Creamy Cheeses': ('dairy_eggs', 'cheese'),
+    },
+    'Bakery': {
+        'Sliced Bread': ('bakery_bread', 'bread'),
+        'Loaves, Rolls, Buns': ('bakery_bread', 'bread'),
+        'Bagels': ('bakery_bread', 'bread'),
+        'Tortillas & Flatbreads': ('bakery_bread', 'tortillas'),
+        'Sweet Stuff': ('bakery_bread', 'desserts_pastries'),
+    },
+    'From The Freezer': {
+        'Appetizers': ('frozen_food', 'meals_sides'),
+        'Entrées & Sides': ('frozen_food', 'meals_sides'),
+        'Fruit & Vegetables': ('frozen_food', 'vegetables'),
+        'Cool Desserts': ('frozen_food', 'ice_cream_treats'),
+    },
+    'For the Pantry': {
+        'Pastas & Grains': ('pantry', 'pasta_rice'),
+        'Packaged Fish, Meat, Fruit & Veg': ('pantry', 'canned_dried_food'),
+        'Nut Butters & Fruit Spreads': ('pantry', 'peanut_butter'),
+        'Oils & Vinegars': ('pantry', 'dressing_oil_vinegar'),
+        'For Baking & Cooking': ('pantry', 'baking_ingredients'),
+        'Spices': ('pantry', 'spices_seasonings'),
+        'Soup, Chili & Meals': ('pantry', 'soups_chili'),
+        'Honeys, Syrups & Nectars': ('pantry', 'jelly_jam'),
+    },
+    'Dips, Sauces & Dressings': {
+        'Condiments': ('pantry', 'condiments'),
+        'BBQ, Pasta, Simmer': ('pantry', 'sauces_marinades'),
+        'Salsa & Hot Sauce': ('pantry', 'salsa_dip'),
+        'Dip/Spread': ('pantry', 'salsa_dip'),
+        'Dressing & Seasoning': ('pantry', 'dressing_oil_vinegar'),
+    },
+    'Snacks & Sweets': {
+        'Chips, Crackers & Crunchy Bites': ('pantry', 'snacks_candy'),
+        'Candies & Cookies': ('pantry', 'snacks_candy'),
+    },
+    'Beverages': {
+        'Juices & More': ('beverages', 'juice'),
+        'Water (Sparkling & Still)': ('beverages', 'water'),
+        'Coffee & Tea': ('beverages', 'coffee'),
+        'Sodas & Mixers': ('beverages', 'soda'),
+        # Exclude: 'Wine, Beer & Liquor' - alcohol
+    },
+    'Everything Else': {
+        'Household Essentials': ('everyday_essentials', 'cleaners'),
+        'For the Face & Body': ('health_beauty', 'bath_skin_care'),
+        'Pet Stuff': ('pets', 'dogs'),
+        'Nutritional Supplements': ('health_beauty', 'vitamins_supplements'),
+    },
+}
+
+# Whole Foods category mapping (nested structure)
+WHOLEFOODS_CATEGORY_MAP = {
+    'Produce': {
+        'Fresh Vegetables': ('fruit_vegetables', 'vegetables'),
+        'Fresh Fruit': ('fruit_vegetables', 'fruit'),
+        'Packaged Produce': ('fruit_vegetables', 'specialty'),
+        'Dried Fruits &Vegetables': ('pantry', 'snacks_candy'),
+        'Herbs &Spices': ('pantry', 'spices_seasonings'),
+        'Nuts &Seeds': ('pantry', 'snacks_candy'),
+        'Tofu &Plant-Based Proteins': ('meat_seafood', 'tofu_meat_alternatives'),
+    },
+    'Meat & Seafood': {
+        'Beef': ('meat_seafood', 'beef'),
+        'Turkey': ('meat_seafood', 'poultry'),
+        'Wild Game': ('meat_seafood', 'other_meat'),
+        'Lamb': ('meat_seafood', 'other_meat'),
+        'Seafood': ('meat_seafood', 'seafood'),
+        'Packaged Cured & Deli Meats': ('deli_prepared_food', 'meat'),
+        'Frozen Meats': ('frozen_food', 'meat'),
+        'Sliced Deli Meats': ('deli_prepared_food', 'meat'),
+        'Frozen Seafood': ('frozen_food', 'seafood'),
+        'Sausage': ('meat_seafood', 'pork'),
+        'Chicken': ('meat_seafood', 'poultry'),
+        'Meat Alternatives': ('meat_seafood', 'tofu_meat_alternatives'),
+        'Hot Dogs & Franks': ('meat_seafood', 'pork'),
+        'Pork': ('meat_seafood', 'pork'),
+        'Bacon': ('meat_seafood', 'pork'),
+    },
+    'Breads & Bakery': {
+        'Breads': ('bakery_bread', 'bread'),
+        'Cakes': ('bakery_bread', 'cakes'),
+        'Pastries &Breakfast': ('bakery_bread', 'desserts_pastries'),
+        'Cookies': ('pantry', 'snacks_candy'),
+        'Desserts': ('bakery_bread', 'desserts_pastries'),
+        'Bread Crumbs &Stuffing': ('bakery_bread', 'breading_crumbs'),
+        'Breadsticks': ('pantry', 'snacks_candy'),
+    },
+    'Deli & Prepared Foods': {
+        'Entrées': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Deli Meats &Cheeses': ('deli_prepared_food', 'cheese'),
+        'Deli Salads': ('fruit_vegetables', 'vegetables'),
+        'Soups, Stews &Chili': ('pantry', 'soups_chili'),
+        'Dips, Salsas &Spreads': ('deli_prepared_food', 'dip'),
+        'Appetizers': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Pasta &Sauces': ('pantry', 'pasta_rice'),
+        'Sandwiches &Wraps': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Sides': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Casseroles, Potpies &Quiches': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Breakfast': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Sushi': ('meat_seafood', 'seafood'),
+        'Meal Kits': ('deli_prepared_food', 'meal_kits'),
+    },
+    'Dairy, Cheese & Eggs': {
+        'Cheese': ('dairy_eggs', 'cheese'),
+        'Eggs &Egg Substitutes': ('dairy_eggs', 'eggs_egg_substitutes'),
+        'Milk &Cream': ('dairy_eggs', 'milk'),
+        'Yogurt': ('dairy_eggs', 'yogurt'),
+        'Butter &Margarine': ('dairy_eggs', 'butter_margarine'),
+        'Sour Creams': ('dairy_eggs', 'sour_cream'),
+        'Cottage Cheese': ('dairy_eggs', 'cottage_cheese'),
+        'Cream Cheese': ('dairy_eggs', 'cheese'),
+        'Milk Alternatives': ('dairy_eggs', 'milk'),
+        'Whipped Toppings': ('dairy_eggs', 'cream'),
+    },
+    'Frozen Foods': {
+        'Meals &Entrées': ('frozen_food', 'meals_sides'),
+        'Vegetables': ('frozen_food', 'vegetables'),
+        'Pizza': ('frozen_food', 'meals_sides'),
+        'Fruit': ('frozen_food', 'fruit'),
+        'Ice Cream &Novelties': ('frozen_food', 'ice_cream_treats'),
+        'Breakfast Foods': ('frozen_food', 'meals_sides'),
+        'Frozen Meats': ('frozen_food', 'meat'),
+        'Bread &Dough': ('frozen_food', 'bread_baked_goods'),
+        'Desserts &Toppings': ('frozen_food', 'ice_cream_treats'),
+    },
+    'Snacks, Chips, Salsas & Dips': {
+        'Chips &Crisps': ('pantry', 'snacks_candy'),
+        'Chips &Crackers': ('pantry', 'snacks_candy'),
+        'Popcorn': ('pantry', 'snacks_candy'),
+        'Bars': ('pantry', 'snacks_candy'),
+        'Salsas, Dips &Spreads': ('pantry', 'salsa_dip'),
+        'Puffed Snacks': ('pantry', 'snacks_candy'),
+        'Nuts &Seeds': ('pantry', 'snacks_candy'),
+        'Cookies': ('pantry', 'snacks_candy'),
+        'Dried Fruit &Raisins': ('pantry', 'snacks_candy'),
+        'Pretzels': ('pantry', 'snacks_candy'),
+        'Snack &Trail Mixes': ('pantry', 'snacks_candy'),
+        'Crackers': ('pantry', 'snacks_candy'),
+        'Meat Snacks': ('pantry', 'snacks_candy'),
+        'Candy &Chocolate': ('pantry', 'snacks_candy'),
+        'Fruit Snacks': ('pantry', 'snacks_candy'),
+        'Applesauce &Fruit Cups': ('pantry', 'snacks_candy'),
+        'Snack Cakes &Pastries': ('pantry', 'snacks_candy'),
+        'Seaweed Snacks': ('pantry', 'snacks_candy'),
+        'Party Mix': ('pantry', 'snacks_candy'),
+        'Puddings &Gelatins': ('dairy_eggs', 'pudding_gelatin'),
+        'Fruit Leathers': ('pantry', 'snacks_candy'),
+        'Vegetable Snacks': ('pantry', 'snacks_candy'),
+        'Ice Cream Cones &Toppings': ('frozen_food', 'ice_cream_treats'),
+        'Breadsticks': ('pantry', 'snacks_candy'),
+    },
+    'Pantry Essentials': {
+        'Pasta &Noodles': ('pantry', 'pasta_rice'),
+        'Condiments &Salad Dressings': ('pantry', 'condiments'),
+        'Canned, Jarred &Packaged Foods': ('pantry', 'canned_dried_food'),
+        'Cereal &Granola': ('pantry', 'cereal_breakfast'),
+        'Jams, Jellies &Sweet Spreads': ('pantry', 'jelly_jam'),
+        'Spices &Seasonings': ('pantry', 'spices_seasonings'),
+        'Grains &Rice': ('pantry', 'pasta_rice'),
+        'Soups, Stocks &Broths': ('pantry', 'broth_bouillon'),
+        'Sauces, Gravies &Marinades': ('pantry', 'sauces_marinades'),
+        'Cooking &Baking': ('pantry', 'baking_ingredients'),
+        'Nut &Seed Butters': ('pantry', 'peanut_butter'),
+        'Olives, Pickles &Relishes': ('pantry', 'condiments'),
+        'Beans, Lentils &Peas': ('pantry', 'pasta_rice'),
+    },
+    'Beverages': {
+        'Juices': ('beverages', 'juice'),
+        'Soft Drinks': ('beverages', 'soda'),
+        'Water': ('beverages', 'water'),
+        'Coffee': ('beverages', 'coffee'),
+        'Tea': ('beverages', 'tea'),
+        'Sparkling Water': ('beverages', 'water'),
+        'Sports Drinks': ('beverages', 'sports_energy_drinks'),
+        # Exclude: 'Alcohol' - alcohol
+        # Exclude: 'Cocktail Mixes' - alcohol-related
+    },
+    'Beauty': {
+        'Bath &Body': ('health_beauty', 'bath_skin_care'),
+        'Oral Care': ('health_beauty', 'oral_hygiene'),
+        'Hair Care': ('health_beauty', 'hair_care'),
+        'Deodorants &Shave': ('health_beauty', 'bath_skin_care'),
+        'Skin Care': ('health_beauty', 'bath_skin_care'),
+        'Hand Soap &Sanitizers': ('everyday_essentials', 'cleaners'),
+        'First Aid': ('health_beauty', 'medicines_treatments'),
+        'Makeup &Fragrances': ('health_beauty', 'makeup'),
+        "Women 's Care": ('health_beauty', 'feminine_care'),
+        'Baby &Child Care': ('baby_kids', 'health_skin_care'),
+        # Exclude: 'Aromatherapy' - non-food
+    },
+    'Household': {
+        'Paper &Plastic': ('everyday_essentials', 'paper_towels'),
+        'Cleaning Supplies': ('everyday_essentials', 'cleaners'),
+        'Laundry': ('everyday_essentials', 'laundry'),
+        'Dishwashing': ('everyday_essentials', 'cleaners'),
+        'Kids &Baby Essentials': ('baby_kids', 'diapers_potty'),
+        'Pet Supplies': ('pets', 'dogs'),
+        # Exclude: 'Home Décor' - non-food
+    },
+    'Vitamins & Supplements': {
+        'A-Z Vitamins and Supplements': ('health_beauty', 'vitamins_supplements'),
+        'Sleep': ('health_beauty', 'vitamins_supplements'),
+        'Vitamin C': ('health_beauty', 'vitamins_supplements'),
+        'Protein &Sports Nutrition': ('health_beauty', 'vitamins_supplements'),
+        'Brain &Memory': ('health_beauty', 'vitamins_supplements'),
+        'Multivitamins': ('health_beauty', 'vitamins_supplements'),
+        'Immunity': ('health_beauty', 'vitamins_supplements'),
+        "Women 's Supplements": ('health_beauty', 'vitamins_supplements'),
+        'Beauty &Collagen': ('health_beauty', 'vitamins_supplements'),
+        "Children 's Vitamins &Supplements": ('health_beauty', 'vitamins_supplements'),
+        'Vitamin D': ('health_beauty', 'vitamins_supplements'),
+        'Vitamin B': ('health_beauty', 'vitamins_supplements'),
+        'Probiotics &Gut': ('health_beauty', 'vitamins_supplements'),
+        'Energy &Mood': ('health_beauty', 'vitamins_supplements'),
+        'Heart': ('health_beauty', 'vitamins_supplements'),
+        'Herbs &Mushrooms': ('health_beauty', 'vitamins_supplements'),
+        'Superfoods, Greens &Seeds': ('health_beauty', 'vitamins_supplements'),
+        'Vitamin E': ('health_beauty', 'vitamins_supplements'),
+    },
+}
+
+# Target category mapping (nested structure)
+TARGET_CATEGORY_MAP = {
+    'Baby Food': {
+        'Baby Food': ('pantry', 'baby_food'),
+    },
+    'Bakery & Bread': {
+        'Bagels': ('bakery_bread', 'bread'),
+        'Breads': ('bakery_bread', 'bread'),
+        'Cakes & Pies': ('bakery_bread', 'cakes'),
+        'Cookies & Bars': ('pantry', 'snacks_candy'),
+        'Donuts & Pastries': ('bakery_bread', 'desserts_pastries'),
+        'Muffins': ('bakery_bread', 'desserts_pastries'),
+        'Pizza Crusts': ('bakery_bread', 'bread'),
+        'Refrigerated Doughs': ('dairy_eggs', 'biscuit_cookie_dough'),
+        'Rolls & Buns': ('bakery_bread', 'bread'),
+        'Snack Cakes': ('bakery_bread', 'desserts_pastries'),
+        'Tortillas, Pitas & Wraps': ('bakery_bread', 'tortillas'),
+    },
+    'Beverages': {
+        'Cocoa': ('beverages', 'cocoa'),
+        'Coffee': ('beverages', 'coffee'),
+        'Coffee Creamers': ('beverages', 'coffee_creamer'),
+        'Cold Brew & Bottled Coffee': ('beverages', 'coffee'),
+        'Drink Mixes': ('beverages', 'mixes_flavor_enhancers'),
+        'Energy Drinks': ('beverages', 'sports_energy_drinks'),
+        'Espresso': ('beverages', 'coffee'),
+        'Ground Coffee': ('beverages', 'coffee'),
+        'Hard Cider': ('beverages', 'juice'),  # Non-alcoholic cider
+        'Instant Coffee': ('beverages', 'coffee'),
+        'Juice & Cider': ('beverages', 'juice'),
+        'K-Cups & Coffee Pods': ('beverages', 'coffee'),
+        'Meal Replacement Drinks': ('beverages', 'shakes_smoothies'),
+        'Milk': ('dairy_eggs', 'milk'),
+        'Milk Substitutes': ('dairy_eggs', 'milk'),
+        'Non-Alcoholic Drinks': ('beverages', 'mixes_flavor_enhancers'),
+        'Protein Powders': ('beverages', 'shakes_smoothies'),
+        'Soda & Pop': ('beverages', 'soda'),
+        'Sports Drinks': ('beverages', 'sports_energy_drinks'),
+        'Tea': ('beverages', 'tea'),
+        'Water': ('beverages', 'water'),
+        'Whole Bean Coffee': ('beverages', 'coffee'),
+        # Exclude: 'Hard Cider' (alcoholic), 'Wine', 'Beer', 'Liquor' - alcohol
+    },
+    'Breakfast & Cereal': {
+        'Cereal': ('pantry', 'cereal_breakfast'),
+        'Granola': ('pantry', 'cereal_breakfast'),
+        'Oatmeal': ('pantry', 'cereal_breakfast'),
+        'Pancake Mixes, Waffle Mixes & Syrup': ('pantry', 'baking_ingredients'),
+        'Toaster Pastries & Breakfast Bars': ('pantry', 'cereal_breakfast'),
+    },
+    'Candy': {
+        'Chocolate Candy': ('pantry', 'snacks_candy'),
+        'Christmas Candy & Treats': ('pantry', 'snacks_candy'),
+        'Freeze Dried Candy': ('pantry', 'snacks_candy'),
+        'Gum & Mints': ('pantry', 'snacks_candy'),
+        'Gummy & Chewy Candy': ('pantry', 'snacks_candy'),
+        'Hard Candy': ('pantry', 'snacks_candy'),
+        'Sour Candy': ('pantry', 'snacks_candy'),
+    },
+    'Coffee': {
+        'Coffee Creamers': ('beverages', 'coffee_creamer'),
+        'Cold Brew & Bottled Coffee': ('beverages', 'coffee'),
+        'Espresso': ('beverages', 'coffee'),
+        'Ground Coffee': ('beverages', 'coffee'),
+        'Instant Coffee': ('beverages', 'coffee'),
+        'K-Cups & Coffee Pods': ('beverages', 'coffee'),
+        'Whole Bean Coffee': ('beverages', 'coffee'),
+    },
+    'Dairy': {
+        'Butter & Margarine': ('dairy_eggs', 'butter_margarine'),
+        'Cheese': ('dairy_eggs', 'cheese'),
+        'Coffee Creamers': ('beverages', 'coffee_creamer'),
+        'Cottage Cheese': ('dairy_eggs', 'cottage_cheese'),
+        'Cream & Whipped Toppings': ('dairy_eggs', 'cream'),
+        'Cream Cheese': ('dairy_eggs', 'cheese'),
+        'Desserts & Puddings': ('dairy_eggs', 'pudding_gelatin'),
+        'Eggs': ('dairy_eggs', 'eggs_egg_substitutes'),
+        'Milk': ('dairy_eggs', 'milk'),
+        'Milk Substitutes': ('dairy_eggs', 'milk'),
+        'Refrigerated Doughs': ('dairy_eggs', 'biscuit_cookie_dough'),
+        'Sour Cream & Dips': ('dairy_eggs', 'sour_cream'),
+        'Yogurt': ('dairy_eggs', 'yogurt'),
+    },
+    'Deli': {
+        'Artisan Cheese & Cured Meats': ('deli_prepared_food', 'cheese'),
+        'Fresh Dips, Salsas & Hummus': ('deli_prepared_food', 'dip'),
+        'Fresh Soups': ('pantry', 'soups_chili'),
+        'Meal Kits': ('deli_prepared_food', 'meal_kits'),
+        'Packaged Lunch Meat': ('deli_prepared_food', 'meat'),
+        'Party Trays': ('deli_prepared_food', 'party_trays'),
+        'Prepared Meals & Sides': ('deli_prepared_food', 'prepared_meals'),
+        'Prepared Salads & Sandwiches': ('deli_prepared_food', 'prepared_meals'),
+        'Sliced Deli Meat & Deli Cheese': ('deli_prepared_food', 'meat'),
+        'Snack Packs & On the Go Snacks': ('deli_prepared_food', 'ready_meals_snacks'),
+    },
+    'Frozen Foods': {
+        'Frozen Appetizers & Snacks': ('frozen_food', 'meals_sides'),
+        'Frozen Beef': ('frozen_food', 'meat'),
+        'Frozen Bread & Dough': ('frozen_food', 'bread_baked_goods'),
+        'Frozen Breakfast Food': ('frozen_food', 'meals_sides'),
+        'Frozen Chicken': ('frozen_food', 'meat'),
+        'Frozen Desserts': ('frozen_food', 'ice_cream_treats'),
+        'Frozen Family Meals': ('frozen_food', 'meals_sides'),
+        'Frozen Fish & Seafood': ('frozen_food', 'seafood'),
+        'Frozen Fruit': ('frozen_food', 'fruit'),
+        'Frozen Meat, Poultry & Seafood': ('frozen_food', 'meat'),
+        'Frozen Meatless Alternatives': ('frozen_food', 'meat_alternatives'),
+        'Frozen Pizza': ('frozen_food', 'meals_sides'),
+        'Frozen Potatoes': ('frozen_food', 'vegetables'),
+        'Frozen Single Serve Meals': ('frozen_food', 'meals_sides'),
+        'Frozen Turkey': ('frozen_food', 'meat'),
+        'Frozen Vegetables': ('frozen_food', 'vegetables'),
+        'Ice Cream & Novelties': ('frozen_food', 'ice_cream_treats'),
+    },
+    'Meat & Seafood': {
+        'Bacon': ('meat_seafood', 'pork'),
+        'Beef': ('meat_seafood', 'beef'),
+        'Chicken': ('meat_seafood', 'poultry'),
+        'Fish & Seafood': ('meat_seafood', 'seafood'),
+        'Ham': ('meat_seafood', 'pork'),
+        'Hot Dogs': ('meat_seafood', 'pork'),
+        'Meatless Alternatives': ('meat_seafood', 'tofu_meat_alternatives'),
+        'Packaged Lunch Meat': ('deli_prepared_food', 'meat'),
+        'Pork': ('meat_seafood', 'pork'),
+        'Sausages': ('meat_seafood', 'pork'),
+        'Sliced Deli Meat & Deli Cheese': ('deli_prepared_food', 'meat'),
+        'Turkey': ('meat_seafood', 'poultry'),
+    },
+    'Pantry': {
+        'Almonds': ('pantry', 'snacks_candy'),
+        'Applesauce & Fruit Cups': ('pantry', 'snacks_candy'),
+        'Apricot Kernels': ('pantry', 'snacks_candy'),
+        'Baking Chips & Cocoa': ('pantry', 'baking_ingredients'),
+        'Baking Kits & Mixes': ('pantry', 'baking_ingredients'),
+        'Baking Powder, Baking Soda & Yeast': ('pantry', 'baking_ingredients'),
+        'Baking Staples': ('pantry', 'baking_ingredients'),
+        'Boxed Meals & Side Dishes': ('pantry', 'pantry_meals'),
+        'Brazil Nuts': ('pantry', 'snacks_candy'),
+        'Canned & Packaged Foods': ('pantry', 'canned_dried_food'),
+        'Canned Fruit': ('pantry', 'canned_dried_food'),
+        'Canned Meat': ('pantry', 'canned_dried_food'),
+        'Canned Tuna & Seafood': ('pantry', 'canned_dried_food'),
+        'Canned Vegetables': ('pantry', 'canned_dried_food'),
+        'Cashews': ('pantry', 'snacks_candy'),
+        'Chestnuts': ('pantry', 'snacks_candy'),
+        'Chickpeas': ('pantry', 'snacks_candy'),
+        'Condensed & Powdered Milk': ('pantry', 'baking_ingredients'),
+        'Condiments': ('pantry', 'condiments'),
+        'Cooking Oil & Vinegar': ('pantry', 'dressing_oil_vinegar'),
+        'Corn Nuts': ('pantry', 'snacks_candy'),
+        'Dried Fruit & Raisins': ('pantry', 'snacks_candy'),
+        'Extracts & Food Coloring': ('pantry', 'baking_ingredients'),
+        'Flours & Meals': ('pantry', 'baking_ingredients'),
+        'Frosting & Icing': ('pantry', 'baking_ingredients'),
+        'Fruit Spreads, Jams & Jellies': ('pantry', 'jelly_jam'),
+        'Gelatin & Pudding': ('dairy_eggs', 'pudding_gelatin'),
+        'Hazelnuts': ('pantry', 'snacks_candy'),
+        'Herbs, Rubs & Spices': ('pantry', 'spices_seasonings'),
+        'Macadamia Nuts': ('pantry', 'snacks_candy'),
+        'Marshmallows': ('pantry', 'baking_ingredients'),
+        'Mixed Nuts': ('pantry', 'snacks_candy'),
+        'Nut Butters': ('pantry', 'peanut_butter'),
+        'Nuts': ('pantry', 'snacks_candy'),
+        'Olives, Pickles & Peppers': ('pantry', 'canned_dried_food'),
+        'Pasta, Rice & Grains': ('pantry', 'pasta_rice'),
+        'Peanut Butter & Spreads': ('pantry', 'peanut_butter'),
+        'Peanuts': ('pantry', 'snacks_candy'),
+        'Pecans': ('pantry', 'snacks_candy'),
+        'Pie Crusts & Filling': ('pantry', 'baking_ingredients'),
+        'Pine Nuts': ('pantry', 'snacks_candy'),
+        'Pistachios': ('pantry', 'snacks_candy'),
+        'Salad Dressings': ('pantry', 'dressing_oil_vinegar'),
+        'Salsa & Dips': ('pantry', 'salsa_dip'),
+        'Salt & Pepper': ('pantry', 'spices_seasonings'),
+        'Sauces & Marinades': ('pantry', 'sauces_marinades'),
+        'Soups, Broth & Chili': ('pantry', 'soups_chili'),
+        'Soy Nut': ('pantry', 'snacks_candy'),
+        'Spices & Seasonings': ('pantry', 'spices_seasonings'),
+        'Sprinkles, Candles & Decorations': ('pantry', 'baking_ingredients'),
+        'Sugar & Sweeteners': ('pantry', 'sugar_sweeteners'),
+        'Syrups & Sauces': ('pantry', 'sauces_marinades'),
+        'Walnuts': ('pantry', 'snacks_candy'),
+    },
+    'Fruit & vegetables': {
+        'Fresh Dressings & Dips': ('deli_prepared_food', 'dip'),
+        'Fresh Fruit': ('fruit_vegetables', 'fruit'),
+        'Fresh Juices': ('beverages', 'juice'),
+        'Fresh Vegetables': ('fruit_vegetables', 'vegetables'),
+        'Meatless Alternatives': ('meat_seafood', 'tofu_meat_alternatives'),
+        'Salad Mixes': ('fruit_vegetables', 'vegetables'),
+    },
+    'Snacks': {
+        'Almonds': ('pantry', 'snacks_candy'),
+        'Applesauce & Fruit Cups': ('pantry', 'snacks_candy'),
+        'Apricot Kernels': ('pantry', 'snacks_candy'),
+        'Brazil Nuts': ('pantry', 'snacks_candy'),
+        'Butter Crackers': ('pantry', 'snacks_candy'),
+        'Candy': ('pantry', 'snacks_candy'),
+        'Cashews': ('pantry', 'snacks_candy'),
+        'Cheese Crackers': ('pantry', 'snacks_candy'),
+        'Chestnuts': ('pantry', 'snacks_candy'),
+        'Chickpeas': ('pantry', 'snacks_candy'),
+        'Chip Multipacks': ('pantry', 'snacks_candy'),
+        'Chips': ('pantry', 'snacks_candy'),
+        'Chocolate Candy': ('pantry', 'snacks_candy'),
+        'Christmas Candy & Treats': ('pantry', 'snacks_candy'),
+        'Cookie Multipacks': ('pantry', 'snacks_candy'),
+        'Cookies': ('pantry', 'snacks_candy'),
+        'Corn Chips': ('pantry', 'snacks_candy'),
+        'Corn Nuts': ('pantry', 'snacks_candy'),
+        'Cracker Multipacks': ('pantry', 'snacks_candy'),
+        'Crackers': ('pantry', 'snacks_candy'),
+        'Dried Fruit & Raisins': ('pantry', 'snacks_candy'),
+        'Freeze Dried Candy': ('pantry', 'snacks_candy'),
+        'Frozen Appetizers & Snacks': ('frozen_food', 'meals_sides'),
+        'Fruit Snacks': ('pantry', 'snacks_candy'),
+        'Gelatin & Pudding': ('dairy_eggs', 'pudding_gelatin'),
+        'Gluten Free Crackers': ('pantry', 'snacks_candy'),
+        'Graham Crackers': ('pantry', 'snacks_candy'),
+        'Grain Chips': ('pantry', 'snacks_candy'),
+        'Gum & Mints': ('pantry', 'snacks_candy'),
+        'Gummy & Chewy Candy': ('pantry', 'snacks_candy'),
+        'Hard Candy': ('pantry', 'snacks_candy'),
+        'Hazelnuts': ('pantry', 'snacks_candy'),
+        'Jerky': ('pantry', 'snacks_candy'),
+        'Macadamia Nuts': ('pantry', 'snacks_candy'),
+        'Meat Sticks': ('pantry', 'snacks_candy'),
+        'Mixed Nuts': ('pantry', 'snacks_candy'),
+        'Multigrain, Rice & Seed Crackers': ('pantry', 'snacks_candy'),
+        'Nuts': ('pantry', 'snacks_candy'),
+        'Peanuts': ('pantry', 'snacks_candy'),
+        'Pecans': ('pantry', 'snacks_candy'),
+        'Pine Nuts': ('pantry', 'snacks_candy'),
+        'Pistachios': ('pantry', 'snacks_candy'),
+        'Pita Chips': ('pantry', 'snacks_candy'),
+        'Popcorn': ('pantry', 'snacks_candy'),
+        'Popcorn & Pretzel Multipacks': ('pantry', 'snacks_candy'),
+        'Pork Rinds': ('pantry', 'snacks_candy'),
+        'Potato Chips': ('pantry', 'snacks_candy'),
+        'Pretzels': ('pantry', 'snacks_candy'),
+        'Protein Bars': ('pantry', 'snacks_candy'),
+        'Protein Chips': ('pantry', 'snacks_candy'),
+        'Puffed Snacks': ('pantry', 'snacks_candy'),
+        'Rice Cakes': ('pantry', 'snacks_candy'),
+        'Salsa & Dips': ('pantry', 'salsa_dip'),
+        'Saltine Crackers': ('pantry', 'snacks_candy'),
+        'Sandwich Crackers': ('pantry', 'snacks_candy'),
+        'Seeds': ('pantry', 'snacks_candy'),
+        'Snack & Granola Bars': ('pantry', 'snacks_candy'),
+        'Snack Cakes': ('bakery_bread', 'desserts_pastries'),
+        'Snack Mix': ('pantry', 'snacks_candy'),
+        'Snack Packs & On the Go Snacks': ('deli_prepared_food', 'ready_meals_snacks'),
+        'Snack Variety Packs': ('pantry', 'snacks_candy'),
+        'Sour Candy': ('pantry', 'snacks_candy'),
+        'Soy Nut': ('pantry', 'snacks_candy'),
+        'Toaster Pastries & Breakfast Bars': ('pantry', 'cereal_breakfast'),
+        'Tortilla Chips': ('pantry', 'snacks_candy'),
+        'Trail Mix': ('pantry', 'snacks_candy'),
+        'Vegetable Chips': ('pantry', 'snacks_candy'),
+        'Walnuts': ('pantry', 'snacks_candy'),
+    },
+}
+
+# Unified category map for all retailers
+CATEGORY_MAP = {
+    'heb': HEB_CATEGORY_MAP,
+    'walmart': WALMART_CATEGORY_MAP,
+    'central_market': CENTRALMARKET_CATEGORY_MAP,
+    'costco': COSTCO_CATEGORY_MAP,
+    'traderjoes': TRADERJOES_CATEGORY_MAP,
+    'whole_foods': WHOLEFOODS_CATEGORY_MAP,
+    'target': TARGET_CATEGORY_MAP,
+}
+
+
+def normalize_category(retailer: str, category_path: str, parent: str = None) -> tuple[str, str | None]:
+    """
+    Map retailer category to Goods taxonomy.
+    
+    Args:
+        retailer: Retailer identifier ('heb', 'walmart', 'central_market', 'costco', 'traderjoes', 'whole_foods', 'target')
+        category_path: Retailer-specific category/subcategory name
+        parent: Parent category name (required for nested structures: heb, central_market, costco, traderjoes, whole_foods, target)
+        
+    Returns:
+        Tuple of (goods_category, goods_subcategory) or ('uncategorized', None) if not found
+    """
+    mapping = CATEGORY_MAP.get(retailer, {})
+    
+    # Nested structure retailers
+    if retailer in ('heb', 'central_market', 'costco', 'traderjoes', 'whole_foods', 'target') and parent:
+        parent_map = mapping.get(parent, {})
+        return parent_map.get(category_path, ('uncategorized', None))
+    
+    # Flat structure retailers (Walmart)
+    return mapping.get(category_path, ('uncategorized', None))
+
+
+def is_grocery_category(goods_category: str, goods_subcategory: str = None) -> bool:
+    """
+    Check if a Goods category/subcategory is grocery-related.
+    
+    Args:
+        goods_category: Goods top-level category
+        goods_subcategory: Goods subcategory (optional)
+        
+    Returns:
+        True if grocery-related, False otherwise
+    """
+    # Check if top-level category is grocery
+    if goods_category not in GROCERY_CATEGORIES:
+        return False
+    
+    # Check if subcategory is excluded
+    if goods_subcategory and goods_subcategory in EXCLUDED_SUBCATEGORIES:
+        return False
+    
+    # Special handling for beverages - exclude alcohol subcategories
+    if goods_category == 'beverages' and goods_subcategory == 'beer_wine':
+        return False
+    
+    return True
+
+
+def should_include_category(retailer: str, category_path: str, parent: str = None) -> bool:
+    """
+    Determine if a retailer category should be included in scraping.
+    
+    Args:
+        retailer: Retailer identifier
+        category_path: Retailer-specific category/subcategory name
+        parent: Parent category name (for nested structures)
+        
+    Returns:
+        True if category should be scraped, False otherwise
+    """
+    goods_category, goods_subcategory = normalize_category(retailer, category_path, parent)
+    
+    # If unmapped, exclude
+    if goods_category == 'uncategorized':
+        return False
+    
+    # Check if it's a grocery category
+    return is_grocery_category(goods_category, goods_subcategory)
+

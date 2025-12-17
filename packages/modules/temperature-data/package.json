@@ -1,0 +1,20 @@
+{
+  "name": "@switchyard/temperature-data",
+  "version": "0.0.1",
+  "description": "Temperature data module for time-series readings",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@switchyard/framework": "workspace:^",
+    "@switchyard/utils": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  }
+}

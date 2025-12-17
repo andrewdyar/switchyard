@@ -1,0 +1,1273 @@
+{
+    "metadata": {
+        "seo_data": {
+            "page_id": "/c/5xsy9",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_bc5c9180-3205-4a19-a0b9-4581761c3372",
+            "seo_keywords": "Snacks, Grocery",
+            "robots": "index, follow",
+            "page_type": "category",
+            "seo_description": "Shop Target for Snacks you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+            "seo_title": "Chips, Snacks & Cookies : Target",
+            "seo_h1": "Snacks",
+            "canonical_url": "/c/snacks-grocery/-/N-5xsy9"
+        },
+        "node_id": "5xsy9",
+        "type": "Category",
+        "breadcrumbs": [
+            {
+                "node_id": "root",
+                "page_type": "category",
+                "page_id": "/c/root",
+                "seo_h1": "Homepage",
+                "canonical_url": "/",
+                "number_of_children": "45",
+                "linking_id": "root",
+                "type": "Category",
+                "name": "Homepage"
+            },
+            {
+                "node_id": "5xt1a",
+                "page_type": "category",
+                "page_id": "/c/5xt1a",
+                "seo_h1": "Grocery",
+                "canonical_url": "/c/grocery/-/N-5xt1a",
+                "number_of_children": "28",
+                "linking_id": "5xt1a",
+                "type": "Category",
+                "name": "Grocery"
+            }
+        ],
+        "children": [
+            {
+                "node_id": "7oj7s",
+                "name": "Christmas Snacks",
+                "type": "Tag",
+                "linking_id": "7oj7s",
+                "number_of_children": "0",
+                "canonical_url": "/c/christmas-snacks-candy-treats/-/N-7oj7s",
+                "seo_h1": "Christmas Snacks",
+                "page_id": "/c/7oj7s",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_2f30057f-2a09-49eb-996a-df29d88733f0"
+            },
+            {
+                "node_id": "sjs32",
+                "name": "Snack Variety Packs",
+                "type": "Category",
+                "linking_id": "sjs32",
+                "number_of_children": "7",
+                "canonical_url": "/c/snack-variety-packs-snacks-grocery/-/N-sjs32",
+                "seo_h1": "Snack Variety Packs",
+                "page_id": "/c/sjs32",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_a6726161-3c2b-484a-9e0d-ae5da91b30e1"
+            },
+            {
+                "node_id": "5xsy7",
+                "name": "Chips",
+                "type": "Category",
+                "linking_id": "5xsy7",
+                "number_of_children": "11",
+                "canonical_url": "/c/chips-snacks-grocery/-/N-5xsy7",
+                "seo_h1": "Chips",
+                "page_id": "/c/5xsy7",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/10wk1_Grocery_BubcatBubcat_Chips-201005-1601921713063"
+            },
+            {
+                "node_id": "54v3e",
+                "name": "Cookies",
+                "type": "Category",
+                "linking_id": "54v3e",
+                "number_of_children": "0",
+                "canonical_url": "/c/cookies-snacks-grocery/-/N-54v3e",
+                "seo_h1": "Cookies",
+                "page_id": "/c/54v3e",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_Cookies-QUIVER-190913-1568403099435"
+            },
+            {
+                "node_id": "5xsy6",
+                "name": "Crackers",
+                "type": "Category",
+                "linking_id": "5xsy6",
+                "number_of_children": "8",
+                "canonical_url": "/c/crackers-snacks-grocery/-/N-5xsy6",
+                "seo_h1": "Crackers",
+                "page_id": "/c/5xsy6",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_Crackers-QUIVER-190913-1568403300173"
+            },
+            {
+                "node_id": "rdb7b",
+                "name": "Rice Cakes",
+                "type": "Category",
+                "linking_id": "rdb7b",
+                "number_of_children": "0",
+                "canonical_url": "/c/rice-cakes-snacks-grocery/-/N-rdb7b",
+                "seo_h1": "Rice Cakes",
+                "page_id": "/c/rdb7b",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_44be3d9a-2d53-45b8-8a32-2d3d24487ae8"
+            },
+            {
+                "node_id": "udc6e",
+                "name": "New in Snacks",
+                "type": "Tag",
+                "linking_id": "udc6e",
+                "number_of_children": "0",
+                "canonical_url": "/c/new-in-snacks/-/N-udc6e",
+                "seo_h1": "New in Snacks",
+                "page_id": "/c/udc6e",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_b4ff309e-c3fe-4384-b5ed-401dd95048db"
+            },
+            {
+                "node_id": "4rsq0",
+                "name": "Protein Bars",
+                "type": "Category",
+                "linking_id": "4rsq0",
+                "number_of_children": "0",
+                "canonical_url": "/c/protein-bars-nutrition-health/-/N-4rsq0",
+                "seo_h1": "Protein Bars",
+                "page_id": "/c/4rsq0",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_81570c55-0f6a-4078-95e8-ce64ef5ddd6d"
+            },
+            {
+                "node_id": "4ydo1",
+                "name": "Snack & Granola Bars",
+                "type": "Category",
+                "linking_id": "4ydo1",
+                "number_of_children": "0",
+                "canonical_url": "/c/snack-granola-bars-snacks-grocery/-/N-4ydo1",
+                "seo_h1": "Snack & Granola Bars",
+                "page_id": "/c/4ydo1",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_6e5ea0e4-0664-4e57-b70b-470d275b0474"
+            },
+            {
+                "node_id": "5xsy1",
+                "name": "Trail Mix",
+                "type": "Category",
+                "linking_id": "5xsy1",
+                "number_of_children": "0",
+                "canonical_url": "/c/trail-mix-snacks-grocery/-/N-5xsy1",
+                "seo_h1": "Trail Mix",
+                "page_id": "/c/5xsy1",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_f0b87b07-a7e1-4a67-8287-bf30dd2638f3"
+            },
+            {
+                "node_id": "5xsy2",
+                "name": "Meat Sticks",
+                "type": "Category",
+                "linking_id": "5xsy2",
+                "number_of_children": "0",
+                "canonical_url": "/c/meat-sticks-snacks-grocery/-/N-5xsy2",
+                "seo_h1": "Meat Sticks",
+                "page_id": "/c/5xsy2",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_01f90d92-db56-4f44-9797-6e9a296a148d"
+            },
+            {
+                "node_id": "5xsy0",
+                "name": "Popcorn",
+                "type": "Category",
+                "linking_id": "5xsy0",
+                "number_of_children": "0",
+                "canonical_url": "/c/popcorn-snacks-grocery/-/N-5xsy0",
+                "seo_h1": "Popcorn",
+                "page_id": "/c/5xsy0",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/10wk1_Grocery_BubcatBubcat_Popcorn-201005-1601921770979"
+            },
+            {
+                "node_id": "ps6um",
+                "name": "Snack Mix",
+                "type": "Category",
+                "linking_id": "ps6um",
+                "number_of_children": "0",
+                "canonical_url": "/c/snack-mix-snacks-grocery/-/N-ps6um",
+                "seo_h1": "Snack Mix",
+                "page_id": "/c/ps6um",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_24dcd6ea-aaee-457e-8915-b9e28950d6e6"
+            },
+            {
+                "node_id": "yh744",
+                "name": "Jerky",
+                "type": "Category",
+                "linking_id": "yh744",
+                "number_of_children": "0",
+                "canonical_url": "/c/jerky-snacks-grocery/-/N-yh744",
+                "seo_h1": "Jerky",
+                "page_id": "/c/yh744",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_f99027f1-89c7-4f1d-a57c-1942cab81bb4"
+            },
+            {
+                "node_id": "f7azc",
+                "name": "Pretzels",
+                "type": "Category",
+                "linking_id": "f7azc",
+                "number_of_children": "0",
+                "canonical_url": "/c/pretzels-snacks-grocery/-/N-f7azc",
+                "seo_h1": "Pretzels",
+                "page_id": "/c/f7azc",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_Pretzels-200723-1595516466347"
+            },
+            {
+                "node_id": "qzfx",
+                "name": "Seeds",
+                "type": "Category",
+                "linking_id": "qzfx",
+                "number_of_children": "0",
+                "canonical_url": "/c/seeds-snacks-grocery/-/N-qzfx",
+                "seo_h1": "Seeds",
+                "page_id": "/c/qzfx",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_ce091606-a003-4dd5-ba34-fc21f8a6f6f0"
+            },
+            {
+                "node_id": "5xsy8",
+                "name": "Applesauce & Fruit Cups",
+                "type": "Category",
+                "linking_id": "5xsy8",
+                "number_of_children": "0",
+                "canonical_url": "/c/applesauce-fruit-cups-snacks-grocery/-/N-5xsy8",
+                "seo_h1": "Applesauce & Fruit Cups",
+                "page_id": "/c/5xsy8",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_AppleSauce_FruitCups-QUIVER-190913-1568402866887"
+            },
+            {
+                "node_id": "5xt0d",
+                "name": "Candy",
+                "type": "Category",
+                "linking_id": "5xt0d",
+                "number_of_children": "11",
+                "canonical_url": "/c/candy-grocery/-/N-5xt0d",
+                "seo_h1": "Candy",
+                "page_id": "/c/5xt0d",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_5da9fcf9-fc86-4318-a773-53a29cc04bcd"
+            },
+            {
+                "node_id": "5xszb",
+                "name": "Frozen Appetizers & Snacks",
+                "type": "Category",
+                "linking_id": "5xszb",
+                "number_of_children": "0",
+                "canonical_url": "/c/frozen-appetizers-snacks-foods-grocery/-/N-5xszb",
+                "seo_h1": "Frozen Appetizers & Snacks",
+                "page_id": "/c/5xszb",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_e145d623-d32d-47ee-a82e-35c4a3c569d4"
+            },
+            {
+                "node_id": "5xsy4",
+                "name": "Fruit Snacks",
+                "type": "Category",
+                "linking_id": "5xsy4",
+                "number_of_children": "0",
+                "canonical_url": "/c/fruit-snacks-grocery/-/N-5xsy4",
+                "seo_h1": "Fruit Snacks",
+                "page_id": "/c/5xsy4",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_995bd68f-f91d-4fc6-ac35-9bebd13e4c5a"
+            },
+            {
+                "node_id": "5xsy5",
+                "name": "Salsa & Dips",
+                "type": "Category",
+                "linking_id": "5xsy5",
+                "number_of_children": "0",
+                "canonical_url": "/c/dips-spreads-chips-snacks-cookies-grocery/-/N-5xsy5",
+                "seo_h1": "Salsa & Dips",
+                "page_id": "/c/5xsy5",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_Dips_Spreads-QUIVER-190913-1568403420741"
+            },
+            {
+                "node_id": "dhjbd",
+                "name": "Snack Packs & On the Go Snacks",
+                "type": "Category",
+                "linking_id": "dhjbd",
+                "number_of_children": "0",
+                "canonical_url": "/c/snack-packs-on-the-go-snacks-deli-grocery/-/N-dhjbd",
+                "seo_h1": "Snack Packs & On the Go Snacks",
+                "page_id": "/c/dhjbd",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_dd07434c-b7a1-4d6c-a44d-fe2e2aeb45d0"
+            },
+            {
+                "node_id": "5xt0i",
+                "name": "Toaster Pastries & Breakfast Bars",
+                "type": "Category",
+                "linking_id": "5xt0i",
+                "number_of_children": "0",
+                "canonical_url": "/c/toaster-pastries-breakfast-cereal-grocery/-/N-5xt0i",
+                "seo_h1": "Toaster Pastries & Breakfast Bars",
+                "page_id": "/c/5xt0i",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_803be71c-8746-4263-8e1f-0026a9c44a4a"
+            },
+            {
+                "node_id": "5xt0y",
+                "name": "Dried Fruit & Raisins",
+                "type": "Category",
+                "linking_id": "5xt0y",
+                "number_of_children": "0",
+                "canonical_url": "/c/dried-fruit-raisins-snacks-grocery/-/N-5xt0y",
+                "seo_h1": "Dried Fruit & Raisins",
+                "page_id": "/c/5xt0y",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_DriedFruit_Raisins-QUIVER-190913-1568403484897"
+            },
+            {
+                "node_id": "tc851",
+                "name": "Nuts",
+                "type": "Category",
+                "linking_id": "tc851",
+                "number_of_children": "16",
+                "canonical_url": "/c/nuts-snacks-grocery/-/N-tc851",
+                "seo_h1": "Nuts",
+                "page_id": "/c/tc851",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_Nuts-200723-1595516545452"
+            },
+            {
+                "node_id": "5xsxz",
+                "name": "Snack Cakes",
+                "type": "Category",
+                "linking_id": "5xsxz",
+                "number_of_children": "0",
+                "canonical_url": "/c/snack-cakes-snacks-grocery/-/N-5xsxz",
+                "seo_h1": "Snack Cakes",
+                "page_id": "/c/5xsxz",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/Grocery_Bakery_BreadL2_BubCat_SnackCakes-QUIVER-190913-1568394613006"
+            },
+            {
+                "node_id": "5xsy3",
+                "name": "Gelatin & Pudding",
+                "type": "Category",
+                "linking_id": "5xsy3",
+                "number_of_children": "0",
+                "canonical_url": "/c/gelatin-pudding-snacks-grocery/-/N-5xsy3",
+                "seo_h1": "Gelatin & Pudding",
+                "page_id": "/c/5xsy3",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_Gelatin_Pudding-QUIVER-190913-1568403720997"
+            },
+            {
+                "node_id": "cmc2c",
+                "name": "Protein Snacks",
+                "type": "Tag",
+                "linking_id": "cmc2c",
+                "number_of_children": "0",
+                "canonical_url": "/c/protein-snacks/-/N-cmc2c",
+                "seo_h1": "Protein Snacks",
+                "page_id": "/c/cmc2c",
+                "page_type": "category",
+                "image_path": "https://target.scene7.com/is/image/Target/GUEST_61420d79-04d2-48f0-a3a8-07fd912193fa"
+            }
+        ],
+        "og": {
+            "title": "Chips, Snacks & Cookies : Target",
+            "type": "product.group",
+            "image": "https://target.scene7.com/is/image/Target/GUEST_bc5c9180-3205-4a19-a0b9-4581761c3372",
+            "url": "/c/snacks-grocery/-/N-5xsy9",
+            "description": "Shop Target for Snacks you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+        },
+        "content": {
+            "suppress_sponsored_ads": false,
+            "suppress_banner_ads": false
+        },
+        "linking_id": "5xsy9",
+        "title": "Snacks",
+        "deactivation_date": "2025-11-28T08:00Z",
+        "activation_date": "2025-11-27T08:00Z"
+    },
+    "slots": {
+        "200": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "Page Title",
+                        "id": "WEB-c_web_pagetitle_v01",
+                        "placement_id": "WEB-category-page_title-default",
+                        "type": "c_web_pagetitle_v01",
+                        "type_name": "Page Title",
+                        "content_type": "dynamic"
+                    }
+                ]
+            },
+            "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+            "order": 200
+        },
+        "300": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "Bubcat placeholder for web",
+                        "id": "WEB-c_bubcat_v01",
+                        "placement_id": "63111e2c716d5367674daa9d",
+                        "type": "c_bubcat_v01",
+                        "type_name": "Bubcat",
+                        "content_type": "dynamic"
+                    }
+                ]
+            },
+            "presentation": "bubcat",
+            "order": 300
+        },
+        "800": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "2025_NovWK4_F&B_2/$9 when you buy 2 Frito Lay Party Size & Dips with same day services",
+                        "id": "STORY-41497",
+                        "placement_id": "6916d1121527587cd86399fe",
+                        "type": "story_v01",
+                        "type_name": "Story",
+                        "content_type": "all_prz",
+                        "prz_placement_id": "stories_foryou",
+                        "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xsy9",
+                        "prz_strategy_id": "stories_foryou",
+                        "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+                    },
+                    {
+                        "title": "2025_NovWK4_F&B_Sale from $3.49 on Favorite Day Holiday Cookies & Treats with same day services",
+                        "id": "STORY-41502",
+                        "placement_id": "6916d1121527587cd86399ff",
+                        "type": "story_v01",
+                        "type_name": "Story",
+                        "content_type": "all_prz",
+                        "prz_placement_id": "stories_foryou",
+                        "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xsy9",
+                        "prz_strategy_id": "stories_foryou",
+                        "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+                    }
+                ]
+            },
+            "content": {
+                "stories": [
+                    {
+                        "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_7ffb7d26-55a7-406d-843a-dddd9c8c2d9c",
+                        "amplified_headline": {
+                            "color": "#cc0000",
+                            "line_one": [
+                                "Save when"
+                            ],
+                            "line_three": [
+                                "2",
+                                "9"
+                            ],
+                            "line_two": [
+                                "you buy 2"
+                            ],
+                            "lockup": "multiple-units-versioned",
+                            "lockup_disposition": "mandated",
+                            "version": "v2"
+                        },
+                        "background_color": "#CBE6EC",
+                        "background_color_behavior": "simplified",
+                        "call_to_action_button_style": {
+                            "background_color": "#cc0000",
+                            "text_color": "#ffffff",
+                            "button_type": "filled",
+                            "button_copy": "Get the deal"
+                        },
+                        "headline": {
+                            "content": [
+                                {
+                                    "attributes": {
+                                        "color": "#cc0000"
+                                    },
+                                    "insert": {
+                                        "text": "Save when you buy 2\n"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#cc0000"
+                                    },
+                                    "insert": {
+                                        "text": "2/"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#cc0000",
+                                        "pricestyleprice": true
+                                    },
+                                    "insert": {
+                                        "text": "$"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#cc0000"
+                                    },
+                                    "insert": {
+                                        "text": "9"
+                                    }
+                                },
+                                {
+                                    "insert": {
+                                        "text": "\n"
+                                    }
+                                }
+                            ]
+                        },
+                        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_6a9fb0fa-e901-47a0-9465-bc11a004efed",
+                        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_6852b766-f906-4a21-b499-98e530633011",
+                        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_d88f757c-8a3a-45ff-9c50-f1e3a5f04423",
+                        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_fee2b482-2cea-456e-bb8b-e2abb7114572",
+                        "link": {
+                            "target": "PROMO",
+                            "link_tag": "C_DPLP_797082530_STORY-41497",
+                            "detail": {
+                                "id": "797082530"
+                            }
+                        },
+                        "metadata": {
+                            "component_type": "Story",
+                            "component_version": "01"
+                        },
+                        "subhead": {
+                            "content": [
+                                {
+                                    "insert": {
+                                        "text": "Frito-Lay party-size chips & dips*\n"
+                                    },
+                                    "attributes": {
+                                        "color": "#333333"
+                                    }
+                                }
+                            ]
+                        },
+                        "text_position": "middleleft",
+                        "type_stack": "medium",
+                        "width": 34
+                    },
+                    {
+                        "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_c0cf1f4b-4eac-426b-8482-13807406f1b9",
+                        "amplified_headline": {
+                            "color": "#cc0000",
+                            "line_one": [
+                                "Sale from"
+                            ],
+                            "line_two": [
+                                "3.49"
+                            ],
+                            "lockup": "price-emphasis-versioned",
+                            "version": "v2"
+                        },
+                        "background_color": "#CBE6EC",
+                        "background_color_behavior": "simplified",
+                        "call_to_action_button_style": {
+                            "background_color": "#cc0000",
+                            "text_color": "#ffffff",
+                            "button_type": "filled",
+                            "button_copy": "Get the deal"
+                        },
+                        "headline": {
+                            "content": [
+                                {
+                                    "attributes": {
+                                        "color": "#cc0000"
+                                    },
+                                    "insert": {
+                                        "text": "Sale from "
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#cc0000",
+                                        "pricestyleprice": true
+                                    },
+                                    "insert": {
+                                        "text": "$"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#cc0000"
+                                    },
+                                    "insert": {
+                                        "text": "3.49"
+                                    }
+                                },
+                                {
+                                    "insert": {
+                                        "text": "\n"
+                                    }
+                                }
+                            ]
+                        },
+                        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_5121eb3f-e323-4696-8e6b-9b683c8d7651",
+                        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_2a8664da-3452-4c09-91b7-b0a5ef2053c8",
+                        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_ba60a29f-4847-4412-921c-30ed646f4aa7",
+                        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_6e3a7ad7-419f-4ceb-8417-aae592c9dcd3",
+                        "link": {
+                            "target": "GROUPED_OFFER",
+                            "link_tag": "C_GroupedOffer_8675-2055500264417_STORY-41502",
+                            "detail": {
+                                "id": "8675-2055500264417",
+                                "promo_ids": [
+                                    "116362228",
+                                    "410930194"
+                                ],
+                                "boosted_tcins": [
+                                    "88307850",
+                                    "88307849",
+                                    "88392073"
+                                ]
+                            }
+                        },
+                        "metadata": {
+                            "component_type": "Story",
+                            "component_version": "01"
+                        },
+                        "subhead": {
+                            "content": [
+                                {
+                                    "insert": {
+                                        "text": "Favorite Day™ holiday treats & cookies*\n"
+                                    },
+                                    "attributes": {
+                                        "color": "#333333"
+                                    }
+                                }
+                            ]
+                        },
+                        "text_position": "middleleft",
+                        "type_stack": "medium",
+                        "width": 35
+                    }
+                ]
+            },
+            "presentation": "multi-story-blocks-carousel",
+            "component_type": "story_v01",
+            "order": 800
+        },
+        "1100": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "Nov wk 1_Snacks New & Featured_Standard Nav",
+                        "id": "WEB-433561",
+                        "placement_id": "69033bfb000bf036952b231b",
+                        "type": "c_web_a_0003_v04",
+                        "type_name": "Browse Manual",
+                        "content_type": "static"
+                    }
+                ]
+            },
+            "content": {
+                "text_only": false,
+                "taxonomy_nodes": [
+                    {
+                        "reference_type": "DEFINED",
+                        "link_url": "/c/new-in-snacks/-/N-udc6e",
+                        "link_tag": "C_NewinSnacks_WEB-433561_0",
+                        "link_name": "New Arrivals",
+                        "image_path": "https://target.scene7.com/is/image/Target/GUEST_654c63e2-c8fc-49a8-ac0d-45fb6a02993a"
+                    },
+                    {
+                        "reference_type": "DEFINED",
+                        "link_url": "/c/christmas-snacks-candy-treats/-/N-7oj7s",
+                        "link_tag": "C_ChristmasSnacks_WEB-433561_1",
+                        "link_name": "Christmas Snacks",
+                        "image_path": "https://target.scene7.com/is/image/Target/GUEST_300ec41d-05d9-4e3b-a2c6-b12c3cae5335"
+                    },
+                    {
+                        "reference_type": "DEFINED",
+                        "link_url": "/c/snacks-grocery/high-protein/-/N-5xsy9Z9akos",
+                        "link_tag": "C_Snacks_0007-high-protein_WEB-433561_2",
+                        "link_name": "High Protein",
+                        "image_path": "https://target.scene7.com/is/image/Target/GUEST_f2a264b9-9553-484f-b6f5-66af0734ed1e"
+                    },
+                    {
+                        "reference_type": "DEFINED",
+                        "link_url": "/c/snacks-grocery/gluten-free/-/N-5xsy9Zb8gba",
+                        "link_tag": "C_Snacks_0005-gluten-free_WEB-433561_3",
+                        "link_name": "Gluten Free",
+                        "image_path": "https://target.scene7.com/is/image/Target/GUEST_1bebf86b-b8d3-4f75-bc17-f4516d5a66d4"
+                    },
+                    {
+                        "reference_type": "DEFINED",
+                        "link_url": "/c/seedless-oil-snacks/-/N-1zman",
+                        "link_tag": "C_SeedlessOilSnacks_WEB-433561_4",
+                        "link_name": "Seedless Oil",
+                        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0caf62a7-b5c7-4ad3-a15f-cc7d8198a2f1"
+                    },
+                    {
+                        "reference_type": "DEFINED",
+                        "link_url": "/c/meal-snack-ideas-for-kids/-/N-xad8e",
+                        "link_tag": "C_Meal&SnackIdeasforKids_WEB-433561_5",
+                        "link_name": "Meal & Snack Ideas for Kids",
+                        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0e9d0ad0-9db7-409d-a8b1-5085b33d2e2e"
+                    }
+                ],
+                "shape": "circle",
+                "scene7_params": "wid=315&hei=315&qlt=60&fmt=pjpeg",
+                "metadata": {
+                    "component_type": "Browse - Manual",
+                    "component_version": "04"
+                }
+            },
+            "presentation": "/adaptive/c_web_a_0003/v04/mobile",
+            "order": 1100
+        },
+        "1150": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "Default Category Roundel Component",
+                        "id": "WEB-category-roundel-default",
+                        "placement_id": "687a9d3cbf7b50255c1d3659",
+                        "type": "c_web_dvm3_v01",
+                        "type_name": "Web Top Deals Roundel",
+                        "content_type": "static"
+                    }
+                ]
+            },
+            "content": {
+                "position": "block0",
+                "page_type": "category",
+                "ad_unit": "/7079046/tgt/",
+                "ad_slot": "categoryblock0"
+            },
+            "presentation": "c_web_dvm3_v01",
+            "order": 1150
+        },
+        "1300": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "2024_09wk4_Snacks L2_Trending_MTC",
+                        "id": "WEB-407404",
+                        "placement_id": "69033bfb000bf036952b231c",
+                        "type": "c_web_manual_tcin_carousel_v01",
+                        "type_name": "Manual TCIN Carousel",
+                        "content_type": "static"
+                    }
+                ]
+            },
+            "content": {
+                "trackingId": "WEB-407404",
+                "text_color": "dark",
+                "tcins": [
+                    "92340871",
+                    "92341423",
+                    "92340839",
+                    "93167053",
+                    "93105262",
+                    "92993813",
+                    "93768359",
+                    "92996282",
+                    "94160033",
+                    "89022072",
+                    "92278444",
+                    "89095997",
+                    "93149891",
+                    "90858164",
+                    "91852921",
+                    "93105251",
+                    "88337091",
+                    "92328783",
+                    "92397560",
+                    "92399457",
+                    "91844173",
+                    "89489588",
+                    "88233058",
+                    "93046030",
+                    "92327814",
+                    "92993812",
+                    "91953739",
+                    "92167766",
+                    "92328784",
+                    "92246044",
+                    "92244608"
+                ],
+                "metadata": {
+                    "component_type": "Manual TCIN Carousel",
+                    "component_version": "01"
+                },
+                "margin_bottom": "standard",
+                "id": "WEB-407404",
+                "custom_headline": "Get trendy snacks today with free Drive Up",
+                "container": {
+                    "callToAction": "add_to_cart",
+                    "keyValuePairs": {
+                        "context": "placementId,slingshot_manual_tcins"
+                    },
+                    "type": "personalizedProducts"
+                },
+                "background_color": "#F7f5f2"
+            },
+            "presentation": "manual_prz_tcin_carousel",
+            "order": 1300
+        },
+        "1500": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "Nov wk 1_F&B_Gingerbread cookie kits_StandardCP",
+                        "id": "STORY-40999",
+                        "placement_id": "6916d18ceac36b703f5253de",
+                        "type": "story_v01",
+                        "type_name": "Story",
+                        "content_type": "all_manual"
+                    },
+                    {
+                        "title": "Nov wk 1_F&B_Holiday Snacking_Standard CP",
+                        "id": "STORY-40972",
+                        "placement_id": "6916d18ceac36b703f5253dd",
+                        "type": "story_v01",
+                        "type_name": "Story",
+                        "content_type": "all_manual"
+                    },
+                    {
+                        "title": "Nov Wk 1_ Favorite Day Holiday Bakery from $4.99_Standard CP",
+                        "id": "STORY-40981",
+                        "placement_id": "6916d18ceac36b703f5253df",
+                        "type": "story_v01",
+                        "type_name": "Story",
+                        "content_type": "all_manual"
+                    }
+                ]
+            },
+            "content": {
+                "stories": [
+                    {
+                        "amplified_headline": {
+                            "color": "#333333",
+                            "line_four": [
+                                "12"
+                            ],
+                            "line_one": [
+                                "Favorite Day™"
+                            ],
+                            "line_three": [
+                                "under"
+                            ],
+                            "line_two": [
+                                "activity kits"
+                            ],
+                            "lockup": "value-price-emphasis-versioned",
+                            "lockup_disposition": "double-line",
+                            "version": "v2"
+                        },
+                        "background_color": "#F6F5F1",
+                        "background_color_behavior": "simplified",
+                        "call_to_action_button_style": {
+                            "background_color": "#cc0000",
+                            "text_color": "#ffffff",
+                            "button_type": "filled",
+                            "button_copy": "Shop activity kits"
+                        },
+                        "extensions": {
+                            "shoppable_carousel": {
+                                "context": {
+                                    "call_to_action": "add_to_cart",
+                                    "prz": {
+                                        "config": "placementId,slingshot_manual_tcins"
+                                    },
+                                    "type": "personalizedProducts"
+                                },
+                                "tcins": [
+                                    "94585082",
+                                    "85929395",
+                                    "85929069",
+                                    "91112763",
+                                    "85929217",
+                                    "86057362",
+                                    "91112764",
+                                    "94624237",
+                                    "94624238",
+                                    "85930567",
+                                    "85928801",
+                                    "86057402",
+                                    "88578175",
+                                    "85930633",
+                                    "91125282",
+                                    "85928778",
+                                    "91696875",
+                                    "85928779",
+                                    "86027189",
+                                    "94583821",
+                                    "91127429",
+                                    "94450651",
+                                    "94567752",
+                                    "91080125",
+                                    "91127432",
+                                    "91127431",
+                                    "91127430",
+                                    "91080123",
+                                    "88580144",
+                                    "88580146",
+                                    "88565120",
+                                    "88565121",
+                                    "94500641",
+                                    "88317894",
+                                    "88317895"
+                                ]
+                            }
+                        },
+                        "headline": {
+                            "content": [
+                                {
+                                    "attributes": {
+                                        "color": "#333333"
+                                    },
+                                    "insert": {
+                                        "text": "Favorite Day™ activity kits under "
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#333333",
+                                        "pricestyleprice": true
+                                    },
+                                    "insert": {
+                                        "text": "$"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#333333"
+                                    },
+                                    "insert": {
+                                        "text": "12\n"
+                                    }
+                                }
+                            ]
+                        },
+                        "hero_background_color": "#F0E9DE",
+                        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_8c09bdf3-d39d-441b-ba73-6e0372537f3a",
+                        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_1221851b-95a6-4128-8d2c-c486cc0b0ec1",
+                        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_9afe7fef-2e40-4747-bc1e-ea9f7564aaa9",
+                        "link": {
+                            "target": "TAXONOMY",
+                            "link_tag": "C_GingerbreadHouses&ActivityKits_STORY-40999",
+                            "min_price": 1,
+                            "max_price": 12,
+                            "destination_content": "GRID",
+                            "detail": {
+                                "id": "s2yud",
+                                "name": "Gingerbread Houses & Activity Kits",
+                                "seo_url": "/c/gingerbread-houses-activity-kits/-/N-s2yud",
+                                "type": "TAG",
+                                "sub_type": "seasonal",
+                                "page_type_prefix": "c"
+                            },
+                            "facets": [],
+                            "marketing_groups": []
+                        },
+                        "metadata": {
+                            "component_type": "Story",
+                            "component_version": "01"
+                        },
+                        "text_position": "topleft",
+                        "type_stack": "medium",
+                        "width": 100
+                    },
+                    {
+                        "amplified_headline": {
+                            "color": "#ffffff",
+                            "line_one": [
+                                "Holiday snacks"
+                            ],
+                            "line_three": [
+                                "2"
+                            ],
+                            "line_two": [
+                                "from"
+                            ],
+                            "lockup": "value-price-emphasis-versioned",
+                            "lockup_disposition": "single-line",
+                            "version": "v2"
+                        },
+                        "background_color": "#9F0609",
+                        "background_color_behavior": "simplified",
+                        "call_to_action_button_style": {
+                            "background_color": "#ffffff",
+                            "text_color": "#333333",
+                            "outline_color": "#333333",
+                            "button_type": "outlined",
+                            "button_copy": "Shop snacks & treats"
+                        },
+                        "headline": {
+                            "content": [
+                                {
+                                    "attributes": {
+                                        "color": "#ffffff"
+                                    },
+                                    "insert": {
+                                        "text": "Holiday snacks from "
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#ffffff",
+                                        "pricestyleprice": true
+                                    },
+                                    "insert": {
+                                        "text": "$"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#ffffff"
+                                    },
+                                    "insert": {
+                                        "text": "2\n"
+                                    }
+                                }
+                            ]
+                        },
+                        "hero_background_color": "#F5F0E7",
+                        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_3eb03f03-c708-4750-9e25-2a75b07a6650",
+                        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_323b947b-b0ad-4869-bda4-02529362bd24",
+                        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_532a95ec-6e47-4335-8d44-4fa0974ea7fb",
+                        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_6c7618a7-2f85-4b83-83ce-2d6a8ccd6060",
+                        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_901f2f36-9ca0-4cf5-980b-32e23df1b5e5",
+                        "link": {
+                            "target": "TAXONOMY",
+                            "link_tag": "C_ChristmasSnacks_STORY-40972",
+                            "destination_content": "CONTENT",
+                            "detail": {
+                                "id": "7oj7s",
+                                "name": "Christmas Snacks",
+                                "seo_url": "/c/christmas-snacks-candy-treats/-/N-7oj7s",
+                                "type": "TAG",
+                                "page_type_prefix": "c"
+                            },
+                            "facets": [],
+                            "marketing_groups": []
+                        },
+                        "metadata": {
+                            "component_type": "Story",
+                            "component_version": "01"
+                        },
+                        "text_position": "middleleft",
+                        "type_stack": "medium",
+                        "width": 100
+                    },
+                    {
+                        "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_5fae6ada-b786-4003-aa4a-0fc58a1d7eed",
+                        "amplified_headline": {
+                            "color": "#ffffff",
+                            "line_four": [
+                                "4.99"
+                            ],
+                            "line_one": [
+                                "Favorite Day™"
+                            ],
+                            "line_three": [
+                                "from"
+                            ],
+                            "line_two": [
+                                "holiday bakery"
+                            ],
+                            "lockup": "value-price-emphasis-versioned",
+                            "lockup_disposition": "double-line",
+                            "version": "v2"
+                        },
+                        "background_color": "#870508",
+                        "background_color_behavior": "simplified",
+                        "call_to_action_button_style": {
+                            "background_color": "#ffffff",
+                            "text_color": "#333333",
+                            "outline_color": "#333333",
+                            "button_type": "outlined",
+                            "button_copy": "Shop holiday bakery"
+                        },
+                        "headline": {
+                            "content": [
+                                {
+                                    "attributes": {
+                                        "color": "#ffffff"
+                                    },
+                                    "insert": {
+                                        "text": "Favorite Day™ holiday bakery from "
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#ffffff",
+                                        "pricestyleprice": true
+                                    },
+                                    "insert": {
+                                        "text": "$"
+                                    }
+                                },
+                                {
+                                    "attributes": {
+                                        "color": "#ffffff"
+                                    },
+                                    "insert": {
+                                        "text": "4.99\n"
+                                    }
+                                }
+                            ]
+                        },
+                        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_87c62a5e-0247-4942-99ce-9eb364014e76",
+                        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_9e4d319f-f25c-47da-9437-c76cf5dbfe26",
+                        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_1922df8d-d655-475e-81f4-63d1c01f57c9",
+                        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_60b1040b-d8aa-4311-9e96-cc30f76dd606",
+                        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_05720799-9645-4e73-8e81-a03397a3a7aa",
+                        "link": {
+                            "target": "TAXONOMY",
+                            "link_tag": "C_HolidayBakery_STORY-40981",
+                            "destination_content": "GRID",
+                            "detail": {
+                                "id": "3w9pq",
+                                "name": "Holiday Bakery",
+                                "seo_url": "/c/holiday-bakery/-/N-3w9pq",
+                                "type": "TAG",
+                                "page_type_prefix": "c"
+                            },
+                            "facets": [],
+                            "marketing_groups": []
+                        },
+                        "metadata": {
+                            "component_type": "Story",
+                            "component_version": "01"
+                        },
+                        "text_position": "topleft",
+                        "type_stack": "medium",
+                        "width": 100
+                    }
+                ]
+            },
+            "presentation": "multi-story-blocks",
+            "styles": {
+                "bottom_margin": "16px",
+                "position": "standalone"
+            },
+            "order": 1500
+        },
+        "1700": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "2024_09wk4_Snacks L2_BIA_PRZ",
+                        "id": "WEB-407406",
+                        "placement_id": "69033bfb000bf036952b231f",
+                        "type": "c_web_a_0056_v01",
+                        "type_name": "Item or Promotion Carousel",
+                        "content_type": "static"
+                    }
+                ]
+            },
+            "content": {
+                "trackingId": "WEB-407406",
+                "text_color": "dark",
+                "metadata": {
+                    "component_type": "Item Or Promotion Carousel",
+                    "component_version": "01"
+                },
+                "margin_bottom": "standard",
+                "id": "WEB-407406",
+                "container": {
+                    "callToAction": "add_to_cart",
+                    "keyValuePairs": {
+                        "context": "placementId,adapt_primary_bia_sameday_drive_up;categoryId,5xsy9"
+                    },
+                    "type": "personalizedProducts"
+                },
+                "background_color": "#EEEEEE"
+            },
+            "presentation": "universal_prz_carousel",
+            "order": 1700
+        },
+        "2250": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "Roundel",
+                        "id": "WEB-c_web_dvm_v01",
+                        "placement_id": "WEB-category-dvm-default",
+                        "type": "c_web_dvm_v01",
+                        "type_name": "ROUNDEL",
+                        "content_type": "dynamic"
+                    }
+                ]
+            },
+            "content": {
+                "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+                "pos": "BLOCK1"
+            },
+            "presentation": "slingshot/dvm",
+            "order": 2250
+        },
+        "2300": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "Product Grid",
+                        "id": "WEB-c_web_productgrid_v01",
+                        "placement_id": "WEB-category-product-grid-default",
+                        "type": "c_web_productgrid_v01",
+                        "type_name": "Product Grid",
+                        "content_type": "dynamic"
+                    }
+                ]
+            },
+            "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+            "order": 2300
+        },
+        "2350": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "PLP Recommendations",
+                        "id": "WEB-c_web_plp_recs_v01",
+                        "placement_id": "WEB-category-recs-default",
+                        "type": "c_web_recs_v01",
+                        "type_name": "Recommendations",
+                        "content_type": "dynamic"
+                    }
+                ]
+            },
+            "content": {
+                "placement_id": "plp"
+            },
+            "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+            "order": 2350
+        },
+        "2500": {
+            "metadata": {
+                "components": [
+                    {
+                        "title": "SEO",
+                        "id": "WEB-426093",
+                        "placement_id": "6855776d8a58a5663de1f2ef",
+                        "type": "c_web_a_0029_v02",
+                        "type_name": "SEO Dynamic Linking",
+                        "content_type": "dynamic"
+                    }
+                ]
+            },
+            "content": {
+                "metadata": {
+                    "component_type": "SEO Dynamic Linking",
+                    "component_version": "02"
+                },
+                "message": "<a href=https://www.target.com/c/snacks-grocery/gluten-free/-/N-5xsy9Zb8gba>gluten free snacks</a>,<a href=https://www.target.com/p/lays-wavy-funyuns-onion-7-5oz/-/A-82689208>funyuns chips</a>,<a href=https://www.target.com/c/snacks-grocery/nature-s-bakery/-/N-5xsy9Z8uavq>nature's bakery</a>,<a href=https://www.target.com/c/snacks-grocery/nutri-grain/-/N-5xsy9Z56gpr>nutrigrain</a>,<a href=https://www.target.com/c/snacks-grocery/low-sodium/-/N-5xsy9Z7ct93>low sodium snacks</a>,<a href=https://www.target.com/c/snacks-grocery/munchies/-/N-5xsy9Z55imi>munchies chips</a>,<a href=https://www.target.com/c/snacks-grocery/pure-protein/-/N-5xsy9Z561o1>pure protein chips</a>,<a href=https://www.target.com/b/larabar/-/N-5q76i>larabar</a>,<a href=https://www.target.com/c/snacks-grocery/chester-s/-/N-5xsy9Z560aw>chester's popcorn</a>,<a href=https://www.target.com/c/snacks-grocery/sabritas/-/N-5xsy9Z2n0de>sabritas</a>,<a href=https://www.target.com/c/chips-snacks-grocery/late-july/-/N-5xsy7Zdwyj3>late july chips</a>,<a href=https://www.target.com/c/snacks-grocery/bare-fruit/-/N-5xsy9Z3sh63>bare snacks</a>,<a href=https://www.target.com/c/snacks-grocery/karen-s-naturals/-/N-5xsy9Zq643le7cgry>karen chips</a>,<a href=https://www.target.com/c/snacks-grocery/auntie-anne-s/-/N-5xsy9Z7c9o7>ann chips</a>,<a href=https://www.target.com/b/jack-link-s/-/N-5buts>jack links</a>,<a href=https://www.target.com/c/snacks-grocery/siete/-/N-5xsy9Zs03wo>siete chips</a>,<a href=https://www.target.com/c/snacks-grocery/vegan/-/N-5xsy9Z5zlg9>vegan snacks</a>,<a href=https://www.target.com/c/snacks-grocery/wise/-/N-5xsy9Z4vq1m>wise chips</a>,<a href=https://www.target.com/c/snacks-grocery/newman-s-own/-/N-5xsy9Z560ht>newman os</a>,<a href=https://www.target.com/b/teddy-grahams/-/N-54w7k>teddy grahams</a>,<a href=https://www.target.com/p/lorna-doone-shortbread-cookies-10oz/-/A-12945666>lorna doones</a>,<a href=https://www.target.com/b/ruffles/-/N-56cbh>ruffles</a>,<a href=https://www.target.com/s/dots+cheese+curls>dots cheese curls</a>,<a href=https://www.target.com/c/snacks-grocery/low-fat/-/N-5xsy9Znghi2>low fat chips</a>,<a href=https://www.target.com/p/legendary-foods-popped-chips-ranch-4-8oz/-/A-89231121>legendary chips</a>,<a href=https://www.target.com/p/la-cocina-de-josefina-mexican-restaurant-style-tortilla-chips-12oz/-/A-47888566>la cocina de josefina</a>,<a href=https://www.target.com/c/snacks-grocery/-/N-5xsy9>good snacks to get</a>,<a href=https://www.target.com/p/gardetto-s-original-recipe-snack-mix-14-5oz/-/A-53434659>gardetto's</a>,<a href=https://www.target.com/p/crunchmaster-multi-grain-sea-salt-crackers-4oz/-/A-14742183?sid=1809S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=71-10&amp;gStoreCode=1809S&amp;gQT=2>crunchmaster</a>,<a href=https://www.target.com/c/snacks-grocery/-/N-5xsy9>good snacks to get</a>,<a href=https://www.target.com/b/bcuz-snacks/-/N-q643le8jag0>bcuz</a>,<a href=https://www.target.com/c/snacks-grocery/gimme/-/N-5xsy9Z4y7cn>gimme snacks</a>,<a href=https://www.target.com/c/snacks-grocery/clif-bar/-/N-5xsy9Z4tg8t>clif snacks</a>,<a href=https://www.target.com/p/nestle-oreo-frozen-bites-14ct-3-5-fl-oz/-/A-94268449?sid=1112S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Dairy+Frozen&amp;adgroup=288-7&amp;gStoreCode=1112S&amp;gQT=1>oreo snacks</a>,<a href=https://www.target.com/b/the-popcorn-factory/-/N-71omk>the popcorn factory</a>,<a href=https://www.target.com/c/nutrition-health/built-bar/-/N-5xu0dZq643lejv7f4>built bar</a>,<a href=https://www.target.com/c/snacks-grocery/kettle-brand/-/N-5xsy9Z70z8i>kettle brand snacks for parties</a>,<a href=https://www.target.com/p/madegood-organic-gluten-free-chocolate-chip-cookies-soft-baked-12ct-traypack/-/A-85871556>made good cookies</a>,<a href=https://www.target.com/c/snacks-grocery/walong-marketing-inc-/-/N-5xsy9Zq643leziwt4>walong marketing</a>,<a href=https://www.target.com/c/snacks-grocery/lance/-/N-5xsy9Z560hb>lance chips</a>,<a href=https://www.target.com/c/snacks-grocery/jell-o/-/N-5xsy9Z56eq3>jello snacks</a>,<a href=https://www.target.com/c/snacks-grocery/bobo-s-oat-bars/-/N-5xsy9Z6xeec>how much are the bobo's</a>,<a href=https://www.target.com/b/vitner-s/-/N-dnpve>vitner</a>,<a href=https://www.target.com/c/snacks-grocery/goldfish/-/N-5xsy9Z560fs>goldfish chips</a>,<a href=https://www.target.com/b/rustic-bakery/-/N-q643le4823k>rustic bakery</a>,<a href=https://www.target.com/c/chips-snacks-grocery/krunchers-/-/N-5xsy7Zvwjku>krunchers chips</a>,<a href=https://www.target.com/b/charras/-/N-7xrbd>charras</a>,<a href=https://www.target.com/c/snacks-grocery/conchita/-/N-5xsy9Zt1w7h>conchita chips</a>,<a href=https://www.target.com/c/snacks-grocery/quaker/-/N-5xsy9Z56e7x>quaker snacks</a>,<a href=https://www.target.com/c/snacks-grocery/bimbo/-/N-5xsy9Z5610v>bimbo snacks</a>,<a href=https://www.target.com/c/chips-snacks-grocery/zapp-s/-/N-5xsy7Ze5ge4>zapp's</a>,<a href=https://www.target.com/p/cheez-it-summer-stamps-baked-crackers-12-4oz/-/A-93101383?sid=871S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=71-10&amp;lnm=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e>cheez its</a>,<a href=https://www.target.com/c/cookies-snacks-grocery/voortman/-/N-54v3eZ55c3j>voortman cookies</a>,<a href=https://www.target.com/b/honey-stinger/-/N-c0vb>stinger snacks</a>,<a href=https://www.target.com/c/snacks-grocery/epic/-/N-5xsy9Zifi2x>epic snacks</a>,<a href=https://www.target.com/c/snacks-grocery/ethel-s-baking-co/-/N-5xsy9Zq643leqa9bg>ethel's pharmacy</a>,<a href=https://www.target.com/c/snacks-grocery/-/N-5xsy9>food and snacks</a>,<a href=https://www.target.com/c/snacks-grocery/living-nutz/-/N-5xsy9Zq643leq16sl>nutz chips</a>,<a href=https://www.target.com/c/snacks-grocery/premium/-/N-5xsy9Z56cmw>premium snacks</a>,<a href=https://www.target.com/c/snacks-grocery/tosi/-/N-5xsy9Zq643leoi7o5>tosi</a>,<a href=https://www.target.com/p/sunchips-chili-lime-chips-7oz/-/A-81418148>sun chips flavors</a>,<a href=https://www.target.com/c/snacks-grocery/all-deals/-/N-5xsy9Zakkos>snack deals</a>,<a href=https://www.target.com/c/snacks-grocery/ricos/-/N-5xsy9Zbdwzf>ricos chips</a>,<a href=https://www.target.com/c/fruit-snacks-grocery/solely/-/N-5xsy4Zq643leg9q32>solely</a>,<a href=https://www.target.com/c/snacks-grocery/karma/-/N-5xsy9Zq643le2kcow>karma time snacks</a>,<a href=https://www.target.com/c/snacks-grocery/snyder-s-of-hanover/-/N-5xsy9Z4uf1d>snyders snacks</a>,<a href=https://www.target.com/c/snacks-grocery/rw-garcia/-/N-5xsy9Zq643le170m7>rw garcia chips</a>,<a href=https://www.target.com/c/snacks-grocery/that-s-it-/-/N-5xsy9Z4xw09>that's it snacks</a>,<a href=https://www.target.com/c/snacks-grocery/mrs-renfro-s/-/N-5xsy9Z10e8s>renfro's</a>,<a href=https://www.target.com/c/snacks-grocery/munchkin/-/N-5xsy9Z5y3ef>munchkin chips</a>,<a href=https://www.target.com/b/walnut-creek-foods/-/N-q643leb5c6y>walnut creek foods</a>,<a href=https://www.target.com/c/snacks-grocery/whole-grain/-/N-5xsy9Zhft6b>whole grain snacks</a>,<a href=https://www.target.com/c/snacks-grocery/cholula/-/N-5xsy9Zbj5ty>cholula chips</a>,<a href=https://www.target.com/c/snacks-grocery/serendippity/-/N-5xsy9Zq643leh7eji>serendippity</a>"
+            },
+            "presentation": "c_web_a_0029_v02",
+            "order": 2500
+        }
+    },
+    "uri": "/5xsy9/WEB",
+    "deactivation_date": "2025-11-28T08:00Z",
+    "activation_date": "2025-11-27T08:00Z"
+}

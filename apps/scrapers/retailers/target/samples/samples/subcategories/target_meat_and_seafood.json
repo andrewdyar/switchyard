@@ -1,0 +1,521 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5xsyh",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_c286b9a9-f6a0-44dc-a43f-a77619dfd529",
+      "seo_keywords": "Meat & Seafood, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Shop Target for Meat & Seafood you will love at great low prices. Free shipping on orders of $35+ or same-day pick-up in store.",
+      "seo_title": "Meat & Seafood : Target",
+      "seo_h1": "Meat & Seafood",
+      "canonical_url": "/c/meat-seafood-grocery/-/N-5xsyh"
+    },
+    "node_id": "5xsyh",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "4tgi8",
+        "name": "Beef",
+        "type": "Category",
+        "linking_id": "4tgi8",
+        "number_of_children": "0",
+        "canonical_url": "/c/beef-meat-seafood-grocery/-/N-4tgi8",
+        "seo_h1": "Beef",
+        "page_id": "/c/4tgi8",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_BUBCAT_May26BubCat_Beef-200526-1590505480575"
+      },
+      {
+        "node_id": "4tgi7",
+        "name": "Chicken",
+        "type": "Category",
+        "linking_id": "4tgi7",
+        "number_of_children": "0",
+        "canonical_url": "/c/chicken-meat-seafood-grocery/-/N-4tgi7",
+        "seo_h1": "Chicken",
+        "page_id": "/c/4tgi7",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_BUBCAT_May26BubCat_Chicken-200526-1590505503443"
+      },
+      {
+        "node_id": "f2cgx",
+        "name": "Ham",
+        "type": "Category",
+        "linking_id": "f2cgx",
+        "number_of_children": "0",
+        "canonical_url": "/c/ham-meat-seafood-grocery/-/N-f2cgx",
+        "seo_h1": "Ham",
+        "page_id": "/c/f2cgx",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_e86c5a84-8790-4b5b-b41f-ad23e6dadfbf"
+      },
+      {
+        "node_id": "4tghz",
+        "name": "Turkey",
+        "type": "Category",
+        "linking_id": "4tghz",
+        "number_of_children": "0",
+        "canonical_url": "/c/turkey-meat-seafood-grocery/-/N-4tghz",
+        "seo_h1": "Turkey",
+        "page_id": "/c/4tghz",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_8fb8b2af-bc34-444b-91dd-36a9a3305aa9"
+      },
+      {
+        "node_id": "4tgi0",
+        "name": "Fish & Seafood",
+        "type": "Category",
+        "linking_id": "4tgi0",
+        "number_of_children": "0",
+        "canonical_url": "/c/seafood-meat-grocery/-/N-4tgi0",
+        "seo_h1": "Fish & Seafood",
+        "page_id": "/c/4tgi0",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_b721021b-7608-45cf-8e25-5888e2307a49"
+      },
+      {
+        "node_id": "4tgi6",
+        "name": "Packaged Lunch Meat",
+        "type": "Category",
+        "linking_id": "4tgi6",
+        "number_of_children": "0",
+        "canonical_url": "/c/packaged-lunch-meat-deli-grocery/-/N-4tgi6",
+        "seo_h1": "Packaged Lunch Meat",
+        "page_id": "/c/4tgi6",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_cb527427-a260-424c-9f70-d0ec35dc6c79"
+      },
+      {
+        "node_id": "4tgi2",
+        "name": "Pork",
+        "type": "Category",
+        "linking_id": "4tgi2",
+        "number_of_children": "0",
+        "canonical_url": "/c/pork-meat-seafood-grocery/-/N-4tgi2",
+        "seo_h1": "Pork",
+        "page_id": "/c/4tgi2",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_f4662b8a-8834-4ec7-9013-37c9c4d4746d"
+      },
+      {
+        "node_id": "4tgi9",
+        "name": "Bacon",
+        "type": "Category",
+        "linking_id": "4tgi9",
+        "number_of_children": "0",
+        "canonical_url": "/c/bacon-meat-seafood-grocery/-/N-4tgi9",
+        "seo_h1": "Bacon",
+        "page_id": "/c/4tgi9",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_d0217c77-ab4d-43ca-9922-418d6e311174"
+      },
+      {
+        "node_id": "p9cdq",
+        "name": "Sausages",
+        "type": "Category",
+        "linking_id": "p9cdq",
+        "number_of_children": "0",
+        "canonical_url": "/c/sausages-meat-seafood-grocery/-/N-p9cdq",
+        "seo_h1": "Sausages",
+        "page_id": "/c/p9cdq",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_717f1c1a-8d41-4bf6-92b7-0b1c18087920"
+      },
+      {
+        "node_id": "4tgi5",
+        "name": "Hot Dogs",
+        "type": "Category",
+        "linking_id": "4tgi5",
+        "number_of_children": "0",
+        "canonical_url": "/c/hot-dogs-meat-seafood-grocery/-/N-4tgi5",
+        "seo_h1": "Hot Dogs",
+        "page_id": "/c/4tgi5",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_8951c5e1-e67b-4800-ac7c-254d5b06533c"
+      },
+      {
+        "node_id": "zomk2",
+        "name": "Sliced Deli Meat & Deli Cheese",
+        "type": "Category",
+        "linking_id": "zomk2",
+        "number_of_children": "0",
+        "canonical_url": "/c/sliced-deli-meat-cheese-grocery/-/N-zomk2",
+        "seo_h1": "Sliced Deli Meat & Deli Cheese",
+        "page_id": "/c/zomk2",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_ae3daf1a-d8a5-4c42-996d-b6a9c4336484"
+      },
+      {
+        "node_id": "4tgi3",
+        "name": "Meatless Alternatives",
+        "type": "Category",
+        "linking_id": "4tgi3",
+        "number_of_children": "0",
+        "canonical_url": "/c/meatless-alternatives-meat-seafood-grocery/-/N-4tgi3",
+        "seo_h1": "Meatless Alternatives",
+        "page_id": "/c/4tgi3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_926d243f-a1c7-433e-aaaf-aa84604150cc"
+      }
+    ],
+    "og": {
+      "title": "Meat & Seafood : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_c286b9a9-f6a0-44dc-a43f-a77619dfd529",
+      "url": "/c/meat-seafood-grocery/-/N-5xsyh",
+      "description": "Shop Target for Meat & Seafood you will love at great low prices. Free shipping on orders of $35+ or same-day pick-up in store."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5xsyh",
+    "title": "Meat & Seafood",
+    "activation_date": "2025-10-12T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "09.14.22_Meats&SeafoodsBIA_PRZ",
+            "id": "WEB-366639",
+            "placement_id": "68dea43fc90339156ce03f15",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-366639",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-366639",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_bia_sameday_drive_up;categoryId,5xsyh;fulfillmentId,scheduled_delivery_and_available,store_pickup_and_available,curbside_and_available"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#F7F5F2"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1300
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov Wk 1_G&G 0.79 Turkey per lbs_Standard CP",
+            "id": "STORY-40976",
+            "placement_id": "68dea43fc90339156ce03f18",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xsyh",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "amplified_headline": {
+              "color": "#ffffff",
+              "line_four": [
+                "0.79"
+              ],
+              "line_one": [
+                ""
+              ],
+              "line_three": [
+                "from"
+              ],
+              "line_two": [
+                "Whole turkeys "
+              ],
+              "lockup": "value-price-emphasis-versioned",
+              "lockup_disposition": "double-line",
+              "version": "v2"
+            },
+            "background_color": "#AA5048",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop turkey"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Whole turkeys  from "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#ffffff",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "0.79\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_f7842123-117f-4b6b-bef9-2d4294b014ed",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_299b604a-bc0d-4e8b-bf9e-9c9ab364bd81",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_a5fbf334-54d3-4d99-9b82-4252d325ac4a",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_Turkey_whole_STORY-40976",
+              "sort_by": "Featured",
+              "destination_content": "GRID",
+              "detail": {
+                "id": "4tghz",
+                "name": "Turkey",
+                "seo_url": "/c/turkey-meat-seafood-grocery/whole/-/N-4tghz",
+                "type": "CATEGORY",
+                "page_type_prefix": "c"
+              },
+              "facets": [
+                {
+                  "id": "fi4pqhjhkuw",
+                  "name": "d_meat_cut",
+                  "value": "whole",
+                  "seo_value": "whole"
+                }
+              ],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "per pound"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "topleft",
+            "type_stack": "medium",
+            "width": 100
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1500
+    },
+    "1700": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Oct Wk 2_Meat & Seafood Item Recs_Standard CSL",
+            "id": "WEB-431880",
+            "placement_id": "68dea43fc90339156ce03f19",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-431880",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-431880",
+        "custom_headline": "Trending now in Meat & Seafood",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_viral;categoryId,5xsyh"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1700
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    }
+  },
+  "uri": "/5xsyh/WEB",
+  "activation_date": "2025-10-12T07:00Z"
+}

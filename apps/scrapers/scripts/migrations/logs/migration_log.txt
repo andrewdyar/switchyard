@@ -1,0 +1,201 @@
+INFO:supabase_client:Supabase client initialized successfully
+INFO:__main__:============================================================
+INFO:__main__:Product Image Migration to Supabase Storage
+INFO:__main__:============================================================
+INFO:httpx:HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/bucket "HTTP/2 200 OK"
+INFO:__main__:✅ Bucket products already exists
+INFO:httpx:HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?select=id%2Cname "HTTP/2 200 OK"
+INFO:__main__:Found 71 products in Supabase
+INFO:httpx:HTTP Request: GET https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?select=product_id%2Cstore_name%2Cstore_item_id%2Cstore_image_url "HTTP/2 200 OK"
+INFO:__main__:Found 71 store mappings
+INFO:__main__:Downloading image for Soli Organic Fresh Basil (heb)...
+INFO:__main__:Uploading 1e1800b0-0fc2-4896-85bd-522a3487d62c/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/1e1800b0-0fc2-4896-85bd-522a3487d62c/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/1e1800b0-0fc2-4896-85bd-522a3487d62c/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.1e1800b0-0fc2-4896-85bd-522a3487d62c&store_name=eq.heb&store_item_id=eq.10567514 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.1e1800b0-0fc2-4896-85bd-522a3487d62c "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Soli Organic Fresh Basil (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/1e1800b0-0fc2-4896-85bd-522a3487d62c/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Salad Kit - Classic Caesar (heb)...
+INFO:__main__:Uploading 29028880-888c-4967-81c4-d2dc59639678/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/29028880-888c-4967-81c4-d2dc59639678/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/29028880-888c-4967-81c4-d2dc59639678/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.29028880-888c-4967-81c4-d2dc59639678&store_name=eq.heb&store_item_id=eq.1383541 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.29028880-888c-4967-81c4-d2dc59639678 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Salad Kit - Classic Caesar (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/29028880-888c-4967-81c4-d2dc59639678/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Green Onions (heb)...
+INFO:__main__:Uploading 80226755-2b5b-47f1-8b21-3fd183ab3a4d/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/80226755-2b5b-47f1-8b21-3fd183ab3a4d/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/80226755-2b5b-47f1-8b21-3fd183ab3a4d/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.80226755-2b5b-47f1-8b21-3fd183ab3a4d&store_name=eq.heb&store_item_id=eq.374854 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.80226755-2b5b-47f1-8b21-3fd183ab3a4d "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Green Onions (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/80226755-2b5b-47f1-8b21-3fd183ab3a4d/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Italian Parsley (heb)...
+INFO:__main__:Uploading dedad7dd-1124-464c-8fcc-f2f1e6f26e50/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/dedad7dd-1124-464c-8fcc-f2f1e6f26e50/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/dedad7dd-1124-464c-8fcc-f2f1e6f26e50/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.dedad7dd-1124-464c-8fcc-f2f1e6f26e50&store_name=eq.heb&store_item_id=eq.319480 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.dedad7dd-1124-464c-8fcc-f2f1e6f26e50 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Italian Parsley (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/dedad7dd-1124-464c-8fcc-f2f1e6f26e50/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Celery Stalk (heb)...
+INFO:__main__:Uploading 79ec59f3-106f-4fc7-b1dc-0f1db488803e/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/79ec59f3-106f-4fc7-b1dc-0f1db488803e/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/79ec59f3-106f-4fc7-b1dc-0f1db488803e/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.79ec59f3-106f-4fc7-b1dc-0f1db488803e&store_name=eq.heb&store_item_id=eq.325173 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.79ec59f3-106f-4fc7-b1dc-0f1db488803e "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Celery Stalk (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/79ec59f3-106f-4fc7-b1dc-0f1db488803e/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Cilantro (heb)...
+INFO:__main__:Uploading cdb7c374-ba61-45c7-983d-e28b3f86ddab/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/cdb7c374-ba61-45c7-983d-e28b3f86ddab/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/cdb7c374-ba61-45c7-983d-e28b3f86ddab/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.cdb7c374-ba61-45c7-983d-e28b3f86ddab&store_name=eq.heb&store_item_id=eq.325175 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.cdb7c374-ba61-45c7-983d-e28b3f86ddab "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Cilantro (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/cdb7c374-ba61-45c7-983d-e28b3f86ddab/heb/image.jpg
+INFO:__main__:Downloading image for Hill Country Fare Rotisserie Chicken - Original (heb)...
+INFO:__main__:Uploading 344e2f28-cff4-4fe2-b93d-94736e4dc525/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/344e2f28-cff4-4fe2-b93d-94736e4dc525/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/344e2f28-cff4-4fe2-b93d-94736e4dc525/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.344e2f28-cff4-4fe2-b93d-94736e4dc525&store_name=eq.heb&store_item_id=eq.14959011 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.344e2f28-cff4-4fe2-b93d-94736e4dc525 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Hill Country Fare Rotisserie Chicken - Original (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/344e2f28-cff4-4fe2-b93d-94736e4dc525/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Green Bell Pepper (heb)...
+INFO:__main__:Uploading 7ef84a92-3930-4aaf-8994-b4eec9039a73/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/7ef84a92-3930-4aaf-8994-b4eec9039a73/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/7ef84a92-3930-4aaf-8994-b4eec9039a73/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.7ef84a92-3930-4aaf-8994-b4eec9039a73&store_name=eq.heb&store_item_id=eq.374700 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.7ef84a92-3930-4aaf-8994-b4eec9039a73 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Green Bell Pepper (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/7ef84a92-3930-4aaf-8994-b4eec9039a73/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Jalapeño Pepper (heb)...
+INFO:__main__:Uploading d55527f5-6d7a-40f9-88d4-347237ea211b/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/d55527f5-6d7a-40f9-88d4-347237ea211b/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/d55527f5-6d7a-40f9-88d4-347237ea211b/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.d55527f5-6d7a-40f9-88d4-347237ea211b&store_name=eq.heb&store_item_id=eq.374686 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.d55527f5-6d7a-40f9-88d4-347237ea211b "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Jalapeño Pepper (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/d55527f5-6d7a-40f9-88d4-347237ea211b/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Yellow Onion (heb)...
+INFO:__main__:Uploading 631980cc-a675-4fd6-ae56-82b5fbbb6fe3/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/631980cc-a675-4fd6-ae56-82b5fbbb6fe3/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/631980cc-a675-4fd6-ae56-82b5fbbb6fe3/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.631980cc-a675-4fd6-ae56-82b5fbbb6fe3&store_name=eq.heb&store_item_id=eq.318939 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.631980cc-a675-4fd6-ae56-82b5fbbb6fe3 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Yellow Onion (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/631980cc-a675-4fd6-ae56-82b5fbbb6fe3/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Garlic (heb)...
+INFO:__main__:Uploading b1724ca9-5a95-4968-8e24-00a57b9abfaa/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/b1724ca9-5a95-4968-8e24-00a57b9abfaa/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/b1724ca9-5a95-4968-8e24-00a57b9abfaa/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.b1724ca9-5a95-4968-8e24-00a57b9abfaa&store_name=eq.heb&store_item_id=eq.325168 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.b1724ca9-5a95-4968-8e24-00a57b9abfaa "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Garlic (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/b1724ca9-5a95-4968-8e24-00a57b9abfaa/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Red Onion (heb)...
+INFO:__main__:Uploading f65c499f-5edf-4b32-bcb1-6bde10cdc771/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/f65c499f-5edf-4b32-bcb1-6bde10cdc771/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/f65c499f-5edf-4b32-bcb1-6bde10cdc771/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.f65c499f-5edf-4b32-bcb1-6bde10cdc771&store_name=eq.heb&store_item_id=eq.325170 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.f65c499f-5edf-4b32-bcb1-6bde10cdc771 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Red Onion (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/f65c499f-5edf-4b32-bcb1-6bde10cdc771/heb/image.jpg
+INFO:__main__:Downloading image for Fresh Shallot (heb)...
+INFO:__main__:Uploading 19408b24-a9c6-4180-bd59-7bb033f9fa2d/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/19408b24-a9c6-4180-bd59-7bb033f9fa2d/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/19408b24-a9c6-4180-bd59-7bb033f9fa2d/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.19408b24-a9c6-4180-bd59-7bb033f9fa2d&store_name=eq.heb&store_item_id=eq.374935 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.19408b24-a9c6-4180-bd59-7bb033f9fa2d "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Fresh Shallot (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/19408b24-a9c6-4180-bd59-7bb033f9fa2d/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Bakery Flour Tortillas (heb)...
+INFO:__main__:Uploading e8168732-e474-4a62-b9fd-41efa1f0c563/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/e8168732-e474-4a62-b9fd-41efa1f0c563/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/e8168732-e474-4a62-b9fd-41efa1f0c563/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.e8168732-e474-4a62-b9fd-41efa1f0c563&store_name=eq.heb&store_item_id=eq.465326 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.e8168732-e474-4a62-b9fd-41efa1f0c563 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Bakery Flour Tortillas (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/e8168732-e474-4a62-b9fd-41efa1f0c563/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Natural Angus Ground Beef, 80% Lean (heb)...
+INFO:__main__:Uploading df0a4098-8645-4729-83db-155cd3f788cb/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/df0a4098-8645-4729-83db-155cd3f788cb/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/df0a4098-8645-4729-83db-155cd3f788cb/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.df0a4098-8645-4729-83db-155cd3f788cb&store_name=eq.heb&store_item_id=eq.3163589 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.df0a4098-8645-4729-83db-155cd3f788cb "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Natural Angus Ground Beef, 80% Lean (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/df0a4098-8645-4729-83db-155cd3f788cb/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Ground Pork Italian Sausage - Mild (heb)...
+INFO:__main__:Uploading 5281cced-bee0-4cbd-be85-e6b447bef1dd/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/5281cced-bee0-4cbd-be85-e6b447bef1dd/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/5281cced-bee0-4cbd-be85-e6b447bef1dd/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.5281cced-bee0-4cbd-be85-e6b447bef1dd&store_name=eq.heb&store_item_id=eq.938524 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.5281cced-bee0-4cbd-be85-e6b447bef1dd "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Ground Pork Italian Sausage - Mild (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/5281cced-bee0-4cbd-be85-e6b447bef1dd/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Natural Boneless Chicken Breast Tenders (heb)...
+INFO:__main__:Uploading dab017d4-c8d4-45e8-a7e0-ceb2e3555bf3/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/dab017d4-c8d4-45e8-a7e0-ceb2e3555bf3/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/dab017d4-c8d4-45e8-a7e0-ceb2e3555bf3/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.dab017d4-c8d4-45e8-a7e0-ceb2e3555bf3&store_name=eq.heb&store_item_id=eq.684580 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.dab017d4-c8d4-45e8-a7e0-ceb2e3555bf3 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Natural Boneless Chicken Breast Tenders (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/dab017d4-c8d4-45e8-a7e0-ceb2e3555bf3/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Natural Boneless Chicken Breasts (heb)...
+INFO:__main__:Uploading 87c31db5-b508-47be-9494-4c92f6b4d208/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/87c31db5-b508-47be-9494-4c92f6b4d208/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/87c31db5-b508-47be-9494-4c92f6b4d208/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.87c31db5-b508-47be-9494-4c92f6b4d208&store_name=eq.heb&store_item_id=eq.1767797 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.87c31db5-b508-47be-9494-4c92f6b4d208 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Natural Boneless Chicken Breasts (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/87c31db5-b508-47be-9494-4c92f6b4d208/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Grated Parmesan Cheese (heb)...
+INFO:__main__:Uploading 6662728a-2351-4883-a164-92495dcc6d66/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/6662728a-2351-4883-a164-92495dcc6d66/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/6662728a-2351-4883-a164-92495dcc6d66/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.6662728a-2351-4883-a164-92495dcc6d66&store_name=eq.heb&store_item_id=eq.1541758 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.6662728a-2351-4883-a164-92495dcc6d66 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Grated Parmesan Cheese (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/6662728a-2351-4883-a164-92495dcc6d66/heb/image.jpg
+INFO:__main__:Downloading image for Hill Country Fare Mild Cheddar Cheese (heb)...
+INFO:__main__:Uploading 697980f4-8cc2-430d-8cc2-c56d84ae50d3/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/697980f4-8cc2-430d-8cc2-c56d84ae50d3/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/697980f4-8cc2-430d-8cc2-c56d84ae50d3/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.697980f4-8cc2-430d-8cc2-c56d84ae50d3&store_name=eq.heb&store_item_id=eq.1368944 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.697980f4-8cc2-430d-8cc2-c56d84ae50d3 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Hill Country Fare Mild Cheddar Cheese (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/697980f4-8cc2-430d-8cc2-c56d84ae50d3/heb/image.jpg
+INFO:__main__:Downloading image for Hill Country Fare Monterey Jack Cheese (heb)...
+INFO:__main__:Uploading 5c656bb2-2a9a-4b02-b2a3-8a8c2c8ddd08/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/5c656bb2-2a9a-4b02-b2a3-8a8c2c8ddd08/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/5c656bb2-2a9a-4b02-b2a3-8a8c2c8ddd08/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.5c656bb2-2a9a-4b02-b2a3-8a8c2c8ddd08&store_name=eq.heb&store_item_id=eq.1368946 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.5c656bb2-2a9a-4b02-b2a3-8a8c2c8ddd08 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Hill Country Fare Monterey Jack Cheese (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/5c656bb2-2a9a-4b02-b2a3-8a8c2c8ddd08/heb/image.jpg
+INFO:__main__:Downloading image for Hill Country Fare Low Moisture Part-Skim Mozzarella Sliced Cheese (heb)...
+INFO:__main__:Uploading 11c17083-c471-4cac-9406-c58d9802d644/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/11c17083-c471-4cac-9406-c58d9802d644/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/11c17083-c471-4cac-9406-c58d9802d644/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.11c17083-c471-4cac-9406-c58d9802d644&store_name=eq.heb&store_item_id=eq.1363610 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.11c17083-c471-4cac-9406-c58d9802d644 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Hill Country Fare Low Moisture Part-Skim Mozzarella Sliced Cheese (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/11c17083-c471-4cac-9406-c58d9802d644/heb/image.jpg
+INFO:__main__:Downloading image for Hill Country Fare Hickory Smoked Sliced Bacon (heb)...
+INFO:__main__:Uploading a4cabea9-0446-442f-80c8-291a00e2766c/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/a4cabea9-0446-442f-80c8-291a00e2766c/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/a4cabea9-0446-442f-80c8-291a00e2766c/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.a4cabea9-0446-442f-80c8-291a00e2766c&store_name=eq.heb&store_item_id=eq.126714 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.a4cabea9-0446-442f-80c8-291a00e2766c "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Hill Country Fare Hickory Smoked Sliced Bacon (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/a4cabea9-0446-442f-80c8-291a00e2766c/heb/image.jpg
+INFO:__main__:Downloading image for San Marcos Chipotle Peppers in Adobo Sauce (heb)...
+INFO:__main__:Uploading c4053c93-c5d8-4c29-a68e-85fb745702a4/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/c4053c93-c5d8-4c29-a68e-85fb745702a4/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/c4053c93-c5d8-4c29-a68e-85fb745702a4/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.c4053c93-c5d8-4c29-a68e-85fb745702a4&store_name=eq.heb&store_item_id=eq.1405248 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.c4053c93-c5d8-4c29-a68e-85fb745702a4 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: San Marcos Chipotle Peppers in Adobo Sauce (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/c4053c93-c5d8-4c29-a68e-85fb745702a4/heb/image.jpg
+INFO:__main__:Downloading image for Hill Country Fare Diced Mild Green Chiles (heb)...
+INFO:__main__:Uploading 11ae8d47-dc59-490b-ab72-6e5c1f4c1c1f/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/11ae8d47-dc59-490b-ab72-6e5c1f4c1c1f/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/11ae8d47-dc59-490b-ab72-6e5c1f4c1c1f/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.11ae8d47-dc59-490b-ab72-6e5c1f4c1c1f&store_name=eq.heb&store_item_id=eq.729326 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.11ae8d47-dc59-490b-ab72-6e5c1f4c1c1f "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: Hill Country Fare Diced Mild Green Chiles (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/11ae8d47-dc59-490b-ab72-6e5c1f4c1c1f/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Split Top Honey Wheat Enriched Sliced Bread (heb)...
+INFO:__main__:Uploading 0ddad81e-20d9-4ef8-a619-cf0fdbc0bc52/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/0ddad81e-20d9-4ef8-a619-cf0fdbc0bc52/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/0ddad81e-20d9-4ef8-a619-cf0fdbc0bc52/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.0ddad81e-20d9-4ef8-a619-cf0fdbc0bc52&store_name=eq.heb&store_item_id=eq.672610 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.0ddad81e-20d9-4ef8-a619-cf0fdbc0bc52 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Split Top Honey Wheat Enriched Sliced Bread (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/0ddad81e-20d9-4ef8-a619-cf0fdbc0bc52/heb/image.jpg
+INFO:__main__:Downloading image for H-E-B Yellow Corn Tortillas (heb)...
+INFO:__main__:Uploading 178781e8-a5c9-498d-a98c-838ae266a0f2/heb/image.jpg...
+INFO:httpx:HTTP Request: POST https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/products/178781e8-a5c9-498d-a98c-838ae266a0f2/heb/image.jpg "HTTP/2 200 OK"
+INFO:__main__:Uploaded to products/178781e8-a5c9-498d-a98c-838ae266a0f2/heb/image.jpg
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/product_store_mappings?product_id=eq.178781e8-a5c9-498d-a98c-838ae266a0f2&store_name=eq.heb&store_item_id=eq.324989 "HTTP/2 200 OK"
+INFO:httpx:HTTP Request: PATCH https://epwngkevdzaehiivtzpd.supabase.co/rest/v1/products?id=eq.178781e8-a5c9-498d-a98c-838ae266a0f2 "HTTP/2 200 OK"
+INFO:__main__:✅ Migrated: H-E-B Yellow Corn Tortillas (heb) -> https://epwngkevdzaehiivtzpd.supabase.co/storage/v1/object/public/products/178781e8-a5c9-498d-a98c-838ae266a0f2/heb/image.jpg
+INFO:__main__:Downloading image for Family Style Hamburger Buns (heb)...
+INFO:__main__:Uploading afbd0a83-d25c-4775-9915-148c512d5fa6/heb/image.jpg...

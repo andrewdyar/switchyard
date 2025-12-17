@@ -1,0 +1,1173 @@
+{
+    "data": {
+        "browse": {
+            "categories": [
+                {
+                    "name": "Fruits & Vegetables",
+                    "name_slug": "fresh-produce",
+                    "id": "483475",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Fruit",
+                            "name_slug": "fruit",
+                            "id": "483627",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Vegetables",
+                            "name_slug": "vegetables",
+                            "id": "483718",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Meat & Poultry",
+                    "name_slug": "butcher-shop",
+                    "id": "1246473",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "In-House Sausage",
+                            "name_slug": "in-house-sausage",
+                            "id": "1246474",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Meat",
+                            "name_slug": "meat",
+                            "id": "1246475",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Poultry",
+                            "name_slug": "poultry",
+                            "id": "1246491",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Smoked Meats",
+                            "name_slug": "smoked-meats",
+                            "id": "1246505",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Heat & Eat",
+                            "name_slug": "heat-and-eat",
+                            "id": "1441971",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Ready to Cook",
+                            "name_slug": "ready-to-cook",
+                            "id": "1541133",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Seafood",
+                    "name_slug": "seafood",
+                    "id": "1210269",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Shellfish",
+                            "name_slug": "shellfish",
+                            "id": "1210270",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Fish",
+                            "name_slug": "fish",
+                            "id": "1210283",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Ready to Cook",
+                            "name_slug": "ready-to-cook",
+                            "id": "1541413",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Grocery & Staples",
+                    "name_slug": "grocery-and-staples",
+                    "id": "483476",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Baking",
+                            "name_slug": "baking",
+                            "id": "483548",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Coffee, Tea, & Hot Cocoa",
+                            "name_slug": "coffee-tea-and-hot-cocoa",
+                            "id": "483597",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Nut Butters",
+                            "name_slug": "nut-butters",
+                            "id": "483660",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Sauces, Marinades, & Condiments",
+                            "name_slug": "sauces-marinades-and-condiments",
+                            "id": "483694",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Asian",
+                            "name_slug": "asian",
+                            "id": "485648",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Chips & Salty Snacks",
+                            "name_slug": "chips-and-salty-snacks",
+                            "id": "1175783",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Cookies & Sweet Snacks",
+                            "name_slug": "cookies-and-sweet-snacks",
+                            "id": "1175796",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Crackers & Crisps",
+                            "name_slug": "crackers-and-crisps",
+                            "id": "1175868",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Nuts, Seeds, & Dried Fruit",
+                            "name_slug": "nuts-seeds-and-dried-fruit",
+                            "id": "1177097",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Bars",
+                            "name_slug": "bars",
+                            "id": "1177117",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Chocolate & Candy",
+                            "name_slug": "chocolate-and-candy",
+                            "id": "1194954",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Herbs & Spices",
+                            "name_slug": "herbs-and-spices",
+                            "id": "1209073",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Salsa & Dips",
+                            "name_slug": "salsa-and-dips",
+                            "id": "1323605",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Bread",
+                            "name_slug": "bread",
+                            "id": "1323760",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Breakfast & Cereal",
+                            "name_slug": "breakfast-and-cereal",
+                            "id": "1323768",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Canned Goods",
+                            "name_slug": "canned-goods",
+                            "id": "1323779",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Fruit Spreads & Honey",
+                            "name_slug": "fruit-spreads-and-honey",
+                            "id": "1323802",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Oil & Vinegar",
+                            "name_slug": "oil-and-vinegar",
+                            "id": "1323810",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Pasta & Sauce",
+                            "name_slug": "pasta-and-sauce",
+                            "id": "1323827",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Packaged Meals & Sides",
+                            "name_slug": "packaged-meals-and-sides",
+                            "id": "1323850",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Rice, Beans, & Grains",
+                            "name_slug": "rice-beans-and-grains",
+                            "id": "1323858",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Salad Dressing & Toppings",
+                            "name_slug": "salad-dressing-and-toppings",
+                            "id": "1323868",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Soups & Chili",
+                            "name_slug": "soups-and-chili",
+                            "id": "1323899",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Stocks & Broth",
+                            "name_slug": "stocks-and-broth",
+                            "id": "1323902",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Bulk Foods",
+                    "name_slug": "bulk-foods",
+                    "id": "1547011",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Baking & Spices",
+                            "name_slug": "baking-and-spices",
+                            "id": "1547012",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Chocolate & Candy",
+                            "name_slug": "chocolate-and-candy",
+                            "id": "1547025",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Coffee Beans & Loose-Leaf Tea",
+                            "name_slug": "coffee-beans-and-loose-leaf-tea",
+                            "id": "1547031",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Granola & Oats",
+                            "name_slug": "granola-and-oats",
+                            "id": "1547040",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Nuts, Seeds, & Dried Fruit",
+                            "name_slug": "nuts-seeds-and-dried-fruit",
+                            "id": "1547043",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Rice, Beans, & Grains",
+                            "name_slug": "rice-beans-and-grains",
+                            "id": "1547058",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Dairy & Eggs",
+                    "name_slug": "dairy",
+                    "id": "483468",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Biscuits & Dessert",
+                            "name_slug": "biscuits-and-dessert",
+                            "id": "483528",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Dips, Spreads, & Sour Cream",
+                            "name_slug": "dips-spreads-and-sour-cream",
+                            "id": "483543",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Eggs",
+                            "name_slug": "eggs",
+                            "id": "483544",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Milk & Cream",
+                            "name_slug": "milk-and-cream",
+                            "id": "483545",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Yogurt",
+                            "name_slug": "yogurt",
+                            "id": "483546",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Packaged Cheese",
+                            "name_slug": "packaged-cheese",
+                            "id": "1169260",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Butter",
+                            "name_slug": "butter",
+                            "id": "1170398",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Tofu & Meat Alternatives",
+                            "name_slug": "tofu-and-meat-alternatives",
+                            "id": "1179950",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Chef Prepared",
+                    "name_slug": "chef-prepared",
+                    "id": "483467",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Dips, Salsas, & Spreads",
+                            "name_slug": "dips-salsas-and-spreads",
+                            "id": "483506",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Breakfast & Quiche",
+                            "name_slug": "breakfast-and-quiche",
+                            "id": "1309774",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Casseroles & Pot Pies",
+                            "name_slug": "casseroles-and-pot-pies",
+                            "id": "1309777",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Dinner For One",
+                            "name_slug": "dinner-for-one",
+                            "id": "1309778",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Mains & Sides",
+                            "name_slug": "mains-and-sides",
+                            "id": "1309780",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Party Trays",
+                            "name_slug": "party-trays",
+                            "id": "1309784",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Rotisserie",
+                            "name_slug": "rotisserie",
+                            "id": "1309785",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Salads & Dressings",
+                            "name_slug": "salads-and-dressings",
+                            "id": "1309786",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Sandwiches & Wraps",
+                            "name_slug": "sandwiches-and-wraps",
+                            "id": "1309792",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Snack Packs & Lunch Kits",
+                            "name_slug": "snack-packs-and-lunch-kits",
+                            "id": "1309793",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Soups & Chili",
+                            "name_slug": "soups-and-chili",
+                            "id": "1309794",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Sushi",
+                            "name_slug": "sushi",
+                            "id": "1309795",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Ready To Cook",
+                            "name_slug": "ready-to-cook",
+                            "id": "1309796",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Deli",
+                    "name_slug": "deli-meats",
+                    "id": "1309768",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Deli Meats",
+                            "name_slug": "deli-meats",
+                            "id": "1309769",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Fresh Pasta & Sauce",
+                            "name_slug": "fresh-pasta-and-sauce",
+                            "id": "1309772",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Olive Bar",
+                            "name_slug": "olive-bar",
+                            "id": "1309773",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Tamales",
+                            "name_slug": "tamales",
+                            "id": "1311209",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Cheese",
+                    "name_slug": "cheese",
+                    "id": "483466",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Cheese Shop",
+                            "name_slug": "cheese-shop",
+                            "id": "483503",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Packaged Cheese",
+                            "name_slug": "packaged-cheese",
+                            "id": "483504",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Bakery",
+                    "name_slug": "bakery",
+                    "id": "483465",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Breakfast",
+                            "name_slug": "breakfast",
+                            "id": "1303218",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Bread & Rolls",
+                            "name_slug": "bread-and-rolls",
+                            "id": "1303224",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Sweets & Desserts",
+                            "name_slug": "sweets-and-desserts",
+                            "id": "1303232",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Tortillas",
+                            "name_slug": "tortillas",
+                            "id": "1303244",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Wine & Beer",
+                    "name_slug": "beer-and-wine",
+                    "id": "457644",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Beer",
+                            "name_slug": "beer",
+                            "id": "457650",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Wine",
+                            "name_slug": "wine",
+                            "id": "483512",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Cider",
+                            "name_slug": "cider",
+                            "id": "1231686",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Hard Soda & Seltzer",
+                            "name_slug": "hard-soda-and-seltzer",
+                            "id": "1231687",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Cocktail Mixers",
+                            "name_slug": "cocktail-mixers",
+                            "id": "1231688",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Non-Alcoholic",
+                            "name_slug": "non-alcoholic",
+                            "id": "1234140",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Saké",
+                            "name_slug": "sake",
+                            "id": "1248208",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Floral",
+                    "name_slug": "floral",
+                    "id": "1147615",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Indoor Plants",
+                            "name_slug": "indoor-plants",
+                            "id": "1147616",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Bouquets",
+                            "name_slug": "bouquets",
+                            "id": "1147617",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Cut Flowers",
+                            "name_slug": "cut-flowers",
+                            "id": "1147618",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Seasonal Décor",
+                            "name_slug": "seasonal-decor",
+                            "id": "1147620",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Cards & Gifts",
+                            "name_slug": "cards-and-gifts",
+                            "id": "1147623",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Frozen",
+                    "name_slug": "frozen",
+                    "id": "483471",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Bread",
+                            "name_slug": "bread",
+                            "id": "483569",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Breakfast",
+                            "name_slug": "breakfast",
+                            "id": "483571",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Fruit & Vegetables",
+                            "name_slug": "fruit-and-vegetables",
+                            "id": "483594",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Ice Cream & Novelties",
+                            "name_slug": "ice-cream-and-novelties",
+                            "id": "483604",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Pizza",
+                            "name_slug": "pizza",
+                            "id": "1174279",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Appetizers & Snacks",
+                            "name_slug": "appetizers-and-snacks",
+                            "id": "1242349",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Entrées & Sides",
+                            "name_slug": "entrees-and-sides",
+                            "id": "1242362",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Soup & Broth",
+                            "name_slug": "soup-and-broth",
+                            "id": "1242375",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Ice",
+                            "name_slug": "ice",
+                            "id": "1242376",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Sweets & Baking",
+                            "name_slug": "sweets-and-baking",
+                            "id": "1242388",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Healthy Living",
+                    "name_slug": "health-and-beauty",
+                    "id": "1329887",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Aromatherapy",
+                            "name_slug": "aromatherapy",
+                            "id": "1329888",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Diet & Nutrition",
+                            "name_slug": "diet-and-nutrition",
+                            "id": "1329895",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "First Aid & Medicine",
+                            "name_slug": "first-aid-and-medicine",
+                            "id": "1329901",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Personal Care",
+                            "name_slug": "personal-care",
+                            "id": "1329907",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Vitamins & Supplements",
+                            "name_slug": "vitamins-and-supplements",
+                            "id": "1329923",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Beverages",
+                    "name_slug": "beverages",
+                    "id": "1174535",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Coconut & Aloe Water",
+                            "name_slug": "coconut-and-aloe-water",
+                            "id": "1174540",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Cold Brew & Iced Coffee",
+                            "name_slug": "cold-brew-and-iced-coffee",
+                            "id": "1174541",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Energy",
+                            "name_slug": "energy",
+                            "id": "1174542",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Iced Tea",
+                            "name_slug": "iced-tea",
+                            "id": "1174543",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Instant Mixes",
+                            "name_slug": "instant-mixes",
+                            "id": "1174544",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Juice & Fruit Drinks",
+                            "name_slug": "juice-and-fruit-drinks",
+                            "id": "1174546",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Kombucha & Fermented",
+                            "name_slug": "kombucha-and-fermented",
+                            "id": "1174563",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Shrubs & Tonics",
+                            "name_slug": "shrubs-and-tonics",
+                            "id": "1174564",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Soda",
+                            "name_slug": "soda",
+                            "id": "1174565",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Sparkling Water & Seltzer",
+                            "name_slug": "sparkling-water-and-seltzer",
+                            "id": "1174570",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Water",
+                            "name_slug": "water",
+                            "id": "1174573",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Household",
+                    "name_slug": "household",
+                    "id": "1379429",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Pet",
+                            "name_slug": "pet",
+                            "id": "483670",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Décor",
+                            "name_slug": "decor",
+                            "id": "1379430",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Household Essentials",
+                            "name_slug": "household-essentials",
+                            "id": "1379431",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Kitchen & Dining",
+                            "name_slug": "kitchen-and-dining",
+                            "id": "1379440",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Outdoor",
+                            "name_slug": "outdoor",
+                            "id": "1379444",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                },
+                {
+                    "name": "Kids & Baby",
+                    "name_slug": "kids-and-baby",
+                    "id": "1329930",
+                    "id_path": null,
+                    "count": null,
+                    "custom_flag": null,
+                    "custom_icon_url": null,
+                    "categories": [
+                        {
+                            "name": "Accessories & Toys",
+                            "name_slug": "accessories-and-toys",
+                            "id": "1329931",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Pouches & Snacks",
+                            "name_slug": "pouches-and-snacks",
+                            "id": "1329934",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Diapers & Wipes",
+                            "name_slug": "diapers-and-wipes",
+                            "id": "1329937",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Bottles & Formula",
+                            "name_slug": "bottles-and-formula",
+                            "id": "1329938",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        },
+                        {
+                            "name": "Health & Skin Care",
+                            "name_slug": "health-and-skin-care",
+                            "id": "1329941",
+                            "id_path": null,
+                            "count": null,
+                            "__typename": "SearchResultsCategory"
+                        }
+                    ],
+                    "__typename": "SearchResultsCategory"
+                }
+            ],
+            "__typename": "ProductSearchResult"
+        }
+    }
+}

@@ -1,0 +1,528 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5xszm",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_ab08cb89-5d02-46b1-b0da-27a136889392",
+      "seo_keywords": "Dairy, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Shop Target for Dairy you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "seo_title": "Dairy : Target",
+      "seo_h1": "Dairy",
+      "canonical_url": "/c/dairy-grocery/-/N-5xszm"
+    },
+    "node_id": "5xszm",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "5xszk",
+        "name": "Cheese",
+        "type": "Category",
+        "linking_id": "5xszk",
+        "number_of_children": "0",
+        "canonical_url": "/c/cheese-dairy-grocery/-/N-5xszk",
+        "seo_h1": "Cheese",
+        "page_id": "/c/5xszk",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_DairyL2_BubCat_Cheese-QUIVER-190913-1568391107548"
+      },
+      {
+        "node_id": "5xszh",
+        "name": "Milk",
+        "type": "Category",
+        "linking_id": "5xszh",
+        "number_of_children": "0",
+        "canonical_url": "/c/milk-dairy-grocery/-/N-5xszh",
+        "seo_h1": "Milk",
+        "page_id": "/c/5xszh",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_DairyL2_BubCat_Milk-QUIVER-190913-1568390987147"
+      },
+      {
+        "node_id": "5xszi",
+        "name": "Eggs",
+        "type": "Category",
+        "linking_id": "5xszi",
+        "number_of_children": "0",
+        "canonical_url": "/c/eggs-dairy-grocery/-/N-5xszi",
+        "seo_h1": "Eggs",
+        "page_id": "/c/5xszi",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_DairyL2_BubCat_Eggs-QUIVER-190913-1568391038134"
+      },
+      {
+        "node_id": "5xszf",
+        "name": "Yogurt",
+        "type": "Category",
+        "linking_id": "5xszf",
+        "number_of_children": "0",
+        "canonical_url": "/c/yogurt-dairy-grocery/-/N-5xszf",
+        "seo_h1": "Yogurt",
+        "page_id": "/c/5xszf",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_bc2c035f-a2c5-4203-bcd7-37cd0f854d9c"
+      },
+      {
+        "node_id": "5xszl",
+        "name": "Butter & Margarine",
+        "type": "Category",
+        "linking_id": "5xszl",
+        "number_of_children": "0",
+        "canonical_url": "/c/butter-margarine-dairy-grocery/-/N-5xszl",
+        "seo_h1": "Butter & Margarine",
+        "page_id": "/c/5xszl",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_DairyL2_BubCat_Butter-QUIVER-190917-1568746464175"
+      },
+      {
+        "node_id": "4tgo9",
+        "name": "Cottage Cheese",
+        "type": "Category",
+        "linking_id": "4tgo9",
+        "number_of_children": "0",
+        "canonical_url": "/c/cottage-cheese-dairy-grocery/-/N-4tgo9",
+        "seo_h1": "Cottage Cheese",
+        "page_id": "/c/4tgo9",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_3e5b0bee-cdfe-458c-8762-42cb20a0f683"
+      },
+      {
+        "node_id": "5xszj",
+        "name": "Cream & Whipped Toppings",
+        "type": "Category",
+        "linking_id": "5xszj",
+        "number_of_children": "0",
+        "canonical_url": "/c/cream-whipped-toppings-dairy-grocery/-/N-5xszj",
+        "seo_h1": "Cream & Whipped Toppings",
+        "page_id": "/c/5xszj",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_DairyL2_BubCat_Cream-QUIVER-190913-1568391974108"
+      },
+      {
+        "node_id": "zkvwk",
+        "name": "Milk Substitutes",
+        "type": "Category",
+        "linking_id": "zkvwk",
+        "number_of_children": "0",
+        "canonical_url": "/c/milk-substitutes-dairy-grocery/-/N-zkvwk",
+        "seo_h1": "Milk Substitutes",
+        "page_id": "/c/zkvwk",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c8f29c8c-aa90-4c2c-b747-1e676c7ce2d1"
+      },
+      {
+        "node_id": "5xszv",
+        "name": "Coffee Creamers",
+        "type": "Category",
+        "linking_id": "5xszv",
+        "number_of_children": "0",
+        "canonical_url": "/c/coffee-creamers-beverages-grocery/-/N-5xszv",
+        "seo_h1": "Coffee Creamers",
+        "page_id": "/c/5xszv",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_6c56504e-5145-4379-b8ab-b7917ac48acc"
+      },
+      {
+        "node_id": "4tgo8",
+        "name": "Cream Cheese",
+        "type": "Category",
+        "linking_id": "4tgo8",
+        "number_of_children": "0",
+        "canonical_url": "/c/cream-cheese-dairy-grocery/-/N-4tgo8",
+        "seo_h1": "Cream Cheese",
+        "page_id": "/c/4tgo8",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_DairyL2_BubCat_CreamCheese-QUIVER-190913-1568391286967"
+      },
+      {
+        "node_id": "4tgo6",
+        "name": "Refrigerated Doughs",
+        "type": "Category",
+        "linking_id": "4tgo6",
+        "number_of_children": "0",
+        "canonical_url": "/c/refrigerated-doughs-dairy-grocery/-/N-4tgo6",
+        "seo_h1": "Refrigerated Doughs",
+        "page_id": "/c/4tgo6",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_87bd7abc-648c-46a0-983e-d469439e8089"
+      },
+      {
+        "node_id": "5xszg",
+        "name": "Sour Cream & Dips",
+        "type": "Category",
+        "linking_id": "5xszg",
+        "number_of_children": "0",
+        "canonical_url": "/c/sour-cream-dips-dairy-grocery/-/N-5xszg",
+        "seo_h1": "Sour Cream & Dips",
+        "page_id": "/c/5xszg",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/10wk1_Grocery_BubcatBubcat_SourCreamDips-200901-1598989905876"
+      },
+      {
+        "node_id": "ab90f",
+        "name": "Desserts & Puddings",
+        "type": "Category",
+        "linking_id": "ab90f",
+        "number_of_children": "0",
+        "canonical_url": "/c/desserts-puddings-dairy-grocery/-/N-ab90f",
+        "seo_h1": "Desserts & Puddings",
+        "page_id": "/c/ab90f",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_7387af11-68be-457a-816a-247a477c000d"
+      }
+    ],
+    "og": {
+      "title": "Dairy : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_ab08cb89-5d02-46b1-b0da-27a136889392",
+      "url": "/c/dairy-grocery/-/N-5xszm",
+      "description": "Shop Target for Dairy you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5xszm",
+    "title": "Dairy",
+    "activation_date": "2025-10-15T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Oct Wk 2_Dairy BIA_Standard CSL",
+            "id": "WEB-431879",
+            "placement_id": "68e34b2230cc977cddbdc82e",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-431879",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-431879",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_bia_frequent_sameday_driveup;categoryId,5xszm;fulfillmentId,curbside_and_available,scheduled_delivery_and_available"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1300
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_F&B_Holiday Charcuterie_Standard CP",
+            "id": "STORY-41179",
+            "placement_id": "68e34b2230cc977cddbdc831",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xszm",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "amplified_headline": {
+              "color": "#333333",
+              "line_four": [
+                "2"
+              ],
+              "line_one": [
+                "Build  your"
+              ],
+              "line_three": [
+                "from"
+              ],
+              "line_two": [
+                "charcuterie board"
+              ],
+              "lockup": "value-price-emphasis-versioned",
+              "lockup_disposition": "double-line",
+              "version": "v2"
+            },
+            "background_color": "#F6F5F1",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop charcuterie faves"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "Build  your charcuterie board from "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "2\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_96ae43f4-d450-4c31-b793-88a15a94b434",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_76f9094b-d783-42bb-aa70-d8826318c924",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_d3e72f88-5a0b-46e5-b506-adfaa25ed6b2",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_CharcuterieBoardIdeas_STORY-41179",
+              "destination_content": "CONTENT",
+              "detail": {
+                "id": "sv5if",
+                "name": "Charcuterie Board Ideas",
+                "seo_url": "/c/charcuterie-board-ideas/-/N-sv5if",
+                "type": "TAG",
+                "page_type_prefix": "c"
+              },
+              "facets": [],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "topleft",
+            "type_stack": "medium",
+            "width": 100
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1500
+    },
+    "1700": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Oct Wk 2_Dairy Item Recs_Standard CSL",
+            "id": "WEB-431884",
+            "placement_id": "68e34b2230cc977cddbdc832",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-431884",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-431884",
+        "custom_headline": "Trending now in Dairy",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_trending_for_you;categoryId,5xszm"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1700
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-434204",
+            "placement_id": "68ef31b9f92a9b47a8d4ba37",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/milk-dairy-grocery/-/N-5xszh>milk</a>,<a href=https://www.target.com/c/dairy-grocery/daisy-brand/-/N-5xszmZ4xpfn>daisy yogurt</a>,<a href=https://www.target.com/p/parmalat-uht-shelf-stable-whole-milk-32-fl-oz/-/A-15078349?sid=2372S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Dry+Grocery&amp;adgroup=231-16>shelf stable milk</a>,<a href=https://www.target.com/c/cheese-dairy-grocery/cabot-creamery/-/N-5xszkZfz97x>cabot creamery</a>,<a href=https://www.target.com/c/dairy-grocery/eberhard-s/-/N-5xszmZatcv7>eberhard's dairy products</a>,<a href=https://www.target.com/c/dairy-grocery/-/N-5xszm>dairy section</a>,<a href=https://www.target.com/c/dairy-grocery/-/N-5xszm>dairy section</a>,<a href=https://www.target.com/c/dairy-grocery/-/N-5xszm>dairy section</a>,<a href=https://www.target.com/c/dairy-grocery/daisy/-/N-5xszmZq643lely3gd>daisy dairy products</a>,<a href=https://www.target.com/c/dairy-grocery/-/N-5xszm>dairy section</a>,<a href=https://www.target.com/c/dairy-grocery/prairie-farms/-/N-5xszmZltjnr>prarie farms</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/5xszm/WEB",
+  "activation_date": "2025-10-15T07:00Z"
+}

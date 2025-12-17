@@ -1,0 +1,359 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Chips",
+    "type": "Category",
+    "node_id": "5xsy7",
+    "linking_id": "5xsy7",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/chips-snacks-grocery/-/N-5xsy7",
+      "seo_h1": "Chips",
+      "seo_title": "Chips : Target",
+      "seo_description": "Shop chips and snacks at Target including Lay’s, Doritos, Pringles and more crunchy favorites for every craving. Free shipping on orders $35+.",
+      "page_id": "/c/5xsy7",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Chips, Snacks, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/10wk1_Grocery_BubcatBubcat_Chips-201005-1601921713063"
+    },
+    "og": {
+      "title": "Chips : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/10wk1_Grocery_BubcatBubcat_Chips-201005-1601921713063",
+      "url": "/c/chips-snacks-grocery/-/N-5xsy7",
+      "description": "Shop chips and snacks at Target including Lay’s, Doritos, Pringles and more crunchy favorites for every craving. Free shipping on orders $35+."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xsy9",
+        "name": "Snacks",
+        "type": "Category",
+        "linking_id": "5xsy9",
+        "number_of_children": "28",
+        "canonical_url": "/c/snacks-grocery/-/N-5xsy9",
+        "seo_h1": "Snacks",
+        "page_id": "/c/5xsy9",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "7ker",
+        "name": "Chip Multipacks",
+        "type": "Category",
+        "linking_id": "7ker",
+        "number_of_children": "0",
+        "canonical_url": "/c/chip-multipacks-snack-variety-packs-snacks-grocery/-/N-7ker",
+        "seo_h1": "Chip Multipacks",
+        "page_id": "/c/7ker",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_5ec363f3-cf9e-46f6-b258-a53979bfb7bf"
+      },
+      {
+        "node_id": "5o1js",
+        "name": "Tortilla Chips",
+        "type": "Category",
+        "linking_id": "5o1js",
+        "number_of_children": "0",
+        "canonical_url": "/c/tortilla-chips-snacks-grocery/-/N-5o1js",
+        "seo_h1": "Tortilla Chips",
+        "page_id": "/c/5o1js",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_2cac07a0-193a-406d-bd1a-7f3db7755eba"
+      },
+      {
+        "node_id": "stdt9",
+        "name": "Potato Chips",
+        "type": "Category",
+        "linking_id": "stdt9",
+        "number_of_children": "0",
+        "canonical_url": "/c/potato-chips-snacks-grocery/-/N-stdt9",
+        "seo_h1": "Potato Chips",
+        "page_id": "/c/stdt9",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0c00037b-cc2e-4044-b58d-ff6fe7e27096"
+      },
+      {
+        "node_id": "pa7uy",
+        "name": "Corn Chips",
+        "type": "Category",
+        "linking_id": "pa7uy",
+        "number_of_children": "0",
+        "canonical_url": "/c/corn-chips-snacks-grocery/-/N-pa7uy",
+        "seo_h1": "Corn Chips",
+        "page_id": "/c/pa7uy",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_d4c720cd-b6a7-41ab-88d3-d22bf0bbcf15"
+      },
+      {
+        "node_id": "t2oe7",
+        "name": "Puffed Snacks",
+        "type": "Category",
+        "linking_id": "t2oe7",
+        "number_of_children": "0",
+        "canonical_url": "/c/puffed-snacks-chips-grocery/-/N-t2oe7",
+        "seo_h1": "Puffed Snacks",
+        "page_id": "/c/t2oe7",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_a948180a-63ee-4b94-b8dd-60f2a6238dc0"
+      },
+      {
+        "node_id": "hdnoy",
+        "name": "Grain Chips",
+        "type": "Category",
+        "linking_id": "hdnoy",
+        "number_of_children": "0",
+        "canonical_url": "/c/grain-chips-snacks-grocery/-/N-hdnoy",
+        "seo_h1": "Grain Chips",
+        "page_id": "/c/hdnoy",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_e31c67c3-9665-4b82-8f97-5eea2bd930dd"
+      },
+      {
+        "node_id": "svnpn",
+        "name": "Protein Chips",
+        "type": "Category",
+        "linking_id": "svnpn",
+        "number_of_children": "0",
+        "canonical_url": "/c/protein-chips-snacks-grocery/-/N-svnpn",
+        "seo_h1": "Protein Chips",
+        "page_id": "/c/svnpn",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_30b45bcc-9cfe-4d1c-86d2-411f291d9e7d"
+      },
+      {
+        "node_id": "vg697",
+        "name": "Pita Chips",
+        "type": "Category",
+        "linking_id": "vg697",
+        "number_of_children": "0",
+        "canonical_url": "/c/pita-chips-snacks-grocery/-/N-vg697",
+        "seo_h1": "Pita Chips",
+        "page_id": "/c/vg697",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_8803a90f-cb81-4b70-9325-872c462447df"
+      },
+      {
+        "node_id": "4gl5j",
+        "name": "Pork Rinds",
+        "type": "Category",
+        "linking_id": "4gl5j",
+        "number_of_children": "0",
+        "canonical_url": "/c/pork-rinds-chips-snacks-grocery/-/N-4gl5j",
+        "seo_h1": "Pork Rinds",
+        "page_id": "/c/4gl5j",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_656b51b8-febb-4db4-b2de-9df4e35bac55"
+      },
+      {
+        "node_id": "fpt3r",
+        "name": "Vegetable Chips",
+        "type": "Category",
+        "linking_id": "fpt3r",
+        "number_of_children": "0",
+        "canonical_url": "/c/vegetable-chips-snacks-grocery/-/N-fpt3r",
+        "seo_h1": "Vegetable Chips",
+        "page_id": "/c/fpt3r",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_ae355d0a-ba36-405c-98d9-7de600356c82"
+      },
+      {
+        "node_id": "5xsy5",
+        "name": "Salsa & Dips",
+        "type": "Category",
+        "linking_id": "5xsy5",
+        "number_of_children": "0",
+        "canonical_url": "/c/dips-spreads-chips-snacks-cookies-grocery/-/N-5xsy5",
+        "seo_h1": "Salsa & Dips",
+        "page_id": "/c/5xsy5",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_Dips_Spreads-QUIVER-190913-1568403420741"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/p/frito-lay-doritos-twisted-queso-2-625oz/-/A-94601819>doritos twisted queso</a>,<a href=https://www.target.com/p/zapp-39-s-new-orleans-kettle-style-voodoo-potato-chips-8oz/-/A-47086581>voodoo chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/-/N-5xsy7>chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/-/N-5xsy7>chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/-/N-5xsy7>chips</a>,<a href=https://www.target.com/p/like-air-classic-baked-puffcorn-case-of-12-4-oz/-/A-89825309>like air puffcorn</a>,<a href=https://www.target.com/p/simply-cheetos-crunchy-white-cheddar-puffed-snacks-8-5oz/-/A-54221647>simply cheetos</a>,<a href=https://www.target.com/p/gimme-organic-roasted-seaweed-snack-sea-salt-35oz/-/A-17264592>seaweed snacks</a>,<a href=https://www.target.com/c/chips-snacks-grocery/tostitos/-/N-5xsy7Z56cbj>tostitos chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/takis/-/N-5xsy7Z8gm2b>takis chips</a>,<a href=https://www.target.com/p/bugles-original-flavor-crispy-corn-snacks-14-5oz/-/A-53434622>bugles chips</a>,<a href=https://www.target.com/p/drizzilicious-rice-crisp-birthday-cake-pack-of-6-0-74-oz/-/A-93036544>drizzilicious birthday cake</a>,<a href=https://www.target.com/p/doritos-simply-organic-white-cheddar-tortilla-flavored-chips-7-5oz/-/A-51591715>simply doritos</a>,<a href=https://www.target.com/c/chips-snacks-grocery/-/N-5xsy7>chips</a>,<a href=https://www.target.com/p/fritos-chili-cheese-flavored-corn-chips-9-75oz/-/A-12992226>fritos</a>,<a href=https://www.target.com/p/pringles-mingles-dill-pickle-38-ranch-5-5oz/-/A-93787511>pringle mingles</a>,<a href=https://www.target.com/c/chips-snacks-grocery/hal-s-new-york/-/N-5xsy7Zxe6fg>hal's chips</a>,<a href=https://www.target.com/p/lesserevil-organic-cheddar-space-balls-5-oz/-/A-89437882>lesser evil space balls</a>,<a href=https://www.target.com/p/frito-lay-variety-pack-bold-mix-18ct/-/A-14930855>variety box of chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/chester-s/-/N-5xsy7Z560aw>chesters chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/snacklins/-/N-5xsy7Zq643lecbym>snacklins chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/pork-rinds/-/N-5xsy7Zboy3l>pork rinds chips</a>,<a href=https://www.target.com/p/simply-variety-pack-36ct-31-5oz/-/A-92263005>simply chips variety pack</a>,<a href=https://www.target.com/p/utz-cheese-balls-barrel-23oz/-/A-13202949>utz cheese balls</a>,<a href=https://www.target.com/p/drizzilicious-rice-crisp-cinnamon-swirl-pack-of-6-0-74-oz/-/A-93036530>cinnamon swirl rice cake bites</a>,<a href=https://www.target.com/p/frito-lay-simply-doritos-zesty-cool-ranch-7-5oz/-/A-94243116?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=71-5&region_id=444444>simply doritos cool ranch</a>,<a href=https://www.target.com/p/pringles-hot-ones-verde-5-5oz/-/A-93051341>pringles hot ones</a>,<a href=https://www.target.com/p/siete-queso-puffs-4oz/-/A-89396065>siete queso puffs</a>,<a href=https://www.target.com/c/chips-snacks-grocery/mission/-/N-5xsy7Z56cx8>mission chips</a>,<a href=https://www.target.com/p/flock-chicken-skin-crisps-original-2-5oz/-/A-90909456>chicken chips</a>,<a href=https://www.target.com/p/doritos-dinamita-flamin-hot-queso-10-75oz/-/A-83223601>doritos dinamita flamin hot</a>,<a href=https://www.target.com/p/frito-lay-sunchips-mix-18oz/-/A-94232555?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=71-5&region_id=019019&gQT=3>sunchips</a>,<a href=https://www.target.com/p/kikkoman-preservative-free-stir-fry-sauce-11-4oz/-/A-17264638>quest protein chips nutrition facts</a>,<a href=https://www.target.com/c/chips-snacks-grocery/hardbite/-/N-5xsy7Z9thvi>hardbite chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/the-daily-crave/-/N-5xsy7Zq643le2nllp>the daily crave</a>,<a href=https://www.target.com/p/calbee-shrimp-chips-4oz/-/A-47089491>calbee shrimp chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/lesserevil/-/N-5xsy7Zq643lej5hk8>lesserevil</a>,<a href=https://www.target.com/p/quaker-large-rice-cake-everything-5-9oz/-/A-79373162>everything rice cakes</a>,<a href=https://www.target.com/c/chips-snacks-grocery/jackson-s/-/N-5xsy7Zq643lel83f0>jacksons chips</a>,<a href=https://www.target.com/p/ritz-toasted-chips-sour-cream-onion-8-1oz/-/A-14899903>ritz chips</a>,<a href=https://www.target.com/p/quaker-large-rice-cake-apple-cinn-6-53oz/-/A-79373161>cinnamon rice cakes</a>,<a href=https://www.target.com/p/ruffles-queso-flavored-chips-8oz/-/A-47085568>ruffles queso</a>,<a href=https://www.target.com/p/lay-39-s-chips-chesapeake-bay-crab-spice-7-75oz/-/A-94640923?gQT=1>crab chips</a>,<a href=https://www.target.com/c/snack-variety-packs/dot-s-homestyle-pretzels/-/N-sjs32Zjdjl5>dots variety pack</a>,<a href=https://www.target.com/p/hippeas-flavor-blast-blazin-hot-puffs-3-75oz/-/A-94079384>hippeas blazin hot</a>,<a href=https://www.target.com/p/gimme-organic-roasted-seaweed-snack-teriyaki-0-35oz/-/A-50330672>gimme seaweed teriyaki</a>,<a href=https://www.target.com/p/doritos-salsa-verde-chips-9-25oz/-/A-12992582>doritos salsa flavor</a>,<a href=https://www.target.com/p/utz-ripples-fried-dill-pickle-potato-chips-7-75oz/-/A-79382833?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=71-6&region_id=115115>utz fried dill pickle chips</a>,<a href=https://www.target.com/p/punjabi-shakkar-gur-jaggery-powder-70oz-4-4lbs-2kg-rani-brand-authentic-indian-products/-/A-1001353857>shakkar</a>,<a href=https://www.target.com/p/shirakiku-baby-star-ramen-garlic-chips-2-47oz/-/A-82827020?gQT=1>baby star ramen snack</a>,<a href=https://www.target.com/p/organic-dried-sweetened-banana-chips-5oz/-/A-89375227?TCID=OGS&AFID=google&CPNG=Produce%2BFloral&adgroup=211-11&region_id=802802&gQT=1>banana chips</a>,<a href=https://www.target.com/p/wilde-brand-protein-chips-collection/-/A-88273849>wild chips</a>,<a href=https://www.target.com/p/pringles-lightly-salted-5-2oz/-/A-93787236>pringles low sodium chips reviews</a>,<a href=https://www.target.com/p/cape-cod-potato-chips-original-kettle-cooked-chips-8oz/-/A-13208635>cape cod sea salt chips</a>,<a href=https://www.target.com/b/frito-lay/-/N-55imh>frito lay chips</a>,<a href=https://www.target.com/p/frito-lay-variety-pack-classic-mix-18ct/-/A-13344794?sid=1822S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=71-5&amp;gStoreCode=1822S&amp;gQT=1>chip boxes</a>,<a href=https://www.target.com/p/jays-barbecue-potato-chips-8oz/-/A-94566025>jays bbq chips</a>,<a href=https://www.target.com/b/taco-works-tortilla-chips/-/N-q643legmer1>taco works</a>,<a href=https://www.target.com/c/chips-snacks-grocery/popadelics/-/N-5xsy7Zq643lex561p>popadelics</a>,<a href=https://www.target.com/p/funyuns-steakhouse-xl-6oz/-/A-92030388>steakhouse funyuns</a>,<a href=https://www.target.com/c/chips-snacks-grocery/i-amaranth/-/N-5xsy7Zq643le73my6>amaranth chips</a>,<a href=https://www.target.com/p/hippeas-hippeas-white-cheddar-puffs-4oz/-/A-88402160>hippeas chickpea puffs</a>,<a href=https://www.target.com/p/cape-cod-potato-chips-less-fat-original-kettle-chips-party-size-14oz/-/A-14933640>cape cod chips party snacks reviews</a>,<a href=https://www.target.com/p/zapp-39-s-new-orleans-kettle-style-spicy-cajun-crawtators-potato-chips-8oz/-/A-47086582>zapps crawtators</a>,<a href=https://www.target.com/p/chitale-bakarwadi-200-gm/-/A-93351477>chitale bakarwadi</a>,<a href=https://www.target.com/p/mac-s-chicharrones-original-pork-cracklins-case-of-12-8-oz/-/A-91940352>mac's cracklins</a>,<a href=https://www.target.com/p/grab-38-go-family-favorites-multipack-snacks-12-5oz-18ct/-/A-93657606>grab and go family favorites</a>,<a href=https://www.target.com/p/iwon-organics-cheddar-cheese-protein-puffs-case-of-12-5-oz/-/A-89282112>iwon protein puffs</a>,<a href=https://www.target.com/p/kettle-brand-unsalted-potato-chips-case-of-15-5-oz/-/A-89282071>kettle brand low sodium chips reviews</a>,<a href=https://www.target.com/p/frito-lay-miss-vickies-mix-15oz/-/A-94232400?sid=1892S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=71-5&amp;gStoreCode=1892S&amp;gQT=0>miss vickie's variety pack</a>,<a href=https://www.target.com/c/chips-snacks-grocery/dill-pickle/-/N-5xsy7Z55blv>dill pickle chips</a>,<a href=https://www.target.com/p/sunchips-original-whole-grain-chips-7oz/-/A-14618736>sun chips original</a>,<a href=https://www.target.com/p/kettle-brand-sea-salt-and-vinegar-kettle-potato-chips-7-5oz/-/A-86921240>kettle chips salt and vinegar</a>,<a href=https://www.target.com/c/chips-snacks-grocery/mustard/-/N-5xsy7Z55k4y>mustard chips</a>,<a href=https://www.target.com/p/mambi-pork-cracklings-chicharrones-2-5oz/-/A-47075078>mambi chicharrones</a>,<a href=https://www.target.com/p/harvest-snaps-red-lentil-snack-crisps-tomato-basil-3oz/-/A-26390110>tomato basil harvest snaps</a>,<a href=https://www.target.com/p/guinness-burts-thick-cut-hand-cooked-potato-chips-case-of-10-5-3-oz/-/A-92397116>guiness chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/xochitl/-/N-5xsy7Z4y7d2>where to buy xochitl chips</a>,<a href=https://www.target.com/p/better-made-special-original-potato-chips-10oz/-/A-47075361>better made potato chips</a>,<a href=https://www.target.com/p/takis-dragon-sweet-chili-9-9oz/-/A-87844834>dragon sweet chili takis</a>,<a href=https://www.target.com/p/sensible-portions-sea-salt-garden-veggie-straws-1oz/-/A-51681750>sensible portions garden veggie straws reviews</a>,<a href=https://www.target.com/c/chips-snacks-grocery/sensible-portions/-/N-5xsy7Z55c28>sensible portions veggie chips</a>,<a href=https://www.target.com/p/sensible-portions-sea-salt-garden-veggie-straws-7oz/-/A-14244548>sensible portions garden veggie straws sea salt reviews</a>,<a href=https://www.target.com/p/zapp-39-s-new-orleans-kettle-style-cajun-dill-gator-potatoe-chips-8oz/-/A-87183959>zapp's cajun dill gator tators</a>,<a href=https://www.target.com/p/hippeas-chickpea-puffs-variety-pack-0-8-ounce-pack-of-18/-/A-1002360790>hippeas chickpea puffs, vegan white cheddar, 0.8 ounce (pack of 18), 3g protein, 2g fiber, vegan, gluten-free, crunchy, plant protein snacks</a>,<a href=https://www.target.com/p/frito-lay-variety-pack-flavor-mix-18ct/-/A-13339499>frito lay flavor mix</a>,<a href=https://www.target.com/b/taco-works-tortilla-chips/-/N-q643legmer1>taco works</a>,<a href=https://www.target.com/p/lay-39-s-sweet-southern-heat-barbecue-flavored-potato-chips-7-75oz/-/A-47766918?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=71-5&region_id=940940>lays southern heat</a>,<a href=https://www.target.com/p/doritos-sweet-38-tangy-bbq-chips-9-25oz/-/A-85928428>tangy bbq doritos</a>,<a href=https://www.target.com/c/chips-snacks-grocery/plain/-/N-5xsy7Z55i1u>plain chips</a>,<a href=https://www.target.com/p/pringles-harvest-blends-homestyle-ranch-5-5oz/-/A-90771202?gQT=0>healthy pringles</a>,<a href=https://www.target.com/p/pran-crispy-chanachur-bombay-mix-300-gms/-/A-93351523>chanachur</a>,<a href=https://www.target.com/c/chips-snacks-grocery/target-brands/-/N-5xsy7Zxmf9o>chip brands</a>,<a href=https://www.target.com/p/lesserevil-moonoions-intergalactic-onion-chips-6oz/-/A-91504046>moononions</a>,<a href=https://www.target.com/c/chips-snacks-grocery/hippeas/-/N-5xsy7Z9l018>hippeas tortilla chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/waffle/-/N-5xsy7Zy1npe>waffle chips</a>,<a href=https://www.target.com/p/siete-sea-salt-vin-kettle-chips-5-5oz/-/A-85321675>siete salt and vinegar</a>,<a href=https://www.target.com/p/herr-39-s-salt-38-vinegar-potato-chips/-/A-87166390>herr salt and vinegar chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/savoursmiths/-/N-5xsy7Zq643le8gemu>savoursmiths</a>,<a href=https://www.target.com/p/harvest-snaps-loaded-taco-crunchy-puffs-4-2oz/-/A-91722686>harvest snaps loaded taco</a>,<a href=https://www.target.com/c/chips-snacks-grocery/tomato/-/N-5xsy7Z55jxj>tomato chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/non-gmo/-/N-5xsy7Zsjhan>non gmo tortilla chips</a>,<a href=https://www.target.com/p/ruffles-potato-chips-queso-party-size-12-5oz/-/A-86461027>ruffles queso party size</a>,<a href=https://www.target.com/p/pringles-mingles-sharp-white-cheddar-38-ranch-5-5oz/-/A-93787480>mingles chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/terra/-/N-5xsy7Z4ynnt>terra chips</a>,<a href=https://www.target.com/p/annie-s-homegrown-cheddar-cheesy-smile-puffs-case-of-12-4-oz/-/A-89282038>annies cheddar smiles</a>,<a href=https://www.target.com/c/chips-snacks-grocery/guacamole/-/N-5xsy7Zxhicu>guacamole chips</a>,<a href=https://www.target.com/p/spudsy-cinnamon-churro-sweet-potato-puffs-case-of-12-4-oz/-/A-91940598>spudsy sweet potato puffs cinnamon churro</a>,<a href=https://www.target.com/s/drizzilicious+mini+rice+cakes>drizzled rice cakes</a>,<a href=https://www.target.com/p/spudsy-white-cheddar-sweet-potato-fries-case-of-9-4-oz/-/A-91940465>spudsy white cheddar poppers</a>,<a href=https://www.target.com/p/kettle-brand-farmstand-ranch-potato-chips-case-of-15-5-oz/-/A-89282193>ranch kettle chips</a>,<a href=https://www.target.com/p/dirty-potato-chips-salt-and-vinegar-potato-chips-case-of-25-2-oz/-/A-89282109>dirty chips salt and vinegar</a>,<a href=https://www.target.com/p/chicas-lime-corn-tortilla-chips-case-of-9-7-5-oz/-/A-91940552>chicas lime chips</a>,<a href=https://www.target.com/p/takis-blue-heat-mini-snack-10ct/-/A-94493027?gQT=2>mini blue takis</a>,<a href=https://www.target.com/p/caza-de-oro-kettle-style-corn-tortilla-chips-sea-salt-case-of-9-11-oz/-/A-91940302?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy+-+Target+Plus&adgroup=71-6&lnm=d30042528f072ba8a22b19c81250437cd47a2f30330f0ed03551c4efdaf3409e>kettle cooked tortilla chips</a>,<a href=https://www.target.com/p/lesser-evil-fiery-hot-power-curls-case-of-9-4-oz/-/A-91986860>lesser evil power curls fiery hot</a>,<a href=https://www.target.com/c/chips-snacks-grocery/chipotle/-/N-5xsy7Z55hqt>chipotle chips</a>,<a href=https://www.target.com/p/hot-honey-fried-pork-rinds-5oz-good-38-gather-8482-collabs-rodney-scott/-/A-92492735?sid=3380S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Bakery+Deli&amp;adgroup=261-12&amp;gStoreCode=3380S&amp;gQT=1>pork rinds</a>,<a href=https://www.target.com/p/late-july-snacks-multigrain-sweet-potato-tortilla-chips-case-of-12-7-5-oz/-/A-89282301>late july sweet potato chips</a>,<a href=https://www.target.com/p/ripple-potato-chips-8oz-market-pantry-8482/-/A-54511790>wavy potato chips</a>,<a href=https://www.target.com/p/krunchers-kettle-cooked-potato-chips-jalape-241-o-flavored-chips-8oz/-/A-47086630>jays krunchers jalapeno chips</a>,<a href=https://www.target.com/p/sensible-portions-veggie-straws-variety-pack-12ct/-/A-88014517>veggie straw flavors colors</a>,<a href=https://www.target.com/p/raju-dal-sev/-/A-93351431>dal sev</a>,<a href=https://www.target.com/p/lay-39-s-kettle-cooked-cajun-spice-xl-8oz/-/A-92030359>kettle cooked cajun spice</a>,<a href=https://www.target.com/p/frito-lay-puffed-38-popped-mix-9-75oz-15ct/-/A-90096903>lays puff chips</a>,<a href=https://www.target.com/p/barnana-himalayan-pink-salt-plantain-chip-5oz/-/A-81817447?sid=2056S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=71-6&amp;gStoreCode=2056S&amp;gQT=1>organic plantain chips</a>,<a href=https://www.target.com/p/real-food-from-the-ground-up-sea-salt-cauliflower-potato-chips-case-of-12-3-5-oz/-/A-89282008>cauliflower chips from the ground up</a>,<a href=https://www.target.com/c/chips-snacks-grocery/pepper/-/N-5xsy7Z55k5a>pepper chips</a>,<a href=https://www.target.com/p/tostitos-hint-of-guacamole-bite-size-rounds-11oz/-/A-79857567>tostitos hint of guacamole</a>,<a href=https://www.target.com/p/tostitos-hint-of-lime-tortilla-chips-11oz/-/A-12992592>lime chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/honey/-/N-5xsy7Z55k69>honey chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/pork-cracklings/-/N-5xsy7Zal25lfc6dp1>cracklings chips</a>,<a href=https://www.target.com/p/kettle-brand-potato-chips-jalapeno-kettle-chips-snack-2oz/-/A-79750385>kettle brand jalapeno chips</a>,<a href=https://www.target.com/c/chips-snacks-grocery/potato-chips/-/N-5xsy7Z1140d>potato chips</a>,<a href=https://www.target.com/p/siete-spicy-dill-pickle-kettle-cooked-potato-chips-5-5oz/-/A-93825712>kettle cooked pickle chips</a>,<a href=https://www.target.com/b/maui-style/-/N-jc9eg>maui style shrimp chips</a>,<a href=https://www.target.com/p/frito-lay-chester-8217-s-jalapeno-cheddar-popcorn-4-25oz/-/A-94232933>chester's cheddar jalapeno popcorn</a>,<a href=https://www.target.com/p/plantain-chips-no-salt-9oz/-/A-47086206>no salt plantain chips</a>,<a href=https://www.target.com/p/the-good-crisp-company-spicy-jalapeno-potato-crisps-case-of-8-5-6-oz/-/A-91940528>the good crisp jalapeno</a>,<a href=https://www.target.com/p/shirakiku-baby-star-ramen-chips-original-2-64oz/-/A-82826705>baby star crispy ramen snack</a>,<a href=https://www.target.com/p/terra-chips-sweet-potato-vegetable-chips-case-of-8-2-oz/-/A-91940360>terra sweet potato chips</a>,<a href=https://www.target.com/p/utz-kettle-classics-smokin-39-sweet-bbq-potato-chips-7-5oz/-/A-14271482>smokin sweet bbq chips</a>,<a href=https://www.target.com/p/parmesan-garlic-kettle-chips-8oz-good-gather-8482/-/A-54550931>garlic parmesan kettle chips</a>,<a href=https://www.target.com/p/herr-s-creamy-ranch-habanero-potato-chips-1-oz-bag-pack-of-7/-/A-93628663>creamy ranch habanero chips</a>,<a href=https://www.target.com/p/lay-39-s-wavy-original-potato-chips-13oz/-/A-14898533>wavy lay's party size</a>,<a href=https://www.target.com/p/frito-lay-josefina-sazonados-11-5oz/-/A-94241566>sazonados</a>,<a href=https://www.target.com/p/raju-plain-sev-400-gms/-/A-93351353>raju sev</a>,<a href=https://www.target.com/c/chips-snacks-grocery/apple-cider/-/N-5xsy7Z4yo3f>apple cider vinegar chips</a>,<a href=https://www.target.com/p/osem-bamba-peanut-butter-puffs-baby-snacks-12oz/-/A-82226831?sid=1315S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Baby&amp;adgroup=7-10&amp;gStoreCode=1315S&amp;gQT=1>bambas</a>,<a href=https://www.target.com/p/lieber-39-s-rice-cakes-milk-chocolate-coated-3-1oz/-/A-89832516>liebers rice cakes with milk chocolate</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-425918",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "68557756cec2905432ccc805"
+          }
+        ]
+      }
+    },
+    "2600": {
+      "order": 2600,
+      "content": {
+        "message": "<p>Amp up your snacking game with a delicious packet of potato chips, tortilla chips, snack mixes & more. From Frito-Lay, Fritos & Funyuns to corn crisps, cheddar chips, crunchy cheetos, Doritos, Tostitos & Pringles, there are so many options to stock up your snack drawer. Make work from home work for your tummy with delicious snacking options like a cookie, a scoop of your favorite sundae ice cream or a pack of Flamin Cheetos. Keep a packet of crisps on the kitchen counter for anytime hunger or pack chips & a small piece of cake for kiddo&#8217;s play date. All you need is a packet of chips to turn your living room console into a box office setup where you can enjoy timeless classics with friends or family. Check out target.com to find your favorite chip & dips flavors for Friday hangouts or family game nights. Don&#8217;t want to skip your diet recommendations? Switch to baked potato puffs or multigrain options like SunChips for an anytime pick-me-up that&#8217;s both healthy & delicious.</p>",
+        "metadata": {
+          "component_type": "SEO",
+          "component_version": "01"
+        }
+      },
+      "presentation": "/adaptive/c_web_a_0029/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "3.19_SEO_Chips",
+            "id": "WEB-329325",
+            "type": "c_web_a_0029_v01",
+            "type_name": "SEO Component",
+            "content_type": "static",
+            "placement_id": "604a59ed70b3d900101ccaa6"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/5xsy7/WEB"
+}

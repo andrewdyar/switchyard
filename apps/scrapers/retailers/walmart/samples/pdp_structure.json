@@ -1,0 +1,746 @@
+{
+  "primaryShelfId": "3185427",
+  "canAddToList": true,
+  "specialOrderQuantityEligible": true,
+  "isPartOfLowReturnRateTest": false,
+  "fulfillmentTypeClassification": "PERISHABLE",
+  "primaryProductId": null,
+  "ebooks": null,
+  "eGiftCard": null,
+  "itemTypeV2": "UNKNOWN",
+  "primaryOffer": {
+    "warranty": null
+  },
+  "blitzItem": null,
+  "giftingEligibility": false,
+  "showCondition": false,
+  "showAtc": true,
+  "hideAtcForServices": false,
+  "selectedOfferId": "F6BB599C0A9E48888C0C10E8DAE2D8C0",
+  "specialCtaType": "UNKNOWN",
+  "specialCtaContext": "",
+  "flowerDeliveryInfo": [],
+  "productDisclaimers": [],
+  "isFreeWarranty": false,
+  "topPromoText": null,
+  "wirelessCarrier": "",
+  "wirelessThirdPartyUrl": null,
+  "staticMessageType": "UNKNOWN",
+  "shippingCostType": null,
+  "shippingPrice": null,
+  "memberLimit": null,
+  "showHighlightsSellerRating": false,
+  "gradingLabel": "New",
+  "gradingTypeCode": null,
+  "collectibles": null,
+  "conditionOffers": [
+    {
+      "offerId": "F6BB599C0A9E48888C0C10E8DAE2D8C0",
+      "availabilityStatus": {
+        "display": "In stock",
+        "value": "IN_STOCK"
+      },
+      "condition": {
+        "code": 1,
+        "text": "New",
+        "groupCode": 1,
+        "groupText": "New"
+      },
+      "price": {
+        "price": 2.97,
+        "priceString": "$2.97"
+      },
+      "topBoostedOffer": null,
+      "moreConditions": null
+    }
+  ],
+  "shipAsIs": false,
+  "subscription": {
+    "showSubscriptionModule": true,
+    "subscriptionEligible": true,
+    "subscriptionTransactable": true,
+    "subscriptionSubmessage": "NONE"
+  },
+  "subscriptionEligible": true,
+  "buyBoxSuppression": false,
+  "discounts": {
+    "discountedValue": null,
+    "discountMetaData": [
+      {
+        "id": "wplus_subscription",
+        "type": "wplus_subscription",
+        "savings": {
+          "amount": null,
+          "priceString": "$NaN",
+          "percent": null
+        },
+        "price": {
+          "price": null,
+          "priceString": null,
+          "priceDisplay": "Now est. $NaN"
+        },
+        "unitPrice": {
+          "price": null,
+          "priceString": null
+        },
+        "comparisonPrice": {
+          "price": null,
+          "priceString": null
+        },
+        "unitPriceDisplayCondition": null
+      }
+    ]
+  },
+  "rewards": null,
+  "promoEligible": false,
+  "promoDiscount": null,
+  "showFulfillmentLink": false,
+  "additionalOfferCount": null,
+  "legalRestriction": false,
+  "lmpEligible": false,
+  "isLMPAlcoholItem": false,
+  "isLMPAlcoholSeller": false,
+  "isBYOD": false,
+  "availabilityStatus": "IN_STOCK",
+  "availabilityStatusV2": {
+    "display": "In stock",
+    "value": "IN_STOCK"
+  },
+  "averageRating": 4.7,
+  "associatedBundleId": null,
+  "suppressReviews": false,
+  "brand": "Kraft",
+  "brandUrl": "/search?q=Kraft&facet=brand:Kraft",
+  "badges": {
+    "flags": [
+      {
+        "__typename": "BaseBadge",
+        "id": "L1200",
+        "text": "Popular pick",
+        "key": "CUSTOMER_PICK",
+        "rank": 1,
+        "query": "kraft singles",
+        "type": "LABEL",
+        "styleId": "PRIMARY_BLUE_BOLD"
+      }
+    ],
+    "labels": null,
+    "tags": [],
+    "groups": [
+      {
+        "__typename": "UnifiedBadgeGroup",
+        "name": "benefits",
+        "members": [
+          {
+            "__typename": "BadgeGroupMember",
+            "id": "L1033",
+            "key": "SNAP_ELIGIBLE",
+            "memberType": "badge",
+            "rank": 1,
+            "slaText": null,
+            "styleId": "EBT_STYLE",
+            "actionId": null,
+            "slaDate": null,
+            "slaDateISO": null,
+            "text": "SNAP eligible",
+            "type": "ICON",
+            "iconId": null,
+            "badgeContent": null
+          }
+        ]
+      }
+    ],
+    "groupsV2": [
+      {
+        "name": "flags",
+        "flow": "HORIZONTAL",
+        "pos": "ItemPageBadgeModule2",
+        "members": [
+          {
+            "memType": "badge",
+            "memId": "L1200",
+            "memStyleId": "PRIMARY_PRUSSIANBLUE_MR4",
+            "fbMemStyleId": null,
+            "content": [
+              {
+                "type": "TEXT",
+                "value": "Popular pick",
+                "styleId": "WHITE_BOLD",
+                "fbStyleId": null,
+                "contDesc": null,
+                "url": null,
+                "actionId": null
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "rhPath": "40000:42000:42003:42106:42242",
+  "aaiaBrandId": null,
+  "manufacturerProductId": "021000615261",
+  "productTypeId": "174",
+  "tireSize": null,
+  "tireLoadIndex": null,
+  "tireSpeedRating": null,
+  "trustBadges": [
+    {
+      "type": "FREE_RETURN",
+      "subtype": null
+    },
+    {
+      "type": "PICKUP",
+      "subtype": null
+    },
+    {
+      "type": "SOLD_BY_WALMART",
+      "subtype": null
+    }
+  ],
+  "viscosity": null,
+  "motorOilType": null,
+  "model": "00021000615261",
+  "buyNowEligible": false,
+  "isGetItNowEligible": false,
+  "petRxEligible": null,
+  "petRx": {
+    "eligible": false,
+    "singleDispense": null
+  },
+  "claimRate": null,
+  "vision": {
+    "visionCenterApproved": false,
+    "ageGroup": null
+  },
+  "earlyAccessEvent": false,
+  "isEarlyAccessItem": false,
+  "annualEvent": null,
+  "eventAttributes": {
+    "priceFlip": false,
+    "specialBuy": false
+  },
+  "isWplusMember": false,
+  "showBuyWithWplus": false,
+  "preOrder": {
+    "isPreOrder": false,
+    "releaseDate": null
+  },
+  "ozarkAttributes": {
+    "shippingPromise": null,
+    "exactAddress": false
+  },
+  "canonicalUrl": "/ip/Kraft-Singles-American-Cheese-Slices-24-Ct-Pk/10452905",
+  "catalogSellerId": 0,
+  "sellerReviewCount": null,
+  "sellerAverageRating": null,
+  "category": {
+    "categoryPathId": "0:976759:9569500:5667623:3185427",
+    "path": [
+      {
+        "name": "Food",
+        "url": "/cp/food/976759"
+      },
+      {
+        "name": "Meat & Seafood",
+        "url": "/cp/meat-seafood/9569500"
+      },
+      {
+        "name": "Meat & Seafood",
+        "url": "/cp/meat-seafood/5667623"
+      },
+      {
+        "name": "Everything Hamburger!",
+        "url": "/cp/everything-hamburger/3185427"
+      }
+    ]
+  },
+  "classType": "REGULAR",
+  "classId": "1",
+  "fulfillmentTitle": "title_store_delivery_curbside_pickup",
+  "shortDescription": "Delicious any way you square it, Kraft Singles American Slices deliver the classic American taste and irresistible melt that take your favorite foods to the next level. Made with real dairy and no artificial flavors, our slices have a mild, savory flavor and smooth, creamy texture that\u2019s perfectly melty. Our simple squares are ideal for more than just grilled cheese. Try adding Kraft Singles to your breakfast sandwich, burger or tuna melt. Transform steak and bread into a Philly cheesesteak, put a twist on ramen or turn plain fries into ooey gooey cheese fries. When you\u2019re craving classic comfort food, add America's favorite square to your mac and cheese for a simple joy that\u2019s sure to make you smile. Each cheese slice comes individually wrapped for convenience, so you can stack and snack any time. Kraft Singles contain 50 calories per serving. For optimal creamy goodness, keep our pack of 24 cheese slices refrigerated.",
+  "fulfillmentType": "STORE",
+  "fulfillmentBadge": null,
+  "checkStoreAvailabilityATC": false,
+  "checkAvailabilityGlobalDFS": false,
+  "hasSellerBadge": null,
+  "hasCarePlans": false,
+  "hasHomeServices": null,
+  "itemType": null,
+  "id": "6903T7MTF5B4",
+  "abstractProductId": null,
+  "primaryUsItemId": null,
+  "conditionType": "New",
+  "imageInfo": {
+    "allImages": [
+      {
+        "id": "1EA9C330ED5846458EA906F6A2B114CF",
+        "url": "https://i5.walmartimages.com/seo/Kraft-Singles-American-Cheese-Slices-24-Ct-Pk_5aa07c37-6f09-4af9-97b8-a5b8b5c536d6.6a384c8b2f499f34caca4d045811b1a4.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "E3C2F804D40F424A91F272F07138AA56",
+        "url": "https://i5.walmartimages.com/asr/7e7db94c-e84a-420e-8f04-52720ef30cfb.9f38814467dc89b18c0614c19b3d488e.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "11E43F8B72444D52939459DD91A33935",
+        "url": "https://i5.walmartimages.com/asr/6eb8eb64-b901-48cb-ac5f-8eacef13478d.e988635c233775abcc129a042b955f3b.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "7DA4A94B95484EDFA6711494E1ADE35C",
+        "url": "https://i5.walmartimages.com/asr/b5c0d78c-f1eb-4145-8a00-ec10fbd9fc46.c8b8ff77de61190e46c784dffd322ec5.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "8DFBFA5DBFD64658A876A1F1E899E6CA",
+        "url": "https://i5.walmartimages.com/asr/241d9770-3b9f-4ca6-94e6-efae66c5a5e3.882f39e2192c43a497c3af371f330e06.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "81B8643DB5A4425C9BC2E4A5D8006CC1",
+        "url": "https://i5.walmartimages.com/asr/31e311f3-8b20-447b-93d3-13020b938490.0a2209204c27cb1b38bb59f96463004b.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "96E26C5B18BC496FB9CA30471EB31287",
+        "url": "https://i5.walmartimages.com/asr/d9c0385c-9fae-48ce-8363-3addd0548442.03b0a1e1050f039a941b1faf6babac71.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "0E372C2844884DD48226F3982FE80A23",
+        "url": "https://i5.walmartimages.com/asr/69280f2a-0622-4960-911c-1959e5d77fb7.151e5fbfd1846e80c09c71c0568599ae.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "5F4BD7B4E03E4D6C9417BB6D9E0810C0",
+        "url": "https://i5.walmartimages.com/asr/a2a41d66-5429-4c04-b032-3cda2dc6ec46.8b4ee5f03cdfd4a63de9ef13cba86d6b.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "F657E9608FA041629EFC1FA0BE971409",
+        "url": "https://i5.walmartimages.com/asr/e72aefac-2f44-48b1-9ea3-c4b1d1373f70.de44d5c5c5084a6cc84fd6b2d639c68c.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "E39AEE1A9EB5499AB2257DEDF394E62F",
+        "url": "https://i5.walmartimages.com/asr/fbf323f0-4f73-4f2c-a274-129f7c03e1a7.a4f3782325abaf4ab9ef6304602c93c7.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "FE56258D1CC14B78BA5018AFF1AEB8AB",
+        "url": "https://i5.walmartimages.com/asr/fcc24756-c368-447a-bab4-c6943f85dbab.0fbf29571f5f2393d47aa005d9110894.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "3C44FD75C20C4E34A0F39B46AB96B4AC",
+        "url": "https://i5.walmartimages.com/asr/3d92d209-5486-4188-9769-2871e2700658.a4b87d92e69d14379c2532f77849a0f9.jpeg",
+        "zoomable": true
+      },
+      {
+        "id": "16DC7248BCB440098A5EF814A512FAEC",
+        "url": "https://i5.walmartimages.com/asr/c8ccdb0a-c641-4b43-b4ff-139d29c7fc1d.d2d33e076f5bd124ba8da94e4fab110b.jpeg",
+        "zoomable": true
+      }
+    ],
+    "thumbnailUrl": "https://i5.walmartimages.com/seo/Kraft-Singles-American-Cheese-Slices-24-Ct-Pk_5aa07c37-6f09-4af9-97b8-a5b8b5c536d6.6a384c8b2f499f34caca4d045811b1a4.jpeg",
+    "thumbnailAspectRatio": "1:1"
+  },
+  "name": "Kraft Singles American Slices, 24 ct Pack",
+  "personalizable": false,
+  "isReplenishable": true,
+  "topBoostedOffer": {
+    "dateString": null,
+    "displayPrice": null,
+    "fulfillmentPromise": null,
+    "offerId": null,
+    "priceString": null,
+    "sellerId": null,
+    "sellerName": null,
+    "shippingCost": null
+  },
+  "externalInfo": null,
+  "numberOfReviews": 12999,
+  "orderMinLimit": 1,
+  "orderLimit": 12,
+  "weightIncrement": 1,
+  "offerId": "F6BB599C0A9E48888C0C10E8DAE2D8C0",
+  "offerType": "ONLINE_AND_STORE",
+  "priceInfo": {
+    "priceDisplayCodes": {
+      "clearance": null,
+      "eligibleForAssociateDiscount": null,
+      "finalCostByWeight": null,
+      "priceDisplayCondition": null,
+      "reducedPrice": null,
+      "rollback": null,
+      "submapType": null,
+      "isB2BPrice": false,
+      "pricePerUnitUom": "OZ",
+      "priceDisplayType": "UNKNOWN"
+    },
+    "currentPrice": {
+      "price": 2.97,
+      "priceString": "$2.97",
+      "variantPriceString": "$2.97",
+      "currencyUnit": "USD",
+      "bestValue": null,
+      "supportText": null,
+      "priceDisplay": "Now $2.97"
+    },
+    "basePrice": null,
+    "wasPrice": {
+      "price": 4.86,
+      "priceString": "$4.86",
+      "variantPriceString": null,
+      "currencyUnit": "USD",
+      "bestValue": null,
+      "supportText": null
+    },
+    "comparisonPrice": null,
+    "unitPrice": {
+      "price": 0.186,
+      "priceString": "18.6 \u00a2/oz",
+      "variantPriceString": null,
+      "currencyUnit": "USD",
+      "bestValue": null,
+      "supportText": null
+    },
+    "savings": null,
+    "savingsAmount": {
+      "amount": 1.89,
+      "priceString": "SAVE $1.89"
+    },
+    "secondaryOfferBoost": null,
+    "shipPrice": null,
+    "isPriceReduced": true,
+    "priceReducedDisplay": "Now $2.97",
+    "subscriptionPrice": null,
+    "priceRange": {
+      "minPrice": null,
+      "maxPrice": null,
+      "priceString": null,
+      "currencyUnit": null,
+      "denominations": null
+    },
+    "listPrice": null,
+    "capType": null,
+    "volumePriceTiers": [],
+    "walmartFundedAmount": null,
+    "wPlusEarlyAccessPrice": null,
+    "additionalFees": {
+      "dutyFee": {
+        "price": null,
+        "priceString": null
+      },
+      "shippingAndImportFee": {
+        "price": null,
+        "priceString": null
+      },
+      "giftCardMarginAndFee": null,
+      "estimatedTotalPrice": {
+        "price": null,
+        "priceString": null
+      },
+      "countryName": null
+    }
+  },
+  "returnPolicy": {
+    "returnable": true,
+    "freeReturns": true,
+    "returnWindow": {
+      "value": 90,
+      "unitType": "Day"
+    },
+    "returnPolicyText": "Free 90-day returns",
+    "returnPolicyTextCode": {
+      "code": "PRODUCT_RETURN_WINDOW",
+      "data": null
+    },
+    "returnPolicyCondition": null,
+    "holidayReturnEnabled": false
+  },
+  "returnAttributes": {
+    "frequencyOfReturn": "Low"
+  },
+  "fsaEligibleInd": false,
+  "sellerId": "F55CDC31AB754BB68FE0B39041159D63",
+  "sellerName": "Walmart.com",
+  "sellerDisplayName": "Walmart.com",
+  "sellerStoreFrontURL": null,
+  "sellerLogoURL": null,
+  "secondaryOfferPrice": {
+    "currentPrice": null
+  },
+  "semStoreData": null,
+  "type": "Cheeses",
+  "pickupOption": {
+    "slaTier": null,
+    "accessTypes": [
+      "PICKUP_CURBSIDE"
+    ],
+    "availabilityStatus": "AVAILABLE",
+    "storeName": null,
+    "storeId": null
+  },
+  "salesUnit": "EACH",
+  "usItemId": "10452905",
+  "transactableOfferCount": 1,
+  "maxRewardAmongAllVariants": null,
+  "variantCriteria": [],
+  "variants": [],
+  "groupMetaData": null,
+  "upc": "021000615261",
+  "wfsEnabled": false,
+  "wfsProviderName": null,
+  "sellerType": "INTERNAL",
+  "ironbankCategory": "Food & Beverage",
+  "snapEligible": false,
+  "promoData": [],
+  "showAddOnServices": true,
+  "addOnServices": null,
+  "productLocation": [
+    {
+      "displayValue": "B3"
+    }
+  ],
+  "zeekitData": null,
+  "experienceType": null,
+  "redirect": {
+    "replacedByItemId": "",
+    "replacedByProductId": "",
+    "replacedByProductUrlText": ""
+  },
+  "langUrls": null,
+  "pac": null,
+  "fulfillmentSummary": [
+    {
+      "outOfCountryEligible": null,
+      "fulfillment": "DELIVERY",
+      "storeId": "5103",
+      "deliveryDate": null,
+      "sla": {
+        "unitOfMeasure": "DAY",
+        "measurementValue": 0,
+        "rank": null
+      },
+      "calculatedSlaDays": 0,
+      "fulfillmentMethods": [
+        "SCHEDULED"
+      ],
+      "fulfillmentPrice": null,
+      "fulfillmentBadge": null,
+      "isFreeForWPlus": null,
+      "isExpress": true,
+      "maxDeliveryDate": null,
+      "regularSla": {
+        "deliveryDate": "2025-11-29T18:00:00.000Z",
+        "fulfillmentBadge": null,
+        "maxDeliveryDate": "2025-11-29T20:00:00.000Z",
+        "storeDeliveryDate": null,
+        "storeMaxDeliveryDate": null
+      },
+      "storeDeliveryDate": "2025-11-29T13:00:00.000-05:00",
+      "storeMaxDeliveryDate": "2025-11-29T15:00:00.000-05:00",
+      "storeTimezone": "America/New_York"
+    },
+    {
+      "outOfCountryEligible": null,
+      "fulfillment": "PICKUP",
+      "storeId": "5103",
+      "deliveryDate": "2025-11-29T18:00:00.000Z",
+      "sla": {
+        "unitOfMeasure": "DAY",
+        "measurementValue": 0,
+        "rank": null
+      },
+      "calculatedSlaDays": 0,
+      "fulfillmentMethods": [
+        "SCHEDULED"
+      ],
+      "fulfillmentPrice": null,
+      "fulfillmentBadge": null,
+      "isFreeForWPlus": null,
+      "isExpress": false,
+      "maxDeliveryDate": "2025-11-29T19:00:00.000Z",
+      "regularSla": null,
+      "storeDeliveryDate": "2025-11-29T13:00:00.000-05:00",
+      "storeMaxDeliveryDate": "2025-11-29T14:00:00.000-05:00",
+      "storeTimezone": "EST"
+    }
+  ],
+  "availableFulfillmentOptions": [
+    "SCHEDULED_PICKUP",
+    "SCHEDULED_DELIVERY"
+  ],
+  "showExploreOtherConditionsCTA": false,
+  "isPreowned": false,
+  "preownedCondition": "New",
+  "newConditionProductId": null,
+  "displayOfferLevelImage": false,
+  "availabilityInNearbyStore": false,
+  "gender": null,
+  "mhmdFlag": false,
+  "specialInstruction": false,
+  "tobaccoStaticMesages": [],
+  "fulfillmentLabel": [
+    {
+      "checkStoreAvailability": null,
+      "wPlusFulfillmentText": null,
+      "message": "Pickup, today at Philadelphia Store",
+      "shippingText": "Pickup",
+      "fulfillmentText": "today",
+      "locationText": "Philadelphia Store",
+      "fulfillmentType": "STORE",
+      "fulfillmentMethod": "PICKUP",
+      "addressEligibility": false,
+      "postalCode": null,
+      "sla": null,
+      "deliveryDate": null
+    },
+    {
+      "checkStoreAvailability": null,
+      "wPlusFulfillmentText": null,
+      "message": "Delivery from store",
+      "shippingText": "Delivery from store",
+      "fulfillmentText": null,
+      "locationText": null,
+      "fulfillmentType": "STORE",
+      "fulfillmentMethod": "DELIVERY",
+      "addressEligibility": true,
+      "postalCode": null,
+      "sla": null,
+      "deliveryDate": null
+    }
+  ],
+  "fulfillmentOptions": [
+    {
+      "__typename": "ShippingOptionV2",
+      "type": "SHIPPING",
+      "viewOnly": false,
+      "selected": false,
+      "intent": true,
+      "availabilityType": "CURRENT",
+      "availableQuantity": null,
+      "maxOrderQuantity": null,
+      "orderLimit": null,
+      "speedDetails": null,
+      "locationText": "Philadelphia, 19144",
+      "availabilityStatus": "NOT_AVAILABLE",
+      "subscriptionSubmessage": "NONE",
+      "inventoryStatus": null,
+      "restricted": null
+    },
+    {
+      "__typename": "PickupOptionV2",
+      "type": "PICKUP",
+      "viewOnly": false,
+      "selected": true,
+      "intent": false,
+      "availableQuantity": null,
+      "maxOrderQuantity": 12,
+      "orderLimit": 12,
+      "speedDetails": {
+        "maxDeliveryDate": "2025-11-29T13:00:00.000-05:00",
+        "maxDeliveryDateISOWithTimeOffset": null,
+        "fulfillmentBadge": "Today",
+        "deliveryDate": null,
+        "hasFastDeliveryOptions": false,
+        "fulfillmentPrice": null,
+        "freeFulfillment": false,
+        "wPlusEligible": false,
+        "storeDeliveryDate": "2025-11-29T13:00:00.000-05:00",
+        "isExpress": false,
+        "slaDayEnum": "TODAY",
+        "storeTimezone": "America/New_York",
+        "minSlaInMins": null,
+        "slaInMins": null,
+        "expressType": null,
+        "earliestSlot": null
+      },
+      "locationText": "Philadelphia Store",
+      "locationAddress": null,
+      "availabilityStatus": "IN_STOCK",
+      "subscriptionSubmessage": "NONE",
+      "inventoryStatus": null,
+      "productLocation": [
+        {
+          "displayValue": "B3"
+        }
+      ],
+      "storeName": null,
+      "checkStoreAvailability": false
+    },
+    {
+      "__typename": "DeliveryOptionV2",
+      "type": "DELIVERY",
+      "viewOnly": false,
+      "selected": false,
+      "intent": false,
+      "availableQuantity": null,
+      "maxOrderQuantity": 12,
+      "orderLimit": 12,
+      "restricted": false,
+      "speedDetails": {
+        "maxDeliveryDate": null,
+        "maxDeliveryDateISOWithTimeOffset": null,
+        "fulfillmentBadge": "Today",
+        "deliveryDate": null,
+        "hasFastDeliveryOptions": false,
+        "fulfillmentPrice": {
+          "price": 7.95,
+          "priceString": null
+        },
+        "freeFulfillment": false,
+        "wPlusEligible": false,
+        "storeDeliveryDate": "2025-11-29T13:00:00.000-05:00",
+        "isExpress": true,
+        "slaDayEnum": "TODAY",
+        "storeTimezone": "America/New_York",
+        "minSlaInMins": null,
+        "slaInMins": null,
+        "expressType": null
+      },
+      "locationText": "Philadelphia, 19144",
+      "availabilityStatus": "IN_STOCK",
+      "subscriptionSubmessage": "NONE",
+      "deliveryTier": null
+    }
+  ],
+  "location": {
+    "postalCode": "19144",
+    "stateOrProvinceCode": "PA",
+    "city": "Philadelphia",
+    "storeIds": [
+      "5103"
+    ],
+    "addressId": null,
+    "intent": "SHIPPING",
+    "mpPickupLocation": null,
+    "pickupLocation": {
+      "storeId": "5103",
+      "accessPointId": null,
+      "accessType": null
+    }
+  },
+  "shippingRestriction": false,
+  "shippingOption": {
+    "availabilityStatus": "AVAILABLE",
+    "slaTier": null,
+    "deliveryDate": null,
+    "maxDeliveryDate": null,
+    "shipMethod": null,
+    "shipPrice": null,
+    "internationalShipping": null
+  },
+  "isCollection": false,
+  "conditionV2": {
+    "code": 1,
+    "groupCode": 1
+  },
+  "selectedVariantIds": [],
+  "variantProductIdMap": {},
+  "imageMap": {},
+  "variantsMap": {}
+}

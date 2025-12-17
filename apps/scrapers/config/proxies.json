@@ -1,0 +1,31 @@
+{
+  "webshare": {
+    "proxies": [
+      "http://gogwxizb-US:b76k5qxgf9x0@192.145.71.174:6811",
+      "http://gogwxizb-US:b76k5qxgf9x0@207.228.29.211:5702",
+      "http://gogwxizb-US:b76k5qxgf9x0@216.170.122.68:6106",
+      "http://gogwxizb-US:b76k5qxgf9x0@192.53.69.72:6710",
+      "http://gogwxizb-US:b76k5qxgf9x0@45.56.137.135:9200",
+      "http://gogwxizb-US:b76k5qxgf9x0@9.142.11.3:5159",
+      "http://gogwxizb-US:b76k5qxgf9x0@130.180.228.161:6445",
+      "http://gogwxizb-US:b76k5qxgf9x0@103.210.12.240:6168",
+      "http://gogwxizb-US:b76k5qxgf9x0@138.226.70.200:7890",
+      "http://gogwxizb-US:b76k5qxgf9x0@130.180.231.186:8328",
+      "http://gogwxizb-US:b76k5qxgf9x0@64.52.31.121:6308",
+      "http://gogwxizb-US:b76k5qxgf9x0@192.53.67.70:5619",
+      "http://gogwxizb-US:b76k5qxgf9x0@72.1.154.60:7951",
+      "http://gogwxizb-US:b76k5qxgf9x0@9.142.194.248:6916",
+      "http://gogwxizb-US:b76k5qxgf9x0@138.226.88.169:7857",
+      "http://gogwxizb-US:b76k5qxgf9x0@103.210.12.114:6042",
+      "http://gogwxizb-US:b76k5qxgf9x0@9.142.14.124:6780",
+      "http://gogwxizb-US:b76k5qxgf9x0@46.203.137.143:6140",
+      "http://gogwxizb-US:b76k5qxgf9x0@72.1.183.206:5503",
+      "http://gogwxizb-US:b76k5qxgf9x0@63.246.137.234:5863"
+    ],
+    "provider": "webshare",
+    "format": "http://username:password@host:port",
+    "notes": "Webshare static residential proxies - 20 US residential proxies",
+    "type": "residential",
+    "source": "https://proxy.webshare.io/api/v2/proxy/list/download/yhzwuyxmczhkejalqgxkakdbpfudhiremskzjnjq/-/any/username/direct/-/"
+  }
+}

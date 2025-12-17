@@ -1,0 +1,489 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "deactivation_date": "2026-01-01T08:00Z",
+    "title": "Liquor",
+    "type": "Category",
+    "node_id": "5xsxw",
+    "linking_id": "5xsxw",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/liquor-wine-beer-grocery/-/N-5xsxw",
+      "seo_h1": "Liquor",
+      "seo_title": "Liquor & Spirits : Target",
+      "seo_description": "Target's liquor stores stock a wide variety of wines, beer and hard liquor. From staples like Tito's Vodka, Miller Light and Captain Morgan; to local favorites. Find a Target liquor store near you!",
+      "page_id": "/c/5xsxw",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Liquor, Wine, Beer & Liquor, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/9Wk5_Grocery_Liquor_BubcatLiquor-QUIVER-190913-1568406465231"
+    },
+    "og": {
+      "title": "Liquor & Spirits : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/9Wk5_Grocery_Liquor_BubcatLiquor-QUIVER-190913-1568406465231",
+      "url": "/c/liquor-wine-beer-grocery/-/N-5xsxw",
+      "description": "Target's liquor stores stock a wide variety of wines, beer and hard liquor. From staples like Tito's Vodka, Miller Light and Captain Morgan; to local favorites. Find a Target liquor store near you!"
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5n5q6",
+        "name": "Wine, Beer & Liquor",
+        "type": "Category",
+        "linking_id": "5n5q6",
+        "number_of_children": "11",
+        "canonical_url": "/c/wine-beer-liquor-beverages/-/N-5n5q6",
+        "seo_h1": "Wine, Beer & Liquor",
+        "page_id": "/c/5n5q6",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "y2mjk",
+        "name": "Top Spirits",
+        "type": "Tag",
+        "linking_id": "y2mjk",
+        "number_of_children": "0",
+        "canonical_url": "/c/top-spirits/-/N-y2mjk",
+        "seo_h1": "Top Spirits",
+        "page_id": "/c/y2mjk",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_TopSpirits-211020-1634738117893"
+      },
+      {
+        "node_id": "ln0x9",
+        "name": "Vodka",
+        "type": "Category",
+        "linking_id": "ln0x9",
+        "number_of_children": "0",
+        "canonical_url": "/c/vodka-liquor-wine-beer-grocery/-/N-ln0x9",
+        "seo_h1": "Vodka",
+        "page_id": "/c/ln0x9",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_Vodka-211020-1634738165634"
+      },
+      {
+        "node_id": "xxj34",
+        "name": "Bourbon",
+        "type": "Category",
+        "linking_id": "xxj34",
+        "number_of_children": "0",
+        "canonical_url": "/c/bourbon-liquor-wine-beer-grocery/-/N-xxj34",
+        "seo_h1": "Bourbon",
+        "page_id": "/c/xxj34",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_Bourban-211020-1634738186065"
+      },
+      {
+        "node_id": "5xm96",
+        "name": "Whiskey",
+        "type": "Category",
+        "linking_id": "5xm96",
+        "number_of_children": "0",
+        "canonical_url": "/c/whiskey-liquor-wine-beer-grocery/-/N-5xm96",
+        "seo_h1": "Whiskey",
+        "page_id": "/c/5xm96",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_Whiskey-211020-1634738225583"
+      },
+      {
+        "node_id": "0091p",
+        "name": "Tequila",
+        "type": "Category",
+        "linking_id": "0091p",
+        "number_of_children": "0",
+        "canonical_url": "/c/tequila-liquor-wine-beer-grocery/-/N-0091p",
+        "seo_h1": "Tequila",
+        "page_id": "/c/0091p",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_Tequila-211020-1634738261845"
+      },
+      {
+        "node_id": "vazqx",
+        "name": "Rum",
+        "type": "Category",
+        "linking_id": "vazqx",
+        "number_of_children": "0",
+        "canonical_url": "/c/rum-liquor-wine-beer-grocery/-/N-vazqx",
+        "seo_h1": "Rum",
+        "page_id": "/c/vazqx",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_Rum-211020-1634738320422"
+      },
+      {
+        "node_id": "4uez3",
+        "name": "Cocktail Mixers",
+        "type": "Category",
+        "linking_id": "4uez3",
+        "number_of_children": "0",
+        "canonical_url": "/c/cocktail-mixers-beverages-grocery/-/N-4uez3",
+        "seo_h1": "Cocktail Mixers",
+        "page_id": "/c/4uez3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_8931475f-947b-40f6-a284-e857d19963ba"
+      },
+      {
+        "node_id": "9vaw3",
+        "name": "Gin",
+        "type": "Category",
+        "linking_id": "9vaw3",
+        "number_of_children": "0",
+        "canonical_url": "/c/gin-liquor-wine-beer-grocery/-/N-9vaw3",
+        "seo_h1": "Gin",
+        "page_id": "/c/9vaw3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_GIn-211020-1634738345448"
+      },
+      {
+        "node_id": "ar4qr",
+        "name": "Scotch",
+        "type": "Category",
+        "linking_id": "ar4qr",
+        "number_of_children": "0",
+        "canonical_url": "/c/scotch-liquor-wine-beer-grocery/-/N-ar4qr",
+        "seo_h1": "Scotch",
+        "page_id": "/c/ar4qr",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_Scotch-211020-1634738473446"
+      },
+      {
+        "node_id": "hpmj8",
+        "name": "Brandy & Cognac",
+        "type": "Category",
+        "linking_id": "hpmj8",
+        "number_of_children": "0",
+        "canonical_url": "/c/brandy-cognac-liquor-wine-beer-grocery/-/N-hpmj8",
+        "seo_h1": "Brandy & Cognac",
+        "page_id": "/c/hpmj8",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_Brandy-211020-1634738822799"
+      },
+      {
+        "node_id": "fij4m",
+        "name": "Liqueurs, Cordials & Schnapps",
+        "type": "Category",
+        "linking_id": "fij4m",
+        "number_of_children": "0",
+        "canonical_url": "/c/liqueurs-cordials-schnapps-liquor-wine-beer-grocery/-/N-fij4m",
+        "seo_h1": "Liqueurs, Cordials & Schnapps",
+        "page_id": "/c/fij4m",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_LiquorBubcat_Liquers-211020-1634738761861"
+      },
+      {
+        "node_id": "5xts9",
+        "name": "Bar & Wine Tools",
+        "type": "Category",
+        "linking_id": "5xts9",
+        "number_of_children": "0",
+        "canonical_url": "/c/bar-wine-tools-kitchen-dining/-/N-5xts9",
+        "seo_h1": "Bar & Wine Tools",
+        "page_id": "/c/5xts9",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/5xts9-bar-and-wine-accessories-QUIVER-190408-1554762948370"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "800": {
+      "order": 800,
+      "content": {
+        "background_color": "#eeeeee",
+        "container": {
+          "keyValuePairs": {
+            "context": "placementId,web_primary_basket_pbo_offers_foryou;categoryId,5n5q6,4uez3"
+          },
+          "type": "personalizedPromotions"
+        },
+        "id": "WEB-366679",
+        "margin_bottom": "standard",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "text_color": "dark",
+        "trackingId": "WEB-366679"
+      },
+      "presentation": "universal_prz_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "OFFER PRZ",
+            "id": "WEB-366679",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static",
+            "placement_id": "6616ba821b0140138bbc1fd7"
+          }
+        ]
+      }
+    },
+    "1100": {
+      "order": 1100,
+      "content": {
+        "background_color": "#EEEEEE",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,slingshot_manual_tcins"
+          },
+          "type": "personalizedProducts"
+        },
+        "custom_headline": "Top cocktail mixers",
+        "id": "WEB-388802",
+        "metadata": {
+          "component_type": "Manual TCIN Carousel",
+          "component_version": "01"
+        },
+        "tcins": [
+          "52703587",
+          "77661201",
+          "14757395",
+          "13424150",
+          "79322170",
+          "88693659",
+          "50508607",
+          "54220726",
+          "91315963",
+          "14776405",
+          "54603858",
+          "50536116",
+          "54266721",
+          "53155747",
+          "89923336",
+          "53131499",
+          "54266697",
+          "89923354",
+          "89923337",
+          "78098807",
+          "87113177",
+          "13305603",
+          "15026731",
+          "15013629",
+          "15026732",
+          "51139832",
+          "87113182",
+          "51139835",
+          "11215316",
+          "54360490",
+          "53131276",
+          "16224385",
+          "78596028",
+          "50536054",
+          "53648556",
+          "89923352",
+          "91309913"
+        ],
+        "text_color": "dark",
+        "trackingId": "WEB-388802"
+      },
+      "presentation": "manual_prz_tcin_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "12Wk1_MTC_MIXERS",
+            "id": "WEB-388802",
+            "type": "c_web_manual_tcin_carousel_v01",
+            "type_name": "Manual TCIN Carousel",
+            "content_type": "static",
+            "placement_id": "6616ba94ff87b209ae20ae49"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "1300": {
+      "order": 1300,
+      "content": {
+        "background_color": "#f7f7f7",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_bia_sameday_drive_up_trending;categoryId,5xsxw"
+          },
+          "type": "personalizedProducts"
+        },
+        "id": "WEB-398563",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "text_color": "dark",
+        "trackingId": "WEB-398563"
+      },
+      "presentation": "universal_prz_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "2024_April Wk 1_F&B_Liquor",
+            "id": "WEB-398563",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static",
+            "placement_id": "6616bafcd8d091683b5518ba"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/p/clase-azul-reposado-tequila-750ml-bottle/-/A-53038547?gQT=3>clase azul</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/tito-s-handmade-vodka/-/N-5xsxwZwu0lq>how much is a bottle of titos</a>,<a href=https://www.target.com/c/whiskey-liquor-wine-beer-grocery/whiskey-acres-distilling-co-/-/N-5xm96Zq643legdtrp>whiskey acres</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/effen/-/N-5xsxwZasr0v>effen liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/-/N-5xsxw>liquor cerca de mi</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/bacardi/-/N-5xsxwZ56d4e>bacardi vodka</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/pinnacle/-/N-5xsxwZ5eecv>pinnacle liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/belvedere/-/N-5xsxwZebr7g>belvedere liquor store</a>,<a href=https://www.target.com/b/el-jimador/-/N-ed9xh>el jimador</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/herradura/-/N-5xsxwZ894it>herradura liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/windsor/-/N-5xsxwZvj030>windsor liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/rabbit-hole-distillery/-/N-5xsxwZq643le6lk3>rabbit hole liquor</a>,<a href=https://www.target.com/p/mccormick-vodka-1-75l-plastic-bottle/-/A-47137436>mccormick liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/bombay-sapphire/-/N-5xsxwZyh3hd>sapphire liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/lord-calvert/-/N-5xsxwZzkls7>calvert liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/wheatley/-/N-5xsxwZfclgd>wheatley liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/plantation/-/N-5xsxwZns7un>plantation liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/myers-s/-/N-5xsxwZy7kqw>myers liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/yellowstone-whiskey/-/N-5xsxwZq643le8rps4>yellowstone liquor</a>,<a href=https://www.target.com/c/wine-beer-liquor-beverages/appleton-estate/-/N-5n5q6Zy3h1r>appleton liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/hotel-tango/-/N-5xsxwZwufma>tango liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/ancho-reyes/-/N-5xsxwZ5xjum>reyes liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/prairie/-/N-5xsxwZuuw4v>prairie liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/gordon-s/-/N-5xsxwZwypma>gordons liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/knob-creek/-/N-5xsxwZ9nv6t>knob liquor</a>,<a href=https://www.target.com/p/bombay-sapphire-gin-750ml-bottle/-/A-14983861>bombay liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/b-b/-/N-5xsxwZq643le18n9y>b&b liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/ocean/-/N-5xsxwZo9fca>ocean liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/martell/-/N-5xsxwZq643lelty11>martell liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/savage-cooke/-/N-5xsxwZm3fo3>savage liquor</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/sale/-/N-5xsxwZ5tdv0>alcohol on sale</a>,<a href=https://www.target.com/c/liquor-wine-beer-grocery/wild-turkey/-/N-5xsxwZ4c2lo>wild turkey liquor</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426999",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "685577e3e5573e7c5e82e59e"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "deactivation_date": "2026-01-01T08:00Z",
+  "uri": "/5xsxw/WEB"
+}

@@ -1,0 +1,323 @@
+{
+  "metadata": {
+    "activation_date": "2025-09-29T07:00Z",
+    "title": "Crackers",
+    "type": "Category",
+    "node_id": "5xsy6",
+    "linking_id": "5xsy6",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/crackers-snacks-grocery/-/N-5xsy6",
+      "seo_h1": "Crackers",
+      "seo_title": "Crackers : Target",
+      "seo_description": "Shop Target for Crackers you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/5xsy6",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Crackers, Snacks, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_Crackers-QUIVER-190913-1568403300173"
+    },
+    "og": {
+      "title": "Crackers : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_Crackers-QUIVER-190913-1568403300173",
+      "url": "/c/crackers-snacks-grocery/-/N-5xsy6",
+      "description": "Shop Target for Crackers you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xsy9",
+        "name": "Snacks",
+        "type": "Category",
+        "linking_id": "5xsy9",
+        "number_of_children": "28",
+        "canonical_url": "/c/snacks-grocery/-/N-5xsy9",
+        "seo_h1": "Snacks",
+        "page_id": "/c/5xsy9",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "y33cc",
+        "name": "Multigrain, Rice & Seed Crackers",
+        "type": "Category",
+        "linking_id": "y33cc",
+        "number_of_children": "0",
+        "canonical_url": "/c/multigrain-rice-seed-crackers-snacks-grocery/-/N-y33cc",
+        "seo_h1": "Multigrain, Rice & Seed Crackers",
+        "page_id": "/c/y33cc",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_1142a972-52ab-45da-b51c-071a337f855d"
+      },
+      {
+        "node_id": "hq89u",
+        "name": "Butter Crackers",
+        "type": "Category",
+        "linking_id": "hq89u",
+        "number_of_children": "0",
+        "canonical_url": "/c/butter-crackers-snacks-grocery/-/N-hq89u",
+        "seo_h1": "Butter Crackers",
+        "page_id": "/c/hq89u",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_74deac1f-354f-43dd-ba95-a078c9b8162c"
+      },
+      {
+        "node_id": "2gjhn",
+        "name": "Cheese Crackers",
+        "type": "Category",
+        "linking_id": "2gjhn",
+        "number_of_children": "0",
+        "canonical_url": "/c/cheese-crackers-snacks-grocery/-/N-2gjhn",
+        "seo_h1": "Cheese Crackers",
+        "page_id": "/c/2gjhn",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_1377df1c-4c34-4a66-b2cc-24e5cd8763ea"
+      },
+      {
+        "node_id": "95u1d",
+        "name": "Cracker Multipacks",
+        "type": "Category",
+        "linking_id": "95u1d",
+        "number_of_children": "0",
+        "canonical_url": "/c/cracker-multipacks-snack-variety-packs-snacks-grocery/-/N-95u1d",
+        "seo_h1": "Cracker Multipacks",
+        "page_id": "/c/95u1d",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_820f7a40-c9c8-44bf-a550-010ee0899862"
+      },
+      {
+        "node_id": "a4u74",
+        "name": "Gluten Free Crackers",
+        "type": "Category",
+        "linking_id": "a4u74",
+        "number_of_children": "0",
+        "canonical_url": "/c/gluten-free-crackers-snacks-grocery/-/N-a4u74",
+        "seo_h1": "Gluten Free Crackers",
+        "page_id": "/c/a4u74",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_a49c0246-0171-4dc5-b4ee-903dc1083794"
+      },
+      {
+        "node_id": "e1h0n",
+        "name": "Graham Crackers",
+        "type": "Category",
+        "linking_id": "e1h0n",
+        "number_of_children": "0",
+        "canonical_url": "/c/graham-crackers-snacks-grocery/-/N-e1h0n",
+        "seo_h1": "Graham Crackers",
+        "page_id": "/c/e1h0n",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_4011d788-7705-49ad-af62-b9a971594e9e"
+      },
+      {
+        "node_id": "urn30",
+        "name": "Saltine Crackers",
+        "type": "Category",
+        "linking_id": "urn30",
+        "number_of_children": "0",
+        "canonical_url": "/c/saltine-crackers-snacks-grocery/-/N-urn30",
+        "seo_h1": "Saltine Crackers",
+        "page_id": "/c/urn30",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_aaa328e4-d711-4441-bbcd-a8d40ccb8d8d"
+      },
+      {
+        "node_id": "v35so",
+        "name": "Sandwich Crackers",
+        "type": "Category",
+        "linking_id": "v35so",
+        "number_of_children": "0",
+        "canonical_url": "/c/sandwich-crackers-snacks-grocery/-/N-v35so",
+        "seo_h1": "Sandwich Crackers",
+        "page_id": "/c/v35so",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_b649a585-7456-4266-b031-e56a81d8f2b3"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/p/premium-saltine-crackers-original-16oz/-/A-12958799>saltines</a>,<a href=https://www.target.com/p/lotte-choco-pie-original-5-93oz/-/A-91200375?sid=323S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Dry+Grocery&amp;adgroup=212-30>chocopie</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/rice-crackers/-/N-5xsy6Zs1qe3>rice cracker</a>,<a href=https://www.target.com/p/premium-soup-oyster-crackers-9oz/-/A-15115843?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=71-10&region_id=750750>oyster crackers</a>,<a href=https://www.target.com/p/ritz-toasted-chips-original-8-1oz/-/A-14899905>ritz toasted chips</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/town-house/-/N-5xsy6Z56gpz>toll house crackers</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/valley-lahvosh/-/N-5xsy6Zq643leoir16>lahvosh</a>,<a href=https://www.target.com/p/goldfish-crisps-variety-pack-7-2oz-9ct/-/A-92328872?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=71-10&region_id=117117>goldfish crisps</a>,<a href=https://www.target.com/p/cheddies-classic-cheddar-crackers-4-2oz/-/A-90303913>cheddies crackers</a>,<a href=https://www.target.com/p/nabisco-ritz-original-classic-crackers-13-7oz/-/A-12958804>nabisco crackers</a>,<a href=https://www.target.com/p/triscuit-original-whole-grain-wheat-vegan-crackers-family-size-12-5oz/-/A-12959631>original triscuit crackers reviews</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/milton-s-craft-bakers/-/N-5xsy6Z4ipzn>milton's crackers</a>,<a href=https://www.target.com/p/threptin-regular-diskettes-pack-of-2-each-275g/-/A-1002897115>diskettes</a>,<a href=https://www.target.com/p/pepperidge-farm-goldfish-cheddar-crackers-6-6oz/-/A-13005401>goldfish cheddar</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/-/N-5xsy6>cracker</a>,<a href=https://www.target.com/p/cheez-it-original-baked-snack-crackers-21oz/-/A-13327376>does nabisco make cheez-its</a>,<a href=https://www.target.com/p/crunchmaster-multi-seed-rosemary-olive-oil-crackers-case-of-12-4-oz/-/A-89718631>crunchmaster gluten-free crackers snacks olive oil</a>,<a href=https://www.target.com/p/good-thins-sea-salt-corn-snacks-gluten-free-crackers-3-5oz/-/A-51219443>good thins sea salt corn snacks gluten free crackers reviews</a>,<a href=https://www.target.com/p/cheez-it-snap-d-cheddar-sour-cream-onion-crackers-7-5oz/-/A-54202272>cheez it snapd</a>,<a href=https://www.target.com/p/mary-39-s-gone-crackers-original-4oz/-/A-94337367>evaluate the gluten-free crackers and snacks - crunchmaster company mary’s gone crackers on on-the-go healthy snacks</a>,<a href=https://www.target.com/p/cheez-it-puff-39-d-double-cheese-crackers-5-75oz/-/A-85712496>cheez its puff</a>,<a href=https://www.target.com/p/sonoma-creamery-pizza-crisps-pepperoni-case-of-6-2-oz/-/A-92113693>sonoma pepperoni pizza crisps</a>,<a href=https://www.target.com/p/goldfish-cheddar-crackers-baked-with-whole-grain-27-3oz/-/A-88951128>whole grain goldfish</a>,<a href=https://www.target.com/p/simple-mills-garlic-herb-seed-flour-crackers-case-of-6-4-25-oz/-/A-89718770?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy+-+Target+Plus&adgroup=71-10>simple mills garlic and herb crackers</a>,<a href=https://www.target.com/p/gluten-free-multi-grain-with-flax-rice-crackers-3-5oz-good-38-gather-8482/-/A-79547533>which stores carry multigrain rice crackers?</a>,<a href=https://www.target.com/p/ella-s-flats-everything-all-seed-savory-crisps-case-of-6-4-8-oz/-/A-91987158>6/4.8</a>,<a href=https://www.target.com/p/flackers-sea-salt-flax-seed-crackers-case-of-6-5-oz/-/A-89718788>flackers flaxseed crackers sea salt product info and reviews</a>,<a href=https://www.target.com/p/annie-s-cheddar-squares-baked-snack-crackers-7-5oz/-/A-52089346?sid=2418S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=71-10>annie's cheddar squares</a>,<a href=https://www.target.com/p/triscuit-roasted-garlic-crackers-8-5oz/-/A-12959610>garlic triscuits</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/moon-cheese/-/N-5xsy6Z38fmh>moon cheese crackers</a>,<a href=https://www.target.com/b/handi-snacks/-/N-55cas>handy snacks</a>,<a href=https://www.target.com/c/snack-variety-packs-snacks-grocery/rice-crackers/-/N-sjs32Z4pmx7>rice crackers available in family-size packs</a>,<a href=https://www.target.com/p/cheez-it-extra-cheesy-12-4oz/-/A-78364799>extra cheddar cheez its</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/gripz/-/N-5xsy6Zq643le39tgl>gripz crackers</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/sunflower/-/N-5xsy6Zorzqo5u2jda>sunflower crackers</a>,<a href=https://www.target.com/p/pepperidge-farm-goldfish-sour-cream-38-onion-crisps-6-25oz/-/A-89885972?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=71-10&region_id=773773>goldfish crisps sour cream and onion</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/-/N-5xsy6>cracker</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/top-rated/-/N-5xsy6Zxu0v4>popular crackers</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/olive-oil/-/N-5xsy6Z55i1p>best crackers made with olive oil</a>,<a href=https://www.target.com/p/annie-39-s-organic-cheddar-bunnies-baked-snack-crackers-7-5oz/-/A-52089319>annie's bunnies</a>,<a href=https://www.target.com/p/goldfish-disney-100th-anniversary-bag-6-6oz/-/A-87436123>disney goldfish</a>,<a href=https://www.target.com/p/crunchmaster-multi-seed-original-crackers-case-of-6-3-54-oz/-/A-1002927098?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy+-+Target+Plus&adgroup=71-10>crunchmaster original multi-seed crackers, 3.54 oz</a>,<a href=https://www.target.com/p/cheez-it-extra-toasty-baked-snack-crackers-12-4oz/-/A-16951564>burnt cheezits</a>,<a href=https://www.target.com/p/artisan-tropic-organic-sea-salt-crackers-grain-free-case-of-6-4-25-oz/-/A-1003054975>artisan tropic organic grain-free sea salt crackers reviews</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/carr-s/-/N-5xsy6Z56grh>carr crackers</a>,<a href=https://www.target.com/p/good-thins-parmesan-and-garlic-potato-chips-3-5oz/-/A-54195333>good thins parmesan and garlic</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/34-degrees/-/N-5xsy6Zq77dg>34 degrees crackers</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/gluten-free/-/N-5xsy6Zjmvlx>snack packs of gluten free crackers for on the go</a>,<a href=https://www.target.com/p/ritz-crackers-original-family-size-20-5oz/-/A-14933681>ritz crackers family size</a>,<a href=https://www.target.com/p/teddy-grahams-chocolate-graham-snacks-10oz/-/A-12959615?sid=2496S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=71-9>teddy graham crackers</a>,<a href=https://www.target.com/p/nu-bake-phyllo-crisps-cranberry-oat-case-of-12-2-8-oz/-/A-92822641>nu bake phyllo crisps where to buy</a>,<a href=https://www.target.com/p/cheez-it-cheesy-jalapeno-12-4oz/-/A-91007513>cheez its</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/schar/-/N-5xsy6Zq643leql9xs>schar gluten free crackers</a>,<a href=https://www.target.com/p/lieber-s-multi-grain-rice-cakes-3-1oz/-/A-48641309>multigrain rice cakes</a>,<a href=https://www.target.com/p/good2grow-chocolate-snackers-2oz/-/A-91017444>good 2 grow crackers</a>,<a href=https://www.target.com/p/simple-mills-pizza-pop-mmms-4oz/-/A-89691541>simple mills pizza crackers</a>,<a href=https://www.target.com/p/goldfish-flavor-blasted-xtra-cheddar-cheese-crackers-27-3oz/-/A-88951126>xtra cheddar goldfish big box</a>,<a href=https://www.target.com/p/flackers-sea-salt-flax-seed-crackers-case-of-6-5-oz/-/A-89718788?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy+-+Target+Plus&adgroup=71-10>flaxseed crackers</a>,<a href=https://www.target.com/p/gluten-free-rice-38-almond-flour-four-cheese-crackers-3-5oz-good-38-gather-8482/-/A-87429059>which almond flour crackers are best for cheese pairing?</a>,<a href=https://www.target.com/p/simple-mills-veggie-flour-pita-crackers-himalayan-salt-4-25-oz/-/A-87860888>gluten free pita crackers</a>,<a href=https://www.target.com/p/cheez-it-snap-39-d-crackers-extra-crunchy-thin-crust-margherita-pizza-7-5oz/-/A-92243651>cheez it margherita pizza</a>,<a href=https://www.target.com/p/premium-minis-original-saltine-crackers-11oz/-/A-14933647>premium mini saltines</a>,<a href=https://www.target.com/p/ritz-toasted-crackers-chips-veggie-8-1oz/-/A-92417288>ritz toasted chips veggie</a>,<a href=https://www.target.com/p/cheez-it-crackers-duoz-pesto-38-mozzarella-12-4oz/-/A-92243636>pesto mozzarella cheez its</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/flatbread-crackers/-/N-5xsy6Zeo3tq>flatbread crackers</a>,<a href=https://www.target.com/p/honey-graham-crackers-14-4oz-favorite-day-8482/-/A-86861120>honey gram</a>,<a href=https://www.target.com/p/kellogg-39-s-club-multi-grain-crackers-12-7oz/-/A-13010095>club crackers multigrain</a>,<a href=https://www.target.com/p/mary-39-s-gone-crackers-super-seed-classic-4oz/-/A-94337519>mary's gone crackers super seed everything crackers product info and reviews</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/manischewitz/-/N-5xsy6Znijzu>manischewitz crackers</a>,<a href=https://www.target.com/p/cheez-it-hot-spicy-baked-snack-crackers-12-4oz/-/A-14932024>flamin hot cheez its</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/corn/-/N-5xsy6Z55k6q>corn crackers</a>,<a href=https://www.target.com/p/finn-crisp-original-sourdough-rye-thins-case-of-9-7-oz/-/A-89718685>finn crisp sourdough rye thins reviews</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/vanilla/-/N-5xsy6Z55k6l>vanilla crackers</a>,<a href=https://www.target.com/p/toasted-crackers-13-7oz-market-pantry-8482/-/A-13349404>toasted rounds crackers</a>,<a href=https://www.target.com/p/pepperidge-farm-goldfish-flavor-blasted-extra-cheddar-10-8oz-12ct/-/A-82219136>extra blasted goldfish</a>,<a href=https://www.target.com/p/diamond-bakery-coconut-royal-creem-crackers-8oz/-/A-47077987>royal cream crackers</a>,<a href=https://www.target.com/p/triscuit-thin-crisps-whole-grain-wheat-vegan-crackers-7-1oz/-/A-14933622>triscuit thins</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/low-sodium/-/N-5xsy6Z7ct93>low sodium goldfish</a>,<a href=https://www.target.com/p/colombina-crake-241-as-salt-237-n-integral-13-5oz/-/A-51592964>crackeñas</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/ellas-flats/-/N-5xsy6Zq643lenzg6n>ellas crackers</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/annie-s/-/N-5xsy6Z56dvw>annie's bunny crackers</a>,<a href=https://www.target.com/p/pepperidge-farm-goldfish-colors-cheddar-crackers/-/A-89409905>goldfish pepperidge farm</a>,<a href=https://www.target.com/p/goldfish-crisps-barbecue-crackers-6-25oz/-/A-92328760>bbq goldfish</a>,<a href=https://www.target.com/p/alessi-thin-breadsticks-case-of-12-3-oz/-/A-89718627>alessi thin breadsticks reviews</a>,<a href=https://www.target.com/c/crackers-snacks-grocery/lance/-/N-5xsy6Z560hb>lances crackers</a>,<a href=https://www.target.com/p/madegood-star-puffed-cracker-pizza-case-of-6-4-26-oz/-/A-92113789>made good pizza crackers</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-432829",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "68da199e11aab4381b576bad"
+          }
+        ]
+      }
+    },
+    "2600": {
+      "order": 2600,
+      "content": {
+        "message": "<p>With any type of crackers, the smiles come naturally. Make snack time more fun with the crackers of your choice. With numerous delicious flavors of Cheez-It, Pepperidge, Ritz, Goldfish, Animal cookie, there&#8217;s a cracker favorite for everyone. Each bite is loaded with bold and wholesome flavor that hits your taste buds with every delicious mouthful. Crackers that are perfect for on-the-go snacking, a cheesy addition to a packed lunch, or even just a quick bite around the house. They are great to bring along on field trips, camping, hiking, trips to the park, picnics, outdoor concerts, everyday errands, and more. You&#8217;ll love the satisfying flavor in every delicious bite. With no artificial flavors or preservatives, crackers are a snack the whole family will adore. The colored ones are sourced from plants like using a mix of beet juice concentrate and paprika extracted from sweet red peppers. Green comes from watermelon and huito juice concentrates mixed with extracted turmeric. The red orange is colored with paprika extracted from sweet red peppers and many more. Select from cheese crisps, gluten free thins, toasted ones, or baked. You can also select crackers based on ingredients like wheat flour, toasted in olive oil, chicken, garlic, onions, wholesome non-GMO ingredients and many more. Walk into your nearest Target store or order online to as there&#8217;s no occasion that crackers can&#8217;t make richer, from movie nights to office snacks to study sessions. They make crispy, savory road trip treats, quick after-school snacks, and simple party snacks. Enjoy these snack chips straight from the bag or dip them into your favorite spreads! </p>",
+        "metadata": {
+          "component_type": "SEO",
+          "component_version": "01"
+        }
+      },
+      "presentation": "/adaptive/c_web_a_0029/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "2.25.22 SEO Crackers",
+            "id": "WEB-354862",
+            "type": "c_web_a_0029_v01",
+            "type_name": "SEO Component",
+            "content_type": "static",
+            "placement_id": "620e71c688152364e54b6327"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-09-29T07:00Z",
+  "uri": "/5xsy6/WEB"
+}

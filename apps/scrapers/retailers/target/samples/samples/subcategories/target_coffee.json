@@ -1,0 +1,1052 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/4yi5p",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_3fabb154-5b51-4b47-b854-c186bca66797",
+      "seo_keywords": "Coffee, Beverages, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Shop from a wide selection of coffee beverages at Target, including ground coffee, K-Cups, creamers, and cold brew. Free shipping with orders $35+.",
+      "seo_title": "Coffee : Target",
+      "seo_h1": "Coffee",
+      "canonical_url": "/c/coffee-beverages-grocery/-/N-4yi5p"
+    },
+    "node_id": "4yi5p",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      },
+      {
+        "node_id": "5xt0r",
+        "page_type": "category",
+        "page_id": "/c/5xt0r",
+        "seo_h1": "Beverages",
+        "canonical_url": "/c/beverages-grocery/-/N-5xt0r",
+        "number_of_children": "18",
+        "linking_id": "5xt0r",
+        "type": "Category",
+        "name": "Beverages"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "2ikky",
+        "name": "Bulk & Multi-Pack Coffee",
+        "type": "Tag",
+        "linking_id": "2ikky",
+        "number_of_children": "0",
+        "canonical_url": "/c/bulk-multi-pack-coffee/-/N-2ikky",
+        "seo_h1": "Bulk & Multi-Pack Coffee",
+        "page_id": "/c/2ikky",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_b99c4717-76d2-439c-9e9b-e01e60d93d75"
+      },
+      {
+        "node_id": "ku87g",
+        "name": "Seasonal Coffee Flavors",
+        "type": "Tag",
+        "linking_id": "ku87g",
+        "number_of_children": "0",
+        "canonical_url": "/c/seasonal-coffee-flavors/-/N-ku87g",
+        "seo_h1": "Seasonal Coffee Flavors",
+        "page_id": "/c/ku87g",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_0a0a9a8a-b85d-4d89-9da0-ace9e4092a7d"
+      },
+      {
+        "node_id": "x2hqv",
+        "name": "Ground Coffee",
+        "type": "Category",
+        "linking_id": "x2hqv",
+        "number_of_children": "0",
+        "canonical_url": "/c/ground-coffee-beverages-grocery/-/N-x2hqv",
+        "seo_h1": "Ground Coffee",
+        "page_id": "/c/x2hqv",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_34b10a29-2140-4742-9abc-a21d4b9e0742"
+      },
+      {
+        "node_id": "6kpkn",
+        "name": "K-Cups & Coffee Pods",
+        "type": "Category",
+        "linking_id": "6kpkn",
+        "number_of_children": "0",
+        "canonical_url": "/c/k-cups-coffee-pods-beverages-grocery/-/N-6kpkn",
+        "seo_h1": "K-Cups & Coffee Pods",
+        "page_id": "/c/6kpkn",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_4a14e719-c5de-460a-864a-5f2ad49f10f0"
+      },
+      {
+        "node_id": "n8upo",
+        "name": "Whole Bean Coffee",
+        "type": "Category",
+        "linking_id": "n8upo",
+        "number_of_children": "0",
+        "canonical_url": "/c/whole-bean-coffee-beverages-grocery/-/N-n8upo",
+        "seo_h1": "Whole Bean Coffee",
+        "page_id": "/c/n8upo",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_92b244e2-76a9-43bb-8f30-86023a3315b7"
+      },
+      {
+        "node_id": "2dpp9",
+        "name": "Espresso",
+        "type": "Category",
+        "linking_id": "2dpp9",
+        "number_of_children": "0",
+        "canonical_url": "/c/espresso-coffee-beverages-grocery/-/N-2dpp9",
+        "seo_h1": "Espresso",
+        "page_id": "/c/2dpp9",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_bd3513fe-1626-428e-9b65-5035424481b1"
+      },
+      {
+        "node_id": "260b3",
+        "name": "Cold Brew & Bottled Coffee",
+        "type": "Category",
+        "linking_id": "260b3",
+        "number_of_children": "0",
+        "canonical_url": "/c/cold-brew-coffee-beverages-grocery/-/N-260b3",
+        "seo_h1": "Cold Brew & Bottled Coffee",
+        "page_id": "/c/260b3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_035023a8-bd73-44d6-b596-2f9d748650a7"
+      },
+      {
+        "node_id": "05hso",
+        "name": "Instant Coffee",
+        "type": "Category",
+        "linking_id": "05hso",
+        "number_of_children": "0",
+        "canonical_url": "/c/instant-coffee-beverages-grocery/-/N-05hso",
+        "seo_h1": "Instant Coffee",
+        "page_id": "/c/05hso",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_aa9bf95a-447d-44d8-86ee-c426285114fd"
+      },
+      {
+        "node_id": "6yvy4",
+        "name": "Mushroom Coffee",
+        "type": "Tag",
+        "linking_id": "6yvy4",
+        "number_of_children": "0",
+        "canonical_url": "/c/mushroom-coffee/-/N-6yvy4",
+        "seo_h1": "Mushroom Coffee",
+        "page_id": "/c/6yvy4",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_979db641-faf3-4cdc-af60-944e01b56574"
+      },
+      {
+        "node_id": "5xszv",
+        "name": "Coffee Creamers",
+        "type": "Category",
+        "linking_id": "5xszv",
+        "number_of_children": "0",
+        "canonical_url": "/c/coffee-creamers-beverages-grocery/-/N-5xszv",
+        "seo_h1": "Coffee Creamers",
+        "page_id": "/c/5xszv",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_6c56504e-5145-4379-b8ab-b7917ac48acc"
+      },
+      {
+        "node_id": "vyhpk",
+        "name": "Coffee Syrups & Flavorings",
+        "type": "Tag",
+        "linking_id": "vyhpk",
+        "number_of_children": "0",
+        "canonical_url": "/c/coffee-syrups-flavorings/-/N-vyhpk",
+        "seo_h1": "Coffee Syrups & Flavorings",
+        "page_id": "/c/vyhpk",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_6c2c9c6b-4357-446e-9c1d-46890f8de2db"
+      }
+    ],
+    "og": {
+      "title": "Coffee : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_3fabb154-5b51-4b47-b854-c186bca66797",
+      "url": "/c/coffee-beverages-grocery/-/N-4yi5p",
+      "description": "Shop from a wide selection of coffee beverages at Target, including ground coffee, K-Cups, creamers, and cold brew. Free shipping with orders $35+."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "4yi5p",
+    "title": "Coffee",
+    "activation_date": "2025-10-19T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "800": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_NovWK4_F&B_BOGO 50% Favorite Day Whips & Cold Foams with Target Circle",
+            "id": "STORY-41500",
+            "placement_id": "68ec86ec000bf036952b10be",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:4yi5p",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          },
+          {
+            "title": "2025_NovWK4_F&B_30% off Coffee & Tea Advent Calendars",
+            "id": "STORY-42197",
+            "placement_id": "68ec86ed000bf036952b10bf",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:4yi5p",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_170700ce-7895-4385-8991-4027308f083c",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                "BOGO"
+              ],
+              "line_two": [
+                "50"
+              ],
+              "lockup": "percent-off-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop whipped toppings & cold foams"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "BOGO 50"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "percent-off"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_5c061676-6358-4a40-ae71-ae834b73ea4b",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_971a38a4-24d1-492b-98ff-6fb909573c80",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_374c37ec-951f-4797-9dcc-9e97ad07d5e5",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_a98c2d0a-8929-4101-9d15-2cf9f809f171",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_727700595_STORY-41500",
+              "detail": {
+                "id": "727700595"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "Favorite Day™ whipped toppings & cold foams with "
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                },
+                {
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "bullseye-circle"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 42
+          },
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_39d6048d-2228-4516-8277-2d3394e11603",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                ""
+              ],
+              "line_two": [
+                "30"
+              ],
+              "lockup": "percent-off-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Get the deal"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "30"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "percent-off"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_128aa8d7-6aa1-4847-8760-25f3d9af9e4a",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_cc4114a3-f31b-49f1-b5d7-473c64b4490a",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_e0ad5ecc-c635-45d4-ad15-db5ea7548ce9",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_53995c83-6bb9-42fe-96d2-07354956a682",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_205062752_STORY-42197",
+              "detail": {
+                "id": "205062752"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "coffee & tea Advent calendars*\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 100
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-carousel-large",
+      "component_type": "story_v01",
+      "styles": {
+        "position": "standalone"
+      },
+      "order": 800
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "11.05.23_COFFEE_BIA_PRZ",
+            "id": "WEB-388081",
+            "placement_id": "68ec8730000bf036952b10c0",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-388081",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-388081",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_bia_frequent_sameday_driveup;categoryId,4yi5p"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#EEEEEE"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1300
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_Nov Wk 1_Coffee Bar Must-Haves_Holiday",
+            "id": "STORY-40928",
+            "placement_id": "68f67211000bf036952b1690",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:4yi5p",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          },
+          {
+            "title": "Oct Wk 4_Holiday Coffee Flavors_Standard CP",
+            "id": "STORY-40726",
+            "placement_id": "68f67211000bf036952b1691",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:4yi5p",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          },
+          {
+            "title": "Nov wk 3_Starbucks Exclusive Frozen Cocoa_Standard CP",
+            "id": "STORY-41380",
+            "placement_id": "68f67211000bf036952b1692",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:4yi5p",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_34c7afbc-c940-4cb6-8594-9f00f3e57013",
+            "background_color": "#870508",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop Caffeination Station"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Holiday-ready caffeination station essentials"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_dbaec376-7c7e-4424-ad38-0dc7e4939bb0",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_34c7afbc-c940-4cb6-8594-9f00f3e57013",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_a9770a95-6baf-4792-83d4-26a049d3fb7f",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_d652a85b-9adf-465b-a139-9214337a25bb",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_27df48e1-e934-4446-a159-aa35a570bb52",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_CoffeeBarMust-Haves_STORY-40928",
+              "destination_content": "CONTENT",
+              "detail": {
+                "id": "gfd8l",
+                "name": "Coffee Bar Must-Haves",
+                "seo_url": "/c/coffee-bar-must-haves/-/N-gfd8l",
+                "type": "TAG",
+                "page_type_prefix": "c"
+              },
+              "facets": [],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 35
+          },
+          {
+            "accessibility_text": "New",
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_f957369a-9a65-4a69-afbf-2e1d8b641d51",
+            "background_color": "#9F0609",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#ffffff",
+              "text_color": "#333333",
+              "outline_color": "#333333",
+              "button_type": "outlined",
+              "button_copy": " Shop seasonal coffee"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Up your coffee game with festive flavors"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_a5936923-f01a-47a6-858d-9f8e44d9b015",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_939236ed-961e-4ce2-a147-314663f6ed4e",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_33801cca-4fda-4b22-b8ae-531e9a19b070",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_f1ca036b-acb9-4918-8183-0ae8d1e32629",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_f9e6b633-c232-4e62-b417-1383ebfa09ca",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_SeasonalCoffeeFlavors_STORY-40726",
+              "sort_by": "newest",
+              "destination_content": "GRID",
+              "detail": {
+                "id": "ku87g",
+                "name": "Seasonal Coffee Flavors",
+                "seo_url": "/c/seasonal-coffee-flavors/-/N-ku87g",
+                "type": "TAG",
+                "page_type_prefix": "c"
+              },
+              "facets": [],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 40
+          },
+          {
+            "background_color": "#9F0609",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#ffffff",
+              "text_color": "#333333",
+              "outline_color": "#333333",
+              "button_type": "outlined",
+              "button_copy": "Store Locator"
+            },
+            "enhancement": {
+              "alt_text": "New",
+              "background_color": "#000000",
+              "text": "New",
+              "text_color": "#FFFFFF",
+              "type": "ribbon"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Frozen peppermint hot chocolate"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_f0a21f3a-b808-4ca3-9fd7-19a7698c7e21",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_8f6addfa-3117-4361-815e-068df4b3925c",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_effb5448-01d9-4687-bb18-a4722017d8d5",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_6ba0198e-f54f-4f35-80fc-38b2a36cea0f",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_1fd0e7a7-7999-4cd2-add5-8cbdda6bc7aa",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_Starbucks_STORY-41380",
+              "destination_content": "CONTENT",
+              "detail": {
+                "id": "5cofw",
+                "name": "Starbucks",
+                "seo_url": "/c/starbucks/-/N-5cofw",
+                "type": "TAG",
+                "page_type_prefix": "c"
+              },
+              "facets": [],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Only at Starbucks Cafe in Target stores."
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 35
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1500
+    },
+    "1700": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_01Wk4_F&B_CoffeeTrending_MTC",
+            "id": "WEB-416252",
+            "placement_id": "68ec8730000bf036952b10c4",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-416252",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-416252",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_trending_for_you;categoryId,4yi5p"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#F7F5F2"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1700
+    },
+    "1900": {
+      "metadata": {
+        "components": [
+          {
+            "title": "JulyWk2_2024_F&B_Coffee Brands_Nav",
+            "id": "WEB-404500",
+            "placement_id": "66913a4a272ccb5ce9105f23",
+            "type": "c_web_a_0003_v04",
+            "type_name": "Browse Manual",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "text_only": false,
+        "taxonomy_nodes": [
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/good-gather/-/N-4yi5pZyfqzk",
+            "link_tag": "C_Coffee_good-&-gather_WEB-404500_0",
+            "link_name": "Good & Gather&#8482;",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_b5b32c6d-a634-4c2b-91af-81c7dacda187"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/dunkin-donuts/-/N-4yi5pZ1neq2?sortBy=Featured",
+            "link_tag": "C_Coffee_dunkin'-donuts_WEB-404500_1",
+            "link_name": "Dunkin&#8217;",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_68e69768-5682-473b-ac03-108e5c349554"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/starbucks/-/N-4yi5pZ7w24v?sortBy=Featured",
+            "link_tag": "C_Coffee_starbucks_WEB-404500_2",
+            "link_name": "Starbucks",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_ca6c3d80-5851-42e0-9672-06fa5b6b4bcc"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/b/nespresso/-/N-5s79h",
+            "link_tag": "C_Nespresso_WEB-404500_3",
+            "link_name": "Nespresso",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_472b1073-810e-49cc-be0b-93dd83c3e243"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/peet-s-coffee/-/N-4yi5pZ8romv?sortBy=Featured",
+            "link_tag": "C_Coffee_peet's-coffee_WEB-404500_4",
+            "link_name": "Peet&#8217;s Coffee",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_de345f22-f424-479f-9e21-0edc13f20c2b"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/green-mountain/-/N-4yi5pZ4yz0w?sortBy=Featured",
+            "link_tag": "C_Coffee_green-mountain_WEB-404500_5",
+            "link_name": "Green Mountain",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_abbcfe6f-d1a4-4ffa-b4f3-00da86575815"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/folgers/-/N-4yi5pZ56dfy?sortBy=Featured",
+            "link_tag": "C_Coffee_folgers_WEB-404500_6",
+            "link_name": "Folgers",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_6181bc95-0004-442a-aa29-5dc041c36b01"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/the-original-donut-shop/-/N-4yi5pZyetqc?sortBy=Featured",
+            "link_tag": "C_Coffee_the-original-donut-shop_WEB-404500_7",
+            "link_name": "The Original Donut Shop",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_b793c9b7-a26d-41b0-bc9f-0f56e058c428"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/caribou-coffee/-/N-4yi5pZ55ecs?sortBy=Featured",
+            "link_tag": "C_Coffee_caribou-coffee_WEB-404500_8",
+            "link_name": "Caribou Coffee",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_d949f7e9-2f0d-4d84-88df-b0adf87b5471"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-beverages-grocery/keurig/-/N-4yi5pZ5uvm4?sortBy=Featured",
+            "link_tag": "C_Coffee_keurig_WEB-404500_9",
+            "link_name": "Keurig",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_1c176c71-2737-48b6-88dc-d60196caa2d0"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/b/cafe-bustelo/-/N-56692",
+            "link_tag": "C_CafeBustelo_WEB-404500_10",
+            "link_name": "Cafe Bustelo",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_9f1801ed-5cb1-4953-80f8-eb7dfcb6860f"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/b/nescafe/-/N-5e6kc",
+            "link_tag": "C_Nescafe_WEB-404500_11",
+            "link_name": "Nescafe",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_9e6fd2d9-7720-44af-bd58-83ab0ec79d79"
+          }
+        ],
+        "shape": "circle",
+        "scene7_params": "wid=315&hei=315&qlt=60&fmt=pjpeg",
+        "metadata": {
+          "component_type": "Browse - Manual",
+          "component_version": "04"
+        }
+      },
+      "presentation": "/adaptive/c_web_a_0003/v04/mobile",
+      "order": 1900
+    },
+    "2100": {
+      "metadata": {
+        "components": [
+          {
+            "title": "021318_coffee_CB",
+            "id": "WEB-115922",
+            "placement_id": "68ec8730000bf036952b10c5",
+            "type": "c_web_a_0003_v04",
+            "type_name": "Browse Manual",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "text_only": false,
+        "taxonomy_nodes": [
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-makers-tea-espresso-kitchen-appliances-dining/single-serve-coffee-makers/-/N-5xtroZal25lf1euu9",
+            "link_tag": "C_CoffeeMakers_single-serve-coffee-makers_WEB-115922_0",
+            "link_name": "Single-Serve",
+            "image_path": "//target.scene7.com/is/image/Target/CB_Coffee_makers_single-serve95217-170821_1503352952547"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-makers-tea-espresso-kitchen-appliances-dining/drip-coffee-makers/-/N-5xtroZal25lffl6gd",
+            "link_tag": "C_CoffeeMakers_drip-coffee-makers_WEB-115922_1",
+            "link_name": "Automatic Drip",
+            "image_path": "//target.scene7.com/is/image/Target/CB_Coffee_makers_automatic-drip95217-170821_1503352959127"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-makers-tea-espresso-kitchen-appliances-dining/espresso-makers/-/N-5xtroZg3l4c",
+            "link_tag": "C_Coffee&EspressoMakers_espresso-makers_WEB-115922_2",
+            "link_name": "Espresso & Cappuccino Makers",
+            "image_path": "//target.scene7.com/is/image/Target/CB_Coffee_makers_espresso-cappuccino-makers95217-170821_1503352976709"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-makers-tea-espresso-kitchen-appliances-dining/french-press-coffee-makers/-/N-5xtroZal25lfxa95w",
+            "link_tag": "C_CoffeeMakers_french-press-coffee-makers_WEB-115922_3",
+            "link_name": "French Press Pots",
+            "image_path": "//target.scene7.com/is/image/Target/CB_Coffee_makers_french-press95217-170821_1503352969908"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-makers-tea-espresso-kitchen-appliances-dining/pour-over-coffee-makers/-/N-5xtroZal25lfbmqay",
+            "link_tag": "C_CoffeeMakers_pour-over-coffee-makers_WEB-115922_4",
+            "link_name": "Pour-Over Coffee Makers",
+            "image_path": "//target.scene7.com/is/image/Target/1115922-180923_1537753691672"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/coffee-makers-tea-espresso-kitchen-appliances-dining/brews-iced-coffee/-/N-5xtroZd8m2v",
+            "link_tag": "C_CoffeeMakers_brews-iced-coffee_WEB-115922_5",
+            "link_name": "Cold Brew",
+            "image_path": "//target.scene7.com/is/image/Target/Cold-Brewimage_upload-171113_1510604520483"
+          }
+        ],
+        "shape": "circle",
+        "scene7_params": "wid=315&hei=315&qlt=60&fmt=pjpeg",
+        "metadata": {
+          "component_type": "Browse - Manual",
+          "component_version": "04"
+        },
+        "headline": "Shop coffee makers by type"
+      },
+      "presentation": "/adaptive/c_web_a_0003/v04/mobile",
+      "order": 2100
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426432",
+            "placement_id": "6855779acec2905432ccc87a",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/coffee-beverages-grocery/half-caffeinated/-/N-4yi5pZa453q>half caff coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/happy/-/N-4yi5pZq643lefs0b6>happy coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/wicked-joe/-/N-4yi5pZl646p>wicked joe coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/kaldi-s-coffee/-/N-4yi5pZq643ledm6ta>kaldi coffee</a>,<a href=https://www.target.com/b/intelligentsia/-/N-4yyyu>intelligentsia</a>,<a href=https://www.target.com/p/folgers-classic-medium-roast-ground-coffee-25-9oz/-/A-13397813?sid=61S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Dry+Grocery&amp;adgroup=231-10&amp;gStoreCode=61S&amp;gQT=1>folgers coffee</a>,<a href=https://www.target.com/p/kopiko-coffee-candy-real-coffee-hard-candy-28-2oz-800-g/-/A-1003202043?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy+-+Target+Plus&adgroup=55-2&gQT=3>kopiko</a>,<a href=https://www.target.com/p/caf-233-bustelo-174-espresso-vacuum-packed-dark-roast-ground-coffee-10oz/-/A-13740971?lnk=rec%7Cadaptpdph4%7Cbought_bought%7Cadaptpdph4%7C13740971%7C1&showOnlyQuestions=true>bustelo coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/philz-coffee/-/N-4yi5pZ6cwdl>philz</a>,<a href=https://www.target.com/c/coffee-creamers-beverages-grocery/coffee-mate/-/N-5xszvZqwnw2>coffee mate creamer</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/tim-hortons/-/N-4yi5pZai03h>tim hortons coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/eight-o-clock/-/N-4yi5pZ56dfk>eight o clock</a>,<a href=https://www.target.com/c/ground-coffee-beverages-grocery/victor-allen-s-coffee/-/N-x2hqvZq643lem6e4n>victor allen's signature medium-dark roast coffee pods</a>,<a href=https://www.target.com/p/medaglia-d-oro-instant-espresso-coffee-2oz/-/A-13476840?showOnlyQuestions=true>medaglia d'oro</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/blue-bottle-coffee/-/N-4yi5pZq8dxu>blue bottle coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/spyhouse-coffee-roasters/-/N-4yi5pZq643leseevb>spyhouse coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/better-buzz-coffee/-/N-4yi5pZq643lezdgb7>buzz coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/tieman-s-fusion-coffee/-/N-4yi5pZq643lesp301>tieman's coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/newman-s-own/-/N-4yi5pZ560ht>newman own coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/la-colombe/-/N-4yi5pZ4ylpv>la colombe coffee beans</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/slate-milk/-/N-4yi5pZq643lebmsl5>slate coffee creamer</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/elite/-/N-4yi5pZ5vjyk>elite coffee</a>,<a href=https://www.target.com/p/illy-174-espresso-dark-roast-ground-coffee-8-8oz/-/A-15382700?lnk=rec%7Cadaptpdph4%7Cbought_bought%7Cadaptpdph4%7C15382700%7C4&showOnlyQuestions=true>illy coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/peet-s-coffee/-/N-4yi5pZ8romv>where to buy peet's coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/tchibo/-/N-4yi5pZq643leddxra>tchibo coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/kaya-kopi/-/N-4yi5pZq643leeksee>kaya kopi coffee</a>,<a href=https://www.target.com/p/stumptown-founders-whole-bean-light-roast-coffee-12oz/-/A-54459183?sid=2730S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Dry+Grocery&amp;adgroup=231-10&amp;gStoreCode=2730S&amp;gQT=1>best organic coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/starbucks-creamer/-/N-4yi5pZq643leuyd4g>starbucks maple pecan latte creamer</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/community-coffee/-/N-4yi5pZ56cin>community coffee on sale this week</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/target-circle-deals/-/N-4yi5pZuj3xg>coffee deals</a>,<a href=https://www.target.com/p/cuvee-coffee-colombia-single-origin-medium-roast-whole-bean-coffee-12oz/-/A-88448138?TCID=OGS&AFID=google&CPNG=Dry%2BGrocery&adgroup=231-10&region_id=212212&gQT=2>cuvee coffee</a>,<a href=https://www.target.com/p/keurig-k-elite-single-serve-k-cup-pod-coffee-maker-with-iced-coffee-setting-brushed-slate/-/A-53205836?sid=1090S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Appliances&amp;adgroup=72-8&amp;gStoreCode=1090S&amp;gQT=1>keurig coffee</a>,<a href=https://www.target.com/b/javvy/-/N-q643lewa6zp>javvvy</a>,<a href=https://www.target.com/b/caffe-d-vita/-/N-q643ley5zu7>caffe d vita</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/heirloom-coffee-roasters/-/N-4yi5pZq643lehlktn>heirloom coffee</a>,<a href=https://www.target.com/b/blk-bold-specialty-beverages/-/N-s5v20>blk coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/black-rifle-coffee-company/-/N-4yi5pZq643lecuo1n>black rifle coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/la-republica/-/N-4yi5pZq643ledg3ct>la republica coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/stumptown/-/N-4yi5pZ7ayol>where to buy stumptown coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/monster-energy/-/N-4yi5pZ561ol>monster coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/non-caffeinated/-/N-4yi5pZfnvr4>no caffeine coffee</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/lifeboost/-/N-4yi5pZq643le1gewl>lifeboost</a>,<a href=https://www.target.com/c/coffee-beverages-grocery/cafe-altura/-/N-4yi5pZq643le932pz>cafe altura</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/4yi5p/WEB",
+  "activation_date": "2025-10-19T07:00Z"
+}

@@ -1,0 +1,1231 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5xt0d",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_5da9fcf9-fc86-4318-a773-53a29cc04bcd",
+      "seo_keywords": "Candy, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Shop for candy at Target. Bulk assorted candy, candy gifts, chocolate candy, hard candy, gummy candy, mints, gum, trending candy, and candy deals. Get free shipping on $35 or more orders. Find all your favorite candies and stock up today.",
+      "seo_title": "Candy : Target",
+      "seo_h1": "Candy",
+      "canonical_url": "/c/candy-grocery/-/N-5xt0d"
+    },
+    "node_id": "5xt0d",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "zt84g",
+        "name": "New in Candy",
+        "type": "Tag",
+        "linking_id": "zt84g",
+        "number_of_children": "0",
+        "canonical_url": "/c/new-in-candy/-/N-zt84g",
+        "seo_h1": "New in Candy",
+        "page_id": "/c/zt84g",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_78b25203-365f-413b-884f-c3585891bd2b"
+      },
+      {
+        "node_id": "iywcd",
+        "name": "Christmas Candy & Treats",
+        "type": "Category",
+        "linking_id": "iywcd",
+        "number_of_children": "0",
+        "canonical_url": "/c/christmas-candy-treats-holiday-shop/-/N-iywcd",
+        "seo_h1": "Christmas Candy & Treats",
+        "page_id": "/c/iywcd",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_7446bff7-6df6-44c9-8f77-87325ecf59d8"
+      },
+      {
+        "node_id": "5xt0b",
+        "name": "Chocolate Candy",
+        "type": "Category",
+        "linking_id": "5xt0b",
+        "number_of_children": "0",
+        "canonical_url": "/c/chocolate-candy-grocery/-/N-5xt0b",
+        "seo_h1": "Chocolate Candy",
+        "page_id": "/c/5xt0b",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_659a2e80-f99e-428f-85da-ef884deec80a"
+      },
+      {
+        "node_id": "5xt0a",
+        "name": "Gum & Mints",
+        "type": "Category",
+        "linking_id": "5xt0a",
+        "number_of_children": "0",
+        "canonical_url": "/c/gum-mints-candy-grocery/-/N-5xt0a",
+        "seo_h1": "Gum & Mints",
+        "page_id": "/c/5xt0a",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_ef28ef7e-be10-443c-b966-5bd9781d64cf"
+      },
+      {
+        "node_id": "5xt09",
+        "name": "Gummy & Chewy Candy",
+        "type": "Category",
+        "linking_id": "5xt09",
+        "number_of_children": "0",
+        "canonical_url": "/c/gummy-chewy-candy-grocery/-/N-5xt09",
+        "seo_h1": "Gummy & Chewy Candy",
+        "page_id": "/c/5xt09",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_52751add-b3ce-4d2f-b7d5-42112def9b6f"
+      },
+      {
+        "node_id": "m4inq",
+        "name": "Premium Candy",
+        "type": "Tag",
+        "linking_id": "m4inq",
+        "number_of_children": "0",
+        "canonical_url": "/c/premium-candy/-/N-m4inq",
+        "seo_h1": "Premium Candy",
+        "page_id": "/c/m4inq",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c9ceccca-fcb2-4df4-ba56-2d79badcbe2e"
+      },
+      {
+        "node_id": "5xt08",
+        "name": "Hard Candy",
+        "type": "Category",
+        "linking_id": "5xt08",
+        "number_of_children": "0",
+        "canonical_url": "/c/hard-candy-grocery/-/N-5xt08",
+        "seo_h1": "Hard Candy",
+        "page_id": "/c/5xt08",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_72f9fc03-a6c3-4d5d-9b42-c0d75f1e3fdd"
+      },
+      {
+        "node_id": "iomx6",
+        "name": "Candy Variety Packs",
+        "type": "Tag",
+        "linking_id": "iomx6",
+        "number_of_children": "0",
+        "canonical_url": "/c/candy-variety-packs/-/N-iomx6",
+        "seo_h1": "Candy Variety Packs",
+        "page_id": "/c/iomx6",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_f0e85c82-01b1-49ae-b901-7ff4457dddd7"
+      },
+      {
+        "node_id": "ojrvg",
+        "name": "Freeze Dried Candy",
+        "type": "Category",
+        "linking_id": "ojrvg",
+        "number_of_children": "0",
+        "canonical_url": "/c/freeze-dried-candy-grocery/-/N-ojrvg",
+        "seo_h1": "Freeze Dried Candy",
+        "page_id": "/c/ojrvg",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_622ea626-8f80-4e73-b378-e1a151efaf4b"
+      },
+      {
+        "node_id": "gkcog",
+        "name": "Low Sugar Candy",
+        "type": "Tag",
+        "linking_id": "gkcog",
+        "number_of_children": "0",
+        "canonical_url": "/c/low-sugar-candy/-/N-gkcog",
+        "seo_h1": "Low Sugar Candy",
+        "page_id": "/c/gkcog",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_f54765a6-096b-41b8-9598-9567c99d99c4"
+      },
+      {
+        "node_id": "r498f",
+        "name": "Sour Candy",
+        "type": "Category",
+        "linking_id": "r498f",
+        "number_of_children": "0",
+        "canonical_url": "/c/sour-candy-grocery/-/N-r498f",
+        "seo_h1": "Sour Candy",
+        "page_id": "/c/r498f",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_7f887634-4fac-4169-8a1b-a83a2b58fd83"
+      }
+    ],
+    "og": {
+      "title": "Candy : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_5da9fcf9-fc86-4318-a773-53a29cc04bcd",
+      "url": "/c/candy-grocery/-/N-5xt0d",
+      "description": "Shop for candy at Target. Bulk assorted candy, candy gifts, chocolate candy, hard candy, gummy candy, mints, gum, trending candy, and candy deals. Get free shipping on $35 or more orders. Find all your favorite candies and stock up today."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5xt0d",
+    "title": "Candy",
+    "deactivation_date": "2025-12-26T08:00Z",
+    "activation_date": "2025-11-27T08:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "400": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Oct Wk 3_Hearth & Hand Food Gifting_Standard CP",
+            "id": "STORY-40628",
+            "placement_id": "692452b4eac36b703f525fb2",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "manual"
+          }
+        ]
+      },
+      "content": {
+        "width": 48,
+        "type_stack": "medium",
+        "text_position": "middleleft",
+        "subhead": {
+          "content": [
+            {
+              "insert": {
+                "text": "New & only at "
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            },
+            {
+              "insert": {
+                "targetspecific": {
+                  "variant": "bullseye-normal"
+                }
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            },
+            {
+              "insert": {
+                "text": "\n"
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            }
+          ]
+        },
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "link": {
+          "target": "TAXONOMY",
+          "link_tag": "C_Hearth&Hand™withMagnoliaFood_STORY-40628",
+          "destination_content": "CONTENT",
+          "detail": {
+            "id": "v69cc",
+            "name": "Hearth & Hand™ with Magnolia Food",
+            "seo_url": "/c/hearth-hand-with-magnolia-food/-/N-v69cc",
+            "type": "TAG",
+            "page_type_prefix": "c"
+          },
+          "facets": [],
+          "marketing_groups": []
+        },
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_aba8ed30-bf6b-4657-892e-9513961604bd",
+        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_f38afbdf-73c9-4ff0-a546-5a1706cf927c",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_baf4244c-cbbf-4932-89aa-b7ec42658706",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_a6f63932-43fb-4a85-b83c-77b4a2f33e9b",
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_7a4efd55-9ff2-40d0-9118-046fc68cd568",
+        "hero_background_color": "#9fa27e",
+        "headline": {
+          "content": [
+            {
+              "insert": {
+                "text": "Hearth & Hand™ with Magnolia Table food gifts\n"
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            }
+          ]
+        },
+        "extensions": {
+          "shoppable_carousel": {
+            "context": {
+              "call_to_action": "add_to_cart",
+              "prz": {
+                "config": "placementId,slingshot_manual_tcins"
+              },
+              "type": "personalizedProducts"
+            },
+            "tcins": [
+              "94577712",
+              "94501668",
+              "94595470",
+              "94566553",
+              "94501709",
+              "94577571",
+              "94577459",
+              "94584999",
+              "94566554",
+              "94585001",
+              "94577673",
+              "94595471",
+              "94595427"
+            ]
+          }
+        },
+        "call_to_action_button_style": {
+          "background_color": "#cc0000",
+          "text_color": "#ffffff",
+          "button_type": "filled",
+          "button_copy": "Shop giftable eats"
+        },
+        "background_color_behavior": "simplified",
+        "background_color": "#f6f5f1",
+        "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_b7a886a9-6c1b-4a5b-9c87-4215a5fab2d3",
+        "accessibility_text": "Hearth & Hand TM with Magnolia"
+      },
+      "presentation": "standard",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 400
+    },
+    "800": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_NovWK4_F&B_BOGO 25% off Holiday Chocolate & Candy with Target Circle",
+            "id": "STORY-41494",
+            "placement_id": "68669d0a7b4bb63688ef3bf7",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xt0d",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          },
+          {
+            "title": "2025_NovWK4_F&B_BOGO 50 % off Candy Canes with Target Circle",
+            "id": "STORY-41499",
+            "placement_id": "68669d0a7b4bb63688ef3bfa",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:5xt0d",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_17ec5676-7b59-4814-82c2-3063200f137f",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                "BOGO"
+              ],
+              "line_two": [
+                "50"
+              ],
+              "lockup": "percent-off-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop chocolates & candy"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "BOGO 50"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "percent-off"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_9f043dfc-d87e-4e75-8aad-25fc55e25399",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_4b27c00b-1c47-4015-bc17-ad672f6227b6",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_51093d66-a587-45c3-9dc0-4ee48691412f",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_0cf768ef-21b8-4e4e-9e83-712006743edb",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_895587876_STORY-41494",
+              "detail": {
+                "id": "895587876"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "holiday chocolates & candy with "
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                },
+                {
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "bullseye-circle"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 27
+          },
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_3d7ccc05-0e1c-44c4-b4a0-c46817eb878e",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                "BOGO"
+              ],
+              "line_two": [
+                "50"
+              ],
+              "lockup": "percent-off-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop candy & candy canes"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "BOGO 50"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "percent-off"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_13764341-3c88-4585-b1e6-cf80cfce097d",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_5c912470-a789-4ca6-99d3-f728a5d7a5d2",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_ac1c7b43-d89c-4393-bf7a-3662d170b1ab",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_55e7f7d8-b573-4d8f-85c3-3c2fa35a73b0",
+            "link": {
+              "target": "PROMO",
+              "link_tag": "C_DPLP_718787675_STORY-41499",
+              "detail": {
+                "id": "718787675"
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "candy & candy canes with "
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                },
+                {
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "bullseye-circle"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 100
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-carousel-large",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 800
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_F&B_Candy Stocking Stuffers_Standard CP",
+            "id": "STORY-41000",
+            "placement_id": "692452b4eac36b703f525fb3",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "manual"
+          }
+        ]
+      },
+      "content": {
+        "width": 100,
+        "type_stack": "medium",
+        "text_position": "middleleft",
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "link": {
+          "target": "TAXONOMY",
+          "link_tag": "C_StockingStuffers_candy-bars_chewy-candies_filled-chocolates_gummy-candies_$0---$4.99_candy-coated-chocolates_candy-and-chocolate-variety-packs_individually-wrapped-chocolates_STORY-41000",
+          "destination_content": "GRID",
+          "detail": {
+            "id": "av00p",
+            "name": "Stocking Stuffers",
+            "seo_url": "/c/stocking-stuffers/-/N-av00p",
+            "type": "TAG",
+            "sub_type": "seasonal",
+            "page_type_prefix": "c"
+          },
+          "facets": [
+            {
+              "id": "h20t5",
+              "name": "d_item_type_all",
+              "value": "candy bars",
+              "seo_value": "candy-bars"
+            },
+            {
+              "id": "al25lfb4rl5",
+              "name": "d_item_type_all",
+              "value": "chewy candies",
+              "seo_value": "chewy-candies"
+            },
+            {
+              "id": "al25lfgqaft",
+              "name": "d_item_type_all",
+              "value": "filled chocolates",
+              "seo_value": "filled-chocolates"
+            },
+            {
+              "id": "al25lf50xci",
+              "name": "d_item_type_all",
+              "value": "gummy candies",
+              "seo_value": "gummy-candies"
+            },
+            {
+              "id": "tb9f0",
+              "name": "d_price_5_dollar_ranges",
+              "value": "$0 - $4.99",
+              "seo_value": "0-4-99"
+            },
+            {
+              "id": "al25lf3rqdm",
+              "name": "d_item_type_all",
+              "value": "candy coated chocolates",
+              "seo_value": "candy-coated-chocolates"
+            },
+            {
+              "id": "k5gnx",
+              "name": "d_item_type_all",
+              "value": "candy and chocolate variety packs",
+              "seo_value": "candy-and-chocolate-variety-packs"
+            },
+            {
+              "id": "al25lf533qs",
+              "name": "d_item_type_all",
+              "value": "individually wrapped chocolates",
+              "seo_value": "individually-wrapped-chocolates"
+            }
+          ],
+          "marketing_groups": []
+        },
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_cb2afe88-b2e1-4a40-9242-dc20c640b011",
+        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_2f0d1668-bbc6-43bc-9c77-d875a0a3b1bb",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_e5c68f5a-dee7-4619-8b67-60ba90b84cfa",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_133421f4-f614-4586-87e1-3aeb28ba1d72",
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_1927a33b-0967-4f27-97a4-a6938db9700c",
+        "hero_background_color": "#F5F0E7",
+        "headline": {
+          "content": [
+            {
+              "attributes": {
+                "color": "#ffffff"
+              },
+              "insert": {
+                "text": "Candy stocking stuffers under "
+              }
+            },
+            {
+              "attributes": {
+                "color": "#ffffff",
+                "pricestyleprice": true
+              },
+              "insert": {
+                "text": "$"
+              }
+            },
+            {
+              "attributes": {
+                "color": "#ffffff"
+              },
+              "insert": {
+                "text": "5\n"
+              }
+            }
+          ]
+        },
+        "extensions": {
+          "shoppable_carousel": {
+            "context": {
+              "call_to_action": "add_to_cart",
+              "prz": {
+                "config": "placementId,primary_best_sellers;categoryId,av00p;facetId,tb9f0,k5gnx,h20t5,al25lf3rqdm,al25lfb4rl5,al25lfi30fd,al25lfgqaft,al25lf50xci,al25lf8bj1d,al25lf533qs,al25lffla6y",
+                "filters": [
+                  {
+                    "id": "salesRankSort"
+                  }
+                ]
+              },
+              "type": "personalizedProducts"
+            },
+            "tcins": [
+              "94732475",
+              "80189980",
+              "83111315",
+              "80113794",
+              "94586624",
+              "94586690",
+              "94586693",
+              "94652276",
+              "80117558",
+              "91791453",
+              "91776981",
+              "80118318",
+              "94582709",
+              "86057490",
+              "91519109",
+              "94502968",
+              "94586647",
+              "94586646",
+              "94760324",
+              "83433881",
+              "83111326",
+              "91791260",
+              "88877105",
+              "83441382",
+              "94761422",
+              "1003866825",
+              "88888881",
+              "94761534",
+              "80117561",
+              "82865309",
+              "80195427",
+              "94759112",
+              "83031192",
+              "80109320",
+              "91792277",
+              "80109177",
+              "94680190",
+              "94954702",
+              "86267109",
+              "94760405"
+            ]
+          }
+        },
+        "call_to_action_button_style": {
+          "background_color": "#ffffff",
+          "text_color": "#333333",
+          "outline_color": "#333333",
+          "button_type": "outlined",
+          "button_copy": "Shop stocking stuffers"
+        },
+        "background_color_behavior": "simplified",
+        "background_color": "#9F0609",
+        "amplified_headline": {
+          "color": "#ffffff",
+          "line_four": [
+            "5"
+          ],
+          "line_one": [
+            "Candy stocking"
+          ],
+          "line_three": [
+            "under"
+          ],
+          "line_two": [
+            "stuffers"
+          ],
+          "lockup": "value-price-emphasis-versioned",
+          "lockup_disposition": "double-line",
+          "version": "v2"
+        }
+      },
+      "presentation": "standard",
+      "extensions": [
+        "shoppable_carousel"
+      ],
+      "styles": {
+        "background_color": "#F5F0E7",
+        "position": "top"
+      },
+      "order": 1300
+    },
+    "1400": {
+      "metadata": {
+        "components": [
+          {
+            "title": "11wk4_Holiday_Headline_Banner",
+            "id": "WEB-435797",
+            "placement_id": "692452b4eac36b703f525fb4",
+            "type": "c_web_a_0019_v02",
+            "type_name": "Banner",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Banner",
+          "component_version": "02"
+        },
+        "link_type": "none",
+        "headline": "Crave-worthy sweets they&#8217;ll love",
+        "corners_rounded": false,
+        "background_color": "#F5F0E7"
+      },
+      "presentation": "/adaptive/c_web_a_0019/v02/mobile",
+      "order": 1400
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 1_F&B_Upscale Chocolate Gifting_Standard CP",
+            "id": "STORY-40978",
+            "placement_id": "692452b4eac36b703f525fb5",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_manual"
+          },
+          {
+            "title": "Nov Wk 1_Marks & Spencer_Complex CP",
+            "id": "STORY-40625",
+            "placement_id": "692452b4eac36b703f525fb6",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_manual"
+          },
+          {
+            "title": "Nov wk 1_F&B_Sugarfina_Standard CP",
+            "id": "STORY-40971",
+            "placement_id": "692452b4eac36b703f525fb7",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "all_manual"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "amplified_headline": {
+              "color": "#333333",
+              "line_five": [
+                "& under"
+              ],
+              "line_four": [
+                "10"
+              ],
+              "line_one": [
+                "Next-level"
+              ],
+              "line_three": [
+                ""
+              ],
+              "line_two": [
+                "chocolate gifts"
+              ],
+              "lockup": "value-price-emphasis-versioned",
+              "lockup_disposition": "double-line",
+              "version": "v2"
+            },
+            "background_color": "#F6F5F1",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop the collection"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "Next-level chocolate gifts "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#333333"
+                  },
+                  "insert": {
+                    "text": "10 & under\n"
+                  }
+                }
+              ]
+            },
+            "hero_background_color": "#F0E9DE",
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_9d9f238d-b314-485e-be5b-63df20bcf60e",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_ee0e109c-e714-49fa-9345-cae4ff631196",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_4a971747-74a2-44b8-8898-3e427b02270c",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_PremiumCandy_dark-chocolate_non-dairy-chocolate_milk-chocolate_white-chocolate_STORY-40978",
+              "min_price": 1,
+              "max_price": 10,
+              "destination_content": "GRID",
+              "detail": {
+                "id": "m4inq",
+                "name": "Premium Candy",
+                "seo_url": "/c/premium-candy/-/N-m4inq",
+                "type": "TAG",
+                "page_type_prefix": "c"
+              },
+              "facets": [
+                {
+                  "id": "1a42g",
+                  "name": "d_chocolate_type",
+                  "value": "Dark Chocolate",
+                  "seo_value": "dark-chocolate"
+                },
+                {
+                  "id": "81v9ugvst6b",
+                  "name": "d_chocolate_type",
+                  "value": "Non-Dairy Chocolate",
+                  "seo_value": "non-dairy-chocolate"
+                },
+                {
+                  "id": "myq8j",
+                  "name": "d_chocolate_type",
+                  "value": "Milk Chocolate",
+                  "seo_value": "milk-chocolate"
+                },
+                {
+                  "id": "yg80u",
+                  "name": "d_chocolate_type",
+                  "value": "White Chocolate",
+                  "seo_value": "white-chocolate"
+                }
+              ],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "topleft",
+            "type_stack": "medium",
+            "width": 100
+          },
+          {
+            "background_color": "#02664E",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Shop the collection"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Candy & treats from Marks & Spencer"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_bd0a5570-51e3-4db2-b631-28f17319e0d6",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_5f01e44e-6575-4c77-ab69-454721272920",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_d813bbdd-76e7-4901-8a83-90d6b8529621",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_a1eff81d-fc99-4471-ac66-874ddadbbc39",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_07493a66-2aa7-477f-8503-a7087b091c3e",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_Marks&Spencer_STORY-40625",
+              "destination_content": "CONTENT",
+              "detail": {
+                "id": "s80gx",
+                "name": "Marks & Spencer ",
+                "seo_url": "/c/marks-spencer/-/N-s80gx",
+                "type": "TAG",
+                "page_type_prefix": "c"
+              },
+              "facets": [],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "text_position": "topleft",
+            "type_stack": "medium",
+            "width": 35
+          },
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_1b5db930-9ace-43b3-816e-502e30d228d3",
+            "background_color": "#9F0609",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#ffffff",
+              "text_color": "#333333",
+              "outline_color": "#333333",
+              "button_type": "outlined",
+              "button_copy": "Shop Sugarfina"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "Make their holiday with Sugarfina"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "hero_background_color": "#F5F0E7",
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_ff6d6022-7597-4fbc-8686-3473740664fd",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_1b5db930-9ace-43b3-816e-502e30d228d3",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_48ee4972-bc8a-4552-bbab-f10ee3429291",
+            "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_2852217a-7bc4-4d57-9066-18a4998a52dd",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_28426d5d-6fb1-46ae-b734-b937b353bc40",
+            "link": {
+              "target": "TAXONOMY",
+              "link_tag": "C_Sugarfina_include-out-of-stock_STORY-40971",
+              "destination_content": "CONTENT",
+              "detail": {
+                "id": "q643le6e2mz",
+                "name": "Sugarfina",
+                "seo_url": "/b/sugarfina/include-out-of-stock/-/N-q643le6e2mz",
+                "type": "BRAND",
+                "page_type_prefix": "b"
+              },
+              "facets": [
+                {
+                  "id": "fwtfr",
+                  "name": "d_channel",
+                  "value": "include out of stock",
+                  "seo_value": "include-out-of-stock"
+                }
+              ],
+              "marketing_groups": []
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "text": "New at "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#ffffff"
+                  },
+                  "insert": {
+                    "targetspecific": {
+                      "variant": "bullseye-large-white"
+                    }
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "large",
+            "width": 41
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-large",
+      "styles": {
+        "background_color": "#F5F0E7",
+        "bottom_margin": "16px",
+        "position": "bottom"
+      },
+      "order": 1500
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426051",
+            "placement_id": "68557767e0579254f0f523ea",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/candy-grocery/albanese/-/N-5xt0dZ4yiw4>albanese</a>,<a href=https://www.target.com/c/candy-grocery/twizzlers/-/N-5xt0dZ55j1r>twizzlers</a>,<a href=https://www.target.com/c/candy-grocery/lemonhead/-/N-5xt0dZq643letgi5g>lemonheads candy</a>,<a href=https://www.target.com/c/candy-grocery/mentos/-/N-5xt0dZ56cqn>mentos</a>,<a href=https://www.target.com/c/candy-grocery/payday/-/N-5xt0dZ55fx7>payday candy bar</a>,<a href=https://www.target.com/c/candy-grocery/warheads/-/N-5xt0dZ55i4e>warheads</a>,<a href=https://www.target.com/p/red-vines-black-licorice-twists-56oz/-/A-87951186?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=55-2&gQT=1>red vines candy</a>,<a href=https://www.target.com/b/m-s/-/N-560n4>m&m's candy</a>,<a href=https://www.target.com/c/candy-grocery/cry-baby/-/N-5xt0dZq643le3ntd0>cry babies candy</a>,<a href=https://www.target.com/c/candy-grocery/nerds/-/N-5xt0dZ560id>nerds candy</a>,<a href=https://www.target.com/c/candy-grocery/-/N-5xt0d>candies</a>,<a href=https://www.target.com/c/candy-grocery/top-rated/-/N-5xt0dZxu0v4>top candy</a>,<a href=https://www.target.com/p/reese-39-s-pieces-peanut-butter-candy-4oz/-/A-13347740>reese's</a>,<a href=https://www.target.com/c/candy-grocery/juicy-drop/-/N-5xt0dZq643lekmx8n>juicy drops</a>,<a href=https://www.target.com/b/sour-punch/-/N-4yiqb>sour punches</a>,<a href=https://www.target.com/b/push-pop/-/N-y40r9>pushpop</a>,<a href=https://www.target.com/c/candy-grocery/milk-duds/-/N-5xt0dZ4yilo>milk duds candy</a>,<a href=https://www.target.com/c/candy-grocery/necco/-/N-5xt0dZaitoz>necco</a>,<a href=https://www.target.com/c/candy-grocery/sweet-s/-/N-5xt0dZ4yiwh>sweet candy</a>,<a href=https://www.target.com/c/candy-grocery/hot-tamales/-/N-5xt0dZ55uu3>hot tamale candy</a>,<a href=https://www.target.com/b/almond-joy/-/N-bxt33>almond joy</a>,<a href=https://www.target.com/c/candy-grocery/rani-brand-authentic-indian-foods/-/N-5xt0dZq643le5nw7r>indian candy</a>,<a href=https://www.target.com/c/candy-grocery/lucas/-/N-5xt0dZ4yysk>luca candy</a>,<a href=https://www.target.com/p/snickers-mixed-variety-bag-fun-size-candy-24-02oz/-/A-90603808?gQT=3>snickers</a>,<a href=https://www.target.com/c/candy-grocery/-/N-5xt0d>good candies</a>,<a href=https://www.target.com/c/candy-grocery/-/N-5xt0d>good candies</a>,<a href=https://www.target.com/b/kit-kat/-/N-56090>kikat</a>,<a href=https://www.target.com/c/candy-grocery/st-patrick-s-day/-/N-5xt0dZrzr6l>best st. patrick's day candy for kids</a>,<a href=https://www.target.com/c/candy-grocery/low-sodium/-/N-5xt0dZ7ct93>low sodium candy</a>,<a href=https://www.target.com/p/m-38-s-swiss-chocolate-after-dinner-selection-9-28/-/A-94286378?sid=1491S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=55-2&amp;gStoreCode=1491S&amp;gQT=1>m&s chocolates</a>,<a href=https://www.target.com/b/hubba-bubba/-/N-4ylif>hubba bubba</a>,<a href=https://www.target.com/p/rolo-chocolate-candy-10-6oz/-/A-54236451>rolo</a>,<a href=https://www.target.com/p/whoppers-malted-milk-balls-candy-5oz/-/A-13346907?TCID=OGS&AFID=google&CPNG=Snacks%2BCandy&adgroup=55-2>whopper candy</a>,<a href=https://www.target.com/c/candy-grocery/rucker-s-makin-batch/-/N-5xt0dZq643lem9avv>ruckers candy</a>,<a href=https://www.target.com/p/glico-pocky-strawberry-cream-covered-biscuit-sticks-2-47oz/-/A-15056681>pocky</a>,<a href=https://www.target.com/c/candy-grocery/thank-you/-/N-5xt0dZ5r3ts>thank you candy</a>,<a href=https://www.target.com/c/candy-grocery/ricolino/-/N-5xt0dZw15ut>ricolino candy</a>,<a href=https://www.target.com/c/candy-grocery/birthday/-/N-5xt0dZypwh2>birthday candy</a>,<a href=https://www.target.com/c/candy-grocery/sour-patch/-/N-5xt0dZ56d4y>candy sour patch</a>,<a href=https://www.target.com/p/fannie-may-s-39-mores-candy-snack-mix-5oz/-/A-80326424?sid=2043S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=55-2&amp;gStoreCode=2043S&amp;gQT=1>fannie may candy</a>,<a href=https://www.target.com/c/candy-grocery/life-savers/-/N-5xt0dZ56f71>lifesavers cherry 14.5 ounce bag individually wrapped candy</a>,<a href=https://www.target.com/c/candy-grocery/twix/-/N-5xt0dZ560n8>trix candy</a>,<a href=https://www.target.com/c/candy-grocery/bachelorette-party/-/N-5xt0dZwksdm>bachelorette candy</a>,<a href=https://www.target.com/c/candy-grocery/charms/-/N-5xt0dZ4yil1>charms candy</a>,<a href=https://www.target.com/c/candy-grocery/altoids/-/N-5xt0dZ56dga>altoids candy</a>,<a href=https://www.target.com/c/candy-grocery/plant-based/-/N-5xt0dZ7vn3n>plant candy</a>,<a href=https://www.target.com/c/candy-grocery/miskets/-/N-5xt0dZq643leqqabx>miskets</a>,<a href=https://www.target.com/c/candy-grocery/candyman/-/N-5xt0dZq643le7xwmy>candyman chocolate</a>,<a href=https://www.target.com/c/candy-grocery/wedding-shower/-/N-5xt0dZ1g742>bridal shower candy</a>,<a href=https://www.target.com/c/candy-grocery/tic-tac/-/N-5xt0dZ560zv>tic tac candy</a>,<a href=https://www.target.com/c/candy-grocery/spring/-/N-5xt0dZp2tbc>best candy deals for spring break</a>,<a href=https://www.target.com/c/candy-grocery/mardi-gras/-/N-5xt0dZs9yxs>mardi gras candy</a>,<a href=https://www.target.com/c/candy-grocery/5-gum/-/N-5xt0dZ2nyd8>5 star gum</a>,<a href=https://www.target.com/c/candy-grocery/no-high-fructose-corn-syrup/-/N-5xt0dZnnk9e>candy with no corn syrup</a>,<a href=https://www.target.com/b/tootsie-roll/-/N-b83b1>tootsie roll</a>,<a href=https://www.target.com/c/candy-grocery/chocolove/-/N-5xt0dZ8evj8>chocolove</a>,<a href=https://www.target.com/p/klik-chocolate-covered-corn-flakes-2-64oz/-/A-47088751>klik chocolate</a>,<a href=https://www.target.com/c/candy-grocery/father-s-day/-/N-5xt0dZt9t9q>father's day candy</a>,<a href=https://www.target.com/c/candy-grocery/feastables/-/N-5xt0dZq643lexc7k9>feastables candy</a>,<a href=https://www.target.com/c/candy-grocery/-/N-5xt0d>candy brands</a>,<a href=https://www.target.com/c/candy-grocery/spongebob-squarepants/-/N-5xt0dZc6l0l>spongebob candy</a>,<a href=https://www.target.com/c/candy-grocery/organic/-/N-5xt0dZs2ozl>organic candy</a>,<a href=https://www.target.com/c/candy-grocery/alter-eco/-/N-5xt0dZhjiqb>eco chocolate</a>,<a href=https://www.target.com/c/candy-grocery/jelina-chocolatier/-/N-5xt0dZcvtyz>jelina chocolatier</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/5xt0d/WEB",
+  "deactivation_date": "2025-12-26T08:00Z",
+  "activation_date": "2025-11-27T08:00Z"
+}

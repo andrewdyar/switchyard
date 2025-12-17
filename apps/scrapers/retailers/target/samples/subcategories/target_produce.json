@@ -1,0 +1,525 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/u7fty",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_8344f882-0580-4d8a-8f58-c0bbbe26d370",
+      "seo_keywords": "Produce, Grocery",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Shop Target for fresh fruits and vegetables and find low prices on high quality produce. Order online and have your groceries delivered same day, pick them up with Drive Up or Order Pickup.",
+      "seo_title": "Fresh Produce : Target",
+      "seo_h1": "Produce",
+      "canonical_url": "/c/produce-grocery/-/N-u7fty"
+    },
+    "node_id": "u7fty",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xt1a",
+        "page_type": "category",
+        "page_id": "/c/5xt1a",
+        "seo_h1": "Grocery",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "number_of_children": "28",
+        "linking_id": "5xt1a",
+        "type": "Category",
+        "name": "Grocery"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "4tglt",
+        "name": "Fresh Fruit",
+        "type": "Category",
+        "linking_id": "4tglt",
+        "number_of_children": "0",
+        "canonical_url": "/c/fresh-fruit-produce-grocery/-/N-4tglt",
+        "seo_h1": "Fresh Fruit",
+        "page_id": "/c/4tglt",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_79b44ea3-cf6a-40ce-b676-efcfde3852e4"
+      },
+      {
+        "node_id": "4tglh",
+        "name": "Fresh Vegetables",
+        "type": "Category",
+        "linking_id": "4tglh",
+        "number_of_children": "0",
+        "canonical_url": "/c/fresh-vegetables-produce-grocery/-/N-4tglh",
+        "seo_h1": "Fresh Vegetables",
+        "page_id": "/c/4tglh",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_e90bc04c-b4b7-44fe-ba18-fbf22fc94589"
+      },
+      {
+        "node_id": "by5pi",
+        "name": "Salad Mixes",
+        "type": "Category",
+        "linking_id": "by5pi",
+        "number_of_children": "0",
+        "canonical_url": "/c/salad-mixes-produce-grocery/-/N-by5pi",
+        "seo_h1": "Salad Mixes",
+        "page_id": "/c/by5pi",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_f96fc090-a339-4e9f-8d8a-88b3b4480c4e"
+      },
+      {
+        "node_id": "h0uds",
+        "name": "Berries",
+        "type": "Tag",
+        "linking_id": "h0uds",
+        "number_of_children": "0",
+        "canonical_url": "/c/berries/-/N-h0uds",
+        "seo_h1": "Berries",
+        "page_id": "/c/h0uds",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_689463ac-f660-4446-b38a-2f3222cd8661"
+      },
+      {
+        "node_id": "ofsqb",
+        "name": "Citrus",
+        "type": "Tag",
+        "linking_id": "ofsqb",
+        "number_of_children": "0",
+        "canonical_url": "/c/citrus/-/N-ofsqb",
+        "seo_h1": "Citrus",
+        "page_id": "/c/ofsqb",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c2f673e8-c341-41fe-b9b8-614d971924ee"
+      },
+      {
+        "node_id": "h6rph",
+        "name": "Organic Produce",
+        "type": "Tag",
+        "linking_id": "h6rph",
+        "number_of_children": "0",
+        "canonical_url": "/c/organic-produce/-/N-h6rph",
+        "seo_h1": "Organic Produce",
+        "page_id": "/c/h6rph",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_4129c871-49fb-4278-829f-26b6670f50b8"
+      },
+      {
+        "node_id": "c5lky",
+        "name": "Fresh Juices",
+        "type": "Category",
+        "linking_id": "c5lky",
+        "number_of_children": "0",
+        "canonical_url": "/c/fresh-juices-produce-grocery/-/N-c5lky",
+        "seo_h1": "Fresh Juices",
+        "page_id": "/c/c5lky",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_3877d9b7-c246-4eff-bab0-a026b7a5e83f"
+      },
+      {
+        "node_id": "flfjt",
+        "name": "Fresh Dressings & Dips",
+        "type": "Category",
+        "linking_id": "flfjt",
+        "number_of_children": "0",
+        "canonical_url": "/c/fresh-dressings-dips-produce-grocery/-/N-flfjt",
+        "seo_h1": "Fresh Dressings & Dips",
+        "page_id": "/c/flfjt",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_3269bb75-bba9-4a03-97bb-35e4a1ce9f1c"
+      },
+      {
+        "node_id": "2dei4",
+        "name": "Fresh Flowers & Plants",
+        "type": "Category",
+        "linking_id": "2dei4",
+        "number_of_children": "0",
+        "canonical_url": "/c/fresh-flowers-plants-produce-grocery/-/N-2dei4",
+        "seo_h1": "Fresh Flowers & Plants",
+        "page_id": "/c/2dei4",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_fab9b3cc-1208-4fa6-b85e-e099db574a98"
+      },
+      {
+        "node_id": "4tgi3",
+        "name": "Meatless Alternatives",
+        "type": "Category",
+        "linking_id": "4tgi3",
+        "number_of_children": "0",
+        "canonical_url": "/c/meatless-alternatives-meat-seafood-grocery/-/N-4tgi3",
+        "seo_h1": "Meatless Alternatives",
+        "page_id": "/c/4tgi3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_926d243f-a1c7-433e-aaaf-aa84604150cc"
+      }
+    ],
+    "og": {
+      "title": "Fresh Produce : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_8344f882-0580-4d8a-8f58-c0bbbe26d370",
+      "url": "/c/produce-grocery/-/N-u7fty",
+      "description": "Shop Target for fresh fruits and vegetables and find low prices on high quality produce. Order online and have your groceries delivered same day, pick them up with Drive Up or Order Pickup."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "u7fty",
+    "title": "Produce",
+    "activation_date": "2025-11-01T07:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "800": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_NovWK4_F&B_Sale from $1.89 on Thanksgiving Sides & Meal essentials with same day services",
+            "id": "STORY-41501",
+            "placement_id": "686530cab62e620b0c695e78",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "prz",
+            "prz_placement_id": "stories_foryou",
+            "prz_strategy_name": "backfill_story_2_service;strategies:flexible_recs_stories_benefit,guest_story_similarity_recs_br3_prod,flexible_recs_stories_click_fallback,flexible_recs_stories_newness;categories:u7fty",
+            "prz_strategy_id": "stories_foryou",
+            "prz_strategy_description": "Blended GSS Backfilled with Click Model"
+          }
+        ]
+      },
+      "content": {
+        "stories": [
+          {
+            "alternate_image_1x1": "https://target.scene7.com/is/image/Target/GUEST_1047bba2-25c1-4f37-9490-6e374ecd9423",
+            "amplified_headline": {
+              "color": "#cc0000",
+              "line_one": [
+                "Sale from"
+              ],
+              "line_two": [
+                "1.89"
+              ],
+              "lockup": "price-emphasis-versioned",
+              "version": "v2"
+            },
+            "background_color": "#CBE6EC",
+            "background_color_behavior": "simplified",
+            "call_to_action_button_style": {
+              "background_color": "#cc0000",
+              "text_color": "#ffffff",
+              "button_type": "filled",
+              "button_copy": "Get the deal"
+            },
+            "headline": {
+              "content": [
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "Sale from "
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000",
+                    "pricestyleprice": true
+                  },
+                  "insert": {
+                    "text": "$"
+                  }
+                },
+                {
+                  "attributes": {
+                    "color": "#cc0000"
+                  },
+                  "insert": {
+                    "text": "1.89"
+                  }
+                },
+                {
+                  "insert": {
+                    "text": "\n"
+                  }
+                }
+              ]
+            },
+            "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_1aacdb64-01a5-4335-9b72-1ced2fa62d74",
+            "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_0576d03b-a208-4561-82fc-2854eb7bb35b",
+            "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_9ed3abbe-66a6-47b6-80b6-3d18c16f7df6",
+            "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_a10c9be8-d342-4b97-b9ce-f660f21687f7",
+            "link": {
+              "target": "GROUPED_OFFER",
+              "link_tag": "C_GroupedOffer_8675-2022353715895_STORY-41501",
+              "detail": {
+                "id": "8675-2022353715895",
+                "promo_ids": [
+                  "210971174",
+                  "276969467",
+                  "781086538",
+                  "926082072",
+                  "821874538",
+                  "668570004",
+                  "597829954",
+                  "931214385",
+                  "781770561",
+                  "256152752"
+                ],
+                "boosted_tcins": [
+                  "54560287",
+                  "94566542",
+                  "13204307",
+                  "14770109",
+                  "12953828",
+                  "13601362",
+                  "13156213",
+                  "12958524",
+                  "12958523",
+                  "14992709",
+                  "54550537",
+                  "14746100",
+                  "78853664",
+                  "78829251"
+                ]
+              }
+            },
+            "metadata": {
+              "component_type": "Story",
+              "component_version": "01"
+            },
+            "subhead": {
+              "content": [
+                {
+                  "insert": {
+                    "text": "side dishes & meal essentials for Thanksgiving*\n"
+                  },
+                  "attributes": {
+                    "color": "#333333"
+                  }
+                }
+              ]
+            },
+            "text_position": "middleleft",
+            "type_stack": "medium",
+            "width": 27
+          }
+        ]
+      },
+      "presentation": "multi-story-blocks-carousel",
+      "component_type": "story_v01",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 800
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "09.14.22_Produce BIA_PRZ",
+            "id": "WEB-366608",
+            "placement_id": "68dea216bf99777e75a3fab0",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-366608",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-366608",
+        "custom_headline": "Buy it again with Drive Up",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_bia_sameday_drive_up;categoryId,u7fty"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#f7f7f7"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1500
+    },
+    "1900": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Oct Wk 2_Produce Item Recs_Standard CSL",
+            "id": "WEB-431882",
+            "placement_id": "68dea216bf99777e75a3fab4",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-431882",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "id": "WEB-431882",
+        "custom_headline": "Trending produce for you",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,primary_trending_for_you;categoryId,u7fty"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#eeeeee"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1900
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-435471",
+            "placement_id": "69059b322954a751d474533b",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/produce-grocery/naturipe-farms/-/N-u7ftyZq643lef185s>naturipe farms</a>,<a href=https://www.target.com/c/produce-grocery/frieda-s/-/N-u7ftyZq643lek9ffv>frieda's produce</a>,<a href=https://www.target.com/c/produce-grocery/-/N-u7fty>produce section</a>,<a href=https://www.target.com/c/produce-grocery/cut-fruit-express/-/N-u7ftyZub9f3>cut fruit express</a>,<a href=https://www.target.com/p/live-6-34-succulent-garden-houseplant-varieties-may-vary/-/A-87765319>good little garden live 6\" succulent garden houseplant reviews</a>,<a href=https://www.target.com/c/produce-grocery/-/N-u7fty>fresh foods</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    }
+  },
+  "uri": "/u7fty/WEB",
+  "activation_date": "2025-11-01T07:00Z"
+}

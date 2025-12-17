@@ -1,0 +1,239 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Peanut Butter & Spreads",
+    "type": "Category",
+    "node_id": "5xszr",
+    "linking_id": "5xszr",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/peanut-butter-spreads-pantry-grocery/-/N-5xszr",
+      "seo_h1": "Peanut Butter & Spreads",
+      "seo_title": "Peanut Butter & Spreads : Target",
+      "seo_description": "Shop Target for Peanut Butter & Spreads you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/5xszr",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Peanut Butter & Spreads, Pantry, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_08b6958b-2e37-4e17-85d0-d08a7cec2f86"
+    },
+    "og": {
+      "title": "Peanut Butter & Spreads : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_08b6958b-2e37-4e17-85d0-d08a7cec2f86",
+      "url": "/c/peanut-butter-spreads-pantry-grocery/-/N-5xszr",
+      "description": "Shop Target for Peanut Butter & Spreads you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt13",
+        "name": "Pantry",
+        "type": "Category",
+        "linking_id": "5xt13",
+        "number_of_children": "20",
+        "canonical_url": "/c/pantry-grocery/-/N-5xt13",
+        "seo_h1": "Pantry",
+        "page_id": "/c/5xt13",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "mnyf1",
+        "name": "Nut Butters",
+        "type": "Category",
+        "linking_id": "mnyf1",
+        "number_of_children": "0",
+        "canonical_url": "/c/nut-butters-peanut-butter-spreads-pantry-grocery/-/N-mnyf1",
+        "seo_h1": "Nut Butters",
+        "page_id": "/c/mnyf1",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_7dced407-a6b3-47df-8591-a19c78f3c487"
+      },
+      {
+        "node_id": "58bef",
+        "name": "Fruit Spreads, Jams & Jellies",
+        "type": "Category",
+        "linking_id": "58bef",
+        "number_of_children": "0",
+        "canonical_url": "/c/fruit-spreads-jams-jellies-peanut-butter-pantry-grocery/-/N-58bef",
+        "seo_h1": "Fruit Spreads, Jams & Jellies",
+        "page_id": "/c/58bef",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_e6c640a7-13a5-49f7-b672-ab71cb74812f"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1100": {
+      "order": 1100,
+      "content": {
+        "background_color": "#f7f7f7",
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,web_primary_top_items_with_deals;categoryId,5xt13"
+          },
+          "type": "personalizedProducts"
+        },
+        "id": "WEB-367063",
+        "margin_bottom": "standard",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "text_color": "dark",
+        "trackingId": "WEB-367063"
+      },
+      "presentation": "universal_prz_carousel",
+      "metadata": {
+        "components": [
+          {
+            "title": "PromoCarousel",
+            "id": "WEB-367063",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static",
+            "placement_id": "632335e44ff92a749a575688"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/5xszr/WEB"
+}

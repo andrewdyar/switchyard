@@ -1,0 +1,288 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Snack Variety Packs",
+    "type": "Category",
+    "node_id": "sjs32",
+    "linking_id": "sjs32",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/snack-variety-packs-snacks-grocery/-/N-sjs32",
+      "seo_h1": "Snack Variety Packs",
+      "seo_title": "Snack Variety Packs : Target",
+      "seo_description": "Shop Target for Snack Variety Packs you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/sjs32",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Snack Variety Packs, Snacks, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_a6726161-3c2b-484a-9e0d-ae5da91b30e1"
+    },
+    "og": {
+      "title": "Snack Variety Packs : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_a6726161-3c2b-484a-9e0d-ae5da91b30e1",
+      "url": "/c/snack-variety-packs-snacks-grocery/-/N-sjs32",
+      "description": "Shop Target for Snack Variety Packs you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xsy9",
+        "name": "Snacks",
+        "type": "Category",
+        "linking_id": "5xsy9",
+        "number_of_children": "28",
+        "canonical_url": "/c/snacks-grocery/-/N-5xsy9",
+        "seo_h1": "Snacks",
+        "page_id": "/c/5xsy9",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "7ker",
+        "name": "Chip Multipacks",
+        "type": "Category",
+        "linking_id": "7ker",
+        "number_of_children": "0",
+        "canonical_url": "/c/chip-multipacks-snack-variety-packs-snacks-grocery/-/N-7ker",
+        "seo_h1": "Chip Multipacks",
+        "page_id": "/c/7ker",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_5ec363f3-cf9e-46f6-b258-a53979bfb7bf"
+      },
+      {
+        "node_id": "v247q",
+        "name": "Cookie Multipacks",
+        "type": "Category",
+        "linking_id": "v247q",
+        "number_of_children": "0",
+        "canonical_url": "/c/cookie-multipacks-snack-variety-packs-snacks-grocery/-/N-v247q",
+        "seo_h1": "Cookie Multipacks",
+        "page_id": "/c/v247q",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_16853937-47ce-48c7-bd40-c320310627d6"
+      },
+      {
+        "node_id": "95u1d",
+        "name": "Cracker Multipacks",
+        "type": "Category",
+        "linking_id": "95u1d",
+        "number_of_children": "0",
+        "canonical_url": "/c/cracker-multipacks-snack-variety-packs-snacks-grocery/-/N-95u1d",
+        "seo_h1": "Cracker Multipacks",
+        "page_id": "/c/95u1d",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_820f7a40-c9c8-44bf-a550-010ee0899862"
+      },
+      {
+        "node_id": "55oea",
+        "name": "Popcorn & Pretzel Multipacks",
+        "type": "Category",
+        "linking_id": "55oea",
+        "number_of_children": "0",
+        "canonical_url": "/c/popcorn-pretzel-multipacks-snack-variety-packs-snacks-grocery/-/N-55oea",
+        "seo_h1": "Popcorn & Pretzel Multipacks",
+        "page_id": "/c/55oea",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_904aac7a-ebfc-4933-b6af-652d9294465a"
+      },
+      {
+        "node_id": "4ydo1",
+        "name": "Snack & Granola Bars",
+        "type": "Category",
+        "linking_id": "4ydo1",
+        "number_of_children": "0",
+        "canonical_url": "/c/snack-granola-bars-snacks-grocery/-/N-4ydo1",
+        "seo_h1": "Snack & Granola Bars",
+        "page_id": "/c/4ydo1",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_6e5ea0e4-0664-4e57-b70b-470d275b0474"
+      },
+      {
+        "node_id": "5xsy8",
+        "name": "Applesauce & Fruit Cups",
+        "type": "Category",
+        "linking_id": "5xsy8",
+        "number_of_children": "0",
+        "canonical_url": "/c/applesauce-fruit-cups-snacks-grocery/-/N-5xsy8",
+        "seo_h1": "Applesauce & Fruit Cups",
+        "page_id": "/c/5xsy8",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_AppleSauce_FruitCups-QUIVER-190913-1568402866887"
+      },
+      {
+        "node_id": "5xsy4",
+        "name": "Fruit Snacks",
+        "type": "Category",
+        "linking_id": "5xsy4",
+        "number_of_children": "0",
+        "canonical_url": "/c/fruit-snacks-grocery/-/N-5xsy4",
+        "seo_h1": "Fruit Snacks",
+        "page_id": "/c/5xsy4",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_995bd68f-f91d-4fc6-ac35-9bebd13e4c5a"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "3900": {
+      "order": 3900,
+      "content": {
+        "message": "<a href=https://www.target.com/c/snack-variety-packs/siete/-/N-sjs32Zs03wo>siete chips individual bags</a>,<a href=https://www.target.com/c/snack-variety-packs/cheetos/-/N-sjs32Z56dg8>cheetos snack pack</a>,<a href=https://www.target.com/c/snack-variety-packs/teddy-grahams/-/N-sjs32Z54w7k>teddy grahams variety pack</a>,<a href=https://www.target.com/c/snack-variety-packs/ritz/-/N-sjs32Z560yt>ritz snack pack</a>,<a href=https://www.target.com/c/snacks-grocery/serendippity/-/N-5xsy9Zq643leh7eji>serendippity</a>,<a href=https://www.target.com/c/snack-variety-packs/simple-mills/-/N-sjs32Z842bj>simple mills individual packs</a>,<a href=https://www.target.com/c/snack-variety-packs/funyuns/-/N-sjs32Z560b2>box of funyuns</a>,<a href=https://www.target.com/c/snack-variety-packs/utz/-/N-sjs32Z56dd2>utz snack pack</a>,<a href=https://www.target.com/p/pirate-39-s-booty-aged-white-cheddar-puffs-12ct-0-5oz/-/A-13372508>pirate's booty multipack</a>,<a href=https://www.target.com/c/snack-variety-packs/kettle-brand/-/N-sjs32Z70z8i>kettle chips variety pack</a>,<a href=https://www.target.com/c/snack-variety-packs/chips-ahoy-/-/N-sjs32Z56f1n>chips ahoy pack</a>,<a href=https://www.target.com/c/snack-variety-packs/mother-s-cookies/-/N-sjs32Z55fn9>mother's cookies variety bag</a>,<a href=https://www.target.com/c/snack-variety-packs/annie-s/-/N-sjs32Z56dvw>annie's variety</a>,<a href=https://www.target.com/c/snack-variety-packs/hippeas/-/N-sjs32Z9l018>hippeas individual bags</a>,<a href=https://www.target.com/c/snack-variety-packs/handi-snacks/-/N-sjs32Z55cas>handy snacks</a>,<a href=https://www.target.com/c/snack-variety-packs/nabisco/-/N-sjs32Z56eqb>nabisco variety pack</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-427479",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "68557822e5573e7c5e82e620"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/sjs32/WEB"
+}

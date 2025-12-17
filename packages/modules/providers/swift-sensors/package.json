@@ -1,0 +1,15 @@
+{
+  "name": "@switchyard/providers-swift-sensors",
+  "version": "1.0.0",
+  "description": "Swift Sensors API client provider",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "test": "jest"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.0.0"
+  }
+}

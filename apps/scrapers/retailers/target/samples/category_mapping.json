@@ -1,0 +1,1523 @@
+{
+  "mapped": {
+    "Bakery & Bread": {
+      "Breads": [
+        "bakery",
+        "bread"
+      ],
+      "Cookies & Bars": [
+        "snacks",
+        "candy"
+      ],
+      "Donuts & Pastries": [
+        "bakery",
+        "pastries"
+      ],
+      "Bagels": [
+        "bakery",
+        "bread"
+      ],
+      "Muffins": [
+        "bakery",
+        "pastries"
+      ],
+      "Cakes & Pies": [
+        "bakery",
+        "pastries"
+      ],
+      "Tortillas, Pitas & Wraps": [
+        "bakery",
+        "tortillas"
+      ],
+      "Refrigerated Doughs": [
+        "bakery",
+        "bread"
+      ],
+      "Rolls & Buns": [
+        "bakery",
+        "bread"
+      ],
+      "Pizza Crusts": [
+        "bakery",
+        "bread"
+      ],
+      "Snack Cakes": [
+        "bakery",
+        "pastries"
+      ]
+    },
+    "Beverages": {
+      "Energy Drinks": [
+        "beverages",
+        "soda"
+      ],
+      "Juice & Cider": [
+        "beverages",
+        "juice"
+      ],
+      "Soda & Pop": [
+        "beverages",
+        "soda"
+      ],
+      "Sports Drinks": [
+        "beverages",
+        "soda"
+      ],
+      "Water": [
+        "beverages",
+        "water"
+      ],
+      "Milk": [
+        "dairy_eggs",
+        "milk"
+      ],
+      "Milk Substitutes": [
+        "dairy_eggs",
+        "milk"
+      ],
+      "Protein Powders": [
+        "beverages",
+        null
+      ],
+      "Tea": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Cocoa": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Drink Mixes": [
+        "beverages",
+        null
+      ],
+      "Meal Replacement Drinks": [
+        "beverages",
+        null
+      ],
+      "Ground Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "K-Cups & Coffee Pods": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Whole Bean Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Espresso": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Cold Brew & Bottled Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Instant Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Coffee Creamers": [
+        "dairy_eggs",
+        "milk"
+      ],
+      "Non-Alcoholic Drinks": [
+        "beverages",
+        null
+      ],
+      "Hard Cider": [
+        "beverages",
+        "juice"
+      ]
+    },
+    "Breakfast & Cereal": {
+      "Cereal": [
+        "pantry",
+        null
+      ],
+      "Granola": [
+        "pantry",
+        null
+      ],
+      "Oatmeal": [
+        "pantry",
+        "pasta_rice"
+      ],
+      "Pancake Mixes, Waffle Mixes & Syrup": [
+        "pantry",
+        "baking"
+      ],
+      "Toaster Pastries & Breakfast Bars": [
+        "bakery",
+        "pastries"
+      ]
+    },
+    "Candy": {
+      "Christmas Candy & Treats": [
+        "snacks",
+        "candy"
+      ],
+      "Chocolate Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Gum & Mints": [
+        "snacks",
+        "candy"
+      ],
+      "Gummy & Chewy Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Hard Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Freeze Dried Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Sour Candy": [
+        "snacks",
+        "candy"
+      ]
+    },
+    "Coffee": {
+      "Ground Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "K-Cups & Coffee Pods": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Whole Bean Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Espresso": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Cold Brew & Bottled Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Instant Coffee": [
+        "beverages",
+        "coffee_tea"
+      ],
+      "Coffee Creamers": [
+        "dairy_eggs",
+        "milk"
+      ]
+    },
+    "Dairy": {
+      "Cheese": [
+        "dairy_eggs",
+        "cheese"
+      ],
+      "Milk": [
+        "dairy_eggs",
+        "milk"
+      ],
+      "Eggs": [
+        "dairy_eggs",
+        "eggs"
+      ],
+      "Yogurt": [
+        "dairy_eggs",
+        "yogurt"
+      ],
+      "Butter & Margarine": [
+        "dairy_eggs",
+        "butter"
+      ],
+      "Cottage Cheese": [
+        "dairy_eggs",
+        "cheese"
+      ],
+      "Cream & Whipped Toppings": [
+        "dairy_eggs",
+        "milk"
+      ],
+      "Milk Substitutes": [
+        "dairy_eggs",
+        "milk"
+      ],
+      "Coffee Creamers": [
+        "dairy_eggs",
+        "milk"
+      ],
+      "Cream Cheese": [
+        "dairy_eggs",
+        "cheese"
+      ],
+      "Refrigerated Doughs": [
+        "bakery",
+        "bread"
+      ],
+      "Sour Cream & Dips": [
+        "dairy_eggs",
+        "milk"
+      ],
+      "Desserts & Puddings": [
+        "dairy_eggs",
+        null
+      ]
+    },
+    "Deli": {
+      "Prepared Salads & Sandwiches": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Fresh Dips, Salsas & Hummus": [
+        "pantry",
+        "condiments"
+      ],
+      "Prepared Meals & Sides": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Artisan Cheese & Cured Meats": [
+        "dairy_eggs",
+        "cheese"
+      ],
+      "Packaged Lunch Meat": [
+        "meat_seafood",
+        null
+      ],
+      "Fresh Soups": [
+        "pantry",
+        "canned_goods"
+      ],
+      "Snack Packs & On the Go Snacks": [
+        "snacks",
+        null
+      ],
+      "Sliced Deli Meat & Deli Cheese": [
+        "dairy_eggs",
+        "cheese"
+      ],
+      "Meal Kits": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Party Trays": [
+        "frozen",
+        "frozen_meals"
+      ]
+    },
+    "Frozen Foods": {
+      "Frozen Single Serve Meals": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Family Meals": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Ice Cream & Novelties": [
+        "frozen",
+        "ice_cream"
+      ],
+      "Frozen Pizza": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Breakfast Food": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Meat, Poultry & Seafood": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Appetizers & Snacks": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Desserts": [
+        "frozen",
+        "ice_cream"
+      ],
+      "Frozen Fruit": [
+        "frozen",
+        "frozen_produce"
+      ],
+      "Frozen Potatoes": [
+        "frozen",
+        "frozen_produce"
+      ],
+      "Frozen Vegetables": [
+        "frozen",
+        "frozen_produce"
+      ],
+      "Frozen Bread & Dough": [
+        "bakery",
+        "bread"
+      ],
+      "Frozen Chicken": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Beef": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Fish & Seafood": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Turkey": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Frozen Meatless Alternatives": [
+        "frozen",
+        "frozen_meals"
+      ]
+    },
+    "Meat & Seafood": {
+      "Beef": [
+        "meat_seafood",
+        "beef"
+      ],
+      "Chicken": [
+        "meat_seafood",
+        "poultry"
+      ],
+      "Ham": [
+        "meat_seafood",
+        "poultry"
+      ],
+      "Turkey": [
+        "meat_seafood",
+        "poultry"
+      ],
+      "Fish & Seafood": [
+        "meat_seafood",
+        "seafood"
+      ],
+      "Packaged Lunch Meat": [
+        "meat_seafood",
+        null
+      ],
+      "Pork": [
+        "meat_seafood",
+        "pork"
+      ],
+      "Bacon": [
+        "meat_seafood",
+        "pork"
+      ],
+      "Sausages": [
+        "meat_seafood",
+        "pork"
+      ],
+      "Hot Dogs": [
+        "meat_seafood",
+        "pork"
+      ],
+      "Sliced Deli Meat & Deli Cheese": [
+        "meat_seafood",
+        null
+      ],
+      "Meatless Alternatives": [
+        "meat_seafood",
+        "plant_based"
+      ]
+    },
+    "Pantry": {
+      "Pasta, Rice & Grains": [
+        "pantry",
+        "pasta_rice"
+      ],
+      "Sauces & Marinades": [
+        "pantry",
+        "condiments"
+      ],
+      "Boxed Meals & Side Dishes": [
+        "pantry",
+        null
+      ],
+      "Canned & Packaged Foods": [
+        "pantry",
+        "canned_goods"
+      ],
+      "Soups, Broth & Chili": [
+        "pantry",
+        "canned_goods"
+      ],
+      "Baking Staples": [
+        "pantry",
+        "baking"
+      ],
+      "Condiments": [
+        "pantry",
+        "condiments"
+      ],
+      "Peanut Butter & Spreads": [
+        "pantry",
+        "condiments"
+      ],
+      "Spices & Seasonings": [
+        "pantry",
+        "baking"
+      ],
+      "Salad Dressings": [
+        "pantry",
+        "condiments"
+      ],
+      "Applesauce & Fruit Cups": [
+        "snacks",
+        null
+      ],
+      "Cooking Oil & Vinegar": [
+        "pantry",
+        "condiments"
+      ],
+      "Salsa & Dips": [
+        "pantry",
+        "condiments"
+      ],
+      "Sugar & Sweeteners": [
+        "pantry",
+        "baking"
+      ],
+      "Dried Fruit & Raisins": [
+        "snacks",
+        null
+      ],
+      "Nuts": [
+        "snacks",
+        null
+      ],
+      "Baking Chips & Cocoa": [
+        "pantry",
+        "baking"
+      ],
+      "Baking Kits & Mixes": [
+        "pantry",
+        "baking"
+      ],
+      "Baking Powder, Baking Soda & Yeast": [
+        "pantry",
+        "baking"
+      ],
+      "Condensed & Powdered Milk": [
+        "pantry",
+        "baking"
+      ],
+      "Extracts & Food Coloring": [
+        "pantry",
+        "baking"
+      ],
+      "Flours & Meals": [
+        "pantry",
+        "baking"
+      ],
+      "Frosting & Icing": [
+        "pantry",
+        "baking"
+      ],
+      "Gelatin & Pudding": [
+        "snacks",
+        null
+      ],
+      "Marshmallows": [
+        "pantry",
+        "baking"
+      ],
+      "Pie Crusts & Filling": [
+        "pantry",
+        "baking"
+      ],
+      "Sprinkles, Candles & Decorations": [
+        "pantry",
+        "baking"
+      ],
+      "Syrups & Sauces": [
+        "pantry",
+        "condiments"
+      ],
+      "Canned Fruit": [
+        "pantry",
+        "canned_goods"
+      ],
+      "Canned Vegetables": [
+        "pantry",
+        "canned_goods"
+      ],
+      "Canned Meat": [
+        "pantry",
+        "canned_goods"
+      ],
+      "Canned Tuna & Seafood": [
+        "pantry",
+        "canned_goods"
+      ],
+      "Olives, Pickles & Peppers": [
+        "pantry",
+        "canned_goods"
+      ],
+      "Mixed Nuts": [
+        "snacks",
+        null
+      ],
+      "Almonds": [
+        "pantry",
+        null
+      ],
+      "Cashews": [
+        "pantry",
+        null
+      ],
+      "Peanuts": [
+        "snacks",
+        null
+      ],
+      "Chickpeas": [
+        "pantry",
+        null
+      ],
+      "Corn Nuts": [
+        "snacks",
+        null
+      ],
+      "Pistachios": [
+        "pantry",
+        null
+      ],
+      "Hazelnuts": [
+        "snacks",
+        null
+      ],
+      "Macadamia Nuts": [
+        "snacks",
+        null
+      ],
+      "Pecans": [
+        "pantry",
+        null
+      ],
+      "Walnuts": [
+        "snacks",
+        null
+      ],
+      "Apricot Kernels": [
+        "pantry",
+        null
+      ],
+      "Brazil Nuts": [
+        "snacks",
+        null
+      ],
+      "Chestnuts": [
+        "snacks",
+        null
+      ],
+      "Pine Nuts": [
+        "snacks",
+        null
+      ],
+      "Soy Nut": [
+        "snacks",
+        null
+      ],
+      "Nut Butters": [
+        "pantry",
+        "condiments"
+      ],
+      "Fruit Spreads, Jams & Jellies": [
+        "pantry",
+        "condiments"
+      ],
+      "Herbs, Rubs & Spices": [
+        "pantry",
+        "baking"
+      ],
+      "Salt & Pepper": [
+        "pantry",
+        "baking"
+      ]
+    },
+    "Produce": {
+      "Fresh Fruit": [
+        "produce",
+        "fruit"
+      ],
+      "Fresh Vegetables": [
+        "produce",
+        "vegetables"
+      ],
+      "Salad Mixes": [
+        "produce",
+        "vegetables"
+      ],
+      "Fresh Juices": [
+        "beverages",
+        "juice"
+      ],
+      "Fresh Dressings & Dips": [
+        "pantry",
+        "condiments"
+      ],
+      "Meatless Alternatives": [
+        "meat_seafood",
+        "plant_based"
+      ]
+    },
+    "Snacks": {
+      "Snack Variety Packs": [
+        "snacks",
+        null
+      ],
+      "Chips": [
+        "snacks",
+        "chips"
+      ],
+      "Cookies": [
+        "snacks",
+        "candy"
+      ],
+      "Crackers": [
+        "snacks",
+        "crackers"
+      ],
+      "Rice Cakes": [
+        "snacks",
+        "crackers"
+      ],
+      "Protein Bars": [
+        "snacks",
+        null
+      ],
+      "Snack & Granola Bars": [
+        "snacks",
+        null
+      ],
+      "Trail Mix": [
+        "snacks",
+        null
+      ],
+      "Meat Sticks": [
+        "snacks",
+        null
+      ],
+      "Popcorn": [
+        "snacks",
+        "chips"
+      ],
+      "Snack Mix": [
+        "snacks",
+        null
+      ],
+      "Jerky": [
+        "snacks",
+        null
+      ],
+      "Pretzels": [
+        "snacks",
+        "crackers"
+      ],
+      "Seeds": [
+        "snacks",
+        null
+      ],
+      "Applesauce & Fruit Cups": [
+        "snacks",
+        "candy"
+      ],
+      "Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Frozen Appetizers & Snacks": [
+        "frozen",
+        "frozen_meals"
+      ],
+      "Fruit Snacks": [
+        "snacks",
+        "candy"
+      ],
+      "Salsa & Dips": [
+        "pantry",
+        "condiments"
+      ],
+      "Snack Packs & On the Go Snacks": [
+        "snacks",
+        null
+      ],
+      "Toaster Pastries & Breakfast Bars": [
+        "bakery",
+        "pastries"
+      ],
+      "Dried Fruit & Raisins": [
+        "snacks",
+        null
+      ],
+      "Nuts": [
+        "snacks",
+        null
+      ],
+      "Snack Cakes": [
+        "bakery",
+        "pastries"
+      ],
+      "Gelatin & Pudding": [
+        "snacks",
+        null
+      ],
+      "Christmas Candy & Treats": [
+        "snacks",
+        "candy"
+      ],
+      "Chocolate Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Gum & Mints": [
+        "snacks",
+        "candy"
+      ],
+      "Gummy & Chewy Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Hard Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Freeze Dried Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Sour Candy": [
+        "snacks",
+        "candy"
+      ],
+      "Chip Multipacks": [
+        "snacks",
+        "chips"
+      ],
+      "Tortilla Chips": [
+        "snacks",
+        "chips"
+      ],
+      "Potato Chips": [
+        "snacks",
+        "chips"
+      ],
+      "Corn Chips": [
+        "snacks",
+        "chips"
+      ],
+      "Puffed Snacks": [
+        "snacks",
+        "chips"
+      ],
+      "Grain Chips": [
+        "snacks",
+        "chips"
+      ],
+      "Protein Chips": [
+        "snacks",
+        "chips"
+      ],
+      "Pita Chips": [
+        "snacks",
+        "chips"
+      ],
+      "Pork Rinds": [
+        "snacks",
+        "chips"
+      ],
+      "Vegetable Chips": [
+        "snacks",
+        "chips"
+      ],
+      "Multigrain, Rice & Seed Crackers": [
+        "snacks",
+        "crackers"
+      ],
+      "Butter Crackers": [
+        "snacks",
+        "crackers"
+      ],
+      "Cheese Crackers": [
+        "snacks",
+        "crackers"
+      ],
+      "Cracker Multipacks": [
+        "snacks",
+        "crackers"
+      ],
+      "Gluten Free Crackers": [
+        "snacks",
+        "crackers"
+      ],
+      "Graham Crackers": [
+        "snacks",
+        "crackers"
+      ],
+      "Saltine Crackers": [
+        "snacks",
+        "crackers"
+      ],
+      "Sandwich Crackers": [
+        "snacks",
+        "crackers"
+      ],
+      "Cookie Multipacks": [
+        "snacks",
+        "candy"
+      ],
+      "Popcorn & Pretzel Multipacks": [
+        "snacks",
+        "chips"
+      ],
+      "Mixed Nuts": [
+        "snacks",
+        null
+      ],
+      "Almonds": [
+        "snacks",
+        null
+      ],
+      "Cashews": [
+        "snacks",
+        null
+      ],
+      "Peanuts": [
+        "snacks",
+        null
+      ],
+      "Chickpeas": [
+        "snacks",
+        null
+      ],
+      "Corn Nuts": [
+        "snacks",
+        null
+      ],
+      "Pistachios": [
+        "snacks",
+        null
+      ],
+      "Hazelnuts": [
+        "snacks",
+        null
+      ],
+      "Macadamia Nuts": [
+        "snacks",
+        null
+      ],
+      "Pecans": [
+        "snacks",
+        null
+      ],
+      "Walnuts": [
+        "snacks",
+        null
+      ],
+      "Apricot Kernels": [
+        "snacks",
+        null
+      ],
+      "Brazil Nuts": [
+        "snacks",
+        null
+      ],
+      "Chestnuts": [
+        "snacks",
+        null
+      ],
+      "Pine Nuts": [
+        "snacks",
+        null
+      ],
+      "Soy Nut": [
+        "snacks",
+        null
+      ]
+    },
+    "Baby Food": {
+      "Baby Food": [
+        "pantry",
+        "canned_goods"
+      ]
+    }
+  },
+  "excluded": [
+    {
+      "name": "Cocktail Mixers",
+      "parent": "Beverages",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Wine, Beer & Liquor",
+      "parent": "Beverages",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Wine",
+      "parent": "Beverages",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Hard Seltzers & Canned Cocktails",
+      "parent": "Beverages",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Beer",
+      "parent": "Beverages",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Liquor",
+      "parent": "Beverages",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Cocktail Mixers",
+      "parent": "Beverages",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Target Selects",
+      "parent": "Beverages",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Bar & Wine Tools",
+      "parent": "Beverages",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Domestic Beer",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Craft Beer",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Import Beer",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Non-Alcoholic Beer",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Vodka",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Bourbon",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Whiskey",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Tequila",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Rum",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Cocktail Mixers",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Gin",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Scotch",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Brandy & Cognac",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Liqueurs, Cordials & Schnapps",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Bar & Wine Tools",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "White Wine",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Red Wine",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Rose Wine",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Champagne & Sparkling Wine",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Sweet Wine",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Target Selects",
+      "parent": "Beverages",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Wine",
+      "parent": "Food Gifts",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Fresh Flowers & Plants",
+      "parent": "Food Gifts",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "White Wine",
+      "parent": "Food Gifts",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Red Wine",
+      "parent": "Food Gifts",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Rose Wine",
+      "parent": "Food Gifts",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Champagne & Sparkling Wine",
+      "parent": "Food Gifts",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Sweet Wine",
+      "parent": "Food Gifts",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Target Selects",
+      "parent": "Food Gifts",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "White Wine",
+      "parent": "Food Gifts",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Red Wine",
+      "parent": "Food Gifts",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Rose Wine",
+      "parent": "Food Gifts",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Champagne & Sparkling Wine",
+      "parent": "Food Gifts",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Sweet Wine",
+      "parent": "Food Gifts",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Target Selects",
+      "parent": "Food Gifts",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Emergency Food",
+      "parent": "Pantry",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Breadcrumbs & Seasoned Coatings",
+      "parent": "Pantry",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Fresh Flowers & Plants",
+      "parent": "Produce",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Wine",
+      "parent": "Wine, Beer & Liquor",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Hard Seltzers & Canned Cocktails",
+      "parent": "Wine, Beer & Liquor",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Liquor",
+      "parent": "Wine, Beer & Liquor",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Cocktail Mixers",
+      "parent": "Wine, Beer & Liquor",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Non-Alcoholic Drinks",
+      "parent": "Wine, Beer & Liquor",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Target Selects",
+      "parent": "Wine, Beer & Liquor",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Bar & Wine Tools",
+      "parent": "Wine, Beer & Liquor",
+      "level": 1,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Domestic Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Craft Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Import Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Hard Cider",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Non-Alcoholic Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Vodka",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Bourbon",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Whiskey",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Tequila",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Rum",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Cocktail Mixers",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Gin",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Scotch",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Brandy & Cognac",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Liqueurs, Cordials & Schnapps",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Bar & Wine Tools",
+      "parent": "Wine, Beer & Liquor",
+      "level": 2,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Domestic Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Craft Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Import Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Hard Cider",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Non-Alcoholic Beer",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Vodka",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Bourbon",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Whiskey",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Tequila",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Rum",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Cocktail Mixers",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Gin",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Scotch",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Brandy & Cognac",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Liqueurs, Cordials & Schnapps",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Bar & Wine Tools",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "White Wine",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Red Wine",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Rose Wine",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Champagne & Sparkling Wine",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Sweet Wine",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    },
+    {
+      "name": "Target Selects",
+      "parent": "Wine, Beer & Liquor",
+      "level": 3,
+      "reason": "Alcohol, non-food, or does not fit Goods categories"
+    }
+  ],
+  "stats": {
+    "total": 347,
+    "mapped": 232,
+    "excluded": 93
+  }
+}

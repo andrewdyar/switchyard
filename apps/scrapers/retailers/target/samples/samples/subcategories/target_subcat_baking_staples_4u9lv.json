@@ -1,0 +1,373 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Baking Staples",
+    "type": "Category",
+    "node_id": "4u9lv",
+    "linking_id": "4u9lv",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/baking-staples-pantry-grocery/-/N-4u9lv",
+      "seo_h1": "Baking Staples",
+      "seo_title": "Baking Staples : Target",
+      "seo_description": "Shop Target for Baking Staples you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less.",
+      "page_id": "/c/4u9lv",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Baking Staples, Pantry, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_b752bc2e-c693-4aba-a5ba-480de7843416"
+    },
+    "og": {
+      "title": "Baking Staples : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_b752bc2e-c693-4aba-a5ba-480de7843416",
+      "url": "/c/baking-staples-pantry-grocery/-/N-4u9lv",
+      "description": "Shop Target for Baking Staples you will love at great low prices. Choose from Same Day Delivery, Drive Up or Order Pickup. Free standard shipping with $35 orders. Expect More. Pay Less."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt13",
+        "name": "Pantry",
+        "type": "Category",
+        "linking_id": "5xt13",
+        "number_of_children": "20",
+        "canonical_url": "/c/pantry-grocery/-/N-5xt13",
+        "seo_h1": "Pantry",
+        "page_id": "/c/5xt13",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "0gxrs",
+        "name": "Holiday Baking",
+        "type": "Tag",
+        "linking_id": "0gxrs",
+        "number_of_children": "0",
+        "canonical_url": "/c/holiday-baking-christmas-candy-food-gifts-shop/-/N-0gxrs",
+        "seo_h1": "Holiday Baking",
+        "page_id": "/c/0gxrs",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_75f60176-fa3a-4131-afeb-e7791158c94a"
+      },
+      {
+        "node_id": "5xt0u",
+        "name": "Sugar & Sweeteners",
+        "type": "Category",
+        "linking_id": "5xt0u",
+        "number_of_children": "0",
+        "canonical_url": "/c/sugar-sweeteners-pantry-grocery/-/N-5xt0u",
+        "seo_h1": "Sugar & Sweeteners",
+        "page_id": "/c/5xt0u",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_9602416c-d2cc-4081-8729-401fc660c2e0"
+      },
+      {
+        "node_id": "5xt0y",
+        "name": "Dried Fruit & Raisins",
+        "type": "Category",
+        "linking_id": "5xt0y",
+        "number_of_children": "0",
+        "canonical_url": "/c/dried-fruit-raisins-snacks-grocery/-/N-5xt0y",
+        "seo_h1": "Dried Fruit & Raisins",
+        "page_id": "/c/5xt0y",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_DriedFruit_Raisins-QUIVER-190913-1568403484897"
+      },
+      {
+        "node_id": "tc851",
+        "name": "Nuts",
+        "type": "Category",
+        "linking_id": "tc851",
+        "number_of_children": "16",
+        "canonical_url": "/c/nuts-snacks-grocery/-/N-tc851",
+        "seo_h1": "Nuts",
+        "page_id": "/c/tc851",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_Nuts-200723-1595516545452"
+      },
+      {
+        "node_id": "5xt12",
+        "name": "Baking Chips & Cocoa",
+        "type": "Category",
+        "linking_id": "5xt12",
+        "number_of_children": "0",
+        "canonical_url": "/c/baking-chips-cocoa-staples-pantry-grocery/-/N-5xt12",
+        "seo_h1": "Baking Chips & Cocoa",
+        "page_id": "/c/5xt12",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_1aabd95f-bffe-4f46-bfc8-b5daf77f72b8"
+      },
+      {
+        "node_id": "5xt11",
+        "name": "Baking Kits & Mixes",
+        "type": "Category",
+        "linking_id": "5xt11",
+        "number_of_children": "0",
+        "canonical_url": "/c/baking-kits-mixes-staples-pantry-grocery/-/N-5xt11",
+        "seo_h1": "Baking Kits & Mixes",
+        "page_id": "/c/5xt11",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_12d3b26d-1d69-435f-9fdd-358693435c4f"
+      },
+      {
+        "node_id": "5xt0s",
+        "name": "Baking Powder, Baking Soda & Yeast",
+        "type": "Category",
+        "linking_id": "5xt0s",
+        "number_of_children": "0",
+        "canonical_url": "/c/baking-powder-soda-yeast-staples-pantry-grocery/-/N-5xt0s",
+        "seo_h1": "Baking Powder, Baking Soda & Yeast",
+        "page_id": "/c/5xt0s",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_16151dfb-140e-4a93-916c-ea816c776d91"
+      },
+      {
+        "node_id": "5xt03",
+        "name": "Condensed & Powdered Milk",
+        "type": "Category",
+        "linking_id": "5xt03",
+        "number_of_children": "0",
+        "canonical_url": "/c/condensed-powdered-milk-baking-staples-pantry-grocery/-/N-5xt03",
+        "seo_h1": "Condensed & Powdered Milk",
+        "page_id": "/c/5xt03",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_9a822450-a482-4bcf-b50a-020de5657d6e"
+      },
+      {
+        "node_id": "4u9lt",
+        "name": "Extracts & Food Coloring",
+        "type": "Category",
+        "linking_id": "4u9lt",
+        "number_of_children": "0",
+        "canonical_url": "/c/extracts-food-coloring-baking-staples-pantry-grocery/-/N-4u9lt",
+        "seo_h1": "Extracts & Food Coloring",
+        "page_id": "/c/4u9lt",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_818c7317-1c9f-40c8-99d9-45db64d1204c"
+      },
+      {
+        "node_id": "4u9lu",
+        "name": "Flours & Meals",
+        "type": "Category",
+        "linking_id": "4u9lu",
+        "number_of_children": "0",
+        "canonical_url": "/c/flours-meals-baking-staples-pantry-grocery/-/N-4u9lu",
+        "seo_h1": "Flours & Meals",
+        "page_id": "/c/4u9lu",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_fe4a821c-4f79-48f2-b2d9-3dd9cb25c514"
+      },
+      {
+        "node_id": "4u9ls",
+        "name": "Frosting & Icing",
+        "type": "Category",
+        "linking_id": "4u9ls",
+        "number_of_children": "0",
+        "canonical_url": "/c/frosting-icing-baking-staples-pantry-grocery/-/N-4u9ls",
+        "seo_h1": "Frosting & Icing",
+        "page_id": "/c/4u9ls",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_54aa610b-46bc-4ac1-a2ae-481323b48924"
+      },
+      {
+        "node_id": "5xsy3",
+        "name": "Gelatin & Pudding",
+        "type": "Category",
+        "linking_id": "5xsy3",
+        "number_of_children": "0",
+        "canonical_url": "/c/gelatin-pudding-snacks-grocery/-/N-5xsy3",
+        "seo_h1": "Gelatin & Pudding",
+        "page_id": "/c/5xsy3",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/Grocery_ChipsSnacksCookies_L2_BubCat_Gelatin_Pudding-QUIVER-190913-1568403720997"
+      },
+      {
+        "node_id": "5xt0v",
+        "name": "Marshmallows",
+        "type": "Category",
+        "linking_id": "5xt0v",
+        "number_of_children": "0",
+        "canonical_url": "/c/marshmallows-baking-staples-pantry-grocery/-/N-5xt0v",
+        "seo_h1": "Marshmallows",
+        "page_id": "/c/5xt0v",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_9193c676-e9e6-4471-bffb-550c8d661bc3"
+      },
+      {
+        "node_id": "4u9lr",
+        "name": "Pie Crusts & Filling",
+        "type": "Category",
+        "linking_id": "4u9lr",
+        "number_of_children": "0",
+        "canonical_url": "/c/pie-crusts-filling-baking-staples-pantry-grocery/-/N-4u9lr",
+        "seo_h1": "Pie Crusts & Filling",
+        "page_id": "/c/4u9lr",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_60a1f21c-22a5-4b00-b171-8c07939f71d4"
+      },
+      {
+        "node_id": "5xt0z",
+        "name": "Sprinkles, Candles & Decorations",
+        "type": "Category",
+        "linking_id": "5xt0z",
+        "number_of_children": "0",
+        "canonical_url": "/c/sprinkles-candles-decorations-baking-staples-pantry-grocery/-/N-5xt0z",
+        "seo_h1": "Sprinkles, Candles & Decorations",
+        "page_id": "/c/5xt0z",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_a70e4048-fd41-47f5-8bf0-6a95b6f2cc37"
+      },
+      {
+        "node_id": "5xt0w",
+        "name": "Syrups & Sauces",
+        "type": "Category",
+        "linking_id": "5xt0w",
+        "number_of_children": "0",
+        "canonical_url": "/c/syrups-sauces-baking-staples-pantry-grocery/-/N-5xt0w",
+        "seo_h1": "Syrups & Sauces",
+        "page_id": "/c/5xt0w",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_780fbe45-efcb-4faa-9336-30a75e51bc7f"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/category/WEB"
+}

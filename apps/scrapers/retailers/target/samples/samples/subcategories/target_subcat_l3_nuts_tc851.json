@@ -1,0 +1,396 @@
+{
+  "metadata": {
+    "activation_date": "2025-07-24T07:00Z",
+    "title": "Nuts",
+    "type": "Category",
+    "node_id": "tc851",
+    "linking_id": "tc851",
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "seo_data": {
+      "canonical_url": "/c/nuts-snacks-grocery/-/N-tc851",
+      "seo_h1": "Nuts",
+      "seo_title": "Nuts : Target",
+      "seo_description": "Shop almonds, cashews, walnuts & more nut snacks from brands like Planters, Good & Gather, and Blue Diamond at Target. Free shipping on orders $35+.",
+      "page_id": "/c/tc851",
+      "page_type": "category",
+      "robots": "index, follow",
+      "seo_keywords": "Nuts, Snacks, Grocery",
+      "image_path": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_Nuts-200723-1595516545452"
+    },
+    "og": {
+      "title": "Nuts : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/BUBCAT_TemplateBubcat_Nuts-200723-1595516545452",
+      "url": "/c/nuts-snacks-grocery/-/N-tc851",
+      "description": "Shop almonds, cashews, walnuts & more nut snacks from brands like Planters, Good & Gather, and Blue Diamond at Target. Free shipping on orders $35+."
+    },
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "name": "Homepage",
+        "type": "Category",
+        "linking_id": "root",
+        "number_of_children": "45",
+        "canonical_url": "/",
+        "seo_h1": "Homepage",
+        "page_id": "/c/root",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xt1a",
+        "name": "Grocery",
+        "type": "Category",
+        "linking_id": "5xt1a",
+        "number_of_children": "28",
+        "canonical_url": "/c/grocery/-/N-5xt1a",
+        "seo_h1": "Grocery",
+        "page_id": "/c/5xt1a",
+        "page_type": "category"
+      },
+      {
+        "node_id": "5xsy9",
+        "name": "Snacks",
+        "type": "Category",
+        "linking_id": "5xsy9",
+        "number_of_children": "28",
+        "canonical_url": "/c/snacks-grocery/-/N-5xsy9",
+        "seo_h1": "Snacks",
+        "page_id": "/c/5xsy9",
+        "page_type": "category"
+      }
+    ],
+    "children": [
+      {
+        "node_id": "wm5wa",
+        "name": "Mixed Nuts",
+        "type": "Category",
+        "linking_id": "wm5wa",
+        "number_of_children": "0",
+        "canonical_url": "/c/mixed-nuts-snacks-grocery/-/N-wm5wa",
+        "seo_h1": "Mixed Nuts",
+        "page_id": "/c/wm5wa",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_aa71da23-e26e-43f0-8599-3867c092fb89"
+      },
+      {
+        "node_id": "jj7li",
+        "name": "Almonds",
+        "type": "Category",
+        "linking_id": "jj7li",
+        "number_of_children": "0",
+        "canonical_url": "/c/almonds-nuts-snacks-grocery/-/N-jj7li",
+        "seo_h1": "Almonds",
+        "page_id": "/c/jj7li",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_b9c54472-a060-4ca2-a26a-3dc1cf5a6beb"
+      },
+      {
+        "node_id": "35foc",
+        "name": "Cashews",
+        "type": "Category",
+        "linking_id": "35foc",
+        "number_of_children": "0",
+        "canonical_url": "/c/cashews-nuts-snacks-grocery/-/N-35foc",
+        "seo_h1": "Cashews",
+        "page_id": "/c/35foc",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_96d134a1-082b-4735-bb27-edc8ed8d0df2"
+      },
+      {
+        "node_id": "cm46a",
+        "name": "Peanuts",
+        "type": "Category",
+        "linking_id": "cm46a",
+        "number_of_children": "0",
+        "canonical_url": "/c/peanuts-nuts-snacks-grocery/-/N-cm46a",
+        "seo_h1": "Peanuts",
+        "page_id": "/c/cm46a",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c47a7298-ddf7-4a3a-ac78-60a7432dab9c"
+      },
+      {
+        "node_id": "cvw85",
+        "name": "Chickpeas",
+        "type": "Category",
+        "linking_id": "cvw85",
+        "number_of_children": "0",
+        "canonical_url": "/c/chickpeas-nuts-snacks-grocery/-/N-cvw85",
+        "seo_h1": "Chickpeas",
+        "page_id": "/c/cvw85",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_b4545b4f-6eb5-4a2a-9e14-6ea6cb48d9b4"
+      },
+      {
+        "node_id": "hdmsb",
+        "name": "Corn Nuts",
+        "type": "Category",
+        "linking_id": "hdmsb",
+        "number_of_children": "0",
+        "canonical_url": "/c/corn-nuts-snacks-grocery/-/N-hdmsb",
+        "seo_h1": "Corn Nuts",
+        "page_id": "/c/hdmsb",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_e3d94807-2576-49a8-bc1f-f631b91dfdca"
+      },
+      {
+        "node_id": "4ueyh",
+        "name": "Pistachios",
+        "type": "Category",
+        "linking_id": "4ueyh",
+        "number_of_children": "0",
+        "canonical_url": "/c/pistachios-nuts-snacks-grocery/-/N-4ueyh",
+        "seo_h1": "Pistachios",
+        "page_id": "/c/4ueyh",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_ece5d241-e871-4816-b7f5-8c23125f99e6"
+      },
+      {
+        "node_id": "8jk59",
+        "name": "Hazelnuts",
+        "type": "Category",
+        "linking_id": "8jk59",
+        "number_of_children": "0",
+        "canonical_url": "/c/hazelnuts-nuts-snacks-grocery/-/N-8jk59",
+        "seo_h1": "Hazelnuts",
+        "page_id": "/c/8jk59",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_24d9a813-d4f0-4f51-a9e9-e83a9af4bf13"
+      },
+      {
+        "node_id": "iq3w0",
+        "name": "Macadamia Nuts",
+        "type": "Category",
+        "linking_id": "iq3w0",
+        "number_of_children": "0",
+        "canonical_url": "/c/macadamia-nuts-snacks-grocery/-/N-iq3w0",
+        "seo_h1": "Macadamia Nuts",
+        "page_id": "/c/iq3w0",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_8f5de602-0fa3-4fc1-a7fd-6d7070b4a599"
+      },
+      {
+        "node_id": "h2ijq",
+        "name": "Pecans",
+        "type": "Category",
+        "linking_id": "h2ijq",
+        "number_of_children": "0",
+        "canonical_url": "/c/pecans-nuts-snacks-grocery/-/N-h2ijq",
+        "seo_h1": "Pecans",
+        "page_id": "/c/h2ijq",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_4ef794d8-6779-4d19-8942-60357715f934"
+      },
+      {
+        "node_id": "94swx",
+        "name": "Walnuts",
+        "type": "Category",
+        "linking_id": "94swx",
+        "number_of_children": "0",
+        "canonical_url": "/c/walnuts-nuts-snacks-grocery/-/N-94swx",
+        "seo_h1": "Walnuts",
+        "page_id": "/c/94swx",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_57be699c-9e46-411e-8e43-f815c12dd944"
+      },
+      {
+        "node_id": "89egw",
+        "name": "Apricot Kernels",
+        "type": "Category",
+        "linking_id": "89egw",
+        "number_of_children": "0",
+        "canonical_url": "/c/apricot-kernels-nuts-snacks-grocery/-/N-89egw",
+        "seo_h1": "Apricot Kernels",
+        "page_id": "/c/89egw",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_fe6416ca-b84b-4827-852f-9d682b99463c"
+      },
+      {
+        "node_id": "aff1y",
+        "name": "Brazil Nuts",
+        "type": "Category",
+        "linking_id": "aff1y",
+        "number_of_children": "0",
+        "canonical_url": "/c/brazil-nuts-snacks-grocery/-/N-aff1y",
+        "seo_h1": "Brazil Nuts",
+        "page_id": "/c/aff1y",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_b79934f4-3634-4f1e-8461-04dacc827319"
+      },
+      {
+        "node_id": "ritg4",
+        "name": "Chestnuts",
+        "type": "Category",
+        "linking_id": "ritg4",
+        "number_of_children": "0",
+        "canonical_url": "/c/chestnuts-nuts-snacks-grocery/-/N-ritg4",
+        "seo_h1": "Chestnuts",
+        "page_id": "/c/ritg4",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_3a9ef7ff-85ad-467d-b6ec-7e3ee0d35222"
+      },
+      {
+        "node_id": "xsvrf",
+        "name": "Pine Nuts",
+        "type": "Category",
+        "linking_id": "xsvrf",
+        "number_of_children": "0",
+        "canonical_url": "/c/pine-nuts-snacks-grocery/-/N-xsvrf",
+        "seo_h1": "Pine Nuts",
+        "page_id": "/c/xsvrf",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_9b8466f8-167b-4a4c-9086-44467b452c5c"
+      },
+      {
+        "node_id": "5oplp",
+        "name": "Soy Nut",
+        "type": "Category",
+        "linking_id": "5oplp",
+        "number_of_children": "0",
+        "canonical_url": "/c/soy-nut-nuts-snacks-grocery/-/N-5oplp",
+        "seo_h1": "Soy Nut",
+        "page_id": "/c/5oplp",
+        "page_type": "category",
+        "image_path": "https://target.scene7.com/is/image/Target/GUEST_c0f01b5c-fc88-42e6-bdd3-22b07b0b889c"
+      }
+    ]
+  },
+  "slots": {
+    "200": {
+      "order": 200,
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-page_title-default"
+          }
+        ]
+      }
+    },
+    "300": {
+      "order": 300,
+      "presentation": "bubcat",
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic",
+            "placement_id": "63111e2c716d5367674daa9d"
+          }
+        ]
+      }
+    },
+    "1150": {
+      "order": 1150,
+      "content": {
+        "ad_slot": "categoryblock0",
+        "ad_unit": "/7079046/tgt/",
+        "page_type": "category",
+        "position": "block0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static",
+            "placement_id": "687a9d3cbf7b50255c1d3659"
+          }
+        ]
+      }
+    },
+    "2250": {
+      "order": 2250,
+      "content": {
+        "pos": "BLOCK1",
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]"
+      },
+      "presentation": "slingshot/dvm",
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-dvm-default"
+          }
+        ]
+      }
+    },
+    "2300": {
+      "order": 2300,
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-product-grid-default"
+          }
+        ]
+      }
+    },
+    "2350": {
+      "order": 2350,
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic",
+            "placement_id": "WEB-category-recs-default"
+          }
+        ]
+      }
+    },
+    "2500": {
+      "order": 2500,
+      "content": {
+        "message": "<a href=https://www.target.com/c/nuts-snacks-grocery/apricot-kernels/-/N-tc851Zal25lfasi3m>apricot seeds</a>,<a href=https://www.target.com/p/the-only-bean-crunchy-dry-roasted-edamame-snacks-sea-salt-0-9-oz-bag-pack-of-10/-/A-1001520974>the only bean edamame</a>,<a href=https://www.target.com/p/raw-whole-almonds-10-5oz-good-38-gather-8482/-/A-78099044?gQT=1>almonds</a>,<a href=https://www.target.com/c/nuts-snacks-grocery/love-corn/-/N-tc851Zd8vak>love nuts</a>,<a href=https://www.target.com/p/wonderful-roasted-salted-pistachios-8oz/-/A-14769468?sid=2333S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Produce+Floral&amp;adgroup=211-11&amp;gStoreCode=2333S&amp;gQT=1>wonderful pistachios</a>,<a href=https://www.target.com/c/nuts-snacks-grocery/corn-nuts/-/N-tc851Zwppgm>corn nuts</a>,<a href=https://www.target.com/c/nuts-snacks-grocery/target-brands/-/N-tc851Zxmf9o>nut brands</a>,<a href=https://www.target.com/p/blue-diamond-smokehouse-almonds-25oz/-/A-90898322?sid=2776S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Snacks+Candy&amp;adgroup=71-8&amp;gStoreCode=2776S&amp;gQT=1>smokehouse almonds</a>,<a href=https://www.target.com/c/nuts-snacks-grocery/ziba-foods/-/N-tc851Zq643le53301>ziba foods</a>,<a href=https://www.target.com/p/daily-crunch-nashville-hot-sprouted-almonds-5oz/-/A-90588634>daily crunch sprouted almonds</a>,<a href=https://www.target.com/p/de-la-rosa-japones-peanuts-candy-variety-pack-32oz/-/A-88666913>de la rosa japanese peanuts</a>,<a href=https://www.target.com/p/salted-comuna-valencia-almonds-4-93oz-good-38-gather-8482/-/A-84922777>valencia almonds</a>,<a href=https://www.target.com/p/wonderful-pistachios-no-shells-chili-roasted-5-5oz/-/A-77289304>wonderful chili roasted pistachios</a>,<a href=https://www.target.com/p/honey-roasted-almonds-6oz-good-38-gather-8482/-/A-84109299>honey roasted almonds</a>,<a href=https://www.target.com/b/pop-sol-by-nuts-com/-/N-q643lev12il>pop and sol</a>,<a href=https://www.target.com/p/wonderful-roasted-salted-pistachios-8oz/-/A-14769468>wonderful pistachios 8 oz</a>,<a href=https://www.target.com/c/nuts-snacks-grocery/karma/-/N-tc851Zq643le2kcow>karma nuts</a>,<a href=https://www.target.com/p/lightly-salted-roasted-whole-cashews-30oz-good-38-gather-8482/-/A-78063009>lightly salted cashews</a>,<a href=https://www.target.com/p/wonderful-pistachios-roasted-38-salted-16oz/-/A-79706587>wonderful pistachios 16 oz</a>,<a href=https://www.target.com/p/woodstock-farms-organic-brazil-nuts-44-lb/-/A-89631189>woodstock brazil nuts</a>,<a href=https://www.target.com/p/wonderful-roasted-salted-no-shells-pistachios-12oz/-/A-14388320>ready to eat pistachios</a>,<a href=https://www.target.com/p/biena-honey-roasted-8oz/-/A-85239547>biena roasted chickpeas sugar per ounce</a>,<a href=https://www.target.com/p/sesame-honey-almonds-6oz/-/A-89369964>sesame honey almonds</a>,<a href=https://www.target.com/p/diamond-of-california-sliced-almonds-6oz/-/A-53467370>diamond sliced almonds</a>,<a href=https://www.target.com/p/navitas-organics-organic-power-snack-cacao-goji-16-oz-454-g/-/A-89230662>navitas power snacks</a>,<a href=https://www.target.com/p/blue-diamond-wasabi-soy-sauce-almonds-12oz/-/A-17079629>blue diamond wasabi soy almonds</a>,<a href=https://www.target.com/c/nuts-snacks-grocery/organic/-/N-tc851Zs2ozl>organic nuts</a>,<a href=https://www.target.com/p/blue-diamond-salt-38-vinegar-almonds-6oz/-/A-76555869>salt and vinegar almonds blue diamond</a>,<a href=https://www.target.com/p/planters-deluxe-whole-cashews-lightly-salted-18-25oz/-/A-16908237>planters deluxe salted whole cashews</a>,<a href=https://www.target.com/p/wonderful-roasted-light-salt-no-shells-pistachios-12oz/-/A-82136241>wonderful lightly salted pistachios</a>,<a href=https://www.target.com/p/blue-diamond-almonds-roasted-salted-12oz/-/A-14723325>blue diamond roasted salted almonds</a>,<a href=https://www.target.com/p/biena-sea-salt-8oz/-/A-85239546>biena chickpea snacks sea salt</a>,<a href=https://www.target.com/p/planters-deluxe-lightly-salted-mixed-nuts-15-25oz/-/A-16134037>planters lightly salted mixed nuts</a>,<a href=https://www.target.com/c/nuts-snacks-grocery/low-sodium/-/N-tc851Z7ct93>low sodium nuts</a>,<a href=https://www.target.com/p/wonderful-pistachios-no-shells-honey-roasted-5-5oz/-/A-77289149>wonderful honey roasted pistachios</a>,<a href=https://www.target.com/c/nuts-snacks-grocery/wonderful/-/N-tc851Z55fss>wonderful nuts</a>,<a href=https://www.target.com/b/pop-sol-by-nuts-com/-/N-q643lev12il>pop & sol</a>",
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        }
+      },
+      "presentation": "c_web_a_0029_v02",
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-425967",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic",
+            "placement_id": "6855775d8a58a5663de1f2cb"
+          }
+        ]
+      }
+    }
+  },
+  "activation_date": "2025-07-24T07:00Z",
+  "uri": "/tc851/WEB"
+}

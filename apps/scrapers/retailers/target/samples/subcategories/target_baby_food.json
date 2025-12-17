@@ -1,0 +1,509 @@
+{
+  "metadata": {
+    "seo_data": {
+      "page_id": "/c/5xtki",
+      "image_path": "https://target.scene7.com/is/image/Target/GUEST_7c6a7222-37de-4f34-ac4a-1bf4aac39e8e",
+      "seo_keywords": "Baby Food, Nursing & Feeding, Baby",
+      "robots": "index, follow",
+      "page_type": "category",
+      "seo_description": "Get Baby Food from Target to save money and time. Select Same Day Delivery or Drive Up for easy contactless purchases.",
+      "seo_title": "Baby Food : Target",
+      "seo_h1": "Baby Food",
+      "canonical_url": "/c/baby-food-nursing-feeding/-/N-5xtki"
+    },
+    "node_id": "5xtki",
+    "type": "Category",
+    "breadcrumbs": [
+      {
+        "node_id": "root",
+        "page_type": "category",
+        "page_id": "/c/root",
+        "seo_h1": "Homepage",
+        "canonical_url": "/",
+        "number_of_children": "45",
+        "linking_id": "root",
+        "type": "Category",
+        "name": "Homepage"
+      },
+      {
+        "node_id": "5xtly",
+        "page_type": "category",
+        "page_id": "/c/5xtly",
+        "seo_h1": "Baby",
+        "canonical_url": "/c/baby/-/N-5xtly",
+        "number_of_children": "26",
+        "linking_id": "5xtly",
+        "type": "Category",
+        "name": "Baby"
+      },
+      {
+        "node_id": "5xtl0",
+        "page_type": "category",
+        "page_id": "/c/5xtl0",
+        "seo_h1": "Nursing & Feeding",
+        "canonical_url": "/c/nursing-feeding-baby/-/N-5xtl0",
+        "number_of_children": "14",
+        "linking_id": "5xtl0",
+        "type": "Category",
+        "name": "Nursing & Feeding"
+      }
+    ],
+    "og": {
+      "title": "Baby Food : Target",
+      "type": "product.group",
+      "image": "https://target.scene7.com/is/image/Target/GUEST_7c6a7222-37de-4f34-ac4a-1bf4aac39e8e",
+      "url": "/c/baby-food-nursing-feeding/-/N-5xtki",
+      "description": "Get Baby Food from Target to save money and time. Select Same Day Delivery or Drive Up for easy contactless purchases."
+    },
+    "content": {
+      "suppress_sponsored_ads": false,
+      "suppress_banner_ads": false
+    },
+    "linking_id": "5xtki",
+    "title": "Baby Food",
+    "deactivation_date": "2026-01-04T08:00Z",
+    "activation_date": "2025-11-16T08:00Z"
+  },
+  "slots": {
+    "200": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Page Title",
+            "id": "WEB-c_web_pagetitle_v01",
+            "placement_id": "WEB-category-page_title-default",
+            "type": "c_web_pagetitle_v01",
+            "type_name": "Page Title",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/pagetitle/v01/mobile",
+      "order": 200
+    },
+    "300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Bubcat placeholder for web",
+            "id": "WEB-c_bubcat_v01",
+            "placement_id": "63111e2c716d5367674daa9d",
+            "type": "c_bubcat_v01",
+            "type_name": "Bubcat",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "bubcat",
+      "order": 300
+    },
+    "600": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Nov wk 4_Baby_Food_Shop_By_Age_Nav",
+            "id": "WEB-414011",
+            "placement_id": "673f8761d31e57797828e10b",
+            "type": "c_web_a_0003_v04",
+            "type_name": "Browse Manual",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "text_only": false,
+        "taxonomy_nodes": [
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/-/N-5xtkiZ5lt5aZ7z9d7?type=products",
+            "link_tag": "C_BabyFood_4-months-and-up_5-months-and-up_WEB-414011_0",
+            "link_name": "4&#8211;5 months",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_21a0823e-0539-4cc6-9cea-0d806ba28e42"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/-/N-5xtkiZ33r9kZ5mfzbZ90xly?type=products",
+            "link_tag": "C_BabyFood_7-months-and-up_6-months-and-up_8-months-and-up_WEB-414011_1",
+            "link_name": "6&#8211;8 months",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_76d31f90-9085-4d85-961e-f2c799a3f440"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/-/N-5xtkiZ29s41Z5kr39ZaqbyzZnmxef?type=products",
+            "link_tag": "C_BabyFood_10-months-and-up_9-months-and-up_12-months-and-up_11-months-and-up_WEB-414011_2",
+            "link_name": "9&#8211;12 months",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_d564f5ce-1a8b-442a-a675-c2ebd4f5f486"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/-/N-5xtkiZ5621dZ56derZaqbyzZdr1t7Zl32qh?type=products",
+            "link_tag": "C_BabyFood_toddler-12-36-months_24-months-and-up_12-months-and-up_18-months-and-up_15-months-and-up_WEB-414011_3",
+            "link_name": "12+ months  ",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_b64831bd-5d0f-48ab-ab5f-5352129ce204"
+          }
+        ],
+        "shape": "circle",
+        "scene7_params": "wid=315&hei=315&qlt=60&fmt=pjpeg",
+        "metadata": {
+          "component_type": "Browse - Manual",
+          "component_version": "04"
+        },
+        "headline": "Shop by age"
+      },
+      "presentation": "/adaptive/c_web_a_0003/v04/mobile",
+      "order": 600
+    },
+    "1100": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_11Wk3_Baby_ValueBabyFood_DynamicIRC",
+            "id": "WEB-436034",
+            "placement_id": "6916dbf71527587cd8639a0a",
+            "type": "c_web_a_0056_v01",
+            "type_name": "Item or Promotion Carousel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "trackingId": "WEB-436034",
+        "text_color": "dark",
+        "metadata": {
+          "component_type": "Item Or Promotion Carousel",
+          "component_version": "01"
+        },
+        "margin_bottom": "standard",
+        "id": "WEB-436034",
+        "custom_headline": "Best-selling baby food under $5 ",
+        "container_design": {
+          "type": "default-carousel"
+        },
+        "container": {
+          "callToAction": "add_to_cart",
+          "keyValuePairs": {
+            "context": "placementId,adapt_primary_top_sellers;categoryId,5xtki;facetId,3glrd"
+          },
+          "type": "personalizedProducts"
+        },
+        "background_color": "#f7f7f7"
+      },
+      "presentation": "universal_prz_carousel",
+      "order": 1100
+    },
+    "1150": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Default Category Roundel Component",
+            "id": "WEB-category-roundel-default",
+            "placement_id": "687a9d3cbf7b50255c1d3659",
+            "type": "c_web_dvm3_v01",
+            "type_name": "Web Top Deals Roundel",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "position": "block0",
+        "page_type": "category",
+        "ad_unit": "/7079046/tgt/",
+        "ad_slot": "categoryblock0"
+      },
+      "presentation": "c_web_dvm3_v01",
+      "order": 1150
+    },
+    "1500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2025_09Wk2_Baby_OrganicBabyFood",
+            "id": "STORY-39436",
+            "placement_id": "6916dbf71527587cd8639a0f",
+            "type": "story_v01",
+            "type_name": "Story",
+            "content_type": "manual"
+          }
+        ]
+      },
+      "content": {
+        "width": 100,
+        "type_stack": "medium",
+        "text_position": "middleleft",
+        "subhead": {
+          "content": [
+            {
+              "insert": {
+                "text": "Explore Once Upon a Farm, Beech-Nut & more trusted brands.\n"
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            }
+          ]
+        },
+        "metadata": {
+          "component_type": "Story",
+          "component_version": "01"
+        },
+        "link": {
+          "target": "TAXONOMY",
+          "link_tag": "C_BabyFood_0021-organic_STORY-39436",
+          "destination_content": "GRID",
+          "detail": {
+            "id": "5xtki",
+            "name": "Baby Food",
+            "seo_url": "/c/baby-food-nursing-feeding/organic/-/N-5xtki",
+            "type": "CATEGORY",
+            "page_type_prefix": "c"
+          },
+          "facets": [
+            {
+              "id": "s2ozl",
+              "name": "d_dietary_needs",
+              "value": "0021 organic",
+              "seo_value": "organic"
+            }
+          ],
+          "marketing_groups": []
+        },
+        "image_7x12": "https://target.scene7.com/is/image/Target/GUEST_6b0b5223-8ac2-4677-b294-15dd417c7597",
+        "image_5x2": "https://target.scene7.com/is/image/Target/GUEST_4ad2d6f3-5883-4ba0-8c48-3b0f5b7eb115",
+        "image_4x1": "https://target.scene7.com/is/image/Target/GUEST_ed8afb40-2d9a-4011-8fde-5ab27897f6d3",
+        "image_1x1": "https://target.scene7.com/is/image/Target/GUEST_b0e16d8c-08cc-4da6-9155-95c375eb77ea",
+        "image_16x9": "https://target.scene7.com/is/image/Target/GUEST_9c7701c6-1c7d-46e0-94ca-7f9027a01eef",
+        "headline": {
+          "content": [
+            {
+              "insert": {
+                "text": "Your go-to for organic baby food\n"
+              },
+              "attributes": {
+                "color": "#333333"
+              }
+            }
+          ]
+        },
+        "fine_print": {
+          "content": []
+        },
+        "call_to_action_button_style": {
+          "background_color": "#cc0000",
+          "text_color": "#ffffff",
+          "button_type": "filled",
+          "button_copy": "Shop organic baby food"
+        },
+        "background_color_behavior": "simplified",
+        "background_color": "#f6f5f1"
+      },
+      "presentation": "standard",
+      "styles": {
+        "bottom_margin": "16px",
+        "position": "standalone"
+      },
+      "order": 1500
+    },
+    "1700": {
+      "metadata": {
+        "components": [
+          {
+            "title": "2023 08/20 Baby Food - Shop by brand",
+            "id": "WEB-383330",
+            "placement_id": "6916dbf71527587cd8639a10",
+            "type": "c_web_a_0003_v04",
+            "type_name": "Browse Manual",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "text_only": false,
+        "taxonomy_nodes": [
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/good-gather/-/N-5xtkiZyfqzk",
+            "link_tag": "C_BabyFood_good-&-gather_WEB-383330_0",
+            "link_name": "Good & Gather Baby & Toddler Food",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_31f0da6e-de6c-4db1-8265-9e28ac223c41"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/once-upon-a-farm/-/N-5xtkiZfqfwd",
+            "link_tag": "C_BabyFood_once-upon-a-farm_WEB-383330_1",
+            "link_name": "Once Upon a Farm",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_9c378aa4-925b-449d-aef0-f95db2d0de3d"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/gerber/-/N-5xtkiZ5y4gj?type=products&facetRecovery=true",
+            "link_tag": "GerberBabyFood",
+            "link_name": "Gerber<span class=\"h-sr-only\"> </span><br aria-hidden=\"true\">",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_e8c8e8bd-95cb-46ca-82de-7ffa1e96b328"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/happy-family/-/N-5xtkiZ4yiex",
+            "link_tag": "C_BabyFood_happy-family_WEB-383330_3",
+            "link_name": "Happy Family<span class=\"h-sr-only\"> </span><br aria-hidden=\"true\">",
+            "image_path": "//target.scene7.com/is/image/Target/6Wk5_Baby_BabyFood_CN-_HappyFamilycopy178965-190610_1560194954755"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/earth-s-best/-/N-5xtkiZ5rggn?type=products&facetRecovery=true",
+            "link_tag": "EarthsBestBabyF",
+            "link_name": "Earth&#8217;s Best<span class=\"h-sr-only\"> </span><br aria-hidden=\"true\">",
+            "image_path": "//target.scene7.com/is/image/Target/6Wk5_Baby_BabyFood_CN-_EarthsBestOrganiccopy178965-190610_1560194978256"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/beech-nut/-/N-5xtkiZ4ppou?type=products&facetRecovery=true",
+            "link_tag": "BeechNutBabyFoo",
+            "link_name": "Beech-Nut<span class=\"h-sr-only\"> </span><br aria-hidden=\"true\">",
+            "image_path": "//target.scene7.com/is/image/Target/6Wk5_Baby_BabyFood_CN-_BeechNutcopy178965-190610_1560194996795"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/baby-food-nursing-feeding/serenity-kids/-/N-5xtkiZq643lef3uo4",
+            "link_tag": "C_BabyFood_serenity-kids_WEB-383330_6",
+            "link_name": "Serenity",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_84e349b4-4f51-4295-bfde-844a7b6641bd"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/b/kendamil/-/N-q643le4gy3zZhmqn7Zvzbuu?type=products",
+            "link_tag": "C_Kendamil_pediatric-nutritional-drinks_baby-cereals_WEB-383330_7",
+            "link_name": "Kendamil",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_f1cc3901-ccb2-482d-be47-b049133be908"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/b/yumi/-/N-q643leudaoy",
+            "link_tag": "C_YUMI_WEB-383330_8",
+            "link_name": "Yumi",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_5bfdc7a7-3507-478e-bdfe-71a12bb71b29"
+          },
+          {
+            "reference_type": "DEFINED",
+            "link_url": "/c/when-to-introduce-baby-solid-foods/-/N-g90sl",
+            "link_tag": "C_WhentoIntroduceBabytoSolidFoods_WEB-383330_9",
+            "link_name": "Baby Food Guide",
+            "image_path": "https://target.scene7.com/is/image/Target/GUEST_f1d8b5a2-17b7-4d0d-a082-9938d5d44b72"
+          }
+        ],
+        "shape": "circle",
+        "scene7_params": "wid=315&hei=315&qlt=60&fmt=pjpeg",
+        "metadata": {
+          "component_type": "Browse - Manual",
+          "component_version": "04"
+        },
+        "headline": "Featured brands & seasonal faves"
+      },
+      "presentation": "/adaptive/c_web_a_0003/v04/mobile",
+      "order": 1700
+    },
+    "2250": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Roundel",
+            "id": "WEB-c_web_dvm_v01",
+            "placement_id": "WEB-category-dvm-default",
+            "type": "c_web_dvm_v01",
+            "type_name": "ROUNDEL",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "sizes": "[[[0,0],[]],[[300,125],[\"fluid\",[300,75]]],[[768,200],[\"fluid\",[728,90],[768,100]]],[[1024,200],[\"fluid\",[728,90],[1024,100]]],[[1200,200],[\"fluid\",[728,90],[970,90],[1200,100]]]]",
+        "pos": "BLOCK1"
+      },
+      "presentation": "slingshot/dvm",
+      "order": 2250
+    },
+    "2300": {
+      "metadata": {
+        "components": [
+          {
+            "title": "Product Grid",
+            "id": "WEB-c_web_productgrid_v01",
+            "placement_id": "WEB-category-product-grid-default",
+            "type": "c_web_productgrid_v01",
+            "type_name": "Product Grid",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "presentation": "/adaptive/placeholders/productgrid/v01/mobile",
+      "order": 2300
+    },
+    "2350": {
+      "metadata": {
+        "components": [
+          {
+            "title": "PLP Recommendations",
+            "id": "WEB-c_web_plp_recs_v01",
+            "placement_id": "WEB-category-recs-default",
+            "type": "c_web_recs_v01",
+            "type_name": "Recommendations",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "placement_id": "plp"
+      },
+      "presentation": "/adaptive/c_web_a_0004/v03/mobile",
+      "order": 2350
+    },
+    "2500": {
+      "metadata": {
+        "components": [
+          {
+            "title": "SEO",
+            "id": "WEB-426066",
+            "placement_id": "685577698a58a5663de1f2e8",
+            "type": "c_web_a_0029_v02",
+            "type_name": "SEO Dynamic Linking",
+            "content_type": "dynamic"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO Dynamic Linking",
+          "component_version": "02"
+        },
+        "message": "<a href=https://www.target.com/c/baby-food-nursing-feeding/once-upon-a-farm/-/N-5xtkiZfqfwd>once upon a farm</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/fresh-bellies/-/N-5xtkiZq643leddpvs>fresh bellies</a>,<a href=https://www.target.com/p/gerber-lil-crunchies-baked-whole-grain-corn-snack-apple-and-sweet-potato-1-48oz/-/A-14528753>gerber</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/good-gather/-/N-5xtkiZyfqzk>good and gather baby food</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/baby-snacks/-/N-5xtkiZo1smq>baby snacks</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/gerber/-/N-5xtkiZ5y4gj>gerber baby food</a>,<a href=https://www.target.com/p/gerber-single-grain-oatmeal-baby-cereal-16oz/-/A-14528796>gerber organic oatmeal</a>,<a href=https://www.target.com/s/happy+baby+organic>happy baby food</a>,<a href=https://www.target.com/p/gerber-yogurt-melts-mixed-berries-freeze-dried-yogurt-38-fruit-snacks-1oz/-/A-14602083>gerber yogurt melts</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/1st-stage/-/N-5xtkiZmn41wj5n4li>best baby food stage 1</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/vegetable/-/N-5xtkiZ55k7b>baby food vegetables</a>,<a href=https://www.target.com/s/happy+tot>happy tot meals</a>,<a href=https://www.target.com/p/fresh-bellies-two-to-mango-baby-snacks-0-75oz/-/A-79472235>fresh bellies mango</a>,<a href=https://www.target.com/p/happy-baby-savory-blends-stage-3-pouches-grass-fed-beef-vegetable-38-quinoa-stew-baby-meals-3-5oz/-/A-85069661>happy baby stage 3</a>,<a href=https://www.target.com/p/earth-39-s-best-melty-hoops-spring-veggies-multipack-baby-food-1-28oz-4ct/-/A-92788084>organic melty hoops</a>,<a href=https://www.target.com/p/little-bellies-organic-banana-pick-me-sticks-baby-snacks-0-56oz/-/A-85585225>little bellies pick me sticks</a>,<a href=https://www.target.com/p/cerebelly-organic-blueberry-banana-sweet-potato-smart-snack-bars-4-2oz-5pk/-/A-83903916>cerebelly bars</a>,<a href=https://www.target.com/p/gerber-sitter-2nd-foods-banana-baby-meals-2ct-8oz/-/A-14599316>gerber puree</a>,<a href=https://www.target.com/p/organic-freeze-dried-mixed-berry-yogurt-bites-1oz-good-38-gather-8482/-/A-87657906>good and gather yogurt bites</a>,<a href=https://www.target.com/p/happybaby-sweet-potato-38-banana-organic-teethers-12ct-1-7oz/-/A-16185676>happy baby teethers age</a>,<a href=https://www.target.com/p/happybaby-clearly-crafted-bananas-raspberries-38-oats-baby-food-pouch-4oz/-/A-50631201>happy baby banana raspberry oats</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/gerber/-/N-5xtkiZ5y4gj>gerber baby food</a>,<a href=https://www.target.com/p/organic-orange-sweet-potato-snack-bars-3-17oz-5ct-good-38-gather-8482/-/A-87689988>ddoddoman sweet potato bar nutritional information</a>,<a href=https://www.target.com/p/baby-food-tub-8211-pears-8211-4-oz-good-38-gather-8482/-/A-87712428>pears for babies</a>,<a href=https://www.target.com/p/gerber-yogurt-melts-mixed-berries-freeze-dried-yogurt-38-fruit-snacks-1oz/-/A-14602083>gerber yogurt melts reviews</a>,<a href=https://www.target.com/p/yumi-organic-blueberry-38-purple-carrot-baby-snack-bars-3-7oz-5ct/-/A-86226708>yumi bars recall</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/all-deals/-/N-5xtkiZakkos>baby food coupon</a>,<a href=https://www.target.com/p/serenity-kids-grass-fed-bison-with-organic-kabocha-squash-38-spinach-baby-meals-3-5oz/-/A-82080692>serenity kids bison</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/orange/-/N-5xtkiZ55jv8>orange baby food</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/teething-snacks/-/N-5xtkiZ6qber>baby teether snacks</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/peter-rabbit-organics/-/N-5xtkiZuojev>peter rabbit food pouch</a>,<a href=https://www.target.com/p/gerber-2nd-foods-ham-38-gravy-puree-jar-2-5oz/-/A-87925022>ham baby food</a>,<a href=https://www.target.com/p/gerber-mashed-potatoes-and-seasoned-ground-beef-baby-meals-6-67oz/-/A-88193361>gerber mashed potatoes and gravy</a>,<a href=https://www.target.com/p/sprout-foods-organic-blueberry-apple-wafflez-toddler-snacks-3-15oz/-/A-82080684>wafflez</a>,<a href=https://www.target.com/p/ready-set-food-organic-peanut-butter-puffs-1-5oz/-/A-89835032>ready set food puffs</a>,<a href=https://www.target.com/p/gerber-lil-39-entrees-macaroni-38-cheese-with-seasoned-peas-and-carrots-6-6oz/-/A-14376327>gerber mac n cheese</a>,<a href=https://www.target.com/p/happytot-super-bellies-pouches-8pk/-/A-84022430>super bellies pouches</a>,<a href=https://www.target.com/p/happybaby-clearly-crafted-sweet-potatoes-baby-food-4oz/-/A-53205404>happy baby sweet potato</a>,<a href=https://www.target.com/p/gerber-lil-39-crunchies-garden-tomato-baked-corn-baby-snacks-1-48oz/-/A-14602081>gerber tomato puffs</a>,<a href=https://www.target.com/p/happytot-super-bellies-pouches-8pk/-/A-84022430?sid=797S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Baby&amp;adgroup=7-10&amp;gStoreCode=797S&amp;gQT=2>happy tot super bellies</a>,<a href=https://www.target.com/p/sprout-foods-organic-pumpkin-butter-38-jelly-wafflez-toddler-snacks-3-15oz/-/A-82080690>sprout wafflez</a>,<a href=https://www.target.com/p/happytot-love-my-veggies-4pk-organic-carrots-bananas-mangos-38-sweet-potatoes-16-88oz/-/A-17079478>happy tot love my veggies</a>,<a href=https://www.target.com/p/gerber-2nd-foods-wonderfoods-banana-plum-38-grape-puree-tub-8oz-2pk/-/A-87925020>gerber plum baby food</a>,<a href=https://www.target.com/p/blueberry-teething-wafers-baby-snacks-1-76oz-12pk-good-38-gather-8482/-/A-88007093>good and gather teething wafers heavy metals</a>,<a href=https://www.target.com/p/gerber-toddler-food-fruit-yogurt-strawberry-banana-3-5oz/-/A-53382094>gerber baby pouches</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/sprout-organics/-/N-5xtkiZq643leuz3xa>sprout baby food</a>,<a href=https://www.target.com/p/gerber-sitter-2nd-foods-peach-baby-meals-tubs-2ct-4oz-each/-/A-14528759>gerber peach baby food</a>,<a href=https://www.target.com/p/gerber-fruit-38-veggie-melts-very-berry-blend-freeze-dried-snack-1oz/-/A-13996946>gerber fruit and veggie melts</a>,<a href=https://www.target.com/p/gerber-teether-wheels-apple-harvest-baby-snacks-1-48oz/-/A-14782741>gerber wheels</a>,<a href=https://www.target.com/p/happybaby-clearly-crafted-carrots-baby-meals-jar-4oz/-/A-54557877>happy baby jar food</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/3rd-stage/-/N-5xtkiZmn41wj5mfza>stage 3 baby food</a>,<a href=https://www.target.com/p/gerber-apple-prune-juice-baby-beverages-4ct-6-fl-oz-total/-/A-14071510>apple prune juice for constipation</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/vanilla/-/N-5xtkiZ55k6l>vanilla baby food</a>,<a href=https://www.target.com/p/happytot-organic-veggies-38-wild-rice-with-mushrooms-and-parmesan-baby-food-4-5oz/-/A-79314678>happy tots meals</a>,<a href=https://www.target.com/p/earth-39-s-best-sesame-street-organic-sunny-days-strawberry-snack-bars-16ct/-/A-52126348>organic sunny days snack bars</a>,<a href=https://www.target.com/p/earth-39-s-best-crunchin-39-grahams-honey-sticks-baby-snacks-5-3oz/-/A-85069756>baby graham crackers</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/baby-fruit-and-vegetable-snacks/-/N-5xtkiZ5c02p>baby fruit snacks</a>,<a href=https://www.target.com/p/once-upon-a-farm-organic-smart-blend-kids-39-snack-variety-pack-12-8oz-4ct-pouches/-/A-84621423>once upon a farm smart blend</a>,<a href=https://www.target.com/p/gerber-fruit-38-yogurt-pouch-variety-baby-snacks-1-96oz-9pk-each/-/A-82089010>gerber yogurt pouches</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/gluten-free/-/N-5xtkiZb8gba>gluten free baby food</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/cerebelly/-/N-5xtkiZq643le5rylk>cerebelly pouches</a>,<a href=https://www.target.com/p/mission-mightyme-nutty-puffs-baby-snacks-mixed-nut-butter-1-5oz-1-5oz/-/A-91271089>mighty me puffs</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/pouch/-/N-5xtkiZwj2xwrnas1u>toddler pouches</a>,<a href=https://www.target.com/p/once-upon-a-farm-coconut-melts-mango-baby-snacks-1oz/-/A-90293092>once upon a farm yogurt melts</a>,<a href=https://www.target.com/b/yumi/-/N-q643leudaoy>yumi bar</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/8-months-and-up/-/N-5xtkiZ90xly>8 month baby food</a>,<a href=https://www.target.com/p/beech-nut-naturals-prunes-baby-food-jar-4oz/-/A-53968490>beech nut prunes</a>,<a href=https://www.target.com/p/cerebelly-organic-strawberry-beet-smart-snack-bars-4-2oz-5pk/-/A-83903917>smart bars strawberry beet</a>,<a href=https://www.target.com/p/earth-39-s-best-sesame-street-organic-veggie-cheddar-puffs-baby-snacks-1-55oz/-/A-81624435>earth's best cheddar puffs</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/-/N-5xtki>infant food</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/7-months-and-up/-/N-5xtkiZ33r9k>snacks for 7 month old</a>,<a href=https://www.target.com/p/cerebelly-organic-blueberry-banana-sweet-potato-smart-snack-bars-4-2oz-5pk/-/A-83903916>cerebelly snack bars</a>,<a href=https://www.target.com/p/once-upon-a-farm-coconut-yogurt-alternative-mixed-berry-organic-snack-pouch-3-2oz/-/A-92959664?gQT=1>once upon a farm yogurt</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/apple/-/N-5xtkiZ55jv3>apple baby food</a>,<a href=https://www.target.com/p/gerber-puffs-vanilla-cereal-baby-snacks-1-48oz/-/A-14138210>gerber puffs vanilla</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/microwaveable-baby-entrees/-/N-5xtkiZol0mk>baby food meals</a>,<a href=https://www.target.com/p/fresh-bellies-strawberry-feels-forever-0-75oz/-/A-79472237?sid=1159S&amp;afid=google&amp;TCID=OGS&amp;CPNG=Baby&amp;adgroup=7-10&amp;gStoreCode=1159S&amp;gQT=0>fresh bellies strawberry</a>,<a href=https://www.target.com/p/brainiac-kids-little-brainiac-neuro-smoothie-baby-meals-strawberry-banana-3-5oz/-/A-90462520>brainiac baby food</a>,<a href=https://www.target.com/p/beech-nut-organics-pumpkin-baby-food-jar-4oz/-/A-50623992>pumpkin baby food</a>,<a href=https://www.target.com/p/happytot-super-foods-oat-bar-blueberry-38-oatmeal-5ct-4-4oz/-/A-54557860>happy tot bars</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/baby-snack-bars/-/N-5xtkiZlhkzn>baby bars</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/12-months-and-up/-/N-5xtkiZaqbyz>12 month old snacks</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/brainiac-kids/-/N-5xtkiZq643le4kw8y>little brainiac baby food</a>,<a href=https://www.target.com/p/serenity-kids-wild-caught-salmon-with-organic-butternut-squash-38-beet-baby-meals-3-5oz/-/A-82080694>serenity salmon</a>,<a href=https://www.target.com/p/gerber-sitter-2nd-foods-chicken-rice-baby-meals-2ct-4oz-each/-/A-14783299>gerber chicken and rice</a>,<a href=https://www.target.com/c/baby-food-nursing-feeding/teething-snacks/-/N-5xtkiZ6qber>baby teether snacks</a>,<a href=https://www.target.com/s/happybaby+advancing+textures>happy baby advancing textures</a>"
+      },
+      "presentation": "c_web_a_0029_v02",
+      "order": 2500
+    },
+    "2600": {
+      "metadata": {
+        "components": [
+          {
+            "title": "10.8.21 SEO Copy Baby Food",
+            "id": "WEB-345659",
+            "placement_id": "615219eb15072e5f3327bfd5",
+            "type": "c_web_a_0029_v01",
+            "type_name": "SEO Component",
+            "content_type": "static"
+          }
+        ]
+      },
+      "content": {
+        "metadata": {
+          "component_type": "SEO",
+          "component_version": "01"
+        },
+        "message": "<p>Looking for some wholesome baby food for your infant? Whether it is store-bought baby food or well-cooked homemade baby food, your toddler deserves nothing but the best. Give your little one a nutritious start to the day by choosing baby food like oatmeal cereal with the goodness of fruit like apple and banana. Worried about providing ample nutrition to your infant during lunchtime? Go for healthy vegetable puree pouches that are not only easy to use but are also packed with the goodness of greens. Baby food in the form of puree is also available in a portable jar with a single ingredient like peas, sweet potato or pumpkin. Want your baby to snack on something healthy? Select baby food like healthy puffs or oat crackers available in a fruit or chocolate flavor. Whether you are at home or planning a day out with your baby, the baby food collection at Target offers nutritious and convenient solutions to your little one&#8217;s needs. </p>"
+      },
+      "presentation": "/adaptive/c_web_a_0029/v01/mobile",
+      "order": 2600
+    }
+  },
+  "uri": "/5xtki/WEB",
+  "deactivation_date": "2026-01-04T08:00Z",
+  "activation_date": "2025-11-16T08:00Z"
+}
