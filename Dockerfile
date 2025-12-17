@@ -71,8 +71,8 @@ ENV VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY
 # Build all packages except integration-tests (not needed in production)
 RUN yarn build --filter='!integration-tests-*' --filter='!./integration-tests/*'
 
-# Build Switchyard backend and admin
-RUN cd apps/goods-backend && npx switchyard build
+# Build Switchyard backend and admin (uses yarn script which properly resolves workspace CLI)
+RUN cd apps/goods-backend && yarn run build
 
 # Verify and prepare admin build
 RUN cd apps/goods-backend && \
@@ -93,4 +93,6 @@ EXPOSE 9000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
   CMD node -e "require('http').get('http://localhost:9000/health', (r) => process.exit(r.statusCode === 200 ? 0 : 1))"
 
-CMD ["npx", "switchyard", "start", "--host", "0.0.0.0"]
+# Start the server (uses yarn script which properly resolves workspace CLI)
+# --host 0.0.0.0 is needed for Docker networking
+CMD ["sh", "-c", "yarn switchyard start --host 0.0.0.0"]
