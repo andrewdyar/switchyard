@@ -1,14 +1,37 @@
 # =============================================================================
 # Production Dockerfile for Switchyard Application
 # =============================================================================
-# Simple single-stage build - reliable and straightforward
+# Multi-stage build optimized for Docker layer caching
+# Dependencies are cached unless package.json files change
 # =============================================================================
 
-FROM node:20-bullseye-slim
+# -----------------------------------------------------------------------------
+# Stage 1: Extract package.json files for dependency caching
+# -----------------------------------------------------------------------------
+FROM node:20-bullseye-slim AS package-extractor
 
 WORKDIR /app
 
-# Copy package manifests and yarn configuration
+# Copy everything
+COPY . .
+
+# Extract only package.json files maintaining directory structure
+# This creates a minimal /package-jsons directory with just the manifests
+RUN mkdir -p /package-jsons && \
+    find . -name "package.json" \
+      -not -path "./node_modules/*" \
+      -not -path "./.yarn/*" \
+      -not -path "*/node_modules/*" \
+      -exec sh -c 'mkdir -p "/package-jsons/$(dirname "$1")" && cp "$1" "/package-jsons/$1"' _ {} \;
+
+# -----------------------------------------------------------------------------
+# Stage 2: Install dependencies (cached layer)
+# -----------------------------------------------------------------------------
+FROM node:20-bullseye-slim AS deps
+
+WORKDIR /app
+
+# Copy yarn configuration first
 COPY package.json yarn.lock .yarnrc.yml ./
 COPY .yarn/releases .yarn/releases
 COPY .yarn/plugins .yarn/plugins
@@ -17,12 +40,24 @@ COPY .yarn/patches .yarn/patches
 # Copy workspace configuration
 COPY turbo.json tsconfig.json _tsconfig.base.json ./
 
-# Copy all workspace packages and apps
+# Copy only package.json files from all workspaces (from extractor stage)
+COPY --from=package-extractor /package-jsons/packages ./packages
+COPY --from=package-extractor /package-jsons/apps ./apps
+COPY --from=package-extractor /package-jsons/integration-tests ./integration-tests
+
+# Install dependencies - THIS LAYER IS CACHED if package.json files don't change
+RUN corepack enable && yarn install --inline-builds
+
+# -----------------------------------------------------------------------------
+# Stage 3: Build and run
+# -----------------------------------------------------------------------------
+FROM deps AS final
+
+WORKDIR /app
+
+# Now copy the actual source code (this invalidates build cache, but deps are cached above)
 COPY packages ./packages
 COPY apps ./apps
-
-# Install dependencies
-RUN corepack enable && yarn install --inline-builds
 
 # Set build environment
 ENV NODE_ENV=production
