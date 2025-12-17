@@ -117,10 +117,9 @@ export const Login = () => {
     setGoogleError(null)
 
     try {
-      // Use current origin for redirect - ensures it works in both dev and production
+      // Use current URL for redirect - ensures it works in both dev and production
       // The redirect URL must be whitelisted in Supabase Dashboard > Authentication > URL Configuration
-      const currentOrigin = window.location.origin
-      const redirectTo = `${currentOrigin}/login`
+      const redirectTo = window.location.href.split('#')[0].split('?')[0]
       
       const { data, error } = await supabase.auth.signInWithOAuth({
         provider: "google",
