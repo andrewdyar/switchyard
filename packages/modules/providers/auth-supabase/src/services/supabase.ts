@@ -7,6 +7,7 @@ import {
 import {
   AbstractAuthModuleProvider,
   SwitchyardError,
+  Modules,
 } from "@switchyard/framework/utils"
 import { createClient, SupabaseClient } from "@supabase/supabase-js"
 import crypto from "crypto"
@@ -160,6 +161,15 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
       }
 
       const entity_id = user.id
+      
+      // Extract user info from Google OAuth metadata if available
+      const googleMetadata = user.user_metadata || {}
+      const firstName = googleMetadata.given_name || googleMetadata.first_name || 
+        (googleMetadata.name ? googleMetadata.name.split(' ')[0] : null)
+      const lastName = googleMetadata.family_name || googleMetadata.last_name || 
+        (googleMetadata.name ? googleMetadata.name.split(' ').slice(1).join(' ') : null)
+      const profilePicture = googleMetadata.picture || googleMetadata.avatar_url || null
+      
       const userMetadata = {
         email: user.email,
         phone: user.phone,
@@ -168,9 +178,14 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
         supabase_user_id: user.id,
         email_confirmed: user.email_confirmed_at !== null,
         user_metadata: user.user_metadata,
+        // Include Google profile data
+        first_name: firstName,
+        last_name: lastName,
+        picture: profilePicture,
       }
 
       let authIdentity
+      let isNewAuthIdentity = false
       try {
         // Try to retrieve existing auth identity by entity_id (Supabase user ID)
         authIdentity = await authIdentityService.retrieve({ entity_id })
@@ -178,6 +193,66 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
         authIdentity = await authIdentityService.update(authIdentity.id, {
           user_metadata: userMetadata,
         })
+        
+        // Ensure existing auth identity is linked to a user
+        if (user.email && !authIdentity.app_metadata?.user_id) {
+          const { data: existingUser } = await this.supabaseAdmin_
+            .from('user')
+            .select('id')
+            .eq('email', user.email)
+            .single()
+          
+          if (existingUser) {
+            // Link to existing user
+            await this.supabaseAdmin_
+              .from('auth_identity')
+              .update({ 
+                app_metadata: { 
+                  ...authIdentity.app_metadata,
+                  user_id: existingUser.id,
+                  picture: profilePicture,
+                },
+                updated_at: new Date().toISOString()
+              })
+              .eq('id', authIdentity.id)
+            authIdentity.app_metadata = { 
+              ...authIdentity.app_metadata,
+              user_id: existingUser.id,
+              picture: profilePicture,
+            }
+          } else {
+            // Create new user for existing auth identity
+            try {
+              const userModuleService = this.container_.resolve(Modules.USER)
+              const newUser = await userModuleService.createUsers({
+                email: user.email,
+                first_name: firstName || undefined,
+                last_name: lastName || undefined,
+              })
+              
+              await this.supabaseAdmin_
+                .from('auth_identity')
+                .update({ 
+                  app_metadata: { 
+                    ...authIdentity.app_metadata,
+                    user_id: newUser.id,
+                    picture: profilePicture,
+                  },
+                  updated_at: new Date().toISOString()
+                })
+                .eq('id', authIdentity.id)
+              
+              authIdentity.app_metadata = { 
+                ...authIdentity.app_metadata,
+                user_id: newUser.id,
+                picture: profilePicture,
+              }
+              this.logger_.info(`Auto-created user record for existing auth identity: ${newUser.id}`)
+            } catch (createUserError: any) {
+              this.logger_.error(`Failed to auto-create user for existing auth identity: ${createUserError.message}`)
+            }
+          }
+        }
       } catch (error: any) {
         if (error.type === SwitchyardError.Types.NOT_FOUND) {
           try {
@@ -186,8 +261,9 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
               entity_id,
               user_metadata: userMetadata,
             })
+            isNewAuthIdentity = true
             
-            // Try to auto-link to existing user by email
+            // Try to auto-link to existing user by email, or create new user
             if (user.email) {
               const { data: existingUser } = await this.supabaseAdmin_
                 .from('user')
@@ -197,7 +273,6 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
               
               if (existingUser) {
                 // Link auth identity to existing user via direct database update
-                // (the authIdentityService.update doesn't support app_metadata)
                 await this.supabaseAdmin_
                   .from('auth_identity')
                   .update({ 
@@ -209,6 +284,37 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
                 // Update authIdentity object to reflect the change
                 authIdentity.app_metadata = { user_id: existingUser.id }
                 this.logger_.info(`Auto-linked auth identity to existing user: ${existingUser.id}`)
+              } else {
+                // Create new user record automatically
+                try {
+                  const userModuleService = this.container_.resolve(Modules.USER)
+                  const newUser = await userModuleService.createUsers({
+                    email: user.email,
+                    first_name: firstName || undefined,
+                    last_name: lastName || undefined,
+                  })
+                  
+                  // Link auth identity to new user
+                  await this.supabaseAdmin_
+                    .from('auth_identity')
+                    .update({ 
+                      app_metadata: { 
+                        user_id: newUser.id,
+                        picture: profilePicture, // Store profile picture in app_metadata
+                      },
+                      updated_at: new Date().toISOString()
+                    })
+                    .eq('id', authIdentity.id)
+                  
+                  authIdentity.app_metadata = { 
+                    user_id: newUser.id,
+                    picture: profilePicture,
+                  }
+                  this.logger_.info(`Auto-created user record: ${newUser.id} for new Google sign-in`)
+                } catch (createUserError: any) {
+                  this.logger_.error(`Failed to auto-create user: ${createUserError.message}`)
+                  // Continue without user record - user can be created manually later
+                }
               }
             }
           } catch (createError: any) {

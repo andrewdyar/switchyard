@@ -28,8 +28,12 @@ export const useCategoryTableColumns = () => {
         header: () => <TextHeader text={t("fields.name")} />,
         cell: ({ getValue, row }) => {
           const expandHandler = row.getToggleExpandedHandler()
-
-          if (row.original.parent_category !== undefined) {
+          
+          // Show path breadcrumb when searching (has ancestors) and not at root
+          const hasParentCategory = row.original.parent_category !== undefined && 
+                                    row.original.parent_category !== null
+          
+          if (hasParentCategory) {
             const path = getCategoryPath(row.original)
 
             return (
@@ -56,6 +60,7 @@ export const useCategoryTableColumns = () => {
             )
           }
 
+          // Show expand/collapse button for categories with children
           return (
             <div className="flex size-full items-center gap-x-3 overflow-hidden">
               <div className="flex size-7 items-center justify-center">
@@ -79,7 +84,9 @@ export const useCategoryTableColumns = () => {
                       })}
                     />
                   </IconButton>
-                ) : null}
+                ) : (
+                  <div className="size-7" /> // Spacer for alignment when no expand button
+                )}
               </div>
               <span className="truncate">{getValue()}</span>
             </div>

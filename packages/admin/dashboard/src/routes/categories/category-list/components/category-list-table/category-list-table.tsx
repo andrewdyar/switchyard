@@ -26,6 +26,7 @@ export const CategoryListTable = () => {
     ? {
         include_ancestors_tree: true,
         fields: "id,name,handle,is_active,is_internal,parent_category",
+        q: raw.q,
         ...searchParams,
       }
     : {

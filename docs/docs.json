@@ -4,7 +4,9 @@
   "theme": "almond",
   "logo": {
     "dark": "/logo/dark.svg",
-    "light": "/logo/light.svg"
+    "light": "/logo/light.svg",
+    "height": "50px",
+    "width": "auto"
   },
   "favicon": "/favicon.svg",
   "colors": {
@@ -23,7 +25,10 @@
     "options": [
       "copy",
       "chatgpt",
-      "claude"
+      "claude",
+      "mcp",
+      "cursor",
+      "vscode"
     ]
   },
   "topbarLinks": [
