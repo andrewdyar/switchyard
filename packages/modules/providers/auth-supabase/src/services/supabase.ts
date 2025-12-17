@@ -185,7 +185,6 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
       }
 
       let authIdentity
-      let isNewAuthIdentity = false
       try {
         // Try to retrieve existing auth identity by entity_id (Supabase user ID)
         authIdentity = await authIdentityService.retrieve({ entity_id })
@@ -261,7 +260,6 @@ export class SupabaseAuthService extends AbstractAuthModuleProvider {
               entity_id,
               user_metadata: userMetadata,
             })
-            isNewAuthIdentity = true
             
             // Try to auto-link to existing user by email, or create new user
             if (user.email) {
