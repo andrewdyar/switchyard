@@ -68,8 +68,8 @@ ARG VITE_SUPABASE_ANON_KEY
 ENV VITE_SUPABASE_URL=$VITE_SUPABASE_URL
 ENV VITE_SUPABASE_ANON_KEY=$VITE_SUPABASE_ANON_KEY
 
-# Build all packages
-RUN yarn build
+# Build all packages except integration-tests (not needed in production)
+RUN yarn build --filter='!integration-tests-*' --filter='!./integration-tests/*'
 
 # Build Switchyard backend and admin
 RUN cd apps/goods-backend && npx switchyard build
