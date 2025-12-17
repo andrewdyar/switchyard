@@ -269,7 +269,7 @@ export const Login = () => {
           {/* Google Sign-In */}
           {SUPABASE_URL && SUPABASE_ANON_KEY && (
             <>
-              <div className="relative my-4">
+              <div className="relative my-2">
                 <div className="absolute inset-0 flex items-center">
                   <div className="w-full border-t border-ui-border-base" />
                 </div>
