@@ -1,5 +1,6 @@
 import { createStep, StepResponse } from "@switchyard/framework/workflows-sdk"
-import { Modules } from "@switchyard/framework/utils"
+import { Modules, MedusaContext } from "@switchyard/framework/utils"
+import { Context } from "@switchyard/framework/types"
 
 type SyncSwiftSensorsDataStepInput = {
   accountId: string
@@ -57,26 +58,26 @@ export const syncSwiftSensorsDataStep = createStep(
       }
 
       // Sync latest readings
-      await syncService.syncLatestReadings(input.accountId, sensorMap, {})
+      await syncService.syncLatestReadings(input.accountId, sensorMap, {} as Context)
 
-      // Get equipment with thresholds for alert checking
-      for (const eq of equipment) {
-        const thresholds = await equipmentModuleService.getThresholds(eq.id, {})
+        // Get equipment with thresholds for alert checking
+        for (const eq of equipment) {
+          const thresholds = await equipmentModuleService.getThresholds(eq.id, {} as Context)
 
         const tempThreshold = thresholds.find((t: any) => t.measurement_type === "temperature")
         const humidityThreshold = thresholds.find((t: any) => t.measurement_type === "humidity")
 
-        // Get latest readings for this equipment
-        const latestTemp = await temperatureDataModuleService.getLatestReading(
-          eq.id,
-          "temperature",
-          {}
-        )
-        const latestHumidity = await temperatureDataModuleService.getLatestReading(
-          eq.id,
-          "humidity",
-          {}
-        )
+          // Get latest readings for this equipment
+          const latestTemp = await temperatureDataModuleService.getLatestReading(
+            eq.id,
+            "temperature",
+            {} as Context
+          )
+          const latestHumidity = await temperatureDataModuleService.getLatestReading(
+            eq.id,
+            "humidity",
+            {} as Context
+          )
 
         const alertDetectionService = alertsModuleService.getAlertDetectionService()
 
@@ -93,7 +94,7 @@ export const syncSwiftSensorsDataStep = createStep(
               high_warning: tempThreshold.high_warning,
               high_critical: tempThreshold.high_critical,
             },
-            {}
+            {} as Context
           )
         }
 
@@ -110,7 +111,7 @@ export const syncSwiftSensorsDataStep = createStep(
               high_warning: humidityThreshold.high_warning,
               high_critical: humidityThreshold.high_critical,
             },
-            {}
+            {} as Context
           )
         }
 
@@ -120,7 +121,7 @@ export const syncSwiftSensorsDataStep = createStep(
           : latestHumidity
           ? new Date(latestHumidity.recorded_at)
           : null
-        await alertDetectionService.checkConnectivity(eq.id, lastReadingTime, {})
+        await alertDetectionService.checkConnectivity(eq.id, lastReadingTime, {} as Context)
       }
 
       logger.info(`Synced Swift Sensors data for ${equipment.length} equipment units`)

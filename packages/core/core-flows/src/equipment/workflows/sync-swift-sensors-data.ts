@@ -13,11 +13,5 @@ export const syncSwiftSensorsDataWorkflow = createWorkflow(
       throw new Error("SWIFT_SENSORS_ACCOUNT_ID is required")
     }
     return syncSwiftSensorsDataStep({ accountId })
-  },
-  {
-    schedule: {
-      interval: 5 * 60 * 1000, // 5 minutes
-      concurrency: "forbid",
-    },
   }
 )
