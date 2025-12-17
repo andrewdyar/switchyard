@@ -10,14 +10,14 @@ export const EquipmentMonitoringTab = () => {
     is_active: true 
   })
   
-  const freezers = useEquipmentList({ 
+  const { equipment: freezers, isLoading: freezersLoading } = useEquipmentList({ 
     type: "freezer",
     is_active: true 
   })
 
   const allEquipment = [
     ...(equipment || []),
-    ...(freezers.equipment || [])
+    ...(freezers || [])
   ]
 
   return (

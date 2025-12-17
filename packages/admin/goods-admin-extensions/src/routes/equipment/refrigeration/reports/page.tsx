@@ -1,20 +1,11 @@
 /* @refresh reload */
 import { defineRouteConfig } from "@switchyard/admin-sdk"
 import { Container, Heading, Text } from "@switchyard/ui"
-import { useState } from "react"
 import { Link, useLocation } from "react-router-dom"
-import { EquipmentMonitoringTab } from "./components/equipment-monitoring-tab"
-import { NotificationsManagementTab } from "./components/notifications-management-tab"
-import { HistoricalReportingTab } from "./components/historical-reporting-tab"
+import { HistoricalReportingTab } from "../components/historical-reporting-tab"
 
-const RefrigerationPage = () => {
+const ReportsPage = () => {
   const location = useLocation()
-  const activeTab = location.pathname.includes("/notifications")
-    ? "notifications"
-    : location.pathname.includes("/reports")
-    ? "reports"
-    : "monitoring"
-
   const tabs = [
     { label: "Equipment Monitoring", path: "/equipment/refrigeration", key: "monitoring" },
     { label: "Notifications", path: "/equipment/refrigeration/notifications", key: "notifications" },
@@ -31,7 +22,7 @@ const RefrigerationPage = () => {
         {/* Tab Navigation */}
         <div className="flex gap-4 border-b border-ui-border-base -mx-6 px-6">
           {tabs.map((tab) => {
-            const isActive = activeTab === tab.key
+            const isActive = location.pathname === tab.path
             return (
               <Link
                 key={tab.key}
@@ -52,20 +43,18 @@ const RefrigerationPage = () => {
       </div>
 
       <div className="px-6 py-6">
-        {activeTab === "monitoring" && <EquipmentMonitoringTab />}
-        {activeTab === "notifications" && <NotificationsManagementTab />}
-        {activeTab === "reports" && <HistoricalReportingTab />}
+        <HistoricalReportingTab />
       </div>
     </Container>
   )
 }
 
 export const config = defineRouteConfig({
-  label: "Refrigeration",
+  label: "Historical Reports",
   link: {
-    label: "Refrigeration",
+    label: "Historical Reports",
     icon: null,
   },
 })
 
-export default RefrigerationPage
+export default ReportsPage
