@@ -1,0 +1,362 @@
+---
+title: "Equipment Monitoring System"
+description: "Set up and manage temperature and humidity monitoring for refrigeration equipment using Swift Sensors integration"
+---
+
+# Equipment Monitoring System
+
+The Equipment Monitoring System provides real-time temperature and humidity monitoring for your refrigeration equipment, integrated with Swift Sensors hardware.
+
+<CardGroup cols={2}>
+  <Card title="Real-time Monitoring" icon="temperature-half">
+    Monitor temperature and humidity across all your fridges and freezers
+  </Card>
+  <Card title="Smart Alerts" icon="bell">
+    Receive notifications via email, SMS, or in-app when thresholds are exceeded
+  </Card>
+  <Card title="Historical Reports" icon="chart-line">
+    Generate reports for compliance and analysis
+  </Card>
+  <Card title="Multi-channel Notifications" icon="envelope">
+    Configure who receives which alerts through which channels
+  </Card>
+</CardGroup>
+
+## Architecture Overview
+
+```
+Swift Sensors API → API Client → Supabase (historical storage) → Admin Dashboard
+                                          ↓
+                                   Background Sync Jobs
+```
+
+The system consists of five backend modules that work together:
+
+1. **Swift Sensors API Client** - Handles authentication and data fetching from Swift Sensors
+2. **Equipment Module** - Manages equipment units and threshold configuration
+3. **Temperature Data Module** - Stores and queries time-series data
+4. **Alert System** - Detects threshold violations and tracks alert status
+5. **Notification System** - Routes alerts to assigned users
+
+## Setup
+
+<Steps>
+<Step title="Configure environment variables">
+
+Add your Swift Sensors credentials to your `.env` file:
+
+```bash .env
+SWIFT_SENSORS_API_KEY=your_api_key
+SWIFT_SENSORS_EMAIL=your_email
+SWIFT_SENSORS_PASSWORD=your_password
+SWIFT_SENSORS_ACCOUNT_ID=your_account_id
+```
+
+<Warning>
+Never commit API credentials to version control. Use environment variables or a secrets manager.
+</Warning>
+
+</Step>
+
+<Step title="Register the modules">
+
+Add the equipment modules to your `medusa-config.js`:
+
+```javascript medusa-config.js
+module.exports = {
+  modules: [
+    { resolve: "@switchyard/equipment" },
+    { resolve: "@switchyard/temperature-data" },
+    { resolve: "@switchyard/equipment-alerts" },
+    { resolve: "@switchyard/equipment-notifications" },
+  ],
+}
+```
+
+</Step>
+
+<Step title="Run database migrations">
+
+Create the required database tables:
+
+```bash Terminal
+npx medusa migrations run
+```
+
+<Check>
+Verify the migration created these tables: `equipment`, `equipment_thresholds`, `temperature_readings`, `equipment_alerts`, `alert_notification_assignments`
+</Check>
+
+</Step>
+
+<Step title="Access the dashboard">
+
+Navigate to **Equipment → Refrigeration** in the admin dashboard to begin monitoring.
+
+</Step>
+</Steps>
+
+## Database Schema
+
+### Equipment Table
+
+The `equipment` table stores your refrigeration units:
+
+<ResponseField name="id" type="string" required>
+Primary key for the equipment record
+</ResponseField>
+
+<ResponseField name="name" type="string" required>
+Human-readable name (e.g., "Walk-in Fridge 1")
+</ResponseField>
+
+<ResponseField name="type" type="string" required>
+Equipment type: `refrigerator`, `freezer`, `handheld`, or `robot`
+</ResponseField>
+
+<ResponseField name="inventory_group_id" type="string">
+Link to associated inventory group for location tracking
+</ResponseField>
+
+<ResponseField name="swift_sensor_id_temperature" type="integer">
+Swift Sensors temperature sensor ID
+</ResponseField>
+
+<ResponseField name="swift_sensor_id_humidity" type="integer">
+Swift Sensors humidity sensor ID (optional)
+</ResponseField>
+
+<ResponseField name="is_active" type="boolean">
+Whether the equipment is currently monitored
+</ResponseField>
+
+### Equipment Thresholds Table
+
+Configure custom alert thresholds for each equipment unit:
+
+<ResponseField name="equipment_id" type="string" required>
+Foreign key to the equipment record
+</ResponseField>
+
+<ResponseField name="measurement_type" type="string" required>
+Either `temperature` or `humidity`
+</ResponseField>
+
+<ResponseField name="low_critical" type="number">
+Value below which a critical alert is triggered
+</ResponseField>
+
+<ResponseField name="low_warning" type="number">
+Value below which a warning alert is triggered
+</ResponseField>
+
+<ResponseField name="high_warning" type="number">
+Value above which a warning alert is triggered
+</ResponseField>
+
+<ResponseField name="high_critical" type="number">
+Value above which a critical alert is triggered
+</ResponseField>
+
+## Alert Types
+
+The system monitors for these alert conditions:
+
+| Alert Type | Description | Default Severity |
+|------------|-------------|------------------|
+| `temperature_high` | Temperature exceeds high threshold | Based on threshold |
+| `temperature_low` | Temperature below low threshold | Based on threshold |
+| `humidity_high` | Humidity exceeds threshold | Based on threshold |
+| `humidity_low` | Humidity below threshold | Based on threshold |
+| `connectivity_loss` | No readings received for 15+ minutes | Critical |
+| `battery_low` | Sensor battery needs replacement | Warning |
+| `sensor_offline` | Sensor not responding | Critical |
+
+<Tip>
+Configure thresholds per equipment unit to account for different requirements. Freezers typically need different thresholds than refrigerators.
+</Tip>
+
+## API Endpoints
+
+### Equipment Management
+
+<CodeGroup>
+
+```bash Create Equipment
+curl -X POST 'https://switchyard.run/admin/equipment' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_TOKEN' \
+  -d '{
+    "name": "Walk-in Fridge 1",
+    "type": "refrigerator",
+    "inventory_group_id": "inv_group_123"
+  }'
+```
+
+```bash List Equipment
+curl -X GET 'https://switchyard.run/admin/equipment?type=refrigerator&is_active=true' \
+  -H 'Authorization: Bearer YOUR_TOKEN'
+```
+
+```bash Update Equipment
+curl -X PATCH 'https://switchyard.run/admin/equipment/equip_123' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_TOKEN' \
+  -d '{
+    "swift_sensor_id_temperature": 12345,
+    "swift_sensor_id_humidity": 12346
+  }'
+```
+
+</CodeGroup>
+
+### Alert Management
+
+<CodeGroup>
+
+```bash List Active Alerts
+curl -X GET 'https://switchyard.run/admin/equipment/alerts?status=active' \
+  -H 'Authorization: Bearer YOUR_TOKEN'
+```
+
+```bash Resolve Alert
+curl -X PATCH 'https://switchyard.run/admin/equipment/alerts/alert_123/resolve' \
+  -H 'Content-Type: application/json' \
+  -H 'Authorization: Bearer YOUR_TOKEN' \
+  -d '{"reason": "Temperature normalized after door repair"}'
+```
+
+```bash Acknowledge Alert
+curl -X PATCH 'https://switchyard.run/admin/equipment/alerts/alert_123/acknowledge' \
+  -H 'Authorization: Bearer YOUR_TOKEN'
+```
+
+</CodeGroup>
+
+### Time Series Data
+
+Retrieve historical readings for analysis and reporting:
+
+```bash Get Time Series
+curl -X GET 'https://switchyard.run/admin/equipment/equip_123/time-series?startTime=1704067200000&endTime=1704153600000&measurementType=both' \
+  -H 'Authorization: Bearer YOUR_TOKEN'
+```
+
+<ParamField query="startTime" type="integer" required>
+Start timestamp in milliseconds
+</ParamField>
+
+<ParamField query="endTime" type="integer" required>
+End timestamp in milliseconds
+</ParamField>
+
+<ParamField query="measurementType" type="string" default="both">
+Filter by `temperature`, `humidity`, or `both`
+</ParamField>
+
+### Reports
+
+Generate historical reports for compliance and analysis:
+
+```bash Generate CSV Report
+curl -X GET 'https://switchyard.run/admin/equipment/reports?equipmentId=equip_123&startTime=1704067200000&endTime=1704153600000&format=csv' \
+  -H 'Authorization: Bearer YOUR_TOKEN' \
+  -o report.csv
+```
+
+## Dashboard Features
+
+### Equipment Monitoring Tab
+
+The monitoring tab provides:
+
+- **Active Alerts Section** - View and manage current alerts with one-click resolve/acknowledge
+- **Equipment Grid** - Cards showing current temperature, humidity, and status for each unit
+- **Status Indicators** - Color-coded badges (green/orange/red) for normal/warning/critical states
+
+### Equipment Detail Modal
+
+Click any equipment card to open the detail view:
+
+- **Historical Charts** - Temperature and humidity over time with selectable ranges (1h, 6h, 24h, 7d, 30d)
+- **Active Alerts** - Alerts specific to this equipment
+- **Configuration** - Sensor IDs and threshold settings
+
+### Notifications Management Tab
+
+Configure which users receive which alerts:
+
+1. Select an alert type
+2. Choose users to assign
+3. Select notification channels (email, SMS, in-app)
+4. Optionally limit to specific equipment
+
+<Note>
+Users only receive notifications for alert types they are explicitly assigned to. Unassigned users will not receive any equipment alerts.
+</Note>
+
+### Historical Reporting Tab
+
+Generate reports for compliance and analysis:
+
+1. Select equipment from the dropdown
+2. Choose date range
+3. Select format (CSV for raw data, JSON for summary)
+4. Click Generate Report
+
+## Troubleshooting
+
+<AccordionGroup>
+<Accordion title="No data appearing in the dashboard">
+
+1. **Verify credentials** - Check that your Swift Sensors credentials are correct in `.env`
+2. **Check sensor pairing** - Ensure equipment records have `swift_sensor_id_temperature` set
+3. **Review sync logs** - Check the background sync job logs for errors
+4. **Test API connection** - Try fetching data directly from Swift Sensors API
+
+</Accordion>
+
+<Accordion title="Alerts not triggering">
+
+1. **Check thresholds** - Verify thresholds are configured for the equipment
+2. **Verify readings** - Ensure sensor data is being recorded in `temperature_readings`
+3. **Review alert detection** - Check that the alert detection service is running
+
+</Accordion>
+
+<Accordion title="Notifications not sending">
+
+1. **Check assignments** - Verify notification assignments exist for the alert type
+2. **Verify user data** - Ensure assigned users have valid email/phone
+3. **Review notification logs** - Check the notification service logs
+
+</Accordion>
+</AccordionGroup>
+
+## Next Steps: When Sensors Arrive
+
+<Steps>
+<Step title="Install sensors">
+Follow Swift Sensors installation documentation to mount sensors in your refrigeration units.
+</Step>
+
+<Step title="Note sensor IDs">
+Log into the Swift Sensors dashboard and note the sensor IDs for each device.
+</Step>
+
+<Step title="Pair sensors to equipment">
+Update each equipment record with the corresponding sensor IDs via the API.
+</Step>
+
+<Step title="Configure thresholds">
+Set appropriate temperature and humidity thresholds for each unit type.
+</Step>
+
+<Step title="Set up notifications">
+Assign users to receive alerts through their preferred channels.
+</Step>
+
+<Step title="Begin monitoring">
+The dashboard will start showing real-time data once sensors are paired.
+</Step>
+</Steps>

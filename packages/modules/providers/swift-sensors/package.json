@@ -1,0 +1,36 @@
+{
+  "name": "@switchyard/providers-swift-sensors",
+  "version": "1.0.0",
+  "description": "Swift Sensors API client provider for temperature monitoring",
+  "main": "dist/index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewdyar/switchyard",
+    "directory": "packages/modules/providers/swift-sensors"
+  },
+  "files": [
+    "dist",
+    "!dist/**/__tests__",
+    "!dist/**/__mocks__",
+    "!dist/**/__fixtures__"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "author": "Goods Grocery",
+  "license": "MIT",
+  "scripts": {
+    "build": "yarn run -T rimraf dist && yarn run -T tsc --build",
+    "watch": "yarn run -T tsc --watch"
+  },
+  "devDependencies": {
+    "@switchyard/framework": "workspace:*"
+  },
+  "peerDependencies": {
+    "@switchyard/framework": "workspace:*"
+  },
+  "keywords": [
+    "medusa-provider",
+    "medusa-provider-swift-sensors"
+  ]
+}

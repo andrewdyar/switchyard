@@ -91,6 +91,12 @@
             "pages": [
               "guides/cart-module"
             ]
+          },
+          {
+            "group": "Equipment",
+            "pages": [
+              "guides/equipment-monitoring"
+            ]
           }
         ]
       },
