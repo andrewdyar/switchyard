@@ -1,8 +1,8 @@
-import { Context } from "@switchyard/framework/types"
+import { Context, DAL } from "@switchyard/framework/types"
 import {
   InjectManager,
   MedusaContext,
-  MedusaService,
+  SwitchyardService,
 } from "@switchyard/framework/utils"
 import { AlertNotificationAssignment } from "../models"
 import {
@@ -12,14 +12,16 @@ import {
 } from "../types"
 
 type InjectedDependencies = {
-  baseRepository: any
+  baseRepository: DAL.RepositoryService
   logger?: any
 }
 
-export default class EquipmentNotificationsModuleService extends MedusaService({
+export default class EquipmentNotificationsModuleService extends SwitchyardService<{
+  AlertNotificationAssignment: { dto: AlertNotificationAssignmentDTO }
+}>({
   AlertNotificationAssignment,
 }) {
-  protected readonly baseRepository_: any
+  protected readonly baseRepository_: DAL.RepositoryService
   protected readonly logger_?: any
 
   constructor(

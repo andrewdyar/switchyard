@@ -1,8 +1,8 @@
-import { Context } from "@switchyard/framework/types"
+import { Context, DAL } from "@switchyard/framework/types"
 import {
   InjectManager,
   MedusaContext,
-  MedusaService,
+  SwitchyardService,
 } from "@switchyard/framework/utils"
 import { Equipment, EquipmentThreshold } from "../models"
 import {
@@ -15,14 +15,17 @@ import {
 } from "../types"
 
 type InjectedDependencies = {
-  baseRepository: any
+  baseRepository: DAL.RepositoryService
 }
 
-export default class EquipmentModuleService extends MedusaService({
+export default class EquipmentModuleService extends SwitchyardService<{
+  Equipment: { dto: EquipmentDTO }
+  EquipmentThreshold: { dto: EquipmentThresholdDTO }
+}>({
   Equipment,
   EquipmentThreshold,
 }) {
-  protected readonly baseRepository_: any
+  protected readonly baseRepository_: DAL.RepositoryService
 
   constructor(
     { baseRepository }: InjectedDependencies,
