@@ -1,4 +1,4 @@
-import { Migration } from "@mikro-orm/migrations"
+import { Migration } from "@switchyard/framework/mikro-orm/migrations"
 
 export class Migration20250120000001_CreateTemperatureReadingsTable extends Migration {
   async up(): Promise<void> {
