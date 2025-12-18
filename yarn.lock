@@ -10413,6 +10413,39 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@switchyard/equipment-alerts@workspace:packages/modules/equipment-alerts":
+  version: 0.0.0-use.local
+  resolution: "@switchyard/equipment-alerts@workspace:packages/modules/equipment-alerts"
+  dependencies:
+    "@switchyard/framework": "workspace:*"
+    "@switchyard/test-utils": "workspace:*"
+  peerDependencies:
+    "@switchyard/framework": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@switchyard/equipment-notifications@workspace:packages/modules/equipment-notifications":
+  version: 0.0.0-use.local
+  resolution: "@switchyard/equipment-notifications@workspace:packages/modules/equipment-notifications"
+  dependencies:
+    "@switchyard/framework": "workspace:*"
+    "@switchyard/test-utils": "workspace:*"
+  peerDependencies:
+    "@switchyard/framework": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
+"@switchyard/equipment@workspace:packages/modules/equipment":
+  version: 0.0.0-use.local
+  resolution: "@switchyard/equipment@workspace:packages/modules/equipment"
+  dependencies:
+    "@switchyard/framework": "workspace:*"
+    "@switchyard/test-utils": "workspace:*"
+  peerDependencies:
+    "@switchyard/framework": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "@switchyard/event-bus-local@workspace:*, @switchyard/event-bus-local@workspace:packages/modules/event-bus-local":
   version: 0.0.0-use.local
   resolution: "@switchyard/event-bus-local@workspace:packages/modules/event-bus-local"
@@ -10815,6 +10848,16 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@switchyard/providers-swift-sensors@workspace:packages/modules/providers/swift-sensors":
+  version: 0.0.0-use.local
+  resolution: "@switchyard/providers-swift-sensors@workspace:packages/modules/providers/swift-sensors"
+  dependencies:
+    "@switchyard/framework": "workspace:*"
+  peerDependencies:
+    "@switchyard/framework": "workspace:*"
+  languageName: unknown
+  linkType: soft
+
 "@switchyard/region@workspace:*, @switchyard/region@workspace:^, @switchyard/region@workspace:packages/modules/region":
   version: 0.0.0-use.local
   resolution: "@switchyard/region@workspace:packages/modules/region"
@@ -10906,6 +10949,17 @@ __metadata:
     is-docker: ^2.2.1
     remove-trailing-slash: ^0.1.1
     uuid: ^9.0.0
+  languageName: unknown
+  linkType: soft
+
+"@switchyard/temperature-data@workspace:packages/modules/temperature-data":
+  version: 0.0.0-use.local
+  resolution: "@switchyard/temperature-data@workspace:packages/modules/temperature-data"
+  dependencies:
+    "@switchyard/framework": "workspace:*"
+    "@switchyard/test-utils": "workspace:*"
+  peerDependencies:
+    "@switchyard/framework": "workspace:*"
   languageName: unknown
   linkType: soft
 
