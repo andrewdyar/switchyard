@@ -1,0 +1,468 @@
+---
+title: "Cart Module Guide"
+description: "Understanding the Cart module architecture, database schema, workflows, and integration with other commerce modules"
+---
+
+# Cart Module Guide
+
+The Cart module manages shopping carts for customers, handling everything from adding items to completing checkout and placing orders.
+
+<CardGroup cols={2}>
+  <Card title="Shopping Cart" icon="cart-shopping">
+    Create and manage customer shopping carts
+  </Card>
+  <Card title="Line Items" icon="list">
+    Add, update, and remove products from carts
+  </Card>
+  <Card title="Checkout Flow" icon="credit-card">
+    Handle shipping, payment, and order creation
+  </Card>
+  <Card title="Promotions" icon="tag">
+    Apply discounts and promotional codes
+  </Card>
+</CardGroup>
+
+## Overview
+
+A cart is a virtual shopping bag that customers use to collect items before purchase. The Cart module provides:
+
+- Creating and managing shopping carts
+- Adding, updating, and removing line items
+- Managing shipping and billing addresses
+- Applying promotions and calculating discounts
+- Tax line calculations
+- Payment collection integration
+- Completing the cart to create an order
+
+## Database Schema
+
+### Cart Table
+
+The `cart` table stores the main cart entity:
+
+<ResponseField name="id" type="string" required>
+Primary key with `cart` prefix (e.g., `cart_01H...`)
+</ResponseField>
+
+<ResponseField name="region_id" type="string">
+Associated region for pricing and tax calculations
+</ResponseField>
+
+<ResponseField name="customer_id" type="string">
+Customer reference (null for guest carts)
+</ResponseField>
+
+<ResponseField name="sales_channel_id" type="string">
+Sales channel context for the cart
+</ResponseField>
+
+<ResponseField name="email" type="string">
+Customer email address
+</ResponseField>
+
+<ResponseField name="currency_code" type="string" required>
+Currency for pricing (e.g., "USD")
+</ResponseField>
+
+<ResponseField name="completed_at" type="datetime">
+When the cart was completed (order placed)
+</ResponseField>
+
+<ResponseField name="shipping_address_id" type="string">
+Foreign key to shipping address
+</ResponseField>
+
+<ResponseField name="billing_address_id" type="string">
+Foreign key to billing address
+</ResponseField>
+
+### Line Item Table
+
+The `cart_line_item` table stores products in the cart:
+
+<ResponseField name="id" type="string" required>
+Primary key with `cali` prefix
+</ResponseField>
+
+<ResponseField name="cart_id" type="string" required>
+Foreign key to parent cart
+</ResponseField>
+
+<ResponseField name="title" type="string" required>
+Product title (denormalized)
+</ResponseField>
+
+<ResponseField name="quantity" type="integer" required>
+Quantity in cart
+</ResponseField>
+
+<ResponseField name="variant_id" type="string">
+Product variant reference
+</ResponseField>
+
+<ResponseField name="product_id" type="string">
+Product reference
+</ResponseField>
+
+<ResponseField name="unit_price" type="number" required>
+Price per unit in the cart's currency
+</ResponseField>
+
+<ResponseField name="is_tax_inclusive" type="boolean">
+Whether the unit price includes tax
+</ResponseField>
+
+<ResponseField name="is_discountable" type="boolean">
+Whether promotions can be applied
+</ResponseField>
+
+<ResponseField name="requires_shipping" type="boolean">
+Whether the item needs shipping
+</ResponseField>
+
+<Note>
+Product information is denormalized onto line items to preserve order history even if products change later.
+</Note>
+
+### Relationships
+
+```
+Cart
+├── items (LineItem[])
+│   ├── adjustments (LineItemAdjustment[])
+│   └── tax_lines (LineItemTaxLine[])
+├── shipping_methods (ShippingMethod[])
+│   ├── adjustments (ShippingMethodAdjustment[])
+│   └── tax_lines (ShippingMethodTaxLine[])
+├── shipping_address (Address)
+├── billing_address (Address)
+└── credit_lines (CreditLine[])
+```
+
+## Core Workflows
+
+The Cart module uses workflows for all major operations. Workflows ensure data consistency, emit events, and support compensation on failures.
+
+### Create Cart Workflow
+
+The `createCartWorkflow` creates a new cart with optional initial items:
+
+<Steps>
+<Step title="Validate inputs">
+Find or create the sales channel, region, and customer.
+</Step>
+
+<Step title="Get variant pricing">
+Retrieve prices for items being added, applying any custom pricing rules.
+</Step>
+
+<Step title="Confirm inventory">
+Verify sufficient stock is available for all items.
+</Step>
+
+<Step title="Create the cart">
+Create the cart record with line items.
+</Step>
+
+<Step title="Calculate taxes">
+Apply tax lines based on region and shipping address.
+</Step>
+
+<Step title="Apply promotions">
+Process any promotion codes provided.
+</Step>
+
+<Step title="Create payment collection">
+Initialize the payment collection for checkout.
+</Step>
+</Steps>
+
+```typescript Example Usage
+const { result } = await createCartWorkflow(container).run({
+  input: {
+    region_id: "reg_123",
+    items: [
+      { variant_id: "var_456", quantity: 2 }
+    ],
+    customer_id: "cus_789",
+    promo_codes: ["SUMMER20"]
+  }
+})
+```
+
+### Add to Cart Workflow
+
+The `addToCartWorkflow` adds items to an existing cart:
+
+<Steps>
+<Step title="Acquire lock">
+Prevent concurrent modifications to the same cart.
+</Step>
+
+<Step title="Validate cart">
+Ensure the cart exists and is not completed.
+</Step>
+
+<Step title="Get pricing">
+Retrieve prices for the variants being added.
+</Step>
+
+<Step title="Confirm inventory">
+Verify stock availability for the quantities requested.
+</Step>
+
+<Step title="Create or update items">
+If the variant already exists in cart, update quantity. Otherwise, create a new line item.
+</Step>
+
+<Step title="Refresh cart">
+Recalculate totals, taxes, and promotions.
+</Step>
+
+<Step title="Release lock">
+Allow other operations on the cart.
+</Step>
+</Steps>
+
+<Tip>
+The workflow uses locking to prevent race conditions when multiple requests try to modify the same cart simultaneously.
+</Tip>
+
+### Complete Cart Workflow
+
+The `completeCartWorkflow` converts a cart into an order:
+
+<Steps>
+<Step title="Validate cart">
+Ensure payment is authorized and shipping is configured.
+</Step>
+
+<Step title="Create order">
+Transform cart data into an order record.
+</Step>
+
+<Step title="Reserve inventory">
+Decrement available stock for ordered items.
+</Step>
+
+<Step title="Register promotion usage">
+Track that promotions were used for reporting.
+</Step>
+
+<Step title="Link order to cart">
+Create the order-cart relationship.
+</Step>
+
+<Step title="Authorize payment">
+Complete payment authorization with the provider.
+</Step>
+
+<Step title="Emit order.placed event">
+Trigger downstream workflows (notifications, fulfillment, etc.).
+</Step>
+</Steps>
+
+<Warning>
+Once a cart is completed, it cannot be modified. The `completed_at` timestamp indicates the cart has been converted to an order.
+</Warning>
+
+## Calculated Totals
+
+Request total fields when you need them. The module calculates these on-demand:
+
+| Field | Description |
+|-------|-------------|
+| `total` | Grand total including all taxes and shipping |
+| `subtotal` | Items total before tax and discounts |
+| `tax_total` | Total tax amount |
+| `discount_total` | Total discount amount |
+| `shipping_total` | Shipping cost with tax |
+| `item_total` | Items subtotal with tax |
+| `item_subtotal` | Items subtotal without tax |
+
+```typescript Requesting Totals
+const cart = await cartService.retrieveCart("cart_123", {
+  select: ["total", "subtotal", "tax_total", "discount_total"],
+  relations: ["items", "shipping_methods"]
+})
+```
+
+<Note>
+When you request total fields, the module automatically includes required relations for calculations.
+</Note>
+
+## Integration with Other Modules
+
+### Product Module
+
+Line items reference products and variants:
+
+```typescript
+{
+  variant_id: "var_123",
+  product_id: "prod_456",
+  // Product data is denormalized for history
+  product_title: "Organic Apples",
+  variant_sku: "APPL-ORG-1LB"
+}
+```
+
+### Payment Module
+
+Carts have a payment collection for checkout:
+
+- Payment collection is created automatically on cart creation
+- Customers select a payment provider and authorize payment
+- Payment is finalized during cart completion
+
+### Promotion Module
+
+Promotions are applied through adjustments:
+
+- Line item adjustments for product discounts
+- Shipping method adjustments for shipping discounts
+- Promotion usage is tracked when cart is completed
+
+### Tax Module
+
+Tax lines are calculated based on:
+
+- Region tax rates
+- Shipping address
+- Product tax classes
+
+### Inventory Module
+
+Inventory is managed at two points:
+
+1. **Add to Cart** - Confirm inventory is available
+2. **Complete Cart** - Reserve inventory for the order
+
+### Order Module
+
+When a cart is completed:
+
+1. Order is created from cart data
+2. Link is established between order and cart
+3. Cart is marked as completed
+
+## Order-Cart Link
+
+The `order_cart` link module creates a relationship between orders and carts:
+
+```
+Order → order_cart → Cart
+```
+
+This allows you to:
+
+- Query the original cart from an order
+- Find which order was created from a cart
+- Maintain audit trail for order history
+
+## Complete Checkout Example
+
+<CodeGroup>
+
+```typescript Node.js
+import { createCartWorkflow, addToCartWorkflow, completeCartWorkflow } from "@switchyard/core-flows"
+
+// 1. Create cart with initial items
+const { result: cart } = await createCartWorkflow(container).run({
+  input: {
+    region_id: "reg_123",
+    items: [{ variant_id: "var_456", quantity: 1 }]
+  }
+})
+
+// 2. Add shipping address
+await updateCartWorkflow(container).run({
+  input: {
+    id: cart.id,
+    shipping_address: {
+      first_name: "John",
+      last_name: "Doe",
+      address_1: "123 Main St",
+      city: "New York",
+      postal_code: "10001",
+      country_code: "us"
+    }
+  }
+})
+
+// 3. Add shipping method
+await addShippingMethodToCartWorkflow(container).run({
+  input: {
+    cart_id: cart.id,
+    options: [{ id: "so_123" }]
+  }
+})
+
+// 4. Initialize and authorize payment
+// (implementation depends on payment provider)
+
+// 5. Complete cart to create order
+const { result: order } = await completeCartWorkflow(container).run({
+  input: { id: cart.id }
+})
+
+console.log("Order created:", order.id)
+```
+
+```bash cURL
+# 1. Create cart
+curl -X POST 'https://switchyard.run/store/carts' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "region_id": "reg_123",
+    "items": [{"variant_id": "var_456", "quantity": 1}]
+  }'
+
+# 2. Update with shipping address
+curl -X POST 'https://switchyard.run/store/carts/cart_123' \
+  -H 'Content-Type: application/json' \
+  -d '{
+    "shipping_address": {
+      "first_name": "John",
+      "last_name": "Doe",
+      "address_1": "123 Main St",
+      "city": "New York",
+      "postal_code": "10001",
+      "country_code": "us"
+    }
+  }'
+
+# 3. Add shipping method
+curl -X POST 'https://switchyard.run/store/carts/cart_123/shipping-methods' \
+  -H 'Content-Type: application/json' \
+  -d '{"option_id": "so_123"}'
+
+# 4. Complete cart
+curl -X POST 'https://switchyard.run/store/carts/cart_123/complete'
+```
+
+</CodeGroup>
+
+## Best Practices
+
+<AccordionGroup>
+<Accordion title="Use workflows for cart operations">
+Always use the provided workflows instead of direct service calls. Workflows handle locking, event emission, and compensation on failures.
+</Accordion>
+
+<Accordion title="Request totals only when needed">
+Total calculations require loading additional relations. Only include total fields when displaying to users.
+</Accordion>
+
+<Accordion title="Handle concurrent modifications">
+The cart workflows use locking to prevent race conditions. If you build custom operations, implement similar locking.
+</Accordion>
+
+<Accordion title="Check completed_at before modifications">
+Always verify a cart is not completed before attempting modifications. Completed carts cannot be changed.
+</Accordion>
+
+<Accordion title="Denormalize product data">
+Line items store product info to preserve order history. Don't rely on product lookups for historical data.
+</Accordion>
+</AccordionGroup>

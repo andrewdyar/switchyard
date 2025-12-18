@@ -1,0 +1,33 @@
+{
+  "name": "@switchyard/equipment",
+  "version": "0.0.1",
+  "description": "Equipment module for temperature monitoring",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./models": {
+      "types": "./dist/models/index.d.ts",
+      "default": "./dist/models/index.js"
+    }
+  },
+  "files": ["dist"],
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@switchyard/framework": "workspace:^",
+    "@switchyard/utils": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@switchyard/framework": "workspace:^"
+  }
+}

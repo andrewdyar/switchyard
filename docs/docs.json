@@ -85,6 +85,18 @@
               "guides/scanner-api",
               "guides/scraping"
             ]
+          },
+          {
+            "group": "Commerce",
+            "pages": [
+              "guides/cart-module"
+            ]
+          },
+          {
+            "group": "Equipment",
+            "pages": [
+              "guides/equipment-monitoring"
+            ]
           }
         ]
       },
@@ -104,6 +116,13 @@
           {
             "group": "Admin API",
             "openapi": "api-reference/openapi/admin.yaml"
+          },
+          {
+            "group": "Store API",
+            "pages": [
+              "api-reference/store/introduction",
+              "api-reference/store/carts"
+            ]
           }
         ]
       }

@@ -1,0 +1,660 @@
+---
+title: "Cart API Reference"
+description: "Store API endpoints for creating and managing shopping carts, adding items, and completing checkout"
+---
+
+# Cart API Reference
+
+The Cart API allows customers to create and manage their shopping carts, add items, configure shipping, and complete checkout.
+
+## Create Cart
+
+Create a new shopping cart with optional initial items.
+
+```
+POST /store/carts
+```
+
+<ParamField body="region_id" type="string">
+Region ID for pricing and tax calculations
+</ParamField>
+
+<ParamField body="sales_channel_id" type="string">
+Sales channel context
+</ParamField>
+
+<ParamField body="email" type="string">
+Customer email address
+</ParamField>
+
+<ParamField body="currency_code" type="string">
+Currency code (e.g., "USD"). Defaults to region's currency.
+</ParamField>
+
+<ParamField body="items" type="array">
+Initial items to add to cart
+
+<Expandable title="Item properties">
+<ParamField body="items[].variant_id" type="string" required>
+Product variant ID
+</ParamField>
+
+<ParamField body="items[].quantity" type="integer" required>
+Quantity to add
+</ParamField>
+
+<ParamField body="items[].metadata" type="object">
+Custom metadata for the line item
+</ParamField>
+</Expandable>
+</ParamField>
+
+<ParamField body="shipping_address" type="object">
+Shipping address for the cart
+
+<Expandable title="Address properties">
+<ParamField body="shipping_address.first_name" type="string">
+First name
+</ParamField>
+
+<ParamField body="shipping_address.last_name" type="string">
+Last name
+</ParamField>
+
+<ParamField body="shipping_address.address_1" type="string">
+Street address
+</ParamField>
+
+<ParamField body="shipping_address.city" type="string">
+City
+</ParamField>
+
+<ParamField body="shipping_address.postal_code" type="string">
+Postal/ZIP code
+</ParamField>
+
+<ParamField body="shipping_address.country_code" type="string">
+ISO country code (e.g., "us")
+</ParamField>
+</Expandable>
+</ParamField>
+
+<ParamField body="promo_codes" type="array">
+Promotion codes to apply
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST 'https://switchyard.run/store/carts' \
+  -H 'Content-Type: application/json' \
+  -H 'x-publishable-api-key: YOUR_KEY' \
+  -d '{
+    "region_id": "reg_123",
+    "items": [
+      {
+        "variant_id": "variant_456",
+        "quantity": 2
+      }
+    ],
+    "email": "customer@example.com"
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Success
+{
+  "cart": {
+    "id": "cart_01H...",
+    "region_id": "reg_123",
+    "customer_id": null,
+    "email": "customer@example.com",
+    "currency_code": "USD",
+    "items": [
+      {
+        "id": "cali_01H...",
+        "title": "Organic Apples",
+        "variant_id": "variant_456",
+        "quantity": 2,
+        "unit_price": 499,
+        "subtotal": 998
+      }
+    ],
+    "subtotal": 998,
+    "tax_total": 90,
+    "total": 1088,
+    "created_at": "2024-01-15T10:00:00Z"
+  }
+}
+```
+
+</ResponseExample>
+
+---
+
+## Get Cart
+
+Retrieve a cart by its ID.
+
+```
+GET /store/carts/:id
+```
+
+<ParamField path="id" type="string" required>
+The cart ID
+</ParamField>
+
+<ParamField query="fields" type="string">
+Comma-separated list of fields to include
+</ParamField>
+
+<ParamField query="expand" type="string">
+Comma-separated list of relations to expand
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl -X GET 'https://switchyard.run/store/carts/cart_01H123' \
+  -H 'x-publishable-api-key: YOUR_KEY'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Success
+{
+  "cart": {
+    "id": "cart_01H...",
+    "region_id": "reg_123",
+    "items": [
+      {
+        "id": "cali_01H...",
+        "title": "Organic Apples",
+        "variant_id": "variant_456",
+        "quantity": 2,
+        "unit_price": 499,
+        "subtotal": 998,
+        "total": 1088
+      }
+    ],
+    "shipping_methods": [],
+    "shipping_address": null,
+    "payment_collection": null,
+    "subtotal": 998,
+    "tax_total": 90,
+    "shipping_total": 0,
+    "discount_total": 0,
+    "total": 1088
+  }
+}
+```
+
+</ResponseExample>
+
+---
+
+## Update Cart
+
+Update a cart's properties including addresses and email.
+
+```
+POST /store/carts/:id
+```
+
+<ParamField path="id" type="string" required>
+The cart ID
+</ParamField>
+
+<ParamField body="email" type="string">
+Customer email address
+</ParamField>
+
+<ParamField body="shipping_address" type="object">
+Shipping address (see Create Cart for properties)
+</ParamField>
+
+<ParamField body="billing_address" type="object">
+Billing address (same properties as shipping)
+</ParamField>
+
+<ParamField body="promo_codes" type="array">
+Promotion codes to apply
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST 'https://switchyard.run/store/carts/cart_01H123' \
+  -H 'Content-Type: application/json' \
+  -H 'x-publishable-api-key: YOUR_KEY' \
+  -d '{
+    "email": "newemail@example.com",
+    "shipping_address": {
+      "first_name": "Jane",
+      "last_name": "Doe",
+      "address_1": "456 Oak Ave",
+      "city": "Los Angeles",
+      "postal_code": "90001",
+      "country_code": "us"
+    }
+  }'
+```
+
+</RequestExample>
+
+---
+
+## Add Line Item
+
+Add a product variant to the cart.
+
+```
+POST /store/carts/:id/line-items
+```
+
+<ParamField path="id" type="string" required>
+The cart ID
+</ParamField>
+
+<ParamField body="variant_id" type="string" required>
+Product variant ID to add
+</ParamField>
+
+<ParamField body="quantity" type="integer" required>
+Quantity to add
+</ParamField>
+
+<ParamField body="metadata" type="object">
+Custom metadata for the line item
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST 'https://switchyard.run/store/carts/cart_01H123/line-items' \
+  -H 'Content-Type: application/json' \
+  -H 'x-publishable-api-key: YOUR_KEY' \
+  -d '{
+    "variant_id": "variant_789",
+    "quantity": 1,
+    "metadata": {
+      "gift_message": "Happy Birthday!"
+    }
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Success
+{
+  "cart": {
+    "id": "cart_01H...",
+    "items": [
+      {
+        "id": "cali_01H...",
+        "variant_id": "variant_789",
+        "quantity": 1,
+        "unit_price": 1299,
+        "subtotal": 1299,
+        "metadata": {
+          "gift_message": "Happy Birthday!"
+        }
+      }
+    ],
+    "total": 1416
+  }
+}
+```
+
+</ResponseExample>
+
+<Note>
+If the variant already exists in the cart, the quantity is updated instead of creating a duplicate line item.
+</Note>
+
+---
+
+## Update Line Item
+
+Update a line item's quantity or metadata.
+
+```
+POST /store/carts/:id/line-items/:line_id
+```
+
+<ParamField path="id" type="string" required>
+The cart ID
+</ParamField>
+
+<ParamField path="line_id" type="string" required>
+The line item ID
+</ParamField>
+
+<ParamField body="quantity" type="integer">
+New quantity
+</ParamField>
+
+<ParamField body="metadata" type="object">
+Updated metadata
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST 'https://switchyard.run/store/carts/cart_01H123/line-items/cali_01H456' \
+  -H 'Content-Type: application/json' \
+  -H 'x-publishable-api-key: YOUR_KEY' \
+  -d '{
+    "quantity": 3
+  }'
+```
+
+</RequestExample>
+
+---
+
+## Delete Line Item
+
+Remove a line item from the cart.
+
+```
+DELETE /store/carts/:id/line-items/:line_id
+```
+
+<ParamField path="id" type="string" required>
+The cart ID
+</ParamField>
+
+<ParamField path="line_id" type="string" required>
+The line item ID to remove
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl -X DELETE 'https://switchyard.run/store/carts/cart_01H123/line-items/cali_01H456' \
+  -H 'x-publishable-api-key: YOUR_KEY'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Success
+{
+  "id": "cali_01H456",
+  "object": "line_item",
+  "deleted": true,
+  "parent": {
+    "id": "cart_01H123",
+    "items": []
+  }
+}
+```
+
+</ResponseExample>
+
+---
+
+## Add Shipping Method
+
+Add a shipping method to the cart.
+
+```
+POST /store/carts/:id/shipping-methods
+```
+
+<ParamField path="id" type="string" required>
+The cart ID
+</ParamField>
+
+<ParamField body="option_id" type="string" required>
+Shipping option ID
+</ParamField>
+
+<ParamField body="data" type="object">
+Provider-specific data
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST 'https://switchyard.run/store/carts/cart_01H123/shipping-methods' \
+  -H 'Content-Type: application/json' \
+  -H 'x-publishable-api-key: YOUR_KEY' \
+  -d '{
+    "option_id": "so_standard_shipping"
+  }'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Success
+{
+  "cart": {
+    "id": "cart_01H...",
+    "shipping_methods": [
+      {
+        "id": "casm_01H...",
+        "shipping_option_id": "so_standard_shipping",
+        "name": "Standard Shipping",
+        "amount": 599,
+        "subtotal": 599,
+        "tax_total": 54,
+        "total": 653
+      }
+    ],
+    "shipping_total": 653,
+    "total": 1741
+  }
+}
+```
+
+</ResponseExample>
+
+---
+
+## Complete Cart
+
+Complete the cart and create an order. The cart must have a valid payment session, shipping method, and shipping address.
+
+```
+POST /store/carts/:id/complete
+```
+
+<ParamField path="id" type="string" required>
+The cart ID
+</ParamField>
+
+<RequestExample>
+
+```bash cURL
+curl -X POST 'https://switchyard.run/store/carts/cart_01H123/complete' \
+  -H 'x-publishable-api-key: YOUR_KEY'
+```
+
+</RequestExample>
+
+<ResponseExample>
+
+```json Success
+{
+  "type": "order",
+  "order": {
+    "id": "order_01H...",
+    "status": "pending",
+    "items": [
+      {
+        "id": "ordli_01H...",
+        "title": "Organic Apples",
+        "quantity": 2
+      }
+    ],
+    "shipping_methods": [...],
+    "total": 1741,
+    "created_at": "2024-01-15T10:30:00Z"
+  }
+}
+```
+
+```json Requires Action
+{
+  "type": "cart",
+  "cart": {
+    "id": "cart_01H...",
+    "payment_collection": {
+      "status": "requires_action"
+    }
+  },
+  "error": {
+    "message": "Payment requires additional action",
+    "code": "payment_requires_action"
+  }
+}
+```
+
+</ResponseExample>
+
+<Warning>
+Once completed, a cart cannot be modified. Attempting to update a completed cart will return an error.
+</Warning>
+
+---
+
+## Response Objects
+
+### Cart Object
+
+<ResponseField name="id" type="string" required>
+Unique identifier with `cart` prefix
+</ResponseField>
+
+<ResponseField name="region_id" type="string">
+Associated region ID
+</ResponseField>
+
+<ResponseField name="customer_id" type="string">
+Associated customer ID (null for guests)
+</ResponseField>
+
+<ResponseField name="email" type="string">
+Customer email
+</ResponseField>
+
+<ResponseField name="currency_code" type="string" required>
+Currency code (e.g., "USD")
+</ResponseField>
+
+<ResponseField name="completed_at" type="datetime">
+When cart was completed
+</ResponseField>
+
+<ResponseField name="items" type="array">
+Line items in the cart
+</ResponseField>
+
+<ResponseField name="shipping_methods" type="array">
+Selected shipping methods
+</ResponseField>
+
+<ResponseField name="shipping_address" type="object">
+Shipping address
+</ResponseField>
+
+<ResponseField name="billing_address" type="object">
+Billing address
+</ResponseField>
+
+<ResponseField name="payment_collection" type="object">
+Payment information
+</ResponseField>
+
+<ResponseField name="subtotal" type="integer">
+Total before tax and shipping (in cents)
+</ResponseField>
+
+<ResponseField name="tax_total" type="integer">
+Total tax (in cents)
+</ResponseField>
+
+<ResponseField name="shipping_total" type="integer">
+Shipping cost with tax (in cents)
+</ResponseField>
+
+<ResponseField name="discount_total" type="integer">
+Total discounts (in cents)
+</ResponseField>
+
+<ResponseField name="total" type="integer">
+Grand total (in cents)
+</ResponseField>
+
+### Line Item Object
+
+<ResponseField name="id" type="string" required>
+Unique identifier with `cali` prefix
+</ResponseField>
+
+<ResponseField name="cart_id" type="string" required>
+Parent cart ID
+</ResponseField>
+
+<ResponseField name="title" type="string" required>
+Product title
+</ResponseField>
+
+<ResponseField name="quantity" type="integer" required>
+Quantity in cart
+</ResponseField>
+
+<ResponseField name="variant_id" type="string">
+Product variant ID
+</ResponseField>
+
+<ResponseField name="unit_price" type="integer" required>
+Price per unit (in cents)
+</ResponseField>
+
+<ResponseField name="subtotal" type="integer">
+Line total before tax (in cents)
+</ResponseField>
+
+<ResponseField name="total" type="integer">
+Line total with tax (in cents)
+</ResponseField>
+
+---
+
+## Error Codes
+
+| Code | HTTP Status | Description |
+|------|-------------|-------------|
+| `cart_not_found` | 404 | Cart with the given ID doesn't exist |
+| `cart_completed` | 400 | Cart has already been completed |
+| `insufficient_inventory` | 409 | Not enough stock for requested quantity |
+| `invalid_shipping_address` | 400 | Shipping address is missing or invalid |
+| `payment_required` | 400 | Payment must be authorized before completing |
+| `payment_requires_action` | 400 | Additional payment action needed |
+| `region_not_found` | 404 | Invalid region ID |
+| `variant_not_found` | 404 | Invalid variant ID |
+
+---
+
+## Webhooks
+
+The cart module emits these events that you can subscribe to:
+
+| Event | Description |
+|-------|-------------|
+| `cart.created` | A new cart was created |
+| `cart.updated` | Cart was modified (items, addresses, etc.) |
+| `order.placed` | Cart was completed and order created |

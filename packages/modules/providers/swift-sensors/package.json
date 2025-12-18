@@ -1,0 +1,26 @@
+{
+  "name": "@switchyard/providers-swift-sensors",
+  "version": "1.0.0",
+  "description": "Swift Sensors API client provider for temperature monitoring",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "@switchyard/framework": "workspace:^"
+  },
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "@switchyard/framework": "workspace:^"
+  }
+}
