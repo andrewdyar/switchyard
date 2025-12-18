@@ -261,25 +261,6 @@ const useCoreRoutes = (): Omit<INavItem, "pathname">[] => {
       label: "Scrapers",
       to: "/scrapers",
     },
-    {
-      icon: <BuildingStorefront />,
-      label: "Equipment",
-      to: "/equipment",
-      items: [
-        {
-          label: "Refrigeration",
-          to: "/equipment/refrigeration",
-        },
-        {
-          label: "Handhelds",
-          to: "/equipment/handhelds",
-        },
-        {
-          label: "Robots",
-          to: "/equipment/robots",
-        },
-      ],
-    },
   ]
 }
 
