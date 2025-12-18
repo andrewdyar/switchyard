@@ -1,4 +1,11 @@
-import { AlertType } from "@switchyard/equipment-alerts"
+export type AlertType =
+  | "temperature_high"
+  | "temperature_low"
+  | "humidity_high"
+  | "humidity_low"
+  | "connectivity_loss"
+  | "battery_low"
+  | "sensor_offline"
 
 export type NotificationChannel = "email" | "sms" | "in_app"
 
