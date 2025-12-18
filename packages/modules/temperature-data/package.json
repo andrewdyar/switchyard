@@ -1,24 +1,38 @@
 {
   "name": "@switchyard/temperature-data",
-  "version": "0.0.1",
-  "description": "Temperature data module for time-series storage",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "types": "./dist/index.d.ts",
-      "default": "./dist/index.js"
-    }
+  "version": "2.12.1",
+  "description": "Temperature data module for sensor readings",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/__tests__",
+    "!dist/**/__mocks__",
+    "!dist/**/__fixtures__"
+  ],
+  "engines": {
+    "node": ">=20"
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewdyar/switchyard",
+    "directory": "packages/modules/temperature-data"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Switchyard",
+  "license": "MIT",
   "scripts": {
-    "build": "tsc",
-    "watch": "tsc --watch"
-  },
-  "dependencies": {
-    "@switchyard/framework": "workspace:^",
-    "@switchyard/providers-swift-sensors": "workspace:^"
+    "watch": "yarn run -T tsc --build --watch",
+    "resolve:aliases": "yarn run -T tsc --showConfig -p tsconfig.json > tsconfig.resolved.json && yarn run -T tsc-alias -p tsconfig.resolved.json && yarn run -T rimraf tsconfig.resolved.json",
+    "build": "yarn run -T rimraf dist && yarn run -T tsc --build && npm run resolve:aliases"
   },
   "devDependencies": {
-    "typescript": "^5.3.3"
+    "@switchyard/framework": "workspace:*",
+    "@switchyard/test-utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "@switchyard/framework": "workspace:*"
   }
 }

@@ -1,8 +1,10 @@
 {
-  "extends": "../../../tsconfig.json",
+  "extends": "../../../_tsconfig.base.json",
   "compilerOptions": {
-    "outDir": "./dist",
-    "rootDir": "./src"
-  },
-  "include": ["src/**/*"]
+    "paths": {
+      "@models": ["./src/models"],
+      "@services": ["./src/services"],
+      "@types": ["./src/types"]
+    }
+  }
 }
