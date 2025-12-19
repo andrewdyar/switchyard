@@ -88,15 +88,30 @@ Updated on every scrape run:
 
 ### Pricing Data (retailer_pricing)
 
-New record inserted when price changes:
+New record inserted when price changes - **this is our acquisition cost**:
 
-- **price** - Effective price
+- **price** - Effective price (what we pay)
 - **list_price** - Regular price
 - **sale_price** - Sale price (if on sale)
 - **is_on_sale** - Currently on sale flag
 - **price_per_unit** - Unit pricing (e.g., $0.25/oz)
 - **effective_from** - When this price started
 - **effective_to** - When this price ended (null = current)
+
+### Retailer Selling Prices (retailer_selling_prices)
+
+What retailers charge their customers - used for competitive analysis:
+
+- **selling_price** - Retailer's customer-facing price
+- **store_name** - Which retailer
+- **updated_at** - When last updated
+
+<Note>
+**Three Price Types:**
+- `retailer_pricing.price` = Our cost (what we pay retailers)
+- `retailer_selling_prices.selling_price` = Retailer's customer price
+- `sellable_products.selling_price` = Our customer price
+</Note>
 
 ## Write Separation
 

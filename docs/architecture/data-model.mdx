@@ -350,6 +350,68 @@ Links sweep items to inventory for inventory purchasing sweeps.
 - `location_tax_rates` → tax rates per location
 - Carts and orders reference their location for pricing and tax calculation
 
+## Retail Locations
+
+### stock_location
+
+Physical retailer store locations referenced by `retailer_mappings`.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | uuid | Unique identifier |
+| name | string | Store name (e.g., "HEB Mueller") |
+| address_id | uuid | Reference to stock_location_address |
+| metadata | jsonb | Additional store data |
+
+### stores
+
+Retailer brands we scrape from and purchase inventory.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | uuid | Unique identifier |
+| name | string | Retailer name (HEB, Walmart, Target) |
+| logo_url | string | Retailer logo |
+| is_active | boolean | Currently scraping |
+
+## Equipment Monitoring
+
+For tracking warehouse refrigeration and freezer equipment.
+
+### equipment
+
+Physical equipment (fridges, freezers) in the RFC.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | uuid | Unique identifier |
+| name | string | Equipment name |
+| type | string | fridge, freezer, ambient |
+| location | string | Physical location |
+| swift_sensor_id | string | Swift Sensors device ID |
+
+### temperature_readings
+
+Sensor data from Swift Sensors integration.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| equipment_id | uuid | Reference to equipment |
+| temperature | decimal | Temperature reading |
+| humidity | decimal | Humidity reading (optional) |
+| recorded_at | datetime | When recorded |
+
+### equipment_alerts
+
+Temperature threshold violations.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| equipment_id | uuid | Reference to equipment |
+| alert_type | string | high_temp, low_temp, offline |
+| severity | string | warning, critical |
+| acknowledged_at | datetime | When acknowledged |
+
 ## Dashboard Views
 
 The admin dashboard queries directly from Supabase with React Query caching:
@@ -360,3 +422,6 @@ The admin dashboard queries directly from Supabase with React Query caching:
 | **Sellable Products** | `sellable_products` | Manage curated catalog |
 | **Inventory** | `inventory_items` | Manage RFC stock levels, FEFO/FIFO |
 | **Staff** | `staff` | Manage pickers and drivers |
+| **Equipment** | `equipment` | Monitor warehouse equipment |
+| **Sweeps** | `sweeps`, `routes` | Manage shopping trips |
+| **Orders** | `orders`, `order_items` | Manage customer orders |

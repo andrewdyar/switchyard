@@ -7,6 +7,17 @@ description: Order allocation, picking, sweeps, and delivery in Switchyard
 
 This document describes how orders are allocated, picked, and delivered in Switchyard.
 
+## Overview
+
+Switchyard uses a hybrid fulfillment model:
+
+| Source | When Used | Flow |
+|--------|-----------|------|
+| **RFC Inventory** | Items in stock at warehouse | `inventory_items` → `pick_list` → `bag` → `tote` → `robot` |
+| **Retail Sweep** | Items not in stock | `sweep_items` → driver shops → intake → `bag` → `tote` → `robot` |
+
+The allocation engine automatically decides which source to use based on inventory availability and economics.
+
 ## Staff and Roles
 
 ```mermaid
