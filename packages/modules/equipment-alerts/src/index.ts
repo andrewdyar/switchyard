@@ -10,3 +10,4 @@ export default Module(EQUIPMENT_ALERTS_MODULE, {
 export { EquipmentAlertsModuleService }
 export * from "./models"
 export * from "./types"
+

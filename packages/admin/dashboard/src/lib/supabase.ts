@@ -160,8 +160,9 @@ export async function fetchScrapedProducts(
   const offset = (page - 1) * pageSize
 
   // Build base query - using left joins to avoid excluding products without mappings
+  // Tables renamed: source_products -> scraped_products, goods_retailer_* -> retailer_*
   let query = supabase
-    .from("source_products")
+    .from("scraped_products")
     .select(
       `
       id,
@@ -170,24 +171,21 @@ export async function fetchScrapedProducts(
       brand,
       image_url,
       updated_at,
-      categories!source_products_category_id_fkey (
+      categories!scraped_products_category_id_fkey (
         id,
         name
       ),
-      goods_retailer_mapping (
+      retailer_mappings (
         store_name,
         is_active,
         last_seen_at
       ),
-      goods_retailer_pricing (
+      retailer_pricing (
         price,
         effective_to
       ),
-      goods_source_product_link (
-        id,
-        product_goods_source_link (
-          product_id
-        )
+      sellable_products (
+        id
       )
     `,
       { count: "exact" }
@@ -217,15 +215,14 @@ export async function fetchScrapedProducts(
 
   // Transform data to list items
   const products: ScrapedProductListItem[] = (data || []).map((product: any) => {
-    const mappings = product.goods_retailer_mapping || []
-    const pricings = (product.goods_retailer_pricing || []).filter(
+    const mappings = product.retailer_mappings || []
+    const pricings = (product.retailer_pricing || []).filter(
       (p: any) => p.effective_to === null
     )
     
-    // Check if linked to a Medusa product
-    const sourceLink = product.goods_source_product_link?.[0]
-    const productLink = sourceLink?.product_goods_source_link?.[0]
-    const isLinkedToProduct = !!productLink?.product_id
+    // Check if linked to a sellable product
+    const sellableProducts = product.sellable_products || []
+    const isLinkedToProduct = sellableProducts.length > 0
 
     const activeMappings = mappings.filter((m: any) => m.is_active)
     const retailerCount = new Set(activeMappings.map((m: any) => m.store_name)).size
@@ -261,23 +258,21 @@ export async function fetchScrapedProduct(id: string): Promise<ScrapedProductDet
   const supabase = getSupabaseClient()
 
   // Fetch product with related data
+  // Tables renamed: source_products -> scraped_products
   const { data: product, error: productError } = await supabase
-    .from("source_products")
+    .from("scraped_products")
     .select(
       `
       *,
-      categories!source_products_category_id_fkey (
+      categories!scraped_products_category_id_fkey (
         id,
         name,
         parent_id,
         source,
         level
       ),
-      goods_source_product_link (
-        id,
-        product_goods_source_link (
-          product_id
-        )
+      sellable_products (
+        id
       )
     `
     )
@@ -293,14 +288,13 @@ export async function fetchScrapedProduct(id: string): Promise<ScrapedProductDet
     return null
   }
 
-  // Check if linked to a Medusa product
-  const sourceLink = product.goods_source_product_link?.[0]
-  const productLink = sourceLink?.product_goods_source_link?.[0]
-  const linkedProductId = productLink?.product_id || null
+  // Check if linked to a sellable product
+  const sellableProducts = product.sellable_products || []
+  const linkedProductId = sellableProducts.length > 0 ? sellableProducts[0].id : null
 
-  // Fetch retailer mappings
+  // Fetch retailer mappings (renamed from goods_retailer_mapping)
   const { data: mappings, error: mappingsError } = await supabase
-    .from("goods_retailer_mapping")
+    .from("retailer_mappings")
     .select("*")
     .eq("product_id", id)
 
@@ -309,9 +303,9 @@ export async function fetchScrapedProduct(id: string): Promise<ScrapedProductDet
     throw mappingsError
   }
 
-  // Fetch current pricing for each retailer
+  // Fetch current pricing for each retailer (renamed from goods_retailer_pricing)
   const { data: pricings, error: pricingsError } = await supabase
-    .from("goods_retailer_pricing")
+    .from("retailer_pricing")
     .select("*")
     .eq("product_id", id)
     .is("effective_to", null)
@@ -384,8 +378,9 @@ export async function fetchPriceHistory(
   const startDate = new Date()
   startDate.setDate(startDate.getDate() - days)
 
+  // Table renamed from goods_retailer_pricing to retailer_pricing
   const { data, error } = await supabase
-    .from("goods_retailer_pricing")
+    .from("retailer_pricing")
     .select("*")
     .eq("product_id", productId)
     .gte("effective_from", startDate.toISOString())

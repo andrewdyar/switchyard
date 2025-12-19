@@ -31,3 +31,4 @@ const Equipment = model
   ])
 
 export default Equipment
+

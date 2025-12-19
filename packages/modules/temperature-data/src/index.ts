@@ -10,3 +10,4 @@ export default Module(TEMPERATURE_DATA_MODULE, {
 export { TemperatureDataModuleService }
 export * from "./models"
 export * from "./types"
+

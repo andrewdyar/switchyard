@@ -24,3 +24,4 @@ class EquipmentNotificationsModuleService extends SwitchyardService({
 }
 
 export default EquipmentNotificationsModuleService
+

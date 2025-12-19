@@ -39,3 +39,4 @@ export interface EquipmentAlertDTO {
   triggered_at: Date
   created_at: Date
 }
+

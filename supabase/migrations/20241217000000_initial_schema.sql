@@ -6,3 +6,4 @@
 -- This Supabase migrations folder is for database-level changes that need
 -- to be tracked separately (RLS policies, functions, triggers, etc.)
 
+

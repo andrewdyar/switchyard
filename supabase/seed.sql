@@ -6,3 +6,4 @@
 -- INSERT INTO public.users (id, email, name) VALUES 
 --   ('user_001', 'test@example.com', 'Test User');
 
+

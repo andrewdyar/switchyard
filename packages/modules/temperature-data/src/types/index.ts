@@ -18,3 +18,4 @@ export interface TimeSeriesQueryParams {
   measurementType?: "temperature" | "humidity" | "both"
   groupByMinutes?: number
 }
+

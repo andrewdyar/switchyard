@@ -112,3 +112,4 @@ export interface SwiftSensorsOptions {
   password: string
   baseUrl?: string
 }
+

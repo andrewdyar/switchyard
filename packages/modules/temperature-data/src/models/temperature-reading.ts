@@ -28,3 +28,4 @@ const TemperatureReading = model
   ])
 
 export default TemperatureReading
+

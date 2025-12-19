@@ -72,3 +72,4 @@ export class Migration20250120000000_CreateEquipmentTables extends Migration {
     this.addSql(`DROP TABLE IF EXISTS "equipment";`)
   }
 }
+

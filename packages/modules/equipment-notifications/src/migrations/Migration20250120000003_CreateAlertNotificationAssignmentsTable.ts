@@ -38,3 +38,4 @@ export class Migration20250120000003_CreateAlertNotificationAssignmentsTable ext
     this.addSql(`DROP TABLE IF EXISTS "alert_notification_assignments";`)
   }
 }
+

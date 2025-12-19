@@ -33,3 +33,4 @@ export interface AlertNotificationAssignmentDTO {
   created_at: Date
   updated_at: Date
 }
+

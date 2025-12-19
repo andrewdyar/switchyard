@@ -278,3 +278,4 @@ export class SwiftSensorsAPIClient {
     return this.tokenInfo_?.accountId
   }
 }
+

@@ -16,47 +16,91 @@ Orders in Goods can be fulfilled from two sources:
 
 The fulfillment strategy depends on product availability, pricing, and route optimization.
 
-## Order Flow Diagram
+## Order Fulfillment Flow
 
 ```mermaid
 flowchart TD
-    subgraph CustomerFlow [Customer Flow]
-        A[Customer places order in Goods App] --> B[Order sent to Switchyard]
+    subgraph OrderPlacement [Order Placement]
+        APP[Goods App] --> |Create Order| ORD[orders table]
+        ADMIN[Admin Dashboard] --> |Manual Order| ORD
+        ORD --> OI[order_items]
     end
     
-    subgraph Allocation [Order Allocation]
-        B --> C{Source Analysis}
-        C -->|RFC Stock Available| D[RFC Pick Queue]
-        C -->|Need from Retailer| E[Assign to Sweep]
-        C -->|Hybrid| F[Split: RFC + Sweep]
+    subgraph Allocation [Order Item Allocation]
+        OI --> ALLOC{Allocation Engine}
+        ALLOC --> |Check inventory| INV[(inventory_items)]
+        INV --> |Sufficient stock?| PICK_PATH
+        INV --> |Insufficient/None| SWEEP_PATH
     end
     
-    subgraph SweepFlow [Sweep Operations]
-        E --> G[Daily Sweep Manifest]
-        F --> G
-        G --> H[Driver Shops at Retailer]
-        H -->|Item OOS| I{Other Sweep Available?}
-        I -->|Yes| J[Push to Other Sweep]
-        I -->|No| K[Driver Substitutes]
-        K --> L[Customer: Accept or Refund]
-        H --> M[Driver Returns to RFC]
-        J --> H
+    subgraph PICK_PATH [RFC Fulfillment Path]
+        PL[pick_lists<br/>Assigned to staff picker] --> PLI[pick_list_items]
+        PLI --> |FEFO/FIFO select| INV
+        PLI --> |Picker scans| PICKER[Picker with Zebra]
+        PICKER --> |Scan item into| BAG_PICK[bag via bag_items]
     end
     
-    subgraph RFCFlow [RFC Operations]
-        M --> N[Intake/Sort Items]
-        N --> O[Assign Items to Orders]
-        D --> P[Picker Gets Pick List]
-        O --> P
-        P --> Q[Picker Scans and Picks]
-        Q --> R[Order Staged in Tote]
+    subgraph SWEEP_PATH [Sweep Fulfillment Path]
+        RETAILER_SELECT{Select Best Retailer}
+        RETAILER_SELECT --> |Price + Availability| RT[routes]
+        RT --> SW[sweeps<br/>Assigned to staff driver]
+        SW --> SWI[sweep_items]
+        SWI --> |Get aisle from| RM[(retailer_mappings)]
+        SWI --> DRIVER[Driver Shops]
+        DRIVER --> |Return to RFC| INTAKE[Intake Station]
+        INTAKE --> |Scan items into| BAG_SWEEP[bag via bag_items]
+    end
+    
+    subgraph Assembly [Order Assembly]
+        BAG_PICK --> BAGS[bags]
+        BAG_SWEEP --> BAGS
+        BAGS --> |Assigned to| TOTES[totes]
+        TOTES --> |Staged at| LOC[inventory_locations]
     end
     
     subgraph Delivery [Delivery]
-        R --> S[Robot Delivers Tote]
-        S --> T[Customer Pickup]
+        TOTES --> |Paired with| ROBOT[robots]
+        ROBOT --> CUSTOMER[Customer Pickup]
+    end
+    
+    ALLOC --> RETAILER_SELECT
+```
+
+## Bags, Totes, and Order Assembly
+
+```mermaid
+flowchart TD
+    subgraph OrderAssembly [Order Assembly Flow]
+        OI[order_items] --> ALLOC{Allocation}
+        
+        ALLOC --> |From Inventory| PLI[pick_list_items]
+        ALLOC --> |From Sweep| SWI[sweep_items]
+        
+        PLI --> |Picker scans into| BAG1[bags]
+        SWI --> |Intake scans into| BAG2[bags]
+        
+        BAG1 --> |Assigned to| TOTE[totes]
+        BAG2 --> |Assigned to| TOTE
+        
+        TOTE --> |Paired with| ROBOT[robots]
+        ROBOT --> |Delivers to| CUSTOMER[Customer Pickup]
     end
 ```
+
+### Relationships:
+
+- **Order** → has many **Totes** (one order may require multiple totes)
+- **Tote** → has many **Bags** (bags go inside totes)
+- **Bag** → has many **Bag Items** (items packed into a bag)
+- **Bag Item** → links to **Order Item** (fulfills an order item)
+- **Tote** → paired with **Robot** for delivery (1:1)
+
+### Bag Types
+
+Bags are temperature-separated:
+- **ambient** - Room temperature items
+- **chilled** - Refrigerated items
+- **frozen** - Frozen items
 
 ## Order Statuses
 
@@ -71,98 +115,107 @@ flowchart TD
 | `delivering` | Robot en route to customer |
 | `delivered` | Customer has received order |
 
+## Staff Roles
+
+| Role | Responsibilities |
+|------|------------------|
+| **Picker** | Picks items from RFC inventory, scans into bags |
+| **Driver** | Performs sweeps at retailers, returns items to RFC |
+
+<Note>
+Staff members can have both picker and driver roles, but cannot perform both simultaneously. Each pick_list is assigned to a staff member with the picker role. Each sweep is assigned to a staff member with the driver role.
+</Note>
+
 ## Detailed Flow
 
 ### 1. Order Placement
 
-Customer places an order through the Goods mobile app. The app handles:
-- Product browsing and selection
-- Cart management
-- Payment processing (Stripe)
-- Delivery window selection
+Customer places an order through the Goods mobile app or admin dashboard. Orders reference:
+- **location_id** - Store location for pricing and tax
+- **customer_id** - Customer placing the order
+- **source** - 'app' or 'admin'
 
-The order is then sent to Switchyard via API.
+Order items reference **sellable_products** (not raw scraped products).
 
-### 2. Source Analysis
+### 2. Source Analysis (Allocation Engine)
 
-When an order arrives, the system analyzes each line item to determine sourcing:
+When an order arrives, the allocation engine analyzes each line item:
 
 **Decision Factors:**
-- RFC inventory availability
+- RFC inventory availability (using FEFO/FIFO)
 - Retailer pricing (we track costs at each retailer)
-- Retailer availability
-- Route optimization (consolidate items to minimize trips)
+- Bulk vs individual SKU pricing
+- Route optimization
 
 **Sourcing Rules:**
-- If item is in RFC stock → add to RFC pick queue
-- If item needs retailer sourcing → assign to appropriate sweep
-- If item available at multiple retailers → choose based on price and route efficiency
+1. Check inventory_items for available stock (FEFO/FIFO order)
+2. If sufficient stock → allocate to pick_list (fulfillment_source = 'inventory')
+3. If insufficient/none → allocate to sweep (fulfillment_source = 'sweep')
+4. For sweeps, select best retailer based on price (including bulk SKU options)
 
-### 3. RFC-Only Orders
+### 3. RFC-Only Orders (Inventory Path)
 
-Orders containing only RFC-stocked items can be fulfilled within 10 minutes:
+Orders containing only RFC-stocked items:
 
-1. Order enters RFC pick queue
-2. Picker receives pick list on Zebra scanner
-3. Scanner app guides picker through efficient warehouse route
-4. Items picked and scanned
-5. Order staged in tote with QR code
+1. Order items allocated to pick_list
+2. Pick_list assigned to staff (picker)
+3. Picker uses Zebra scanner to locate items (FEFO/FIFO order)
+4. Picker scans items into bags (temperature-separated)
+5. Bags assigned to totes
+6. Totes staged for robot delivery
 
 ### 4. Sweep Operations
 
-Orders requiring retailer items follow the sweep process:
+Orders requiring retailer items:
 
-**Daily Sweeps:**
-- One scheduled sweep per retailer per day
-- Cutoff time determines which orders are included
-- Additional sweeps can be added manually for high-volume days
+**Routes and Sweeps:**
+- Routes group multiple sweeps for a driver trip
+- Each sweep is for one retailer store
+- Sweep type: 'order' (for customer orders) or 'inventory' (for stock replenishment)
 
 **Sweep Manifest:**
-- Aggregates ALL items needed from a retailer across ALL orders
-- Not per-order picking - batch shopping trip
+- Aggregates items from sweep_items
+- Includes aisle locations from retailer_mappings
 - Driver receives manifest on their device
 
 **During Shopping:**
 - Driver shops the manifest
-- If item is out of stock:
-  - Check if another sweep (different retailer) hasn't left yet
-  - If yes, dynamically push item to that sweep
-  - If no, driver substitutes and system notifies customer
-- Customer can accept substitute or request refund
+- Records actual_price paid
+- If item is out of stock, can be pushed to another sweep or substituted
 
 ### 5. Intake Processing
 
 When drivers return from sweeps:
 
 1. Items scanned at intake station
-2. System matches items to orders
-3. Items sorted and staged for order assembly
-4. Any sweep items + RFC items combined per order
+2. Scanned items create bag_items linked to:
+   - sweep_item_id (for tracking)
+   - order_item_id (for fulfillment)
+3. Bags assigned to totes per order
 
-### 6. Order Picking
+### 6. Order Picking (RFC Items)
 
 Pickers use Zebra scanners with the picking app:
 
-1. Picker assigned to order(s)
-2. App generates optimized pick path through warehouse
-3. Picker scans each item as picked
-4. Validates correct item via UPC
-5. Places items in order tote
+1. Picker assigned to pick_list
+2. App guides picker to inventory items (FEFO/FIFO order)
+3. pick_list_item.inventory_item_id tracks which specific item
+4. Picker scans into bag, creates bag_item
+5. pick_list_item.bag_item_id links to the created bag_item
 
 ### 7. Staging
 
 Completed orders are staged in totes:
 
-- Each tote has a QR code
-- QR links tote to order
-- Totes placed in staging area for robot pickup
+- Bags from both pick path and sweep path combined
+- Each tote has a tote_code (QR)
+- Totes staged at inventory_locations
+- One robot assigned per tote (1:1)
 
 ### 8. Robot Delivery
 
-Robot system (out of Switchyard scope):
-
-1. Robot scans tote QR
-2. Robot delivers tote to customer location (~100 feet)
+1. Robot scans tote QR (tote_code)
+2. Robot delivers tote to customer location
 3. Customer picks up order
 4. Order marked as delivered
 
@@ -170,35 +223,32 @@ Robot system (out of Switchyard scope):
 
 | Type | Items From | Fulfillment Time |
 |------|------------|------------------|
-| RFC-Only | Warehouse stock | ~10 minutes |
+| RFC-Only | inventory_items | ~10 minutes |
 | Sweep-Only | Retailer(s) | Next available pickup window |
-| Hybrid | RFC + Retailer(s) | Next available pickup window |
+| Hybrid | Inventory + Retailer(s) | Next available pickup window |
 
 ## Key Entities
 
 | Entity | Purpose |
 |--------|---------|
-| Order | Customer order with line items |
-| Sweep | Daily shopping trip to a retailer |
-| SweepItem | Item on a sweep manifest |
-| PickList | RFC picking assignment |
-| PickListItem | Item to pick from warehouse |
-| Driver | Person performing sweeps |
-| Tote | Container for staged order |
+| orders | Customer order with line items |
+| order_items | Line items referencing sellable_products |
+| routes | Groups multiple sweeps for a driver trip |
+| sweeps | Shopping trip to a retailer |
+| sweep_items | Item on a sweep manifest |
+| pick_lists | RFC picking assignment for a picker |
+| pick_list_items | Item to pick from warehouse |
+| staff | Pickers and drivers (replaces old drivers table) |
+| totes | Container for robot delivery |
+| bags | Temperature-separated bags inside totes |
+| bag_items | Items packed into bags |
 
 ## Integration Points
 
 | System | Integration |
 |--------|-------------|
 | Goods Mobile App | Places orders via Switchyard API |
-| Zebra Scanners | Use Scanner API for picking operations |
-| Robot System | Reads tote QR codes (out of scope) |
-| Customer Notifications | Webhooks from Switchyard to app |
-
-## Future Considerations
-
-- Third-party delivery options (robots still stage orders)
-- Multiple pickup/delivery locations
-- Real-time inventory sync with retailers
-- Predictive stocking based on order patterns
-
+| Admin Dashboard | Manual order creation, staff management |
+| Zebra Scanners | Scanner API for picking and intake |
+| Robot System | Reads tote_code QR codes |
+| Payment Providers | payment_collection → payment_session → payment |

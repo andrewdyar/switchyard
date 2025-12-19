@@ -10,3 +10,4 @@ export default Module(EQUIPMENT_MODULE, {
 export { EquipmentModuleService }
 export * from "./types"
 export * from "./models"
+

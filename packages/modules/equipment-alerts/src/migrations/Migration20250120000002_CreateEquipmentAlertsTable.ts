@@ -49,3 +49,4 @@ export class Migration20250120000002_CreateEquipmentAlertsTable extends Migratio
     this.addSql(`DROP TABLE IF EXISTS "equipment_alerts";`)
   }
 }
+

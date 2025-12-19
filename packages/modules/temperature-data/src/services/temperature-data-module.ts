@@ -24,3 +24,4 @@ class TemperatureDataModuleService extends SwitchyardService({
 }
 
 export default TemperatureDataModuleService
+

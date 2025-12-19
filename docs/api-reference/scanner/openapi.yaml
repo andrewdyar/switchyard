@@ -1,14 +1,15 @@
 openapi: 3.0.0
 info:
   title: Switchyard Scanner API
-  version: 1.0.0
+  version: 2.0.0
   description: |
     API for Zebra scanners and mobile devices used by warehouse pickers and sweep drivers.
     
     This API provides endpoints for:
-    - Product lookup by barcode
-    - Inventory scanning and adjustment
+    - Product lookup by barcode (using sellable_products catalog)
+    - Inventory scanning and adjustment (using inventory_items with FEFO/FIFO)
     - Order access for picking operations
+    - Inventory receiving from sweeps
   contact:
     name: Switchyard Support
     url: https://github.com/andrewdyar/switchyard
@@ -51,7 +52,7 @@ paths:
                     example: ok
                   version:
                     type: string
-                    example: "1.0.0"
+                    example: "2.0.0"
                   features:
                     type: object
                     properties:
@@ -61,12 +62,18 @@ paths:
                         type: boolean
                       location_tracking:
                         type: boolean
+                      fefo_fifo_picking:
+                        type: boolean
+                      inventory_receiving:
+                        type: boolean
 
   /scanner/inventory/lookup:
     get:
       summary: Look up product by barcode
       description: |
-        Look up a product and its inventory levels by scanning a barcode (UPC/EAN or SKU).
+        Look up a sellable product and its inventory levels by scanning a barcode (UPC/EAN).
+        Uses the scraped_products -> sellable_products mapping.
+        Inventory items are returned in FEFO/FIFO order (expiring soonest first, then oldest received).
         Optionally filter inventory by location.
       operationId: lookupProductByBarcode
       tags:
@@ -75,17 +82,18 @@ paths:
         - name: barcode
           in: query
           required: true
-          description: UPC/EAN barcode or SKU to look up
+          description: UPC/EAN barcode to look up (matches scraped_products.barcode)
           schema:
             type: string
           example: "012345678901"
         - name: location_id
           in: query
           required: false
-          description: Filter inventory to a specific stock location
+          description: Filter inventory to a specific inventory location
           schema:
             type: string
-          example: "sloc_01ABC123"
+            format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
       responses:
         '200':
           description: Product found with inventory information
@@ -100,7 +108,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
         '404':
-          description: Product not found
+          description: Product not found in sellable catalog
           content:
             application/json:
               schema:
@@ -117,9 +125,12 @@ paths:
       summary: Process inventory scan
       description: |
         Process a barcode scan from a mobile device. Can be used to:
-        - Look up product information
-        - Adjust inventory quantities
-        - Perform inventory counts
+        - **lookup**: Look up product information and current inventory
+        - **adjust**: Adjust inventory quantities (positive or negative)
+        - **count**: Set inventory to an exact count
+        - **receive**: Receive new inventory (e.g., from sweep delivery)
+        
+        Inventory is tracked using FEFO (First Expired, First Out) with FIFO fallback.
       operationId: processInventoryScan
       tags:
         - Inventory
@@ -143,7 +154,7 @@ paths:
               schema:
                 $ref: '#/components/schemas/Error'
         '404':
-          description: Product not found
+          description: Product not found in sellable catalog
           content:
             application/json:
               schema:
@@ -155,6 +166,7 @@ paths:
       description: |
         Get a list of orders for the current picker/driver.
         Orders can be filtered by status and paginated.
+        Order items reference sellable_products.
       operationId: listOrdersForPicking
       tags:
         - Orders
@@ -194,7 +206,8 @@ paths:
       summary: Get order details
       description: |
         Get detailed order information including line items for picking.
-        Includes product details, quantities, and location information.
+        Includes sellable product details, quantities, and location information.
+        Items show fulfillment_source (inventory or sweep) when allocated.
       operationId: getOrderForPicking
       tags:
         - Orders
@@ -202,10 +215,11 @@ paths:
         - name: id
           in: path
           required: true
-          description: Order ID
+          description: Order ID (UUID)
           schema:
             type: string
-          example: "order_01ABC123"
+            format: uuid
+          example: "550e8400-e29b-41d4-a716-446655440000"
       responses:
         '200':
           description: Order details
@@ -250,50 +264,77 @@ components:
           example: "012345678901"
         product:
           type: object
+          description: Sellable product information
           properties:
             id:
               type: string
-              example: "prod_01ABC123"
-            title:
+              format: uuid
+              description: sellable_products.id
+              example: "550e8400-e29b-41d4-a716-446655440000"
+            name:
               type: string
               example: "Organic Bananas"
-            handle:
+            brand:
               type: string
-              example: "organic-bananas"
-            thumbnail:
+              example: "Dole"
+            image_url:
               type: string
               format: uri
               example: "https://cdn.example.com/bananas.jpg"
             description:
               type: string
-        variant:
+            selling_price:
+              type: number
+              format: float
+              example: 1.99
+            is_perishable:
+              type: boolean
+              example: true
+            warehouse_zone:
+              type: string
+              example: "C"
+              description: Warehouse zone (A=Ambient, C=Chilled, F=Frozen)
+        inventory:
           type: object
           properties:
-            id:
-              type: string
-              example: "var_01XYZ789"
-            title:
-              type: string
-              example: "1 lb"
-            sku:
-              type: string
-              example: "BAN-ORG-1LB"
-            barcode:
-              type: string
-              example: "012345678901"
-        inventory:
-          type: array
-          items:
-            type: object
-            properties:
-              location_id:
-                type: string
-              stocked_quantity:
-                type: integer
-              reserved_quantity:
-                type: integer
-              available_quantity:
-                type: integer
+            total_quantity:
+              type: integer
+              description: Total quantity across all inventory items
+            total_reserved:
+              type: integer
+              description: Total reserved quantity
+            available_quantity:
+              type: integer
+              description: Total available (total - reserved)
+            items:
+              type: array
+              description: Individual inventory items in FEFO/FIFO order
+              items:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    format: uuid
+                    description: inventory_items.id
+                  location_id:
+                    type: string
+                    format: uuid
+                  quantity:
+                    type: integer
+                  reserved_quantity:
+                    type: integer
+                  available:
+                    type: integer
+                  expiration_date:
+                    type: string
+                    format: date
+                    nullable: true
+                  received_at:
+                    type: string
+                    format: date-time
+                  lot_number:
+                    type: string
+                    nullable: true
 
     ScanInventoryRequest:
       type: object
@@ -302,21 +343,31 @@ components:
       properties:
         barcode:
           type: string
-          description: UPC/EAN barcode or SKU
+          description: UPC/EAN barcode
           example: "012345678901"
         location_id:
           type: string
-          description: Stock location ID for inventory operations
-          example: "sloc_01ABC123"
+          format: uuid
+          description: Inventory location ID for operations
+          example: "550e8400-e29b-41d4-a716-446655440000"
         quantity:
           type: integer
-          description: Quantity to adjust (for adjust action)
+          description: Quantity for adjust/count/receive actions
           example: 5
         action:
           type: string
           description: Type of scan operation
-          enum: [lookup, adjust, count]
+          enum: [lookup, adjust, count, receive]
           default: lookup
+        expiration_date:
+          type: string
+          format: date
+          description: Expiration date for receive action (perishables)
+          example: "2025-01-15"
+        lot_number:
+          type: string
+          description: Lot number for receive action
+          example: "LOT-2024-001"
 
     ScanInventoryResponse:
       type: object
@@ -325,35 +376,63 @@ components:
           type: boolean
         barcode:
           type: string
+        action:
+          type: string
+          enum: [lookup, adjust, count, receive]
         product:
           type: object
+          description: Sellable product information
           properties:
             id:
               type: string
-            title:
+              format: uuid
+            name:
               type: string
-            handle:
+            brand:
               type: string
-            thumbnail:
+            image_url:
               type: string
+            selling_price:
+              type: number
+            is_perishable:
+              type: boolean
         inventory:
           type: object
           nullable: true
+          description: The specific inventory item affected (for adjust/count/receive)
           properties:
-            stocked_quantity:
+            item_id:
+              type: string
+              format: uuid
+            quantity:
               type: integer
             reserved_quantity:
               type: integer
-            available_quantity:
+            available:
               type: integer
             location_id:
               type: string
+              format: uuid
+            expiration_date:
+              type: string
+              format: date
+              nullable: true
+        totals:
+          type: object
+          description: Aggregate inventory totals for this product at this location
+          properties:
+            total_quantity:
+              type: integer
+            total_reserved:
+              type: integer
+            available:
+              type: integer
         scanned_at:
           type: string
           format: date-time
         scanned_by:
           type: string
-          description: User ID who performed the scan
+          description: Staff ID who performed the scan
 
     OrderListResponse:
       type: object
@@ -375,36 +454,26 @@ components:
       properties:
         id:
           type: string
-          example: "order_01ABC123"
+          format: uuid
         display_id:
           type: integer
           example: 1234
         status:
           type: string
-        fulfillment_status:
+        source:
           type: string
-        payment_status:
-          type: string
+          enum: [app, admin]
+          description: Order source (app or admin dashboard)
         created_at:
           type: string
           format: date-time
         total:
           type: number
           format: float
-        shipping_address:
-          type: object
-          nullable: true
-          properties:
-            first_name:
-              type: string
-            last_name:
-              type: string
-            address_1:
-              type: string
-            city:
-              type: string
-            postal_code:
-              type: string
+        location_id:
+          type: string
+          format: uuid
+          description: Store location for pricing/tax
 
     OrderDetailResponse:
       type: object
@@ -414,63 +483,78 @@ components:
           properties:
             id:
               type: string
+              format: uuid
             display_id:
               type: integer
             status:
               type: string
-            fulfillment_status:
+            source:
               type: string
-              nullable: true
-            payment_status:
-              type: string
-              nullable: true
             created_at:
               type: string
               format: date-time
+            location_id:
+              type: string
+              format: uuid
             items:
               type: array
               items:
                 $ref: '#/components/schemas/OrderItem'
-            shipping_address:
-              type: object
-            billing_address:
-              type: object
-            fulfillments:
+            totes:
               type: array
+              description: Totes assigned to this order
               items:
                 type: object
                 properties:
                   id:
                     type: string
+                    format: uuid
+                  tote_code:
+                    type: string
                   status:
                     type: string
-                  shipped_at:
-                    type: string
-                    format: date-time
-                    nullable: true
-                  delivered_at:
-                    type: string
-                    format: date-time
-                    nullable: true
+                  bags:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: string
+                          format: uuid
+                        bag_code:
+                          type: string
+                        bag_type:
+                          type: string
+                          enum: [ambient, chilled, frozen]
 
     OrderItem:
       type: object
       properties:
         id:
           type: string
+          format: uuid
+        sellable_product_id:
+          type: string
+          format: uuid
+          description: Reference to sellable_products
         title:
           type: string
-          description: Product title
+          description: Product name
         quantity:
           type: integer
         unit_price:
           type: number
           format: float
-        thumbnail:
+        image_url:
           type: string
           format: uri
           nullable: true
-        variant_sku:
+        fulfillment_source:
           type: string
-          description: SKU for barcode scanning
-
+          enum: [inventory, sweep]
+          nullable: true
+          description: How this item will be fulfilled
+        allocated_at:
+          type: string
+          format: date-time
+          nullable: true

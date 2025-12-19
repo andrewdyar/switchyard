@@ -40,3 +40,4 @@ export class Migration20250120000001_CreateTemperatureReadingsTable extends Migr
     this.addSql(`DROP TABLE IF EXISTS "temperature_readings";`)
   }
 }
+

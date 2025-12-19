@@ -7,359 +7,356 @@ description: Key entities and their relationships in Switchyard
 
 This document describes the key entities in Switchyard and how they relate to each other.
 
-## Single Product Entity Architecture
+## Schema Architecture Overview
 
-Switchyard uses a **single product entity** that serves all purposes throughout its lifecycle. The same product record is used whether it's scraped, curated for sale, or stocked in the RFC warehouse.
+Switchyard uses a **layered product architecture** that separates scraped data from the curated sellable catalog:
+
+1. **Scraped Products Layer** - Raw product data from retailer scrapers (unique by UPC)
+2. **Sellable Products Layer** - Curated catalog of products we sell (1:1 with scraped products)
+3. **Inventory Layer** - Physical stock in the RFC warehouse
+4. **Order & Fulfillment Layer** - Customer orders, bags, totes, and robot delivery
+
+## Complete Schema Architecture
 
 ```mermaid
-flowchart TB
-    subgraph ProductLifecycle [Single Product Entity]
-        SP[source_products]
-    end
+erDiagram
+    %% === PRODUCT CATALOG ===
+    scraped_products ||--o{ retailer_mappings : "available at"
+    scraped_products ||--o{ retailer_pricing : "priced at"
+    scraped_products ||--o| sellable_products : "curated as 1-to-1"
     
-    subgraph Contexts [Different Contexts - Same Product]
-        Scraped[Scraped Products<br/>All 114K+ products]
-        Sellable[Sellable Products<br/>is_sellable = true]
-        Stocked[RFC Inventory<br/>Has inventory record]
-    end
+    sellable_products ||--o{ inventory_items : "stocked as"
+    sellable_products }o--o{ variant_group_members : "grouped in"
+    sellable_products }o--o{ bulk_sku_relationships : "bulk/individual"
+    sellable_products }|--|| categories : "categorized in"
     
-    SP --> Scraped
-    SP --> Sellable
-    SP --> Stocked
+    variant_groups ||--|{ variant_group_members : contains
+    
+    inventory_items }|--|| inventory_locations : "stored at"
+    inventory_locations }|--|| inventory_groups : "part of"
+    
+    %% === CUSTOMERS & CARTS (STORE API) ===
+    customers ||--o{ orders : places
+    customers ||--o{ carts : has
+    customers }o--o{ customer_groups : "member of"
+    
+    carts ||--|{ cart_line_items : contains
+    carts }o--o| cart_address : "billing address"
+    cart_line_items }|--|| sellable_products : references
+    %% Note: Shipping address is static store address (configured at app level, not stored per cart)
+    
+    %% === ORDERS & FULFILLMENT ===
+    orders ||--|{ order_items : contains
+    orders ||--|{ totes : "assembled into"
+    order_items }|--|| sellable_products : references
+    
+    totes ||--|{ bags : contains
+    totes ||--o| robots : "delivered by 1-to-1"
+    bags ||--|{ bag_items : contains
+    bag_items }|--|| order_items : fulfills
+    bags }|--|| inventory_locations : "staged at"
+    
+    %% === SWEEPS & PICKING ===
+    routes ||--|{ sweeps : contains
+    sweeps ||--|{ sweep_items : contains
+    sweep_items }|--|| sellable_products : references
+    sweep_items ||--o{ sweep_order_allocations : "allocated to orders"
+    sweep_items ||--o{ sweep_inventory_allocations : "allocated to inventory"
+    
+    pick_lists ||--|{ pick_list_items : contains
+    pick_list_items }|--|| sellable_products : references
+    pick_list_items }|--|| inventory_items : "picked from"
+    pick_list_items }|--|| bag_items : "placed into"
+    
+    %% === STAFF ===
+    users ||--o| staff : "linked to"
+    staff ||--o{ sweeps : "drives"
+    staff ||--o{ pick_lists : "picks"
+    stores ||--o{ sweeps : "shopped at"
+    
+    %% === PROMOTIONS (STORE API) ===
+    promotions ||--|{ promotion_rules : "has rules"
+    promotions ||--o{ promotion_application_methods : "applied via"
+    promotions }o--o{ sellable_products : "applies to"
+    promotions }o--o{ categories : "applies to"
+    promotions }o--o{ customers : "applies to"
+    promotions }o--o{ customer_groups : "applies to"
+    carts }o--o{ cart_promotions : "has applied"
+    cart_promotions }|--|| promotions : references
+    orders }o--o{ order_promotions : "has applied"
+    order_promotions }|--|| promotions : references
+    
+    %% === PAYMENTS (STORE API - MEDUSA FLOW) ===
+    payment_collections ||--|{ payment_sessions : contains
+    payment_collections }o--o| carts : "for cart"
+    payment_collections }o--o| orders : "for order"
+    payment_sessions ||--o| payments : "captured as"
+    payments ||--o{ captures : "has captures"
+    payments ||--o{ refunds : "has refunds"
+    payment_providers ||--o{ payment_sessions : provides
+    
+    %% === LOCATIONS & TAX (STORE API) ===
+    %% Locations are physical store locations with location-specific pricing and tax rates
+    locations ||--o{ tax_rates : "has rates"
+    locations }o--o{ payment_providers : "available providers"
+    carts }|--o| locations : "priced in"
+    orders }|--o| locations : "priced in"
 ```
 
-### Write Separation
+## Write Separation
 
 To protect product data integrity, scrapers and admin have different write permissions:
 
 | Table | Scrapers | Admin |
 |-------|----------|-------|
-| `source_products` | Create new only | Full control |
-| `goods_retailer_mapping` | Full control | Read only |
-| `goods_retailer_pricing` | Full control | Read only |
-| `goods_product_attributes` | Never | Full control |
-| `inventory` | Never | Full control |
+| `scraped_products` | Create new only | Full control |
+| `retailer_mappings` | Full control | Read only |
+| `retailer_pricing` | Full control | Read only |
+| `sellable_products` | Never | Full control |
+| `inventory_items` | Never | Full control |
 
-**Key principle:** Once a product exists, scrapers only update retailer-specific tables (pricing, availability), never core product attributes.
+<Warning>
+Once a product exists, scrapers only update retailer-specific tables (pricing, availability), never core product attributes.
+</Warning>
 
-## Entity Relationship Diagram
+## Retailer Location Data Flow
+
+For items NOT stocked in inventory, aisle/location data comes from `retailer_mappings`:
 
 ```mermaid
-erDiagram
-    Customer ||--o{ Order : places
-    Order ||--|{ LineItem : contains
-    LineItem }|--|| SourceProduct : references
-    SourceProduct ||--o{ RetailerMapping : "available at"
-    SourceProduct ||--o{ RetailerPricing : "priced at"
-    SourceProduct ||--o| ProductAttributes : "curated by"
-    SourceProduct ||--o| Inventory : "stocked in"
-    Inventory }|--|| InventoryLocation : stored_at
+flowchart LR
+    subgraph ScrapedData [Scraped Data Layer]
+        SP[scraped_products<br/>Unique by UPC]
+        RM[retailer_mappings<br/>store_location_text: Aisle 27<br/>retailer_location_id: 92]
+    end
     
-    Order ||--o{ PickListItem : fulfilled_by
-    PickList ||--|{ PickListItem : contains
-    Driver ||--o{ PickList : assigned
+    subgraph SellableLayer [Sellable Layer]
+        SEL[sellable_products<br/>1:1 with scraped_products]
+    end
     
-    Sweep ||--|{ SweepItem : contains
-    Driver ||--o{ Sweep : performs
-    SweepItem }|--|| SourceProduct : references
+    subgraph Fulfillment [Fulfillment]
+        SI[sweep_items<br/>Gets aisle from retailer_mappings]
+    end
     
-    Order }o--o{ Sweep : sourced_from
+    SP --> SEL
+    SP --> RM
+    SEL --> SI
+    RM -.->|"Lookup aisle for sweep"| SI
 ```
 
 ## Product Domain
 
-### SourceProduct
+### scraped_products
 
-The master product record, scraped from retailers. This is the single source of truth for product identity.
+The raw product catalog from scrapers. **Unique by UPC/barcode.**
 
 | Field | Type | Description |
 |-------|------|-------------|
 | id | uuid | Unique identifier |
 | name | string | Product name |
-| barcode | string | UPC/EAN barcode (primary key for matching) |
+| barcode | string | UPC/EAN barcode (canonical identifier) |
 | brand | string | Brand name |
 | image_url | string | Primary product image |
-| size | string | Package size (e.g., "16 oz") |
-| size_uom | string | Unit of measure (oz, lb, ct) |
 | category_id | uuid | Reference to Category |
 | subcategory_id | uuid | Reference to subcategory |
 | description | text | Product description |
 | created_at | datetime | First scraped |
 | updated_at | datetime | Last updated |
 
-**Key behavior:**
-- Barcode is the canonical identifier for matching across retailers
-- Core attributes are set on first scrape and rarely change
-- Updates to name/brand only happen if product doesn't exist
+### sellable_products
 
-### RetailerMapping (goods_retailer_mapping)
-
-Links a product to a specific retailer and store location. Updated by scrapers on each run.
+The curated catalog of products we sell. **1:1 relationship with scraped_products.**
 
 | Field | Type | Description |
 |-------|------|-------------|
 | id | uuid | Unique identifier |
-| product_id | uuid | Reference to SourceProduct |
-| store_name | string | Retailer (heb, walmart, target, etc.) |
+| scraped_product_id | uuid | Reference to scraped_products (UNIQUE) |
+| name | string | Curated product name |
+| brand | string | Brand |
+| selling_price | decimal | Our price to customers |
+| is_perishable | boolean | Requires expiration tracking |
+| warehouse_zone | string | RFC zone (A=Ambient, C=Chilled, F=Frozen) |
+| preferred_retailer | string | Preferred sourcing retailer |
+| status | enum | draft, active, discontinued |
+| is_active | boolean | Currently available for sale |
+
+### retailer_mappings
+
+Links scraped products to specific retailers and stores. **Contains aisle/location data for sweeps.**
+
+| Field | Type | Description |
+|-------|------|-------------|
+| id | uuid | Unique identifier |
+| product_id | uuid | Reference to scraped_products |
+| store_name | string | Retailer (heb, walmart, target) |
 | retailer_location_id | string | Specific store ID |
 | store_item_id | string | Retailer's internal SKU |
-| store_item_name | string | Retailer's product name |
-| store_location | string | Aisle location (e.g., "A12") |
+| store_location_text | string | Aisle location (e.g., "Aisle 27") |
+| store_aisle | integer | Parsed aisle number |
 | is_active | boolean | Currently available |
 | last_seen_at | datetime | Last successful scrape |
-| out_of_stock_count | integer | Consecutive days unavailable |
 
-**Unique constraint:** `(product_id, store_name, retailer_location_id, store_item_id)`
+### variant_groups & variant_group_members
 
-### RetailerPricing (goods_retailer_pricing)
-
-Price history for products at each retailer. New records are inserted (not updated) to maintain history.
+Groups related products together for PDP display (e.g., 12oz Coke, 20oz Coke, 2L Coke).
 
 | Field | Type | Description |
 |-------|------|-------------|
-| id | uuid | Unique identifier |
-| product_id | uuid | Reference to SourceProduct |
-| store_name | string | Retailer |
-| retailer_location_id | string | Specific store ID |
-| price | decimal | Current effective price |
-| list_price | decimal | Regular price |
-| sale_price | decimal | Sale price (if on sale) |
-| is_on_sale | boolean | Currently on sale |
-| price_per_unit | decimal | Unit price |
-| price_per_unit_uom | string | Unit (oz, lb, each) |
-| effective_from | datetime | When this price started |
-| effective_to | datetime | When this price ended (null = current) |
+| variant_group_id | uuid | Reference to variant_groups |
+| sellable_product_id | uuid | Reference to sellable_products |
+| is_default | boolean | Shown first on PDP |
+| variant_label | string | Display label (e.g., "12 oz") |
 
-### ProductAttributes (goods_product_attributes)
+### bulk_sku_relationships
 
-Admin-controlled curation decisions. Determines if a product is sellable and its Goods-specific settings.
+Mathematical relationship where a bulk SKU contains N individual SKUs.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| id | uuid | Unique identifier |
-| product_id | uuid | Reference to SourceProduct |
-| is_sellable | boolean | Admin decision: do we sell this? |
-| curation_status | enum | pending, approved, rejected |
-| selling_price | decimal | Our price to customers |
-| margin_target | decimal | Target margin percentage |
-| warehouse_zone | string | RFC zone (A=Ambient, C=Chilled, F=Frozen) |
-| warehouse_aisle | integer | RFC aisle number |
-| preferred_retailer | string | Preferred sourcing retailer |
-| curated_at | datetime | When admin made decision |
-| curated_by | uuid | Reference to User |
-
-## Customer Domain
-
-### Customer
-
-Represents a user of the Goods mobile app.
-
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| email | string | Email address |
-| first_name | string | First name |
-| last_name | string | Last name |
-| phone | string | Phone number |
-| addresses | Address[] | Delivery/billing addresses |
-
-**Relationships:**
-- Has many Orders
-- Managed via Supabase Auth
-
-## Order Domain
-
-### Order
-
-A customer's purchase request.
-
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| customer_id | string | Reference to Customer |
-| status | enum | Order status (see Order Flow) |
-| items | LineItem[] | Products ordered |
-| created_at | datetime | When order was placed |
-| fulfillment_type | enum | rfc_only, sweep_only, hybrid |
-
-**Statuses:**
-`pending` → `processing` → `sweep_in_progress` → `intake` → `picking` → `staged` → `delivering` → `delivered`
-
-### LineItem
-
-Individual product in an order. Can be sourced from RFC inventory or via sweep.
-
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| order_id | string | Reference to Order |
-| product_id | string | Reference to SourceProduct |
-| quantity | number | Quantity ordered |
-| unit_price | number | Price per unit |
-| source | enum | rfc, sweep |
-| retailer | string | Which retailer (if sweep sourced) |
-| retailer_location | string | Aisle info for sweep driver |
-
-**Sourcing logic:**
-1. Check RFC inventory first
-2. If insufficient quantity, split between RFC and sweep
-3. Sweep items include retailer aisle location for driver
+| bulk_sellable_id | uuid | The bulk product (e.g., 12-pack) |
+| individual_sellable_id | uuid | The individual unit (e.g., single can) |
+| unit_count | integer | How many individuals in the bulk |
+| break_down_on_receipt | boolean | Auto-break bulk into individuals |
 
 ## Inventory Domain
 
-### Inventory
+### inventory_items
 
-Tracks RFC warehouse stock levels.
+Tracks physical inventory in the RFC warehouse. Supports **FEFO/FIFO picking**.
 
 | Field | Type | Description |
 |-------|------|-------------|
 | id | uuid | Unique identifier |
-| product_id | uuid | Reference to SourceProduct |
-| location_id | uuid | Reference to InventoryLocation |
+| sellable_product_id | uuid | Reference to sellable_products |
+| location_id | uuid | Reference to inventory_locations |
 | quantity | integer | Total quantity |
 | reserved_quantity | integer | Reserved for orders |
-| available_quantity | integer | Generated: quantity - reserved |
-| last_counted_at | datetime | Last physical count |
+| received_at | datetime | When received (for FIFO) |
+| expiration_date | date | Expiration (for FEFO, nullable) |
+| lot_number | string | Lot tracking |
+| source_sweep_id | uuid | Which sweep brought this in |
+| unit_cost | decimal | Acquisition cost |
 
-### InventoryLocation
+<Note>
+**FEFO/FIFO Picking**: Items are picked with expiring soonest first (FEFO), with oldest received as fallback for non-perishables (FIFO).
+</Note>
+
+### inventory_locations
 
 Physical location within the RFC warehouse.
 
+### inventory_groups
+
+Hierarchical warehouse organization: Zone → Aisle → Bay → Shelf → Slot
+
+## Staff Domain
+
+### staff
+
+Employees who can be pickers, drivers, or both. Replaces the old `drivers` table.
+
 | Field | Type | Description |
 |-------|------|-------------|
 | id | uuid | Unique identifier |
-| zone | string | Zone letter (A, B, C) |
-| shelf | string | Shelf code (A1, A2) |
-| bin | string | Bin code (A1-B3) |
-| is_active | boolean | Currently in use |
+| user_id | string | Link to admin user account |
+| email | string | Staff email |
+| is_picker | boolean | Can pick orders |
+| is_driver | boolean | Can perform sweeps |
+| is_active | boolean | Currently active |
 
-### InventoryGroup
+<Note>
+Staff members can have both picker and driver roles, but not perform both simultaneously.
+</Note>
 
-Hierarchical warehouse organization (custom module).
+## Order & Fulfillment Domain
+
+### orders
+
+Customer orders from app or admin dashboard.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| id | string | Unique identifier |
-| name | string | Group name |
-| code | string | Location code (e.g., A1-2-3-1) |
-| type | enum | zone, aisle, bay, shelf, slot |
-| parent_id | string | Parent group reference |
-| stock_location_id | string | Reference to StockLocation |
+| id | uuid | Unique identifier |
+| customer_id | uuid | Reference to customers |
+| source | enum | 'app' or 'admin' |
+| location_id | uuid | Store location for pricing/tax |
+| payment_collection_id | text | Reference to payment_collection |
 
-**Hierarchy:**
-Zone → Aisle → Bay → Shelf → Slot
+### order_items
 
-**Example:** `A1-2-3-1` = Zone A, Aisle 1, Bay 2, Shelf 3, Slot 1
+Line items referencing sellable_products.
+
+| Field | Type | Description |
+|-------|------|-------------|
+| sellable_product_id | uuid | Reference to sellable_products |
+| fulfillment_source | enum | 'inventory' or 'sweep' |
+| allocated_at | datetime | When allocation was made |
+
+### totes, bags, bag_items
+
+Physical containers for robot delivery:
+
+- **Order** → has many **Totes**
+- **Tote** → has many **Bags** (one robot per tote)
+- **Bag** → has many **Bag Items** (temperature-separated)
+- **Bag Item** → fulfills an **Order Item**
 
 ## Operations Domain
 
-### Driver
+### routes
 
-Person who performs sweeps and deliveries.
+Groups multiple sweeps together for a single driver trip.
 
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| first_name | string | First name |
-| last_name | string | Last name |
-| phone | string | Phone number |
-| email | string | Email (optional) |
-| license_number | string | Driver's license |
-| vehicle_info | string | Vehicle description |
-| is_active | boolean | Currently active |
+### sweeps
 
-### Sweep
-
-Daily shopping trip to a retailer.
+Shopping trips to retailers. Supports order sweeps and inventory sweeps.
 
 | Field | Type | Description |
 |-------|------|-------------|
-| id | string | Unique identifier |
-| store_id | string | Reference to StockLocation (retailer) |
-| sweep_date | date | Date of sweep |
-| scheduled_start_time | datetime | When sweep should begin |
-| actual_start_time | datetime | When driver started |
-| actual_end_time | datetime | When driver returned |
-| driver_id | string | Reference to Driver |
-| status | enum | scheduled, in_progress, completed, cancelled |
-| total_items | number | Total items on manifest |
+| sweep_type | enum | 'order' or 'inventory' |
+| driver_id | uuid | Reference to staff |
+| route_id | uuid | Reference to routes |
 
-**Schedule:**
-- One sweep per retailer per day (default)
-- Additional sweeps can be added manually
+### pick_lists
 
-### SweepItem
+RFC picking assignments assigned to staff (pickers).
 
-Item on a sweep manifest. Includes retailer aisle location for efficient shopping.
+### sweep_inventory_allocations
 
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| sweep_id | string | Reference to Sweep |
-| product_id | string | Reference to SourceProduct |
-| quantity | number | Quantity to pick |
-| picked_quantity | number | Quantity actually picked |
-| status | enum | pending, picked, substituted, unavailable |
-| retailer_location | string | Aisle location from RetailerMapping |
-| substitute_product_id | string | If substituted, the replacement |
+Links sweep items to inventory for inventory purchasing sweeps.
 
-### PickList
+## Store API Integration
 
-Assignment of picking work to a warehouse picker.
+### Cart Module
 
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| order_id | string | Reference to Order |
-| picker_id | string | Reference to Driver (who picks) |
-| status | enum | pending, in_progress, completed |
-| started_at | datetime | When picking started |
-| completed_at | datetime | When picking finished |
+- `carts` → linked to customers
+- `cart_line_items` → reference **sellable_products** (not Medusa product_variant)
+- `cart_address` → billing address only (shipping is static store address)
 
-### PickListItem
+### Promotions Module
 
-Individual item to pick from warehouse.
+- `promotions` → can target sellable_products, categories, customers, or customer_groups
+- `order_promotions` / `cart_promotions` → track applied promotions
 
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| pick_list_id | string | Reference to PickList |
-| order_item_id | string | Reference to LineItem |
-| product_id | string | Reference to SourceProduct |
-| location_id | string | Reference to InventoryGroup (slot) |
-| quantity | number | Quantity to pick |
-| picked_quantity | number | Quantity picked |
-| status | enum | pending, picked, unavailable |
-| sequence | number | Order in pick path |
+### Payments Module (Full Medusa Flow)
 
-## User Domain
+- `payment_collections` → container for payment attempts
+- `payment_sessions` → individual payment attempts with a provider
+- `payments` → successful payments with captures/refunds
 
-### User
+### Locations & Tax Module
 
-Admin/staff user of Switchyard.
-
-| Field | Type | Description |
-|-------|------|-------------|
-| id | string | Unique identifier |
-| email | string | Email address |
-| first_name | string | First name |
-| last_name | string | Last name |
-| role | enum | admin, manager, picker, driver |
-
-**Roles:**
-- `admin` - Full access
-- `manager` - Operations management
-- `picker` - Warehouse picking
-- `driver` - Sweep operations
+- `locations` → physical store locations with location-specific pricing
+- `location_tax_rates` → tax rates per location
+- Carts and orders reference their location for pricing and tax calculation
 
 ## Dashboard Views
 
-The admin dashboard has three main product-related pages, all querying the same underlying data:
+The admin dashboard queries directly from Supabase with React Query caching:
 
-| Page | Filter | Primary Use |
-|------|--------|-------------|
-| **Scraped Products** | All `source_products` | Monitor prices, availability, discover products |
-| **Products** | `goods_product_attributes.is_sellable = true` | Manage sellable catalog |
-| **Inventory** | Has `inventory` record | Manage RFC stock levels, trigger reorders |
-
-All three pages query directly from Supabase with React Query caching for performance.
+| Page | Table | Primary Use |
+|------|-------|-------------|
+| **Scraped Products** | `scraped_products` | Monitor prices, availability, discover products |
+| **Sellable Products** | `sellable_products` | Manage curated catalog |
+| **Inventory** | `inventory_items` | Manage RFC stock levels, FEFO/FIFO |
+| **Staff** | `staff` | Manage pickers and drivers |

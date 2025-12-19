@@ -10,3 +10,4 @@ export default Module(EQUIPMENT_NOTIFICATIONS_MODULE, {
 export { EquipmentNotificationsModuleService }
 export * from "./models"
 export * from "./types"
+

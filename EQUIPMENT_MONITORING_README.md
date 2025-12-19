@@ -127,3 +127,4 @@ When sensors arrive:
 6. Begin monitoring!
 
 See `docs/guides/equipment-monitoring-setup.md` for detailed setup instructions.
+

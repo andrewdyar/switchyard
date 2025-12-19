@@ -5,15 +5,16 @@ description: Mobile scanning and inventory operations
 
 # Scanner API
 
-The Scanner API is designed for mobile devices used by warehouse pickers and delivery drivers.
+The Scanner API is designed for mobile devices used by warehouse pickers, drivers, and intake staff.
 
 ## Overview
 
 The Scanner API provides:
-- **Barcode Lookup**: Find products by UPC/EAN barcode
-- **Inventory Scanning**: Update quantities via mobile scan
+- **Barcode Lookup**: Find sellable products by UPC/EAN barcode
+- **Inventory Scanning**: Update quantities with FEFO/FIFO tracking
+- **Inventory Receiving**: Receive new inventory from sweeps
 - **Order Picking**: Access orders assigned for fulfillment
-- **Location Tracking**: Validate item locations
+- **Bag Scanning**: Scan items into bags for order assembly
 
 ## Authentication
 
@@ -46,51 +47,68 @@ Authorization: Bearer <token>
 ```
 
 Response:
+
 ```json
 {
   "status": "ok",
-  "user": {
-    "email": "picker@example.com",
-    "roles": ["picker"]
-  },
-  "permissions": ["inventory.scan", "orders.read"]
+  "version": "2.0.0",
+  "features": {
+    "inventory_scan": true,
+    "barcode_lookup": true,
+    "location_tracking": true,
+    "fefo_fifo_picking": true,
+    "inventory_receiving": true
+  }
 }
 ```
 
 ### Product Lookup
 
-Look up a product by barcode.
+Look up a sellable product by barcode. Returns inventory in FEFO/FIFO order.
 
 ```bash
-GET /scanner/inventory/lookup?barcode=012345678901
+GET /scanner/inventory/lookup?barcode=012345678901&location_id=loc-uuid
 Authorization: Bearer <token>
 ```
 
 Response:
+
 ```json
 {
-  "found": true,
+  "success": true,
+  "barcode": "012345678901",
   "product": {
-    "id": "prod_123",
-    "title": "Organic Bananas",
-    "thumbnail": "https://...",
-    "variants": [{
-      "id": "var_456",
-      "sku": "BAN-ORG-001",
-      "barcode": "012345678901",
-      "inventory_quantity": 24
-    }]
+    "id": "550e8400-e29b-41d4-a716-446655440000",
+    "name": "Organic Bananas",
+    "brand": "Dole",
+    "image_url": "https://cdn.example.com/bananas.jpg",
+    "selling_price": 1.99,
+    "is_perishable": true,
+    "warehouse_zone": "C"
   },
-  "location": {
-    "code": "A1-2-3-1",
-    "zone": "A",
-    "aisle": 1,
-    "bay": 2,
-    "shelf": 3,
-    "slot": 1
+  "inventory": {
+    "total_quantity": 48,
+    "total_reserved": 12,
+    "available_quantity": 36,
+    "items": [
+      {
+        "id": "inv-item-uuid",
+        "location_id": "loc-uuid",
+        "quantity": 24,
+        "reserved_quantity": 6,
+        "available": 18,
+        "expiration_date": "2025-01-15",
+        "received_at": "2024-12-15T10:00:00Z",
+        "lot_number": "LOT-2024-001"
+      }
+    ]
   }
 }
 ```
+
+<Note>
+Inventory items are returned in FEFO/FIFO order - items expiring soonest first, then oldest received.
+</Note>
 
 ### Inventory Scan
 
@@ -103,22 +121,50 @@ Content-Type: application/json
 
 {
   "barcode": "012345678901",
-  "location_id": "loc_789",
+  "location_id": "loc-uuid",
   "quantity": 24,
-  "action": "set",
-  "notes": "Restocked from delivery"
+  "action": "receive",
+  "expiration_date": "2025-01-15",
+  "lot_number": "LOT-2024-001"
 }
 ```
 
+#### Actions
+
+| Action | Description |
+|--------|-------------|
+| `lookup` | Just look up product and inventory |
+| `adjust` | Add or subtract from current quantity |
+| `count` | Set exact count (inventory audit) |
+| `receive` | Receive new inventory (e.g., from sweep) |
+
 Response:
+
 ```json
 {
   "success": true,
+  "barcode": "012345678901",
+  "action": "receive",
+  "product": {
+    "id": "prod-uuid",
+    "name": "Organic Bananas",
+    "is_perishable": true
+  },
   "inventory": {
-    "previous_quantity": 12,
-    "new_quantity": 24,
-    "location_code": "A1-2-3-1"
-  }
+    "item_id": "new-inv-item-uuid",
+    "quantity": 24,
+    "reserved_quantity": 0,
+    "available": 24,
+    "location_id": "loc-uuid",
+    "expiration_date": "2025-01-15"
+  },
+  "totals": {
+    "total_quantity": 48,
+    "total_reserved": 12,
+    "available": 36
+  },
+  "scanned_at": "2024-12-18T15:30:00Z",
+  "scanned_by": "staff-uuid"
 }
 ```
 
@@ -127,18 +173,103 @@ Response:
 Get orders assigned for picking.
 
 ```bash
-GET /scanner/orders?status=pending
+GET /scanner/orders?status=pending&limit=20
 Authorization: Bearer <token>
+```
+
+Response:
+
+```json
+{
+  "orders": [
+    {
+      "id": "order-uuid",
+      "display_id": 1234,
+      "status": "picking",
+      "source": "app",
+      "created_at": "2024-12-18T10:00:00Z",
+      "total": 45.99,
+      "location_id": "loc-uuid"
+    }
+  ],
+  "count": 15,
+  "limit": 20,
+  "offset": 0
+}
 ```
 
 ### Order Details
 
-Get full order details for picking.
+Get full order details for picking, including totes and bags.
 
 ```bash
 GET /scanner/orders/:id
 Authorization: Bearer <token>
 ```
+
+Response:
+
+```json
+{
+  "order": {
+    "id": "order-uuid",
+    "display_id": 1234,
+    "status": "picking",
+    "source": "app",
+    "created_at": "2024-12-18T10:00:00Z",
+    "location_id": "loc-uuid",
+    "items": [
+      {
+        "id": "item-uuid",
+        "sellable_product_id": "prod-uuid",
+        "title": "Organic Bananas",
+        "quantity": 2,
+        "unit_price": 1.99,
+        "image_url": "https://cdn.example.com/bananas.jpg",
+        "fulfillment_source": "inventory",
+        "allocated_at": "2024-12-18T10:05:00Z"
+      }
+    ],
+    "totes": [
+      {
+        "id": "tote-uuid",
+        "tote_code": "TOTE-001",
+        "status": "packing",
+        "bags": [
+          {
+            "id": "bag-uuid",
+            "bag_code": "BAG-001",
+            "bag_type": "chilled"
+          }
+        ]
+      }
+    ]
+  }
+}
+```
+
+## Bag and Tote Workflow
+
+### Picking Flow
+
+1. Picker receives pick_list assignment
+2. For each pick_list_item:
+   - Scan product barcode
+   - System shows inventory location (FEFO/FIFO)
+   - Picker retrieves item
+   - Scan into bag (creates bag_item)
+3. Seal bag and assign to tote
+4. Stage tote for robot delivery
+
+### Intake Flow (Sweep Returns)
+
+1. Driver returns from sweep
+2. For each sweep_item:
+   - Scan product barcode
+   - Scan into bag (creates bag_item)
+   - Links to order_item for fulfillment
+3. Bags assigned to totes
+4. Stage for delivery
 
 ## Permissions
 
@@ -147,6 +278,7 @@ Authorization: Bearer <token>
 | `GET /scanner` | `scanner.use` |
 | `GET /scanner/inventory/lookup` | `inventory.read` |
 | `POST /scanner/inventory/scan` | `inventory.scan` |
+| `POST /scanner/inventory/scan` (receive) | `inventory.receive` |
 | `GET /scanner/orders` | `orders.read` |
 | `GET /scanner/orders/:id` | `orders.read` |
 
@@ -158,7 +290,7 @@ No valid authentication token.
 
 ```json
 {
-  "message": "Unauthorized"
+  "error": "Unauthorized"
 }
 ```
 
@@ -168,20 +300,25 @@ Authenticated but missing required permission.
 
 ```json
 {
-  "message": "Forbidden: Missing required permission. Required: inventory.scan"
+  "error": "Forbidden: Missing required permission",
+  "required": "inventory.scan"
 }
 ```
 
 ### 404 Not Found
 
-Barcode not found in system.
+Barcode not found in sellable catalog.
 
 ```json
 {
-  "found": false,
-  "message": "Product not found for barcode: 012345678901"
+  "error": "Product not found",
+  "barcode": "012345678901"
 }
 ```
+
+<Warning>
+The barcode must exist in both scraped_products AND sellable_products to be found. If a product exists in scraped_products but hasn't been curated into sellable_products, it will return 404.
+</Warning>
 
 ## Mobile SDK Example
 
@@ -195,22 +332,54 @@ class ScannerClient {
     this.token = data.session.access_token;
   }
 
-  async lookupBarcode(barcode: string) {
-    const response = await fetch(
-      `${this.baseUrl}/scanner/inventory/lookup?barcode=${barcode}`,
-      { headers: { Authorization: `Bearer ${this.token}` } }
-    );
+  async lookupBarcode(barcode: string, locationId?: string) {
+    let url = `${this.baseUrl}/scanner/inventory/lookup?barcode=${barcode}`;
+    if (locationId) url += `&location_id=${locationId}`;
+    
+    const response = await fetch(url, {
+      headers: { Authorization: `Bearer ${this.token}` }
+    });
     return response.json();
   }
 
-  async scanInventory(barcode: string, locationId: string, quantity: number) {
+  async receiveInventory(
+    barcode: string, 
+    locationId: string, 
+    quantity: number,
+    expirationDate?: string,
+    lotNumber?: string
+  ) {
     const response = await fetch(`${this.baseUrl}/scanner/inventory/scan`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${this.token}`,
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ barcode, location_id: locationId, quantity, action: 'set' })
+      body: JSON.stringify({
+        barcode,
+        location_id: locationId,
+        quantity,
+        action: 'receive',
+        expiration_date: expirationDate,
+        lot_number: lotNumber
+      })
+    });
+    return response.json();
+  }
+
+  async adjustInventory(barcode: string, locationId: string, adjustment: number) {
+    const response = await fetch(`${this.baseUrl}/scanner/inventory/scan`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${this.token}`,
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+        barcode,
+        location_id: locationId,
+        quantity: adjustment,
+        action: 'adjust'
+      })
     });
     return response.json();
   }

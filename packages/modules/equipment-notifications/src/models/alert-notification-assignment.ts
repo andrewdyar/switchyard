@@ -26,3 +26,4 @@ const AlertNotificationAssignment = model
   ])
 
 export default AlertNotificationAssignment
+
