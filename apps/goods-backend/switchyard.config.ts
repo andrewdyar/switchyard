@@ -1,4 +1,4 @@
-import { defineConfig, loadEnv } from "@switchyard/framework/utils"
+import { defineConfig, loadEnv, Modules } from "@switchyard/framework/utils"
 
 loadEnv(process.env.NODE_ENV || "development", process.cwd())
 
@@ -41,23 +41,33 @@ if (hasSupabaseConfig) {
 // Configure auth methods based on available providers
 const userAuthMethods = authProviders.map(p => p.id)
 
-// Build modules list - add Redis modules for production if REDIS_URL is configured
-const modules: any[] = [
-  {
+// Build modules object - configure what modules are enabled/disabled
+const modules: Record<string, any> = {
+  // Custom modules
+  [Modules.INVENTORY]: {
     resolve: "@switchyard/inventory-group",
   },
-  {
+  // Auth module
+  [Modules.AUTH]: {
     resolve: "@switchyard/core/auth",
     options: {
       providers: authProviders,
     },
   },
-]
+  // Explicitly disable modules whose tables have been removed
+  // These modules require tables that no longer exist in our custom schema
+  [Modules.REGION]: false,
+  [Modules.CURRENCY]: false,
+  [Modules.TAX]: false,
+  [Modules.FULFILLMENT]: false,
+  [Modules.NOTIFICATION]: false,
+  [Modules.STORE]: false,
+}
 
 // Add Redis-based modules for production (required for multi-instance deployments)
 if (process.env.REDIS_URL) {
   // Redis Caching Module
-  modules.push({
+  modules[Modules.CACHING] = {
     resolve: "@switchyard/core/caching",
     options: {
       providers: [
@@ -71,10 +81,10 @@ if (process.env.REDIS_URL) {
         },
       ],
     },
-  })
+  }
 
   // Redis Event Bus Module
-  modules.push({
+  modules[Modules.EVENT_BUS] = {
     resolve: "@switchyard/core/event-bus-redis",
     options: {
       redisUrl: process.env.REDIS_URL,
@@ -83,20 +93,20 @@ if (process.env.REDIS_URL) {
         removeOnFail: { age: 3600, count: 1000 },
       },
     },
-  })
+  }
 
   // Redis Workflow Engine Module
-  modules.push({
+  modules[Modules.WORKFLOW_ENGINE] = {
     resolve: "@switchyard/core/workflow-engine-redis",
     options: {
       redis: {
         url: process.env.REDIS_URL,
       },
     },
-  })
+  }
 
   // Redis Locking Module
-  modules.push({
+  modules[Modules.LOCKING] = {
     resolve: "@switchyard/core/locking",
     options: {
       providers: [
@@ -110,7 +120,7 @@ if (process.env.REDIS_URL) {
         },
       ],
     },
-  })
+  }
 }
 
 export default defineConfig({

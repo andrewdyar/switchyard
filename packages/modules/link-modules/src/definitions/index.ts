@@ -1,19 +1,26 @@
 export * from "./cart-payment-collection"
 export * from "./cart-promotion"
-export * from "./fulfillment-provider-location"
-export * from "./fulfillment-set-location"
+// Disabled - Fulfillment module tables removed
+// export * from "./fulfillment-provider-location"
+// export * from "./fulfillment-set-location"
 export * from "./order-cart"
-export * from "./order-fulfillment"
+// Disabled - Fulfillment module tables removed
+// export * from "./order-fulfillment"
 export * from "./order-payment-collection"
 export * from "./order-promotion"
-export * from "./order-return-fulfillment"
+// Disabled - Fulfillment module tables removed
+// export * from "./order-return-fulfillment"
 export * from "./product-sales-channel"
 export * from "./product-variant-inventory-item"
 export * from "./product-variant-price-set"
 export * from "./publishable-api-key-sales-channel"
-export * from "./readonly"
-export * from "./region-payment-provider"
+// Disabled - Region/Currency module tables removed
+// export * from "./readonly"
+// Disabled - Region module tables removed
+// export * from "./region-payment-provider"
 export * from "./sales-channel-location"
-export * from "./shipping-option-price-set"
-export * from "./product-shipping-profile"
+// Disabled - shipping uses Fulfillment module tables
+// export * from "./shipping-option-price-set"
+// Disabled - shipping uses Fulfillment module tables
+// export * from "./product-shipping-profile"
 export * from "./customer-account-holder"
