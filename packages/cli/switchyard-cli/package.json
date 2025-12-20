@@ -4,7 +4,8 @@
   "description": "Command Line interface for Medusa Commerce",
   "main": "dist/index.js",
   "bin": {
-    "switchyard": "cli.js"
+    "switchyard": "cli.js",
+    "medusa": "cli.js"
   },
   "repository": {
     "type": "git",
