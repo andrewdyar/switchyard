@@ -9,22 +9,24 @@
     "seed": "medusa exec ./src/scripts/seed.ts"
   },
   "dependencies": {
-    "@switchyard/admin-sdk": "workspace:*",
-    "@switchyard/cli": "workspace:*",
-    "@switchyard/framework": "workspace:*",
-    "@switchyard/core": "workspace:*",
     "@supabase/supabase-js": "^2.45.0",
-
+    "@switchyard/admin-sdk": "workspace:*",
     "@switchyard/api-key": "workspace:*",
     "@switchyard/auth": "workspace:*",
     "@switchyard/auth-emailpass": "workspace:*",
     "@switchyard/auth-supabase": "workspace:*",
+    "@switchyard/caching-redis": "workspace:*",
     "@switchyard/cart": "workspace:*",
+    "@switchyard/cli": "workspace:*",
+    "@switchyard/core": "workspace:*",
     "@switchyard/customer": "workspace:*",
+    "@switchyard/event-bus-redis": "workspace:*",
     "@switchyard/file": "workspace:*",
     "@switchyard/file-local": "workspace:*",
+    "@switchyard/framework": "workspace:*",
     "@switchyard/inventory": "workspace:*",
     "@switchyard/inventory-group": "workspace:*",
+    "@switchyard/locking-redis": "workspace:*",
     "@switchyard/order": "workspace:*",
     "@switchyard/payment": "workspace:*",
     "@switchyard/pricing": "workspace:*",
@@ -34,10 +36,6 @@
     "@switchyard/settings": "workspace:*",
     "@switchyard/stock-location": "workspace:*",
     "@switchyard/user": "workspace:*",
-
-    "@switchyard/caching-redis": "workspace:*",
-    "@switchyard/event-bus-redis": "workspace:*",
-    "@switchyard/locking-redis": "workspace:*",
     "@switchyard/workflow-engine-redis": "workspace:*"
   },
   "devDependencies": {

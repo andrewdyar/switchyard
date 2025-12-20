@@ -10018,7 +10018,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/analytics-local@workspace:*, @switchyard/analytics-local@workspace:packages/modules/providers/analytics-local":
+"@switchyard/analytics-local@workspace:packages/modules/providers/analytics-local":
   version: 0.0.0-use.local
   resolution: "@switchyard/analytics-local@workspace:packages/modules/providers/analytics-local"
   dependencies:
@@ -10028,7 +10028,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/analytics-posthog@workspace:*, @switchyard/analytics-posthog@workspace:packages/modules/providers/analytics-posthog":
+"@switchyard/analytics-posthog@workspace:packages/modules/providers/analytics-posthog":
   version: 0.0.0-use.local
   resolution: "@switchyard/analytics-posthog@workspace:packages/modules/providers/analytics-posthog"
   dependencies:
@@ -10040,7 +10040,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/analytics@workspace:*, @switchyard/analytics@workspace:packages/modules/analytics":
+"@switchyard/analytics@workspace:packages/modules/analytics":
   version: 0.0.0-use.local
   resolution: "@switchyard/analytics@workspace:packages/modules/analytics"
   dependencies:
@@ -10073,7 +10073,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/auth-github@workspace:*, @switchyard/auth-github@workspace:packages/modules/providers/auth-github":
+"@switchyard/auth-github@workspace:packages/modules/providers/auth-github":
   version: 0.0.0-use.local
   resolution: "@switchyard/auth-github@workspace:packages/modules/providers/auth-github"
   dependencies:
@@ -10083,7 +10083,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/auth-google@workspace:*, @switchyard/auth-google@workspace:packages/modules/providers/auth-google":
+"@switchyard/auth-google@workspace:packages/modules/providers/auth-google":
   version: 0.0.0-use.local
   resolution: "@switchyard/auth-google@workspace:packages/modules/providers/auth-google"
   dependencies:
@@ -10094,7 +10094,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/auth-supabase@workspace:packages/modules/providers/auth-supabase":
+"@switchyard/auth-supabase@workspace:*, @switchyard/auth-supabase@workspace:packages/modules/providers/auth-supabase":
   version: 0.0.0-use.local
   resolution: "@switchyard/auth-supabase@workspace:packages/modules/providers/auth-supabase"
   dependencies:
@@ -10229,53 +10229,19 @@ __metadata:
     "@inquirer/checkbox": ^2.3.11
     "@inquirer/input": ^2.2.9
     "@switchyard/admin-bundler": "workspace:*"
-    "@switchyard/analytics": "workspace:*"
-    "@switchyard/analytics-local": "workspace:*"
-    "@switchyard/analytics-posthog": "workspace:*"
-    "@switchyard/api-key": "workspace:*"
-    "@switchyard/auth": "workspace:*"
-    "@switchyard/auth-emailpass": "workspace:*"
-    "@switchyard/auth-github": "workspace:*"
-    "@switchyard/auth-google": "workspace:*"
     "@switchyard/cache-inmemory": "workspace:*"
     "@switchyard/cache-redis": "workspace:*"
     "@switchyard/caching": "workspace:*"
     "@switchyard/caching-redis": "workspace:*"
-    "@switchyard/cart": "workspace:*"
     "@switchyard/core-flows": "workspace:*"
-    "@switchyard/currency": "workspace:*"
-    "@switchyard/customer": "workspace:*"
     "@switchyard/event-bus-local": "workspace:*"
     "@switchyard/event-bus-redis": "workspace:*"
-    "@switchyard/file": "workspace:*"
-    "@switchyard/file-local": "workspace:*"
-    "@switchyard/file-s3": "workspace:*"
     "@switchyard/framework": "workspace:*"
-    "@switchyard/fulfillment": "workspace:*"
-    "@switchyard/fulfillment-manual": "workspace:*"
-    "@switchyard/index": "workspace:*"
-    "@switchyard/inventory": "workspace:*"
     "@switchyard/link-modules": "workspace:*"
     "@switchyard/locking": "workspace:*"
     "@switchyard/locking-postgres": "workspace:*"
     "@switchyard/locking-redis": "workspace:*"
-    "@switchyard/notification": "workspace:*"
-    "@switchyard/notification-local": "workspace:*"
-    "@switchyard/notification-sendgrid": "workspace:*"
-    "@switchyard/order": "workspace:*"
-    "@switchyard/payment": "workspace:*"
-    "@switchyard/payment-stripe": "workspace:*"
-    "@switchyard/pricing": "workspace:*"
-    "@switchyard/product": "workspace:*"
-    "@switchyard/promotion": "workspace:*"
-    "@switchyard/region": "workspace:*"
-    "@switchyard/sales-channel": "workspace:*"
-    "@switchyard/settings": "workspace:*"
-    "@switchyard/stock-location": "workspace:*"
-    "@switchyard/store": "workspace:*"
-    "@switchyard/tax": "workspace:*"
     "@switchyard/telemetry": "workspace:*"
-    "@switchyard/user": "workspace:*"
     "@switchyard/workflow-engine-inmemory": "workspace:*"
     "@switchyard/workflow-engine-redis": "workspace:*"
     boxen: ^5.0.1
@@ -10294,12 +10260,114 @@ __metadata:
     zod: 3.25.76
   peerDependencies:
     "@swc/core": ^1.7.28
+    "@switchyard/analytics": "workspace:*"
+    "@switchyard/analytics-local": "workspace:*"
+    "@switchyard/analytics-posthog": "workspace:*"
+    "@switchyard/api-key": "workspace:*"
+    "@switchyard/auth": "workspace:*"
+    "@switchyard/auth-emailpass": "workspace:*"
+    "@switchyard/auth-github": "workspace:*"
+    "@switchyard/auth-google": "workspace:*"
+    "@switchyard/cart": "workspace:*"
+    "@switchyard/currency": "workspace:*"
+    "@switchyard/customer": "workspace:*"
+    "@switchyard/file": "workspace:*"
+    "@switchyard/file-local": "workspace:*"
+    "@switchyard/file-s3": "workspace:*"
     "@switchyard/framework": "workspace:*"
+    "@switchyard/fulfillment": "workspace:*"
+    "@switchyard/fulfillment-manual": "workspace:*"
+    "@switchyard/index": "workspace:*"
+    "@switchyard/inventory": "workspace:*"
+    "@switchyard/notification": "workspace:*"
+    "@switchyard/notification-local": "workspace:*"
+    "@switchyard/notification-sendgrid": "workspace:*"
+    "@switchyard/order": "workspace:*"
+    "@switchyard/payment": "workspace:*"
+    "@switchyard/payment-stripe": "workspace:*"
+    "@switchyard/pricing": "workspace:*"
+    "@switchyard/product": "workspace:*"
+    "@switchyard/promotion": "workspace:*"
+    "@switchyard/region": "workspace:*"
+    "@switchyard/sales-channel": "workspace:*"
+    "@switchyard/settings": "workspace:*"
+    "@switchyard/stock-location": "workspace:*"
+    "@switchyard/store": "workspace:*"
+    "@switchyard/tax": "workspace:*"
+    "@switchyard/user": "workspace:*"
     posthog-node: ^5.11.0
     react-dom: ^18.3.1
     yalc: ^1.0.0-pre.53
   peerDependenciesMeta:
     "@swc/core":
+      optional: true
+    "@switchyard/analytics":
+      optional: true
+    "@switchyard/analytics-local":
+      optional: true
+    "@switchyard/analytics-posthog":
+      optional: true
+    "@switchyard/api-key":
+      optional: true
+    "@switchyard/auth":
+      optional: true
+    "@switchyard/auth-emailpass":
+      optional: true
+    "@switchyard/auth-github":
+      optional: true
+    "@switchyard/auth-google":
+      optional: true
+    "@switchyard/cart":
+      optional: true
+    "@switchyard/currency":
+      optional: true
+    "@switchyard/customer":
+      optional: true
+    "@switchyard/file":
+      optional: true
+    "@switchyard/file-local":
+      optional: true
+    "@switchyard/file-s3":
+      optional: true
+    "@switchyard/fulfillment":
+      optional: true
+    "@switchyard/fulfillment-manual":
+      optional: true
+    "@switchyard/index":
+      optional: true
+    "@switchyard/inventory":
+      optional: true
+    "@switchyard/notification":
+      optional: true
+    "@switchyard/notification-local":
+      optional: true
+    "@switchyard/notification-sendgrid":
+      optional: true
+    "@switchyard/order":
+      optional: true
+    "@switchyard/payment":
+      optional: true
+    "@switchyard/payment-stripe":
+      optional: true
+    "@switchyard/pricing":
+      optional: true
+    "@switchyard/product":
+      optional: true
+    "@switchyard/promotion":
+      optional: true
+    "@switchyard/region":
+      optional: true
+    "@switchyard/sales-channel":
+      optional: true
+    "@switchyard/settings":
+      optional: true
+    "@switchyard/stock-location":
+      optional: true
+    "@switchyard/store":
+      optional: true
+    "@switchyard/tax":
+      optional: true
+    "@switchyard/user":
       optional: true
     posthog-node:
       optional: true
@@ -10310,7 +10378,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/currency@workspace:*, @switchyard/currency@workspace:^, @switchyard/currency@workspace:packages/modules/currency":
+"@switchyard/currency@workspace:^, @switchyard/currency@workspace:packages/modules/currency":
   version: 0.0.0-use.local
   resolution: "@switchyard/currency@workspace:packages/modules/currency"
   dependencies:
@@ -10478,7 +10546,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/file-s3@workspace:*, @switchyard/file-s3@workspace:packages/modules/providers/file-s3":
+"@switchyard/file-s3@workspace:packages/modules/providers/file-s3":
   version: 0.0.0-use.local
   resolution: "@switchyard/file-s3@workspace:packages/modules/providers/file-s3"
   dependencies:
@@ -10551,7 +10619,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/fulfillment-manual@workspace:*, @switchyard/fulfillment-manual@workspace:^, @switchyard/fulfillment-manual@workspace:packages/modules/providers/fulfillment-manual":
+"@switchyard/fulfillment-manual@workspace:^, @switchyard/fulfillment-manual@workspace:packages/modules/providers/fulfillment-manual":
   version: 0.0.0-use.local
   resolution: "@switchyard/fulfillment-manual@workspace:packages/modules/providers/fulfillment-manual"
   dependencies:
@@ -10561,7 +10629,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/fulfillment@workspace:*, @switchyard/fulfillment@workspace:^, @switchyard/fulfillment@workspace:packages/modules/fulfillment":
+"@switchyard/fulfillment@workspace:^, @switchyard/fulfillment@workspace:packages/modules/fulfillment":
   version: 0.0.0-use.local
   resolution: "@switchyard/fulfillment@workspace:packages/modules/fulfillment"
   dependencies:
@@ -10598,7 +10666,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/index@workspace:*, @switchyard/index@workspace:packages/modules/index":
+"@switchyard/index@workspace:packages/modules/index":
   version: 0.0.0-use.local
   resolution: "@switchyard/index@workspace:packages/modules/index"
   dependencies:
@@ -10609,7 +10677,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/inventory-group@workspace:packages/modules/inventory-group":
+"@switchyard/inventory-group@workspace:*, @switchyard/inventory-group@workspace:packages/modules/inventory-group":
   version: 0.0.0-use.local
   resolution: "@switchyard/inventory-group@workspace:packages/modules/inventory-group"
   dependencies:
@@ -10696,7 +10764,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/notification-local@workspace:*, @switchyard/notification-local@workspace:packages/modules/providers/notification-local":
+"@switchyard/notification-local@workspace:packages/modules/providers/notification-local":
   version: 0.0.0-use.local
   resolution: "@switchyard/notification-local@workspace:packages/modules/providers/notification-local"
   dependencies:
@@ -10706,7 +10774,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/notification-sendgrid@workspace:*, @switchyard/notification-sendgrid@workspace:packages/modules/providers/notification-sendgrid":
+"@switchyard/notification-sendgrid@workspace:packages/modules/providers/notification-sendgrid":
   version: 0.0.0-use.local
   resolution: "@switchyard/notification-sendgrid@workspace:packages/modules/providers/notification-sendgrid"
   dependencies:
@@ -10717,7 +10785,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/notification@workspace:*, @switchyard/notification@workspace:packages/modules/notification":
+"@switchyard/notification@workspace:packages/modules/notification":
   version: 0.0.0-use.local
   resolution: "@switchyard/notification@workspace:packages/modules/notification"
   dependencies:
@@ -10780,7 +10848,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/payment-stripe@workspace:*, @switchyard/payment-stripe@workspace:packages/modules/providers/payment-stripe":
+"@switchyard/payment-stripe@workspace:packages/modules/providers/payment-stripe":
   version: 0.0.0-use.local
   resolution: "@switchyard/payment-stripe@workspace:packages/modules/providers/payment-stripe"
   dependencies:
@@ -10858,7 +10926,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/region@workspace:*, @switchyard/region@workspace:^, @switchyard/region@workspace:packages/modules/region":
+"@switchyard/region@workspace:^, @switchyard/region@workspace:packages/modules/region":
   version: 0.0.0-use.local
   resolution: "@switchyard/region@workspace:packages/modules/region"
   dependencies:
@@ -10902,7 +10970,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/store@workspace:*, @switchyard/store@workspace:^, @switchyard/store@workspace:packages/modules/store":
+"@switchyard/store@workspace:^, @switchyard/store@workspace:packages/modules/store":
   version: 0.0.0-use.local
   resolution: "@switchyard/store@workspace:packages/modules/store"
   dependencies:
@@ -10925,7 +10993,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@switchyard/tax@workspace:*, @switchyard/tax@workspace:^, @switchyard/tax@workspace:packages/modules/tax":
+"@switchyard/tax@workspace:^, @switchyard/tax@workspace:packages/modules/tax":
   version: 0.0.0-use.local
   resolution: "@switchyard/tax@workspace:packages/modules/tax"
   dependencies:
@@ -17859,9 +17927,32 @@ __metadata:
   dependencies:
     "@supabase/supabase-js": ^2.45.0
     "@switchyard/admin-sdk": "workspace:*"
+    "@switchyard/api-key": "workspace:*"
+    "@switchyard/auth": "workspace:*"
+    "@switchyard/auth-emailpass": "workspace:*"
+    "@switchyard/auth-supabase": "workspace:*"
+    "@switchyard/caching-redis": "workspace:*"
+    "@switchyard/cart": "workspace:*"
     "@switchyard/cli": "workspace:*"
     "@switchyard/core": "workspace:*"
+    "@switchyard/customer": "workspace:*"
+    "@switchyard/event-bus-redis": "workspace:*"
+    "@switchyard/file": "workspace:*"
+    "@switchyard/file-local": "workspace:*"
     "@switchyard/framework": "workspace:*"
+    "@switchyard/inventory": "workspace:*"
+    "@switchyard/inventory-group": "workspace:*"
+    "@switchyard/locking-redis": "workspace:*"
+    "@switchyard/order": "workspace:*"
+    "@switchyard/payment": "workspace:*"
+    "@switchyard/pricing": "workspace:*"
+    "@switchyard/product": "workspace:*"
+    "@switchyard/promotion": "workspace:*"
+    "@switchyard/sales-channel": "workspace:*"
+    "@switchyard/settings": "workspace:*"
+    "@switchyard/stock-location": "workspace:*"
+    "@switchyard/user": "workspace:*"
+    "@switchyard/workflow-engine-redis": "workspace:*"
     "@types/node": ^20.12.11
     typescript: ^5.6.2
   languageName: unknown
