@@ -56,6 +56,7 @@ const modules: Record<string, any> = {
   },
   // Explicitly disable modules whose tables have been removed
   // These modules require tables that no longer exist in our custom schema
+  // Instead, we use static configuration below
   [Modules.REGION]: false,
   [Modules.CURRENCY]: false,
   [Modules.TAX]: false,
@@ -138,6 +139,32 @@ export default defineConfig({
         customer: ["emailpass"],
       },
     },
+    
+    // Static defaults (replacing disabled modules)
+    // These values are used instead of the Region, Currency, Tax, and Store modules
+    
+    // Static currency - replacing Currency module
+    // Always USD, no currency conversion needed
+    defaultCurrency: "usd",
+    
+    // Static tax rate - replacing Tax module
+    // 8.25% Texas state tax
+    defaultTaxRate: 0.0825,
+    
+    // Static store configuration - replacing Store module
+    store: {
+      name: "RFC 0001",
+      default_currency_code: "usd",
+      default_locale: "en-US",
+      // Static shipping address for all orders
+      address: {
+        address_1: "6500 N Lamar Blvd",
+        city: "Austin",
+        province: "TX",
+        postal_code: "78758",
+        country_code: "us",
+      },
+    },
   },
   admin: {
     disable: false,
@@ -145,4 +172,3 @@ export default defineConfig({
   modules,
   plugins: [],
 })
-

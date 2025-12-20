@@ -3,17 +3,42 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "switchyard develop",
-    "build": "switchyard build",
-    "start": "switchyard start",
-    "seed": "switchyard exec ./src/scripts/seed.ts"
+    "dev": "medusa develop",
+    "build": "medusa build",
+    "start": "medusa start",
+    "seed": "medusa exec ./src/scripts/seed.ts"
   },
   "dependencies": {
-    "@supabase/supabase-js": "^2.45.0",
     "@switchyard/admin-sdk": "workspace:*",
     "@switchyard/cli": "workspace:*",
+    "@switchyard/framework": "workspace:*",
     "@switchyard/core": "workspace:*",
-    "@switchyard/framework": "workspace:*"
+    "@supabase/supabase-js": "^2.45.0",
+
+    "@switchyard/api-key": "workspace:*",
+    "@switchyard/auth": "workspace:*",
+    "@switchyard/auth-emailpass": "workspace:*",
+    "@switchyard/auth-supabase": "workspace:*",
+    "@switchyard/cart": "workspace:*",
+    "@switchyard/customer": "workspace:*",
+    "@switchyard/file": "workspace:*",
+    "@switchyard/file-local": "workspace:*",
+    "@switchyard/inventory": "workspace:*",
+    "@switchyard/inventory-group": "workspace:*",
+    "@switchyard/order": "workspace:*",
+    "@switchyard/payment": "workspace:*",
+    "@switchyard/pricing": "workspace:*",
+    "@switchyard/product": "workspace:*",
+    "@switchyard/promotion": "workspace:*",
+    "@switchyard/sales-channel": "workspace:*",
+    "@switchyard/settings": "workspace:*",
+    "@switchyard/stock-location": "workspace:*",
+    "@switchyard/user": "workspace:*",
+
+    "@switchyard/caching-redis": "workspace:*",
+    "@switchyard/event-bus-redis": "workspace:*",
+    "@switchyard/locking-redis": "workspace:*",
+    "@switchyard/workflow-engine-redis": "workspace:*"
   },
   "devDependencies": {
     "@types/node": "^20.12.11",

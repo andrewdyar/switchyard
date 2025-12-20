@@ -109,6 +109,10 @@ export async function loadModules(args: {
     moduleExports?: ModuleExports
   }[] = []
 
+  const logger = sharedContainer.resolve(ContainerRegistrationKeys.LOGGER) ?? console
+  const enabledModules: string[] = []
+  const disabledModules: string[] = []
+
   for (const moduleName of Object.keys(modulesConfig)) {
     const mod = modulesConfig[moduleName]
     let path: string
@@ -118,8 +122,11 @@ export async function loadModules(args: {
 
     // TODO: We are keeping mod === false for backward compatibility for now
     if (mod === false || (isObject(mod) && "disable" in mod && mod.disable)) {
+      disabledModules.push(moduleName)
       continue
     }
+
+    enabledModules.push(moduleName)
 
     if (isObject(mod)) {
       const mod_ = mod as unknown as InternalModuleDeclaration
@@ -158,6 +165,14 @@ export async function loadModules(args: {
       moduleDefinition: definition as ModuleDefinition,
       moduleExports,
     })
+  }
+
+  // Log which modules are enabled and disabled
+  if (enabledModules.length > 0) {
+    logger.info(`[Switchyard] Loading ${enabledModules.length} modules: ${enabledModules.join(", ")}`)
+  }
+  if (disabledModules.length > 0) {
+    logger.info(`[Switchyard] Skipping ${disabledModules.length} disabled modules: ${disabledModules.join(", ")}`)
   }
 
   const loaded = (await SwitchyardModule.bootstrapAll(modulesToLoad, {

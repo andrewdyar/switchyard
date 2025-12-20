@@ -35,12 +35,9 @@
   "engines": {
     "node": ">=20"
   },
-  "author": "Sebastian Rindom",
+  "author": "Switchyard",
   "license": "MIT",
-  "homepage": "https://medusajs.com",
-  "llms": "https://docs.medusajs.com/llms.txt",
-  "llmsFull": "https://docs.medusajs.com/llms-full.txt",
-  "mcpServer": "https://docs.medusajs.com/mcp",
+  "homepage": "https://switchyard.dev",
   "scripts": {
     "watch": "yarn run -T tsc --build --watch",
     "build": "yarn run -T rimraf dist && yarn run -T tsc --build",
@@ -55,52 +52,18 @@
     "@inquirer/checkbox": "^2.3.11",
     "@inquirer/input": "^2.2.9",
     "@switchyard/admin-bundler": "workspace:*",
-    "@switchyard/analytics": "workspace:*",
-    "@switchyard/analytics-local": "workspace:*",
-    "@switchyard/analytics-posthog": "workspace:*",
-    "@switchyard/api-key": "workspace:*",
-    "@switchyard/auth": "workspace:*",
-    "@switchyard/auth-emailpass": "workspace:*",
-    "@switchyard/auth-github": "workspace:*",
-    "@switchyard/auth-google": "workspace:*",
     "@switchyard/cache-inmemory": "workspace:*",
     "@switchyard/cache-redis": "workspace:*",
     "@switchyard/caching": "workspace:*",
     "@switchyard/caching-redis": "workspace:*",
-    "@switchyard/cart": "workspace:*",
     "@switchyard/core-flows": "workspace:*",
-    "@switchyard/currency": "workspace:*",
-    "@switchyard/customer": "workspace:*",
     "@switchyard/event-bus-local": "workspace:*",
     "@switchyard/event-bus-redis": "workspace:*",
-    "@switchyard/file": "workspace:*",
-    "@switchyard/file-local": "workspace:*",
-    "@switchyard/file-s3": "workspace:*",
-    "@switchyard/fulfillment": "workspace:*",
-    "@switchyard/fulfillment-manual": "workspace:*",
-    "@switchyard/index": "workspace:*",
-    "@switchyard/inventory": "workspace:*",
     "@switchyard/link-modules": "workspace:*",
     "@switchyard/locking": "workspace:*",
     "@switchyard/locking-postgres": "workspace:*",
     "@switchyard/locking-redis": "workspace:*",
-    "@switchyard/notification": "workspace:*",
-    "@switchyard/notification-local": "workspace:*",
-    "@switchyard/notification-sendgrid": "workspace:*",
-    "@switchyard/order": "workspace:*",
-    "@switchyard/payment": "workspace:*",
-    "@switchyard/payment-stripe": "workspace:*",
-    "@switchyard/pricing": "workspace:*",
-    "@switchyard/product": "workspace:*",
-    "@switchyard/promotion": "workspace:*",
-    "@switchyard/region": "workspace:*",
-    "@switchyard/sales-channel": "workspace:*",
-    "@switchyard/settings": "workspace:*",
-    "@switchyard/stock-location": "workspace:*",
-    "@switchyard/store": "workspace:*",
-    "@switchyard/tax": "workspace:*",
     "@switchyard/telemetry": "workspace:*",
-    "@switchyard/user": "workspace:*",
     "@switchyard/workflow-engine-inmemory": "workspace:*",
     "@switchyard/workflow-engine-redis": "workspace:*",
     "boxen": "^5.0.1",
@@ -120,13 +83,149 @@
   },
   "peerDependencies": {
     "@swc/core": "^1.7.28",
+    "@switchyard/analytics": "workspace:*",
+    "@switchyard/analytics-local": "workspace:*",
+    "@switchyard/analytics-posthog": "workspace:*",
+    "@switchyard/api-key": "workspace:*",
+    "@switchyard/auth": "workspace:*",
+    "@switchyard/auth-emailpass": "workspace:*",
+    "@switchyard/auth-github": "workspace:*",
+    "@switchyard/auth-google": "workspace:*",
+    "@switchyard/cart": "workspace:*",
+    "@switchyard/currency": "workspace:*",
+    "@switchyard/customer": "workspace:*",
+    "@switchyard/file": "workspace:*",
+    "@switchyard/file-local": "workspace:*",
+    "@switchyard/file-s3": "workspace:*",
     "@switchyard/framework": "workspace:*",
+    "@switchyard/fulfillment": "workspace:*",
+    "@switchyard/fulfillment-manual": "workspace:*",
+    "@switchyard/index": "workspace:*",
+    "@switchyard/inventory": "workspace:*",
+    "@switchyard/notification": "workspace:*",
+    "@switchyard/notification-local": "workspace:*",
+    "@switchyard/notification-sendgrid": "workspace:*",
+    "@switchyard/order": "workspace:*",
+    "@switchyard/payment": "workspace:*",
+    "@switchyard/payment-stripe": "workspace:*",
+    "@switchyard/pricing": "workspace:*",
+    "@switchyard/product": "workspace:*",
+    "@switchyard/promotion": "workspace:*",
+    "@switchyard/region": "workspace:*",
+    "@switchyard/sales-channel": "workspace:*",
+    "@switchyard/settings": "workspace:*",
+    "@switchyard/stock-location": "workspace:*",
+    "@switchyard/store": "workspace:*",
+    "@switchyard/tax": "workspace:*",
+    "@switchyard/user": "workspace:*",
     "posthog-node": "^5.11.0",
     "react-dom": "^18.3.1",
     "yalc": "^1.0.0-pre.53"
   },
   "peerDependenciesMeta": {
     "@swc/core": {
+      "optional": true
+    },
+    "@switchyard/analytics": {
+      "optional": true
+    },
+    "@switchyard/analytics-local": {
+      "optional": true
+    },
+    "@switchyard/analytics-posthog": {
+      "optional": true
+    },
+    "@switchyard/api-key": {
+      "optional": true
+    },
+    "@switchyard/auth": {
+      "optional": true
+    },
+    "@switchyard/auth-emailpass": {
+      "optional": true
+    },
+    "@switchyard/auth-github": {
+      "optional": true
+    },
+    "@switchyard/auth-google": {
+      "optional": true
+    },
+    "@switchyard/cart": {
+      "optional": true
+    },
+    "@switchyard/currency": {
+      "optional": true
+    },
+    "@switchyard/customer": {
+      "optional": true
+    },
+    "@switchyard/file": {
+      "optional": true
+    },
+    "@switchyard/file-local": {
+      "optional": true
+    },
+    "@switchyard/file-s3": {
+      "optional": true
+    },
+    "@switchyard/fulfillment": {
+      "optional": true
+    },
+    "@switchyard/fulfillment-manual": {
+      "optional": true
+    },
+    "@switchyard/index": {
+      "optional": true
+    },
+    "@switchyard/inventory": {
+      "optional": true
+    },
+    "@switchyard/notification": {
+      "optional": true
+    },
+    "@switchyard/notification-local": {
+      "optional": true
+    },
+    "@switchyard/notification-sendgrid": {
+      "optional": true
+    },
+    "@switchyard/order": {
+      "optional": true
+    },
+    "@switchyard/payment": {
+      "optional": true
+    },
+    "@switchyard/payment-stripe": {
+      "optional": true
+    },
+    "@switchyard/pricing": {
+      "optional": true
+    },
+    "@switchyard/product": {
+      "optional": true
+    },
+    "@switchyard/promotion": {
+      "optional": true
+    },
+    "@switchyard/region": {
+      "optional": true
+    },
+    "@switchyard/sales-channel": {
+      "optional": true
+    },
+    "@switchyard/settings": {
+      "optional": true
+    },
+    "@switchyard/stock-location": {
+      "optional": true
+    },
+    "@switchyard/store": {
+      "optional": true
+    },
+    "@switchyard/tax": {
+      "optional": true
+    },
+    "@switchyard/user": {
       "optional": true
     },
     "posthog-node": {
