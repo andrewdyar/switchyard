@@ -10205,6 +10205,7 @@ __metadata:
     winston: ^3.9.0
     yargs: ^17.7.2
   bin:
+    medusa: cli.js
     switchyard: cli.js
   languageName: unknown
   linkType: soft
