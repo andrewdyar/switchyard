@@ -109,7 +109,7 @@ export async function loadModules(args: {
     moduleExports?: ModuleExports
   }[] = []
 
-  const logger = sharedContainer.resolve(ContainerRegistrationKeys.LOGGER) ?? console
+  const logger = sharedContainer.resolve<Logger>(ContainerRegistrationKeys.LOGGER) ?? console
   const enabledModules: string[] = []
   const disabledModules: string[] = []
 
