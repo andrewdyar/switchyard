@@ -1,8 +1,8 @@
 import type {
-  AuthenticatedMedusaRequest,
-  MedusaResponse,
-} from "@medusajs/framework/http"
-import { Modules } from "@medusajs/framework/utils"
+  AuthenticatedSwitchyardRequest,
+  SwitchyardResponse,
+} from "@switchyard/framework/http"
+import { Modules } from "@switchyard/framework/utils"
 
 // Disable global authentication - we handle it explicitly via middleware
 export const AUTHENTICATE = false
@@ -12,8 +12,8 @@ export const AUTHENTICATE = false
  * Look up product and inventory by barcode
  */
 export const GET = async (
-  req: AuthenticatedMedusaRequest,
-  res: MedusaResponse
+  req: AuthenticatedSwitchyardRequest,
+  res: SwitchyardResponse
 ) => {
   const barcode = req.query.barcode as string
   const locationId = req.query.location_id as string | undefined
