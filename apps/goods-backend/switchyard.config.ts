@@ -124,6 +124,36 @@ if (process.env.REDIS_URL) {
   }
 }
 
+/**
+ * Static defaults (replacing disabled modules)
+ * These values are used instead of the Region, Currency, Tax, and Store modules:
+ * 
+ * - Currency: Always USD (no currency conversion needed)
+ * - Tax Rate: 8.25% Texas state tax
+ * - Store: RFC 0001, en-US locale
+ * - Shipping Address: 6500 N Lamar Blvd, Austin, TX 78758
+ * 
+ * These defaults are hardcoded in the application since we don't use the
+ * corresponding modules (Region, Currency, Tax, Store).
+ */
+export const STATIC_DEFAULTS = {
+  currency: "usd",
+  taxRate: 0.0825,
+  locale: "en-US",
+  store: {
+    name: "RFC 0001",
+    default_currency_code: "usd",
+    default_locale: "en-US",
+  },
+  shippingAddress: {
+    address_1: "6500 N Lamar Blvd",
+    city: "Austin",
+    province: "TX",
+    postal_code: "78758",
+    country_code: "us",
+  },
+}
+
 export default defineConfig({
   projectConfig: {
     databaseUrl: process.env.DATABASE_URL,
@@ -137,32 +167,6 @@ export default defineConfig({
       authMethodsPerActor: {
         user: userAuthMethods,
         customer: ["emailpass"],
-      },
-    },
-    
-    // Static defaults (replacing disabled modules)
-    // These values are used instead of the Region, Currency, Tax, and Store modules
-    
-    // Static currency - replacing Currency module
-    // Always USD, no currency conversion needed
-    defaultCurrency: "usd",
-    
-    // Static tax rate - replacing Tax module
-    // 8.25% Texas state tax
-    defaultTaxRate: 0.0825,
-    
-    // Static store configuration - replacing Store module
-    store: {
-      name: "RFC 0001",
-      default_currency_code: "usd",
-      default_locale: "en-US",
-      // Static shipping address for all orders
-      address: {
-        address_1: "6500 N Lamar Blvd",
-        city: "Austin",
-        province: "TX",
-        postal_code: "78758",
-        country_code: "us",
       },
     },
   },
