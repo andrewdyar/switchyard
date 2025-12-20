@@ -1,22 +1,19 @@
 import type {
-  AuthenticatedSwitchyardRequest,
-  SwitchyardResponse,
-} from "@switchyard/framework/http"
-import {
-  lookupProductByBarcode,
-  getInventoryForProduct,
-} from "../../../../lib/supabase"
+  AuthenticatedMedusaRequest,
+  MedusaResponse,
+} from "@medusajs/framework/http"
+import { Modules } from "@medusajs/framework/utils"
 
 // Disable global authentication - we handle it explicitly via middleware
 export const AUTHENTICATE = false
 
 /**
  * GET /scanner/inventory/lookup?barcode=xxx
- * Look up product and inventory by barcode using Supabase tables
+ * Look up product and inventory by barcode
  */
 export const GET = async (
-  req: AuthenticatedSwitchyardRequest,
-  res: SwitchyardResponse
+  req: AuthenticatedMedusaRequest,
+  res: MedusaResponse
 ) => {
   const barcode = req.query.barcode as string
   const locationId = req.query.location_id as string | undefined
@@ -27,10 +24,16 @@ export const GET = async (
   }
 
   try {
-    // Look up sellable product by barcode
-    const sellableProduct = await lookupProductByBarcode(barcode)
+    const productModuleService = req.scope.resolve(Modules.PRODUCT)
+    const inventoryModuleService = req.scope.resolve(Modules.INVENTORY)
 
-    if (!sellableProduct) {
+    // Look up product variants by SKU or barcode
+    const [variants] = await productModuleService.listProductVariants({
+      $or: [{ sku: barcode }, { barcode: barcode }],
+    } as any)
+
+    const variantsArray = variants as unknown as any[]
+    if (!variantsArray || variantsArray.length === 0) {
       res.status(404).json({
         error: "Product not found",
         barcode,
@@ -38,44 +41,64 @@ export const GET = async (
       return
     }
 
-    // Get inventory items for this product using FEFO/FIFO
-    const inventoryItems = await getInventoryForProduct(
-      sellableProduct.id,
-      locationId
-    )
+    const variant = variantsArray[0]
 
-    // Calculate totals
-    const totalQuantity = inventoryItems.reduce((sum, item) => sum + item.quantity, 0)
-    const totalReserved = inventoryItems.reduce((sum, item) => sum + item.reserved_quantity, 0)
+    // Get the product
+    const productId = variant.product_id
+    if (!productId) {
+      res.status(404).json({ error: "Product not linked to variant", barcode })
+      return
+    }
+    const product = await productModuleService.retrieveProduct(productId)
+
+    // Get inventory items for this variant
+    const variantSku = variant.sku
+    let inventoryLevels: any[] = []
+    
+    if (variantSku) {
+      const [inventoryItems] = await inventoryModuleService.listInventoryItems({
+        sku: variantSku,
+      })
+
+      const itemsArray = inventoryItems as unknown as any[]
+      if (itemsArray && itemsArray.length > 0) {
+        const inventoryItem = itemsArray[0]
+        
+        const filter: any = {
+          inventory_item_id: inventoryItem.id,
+        }
+        
+        if (locationId) {
+          filter.location_id = locationId
+        }
+
+        const [levels] = await inventoryModuleService.listInventoryLevels(filter)
+        inventoryLevels = Array.isArray(levels) ? levels : []
+      }
+    }
 
     res.json({
       success: true,
       barcode,
       product: {
-        id: sellableProduct.id,
-        name: sellableProduct.name,
-        brand: sellableProduct.brand,
-        image_url: sellableProduct.image_url,
-        description: sellableProduct.description,
-        selling_price: sellableProduct.selling_price,
-        is_perishable: sellableProduct.is_perishable,
-        warehouse_zone: sellableProduct.warehouse_zone,
+        id: product.id,
+        title: product.title,
+        handle: product.handle,
+        thumbnail: product.thumbnail,
+        description: product.description,
       },
-      inventory: {
-        total_quantity: totalQuantity,
-        total_reserved: totalReserved,
-        available_quantity: totalQuantity - totalReserved,
-        items: inventoryItems.map((item) => ({
-          id: item.id,
-          location_id: item.location_id,
-          quantity: item.quantity,
-          reserved_quantity: item.reserved_quantity,
-          available: item.quantity - item.reserved_quantity,
-          expiration_date: item.expiration_date,
-          received_at: item.received_at,
-          lot_number: item.lot_number,
-        })),
+      variant: {
+        id: variant.id,
+        title: variant.title,
+        sku: variant.sku,
+        barcode: variant.barcode,
       },
+      inventory: inventoryLevels.map((level: any) => ({
+        location_id: level.location_id,
+        stocked_quantity: level.stocked_quantity,
+        reserved_quantity: level.reserved_quantity,
+        available_quantity: level.stocked_quantity - level.reserved_quantity,
+      })),
     })
   } catch (error: any) {
     console.error("Inventory lookup error:", error)
