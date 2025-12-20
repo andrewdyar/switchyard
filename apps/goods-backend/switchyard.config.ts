@@ -56,13 +56,26 @@ const modules: Record<string, any> = {
   },
   // Explicitly disable modules whose tables have been removed
   // These modules require tables that no longer exist in our custom schema
-  // Instead, we use static configuration below
+  // We use Supabase with our own custom schema instead
   [Modules.REGION]: false,
   [Modules.CURRENCY]: false,
   [Modules.TAX]: false,
   [Modules.FULFILLMENT]: false,
   [Modules.NOTIFICATION]: false,
   [Modules.STORE]: false,
+  [Modules.SALES_CHANNEL]: false,
+  [Modules.PRODUCT]: false,
+  [Modules.PRICING]: false,
+  [Modules.PROMOTION]: false,
+  [Modules.CUSTOMER]: false,
+  [Modules.CART]: false,
+  [Modules.PAYMENT]: false,
+  [Modules.ORDER]: false,
+  [Modules.STOCK_LOCATION]: false,
+  [Modules.INVENTORY]: false,
+  [Modules.USER]: false,
+  [Modules.API_KEY]: false,
+  [Modules.FILE]: false,
 }
 
 // Add Redis-based modules for production (required for multi-instance deployments)
