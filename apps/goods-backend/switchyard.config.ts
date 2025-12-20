@@ -43,16 +43,16 @@ const userAuthMethods = authProviders.map(p => p.id)
 
 // Build modules object - configure what modules are enabled/disabled
 const modules: Record<string, any> = {
-  // Custom modules
-  [Modules.INVENTORY]: {
-    resolve: "@switchyard/inventory-group",
-  },
   // Auth module
   [Modules.AUTH]: {
     resolve: "@switchyard/core/auth",
     options: {
       providers: authProviders,
     },
+  },
+  // Custom inventory group module (additional, not replacing standard inventory)
+  inventoryGroup: {
+    resolve: "@switchyard/inventory-group",
   },
   // Explicitly disable modules whose tables have been removed
   // These modules require tables that no longer exist in our custom schema
