@@ -1,11 +1,11 @@
 /**
- * Product Model - Modified for Goods Integration
+ * Product Model - Maps to Supabase sellable_products
  * 
- * Maps to Supabase `source_products` table instead of Medusa's default `product` table.
- * This allows Medusa to work directly with Goods' existing product catalog.
+ * Each sellable_product IS the sellable unit with all variant-like attributes merged in.
+ * Related products are linked via variant_groups (separate module).
  */
 
-import { model, ProductUtils } from "@switchyard/framework/utils"
+import { model } from "@switchyard/framework/utils"
 
 import ProductCategory from "./product-category"
 import ProductCollection from "./product-collection"
@@ -18,71 +18,66 @@ import ProductVariant from "./product-variant"
 const Product = model
   .define(
     {
-      tableName: "source_products",  // Use Goods source_products table
-      name: "Product",               // Keep Medusa's internal name for compatibility
+      tableName: "sellable_products",  // Maps to Supabase sellable_products table
+      name: "Product",
     },
     {
-      // UUID primary key (matches source_products.id)
+      // UUID primary key
       id: model.id().primaryKey(),
       
-      // Use 'name' to match source_products.name column (will be mapped to 'title' in API responses)
+      // Reference to raw scraped product (1:1 relationship)
+      scraped_product_id: model.text().nullable(),
+      
+      // Core product fields
       name: model.text().searchable(),
-      
-      // Handle for URL slugs (new column added via migration)
-      handle: model.text().nullable(),
-      
-      // Description (already exists in source_products)
+      brand: model.text().searchable().nullable(),
       description: model.text().searchable().nullable(),
-      
-      // Status (new column added via migration)
-      status: model
-        .enum(ProductUtils.ProductStatus)
-        .default(ProductUtils.ProductStatus.DRAFT),
-      
-      // Use 'image_url' to match source_products.image_url column (will be mapped to 'thumbnail' in API responses)
       image_url: model.text().nullable(),
       
-      // Metadata (new JSONB column added via migration)
-      metadata: model.json().nullable(),
-      
-      // ---- Goods-specific fields (map directly to source_products columns) ----
-      
-      // Brand
-      brand: model.text().searchable().nullable(),
-      
-      // Barcode (UPC)
-      barcode: model.text().searchable().nullable(),
-      
-      // Unit of measure
-      unit_of_measure: model.text().default("each").nullable(),
-      
-      // Size and size UOM
+      // Size/variant-like attributes (merged into product)
       size: model.text().nullable(),
       size_uom: model.text().nullable(),
+      unit_count: model.number().nullable(),
       
-      // Full category hierarchy path
-      full_category_hierarchy: model.text().nullable(),
+      // Pricing (our selling price, not retailer cost)
+      selling_price: model.bigNumber(),
+      price_per_unit: model.bigNumber().nullable(),
+      price_per_unit_uom: model.text().nullable(),
       
-      // Product page URL
-      product_page_url: model.text().nullable(),
-      
-      // Boolean flags
-      is_active: model.boolean().default(true),
-      is_new: model.boolean().default(false),
-      on_ad: model.boolean().default(false),
-      best_available: model.boolean().default(false),
-      priced_by_weight: model.boolean().default(false),
-      show_coupon_flag: model.boolean().default(false),
-      in_assortment: model.boolean().default(true),
+      // Product attributes
+      is_perishable: model.boolean().default(false),
       is_organic: model.boolean().default(false),
       is_gluten_free: model.boolean().default(false),
       is_vegan: model.boolean().default(false),
-      is_non_gmo: model.boolean().default(false),
-      needs_review: model.boolean().default(false),
       
-      // ---- Medusa fields we don't use but keep for compatibility ----
-      subtitle: model.text().searchable().nullable(),
+      // Warehouse/fulfillment
+      warehouse_zone: model.text().nullable(),  // A=Ambient, C=Chilled, F=Frozen
+      preferred_retailer: model.text().nullable(),
+      
+      // Status
+      status: model.text().default("active"),  // draft, active, discontinued
+      is_active: model.boolean().default(true),
+      
+      // Category references
+      category_id: model.text().nullable(),
+      subcategory_id: model.text().nullable(),
+      
+      // Audit fields
+      created_by: model.text().nullable(),
+      updated_by: model.text().nullable(),
+      
+      // Medusa compatibility fields (kept for service/API compatibility)
+      // These map to sellable_products equivalents or are nullable
+      title: model.text().nullable(),  // Maps to name
+      subtitle: model.text().nullable(),
+      thumbnail: model.text().nullable(),  // Maps to image_url
+      handle: model.text().nullable(),
       is_giftcard: model.boolean().default(false),
+      discountable: model.boolean().default(true),
+      external_id: model.text().nullable(),
+      metadata: model.json().nullable(),
+      
+      // Medusa dimension fields (not used but kept for API compatibility)
       weight: model.text().nullable(),
       length: model.text().nullable(),
       height: model.text().nullable(),
@@ -91,12 +86,10 @@ const Product = model
       hs_code: model.text().nullable(),
       mid_code: model.text().nullable(),
       material: model.text().nullable(),
-      discountable: model.boolean().default(true),
-      external_id: model.text().nullable(),
       
-      // ---- Relationships ----
+      // ---- Relationships for service compatibility (stubbed) ----
       
-      // Variants (links to product_skus)
+      // Variants (each product IS its own variant, but kept for API)
       variants: model.hasMany(() => ProductVariant, {
         mappedBy: "product",
       }),
@@ -114,12 +107,12 @@ const Product = model
         pivotTable: "product_tags",
       }),
       
-      // Options (for variant options)
+      // Options (for variant options - stubbed)
       options: model.hasMany(() => ProductOption, {
         mappedBy: "product",
       }),
       
-      // Images
+      // Images (we use image_url directly, but kept for API)
       images: model.hasMany(() => ProductImage, {
         mappedBy: "product",
       }),
@@ -131,7 +124,7 @@ const Product = model
         })
         .nullable(),
       
-      // Categories (will be linked to Goods categories)
+      // Categories (existing - linked to Goods categories)
       categories: model.manyToMany(() => ProductCategory, {
         pivotTable: "product_category_product",
         mappedBy: "products",
@@ -143,28 +136,46 @@ const Product = model
   })
   .indexes([
     {
-      name: "IDX_source_products_handle_unique",
-      on: ["handle"],
+      name: "IDX_sellable_products_scraped_product_id",
+      on: ["scraped_product_id"],
       unique: true,
-      where: "deleted_at IS NULL",
+      where: "deleted_at IS NULL AND scraped_product_id IS NOT NULL",
     },
     {
-      name: "IDX_source_products_status",
+      name: "IDX_sellable_products_status",
       on: ["status"],
       unique: false,
       where: "deleted_at IS NULL",
     },
     {
-      name: "IDX_source_products_brand",
+      name: "IDX_sellable_products_brand",
       on: ["brand"],
       unique: false,
       where: "deleted_at IS NULL",
     },
     {
-      name: "IDX_source_products_barcode",
-      on: ["barcode"],
+      name: "IDX_sellable_products_is_active",
+      on: ["is_active"],
       unique: false,
       where: "deleted_at IS NULL",
+    },
+    {
+      name: "IDX_sellable_products_category_id",
+      on: ["category_id"],
+      unique: false,
+      where: "deleted_at IS NULL",
+    },
+    {
+      name: "IDX_sellable_products_warehouse_zone",
+      on: ["warehouse_zone"],
+      unique: false,
+      where: "deleted_at IS NULL",
+    },
+    {
+      name: "IDX_sellable_products_handle",
+      on: ["handle"],
+      unique: true,
+      where: "deleted_at IS NULL AND handle IS NOT NULL",
     },
   ])
 

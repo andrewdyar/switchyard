@@ -12,7 +12,8 @@ export * from "./order-promotion"
 // export * from "./order-return-fulfillment"
 // Disabled - SalesChannel module not used
 // export * from "./product-sales-channel"
-export * from "./product-variant-inventory-item"
+// Disabled - No separate ProductVariant table (products are their own variants)
+// export * from "./product-variant-inventory-item"
 // Disabled - Pricing module not used
 // export * from "./product-variant-price-set"
 // Disabled - SalesChannel module not used

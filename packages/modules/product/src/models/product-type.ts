@@ -1,5 +1,11 @@
+/**
+ * ProductType Model - Stubbed
+ * 
+ * No product_type table exists in Supabase. This is kept for service compatibility.
+ */
+
 import { model } from "@switchyard/framework/utils"
-import { Product } from "@models"
+import Product from "./product"
 
 const ProductType = model
   .define("ProductType", {

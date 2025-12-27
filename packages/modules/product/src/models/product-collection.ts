@@ -1,3 +1,9 @@
+/**
+ * ProductCollection Model - Stubbed
+ * 
+ * No product_collection table exists in Supabase. This is kept for service compatibility.
+ */
+
 import { model } from "@switchyard/framework/utils"
 import Product from "./product"
 

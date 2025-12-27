@@ -1,3 +1,11 @@
+/**
+ * ProductImage Model - Stubbed
+ * 
+ * No product_image table exists in Supabase. 
+ * Products store image_url directly on sellable_products.
+ * This is kept for service compatibility.
+ */
+
 import { model } from "@switchyard/framework/utils"
 import Product from "./product"
 import ProductVariant from "./product-variant"
@@ -14,9 +22,6 @@ const ProductImage = model
       product: model.belongsTo(() => Product, {
         mappedBy: "images",
       }),
-      /**
-       * @since 2.11.2
-       */
       variants: model.manyToMany(() => ProductVariant, {
         mappedBy: "images",
         pivotEntity: () => ProductVariantProductImage,
@@ -33,18 +38,6 @@ const ProductImage = model
     {
       name: "IDX_product_image_rank",
       on: ["rank"],
-      unique: false,
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_product_image_url_rank_product_id",
-      on: ["url", "rank", "product_id"],
-      unique: false,
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_product_image_rank_product_id",
-      on: ["rank", "product_id"],
       unique: false,
       where: "deleted_at IS NULL",
     },

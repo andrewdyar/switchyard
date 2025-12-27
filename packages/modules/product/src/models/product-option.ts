@@ -1,5 +1,11 @@
+/**
+ * ProductOption Model - Stubbed
+ * 
+ * No product_option table exists in Supabase. This is kept for service compatibility.
+ */
+
 import { model } from "@switchyard/framework/utils"
-import { Product } from "./index"
+import Product from "./product"
 import ProductOptionValue from "./product-option-value"
 
 const ProductOption = model

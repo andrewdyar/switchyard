@@ -1,51 +1,55 @@
-import { ClaimReason, model } from "@switchyard/framework/utils"
-import { OrderClaim } from "./claim"
-import { OrderClaimItemImage } from "./claim-item-image"
-import { OrderLineItem } from "./line-item"
+/**
+ * ClaimItem Model - Maps to Supabase claim_items table
+ * 
+ * Individual items within a claim.
+ */
 
-const _OrderClaimItem = model
-  .define("OrderClaimItem", {
-    id: model.id({ prefix: "claitem" }).primaryKey(),
-    reason: model.enum(ClaimReason).nullable(),
-    quantity: model.bigNumber(),
-    is_additional_item: model.boolean().default(false),
-    note: model.text().nullable(),
-    metadata: model.json().nullable(),
-    claim: model.belongsTo<() => typeof OrderClaim>(() => OrderClaim, {
-      mappedBy: "additional_items",
-    }),
-    item: model.belongsTo<() => typeof OrderLineItem>(() => OrderLineItem, {
-      mappedBy: "claim_items",
-    }),
-    images: model.hasMany<() => typeof OrderClaimItemImage>(
-      () => OrderClaimItemImage,
-      {
-        mappedBy: "claim_item",
-      }
-    ),
-  })
-  .cascades({
-    delete: ["images"],
-  })
+import { model } from "@switchyard/framework/utils"
+
+// Forward declare to avoid circular imports
+const Claim = () => require("./claim").Claim
+
+export const OrderClaimItem = model
+  .define(
+    {
+      tableName: "claim_items",  // Maps to Supabase claim_items table
+      name: "OrderClaimItem",
+    },
+    {
+      // UUID primary key
+      id: model.id().primaryKey(),
+      
+      // Claim reference
+      claim_id: model.text(),
+      
+      // Order item reference
+      order_item_id: model.text().nullable(),
+      
+      // Product reference (for easy lookup)
+      sellable_product_id: model.text().nullable(),
+      
+      // Quantity claimed
+      quantity: model.number().default(1),
+      
+      // Reason for this specific item
+      reason: model.text().nullable(),
+      
+      // Claim relationship
+      claim: model.belongsTo<any>(Claim, {
+        mappedBy: "items",
+      }),
+    }
+  )
   .indexes([
     {
-      name: "IDX_order_claim_item_claim_id",
+      name: "IDX_claim_items_claim_id",
       on: ["claim_id"],
       unique: false,
-      where: "deleted_at IS NULL",
     },
     {
-      name: "IDX_order_claim_item_item_id",
-      on: ["item_id"],
+      name: "IDX_claim_items_order_item_id",
+      on: ["order_item_id"],
       unique: false,
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_order_claim_item_deleted_at",
-      on: ["deleted_at"],
-      unique: false,
-      where: "deleted_at IS NOT NULL",
+      where: "order_item_id IS NOT NULL",
     },
   ])
-
-export const OrderClaimItem = _OrderClaimItem

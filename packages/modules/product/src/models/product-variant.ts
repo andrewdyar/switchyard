@@ -1,127 +1,83 @@
 /**
- * Product Variant Model - Modified for Goods Integration
+ * ProductVariant Model - Stubbed for Goods Architecture
  * 
- * Maps to Supabase `product_skus` table instead of Medusa's default `product_variant` table.
- * Each SKU in product_skus becomes a Medusa variant.
+ * In Goods, each sellable_product IS the sellable unit with variant attributes merged in.
+ * There is no separate product_variant/product_skus table.
+ * 
+ * This model is kept for Medusa service compatibility but does not map to a real table.
+ * The service will return Products as their own "variants" for API compatibility.
  */
 
 import { model } from "@switchyard/framework/utils"
-import { Product, ProductImage, ProductOptionValue } from "@models"
+import Product from "./product"
+import ProductImage from "./product-image"
+import ProductOptionValue from "./product-option-value"
 import ProductVariantProductImage from "./product-variant-product-image"
 
+// Stub model - kept for service compatibility
 const ProductVariant = model
-  .define(
-    {
-      tableName: "product_skus",    // Use Goods product_skus table
-      name: "ProductVariant",        // Keep Medusa's internal name for compatibility
-    },
-    {
-      // UUID primary key (matches product_skus.id)
-      id: model.id().primaryKey(),
-      
-      // ---- Map to product_skus columns ----
-      
-      // SKU identifier (use sku_id to match product_skus.sku_id column)
-      sku_id: model.text().searchable().nullable(),
-      
-      // UPC barcode (maps to product_skus.upc)
-      upc: model.text().searchable().nullable(),
-      
-      // Customer friendly size (use customer_friendly_size to match product_skus column)
-      // This serves as the variant title (will be mapped to 'title' in API responses)
-      customer_friendly_size: model.text().searchable(),
-      
-      // Store name (which retailer this SKU is from)
-      store_name: model.text(),
-      
-      // Is this the primary/default variant?
-      is_primary: model.boolean().default(false),
-      
-      // ---- Medusa fields (keep for compatibility) ----
-      
-      // Also use UPC for barcode field
-      barcode: model.text().searchable().nullable(),
-      
-      // EAN code
-      ean: model.text().searchable().nullable(),
-      
-      // Inventory management
-      allow_backorder: model.boolean().default(false),
-      manage_inventory: model.boolean().default(true),
-      
-      // Shipping fields (not used but kept for compatibility)
-      hs_code: model.text().nullable(),
-      origin_country: model.text().nullable(),
-      mid_code: model.text().nullable(),
-      material: model.text().nullable(),
-      weight: model.number().nullable(),
-      length: model.number().nullable(),
-      height: model.number().nullable(),
-      width: model.number().nullable(),
-      
-      // Metadata
-      metadata: model.json().nullable(),
-      
-      // Variant ranking
-      variant_rank: model.number().default(0).nullable(),
-      
-      // Thumbnail
-      thumbnail: model.text().nullable(),
-      
-      // ---- Relationships ----
-      
-      // Link to parent product (source_products)
-      product: model
-        .belongsTo(() => Product, {
-          mappedBy: "variants",
-        })
-        .searchable()
-        .nullable(),
-      
-      // Variant images
-      images: model.manyToMany(() => ProductImage, {
+  .define("ProductVariant", {
+    id: model.id({ prefix: "variant" }).primaryKey(),
+    
+    // Medusa compatibility fields
+    title: model.text().searchable().nullable(),
+    sku: model.text().searchable().nullable(),
+    barcode: model.text().searchable().nullable(),
+    ean: model.text().searchable().nullable(),
+    upc: model.text().searchable().nullable(),
+    
+    // Inventory management
+    allow_backorder: model.boolean().default(false),
+    manage_inventory: model.boolean().default(true),
+    
+    // Dimensions (not used)
+    hs_code: model.text().nullable(),
+    origin_country: model.text().nullable(),
+    mid_code: model.text().nullable(),
+    material: model.text().nullable(),
+    weight: model.number().nullable(),
+    length: model.number().nullable(),
+    height: model.number().nullable(),
+    width: model.number().nullable(),
+    
+    // Other
+    metadata: model.json().nullable(),
+    variant_rank: model.number().default(0).nullable(),
+    thumbnail: model.text().nullable(),
+    
+    // Relationships
+    product: model
+      .belongsTo(() => Product, {
         mappedBy: "variants",
-        pivotEntity: () => ProductVariantProductImage,
-      }),
-      
-      // Option values (for variant selection)
-      options: model.manyToMany(() => ProductOptionValue, {
-        pivotTable: "product_variant_option",
-        mappedBy: "variants",
-        joinColumn: "variant_id",
-        inverseJoinColumn: "option_value_id",
-      }),
-    }
-  )
+      })
+      .searchable()
+      .nullable(),
+    
+    // Variant images
+    images: model.manyToMany(() => ProductImage, {
+      mappedBy: "variants",
+      pivotEntity: () => ProductVariantProductImage,
+    }),
+    
+    // Option values (for variant selection)
+    options: model.manyToMany(() => ProductOptionValue, {
+      pivotTable: "product_variant_option",
+      mappedBy: "variants",
+      joinColumn: "variant_id",
+      inverseJoinColumn: "option_value_id",
+    }),
+  })
   .indexes([
     {
-      name: "IDX_product_skus_product_id",
+      name: "IDX_product_variant_product_id",
       on: ["product_id"],
       where: "deleted_at IS NULL",
     },
     {
-      name: "IDX_product_skus_sku_unique",
-      on: ["sku_id"],
+      name: "IDX_product_variant_sku_unique",
+      on: ["sku"],
       unique: true,
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_product_skus_upc",
-      on: ["upc"],
-      unique: false,
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_product_skus_store_name",
-      on: ["store_name"],
-      unique: false,
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_product_skus_is_primary",
-      on: ["is_primary"],
-      unique: false,
-      where: "deleted_at IS NULL AND is_primary = true",
+      where: "deleted_at IS NULL AND sku IS NOT NULL",
     },
   ])
 

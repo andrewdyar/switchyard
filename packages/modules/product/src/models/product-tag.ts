@@ -1,3 +1,9 @@
+/**
+ * ProductTag Model - Stubbed
+ * 
+ * No product_tag table exists in Supabase. This is kept for service compatibility.
+ */
+
 import { model } from "@switchyard/framework/utils"
 import Product from "./product"
 

@@ -1,34 +1,25 @@
+/**
+ * OrderSummary Model - Stubbed
+ * 
+ * Not used in Goods architecture. Totals are on orders table directly.
+ * Kept for service compatibility.
+ */
+
 import { model } from "@switchyard/framework/utils"
-import { Order } from "./order"
 
-const _OrderSummary = model
-  .define(
-    {
-      tableName: "order_summary",
-      name: "OrderSummary",
-    },
-    {
-      id: model.id({ prefix: "ordsum" }).primaryKey(),
-      version: model.number().default(1),
-      totals: model.json(),
-      order: model.belongsTo<() => typeof Order>(() => Order, {
-        mappedBy: "summary",
-      }),
-    }
-  )
-  .indexes([
-    {
-      name: "IDX_order_summary_order_id_version",
-      on: ["order_id", "version"],
-      unique: false,
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_order_summary_deleted_at",
-      on: ["deleted_at"],
-      unique: false,
-      where: "deleted_at IS NOT NULL",
-    },
-  ])
+// Forward declare
+const Order = () => require("./order").Order
 
-export const OrderSummary = _OrderSummary
+export const OrderSummary = model
+  .define("OrderSummary", {
+    id: model.id({ prefix: "ordsum" }).primaryKey(),
+    order_id: model.text(),  // Required
+    version: model.number().default(1),  // Required by service
+    totals: model.json().nullable(),
+    metadata: model.json().nullable(),
+    
+    // Order relationship
+    order: model.belongsTo<any>(Order, {
+      mappedBy: "summary",
+    }),
+  })
