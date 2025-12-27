@@ -14,6 +14,7 @@ const _Order = model
     custom_display_id: model.text().nullable(),
     region_id: model.text().nullable(),
     customer_id: model.text().nullable(),
+    location_id: model.text().nullable(),  // For location-based pricing/tax
     version: model.number().default(1),
     sales_channel_id: model.text().nullable(),
     status: model.enum(OrderStatus).default(OrderStatus.PENDING),
@@ -125,6 +126,12 @@ const _Order = model
       on: ["is_draft_order"],
       unique: false,
       where: "deleted_at IS NULL",
+    },
+    {
+      name: "IDX_order_location_id",
+      on: ["location_id"],
+      unique: false,
+      where: "deleted_at IS NULL AND location_id IS NOT NULL",
     },
   ])
 

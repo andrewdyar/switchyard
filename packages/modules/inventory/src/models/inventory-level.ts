@@ -1,36 +1,31 @@
-import { model } from "@switchyard/framework/utils"
-import InventoryItem from "./inventory-item"
+/**
+ * InventoryLevel Model - DEPRECATED for Goods
+ * 
+ * The Goods schema uses `inventory_items` directly with location_id,
+ * rather than a separate inventory_level join table.
+ * 
+ * This model is kept as a stub for backward compatibility but is not used.
+ * The inventory_locations table provides location data directly.
+ */
 
+import { model } from "@switchyard/framework/utils"
+
+// Stub model - not used in Goods schema
+// Inventory levels are tracked directly on inventory_items via quantity and location_id
 const InventoryLevel = model
-  .define("InventoryLevel", {
-    id: model.id({ prefix: "ilev" }).primaryKey(),
-    location_id: model.text(),
-    stocked_quantity: model.bigNumber().default(0),
-    reserved_quantity: model.bigNumber().default(0),
-    incoming_quantity: model.bigNumber().default(0),
-    metadata: model.json().nullable(),
-    inventory_item: model.belongsTo(() => InventoryItem, {
-      mappedBy: "location_levels",
-    }),
-    available_quantity: model.bigNumber().computed(),
-  })
-  .indexes([
+  .define(
     {
-      name: "IDX_inventory_level_inventory_item_id",
-      on: ["inventory_item_id"],
-      where: "deleted_at IS NULL",
+      tableName: "inventory_level",  // This table doesn't exist in Supabase
+      name: "InventoryLevel",
     },
     {
-      name: "IDX_inventory_level_location_id",
-      on: ["location_id"],
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_inventory_level_location_id_inventory_item_id",
-      on: ["inventory_item_id", "location_id"],
-      unique: true,
-      where: "deleted_at IS NULL",
-    },
-  ])
+      id: model.id({ prefix: "ilev" }).primaryKey(),
+      location_id: model.text(),
+      stocked_quantity: model.bigNumber().default(0),
+      reserved_quantity: model.bigNumber().default(0),
+      incoming_quantity: model.bigNumber().default(0),
+      metadata: model.json().nullable(),
+    }
+  )
 
 export default InventoryLevel

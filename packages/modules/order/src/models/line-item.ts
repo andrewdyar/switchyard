@@ -10,6 +10,7 @@ const _OrderLineItem = model
     thumbnail: model.text().nullable(),
     variant_id: model.text().nullable(),
     product_id: model.text().nullable(),
+    sellable_product_id: model.text().nullable(),  // Reference to sellable_products
     product_title: model.text().nullable(),
     product_description: model.text().nullable(),
     product_subtitle: model.text().nullable(),
@@ -69,6 +70,12 @@ const _OrderLineItem = model
       on: ["variant_id"],
       unique: false,
       where: "deleted_at IS NULL",
+    },
+    {
+      name: "IDX_order_line_item_sellable_product_id",
+      on: ["sellable_product_id"],
+      unique: false,
+      where: "deleted_at IS NULL AND sellable_product_id IS NOT NULL",
     },
   ])
 

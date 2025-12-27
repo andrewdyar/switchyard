@@ -54,28 +54,19 @@ const modules: Record<string, any> = {
   inventoryGroup: {
     resolve: "@switchyard/inventory-group",
   },
-  // Explicitly disable modules whose tables have been removed
-  // These modules require tables that no longer exist in our custom schema
-  // We use Supabase with our own custom schema instead
-  [Modules.REGION]: false,
-  [Modules.CURRENCY]: false,
-  [Modules.TAX]: false,
-  [Modules.FULFILLMENT]: false,
-  [Modules.NOTIFICATION]: false,
-  [Modules.STORE]: false,
-  [Modules.SALES_CHANNEL]: false,
-  [Modules.PRODUCT]: false,
-  [Modules.PRICING]: false,
-  [Modules.PROMOTION]: false,
-  [Modules.CUSTOMER]: false,
-  [Modules.CART]: false,
-  [Modules.PAYMENT]: false,
-  [Modules.ORDER]: false,
-  [Modules.STOCK_LOCATION]: false,
-  [Modules.INVENTORY]: false,
-  [Modules.USER]: false,
-  [Modules.API_KEY]: false,
-  [Modules.FILE]: false,
+  // Disabled modules - using custom Supabase schema or static config instead
+  [Modules.REGION]: false,        // Using locations table instead
+  [Modules.CURRENCY]: false,      // Static USD
+  [Modules.TAX]: false,           // Static 8.25% rate
+  [Modules.FULFILLMENT]: false,   // Custom fulfillment via bags/totes/robots
+  [Modules.NOTIFICATION]: false,  // Future SendGrid integration
+  [Modules.STORE]: false,         // Static store config
+  [Modules.SALES_CHANNEL]: false, // Single channel (app)
+  [Modules.PRICING]: false,       // Using sellable_products.selling_price
+  
+  // Enabled modules - adapted to use Supabase schema
+  // Product, Order, Cart, Customer, User, Payment, Promotion,
+  // Inventory, StockLocation, API Key, File are enabled by default
 }
 
 // Add Redis-based modules for production (required for multi-instance deployments)

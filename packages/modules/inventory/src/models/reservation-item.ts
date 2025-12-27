@@ -1,40 +1,30 @@
-import { model } from "@switchyard/framework/utils"
-import InventoryItem from "./inventory-item"
+/**
+ * ReservationItem Model - DEPRECATED for Goods
+ * 
+ * The Goods schema tracks reservations via `reserved_quantity` directly
+ * on `inventory_items`, rather than a separate reservation_item table.
+ * 
+ * This model is kept as a stub for backward compatibility but is not used.
+ */
 
+import { model } from "@switchyard/framework/utils"
+
+// Stub model - not used in Goods schema
+// Reservations are tracked via reserved_quantity on inventory_items
 const ReservationItem = model
-  .define("ReservationItem", {
-    id: model.id({ prefix: "resitem" }).primaryKey(),
-    line_item_id: model.text().nullable(),
-    allow_backorder: model.boolean().default(false),
-    location_id: model.text(),
-    quantity: model.bigNumber(),
-    raw_quantity: model.json(),
-    external_id: model.text().nullable(),
-    description: model.text().searchable().nullable(),
-    created_by: model.text().nullable(),
-    metadata: model.json().nullable(),
-    inventory_item: model
-      .belongsTo(() => InventoryItem, {
-        mappedBy: "reservation_items",
-      })
-      .searchable(),
-  })
-  .indexes([
+  .define(
     {
-      name: "IDX_reservation_item_line_item_id",
-      on: ["line_item_id"],
-      where: "deleted_at IS NULL",
+      tableName: "reservation_item",  // This table doesn't exist in Supabase
+      name: "ReservationItem",
     },
     {
-      name: "IDX_reservation_item_location_id",
-      on: ["location_id"],
-      where: "deleted_at IS NULL",
-    },
-    {
-      name: "IDX_reservation_item_inventory_item_id",
-      on: ["inventory_item_id"],
-      where: "deleted_at IS NULL",
-    },
-  ])
+      id: model.id({ prefix: "resitem" }).primaryKey(),
+      line_item_id: model.text().nullable(),
+      location_id: model.text(),
+      quantity: model.bigNumber(),
+      description: model.text().nullable(),
+      metadata: model.json().nullable(),
+    }
+  )
 
 export default ReservationItem

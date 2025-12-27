@@ -10,15 +10,19 @@ export * from "./order-payment-collection"
 export * from "./order-promotion"
 // Disabled - Fulfillment module tables removed
 // export * from "./order-return-fulfillment"
-export * from "./product-sales-channel"
+// Disabled - SalesChannel module not used
+// export * from "./product-sales-channel"
 export * from "./product-variant-inventory-item"
-export * from "./product-variant-price-set"
-export * from "./publishable-api-key-sales-channel"
+// Disabled - Pricing module not used
+// export * from "./product-variant-price-set"
+// Disabled - SalesChannel module not used
+// export * from "./publishable-api-key-sales-channel"
 // Disabled - Region/Currency module tables removed
 // export * from "./readonly"
 // Disabled - Region module tables removed
 // export * from "./region-payment-provider"
-export * from "./sales-channel-location"
+// Disabled - SalesChannel module not used
+// export * from "./sales-channel-location"
 // Disabled - shipping uses Fulfillment module tables
 // export * from "./shipping-option-price-set"
 // Disabled - shipping uses Fulfillment module tables

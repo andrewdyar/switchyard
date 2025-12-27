@@ -14,6 +14,7 @@ const LineItem = model
       quantity: model.number(),
       variant_id: model.text().nullable(),
       product_id: model.text().nullable(),
+      sellable_product_id: model.text().nullable(),  // Reference to sellable_products
       product_title: model.text().nullable(),
       product_description: model.text().nullable(),
       product_subtitle: model.text().nullable(),
@@ -64,6 +65,11 @@ const LineItem = model
       name: "IDX_line_item_product_type_id",
       on: ["product_type_id"],
       where: "deleted_at IS NULL AND product_type_id IS NOT NULL",
+    },
+    {
+      name: "IDX_line_item_sellable_product_id",
+      on: ["sellable_product_id"],
+      where: "deleted_at IS NULL AND sellable_product_id IS NOT NULL",
     },
   ])
   .cascades({
