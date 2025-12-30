@@ -1,13 +1,16 @@
 export * from "./cart-payment-collection"
-export * from "./cart-promotion"
+// Disabled - cart_promotion table doesn't exist
+// export * from "./cart-promotion"
 // Disabled - Fulfillment module tables removed
 // export * from "./fulfillment-provider-location"
 // export * from "./fulfillment-set-location"
-export * from "./order-cart"
+// Disabled - order_cart table doesn't exist
+// export * from "./order-cart"
 // Disabled - Fulfillment module tables removed
 // export * from "./order-fulfillment"
 export * from "./order-payment-collection"
-export * from "./order-promotion"
+// Disabled - order_promotion table doesn't exist (table is order_promotions with plural 's')
+// export * from "./order-promotion"
 // Disabled - Fulfillment module tables removed
 // export * from "./order-return-fulfillment"
 // Disabled - SalesChannel module not used
@@ -28,4 +31,5 @@ export * from "./order-promotion"
 // export * from "./shipping-option-price-set"
 // Disabled - shipping uses Fulfillment module tables
 // export * from "./product-shipping-profile"
-export * from "./customer-account-holder"
+// Disabled - customer_account_holder table doesn't exist
+// export * from "./customer-account-holder"
