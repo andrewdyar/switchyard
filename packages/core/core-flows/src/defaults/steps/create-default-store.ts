@@ -38,7 +38,17 @@ export const createDefaultStoreStepId = "create-default-store"
 export const createDefaultStoreStep = createStep(
   createDefaultStoreStepId,
   async (data: CreateDefaultStoreStepInput, { container }) => {
-    const storeService = container.resolve(Modules.STORE)
+    // Use allowUnregistered to gracefully handle disabled Store module
+    let storeService: IStoreModuleService | undefined
+    try {
+      storeService = container.resolve<IStoreModuleService>(
+        Modules.STORE,
+        { allowUnregistered: true }
+      )
+    } catch {
+      // Module not registered - return early
+      return new StepResponse(void 0)
+    }
 
     if (!storeService) {
       return new StepResponse(void 0)
@@ -83,8 +93,18 @@ export const createDefaultStoreStep = createStep(
       return
     }
 
-    const service = container.resolve<IStoreModuleService>(Modules.STORE)
+    let service: IStoreModuleService | undefined
+    try {
+      service = container.resolve<IStoreModuleService>(
+        Modules.STORE,
+        { allowUnregistered: true }
+      )
+    } catch {
+      return // Module not available
+    }
 
-    await service.deleteStores(data.storeId)
+    if (service) {
+      await service.deleteStores(data.storeId)
+    }
   }
 )

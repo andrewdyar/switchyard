@@ -30,9 +30,17 @@ export const createDefaultSalesChannelStepId = "create-default-sales-channel"
 export const createDefaultSalesChannelStep = createStep(
   createDefaultSalesChannelStepId,
   async (input: CreateDefaultSalesChannelStepInput, { container }) => {
-    const salesChannelService = container.resolve<ISalesChannelModuleService>(
-      Modules.SALES_CHANNEL
-    )
+    // Use allowUnregistered to gracefully handle disabled SalesChannel module
+    let salesChannelService: ISalesChannelModuleService | undefined
+    try {
+      salesChannelService = container.resolve<ISalesChannelModuleService>(
+        Modules.SALES_CHANNEL,
+        { allowUnregistered: true }
+      )
+    } catch {
+      // Module not registered - return early
+      return new StepResponse(void 0)
+    }
 
     if (!salesChannelService) {
       return new StepResponse(void 0)
@@ -57,10 +65,18 @@ export const createDefaultSalesChannelStep = createStep(
       return
     }
 
-    const service = container.resolve<ISalesChannelModuleService>(
-      Modules.SALES_CHANNEL
-    )
+    let service: ISalesChannelModuleService | undefined
+    try {
+      service = container.resolve<ISalesChannelModuleService>(
+        Modules.SALES_CHANNEL,
+        { allowUnregistered: true }
+      )
+    } catch {
+      return // Module not available
+    }
 
-    await service.deleteSalesChannels(data.id)
+    if (service) {
+      await service.deleteSalesChannels(data.id)
+    }
   }
 )
