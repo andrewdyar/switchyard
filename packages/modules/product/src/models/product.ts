@@ -108,9 +108,10 @@ const Product = model
         mappedBy: "product",
       }),
       
-      // Categories (many-to-many)
+      // Categories (many-to-many via product_categories pivot table)
       categories: model.manyToMany(() => ProductCategory, {
         mappedBy: "products",
+        pivotTable: "product_categories",
       }),
       
       // Variants relationship (uses stub product_variant table for service compatibility)
