@@ -19,7 +19,7 @@ const ProductOptionValue = model
           mappedBy: "values",
         })
         .nullable(),
-      // Variants relationship for service compatibility
+      // Variants relationship (uses stub tables for service compatibility)
       variants: model.manyToMany(() => ProductVariant, {
         mappedBy: "options",
       }),

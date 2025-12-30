@@ -19,7 +19,7 @@ const ProductImage = model
       product: model.belongsTo(() => Product, {
         mappedBy: "images",
       }),
-      // Variants relationship for service compatibility
+      // Variants relationship (uses stub tables for service compatibility)
       variants: model.manyToMany(() => ProductVariant, {
         mappedBy: "images",
         pivotEntity: () => ProductVariantProductImage,

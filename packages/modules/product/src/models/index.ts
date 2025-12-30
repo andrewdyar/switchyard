@@ -8,3 +8,5 @@ export { default as ProductTag } from "./product-tag"
 export { default as ProductType } from "./product-type"
 export { default as ProductVariant } from "./product-variant"
 export { default as ProductVariantProductImage } from "./product-variant-product-image"
+// NOTE: ProductVariant tables are stub tables in Supabase for service compatibility
+// Actual variant functionality is handled by the VariantGroups module (variant_groups/variant_group_members)

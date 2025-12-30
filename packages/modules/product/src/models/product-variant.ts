@@ -1,11 +1,9 @@
 /**
  * ProductVariant Model - Stub for Service Compatibility
  * 
- * In Goods, we use variant_groups to link related sellable_products instead of 
- * the Medusa ProductVariant pattern. Each sellable_product IS the sellable unit.
- * 
- * This model is kept with essential fields for service compatibility but does not
- * map to any real table. The VariantGroups module handles variant relationships.
+ * Maps to the product_variant stub table in Supabase.
+ * For actual variant functionality, use the VariantGroups module
+ * (variant_groups/variant_group_members tables) instead.
  */
 
 import { model } from "@switchyard/framework/utils"
@@ -14,7 +12,9 @@ import ProductImage from "./product-image"
 import ProductOptionValue from "./product-option-value"
 
 const ProductVariant = model
-  .define("ProductVariant", {
+  .define(
+    { tableName: "product_variant", name: "ProductVariant" },
+    {
     id: model.id({ prefix: "variant" }).primaryKey(),
     title: model.text().searchable().nullable(),
     sku: model.text().searchable().nullable(),
@@ -33,6 +33,7 @@ const ProductVariant = model
     width: model.number().nullable(),
     metadata: model.json().nullable(),
     variant_rank: model.number().default(0).nullable(),
+    deleted_at: model.dateTime().nullable(),
     
     // Product relationship
     product: model

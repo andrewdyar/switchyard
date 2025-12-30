@@ -113,8 +113,8 @@ const Product = model
         mappedBy: "products",
       }),
       
-      // Variants (stub relationship for service compatibility)
-      // Note: We use variant_groups module instead, but service code expects this
+      // Variants relationship (uses stub product_variant table for service compatibility)
+      // NOTE: For actual variant functionality, use the VariantGroups module
       variants: model.hasMany(() => ProductVariant, {
         mappedBy: "product",
       }),

@@ -1,8 +1,8 @@
 /**
  * Product Module Joiner Config - Aligned with Supabase Schema
  * 
- * ProductVariant is REMOVED from registration - we use variant_groups module instead.
- * All other sub-entities now have backing tables.
+ * ProductVariant uses stub tables in Supabase for service compatibility.
+ * Actual variant functionality is handled by the VariantGroups module.
  */
 import { defineJoinerConfig, Modules } from "@switchyard/framework/utils"
 import {
@@ -29,31 +29,25 @@ export const joinerConfig = defineJoinerConfig(Modules.PRODUCT, {
     ProductCollection,
     ProductCategory,
     ProductImage,
-    // ProductVariant is kept in models for backward compatibility but not actively used
     ProductVariant,
   ],
   linkableKeys: {
-    // product_id is the main linkable key for sellable_products
     product_id: Product.name,
-    // Keep variant_id for backward compatibility but it won't be used
-    variant_id: "ProductVariant",
+    variant_id: ProductVariant.name,
   },
   primaryKeys: ["id", "handle"],
   alias: [
-    // Products alias (primary)
     {
       name: ["product", "products"],
       entity: Product.name,
     },
-    // Variant alias kept for backward compatibility
     {
       name: ["product_variant", "product_variants", "variant", "variants"],
-      entity: "ProductVariant",
+      entity: ProductVariant.name,
       args: {
         methodSuffix: "ProductVariants",
       },
     },
-    // Category alias
     {
       name: ["product_category", "product_categories", "category", "categories"],
       entity: ProductCategory.name,
