@@ -1,3 +1,13 @@
+/**
+ * Product API Helpers - Field Mapping for Supabase Schema
+ * 
+ * Maps between Medusa API expectations and our sellable_products table:
+ * - title <-> name
+ * - thumbnail <-> image_url
+ * 
+ * Also handles graceful defaults for relationships that may not exist.
+ */
+
 import {
   BatchMethodResponse,
   BatchResponse,
@@ -35,18 +45,31 @@ const decodeHtmlEntities = (str: string | null | undefined): string | null | und
     .replace(/&#39;/g, "'")
 }
 
-// Map Medusa API field names to Goods database column names
+/**
+ * Map Medusa API field names to Goods database column names
+ * 
+ * sellable_products table uses:
+ * - name (not title)
+ * - image_url (not thumbnail)
+ */
 const mapProductFieldToColumn = (field: string): string => {
-  // Map title -> name (source_products uses 'name' not 'title')
+  // Map title -> name
   if (field === 'title') return 'name'
   if (field === '*title') return '*name'
-  // Map thumbnail -> image_url (source_products uses 'image_url' not 'thumbnail')
+  // Map thumbnail -> image_url
   if (field === 'thumbnail') return 'image_url'
   if (field === '*thumbnail') return '*image_url'
+  // Remove variant-related fields (we use variant_groups instead)
+  if (field.includes('variant')) return ''
+  // Remove sales_channels (module disabled)
+  if (field.includes('sales_channel')) return ''
   return field
 }
 
-// The variant had prices before, but that is not part of the price_set money amounts. Do we remap the request and response or not?
+/**
+ * Remap product query fields from Medusa API names to database column names
+ * Also filters out fields that don't exist in our schema
+ */
 export const remapKeysForProduct = (selectFields: string[]) => {
   const productFields = selectFields.filter(
     (fieldName: string) => !isPricing(fieldName)
@@ -58,8 +81,10 @@ export const remapKeysForProduct = (selectFields: string[]) => {
       fieldName.replace("variants.prices.", "variants.price_set.prices.")
     )
 
-  // Map API field names to database column names
-  const remappedProductFields = productFields.map(mapProductFieldToColumn)
+  // Map API field names to database column names, filter out empty strings
+  const remappedProductFields = productFields
+    .map(mapProductFieldToColumn)
+    .filter(Boolean)
 
   return [...remappedProductFields, ...pricingFields]
 }
@@ -92,9 +117,17 @@ export const remapKeysForVariant = (selectFields: string[]) => {
   return [...remappedVariantFields, ...pricingFields]
 }
 
+/**
+ * Remap database response to Medusa API format
+ * 
+ * Converts: name -> title, image_url -> thumbnail
+ * Also provides default empty arrays for relationships
+ */
 export const remapProductResponse = (
   product: ProductDTO
 ): HttpTypes.AdminProduct => {
+  if (!product) return product as any
+  
   // Map Goods database fields to Medusa API fields
   const { name, image_url, description, ...rest } = product as any
   const title = decodeHtmlEntities(name || (product as any).title)
@@ -102,11 +135,17 @@ export const remapProductResponse = (
   
   return {
     ...rest,
-    title, // Map 'name' to 'title' for API compatibility, decode HTML entities
+    title, // Map 'name' to 'title' for API compatibility
     description: decodedDescription,
-    thumbnail: image_url || (product as any).thumbnail, // Map 'image_url' to 'thumbnail' for API compatibility
-    variants: product.variants?.map(remapVariantResponse),
-    // TODO: Remove any once all typings are cleaned up
+    thumbnail: image_url || (product as any).thumbnail, // Map 'image_url' to 'thumbnail'
+    // Provide default empty arrays for relationships (variants is now empty since we use variant_groups)
+    variants: [], // We use variant_groups module instead
+    options: (product as any).options || [],
+    tags: (product as any).tags || [],
+    images: (product as any).images || [],
+    categories: (product as any).categories || [],
+    // sales_channels is empty (module disabled)
+    sales_channels: [],
   } as any
 }
 

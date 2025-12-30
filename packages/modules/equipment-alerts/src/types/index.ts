@@ -40,3 +40,5 @@ export interface EquipmentAlertDTO {
   created_at: Date
 }
 
+
+

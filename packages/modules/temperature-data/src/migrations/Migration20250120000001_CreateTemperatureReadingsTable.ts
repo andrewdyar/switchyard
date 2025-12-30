@@ -41,3 +41,5 @@ export class Migration20250120000001_CreateTemperatureReadingsTable extends Migr
   }
 }
 
+
+

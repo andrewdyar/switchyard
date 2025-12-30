@@ -36,3 +36,5 @@ const EquipmentAlert = model
 
 export default EquipmentAlert
 
+
+

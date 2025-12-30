@@ -1,8 +1,12 @@
 /**
  * GoodsOrderItem Model - Maps to Supabase order_items table
  * 
- * Order line items that reference sellable_products with fulfillment tracking.
- * Includes Medusa compatibility fields to satisfy OrderItem interface.
+ * This combined model serves as both OrderLineItem and OrderItem:
+ * - LineItem fields: title, thumbnail, quantity, unit_price
+ * - Item fields: fulfilled_quantity, shipped_quantity, return quantities
+ * - Goods-specific: sweep_id, picked_at, packed_at, fulfillment_source, allocated_at
+ * 
+ * Note: item_id is a self-reference (equals id) for Medusa compatibility
  */
 
 import { model } from "@switchyard/framework/utils"
@@ -13,29 +17,25 @@ const Order = () => require("./order").Order
 export const GoodsOrderItem = model
   .define(
     {
-      tableName: "order_items",  // Maps to Supabase order_items table
+      tableName: "order_items",
       name: "OrderItem",
     },
     {
-      // UUID primary key
+      // Primary key
       id: model.id().primaryKey(),
+      
+      // Self-reference for combined LineItem+Item model (Medusa compatibility)
+      // This equals id for our combined model - required by service
+      item_id: model.text(),
       
       // Order reference
       order_id: model.text(),
       
-      // Medusa compatibility - item_id (same as id for our use)
-      item_id: model.text(),
-      
-      // Product reference (sellable_products, not product_variant)
+      // Product reference
       sellable_product_id: model.text(),
       
-      // Also store as variant_id for Medusa compatibility
-      variant_id: model.text().nullable(),
-      product_id: model.text().nullable(),
-      
-      // Display info
+      // LineItem fields (snapshot at purchase time)
       title: model.text().nullable(),
-      subtitle: model.text().nullable(),
       thumbnail: model.text().nullable(),
       
       // Quantity and pricing
@@ -43,31 +43,31 @@ export const GoodsOrderItem = model
       unit_price: model.bigNumber(),
       total_price: model.bigNumber().nullable(),
       
-      // Medusa quantity tracking fields
-      fulfilled_quantity: model.bigNumber().default(0),
-      shipped_quantity: model.bigNumber().default(0),
-      return_requested_quantity: model.bigNumber().default(0),
-      return_received_quantity: model.bigNumber().default(0),
-      return_dismissed_quantity: model.bigNumber().default(0),
-      written_off_quantity: model.bigNumber().default(0),
-      delivered_quantity: model.bigNumber().default(0),
+      // Fulfillment tracking (OrderItem fields)
+      fulfilled_quantity: model.number().default(0),
+      shipped_quantity: model.number().default(0),
       
-      // Fulfillment source
-      source: model.text().nullable(),  // General source
-      fulfillment_source: model.text().nullable(),  // 'inventory' or 'sweep'
-      sweep_id: model.text().nullable(),  // Reference to sweep if sourced from sweep
+      // Return quantity tracking (Medusa compatibility)
+      return_requested_quantity: model.number().default(0),
+      return_received_quantity: model.number().default(0),
+      return_dismissed_quantity: model.number().default(0),
+      written_off_quantity: model.number().default(0),
       
-      // Fulfillment status
-      allocated_at: model.dateTime().nullable(),
+      // Tax configuration
+      is_tax_inclusive: model.boolean().default(true),
+      
+      // Goods fulfillment fields
+      source: model.text().nullable(),
+      sweep_id: model.text().nullable(),
       picked_at: model.dateTime().nullable(),
       packed_at: model.dateTime().nullable(),
+      fulfillment_source: model.text().nullable(),
+      allocated_at: model.dateTime().nullable(),
       
-      // Other Medusa fields
-      metadata: model.json().nullable(),
-      is_tax_inclusive: model.boolean().default(false),
-      compare_at_unit_price: model.bigNumber().nullable(),
+      // Soft delete
+      deleted_at: model.dateTime().nullable(),
       
-      // Order relationship
+      // Relationship to order
       order: model.belongsTo<any>(Order, {
         mappedBy: "items",
       }),
@@ -77,23 +77,25 @@ export const GoodsOrderItem = model
     {
       name: "IDX_order_items_order_id",
       on: ["order_id"],
-      unique: false,
     },
     {
       name: "IDX_order_items_sellable_product_id",
       on: ["sellable_product_id"],
-      unique: false,
     },
     {
       name: "IDX_order_items_sweep_id",
       on: ["sweep_id"],
-      unique: false,
       where: "sweep_id IS NOT NULL",
+    },
+    {
+      name: "IDX_order_items_deleted_at",
+      on: ["deleted_at"],
+      where: "deleted_at IS NOT NULL",
     },
     {
       name: "IDX_order_items_item_id",
       on: ["item_id"],
-      unique: false,
+      where: "item_id IS NOT NULL",
     },
   ])
 

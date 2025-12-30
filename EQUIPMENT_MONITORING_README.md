@@ -128,3 +128,5 @@ When sensors arrive:
 
 See `docs/guides/equipment-monitoring-setup.md` for detailed setup instructions.
 
+
+

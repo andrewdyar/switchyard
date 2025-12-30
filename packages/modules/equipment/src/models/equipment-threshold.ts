@@ -24,3 +24,5 @@ const EquipmentThreshold = model
 
 export default EquipmentThreshold
 
+
+

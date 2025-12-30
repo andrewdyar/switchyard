@@ -11,12 +11,14 @@ import {
   AdminGetSalesChannelsParams,
   AdminUpdateSalesChannel,
 } from "./validators"
+import { isSalesChannelModuleEnabled } from "../../../utils/middlewares/disabled-module-middleware"
 
 export const adminSalesChannelRoutesMiddlewares: MiddlewareRoute[] = [
   {
     method: ["GET"],
     matcher: "/admin/sales-channels",
     middlewares: [
+      isSalesChannelModuleEnabled,
       validateAndTransformQuery(
         AdminGetSalesChannelsParams,
         QueryConfig.listTransformQueryConfig
@@ -37,6 +39,7 @@ export const adminSalesChannelRoutesMiddlewares: MiddlewareRoute[] = [
     method: ["GET"],
     matcher: "/admin/sales-channels/:id",
     middlewares: [
+      isSalesChannelModuleEnabled,
       validateAndTransformQuery(
         AdminGetSalesChannelParams,
         QueryConfig.retrieveTransformQueryConfig
@@ -47,6 +50,7 @@ export const adminSalesChannelRoutesMiddlewares: MiddlewareRoute[] = [
     method: ["POST"],
     matcher: "/admin/sales-channels",
     middlewares: [
+      isSalesChannelModuleEnabled,
       validateAndTransformBody(AdminCreateSalesChannel),
       validateAndTransformQuery(
         AdminGetSalesChannelParams,
@@ -58,6 +62,7 @@ export const adminSalesChannelRoutesMiddlewares: MiddlewareRoute[] = [
     method: ["POST"],
     matcher: "/admin/sales-channels/:id",
     middlewares: [
+      isSalesChannelModuleEnabled,
       validateAndTransformBody(AdminUpdateSalesChannel),
       validateAndTransformQuery(
         AdminGetSalesChannelParams,
@@ -68,12 +73,13 @@ export const adminSalesChannelRoutesMiddlewares: MiddlewareRoute[] = [
   {
     method: ["DELETE"],
     matcher: "/admin/sales-channels/:id",
-    middlewares: [],
+    middlewares: [isSalesChannelModuleEnabled],
   },
   {
     method: ["POST"],
     matcher: "/admin/sales-channels/:id/products",
     middlewares: [
+      isSalesChannelModuleEnabled,
       validateAndTransformBody(createLinkBody()),
       validateAndTransformQuery(
         AdminGetSalesChannelParams,

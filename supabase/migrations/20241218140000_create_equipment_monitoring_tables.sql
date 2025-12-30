@@ -119,3 +119,5 @@ COMMENT ON TABLE "temperature_readings" IS 'Historical temperature and humidity 
 COMMENT ON TABLE "equipment_alerts" IS 'Alert events triggered by threshold violations or connectivity issues';
 COMMENT ON TABLE "alert_notification_assignments" IS 'User assignments for receiving specific alert type notifications';
 
+
+

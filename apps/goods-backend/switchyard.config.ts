@@ -54,6 +54,10 @@ const modules: Record<string, any> = {
   inventoryGroup: {
     resolve: "@switchyard/inventory-group",
   },
+  // Custom variant groups module (replaces Medusa's ProductVariant)
+  variantGroups: {
+    resolve: "@switchyard/variant-groups",
+  },
   // Disabled modules - using custom Supabase schema or static config instead
   [Modules.REGION]: false,        // Using locations table instead
   [Modules.CURRENCY]: false,      // Static USD

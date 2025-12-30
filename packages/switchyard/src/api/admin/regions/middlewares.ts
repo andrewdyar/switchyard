@@ -10,12 +10,14 @@ import {
   AdminGetRegionsParams,
   AdminUpdateRegion,
 } from "./validators"
+import { isRegionModuleEnabled } from "../../../utils/middlewares/disabled-module-middleware"
 
 export const adminRegionRoutesMiddlewares: MiddlewareRoute[] = [
   {
     method: ["GET"],
     matcher: "/admin/regions",
     middlewares: [
+      isRegionModuleEnabled,
       validateAndTransformQuery(
         AdminGetRegionsParams,
         QueryConfig.listTransformQueryConfig
@@ -26,6 +28,7 @@ export const adminRegionRoutesMiddlewares: MiddlewareRoute[] = [
     method: ["GET"],
     matcher: "/admin/regions/:id",
     middlewares: [
+      isRegionModuleEnabled,
       validateAndTransformQuery(
         AdminGetRegionParams,
         QueryConfig.retrieveTransformQueryConfig
@@ -36,6 +39,7 @@ export const adminRegionRoutesMiddlewares: MiddlewareRoute[] = [
     method: ["POST"],
     matcher: "/admin/regions",
     middlewares: [
+      isRegionModuleEnabled,
       validateAndTransformBody(AdminCreateRegion),
       validateAndTransformQuery(
         AdminGetRegionParams,
@@ -47,6 +51,7 @@ export const adminRegionRoutesMiddlewares: MiddlewareRoute[] = [
     method: ["POST"],
     matcher: "/admin/regions/:id",
     middlewares: [
+      isRegionModuleEnabled,
       validateAndTransformBody(AdminUpdateRegion),
       validateAndTransformQuery(
         AdminGetRegionParams,

@@ -1,7 +1,5 @@
 /**
- * ProductTag Model - Stubbed
- * 
- * No product_tag table exists in Supabase. This is kept for service compatibility.
+ * ProductTag Model - Maps to Supabase product_tag table
  */
 
 import { model } from "@switchyard/framework/utils"
@@ -14,8 +12,10 @@ const ProductTag = model
       id: model.id({ prefix: "ptag" }).primaryKey(),
       value: model.text().searchable(),
       metadata: model.json().nullable(),
+      deleted_at: model.dateTime().nullable(),
       products: model.manyToMany(() => Product, {
         mappedBy: "tags",
+        pivotTable: "product_tags",
       }),
     }
   )

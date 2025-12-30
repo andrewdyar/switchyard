@@ -1,0 +1,38 @@
+{
+  "name": "@switchyard/variant-groups",
+  "version": "2.12.1",
+  "description": "Variant Groups module for linking related sellable products",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "!dist/**/__tests__",
+    "!dist/**/__mocks__",
+    "!dist/**/__fixtures__"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andrewdyar/switchyard",
+    "directory": "packages/modules/variant-groups"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "author": "Switchyard",
+  "license": "MIT",
+  "scripts": {
+    "watch": "yarn run -T tsc --build --watch",
+    "resolve:aliases": "yarn run -T tsc --showConfig -p tsconfig.json > tsconfig.resolved.json && yarn run -T tsc-alias -p tsconfig.resolved.json && yarn run -T rimraf tsconfig.resolved.json",
+    "build": "yarn run -T rimraf dist && yarn run -T tsc --build && npm run resolve:aliases"
+  },
+  "devDependencies": {
+    "@switchyard/framework": "workspace:*",
+    "@switchyard/test-utils": "workspace:*"
+  },
+  "peerDependencies": {
+    "@switchyard/framework": "workspace:*"
+  }
+}

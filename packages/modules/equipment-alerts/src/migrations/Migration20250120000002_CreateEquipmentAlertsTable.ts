@@ -50,3 +50,5 @@ export class Migration20250120000002_CreateEquipmentAlertsTable extends Migratio
   }
 }
 
+
+

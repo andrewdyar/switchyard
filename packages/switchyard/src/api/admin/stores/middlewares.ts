@@ -9,12 +9,14 @@ import {
   AdminGetStoresParams,
   AdminUpdateStore,
 } from "./validators"
+import { isStoreModuleEnabled } from "../../../utils/middlewares/disabled-module-middleware"
 
 export const adminStoreRoutesMiddlewares: MiddlewareRoute[] = [
   {
     method: ["GET"],
     matcher: "/admin/stores",
     middlewares: [
+      isStoreModuleEnabled,
       validateAndTransformQuery(
         AdminGetStoresParams,
         QueryConfig.listTransformQueryConfig
@@ -25,6 +27,7 @@ export const adminStoreRoutesMiddlewares: MiddlewareRoute[] = [
     method: ["GET"],
     matcher: "/admin/stores/:id",
     middlewares: [
+      isStoreModuleEnabled,
       validateAndTransformQuery(
         AdminGetStoreParams,
         QueryConfig.retrieveTransformQueryConfig
@@ -35,6 +38,7 @@ export const adminStoreRoutesMiddlewares: MiddlewareRoute[] = [
     method: ["POST"],
     matcher: "/admin/stores/:id",
     middlewares: [
+      isStoreModuleEnabled,
       validateAndTransformBody(AdminUpdateStore),
       validateAndTransformQuery(
         AdminGetStoreParams,

@@ -1,8 +1,7 @@
 /**
- * Product Category Model - Modified for Goods Integration
+ * Product Category Model - Maps to Supabase categories table
  * 
- * Maps to Supabase `categories` table instead of Medusa's default `product_category` table.
- * Uses Goods' existing category hierarchy.
+ * Uses Goods' existing category hierarchy from the categories table.
  */
 
 import { model } from "@switchyard/framework/utils"
@@ -11,63 +10,48 @@ import Product from "./product"
 const ProductCategory = model
   .define(
     {
-      tableName: "categories",      // Use Goods categories table
-      name: "ProductCategory",       // Keep Medusa's internal name for compatibility
+      tableName: "categories",
+      name: "ProductCategory",
     },
     {
-      // UUID primary key (matches categories.id)
+      // Primary key
       id: model.id().primaryKey(),
       
-      // Category name
+      // Core fields
       name: model.text().searchable(),
-      
-      // Description
       description: model.text().searchable().nullable(),
-      
-      // URL-friendly handle (new column added via migration)
       handle: model.text().searchable().nullable(),
-      
-      // Materialized path for hierarchy (new column added via migration)
       mpath: model.text().nullable(),
       
-      // Is this category active?
+      // Status fields
       is_active: model.boolean().default(true),
-      
-      // Is this an internal-only category?
       is_internal: model.boolean().default(false),
       
-      // Display rank/order (new column added via migration)
+      // Display
       rank: model.number().default(0),
       
-      // Metadata (new JSONB column added via migration)
+      // Metadata
       metadata: model.json().nullable(),
       
-      // ---- Goods-specific fields ----
+      // Soft delete
+      deleted_at: model.dateTime().nullable(),
       
-      // Source identifier (e.g., 'goods', 'heb', 'costco')
+      // Goods-specific fields
       source: model.text().nullable(),
-      
-      // Category level in hierarchy (1 = top level)
       level: model.number().default(1),
-      
-      // Full category path (e.g., "Dairy & eggs/Milk/Whole Milk")
       category_path: model.text().nullable(),
       
-      // ---- Relationships ----
-      
-      // Parent category (self-referential)
+      // Relationships
       parent_category: model
         .belongsTo(() => ProductCategory, {
           mappedBy: "category_children",
         })
         .nullable(),
       
-      // Child categories
       category_children: model.hasMany(() => ProductCategory, {
         mappedBy: "parent_category",
       }),
       
-      // Products in this category
       products: model.manyToMany(() => Product, {
         mappedBy: "categories",
       }),

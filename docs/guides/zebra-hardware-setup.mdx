@@ -1,0 +1,262 @@
+---
+title: "Zebra Hardware Setup Guide"
+description: "Complete setup guide for Zebra ZD421 printer and TC58 scanner integration with Goods"
+---
+
+# Zebra Hardware Setup Guide
+
+This guide covers the complete setup for integrating Zebra hardware with the Goods platform.
+
+## Hardware Overview
+
+| Device | Model | Purpose |
+|--------|-------|---------|
+| Printer | Zebra ZD421 | Bag labels, tote labels, shelf labels |
+| Scanner | Zebra TC58 | Barcode scanning, inventory, picking |
+
+## ZD421 Printer Setup
+
+### 1. Network Configuration
+
+1. Connect the printer to your local network via Ethernet
+2. Print a configuration label by pressing and holding the Feed button for 2 seconds
+3. Note the current IP address
+
+#### Set Static IP (Recommended)
+
+Using the printer's web interface:
+
+1. Navigate to `http://{printer-ip}` in a browser
+2. Go to **Network Settings** → **Wired**
+3. Set IP mode to **Static**
+4. Configure:
+   - IP Address: `192.168.1.100` (or your preferred address)
+   - Subnet Mask: `255.255.255.0`
+   - Gateway: `192.168.1.1`
+5. Save and restart the printer
+
+### 2. Media Configuration
+
+#### Bag Labels (Fold-Over)
+- **Size**: 2.5" × 6"
+- **Type**: Direct Thermal
+- **Gap/Mark**: Black mark sensing (recommended) or gap sensing
+- **Calibration**: Press Feed button 2 times after loading media
+
+#### Tote Labels
+- **Size**: 3" × 3"
+- **Type**: Direct Thermal
+- **Gap/Mark**: Gap sensing
+
+#### Shelf Labels
+- **Size**: 2.5" × 1.25"
+- **Type**: Continuous roll (non-adhesive)
+- **Gap/Mark**: Continuous mode
+
+### 3. Test Printing
+
+From the admin dashboard:
+1. Go to **Settings** → **Hardware**
+2. Click **Check Printer Connection**
+3. Click **Print Test Label**
+
+Or via API:
+```bash
+curl -X POST http://localhost:9000/admin/labels/test \
+  -H "Authorization: Bearer $TOKEN"
+```
+
+## TC58 Scanner Setup
+
+### 1. Device Configuration
+
+1. Power on the TC58
+2. Complete initial Android setup
+3. Connect to your WiFi network
+4. Note the device IP address
+
+### 2. DataWedge Configuration
+
+DataWedge broadcasts scanned barcodes as Android intents.
+
+#### Create Profile
+
+1. Open **DataWedge** app
+2. Tap **Menu** → **New Profile**
+3. Name: `Goods Scanner`
+4. Tap the new profile to configure
+
+#### Configure Profile
+
+**Associated Apps:**
+- App name: `com.goodsgrocery.scanner`
+- Activity: `*`
+
+**Barcode Input:**
+- Enabled: ✓
+- Scanner: Internal Imager (or your preferred)
+
+**Keystroke Output:**
+- Enabled: ✗ (we use intents instead)
+
+**Intent Output:**
+- Enabled: ✓
+- Intent Action: `com.goodsgrocery.scanner.SCAN`
+- Intent Category: `android.intent.category.DEFAULT`
+- Intent Delivery: `Broadcast Intent`
+
+**Data Formatting:**
+- Basic data formatting: ✓
+- Enable new line at end: ✗
+
+### 3. Install Scanner App
+
+```bash
+# Build the APK
+cd switchyard/apps/scanner-app
+npm install
+cd android
+./gradlew assembleRelease
+
+# Install via ADB
+adb install app/build/outputs/apk/release/app-release.apk
+```
+
+Or install directly from your CI/CD pipeline.
+
+### 4. App Configuration
+
+On first launch:
+1. Sign in with your Goods credentials
+2. Go to **Settings**
+3. Configure:
+   - **API URL**: Your Switchyard backend URL
+   - **Printer IP**: The ZD421's static IP
+   - **Printer Port**: `9100`
+4. Tap **Check Connection** to verify printer
+5. Tap **Print Test Label** to confirm
+
+## Label Specifications
+
+### Bag Label (2.5" × 6")
+
+Fold-over design that displays on both sides of a sealed bag.
+
+```
+┌─────────────────────────┐
+│     (TOP HALF)          │  ← Upside down
+│     Same as bottom      │
+│                         │
+├─────────────────────────┤  ← Fold line
+│     (BOTTOM HALF)       │  ← Right-side up
+│     Customer Name       │
+│     • Item 1            │
+│     • Item 2            │
+│     Bag 1 of 3          │
+│     [BARCODE]           │
+└─────────────────────────┘
+```
+
+### Tote Label (3" × 3")
+
+Large QR code for tote identification.
+
+```
+┌─────────────────────────────┐
+│    ┌─────────────────┐      │
+│    │    QR CODE      │      │
+│    │   (2" × 2")     │      │
+│    └─────────────────┘      │
+│        TOTE #12345          │
+└─────────────────────────────┘
+```
+
+### Shelf Label (2.5" × 1.25")
+
+Product identification for gondola shelves.
+
+```
+┌─────────────────────────────────────────┐
+│  Product Name                           │
+│  |||||||||||||||||||||||||||||||        │
+│  012345678901   Location: 3A-2          │
+└─────────────────────────────────────────┘
+```
+
+## API Endpoints
+
+### Print API (Admin Dashboard)
+
+| Endpoint | Method | Purpose |
+|----------|--------|---------|
+| `/admin/labels/printer-status` | GET | Check printer connection |
+| `/admin/labels/test` | POST | Print test label |
+| `/admin/labels/bag` | POST | Print single bag label |
+| `/admin/labels/bag/batch` | POST | Print multiple bag labels |
+| `/admin/labels/tote` | POST | Print single tote label |
+| `/admin/labels/tote/batch` | POST | Print multiple tote labels |
+| `/admin/labels/shelf` | POST | Print single shelf label |
+| `/admin/labels/shelf/batch` | POST | Print multiple shelf labels |
+| `/admin/labels/preview/*` | POST | Return ZPL without printing |
+
+### Scanner API
+
+| Endpoint | Method | Purpose |
+|----------|--------|---------|
+| `/scanner` | GET | API status and features |
+| `/scanner/inventory/lookup` | GET | Look up product by barcode |
+| `/scanner/inventory/scan` | POST | Process inventory scan |
+| `/scanner/orders` | GET | Get orders for picking |
+| `/scanner/orders/:id` | GET | Get order details |
+
+## Troubleshooting
+
+### Printer Not Connecting
+
+1. Verify network connectivity with `ping {printer-ip}`
+2. Check firewall allows port 9100
+3. Restart printer
+4. Confirm static IP hasn't changed
+
+### Labels Not Printing Correctly
+
+1. Calibrate media (press Feed 2x)
+2. Verify label size in ZPL (`^PW` and `^LL` commands)
+3. Check darkness setting in printer web UI
+4. Use Labelary.com to preview ZPL
+
+### Scanner Not Sending Barcodes
+
+1. Verify DataWedge profile is active
+2. Check intent action matches exactly
+3. Test with DataWedge Demo app first
+4. Review Android logs: `adb logcat | grep DataWedge`
+
+### App Authentication Failing
+
+1. Verify Supabase credentials
+2. Check user has appropriate role
+3. Ensure API URL is correct
+4. Check network connectivity
+
+## Environment Variables
+
+### Backend (Switchyard)
+
+```bash
+ZEBRA_PRINTER_IP=192.168.1.100
+ZEBRA_PRINTER_PORT=9100
+```
+
+### Scanner App
+
+Create `apps/scanner-app/.env`:
+
+```bash
+SUPABASE_URL=https://your-project.supabase.co
+SUPABASE_ANON_KEY=your-anon-key
+API_BASE_URL=http://your-backend:9000
+PRINTER_IP=192.168.1.100
+PRINTER_PORT=9100
+```
+

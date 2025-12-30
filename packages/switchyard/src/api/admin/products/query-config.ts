@@ -1,31 +1,26 @@
+/**
+ * Product Query Configuration - Aligned with Supabase Schema
+ * 
+ * Note: We use sellable_products table which has different column names:
+ * - title -> name (mapped in helpers.ts)
+ * - thumbnail -> image_url (mapped in helpers.ts)
+ * 
+ * Relationships now have backing tables:
+ * - *type -> product_type table
+ * - *collection -> product_collection table
+ * - *options -> product_option table
+ * - *tags -> product_tag table (via product_tags pivot)
+ * - *images -> product_image table
+ * 
+ * ProductVariant is DISABLED - we use variant_groups instead
+ */
+
+// Variant fields (mostly unused since we use variant_groups)
 export const defaultAdminProductsVariantFields = [
   "id",
-  "product_id",
-  "thumbnail",
   "title",
   "sku",
-  "allow_backorder",
-  "manage_inventory",
-  "hs_code",
-  "origin_country",
-  "mid_code",
-  "material",
-  "weight",
-  "length",
-  "height",
-  "width",
-  "created_at",
-  "updated_at",
-  "deleted_at",
   "metadata",
-  "variant_rank",
-  "ean",
-  "upc",
-  "barcode",
-  "*prices",
-  "prices.price_rules.value",
-  "prices.price_rules.attribute",
-  "*options",
 ]
 
 export const retrieveVariantConfig = {
@@ -39,7 +34,7 @@ export const listVariantConfig = {
   isList: true,
 }
 
-export const defaultAdminProductsOptionFields = ["id", "title"]
+export const defaultAdminProductsOptionFields = ["id", "title", "metadata"]
 
 export const retrieveOptionConfig = {
   defaults: defaultAdminProductsOptionFields,
@@ -52,63 +47,57 @@ export const listOptionConfig = {
   isList: true,
 }
 
+// Product fields - aligned with sellable_products table
 export const defaultAdminProductFields = [
+  // Core Medusa fields (mapped from sellable_products)
   "id",
-  "title",
-  "subtitle",
-  "status",
-  "external_id",
+  "name",           // Medusa's 'title' - remapped in helpers.ts
   "description",
-  "handle",
-  "is_giftcard",
-  "discountable",
-  "thumbnail",
-  "collection_id",
+  "handle",         // Generated column in DB
+  "status",
+  "image_url",      // Medusa's 'thumbnail' - remapped in helpers.ts
+  
+  // FK references
   "type_id",
-  "weight",
-  "length",
-  "height",
-  "width",
-  "hs_code",
-  "origin_country",
-  "mid_code",
-  "material",
-  "created_at",
-  "updated_at",
-  "deleted_at",
-  "metadata",
-  // Goods-specific fields from source_products
+  "collection_id",
+  "category_id",
+  "subcategory_id",
+  
+  // Goods-specific fields from sellable_products
   "brand",
-  "barcode",
-  "unit_of_measure",
   "size",
   "size_uom",
-  "full_category_hierarchy",
-  "product_page_url",
-  "is_active",
-  "is_new",
-  "on_ad",
-  "best_available",
-  "priced_by_weight",
-  "show_coupon_flag",
-  "in_assortment",
+  "unit_count",
+  "selling_price",
+  "price_per_unit",
+  "price_per_unit_uom",
+  "is_perishable",
   "is_organic",
   "is_gluten_free",
   "is_vegan",
-  "is_non_gmo",
-  "needs_review",
+  "warehouse_zone",
+  "preferred_retailer",
+  "is_active",
+  "scraped_product_id",
+  
+  // Audit fields
+  "created_at",
+  "updated_at",
+  "deleted_at",
+  "created_by",
+  "updated_by",
+  
+  // Relationships (now have backing tables)
   "*type",
   "*collection",
   "*options",
   "*options.values",
   "*tags",
   "*images",
-  "*variants",
-  "*variants.prices",
-  "variants.prices.price_rules.value",
-  "variants.prices.price_rules.attribute",
-  "*variants.options",
-  "*sales_channels",
+  "*categories",
+  
+  // Note: *variants is REMOVED - we use variant_groups module instead
+  // Note: *sales_channels is REMOVED - module is disabled
 ]
 
 export const retrieveProductQueryConfig = {

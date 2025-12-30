@@ -73,3 +73,5 @@ export class Migration20250120000000_CreateEquipmentTables extends Migration {
   }
 }
 
+
+

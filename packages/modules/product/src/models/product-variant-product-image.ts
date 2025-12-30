@@ -1,7 +1,7 @@
 /**
- * ProductVariantProductImage Model - Stubbed
+ * ProductVariantProductImage Model - Stub Pivot Table
  * 
- * Pivot table for variant-image relationship. Not used in Goods architecture.
+ * Pivot table for variant-image relationship. Kept for service compatibility.
  */
 
 import { model } from "@switchyard/framework/utils"
@@ -10,6 +10,8 @@ import ProductImage from "./product-image"
 
 const ProductVariantProductImage = model.define("ProductVariantProductImage", {
   id: model.id({ prefix: "pvpi" }).primaryKey(),
+  variant_id: model.text(),
+  image_id: model.text(),
   variant: model.belongsTo(() => ProductVariant, {
     mappedBy: "images",
   }),

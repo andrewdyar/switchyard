@@ -65,3 +65,5 @@ export interface EquipmentThresholdDTO {
   updated_at: Date
 }
 
+
+

@@ -26,3 +26,5 @@ class EquipmentModuleService extends SwitchyardService({
 
 export default EquipmentModuleService
 
+
+
